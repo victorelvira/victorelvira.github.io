@@ -918,7 +918,7 @@
     "painter": "Botticelli",
     "title": "Portrait of Esmeralda Brandini",
     "year": "1470–1475",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -940,7 +940,8 @@
     "wga_url": "https://www.wga.hu/html/b/botticel/7portrai/02lady.html",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -4079,11 +4080,11 @@
    "properties": {
     "painter": "Botticelli",
     "title": "St Jerome",
-    "year": "1450",
+    "year": "",
     "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20Hermitage%2091.jpg?width=500",
     "qid": "Q27968293",
     "wikidata": "https://www.wikidata.org/wiki/Q27968293",
@@ -4102,10 +4103,21 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      },
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1450 with century precision: a century, not a year, and outside the painter's life (1445-1510)"
      }
     },
     "dimensions": "44.5 × 26 cm",
@@ -4119,7 +4131,8 @@
     "museum_id": "hermitage-museum",
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1450"
    }
   },
   {
@@ -5463,7 +5476,7 @@
     "title": "Allegory of Abundance",
     "year": "1480",
     "location": "British Museum",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20Breughel%20%28II%29%20-%20Allegory%20of%20abundance.jpg?width=500",
@@ -5487,7 +5500,8 @@
     "museum_id": "british-museum",
     "location_src": "British Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -5880,11 +5894,11 @@
    "properties": {
     "painter": "Botticelli",
     "title": "Madonna and Child with Angels",
-    "year": "1450",
+    "year": "",
     "location": "National Gallery of Art",
     "city": "Washington, D.C.",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20-%20Madonna%20and%20Child%20with%20Angels%20%28Kress%2C%20Washington%29.jpg?width=500",
     "qid": "Q20173854",
     "wikidata": "https://www.wikidata.org/wiki/Q20173854",
@@ -5903,16 +5917,28 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      },
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1450 with century precision: a century, not a year, and outside the painter's life (1445-1510)"
      }
     },
     "museum_id": "national-gallery-of-art",
     "location_src": "Galería Nacional de Arte",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1450"
    }
   },
   {
@@ -6419,11 +6445,11 @@
    "properties": {
     "painter": "Botticelli",
     "title": "Vierge avec l'Enfant et le petit saint Jean",
-    "year": "1450",
+    "year": "",
     "location": "Musée Fabre",
     "city": "Montpellier",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli-vierge%20et%20Enfant%20avec%20le%20petit%20saint%20Jean.jpg?width=500",
     "qid": "Q115670795",
     "wikidata": "https://www.wikidata.org/wiki/Q115670795",
@@ -6442,16 +6468,28 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      },
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1450 with century precision: a century, not a year, and outside the painter's life (1445-1510)"
      }
     },
     "museum_id": "musee-fabre",
     "location_src": "Musée Fabre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1450"
    }
   },
   {
@@ -6507,11 +6545,11 @@
    "properties": {
     "painter": "Botticelli",
     "title": "Madonna and Child with an Angel",
-    "year": "1450",
+    "year": "",
     "location": "Petit Palais",
     "city": "Avignon",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli-Vierge%20et%20Enfant%20avec%20un%20ange.jpg?width=500",
     "qid": "Q116284768",
     "wikidata": "https://www.wikidata.org/wiki/Q116284768",
@@ -6530,16 +6568,28 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      },
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1450, after death (1445–1510) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1450 with century precision: a century, not a year, and outside the painter's life (1445-1510)"
      }
     },
     "museum_id": "petit-palais",
     "location_src": "Petit Palais",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1450"
    }
   },
   {

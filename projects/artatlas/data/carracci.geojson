@@ -325,7 +325,7 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Diana Surprised by Actaeon",
-    "year": "1550",
+    "year": "",
     "city": "Brussels-Capital Region",
     "country": "Belgium",
     "location": "Royal Museums of Fine Arts of Belgium",
@@ -344,7 +344,15 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "qid": "Q123512502",
     "location_src": "Royal Museums of Fine Arts of Belgium",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
+     }
+    }
    }
   },
   {
@@ -359,7 +367,7 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Venus and Cupid",
-    "year": "1550",
+    "year": "",
     "city": "Modena",
     "country": "Italy",
     "location": "Galleria Estense",
@@ -378,7 +386,15 @@
     "museum_id": "galleria-estense",
     "qid": "Q126084323",
     "location_src": "Galleria Estense",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
+     }
+    }
    }
   },
   {
@@ -910,12 +926,12 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Saint Roch Distributing Alms",
-    "year": "1550",
+    "year": "",
     "city": "Kassel",
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "331 × 477 cm",
@@ -933,14 +949,26 @@
     "qid": "Q16551556",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "location_src": "Gemäldegalerie Alte Meister",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -1001,12 +1029,12 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Lamentation over the Dead Christ",
-    "year": "1650",
+    "year": "",
     "city": "London",
     "country": "United Kingdom",
     "location": "Bridgewater House",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "273 × 156.2 cm",
@@ -1024,14 +1052,26 @@
     "qid": "Q17626014",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "location_src": "Bridgewater House",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -1923,12 +1963,12 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Christ and the Canaanite Woman",
-    "year": "1550",
+    "year": "",
     "city": "Parma",
     "country": "Italy",
     "location": "Palazzo del Comune",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "255 × 196 cm",
@@ -1946,14 +1986,26 @@
     "qid": "Q19966561",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "location_src": "Palazzo del Comune",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -1968,12 +2020,12 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Christ and the Woman of Samaria",
-    "year": "1550",
+    "year": "",
     "city": "Milan",
     "country": "Italy",
     "location": "Pinacoteca di Brera",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "170 × 225 cm",
@@ -1992,14 +2044,26 @@
     "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/samarita.html",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "location_src": "Pinacoteca di Brera",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -2246,12 +2310,12 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "The Vision of Saint Eustace",
-    "year": "1550",
+    "year": "",
     "city": "Naples",
     "country": "Italy",
     "location": "Museo di Capodimonte",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "86 × 113 cm",
@@ -2269,14 +2333,26 @@
     "qid": "Q19966617",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "location_src": "Museo di Capodimonte",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -3480,11 +3556,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "The Agony in the Garden of Gethsemane",
-    "year": "1550",
+    "year": "",
     "location": "Buckingham Palace",
     "city": "England",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Orazione%20nell%27orto.jpg?width=500",
     "qid": "Q126127658",
     "wikidata": "https://www.wikidata.org/wiki/Q126127658",
@@ -3495,17 +3571,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "buckingham-palace",
     "location_src": "Buckingham Palace",
     "venue_of": "Royal Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -3520,11 +3608,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Portrait of a musician (presumed portrait of Claudio Merulo)",
-    "year": "1550",
+    "year": "",
     "location": "Museo di Capodimonte",
     "city": "Naples",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Ritratto%20di%20Claudio%20Merulo%20Napoli.jpg?width=500",
     "qid": "Q126127649",
     "wikidata": "https://www.wikidata.org/wiki/Q126127649",
@@ -3535,16 +3623,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "museo-di-capodimonte",
     "location_src": "Museo di Capodimonte",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -3590,11 +3690,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "S. Francis",
-    "year": "1550",
+    "year": "",
     "location": "Museo di Capodimonte",
     "city": "Naples",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20carracci%2C%20s.francesco%2C%201585-90%2C%20Q595.JPG?width=500",
     "qid": "Q126181009",
     "wikidata": "https://www.wikidata.org/wiki/Q126181009",
@@ -3605,16 +3705,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "museo-di-capodimonte",
     "location_src": "Museo di Capodimonte",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -3732,11 +3844,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Man with turban",
-    "year": "1550",
+    "year": "",
     "location": "Galleria Borghese",
     "city": "Rome",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%2C%20Uomo%20in%20turbante.jpg?width=500",
     "qid": "Q126367552",
     "wikidata": "https://www.wikidata.org/wiki/Q126367552",
@@ -3747,16 +3859,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "galleria-borghese",
     "location_src": "Galleria Borghese",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -3771,11 +3895,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Hommage to Diana",
-    "year": "1500",
+    "year": "",
     "location": "Palazzo Farnese",
     "city": "Rome",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Carracci%2C%20Annibale%20-%20Hommage%20to%20Diana%20-%201597-1602.jpg?width=500",
     "qid": "Q126133734",
     "wikidata": "https://www.wikidata.org/wiki/Q126133734",
@@ -3786,16 +3910,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1500, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1500, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "palazzo-farnese",
     "location_src": "Palazzo Farnese",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500"
    }
   },
   {
@@ -3810,11 +3946,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Arcangelo Gabriele e Vergine Annunciata",
-    "year": "1550",
+    "year": "",
     "location": "Pinacoteca Nazionale di Bologna",
     "city": "Bologna",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Arcangelo%20Gabriele%20e%20Vergine%20Annunciata%20Bologna.jpg?width=500",
     "qid": "Q126127626",
     "wikidata": "https://www.wikidata.org/wiki/Q126127626",
@@ -3825,16 +3961,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "location_src": "Pinacoteca Nazionale di Bologna",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -3993,11 +4141,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Adoration of the Shepherds",
-    "year": "1550",
+    "year": "",
     "location": "Galleria Nazionale d'Arte Antica",
     "city": "Rome",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Adoration%20of%20the%20Shepherds%20Roma.jpg?width=500",
     "qid": "Q126127612",
     "wikidata": "https://www.wikidata.org/wiki/Q126127612",
@@ -4008,16 +4156,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
     "location_src": "Galleria Nazionale d'Arte Antica",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -4032,11 +4192,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Portrait of a Young Man",
-    "year": "1550",
+    "year": "",
     "location": "Galleria Nazionale d'Arte Antica",
     "city": "Rome",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Ritratto%20di%20Giovane%2C%20Palazzo%20Barberini.jpg?width=500",
     "qid": "Q126127634",
     "wikidata": "https://www.wikidata.org/wiki/Q126127634",
@@ -4047,16 +4207,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "galleria-nazionale-d-arte-antica",
     "location_src": "Galleria Nazionale d'Arte Antica",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -4071,11 +4243,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "The Adoration of the Shepherds",
-    "year": "1550",
+    "year": "",
     "location": "Musée des Beaux-Arts d'Orléans",
     "city": "Orléans",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Adorazione%20dei%20Pastori%20Orleans.png?width=500",
     "qid": "Q126127615",
     "wikidata": "https://www.wikidata.org/wiki/Q126127615",
@@ -4086,16 +4258,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "musee-des-beaux-arts-d-orleans",
     "location_src": "Musée des Beaux-Arts d'Orléans",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -4110,11 +4294,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "The bean eater",
-    "year": "1650",
+    "year": "",
     "location": "Allentown Art Museum",
     "city": "Pennsylvania",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Mangiafagioli.png?width=500",
     "qid": "Q126127663",
     "wikidata": "https://www.wikidata.org/wiki/Q126127663",
@@ -4125,16 +4309,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "allentown-art-museum",
     "location_src": "Allentown Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -4149,11 +4345,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Venus inebriated by a Satyr (\"La Nuda\")",
-    "year": "1550",
+    "year": "",
     "location": "Museu da Casa Brasileira",
     "city": "São Paulo",
     "country": "Brazil",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carraci%20-%20Venus%20Embriagada%20por%20S%C3%A1tiro%2001-1.jpg?width=500",
     "qid": "Q126374743",
     "wikidata": "https://www.wikidata.org/wiki/Q126374743",
@@ -4164,16 +4360,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "museu-da-casa-brasileira",
     "location_src": "Museu da Casa Brasileira",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -4219,11 +4427,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Portait of blind woman",
-    "year": "1550",
+    "year": "",
     "location": "Palazzo Pepoli",
     "city": "Bologna",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Donna%20cieca%20rivolta%20a%20destra.jpg?width=500",
     "qid": "Q126728360",
     "wikidata": "https://www.wikidata.org/wiki/Q126728360",
@@ -4234,16 +4442,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "palazzo-pepoli",
     "location_src": "Palazzo Pepoli",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -4361,11 +4581,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Village festival",
-    "year": "1550",
+    "year": "",
     "location": "Musée des beaux-arts de Marseille",
     "city": "Marseille",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agostino%20Carracci%2C%20Festa%20Campestre%2C%20Marsiglia.jpg?width=500",
     "qid": "Q124393331",
     "wikidata": "https://www.wikidata.org/wiki/Q124393331",
@@ -4376,16 +4596,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "musee-des-beaux-arts-de-marseille",
     "location_src": "Musée des beaux-arts de Marseille",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -5843,11 +6075,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Landscape with river and bathers",
-    "year": "1550",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Carracci%2C%20Annibale%20%28Atribuido%20a%29%20-%20Paisaje%20con%20r%C3%ADo%20y%20ba%C3%B1istas%2C%20P000132.jpg?width=500",
     "qid": "Q59490032",
     "wikidata": "https://www.wikidata.org/wiki/Q59490032",
@@ -5858,16 +6090,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -6131,7 +6375,7 @@
     "title": "Christ and the Samaritan Woman",
     "year": "1595",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20-%20Christ%20and%20the%20Samaritan%20Woman%20-%20Google%20Art%20Project.jpg?width=500",
@@ -6155,7 +6399,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -6170,11 +6415,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Omförd till NM 7172. Pietà",
-    "year": "1750",
+    "year": "",
     "location": "Nationalmuseum",
     "city": "Stockholm",
     "country": "Sweden",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Piet%C3%A0%20%28Annibale%20Carracci%29%20-%20Nationalmuseum%20-%2019052.tif?width=500",
     "qid": "Q43225655",
     "wikidata": "https://www.wikidata.org/wiki/Q43225655",
@@ -6185,16 +6430,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1750, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1750, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1750 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "nationalmuseum",
     "location_src": "Nationalmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1750"
    }
   },
   {
@@ -6445,11 +6702,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Pietà",
-    "year": "1650",
+    "year": "",
     "location": "Dulwich Picture Gallery",
     "city": "Dulwich",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Carracci%2C%20Annibale%20-%20Piet%C3%A0%20-%20Google%20Art%20Project.jpg?width=500",
     "qid": "Q28801616",
     "wikidata": "https://www.wikidata.org/wiki/Q28801616",
@@ -6460,16 +6717,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "dulwich-picture-gallery",
     "location_src": "Dulwich Picture Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -6824,11 +7093,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "Saint John the Baptist seated in the Wilderness",
-    "year": "1650",
+    "year": "",
     "location": "National Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Circle%20of%20Annibale%20Carracci%2C%20Saint%20John%20the%20Baptist%20seated%20in%20the%20Wilderness.jpg?width=500",
     "qid": "Q26693022",
     "wikidata": "https://www.wikidata.org/wiki/Q26693022",
@@ -6839,16 +7108,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "national-gallery",
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -7009,7 +7290,7 @@
     "title": "The Incredulity of St Thomas",
     "year": "1592",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20-%20The%20Incredulity%20of%20Saint%20Thomas%20-%20KMSsp84%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -7023,7 +7304,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7040,7 +7322,7 @@
     "title": "The Deposition",
     "year": "1592",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20-%20The%20Deposition%20-%20KMSsp86%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -7054,7 +7336,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7071,7 +7354,7 @@
     "title": "The Baptism of Christ",
     "year": "1592",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20-%20The%20Baptism%20of%20Christ%20-%20KMSsp82%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -7085,7 +7368,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7102,7 +7386,7 @@
     "title": "St Matthew the Evangelist",
     "year": "1661",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20-%20St%20Matthew%20the%20Evangelist%20-%20KMS387%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -7124,7 +7408,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7141,7 +7426,7 @@
     "title": "St John the Baptist",
     "year": "1592",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20-%20St%20John%20the%20Baptist%20-%20KMSsp83%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -7155,7 +7440,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7660,11 +7946,11 @@
    "properties": {
     "painter": "Annibale Carracci",
     "title": "The Holy Family with Saint Elizabeth and Saint John",
-    "year": "1550",
+    "year": "",
     "location": "Nantes Museum of Arts",
     "city": "Nantes",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Nantes.jpg?width=500",
     "qid": "Q17627469",
     "wikidata": "https://www.wikidata.org/wiki/Q17627469",
@@ -7675,16 +7961,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
     },
     "museum_id": "nantes-museum-of-arts",
     "location_src": "Nantes Museum of Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {

@@ -2588,7 +2588,7 @@
    "properties": {
     "painter": "Hans Holbein the Younger",
     "year": "c. 1539",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -2608,7 +2608,8 @@
     "title": "Portrait Miniature of Anne of Cleves",
     "_title_src": "holbein list (Wikipedia), matched by image",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -2754,7 +2755,7 @@
     "title": "Portrait Miniature of Mrs Jane Small, formerly Mrs Pemberton",
     "year": "1536",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Holbein%2C%20Hans%20%28II%29%20-%20Mrs%20Jane%20Small%2C%20formerly%20Mrs%20Pemberton%20-%20Google%20Art%20Project.jpg?width=500",
@@ -2780,7 +2781,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -3648,7 +3650,7 @@
     "title": "Hans of Antwerp",
     "year": "1532",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20Younger%20-%20Hans%20of%20Antwerp%20%28Victoria%20and%20Albert%20Museum%29.JPG?width=500",
@@ -3674,7 +3676,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -4776,7 +4779,7 @@
     "title": "Portrait miniature of Anne of Cleves (1515-1557)",
     "year": "1539",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20der%20J%C3%BCngere%20-%20Anne%20of%20Cleves%20%28miniature%29%2C%201539%20-%20V%26A%20museum.jpg?width=500",
@@ -4800,7 +4803,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -4817,7 +4821,7 @@
     "title": "Henry VIII (1491–1547)",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20younger%20%28c.1497-1543%29%20%28follower%20of%29%20-%20Henry%20VIII%20%281491%E2%80%931547%29%20-%20620-1882%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -4831,7 +4835,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -5247,11 +5252,11 @@
    "properties": {
     "painter": "Hans Holbein the Younger",
     "title": "Portrait of Desiderius Erasmus, humanist",
-    "year": "1501",
+    "year": "",
     "location": "Leiden University",
     "city": "Leiden",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Desiderius%20Erasmus%2C%20humanist%20Icones%204.tiff?width=500",
     "qid": "Q114807928",
     "wikidata": "https://www.wikidata.org/wiki/Q114807928",
@@ -5262,16 +5267,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1501, after death (1497–1543) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1501, after death (1497–1543) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1497-1543)"
      }
     },
     "museum_id": "leiden-university",
     "location_src": "Leiden University",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501"
    }
   },
   {
@@ -6335,7 +6352,7 @@
     "title": "Portrait of a Man",
     "year": "1527",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20d.Y.%20-%20Portrait%20of%20a%20Man%20-%20KMSsp742%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6359,7 +6376,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6874,11 +6892,11 @@
    "properties": {
     "painter": "Hans Holbein the Younger",
     "title": "Portrait of a Man",
-    "year": "1550",
+    "year": "",
     "location": "Royal Museum of Fine Arts Antwerp",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20%28II%29%20-%20Bildnis%20eines%20Mannes%20%28KMSKA%29.jpg?width=500",
     "qid": "Q21614441",
     "wikidata": "https://www.wikidata.org/wiki/Q21614441",
@@ -6889,16 +6907,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, after death (1497–1543) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, after death (1497–1543) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1497-1543)"
      }
     },
     "museum_id": "royal-museum-of-fine-arts-antwerp",
     "location_src": "Royal Museum of Fine Arts Antwerp",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -7636,7 +7666,7 @@
     "title": "Sir Thomas More (1478–1535)",
     "year": "",
     "location": "Chiswick House",
-    "city": "London Borough of Hounslow",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20younger%20%28c.1497-1543%29%20-%20Sir%20Thomas%20More%20%281478%E2%80%931535%29%20-%2088019200%20-%20Chiswick%20House.jpg?width=500",
@@ -7650,7 +7680,8 @@
     "museum_id": "chiswick-house",
     "location_src": "Chiswick House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Hounslow"
    }
   },
   {
@@ -8008,7 +8039,7 @@
     "title": "Desiderius Erasmus (1466–1536)",
     "year": "",
     "location": "Wellcome Collection",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Holbein%20the%20younger%20%28c.1497-1543%29%20%28after%29%20-%20Desiderius%20Erasmus%20%281466%E2%80%931536%29%20-%2045613i%20-%20Wellcome%20Collection.jpg?width=500",
@@ -8022,7 +8053,8 @@
     "museum_id": "wellcome-collection",
     "location_src": "Wellcome Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -8070,7 +8102,7 @@
     "title": "Henry VIII with the Barber-Surgeons",
     "year": "1541",
     "location": "Hunterian Museum",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Henry%20VIII%20and%20the%20Barber%20Surgeons%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
@@ -8094,7 +8126,8 @@
     "museum_id": "hunterian-museum",
     "location_src": "Hunterian Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {

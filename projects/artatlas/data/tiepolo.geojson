@@ -192,7 +192,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Danae and Jupiter",
     "year": "1736",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "location": "Stockholm University",
     "kind": "museum",
@@ -223,7 +223,8 @@
     "qid": "Q11729455",
     "wga_url": "https://www.wga.hu/html/t/tiepolo/gianbatt/2_1730s/08danae.html",
     "location_src": "Stockholm University",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stockholm Municipality"
    }
   },
   {
@@ -887,7 +888,7 @@
    "properties": {
     "painter": "Giovanni Battista Tiepolo",
     "title": "Flora",
-    "year": "1650",
+    "year": "",
     "city": "Treviso",
     "country": "Italy",
     "location": "Complesso di santa Caterina",
@@ -905,7 +906,15 @@
     "museum_id": "complesso-di-santa-caterina",
     "qid": "Q134721265",
     "location_src": "Complesso di santa Caterina",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1696-1770)"
+     }
+    }
    }
   },
   {
@@ -2157,7 +2166,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Latinus Offering his Daughter Lavinia to Aeneas in Matrimony",
     "year": "1753",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -2182,7 +2191,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20268263",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -3687,7 +3697,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "The Banquet of Cleopatra",
     "year": "1742",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "location": "Musée Cognacq-Jay",
     "kind": "museum",
@@ -3715,7 +3725,8 @@
     "museum_id": "musee-cognacq-jay",
     "qid": "Q47004843",
     "location_src": "Musée Cognacq-Jay",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris"
    }
   },
   {
@@ -4714,7 +4725,7 @@
     "painter": "Giovanni Battista Tiepolo",
     "title": "Saint James Matamoros",
     "year": "1749",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -4743,7 +4754,8 @@
     "qid": "Q9396820",
     "wga_url": "https://www.wga.hu/html/t/tiepolo/gianbatt/3_1740s/09sjames.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -8558,7 +8570,7 @@
     "title": "The Brazen Serpent",
     "year": "1740",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Battista%20Tiepolo%20-%20The%20Brazen%20Serpent%20-%20KMS6683%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -8582,7 +8594,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -8599,7 +8612,7 @@
     "title": "Anthony Leading Cleopatra on board",
     "year": "",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Battista%20Tiepolo%20-%20Anthony%20Leading%20Cleopatra%20on%20board%20-%20DEP14%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -8613,7 +8626,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -8630,7 +8644,7 @@
     "title": "Apollo and Marsyas",
     "year": "1757",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Battista%20Tiepolo%20-%20Apollo%20and%20Marsyas%20-%20KMS4548%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -8654,7 +8668,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -9069,11 +9084,11 @@
    "properties": {
     "painter": "Giovanni Battista Tiepolo",
     "title": "Flight into Egypt",
-    "year": "1500",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Battista%20Tiepolo%20-%20De%20vlucht%20naar%20Egypte.jpg?width=500",
     "qid": "Q17334337",
     "wikidata": "https://www.wikidata.org/wiki/Q17334337",
@@ -9084,16 +9099,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1500, before birth (1696–1770) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1500, before birth (1696–1770) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1696-1770)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500"
    }
   },
   {
@@ -9231,11 +9258,11 @@
    "properties": {
     "painter": "Giovanni Battista Tiepolo",
     "title": "Beheading of a Martyr",
-    "year": "1850",
+    "year": "",
     "location": "Walters Art Museum",
     "city": "Baltimore",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Battista%20Tiepolo%20-%20Beheading%20of%20a%20Martyr%20-%20Walters%20371171.jpg?width=500",
     "qid": "Q18748553",
     "wikidata": "https://www.wikidata.org/wiki/Q18748553",
@@ -9246,16 +9273,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1696–1770) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1696–1770) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1696-1770)"
      }
     },
     "museum_id": "walters-art-museum",
     "location_src": "Walters Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {
@@ -9990,7 +10029,7 @@
     "title": "The Virgin with Six Saints",
     "year": "1755",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiepolo%20-%20The%20Virgin%20with%20Six%20Saints%2C%201755%E2%80%931756%2C%20651.jpg?width=500",
@@ -10014,7 +10053,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {

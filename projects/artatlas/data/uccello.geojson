@@ -89,7 +89,7 @@
    "properties": {
     "painter": "Paolo Uccello",
     "title": "The Virgin and Child",
-    "year": "1500",
+    "year": "",
     "city": "Bezirk Mitte",
     "country": "Germany",
     "location": "Bode Museum",
@@ -108,7 +108,15 @@
     "museum_id": "bode-museum",
     "qid": "Q107441407",
     "location_src": "Bode Museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1397-1475)"
+     }
+    }
    }
   },
   {

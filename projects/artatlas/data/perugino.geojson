@@ -4230,7 +4230,7 @@
     "painter": "Pietro Perugino",
     "title": "Albani Torlonia Polyptych",
     "year": "1491",
-    "city": "Metropolitan City of Rome",
+    "city": "Rome",
     "country": "Italy",
     "location": "Villa Torlonia",
     "attribution": "generally accepted",
@@ -4260,6 +4260,7 @@
     "location_src": "Rome",
     "form": "painting",
     "venue_src": "P276",
+    "city_src": "Metropolitan City of Rome",
     "kind": "museum"
    }
   },
@@ -5046,7 +5047,7 @@
     "title": "The Nativity: The Virgin, Saint Joseph and the Shepherds Adoring the Infant Christ",
     "year": "1522",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Perugino%20%28c.1450-1523%29%20-%20The%20Nativity%2C%20The%20Virgin%2C%20Saint%20Joseph%20and%20the%20Shepherds%20Adoring%20the%20Infant%20Christ%20-%207856-1862%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -5060,7 +5061,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -5355,7 +5357,7 @@
     "title": "The Holy Family",
     "year": "1494",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Perugino%20-%20The%20Holy%20Family%20-%20KMSsp1%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -5379,7 +5381,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {

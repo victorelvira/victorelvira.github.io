@@ -57,7 +57,7 @@
     "title": "Rosebushes under the Trees",
     "year": "1905",
     "location": "Musée d'Orsay",
-    "city": "7th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustav%20Klimt%20-%20Rosebushes%20under%20the%20Trees%20-%20Google%20Art%20Project.jpg?width=500",
@@ -81,7 +81,8 @@
     "museum_id": "musee-d-orsay",
     "location_src": "Musée d'Orsay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
    }
   },
   {
@@ -383,7 +384,7 @@
    "properties": {
     "painter": "Gustav Klimt",
     "title": "The Quattrocento in Rome and in Venice",
-    "year": "1850",
+    "year": "",
     "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
@@ -399,7 +400,15 @@
     "museum_id": "kunsthistorisches-museum",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1862-1918)"
+     }
+    }
    }
   },
   {
@@ -414,7 +423,7 @@
    "properties": {
     "painter": "Gustav Klimt",
     "title": "Ancient Greece and Ancient Egypt",
-    "year": "1850",
+    "year": "",
     "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
@@ -430,7 +439,15 @@
     "museum_id": "kunsthistorisches-museum",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1862-1918)"
+     }
+    }
    }
   },
   {
@@ -445,7 +462,7 @@
    "properties": {
     "painter": "Gustav Klimt",
     "title": "Old Italian Art",
-    "year": "1850",
+    "year": "",
     "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
@@ -461,7 +478,15 @@
     "museum_id": "kunsthistorisches-museum",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1862-1918)"
+     }
+    }
    }
   },
   {
@@ -476,7 +501,7 @@
    "properties": {
     "painter": "Gustav Klimt",
     "title": "Florence of the Cinquecento and Quattrocento",
-    "year": "1850",
+    "year": "",
     "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
@@ -492,7 +517,15 @@
     "museum_id": "kunsthistorisches-museum",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1862-1918)"
+     }
+    }
    }
   },
   {
@@ -4078,7 +4111,7 @@
     "title": "Apple Tree II",
     "year": "1916",
     "location": "Louis Vuitton Foundation",
-    "city": "16th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustav%20Klimt%20013.jpg?width=500",
@@ -4102,7 +4135,8 @@
     "museum_id": "louis-vuitton-foundation",
     "location_src": "Louis Vuitton Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "16th arrondissement of Paris"
    }
   },
   {

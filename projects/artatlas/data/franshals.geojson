@@ -3026,14 +3026,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kenwood-house",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "wikidata": "https://www.wikidata.org/wiki/Q357524",
     "location_src": "Kenwood House",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q357524",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -5572,7 +5573,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "statens-museum-for-kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "wikidata": "https://www.wikidata.org/wiki/Q9191",
     "_merged": [
@@ -5587,7 +5588,8 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q9191",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6494,12 +6496,13 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "statens-museum-for-kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/01-1623/13portma.html",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7576,7 +7579,7 @@
     "title": "Portrait of a man aged 38",
     "year": "1638",
     "location": "Royal Court of Sweden",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20portrait%20of%20a%20man%20with%20a%20wide%20brimmed%20hat%20facing%20right.jpg?width=500",
@@ -7596,7 +7599,8 @@
     "museum_id": "royal-court-of-sweden",
     "location_src": "Royal Court of Sweden",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stockholm Municipality"
    }
   },
   {
@@ -7999,7 +8003,7 @@
     "title": "Portrait of Pieter van den Broecke",
     "year": "1633",
     "location": "Kenwood House",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Pieter%20van%20den%20Broecke%20-%20WGA11121.jpg?width=500",
@@ -8013,7 +8017,8 @@
     "museum_id": "kenwood-house",
     "location_src": "Kenwood House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -8228,11 +8233,11 @@
    "properties": {
     "painter": "Frans Hals",
     "title": "Portrait of Paulus van Beresteyn",
-    "year": "1700",
+    "year": "",
     "location": "Louvre",
     "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hals%2C%20Frans%20-%20Paulus%20van%20Beresteyn%20-%20Louvre%20RF%20424.jpg?width=500",
     "qid": "Q17627408",
     "wikidata": "https://www.wikidata.org/wiki/Q17627408",
@@ -8243,16 +8248,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1582–1666) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1582–1666) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1582-1666)"
      }
     },
     "museum_id": "louvre",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -9285,11 +9302,11 @@
    "properties": {
     "painter": "Frans Hals",
     "title": "The Laughing Toper",
-    "year": "1750",
+    "year": "",
     "location": "Minneapolis Institute of Art",
     "city": "Minneapolis",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/School%20of%20Frans%20Hals%20-%20The%20Laughing%20Toper%20-%2083.6.2%20-%20Minneapolis%20Institute%20of%20Arts.jpg?width=500",
     "qid": "Q20891406",
     "wikidata": "https://www.wikidata.org/wiki/Q20891406",
@@ -9300,16 +9317,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1750, after death (1582–1666) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1750, after death (1582–1666) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1750 with century precision: a century, not a year, and outside the painter's life (1582-1666)"
      }
     },
     "museum_id": "minneapolis-institute-of-art",
     "location_src": "Minneapolis Institute of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1750"
    }
   },
   {

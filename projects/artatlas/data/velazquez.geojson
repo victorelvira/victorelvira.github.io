@@ -6087,11 +6087,11 @@
    "properties": {
     "painter": "Velázquez",
     "title": "Cacería de jabalíes en el Hoyo",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Velazquez-taller-tela%20real-prado.jpg?width=500",
     "qid": "Q59712074",
     "wikidata": "https://www.wikidata.org/wiki/Q59712074",
@@ -6110,16 +6110,28 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      },
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, after death (1599–1660) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, after death (1599–1660) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1599-1660)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -6548,7 +6560,7 @@
     "title": "Isabella of Bourbon. First Queen of King Philip IV",
     "year": "1630",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Isabel%20de%20Borb%C3%B3n%2C%20from%20Statens%20Museum%20for%20Kunst%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
@@ -6572,7 +6584,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6589,7 +6602,7 @@
     "title": "Isabella of Bourbon",
     "year": "1630",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Isabella%20von%20Bourbon%20by%20Diego%20Vel%C3%A1zquez%20-%202.jpg?width=500",
@@ -6613,7 +6626,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {

@@ -199,7 +199,7 @@
     "kind": "museum",
     "year": "1619",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "material": "marble",
     "medium": "marble",
@@ -210,7 +210,8 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "statens-museum-for-kunst",
-    "location_src": "Statens Museum for Kunst"
+    "location_src": "Statens Museum for Kunst",
+    "city_src": "Copenhagen Municipality"
    },
    "geometry": {
     "type": "Point",
@@ -385,7 +386,7 @@
     "kind": "museum",
     "year": "1638",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "material": "marble",
     "medium": "marble",
@@ -396,7 +397,8 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "victoria-and-albert-museum",
-    "location_src": "Victoria and Albert Museum"
+    "location_src": "Victoria and Albert Museum",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    },
    "geometry": {
     "type": "Point",
@@ -633,7 +635,7 @@
     "kind": "museum",
     "year": "1620",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "material": "copper, marble",
     "medium": "copper, marble",
@@ -644,7 +646,8 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "victoria-and-albert-museum",
-    "location_src": "Victoria and Albert Museum"
+    "location_src": "Victoria and Albert Museum",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    },
    "geometry": {
     "type": "Point",
@@ -972,7 +975,7 @@
     "qid": "Q4945054",
     "form": "sculpture",
     "kind": "museum",
-    "year": "150",
+    "year": "",
     "location": "Louvre",
     "country": "France",
     "material": "Carrara marble, marble",
@@ -985,7 +988,15 @@
     },
     "museum_id": "louvre",
     "location_src": "Department of Greek, Etruscan, and Roman Antiquities of the Louvre",
-    "city": "Paris"
+    "city": "Paris",
+    "_year_was": "150",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 150 with century precision: a century, not a year, and outside the painter's life (1598-1680)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -1128,7 +1139,7 @@
     "form": "sculpture",
     "year": "1624",
     "location": "Santa Bibiana Church",
-    "city": "Metropolitan City of Rome",
+    "city": "Rome",
     "country": "Italy",
     "material": "marble",
     "medium": "marble",
@@ -1141,6 +1152,7 @@
     "museum_id": "santa-bibiana-church",
     "location_src": "Rome",
     "venue_src": "P276",
+    "city_src": "Metropolitan City of Rome",
     "kind": "church"
    },
    "geometry": {
@@ -1249,7 +1261,7 @@
     "qid": "Q7848306",
     "form": "sculpture",
     "kind": "museum",
-    "year": "1700",
+    "year": "",
     "location": "Galleria Borghese",
     "city": "Rome",
     "country": "Italy",
@@ -1262,7 +1274,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "galleria-borghese",
-    "location_src": "Galleria Borghese"
+    "location_src": "Galleria Borghese",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1598-1680)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -1373,7 +1393,7 @@
     "form": "sculpture",
     "year": "1630",
     "location": "Palazzo dei Conservatori",
-    "city": "Metropolitan City of Rome",
+    "city": "Rome",
     "country": "Italy",
     "material": "marble",
     "medium": "marble",
@@ -1386,6 +1406,7 @@
     "museum_id": "palazzo-dei-conservatori",
     "location_src": "Rome",
     "venue_src": "P276",
+    "city_src": "Metropolitan City of Rome",
     "kind": "museum"
    },
    "geometry": {
@@ -1588,7 +1609,7 @@
     "form": "sculpture",
     "year": "1639",
     "location": "San Lorenzo in Damaso",
-    "city": "Metropolitan City of Rome",
+    "city": "Rome",
     "country": "Italy",
     "material": "bronze, marble",
     "medium": "bronze, marble",
@@ -1601,6 +1622,7 @@
     "museum_id": "san-lorenzo-in-damaso",
     "location_src": "Rome",
     "venue_src": "P276",
+    "city_src": "Metropolitan City of Rome",
     "kind": "church"
    },
    "geometry": {
@@ -1709,7 +1731,7 @@
     "qid": "Q3955657",
     "form": "sculpture",
     "kind": "church",
-    "year": "1700",
+    "year": "",
     "location": "St. Peter's Basilica",
     "city": "Vatican City",
     "country": "Vatican City",
@@ -1721,7 +1743,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "st-peter-s-basilica",
-    "location_src": "St. Peter's Basilica"
+    "location_src": "St. Peter's Basilica",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1598-1680)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -1884,7 +1914,7 @@
     "qid": "Q29133423",
     "form": "sculpture",
     "kind": "church",
-    "year": "2000",
+    "year": "",
     "location": "Sées Cathedral",
     "city": "Sées",
     "country": "France",
@@ -1896,7 +1926,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "sees-cathedral",
-    "location_src": "Sées Cathedral"
+    "location_src": "Sées Cathedral",
+    "_year_was": "2000",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 2000 with century precision: a century, not a year, and outside the painter's life (1598-1680)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2118,7 +2156,7 @@
     "kind": "museum",
     "year": "1621",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "material": "bronze",
     "medium": "bronze",
@@ -2127,7 +2165,8 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "statens-museum-for-kunst",
-    "location_src": "Statens Museum for Kunst"
+    "location_src": "Statens Museum for Kunst",
+    "city_src": "Copenhagen Municipality"
    },
    "geometry": {
     "type": "Point",
@@ -2232,7 +2271,7 @@
     "form": "sculpture",
     "year": "1649",
     "location": "Academy of Fine Arts of Bologna",
-    "city": "Metropolitan City of Bologna",
+    "city": "Bologna",
     "country": "Italy",
     "material": "terracotta, wax, wood",
     "medium": "terracotta, wax, wood",
@@ -2243,6 +2282,7 @@
     "museum_id": "academy-of-fine-arts-of-bologna",
     "location_src": "Bologna",
     "venue_src": "P195",
+    "city_src": "Metropolitan City of Bologna",
     "kind": "museum"
    },
    "geometry": {
@@ -2642,7 +2682,7 @@
     "kind": "museum",
     "year": "1658",
     "location": "Florence",
-    "city": "Metropolitan City of Florence",
+    "city": "Florence",
     "country": "Italy",
     "material": "terracotta",
     "medium": "terracotta",
@@ -2651,7 +2691,8 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "florence",
-    "location_src": "Florence"
+    "location_src": "Florence",
+    "city_src": "Metropolitan City of Florence"
    },
    "geometry": {
     "type": "Point",
@@ -2841,7 +2882,7 @@
     "form": "sculpture",
     "kind": "museum",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "medium": "Sculpture",
     "attribution": "generally accepted",
@@ -2849,7 +2890,8 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "victoria-and-albert-museum",
-    "location_src": "Victoria and Albert Museum"
+    "location_src": "Victoria and Albert Museum",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    },
    "geometry": {
     "type": "Point",
@@ -3073,7 +3115,7 @@
     "kind": "museum",
     "year": "1670",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "material": "terracotta",
     "medium": "terracotta",
@@ -3082,7 +3124,8 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "victoria-and-albert-museum",
-    "location_src": "Victoria and Albert Museum"
+    "location_src": "Victoria and Albert Museum",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    },
    "geometry": {
     "type": "Point",

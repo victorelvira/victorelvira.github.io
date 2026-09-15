@@ -546,7 +546,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "Christ in Limbo",
     "year": "1530",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "location": "Hallwyl Museum",
     "kind": "museum",
@@ -573,7 +573,8 @@
     "museum_id": "hallwyl-museum",
     "qid": "Q108315462",
     "location_src": "Hallwyl Museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stockholm Municipality"
    }
   },
   {
@@ -1074,7 +1075,7 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Water Nymph",
-    "year": "1600",
+    "year": "",
     "city": "Mitte",
     "country": "Germany",
     "location": "Kunsthalle Bremen",
@@ -1094,7 +1095,15 @@
     "museum_id": "kunsthalle-bremen",
     "qid": "Q112232844",
     "location_src": "Kunsthalle Bremen",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
+     }
+    }
    }
   },
   {
@@ -1420,7 +1429,7 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Martin Luther as an Augustinian Monk posthum",
-    "year": "1600",
+    "year": "",
     "city": "Nuremberg",
     "country": "Germany",
     "location": "Germanisches Nationalmuseum",
@@ -1440,7 +1449,15 @@
     "museum_id": "germanisches-nationalmuseum",
     "qid": "Q115134024",
     "location_src": "Germanisches Nationalmuseum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
+     }
+    }
    }
   },
   {
@@ -3430,7 +3447,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "The Mystic Marriage of Saint Catherine of Alexandria with Saints Dorothy, Margaret and Barbara",
     "year": "1516",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -3459,7 +3476,8 @@
     "qid": "Q11783560",
     "wga_url": "https://www.wga.hu/html/c/cranach/lucas_e/4/01mysti1.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -3919,7 +3937,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "The miracle of the five loaves and two fish",
     "year": "1520",
-    "city": "Strängnäs Municipality",
+    "city": "Strängnäs",
     "country": "Sweden",
     "location": "National Portrait Gallery of Sweden",
     "kind": "museum",
@@ -3947,7 +3965,8 @@
     "museum_id": "national-portrait-gallery-of-sweden",
     "qid": "Q18588766",
     "location_src": "National Portrait Gallery of Sweden",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Strängnäs Municipality"
    }
   },
   {
@@ -5030,7 +5049,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "The Judgement of Paris",
     "year": "1527",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -5058,7 +5077,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20278181",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -5073,7 +5093,7 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Christ Blessing the Children",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -5091,7 +5111,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20278608",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6047,7 +6068,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "Salome with the head of Saint John the Baptist",
     "year": "1530",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -6077,7 +6098,8 @@
     "qid": "Q24430401",
     "wga_url": "https://www.wga.hu/html/c/cranach/lucas_e/9/05salomx.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -7024,7 +7046,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "The Birth of John the Baptist",
     "year": "1518",
-    "city": "Håbo Municipality",
+    "city": "Håbo",
     "country": "Sweden",
     "location": "Skokloster Castle",
     "kind": "museum",
@@ -7052,7 +7074,8 @@
     "museum_id": "skokloster-castle",
     "qid": "Q28797638",
     "location_src": "Skokloster Castle",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Håbo Municipality"
    }
   },
   {
@@ -7904,7 +7927,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "Salome with the Head of St John the Baptist",
     "year": "1526",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -7932,7 +7955,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q30005237",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -7991,7 +8015,7 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Saint Paul",
-    "year": "1600",
+    "year": "",
     "country": "France",
     "location": "Louvre",
     "kind": "museum",
@@ -8011,7 +8035,15 @@
     "city": "Paris",
     "qid": "Q30109287",
     "location_src": "Louvre",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
+     }
+    }
    }
   },
   {
@@ -8026,7 +8058,7 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Saint Peter",
-    "year": "1600",
+    "year": "",
     "country": "France",
     "location": "Louvre",
     "kind": "museum",
@@ -8046,7 +8078,15 @@
     "city": "Paris",
     "qid": "Q30109383",
     "location_src": "Louvre",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
+     }
+    }
    }
   },
   {
@@ -8250,7 +8290,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "Melancholy",
     "year": "1532",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -8279,7 +8319,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q4289290",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -8563,7 +8604,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "Christ and the Adulteress",
     "year": "1532",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -8592,7 +8633,8 @@
     "qid": "Q50888276",
     "wga_url": "https://www.wga.hu/html/c/cranach/lucas_e/4/06chris.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -8608,7 +8650,7 @@
     "painter": "Lucas Cranach the Elder",
     "title": "The Virgin Suckling the Child",
     "year": "1512",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -8636,7 +8678,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50911173",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -10825,7 +10868,7 @@
     "title": "Virgin and Child with the Saints Catherine and Barbara",
     "year": "1511",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20%28I%29%20-%20Madonna%20und%20Kind%20mit%20den%20Heiligen%20Katharina%20und%20Barbara%20%28Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -10839,7 +10882,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -10856,7 +10900,7 @@
     "title": "Portrait of the Elector John Frederic the Magnanimous of Saxony (1503-1554)",
     "year": "1533",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Portr%C3%A4t%20des%20Kurf%C3%BCrsten%20Johann%20Friedrich%20des%20Gro%C3%9Fm%C3%BCtigen%20von%20Sachsen%20%28Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -10870,7 +10914,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -10887,7 +10932,7 @@
     "title": "Portrait of the Duchess Barbara of Saxony, 1478-1534 (wife of George the Bearded)",
     "year": "1537",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Bildnis%20Barbara%20von%20Sachsen%20%28Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -10901,7 +10946,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -10918,7 +10964,7 @@
     "title": "Portrait of the Electress Sibyl of Saxony (1510-1569)",
     "year": "1533",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Sibylle%2C%20Kurf%C3%BCrstin%20von%20Sachsen%20%28Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -10932,7 +10978,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -10949,7 +10996,7 @@
     "title": "Portrait of a Man",
     "year": "1534",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Bildnis%20eines%20Mannes%2C%201534%20%28Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -10963,7 +11010,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11040,11 +11088,11 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Portrait of a Lady of the Saxon Court as Judith with the Head of Holofernes",
-    "year": "1600",
+    "year": "",
     "location": "Fine Arts Museums of San Francisco",
     "city": "San Francisco",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Cranach%20-%20Portr%C3%A4t%20einer%20Dame%20am%20s%C3%A4chsischen%20Hof%20als%20Judith%20mit%20dem%20Haupt%20des%20Holofernes.jpg?width=500",
     "qid": "Q20198819",
     "wikidata": "https://www.wikidata.org/wiki/Q20198819",
@@ -11055,16 +11103,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
      }
     },
     "museum_id": "fine-arts-museums-of-san-francisco",
     "location_src": "Fine Arts Museums of San Francisco",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -11081,7 +11141,7 @@
     "title": "The Stag Hunt of the Elector Frederic the Wise (1463-1525) of Saxony",
     "year": "1529",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Die%20Hirschjagd%20des%20Kurf%C3%BCrsten%20Friedrich%20des%20Weisen%20von%20Sachsen%20%28Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -11095,7 +11155,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11112,7 +11173,7 @@
     "title": "Portrait of the Elector John the Steadfast of Saxony (1468-1532)",
     "year": "1533",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%86.%20-%20Portrait%20of%20the%20Elector%20John%20the%20Steadfast%20of%20Saxony%20%281468-1532%29%20-%20KMSsp729%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -11126,7 +11187,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11143,7 +11205,7 @@
     "title": "The Elector Frederic the Wise of Saxony (1463-1525) with the Saints Ursula (left) and Genevieve (right)",
     "year": "1510",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Elector%20Frederic%20the%20Wise%20of%20Saxony%20with%20Saints%20Ursula%20and%20Genevieve%20by%20Lucas%20Cranach%20the%20Elder%20-%20Statens%20Museum%20for%20Kunst%20-%20DSC08166.JPG?width=500",
@@ -11157,7 +11219,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11174,7 +11237,7 @@
     "title": "Hercules with Omphale",
     "year": "1535",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%86.%20-%20Hercules%20with%20Omphale%20-%20KMSsp727%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -11188,7 +11251,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11918,7 +11982,7 @@
     "title": "Portrait of a Young Woman. Princess Emily of Saxony?",
     "year": "1537",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Bildnis%20einer%20jungen%20Frau%20%28Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -11932,7 +11996,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11949,7 +12014,7 @@
     "title": "Portrait of a Lady",
     "year": "1534",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Bildnis%20einer%20Frau%2C%201534%20%28Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -11963,7 +12028,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11980,7 +12046,7 @@
     "title": "Virgin and Child Adored by the Infant St John",
     "year": "1512",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Madonna%20mit%20dem%20Jesuskind%20und%20dem%20heiligen%20Johannes%20%28ca.1512-14%2C%20Statens%20Museum%20for%20Kunst%29.jpg?width=500",
@@ -11994,7 +12060,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -14525,7 +14592,7 @@
     "title": "The Annunciation to Joachim",
     "year": "1518",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%20%C3%84.%20-%20The%20Annunciation%20to%20Joachim%20-%20WGA05664.jpg?width=500",
@@ -14539,7 +14606,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -14556,7 +14624,7 @@
     "title": "Christ and the Virgin Interceding for Humanity before God the Father",
     "year": "1517",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%20%C3%84.%20-%20Pestbild%20%28Budapest%20Museum%20of%20Fine%20Arts%29.jpg?width=500",
@@ -14570,7 +14638,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -14587,7 +14656,7 @@
     "title": "Lamentation of Christ with Saint Wolfgang and Saint Helen and Unidentified Donors",
     "year": "1515",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%84.%20-%20Die%20Beweinung%20Christi%20%28Budapest%29.jpg?width=500",
@@ -14601,7 +14670,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -15182,11 +15252,11 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Allegory of Law and Mercy: Fall of man",
-    "year": "1600",
+    "year": "",
     "location": "Germanisches Nationalmuseum",
     "city": "Nuremberg",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%20%C3%84.%20%28Werkstatt%29%20-%20Allegorie%20auf%20Gesetz%20und%20Gnade%2C%20Der%20S%C3%BCndenfall%20-%20WAF%20185%20-%20Bavarian%20State%20Painting%20Collections.jpg?width=500",
     "qid": "Q29951549",
     "wikidata": "https://www.wikidata.org/wiki/Q29951549",
@@ -15197,16 +15267,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
      }
     },
     "museum_id": "germanisches-nationalmuseum",
     "location_src": "Germanisches Nationalmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -18451,7 +18533,7 @@
     "title": "Portrait of the Duchess Catherine of Saxony",
     "year": "1515",
     "location": "Thiel Gallery",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Attributed%20to%20Lucas%20Cranach%20the%20Elder%20Portrait%20of%20the%20Duchess%20Catherine%20Thielska%2078.tif?width=500",
@@ -18465,7 +18547,8 @@
     "museum_id": "thiel-gallery",
     "location_src": "Thiel Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stockholm Municipality"
    }
   },
   {
@@ -20418,11 +20501,11 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Charity",
-    "year": "1600",
+    "year": "",
     "location": "National Museum of Archeology, History and Art",
     "city": "Luxembourg",
     "country": "Luxembourg",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20l%27Ancien%20-%20La%20Charit%C3%A9.jpg?width=500",
     "qid": "Q112227480",
     "wikidata": "https://www.wikidata.org/wiki/Q112227480",
@@ -20433,16 +20516,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
      }
     },
     "museum_id": "national-museum-of-archeology-history-and-art",
     "location_src": "National Museum of Archeology, History and Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -20707,7 +20802,7 @@
     "title": "Portrait of St. Bridget of Sweden",
     "year": "1585",
     "location": "Thiel Gallery",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Attributed%20to%20Lucas%20Cranach%20the%20Elder%20Portrait%20of%20St.%20Bridget%20of%20Sweden%20Thielska%2079.tif?width=500",
@@ -20729,7 +20824,8 @@
     "museum_id": "thiel-gallery",
     "location_src": "Thiel Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stockholm Municipality"
    }
   },
   {
@@ -22678,7 +22774,7 @@
     "title": "Portrait of a Lady in a Costume of c.1530",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20the%20elder%20%281472-1553%29%20%28style%20of%29%20-%20Portrait%20of%20a%20Lady%20in%20a%20Costume%20of%20c.1530%20-%20771-1-1865%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -22692,7 +22788,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -23639,7 +23736,7 @@
     "title": "Madonna and Child with the Infant John the Baptist and Angels",
     "year": "1535",
     "location": "Nivaagaard Museum",
-    "city": "Fredensborg Municipality",
+    "city": "Fredensborg",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20d.%C3%86.%2C%20Madonna%20og%20Kristusbarnet%20med%20den%20lille%20Johannes%20D%C3%B8beren%20og%20engle%2C%20efter%201537%2C%200016NMK%2C%20Nivaagaards%20Malerisamling.jpg?width=500",
@@ -23653,7 +23750,8 @@
     "museum_id": "nivaagaard-museum",
     "location_src": "Nivaagaard Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Fredensborg Municipality"
    }
   },
   {
@@ -23670,7 +23768,7 @@
     "title": "Caritas (Charity)",
     "year": "1535",
     "location": "Nivaagaard Museum",
-    "city": "Fredensborg Municipality",
+    "city": "Fredensborg",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20den%20%C3%A6ldre%2C%20Caritas%20%28N%C3%A6stek%C3%A6rligheden%29%2C%201535%2C%200017NMK%2C%20Nivaagaards%20Malerisamling.jpg?width=500",
@@ -23684,7 +23782,8 @@
     "museum_id": "nivaagaard-museum",
     "location_src": "Nivaagaard Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Fredensborg Municipality"
    }
   },
   {
@@ -23854,11 +23953,11 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "St Catherine",
-    "year": "1600",
+    "year": "",
     "location": "National Museum of Ancient Art",
     "city": "Estrela",
     "country": "Portugal",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Imitatore%20di%20cranach%20il%20vecchio%2C%20santa%20caterina%20d%27alessandria%2C%20xvi%20secolo%20circa%20b.jpg?width=500",
     "qid": "Q96354815",
     "wikidata": "https://www.wikidata.org/wiki/Q96354815",
@@ -23869,16 +23968,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
      }
     },
     "museum_id": "national-museum-of-ancient-art",
     "location_src": "National Museum of Ancient Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -24221,11 +24332,11 @@
    "properties": {
     "painter": "Lucas Cranach the Elder",
     "title": "Christian II of Denmark (1481–1559)",
-    "year": "1600",
+    "year": "",
     "location": "Cooper Gallery",
     "city": "Barnsley",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20the%20elder%20%281472-1553%29%20%28after%29%20-%20Christian%20II%20of%20Denmark%20%281481%E2%80%931559%29%20-%20CP-TR%20253%20-%20Cooper%20Gallery.jpg?width=500",
     "qid": "Q118875183",
     "wikidata": "https://www.wikidata.org/wiki/Q118875183",
@@ -24236,16 +24347,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1472–1553) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1472-1553)"
      }
     },
     "museum_id": "cooper-gallery",
     "location_src": "Cooper Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   }
  ]

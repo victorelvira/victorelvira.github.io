@@ -1443,7 +1443,7 @@
     "painter": "J.M.W. Turner",
     "title": "Salisbury Cathedral from the Cloisters",
     "year": "1802",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -1463,7 +1463,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q117592014",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -1681,7 +1682,7 @@
     "painter": "J.M.W. Turner",
     "title": "A Coast Scene with Fishermen Hauling a Boat Ashore",
     "year": "1803-1804",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Kenwood House",
     "attribution": "generally accepted",
@@ -1707,7 +1708,8 @@
     },
     "location_src": "Kenwood House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -9560,7 +9562,7 @@
     "painter": "J.M.W. Turner",
     "title": "East Cowes Castle",
     "year": "1827-28",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -9588,7 +9590,8 @@
     ],
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -11576,7 +11579,7 @@
     "painter": "J.M.W. Turner",
     "title": "Lifeboat and Manby Apparatus Going off to a Stranded Vessel Making the Signal (Blue Lights) of Distress",
     "year": "1831",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -11596,7 +11599,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q119040172",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -12416,7 +12420,7 @@
     "painter": "J.M.W. Turner",
     "title": "St Michael's Mount, Cornwall",
     "year": "1834",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -12436,7 +12440,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q119041031",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -12706,7 +12711,7 @@
     "painter": "J.M.W. Turner",
     "title": "Line Fishing, Off Hastings",
     "year": "1835",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -12726,7 +12731,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q119041403",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -14361,7 +14367,7 @@
     "painter": "J.M.W. Turner",
     "title": "Venice from the Giudecca",
     "year": "1840",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "attribution": "generally accepted",
@@ -14381,7 +14387,8 @@
     "wikidata": "https://www.wikidata.org/wiki/Q4009608",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -18474,11 +18481,11 @@
    "properties": {
     "painter": "J.M.W. Turner",
     "title": "Cicero at His Villa at Tusculum",
-    "year": "1950",
+    "year": "",
     "location": "National Trust",
     "city": "Kingston Lacy",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cicero%20at%20His%20Villa%20at%20Tusculum.jpg?width=500",
     "qid": "Q106462872",
     "wikidata": "https://www.wikidata.org/wiki/Q106462872",
@@ -18489,16 +18496,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1950, after death (1775–1851) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1950, after death (1775–1851) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1950 with century precision: a century, not a year, and outside the painter's life (1775-1851)"
      }
     },
     "museum_id": "national-trust",
     "location_src": "National Trust",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1950"
    }
   },
   {
@@ -18802,7 +18821,7 @@
     "title": "Grand Junction Canal at Southall Mill",
     "year": "1810",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20014.jpg?width=500",
@@ -18826,7 +18845,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -18884,7 +18904,7 @@
     "title": "Lucerne: Moonlight",
     "year": "1843",
     "location": "British Museum",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/J.%20M.%20W.%20Turner%20-%20Lucerne-Moonlight.jpg?width=500",
@@ -18908,7 +18928,8 @@
     "museum_id": "british-museum",
     "location_src": "British Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -18925,7 +18946,7 @@
     "title": "Bridge at Meulan",
     "year": "1832",
     "location": "British Museum",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bridge%20at%20Meulan.jpg?width=500",
@@ -18949,7 +18970,8 @@
     "museum_id": "british-museum",
     "location_src": "British Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -19292,7 +19314,7 @@
     "title": "Warkworth Castle, Northumberland",
     "year": "1799",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Turner%20Walkworth%20Castle.jpg?width=500",
@@ -19316,7 +19338,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {

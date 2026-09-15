@@ -1495,7 +1495,7 @@
     "painter": "Domenico Ghirlandaio",
     "title": "Saint John the Evangelist on the Island of Patmos",
     "year": "1482",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -1523,7 +1523,8 @@
     "qid": "Q50900342",
     "wga_url": "https://www.wga.hu/html/g/ghirland/domenico/7panel/02patmox.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -2004,7 +2005,7 @@
     "title": "Saint Stephen Protomartyr",
     "year": "1490",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Domenico%20Ghirlandaio%20-%20St%20Stephen%20-%20WGA8900.jpg?width=500",
@@ -2028,7 +2029,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -2656,7 +2658,7 @@
     "title": "The Magnanimity of Alexander the Great  (scene from the story of Alexander the Great)",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Domenico%20Ghirlandaio%20%281449-1494%29%20%28studio%20of%29%20-%20The%20Magnanimity%20of%20Alexander%20the%20Great%20%28scene%20from%20the%20story%20of%20Alexander%20the%20Great%29%20-%20E.373-2006%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -2670,7 +2672,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -2687,7 +2690,7 @@
     "title": "Julius Caesar and the Crossing of the Rubicon (scene from the story of Alexander the Great)",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Domenico%20Ghirlandaio%20%281449-1494%29%20%28studio%20of%29%20-%20Julius%20Caesar%20and%20the%20Crossing%20of%20the%20Rubicon%20%28scene%20from%20the%20story%20of%20Alexander%20the%20Great%29%20-%20E.372-2006%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -2701,7 +2704,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -2952,11 +2956,11 @@
    "properties": {
     "painter": "Domenico Ghirlandaio",
     "title": "Adoration of the Child",
-    "year": "1450",
+    "year": "",
     "location": "Pinacoteca Ambrosiana",
     "city": "Milan",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Domenico%20ghirlandaio%2C%20tondo%20con%20l%27adorazione%20del%20bambino.jpg?width=500",
     "qid": "Q140787136",
     "wikidata": "https://www.wikidata.org/wiki/Q140787136",
@@ -2967,16 +2971,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1450, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1450 with century precision: a century, not a year, and outside the painter's life (1448-1494)"
      }
     },
     "museum_id": "pinacoteca-ambrosiana",
     "location_src": "Pinacoteca Ambrosiana",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1450"
    }
   },
   {
@@ -3420,11 +3436,11 @@
    "properties": {
     "painter": "Domenico Ghirlandaio",
     "title": "Giovanna Tornabuoni",
-    "year": "1850",
+    "year": "",
     "location": "Brighton Museum & Art Gallery",
     "city": "Brighton and Hove",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Domenico%20Ghirlandaio%20%281449-1494%29%20%28copy%20after%29%20-%20Giovanna%20Tornabuoni%20-%20FA000152%20-%20Brighton%20Museum%20%5E%20Art%20Gallery.jpg?width=500",
     "qid": "Q120011266",
     "wikidata": "https://www.wikidata.org/wiki/Q120011266",
@@ -3435,16 +3451,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1448–1494) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1448-1494)"
      }
     },
     "museum_id": "brighton-museum-art-gallery",
     "location_src": "Brighton Museum & Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {

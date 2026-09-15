@@ -1293,11 +1293,11 @@
    "properties": {
     "painter": "Jan van Eyck",
     "title": "Virgin at the fountain",
-    "year": "1450",
+    "year": "",
     "location": "Gemäldegalerie Berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20van%20Eyck%2C%20%28Nachfolger%29%20-%20Die%20Madonna%20am%20Springbrunnen%2C%20obj02556013.jpg?width=500",
     "qid": "Q107438399",
     "wikidata": "https://www.wikidata.org/wiki/Q107438399",
@@ -1308,16 +1308,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1450, after death (1390–1441) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1450, after death (1390–1441) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1450 with century precision: a century, not a year, and outside the painter's life (1390-1441)"
      }
     },
     "museum_id": "gemaldegalerie-berlin",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1450"
    }
   },
   {
@@ -1332,11 +1344,11 @@
    "properties": {
     "painter": "Jan van Eyck",
     "title": "Christ",
-    "year": "1500",
+    "year": "",
     "location": "Gemäldegalerie Berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Eyck%20%28workshop%29%2C%20Holy%20Face%2C%201438%2C%20Berlin.jpg?width=500",
     "qid": "Q107438427",
     "wikidata": "https://www.wikidata.org/wiki/Q107438427",
@@ -1347,16 +1359,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1500, after death (1390–1441) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1500, after death (1390–1441) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1390-1441)"
      }
     },
     "museum_id": "gemaldegalerie-berlin",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500"
    }
   },
   {
@@ -1371,11 +1395,11 @@
    "properties": {
     "painter": "Jan van Eyck",
     "title": "Portrait of a woman",
-    "year": "1550",
+    "year": "",
     "location": "Gemäldegalerie Berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Eyck%20%28Nachfolger%29%20-%20Bonne%20d%27Artois%2C%20Herzogin%20von%20Burgund%2C%20Inventar-Nr.%20528C.jpg?width=500",
     "qid": "Q107438433",
     "wikidata": "https://www.wikidata.org/wiki/Q107438433",
@@ -1386,16 +1410,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, after death (1390–1441) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, after death (1390–1441) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1390-1441)"
      }
     },
     "museum_id": "gemaldegalerie-berlin",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {

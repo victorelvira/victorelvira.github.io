@@ -1141,7 +1141,7 @@
    "properties": {
     "painter": "Duccio",
     "title": "Virgin and Child",
-    "year": "1900",
+    "year": "",
     "city": "London",
     "country": "United Kingdom",
     "location": "Courtauld Gallery",
@@ -1161,7 +1161,15 @@
     "museum_id": "courtauld-gallery",
     "qid": "Q119527494",
     "location_src": "Courtauld Gallery",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1900",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1900 with century precision: a century, not a year, and outside the painter's life (1255-1319)"
+     }
+    }
    }
   },
   {
@@ -1347,7 +1355,7 @@
    "properties": {
     "painter": "Duccio",
     "title": "Angel",
-    "year": "1400",
+    "year": "",
     "city": "South Hadley",
     "country": "United States",
     "location": "Mount Holyoke College Art Museum",
@@ -1367,7 +1375,15 @@
     "museum_id": "mount-holyoke-college-art-museum",
     "qid": "Q136752203",
     "location_src": "Mount Holyoke College Art Museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1400",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1400 with century precision: a century, not a year, and outside the painter's life (1255-1319)"
+     }
+    }
    }
   },
   {
@@ -1382,7 +1398,7 @@
    "properties": {
     "painter": "Duccio",
     "title": "Angel",
-    "year": "1400",
+    "year": "",
     "city": "Woluwe-Saint-Pierre",
     "country": "Belgium",
     "location": "Stoclet Palace",
@@ -1401,7 +1417,15 @@
     "museum_id": "stoclet-palace",
     "qid": "Q136753238",
     "location_src": "Stoclet Palace",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1400",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1400 with century precision: a century, not a year, and outside the painter's life (1255-1319)"
+     }
+    }
    }
   },
   {
@@ -1774,7 +1798,7 @@
     "painter": "Duccio",
     "title": "Triptych: Crucifixion and other Scenes",
     "year": "1302",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Hampton Court Palace",
     "kind": "museum",
@@ -1802,7 +1826,8 @@
     "museum_id": "hampton-court-palace",
     "qid": "Q28016108",
     "location_src": "Hampton Court Palace",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {

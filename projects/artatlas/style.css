@@ -1233,3 +1233,15 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
   font-size: 10.5px; letter-spacing: .02em; color: #4a3f2d; top: 4px;
 }
 .gallery.grouped .gcell.fold-head { padding-top: 20px; }
+
+/* ── names that take you somewhere (goPainter / goMuseum in app.js) ──
+   Quiet at rest, so a list of 20 000 works does not turn into a page of blue links; the underline
+   comes with the pointer or the keyboard focus. */
+.golink { cursor: pointer; text-decoration: underline; text-decoration-color: transparent;
+  text-underline-offset: 2px; transition: text-decoration-color .12s; }
+.golink:hover, .golink:focus-visible { text-decoration-color: currentColor; color: var(--ink); }
+.golink:focus-visible { outline: 2px solid var(--accent, #b07a3a); outline-offset: 1px; border-radius: 2px; }
+#lb-cap .golink { color: inherit; text-decoration-color: rgba(255,255,255,.35); }
+#lb-cap .golink:hover { text-decoration-color: currentColor; color: #fff; }
+#chart-names .cn .golink { pointer-events: auto; }
+.legend .golink:hover { color: inherit; }

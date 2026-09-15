@@ -561,12 +561,12 @@
    "properties": {
     "painter": "Fra Angelico",
     "title": "Coronation of the Virgin",
-    "year": "1500",
+    "year": "",
     "city": "Paris",
     "country": "France",
     "location": "Louvre",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Panel",
     "dimensions": "213 × 211 cm",
@@ -586,14 +586,26 @@
     "wga_url": "https://www.wga.hu/html/a/angelico/12/20louvre.html",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1500, after death (1395–1455) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1500, after death (1395–1455) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1395-1455)"
      }
     },
     "location_src": "Louvre",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500"
    }
   },
   {
@@ -608,12 +620,12 @@
    "properties": {
     "painter": "Fra Angelico",
     "title": "San Marco Altarpiece",
-    "year": "1500",
+    "year": "",
     "city": "Florence",
     "country": "Italy",
     "location": "Museum of San Marco",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Panel",
     "dimensions": "220 × 227 cm",
@@ -632,14 +644,26 @@
     "qid": "Q1215809",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1500, after death (1395–1455) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1500, after death (1395–1455) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1395-1455)"
      }
     },
     "location_src": "Museum of San Marco",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500"
    }
   },
   {
@@ -1614,7 +1638,7 @@
     "painter": "Fra Angelico",
     "title": "Adoration of the Magi",
     "year": "1430",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Doughty House",
     "kind": "museum",
@@ -1646,7 +1670,8 @@
     "qid": "Q3531531",
     "wga_url": "https://www.wga.hu/html/l/lippi/filippo/1440/05adora2.html",
     "location_src": "Doughty House",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -3876,7 +3901,7 @@
     "title": "Saint Peter Martyr",
     "year": "1438",
     "location": "Hampton Court Palace",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fra%20Angelico%20%28c.%201400-1455%29%20-%20Saint%20Peter%20Martyr%20-%20RCIN%20403377%20-%20Royal%20Collection.jpg?width=500",
@@ -3900,7 +3925,8 @@
     "museum_id": "hampton-court-palace",
     "location_src": "Hampton Court Palace",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -4040,7 +4066,7 @@
     "title": "Scenes from the Lives of the Desert Fathers (Thebaid)",
     "year": "1420",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fra%20Angelico%20-%20Scenes%20from%20the%20Lives%20of%20the%20Desert%20Fathers%20%28Thebaid%29%20-%20Google%20Art%20Project.jpg?width=500",
@@ -4064,7 +4090,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {

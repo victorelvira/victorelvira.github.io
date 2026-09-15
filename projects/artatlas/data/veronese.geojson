@@ -894,7 +894,7 @@
    "properties": {
     "painter": "Veronese",
     "title": "Saint Jerome",
-    "year": "1600",
+    "year": "",
     "city": "Venice",
     "country": "Italy",
     "location": "San Pietro Martire",
@@ -913,7 +913,15 @@
     "museum_id": "san-pietro-martire",
     "qid": "Q126453198",
     "location_src": "San Pietro Martire",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1528-1588)"
+     }
+    }
    }
   },
   {
@@ -1353,7 +1361,7 @@
    "properties": {
     "painter": "Veronese",
     "title": "Supper of Saint Gregorius",
-    "year": "1501",
+    "year": "",
     "city": "Vicenza",
     "country": "Italy",
     "location": "Museo del Santuario di Monte Berico",
@@ -1370,7 +1378,15 @@
     "museum_id": "museo-del-santuario-di-monte-berico",
     "qid": "Q131629557",
     "location_src": "Museo del Santuario di Monte Berico",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1528-1588)"
+     }
+    }
    }
   },
   {
@@ -2374,7 +2390,7 @@
     "painter": "Veronese",
     "title": "Portrait of a Man",
     "year": "1555",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -2405,7 +2421,8 @@
     "qid": "Q16571134",
     "wga_url": "https://www.wga.hu/html/v/veronese/12/03lynx1.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -4218,7 +4235,7 @@
    "properties": {
     "painter": "Veronese",
     "title": "Noli me tangere",
-    "year": "1600",
+    "year": "",
     "city": "Grenoble",
     "country": "France",
     "location": "Museum of Grenoble",
@@ -4238,7 +4255,15 @@
     "museum_id": "museum-of-grenoble",
     "qid": "Q26710079",
     "location_src": "Museum of Grenoble",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1528-1588)"
+     }
+    }
    }
   },
   {
@@ -6417,7 +6442,7 @@
     "painter": "Veronese",
     "title": "The Finding of Moses",
     "year": "1580",
-    "city": "Metropolitan City of Venice",
+    "city": "Venice",
     "country": "Italy",
     "location": "Venice",
     "kind": "museum",
@@ -6444,7 +6469,8 @@
     "museum_id": "venice",
     "qid": "Q97358907",
     "location_src": "Venice",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Metropolitan City of Venice"
    }
   },
   {
@@ -6502,7 +6528,7 @@
     "title": "The Presentation in the Temple",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20%281528-1588%29%20%28after%29%20-%20The%20Presentation%20in%20the%20Temple%20-%201450-1882%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -6516,7 +6542,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -6533,7 +6560,7 @@
     "title": "Saint Jerome and a Donor",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20%281528-1588%29%20%28copy%20after%29%20-%20Saint%20Jerome%20and%20a%20Donor%20-%20187-1885%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -6547,7 +6574,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -7007,7 +7035,7 @@
     "title": "Emperor Augustus and the Sibyl",
     "year": "1580",
     "location": "Gothenburg Museum of Art",
-    "city": "Gothenburg Municipality",
+    "city": "Gothenburg",
     "country": "Sweden",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Emperor%20Augustus%20and%20the%20Sibyl%20%28Paolo%20Veronese%2C%20attribuerad%20till%29%20-%20Gothenburg%20Museum%20of%20Art%20-%20GKM%200889.tif?width=500",
@@ -7031,7 +7059,8 @@
     "museum_id": "gothenburg-museum-of-art",
     "location_src": "Gothenburg Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Gothenburg Municipality"
    }
   },
   {
@@ -8465,7 +8494,7 @@
     "title": "David Victorious Over Goliath",
     "year": "1567",
     "location": "Hampton Court Palace",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20%281528-88%29%20-%20David%20Victorious%20Over%20Goliath%20-%20RCIN%20402613%20-%20Royal%20Collection.jpg?width=500",
@@ -8489,7 +8518,8 @@
     "museum_id": "hampton-court-palace",
     "location_src": "Hampton Court Palace",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -8506,7 +8536,7 @@
     "title": "Judith with the Head of Holofernes",
     "year": "1564",
     "location": "Hampton Court Palace",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20%281528-88%29%20-%20Judith%20with%20the%20Head%20of%20Holofernes%20-%20RCIN%20402615%20-%20Royal%20Collection.jpg?width=500",
@@ -8530,7 +8560,8 @@
     "museum_id": "hampton-court-palace",
     "location_src": "Hampton Court Palace",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -8689,11 +8720,11 @@
    "properties": {
     "painter": "Veronese",
     "title": "Portrait of a Lady",
-    "year": "1600",
+    "year": "",
     "location": "Barnes Foundation",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Parrasio%20Micheli%2CVeronese%20%28Paolo%20Caliari%29%20-%20Portrait%20of%20a%20Lady%20-%20BF837%20-%20Barnes%20Foundation.jpg?width=500",
     "qid": "Q28128441",
     "wikidata": "https://www.wikidata.org/wiki/Q28128441",
@@ -8704,16 +8735,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1528-1588)"
      }
     },
     "museum_id": "barnes-foundation",
     "location_src": "Barnes Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -9680,11 +9723,11 @@
    "properties": {
     "painter": "Veronese",
     "title": "The Rape of Proserpine",
-    "year": "1600",
+    "year": "",
     "location": "Isabella Stewart Gardner Museum",
     "city": "Boston",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20-%20The%20Rape%20of%20Proserpine%20-%20P17w32.4%20-%20Isabella%20Stewart%20Gardner%20Museum.jpg?width=500",
     "qid": "Q103834197",
     "wikidata": "https://www.wikidata.org/wiki/Q103834197",
@@ -9695,16 +9738,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1528-1588)"
      }
     },
     "museum_id": "isabella-stewart-gardner-museum",
     "location_src": "Isabella Stewart Gardner Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -10889,11 +10944,11 @@
    "properties": {
     "painter": "Veronese",
     "title": "Lamentation of Christ with Mary and two Angels",
-    "year": "1600",
+    "year": "",
     "location": "Palais des Beaux-Arts de Lille",
     "city": "Lille",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lille%20Pdba%20veronese%20christ%20anges.JPG?width=500",
     "qid": "Q72992722",
     "wikidata": "https://www.wikidata.org/wiki/Q72992722",
@@ -10904,16 +10959,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1528-1588)"
      }
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "location_src": "Palais des Beaux-Arts de Lille",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -11154,11 +11221,11 @@
    "properties": {
     "painter": "Veronese",
     "title": "The Choice between Virtue and Passion",
-    "year": "1500",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20-%20De%20keuze%20tussen%20deugd%20en%20hartstocht.jpg?width=500",
     "qid": "Q17334349",
     "wikidata": "https://www.wikidata.org/wiki/Q17334349",
@@ -11169,16 +11236,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1500, before birth (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1500, before birth (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1528-1588)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500"
    }
   },
   {
@@ -11606,7 +11685,7 @@
     "title": "Mystic marriage of Saint Catherine of Alexandria",
     "year": "1565",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20-%20The%20Marriage%20of%20St%20Catharine%20-%20KMSsp149%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -11630,7 +11709,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11647,7 +11727,7 @@
     "title": "The Judgment of Solomon",
     "year": "1615",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20-%20The%20Judgment%20of%20Solomon%20-%20KMSst275%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -11669,7 +11749,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -11684,11 +11765,11 @@
    "properties": {
     "painter": "Veronese",
     "title": "Trois personnages",
-    "year": "1850",
+    "year": "",
     "location": "Louvre",
     "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Veronese%20-%20Genre%20de%20-%20Trois%20personnages%2C%20INV%2020824.jpg?width=500",
     "qid": "Q115673726",
     "wikidata": "https://www.wikidata.org/wiki/Q115673726",
@@ -11699,16 +11780,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1528–1588) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1528-1588)"
      }
     },
     "museum_id": "louvre",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {
@@ -11869,7 +11962,7 @@
     "title": "The Resurrection of Christ",
     "year": "1580",
     "location": "Chelsea and Westminster Hospital",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20%281528-1588%29%20-%20The%20Resurrection%20of%20Christ%20-%20LDCWH%2C%202010.%20693%20-%20Chelsea%20and%20Westminster%20Hospital.jpg?width=500",
@@ -11893,7 +11986,8 @@
     "museum_id": "chelsea-and-westminster-hospital",
     "location_src": "Chelsea and Westminster Hospital",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {

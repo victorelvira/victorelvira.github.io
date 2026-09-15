@@ -2266,7 +2266,7 @@
     "qid": "Q2342843",
     "form": "sculpture",
     "kind": "museum",
-    "year": "1600",
+    "year": "",
     "location": "Museo dell'Opera del Duomo",
     "city": "Florence",
     "country": "Italy",
@@ -2279,7 +2279,15 @@
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
     "museum_id": "museo-dell-opera-del-duomo",
-    "location_src": "Museo dell'Opera del Duomo"
+    "location_src": "Museo dell'Opera del Duomo",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1475-1564)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2910,7 +2918,7 @@
     "kind": "museum",
     "year": "1519",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "material": "wax",
     "medium": "wax",
@@ -2920,7 +2928,8 @@
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
     "museum_id": "victoria-and-albert-museum",
-    "location_src": "Victoria and Albert Museum"
+    "location_src": "Victoria and Albert Museum",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    },
    "geometry": {
     "type": "Point",
@@ -3381,7 +3390,7 @@
     "form": "sculpture",
     "kind": "museum",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "medium": "Sculpture",
     "attribution": "generally accepted",
@@ -3391,7 +3400,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/BLW_Model_of_a_slave.jpg",
-    "_image_src": "commons category Category:Model of a slave by Michelangelo, V&A London"
+    "_image_src": "commons category Category:Model of a slave by Michelangelo, V&A London",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    },
    "geometry": {
     "type": "Point",

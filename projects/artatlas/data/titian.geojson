@@ -1571,8 +1571,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     13.51667,
-     43.61694
+     13.51115,
+     43.62078
     ]
    },
    "properties": {
@@ -1580,7 +1580,7 @@
     "title": "Gozzi Altarpiece",
     "year": "1520",
     "city": "Ancona",
-    "location": "Pinacoteca civica Francesco Podesti,",
+    "location": "Pinacoteca civica \"Francesco Podesti\"",
     "attribution": "generally accepted",
     "dimensions": "312 × 215 cm",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Tiziano%2C_pala_gozzi_01.jpg/500px-Tiziano%2C_pala_gozzi_01.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
@@ -1599,7 +1599,8 @@
     "wga_url": "https://www.wga.hu/html/t/tiziano/02_1520s/2ancona.html",
     "location_src": "Pinacoteca civica Francesco Podesti,",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "country": "Italy"
    }
   },
   {
@@ -6211,11 +6212,11 @@
    "properties": {
     "painter": "Titian",
     "title": "Nymphs and Children in a Landscape with Shepherds",
-    "year": "1600",
+    "year": "",
     "location": "National Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Navolger%20van%20Giorgione%20-%20Nimfen%20en%20kinderen%20in%20een%20landschap%20met%20herders%20-%20NG1695%20-%20National%20Gallery.jpg?width=500",
     "qid": "Q26699539",
     "wikidata": "https://www.wikidata.org/wiki/Q26699539",
@@ -6226,16 +6227,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1488–1576) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1488–1576) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1488-1576)"
      }
     },
     "museum_id": "national-gallery",
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -6591,7 +6604,7 @@
     "title": "Portrait of a Young Man",
     "year": "1501",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgione%20-%20Portrait%20of%20a%20Young%20Man%20-%20KMS553%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6605,7 +6618,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6622,7 +6636,7 @@
     "title": "David",
     "year": "1501",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ubekendt%20italiensk%20KMSsp139%20-%20David%20-%20KMSsp139%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6636,7 +6650,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6776,7 +6791,7 @@
     "title": "Portrait of a Youth",
     "year": "1503",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20a%20Young%20Man%20Giorgione%20-%20Museum%20of%20Fine%20Arts%20-%20Budapest.jpg?width=500",
@@ -6790,7 +6805,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {

@@ -149,7 +149,7 @@
     "painter": "Parmigianino",
     "title": "A Martyrdom",
     "year": "1530",
-    "city": "London Borough of Waltham Forest",
+    "city": "London",
     "country": "United Kingdom",
     "location": "William Morris Gallery",
     "kind": "museum",
@@ -177,7 +177,8 @@
     "museum_id": "william-morris-gallery",
     "qid": "Q119456605",
     "location_src": "William Morris Gallery",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Waltham Forest"
    }
   },
   {
@@ -192,7 +193,7 @@
    "properties": {
     "painter": "Parmigianino",
     "title": "Vierge à l'Enfant adorée par les anges",
-    "year": "1601",
+    "year": "",
     "city": "Rennes",
     "country": "France",
     "location": "Musée des Beaux-Arts de Rennes",
@@ -213,7 +214,15 @@
     "location_src": "Musée des Beaux-Arts de Rennes",
     "form": "painting",
     "_title_was": "Q123510136",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "_year_was": "1601",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1503-1540)"
+     }
+    }
    }
   },
   {
@@ -228,7 +237,7 @@
    "properties": {
     "painter": "Parmigianino",
     "title": "Le Christ au tombeau",
-    "year": "1501",
+    "year": "",
     "city": "Rennes",
     "country": "France",
     "location": "Musée des Beaux-Arts de Rennes",
@@ -249,7 +258,15 @@
     "location_src": "Musée des Beaux-Arts de Rennes",
     "form": "painting",
     "_title_was": "Q123551011",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "_year_was": "1501",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1503-1540)"
+     }
+    }
    }
   },
   {
@@ -1248,7 +1265,7 @@
     "painter": "Parmigianino",
     "title": "Pallas Athena",
     "year": "1534",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Hampton Court Palace",
     "kind": "museum",
@@ -1278,7 +1295,8 @@
     "qid": "Q3858368",
     "wga_url": "https://www.wga.hu/html/p/parmigia/pallas_a.html",
     "location_src": "Hampton Court Palace",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -1294,7 +1312,7 @@
     "painter": "Parmigianino",
     "title": "Nativity",
     "year": "1523",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Doughty House",
     "kind": "museum",
@@ -1315,7 +1333,8 @@
     "museum_id": "doughty-house",
     "qid": "Q3873235",
     "location_src": "Doughty House",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -1459,7 +1478,7 @@
     "painter": "Parmigianino",
     "title": "Portrait of Charles V",
     "year": "1530",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Doughty House",
     "kind": "museum",
@@ -1487,7 +1506,8 @@
     "museum_id": "doughty-house",
     "qid": "Q3937392",
     "location_src": "Doughty House",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -1736,7 +1756,7 @@
     "painter": "Parmigianino",
     "title": "Portrait of Lorenzo Cybo",
     "year": "1524",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -1767,7 +1787,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q3937595",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -1830,7 +1851,7 @@
     "painter": "Parmigianino",
     "title": "Ritratto di giovane",
     "year": "1529",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Hampton Court Palace",
     "kind": "museum",
@@ -1859,7 +1880,8 @@
     "museum_id": "hampton-court-palace",
     "qid": "Q3937704",
     "location_src": "Hampton Court Palace",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -2538,12 +2560,12 @@
    "properties": {
     "painter": "Parmigianino",
     "title": "Madonna with the Long Neck",
-    "year": "1600",
+    "year": "",
     "city": "Florence",
     "country": "Italy",
     "location": "Uffizi Gallery",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on panel",
     "dimensions": "219 × 132 cm",
@@ -2563,14 +2585,26 @@
     "wga_url": "https://www.wga.hu/html/p/parmigia/longneck.html",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1503–1540) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1503–1540) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1503-1540)"
      }
     },
     "location_src": "Uffizi Gallery",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {

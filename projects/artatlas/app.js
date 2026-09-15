@@ -86,9 +86,15 @@ const PAINTERS = [
   { slug: "dali", name: "Salvador Dalí", file: "artatlas/data/dali.geojson" },
   { slug: "klimt", name: "Gustav Klimt", file: "artatlas/data/klimt.geojson" },
   { slug: "miro", name: "Joan Miró", file: "artatlas/data/miro.geojson" },
+  // added 2026-09-15
+  { slug: "munch", name: "Edvard Munch", file: "artatlas/data/munch.geojson" },
+  { slug: "romerodetorres", name: "Julio Romero de Torres", file: "artatlas/data/romerodetorres.geojson" },
+  { slug: "giordano", name: "Luca Giordano", file: "artatlas/data/giordano.geojson" },
+  { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
+  { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.11.8";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-15 01:05";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.12.6";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-15 12:05";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -295,7 +301,7 @@ function openSheet(html, feats) {
   const body = document.getElementById("sheet-body");
   body.innerHTML = html;
   const b = body.querySelector(".pop-museum");           // clickable venue title → open in list
-  if (b) b.addEventListener("click", () => { closeSheet(); selectMuseum(b.dataset.museum); });
+  if (b) b.addEventListener("click", () => goMuseum(b.dataset.museum));
   wireWorkItems(body, feats, closeSheet);                // each work row → its ficha
   document.getElementById("sheet").hidden = false;
 }
@@ -303,7 +309,7 @@ function openSheet(html, feats) {
 function wireWorkItems(container, feats, onOpen) {
   if (!container || !feats) return;
   container.querySelectorAll("li.pop-work[data-i]").forEach(li => li.addEventListener("click", ev => {
-    if (ev.target.closest("a, img")) return;             // links + thumbnail keep their own action
+    if (ev.target.closest("a, img, .golink")) return;    // links, names + thumbnail keep their own action
     const f = feats[+li.dataset.i];
     if (f) { if (onOpen) onOpen(); openWorkCard({ p: f.properties }); }
   }));
@@ -323,6 +329,7 @@ const PALETTE = [
   "#b0692f", "#2f8fb0", "#7a9c3f", "#9c3f7a", "#3f9c7a", "#9c6a3f", "#5f3f9c", "#3f7a9c",
   "#6a8f4a", "#b0417a", "#417a8f", "#8f6a41", "#7a41b0", "#41a06a", "#a0552f", "#4a6a8f",
   "#9c8f3f", "#6a417a", "#2f7a5a", "#8f414a", "#5a8f2f", "#417a6a", "#8f5a7a", "#3f5a7a", "#5a8f7b",
+  "#d9601c", "#5c2a3e", "#9aa832", "#c24f9c", "#2a5c4a", "#3d9bd6",   // 2026-09-15: one per painter, Miró no longer borrows Caravaggio's
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
@@ -382,6 +389,8 @@ const ERA_OF = {
   canaletto: "4", tiepolo: "4", guardi: "4", turner: "4", friedrich: "4", delacroix: "4",
   zuloaga: "5",
   dali: "6", miro: "6", klimt: "6",
+  // added 2026-09-15
+  munch: ["5", "6"], romerodetorres: "5", giordano: "3", guercino: "3", batoni: "4",
 };
 const erasOf = slug => [].concat(ERA_OF[slug] || []);
 
@@ -389,7 +398,7 @@ const erasOf = slug => [].concat(ERA_OF[slug] || []);
 const SCHOOLS = [
   { key: "it", label: "Italian" }, { key: "es", label: "Spanish" }, { key: "fr", label: "French" },
   { key: "nl", label: "Dutch" }, { key: "fl", label: "Flemish / Netherlandish" },
-  { key: "de", label: "German" }, { key: "en", label: "English" }, { key: "mx", label: "Mexican" }, { key: "at", label: "Austrian" },
+  { key: "de", label: "German" }, { key: "en", label: "English" }, { key: "mx", label: "Mexican" }, { key: "at", label: "Austrian" }, { key: "no", label: "Norwegian" },
 ];
 const SCHOOL_OF = {
   duccio: "it", giotto: "it", masaccio: "it", fraangelico: "it", piero: "it", botticelli: "it",
@@ -408,6 +417,7 @@ const SCHOOL_OF = {
   bellini: "it", canaletto: "it", tiepolo: "it", uccello: "it", lippi: "it", perugino: "it",
   bronzino: "it", carracci: "it", reni: "it", guardi: "it",
   turner: "en", friedrich: "de", delacroix: "fr", zuloaga: "es", dali: "es", miro: "es", klimt: "at",
+  munch: "no", romerodetorres: "es", giordano: "it", guercino: "it", batoni: "it",
 };
 const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
 
@@ -427,11 +437,12 @@ const BORN = {
   uccello: 1397, lippi: 1406, bellini: 1430, perugino: 1448, bronzino: 1503, carracci: 1560,
   reni: 1575, tiepolo: 1696, canaletto: 1697, guardi: 1712, friedrich: 1774, turner: 1775,
   delacroix: 1798, zuloaga: 1870, miro: 1893, dali: 1904, klimt: 1862,
+  munch: 1863, romerodetorres: 1874, giordano: 1634, guercino: 1591, batoni: 1708,
 };
 const bornOf = slug => BORN[slug] || 9999;
 
 // death year per painter (Wikidata P570) — for the Timeline life-span labels
-const DIED = { bernini: 1680, klimt: 1918, artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
+const DIED = { munch: 1944, romerodetorres: 1930, giordano: 1705, guercino: 1666, batoni: 1787, bernini: 1680, klimt: 1918, artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
 const diedOf = slug => DIED[slug] || null;
 
 // short label per painter for the selector button (the first name is often wrong — "Ignacio"
@@ -454,6 +465,7 @@ const NICK = {
   delacroix: "Delacroix", tiepolo: "Tiepolo", uccello: "Uccello", lippi: "Lippi",
   perugino: "Perugino", bronzino: "Bronzino", carracci: "Carracci", reni: "Reni",
   guardi: "Guardi", zuloaga: "Zuloaga", dali: "Dalí", miro: "Miró", klimt: "Klimt",
+  munch: "Munch", romerodetorres: "Romero de Torres", giordano: "Giordano", guercino: "Guercino", batoni: "Batoni",
 };
 const nickOf = p => NICK[p.slug] || (p.name || "").split(" ")[0];
 let painterGroupBy = "period";   // "period" | "school"
@@ -512,7 +524,7 @@ function updateLegend() {
     legendDiv.style.display = "none"; return;
   }
   legendDiv.style.display = "";
-  const rows = shown.map(p => `<span class="le"><span class="k" style="background:${colorFor(p.name)}"></span>${esc(p.name)}</span>`).join("");
+  const rows = shown.map(p => `<span class="le"><span class="k" style="background:${colorFor(p.name)}"></span>${shown.length > 1 ? painterLink(p.name) : esc(pName(p.name))}</span>`).join("");
   legendDiv.innerHTML = `<div class="row">${rows}` +
     (shown.length > 1 ? `<span class="le"><span class="k" style="background:${MULTI_COLOR}"></span>Several</span>` : "") + `</div>`;
 }
@@ -525,7 +537,7 @@ let panelVis = [];   // works currently listed in the panel
 // different questions — "where can I see it?" and "what is it?" — so two different sets of chips.
 const state = { mode: "current", museum: true, church: true, private: true, public: true,
                 painting: true, sculpture: true,
-                acceptedOnly: true, museumFilter: null, near: null, q: "",
+                acceptedOnly: true, museumFilter: null, place: null, near: null, q: "",
                 yearMin: -Infinity, yearMax: Infinity, painters: {} };
 
 // museum index (derived from the works): each venue with its painters + work count
@@ -596,7 +608,7 @@ function passesAll(p) {
   const painterOk = state.painters[p.painter] !== false;
   const attrOk = !state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution);
   const museumOk = !state.museumFilter || museumKey(p) === state.museumFilter;
-  return painterOk && kindOk && formOk && attrOk && museumOk && inYear(p) && matchesQ(p);
+  return painterOk && kindOk && formOk && attrOk && museumOk && placeOk(p) && inYear(p) && matchesQ(p);
 }
 // active coordinate per map: current location, or where it was painted (map 2)
 function activeCoord(f) {
@@ -622,11 +634,41 @@ function disputedMark(p) {
   return ` <span class="qm" title="${esc(why)}">?</span>`;
 }
 
+// ── names that take you somewhere ────────────────────────────────────────────────────────────
+// A painter's or a museum's name, wherever it is written, is a way in: the painter's name shows only
+// that painter, the museum's name shows that museum. The view you are in decides the rest (the map
+// flies there, the table stays a table), and the back button undoes it. One delegated handler below
+// (goPainter / goMuseum) serves every place, so a name written somewhere new only needs these helpers.
+function painterLink(name, inner) {
+  if (!name) return inner || "";
+  return `<span class="golink" role="link" tabindex="0" data-go-painter="${esc(name)}" title="${esc(t("Show only this painter"))}">` +
+    `${inner == null ? esc(pName(name)) : inner}</span>`;
+}
+function museumLink(p, inner) {
+  const txt = inner == null ? esc(locName(p)) : inner;
+  if (!p || !p.location || p.placeless) return txt;
+  return `<span class="golink" role="link" tabindex="0" data-go-museum="${esc(museumKey(p))}" title="${esc(t("Show this museum"))}">${txt}</span>`;
+}
+// a city is its name AND its country ("Cambridge" is in two), a country is its name; both as the data spells them
+function cityLink(city, country) {
+  if (!city) return "";
+  return `<span class="golink" role="link" tabindex="0" data-go-city="${esc(city + "|" + (country || ""))}" title="${esc(t("Show this city"))}">${esc(ctyName(city))}</span>`;
+}
+function countryLink(country) {
+  if (!country) return "";
+  return `<span class="golink" role="link" tabindex="0" data-go-country="${esc(country)}" title="${esc(t("Show this country"))}">${esc(cName(country))}</span>`;
+}
+function placeOk(p) {
+  const pl = state.place;
+  if (!pl) return true;
+  if (pl.kind === "country") return p.country === pl.country;
+  return p.city === pl.city && (p.country || "") === pl.country;
+}
 // small painter tag: coloured dot + name (works belong to different painters now)
 function painterTag(p) {
   if (!p.painter) return "";
   const c = colorFor(p.painter);
-  return `<span class="pby"><span class="pdot" style="background:${c}"></span>${esc(pName(p.painter))}</span>`;
+  return `<span class="pby"><span class="pdot" style="background:${c}"></span>${painterLink(p.painter)}</span>`;
 }
 
 // colour = painter (red overrides for lost/stolen); dashed ring = holds a disputed work
@@ -684,11 +726,11 @@ function placePopup(feats) {
       `${provLine(p0, HEAD_SKIP_PAINTED)}</div>`;
   } else {
     const kindTxt = KIND_LABEL[p0.kind] || "";
-    const where = [p0.city, p0.country].filter(Boolean).join(", ");
+    const where = [cityLink(p0.city, p0.country), countryLink(p0.country)].filter(Boolean).join(", ");
     // the venue name is a button → opens this museum in the side list (filters to it)
     head = `<div class="hd"><button type="button" class="nm pop-museum" data-museum="${esc(museumKey(p0))}"` +
       ` title="Show all works of this venue in the list">${esc(locName(p0) || t("Location"))}<span class="pm-arrow"> ↗</span></button>` +
-      `<div class="meta">${esc(where)}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} ${tu(n === 1 ? "work" : "works")}</div>` +
+      `<div class="meta">${where}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} ${tu(n === 1 ? "work" : "works")}</div>` +
       `${provLine(p0, HEAD_SKIP_CURRENT)}</div>`;
   }
 
@@ -706,7 +748,7 @@ function placePopup(feats) {
     const desc = p.summary ? `<div class="ds">${esc(p.summary)}</div>` : "";
     const cap = capOf(p, p0.location || "");
     const thumb = p.image
-      ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
+      ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" ${capAttrs(p, p0.location || "")} alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
     return `<li class="pop-work" data-i="${i}">${thumb}<div class="wk">` +
       `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${yr}${att}${st}</div>` +
@@ -809,6 +851,7 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
     buildMuseumIndex();
     buildPainterSelect();
     applyHash();                       // #caravaggio or #leonardo/painted → preset
+    if (applyPainterParam()) { updatePainterBtn(); renderPainterList(); }   // ?p=munch,goya wins over the hash
     buildMarkers();
     hist.restoring = true;             // arriving on an address is not a step
     try {
@@ -825,7 +868,7 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
       if (isMobile()) { openSheet(e.popup.getContent(), feats); map.closePopup(e.popup); return; }
       const el = e.popup.getElement();
       const b = el && el.querySelector(".pop-museum");
-      if (b) b.addEventListener("click", () => { map.closePopup(); selectMuseum(b.dataset.museum); });
+      if (b) b.addEventListener("click", () => goMuseum(b.dataset.museum));
       wireWorkItems(el, feats, () => map.closePopup());   // each work row → its ficha
     });
     map.on("click", closeSheet);   // tapping the map background dismisses the sheet
@@ -897,7 +940,7 @@ function buildPainterSelect() {
   pop.querySelectorAll("[data-act]").forEach(b => b.addEventListener("click", () => {
     const on = b.dataset.act === "all";
     PAINTERS.forEach(p => { state.painters[p.name] = on; });
-    renderPainterList(); updatePainterBtn(); refresh();
+    renderPainterList(); updatePainterBtn(); refresh(); painterTweak();
   }));
   renderPainterList(); updatePainterBtn();
 }
@@ -911,7 +954,7 @@ function renderPainterList() {
 
   const museumRow = m =>
     `<li class="mrow" data-museum="${esc(m.key)}"><span class="micon">🏛</span><div>` +
-    `<div class="mname">${esc(m.location)}</div>` +
+    `<div class="mname">${esc(locName({ location: m.location, museum_id: m.key }))}</div>` +
     `<div class="msub">${esc([m.city, m.country].filter(Boolean).join(", "))} · ${m.count} works · ` +
     `${m.painters.size} painter${m.painters.size > 1 ? "s" : ""}</div></div></li>`;
 
@@ -968,13 +1011,13 @@ function renderPainterList() {
 
   ul.querySelectorAll("input[data-painter]").forEach(cb => cb.addEventListener("change", () => {
     state.painters[cb.dataset.painter] = cb.checked;
-    refresh(); updatePainterBtn(); renderPainterList();
+    refresh(); updatePainterBtn(); renderPainterList(); painterTweak();
   }));
   // "only" (Kayak-style): deselect everyone, keep just this painter
   ul.querySelectorAll("button[data-only]").forEach(b => b.addEventListener("click", e => {
     e.preventDefault(); e.stopPropagation();
     PAINTERS.forEach(p => { state.painters[p.name] = p.name === b.dataset.only; });
-    refresh(); updatePainterBtn(); renderPainterList();
+    refresh(); updatePainterBtn(); renderPainterList(); painterTweak();
   }));
   // group "only": isolate a whole period/school (uses the active grouping axis)
   ul.querySelectorAll("button[data-grp-only]").forEach(b => b.addEventListener("click", e => {
@@ -982,7 +1025,7 @@ function renderPainterList() {
     const gk = b.dataset.grpOnly;
     const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
     PAINTERS.forEach(p => { state.painters[p.name] = keysOf(p.slug).includes(gk); });
-    refresh(); updatePainterBtn(); renderPainterList();
+    refresh(); updatePainterBtn(); renderPainterList(); painterTweak();
   }));
   // group "also": add a whole period/school to what is already on screen
   ul.querySelectorAll("button[data-grp-also]").forEach(b => b.addEventListener("click", e => {
@@ -990,27 +1033,155 @@ function renderPainterList() {
     const gk = b.dataset.grpAlso;
     const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
     PAINTERS.forEach(p => { if (keysOf(p.slug).includes(gk)) state.painters[p.name] = true; });
-    refresh(); updatePainterBtn(); renderPainterList();
+    refresh(); updatePainterBtn(); renderPainterList(); painterTweak();
   }));
   // group tick: add/remove a whole period/school without disturbing the others
   ul.querySelectorAll("input[data-grp-tick]").forEach(cb => cb.addEventListener("change", () => {
     const gk = cb.dataset.grpTick;
     const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
     PAINTERS.forEach(p => { if (keysOf(p.slug).includes(gk)) state.painters[p.name] = cb.checked; });
-    refresh(); updatePainterBtn(); renderPainterList();
+    refresh(); updatePainterBtn(); renderPainterList(); painterTweak();
   }));
   ul.querySelectorAll(".mrow").forEach(row => row.addEventListener("click", () => selectMuseum(row.dataset.museum)));
 }
 
-function selectMuseum(key) {
+// `stay`: keep the view you are in (the table filters to the museum instead of handing you to the map).
+// `url: false`: the caller writes the step itself (goMuseum changes more than the museum).
+function selectMuseum(key, { stay = false, url = true } = {}) {
   state.museumFilter = key;
+  if (state.place) { state.place = null; renderPlaceChip(); }   // a museum is narrower than any city: one at a time
   const mu = museumIndex.find(m => m.key === key);
   const pop = document.getElementById("painters-pop");
   pop.hidden = true; document.getElementById("painters-btn").setAttribute("aria-expanded", "false");
-  if (mu) { if (view.table) setTableView(false); map.setView([mu.lat, mu.lon], 14); }
-  histStep(urlWith(sp => { sp.set("m", key); }));
+  if (mu) {
+    if (view.table && !stay) setTableView(false);
+    if (!view.table && view.map) map.setView([mu.lat, mu.lon], 14);
+  }
+  if (url) histStep(urlWith(sp => { sp.set("m", key); sp.delete("c"); sp.delete("k"); }));
   renderMuseumChip(); refresh();
 }
+
+// ── the painter selection lives in the address too (?p=munch,goya), so back can undo "only Munch" ──
+function setPainterParam(sp) {
+  const on = PAINTERS.filter(p => state.painters[p.name] !== false);
+  if (on.length === PAINTERS.length) sp.delete("p");
+  else sp.set("p", on.length ? on.map(p => p.slug).join(",") : "-");
+}
+function painterTweak() { histTweak(urlWith(setPainterParam)); }   // ticking boxes is a tweak, not a step
+function applyPainterParam() {           // the address → the selection; false when the address says nothing
+  const v = new URLSearchParams(location.search).get("p");
+  if (v == null) return false;
+  const want = new Set(v === "-" ? [] : v.split(","));
+  PAINTERS.forEach(p => { state.painters[p.name] = want.has(p.slug); });
+  return true;
+}
+
+// ── goPainter / goMuseum: where a name takes you ──
+// · a painter: only that painter, everywhere they hang (a museum filter is lifted); the map fits their works
+// · a museum: that museum, with every painter in it (the painter filter is lifted)
+// · the ficha, the enlarged picture, a popup or the phone sheet close; the table stays the table;
+//   the timeline and the galaxy draw every painter whatever the filters say, so from there the name
+//   opens the map, which is where "only this painter" or "this museum" can be seen
+// · one step in history: back returns to exactly what you were looking at, the ficha included
+function leaveOverlays() {
+  const lbEntry = !lb.hidden && !!(history.state && history.state.lb);
+  if (!lb.hidden) lbCloseNow();
+  if (!workCard.hidden) { workCard.hidden = true; wcWork = null; document.getElementById("wc-body").innerHTML = ""; }
+  if (typeof map !== "undefined") map.closePopup();
+  closeSheet();
+  return lbEntry;
+}
+function leaveUnfilteredViews() {
+  const b = document.body.classList;
+  if (!(b.contains("show-chart") || b.contains("show-galaxy") || b.contains("show-game"))) return false;
+  setTableView(false);
+  return true;
+}
+function writeGoStep(lbEntry, left, mutate) {
+  const url = urlWith(sp => {
+    sp.delete("w");
+    if (left) ["view", "gcb", "gnm", "gt", "g3"].forEach(k => sp.delete(k));
+    mutate(sp);
+  });
+  // an enlarged picture already holds an entry of its own: take it over rather than stack a dead step
+  if (lbEntry && !hist.restoring) { history.replaceState(null, "", url); return; }
+  // the map is about to fly somewhere: the entry we leave remembers where it was, so back lands there too
+  if (!hist.restoring && typeof map !== "undefined" && mapWas) history.replaceState({ ...(history.state || {}), mapv: mapWas }, "", location.href);
+  histStep(url);
+}
+function fitVisible(delay) {
+  const all = works.filter(w => passesAll(w.p) && w.lat != null);
+  if (!all.length) return;
+  // where MOST of the works are: Munch has a painting in Canberra and a thousand in Oslo, and fitting
+  // every last one shows the whole planet. The central 90% on each axis, weighted by works, not venues.
+  const q = (arr, f) => arr[Math.min(arr.length - 1, Math.max(0, Math.round(f * (arr.length - 1))))];
+  const lats = all.map(w => w.lat).sort((a, b) => a - b), lons = all.map(w => w.lon).sort((a, b) => a - b);
+  const trim = all.length >= 20 ? 0.05 : 0;
+  const pts = [[q(lats, trim), q(lons, trim)], [q(lats, 1 - trim), q(lons, 1 - trim)]];
+  // a map that was hidden (timeline, galaxy) has no size until setView's invalidateSize: measure first
+  setTimeout(() => { map.invalidateSize(); map.fitBounds(L.latLngBounds(pts), { padding: [30, 30], maxZoom: 12 }); }, delay);
+}
+let mapWas = null;
+function noteMap() { mapWas = (view.map && !view.table) ? [map.getCenter().lat, map.getCenter().lng, map.getZoom()] : null; }
+function goPainter(name) {
+  const pa = PAINTERS.find(p => p.name === name);
+  if (!pa) return;
+  noteMap();
+  const lbEntry = leaveOverlays(), left = leaveUnfilteredViews();
+  PAINTERS.forEach(p => { state.painters[p.name] = p === pa; });
+  state.museumFilter = null; renderMuseumChip();
+  state.place = null; renderPlaceChip();
+  updatePainterBtn(); renderPainterList(); refresh();
+  if (!view.table && view.map) fitVisible(left ? 160 : 0);
+  writeGoStep(lbEntry, left, sp => { ["m", "c", "k"].forEach(x => sp.delete(x)); setPainterParam(sp); });
+  toast(`${t("Showing only")} ${pName(name)}`);
+}
+// · a city or a country: its works, every painter, no museum; the map fits them
+function goPlace(pl) {
+  noteMap();
+  const lbEntry = leaveOverlays(), left = leaveUnfilteredViews();
+  PAINTERS.forEach(p => { state.painters[p.name] = true; });
+  state.museumFilter = null; renderMuseumChip();
+  state.place = pl; renderPlaceChip();
+  updatePainterBtn(); renderPainterList(); refresh();
+  if (!view.table && view.map) fitVisible(left ? 160 : 0);
+  writeGoStep(lbEntry, left, sp => {
+    ["p", "m", "c", "k"].forEach(x => sp.delete(x));
+    if (pl.kind === "city") sp.set("c", `${pl.city}|${pl.country}`); else sp.set("k", pl.country);
+  });
+}
+function goMuseum(key) {
+  const mu = museumIndex.find(m => m.key === key);
+  if (!mu) return;
+  noteMap();
+  const lbEntry = leaveOverlays(), left = leaveUnfilteredViews();
+  PAINTERS.forEach(p => { state.painters[p.name] = true; });
+  updatePainterBtn(); renderPainterList();
+  selectMuseum(key, { stay: true, url: false });
+  if (left && view.map) setTimeout(() => { map.invalidateSize(); map.setView([mu.lat, mu.lon], 14); }, 160);
+  writeGoStep(lbEntry, left, sp => { ["p", "c", "k"].forEach(x => sp.delete(x)); sp.set("m", key); });
+}
+function goFrom(el) {
+  if (document.body.classList.contains("show-game")) return;   // the game must not hand out its answers
+  if (el.dataset.goPainter) goPainter(el.dataset.goPainter);
+  else if (el.dataset.goMuseum) goMuseum(el.dataset.goMuseum);
+  else if (el.dataset.goCity) { const [city, country = ""] = el.dataset.goCity.split("|"); goPlace({ kind: "city", city, country }); }
+  else if (el.dataset.goCountry) goPlace({ kind: "country", country: el.dataset.goCountry });
+}
+// capture phase: a name sits inside rows and tiles that open the ficha on click; the name wins
+document.addEventListener("click", e => {
+  const el = e.target.closest && e.target.closest(".golink");
+  if (!el) return;
+  e.preventDefault(); e.stopPropagation();
+  goFrom(el);
+}, true);
+document.addEventListener("keydown", e => {
+  if (e.key !== "Enter") return;
+  const el = e.target.closest && e.target.closest(".golink");
+  if (!el) return;
+  e.preventDefault(); e.stopPropagation();
+  goFrom(el);
+}, true);
 function clearMuseum() {
   state.museumFilter = null;
   if (new URLSearchParams(location.search).has("m")) histStep(urlWith(sp => { sp.delete("m"); }));
@@ -1024,10 +1195,38 @@ function renderMuseumChip() {
     el = document.createElement("span"); el.id = "museum-chip"; el.className = "chip mchip";
     document.getElementById("painters").after(el);
   }
-  el.innerHTML = `🏛 ${esc(mu ? mu.location : "Museum")}${mu && mu.city ? ", " + esc(ctyName(mu.city)) : ""} ` +
+  el.innerHTML = `🏛 ${esc(mu ? locName({ location: mu.location, museum_id: mu.key }) : "Museum")}${mu && mu.city ? ", " + esc(ctyName(mu.city)) : ""} ` +
     `<button type="button" aria-label="Clear museum">✕</button>`;
   el.querySelector("button").addEventListener("click", clearMuseum);
 }
+
+// the city or country the atlas is narrowed to: a chip beside the museum's, with its own ✕
+function renderPlaceChip() {
+  let el = document.getElementById("place-chip");
+  const pl = state.place;
+  if (!pl) { if (el) el.remove(); return; }
+  if (!el) {
+    el = document.createElement("span"); el.id = "place-chip"; el.className = "chip mchip";
+    document.getElementById("painters").after(el);
+  }
+  el.innerHTML = (pl.kind === "city" ? `📍 ${esc(ctyName(pl.city))}${pl.country ? ", " + esc(cName(pl.country)) : ""}`
+    : `🌍 ${esc(cName(pl.country))}`) + ` <button type="button" aria-label="${esc(t("Clear"))}">✕</button>`;
+  el.querySelector("button").addEventListener("click", clearPlace);
+}
+function clearPlace() {
+  state.place = null;
+  const sp = new URLSearchParams(location.search);
+  if (sp.has("c") || sp.has("k")) histStep(urlWith(q => { q.delete("c"); q.delete("k"); }));
+  renderPlaceChip(); refresh();
+}
+function placeFromURL() {                  // ?c=Paris|France (a city) · ?k=France (a country)
+  const sp = new URLSearchParams(location.search);
+  const c = sp.get("c"), k = sp.get("k");
+  if (c) { const [city, country = ""] = c.split("|"); return { kind: "city", city, country }; }
+  if (k) return { kind: "country", country: k };
+  return null;
+}
+const placeKey = pl => pl ? `${pl.kind}:${pl.city || ""}|${pl.country}` : "";
 
 function updatePainterBtn() {
   const btn = document.getElementById("painters-btn");
@@ -1095,7 +1294,7 @@ function tablePass(p) {
   return state.painters[p.painter] !== false
     && (!state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution))
     && (!state.museumFilter || museumKey(p) === state.museumFilter)
-    && inYear(p) && matchesQ(p);
+    && placeOk(p) && inYear(p) && matchesQ(p);
 }
 function tableRows() {
   const rows = allFeatures.map(f => f.properties).filter(tablePass);   // tablePass includes the text filter
@@ -1161,21 +1360,21 @@ function renderWorksTable() {
     `${rows.length.toLocaleString()} ${tu(rows.length === 1 ? "work" : "works")}`;
   tbody.innerHTML = rows.map((p, i) => {
     const thumb = p.image
-      ? `<img class="tth" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(capOf(p))}" alt="" loading="lazy">`
+      ? `<img class="tth" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" ${capAttrs(p)} alt="" loading="lazy">`
       : `<span class="tth ph"></span>`;
     const att = p.attribution && !ATTR_ACCEPTED.has(p.attribution)
       ? `<span class="tag att">${esc(t(p.attribution))}</span>` : esc(t(p.attribution || ""));
     return `<tr data-ri="${i}">` +
       `<td class="c-img">${thumb}</td>` +
-      `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${esc(pName(p.painter))}</td>` +
+      `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${painterLink(p.painter)}</td>` +
       `<td class="c-title">${esc(wTitle(p) || t("Untitled"))}</td>` +
       `<td class="c-year">${esc(p.year || "")}</td>` +
       `<td class="c-medium">${esc(p.medium || "")}</td>` +
       `<td class="c-dim">${esc(p.dimensions || "")}</td>` +
       `<td class="c-attr">${att}</td>` +
-      `<td class="c-loc">${esc(locName(p))}</td>` +
-      `<td class="c-city">${esc(ctyName(p.city))}</td>` +
-      `<td class="c-country">${esc(cName(p.country))}</td>` +
+      `<td class="c-loc">${museumLink(p)}</td>` +
+      `<td class="c-city">${cityLink(p.city, p.country)}</td>` +
+      `<td class="c-country">${countryLink(p.country)}</td>` +
       `<td class="c-links">${linksRow(p)}</td>` +
       "</tr>";
   }).join("");
@@ -1183,7 +1382,7 @@ function renderWorksTable() {
   tbody.querySelectorAll(".tth[data-full]").forEach(img => img.addEventListener("click", () =>
     openLightboxFrom(img)));
   tbody.querySelectorAll("tr[data-ri]").forEach(tr => tr.addEventListener("click", e => {
-    if (e.target.closest("a, img")) return;                        // links + thumbnail keep their own action
+    if (e.target.closest("a, img, .golink")) return;               // links, names + thumbnail keep their own action
     const p = tableRowCache[+tr.dataset.ri];
     if (p) openWorkCard({ p });                                     // table row → the work ficha
   }));
@@ -1199,9 +1398,9 @@ function renderMuseumsTable() {
     `${rows.length.toLocaleString()} museum${rows.length === 1 ? "" : "s"}`;
   tbody.innerHTML = rows.map(r =>
     `<tr data-rk="${esc(r.key)}">` +
-    `<td class="c-title">🏛 ${esc(r.location)}</td>` +
-    `<td class="c-city">${esc(ctyName(r.city))}</td>` +
-    `<td class="c-country">${esc(cName(r.country))}</td>` +
+    `<td class="c-title">🏛 ${esc(locName({ location: r.location, museum_id: r.key }))}</td>` +
+    `<td class="c-city">${cityLink(r.city, r.country)}</td>` +
+    `<td class="c-country">${countryLink(r.country)}</td>` +
     `<td class="c-num">${r.count}</td>` +
     `<td class="c-num">${r.npainters}</td>` +
     "</tr>").join("");
@@ -1516,7 +1715,7 @@ function tileHTML(w, vis, grp) {
   const p = w.p;
   const cap = capOf(p);
   const img = p.image
-    ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
+    ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}"${capAttrs(p)} alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
   const share = p.qid ? `<button class="gshare" data-i="${i}" title="Share this painting" aria-label="Share">🔗</button>` : "";
   const style = grp && grp.color ? ` style="background:${grp.color}${grp.edge ? `;--edge:${grp.edge}` : ""}"` : "";
@@ -1529,13 +1728,13 @@ function tileHTML(w, vis, grp) {
     `<div class="gcard">${img}<div class="gmeta">` +
     // under a painter's colour field their name is already written above the whole run, so the card
     // spends its two lines on what is not known yet: the title, and where the work hangs
-    `<div class="gm1">${grp && grp.kind === "painter" ? esc(wTitle(p) || t("Untitled")) : esc(pName(p.painter))}` +
+    `<div class="gm1">${grp && grp.kind === "painter" ? esc(wTitle(p) || t("Untitled")) : painterLink(p.painter)}` +
     `${p.year ? ` <span class="gy">· ${esc(p.year)}</span>` : ""}</div>` +
     // …and under a MUSEUM's colour field the museum is the thing already written above, so the second
     // line gives the painting's title instead of repeating the museum on every tile (Víctor)
     (grp && grp.kind === "museum"
       ? `<div class="gm2">${esc(wTitle(p) || t("Untitled"))}</div>`
-      : p.location ? `<div class="gm2">${esc(locName(p))}${p.city ? `, ${esc(ctyName(p.city))}` : ""}</div>` : "") +
+      : p.location ? `<div class="gm2">${museumLink(p)}${p.city ? `, ${cityLink(p.city, p.country)}` : ""}</div>` : "") +
     `</div></div></li>`;
 }
 function panelCellHTML(w) { return tileHTML(w, panelVis); }
@@ -1679,14 +1878,14 @@ function panelRowHTML(w, grpKey) {
   const p = w.p;
   const cap = capOf(p);
   const thumb = p.image
-    ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="" loading="lazy">`
+    ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}"${capAttrs(p)} alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
   // with no venue headers above it, a row has to say where the work is itself
   const venue = panelSort === "museum" ? "" : locName(p);
   return `<li data-i="${i}"${fold}>${thumb}<div>` +
     `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div>` +
-    (venue ? `<div class="sub wvenue">${esc(venue)}${p.city ? ", " + esc(ctyName(p.city)) : ""}</div>` : "") +
+    (venue ? `<div class="sub wvenue">${museumLink(p, esc(venue))}${p.city ? ", " + cityLink(p.city, p.country) : ""}</div>` : "") +
     `</div></li>`;
 }
 
@@ -2030,6 +2229,22 @@ function capOf(p, where) {
   const head = `${wTitle(p)}${p.year ? ` (${p.year})` : ""}`.trim();
   return [head, pName(p.painter), where === undefined ? locName(p) : where].filter(Boolean).join(" · ");
 }
+// data-cap plus what the enlarged picture needs to turn the painter and the museum into links
+function capAttrs(p, where) {
+  const ml = where === undefined ? locName(p) : where;
+  return ` data-cap="${esc(capOf(p, where))}"` + (p.painter ? ` data-pn="${esc(p.painter)}"` : "") +
+    (p.location && !p.placeless && ml ? ` data-mk="${esc(museumKey(p))}" data-ml="${esc(ml)}"` : "");
+}
+function capHTML(cap, d) {
+  if (!cap) return "";
+  if (!d || !d.pn) return esc(cap);
+  const tail = [pName(d.pn), d.ml].filter(Boolean).join(" · ");
+  if (!cap.endsWith(tail)) return esc(cap);
+  const head = cap.slice(0, cap.length - tail.length).replace(/ · $/, "");
+  const who = painterLink(d.pn);
+  const where = d.mk ? `<span class="golink" role="link" tabindex="0" data-go-museum="${esc(d.mk)}" title="${esc(t("Show this museum"))}">${esc(d.ml)}</span>` : "";
+  return [head ? esc(head) : "", who, where].filter(Boolean).join(" · ");
+}
 const lb = document.getElementById("lightbox");
 // Paging through the enlarged pictures, the way Batalla de Flores does it: the sequence is the
 // pictures of the place you clicked in (the side panel, the table, the table's picture grid), in the
@@ -2042,13 +2257,13 @@ function lbCollect(scope) {
   return [...scope.querySelectorAll("img.th[data-full], img.tth[data-full]")]
     .filter(im => im.offsetParent !== null);
 }
-function paintLightbox(url, cap) {
+function paintLightbox(url, cap, d) {
   document.getElementById("lb-img").src = url;
   const page = commonsPage(url);
   const credit = page
     ? `<a class="lb-credit" href="${esc(page)}" target="_blank" rel="noopener">${esc(t("Wikimedia Commons · licence ↗"))}</a>`
     : "";
-  document.getElementById("lb-cap").innerHTML = (cap ? esc(cap) : "") + credit;
+  document.getElementById("lb-cap").innerHTML = capHTML(cap, d) + credit;
   lb.hidden = false;
 }
 function lbNav() {
@@ -2076,7 +2291,7 @@ function openLightboxFrom(img) {
   lbIdx = lbSeq.indexOf(img);
   if (lbIdx < 0) { lbSeq = [img]; lbIdx = 0; }
   lbPushStep();
-  paintLightbox(img.dataset.full, img.dataset.cap);
+  paintLightbox(img.dataset.full, img.dataset.cap, img.dataset);
   lbNav();
 }
 function moveLightbox(step) {
@@ -2091,7 +2306,7 @@ function moveLightbox(step) {
   }
   lbIdx = (lbIdx + step + lbSeq.length) % lbSeq.length;
   const im = lbSeq[lbIdx];
-  paintLightbox(im.dataset.full, im.dataset.cap);
+  paintLightbox(im.dataset.full, im.dataset.cap, im.dataset);
   lbNav();
 }
 function lbCloseNow() { lb.hidden = true; document.getElementById("lb-img").src = ""; lbSeq = []; }
@@ -2192,9 +2407,9 @@ async function renderAffinity(name) {
   const known = new Set(PAINTERS.map(p => p.name));
   const chips = rec.near.filter(n => known.has(n)).slice(0, 6);
   if (!chips.length) return;
-  host.innerHTML = `<span class="wc-aff-h">If you like ${esc(name)}, try</span>` +
+  host.innerHTML = `<span class="wc-aff-h">${esc(t("If you like N, try").replace("N", pName(name)))}</span>` +
     chips.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}">` +
-      `<span class="pdot" style="background:${colorFor(n)}"></span>${esc(n)}</button>`).join("");
+      `<span class="pdot" style="background:${colorFor(n)}"></span>${esc(pName(n))}</button>`).join("");
 }
 
 // ── "More you might like" (#4) — a per-device taste feed: aggregate the visual neighbours of the works
@@ -2265,7 +2480,7 @@ async function renderSimilar(qid) {
     : "";
   const painterLine = nearPainters.length
     ? `<div class="wc-aff" style="margin-top:12px"><span class="wc-aff-h">${t("Painters nearest this work")}</span>` +
-      nearPainters.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}"><span class="pdot" style="background:${colorFor(n)}"></span>${esc(n)}</button>`).join("") + `</div>`
+      nearPainters.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}"><span class="pdot" style="background:${colorFor(n)}"></span>${esc(pName(n))}</button>`).join("") + `</div>`
     : "";
   const out = thumbRow(t("Visually closest · same painter"), same) + thumbRow(t("Visually closest · other painters"), other) + painterLine;
   if (out) host.innerHTML = out;
@@ -2276,10 +2491,10 @@ function openWorkCard(w) {
   const p = w.p;
   const cap = capOf(p);
   const img = p.image
-    ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}" data-cap="${esc(cap)}" alt="">`
+    ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}"${capAttrs(p)} alt="">`
     : `<div class="wc-noimg">no image on Wikimedia Commons</div>`;
   const row = (k, v) => v ? `<div class="wc-row"><span class="wc-k">${k}</span><span>${v}</span></div>` : "";
-  const venue = [locName(p), ctyName(p.city), cName(p.country)].filter(Boolean).join(", ");
+  const venue = [museumLink(p), cityLink(p.city, p.country), countryLink(p.country)].filter(Boolean).join(", ");
   const attr = (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
     ? esc(p.attribution) + (p.attribution_note ? ` · <span class="wc-note">${esc(p.attribution_note)}</span>` : "") : "";
   const links = linksRow(p);
@@ -2287,7 +2502,7 @@ function openWorkCard(w) {
     `<div class="wc-imgwrap">${img}</div>` +
     `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}</h3>` +
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
-    row(t("Where"), esc(venue)
+    row(t("Where"), venue
       + (p.venue_of ? ` <span class="wc-venueof">· ${esc(p.venue_of)}</span>` : "")
       + (p.placeless ? ` <span class="wc-noplace">${t("not on the map: no public address")}</span>` : "")) +
     row(t("Technique"), esc(p.medium || "")) + row(t("Size"), esc(p.dimensions || "")) + row(t("Attribution"), attr) +
@@ -2334,12 +2549,7 @@ workCard.addEventListener("click", e => {
   const sim = e.target.closest(".wc-sim");
   if (sim) { const x = works.find(y => y.p.qid === sim.dataset.qid); if (x) openWorkCard(x); return; }  // hop to a similar work
   const aff = e.target.closest(".wc-aff-chip");
-  if (aff) {   // "try this painter" → isolate them on the map (Kayak-style "only") and close the card
-    const only = aff.dataset.painterOnly;
-    PAINTERS.forEach(p => { state.painters[p.name] = p.name === only; });
-    closeWorkCard(); refresh(); updatePainterBtn(); renderPainterList();
-    toast("Showing only " + only); return;
-  }
+  if (aff) { goPainter(aff.dataset.painterOnly); return; }   // "try this painter" → the same way in as any painter's name
   if (e.target === workCard) closeWorkCard();
 });
 
@@ -2377,18 +2587,32 @@ function restoreFromHistory(e) {
       else if (want === "timeline") setChartView(true);
       else if (want === "similar") setGalaxyView(true);
     }
+    const before = PAINTERS.map(p => state.painters[p.name] !== false).join();
+    if (!applyPainterParam()) {                         // no ?p= → the #preset, or everyone
+      const focus = PAINTERS.find(p => p.slug === location.hash.replace(/^#/, "").split("/")[0]);
+      PAINTERS.forEach(p => { state.painters[p.name] = focus ? p === focus : true; });
+    }
+    if (PAINTERS.map(p => state.painters[p.name] !== false).join() !== before) {
+      updatePainterBtn(); renderPainterList(); refresh();
+    }
     const m = sp.get("m");
-    if (m && m !== state.museumFilter && museumIndex.some(x => x.key === m)) selectMuseum(m);
+    if (m && m !== state.museumFilter && museumIndex.some(x => x.key === m)) selectMuseum(m, { stay: true });
     else if (!m && state.museumFilter) clearMuseum();
+    const pl = placeFromURL();
+    if (placeKey(pl) !== placeKey(state.place)) { state.place = pl; renderPlaceChip(); refresh(); }
     const w = sp.get("w");
     if (w) {
       if (!wcWork || wcWork.p.qid !== w) { const hit = works.find(x => x.p.qid === w); if (hit) openWorkCard(hit); }
     } else if (!workCard.hidden) closeWorkCard();
+    const mv = e.state && e.state.mapv;                  // a name had flown the map away from here
+    if (mv && view.map && !view.table) map.setView([mv[0], mv[1]], mv[2]);
   } finally { hist.restoring = false; }
 }
 function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum key> → that museum
   const q = new URLSearchParams(location.search);
   const w = q.get("w"), m = q.get("m");
+  const pl = placeFromURL();                     // the list under a ficha is part of the address too
+  if (pl && !m) { state.place = pl; renderPlaceChip(); refresh(); }
   if (w) { const hit = works.find(x => x.p.qid === w); if (hit) return openWorkCard(hit); }
   if (m && museumIndex.some(x => x.key === m)) selectMuseum(m);
 }
@@ -2825,7 +3049,7 @@ function renderChart() {
       const nx = Math.max(padL, Math.min(fx, W - padR - 260));
       parts.push(`<text x="${nx.toFixed(0)}" y="${ry + 13}" font-size="12.5" font-weight="700" fill="#333">${esc(r.label)} <tspan fill="#b3aa9c" font-weight="400">· ${esc(r.sub)}</tspan></text>`);
     } else {   // painter name lives in the FROZEN left column (see #chart-names), not in the scrolling SVG
-      namesHTML += `<span class="cn" style="top:${cy.toFixed(1)}px">${esc(r.label)} <em>${esc(r.sub)}</em></span>`;
+      namesHTML += `<span class="cn" style="top:${cy.toFixed(1)}px">${painterLink(r.label)} <em>${esc(r.sub)}</em></span>`;
     }
     const rmax = agg ? 9 : 5, ri = rows.indexOf(r);
     for (const [yr, cell] of r.years) {

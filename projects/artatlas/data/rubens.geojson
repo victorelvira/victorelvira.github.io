@@ -1955,7 +1955,7 @@
    "properties": {
     "painter": "Rubens",
     "title": "Adam and Eve",
-    "year": "2000",
+    "year": "",
     "city": "Antwerp",
     "country": "Belgium",
     "location": "Rubenshuis",
@@ -1983,7 +1983,15 @@
      }
     ],
     "location_src": "Rubenshuis",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "2000",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 2000 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
+     }
+    }
    }
   },
   {
@@ -2397,7 +2405,7 @@
     "painter": "Rubens",
     "title": "Henry IV at the siege of Amiens",
     "year": "1630",
-    "city": "Gothenburg Municipality",
+    "city": "Gothenburg",
     "country": "Sweden",
     "location": "Gothenburg Museum of Art",
     "kind": "museum",
@@ -2425,7 +2433,8 @@
     "museum_id": "gothenburg-museum-of-art",
     "qid": "Q111357800",
     "location_src": "Gothenburg Museum of Art",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Gothenburg Municipality"
    }
   },
   {
@@ -3159,12 +3168,12 @@
    "properties": {
     "painter": "Rubens",
     "title": "Coronation and Assumption of the Virgin",
-    "year": "1700",
+    "year": "",
     "city": "Saint Petersburg",
     "country": "Russia",
     "location": "Hermitage Museum",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "106 × 78 cm",
@@ -3181,14 +3190,26 @@
     "qid": "Q11743755",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "location_src": "Hermitage Museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -6606,7 +6627,7 @@
     "painter": "Rubens",
     "title": "Portrait of Matthaeus Yrsselius (1541-1629), Abbot of Sint-Michiel's Abbey in Antwerp",
     "year": "1624",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -6634,7 +6655,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20277173",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6697,7 +6719,7 @@
     "painter": "Rubens",
     "title": "The Judgement of Solomon",
     "year": "1617",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -6725,7 +6747,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20396156",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7107,7 +7130,7 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Crucified Christ",
-    "year": "1650",
+    "year": "",
     "city": "Antwerp",
     "country": "Belgium",
     "location": "Royal Museum of Fine Arts Antwerp",
@@ -7128,7 +7151,15 @@
     "qid": "Q21614591",
     "wga_url": "https://www.wga.hu/html/r/rubens/10religi/09religi.html",
     "location_src": "Royal Museum of Fine Arts Antwerp",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
+     }
+    }
    }
   },
   {
@@ -9914,7 +9945,7 @@
     "painter": "Rubens",
     "title": "Diana and her Nymphs Spied upon by Satyrs",
     "year": "1616",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Hampton Court Palace",
     "kind": "museum",
@@ -9942,7 +9973,8 @@
     "museum_id": "hampton-court-palace",
     "qid": "Q28029945",
     "location_src": "Hampton Court Palace",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -9958,7 +9990,7 @@
     "painter": "Rubens",
     "title": "Pythagoras Advocating Vegetarianism",
     "year": "1624",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Hampton Court Palace",
     "kind": "museum",
@@ -9986,7 +10018,8 @@
     "museum_id": "hampton-court-palace",
     "qid": "Q28030046",
     "location_src": "Hampton Court Palace",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -10274,7 +10307,7 @@
    "properties": {
     "painter": "Rubens",
     "title": "Old Woman with a Basket of Coal",
-    "year": "1650",
+    "year": "",
     "city": "Kassel",
     "country": "Germany",
     "location": "Gemäldegalerie Alte Meister",
@@ -10295,7 +10328,15 @@
     "qid": "Q28798126",
     "wga_url": "https://www.wga.hu/html/r/rubens/61other/01basket.html",
     "location_src": "Gemäldegalerie Alte Meister",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
+     }
+    }
    }
   },
   {
@@ -10476,7 +10517,8 @@
     "museum_id": "church-of-saint-eustache",
     "qid": "Q29212827",
     "location_src": "Church of Saint Eustache",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "1st arrondissement of Paris"
    }
   },
   {
@@ -11246,7 +11288,7 @@
    "properties": {
     "painter": "Rubens",
     "title": "Cloelia Passing the Tiber",
-    "year": "1650",
+    "year": "",
     "country": "France",
     "location": "Louvre",
     "kind": "museum",
@@ -11266,7 +11308,15 @@
     "city": "Paris",
     "qid": "Q29656802",
     "location_src": "Louvre",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
+     }
+    }
    }
   },
   {
@@ -16507,7 +16557,7 @@
     "painter": "Rubens",
     "title": "Moses and the Brazen Serpent",
     "year": "1610",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Doughty House",
     "kind": "museum",
@@ -16535,7 +16585,8 @@
     "museum_id": "doughty-house",
     "qid": "Q71962883",
     "location_src": "Doughty House",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -18717,11 +18768,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Silenus march",
-    "year": "1650",
+    "year": "",
     "location": "National Gallery of Armenia",
     "city": "Yerevan",
     "country": "Armenia",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens.%20Silenus%20march.jpg?width=500",
     "qid": "Q28860864",
     "wikidata": "https://www.wikidata.org/wiki/Q28860864",
@@ -18732,16 +18783,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "national-gallery-of-armenia",
     "location_src": "National Gallery of Armenia",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -22343,7 +22406,7 @@
     "title": "Portrait of an Elderly Man",
     "year": "1640",
     "location": "Hallwyl Museum",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20or%20Anthony%20van%20Dyck%20%28attributed%20to%29%20-%20Head%20Study%20of%20a%20Bearded%20Old%20Man.jpg?width=500",
@@ -22367,7 +22430,8 @@
     "museum_id": "hallwyl-museum",
     "location_src": "Hallwyl Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stockholm Municipality"
    }
   },
   {
@@ -23632,11 +23696,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Caesar’s Triumph",
-    "year": "1650",
+    "year": "",
     "location": "National Gallery Prague",
     "city": "Holešovice",
     "country": "Czech Republic",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caesar%E2%80%99s%20Triumph%2C%20by%20Peter%20Paul%20Rubens%20and%20Erasmus%20Quellinus%20II.jpg?width=500",
     "qid": "Q105232448",
     "wikidata": "https://www.wikidata.org/wiki/Q105232448",
@@ -23647,16 +23711,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "national-gallery-prague",
     "location_src": "National Gallery Prague",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -24325,11 +24401,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Saint Bonaventura reading in a book",
-    "year": "1700",
+    "year": "",
     "location": "Palais des Beaux-Arts de Lille",
     "city": "Lille",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lille%20PdBA%20rubens%20st%20bonaventure.jpg?width=500",
     "qid": "Q73122306",
     "wikidata": "https://www.wikidata.org/wiki/Q73122306",
@@ -24340,16 +24416,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "location_src": "Palais des Beaux-Arts de Lille",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -24364,11 +24452,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Saint François en extase",
-    "year": "1700",
+    "year": "",
     "location": "Palais des Beaux-Arts de Lille",
     "city": "Lille",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lille%20Pdba%20Rubens%20st%20francois.JPG?width=500",
     "qid": "Q73122650",
     "wikidata": "https://www.wikidata.org/wiki/Q73122650",
@@ -24379,16 +24467,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "palais-des-beaux-arts-de-lille",
     "location_src": "Palais des Beaux-Arts de Lille",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -24569,7 +24669,7 @@
     "title": "Solomon and the Queen of Sheba",
     "year": "1620",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%2C%20Solomon%20and%20the%20Queen%20of%20Sheba.jpg?width=500",
@@ -24593,7 +24693,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -24610,7 +24711,7 @@
     "title": "Esther before Ahasuerus",
     "year": "1620",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Ahasveros%20reikt%20Ester%20zijn%20gouden%20scepter%20toe%20%28Ester%205-2%29%20-%20P.1978.PG.367%20-%20Courtauld%20Institute%20of%20Art.jpg?width=500",
@@ -24634,7 +24735,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -25061,11 +25163,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Sacrifice of the Old Covenant",
-    "year": "1650",
+    "year": "",
     "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sacrifice%20of%20the%20Old%20Covenant%20Rubens.jpg?width=500",
     "qid": "Q20555718",
     "wikidata": "https://www.wikidata.org/wiki/Q20555718",
@@ -25076,16 +25178,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -25771,7 +25885,7 @@
     "title": "Dominican Friar",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Dominican%20Friar%20-%20KMS3884%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25795,7 +25909,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25812,7 +25927,7 @@
     "title": "Portrait of Frank Franks",
     "year": "",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Portrait%20of%20Frans%20Francken%20-%20KMSsp199%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25826,7 +25941,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25843,7 +25959,7 @@
     "title": "The Ascent to Calvary. The Bearing of the Cross",
     "year": "1634",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20The%20Ascent%20to%20Calvary.%20The%20Bearing%20of%20the%20Cross%20-%20KMS1856%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25867,7 +25983,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25884,7 +26001,7 @@
     "title": "Daniel in the Lions' Den",
     "year": "1711",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Daniel%20in%20the%20Lions%27%20Den%20-%20KMSst384%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25906,7 +26023,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25923,7 +26041,7 @@
     "title": "Portrait of Francesco I de' Medici (1541-1587), the father of Maria de' Medici",
     "year": "1622",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20218.jpg?width=500",
@@ -25947,7 +26065,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25964,7 +26083,7 @@
     "title": "A Monk",
     "year": "1683",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20A%20Monk%20-%20KMS1426%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25986,7 +26105,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26003,7 +26123,7 @@
     "title": "Sleeping Venus with Cupid Watched by Satyrs",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Sleeping%20Venus%20with%20Cupid%20Watched%20by%20Satyrs%20-%20KMS13%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26027,7 +26147,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26044,7 +26165,7 @@
     "title": "Head of a Woman",
     "year": "",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Head%20of%20a%20Woman%20-%20KMSsp193%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26058,7 +26179,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26075,7 +26197,7 @@
     "title": "Landscape with Huntsman and Stags",
     "year": "1637",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Landscape%20with%20Huntsman%20and%20Stags%20-%20KMSsp196%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26099,7 +26221,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26116,7 +26239,7 @@
     "title": "Portrait of Johanna of Austria",
     "year": "1622",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20219.jpg?width=500",
@@ -26140,7 +26263,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26157,7 +26281,7 @@
     "title": "The Apostle Peter",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20The%20Apostle%20Peter%20-%20KMSsp194%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26181,7 +26305,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26198,7 +26323,7 @@
     "title": "Den of Lions",
     "year": "1664",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Den%20of%20Lions%20-%20KMSst47%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26220,7 +26345,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26237,7 +26363,7 @@
     "title": "Portrait of a Lady",
     "year": "1741",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Portrait%20of%20a%20Lady%20-%20KMS1413%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26259,7 +26385,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26276,7 +26403,7 @@
     "title": "Portrait of a Lady",
     "year": "1741",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Portrait%20of%20a%20Lady%20-%20KMS1396%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26298,7 +26425,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26315,7 +26443,7 @@
     "title": "Portrait of a Man",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Portrait%20of%20a%20Man%20-%20DEP11%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26339,7 +26467,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26356,7 +26485,7 @@
     "title": "Achilles among the Daughters of Lycomedes",
     "year": "1617",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Achilles%20among%20the%20Daughters%20of%20Lycomedes%20-%20KMS3581%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -26380,7 +26509,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -28927,7 +29057,7 @@
     "title": "draft titlepage for Opticorum libri sex by Franciscus Aguilon, circa 1613",
     "year": "1613",
     "location": "British Museum",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20262839.jpg?width=500",
@@ -28951,7 +29081,8 @@
     "museum_id": "british-museum",
     "location_src": "British Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -35655,11 +35786,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Resurrection of Christ",
-    "year": "1650",
+    "year": "",
     "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Resurrection%20of%20Christ%20Rubens.jpg?width=500",
     "qid": "Q61744107",
     "wikidata": "https://www.wikidata.org/wiki/Q61744107",
@@ -35670,16 +35801,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "hermitage-museum",
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -36844,7 +36987,7 @@
     "title": "Hunting Party with Diana",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Hunting%20Party%20with%20Diana%20-%20KMS1030%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -36868,7 +37011,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -37129,11 +37273,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Crowning of Roxana",
-    "year": "1650",
+    "year": "",
     "location": "Los Angeles County Museum of Art",
     "city": "Los Angeles",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Crowning%20of%20Roxana%20LACMA%20AC1992.152.143.jpg?width=500",
     "qid": "Q20879049",
     "wikidata": "https://www.wikidata.org/wiki/Q20879049",
@@ -37144,16 +37288,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "los-angeles-county-museum-of-art",
     "location_src": "Los Angeles County Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -37416,7 +37572,7 @@
     "title": "The Calydonian boar hunt",
     "year": "1635",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20268976.jpg?width=500",
@@ -37440,7 +37596,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -37733,11 +37890,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Reception of Saint Bavo, the Patron Saint of Ghent",
-    "year": "1700",
+    "year": "",
     "location": "Cooper Gallery",
     "city": "Barnsley",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28school%20of%29%20-%20The%20Reception%20of%20Saint%20Bavo%2C%20the%20Patron%20Saint%20of%20Ghent%20-%20CP-TR%20259%20-%20Cooper%20Gallery.jpg?width=500",
     "qid": "Q118985393",
     "wikidata": "https://www.wikidata.org/wiki/Q118985393",
@@ -37748,16 +37905,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "cooper-gallery",
     "location_src": "Cooper Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -37772,11 +37941,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Portrait of Albert VII, Archduke of Austria",
-    "year": "1650",
+    "year": "",
     "location": "São Paulo Museum of Art",
     "city": "São Paulo",
     "country": "Brazil",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20O%20Arquiduque%20Alberto%20VII%20da%20%C3%81ustria.jpg?width=500",
     "qid": "Q49876836",
     "wikidata": "https://www.wikidata.org/wiki/Q49876836",
@@ -37787,16 +37956,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "sao-paulo-museum-of-art",
     "location_src": "São Paulo Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -38097,11 +38278,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "King David Playing the Harp",
-    "year": "1650",
+    "year": "",
     "location": "Barnes Foundation",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20King%20David%20Playing%20the%20Harp%20-%20BF812%20-%20Barnes%20Foundation.jpg?width=500",
     "qid": "Q28130709",
     "wikidata": "https://www.wikidata.org/wiki/Q28130709",
@@ -38112,16 +38293,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "barnes-foundation",
     "location_src": "Barnes Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -39225,7 +39418,7 @@
     "title": "Mercury Conducting Psyche to Olympus",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28style%20of%29%20-%20Mercury%20Conducting%20Psyche%20to%20Olympus%20-%20CAI.94%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -39239,7 +39432,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -39256,7 +39450,7 @@
     "title": "The Mystic Marriage of Saint Catherine",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20The%20Mystic%20Marriage%20of%20Saint%20Catherine%20-%20524-1870%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -39270,7 +39464,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -39584,11 +39779,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Portrait of Nicolaas Rockox",
-    "year": "1650",
+    "year": "",
     "location": "Snijders&Rockox House",
     "city": "Antwerp",
     "country": "Belgium",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%28school%29%20-%20Portret%20van%20Nicolaas%20Rockox%20-%20Snijders%5ERockox%20House%20%28BALaT%2044223%29.jpg?width=500",
     "qid": "Q120669727",
     "wikidata": "https://www.wikidata.org/wiki/Q120669727",
@@ -39599,16 +39794,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "snijders-rockox-house",
     "location_src": "Snijders&Rockox House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -39942,7 +40149,7 @@
     "title": "War and Victory (model for a title page)",
     "year": "1634",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20War%20and%20Victory%20%28model%20for%20a%20title%20page%29%20-%20D.1399-1891%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -39966,7 +40173,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -40197,11 +40405,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Apotheosis of James I",
-    "year": "1700",
+    "year": "",
     "location": "Ashmolean Museum",
     "city": "Oxford",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20The%20Apotheosis%20of%20James%20I%20-%20WA1855.169%20-%20Ashmolean%20Museum.jpg?width=500",
     "qid": "Q119499301",
     "wikidata": "https://www.wikidata.org/wiki/Q119499301",
@@ -40212,16 +40420,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "ashmolean-museum",
     "location_src": "Ashmolean Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -41185,7 +41405,7 @@
     "title": "Sir Theodore Turquet de Mayerne (1573–1655), Physician",
     "year": "",
     "location": "Wellcome Collection",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20Sir%20Theodore%20Turquet%20de%20Mayerne%20%281573%E2%80%931655%29%2C%20Physician%20-%2045728i%20-%20Wellcome%20Collection.jpg?width=500",
@@ -41199,7 +41419,8 @@
     "museum_id": "wellcome-collection",
     "location_src": "Wellcome Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -41798,11 +42019,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Succession of the Popes",
-    "year": "1650",
+    "year": "",
     "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Succession%20of%20the%20Popes%20-%20modello.png?width=500",
     "qid": "Q111364147",
     "wikidata": "https://www.wikidata.org/wiki/Q111364147",
@@ -41813,16 +42034,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "hermitage-museum",
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -42780,11 +43013,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Saint Basil",
-    "year": "1650",
+    "year": "",
     "location": "Ducal Museum Gotha",
     "city": "Gotha",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20061.jpg?width=500",
     "qid": "Q111357364",
     "wikidata": "https://www.wikidata.org/wiki/Q111357364",
@@ -42795,16 +43028,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "ducal-museum-gotha",
     "location_src": "Ducal Museum Gotha",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -42942,11 +43187,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Historiography or writing Divine Wisdom",
-    "year": "1650",
+    "year": "",
     "location": "Musée des Beaux-Arts de Tournai",
     "city": "Tournai",
     "country": "Belgium",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Historiography%20or%20Divine%20Wisdom%20-%20bozzetto.jpg?width=500",
     "qid": "Q111358837",
     "wikidata": "https://www.wikidata.org/wiki/Q111358837",
@@ -42957,16 +43202,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "musee-des-beaux-arts-de-tournai",
     "location_src": "Musée des Beaux-Arts de Tournai",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -43555,11 +43812,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Section from \"The Government of the Queen\"",
-    "year": "1850",
+    "year": "",
     "location": "Walters Art Museum",
     "city": "Baltimore",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Peter%20Paul%20Rubens%20-%20Section%20from%20%22The%20Government%20of%20the%20Queen%22%20-%20Walters%20371.jpg?width=500",
     "qid": "Q18749393",
     "wikidata": "https://www.wikidata.org/wiki/Q18749393",
@@ -43570,16 +43827,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "walters-art-museum",
     "location_src": "Walters Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {
@@ -45972,11 +46241,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "'Noli me tangere': the meeting of Christ and Mary Magdalene",
-    "year": "1650",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Workshop%20of%20Peter%20Paul%20Rubens%20004.jpg?width=500",
     "qid": "Q17328406",
     "wikidata": "https://www.wikidata.org/wiki/Q17328406",
@@ -45987,16 +46256,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -46011,11 +46292,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The raising of Lazarus (copy)",
-    "year": "1700",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/After%20Peter%20Paul%20Rubens%20008.jpg?width=500",
     "qid": "Q17329919",
     "wikidata": "https://www.wikidata.org/wiki/Q17329919",
@@ -46026,16 +46307,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -47347,7 +47640,7 @@
     "title": "Portrait of Charles V",
     "year": "1604",
     "location": "Royal Armouries",
-    "city": "London Borough of Tower Hamlets",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Charles%20V%20in%20Armour%20-%20after%20Titian.jpg?width=500",
@@ -47371,7 +47664,8 @@
     "museum_id": "royal-armouries",
     "location_src": "Royal Armouries",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Tower Hamlets"
    }
   },
   {
@@ -47470,7 +47764,7 @@
     "title": "Lion",
     "year": "1614",
     "location": "British Museum",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20077.jpg?width=500",
@@ -47494,7 +47788,8 @@
     "museum_id": "british-museum",
     "location_src": "British Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -47511,7 +47806,7 @@
     "title": "Lion",
     "year": "1613",
     "location": "British Museum",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20247068.jpg?width=500",
@@ -47535,7 +47830,8 @@
     "museum_id": "british-museum",
     "location_src": "British Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -47755,11 +48051,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Virgin and Child with the Infant St John",
-    "year": "1650",
+    "year": "",
     "location": "Santa Maria Zobenigo",
     "city": "Venice",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Virgin%20and%20Child%20with%20the%20Infant%20St%20John%20-%20WGA20252.jpg?width=500",
     "qid": "Q111719757",
     "wikidata": "https://www.wikidata.org/wiki/Q111719757",
@@ -47770,16 +48066,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "santa-maria-zobenigo",
     "location_src": "Santa Maria Zobenigo",
     "kind": "church",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -49516,11 +49824,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Portrait of a man in fur coat",
-    "year": "1650",
+    "year": "",
     "location": "Museo Nacional de San Carlos",
     "city": "Cuauhtémoc",
     "country": "Mexico",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Retrato%20de%20hombre%20con%20abrigo%20de%20pieles.jpg?width=500",
     "qid": "Q111728188",
     "wikidata": "https://www.wikidata.org/wiki/Q111728188",
@@ -49531,16 +49839,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "museo-nacional-de-san-carlos",
     "location_src": "Museo Nacional de San Carlos",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -49639,7 +49959,7 @@
     "title": "Saint Francis Xavier Preaching and Healing",
     "year": "",
     "location": "Wellcome Collection",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/St%20Francis%20Xavier%20preaching%20and%20healing.%20Oil%20painting%20after%20Wellcome%20V0017351.jpg?width=500",
@@ -49653,7 +49973,8 @@
     "museum_id": "wellcome-collection",
     "location_src": "Wellcome Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -49732,7 +50053,7 @@
     "title": "Sir Theodore de Mayerne (1573–1655)",
     "year": "",
     "location": "Royal College of Physicians",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20Sir%20Theodore%20de%20Mayerne%20%281573%E2%80%931655%29%20-%20X158%20-%20Royal%20College%20of%20Physicians.jpg?width=500",
@@ -49746,7 +50067,8 @@
     "museum_id": "royal-college-of-physicians",
     "location_src": "Royal College of Physicians",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -49793,11 +50115,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Salome with the Head of John the Baptist",
-    "year": "1900",
+    "year": "",
     "location": "Towneley Hall Art Gallery And Museum",
     "city": "Burnley",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20Salome%20with%20the%20Head%20of%20John%20the%20Baptist%20-%20BURGM-paoil276%20-%20Towneley%20Hall%20Art%20Gallery%20And%20Museum.jpg?width=500",
     "qid": "Q119940731",
     "wikidata": "https://www.wikidata.org/wiki/Q119940731",
@@ -49808,16 +50130,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1900, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1900, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1900 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "towneley-hall-art-gallery-and-museum",
     "location_src": "Towneley Hall Art Gallery And Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1900"
    }
   },
   {
@@ -49832,11 +50166,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Descent from the Cross",
-    "year": "1750",
+    "year": "",
     "location": "Towneley Hall Art Gallery And Museum",
     "city": "Burnley",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20%28after%29%20-%20The%20Descent%20from%20the%20Cross%20-%20BURGM-paoil5%20-%20Towneley%20Hall%20Art%20Gallery%20And%20Museum.jpg?width=500",
     "qid": "Q119940743",
     "wikidata": "https://www.wikidata.org/wiki/Q119940743",
@@ -49847,16 +50181,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1750, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1750 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "towneley-hall-art-gallery-and-museum",
     "location_src": "Towneley Hall Art Gallery And Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1750"
    }
   },
   {
@@ -49944,11 +50290,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "Allegory of Fortuna and Virtue",
-    "year": "1650",
+    "year": "",
     "location": "National Museum of Fine Arts, Argentina",
     "city": "Buenos Aires",
     "country": "Argentina",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Alegor%C3%ADa%20de%20la%20Fortuna%20y%20la%20Virtud%20-%20Peter%20Paul%20Rubens.jpg?width=500",
     "qid": "Q25317667",
     "wikidata": "https://www.wikidata.org/wiki/Q25317667",
@@ -49959,16 +50305,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "national-museum-of-fine-arts-argentina",
     "location_src": "National Museum of Fine Arts, Argentina",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -50108,7 +50466,7 @@
     "title": "The Adoration of the Blessed Sacrament by the Ecclesiastical Hierarchy",
     "year": "1712",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anoniem%20na%201625%20naar%20Peter%20Paul%20Rubens%20-%20De%20kerkelijke%20hi%C3%ABrarchie%20in%20aanbidding%20-%20903%20-%20Museum%20of%20Fine%20Arts%2C%20Budapest.jpg?width=500",
@@ -50130,7 +50488,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -50147,7 +50506,7 @@
     "title": "Briseis Returning to Achilles",
     "year": "1667",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anoniem%20na%201635%20naar%20Peter%20Paul%20Rubens%20-%20Briseis%20wordt%20aan%20Achilles%20teruggegeven%20-%2051.2981%20-%20Museum%20of%20Fine%20Arts%2C%20Budapest.jpg?width=500",
@@ -50169,7 +50528,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -50186,7 +50546,7 @@
     "title": "The Miracle of Saint Justin",
     "year": "1629",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20RKDimages%2C%20254263.jpg?width=500",
@@ -50210,7 +50570,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -50227,7 +50588,7 @@
     "title": "Study of a Man's Head",
     "year": "1616",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Study%20of%20a%20Man%E2%80%99s%20Head.jpg?width=500",
@@ -50251,7 +50612,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -50348,11 +50710,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Triumph of Divine Love",
-    "year": "1650",
+    "year": "",
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Triumph%20of%20Divine%20Love%20%28panel%203%20of%207%29%20-%20230%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50812813",
     "wikidata": "https://www.wikidata.org/wiki/Q50812813",
@@ -50363,16 +50725,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "fitzwilliam-museum",
     "location_src": "Fitzwilliam Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -50387,11 +50761,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The meeting of Abraham and Melchisedek",
-    "year": "1650",
+    "year": "",
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Meeting%20of%20Abraham%20and%20Melchisedek%20%28panel%207%20of%207%29%20-%20231%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50812816",
     "wikidata": "https://www.wikidata.org/wiki/Q50812816",
@@ -50402,16 +50776,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "fitzwilliam-museum",
     "location_src": "Fitzwilliam Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -50508,11 +50894,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Defenders of the Eucharist",
-    "year": "1650",
+    "year": "",
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Defenders%20of%20the%20Eucharist%20%28panel%205%20of%207%29%20-%20241%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50819505",
     "wikidata": "https://www.wikidata.org/wiki/Q50819505",
@@ -50523,16 +50909,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "fitzwilliam-museum",
     "location_src": "Fitzwilliam Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -50588,11 +50986,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Four Evangelists",
-    "year": "1650",
+    "year": "",
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Four%20Evangelists%20%28panel%201%20of%207%29%20-%20242%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50820707",
     "wikidata": "https://www.wikidata.org/wiki/Q50820707",
@@ -50603,16 +51001,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "fitzwilliam-museum",
     "location_src": "Fitzwilliam Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -50627,11 +51037,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Triumph of the Eucharist over Philosophy and Science",
-    "year": "1650",
+    "year": "",
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Triumph%20of%20the%20Eucharist%20over%20Philosophy%20and%20Science%20%28panel%206%20of%207%29%20-%20243%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50820708",
     "wikidata": "https://www.wikidata.org/wiki/Q50820708",
@@ -50642,16 +51052,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "fitzwilliam-museum",
     "location_src": "Fitzwilliam Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -50707,11 +51129,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Victory of the Eucharist over Heresy",
-    "year": "1650",
+    "year": "",
     "location": "Fitzwilliam Museum",
     "city": "Cambridge",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20%281577-1640%29%20-%20The%20Victory%20of%20the%20Eucharist%20over%20Heresy%20%28panel%202%20of%207%29%20-%20229%20-%20Fitzwilliam%20Museum.jpg?width=500",
     "qid": "Q50820711",
     "wikidata": "https://www.wikidata.org/wiki/Q50820711",
@@ -50722,16 +51144,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "fitzwilliam-museum",
     "location_src": "Fitzwilliam Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -51652,11 +52086,11 @@
    "properties": {
     "painter": "Rubens",
     "title": "The Flight of Cloelia",
-    "year": "1650",
+    "year": "",
     "location": "Gemäldegalerie Alte Meister",
     "city": "Dresden",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20and%20Jan%20Boeckhorst%20-%20The%20escape%20of%20Cloelia%20from%20the%20camp%20of%20Porsenna.jpg?width=500",
     "qid": "Q50324008",
     "wikidata": "https://www.wikidata.org/wiki/Q50324008",
@@ -51667,16 +52101,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1577–1640) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1577-1640)"
      }
     },
     "museum_id": "gemaldegalerie-alte-meister",
     "location_src": "Staatliche Kunstsammlungen Dresden",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {

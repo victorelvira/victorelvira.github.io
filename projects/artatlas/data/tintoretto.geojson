@@ -288,7 +288,7 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "Sacra Famiglia con san Giovannino e sant'Elisabetta",
-    "year": "1501",
+    "year": "",
     "city": "Linz",
     "country": "German Reich",
     "location": "Führermuseum",
@@ -308,7 +308,15 @@
     "museum_id": "fuhrermuseum",
     "qid": "Q111640314",
     "location_src": "Führermuseum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
+     }
+    }
    }
   },
   {
@@ -580,7 +588,7 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "Portrait of Procurator Nicolo Priuli",
-    "year": "1600",
+    "year": "",
     "city": "Venice",
     "country": "Italy",
     "location": "Ca' d'Oro",
@@ -601,7 +609,15 @@
     "qid": "Q114894357",
     "wga_url": "https://www.wga.hu/html/t/tintoret/8/06priuli.html",
     "location_src": "Ca' d'Oro",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
+     }
+    }
    }
   },
   {
@@ -714,7 +730,7 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "Paintings by Jacopo Tintoretto in the Museo del Duomo",
-    "city": "Metropolitan City of Milan",
+    "city": "Milan",
     "country": "Italy",
     "location": "Milan",
     "kind": "museum",
@@ -733,7 +749,8 @@
     "museum_id": "milan",
     "qid": "Q116207700",
     "location_src": "Milan",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Metropolitan City of Milan"
    }
   },
   {
@@ -1201,7 +1218,7 @@
     "painter": "Tintoretto",
     "title": "Self Portrait as a Young Man",
     "year": "1548",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Victoria and Albert Museum",
     "kind": "museum",
@@ -1229,7 +1246,8 @@
     "museum_id": "victoria-and-albert-museum",
     "qid": "Q118874873",
     "location_src": "Victoria and Albert Museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -2706,7 +2724,7 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "Portrait of Doge Girolamo Priuli",
-    "year": "1600",
+    "year": "",
     "city": "London",
     "country": "United Kingdom",
     "location": "Robilant+Voena",
@@ -2726,7 +2744,15 @@
     "museum_id": "robilant-voena",
     "qid": "Q136661430",
     "location_src": "Robilant+Voena",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
+     }
+    }
    }
   },
   {
@@ -4107,7 +4133,7 @@
     "painter": "Tintoretto",
     "title": "The Vision of Saint Nicholas",
     "year": "1582",
-    "city": "Municipality of Novo Mesto",
+    "city": "Novo Mesto",
     "country": "Slovenia",
     "location": "Novo Mesto Cathedral",
     "kind": "church",
@@ -4135,7 +4161,8 @@
     "museum_id": "novo-mesto-cathedral",
     "qid": "Q28004358",
     "location_src": "Novo Mesto Cathedral",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Municipality of Novo Mesto"
    }
   },
   {
@@ -5018,7 +5045,7 @@
     "painter": "Tintoretto",
     "title": "Cain Slaying Abel",
     "year": "1540",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -5046,7 +5073,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50907415",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -6453,7 +6481,7 @@
     "painter": "Tintoretto",
     "title": "Hercules Expelling the Faun from Omphale's Bed",
     "year": "1585-1590",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -6481,7 +6509,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q9291481",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -6808,7 +6837,7 @@
     "title": "Portrait of a Geronimo Foscarini, Procurator of St Mark's",
     "year": "1550",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Portrait%20of%20a%20Geronimo%20Foscarini%2C%20Procurator%20of%20St.%20Marks%2C%201445-1882.jpg?width=500",
@@ -6832,7 +6861,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -6849,7 +6879,7 @@
     "title": "The Embarkation of St Helena to the Holy Land",
     "year": "1555",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20The%20Embarkation%20of%20St%20Helena%20to%20the%20Holy%20Land%2C%20ca.%201555%2C%20ca.%201545%2C%201361-1869.jpg?width=500",
@@ -6873,7 +6903,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -8059,7 +8090,7 @@
     "title": "Marcantonio Bragadin (1523–1571), Governor of Cyprus",
     "year": "1571",
     "location": "Leighton House",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20%28c.1518-1594%29%20%28school%20of%29%20-%20Marcantonio%20Bragadin%20%281523%E2%80%931571%29%2C%20Governor%20of%20Cyprus%20-%20LH0044%20-%20Leighton%20House.jpg?width=500",
@@ -8083,7 +8114,8 @@
     "museum_id": "leighton-house",
     "location_src": "Leighton House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -8752,11 +8784,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "Girolamo Priuli (1486-1567), Doge von Venedig, Kniestück",
-    "year": "1600",
+    "year": "",
     "location": "Kunsthistorisches Museum",
     "city": "Vienna",
     "country": "Austria",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Girolamo%20Priuli%20%281486-1567%29%2C%20Doge%20von%20Venedig%2C%20Kniest%C3%BCck%2C%20Tintoretto.jpg?width=500",
     "qid": "Q27978036",
     "wikidata": "https://www.wikidata.org/wiki/Q27978036",
@@ -8767,16 +8799,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "kunsthistorisches-museum",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -9812,11 +9856,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "A Jesuit",
-    "year": "1501",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Un%20jesuita%2C%20P000370.jpg?width=500",
     "qid": "Q59556336",
     "wikidata": "https://www.wikidata.org/wiki/Q59556336",
@@ -9827,16 +9871,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501"
    }
   },
   {
@@ -9851,11 +9907,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "A Venetian Senator or Secretary",
-    "year": "1501",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Un%20senador%20o%20secretario%20veneciano%2C%20P000371.jpg?width=500",
     "qid": "Q59556340",
     "wikidata": "https://www.wikidata.org/wiki/Q59556340",
@@ -9866,16 +9922,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501"
    }
   },
   {
@@ -9931,11 +9999,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "A Venetian Magistrate",
-    "year": "1501",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Un%20magistrado%20veneciano%2C%20P000374.jpg?width=500",
     "qid": "Q59556347",
     "wikidata": "https://www.wikidata.org/wiki/Q59556347",
@@ -9946,16 +10014,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501"
    }
   },
   {
@@ -9970,11 +10050,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "A Venetian Patrician",
-    "year": "1501",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Un%20patricio%20veneciano%2C%20por%20Tintoretto.jpg?width=500",
     "qid": "Q59556368",
     "wikidata": "https://www.wikidata.org/wiki/Q59556368",
@@ -9985,16 +10065,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501"
    }
   },
   {
@@ -10009,11 +10101,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "Portrait of a Gentleman",
-    "year": "1501",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20caballero%2C%20por%20Tintoretto.jpg?width=500",
     "qid": "Q59674335",
     "wikidata": "https://www.wikidata.org/wiki/Q59674335",
@@ -10024,16 +10116,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501"
    }
   },
   {
@@ -10048,11 +10152,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "Portrait of a Young Woman",
-    "year": "1501",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Retrato%20de%20se%C3%B1ora%20joven%2C%20P000484.jpg?width=500",
     "qid": "Q59680986",
     "wikidata": "https://www.wikidata.org/wiki/Q59680986",
@@ -10063,16 +10167,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1501, before birth (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1501 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1501"
    }
   },
   {
@@ -10335,7 +10451,7 @@
     "title": "Portrait of a Man",
     "year": "1560",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20-%20Portrait%20of%20a%20Man%20-%20WGA22685.jpg?width=500",
@@ -10359,7 +10475,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -10376,7 +10493,7 @@
     "title": "Portrait of a Lady (Marietta Robusti?)",
     "year": "1550",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20-%20Portrait%20of%20a%20Woman%20-%20WGA22691.jpg?width=500",
@@ -10400,7 +10517,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -10417,7 +10535,7 @@
     "title": "Portrait of Doge Pietro Loredano",
     "year": "1568",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20%28and%20workshop%29%20-%20Portrait%20of%20Doge%20Pietro%20Loredano%2C%20ca.%201567%E2%80%931570%2C%204227.jpg?width=500",
@@ -10441,7 +10559,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -10456,11 +10575,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "Christ Washing the Disciples' Feet",
-    "year": "1600",
+    "year": "",
     "location": "Santo Stefano, Venice",
     "city": "Venice",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Lavanda%20dei%20piedi%2C%20Santo%20Stefano.jpg?width=500",
     "qid": "Q96021884",
     "wikidata": "https://www.wikidata.org/wiki/Q96021884",
@@ -10471,16 +10590,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "santo-stefano-venice",
     "location_src": "Santo Stefano, Venice",
     "kind": "church",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -11357,11 +11488,11 @@
    "properties": {
     "painter": "Tintoretto",
     "title": "The Abduction of Proserpina",
-    "year": "1600",
+    "year": "",
     "location": "Museum Boijmans Van Beuningen",
     "city": "Rotterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20-%20De%20schaking%20van%20Proserpina%20-%202568%20%28OK%29%20-%20Museum%20Boijmans%20Van%20Beuningen.jpg?width=500",
     "qid": "Q29846197",
     "wikidata": "https://www.wikidata.org/wiki/Q29846197",
@@ -11372,16 +11503,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1518–1594) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1518-1594)"
      }
     },
     "museum_id": "museum-boijmans-van-beuningen",
     "location_src": "Museum Boijmans Van Beuningen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -12147,7 +12290,7 @@
     "title": "Portrait of a Man",
     "year": "1563",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20Portrait%20of%20a%20Man%20-%20KMS3267%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -12171,7 +12314,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -13357,7 +13501,7 @@
     "title": "The Feast of Dives and Lazarus",
     "year": "1543",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20-%20Feast%20of%20Dives%20and%20Lazarus%202007%20CKS%2007414%200220.jpg?width=500",
@@ -13381,7 +13525,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -13521,7 +13666,7 @@
     "title": "The Supper at Emmaus",
     "year": "1542",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacopo%20Tintoretto%20-%20The%20Supper%20at%20Emmaus%20-%20Google%20Art%20Project.jpg?width=500",
@@ -13545,7 +13690,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -13799,7 +13945,7 @@
     "title": "The Last Supper",
     "year": "1550",
     "location": "Saint-François-Xavier, Paris",
-    "city": "7th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Derni%C3%A8re%20C%C3%A8ne%20-%20Tintoret.jpg?width=500",
@@ -13823,7 +13969,8 @@
     "museum_id": "saint-francois-xavier-paris",
     "location_src": "Saint-François-Xavier, Paris",
     "kind": "church",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
    }
   },
   {

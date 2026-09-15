@@ -332,7 +332,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "The tears of St. Peter",
-    "year": "1700",
+    "year": "",
     "city": "Carcassonne",
     "country": "France",
     "location": "Musée des Beaux-Arts de Carcassonne",
@@ -352,7 +352,15 @@
     "museum_id": "musee-des-beaux-arts-de-carcassonne",
     "qid": "Q106649546",
     "location_src": "Musée des Beaux-Arts de Carcassonne",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1591-1652)"
+     }
+    }
    }
   },
   {
@@ -1667,7 +1675,7 @@
     "painter": "Ribera",
     "title": "Martyrdom of Saint Andrew",
     "year": "1628",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -1698,7 +1706,8 @@
     "qid": "Q11787907",
     "wga_url": "https://www.wga.hu/html/r/ribera/1/s_andrew.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -2239,7 +2248,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "The Martyrdom of Saint Bartholomew",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Wellcome Collection",
     "kind": "museum",
@@ -2257,7 +2266,8 @@
     "museum_id": "wellcome-collection",
     "qid": "Q119931910",
     "location_src": "Wellcome Collection",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -2552,7 +2562,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Bacchus et Silène",
-    "year": "1700",
+    "year": "",
     "city": "Liège",
     "country": "Belgium",
     "location": "Liege Fine Arts Museum",
@@ -2572,7 +2582,15 @@
     "location_src": "Liege Fine Arts Museum",
     "form": "painting",
     "_title_was": "Q120685358",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1591-1652)"
+     }
+    }
    }
   },
   {
@@ -2727,7 +2745,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Saint François d'Assise en prière",
-    "year": "1700",
+    "year": "",
     "city": "Chartres",
     "country": "France",
     "location": "Musée des Beaux-Arts de Chartres",
@@ -2757,7 +2775,15 @@
     "location_src": "Musée des Beaux-Arts de Chartres",
     "form": "painting",
     "_title_was": "Q124435344",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1591-1652)"
+     }
+    }
    }
   },
   {
@@ -5306,7 +5332,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "St Jerome",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -5325,7 +5351,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20354224",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -5340,8 +5367,8 @@
    "properties": {
     "painter": "Ribera",
     "title": "Saint Onufrius",
-    "year": "1700",
-    "city": "Copenhagen Municipality",
+    "year": "",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -5359,7 +5386,16 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20354556",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1591-1652)"
+     }
+    }
    }
   },
   {
@@ -5418,7 +5454,7 @@
     "painter": "Ribera",
     "title": "Sitting Person Conversing One Standing",
     "year": "1629",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -5445,7 +5481,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20491418",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -5509,7 +5546,7 @@
     "painter": "Ribera",
     "title": "Two Tramps",
     "year": "1727",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -5526,7 +5563,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20536569",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6124,7 +6162,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Saint Sebastian",
-    "year": "1700",
+    "year": "",
     "city": "Śródmieście",
     "country": "Poland",
     "location": "National Museum in Warsaw",
@@ -6144,7 +6182,15 @@
     "museum_id": "national-museum-in-warsaw",
     "qid": "Q22133398",
     "location_src": "National Museum in Warsaw",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1591-1652)"
+     }
+    }
    }
   },
   {
@@ -8092,7 +8138,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "The Martyrdom of Saint Sebastian",
-    "year": "1700",
+    "year": "",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
     "location": "Scottish National Gallery",
@@ -8112,7 +8158,15 @@
     "museum_id": "scottish-national-gallery",
     "qid": "Q27967927",
     "location_src": "Scottish National Gallery",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1591-1652)"
+     }
+    }
    }
   },
   {
@@ -8460,7 +8514,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "St. Jerome hearing the trumpets from the Last Judgement",
-    "year": "1700",
+    "year": "",
     "city": "Espelette",
     "country": "France",
     "location": "Église Saint Etienne",
@@ -8479,7 +8533,15 @@
     "museum_id": "eglise-saint-etienne",
     "qid": "Q29121628",
     "location_src": "Église Saint Etienne",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1591-1652)"
+     }
+    }
    }
   },
   {
@@ -9519,7 +9581,7 @@
     "painter": "Ribera",
     "title": "Saint Thomas",
     "year": "1609",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -9547,7 +9609,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50912292",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -9563,7 +9626,7 @@
     "painter": "Ribera",
     "title": "Saint Jerome",
     "year": "1620",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -9590,7 +9653,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50932954",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -9605,7 +9669,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Saint Francis in Ecstasy",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -9623,7 +9687,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50934571",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -9638,7 +9703,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Saint Sebastian",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -9656,7 +9721,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50943004",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -9671,7 +9737,7 @@
    "properties": {
     "painter": "Ribera",
     "title": "Saint Paul the Hermit",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -9689,7 +9755,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50987581",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {

@@ -1801,7 +1801,7 @@
     "painter": "Georges de La Tour",
     "title": "Diogenes",
     "year": "1620",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Doughty House",
     "kind": "museum",
@@ -1829,7 +1829,8 @@
     "museum_id": "doughty-house",
     "qid": "Q73983236",
     "location_src": "Doughty House",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -2101,12 +2102,12 @@
    "properties": {
     "painter": "Georges de La Tour",
     "title": "The Dream of Saint Joseph",
-    "year": "1700",
+    "year": "",
     "city": "Nantes",
     "country": "France",
     "location": "Nantes Museum of Arts",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "93 × 82.2 cm",
@@ -2125,14 +2126,26 @@
     "wga_url": "https://www.wga.hu/html/l/la_tour/georges/2/05dream.html",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1593–1652) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1593–1652) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1593-1652)"
      }
     },
     "location_src": "Nantes Museum of Arts",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {

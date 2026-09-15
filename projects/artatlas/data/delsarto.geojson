@@ -180,12 +180,12 @@
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Predella of Lamentation with Four Saints",
-    "year": "1550",
+    "year": "",
     "city": "Rome",
     "country": "Italy",
     "location": "Galleria Borghese",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "genre": "religious art",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrea%20del%20sarto%2C%20predella%20con%20la%20piet%C3%A0%20e%20santi%2C%201507-09%20ca.%2001.jpg?width=420",
@@ -200,14 +200,26 @@
     "qid": "Q106575258",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, after death (1486–1530) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, after death (1486–1530) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1486-1530)"
      }
     },
     "location_src": "Galleria Borghese",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -408,7 +420,7 @@
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Le Sacrifice d'Abraham",
-    "year": "1550",
+    "year": "",
     "city": "Lyon",
     "country": "France",
     "location": "Museum of Fine Arts of Lyon",
@@ -429,7 +441,15 @@
     "location_src": "Museum of Fine Arts of Lyon",
     "form": "painting",
     "_title_was": "Q115675568",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "_year_was": "1550",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1486-1530)"
+     }
+    }
    }
   },
   {
@@ -732,7 +752,7 @@
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Portrait of a Youth",
-    "year": "1600",
+    "year": "",
     "city": "City of York",
     "country": "United Kingdom",
     "location": "York Art Gallery",
@@ -752,7 +772,15 @@
     "museum_id": "york-art-gallery",
     "qid": "Q119454786",
     "location_src": "York Art Gallery",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1486-1530)"
+     }
+    }
    }
   },
   {
@@ -1081,7 +1109,7 @@
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Santa Margherita di Antiochia",
-    "year": "1550",
+    "year": "",
     "city": "Pisa",
     "country": "Italy",
     "location": "Pisa Cathedral",
@@ -1099,7 +1127,15 @@
     "museum_id": "pisa-cathedral",
     "qid": "Q125691772",
     "location_src": "Pisa Cathedral",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1486-1530)"
+     }
+    }
    }
   },
   {
@@ -1114,7 +1150,7 @@
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Madonna mit Kind.",
-    "year": "1550",
+    "year": "",
     "city": "Baku",
     "country": "Azerbaijan",
     "location": "National Art Museum of Azerbaijan",
@@ -1131,7 +1167,15 @@
     "museum_id": "national-art-museum-of-azerbaijan",
     "qid": "Q125704227",
     "location_src": "National Art Museum of Azerbaijan",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1486-1530)"
+     }
+    }
    }
   },
   {
@@ -1341,12 +1385,12 @@
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Portrait of a Man",
-    "year": "1550",
+    "year": "",
     "city": "New York",
     "country": "United States",
     "location": "Metropolitan Museum of Art",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "66.7 × 50.5 cm",
@@ -1363,14 +1407,26 @@
     "qid": "Q19912405",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, after death (1486–1530) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, after death (1486–1530) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1486-1530)"
      }
     },
     "location_src": "Metropolitan Museum of Art",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -1429,7 +1485,7 @@
     "painter": "Andrea del Sarto",
     "title": "Portrait of a Man",
     "year": "1515",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -1456,7 +1512,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20472815",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -2096,7 +2153,7 @@
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Madonna and Child with St John",
-    "year": "1550",
+    "year": "",
     "city": "Dulwich",
     "country": "United Kingdom",
     "location": "Dulwich Picture Gallery",
@@ -2116,7 +2173,15 @@
     "museum_id": "dulwich-picture-gallery",
     "qid": "Q28801667",
     "location_src": "Dulwich Picture Gallery",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1486-1530)"
+     }
+    }
    }
   },
   {
@@ -3956,7 +4021,7 @@
    "properties": {
     "painter": "Andrea del Sarto",
     "title": "Madonna and Child with the Infant Saint John",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -3974,7 +4039,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50886403",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {

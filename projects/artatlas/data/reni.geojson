@@ -1107,7 +1107,7 @@
     "title": "The Triumph of Job",
     "year": "",
     "location": "Notre-Dame de Paris",
-    "city": "4th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Trionfo%20di%20san%20Giobbe%20-%20Reni.jpg?width=500",
@@ -1121,7 +1121,8 @@
     "museum_id": "notre-dame-de-paris",
     "location_src": "Notre-Dame de Paris",
     "kind": "church",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "4th arrondissement of Paris"
    }
   },
   {
@@ -1426,11 +1427,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Christi Abführung nach der Geißelung",
-    "year": "1550",
+    "year": "",
     "location": "Alte Pinakothek",
     "city": "Munich",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20Christi%20Abf%C3%BChrung%20nach%20der%20Gei%C3%9Felung%2C%20um%201620-21%2C%204546.jpg?width=500",
     "qid": "Q29477868",
     "wikidata": "https://www.wikidata.org/wiki/Q29477868",
@@ -1441,17 +1442,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, before birth (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "alte-pinakothek",
     "location_src": "Alte Pinakothek",
     "venue_of": "Bavarian State Painting Collections",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -2863,7 +2876,7 @@
     "title": "David and Abigail",
     "year": "1617",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Budapest%20kunst%200021.tif?width=500",
@@ -2877,7 +2890,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -3150,11 +3164,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Sainte Madeleine",
-    "year": "1700",
+    "year": "",
     "location": "Saint-Roch, Paris",
     "city": "Quartier du Palais-Royal",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Madeleine%20au%20d%C3%A9sert.JPG?width=500",
     "qid": "Q29212585",
     "wikidata": "https://www.wikidata.org/wiki/Q29212585",
@@ -3165,16 +3179,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "saint-roch-paris",
     "location_src": "Saint-Roch, Paris",
     "kind": "church",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -3375,11 +3401,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "La Trinité",
-    "year": "1650",
+    "year": "",
     "location": "Louvre",
     "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20D%27apr%C3%A8s%20-%20La%20Sainte%20Trinit%C3%A9%20ador%C3%A9e%20par%20deux%20anges%2C%20INV%2020346.jpg?width=500",
     "qid": "Q29651030",
     "wikidata": "https://www.wikidata.org/wiki/Q29651030",
@@ -3390,16 +3416,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "louvre",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -3589,11 +3627,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Johannes der Evangelist",
-    "year": "1650",
+    "year": "",
     "location": "Gemäldegalerie Berlin",
     "city": "Bezirk Mitte",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20Johannes%20der%20Evangelist%2C%20obj02554573.jpg?width=500",
     "qid": "Q107436464",
     "wikidata": "https://www.wikidata.org/wiki/Q107436464",
@@ -3604,16 +3642,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "gemaldegalerie-berlin",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -3785,7 +3835,7 @@
     "title": "An Allegory of Painting",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20%281575-1642%29%20%28follower%20of%29%20-%20An%20Allegory%20of%20Painting%20-%201380-1869%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -3799,7 +3849,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -4172,11 +4223,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Liberality and Modesty",
-    "year": "1700",
+    "year": "",
     "location": "Chiswick House",
-    "city": "London Borough of Hounslow",
+    "city": "London",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20%281575-1642%29%20%28after%29%20-%20Liberality%20and%20Modesty%20-%2088003004%20-%20Chiswick%20House.jpg?width=500",
     "qid": "Q118876972",
     "wikidata": "https://www.wikidata.org/wiki/Q118876972",
@@ -4187,16 +4238,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "chiswick-house",
     "location_src": "Chiswick House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Hounslow",
+    "_year_was": "1700"
    }
   },
   {
@@ -4242,11 +4306,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "L'Union du Dessin et de la Couleur",
-    "year": "1650",
+    "year": "",
     "location": "Palais de la Légion d'Honneur",
     "city": "Invalides",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20D%27apr%C3%A8s%20-%20L%27Union%20du%20Dessin%20et%20de%20la%20Couleur%2C%20INV%20552%20%3B%20B%201648%2C%20Grande%20Chancellerie%20de%20la%20L%C3%A9gion%20d%27Honneur%2C%20Paris.jpg?width=500",
     "qid": "Q115675127",
     "wikidata": "https://www.wikidata.org/wiki/Q115675127",
@@ -4257,16 +4321,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "palais-de-la-legion-d-honneur",
     "location_src": "Palais de la Légion d'Honneur",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -4466,11 +4542,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Saint Jean Baptiste caressant l'agneau sans tache",
-    "year": "1650",
+    "year": "",
     "location": "Nantes Museum of Arts",
     "city": "Nantes",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Saint%20Jean-Baptiste%2C%20par%20Guido%20Reni.jpg?width=500",
     "qid": "Q115676601",
     "wikidata": "https://www.wikidata.org/wiki/Q115676601",
@@ -4481,16 +4557,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "nantes-museum-of-arts",
     "location_src": "Nantes Museum of Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -4615,11 +4703,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Salomé ; Hérodiade",
-    "year": "1650",
+    "year": "",
     "location": "Museum of Grenoble",
     "city": "Grenoble",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20Salom%C3%A9%20%3B%20H%C3%A9rodiade%2C%20MG%201724%2C%20Mus%C3%A9e%20de%20Grenoble%2C%20Grenoble.jpg?width=500",
     "qid": "Q115676660",
     "wikidata": "https://www.wikidata.org/wiki/Q115676660",
@@ -4630,16 +4718,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "museum-of-grenoble",
     "location_src": "Museum of Grenoble",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -4840,11 +4940,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Le Christ au jardin des Oliviers",
-    "year": "1650",
+    "year": "",
     "location": "Musées de Sens",
     "city": "Sens",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20Le%20Christ%20au%20jardin%20des%20Oliviers%2C%202008.9.6.jpg?width=500",
     "qid": "Q110906117",
     "wikidata": "https://www.wikidata.org/wiki/Q110906117",
@@ -4855,16 +4955,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "musees-de-sens",
     "location_src": "Musées de Sens",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -4879,11 +4991,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Saint Pierre pleurant son reniement",
-    "year": "1650",
+    "year": "",
     "location": "Musée des Beaux-Arts de Pau",
     "city": "Pyrénées-Atlantiques",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20Saint%20Pierre.jpg?width=500",
     "qid": "Q66107723",
     "wikidata": "https://www.wikidata.org/wiki/Q66107723",
@@ -4894,16 +5006,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "musee-des-beaux-arts-de-pau",
     "location_src": "Musée des Beaux-Arts de Pau",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -5098,11 +5222,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "La Madeleine",
-    "year": "1650",
+    "year": "",
     "location": "Musée national du Château de Fontainebleau",
     "city": "Fontainebleau",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20D%27apr%C3%A8s%20-%20La%20Madeleine%2C%20INV%20546%20%3B%20C%20127%2C%20Mus%C3%A9e%20national%20du%20ch%C3%A2teau%20de%20Fontainebleau%2C%20Fontainebleau.jpg?width=500",
     "qid": "Q115670505",
     "wikidata": "https://www.wikidata.org/wiki/Q115670505",
@@ -5113,16 +5237,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "musee-national-du-chateau-de-fontainebleau",
     "location_src": "Musée national du Château de Fontainebleau",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -5137,11 +5273,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Vierge à l'Enfant avec saint Jean Baptiste",
-    "year": "1650",
+    "year": "",
     "location": "Louvre",
     "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20D%27apr%C3%A8s%20-%20Vierge%20%C3%A0%20l%27Enfant%20avec%20saint%20Jean%20Baptiste%2C%20RF%202000%2087.jpg?width=500",
     "qid": "Q115670289",
     "wikidata": "https://www.wikidata.org/wiki/Q115670289",
@@ -5152,16 +5288,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "louvre",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -5176,11 +5324,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "L'Amour",
-    "year": "1650",
+    "year": "",
     "location": "Town hall of Vichy",
     "city": "Vichy",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20%C3%89cole%20de%20-%20L%27Amour%2C%20INV%20559%20%3B%20MR%20293%20%3B%20Inv%20119%2C%20Mairie%2C%20Vichy.jpg?width=500",
     "qid": "Q115674145",
     "wikidata": "https://www.wikidata.org/wiki/Q115674145",
@@ -5191,16 +5339,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "town-hall-of-vichy",
     "location_src": "Town hall of Vichy",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -5279,11 +5439,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Enfant jouant avec des colombes",
-    "year": "1650",
+    "year": "",
     "location": "Louvre",
     "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Reni%20-%20D%27apr%C3%A8s%20-%20Enfant%20jouant%20avec%20des%20colombes%2C%20INV%20558%20%3B%20B%201503%2C%20Mus%C3%A9e%20municipal%2C%20Melun.jpg?width=500",
     "qid": "Q116284791",
     "wikidata": "https://www.wikidata.org/wiki/Q116284791",
@@ -5294,16 +5454,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "louvre",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -6253,11 +6425,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Cupid with a Bow",
-    "year": "1650",
+    "year": "",
     "location": "Walters Art Museum",
     "city": "Baltimore",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Follower%20of%20Guido%20Reni%20-%20Cupid%20with%20a%20Bow%20-%20Walters%2037491.jpg?width=500",
     "qid": "Q18748488",
     "wikidata": "https://www.wikidata.org/wiki/Q18748488",
@@ -6268,16 +6440,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "walters-art-museum",
     "location_src": "Walters Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -6428,7 +6612,7 @@
     "title": "Christ as Teacher",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20Christ%20as%20Teacher%20-%20KMSsp102%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6442,7 +6626,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6459,7 +6644,7 @@
     "title": "The Madonna",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Madonna%20-%20KMSsp99%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6473,7 +6658,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6490,7 +6676,7 @@
     "title": "Portrait of a Girl",
     "year": "",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20Portrait%20of%20a%20Girl%20-%20KMSst492%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6504,7 +6690,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6521,7 +6708,7 @@
     "title": "The Fall of the Giants",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Fall%20of%20the%20Giants%20-%20KMSsp98%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6535,7 +6722,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6552,7 +6740,7 @@
     "title": "Troen. Allegorisk kvindefigur",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ubekendt%20KMS%20sp%20101%20-%20Troen.%20Allegorisk%20kvindefigur%20-%20KMSsp101%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6566,7 +6754,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -6583,7 +6772,7 @@
     "title": "The Penitent Mary Magdalene",
     "year": "1616",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20The%20Penitent%20Mary%20Magdalene%20-%20KMSsp100%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -6597,7 +6786,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7464,7 +7654,7 @@
     "title": "An Allegory of Painting: A Man and a Woman Embodying 'Disegno' and 'Colore'",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20%281575-1642%29%20%28after%29%20-%20An%20Allegory%20of%20Painting%2C%20A%20Man%20and%20a%20Woman%20Embodying%20%27Disegno%27%20and%20%27Colore%27%20-%20312-1864%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -7478,7 +7668,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -8120,11 +8311,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Holy Trinity",
-    "year": "1700",
+    "year": "",
     "location": "Santissima Trinità dei Pellegrini",
     "city": "Rome",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Trinit%C3%A0%20-%20Guido%20Reni.jpg?width=500",
     "qid": "Q131352170",
     "wikidata": "https://www.wikidata.org/wiki/Q131352170",
@@ -8135,16 +8326,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "santissima-trinita-dei-pellegrini",
     "location_src": "Santissima Trinità dei Pellegrini",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -8376,11 +8579,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "The Young Saint John the Baptist",
-    "year": "1700",
+    "year": "",
     "location": "Christ Church Picture Gallery",
     "city": "Oxford",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20%281575-1642%29%20-%20The%20Young%20Saint%20John%20the%20Baptist%20-%20JBS%20192%20-%20Christ%20Church.jpg?width=500",
     "qid": "Q119933444",
     "wikidata": "https://www.wikidata.org/wiki/Q119933444",
@@ -8391,16 +8594,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "christ-church-picture-gallery",
     "location_src": "Christ Church Picture Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -8415,11 +8630,11 @@
    "properties": {
     "painter": "Guido Reni",
     "title": "Death of Lucrezia",
-    "year": "1650",
+    "year": "",
     "location": "Galleria Spada",
     "city": "Rome",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anonimo%20sec.%20XVII%20-%20Morte%20di%20Lucrezia%2C%20Galleria%20Spada.jpg?width=500",
     "qid": "Q133864694",
     "wikidata": "https://www.wikidata.org/wiki/Q133864694",
@@ -8430,16 +8645,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1575–1642) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1575-1642)"
      }
     },
     "museum_id": "galleria-spada",
     "location_src": "Galleria Spada",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -8921,7 +9148,7 @@
     "title": "The Madonna in Prayer",
     "year": "",
     "location": "Hackney Museum",
-    "city": "London Borough of Hackney",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20%281575-1642%29%20%28copy%20after%29%20-%20The%20Madonna%20in%20Prayer%20-%20CH%202008.44%20-%20Hackney%20Museum.jpg?width=500",
@@ -8935,7 +9162,8 @@
     "museum_id": "hackney-museum",
     "location_src": "Hackney Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Hackney"
    }
   },
   {

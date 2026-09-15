@@ -7838,11 +7838,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "The holy family with Mary Magdalene",
-    "year": "1700",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/De%20heilige%20familie%20met%20Maria%20Magdalena%20Rijksmuseum%20SK-A-597.jpeg?width=500",
     "qid": "Q17321354",
     "wikidata": "https://www.wikidata.org/wiki/Q17321354",
@@ -7853,16 +7853,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -7947,11 +7959,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Jan Caspar Gevaerts (1593-1666). Jurist, historian and philologist",
-    "year": "1650",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20Caspar%20Gevaerts%20-%20Workshop%20of%20Anthony%20van%20Dyck%20002.jpg?width=500",
     "qid": "Q17328288",
     "wikidata": "https://www.wikidata.org/wiki/Q17328288",
@@ -7962,16 +7974,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -7986,11 +8010,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Portrait of Prins Rupert (1619-82), count palatine of Rhine",
-    "year": "1650",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portret%20van%20Prins%20Ruprecht%20%281619-82%29%2C%20paltsgraaf%20aan%20de%20Rijn%20Rijksmuseum%20SK-A-3927.jpeg?width=500",
     "qid": "Q17335490",
     "wikidata": "https://www.wikidata.org/wiki/Q17335490",
@@ -8001,16 +8025,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -8185,11 +8221,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Portrait Bust of Inigo Jones",
-    "year": "1650",
+    "year": "",
     "location": "Walters Art Museum",
     "city": "Baltimore",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20Bust%20of%20Inigo%20Jones%20-%20Walters%2037803.jpg?width=500",
     "qid": "Q18748381",
     "wikidata": "https://www.wikidata.org/wiki/Q18748381",
@@ -8200,16 +8236,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "walters-art-museum",
     "location_src": "Walters Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -9305,11 +9353,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Portrait of Anna van Thielen, wife of the painter Theodoor Rombouts with their daughter",
-    "year": "1650",
+    "year": "",
     "location": "Bavarian State Painting Collections",
     "city": "Munich",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20Anna%20van%20Thielen%2C%20wife%20of%20the%20painter%20Theodoor%20Rombouts%20with%20their%20daughter.jpg?width=500",
     "qid": "Q29871376",
     "wikidata": "https://www.wikidata.org/wiki/Q29871376",
@@ -9320,16 +9368,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "bavarian-state-painting-collections",
     "location_src": "Bavarian State Painting Collections",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -11456,11 +11516,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Descent from the Cross",
-    "year": "1650",
+    "year": "",
     "location": "National Gallery of Armenia",
     "city": "Yerevan",
     "country": "Armenia",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck.%20Descent%20from%20the%20Cross.jpg?width=500",
     "qid": "Q28860805",
     "wikidata": "https://www.wikidata.org/wiki/Q28860805",
@@ -11471,16 +11531,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "national-gallery-of-armenia",
     "location_src": "National Gallery of Armenia",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -11906,11 +11978,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Christ carrying the Cross",
-    "year": "1700",
+    "year": "",
     "location": "Musei di Strada Nuova",
     "city": "Genoa",
     "country": "Italy",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anton%20Van%20Dyck%20-%20Christ%20carrying%20the%20Cross%20-%20Google%20Art%20Project.jpg?width=500",
     "qid": "Q28803495",
     "wikidata": "https://www.wikidata.org/wiki/Q28803495",
@@ -11921,16 +11993,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "musei-di-strada-nuova",
     "location_src": "Musei di Strada Nuova",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -13822,11 +13906,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Magistrate of Brussels",
-    "year": "1700",
+    "year": "",
     "location": "Wimpole Hall",
     "city": "Wimpole",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Magistrate%20of%20Brussels%20-%20restored.jpg?width=500",
     "qid": "Q15553205",
     "wikidata": "https://www.wikidata.org/wiki/Q15553205",
@@ -13837,16 +13921,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "wimpole-hall",
     "location_src": "Wimpole Hall",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -13904,7 +14000,7 @@
     "title": "Frances Stuart, née Howard (1578–1639), Duchess of Lennox and Richmond",
     "year": "1633",
     "location": "Kenwood House",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20Frances%20Stuart%2C%20n%C3%A9e%20Howard%20%281578%E2%80%931639%29%2C%20Duchess%20of%20Lennox%20and%20Richmond%20-%2088019174%20-%20Kenwood%20House.jpg?width=500",
@@ -13928,7 +14024,8 @@
     "museum_id": "kenwood-house",
     "location_src": "Kenwood House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -14069,7 +14166,7 @@
     "title": "Charles I (1600–1649), and Henrietta Maria (c.1609–1669), with Their Two Eldest Children, Prince Charles (1630–1685), and Princess Mary (1631–1660)",
     "year": "1641",
     "location": "Chiswick House",
-    "city": "London Borough of Hounslow",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20Charles%20I%20%281600%E2%80%931649%29%2C%20and%20Henrietta%20Maria%20%28c.1609%E2%80%931669%29%2C%20with%20Their%20Two%20Eldest%20Children%2C%20Prince%20Cha%20-%2088003000%20-%20Chiswick%20House.jpg?width=500",
@@ -14093,7 +14190,8 @@
     "museum_id": "chiswick-house",
     "location_src": "Chiswick House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Hounslow"
    }
   },
   {
@@ -14213,7 +14311,7 @@
     "title": "Charles I (1600–1649), and Prince Charles (1630–1685)",
     "year": "1635",
     "location": "Marble Hill House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles%20I%20%281600%E2%80%931649%29%2C%20and%20Prince%20Charles%20%281630%E2%80%931685%29.jpg?width=500",
@@ -14237,7 +14335,8 @@
     "museum_id": "marble-hill-house",
     "location_src": "Marble Hill House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -15093,11 +15192,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "James Stanley (1607–1651), 7th Earl of Derby",
-    "year": "1700",
+    "year": "",
     "location": "Victoria Gallery & Museum",
     "city": "Liverpool",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20James%20Stanley%20%281607%E2%80%931651%29%2C%207th%20Earl%20of%20Derby%20-%20FA.1312%20-%20Victoria%20Gallery%20%5E%20Museum.jpg?width=500",
     "qid": "Q118888167",
     "wikidata": "https://www.wikidata.org/wiki/Q118888167",
@@ -15108,16 +15207,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "victoria-gallery-museum",
     "location_src": "Victoria Gallery & Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -15289,7 +15400,7 @@
     "title": "Diego Felipe de Guzmán (1580–1655), 1st Marquis of Leganés",
     "year": "",
     "location": "Orleans House Gallery",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28follower%20of%29%20-%20Diego%20Felipe%20de%20Guzm%C3%A1n%20%281580%E2%80%931655%29%2C%201st%20Marquis%20of%20Legan%C3%A9s%20-%20LDORL%20%2C%2000700%20-%20Orleans%20House%20Gallery.jpg?width=500",
@@ -15303,7 +15414,8 @@
     "museum_id": "orleans-house-gallery",
     "location_src": "Orleans House Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -15617,7 +15729,7 @@
     "title": "Baldwin Hamey, Junior (1600–1676)",
     "year": "1638",
     "location": "Royal College of Physicians",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28and%20studio%29%20-%20Baldwin%20Hamey%2C%20Junior%20%281600%E2%80%931676%29%20-%202012.4%20-%20Royal%20College%20of%20Physicians.jpg?width=500",
@@ -15641,7 +15753,8 @@
     "museum_id": "royal-college-of-physicians",
     "location_src": "Royal College of Physicians",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -15728,11 +15841,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Portrait of a Young Bearded Man",
-    "year": "1650",
+    "year": "",
     "location": "Glasgow Museums Resource Centre",
     "city": "Glasgow City",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28follower%20of%29%20-%20Portrait%20of%20a%20Young%20Bearded%20Man%20-%2050%20-%20Glasgow%20Museums%20Resource%20Centre.jpg?width=500",
     "qid": "Q118889218",
     "wikidata": "https://www.wikidata.org/wiki/Q118889218",
@@ -15743,17 +15856,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "glasgow-museums-resource-centre",
     "location_src": "Glasgow Museums Resource Centre",
     "venue_of": "Glasgow Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -16068,7 +16193,7 @@
     "title": "Margaret Lemon (fl.1635-1640)",
     "year": "1638",
     "location": "Hampton Court Palace",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20Margaret%20Lemon%20%28fl.1635-1640%29%20-%20RCIN%20402531%20-%20Royal%20Collection.jpg?width=500",
@@ -16092,7 +16217,8 @@
     "museum_id": "hampton-court-palace",
     "location_src": "Hampton Court Palace",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -16109,7 +16235,7 @@
     "title": "Charles I (1600-49) on Horseback",
     "year": "1635",
     "location": "Hampton Court Palace",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Charles%20I%20%281600-49%29%20on%20Horseback%20c.1635-6.jpg?width=500",
@@ -16133,7 +16259,8 @@
     "museum_id": "hampton-court-palace",
     "location_src": "Hampton Court Palace",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -16150,7 +16277,7 @@
     "title": "A Man in Half Armour",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28attributed%20to%29%20-%20A%20Man%20in%20Half%20Armour%20-%20DYCE.11%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -16164,7 +16291,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -16181,7 +16309,7 @@
     "title": "Head of a Youth",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28follower%20of%29%20-%20Head%20of%20a%20Youth%20-%20DYCE.84%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -16195,7 +16323,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -17023,7 +17152,7 @@
     "title": "The Children of Charles I",
     "year": "",
     "location": "Young V&A",
-    "city": "London Borough of Tower Hamlets",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20The%20Children%20of%20Charles%20I%20-%201068-1886%20-%20Young%20V%5EA.jpg?width=500",
@@ -17037,7 +17166,8 @@
     "museum_id": "young-v-a",
     "location_src": "Young V&A",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Tower Hamlets"
    }
   },
   {
@@ -17404,7 +17534,7 @@
     "title": "Entombment",
     "year": "1640",
     "location": "Palais Bourbon",
-    "city": "7th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Entombment%2C%20Gotha%2C%20illustratedcatal00gale%208%200021.jpg?width=500",
@@ -17428,7 +17558,8 @@
     "museum_id": "palais-bourbon",
     "location_src": "Palais Bourbon",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
    }
   },
   {
@@ -17486,7 +17617,7 @@
     "title": "Cardinal Bentivoglio (1579–1644)",
     "year": "",
     "location": "Chiswick House",
-    "city": "London Borough of Hounslow",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28circle%20of%29%20-%20Cardinal%20Bentivoglio%20%281579%E2%80%931644%29%20-%2088275601%20-%20Chiswick%20House.jpg?width=500",
@@ -17500,7 +17631,8 @@
     "museum_id": "chiswick-house",
     "location_src": "Chiswick House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Hounslow"
    }
   },
   {
@@ -17735,11 +17867,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Portrait of Antoine Triest, Bishop of Ghent (1576–1655)",
-    "year": "1650",
+    "year": "",
     "location": "Museum of Fine Arts, Houston",
     "city": "Houston",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sir%20Anthony%20van%20Dyck%20-%20Portrait%20of%20Antoine%20Triest%2C%20Bishop%20of%20Ghent%20%281576%E2%80%931655%29%20-%20BF.1977.2%20-%20Hermitage%20Museum.jpg?width=500",
     "qid": "Q28039495",
     "wikidata": "https://www.wikidata.org/wiki/Q28039495",
@@ -17750,16 +17882,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "museum-of-fine-arts-houston",
     "location_src": "Museum of Fine Arts, Houston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -17899,7 +18043,7 @@
     "title": "Portrait of an Elderly Man",
     "year": "1640",
     "location": "Hallwyl Museum",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20or%20Anthony%20van%20Dyck%20%28attributed%20to%29%20-%20Head%20Study%20of%20a%20Bearded%20Old%20Man.jpg?width=500",
@@ -17923,7 +18067,8 @@
     "museum_id": "hallwyl-museum",
     "location_src": "Hallwyl Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stockholm Municipality"
    }
   },
   {
@@ -17938,11 +18083,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Henry Lawes",
-    "year": "1650",
+    "year": "",
     "location": "Bate Collection of Musical Instruments",
     "city": "St Aldate's",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28follower%20of%29%20-%20Henry%20Lawes%20-%20FMI.27%20-%20Bate%20Collection%20of%20Musical%20Instruments.jpg?width=500",
     "qid": "Q118877585",
     "wikidata": "https://www.wikidata.org/wiki/Q118877585",
@@ -17953,16 +18098,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "bate-collection-of-musical-instruments",
     "location_src": "Bate Collection of Musical Instruments",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -18049,11 +18206,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Saint John the Evangelist",
-    "year": "1650",
+    "year": "",
     "location": "Fulham Palace",
-    "city": "London Borough of Hammersmith and Fulham",
+    "city": "London",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28copy%20after%29%20-%20Saint%20John%20the%20Evangelist%20-%20PCF12%20-%20Fulham%20Palace.jpg?width=500",
     "qid": "Q118877354",
     "wikidata": "https://www.wikidata.org/wiki/Q118877354",
@@ -18064,16 +18221,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "fulham-palace",
     "location_src": "Fulham Palace",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Hammersmith and Fulham",
+    "_year_was": "1650"
    }
   },
   {
@@ -18286,7 +18456,7 @@
     "title": "Henry Percy (1564–1632), 9th Earl of Northumberland",
     "year": "",
     "location": "Royal College of Physicians",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20Henry%20Percy%20%281564%E2%80%931632%29%2C%209th%20Earl%20of%20Northumberland%20-%20X50%20-%20Royal%20College%20of%20Physicians.jpg?width=500",
@@ -18300,7 +18470,8 @@
     "museum_id": "royal-college-of-physicians",
     "location_src": "Royal College of Physicians",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -20203,7 +20374,7 @@
     "title": "Portrait of a Married Couple",
     "year": "1630",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20a%20Married%20Couple%20-%20WGA07410.jpg?width=500",
@@ -20227,7 +20398,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -20244,7 +20416,7 @@
     "title": "Saint John the Evangelist",
     "year": "1620",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Saint%20John%20the%20Evangelist%2C%20ca.%201618%E2%80%931620.jpg?width=500",
@@ -20268,7 +20440,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -20285,7 +20458,7 @@
     "title": "Portrait of a Man",
     "year": "1618",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%28attributed%20to%29%20-%20Portrait%20of%20a%20Man%2C%20ca.%201617%E2%80%931620.jpg?width=500",
@@ -20309,7 +20482,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -21230,7 +21404,7 @@
     "title": "George Villiers (1628–1687), 2nd Duke of Buckingham",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20George%20Villiers%20%281628%E2%80%931687%29%2C%202nd%20Duke%20of%20Buckingham%20-%20DYCE.62%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -21244,7 +21418,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -22157,7 +22332,7 @@
     "title": "The Great Peece",
     "year": "",
     "location": "Royal Hospital Chelsea",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28studio%20of%29%20-%20The%20Great%20Peece%20-%20399%20-%20Royal%20Hospital%20Chelsea.jpg?width=500",
@@ -22171,7 +22346,8 @@
     "museum_id": "royal-hospital-chelsea",
     "location_src": "Royal Hospital Chelsea",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -22414,7 +22590,7 @@
     "title": "Henrietta Maria (1609–1669), with the Dwarf, Geoffrey Hudson",
     "year": "",
     "location": "Marble Hill House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20Henrietta%20Maria%20%281609%E2%80%931669%29%2C%20with%20the%20Dwarf%2C%20Geoffrey%20Hudson%20-%2088029301%20-%20Marble%20Hill%20House.jpg?width=500",
@@ -22428,7 +22604,8 @@
     "museum_id": "marble-hill-house",
     "location_src": "Marble Hill House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -23220,7 +23397,7 @@
     "title": "Sir Kenelm Digby (1603–1665)",
     "year": "",
     "location": "Wellcome Collection",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20Sir%20Kenelm%20Digby%20%281603%E2%80%931665%29%20-%2045594i%20-%20Wellcome%20Collection.jpg?width=500",
@@ -23234,7 +23411,8 @@
     "museum_id": "wellcome-collection",
     "location_src": "Wellcome Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -23251,7 +23429,7 @@
     "title": "Sir Kenelm Digby (1603–1665)",
     "year": "",
     "location": "Wellcome Collection",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20Sir%20Kenelm%20Digby%20%281603%E2%80%931665%29%20-%2045593i%20-%20Wellcome%20Collection.jpg?width=500",
@@ -23265,7 +23443,8 @@
     "museum_id": "wellcome-collection",
     "location_src": "Wellcome Collection",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -23685,7 +23864,7 @@
     "title": "Charity",
     "year": "",
     "location": "Hammersmith Library",
-    "city": "London Borough of Hammersmith and Fulham",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20Charity%20-%20212%20-%20Hammersmith%20Library.jpg?width=500",
@@ -23699,7 +23878,8 @@
     "museum_id": "hammersmith-library",
     "location_src": "Hammersmith Library",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Hammersmith and Fulham"
    }
   },
   {
@@ -24996,11 +25176,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "The Crucifixion, with a Bishop, a Saint, and a Donor in Armor",
-    "year": "1650",
+    "year": "",
     "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Follower%20of%20Anthony%20van%20Dyck%20-%20The%20Crucifixion%2C%20with%20a%20Bishop%2C%20a%20Saint%2C%20and%20a%20Donor%20in%20Armor%2C%20W1902-1-8.jpg?width=500",
     "qid": "Q20808920",
     "wikidata": "https://www.wikidata.org/wiki/Q20808920",
@@ -25011,16 +25191,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "philadelphia-museum-of-art",
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -25037,7 +25229,7 @@
     "title": "Virgin and Child with Saint Francis",
     "year": "1627",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Virgin%20and%20Child%20with%20Saint%20Francis%20-%20KMSsp242%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25051,7 +25243,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25068,7 +25261,7 @@
     "title": "The Entombment of Christ",
     "year": "1627",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20The%20Entombment%20of%20Christ%20-%20KMSsp243%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25082,7 +25275,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25099,7 +25293,7 @@
     "title": "Portræt af en kvinde som Flora",
     "year": "1627",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portr%C3%A6t%20af%20en%20kvinde%20som%20Flora%20-%20KMSsp241%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25113,7 +25307,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25130,7 +25325,7 @@
     "title": "Portrait of Cornelis van Poelenburgh",
     "year": "1633",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20Cornelis%20van%20Poelenburgh%20-%20KMS3224%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25154,7 +25349,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25171,7 +25367,7 @@
     "title": "Study Head of a Young Man Looking Upwards. St Sebastian",
     "year": "1627",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Study%20Head%20of%20a%20Young%20Man%20Looking%20Upwards.%20St%20Sebastian%20-%20KMS3222%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25185,7 +25381,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25202,7 +25399,7 @@
     "title": "Portrait of a Mathematician",
     "year": "1677",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20a%20Mathematician%20-%20KMSsp245%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25224,7 +25421,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25241,7 +25439,7 @@
     "title": "Sketch for The Supper at Emmaus",
     "year": "1627",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Sketch%20for%20The%20Supper%20at%20Emmaus%20-%20KMS3223%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25255,7 +25453,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25272,7 +25471,7 @@
     "title": "The Mystic Marriage of St Catherine of Alexandria",
     "year": "1627",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20The%20Mystic%20Marriage%20of%20St%20Catherine%20of%20Alexandria%20-%20KMSsp237%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25286,7 +25485,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -25303,7 +25503,7 @@
     "title": "Portrait of a Man",
     "year": "1677",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20a%20Man%20-%20KMS3264%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -25325,7 +25525,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -26544,7 +26745,7 @@
     "title": "Princess Henrietta of Lorraine (1611–1660), Attended by a Page",
     "year": "1634",
     "location": "Kenwood House",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20Princess%20Henrietta%20of%20Lorraine.jpg?width=500",
@@ -26568,7 +26769,8 @@
     "museum_id": "kenwood-house",
     "location_src": "Kenwood House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -27765,7 +27967,7 @@
     "title": "Bust of a Bearded Man",
     "year": "1616",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Bust%20of%20a%20Bearded%20Man%20gri%2033125001303870%200117.jpg?width=500",
@@ -27789,7 +27991,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -28133,11 +28336,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Albert de Ligne, Count of Arenberg, Prince of Brabançon, (1600-1674)",
-    "year": "1650",
+    "year": "",
     "location": "Metropolitan Museum of Art",
     "city": "New York",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albert%20de%20Ligne%2C%20Count%20of%20Arenberg%2C%20Prince%20of%20Braban%C3%A7on%2C%20%281600-1674%29%20MET%20DP802087.jpg?width=500",
     "qid": "Q124412757",
     "wikidata": "https://www.wikidata.org/wiki/Q124412757",
@@ -28148,16 +28351,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "metropolitan-museum-of-art",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -28174,7 +28389,7 @@
     "title": "Portrait of a seated Genoese woman",
     "year": "1623",
     "location": "Rome",
-    "city": "Metropolitan City of Rome",
+    "city": "Rome",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gentildonna%20genovese%20seduta%20-%20Van%20Dyck.jpg?width=500",
@@ -28188,7 +28403,8 @@
     "museum_id": "rome",
     "location_src": "Rome",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Metropolitan City of Rome"
    }
   },
   {
@@ -28205,7 +28421,7 @@
     "title": "Portrait of a child in white",
     "year": "1628",
     "location": "Genoa",
-    "city": "Metropolitan City of Genoa",
+    "city": "Genoa",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fanciullo%20vestito%20di%20bianco%20-%20Van%20Dyck.jpg?width=500",
@@ -28229,7 +28445,8 @@
     "museum_id": "genoa",
     "location_src": "Genoa",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Metropolitan City of Genoa"
    }
   },
   {
@@ -28246,7 +28463,7 @@
     "title": "The Holy Family with Saint John the Baptist as a child",
     "year": "1625",
     "location": "Genoa",
-    "city": "Metropolitan City of Genoa",
+    "city": "Genoa",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/After%20Anthony%20van%20Dyck%20-%20The%20Holy%20Family%20with%20Saint%20John%20the%20Baptist%20as%20a%20child%2C%201621-1625.jpg?width=500",
@@ -28260,7 +28477,8 @@
     "museum_id": "genoa",
     "location_src": "Genoa",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Metropolitan City of Genoa"
    }
   },
   {
@@ -30935,11 +31153,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Lord Strafford And His Secretary Sir P Mainwaring",
-    "year": "1750",
+    "year": "",
     "location": "Birmingham Museum and Art Gallery",
     "city": "Birmingham",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20-%20Lord%20Strafford%20%281593%E2%80%931641%29%2C%20and%20His%20Secretary%20Sir%20Phillip%20Mainwaring%20%281589%E2%80%931661%29%20-%201981P12%20-%20Birmingham%20Museums%20Trust.jpg?width=500",
     "qid": "Q98149222",
     "wikidata": "https://www.wikidata.org/wiki/Q98149222",
@@ -30950,16 +31168,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1750, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1750, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1750 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "birmingham-museum-and-art-gallery",
     "location_src": "Birmingham Museum and Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1750"
    }
   },
   {
@@ -30974,11 +31204,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Isabella of Austria ( 1566-1633 )",
-    "year": "1750",
+    "year": "",
     "location": "Birmingham Museum and Art Gallery",
     "city": "Birmingham",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20Infanta%20Isabella%20Clara%20Eugenia%20of%20Austria%20%281566%E2%80%931633%29%2C%20Regentess%20of%20the%20Netherlands%20-%201934P686%20-%20Birmingham%20Museums%20Trust.jpg?width=500",
     "qid": "Q98149788",
     "wikidata": "https://www.wikidata.org/wiki/Q98149788",
@@ -30989,16 +31219,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1750, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1750, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1750 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "birmingham-museum-and-art-gallery",
     "location_src": "Birmingham Museum and Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1750"
    }
   },
   {
@@ -31290,7 +31532,7 @@
     "title": "Priest in a Cope",
     "year": "1640",
     "location": "Gothenburg Museum of Art",
-    "city": "Gothenburg Municipality",
+    "city": "Gothenburg",
     "country": "Sweden",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Priest%20in%20a%20Cope%2C%20GKM%200933.jpeg?width=500",
@@ -31314,7 +31556,8 @@
     "museum_id": "gothenburg-museum-of-art",
     "location_src": "Gothenburg Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Gothenburg Municipality"
    }
   },
   {
@@ -31473,11 +31716,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Head of a bearded Man",
-    "year": "1650",
+    "year": "",
     "location": "Museo Nacional de San Carlos",
     "city": "Cuauhtémoc",
     "country": "Mexico",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoon%20van%20Dyck%20-%20Cabe%C3%A7a%20de%20homem%20barbado.jpg?width=500",
     "qid": "Q129255773",
     "wikidata": "https://www.wikidata.org/wiki/Q129255773",
@@ -31488,16 +31731,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1650, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1650 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "museo-nacional-de-san-carlos",
     "location_src": "Museo Nacional de San Carlos",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1650"
    }
   },
   {
@@ -32117,7 +32372,7 @@
     "title": "Venus trying to prevent Adonis from going hunting",
     "year": "1620",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Venus%20and%20Adonis%20stern2-2-2.jpg?width=500",
@@ -32141,7 +32396,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -33440,11 +33696,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Putti Doing a Roundelay",
-    "year": "1700",
+    "year": "",
     "location": "Städel Museum",
     "city": "Frankfurt",
     "country": "Germany",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Putti%20Doing%20a%20Roundelay%20%28SM%202080%29.png?width=500",
     "qid": "Q64788489",
     "wikidata": "https://www.wikidata.org/wiki/Q64788489",
@@ -33455,16 +33711,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "stadel-museum",
     "location_src": "Städel Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -33522,7 +33790,7 @@
     "title": "Portrait of James Stuart (1612–1655), 1st Duke of Richmond and 4th Duke of Lennox",
     "year": "1636",
     "location": "Kenwood House",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20James%20Stuart%20%281612%E2%80%931655%29%2C%201st%20Duke%20of%20Richmond%20and%204th%20Duke%20of%20Lennox%20CDNII%20KEN%20J910514.jpg?width=500",
@@ -33546,7 +33814,8 @@
     "museum_id": "kenwood-house",
     "location_src": "Kenwood House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -33563,7 +33832,7 @@
     "title": "Portrait of a Family",
     "year": "1620",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Family%20of%20Cornelis%20de%20Vos%20by%20Anthony%20Van%20Dyck.jpg?width=500",
@@ -33587,7 +33856,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -34077,7 +34347,7 @@
     "title": "Head of a Young Woman",
     "year": "1617",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20YOUNG%20WOMAN%20RESTING%20HER%20HEAD%20ON%20HER%20HAND%20%28PROBABLY%20THE%20PENITENT%20MAGDALENE%29.jpg?width=500",
@@ -34101,7 +34371,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -34118,7 +34389,7 @@
     "title": "Two Heads",
     "year": "1617",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20TWO%20STUDIES%20OF%20A%20BEARDED%20MAN.jpg?width=500",
@@ -34142,7 +34413,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -34411,7 +34683,7 @@
     "title": "Thomas Wentworth (1593–1641), 1st Earl of Strafford, and His Secretary Sir Philip Mainwaring (1589–1661)",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28after%29%20-%20Thomas%20Wentworth%20%281593%E2%80%931641%29%2C%201st%20Earl%20of%20Strafford%2C%20and%20His%20Secretary%20Sir%20Philip%20Mainwaring%20%281589%E2%80%931661%29%20-%20F.19%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -34425,7 +34697,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -34760,11 +35033,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Charles I (1600–1649)",
-    "year": "1850",
+    "year": "",
     "location": "Northampton Museum and Art Gallery",
     "city": "Northampton",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20%281599-1641%29%20%28imitator%20of%29%20-%20Charles%20I%20%281600%E2%80%931649%29%20-%201992.212%20-%20Northampton%20Museum%20and%20Art%20Gallery.jpg?width=500",
     "qid": "Q119937500",
     "wikidata": "https://www.wikidata.org/wiki/Q119937500",
@@ -34775,16 +35048,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "northampton-museum-and-art-gallery",
     "location_src": "Northampton Museum and Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {
@@ -36873,7 +37158,7 @@
     "title": "The lamentation over the dead Christ",
     "year": "1635",
     "location": "Rome",
-    "city": "Metropolitan City of Rome",
+    "city": "Rome",
     "country": "Italy",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20The%20Lamentation%20of%20Christ.jpg?width=500",
@@ -36897,7 +37182,8 @@
     "museum_id": "rome",
     "location_src": "Rome",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Metropolitan City of Rome"
    }
   },
   {
@@ -37476,11 +37762,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "The Madonna of the Roses",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas-virgen%20de%20la%20rosa-prado.jpg?width=500",
     "qid": "Q59717941",
     "wikidata": "https://www.wikidata.org/wiki/Q59717941",
@@ -37491,16 +37777,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -37515,11 +37813,11 @@
    "properties": {
     "painter": "Anthony van Dyck",
     "title": "Santa Rosalía de Palermo",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%2C%20Antonio%20%28Copia%29%20-%20Santa%20Rosal%C3%ADa%20de%20Palermo%2C%20P002556.jpg?width=500",
     "qid": "Q59771229",
     "wikidata": "https://www.wikidata.org/wiki/Q59771229",
@@ -37530,16 +37828,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, after death (1599–1641) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1599-1641)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {

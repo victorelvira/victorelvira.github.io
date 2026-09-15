@@ -15,7 +15,7 @@
     "painter": "Ignacio Zuloaga",
     "title": "Portrait d'Édouard Branly (1844-1940), physicien",
     "year": "1920",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "location": "Musée Carnavalet",
     "kind": "museum",
@@ -52,7 +52,8 @@
     "location_src": "Musée Carnavalet",
     "form": "painting",
     "_title_was": "Q104373277",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "city_src": "3rd arrondissement of Paris"
    }
   },
   {
@@ -524,7 +525,7 @@
    "properties": {
     "painter": "Ignacio Zuloaga",
     "title": "Retrato de Olegario Peralbo",
-    "year": "2000",
+    "year": "",
     "city": "Córdoba",
     "country": "Spain",
     "location": "Museum of Fine Arts of Córdoba",
@@ -543,7 +544,15 @@
     "museum_id": "museum-of-fine-arts-of-cordoba",
     "qid": "Q113467813",
     "location_src": "Museum of Fine Arts of Córdoba",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "2000",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 2000 with century precision: a century, not a year, and outside the painter's life (1870-1945)"
+     }
+    }
    }
   },
   {
@@ -559,7 +568,7 @@
     "painter": "Ignacio Zuloaga",
     "title": "La gitana",
     "year": "1904",
-    "city": "Stockholm Municipality",
+    "city": "Stockholm",
     "country": "Sweden",
     "location": "Thiel Gallery",
     "kind": "museum",
@@ -581,7 +590,8 @@
     "museum_id": "thiel-gallery",
     "qid": "Q116189284",
     "location_src": "Thiel Gallery",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Stockholm Municipality"
    }
   },
   {
@@ -596,7 +606,7 @@
    "properties": {
     "painter": "Ignacio Zuloaga",
     "title": "Segovia",
-    "year": "1850",
+    "year": "",
     "city": "Havana",
     "country": "Cuba",
     "location": "National Museum of Fine Arts of Cuba",
@@ -614,7 +624,15 @@
     "museum_id": "national-museum-of-fine-arts-of-cuba",
     "qid": "Q116189289",
     "location_src": "National Museum of Fine Arts of Cuba",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1870-1945)"
+     }
+    }
    }
   },
   {
@@ -961,7 +979,7 @@
     "painter": "Ignacio Zuloaga",
     "title": "La Naine Dona Mercedes",
     "year": "1899",
-    "city": "7th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "location": "Musée d'Orsay",
     "kind": "museum",
@@ -987,7 +1005,8 @@
     "location_src": "Musée d'Orsay",
     "form": "painting",
     "_title_was": "Q17492129",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "city_src": "7th arrondissement of Paris"
    }
   },
   {
@@ -1003,7 +1022,7 @@
     "painter": "Ignacio Zuloaga",
     "title": "L'Anachorète",
     "year": "1907",
-    "city": "7th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "location": "Musée d'Orsay",
     "kind": "museum",
@@ -1029,7 +1048,8 @@
     "location_src": "Musée d'Orsay",
     "form": "painting",
     "_title_was": "Q17492587",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "city_src": "7th arrondissement of Paris"
    }
   },
   {
@@ -1120,7 +1140,7 @@
     "painter": "Ignacio Zuloaga",
     "title": "Mon oncle et mes deux cousines",
     "year": "1899",
-    "city": "7th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "location": "Musée d'Orsay",
     "kind": "museum",
@@ -1155,7 +1175,8 @@
     "location_src": "Musée d'Orsay",
     "form": "painting",
     "_title_was": "Q17495398",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "city_src": "7th arrondissement of Paris"
    }
   },
   {

@@ -4315,11 +4315,11 @@
    "properties": {
     "painter": "Hans Memling",
     "title": "Salvator Mundi",
-    "year": "1550",
+    "year": "",
     "location": "Plume Library",
     "city": "Maldon",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20%281430-1440-1494%29%20%28follower%20of%29%20-%20Salvator%20Mundi%20-%20X.1.2%20-%20Plume%20Library.jpg?width=500",
     "qid": "Q118679861",
     "wikidata": "https://www.wikidata.org/wiki/Q118679861",
@@ -4330,16 +4330,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, after death (1430–1494) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, after death (1430–1494) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1430-1494)"
      }
     },
     "museum_id": "plume-library",
     "location_src": "Plume Library",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -4759,7 +4771,7 @@
     "title": "Portrait of a Young Man with a Rosary",
     "year": "1485",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hans%20Memling%20Home%20amb%20rosari.jpg?width=500",
@@ -4773,7 +4785,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {

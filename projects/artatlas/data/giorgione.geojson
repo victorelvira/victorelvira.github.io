@@ -230,7 +230,7 @@
     "painter": "Giorgione",
     "title": "Portrait of a Young Man",
     "year": "1501",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -258,7 +258,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20440585",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -274,7 +275,7 @@
     "painter": "Giorgione",
     "title": "David",
     "year": "1501",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "location": "Statens Museum for Kunst",
     "kind": "museum",
@@ -302,7 +303,8 @@
     "museum_id": "statens-museum-for-kunst",
     "qid": "Q20547967",
     "location_src": "Statens Museum for Kunst",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -446,7 +448,7 @@
    "properties": {
     "painter": "Giorgione",
     "title": "Nymphs and Children in a Landscape with Shepherds",
-    "year": "1600",
+    "year": "",
     "city": "London",
     "country": "United Kingdom",
     "location": "National Gallery",
@@ -466,7 +468,15 @@
     "museum_id": "national-gallery",
     "qid": "Q26699539",
     "location_src": "National Gallery",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1477-1510)"
+     }
+    }
    }
   },
   {
@@ -792,7 +802,7 @@
     "painter": "Giorgione",
     "title": "Portrait of a Youth",
     "year": "1503",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -823,7 +833,8 @@
     "qid": "Q3656034",
     "wga_url": "https://www.wga.hu/html/g/giorgion/portrait/07portra.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -1744,7 +1755,7 @@
    "properties": {
     "painter": "Giorgione",
     "title": "Two Shepherds",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -1761,7 +1772,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "qid": "Q50881662",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {

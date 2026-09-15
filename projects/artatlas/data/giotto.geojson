@@ -311,7 +311,7 @@
    "properties": {
     "painter": "Giotto",
     "title": "Saint Francis Expelling the Devils",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Wellcome Collection",
     "kind": "museum",
@@ -329,7 +329,8 @@
     "museum_id": "wellcome-collection",
     "qid": "Q119450066",
     "location_src": "Wellcome Collection",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -780,7 +781,7 @@
    "properties": {
     "painter": "Giotto",
     "title": "The Last Supper",
-    "year": "1450",
+    "year": "",
     "city": "Munich",
     "country": "Germany",
     "location": "Alte Pinakothek",
@@ -802,7 +803,15 @@
     "wga_url": "https://www.wga.hu/html/g/giotto/z_panel/3polypty/3lastsup.html",
     "location_src": "Alte Pinakothek",
     "venue_of": "Bavarian State Painting Collections",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1450",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1450 with century precision: a century, not a year, and outside the painter's life (1267-1337)"
+     }
+    }
    }
   },
   {
@@ -999,7 +1008,7 @@
    "properties": {
     "painter": "Giotto",
     "title": "la Présentation de Vierge au temple",
-    "year": "1400",
+    "year": "",
     "city": "Bordeaux",
     "country": "France",
     "location": "Bordeaux Cathedral",
@@ -1029,7 +1038,15 @@
     "location_src": "Bordeaux Cathedral",
     "form": "painting",
     "_title_was": "Q29117133",
-    "_title_src": "wikidata label (fr)"
+    "_title_src": "wikidata label (fr)",
+    "_year_was": "1400",
+    "_overrides": {
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1400 with century precision: a century, not a year, and outside the painter's life (1267-1337)"
+     }
+    }
    }
   },
   {

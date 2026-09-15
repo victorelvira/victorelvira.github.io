@@ -1923,11 +1923,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Island of Santo Spirito in Venice.",
-    "year": "1701",
+    "year": "",
     "location": "National Museum in Warsaw",
     "city": "Śródmieście",
     "country": "Poland",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%20Island%20of%20Santo%20Spirito.jpg?width=500",
     "qid": "Q22988706",
     "wikidata": "https://www.wikidata.org/wiki/Q22988706",
@@ -1938,16 +1938,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1701 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "national-museum-in-warsaw",
     "location_src": "National Museum in Warsaw",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1701"
    }
   },
   {
@@ -4564,11 +4576,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Rio dei Mendicanti, Venice",
-    "year": "1800",
+    "year": "",
     "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20-%20Rio%20dei%20Mendicanti%2C%20Venice%20-%2026.776%20-%20Museum%20of%20Fine%20Arts.jpg?width=500",
     "qid": "Q20539602",
     "wikidata": "https://www.wikidata.org/wiki/Q20539602",
@@ -4579,16 +4591,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1800, after death (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1800, after death (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1800 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1800"
    }
   },
   {
@@ -5167,11 +5191,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Landscape with a Quay and Ships on a Lake",
-    "year": "1800",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20-%20Landschap%20met%20een%20kade%20en%20schepen%20op%20een%20meer.jpg?width=500",
     "qid": "Q17334106",
     "wikidata": "https://www.wikidata.org/wiki/Q17334106",
@@ -5182,16 +5206,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1800, after death (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1800, after death (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1800 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1800"
    }
   },
   {
@@ -5206,11 +5242,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Venetian Lagoon",
-    "year": "1500",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20-%20Lagune%20bij%20Veneti%C3%AB.jpg?width=500",
     "qid": "Q17334161",
     "wikidata": "https://www.wikidata.org/wiki/Q17334161",
@@ -5221,16 +5257,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1500, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1500, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500"
    }
   },
   {
@@ -5245,11 +5293,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Fire in the San Marcuola Oil Depot, Venice, 28 November 1789",
-    "year": "1500",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20-%20De%20brand%20in%20de%20wijk%20van%20San%20Marcuola.jpg?width=500",
     "qid": "Q17334299",
     "wikidata": "https://www.wikidata.org/wiki/Q17334299",
@@ -5260,16 +5308,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1500, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1500, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1500 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1500"
    }
   },
   {
@@ -6160,7 +6220,7 @@
     "title": "Bucintoro-festen i Venedig",
     "year": "1750",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20-%20The%20Bucintoro%20Festival%20of%20Venice%20-%20Google%20Art%20Project.jpg?width=500",
@@ -6184,7 +6244,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -8149,7 +8210,7 @@
     "title": "Vue de la place Saint-Marc, à Venise",
     "year": "1760",
     "location": "Musée Cognacq-Jay",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%2C%20Francesco%20-%20Vue%20de%20la%20place%20Saint-Marc%2C%20%C3%A0%20Venise%20-%20J%2053%20-%20Mus%C3%A9e%20Cognacq-Jay.jpg?width=500",
@@ -8173,7 +8234,8 @@
     "museum_id": "musee-cognacq-jay",
     "location_src": "Musée Cognacq-Jay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris"
    }
   },
   {
@@ -8188,11 +8250,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Caprice, avec arc triomphal en ruine et paysage du bord de la lagune",
-    "year": "1701",
+    "year": "",
     "location": "Musée Cognacq-Jay",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%2C%20Francesco%20-%20Caprice%2C%20avec%20arc%20triomphal%20en%20ruine%20et%20paysage%20du%20bord%20de%20la%20lagune%20-%20J%2054%20-%20Mus%C3%A9e%20Cognacq-Jay.jpg?width=500",
     "qid": "Q97643437",
     "wikidata": "https://www.wikidata.org/wiki/Q97643437",
@@ -8203,16 +8265,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1701 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "musee-cognacq-jay",
     "location_src": "Musée Cognacq-Jay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris",
+    "_year_was": "1701"
    }
   },
   {
@@ -8227,11 +8302,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Caprice rustique, avec pont et tour en ruine",
-    "year": "1701",
+    "year": "",
     "location": "Musée Cognacq-Jay",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%2C%20Francesco%20-%20Caprice%20rustique%2C%20avec%20pont%20et%20tour%20en%20ruine%20-%20J%2062%20-%20Mus%C3%A9e%20Cognacq-Jay.jpg?width=500",
     "qid": "Q97643439",
     "wikidata": "https://www.wikidata.org/wiki/Q97643439",
@@ -8242,16 +8317,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1701 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "musee-cognacq-jay",
     "location_src": "Musée Cognacq-Jay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris",
+    "_year_was": "1701"
    }
   },
   {
@@ -8266,11 +8354,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Caprice rustique, avec tour au bord de l'eau",
-    "year": "1701",
+    "year": "",
     "location": "Musée Cognacq-Jay",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%2C%20Francesco%20-%20Caprice%20rustique%2C%20avec%20tour%20au%20bord%20de%20l%27eau%20-%20J%2063%20-%20Mus%C3%A9e%20Cognacq-Jay.jpg?width=500",
     "qid": "Q97643441",
     "wikidata": "https://www.wikidata.org/wiki/Q97643441",
@@ -8281,16 +8369,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1701 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "musee-cognacq-jay",
     "location_src": "Musée Cognacq-Jay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris",
+    "_year_was": "1701"
    }
   },
   {
@@ -8307,7 +8408,7 @@
     "title": "Vue de l'île de Santa Maria delle Grazie",
     "year": "1799",
     "location": "Musée Cognacq-Jay",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "copy or later version",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%2C%20Giacomo%20-%20Vue%20de%20l%27%C3%AEle%20de%20Santa%20Maria%20delle%20Grazie%20-%20J%2058%20-%20Mus%C3%A9e%20Cognacq-Jay.jpg?width=500",
@@ -8329,7 +8430,8 @@
     "museum_id": "musee-cognacq-jay",
     "location_src": "Musée Cognacq-Jay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris"
    }
   },
   {
@@ -8346,7 +8448,7 @@
     "title": "View of the island of San Cristoforo di Murano",
     "year": "1764",
     "location": "Musée Cognacq-Jay",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%2C%20Giacomo%20-%20Vue%20de%20l%27%C3%AEle%20de%20San%20Cristoforo%20di%20Murano%20-%20J%2059%20-%20Mus%C3%A9e%20Cognacq-Jay.jpg?width=500",
@@ -8370,7 +8472,8 @@
     "museum_id": "musee-cognacq-jay",
     "location_src": "Musée Cognacq-Jay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris"
    }
   },
   {
@@ -8385,11 +8488,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Vue d'un port, sur la lagune",
-    "year": "1701",
+    "year": "",
     "location": "Musée Cognacq-Jay",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%2C%20Francesco%20%28atelier%20de%29%20-%20Vue%20d%27un%20port%2C%20sur%20la%20lagune%20-%20J%2056%20-%20Mus%C3%A9e%20Cognacq-Jay.jpg?width=500",
     "qid": "Q97643463",
     "wikidata": "https://www.wikidata.org/wiki/Q97643463",
@@ -8400,16 +8503,29 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1701, before birth (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1701 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "musee-cognacq-jay",
     "location_src": "Musée Cognacq-Jay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris",
+    "_year_was": "1701"
    }
   },
   {
@@ -8426,7 +8542,7 @@
     "title": "capriccio con rovine e casa di pescatori",
     "year": "1750",
     "location": "Musée Cognacq-Jay",
-    "city": "3rd arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%2C%20Francesco%20%28atelier%20de%29%20-%20Caprice%2C%20avec%20arc%20en%20ruine%20et%20maisons%20de%20p%C3%AAcheurs%20-%20J%2060%20-%20Mus%C3%A9e%20Cognacq-Jay.jpg?width=500",
@@ -8450,7 +8566,8 @@
     "museum_id": "musee-cognacq-jay",
     "location_src": "Musée Cognacq-Jay",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "3rd arrondissement of Paris"
    }
   },
   {
@@ -8549,7 +8666,7 @@
     "title": "La Piazzetta et le quai des Esclavons",
     "year": "1780",
     "location": "Musée Nissim de Camondo",
-    "city": "8th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi-Veduta-NissimDeCamondo.jpg?width=500",
@@ -8573,7 +8690,8 @@
     "museum_id": "musee-nissim-de-camondo",
     "location_src": "Musée Nissim de Camondo",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "8th arrondissement of Paris"
    }
   },
   {
@@ -9103,7 +9221,7 @@
     "title": "The Island S. Cristoforo di Murano",
     "year": "1780",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%20-%20The%20Island%20S.%20Cristoforo%20di%20Murano%2C%20ca.%201780%2C%204251.jpg?width=500",
@@ -9127,7 +9245,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -9144,7 +9263,7 @@
     "title": "Bridge at Dolo",
     "year": "1780",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%20-%20Bridge%20at%20Dolo%2C%20ca.%201780%2C%204252.jpg?width=500",
@@ -9168,7 +9287,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -9185,7 +9305,7 @@
     "title": "The S. Pietro di Castello in Venice",
     "year": "1780",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%20-%20The%20San%20Pietro%20di%20Castello%20in%20Venice%2C%20ca.%201780%2C%204250.jpg?width=500",
@@ -9209,7 +9329,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -9226,7 +9347,7 @@
     "title": "The Rio dei Mendicanti in Venice",
     "year": "1780",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%20-%20The%20Rio%20dei%20Mendicanti%20in%20Venice%2C%20ca.%201780%2C%204253.jpg?width=500",
@@ -9250,7 +9371,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -9431,7 +9553,7 @@
     "title": "Capriccio with Ruins and Figures",
     "year": "1765",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20%281712-1793%29%20-%20Capriccio%20with%20Ruins%20and%20Figures%20-%20490-1882%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -9455,7 +9577,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -9472,7 +9595,7 @@
     "title": "Capriccio with Ruins and Figures",
     "year": "1777",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20%281712-1793%29%20-%20Capriccio%20with%20Ruins%20and%20Figures%20-%20489-1882%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -9496,7 +9619,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -9513,7 +9637,7 @@
     "title": "Venice: A Fair in the Piazza San Marco Seen through an Archway at the South-West End",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20%281712-1793%29%20%28follower%20of%29%20-%20Venice%2C%20A%20Fair%20in%20the%20Piazza%20San%20Marco%20Seen%20through%20an%20Archway%20at%20the%20South-West%20End%20-%20CAI.101%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -9527,7 +9651,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -9544,7 +9669,7 @@
     "title": "Venice: View of Santa Maria della Salute and the Dogana",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20%281712-1793%29%20%28style%20of%29%20-%20Venice%2C%20View%20of%20Santa%20Maria%20della%20Salute%20and%20the%20Dogana%20-%20497-1870%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -9558,7 +9683,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -9946,7 +10072,7 @@
     "title": "Venice, the Church of San Simeone Piccolo on the Grand Canal",
     "year": "1755",
     "location": "Kenwood House",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20%281712-1793%29%20-%20Venice%2C%20the%20Church%20of%20San%20Simeone%20Piccolo%20on%20the%20Grand%20Canal%20-%2088028828%20-%20Kenwood%20House.jpg?width=500",
@@ -9970,7 +10096,8 @@
     "museum_id": "kenwood-house",
     "location_src": "Kenwood House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -9987,7 +10114,7 @@
     "title": "Venice, the Church of Santa Lucia on the Grand Canal",
     "year": "1755",
     "location": "Kenwood House",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20%281712-1793%29%20-%20Venice%2C%20the%20Church%20of%20Santa%20Lucia%20on%20the%20Grand%20Canal%20-%2088028829%20-%20Kenwood%20House.jpg?width=500",
@@ -10011,7 +10138,8 @@
     "museum_id": "kenwood-house",
     "location_src": "Kenwood House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -11891,7 +12019,7 @@
     "title": "View of St Mark's Square, Venice",
     "year": "",
     "location": "Royal Free Hospital",
-    "city": "London Borough of Camden",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi%20%281712-1793%29%20%28imitator%20of%29%20-%20View%20of%20St%20Mark%27s%20Square%2C%20Venice%20-%20A213%20-%20Royal%20Free%20Hospital.jpg?width=500",
@@ -11905,7 +12033,8 @@
     "museum_id": "royal-free-hospital",
     "location_src": "Royal Free Hospital",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Camden"
    }
   },
   {
@@ -13124,7 +13253,7 @@
     "title": "The Piazzetta, Venice",
     "year": "1750",
     "location": "Gothenburg Museum of Art",
-    "city": "Gothenburg Municipality",
+    "city": "Gothenburg",
     "country": "Sweden",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guardi%20-%20The%20Piazzetta%2C%20Venice%2C%20GKM%200953.jpg?width=500",
@@ -13148,7 +13277,8 @@
     "museum_id": "gothenburg-museum-of-art",
     "location_src": "Gothenburg Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Gothenburg Municipality"
    }
   },
   {
@@ -13297,11 +13427,11 @@
    "properties": {
     "painter": "Francesco Guardi",
     "title": "Yard",
-    "year": "1850",
+    "year": "",
     "location": "National Gallery of Armenia",
     "city": "Yerevan",
     "country": "Armenia",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Guardi.%20Yard.jpg?width=500",
     "qid": "Q28862857",
     "wikidata": "https://www.wikidata.org/wiki/Q28862857",
@@ -13312,16 +13442,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1712–1793) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1712-1793)"
      }
     },
     "museum_id": "national-gallery-of-armenia",
     "location_src": "National Gallery of Armenia",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {

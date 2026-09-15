@@ -3292,7 +3292,7 @@
     "painter": "Zurbarán",
     "title": "Saint Francis with Two Angels",
     "year": "1600",
-    "city": "Gothenburg Municipality",
+    "city": "Gothenburg",
     "country": "Sweden",
     "location": "Gothenburg Museum of Art",
     "kind": "museum",
@@ -3318,7 +3318,8 @@
     "museum_id": "gothenburg-museum-of-art",
     "qid": "Q130706803",
     "location_src": "Gothenburg Museum of Art",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Gothenburg Municipality"
    }
   },
   {
@@ -3388,7 +3389,7 @@
     "painter": "Zurbarán",
     "title": "Immaculata",
     "year": "1661",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -3417,7 +3418,8 @@
     "location_src": "Museum of Fine Arts, Budapest",
     "form": "painting",
     "_title_was": "Q135455440",
-    "_title_src": "wikidata label (hu)"
+    "_title_src": "wikidata label (hu)",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -3432,7 +3434,7 @@
    "properties": {
     "painter": "Zurbarán",
     "title": "Un Franciscain",
-    "year": "1601",
+    "year": "",
     "city": "Marseille",
     "country": "France",
     "location": "Musée des beaux-arts de Marseille",
@@ -3454,6 +3456,11 @@
      "creation": {
       "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1598-1664)"
      }
     },
     "museum_id": "musee-des-beaux-arts-de-marseille",
@@ -3461,7 +3468,8 @@
     "location_src": "Musée des beaux-arts de Marseille",
     "form": "painting",
     "_title_was": "Q138428808",
-    "_title_src": "wikidata label (mul)"
+    "_title_src": "wikidata label (mul)",
+    "_year_was": "1601"
    }
   },
   {
@@ -7080,7 +7088,7 @@
     "painter": "Zurbarán",
     "title": "The Holy Family",
     "year": "1659",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -7110,7 +7118,8 @@
     "qid": "Q50907377",
     "wga_url": "https://www.wga.hu/html/z/zurbaran/2/egypt.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -7126,7 +7135,7 @@
     "painter": "Zurbarán",
     "title": "The Immaculate Conception",
     "year": "1661",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -7156,7 +7165,8 @@
     "qid": "Q50988413",
     "wga_url": "https://www.wga.hu/html/z/zurbaran/2/immacula.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -7219,7 +7229,7 @@
     "painter": "Zurbarán",
     "title": "Saint Andrew",
     "year": "1635",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -7250,7 +7260,8 @@
     "qid": "Q5403305",
     "wga_url": "https://www.wga.hu/html/z/zurbaran/1/apostle.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -10486,7 +10497,7 @@
     "painter": "Zurbarán",
     "title": "Saint Francis kneeling",
     "year": "1635",
-    "city": "Metropolitan City of Milan",
+    "city": "Milan",
     "country": "Italy",
     "location": "Milan",
     "kind": "museum",
@@ -10514,7 +10525,8 @@
     "museum_id": "milan",
     "qid": "Q87068890",
     "location_src": "Milan",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Metropolitan City of Milan"
    }
   },
   {

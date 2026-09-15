@@ -16530,7 +16530,7 @@
     "title": "Portrait of Senora Ceán Bermudez",
     "year": "1785",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20y%20Lucientes%20-%20Portrait%20of%20Senora%20Ce%C3%A1n%20Bermudez%20-%20Google%20Art%20Project.jpg?width=500",
@@ -16553,7 +16553,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -18142,11 +18143,11 @@
    "properties": {
     "painter": "Goya",
     "title": "Juan Antonio Llorente",
-    "year": "1850",
+    "year": "",
     "location": "São Paulo Museum of Art",
     "city": "São Paulo",
     "country": "Brazil",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20goya%2C%20ritratto%20di%20don%20juan%20antonio%20llorente%2C%201809-13%2C%2002.JPG?width=500",
     "qid": "Q49873216",
     "wikidata": "https://www.wikidata.org/wiki/Q49873216",
@@ -18157,16 +18158,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1746-1828)"
      }
     },
     "museum_id": "sao-paulo-museum-of-art",
     "location_src": "São Paulo Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {
@@ -18390,7 +18403,7 @@
     "title": "Portrait of José Antonio Marqués de Caballero",
     "year": "1807",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20Jos%C3%A9%20Antonio%20Marqu%C3%A9s%20Caballero.jpg?width=500",
@@ -18413,7 +18426,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -18536,11 +18550,11 @@
    "properties": {
     "painter": "Goya",
     "title": "Portrait of a Picador",
-    "year": "1900",
+    "year": "",
     "location": "National Museum of Norway",
     "city": "Oslo",
     "country": "Norway",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20-%20Portrait%20of%20a%20Picador%20-%20NG.M.01402%20-%20National%20Museum%20of%20Art%2C%20Architecture%20and%20Design.jpg?width=500",
     "qid": "Q55424311",
     "wikidata": "https://www.wikidata.org/wiki/Q55424311",
@@ -18551,16 +18565,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1900, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1900, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1900 with century precision: a century, not a year, and outside the painter's life (1746-1828)"
      }
     },
     "museum_id": "national-museum-of-norway",
     "location_src": "National Museum of Norway",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1900"
    }
   },
   {
@@ -18910,11 +18936,11 @@
    "properties": {
     "painter": "Goya",
     "title": "Pigeons and Fowls",
-    "year": "1750",
+    "year": "",
     "location": "Juan B. Castagnino Fine Arts Museum",
     "city": "Rosario",
     "country": "Argentina",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20%28atribuido%29%20-%20Palomas%20y%20pollos.jpg?width=500",
     "qid": "Q55582991",
     "wikidata": "https://www.wikidata.org/wiki/Q55582991",
@@ -18928,16 +18954,28 @@
     "creation_lon": -0.8891,
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1750, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1750, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1750 with century precision: a century, not a year, and outside the painter's life (1746-1828)"
      }
     },
     "museum_id": "juan-b-castagnino-fine-arts-museum",
     "location_src": "Juan B. Castagnino Fine Arts Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1750"
    }
   },
   {
@@ -19739,7 +19777,7 @@
     "title": "The Madman",
     "year": "",
     "location": "Voergaard Castle",
-    "city": "Brønderslev Municipality",
+    "city": "Brønderslev",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27The%20Madman%27%20by%20Francisco%20Goya.jpg?width=500",
@@ -19753,7 +19791,8 @@
     "museum_id": "voergaard-castle",
     "location_src": "Voergaard Castle",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brønderslev Municipality"
    }
   },
   {
@@ -22724,11 +22763,11 @@
    "properties": {
     "painter": "Goya",
     "title": "The Friar's visit",
-    "year": "1850",
+    "year": "",
     "location": "Marquess of la Romana",
     "city": "",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20visita%20del%20fraile%20por%20Francisco%20de%20Goya.jpg?width=500",
     "qid": "Q110271705",
     "wikidata": "https://www.wikidata.org/wiki/Q110271705",
@@ -22739,16 +22778,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1746–1828) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1746-1828)"
      }
     },
     "museum_id": "marquess-of-la-romana",
     "location_src": "Marquess of la Romana",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {

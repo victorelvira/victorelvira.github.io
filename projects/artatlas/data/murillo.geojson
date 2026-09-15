@@ -4426,7 +4426,7 @@
     "painter": "Murillo",
     "title": "The Infant Christ Distributing Bread to the Pilgrims",
     "year": "1678",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
@@ -4457,7 +4457,8 @@
     "qid": "Q9248340",
     "wga_url": "https://www.wga.hu/html/m/murillo/3/310muril.html",
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -4777,12 +4778,12 @@
    "properties": {
     "painter": "Murillo",
     "title": "Holy Family with St. John the Baptist",
-    "year": "1601",
-    "city": "Budapest district XIV",
+    "year": "",
+    "city": "Budapest",
     "country": "Hungary",
     "location": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "156 × 126 cm",
@@ -4801,14 +4802,27 @@
     "wga_url": "https://www.wga.hu/html/m/murillo/2/201muril.html",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "location_src": "Museum of Fine Arts, Budapest",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV",
+    "_year_was": "1601"
    }
   },
   {
@@ -5629,11 +5643,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "An Old Woman Spinning.",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vieja%20hilando%2C%20copia%20de%20un%20original%20de%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695348",
     "wikidata": "https://www.wikidata.org/wiki/Q59695348",
@@ -5644,16 +5658,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -6394,11 +6420,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Penitent Magdalen",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Magdalena%20penitente%2C%20copia%20de%20un%20original%20de%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695504",
     "wikidata": "https://www.wikidata.org/wiki/Q59695504",
@@ -6409,16 +6435,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -6433,11 +6471,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Paisaje",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paisaje%2C%20de%20un%20disc%C3%ADpulo%20de%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695536",
     "wikidata": "https://www.wikidata.org/wiki/Q59695536",
@@ -6448,16 +6486,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -6472,11 +6522,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "El Niño Jesús dormido sobre la Cruz",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Ni%C3%B1o%20Jes%C3%BAs%20dormido%20sobre%20la%20cruz%2C%20de%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695537",
     "wikidata": "https://www.wikidata.org/wiki/Q59695537",
@@ -6487,16 +6537,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -6511,11 +6573,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Paisaje",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paisaje%2C%20de%20un%20disc%C3%ADpulo%20de%20Bartolom%C3%A9%20Esteban%20Murillo.%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695538",
     "wikidata": "https://www.wikidata.org/wiki/Q59695538",
@@ -6526,16 +6588,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -6591,11 +6665,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Cabeza de San Pablo",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cabeza%20de%20San%20Pablo%2C%20copia%20de%20un%20original%20de%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59695599",
     "wikidata": "https://www.wikidata.org/wiki/Q59695599",
@@ -6606,16 +6680,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -6702,11 +6788,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Annunciation to the Virgin",
-    "year": "1750",
+    "year": "",
     "location": "Rijksmuseum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/De%20verkondiging%20aan%20Maria%20Rijksmuseum%20SK-A-4704.jpeg?width=500",
     "qid": "Q17340675",
     "wikidata": "https://www.wikidata.org/wiki/Q17340675",
@@ -6717,16 +6803,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1750, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1750, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1750 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "rijksmuseum",
     "location_src": "Rijksmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1750"
    }
   },
   {
@@ -7465,7 +7563,7 @@
     "title": "The Virgin and Child with Saint John",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20%281617-1682%29%20%28style%20of%29%20-%20The%20Virgin%20and%20Child%20with%20Saint%20John%20-%20584-1870%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -7479,7 +7577,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {
@@ -7835,7 +7934,7 @@
     "title": "A  Spanish Boy with a Dog",
     "year": "1660",
     "location": "Chiswick House",
-    "city": "London Borough of Hounslow",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20%281617-1682%29%20%28probably%20after%29%20-%20A%20Spanish%20Boy%20with%20a%20Dog%20-%2088003074%20-%20Chiswick%20House.jpg?width=500",
@@ -7859,7 +7958,8 @@
     "museum_id": "chiswick-house",
     "location_src": "Chiswick House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Hounslow"
    }
   },
   {
@@ -7874,11 +7974,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Saint Joseph and the Child Jesus",
-    "year": "1700",
+    "year": "",
     "location": "Musée Condé",
     "city": "Chantilly",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Chantilly%20%2860%29%2C%20mus%C3%A9e%20Cond%C3%A9%2C%20Bartolomeo-Esteban%20Murillo%2C%20Saint%20Joseph%20et%20l%27Enfant%20J%C3%A9sus.jpg?width=500",
     "qid": "Q106472264",
     "wikidata": "https://www.wikidata.org/wiki/Q106472264",
@@ -7889,16 +7989,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "musee-conde",
     "location_src": "Musée Condé",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -8970,7 +9082,7 @@
     "title": "Ecce Homo",
     "year": "1670",
     "location": "Doughty House",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20-%20Ecce%20Homo%20103L17033%209FQ2H.jpg?width=500",
@@ -8994,7 +9106,8 @@
     "museum_id": "doughty-house",
     "location_src": "Doughty House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -9483,11 +9596,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "San Francisco de Paula",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Francisco%20de%20Paula%2C%20de%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59710112",
     "wikidata": "https://www.wikidata.org/wiki/Q59710112",
@@ -9498,16 +9611,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -9522,11 +9647,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "The Head of Saint John the Baptist",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cabeza%20de%20San%20Juan%20Bautista%2C%20atribuida%20a%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59710113",
     "wikidata": "https://www.wikidata.org/wiki/Q59710113",
@@ -9537,16 +9662,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -9643,11 +9780,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Paisaje con cascada",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paisaje%20con%20cascada%2C%20atribuido%20a%20Bartolom%C3%A9%20Esteban%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59780105",
     "wikidata": "https://www.wikidata.org/wiki/Q59780105",
@@ -9658,16 +9795,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -9682,11 +9831,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Retrato de caballero",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20caballero%2C%20de%20un%20disc%C3%ADpulo%20de%20Murillo%20%28Museo%20del%20Prado%29.jpg?width=500",
     "qid": "Q59979814",
     "wikidata": "https://www.wikidata.org/wiki/Q59979814",
@@ -9697,16 +9846,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -9721,11 +9882,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "Saint Francis of Paola",
-    "year": "1601",
+    "year": "",
     "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Murillo%20-%20San%20Francisco%20de%20Paula%2C%20P000990.jpg?width=500",
     "qid": "Q59979854",
     "wikidata": "https://www.wikidata.org/wiki/Q59979854",
@@ -9736,16 +9897,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1601, before birth (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1601 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "museo-del-prado",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1601"
    }
   },
   {
@@ -10101,7 +10274,7 @@
     "title": "Mary and Child with Angels Playing Music",
     "year": "1675",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Perez%20Murillo%20-%20Mary%20and%20Child%20with%20Angels%20Playing%20Music%20-%20WGA16395.jpg?width=500",
@@ -10125,7 +10298,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -10717,7 +10891,7 @@
     "title": "The Nativity with the Annunciation to the Shepherds beyond",
     "year": "1675",
     "location": "Château de la Muette",
-    "city": "16th arrondissement of Paris",
+    "city": "Paris",
     "country": "France",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Murillo-natividad%20con%20el%20anuncio%20a%20los%20pastores.jpg?width=500",
@@ -10741,7 +10915,8 @@
     "museum_id": "chateau-de-la-muette",
     "location_src": "Château de la Muette",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "16th arrondissement of Paris"
    }
   },
   {
@@ -11116,11 +11291,11 @@
    "properties": {
     "painter": "Murillo",
     "title": "The Visitation",
-    "year": "1800",
+    "year": "",
     "location": "Guernsey Museum and Art Gallery",
     "city": "Saint Peter Port",
     "country": "Guernsey",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bartolom%C3%A9%20Esteban%20Murillo%20%281617-1682%29%20%28school%20of%29%20-%20The%20Visitation%20-%20GUELI%20%2C%20GMAG%201973%20-%20Guernsey%20Museum%20and%20Art%20Gallery.jpg?width=500",
     "qid": "Q119864036",
     "wikidata": "https://www.wikidata.org/wiki/Q119864036",
@@ -11131,16 +11306,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1800, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1800, after death (1617–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1800 with century precision: a century, not a year, and outside the painter's life (1617-1682)"
      }
     },
     "museum_id": "guernsey-museum-and-art-gallery",
     "location_src": "Guernsey Museum and Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1800"
    }
   },
   {

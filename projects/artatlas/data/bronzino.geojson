@@ -2346,7 +2346,7 @@
     "title": "Portrait of a Man, presumably a member of the Medici Family",
     "year": "1545",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20Portrait%20of%20a%20Man%2C%20presumably%20a%20member%20of%20the%20Medici%20Family%20-%20KMS563%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -2370,7 +2370,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -2512,7 +2513,7 @@
     "title": "Portrait of a Young Lady",
     "year": "1570",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Budapest%20bronzino.JPG?width=500",
@@ -2536,7 +2537,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
@@ -2926,11 +2928,11 @@
    "properties": {
     "painter": "Bronzino",
     "title": "Portrait of a man (copy)",
-    "year": "1700",
+    "year": "",
     "location": "Amsterdam Museum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Portret%20van%20een%20heer%20-%20SA%203342%20-%20Amsterdam%20Museum.jpg?width=500",
     "qid": "Q17531832",
     "wikidata": "https://www.wikidata.org/wiki/Q17531832",
@@ -2941,16 +2943,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1700, after death (1503–1572) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1700, after death (1503–1572) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1700 with century precision: a century, not a year, and outside the painter's life (1503-1572)"
      }
     },
     "museum_id": "amsterdam-museum",
     "location_src": "Amsterdam Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1700"
    }
   },
   {
@@ -3522,7 +3536,7 @@
     "title": "Portrait of a Lady in a Black Dress",
     "year": "",
     "location": "Victoria and Albert Museum",
-    "city": "Royal Borough of Kensington and Chelsea",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Style%20of%20Agnolo%20Bronzino%20-%20Portrait%20of%20a%20Lady%20-%20Victoria%20and%20Albert%20Museum.jpg?width=500",
@@ -3536,7 +3550,8 @@
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Royal Borough of Kensington and Chelsea"
    }
   },
   {

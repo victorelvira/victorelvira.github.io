@@ -797,12 +797,12 @@
    "properties": {
     "painter": "Giovanni Bellini",
     "title": "Madonna with sleeping Child",
-    "year": "1600",
+    "year": "",
     "city": "Verona",
     "country": "Italy",
     "location": "Castelvecchio Museum",
     "kind": "museum",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Panel",
     "dimensions": "73 × 55 cm",
@@ -819,14 +819,26 @@
     "qid": "Q128783484",
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1600, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1600, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1600 with century precision: a century, not a year, and outside the painter's life (1430-1516)"
      }
     },
     "location_src": "Castelvecchio Museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1600"
    }
   },
   {
@@ -6131,11 +6143,11 @@
    "properties": {
     "painter": "Giovanni Bellini",
     "title": "La Vierge et l'Enfant entre saint Jean Baptiste et saint Jérôme",
-    "year": "1550",
+    "year": "",
     "location": "Petit Palais",
     "city": "Avignon",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20bellini%20%28scuola%29%2C%20madonna%20col%20bambino%20tra%20i%20ss.%20giovanni%20battista%20e%20girolamo%2C%2001.jpg?width=500",
     "qid": "Q115669946",
     "wikidata": "https://www.wikidata.org/wiki/Q115669946",
@@ -6146,16 +6158,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1430-1516)"
      }
     },
     "museum_id": "petit-palais",
     "location_src": "Petit Palais",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {
@@ -6170,11 +6194,11 @@
    "properties": {
     "painter": "Giovanni Bellini",
     "title": "La Circoncision",
-    "year": "1550",
+    "year": "",
     "location": "Petit Palais",
     "city": "Avignon",
     "country": "France",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Petit%20Palais%20%28Avignon%29%20giovanni%20bellini%20la%20circoncision.jpg?width=500",
     "qid": "Q115674321",
     "wikidata": "https://www.wikidata.org/wiki/Q115674321",
@@ -6185,16 +6209,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1550, after death (1430–1516) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1430-1516)"
      }
     },
     "museum_id": "petit-palais",
     "location_src": "Petit Palais",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1550"
    }
   },
   {

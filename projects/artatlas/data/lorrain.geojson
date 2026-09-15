@@ -650,7 +650,7 @@
     "painter": "Claude Lorrain",
     "title": "Sunrise",
     "year": "1646",
-    "city": "London Borough of Richmond upon Thames",
+    "city": "London",
     "country": "United Kingdom",
     "location": "Doughty House",
     "kind": "museum",
@@ -679,7 +679,8 @@
     "museum_id": "doughty-house",
     "qid": "Q19904837",
     "location_src": "Doughty House",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "London Borough of Richmond upon Thames"
    }
   },
   {
@@ -2093,7 +2094,7 @@
     "painter": "Claude Lorrain",
     "title": "Landscape with the Flight into Egypt",
     "year": "1646",
-    "city": "Fredensborg Municipality",
+    "city": "Fredensborg",
     "country": "Denmark",
     "location": "Nivaagaard Museum",
     "kind": "museum",
@@ -2121,7 +2122,8 @@
     "museum_id": "nivaagaard-museum",
     "qid": "Q75135162",
     "location_src": "Nivaagaard Museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Fredensborg Municipality"
    }
   },
   {
@@ -6106,11 +6108,11 @@
    "properties": {
     "painter": "Claude Lorrain",
     "title": "The Flight into Egypt",
-    "year": "1850",
+    "year": "",
     "location": "McLean Museum and Art Gallery",
     "city": "Inverclyde",
     "country": "United Kingdom",
-    "attribution": "copy or later version",
+    "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20%281604-1682%29%20%28after%29%20-%20The%20Flight%20into%20Egypt%20-%201977.843%20-%20McLean%20Museum%20and%20Art%20Gallery.jpg?width=500",
     "qid": "Q119859305",
     "wikidata": "https://www.wikidata.org/wiki/Q119859305",
@@ -6121,16 +6123,28 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-24",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1850, after death (1600–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "was": "copy or later version",
+      "undoes": {
+       "at": "2026-08-24",
+       "source": "tier-2 cleaning",
+       "was": "generally accepted",
+       "note": "dated 1850, after death (1600–1682) → later copy / not autograph at this date (Timeline anomaly)"
+      },
+      "note": "the copy label rested only on a date that was a century; attribution restored"
+     },
+     "year": {
+      "at": "2026-09-15",
+      "source": "reading fix (fix_century_dates.py)",
+      "note": "Wikidata gives 1850 with century precision: a century, not a year, and outside the painter's life (1600-1682)"
      }
     },
     "museum_id": "mclean-museum-and-art-gallery",
     "location_src": "McLean Museum and Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "_year_was": "1850"
    }
   },
   {
@@ -7557,7 +7571,7 @@
     "title": "River Landscape with Herdsmen",
     "year": "1630",
     "location": "Statens Museum for Kunst",
-    "city": "Copenhagen Municipality",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20-%20River%20Landscape%20with%20Herdsmen%20-%20KMS4898%20-%20Statens%20Museum%20for%20Kunst.jpg?width=500",
@@ -7581,7 +7595,8 @@
     "museum_id": "statens-museum-for-kunst",
     "location_src": "Statens Museum for Kunst",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
    }
   },
   {
@@ -7721,7 +7736,7 @@
     "title": "Villa in the Roman Campagna",
     "year": "1645",
     "location": "Museum of Fine Arts, Budapest",
-    "city": "Budapest district XIV",
+    "city": "Budapest",
     "country": "Hungary",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Lorrain%20-%20Villa%20in%20the%20Roman%20Campagna%20-%20Google%20Art%20Project.jpg?width=500",
@@ -7745,7 +7760,8 @@
     "museum_id": "museum-of-fine-arts-budapest",
     "location_src": "Museum of Fine Arts, Budapest",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Budapest district XIV"
    }
   },
   {
