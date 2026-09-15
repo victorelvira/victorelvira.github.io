@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.27.9";
+const DATA_V = "0.28.5";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -143,7 +143,8 @@ const whereOf = (s) => WHERES[s[S_WHERE]] || "";
 let VOCAB = {}, SITES = [], TRACES = [];
 let deepState = "none";
 let startLongTail = () => {};             // set at boot when the base names a long tail
-let longTailWaiting = false;   // none | loading | loaded: what the stats line has to admit
+let longTailWaiting = false;
+let loadHere = () => {};                  // the long-tail squares on screen (0.28)   // none | loading | loaded: what the stats line has to admit
 const F_PORTRAIT = 1, F_GRAVEPIC = 2, F_PLACELESS = 4;
 // The pin's shape says what its colour and emoji cannot (Víctor, 2026-09-14: "necesitamos distintos
 // códigos"): F_APPROX, the point stands for an AREA (a battlefield, a town, a square), drawn larger and
@@ -675,8 +676,8 @@ function statsLine(pins, inView, rowsInView) {
     `${tableN.toLocaleString()} traces pass the filters` +
     (placeless ? ` · ${placeless.toLocaleString()} of them unpinnable` : "") +
     // Under-reporting without saying so is the whole family of bug this project keeps refusing.
-    (deepState === "loading" ? " · still loading the long tail…" :
-     deepState === "none" && longTailWaiting ? " · the less known arrive when you zoom in or search" : "");
+    (deepState === "loading" ? " · still loading the less known here…" :
+     (deepState === "none" || deepState === "partial") && longTailWaiting ? " · the less known arrive as you zoom in" : "");
 }
 
 function refresh() {
@@ -1734,6 +1735,7 @@ $("v-top").addEventListener("click", () => setTop(true));
  * ciertas nacionalidades para compensar falta de datos, que es la verdad". culture/data/top.json
  * (build_top.py): the 10 000 highest ranks, with country of birth, traces, and the numbers per country. */
 let TOP = null, topOn = false, topN = 500, topJob = null;
+$("tp-map").addEventListener("click", () => setTop(false));
 function setTop(on) {
   topOn = on;
   $("toppanel").hidden = !on;
@@ -1741,6 +1743,8 @@ function setTop(on) {
   if (on) {
     $("table").hidden = true; tableOn = false; $("v-table").classList.remove("active");
     $("main").style.display = "none"; $("v-map").classList.remove("active");
+    // on a phone the open filters sit above the list: the tap that asks for the list folds them away
+    if (matchMedia("(max-width: 720px)").matches && !document.body.classList.contains("folded")) $("fold").click();
     if (!topJob) topJob = fetch(`culture/data/top.json?v=${DATA_V}`).then((r) => r.json()).then((d) => { TOP = d; initTop(); });
     else if (TOP) renderTop();
   } else if (!tableOn) {
@@ -1770,6 +1774,7 @@ function initTop() {
     topN = +b.dataset.n; $("tp-bar").querySelectorAll("button[data-n]").forEach((x) => x.classList.toggle("on", x === b)); renderTop();
   }));
   sel.addEventListener("change", renderTop);
+  $("tp-bar").querySelectorAll(".tp-tabs button").forEach((b) => b.addEventListener("click", () => showTopTab(b.dataset.tab)));
   $("tp-q").addEventListener("input", renderTop);
   $("tp-list").addEventListener("click", (e) => {
     const row = e.target.closest("[data-qid]"); if (!row) return;
@@ -1780,6 +1785,40 @@ function initTop() {
     if (byPerson.has(q)) openPerson(q); else pendingCard = q;
   });
   renderTop();
+}
+/* the plan B, as numbers: every street and square named after a person of the atlas (build_streets.py) */
+let STATS = null;
+function showTopTab(tab) {
+  $("tp-bar").querySelectorAll(".tp-tabs button").forEach((b) => b.classList.toggle("on", b.dataset.tab === tab));
+  const streets = tab === "streets";
+  $("tp-body").hidden = streets; $("tp-streets").hidden = !streets;
+  $("tp-bar").querySelectorAll(".tp-ns, #tp-country, #tp-q").forEach((el) => { el.style.display = streets ? "none" : ""; });
+  if (!streets) return;
+  const draw = () => {
+    const S = STATS, max = (xs, i) => Math.max(1, ...xs.map((x) => x[i]));
+    const bar = (label, n, m, extra) => `<div class="tp-bar-row"><span class="tp-bl">${label}</span>` +
+      `<span class="tp-bb"><i style="width:${(100 * n / m).toFixed(1)}%"></i></span><span class="tp-bn">${n.toLocaleString()}</span>${extra || ""}</div>`;
+    const g = S.gender, gt = (g.female || 0) + (g.male || 0);
+    const ord = (n) => n + ((n % 100 >= 11 && n % 100 <= 13) ? "th" : ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th"));
+    const cent = (c) => (c > 0 ? `${ord(c)} century` : `${ord(-c)} century BC`);
+    $("tp-streets").innerHTML =
+      `<p class="tp-note">${S.streets.toLocaleString()} streets and squares named after ${S.people.toLocaleString()} people of the atlas, from OpenStreetMap and Wikidata.</p>` +
+      `<div class="st-grid"><section><h3>Most streets</h3>` +
+      S.top.slice(0, 25).map(([q, name, n, c]) => `<div class="tp-bar-row st-p" data-qid="${esc(q)}"><span class="tp-bl">${esc(name)}</span>` +
+        `<span class="tp-bb"><i style="width:${(100 * n / S.top[0][2]).toFixed(1)}%"></i></span><span class="tp-bn">${n.toLocaleString()}</span></div>`).join("") +
+      `</section><section><h3>By country of birth</h3>` +
+      S.countries.slice(0, 15).map(([c, n, who]) => bar(esc(c), n, S.countries[0][1], `<span class="st-who">${esc(who)}</span>`)).join("") +
+      `<h3>Women and men</h3>` + bar("women", g.female || 0, gt) + bar("men", g.male || 0, gt) +
+      `<h3>By century of birth</h3>` + S.centuries.map(([c, n]) => bar(cent(c), n, max(S.centuries, 1))).join("") +
+      `</section></div>`;
+    $("tp-streets").querySelectorAll(".st-p").forEach((row) => row.addEventListener("click", () => {
+      const q = row.dataset.qid; setTop(false); setTable(false); startLongTail();
+      enterPersonMode(q, null); frameRows(byPerson.get(q) || []);
+      if (byPerson.has(q)) openPerson(q); else pendingCard = q;
+    }));
+  };
+  if (STATS) draw();
+  else fetch(`culture/data/streets-stats.json?v=${DATA_V}`).then((r) => r.json()).then((d) => { STATS = d; draw(); });
 }
 function renderTop() {
   if (!TOP) return;
@@ -2133,7 +2172,7 @@ function foldSummary() {
     : `✕ Close filters${n ? ` <b>${n}</b>` : ""}`;
   $("fold").setAttribute("aria-expanded", String(!folded));
 }
-$("fold-done").addEventListener("click", () => { if (!document.body.classList.contains("folded")) $("fold").click(); });
+$("fold-done").addEventListener("click", () => { if (topOn) setTop(false); if (!document.body.classList.contains("folded")) $("fold").click(); });
 $("fold").addEventListener("click", () => {
   document.body.classList.toggle("folded");
   foldSummary();
@@ -2431,60 +2470,76 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     // of the less known, OpenStreetMap, events: ~20 MB) used to follow 2.5 s after every visit. Now it comes
     // the first time the reader zooms to region scale, searches, opens the table, needs a card or a link
     // that lives in it, or after 25 s on the page. The stats line says it is coming meanwhile.
-    if (d.deep) {
-      let started = false;
+    // 0.28 · THE LONG TAIL BY AREA. The less known used to be one file (20 MB by now); it is cut into 10° squares
+    // (build.py) and the map asks for the squares on screen once it is at region scale. Everything at once only
+    // when something needs the whole atlas: a search, the table, the top-people panel, a card or link to
+    // somebody not loaded yet. OpenStreetMap and the events still come whole, with the first square.
+    if (d.deepTiles) {
+      // squares of two folders: the long tail, and the museums only OpenStreetMap knows (0.28, ODbL)
+      const step = d.deepTiles.step, got = new Map();
+      const avail = new Set([...Object.keys(d.deepTiles.tiles).map((t) => "deep/" + t),
+                             ...Object.keys((d.osmMuseumTiles || {}).tiles || {}).map((t) => "osm-museums/" + t)]);
       longTailWaiting = true;
-      startLongTail = () => {
-        if (started) return;
-        started = true;
-        deepState = "loading";
-        (() => {
-        fetch("culture/data/" + d.deep + "?v=" + DATA_V)
-          .then((r) => (r.ok ? r.json() : null))
-          .then((extra) => {
-            if (!extra) { deepState = "none"; return; }
-            absorb(extra);
-            // the long tail's half of the record-card file rides in with it
-            const cards = (name) => fetch(`culture/data/${name}?v=${DATA_V}`)
-              .then((r) => (r.ok ? r.json() : null))
-              .then((more) => { if (more) needPeople(() => Object.assign(PEOPLE, more.p || {})); })
-              .catch(() => {});
-            cards("people-deep.json");
-            const settleIn = () => {
-              indexPeople();
-              const years = TRACES.map((r) => r.died ?? r.born).filter((y) => y != null).sort((a, b) => a - b);
-              if (years.length) buildTimeline(years[Math.floor(years.length * 0.01)], years.at(-1));
-              buildPlaces();
-              refresh();
-              tryPendingCard();         // a ?card= person who lives in the long tail arrives here
-              // the open card may have just gained traces, or people it knew, with this file: redraw it in place
-              if (openCard && !$("sheet").hidden && (byPerson.get(openCard) || []).length !== openCardRows) openPerson(openCard, true);
-              else { const kb = document.querySelector("#sheet-body .sh-knew"); if (kb) fillKnew(kb); }
-            };
-            // Then any further files the base names (0.24: atlas-osm.json, the statues from
-            // OpenStreetMap, ODbL and so in a file of their own, D8), one after another.
-            const more = (d.more || []).slice();
-            const next = () => {
-              const f = more.shift();
-              if (!f) { deepState = "loaded"; settleIn(); return; }
-              fetch("culture/data/" + f + "?v=" + DATA_V)
-                .then((r) => (r.ok ? r.json() : null))
-                // a file names its own card file, if it has people; the events have none, and asking
-                // for "people-events.json" by pattern was a 404 on every load
-                .then((x) => { if (x) { absorb(x); if (x.people) cards(x.people); } })
-                .catch(() => {})
-                .finally(next);
-            };
-            settleIn();
-            next();
-          })
-          .catch(() => { deepState = "none"; });
-        })();
+      const cards = (name) => fetch(`culture/data/${name}?v=${DATA_V}`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((more) => { if (more) needPeople(() => Object.assign(PEOPLE, more.p || {})); })
+        .catch(() => {});
+      const settleIn = () => {
+        indexPeople();
+        const years = TRACES.map((r) => r.died ?? r.born).filter((y) => y != null).sort((a, b) => a - b);
+        if (years.length) buildTimeline(years[Math.floor(years.length * 0.01)], years.at(-1));
+        buildPlaces();
+        refresh();
+        tryPendingCard();         // a ?card= person who lives in the long tail arrives here
+        // the open card may have just gained traces, or people it knew: redraw it in place
+        if (openCard && !$("sheet").hidden && (byPerson.get(openCard) || []).length !== openCardRows) openPerson(openCard, true);
+        else { const kb = document.querySelector("#sheet-body .sh-knew"); if (kb) fillKnew(kb); }
       };
-      map.on("zoomend", () => { if (map.getZoom() >= 6) startLongTail(); });
+      let settleTimer = 0;
+      const settleSoon = () => { clearTimeout(settleTimer); settleTimer = setTimeout(settleIn, 200); };
+      const done = () => {
+        if ([...avail].every((t) => got.has(t)) && moreDone) { deepState = "loaded"; settleSoon(); }
+      };
+      let moreStarted = false, moreDone = false;
+      const startMore = () => {
+        if (moreStarted) return;
+        moreStarted = true;
+        cards("people-deep.json");
+        const more = (d.more || []).slice();
+        const next = () => {
+          const f = more.shift();
+          if (!f) { moreDone = true; done(); return; }
+          fetch("culture/data/" + f + "?v=" + DATA_V)
+            .then((r) => (r.ok ? r.json() : null))
+            // a file names its own card file, if it has people
+            .then((x) => { if (x) { absorb(x); if (x.people) cards(x.people); settleSoon(); } })
+            .catch(() => {})
+            .finally(next);
+        };
+        next();
+      };
+      const loadTile = (t) => {
+        if (!avail.has(t) || got.has(t)) return;
+        deepState = "loading";
+        got.set(t, fetch(`culture/data/${t}.json?v=${DATA_V}`)
+          .then((r) => (r.ok ? r.json() : null))
+          .then((x) => { if (x) absorb(x); settleSoon(); })
+          .catch(() => {})
+          .finally(() => { if (deepState === "loading" && [...got.values()].length) deepState = "partial"; done(); }));
+      };
+      const tilesOnScreen = () => {
+        const b = map.getBounds().pad(0.2), out = [];
+        const norm = (i) => ((i + 18) % 36 + 36) % 36 - 18;   // a view across the date line wraps
+        for (let la = Math.floor(b.getSouth() / step); la <= Math.floor(b.getNorth() / step); la++)
+          for (let lo = Math.floor(b.getWest() / step); lo <= Math.floor(b.getEast() / step); lo++)
+            out.push(`deep/${la}_${norm(lo)}`, `osm-museums/${la}_${norm(lo)}`);
+        return out;
+      };
+      loadHere = () => { if (map.getZoom() < 6) return; startMore(); tilesOnScreen().forEach(loadTile); };
+      startLongTail = () => { startMore(); [...avail].forEach(loadTile); };
+      map.on("moveend", loadHere);
       $("filter").addEventListener("input", () => startLongTail(), { once: true });
-      if (map.getZoom() >= 6 || pendingCard || pendingPlace || tableOn || state.person || state.q) startLongTail();
-      setTimeout(() => startLongTail(), 25000);
+      if (pendingCard || pendingPlace || tableOn || state.person || state.q) startLongTail(); else loadHere();
     }
 
     // And keep measuring: a ResizeObserver fires exactly when the box changes (first layout,
