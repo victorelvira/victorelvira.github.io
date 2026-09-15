@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.33.3";
-const BUILD_AT = "2026-09-15 01:19";
+const DATA_V = "0.37.0";
+const BUILD_AT = "2026-09-15 01:41";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
@@ -44,7 +44,10 @@ const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
                    starts. There is no popularity figure in any source here, so the
                    nearest true one is used: how many recordings exist. See `pop`. */
                 sort:"rec", dir:1, open:new Set(), limit:300, parts:false, doubt:false,
-                grouping:"period", tlMode:"composer", tlZoom:1, year:null, qw:[] };
+                grouping:"period", tlMode:"composer", tlZoom:1, year:null, qw:[],
+                /* quién está abierto en el panel: una obra (`sel`) o una persona
+                   (`person`). Nunca los dos: el panel es uno. */
+                person:null };
 
 /* ---------- reading a field ---------- */
 /* THE INDEX IS COMPACT. core.json holds one short row per work, because the full
@@ -744,7 +747,7 @@ function renderInstrument(){
   const host=document.getElementById("instrument");
   if(state.lens==="table"){ host.innerHTML=""; return; }
   ({fifths:renderFifths, graph:renderGraph, time:renderTimeline,
-    map:renderMap, game:renderGame}[state.lens])(host);
+    map:renderMap, game:renderGame, acq:renderAcq}[state.lens])(host);
 }
 
 /* ---------- lens: the map ----------
@@ -1080,7 +1083,7 @@ function personLine(q){
 }
 function openComposer(slug){
   const c=COMPOSERS.find(x=>x.slug===slug); if(!c) return;
-  state.sel=null; state.comp=new Set();
+  state.sel=null; state.person=slug;
   const q=c.qid, me=PEOPLE[q]||{};
   const ws=WORKS.filter(w=>isWork(w)&&w.composer_slugs.includes(slug));
   const scores=ws.reduce((a,w)=>a+(w.ms||0),0), play=ws.filter(w=>w.au||w.ar).length;
@@ -1127,13 +1130,14 @@ function openComposer(slug){
   document.getElementById("recnav").hidden=true;
   document.body.classList.remove("rec-paged");
   remapSoon();
+  writeHash();          // una ficha de persona es navegación, igual que una de obra
 }
 const REL_INV={"alumno de":"maestro de","maestro de":"alumno de","hijo de":"padre o madre de",
   "hermano de":"hermano de","cónyuge de":"cónyuge de","trabajó para":"empleó a",
   "colaboró con":"colaboró con","influido por":"influyó en"};
 const invRel=t=>REL_INV[t]||t;
 async function openRec(id){
-  const w=BYID.get(id); if(!w) return; state.sel=id;
+  const w=BYID.get(id); if(!w) return; state.sel=id; state.person=null;
   /* the claims live in the composer's detail file, fetched the first time one of
      their records is opened; the card is drawn twice, thin then full, so it never
      waits on the network before showing anything */
@@ -1197,7 +1201,8 @@ function drawRec(row){
     `<p class="whose">${(w.composer_slugs||[w.composer_slug]).map((s2,i)=>{
         const ci=COMPOSERS.find(x=>x.slug===s2)||{};
         return `<span class="dot" style="background:${compColour(s2)}"></span>`
-             + esc(ci.name||(w.composers||[])[i]||s2)
+             + `<button class="plink" data-comp-open="${esc(s2)}">`
+             + esc(ci.name||(w.composers||[])[i]||s2) + `</button>`
              + `<span class="yrs">${ci.born?` ${ci.born}${ci.died?"-"+ci.died:""}`:""}</span>`;
       }).join('<span class="amp">&amp;</span>')}</p>
      ${(w.composer_slugs||[]).length>1?`<p class="shared">The sources attribute this to
@@ -1433,6 +1438,7 @@ function renderActive(){
    no anota nada. */
 function renderStage(){
   document.body.classList.toggle("lens-game", state.lens==="game");
+  document.body.classList.toggle("lens-acq", state.lens==="acq");
   (state.sub==="composers"?renderComposers:renderWorks)(); writeHash(); }
 function draw(){
   state.limit=300; renderPicker(); renderFacets(); renderInstrument(); renderStage();
@@ -1467,6 +1473,7 @@ function hashNow(){
   if(state.q) p.push("q="+encodeURIComponent(state.q));
   Object.entries(state.f).forEach(([k,s])=>{ if(s&&s.size) p.push(k+"="+[...s].join(",")); });
   if(state.sel) p.push("w="+state.sel);
+  if(state.person) p.push("p="+state.person);
   return "#"+p.join("/");
 }
 function writeHash(){
@@ -1481,10 +1488,12 @@ window.addEventListener("popstate",()=>{
   BACK=true;
   try{
     state.comp=new Set(); state.f={}; state.q=""; state.qw=[]; state.sel=null;
+    state.person=null;
     state.sub="works"; state.lens="table"; state.limit=300; state.open=new Set();
     document.getElementById("q").value="";
     readHash();
     if(state.sel && BYID.get(state.sel)) openRec(state.sel);
+    else if(state.person) openComposer(state.person);
     else { document.body.classList.remove("rec-open","rec-paged"); remapSoon(); }
     renderPicker(); renderFacets(); renderInstrument(); renderStage();
   } finally { BACK=false; }
@@ -1492,13 +1501,14 @@ window.addEventListener("popstate",()=>{
 function readHash(){
   const h=decodeURIComponent(location.hash.slice(1)); if(!h) return;
   h.split("/").forEach((p,i)=>{
-    if(i===0&&["table","fifths","graph","time","map","game"].includes(p)) state.lens=p;
+    if(i===0&&["table","fifths","graph","time","map","game","acq"].includes(p)) state.lens=p;
     const m=p.match(/^(\w+)=(.*)$/); if(!m) return;
     if(m[1]==="q"){ state.q=fold(m[2]); state.qw=state.q.split(/\s+/).filter(Boolean);
                     document.getElementById("q").value=m[2]; }
     else if(m[1]==="c") state.comp=new Set(m[2].split(","));
     else if(m[1]==="sub") state.sub=m[2];
     else if(m[1]==="w") state.sel=m[2];
+    else if(m[1]==="p") state.person=m[2];
     else state.f[m[1]]=new Set(m[2].split(","));
   });
   document.querySelectorAll("#view-tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lens===state.lens));
@@ -1579,7 +1589,7 @@ document.addEventListener("click",e=>{
   if(step){ e.stopPropagation(); return moveRec(+step.dataset.step); }
   if(t.closest("#rec .close")){ document.body.classList.remove("rec-open"); remapSoon();
     if(PLAYING){ AUDIO.pause(); PLAYING.classList.remove("on"); PLAYING=null; }
-    state.sel=null; return renderStage(); }
+    state.sel=null; state.person=null; return renderStage(); }
   /* THE GRAPH LED NOWHERE. Hovering a name lit its links and clicking it did nothing,
      so the one lens that shows composers borrowing from each other was a picture rather
      than a way in. A name on the left is a composer in the atlas: clicking it filters
@@ -1715,9 +1725,20 @@ const gPick = a => a[Math.floor(Math.random()*a.length)];
 /* CUOTA POR COMPOSITOR. Bach tiene 211 fragmentos y Purcell 1: sin topar, cuatro de cada
    diez preguntas serían de Bach y el jugador aprendería el bombo en vez de la música. El
    tope es la mediana de los que tienen algo, así que nadie desaparece y nadie manda. */
+/* CADA MODO USA LO QUE PUEDE AFIRMAR.
+   306 de los 880 fragmentos están ligados a su obra porque **la fuente lo dice** (`P51`
+   de Wikidata); los otros 574, porque encontramos el número de catálogo en el nombre del
+   fichero, que es una inferencia nuestra y cada registro lo declara.
+
+   El COMPOSITOR es seguro en los dos casos: la cosecha de Commons va por compositor. La
+   OBRA no. Así que "¿quién?" juega con los 880 y "¿qué obra?" solo con los 306, porque un
+   juego que le dice a alguien que ha fallado cuando ha acertado no es un juego difícil,
+   es un juego que miente. Quedan 229 obras y 23 compositores, que llega de sobra.
+   2026-09-15. */
 function gBalanced(){
+  const pool=GAME.mode==="obra" ? GPOOL.filter(g=>!g.m) : GPOOL;
   const by=new Map();
-  GPOOL.forEach(g=>{ if(!by.has(g.c)) by.set(g.c,[]); by.get(g.c).push(g); });
+  pool.forEach(g=>{ if(!by.has(g.c)) by.set(g.c,[]); by.get(g.c).push(g); });
   const sizes=[...by.values()].map(v=>v.length).sort((a,b)=>a-b);
   const cap=Math.max(6, sizes[Math.floor(sizes.length/2)]);
   const out=[];
@@ -1830,7 +1851,8 @@ function gDraw(host){
        <span class="why">se transmite desde Wikimedia Commons, no se descarga nada</span></p>
     <div class="g-opts">${q.opts.map((o,i)=>{
         let cls=""; if(GAME.answered){ if(o.correct) cls=" ok"; else if(GAME.picked===i) cls=" no"; }
-        return `<button class="gopt${cls}" data-gopt="${i}"${GAME.answered?" disabled":""}>${esc(o.text)}</button>`;
+        return `<button class="gopt${cls}" data-gopt="${i}"${GAME.answered?" disabled":""}>`
+             + `<span class="gnum">${i+1}</span>${esc(o.text)}</button>`;
       }).join("")}</div>
     ${GAME.answered?`<div class="g-after">
       <p class="g-verdict ${GAME.picked!=null&&q.opts[GAME.picked].correct?"ok":"no"}">
@@ -1838,14 +1860,24 @@ function gDraw(host){
       <p class="g-what">${esc(gName(q.target.c))} · ${esc(q.target.t||"")}
         ${q.target.fo?` · ${esc(q.target.fo)}`:""}
         <span class="why">fragmento desde ${Math.floor(q.from/60)}:${String(q.from%60).padStart(2,"0")}
-        de ${Math.floor(q.target.s/60)}:${String(q.target.s%60).padStart(2,"0")}${q.target.l?` · ${esc(q.target.l)}`:""}</span></p>
+        de ${Math.floor(q.target.s/60)}:${String(q.target.s%60).padStart(2,"0")}${q.target.l?` · ${esc(q.target.l)}`:" · la fuente no declara licencia"}</span>
+        ${q.target.m?`<span class="why">Cómo sabemos de qué obra es: ${esc(q.target.m)}.
+          El compositor sí es seguro, la cosecha va por compositor.</span>`:""}</p>
       <p>${w?`<button class="gbtn" data-goto="${esc(q.target.i)}">ver su ficha</button>`:""}
          <button class="gbtn g-next" id="g-next">siguiente ▸</button></p>
     </div>`:""}
-    <p class="g-note">La dificultad no está en la pregunta, está en las respuestas falsas:
+    <p class="g-note"><b>Teclado:</b> 1-${q.opts.length} contestan, espacio repite el
+      fragmento, Enter pasa a la siguiente.<br>
+      La dificultad no está en la pregunta, está en las respuestas falsas:
       en <b>fácil</b> son de otro período y otra plantilla, en <b>difícil</b> son vecinas.
       Cada compositor entra con cuota, para que no se pueda acertar respondiendo siempre
-      al que más grabaciones tiene.</p>
+      al que más grabaciones tiene.<br>
+      ${GAME.mode==="obra"
+        ? `Este modo juega solo con las grabaciones que <b>la fuente liga a su obra</b>
+           (229 obras): en las otras la obra la dedujimos del nombre del fichero, y con eso
+           el juego podría decirte que has fallado cuando has acertado.`
+        : `Este modo juega con las 880 grabaciones: el compositor es seguro en todas,
+           porque la cosecha va por compositor.`}</p>
   </div>`;
   if(!GAME.answered) gPlay();
 }
@@ -1867,5 +1899,91 @@ document.addEventListener("click", e=>{
     if(ok){ GAME.right++; GAME.streak++; gSaveBest(); } else GAME.streak=0;
     gStop();
     return gDraw(host);
+  }
+});
+
+/* ---------- grafo: quién trató a quién ----------
+   Víctor pidió "un grafo de todos con todos". Con las 365 personas que hacen falta para
+   conectarlos sería ilegible, y con solo nuestros 31 habría ocho aristas. Así que: los 31
+   en un eje de año de nacimiento, y un arco entre dos cuando se alcanzan por relaciones
+   documentadas, con el número de pasos encima. El eje hace visible lo que importa, que es
+   que casi nadie pudo tratar a nadie de otro siglo: los arcos cortos son maestros y
+   alumnos, y los largos pasan por gente que no está en el atlas.
+
+   No dice "se conocieron". Dice qué consta, y el camino entero está en el tooltip para
+   que se pueda comprobar. Ver harvest_people.py. */
+function renderAcq(host){
+  const live=COMPOSERS.filter(c=>c.qid&&chosen(c.slug)&&ADJ.has(c.qid));
+  if(live.length<2){ host.innerHTML=`<p class="hint">Hacen falta al menos dos compositores
+    con alguna relación documentada. Prueba a quitar el filtro de compositor.</p>`; return; }
+  const pairs=[];
+  for(let i=0;i<live.length;i++) for(let j=i+1;j<live.length;j++){
+    const p=acqPath(live[i].qid,live[j].qid);
+    if(p) pairs.push({a:live[i],b:live[j],path:p,steps:p.length-1});
+  }
+  if(!pairs.length){ host.innerHTML=`<p class="hint">Ninguna pareja de los elegidos se
+    alcanza por relaciones documentadas.</p>`; return; }
+  const ys=live.map(c=>c.born||0).filter(Boolean);
+  const y0=Math.min(...ys), y1=Math.max(...ys);
+  const W=980, PAD=70, BASE=330, span=Math.max(1,y1-y0);
+  const X=c=>PAD+((c.born||y0)-y0)/span*(W-2*PAD);
+  const maxS=Math.max(...pairs.map(p=>p.steps));
+  const arcs=pairs.sort((a,b)=>b.steps-a.steps).map(p=>{
+    const x1=X(p.a), x2=X(p.b), h=40+((p.steps-1)/Math.max(1,maxS-1))*210;
+    const names=p.path.map(q=>(PEOPLE[q]||{}).label||q).join(" → ");
+    return `<path class="acq s${Math.min(p.steps,5)}" data-a="${esc(p.a.slug)}" data-b="${esc(p.b.slug)}"
+      d="M${x1} ${BASE} Q${(x1+x2)/2} ${BASE-h} ${x2} ${BASE}"><title>${esc(p.a.name)} y ${esc(p.b.name)}: ${p.steps} paso${p.steps>1?"s":""}
+${esc(names)}</title></path>`;}).join("");
+  /* LOS NOMBRES SE PISABAN. El eje es de años y los compositores se amontonan justo donde
+     está lo interesante: entre 1800 y 1850 caben quince. Mover los puntos a un reparto
+     regular haría legible el dibujo y mentiría sobre las fechas, que es lo que el eje
+     existe para contar, así que los puntos se quedan donde están y las ETIQUETAS se
+     escalonan en dos alturas, con una guía hasta su punto cuando la etiqueta se ha bajado. */
+  const order=live.slice().sort((a,b)=>X(a)-X(b));
+  const rank=new Map(order.map((c,i)=>[c.slug,i]));
+  /* tres alturas, no dos: entre 1800 y 1850 hay doce compositores y con dos filas los
+     nombres seguían pisándose. */
+  const nodes=live.map(c=>{const x=X(c), lvl=rank.get(c.slug)%3, low=lvl>0, dy=14+lvl*20;
+    return `<g class="anode" data-comp-open="${esc(c.slug)}">
+      ${low?`<line x1="${x}" y1="${BASE+4}" x2="${x}" y2="${BASE+dy-6}" stroke="#d8c7a6" stroke-dasharray="1 2"/>`:""}
+      <circle cx="${x}" cy="${BASE}" r="5" fill="${compColour(c.slug)}"/>
+      <text x="${x}" y="${BASE+dy}" text-anchor="end" transform="rotate(-55 ${x} ${BASE+dy})">${esc(lastName(c.name))}</text>
+      <title>${esc(c.name)} ${c.born||"?"}-${c.died||"?"}</title></g>`;}).join("");
+  const ticks=[];
+  for(let y=Math.ceil(y0/50)*50; y<=y1; y+=50){
+    const x=PAD+(y-y0)/span*(W-2*PAD);
+    ticks.push(`<line x1="${x}" y1="${BASE}" x2="${x}" y2="${BASE+5}" stroke="#d8c7a6"/>
+      <text class="tick" x="${x}" y="${BASE+-6}" text-anchor="middle">${y}</text>`);
+  }
+  const direct=pairs.filter(p=>p.steps===1).length;
+  host.innerHTML=`<div class="acqwrap">
+    <p class="hint">${pairs.length} de las ${live.length*(live.length-1)/2} parejas posibles
+      se alcanzan por relaciones que constan: maestro, alumno, hermano, cónyuge, empleador.
+      <b>${direct}</b> son directas. El alto del arco son los pasos; pasa el ratón para ver
+      el camino entero. Esto <b>no dice que se conocieran</b>: dice qué consta.</p>
+    <svg viewBox="0 0 ${W} ${BASE+120}" class="acqsvg">
+      <line x1="${PAD-10}" y1="${BASE}" x2="${W-PAD+10}" y2="${BASE}" stroke="#e5e0d6"/>
+      ${ticks.join("")}${arcs}${nodes}
+    </svg></div>`;
+}
+
+/* TECLADO EN EL JUEGO. Un juego de escuchar y responder se juega con las manos quietas:
+   1-5 contestan, espacio vuelve a poner el fragmento, Enter pasa a la siguiente. Sin esto
+   hay que ir con el ratón de la respuesta al botón de siguiente en cada vuelta.
+   No mientras se escribe en el filtro, por lo mismo que las flechas de la ficha. */
+document.addEventListener("keydown", e => {
+  if(state.lens!=="game" || !GAME || !GAME.q) return;
+  const el=document.activeElement, tag=(el&&el.tagName||"").toLowerCase();
+  if(tag==="input"||tag==="textarea"||tag==="select"||(el&&el.isContentEditable)) return;
+  if(e.metaKey||e.ctrlKey||e.altKey) return;
+  const host=document.getElementById("instrument");
+  if(e.key===" "){ e.preventDefault(); return gPlay(); }
+  if((e.key==="Enter"||e.key==="ArrowRight") && GAME.answered){
+    e.preventDefault(); gNewQuestion(); return gDraw(host); }
+  const n=parseInt(e.key,10);
+  if(n>=1 && n<=GAME.q.opts.length && !GAME.answered){
+    e.preventDefault();
+    const b=document.querySelector(`[data-gopt="${n-1}"]`);
+    if(b) b.click();
   }
 });

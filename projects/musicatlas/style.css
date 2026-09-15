@@ -533,7 +533,10 @@ body.resizing .grip::after{opacity:1;background:var(--accent,#8a6d3b)}
    hacer, que es escuchar. En el mapa la tabla sí sirve, porque pinchar un pin la filtra;
    aquí no sirve para nada. */
 body.lens-game #subbar,body.lens-game #facets,
-body.lens-game #scroll,body.lens-game #divider{display:none}
+body.lens-game #scroll,body.lens-game #divider,
+body.lens-acq #scroll,body.lens-acq #divider,body.lens-acq #subbar{display:none}
+body.lens-acq:not(.rec-open) #main{display:none}
+body.lens-acq #instrument{flex:1;min-height:0;overflow-y:auto}
 /* `#main` guarda la tabla Y la ficha. Esconderlo entero mataría el "ver su ficha" del
    juego, así que se colapsa solo mientras no hay ficha abierta; con ella abierta vuelve,
    y dentro solo queda el panel. Sin esto seguía ocupando 285 px vacíos y el juego se
@@ -574,3 +577,21 @@ body.lens-game #instrument{flex:1;min-height:0;overflow-y:auto}
   font-size:11.5px;color:var(--faint);line-height:1.5}
 #game .g-load{color:var(--muted);font-size:13px}
 #game .why{display:block;color:var(--faint);font-size:11px;margin-top:3px}
+
+/* ---------- grafo de quién trató a quién ---------- */
+.acqwrap{padding:12px 16px}
+.acqsvg{width:100%;height:auto;display:block;max-width:1000px;margin:0 auto}
+.acqsvg text{font:10.5px system-ui,-apple-system,sans-serif;fill:var(--muted)}
+.acqsvg text.tick{font-size:9px;fill:var(--faint)}
+.acqsvg .acq{fill:none;stroke:var(--accent);stroke-opacity:.28;stroke-width:1.2}
+.acqsvg .acq.s1{stroke:var(--ok);stroke-opacity:.75;stroke-width:2}
+.acqsvg .acq.s2{stroke-opacity:.5;stroke-width:1.6}
+.acqsvg .acq:hover{stroke-opacity:1;stroke-width:2.6;stroke:var(--hot)}
+.acqsvg .anode{cursor:pointer}
+.acqsvg .anode:hover text{fill:var(--hot);font-weight:600}
+.acqsvg .anode:hover circle{r:7}
+#game .gnum{display:inline-block;min-width:18px;height:18px;line-height:18px;text-align:center;
+  border-radius:4px;background:var(--line);color:var(--muted);font-size:10.5px;margin-right:9px;
+  font-variant-numeric:tabular-nums}
+#game .gopt.ok .gnum{background:var(--ok);color:#fff}
+#game .gopt.no .gnum{background:var(--bad);color:#fff}
