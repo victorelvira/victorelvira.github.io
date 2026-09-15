@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.26.2";
+const DATA_V = "0.27.9";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -141,7 +141,9 @@ const S_NAME = 0, S_LAT = 1, S_LON = 2, S_KIND = 3, S_WHERE = 4, S_OSM = 5;
 const WHERES = [""];
 const whereOf = (s) => WHERES[s[S_WHERE]] || "";
 let VOCAB = {}, SITES = [], TRACES = [];
-let deepState = "none";   // none | loading | loaded: what the stats line has to admit
+let deepState = "none";
+let startLongTail = () => {};             // set at boot when the base names a long tail
+let longTailWaiting = false;   // none | loading | loaded: what the stats line has to admit
 const F_PORTRAIT = 1, F_GRAVEPIC = 2, F_PLACELESS = 4;
 // The pin's shape says what its colour and emoji cannot (Víctor, 2026-09-14: "necesitamos distintos
 // códigos"): F_APPROX, the point stands for an AREA (a battlefield, a town, a square), drawn larger and
@@ -149,23 +151,38 @@ const F_PORTRAIT = 1, F_GRAVEPIC = 2, F_PLACELESS = 4;
 const F_APPROX = 8, F_SAINT = 16;
 
 /* ── state: one object, every dimension ── */
+// 0.27 DEFAULT: the 500 best known PEOPLE HERE, i.e. in the map as it stands. The whole world at once
+// was 315 000 traces drawn as a carpet of pins, and "here" means a zoom into Madrid shows Madrid's best
+// known, not whoever is best known on Earth and happens to be in Madrid. "all" is one tap away and the
+// list says how many are held back (Víctor, 2026-09-15: "más inteligente en los que salen por defecto").
+const TOP_DEFAULT = 500;
 const state = {
   what: {}, mount: {}, access: {}, marking: {}, dom: {}, verb: {},
-  q: "", yearMin: -Infinity, yearMax: Infinity, near: null, site: null, topN: 0,
-  colorBy: "dom", person: null, personName: "",
+  q: "", yearMin: -Infinity, yearMax: Infinity, near: null, site: null, topN: TOP_DEFAULT, topWhere: "here",
+  colorBy: "dom", person: null, personName: "", personSec: null, group: null,
 };
 // The renown dial (DECISIONS D6). Fame never decided who is IN the corpus; it is the reader's
 // control over how much of it to look at. `rankCut` is recomputed from the current selection, so
 // "the top 100" means the hundred best known of *what you are already filtering to*: the top 100
 // writers, not the hundred best known people who happen to be writers.
 let rankCut = 0;
+// 0.27: it counts PEOPLE, not traces (a person with thirty statues took thirty of the hundred), and it
+// can count them HERE (in the map's current bounds) or in the WORLD. Víctor: "quizás necesitamos los dos".
+let heldBack = 0;
 function recomputeRankCut() {
+  heldBack = 0;
   if (!state.topN) { rankCut = 0; return; }
-  const ranks = [];
-  for (const r of TRACES) if (passesExcept(r, "table", "renown")) ranks.push(r.rank);
-  if (ranks.length <= state.topN) { rankCut = 0; return; }
-  ranks.sort((a, z) => z - a);
+  const here = state.topWhere === "here" ? map.getBounds() : null;
+  const best = new Map();
+  for (const r of TRACES) {
+    if (!passesExcept(r, "table", "renown")) continue;
+    if (here && (r.flags & F_PLACELESS || !here.contains([SITES[r.site][S_LAT], SITES[r.site][S_LON]]))) continue;
+    if ((best.get(r.qid) || 0) < r.rank) best.set(r.qid, r.rank);
+  }
+  if (best.size <= state.topN) { rankCut = 0; return; }
+  const ranks = [...best.values()].sort((a, z) => z - a);
   rankCut = ranks[state.topN - 1];
+  heldBack = ranks.filter((x) => x < rankCut).length;
 }
 
 /* ── THE DIMENSIONS (CHASSIS §1) ────────────────────────────────────────────────────────────
@@ -175,6 +192,8 @@ function recomputeRankCut() {
  * be forgotten in the interface, which is exactly the bug check_views.py exists to catch.
  */
 const ALL = ["map", "panel", "table"];
+const SEC_VERBS = { life: ["happened", "born", "lived", "worked", "died", "buried"], work: ["built", "exhibited"],
+                    remembered: ["commemorated"] };
 const DIMENSIONS = [
   { id: "what",    family: true, appliesTo: ALL, test: (r) => state.what[r.what] !== false },
   { id: "mount",   family: true, appliesTo: ALL, test: (r) => state.mount[r.mount] !== false },
@@ -185,16 +204,21 @@ const DIMENSIONS = [
   // A person with no dates stays visible at every slider position: the honesty rule lives inside
   // the predicate, not in a note beside it (CHASSIS §3d).
   { id: "life", appliesTo: ALL, test: (r) => {
+      if (state.person) return true;        // a chosen person is shown whole: Aristotle predates the timeline's start
       const a = r.born, b = r.died;
       if (a == null && b == null) return true;
       return (b ?? a) >= state.yearMin && (a ?? b) <= state.yearMax; } },
   { id: "text", appliesTo: ALL, test: (r) => !state.q || r._s.includes(state.q) },
   { id: "site", appliesTo: ALL, test: (r) => state.site == null || r.site === state.site },
-  { id: "renown", appliesTo: ALL, test: (r) => !state.topN || r.rank >= rankCut },
+  // a person the reader chose is shown whole, whatever the dial says
+  { id: "renown", appliesTo: ALL, test: (r) => !state.topN || !!state.person || r.rank >= rankCut },
   // Picking somebody out of the search does not merely fly there: it narrows the atlas to them,
   // the way the sibling's picker sets `museumFilter` when you click a museum (CHASSIS §3c).
   // Flying without narrowing left the panel behind still listing everyone matching the raw text.
-  { id: "person", appliesTo: ALL, test: (r) => !state.person || r.qid === state.person },
+  { id: "person", appliesTo: ALL, test: (r) => !state.person || r.qid === state.person || !!(state.group && state.group.has(r.qid)) },
+  // one section of that person's card: their life, their work, or where they are remembered (D29)
+  { id: "personSec", appliesTo: ALL, test: (r) => !state.person || !state.personSec ||
+      (SEC_VERBS[state.personSec] || []).includes(VOCAB.verb[r.verb]) },
   // A settlement is not an address (DECISIONS D9): listed and searchable, never pinned.
   { id: "pinnable", appliesTo: ["map", "panel"], test: (r) => !(r.flags & F_PLACELESS) },
 ];
@@ -401,7 +425,7 @@ function sitePopup(siteIdx, rows) {
   const persons = sorted.filter((r) => r.qid.startsWith("Q") ||
                                        (r.qid.startsWith("ev:") && !["battle", "event"].includes(kind)));
   // A site kind is a little wider than a trace kind: a cemetery holds graves.
-  const kindIcon = WHAT_ICON[kind] || { cemetery: "🪦" }[kind] || "";
+  const kindIcon = WHAT_ICON[kind] || { cemetery: "🪦", building: "🏛" }[kind] || "";
   const meta = [kind ? `${kindIcon} ${kind}`.trim() : null, LABEL.access[acc] || acc,
                 persons.length ? `${persons.length} ${persons.length === 1 ? "person" : "people"}` : null]
                .filter(Boolean).join(" · ");
@@ -580,18 +604,66 @@ map.on("popupopen", (e) => {
 // Only a place list: a person card was opened deliberately and closes deliberately.
 map.on("click", () => { if ($("sheet").dataset.kind === "place") closeSheet(); });
 
+/* ── THE MODE BAR: what the map is narrowed to, and the one way out (0.27) ─────────────────────────
+ * Víctor, 2026-09-15: after "Everything on the map", what happens to the zoom and how do you leave this
+ * person? Answer: the map shows ONLY them (or only one section of their card, or their contemporaries),
+ * a bar over the map says so in words, and "✕ Show everyone" puts back the map and filters exactly as
+ * they were before. The back button does the same, one step. */
+let modeBack = null;                // { center, zoom, years: [min, max, chosen] } from before the mode
+const modeBar = L.DomUtil.create("div", "modebar", map.getContainer());
+L.DomEvent.disableClickPropagation(modeBar);
+L.DomEvent.disableScrollPropagation(modeBar);
 function renderPersonChip() {
   const box = $("personchip");
-  if (!box) return;
-  box.hidden = !state.person;
-  if (state.person)
-    box.innerHTML = `<span>only <b>${esc(state.personName)}</b></span>` +
-      `<button type="button" id="person-clear" title="Show everybody again">✕</button>`;
+  if (box) box.hidden = true;                 // the bar over the map replaced the header chip
+  const secName = { life: "their life", work: "their work", remembered: "where they are remembered" }[state.personSec];
+  let html = "";
+  if (state.person) {
+    const n = new Set(TRACES.filter((r) => passes(r, "map")).map((r) => r.site)).size;
+    html = `<span class="mb-t">${state.group ? `<b>${esc(state.personName)}</b> and ${state.group.size} people they knew`
+                                          : `Only <b>${esc(state.personName)}</b>${secName ? ` · ${secName}` : ""}`} · ${n} ${n === 1 ? "place" : "places"}</span>` +
+      (state.personSec ? `<button type="button" data-mb="all">All their places</button>` : "") +
+      `<button type="button" data-mb="card">Card</button>`;
+  } else if (contemporaryOf) {
+    html = `<span class="mb-t">Alive at the same time as <b>${esc(contemporaryOf.name)}</b> · ${yearStr(state.yearMin)}–${yearStr(state.yearMax)}</span>`;
+  }
+  if (html) html += `<button type="button" data-mb="exit" class="mb-x">✕ Show everyone</button>`;
+  modeBar.innerHTML = html;
+  modeBar.hidden = !html;
 }
-document.addEventListener("click", (e) => {
-  if (!e.target.closest("#person-clear")) return;
-  state.person = null; state.personName = ""; refresh();
+let contemporaryOf = null;
+modeBar.addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-mb]"); if (!b) return;
+  if (b.dataset.mb === "exit") exitMode();
+  else if (b.dataset.mb === "card" && state.person) openPerson(state.person);
+  else if (b.dataset.mb === "all" && state.person) { state.personSec = null; refresh(); frameRows(byPerson.get(state.person) || []); }
 });
+function enterPersonMode(qid, sec) {
+  if (!state.person && !contemporaryOf) modeBack = { center: map.getCenter(), zoom: map.getZoom() };
+  contemporaryOf = null;
+  state.person = qid; state.personSec = sec || null; state.group = null;
+  state.personName = ((byPerson.get(qid) || [])[0] || {}).name || "";
+  refresh();
+}
+function exitMode() {
+  const back = modeBack; modeBack = null;
+  if (contemporaryOf) { tlChosen = contemporaryOf.chosen; state.yearMin = contemporaryOf.years[0]; state.yearMax = contemporaryOf.years[1];
+                        contemporaryOf = null; buildTimeline(TL_MIN, TL_MAX); }
+  state.person = null; state.personName = ""; state.personSec = null; state.group = null;
+  streetLayer.clearLayers(); streetLayerOf = null;
+  if (back) map.setView(back.center, back.zoom, { animate: false });
+  refresh();
+}
+// frame some traces sensibly: never closer than a street, never so wide the pins mean nothing
+function frameRows(rows) {
+  const pts = rows.filter((r) => !(r.flags & F_PLACELESS)).map((r) => [SITES[r.site][S_LAT], SITES[r.site][S_LON]]);
+  if (!pts.length) return false;
+  if (pts.length === 1) { map.setView(pts[0], 15); return true; }
+  const sz = map.getSize();
+  const pad = Math.max(8, Math.min(narrow() ? 24 : 60, Math.floor(Math.min(sz.x, sz.y) / 6)));
+  map.fitBounds(L.latLngBounds(pts), { padding: [pad, pad], maxZoom: 16 });
+  return true;
+}
 
 function statsLine(pins, inView, rowsInView) {
   const grouped = pins < inView
@@ -603,7 +675,8 @@ function statsLine(pins, inView, rowsInView) {
     `${tableN.toLocaleString()} traces pass the filters` +
     (placeless ? ` · ${placeless.toLocaleString()} of them unpinnable` : "") +
     // Under-reporting without saying so is the whole family of bug this project keeps refusing.
-    (deepState === "loading" ? " · still loading the long tail…" : "");
+    (deepState === "loading" ? " · still loading the long tail…" :
+     deepState === "none" && longTailWaiting ? " · the less known arrive when you zoom in or search" : "");
 }
 
 function refresh() {
@@ -861,24 +934,33 @@ $("preset-was").addEventListener("click", () => {
 $("reset").addEventListener("click", () => {
   for (const fam of ["what", "mount", "access", "marking", "dom", "verb"])
     VOCAB[fam].forEach((_, i) => { state[fam][i] = true; });
-  state.topN = 0; state.q = ""; state.site = null;
-  state.person = null; state.personName = "";
+  state.topN = TOP_DEFAULT; state.topWhere = "here"; state.q = ""; state.site = null;
+  state.person = null; state.personName = ""; state.personSec = null; modeBack = null;
   $("filter").value = ""; $("filter-clear").hidden = true;
   $("preset-now").classList.remove("active");
   $("preset-was").classList.remove("active");
   tlChosen = false;
-  $("renown").querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.top === "0"));
+  paintRenown();
   buildTimeline(TL_MIN, TL_MAX);
   refresh();
 });
 
 /* ── the renown dial ── */
 document.addEventListener("click", (e) => {
+  if (!e.target.closest("#ph-all")) return;
+  state.topN = 0; paintRenown(); refresh();
+});
+document.addEventListener("click", (e) => {
   const b = e.target.closest("#renown button[data-top]"); if (!b) return;
   state.topN = +b.dataset.top;
-  $("renown").querySelectorAll("button").forEach((x) => x.classList.toggle("on", x === b));
+  if (b.dataset.where) state.topWhere = b.dataset.where;
+  paintRenown();
   refresh();
 });
+function paintRenown() {
+  $("renown").querySelectorAll("button[data-top]").forEach((x) => x.classList.toggle("on",
+    +x.dataset.top === state.topN && (!state.topN || x.dataset.where === state.topWhere)));
+}
 
 /* ── one person, everything they left ────────────────────────────────────────────────────────
  * The atlas is person-anchored (DECISIONS D1) and until now you could not actually see a person:
@@ -898,10 +980,13 @@ function indexPeople() {
 const WHAT_ICON = { battle: "⚔️", event: "🗓️", grave: "🪦", plaque: "🪧", house: "🏠", statue: "🗿",
                     museum: "🏛", church: "⛪" };
 
-function openPerson(qid) {
+let openCardRows = 0;
+function openPerson(qid, keepScroll) {
   const rows = byPerson.get(qid);
-  if (!rows || !rows.length) return;
+  if (!rows || !rows.length) { startLongTail(); return; }
+  openCardRows = rows.length;
   openCard = qid; cardBack = null; renderPanelBack();
+  if (streetLayerOf && streetLayerOf !== qid) { streetLayer.clearLayers(); streetLayerOf = null; }
   if (narrow()) openPlace = null;          // on a phone the person's sheet replaces the place's
   syncURL();
   sheetToken++;                      // a place card still waiting for people.json must not land here
@@ -915,7 +1000,7 @@ function openPerson(qid) {
     const vk = (r) => VOCAB.verb[r.verb] === "happened" ? -1 : r.verb;
     const sorted = rows.slice().sort((a, z) => vk(a) - vk(z));
 
-    const items = sorted.map((r, i) => {
+    const itemHTML = (r, i) => {
       const acc = VOCAB.access[r.access], mk = VOCAB.marking[r.marking];
       const pinnable = !(r.flags & F_PLACELESS);
       return `<li class="sh-trace${pinnable ? "" : " unpinnable"}" data-i="${i}">` +
@@ -927,14 +1012,47 @@ function openPerson(qid) {
         (pinnable ? "" : `<div class="fx warn">the source names a town, not a place: nothing to pin</div>`) +
         (r.flags & F_APPROX ? `<div class="fx approx">◌ an area, not an exact spot</div>` : "") +
         `</div></li>`;
-    }).join("");
+    };
+    // TWO KINDS OF TRACE, TWO SECTIONS (Víctor, 2026-09-15): "cada persona tiene que tener dos secciones:
+    // una para cosas de su vida de verdad y otra, debajo, de que se le recuerda". A statue of Dante in
+    // Buenos Aires belongs on his card, and it must not read as if he had been there. The verb decides:
+    // born, lived, worked, died, buried are their life; built and exhibited, their work; commemorated,
+    // what others put up in their memory, wherever that is.
+    const isEvent = qid.startsWith("ev:");
+    const SECTIONS = [
+      { key: "life", title: isEvent ? "Where it happened" : "Their life",
+        note: isEvent ? "" : "where they were born, lived, worked, died or lie",
+        verbs: ["happened", "born", "lived", "worked", "died", "buried"] },
+      { key: "work", title: "Their work", note: "what they built, and where their work is on show",
+        verbs: ["built", "exhibited"] },
+      { key: "remembered", title: "Remembered",
+        note: isEvent ? "memorials of it, wherever they stand"
+                      : "statues, plaques and memorials put up in their memory: they need not have been there",
+        verbs: ["commemorated"] },
+    ];
+    const secOf = (r) => (SECTIONS.find((x) => x.verbs.includes(VOCAB.verb[r.verb])) || SECTIONS[2]).key;
+    const bySec = Object.fromEntries(SECTIONS.map((x) => [x.key, []]));
+    sorted.forEach((r, i) => bySec[secOf(r)].push([r, i]));
+    const shown = SECTIONS.filter((x) => bySec[x.key].length);
+    const knewSlot = `<div class="sh-sec sh-knew" data-sec="knew" data-q="${esc(qid)}" hidden></div>`;
+    const items = shown.map((x) =>
+      `<div class="sh-sec" data-sec="${x.key}"><div class="sh-sec-h"><span class="sh-sec-t">${x.title}</span>` +
+      `<span class="sh-sec-n">${bySec[x.key].length}</span>` +
+      `<button type="button" class="sh-sec-fit" data-sec="${x.key}" title="Show only these on the map">🗺 On the map</button></div>` +
+      (x.note ? `<div class="sh-sec-note">${x.note}</div>` : "") +
+      `<ul class="sh-list">${bySec[x.key].map(([r, i]) => itemHTML(r, i)).join("")}</ul></div>` +
+      (x.key !== "remembered" && !shown.slice(shown.indexOf(x) + 1).some((y) => y.key !== "remembered") ? knewSlot : "")).join("") +
+      (shown.every((x) => x.key === "remembered") ? knewSlot : "") +
+      `<div class="sh-sec sh-streets" data-sec="streets" data-q="${esc(qid)}" hidden></div>`;
 
+    const scrollWas = $("sheet-body").scrollTop;
     $("sheet-body").innerHTML =
       `<div class="sh-head">` +
       (src ? `<img class="sh-por" src="${esc(src)}" alt="">` : `<div class="sh-por ph">·</div>`) +
       `<div><div class="sh-name">${esc(r0.name)}${r0.flags & F_SAINT ? ` <span class="sh-halo" title="Canonised or beatified (Wikidata P411)">saint or blessed</span>` : ""}</div>` +
       `<div class="sh-life">${esc(life)}</div>` +
       (pf && pf[1] ? `<div class="sh-occ">${esc(pf[1])}</div>` : "") +
+      `<div class="sh-sum" data-q="${esc(qid.replace(/^ev:/, ""))}"></div>` +
       `<div class="sh-count">${rows.length} ${rows.length === 1 ? "trace" : "traces"}` +
       `${countries.size > 1 ? ` in ${countries.size} places` : ""}</div>` +
       `<div class="sh-links">` +
@@ -948,12 +1066,19 @@ function openPerson(qid) {
           ` target="_blank" rel="noopener" title="Their paintings, on the Atlas of Painting">` +
           `🖼 Their paintings</a>` : "") +
       `</div></div></div>` +
-      `<div class="sh-actions"><button type="button" id="sh-fit">🗺 Where they were</button>` +
-      `<button type="button" id="sh-fit-all">🌍 Everything</button></div>` +
-      `<ul class="sh-list">${items}</ul>`;
+      `<div class="sh-actions">` +
+      (shown.length > 1 ? `<button type="button" id="sh-fit-all">🌍 All their places on the map</button>` : "") +
+      (!isEvent && r0.born != null && r0.died != null && r0.died - r0.born < 130
+        ? `<button type="button" id="sh-contemp" title="The timeline set to their lifetime: everyone alive while they were">👥 Their contemporaries</button>` : "") +
+      `</div>` +
+      items;
 
     $("sheet").dataset.kind = "person";
     $("sheet").hidden = false;
+    $("sheet-body").scrollTop = keepScroll ? scrollWas : 0;
+    fillSummary($("sheet-body").querySelector(".sh-sum"));
+    if (!isEvent) fillKnew($("sheet-body").querySelector(".sh-knew"));
+    if (!isEvent) fillStreets($("sheet-body").querySelector(".sh-streets"));
     $("sheet-body").scrollTop = 0;
     $("sheet-body").querySelectorAll(".sh-trace").forEach((li) => li.addEventListener("click", () => {
       const r = sorted[+li.dataset.i];
@@ -983,14 +1108,33 @@ function openPerson(qid) {
         map.fitBounds(L.latLngBounds(pts), { padding: [pad, pad], maxZoom: 17 });
       }
     };
-    const was = sorted.filter((r) => VERBS_PRESENT.includes(VOCAB.verb[r.verb]));
-    const fit = $("sh-fit"), fitAll = $("sh-fit-all");
-    if (fit) fit.addEventListener("click", () =>
-      was.length ? frame(was, "Nothing of theirs can be pinned.")
-                 : frame(sorted, "Nothing of theirs can be pinned."));
-    if (fitAll) fitAll.addEventListener("click", () => frame(sorted, "Nothing of theirs can be pinned."));
-    if (fitAll && !was.length) fit.textContent = "🗺 Frame them";
-    if (fitAll && was.length === sorted.length) fitAll.hidden = true;
+    // each section frames its own places: where they WERE, or where they are remembered (Chopin: 29
+    // homages from Buenos Aires to Tallinn, which framed together looked like the whole planet)
+    // "On the map" is a MODE now (0.27): the map shows only this person, or only this section, with the
+    // bar that says so and the way out; then it frames them.
+    const onMap = (sec, rows, empty) => {
+      if (!rows.some((r) => !(r.flags & F_PLACELESS))) return banner(empty);
+      enterPersonMode(qid, sec);
+      if (narrow()) closeSheet();
+      frameRows(rows);
+    };
+    $("sheet-body").querySelectorAll(".sh-sec-fit").forEach((b) => b.addEventListener("click", () =>
+      onMap(b.dataset.sec, bySec[b.dataset.sec].map(([r]) => r), "None of these can be pinned.")));
+    const fitAll = $("sh-fit-all");
+    if (fitAll) fitAll.addEventListener("click", () => onMap(null, sorted, "Nothing of theirs can be pinned."));
+    // Who else was alive then (Víctor: "iluminar los coetáneos"): the timeline set to their life, the
+    // rest of the map left as it is, so the map around them fills with their contemporaries.
+    const cont = $("sh-contemp");
+    if (cont) cont.addEventListener("click", () => {
+      if (r0.born == null || r0.died == null) return;
+      if (!state.person && !contemporaryOf) modeBack = { center: map.getCenter(), zoom: map.getZoom() };
+      contemporaryOf = { qid, name: r0.name, years: [state.yearMin, state.yearMax], chosen: tlChosen };
+      state.person = null; state.personSec = null;
+      tlChosen = true; state.yearMin = r0.born; state.yearMax = r0.died;
+      buildTimeline(TL_MIN, TL_MAX);
+      if (narrow()) closeSheet();
+      refresh();
+    });
   });
 }
 function closeSheet() {
@@ -1124,7 +1268,155 @@ function pickWikipedia(links) {
   return pick ? pick.url : null;
 }
 
-// RESOLVED BEFORE THE TAP (0.26.2). 0.23.3 asked Wikidata on the tap and, when no Wikipedia had an
+/* WHO THEY KNEW (0.27). Víctor, 2026-09-15: "documentar quién se conoció con quién… un grafo en círculo, tocas a
+ * alguien y se iluminan las personas con las que coincidió". No database of meetings exists; Wikidata holds
+ * relations that cannot happen without meeting (spouse, sibling, parent, teacher and student, partner),
+ * which is what build_relations.py keeps, between two people the atlas shows. Loaded on the first card. */
+let RELATIONS = null, relJob = null, pendingKnew = false;
+function needRelations() {
+  if (!relJob) relJob = fetch(`culture/data/relations.json?v=${DATA_V}`).then((r) => (r.ok ? r.json() : null))
+    .then((d) => (RELATIONS = d)).catch(() => null);
+  return relJob;
+}
+const REL_GROUP = { spouse: "love", partner: "love", father: "family", mother: "family", child: "family",
+  sibling: "family", parent: "family", relative: "family", teacher: "learning", student: "learning",
+  "doctoral advisor": "learning", "doctoral student": "learning", "worked with": "work", "significant person": "other" };
+function fillKnew(box) {
+  if (!box) return;
+  const qid = box.dataset.q;
+  needRelations().then((R) => {
+    if (!R || !box.isConnected) return;
+    const list = (R.p[qid] || []).map(([ri, q]) => ({ rel: R.rel[ri], q, row: (byPerson.get(q) || [])[0] }))
+                                  .filter((x) => x.row);
+    if (!list.length) return;
+    const me = (byPerson.get(qid) || [])[0];
+    // an ellipse inside a box wide enough for the names on either side (they were cut off at 320)
+    const N = Math.min(list.length, 18), W = 440, H = 240, cx = W / 2, cy = H / 2, RX = 96, RY = 96;
+    const nodes = list.slice(0, N).map((x, i) => {
+      const a = -Math.PI / 2 + (2 * Math.PI * i) / N;
+      return { ...x, x: cx + RX * Math.cos(a), y: cy + RY * Math.sin(a), right: Math.cos(a) >= -0.01 };
+    });
+    const short = (s) => (s.length > 22 ? s.slice(0, 21) + "…" : s);
+    const svg = `<svg class="kn-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="People ${esc(me.name)} knew">` +
+      nodes.map((n) => `<line class="kn-l g-${REL_GROUP[n.rel] || "other"}" data-q="${esc(n.q)}" x1="${cx}" y1="${cy}" x2="${n.x.toFixed(1)}" y2="${n.y.toFixed(1)}"/>`).join("") +
+      `<circle class="kn-me" cx="${cx}" cy="${cy}" r="7"/>` +
+      nodes.map((n) => `<g class="kn-n g-${REL_GROUP[n.rel] || "other"}" data-q="${esc(n.q)}" tabindex="0">` +
+        `<circle cx="${n.x.toFixed(1)}" cy="${n.y.toFixed(1)}" r="5"/>` +
+        `<text x="${(n.x + (n.right ? 8 : -8)).toFixed(1)}" y="${(n.y + 3.5).toFixed(1)}" text-anchor="${n.right ? "start" : "end"}">${esc(short(n.row.name))}</text>` +
+        `<title>${esc(n.row.name)} · ${esc(n.rel)}${lifeStr(n.row) ? " · " + esc(lifeStr(n.row)) : ""}</title></g>`).join("") +
+      `</svg>`;
+    const chips = list.map((x) => `<button type="button" class="kn-c g-${REL_GROUP[x.rel] || "other"}" data-q="${esc(x.q)}">` +
+      `<span class="kn-r">${esc(x.rel)}</span> ${esc(x.row.name)}</button>`).join("");
+    box.innerHTML = `<div class="sh-sec-h"><span class="sh-sec-t">People they knew</span><span class="sh-sec-n">${list.length}</span>` +
+      `<button type="button" class="sh-sec-fit kn-map" title="Them and the people they knew, together on the map">🗺 Together on the map</button></div>` +
+      `<div class="sh-sec-note">family, love, teachers and students, work: relations that mean they met (Wikidata)</div>` +
+      svg + `<div class="kn-chips">${chips}</div>`;
+    box.hidden = false;
+    // touch a name: its line lights up; tap it: their card
+    const light = (q, on) => box.querySelectorAll(`[data-q="${CSS.escape(q)}"]`).forEach((el) => el.classList.toggle("lit", on));
+    box.querySelectorAll("[data-q]").forEach((el) => {
+      el.addEventListener("mouseenter", () => light(el.dataset.q, true));
+      el.addEventListener("mouseleave", () => light(el.dataset.q, false));
+      el.addEventListener("click", () => openPerson(el.dataset.q));
+    });
+    box.querySelector(".kn-map").addEventListener("click", () => {
+      enterPersonMode(qid, null);
+      state.group = new Set(list.map((x) => x.q));
+      refresh();
+      if (narrow()) closeSheet();
+      // frame where they LIVED, not every statue of them on the planet
+      const all = [...(byPerson.get(qid) || []), ...list.flatMap((x) => byPerson.get(x.q) || [])];
+      const lived = all.filter((r) => SEC_VERBS.life.includes(VOCAB.verb[r.verb]));
+      frameRows(lived.length ? lived : all);
+    });
+    if (pendingKnew && state.person === qid) { pendingKnew = false; state.group = new Set(list.map((x) => x.q)); refresh(); }
+  });
+}
+
+/* STREETS AND SQUARES NAMED AFTER THEM (0.27, the plan B Víctor asked for, off by default on the map).
+ * For the top 10 000 people of the culture rank, from OpenStreetMap's name:etymology:wikidata. A street is
+ * not a trace (the `_streets` rule): it has its own section below "Remembered" and its own map layer. */
+// 64 shards by the QID's number (build_streets.py): a card fetches the one its person is in
+const streetShards = new Map();
+function needStreets(qid) {
+  const k = +qid.slice(1) % 64;
+  if (!streetShards.has(k)) streetShards.set(k, fetch(`culture/data/streets/${k}.json?v=${DATA_V}`)
+    .then((r) => (r.ok ? r.json() : null)).catch(() => null));
+  return streetShards.get(k);
+}
+function fillStreets(box) {
+  if (!box) return;
+  const qid = box.dataset.q;
+  needStreets(qid).then((S) => {
+    const list = S && S.p[qid];
+    if (!list || !list.length || !box.isConnected) return;
+    const squares = list.filter((r) => r[1] === "square").length;
+    box.innerHTML = `<div class="sh-sec-h"><span class="sh-sec-t">Streets and squares</span><span class="sh-sec-n">${list.length}</span>` +
+      `<button type="button" class="sh-sec-fit st-map">🗺 On the map</button></div>` +
+      `<div class="sh-sec-note">named after them${squares ? `, ${squares} of them squares` : ""} · at least these: only those OpenStreetMap says are named after them</div>` +
+      `<ul class="st-list">${list.slice(0, 60).map((r, i) => `<li data-i="${i}">${r[1] === "square" ? "⬚" : "┃"} ${esc(r[0])}</li>`).join("")}` +
+      (list.length > 60 ? `<li class="st-more">…and ${list.length - 60} more</li>` : "") + `</ul>`;
+    box.hidden = false;
+    box.querySelectorAll("li[data-i]").forEach((li) => li.addEventListener("click", () => {
+      const r = list[+li.dataset.i];
+      if (narrow()) closeSheet();
+      map.setView([r[2], r[3]], 17);
+      showStreetMarks(qid, list);
+    }));
+    box.querySelector(".st-map").addEventListener("click", () => {
+      showStreetMarks(qid, list);
+      if (narrow()) closeSheet();
+      const b = L.latLngBounds(list.map((r) => [r[2], r[3]]));
+      if (list.length === 1) map.setView([list[0][2], list[0][3]], 16); else map.fitBounds(b, { padding: [40, 40], maxZoom: 15 });
+    });
+  });
+}
+// the streets of ONE person drawn as small bars over the map, until the card changes or the mode ends
+const streetLayer = L.layerGroup().addTo(map);
+function showStreetMarks(qid, list) {
+  streetLayer.clearLayers();
+  const icon = (sq) => L.divIcon({ className: "st-pin" + (sq ? " sq" : ""), iconSize: [14, 14], iconAnchor: [7, 7] });
+  for (const r of list) {
+    L.marker([r[2], r[3]], { icon: icon(r[1] === "square"), keyboard: false })
+      .bindTooltip(`${esc(r[0])}${r[4] > 1 ? ` · ${r[4]} stretches` : ""}`, { direction: "top" }).addTo(streetLayer);
+  }
+  streetLayerOf = qid;
+}
+let streetLayerOf = null;
+
+/* WHO THEY WERE, IN TWO SENTENCES (0.27): the first lines of their Wikipedia article, in the reader's
+ * language when it exists (pickWikipedia's order), fetched when the card opens and credited. A card
+ * that only listed places said where someone is and never who they were. */
+const summaries = new Map();
+function fillSummary(box) {
+  if (!box || !/^Q\d+$/.test(box.dataset.q || "")) return;
+  const q = box.dataset.q;
+  const show = (x) => {
+    if (!x || !box.isConnected) return;
+    const max = narrow() ? 200 : 340;     // on a phone the card is half the screen: two sentences, not a page
+    const text = x.extract.length > max + 10 ? x.extract.slice(0, x.extract.lastIndexOf(" ", max)) + "…" : x.extract;
+    // credited in words; the "Wikipedia" link right below it is the link
+    box.innerHTML = `${esc(text)} <span class="sh-sum-src">(Wikipedia)</span>`;
+  };
+  if (summaries.has(q)) return summaries.get(q).then(show);
+  const job = fetch(`https://www.wikidata.org/w/api.php?action=wbgetentities&ids=${q}&props=sitelinks/urls&format=json&origin=*`)
+    .then((r) => r.json())
+    .then((d) => {
+      const url = pickWikipedia((((d.entities || {})[q]) || {}).sitelinks || {});
+      if (!url) return null;
+      wpUrl.set(q, url);
+      const m = url.match(/^https:\/\/([a-z-]+)\.wikipedia\.org\/wiki\/(.+)$/);
+      if (!m) return null;
+      return fetch(`https://${m[1]}.wikipedia.org/api/rest_v1/page/summary/${m[2]}`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((s) => (s && s.extract && s.type !== "disambiguation" ? { extract: s.extract, url } : null));
+    })
+    .catch(() => null);
+  summaries.set(q, job);
+  job.then(show);
+}
+
+// RESOLVED BEFORE THE TAP (0.26.1). 0.23.3 asked Wikidata on the tap and, when no Wikipedia had an
 // article (a plaque in Buenos Aires, most small museums and statues), opened Wikidata under a link
 // that said "Wikipedia". Víctor: "el link de Wikipedia lleva a Wikidata… gran decepción". Now every
 // "Wikipedia" link is looked up as soon as it appears on screen, 50 items per request: it becomes a
@@ -1288,8 +1580,12 @@ function renderPanel() {
     if (!b.contains([s[S_LAT], s[S_LON]])) continue;
     for (const r of pl.rows) if (passes(r, "panel")) vis.push(r);
   }
-  $("panel-head").innerHTML = `<b>${vis.length.toLocaleString()}</b>` +
-    `<span class="ph-tail"> ${vis.length === 1 ? "person" : "people"} in view</span>`;
+  const nPeople = new Set(vis.map((r) => r.qid)).size;
+  // say what the dial is holding back, and give the way to see it (a default must not hide a gap)
+  const held = state.topN && !state.person && heldBack
+    ? `<button type="button" id="ph-all" class="ph-more" title="Show everyone, not only the best known">+${heldBack.toLocaleString()} less known ${state.topWhere === "here" ? "here" : "in the world"}</button>` : "";
+  $("panel-head").innerHTML = `<b>${nPeople.toLocaleString()}</b>` +
+    `<span class="ph-tail"> ${nPeople === 1 ? "person" : "people"} in view${state.topN && !state.person ? ` · the best known ${state.topWhere === "here" ? "here" : "in the world"}` : ""}</span>` + held;
   const ul = $("worklist");
   if (!vis.length) {
     ul.innerHTML = `<li class="empty">${t("Pan or zoom the map. Whoever is in view is listed here.")}</li>`;
@@ -1299,7 +1595,10 @@ function renderPanel() {
   if (panelSort === "place") {
     const groups = new Map();
     for (const r of vis) { if (!groups.has(r.site)) groups.set(r.site, []); groups.get(r.site).push(r); }
-    const ordered = [...groups.entries()].sort((a, z) => z[1].length - a[1].length);
+    // places in order of the best known person in each (0.27), then by how many: the biggest cemetery in
+    // view used to head the list whoever lay in it
+    const top = (rows) => rows.reduce((m, r) => (r.rank > m ? r.rank : m), 0);
+    const ordered = [...groups.entries()].sort((a, z) => top(z[1]) - top(a[1]) || z[1].length - a[1].length);
     for (const [siteIdx, rows] of ordered) {
       rows.sort((a, z) => z.rank - a.rank);
       panelPlan.push({ grp: { siteIdx, n: rows.length } });
@@ -1382,13 +1681,9 @@ $("pv-sort").addEventListener("change", (e) => { panelSort = e.target.value; ren
 // Panning and zooming change which cells exist, so the quota has to be re-run: that IS the
 // mechanism by which zooming in reveals the ones that were held back.
 map.on("moveend", () => {
+  if (state.topN && state.topWhere === "here") recomputeRankCut();
   const { pins, inView, rowsInView } = drawMap();
-  const quota = pins < inView
-    ? `${inView.toLocaleString()} places here, grouped into ${pins.toLocaleString()} pins. Zoom in to split them`
-    : `${inView.toLocaleString()} ${inView === 1 ? "place" : "places"} here, one pin each`;
-  const tableN = TRACES.filter((r) => passes(r, "table")).length;
-  $("stats").textContent = `${quota} · ${rowsInView.toLocaleString()} people in view · ` +
-    `${tableN.toLocaleString()} traces pass the filters`;
+  $("stats").textContent = statsLine(pins, inView, rowsInView);     // one sentence, one place (was written twice)
   renderPanel();
   syncURL();
 });
@@ -1424,13 +1719,87 @@ $("traces-table").querySelector("thead").addEventListener("click", (e) => {
 });
 function setTable(on) {
   tableOn = on;
+  if (on) { startLongTail(); setTop(false); }
   $("table").hidden = !on; $("main").style.display = on ? "none" : "flex";
   $("v-table").classList.toggle("active", on); $("v-map").classList.toggle("active", !on);
   if (on) renderTable(); else map.invalidateSize();
   syncURL();
 }
 $("v-table").addEventListener("click", () => setTable(true));
-$("v-map").addEventListener("click", () => setTable(false));
+$("v-map").addEventListener("click", () => { setTop(false); setTable(false); });
+$("v-top").addEventListener("click", () => setTop(true));
+
+/* ── TOP PEOPLE (0.27): the ranking, and how it is made ─────────────────────────────────────────────
+ * Víctor, 2026-09-15: "quiero un panel de top personas… explica cómo se han conseguido… di que se han ajustado
+ * ciertas nacionalidades para compensar falta de datos, que es la verdad". culture/data/top.json
+ * (build_top.py): the 10 000 highest ranks, with country of birth, traces, and the numbers per country. */
+let TOP = null, topOn = false, topN = 500, topJob = null;
+function setTop(on) {
+  topOn = on;
+  $("toppanel").hidden = !on;
+  $("v-top").classList.toggle("active", on);
+  if (on) {
+    $("table").hidden = true; tableOn = false; $("v-table").classList.remove("active");
+    $("main").style.display = "none"; $("v-map").classList.remove("active");
+    if (!topJob) topJob = fetch(`culture/data/top.json?v=${DATA_V}`).then((r) => r.json()).then((d) => { TOP = d; initTop(); });
+    else if (TOP) renderTop();
+  } else if (!tableOn) {
+    $("main").style.display = "flex"; $("v-map").classList.add("active"); map.invalidateSize();
+  }
+}
+const pct = (x) => (x == null ? "?" : `${Math.round(x * 100)} %`);
+function initTop() {
+  const m = TOP.method || {};
+  const cs = TOP.countries;
+  const cName = (c) => (c ? c.en : "");
+  const byQ = Object.fromEntries(cs.map((c) => [c.q, c]));
+  const THE = new Set(["United Kingdom", "United States", "Netherlands", "Czech Republic"]);
+  const share = (c) => (c && c.famous_dead ? c.in_atlas / c.famous_dead : null);
+  const cov = (q) => { const c = byQ[q]; const x = share(c);
+    return x == null ? "" : `${Math.round(x * 100)} % of those born in ${THE.has(c.en) ? "the " : ""}${c.en}`; };
+  const list = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}` : xs.join(""));
+  const adjusted = cs.filter((c) => c.factor != null && c.factor !== 1).sort((a, z) => z.factor - a.factor);
+  // one sentence, not a methods section (Víctor: "esto no es una web académica… algo muchísimo más flojo de una frase")
+  $("tp-how").innerHTML = `<p class="tp-note">Based on Wikipedia, with some adjustments by language and country of birth.</p>`;
+  const sel = $("tp-country");
+  const counts = {};
+  for (const p of TOP.people) if (p[5] >= 0) counts[p[5]] = (counts[p[5]] || 0) + 1;
+  sel.innerHTML = `<option value="">every country of birth</option>` +
+    Object.entries(counts).sort((a, z) => z[1] - a[1]).map(([i, n]) => `<option value="${i}">${esc(cName(cs[i]))} (${n})</option>`).join("");
+  $("tp-bar").querySelectorAll("button[data-n]").forEach((b) => b.addEventListener("click", () => {
+    topN = +b.dataset.n; $("tp-bar").querySelectorAll("button[data-n]").forEach((x) => x.classList.toggle("on", x === b)); renderTop();
+  }));
+  sel.addEventListener("change", renderTop);
+  $("tp-q").addEventListener("input", renderTop);
+  $("tp-list").addEventListener("click", (e) => {
+    const row = e.target.closest("[data-qid]"); if (!row) return;
+    setTop(false); setTable(false);
+    const q = row.dataset.qid;
+    startLongTail();                       // the panel can be opened before the less known have arrived
+    enterPersonMode(q, null); frameRows(byPerson.get(q) || []);
+    if (byPerson.has(q)) openPerson(q); else pendingCard = q;
+  });
+  renderTop();
+}
+function renderTop() {
+  if (!TOP) return;
+  const cs = TOP.countries, want = $("tp-country").value, q = deacc($("tp-q").value || "");
+  const slice = TOP.people.slice(0, topN);
+  const count = {};
+  for (const p of slice) if (p[5] >= 0) count[p[5]] = (count[p[5]] || 0) + 1;
+  const bars = Object.entries(count).sort((a, z) => z[1] - a[1]).slice(0, 15);
+  const max = bars.length ? bars[0][1] : 1;
+  $("tp-countries").innerHTML = `<h3>Countries of birth in the top ${topN.toLocaleString()}</h3>` +
+    bars.map(([i, n]) => `<div class="tp-bar-row"><span class="tp-bl">${esc(cs[i].en)}</span>` +
+      `<span class="tp-bb"><i style="width:${(100 * n / max).toFixed(1)}%"></i></span><span class="tp-bn">${n}</span></div>`).join("");
+  const rows = slice.map((p, i) => [p, i + 1]).filter(([p]) => (!want || String(p[5]) === want) && (!q || deacc(p[1]).includes(q)));
+  $("tp-list").innerHTML = `<table class="tp-table"><thead><tr><th>#</th><th>person</th><th>life</th><th>born in</th>` +
+    `<th title="The renown score described on the left">renown</th><th title="Places in the atlas">places</th></tr></thead><tbody>` +
+    rows.slice(0, 2000).map(([p, pos]) => `<tr data-qid="${esc(p[0])}"><td class="tp-pos">${pos}</td><td class="tp-name">${esc(p[1])}</td>` +
+      `<td>${esc(lifeStr({ qid: p[0], born: p[2], died: p[3] }))}</td><td>${p[5] >= 0 ? esc(cs[p[5]].en) : ""}</td>` +
+      `<td class="tp-num">${p[4]}</td><td class="tp-num">${p[6]}</td></tr>`).join("") +
+    `</tbody></table>` + (rows.length > 2000 ? `<p class="tp-more">Showing 2,000 of ${rows.length.toLocaleString()}: choose a country or search a name.</p>` : "");
+}
 
 /* ── the search box finds THINGS, not just rows ──────────────────────────────────────────────
  * The filter narrows every view, which is right and was never the problem. The problem was that
@@ -1497,15 +1866,9 @@ $("suggest").addEventListener("click", (e) => {
   const per = e.target.closest(".sg-person");
   if (per) {
     $("suggest").hidden = true;
-    state.person = per.dataset.qid;
-    state.personName = (byPerson.get(state.person) || [{}])[0].name || "";
-    const rows = byPerson.get(per.dataset.qid) || [];
-    const pts = rows.filter((r) => !(r.flags & F_PLACELESS))
-                    .map((r) => [SITES[r.site][S_LAT], SITES[r.site][S_LON]]);
     // go there first, then open the card: the map should already be right behind it
-    refresh();
-    if (pts.length === 1) map.setView(pts[0], 15);
-    else if (pts.length) map.fitBounds(L.latLngBounds(pts), { padding: [70, 70] });
+    enterPersonMode(per.dataset.qid, null);
+    frameRows(byPerson.get(per.dataset.qid) || []);
     openPerson(per.dataset.qid);
     return;
   }
@@ -1574,7 +1937,8 @@ function buildTimeline(min, max) {
     if (a > b) { if (document.activeElement === lo) { b = a; hi.value = b; } else { a = b; lo.value = a; } }
     state.yearMin = a; state.yearMax = b; tlChosen = true; paint(); refresh();
   };
-  lo.addEventListener("input", update); hi.addEventListener("input", update); paint();
+  // listeners once: every rebuild used to add another pair, so a drag ran refresh() several times over
+  lo.oninput = update; hi.oninput = update; paint();
 }
 
 /* ── the blue dot: where you are, while you walk ──────────────────────────────────────────────
@@ -1759,7 +2123,7 @@ function foldSummary() {
   let n = 0;
   for (const fam of ["what", "access", "marking", "verb", "dom"])
     if (VOCAB[fam] && VOCAB[fam].some((_, i) => state[fam][i] === false)) n++;
-  if (state.topN) n++;
+  if (state.topN !== TOP_DEFAULT || state.topWhere !== "here") n++;     // the default is not a filter the reader set
   if (state.person) n++;
   const folded = document.body.classList.contains("folded");
   // Open, the button says what the next tap does. "Filters ▴" read as a label, not as the way back
@@ -1870,7 +2234,9 @@ function viewToURL() {
     if (v.some((_, i) => state[fam][i] === false))
       p.set(fam, v.filter((_, i) => state[fam][i] !== false).join(",") || "none");
   }
-  if (state.topN) p.set("top", String(state.topN));
+  if (state.topN !== TOP_DEFAULT || state.topWhere !== "here") p.set("top", `${state.topN}${state.topN ? "-" + state.topWhere : ""}`);
+  if (state.personSec && state.person) p.set("whosec", state.personSec);
+  if (state.group && state.person) p.set("knew", "1");
   if (state.q) p.set("q", state.q);
   if (state.person) p.set("who", state.person);
   // the place tapped and the person card open, so a reload, a shared link and the back button come back
@@ -1945,7 +2311,13 @@ function applyURL() {
     const on = new Set(p.get(fam) === "none" ? [] : p.get(fam).split(","));
     v.forEach((name, i) => { state[fam][i] = on.has(name); });
   }
-  state.topN = +p.get("top") || 0;
+  // "500-here", "100-world", "0"; an old link's bare "100" was the world's hundred
+  if (p.has("top")) {
+    const [n, w] = p.get("top").split("-");
+    state.topN = +n || 0; state.topWhere = w === "here" ? "here" : "world";
+  } else { state.topN = TOP_DEFAULT; state.topWhere = "here"; }
+  state.personSec = p.get("whosec") || null;
+  state.group = null; pendingKnew = p.get("knew") === "1" && !!p.get("who");
   state.q = deacc(p.get("q") || "");
   state.person = p.get("who") || null;
   pendingCard = p.get("card") || null;          // opened once its person has arrived (tryPendingCard)
@@ -1967,13 +2339,17 @@ function applyURL() {
   if (yr.length === 2 && yr.every(Number.isFinite)) {
     state.yearMin = yr[0]; state.yearMax = yr[1]; tlChosen = true;
     $("tl-min").value = yr[0]; $("tl-max").value = yr[1];
+  } else if (urlBooted && tlChosen) {
+    // a step back to where no years were chosen (the contemporaries mode, a timeline drag) clears them
+    tlChosen = false; contemporaryOf = null;
+    buildTimeline(TL_MIN, TL_MAX);
   }
+  if (!p.has("yr")) contemporaryOf = null;
 
   // and now the controls that show all that
   $("filter").value = p.get("q") || "";
   $("filter-clear").hidden = !$("filter").value;
-  $("renown").querySelectorAll("button[data-top]")
-    .forEach((b) => b.classList.toggle("on", +b.dataset.top === state.topN));
+  paintRenown();
   const openAir = VOCAB.access.indexOf("open-air");
   $("preset-now").classList.toggle("active",
     openAir >= 0 && VOCAB.access.every((_, i) => (state.access[i] !== false) === (i === openAir)));
@@ -2051,9 +2427,18 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
 
     // The long tail, once the map is up and the reader is already looking at something. Nobody
     // waits for it, and the stats line says it is coming rather than quietly under-reporting.
+    // THE LONG TAIL WHEN IT IS WANTED (0.27): the base is the atlas at country scale; the long tail (graves
+    // of the less known, OpenStreetMap, events: ~20 MB) used to follow 2.5 s after every visit. Now it comes
+    // the first time the reader zooms to region scale, searches, opens the table, needs a card or a link
+    // that lives in it, or after 25 s on the page. The stats line says it is coming meanwhile.
     if (d.deep) {
-      deepState = "loading";
-      setTimeout(() => {
+      let started = false;
+      longTailWaiting = true;
+      startLongTail = () => {
+        if (started) return;
+        started = true;
+        deepState = "loading";
+        (() => {
         fetch("culture/data/" + d.deep + "?v=" + DATA_V)
           .then((r) => (r.ok ? r.json() : null))
           .then((extra) => {
@@ -2072,6 +2457,9 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
               buildPlaces();
               refresh();
               tryPendingCard();         // a ?card= person who lives in the long tail arrives here
+              // the open card may have just gained traces, or people it knew, with this file: redraw it in place
+              if (openCard && !$("sheet").hidden && (byPerson.get(openCard) || []).length !== openCardRows) openPerson(openCard, true);
+              else { const kb = document.querySelector("#sheet-body .sh-knew"); if (kb) fillKnew(kb); }
             };
             // Then any further files the base names (0.24: atlas-osm.json, the statues from
             // OpenStreetMap, ODbL and so in a file of their own, D8), one after another.
@@ -2091,7 +2479,12 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
             next();
           })
           .catch(() => { deepState = "none"; });
-      }, 2500);
+        })();
+      };
+      map.on("zoomend", () => { if (map.getZoom() >= 6) startLongTail(); });
+      $("filter").addEventListener("input", () => startLongTail(), { once: true });
+      if (map.getZoom() >= 6 || pendingCard || pendingPlace || tableOn || state.person || state.q) startLongTail();
+      setTimeout(() => startLongTail(), 25000);
     }
 
     // And keep measuring: a ResizeObserver fires exactly when the box changes (first layout,
