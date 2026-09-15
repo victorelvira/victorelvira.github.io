@@ -93,8 +93,8 @@ const PAINTERS = [
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.12.8";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-15 14:03";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.12.15";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-15 20:51";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -566,6 +566,7 @@ function yearNum(p) {
 }
 function inYear(p) {
   const y = yearNum(p);                       // unknown-date works stay visible
+  if (state.undatedOnly) return y == null;    // …and can be asked for on their own (the small "undated" beside the years)
   return y == null || (y >= state.yearMin && y <= state.yearMax);
 }
 // a common free-text filter (title / painter / museum / city / country / year / medium),
@@ -1579,9 +1580,27 @@ function buildTimeline(min, max) {
     state.yearMin = a; state.yearMax = b;
     paint(); refresh();
   };
-  lo.addEventListener("input", update);
-  hi.addEventListener("input", update);
+  lo.addEventListener("input", () => { setUndated(false, false); update(); });
+  hi.addEventListener("input", () => { setUndated(false, false); update(); });
   paint();
+  // Marginal on purpose (Víctor): a quiet word beside the years, with the count, not a chip among the filters.
+  const nd = document.getElementById("tl-undated");
+  if (nd) {
+    const n = allFeatures.filter(f => yearNum(f.properties) == null).length;
+    nd.dataset.n = n;
+    nd.textContent = `${t("undated")} (${n.toLocaleString()})`;
+    nd.addEventListener("click", () => setUndated(!state.undatedOnly));
+    if (new URLSearchParams(location.search).get("nd") === "1") setUndated(true, false);
+  }
+}
+function setUndated(on, write = true) {
+  if (!!state.undatedOnly === on) return;
+  state.undatedOnly = on;
+  const nd = document.getElementById("tl-undated");
+  if (nd) { nd.classList.toggle("on", on); nd.setAttribute("aria-pressed", String(on)); }
+  document.getElementById("timeline")?.classList.toggle("undated-only", on);
+  if (write) histTweak(urlWith(sp => { on ? sp.set("nd", "1") : sp.delete("nd"); }));
+  refresh();
 }
 
 // ── side panel: the works currently within the map viewport, grouped by venue ──
@@ -2613,6 +2632,8 @@ function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum k
   const w = q.get("w"), m = q.get("m");
   const pl = placeFromURL();                     // the list under a ficha is part of the address too
   if (pl && !m) { state.place = pl; renderPlaceChip(); refresh(); }
+  // a shared "only Munch" or "Madrid" link must open ON its works, not on the default view with 0 in sight
+  if (!m && (pl || q.has("p")) && view.map && !view.table) fitVisible(250);
   if (w) { const hit = works.find(x => x.p.qid === w); if (hit) return openWorkCard(hit); }
   if (m && museumIndex.some(x => x.key === m)) selectMuseum(m);
 }
@@ -3290,6 +3311,8 @@ function syncGalaxyURL(step) {
   const v = b.contains("show-galaxy") ? "similar" : b.contains("show-chart") ? "timeline"
     : b.contains("show-game") ? "game" : b.contains("show-table") ? "table" : null;
   if (v) sp.set("view", v);
+  sp.delete("gwhat");
+  if (v === "similar" && galaxyWhat === "painters") sp.set("gwhat", "painters");
   if (v === "similar") {
     if (galaxyColorBy !== "school") sp.set("gcb", galaxyColorBy);
     if (galaxyNames !== "off") sp.set("gnm", galaxyNames);
@@ -3316,11 +3339,125 @@ function applyGalaxyURL() {
   const v = sp.get("view");
   if (v === "similar") {
     setGalaxyView(true);
+    if (sp.get("gwhat") === "painters") loadPainterMap().then(d => { if (Object.keys(d).length) setGalaxyWhat("painters"); });
     if (sp.get("g3") === "1") window._setGalaxy3D && window._setGalaxy3D(true);
   } else if (v === "timeline" && typeof setChartView === "function") setChartView(true);
   else if (v === "game" && typeof setGameView === "function") setGameView(true);
   else if (v === "table") setTableView(true);
 }
+
+// ══ Painters map: one dot per painter, placed by how alike their paintings look (painter_map.py) ══
+// The fingerprints behind it are built to not care how the photographs were taken: each museum counts
+// once, black-and-white photographs are left out. Each painter also carries a stability score (do two
+// halves of their museums land on the same place?) and a painter the data cannot vouch for is drawn
+// hollow rather than left out: seeing that the Michelangelo dot is unreliable is itself worth knowing.
+let galaxyWhat = "works", painterMapData = null, pmSel = null;
+async function loadPainterMap() {
+  if (painterMapData) return painterMapData;
+  try {
+    const j = await (await fetch("artatlas/data/painter_map.json?v=" + DATA_V)).json();
+    // the caption promises black-and-white photographs are left out: only a map built from the
+    // photo-invariant embeddings keeps that promise, so any other build stays unoffered
+    painterMapData = /embeddings_robust/.test(j._doc || "") ? j.painters : {};
+  } catch (e) { painterMapData = {}; }
+  return painterMapData;
+}
+const PM_STABLE = 0.75;
+function pmNick(name) { const pa = PAINTERS.find(p => p.name === name); return pName(pa ? nickOf(pa) : name); }
+async function drawPainterMap() {
+  const data = await loadPainterMap();
+  const svg = document.getElementById("pm-svg"), stage = document.getElementById("pm-stage");
+  if (!svg || !stage) return;
+  const names = Object.keys(data);
+  if (!names.length) { svg.innerHTML = ""; stage.dataset.empty = t("Similarity map not built yet."); return; }
+  const W = Math.max(320, stage.clientWidth), H = Math.max(320, stage.clientHeight), P = 56;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H);
+  const X = d => P + d.x * (W - 2 * P), Y = d => P + d.y * (H - 2 * P);
+  const nmax = Math.max(...names.map(n => data[n].n_works));
+  let lines = "";
+  if (pmSel && data[pmSel]) {
+    const a = data[pmSel];
+    a.near.slice(0, 5).forEach((n, i) => {
+      const b = data[n]; if (!b) return;
+      lines += `<line x1="${X(a).toFixed(1)}" y1="${Y(a).toFixed(1)}" x2="${X(b).toFixed(1)}" y2="${Y(b).toFixed(1)}" class="pm-line" style="opacity:${(0.85 - i * 0.13).toFixed(2)}"/>`;
+    });
+  }
+  // labels: the biggest painters claim their space first; a label that would sit on one already placed
+  // waits for a hover (or for its painter to be selected), so the crowded Italian quarter stays legible
+  const placed = [], showLabel = {};
+  for (const n of names.slice().sort((a, z) => data[z].n_works - data[a].n_works)) {
+    const d = data[n], r = 4 + 9 * Math.sqrt(d.n_works / nmax);
+    const w = pmNick(n).length * 6.2, x0 = X(d) + r + 3, y0 = Y(d) - 7;
+    const box = [x0, y0, x0 + w, y0 + 13];
+    const clash = placed.some(b => !(box[2] < b[0] || box[0] > b[2] || box[3] < b[1] || box[1] > b[3]));
+    showLabel[n] = !clash;
+    if (!clash) placed.push(box);
+  }
+  const dots = names.map(n => {
+    const d = data[n], r = 4 + 9 * Math.sqrt(d.n_works / nmax), c = colorFor(n);
+    const shaky = d.stable < PM_STABLE, on = n === pmSel, near = pmSel && data[pmSel] && data[pmSel].near.slice(0, 5).includes(n);
+    return `<g class="pm-p${on ? " on" : ""}${near ? " near" : ""}${pmSel && !on && !near ? " dim" : ""}" data-pm="${esc(n)}">` +
+      `<circle cx="${X(d).toFixed(1)}" cy="${Y(d).toFixed(1)}" r="${r.toFixed(1)}" ` +
+      (shaky ? `fill="#fff" stroke="${c}" stroke-width="2" stroke-dasharray="3 2"` : `fill="${c}" stroke="#fff" stroke-width="1.5"`) + `/>` +
+      `<text x="${(X(d) + r + 3).toFixed(1)}" y="${(Y(d) + 4).toFixed(1)}"${showLabel[n] ? "" : ' class="hide"'}>${esc(pmNick(n))}</text>` +
+      `<title>${esc(pName(n))}</title></g>`;
+  }).join("");
+  svg.innerHTML = lines + dots;
+}
+function pmSide(name) {
+  const side = document.getElementById("pm-side"), d = painterMapData && painterMapData[name];
+  if (!side) return;
+  if (!d) { side.hidden = true; return; }
+  const k = Math.round(d.stable * 20);
+  const trust = d.stable >= PM_STABLE
+    ? t("A reliable place: in K of 20 random splits, the two halves of their museums still find each other.").replace("K", k)
+    : t("A place the data cannot vouch for: in only K of 20 splits did the two halves of their museums find each other (few works, or photographs that disagree).").replace("K", k);
+  side.innerHTML = `<button type="button" class="pm-x" aria-label="${esc(t("Close"))}">✕</button>` +
+    `<h3>${painterLink(name)}</h3>` +
+    `<div class="pm-sub">${d.n_works} ${tu("works")} · ${d.n_museums} ${tu(d.n_museums === 1 ? "museum" : "museums")}</div>` +
+    `<p class="pm-trust${d.stable >= PM_STABLE ? "" : " shaky"}">${esc(trust)}</p>` +
+    `<div class="pm-h">${esc(t("Paints most like"))}</div><ol class="pm-near">` +
+    d.near.slice(0, 8).map((n, i) => `<li><span class="pdot" style="background:${colorFor(n)}"></span>` +
+      `<button type="button" class="pm-go" data-pm-go="${esc(n)}">${esc(pName(n))}</button>` +
+      `<span class="pm-sim">${Math.round((d.sim[i] || 0) * 100)}</span></li>`).join("") + `</ol>` +
+    `<p class="pm-foot">${esc(t("Click a name above to move to that painter; the painter's own name opens their works on the map."))}</p>`;
+  side.hidden = false;
+  if (isMobile()) side.scrollIntoView({ behavior: "smooth", block: "nearest" });   // on a phone the panel sits under the map
+}
+function setGalaxyWhat(what) {
+  galaxyWhat = what === "painters" ? "painters" : "works";
+  document.body.classList.toggle("galaxy-painters", galaxyWhat === "painters");
+  document.querySelectorAll("#galaxy-what [data-what]").forEach(b => b.classList.toggle("active", b.dataset.what === galaxyWhat));
+  document.getElementById("painter-map").hidden = galaxyWhat !== "painters";
+  document.getElementById("galaxy-body").hidden = galaxyWhat === "painters";
+  if (galaxyWhat === "painters") drawPainterMap(); else galaxyRedraw();
+}
+(function wirePainterMap() {
+  const seg = document.getElementById("galaxy-what"); if (!seg) return;
+  seg.hidden = true;
+  loadPainterMap().then(d => { seg.hidden = !Object.keys(d).length; });
+  seg.addEventListener("click", e => {
+    const b = e.target.closest("[data-what]"); if (!b) return;
+    setGalaxyWhat(b.dataset.what); syncGalaxyURL(true);
+  });
+  const pick = name => { pmSel = pmSel === name ? null : name; drawPainterMap(); if (pmSel) pmSide(pmSel); else document.getElementById("pm-side").hidden = true; };
+  document.getElementById("pm-svg").addEventListener("click", e => {
+    const g = e.target.closest("[data-pm]");
+    if (g) pick(g.dataset.pm); else { pmSel = null; drawPainterMap(); document.getElementById("pm-side").hidden = true; }
+  });
+  document.getElementById("pm-side").addEventListener("click", e => {
+    if (e.target.closest(".pm-x")) { pmSel = null; drawPainterMap(); e.currentTarget.hidden = true; return; }
+    const go = e.target.closest("[data-pm-go]");
+    if (go) { pmSel = go.dataset.pmGo; drawPainterMap(); pmSide(pmSel); }
+  });
+  // redraw whenever the stage changes size: opening the view, the window, a phone turned sideways
+  let pmW = 0, pmH = 0;
+  new ResizeObserver(es => {
+    const r = es[0].contentRect;
+    if (galaxyWhat !== "painters" || !r.width || (Math.abs(r.width - pmW) < 2 && Math.abs(r.height - pmH) < 2)) return;
+    pmW = r.width; pmH = r.height; drawPainterMap();
+  }).observe(document.getElementById("pm-stage"));
+})();
 
 (function wireGalaxy() {
   const el = document.getElementById("v-galaxy"); if (!el) return;

@@ -255,7 +255,21 @@
     "each dot = the painting's own dominant colour": "chaque point = la couleur dominante du tableau",
     "b.": "né en",
     "…and N more": "…et N de plus",
-    "…and N more painters": "…et N autres peintres"
+    "…and N more painters": "…et N autres peintres",
+    "Paintings": "Œuvres",
+    "A reliable place: in K of 20 random splits, the two halves of their museums still find each other.": "Position fiable : dans K partages au hasard sur 20, les deux moitiés de ses musées se reconnaissent.",
+    "A place the data cannot vouch for: in only K of 20 splits did the two halves of their museums find each other (few works, or photographs that disagree).": "Position peu fiable : les deux moitiés de ses musées ne se reconnaissent que dans K partages sur 20 (peu d'œuvres, ou photos discordantes).",
+    "Paints most like": "Peint le plus comme",
+    "Click a name above to move to that painter; the painter's own name opens their works on the map.": "Cliquez un nom de la liste pour passer à ce peintre ; le nom du peintre ouvre ses œuvres sur la carte.",
+    "(CLIP) ·": "(CLIP) ·",
+    "🎲 Mixed": "🎲 Mélange",
+    "· Data:": "· Données :",
+    "Language · Idioma": "Langue · Language",
+    "Language": "Langue",
+    "Map the paintings, or the painters": "Carte des œuvres ou des peintres",
+    "Painters placed by how alike their paintings look": "Peintres placés selon la ressemblance de leurs tableaux",
+    "undated": "sans date",
+    "Show only the works whose date is unknown": "Voir seulement les œuvres sans date connue"
   },
   "units": {
     "works": "œuvres",
@@ -275,7 +289,8 @@
   },
   "blocks": {
     "chart-legend-note": "Chaque point = une année · plus gros = plus d'œuvres",
-    "galaxy-method": "\n        <p>Chaque tableau passe par un modèle d'image <b>CLIP</b> (ViT-B/32, open source) qui transforme\n        l'image en un vecteur de 512 nombres décrivant <em>ce à quoi elle ressemble</em> (composition, palette, sujet,\n        facture), sans légende ni étiquette. Deux œuvres sont « semblables » quand leurs vecteurs pointent dans la même\n        direction (<b>similarité cosinus</b>) ; c'est ce qui alimente <em>Les plus ressemblants</em> et <em>Peintres les plus proches de cette œuvre</em>\n        dans la fiche de chaque tableau.</p>\n        <p>Cette carte dispose en 2-D toutes les œuvres traitées avec <b>t-SNE</b>, si bien que les tableaux qui se ressemblent\n        se retrouvent voisins. Les points peuvent être colorés par peintre, époque ou école, ou par la <b>couleur dominante</b>\n        de chaque œuvre (la moyenne de ses pixels), calculée au même moment. <em>Peintres les plus proches de cette œuvre</em> et\n        les suggestions <em>« Si vous aimez…, essayez »</em> font la moyenne des vecteurs d'un peintre en une « empreinte » et comparent les empreintes.</p>\n        <p>Tout est calculé <b>hors ligne</b> et publié sous forme de petits fichiers précalculés : la page n'exécute aucune IA.\n        La couverture s'étend à mesure que d'autres œuvres sont traitées. Images © leurs sources, via Wikimedia Commons.</p>\n      "
+    "galaxy-method": "\n        <p>Chaque tableau passe par un modèle d'image <b>CLIP</b> (ViT-B/32, open source) qui transforme\n        l'image en un vecteur de 512 nombres décrivant <em>ce à quoi elle ressemble</em> (composition, palette, sujet,\n        facture), sans légende ni étiquette. Deux œuvres sont « semblables » quand leurs vecteurs pointent dans la même\n        direction (<b>similarité cosinus</b>) ; c'est ce qui alimente <em>Les plus ressemblants</em> et <em>Peintres les plus proches de cette œuvre</em>\n        dans la fiche de chaque tableau.</p>\n        <p>Cette carte dispose en 2-D toutes les œuvres traitées avec <b>t-SNE</b>, si bien que les tableaux qui se ressemblent\n        se retrouvent voisins. Les points peuvent être colorés par peintre, époque ou école, ou par la <b>couleur dominante</b>\n        de chaque œuvre (la moyenne de ses pixels), calculée au même moment. <em>Peintres les plus proches de cette œuvre</em> et\n        les suggestions <em>« Si vous aimez…, essayez »</em> font la moyenne des vecteurs d'un peintre en une « empreinte » et comparent les empreintes.</p>\n        <p>Tout est calculé <b>hors ligne</b> et publié sous forme de petits fichiers précalculés : la page n'exécute aucune IA.\n        La couverture s'étend à mesure que d'autres œuvres sont traitées. Images © leurs sources, via Wikimedia Commons.</p>\n      ",
+    "pm-hint": "Chaque peintre est la moyenne de ses tableaux, <b>chaque musée compte une fois</b> et sans les photos en noir et blanc · plus proche = peignent plus pareil · cercle creux = position que les données ne garantissent pas · <b>cliquez un peintre</b>"
   },
   "painters": {
     "Titian": "Titien",

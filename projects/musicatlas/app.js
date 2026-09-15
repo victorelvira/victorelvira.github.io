@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.44.0";
-const BUILD_AT = "2026-09-15 19:59";
+const DATA_V = "0.49.0";
+const BUILD_AT = "2026-09-15 21:16";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
@@ -63,7 +63,9 @@ const state = { lens:"table", sub:"works", sel:null, f:{}, comp:new Set(), q:"",
                 grouping:"period", tlMode:"composer", tlZoom:1, year:null, qw:[],
                 /* quién está abierto en el panel: una obra (`sel`) o una persona
                    (`person`). Nunca los dos: el panel es uno. */
-                person:null };
+                person:null,
+                /* qué eje de filtros está abierto; los siete nombres se ven siempre */
+                axis:"form_group" };
 
 /* ---------- reading a field ---------- */
 /* THE INDEX IS COMPACT. core.json holds one short row per work, because the full
@@ -716,7 +718,7 @@ function renderWorks(){
   document.body.classList.toggle("colw", colwTotal>0);
   document.getElementById("stage").innerHTML = tops.length
     ? `<table class="cat"${colwTotal?` style="width:${colwTotal}px"`:""}>${colTags}<thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`+
-      (tops.length>slice.length?`<button id="more">Show more, ${tops.length-slice.length} left</button>`:"")
+      (tops.length>slice.length?`<button id="more">${t("Show more")}, ${tops.length-slice.length} ${t("left")}</button>`:"")
     : `<p style="padding:34px 18px;color:var(--muted)">Nothing matches. <button id="reset" style="border:0;background:none;color:var(--accent);cursor:pointer;text-decoration:underline;font:inherit">Clear everything</button></p>`;
 }
 function renderComposers(){
@@ -785,7 +787,33 @@ let MAP=null, MAPLAYER=null;
 /* after the layout settles, not during: the grid animates and a size read mid-transition
    is the size it is passing through */
 function remapSoon(){ if(MAP) setTimeout(()=>{ try{ MAP.invalidateSize(); }catch(e){} }, 260); }
+/* LEAFLET SE CARGA CUANDO SE ABRE EL MAPA, NO ANTES.
+   Eran 144 KB de JS y 14 de CSS en la primera carga, casi un 20 % de los 805 KB que viajan,
+   para una vista que la mayoría no va a abrir nunca. Se pide la primera vez que alguien
+   pulsa "Map" y ya se queda. Vendorizado, así que no sale de este sitio. 2026-09-15. */
+let LEAFLET = null;
+function needLeaflet(){
+  if(LEAFLET) return LEAFLET;
+  LEAFLET = new Promise((ok, no) => {
+    const css=document.createElement("link");
+    css.rel="stylesheet"; css.href="vendor/leaflet.css";
+    document.head.appendChild(css);
+    const js=document.createElement("script");
+    js.src="vendor/leaflet.js"; js.onload=()=>ok(true); js.onerror=no;
+    document.head.appendChild(js);
+  });
+  return LEAFLET;
+}
 function renderMap(host){
+  if(typeof L === "undefined"){
+    host.innerHTML=`<p class="hint">${t("loading the map…")}</p>`;
+    needLeaflet().then(()=>renderMap(host))
+      .catch(()=>{ host.innerHTML=`<p class="hint">${t("the map could not load")}</p>`; });
+    return;
+  }
+  return renderMapNow(host);
+}
+function renderMapNow(host){
   const pins=new Map();
   for(const w of visible()){
     if(!w.pp || !PLACES[w.pp]) continue;
@@ -1418,7 +1446,9 @@ function railFor(f, pool, limit){
   /* last, and after the limit, so it is never one of the values a "top 10" cuts off and
      never competes with them for a place in the rail */
   if(gap) items.push([NOT_STATED, gap]);
-  return `<span class="fg"><span class="lbl">${f.label}</span>`+
+  /* el nombre del eje solo se repite en el subeje ("As catalogued" dentro de Kind): para
+     el eje abierto ya lo dice su botón, y ponerlo dos veces es ruido. */
+  return `<span class="fg">${f.id===state.axis?"":`<span class="lbl">${f.label}</span>`}`+
     items.map(([v,n])=>`<button class="chip" data-facet="${f.id}" data-v="${esc(v)}"
       aria-pressed="${!!(state.f[f.id]&&state.f[f.id].has(v))}">${esc(v)}<span class="n">${n}</span></button>`).join("")+
     (cut && f.over ? `<span class="fg-over">${esc(f.over(cut))}</span>` : "")+
@@ -1430,10 +1460,28 @@ function renderFacets(){
      peor respuesta que puede dar un control. */
   if(state.lens==="game"){ document.getElementById("facets").innerHTML=""; return; }
   const pool=WORKS.filter(w=>isWork(w)&&(state.comp.size===0||w.composer_slugs.some(s2=>state.comp.has(s2))));
-  let html=FACETS.filter(f=>!f.hidden).map(f=>railFor(f,pool))
-                 .filter(Boolean).join(`<span class="chip-sep"></span>`);
+  /* UN EJE CADA VEZ, Y LOS SIETE NOMBRES SIEMPRE A LA VISTA.
+     Se dibujaban los siete carriles a la vez: **9 363 px de chips en una ventana de 1 024**,
+     o sea 8 339 px escondidos a la derecha sin nada que dijera que estaban ahí. Entraba el
+     primero y medio, y los otros cinco ejes no existían para quien no arrastrara.
+
+     Recortar chips no era la respuesta, porque el problema no es ningún carril (el mayor
+     son 2 292 px) sino que están los siete. Así que los NOMBRES de los ejes van siempre en
+     una línea, que cabe de sobra, y debajo van los valores del que esté abierto. No se
+     esconde nada: se deja de enseñar todo a la vez. 2026-09-15. */
+  const shown=FACETS.filter(f=>!f.hidden);
+  if(!shown.some(f=>f.id===state.axis)) state.axis=shown[0].id;
+  const tabs=shown.map(f=>{
+    const on=state.f[f.id]&&state.f[f.id].size;
+    return `<button class="axis${f.id===state.axis?" open":""}${on?" has":""}"
+      data-axis="${f.id}">${esc(f.label)}${on?`<span class="n">${on}</span>`:""}</button>`;
+  }).join("");
+  const f=shown.find(x=>x.id===state.axis);
+  let html=`<span class="axes">${tabs}</span><span class="chip-sep"></span>`
+         + (railFor(f,pool)||`<span class="fg-over">${t("nothing on this axis for what is on screen")}</span>`);
+  /* el subeje solo tiene sentido con su eje abierto y algo elegido en él */
   const g=state.f.form_group;
-  if(g && g.size){
+  if(state.axis==="form_group" && g && g.size){
     const sub=railFor(SUBFACET, pool.filter(w=>g.has(w.form_group)));
     if(sub) html += `<span class="chip-sep"></span>` + sub;
   }
@@ -1475,6 +1523,91 @@ function renderActive(){
    obra no dejaba entrada en el historial y el primer atrás se saltaba la ficha entera.
    Es idempotente: si el hash no cambia (ordenar, desplegar una fila, pedir más filas),
    no anota nada. */
+/* QUÉ ES ESTO, DICHO EN ALGÚN SITIO.
+   Hasta hoy no había ni una línea que lo explicara. Alguien que llegaba se encontraba una
+   tabla de 15 080 filas, siete pestañas y siete carriles de filtros, y la idea que
+   distingue al atlas entero (que cada dato dice quién lo sostiene, y que los desacuerdos
+   se publican en vez de resolverse a escondidas) vivía en un `hover` sobre un punto de
+   cuatro píxeles y en una línea gris del pie.
+
+   Los números se cuentan aquí, en vivo. Escribirlos a mano en un texto es exactamente cómo
+   envejece mal un documento, y este proyecto ya ha tropezado con eso. 2026-09-15. */
+function aboutHTML(){
+  const w = WORKS.filter(isWork);
+  const dis = w.filter(inDoubt).length;
+  const bare = w.filter(x=>x.nk).length;
+  const twice = w.filter(x=>x.xc).length;
+  const scores = w.filter(x=>(x.media||{}).scores).length;
+  const play = w.filter(x=>x.au||x.ar).length;
+  const n = x => x.toLocaleString("en");
+  return `<div id="about"><div class="ab">
+    <button class="ab-x" data-about="close" aria-label="Close">×</button>
+    <h2>${t("What this is")}</h2>
+    <p class="ab-lead">${t("A catalogue of")} <b>${n(w.length)}</b> ${t("works by")}
+       <b>${COMPOSERS.length}</b> ${t("composers, built from IMSLP, Wikidata and MusicBrainz. What it tries to do is not hold the most works: it is to be clear about where each fact comes from.")}</p>
+    <h4>${t("Every fact says who says it")}</h4>
+    <p>${t("The dot beside a value is its provenance. Hover it and you see which sources spoke and what each one wrote, in its own words.")}</p>
+    <h4>${t("When the sources disagree, you see both")}</h4>
+    <p>${n(dis)} ${t("works carry a disagreement, and not one of them has been quietly resolved. The reading we did not take stays on the record, with the name of the source that made it.")}
+       <button class="ab-go" data-about="doubt">${t("show me those")}</button></p>
+    <h4>${t("What we do not know is marked, not hidden")}</h4>
+    <p>${n(bare)} ${t("works are a name and nothing else: a catalogue has an entry for them and then says nothing more. They are kept because they exist, not because we know anything about them.")}
+       <button class="ab-go" data-about="bare">${t("show me those")}</button></p>
+    <h4>${t("What you can do with it")}</h4>
+    <p>${n(scores)} ${t("works have a free score and")} ${n(play)} ${t("something to listen to. There is a map of where works were first heard, a graph of who knew whom, and a game.")}
+       ${n(twice)} ${t("works have at least one fact that two independent sources agreed on, which is the number worth trusting.")}</p>
+    <p class="ab-foot">${t("Nothing here is copied: scores and recordings are linked where they live, at IMSLP, Wikimedia Commons and the Internet Archive.")}</p>
+  </div></div>`;
+}
+function showAbout(){
+  document.getElementById("instrument").insertAdjacentHTML("beforebegin", aboutHTML());
+}
+function hideAbout(){ const a=document.getElementById("about"); if(a) a.remove(); }
+document.addEventListener("click", e=>{
+  if(e.target.closest("#whatis")){ hideAbout(); return showAbout(); }
+  const g=e.target.closest("[data-about]");
+  if(!g) return;
+  const k=g.dataset.about;
+  hideAbout();
+  if(k==="close") return;
+  /* Cada "enséñame esas" parte de cero. La primera versión las sumaba, así que pulsar
+     "en duda" y luego "solo un nombre" pedía las dos cosas a la vez y contestaba **0
+     obras**, que es la peor respuesta posible a un botón que promete enseñarte algo. */
+  state.f={}; state.q=""; state.qw=[]; state.doubt=false; state.year=null;
+  document.getElementById("q").value="";
+  const dt=document.getElementById("t-doubt");
+  if(k==="doubt"){ state.doubt=true; dt.setAttribute("aria-pressed", true); }
+  else { dt.setAttribute("aria-pressed", false); }
+  if(k==="bare") state.f.flag=new Set(["a name and nothing else"]);
+  state.lens="table"; state.sub="works";
+  document.querySelectorAll("#view-tabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lens==="table"));
+  return draw();
+});
+
+/* LA TABLA SE ALARGA SOLA AL LLEGAR ABAJO.
+   Dibuja 300 filas de 15 080, y el botón de "más" quedaba **a 14 274 px de scroll**: nadie
+   baja eso, así que para casi todo el mundo el catálogo tenía 300 obras. Ahora se pide el
+   siguiente tramo cuando quedan 600 px por bajar, que es antes de que el lector llegue al
+   final y sin que tenga que hacer nada.
+
+   El botón se queda igualmente, porque un teclado y un lector de pantalla no "se acercan al
+   final", y porque dice cuántas faltan, que es una información que el scroll no da.
+   2026-09-15. */
+function watchScroll(){
+  const sc=document.getElementById("scroll");
+  if(!sc || sc.dataset.watched) return;
+  sc.dataset.watched="1";
+  sc.addEventListener("scroll", () => {
+    if(state.lens!=="table" || state.sub!=="works") return;
+    if(sc.scrollTop + sc.clientHeight < sc.scrollHeight - 600) return;
+    const more=document.getElementById("more");
+    if(!more || more.dataset.busy) return;
+    more.dataset.busy="1";
+    state.limit += 300;
+    renderStage();
+  }, {passive:true});
+}
+
 function renderStage(){
   /* salir de "Play" retira el permiso: al volver, se vuelve a avisar y a esperar. */
   if(state.lens!=="game"){ GREADY=false; gStop(); }
@@ -1570,6 +1703,8 @@ document.addEventListener("keydown", e => {
 });
 document.addEventListener("click",e=>{
   const t=e.target;
+  const ax=t.closest("[data-axis]");
+  if(ax){ state.axis=ax.dataset.axis; return renderFacets(); }
   const chip=t.closest("#facets .chip");
   if(chip){ const f=chip.dataset.facet,v=chip.dataset.v; state.f[f]=state.f[f]||new Set();
     state.f[f].has(v)?state.f[f].delete(v):state.f[f].add(v); return draw(); }
@@ -1723,7 +1858,7 @@ Promise.all([
   WORKS=w.map(r=>hydrate(r,byslug)); EDGES=e;
   BYID=new Map(WORKS.map(x=>[x.id,x]));
   document.getElementById("build").textContent=`v${DATA_V} · ${BUILD_AT}`;
-  readHash(); draw();
+  readHash(); draw(); watchScroll();
   /* el estado inicial SUSTITUYE la entrada en blanco con la que llega el navegador, en
      vez de añadirse detrás: si no, el primer atrás no hacía nada visible. */
   writeHashFirst();

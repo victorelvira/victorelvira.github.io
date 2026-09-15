@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.12.8">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.12.15">
 </head>
 <body>
   <nav id="navbar">
@@ -105,6 +105,7 @@
       <input type="range" id="tl-max" aria-label="To year">
     </div>
     <span id="tl-label" class="tl-val">…</span>
+    <button type="button" id="tl-undated" class="tl-undated" aria-pressed="false" title="Show only the works whose date is unknown">undated</button>
   </div>
 
   <div id="main">
@@ -199,6 +200,11 @@
   <section id="galaxyview" hidden>
     <div id="galaxy-bar">
       <div class="galaxy-controls">
+        <span class="g-seg" id="galaxy-what" title="Map the paintings, or the painters">
+          <button type="button" class="gbtn active" data-what="works">Paintings</button>
+          <button type="button" class="gbtn" data-what="painters">Painters</button>
+        </span>
+        <span class="chart-legend" id="pm-hint" data-i18n-block="pm-hint">Each painter is the average of their paintings, <b>each museum counted once</b> and black-and-white photographs left out · closer = paint more alike · a hollow circle = a place the data cannot vouch for · <b>click a painter</b></span>
         <span class="g-seg" id="galaxy-dim" title="Flat 2-D map or a rotatable 3-D cloud">
           <button type="button" class="gbtn active" data-dim="2d">2D</button>
           <button type="button" class="gbtn" data-dim="3d">🧊 3D</button>
@@ -220,6 +226,10 @@
         <span class="chart-legend" id="galaxy-hint">Dots by <b>visual similarity</b> (CLIP) · <b id="galaxy-n">…</b> works · hover to preview · <b>click to pin</b> · scroll/pinch zoom · drag to pan</span>
       </div>
       <span id="galaxy-legend" class="galaxy-legend"></span>
+    </div>
+    <div id="painter-map" hidden>
+      <div id="pm-stage"><svg id="pm-svg" role="img" aria-label="Painters placed by how alike their paintings look"></svg></div>
+      <aside id="pm-side" hidden></aside>
     </div>
     <div id="galaxy-body">
       <div id="galaxy-scroll"><div id="galaxy-plane"></div><canvas id="galaxy-canvas" hidden></canvas></div>
@@ -301,7 +311,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.12.8"></script>
+  <script src="artatlas/app.js?v=1.12.15"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

@@ -255,7 +255,21 @@
     "each dot = the painting's own dominant colour": "cada punto = el color dominante del propio cuadro",
     "b.": "n.",
     "…and N more": "…y N más",
-    "…and N more painters": "…y N pintores más"
+    "…and N more painters": "…y N pintores más",
+    "Paintings": "Obras",
+    "A reliable place: in K of 20 random splits, the two halves of their museums still find each other.": "Posición fiable: en K de 20 divisiones al azar, las dos mitades de sus museos se siguen reconociendo.",
+    "A place the data cannot vouch for: in only K of 20 splits did the two halves of their museums find each other (few works, or photographs that disagree).": "Posición poco fiable: solo en K de 20 divisiones las dos mitades de sus museos se reconocen (pocas obras, o fotos que no coinciden).",
+    "Paints most like": "Pinta más parecido a",
+    "Click a name above to move to that painter; the painter's own name opens their works on the map.": "Pulsa un nombre de la lista para saltar a ese pintor; el nombre del propio pintor abre sus obras en el mapa.",
+    "(CLIP) ·": "(CLIP) ·",
+    "🎲 Mixed": "🎲 Mezcla",
+    "· Data:": "· Datos:",
+    "Language · Idioma": "Idioma · Language",
+    "Language": "Idioma",
+    "Map the paintings, or the painters": "Mapa de las obras o de los pintores",
+    "Painters placed by how alike their paintings look": "Pintores colocados según lo que se parecen sus cuadros",
+    "undated": "sin fecha",
+    "Show only the works whose date is unknown": "Ver solo las obras sin fecha conocida"
   },
   "units": {
     "works": "obras",
@@ -275,7 +289,8 @@
   },
   "blocks": {
     "chart-legend-note": "Cada punto = un año · más grande = más obras",
-    "galaxy-method": "\n        <p>Cada cuadro pasa por un modelo de imagen <b>CLIP</b> (ViT-B/32, de código abierto) que convierte la\n        imagen en un vector de 512 números que recoge <em>cómo se ve</em> (composición, paleta, tema,\n        factura), sin pies de foto ni etiquetas. Dos obras son «parecidas» cuando sus vectores apuntan en la misma\n        dirección (<b>similitud del coseno</b>); de ahí salen <em>Lo más parecido</em> y <em>Pintores más cercanos a esta obra</em>\n        en la ficha de cada cuadro.</p>\n        <p>Este mapa coloca en 2-D todas las obras procesadas con <b>t-SNE</b>, de modo que los cuadros que se parecen\n        quedan cerca. Los puntos se pueden colorear por pintor, época o escuela, o por el <b>color dominante</b>\n        de cada obra (la media de sus píxeles), que se calcula a la vez. <em>Pintores más cercanos a esta obra</em> y\n        las sugerencias <em>«Si te gusta…, prueba con»</em> promedian los vectores de un pintor en una «huella» y comparan huellas.</p>\n        <p>Todo se calcula <b>fuera de línea</b> y se publica en ficheros pequeños ya calculados: la página no ejecuta ninguna IA.\n        La cobertura crece a medida que se procesan más obras. Imágenes © de sus fuentes, vía Wikimedia Commons.</p>\n      "
+    "galaxy-method": "\n        <p>Cada cuadro pasa por un modelo de imagen <b>CLIP</b> (ViT-B/32, de código abierto) que convierte la\n        imagen en un vector de 512 números que recoge <em>cómo se ve</em> (composición, paleta, tema,\n        factura), sin pies de foto ni etiquetas. Dos obras son «parecidas» cuando sus vectores apuntan en la misma\n        dirección (<b>similitud del coseno</b>); de ahí salen <em>Lo más parecido</em> y <em>Pintores más cercanos a esta obra</em>\n        en la ficha de cada cuadro.</p>\n        <p>Este mapa coloca en 2-D todas las obras procesadas con <b>t-SNE</b>, de modo que los cuadros que se parecen\n        quedan cerca. Los puntos se pueden colorear por pintor, época o escuela, o por el <b>color dominante</b>\n        de cada obra (la media de sus píxeles), que se calcula a la vez. <em>Pintores más cercanos a esta obra</em> y\n        las sugerencias <em>«Si te gusta…, prueba con»</em> promedian los vectores de un pintor en una «huella» y comparan huellas.</p>\n        <p>Todo se calcula <b>fuera de línea</b> y se publica en ficheros pequeños ya calculados: la página no ejecuta ninguna IA.\n        La cobertura crece a medida que se procesan más obras. Imágenes © de sus fuentes, vía Wikimedia Commons.</p>\n      ",
+    "pm-hint": "Cada pintor es la media de sus cuadros, <b>cada museo cuenta una vez</b> y sin las fotos en blanco y negro · más cerca = pintan más parecido · círculo hueco = posición que los datos no garantizan · <b>pulsa un pintor</b>"
   },
   "painters": {
     "Titian": "Tiziano",
