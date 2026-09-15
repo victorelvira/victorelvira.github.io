@@ -11,7 +11,7 @@
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
 const DATA_V = "0.37.0";
-const BUILD_AT = "2026-09-15 01:41";
+const BUILD_AT = "2026-09-15 14:58";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
