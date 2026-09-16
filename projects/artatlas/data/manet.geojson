@@ -1873,7 +1873,7 @@
     "museum_id": "courtauld-gallery",
     "city": "London",
     "country": "United Kingdom",
-    "wikidata": "https://www.wikidata.org/wiki/Q2860945",
+    "wikidata": "https://www.wikidata.org/wiki/Q131349978",
     "_merged": [
      {
       "source": "Wikidata",
@@ -1885,7 +1885,15 @@
     "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q2860945"
+    "qid_shared": "Q2860945",
+    "qid": "Q131349978",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0139 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -2938,7 +2946,7 @@
     "museum_id": "national-gallery-of-victoria",
     "city": "City of Melbourne",
     "country": "Australia",
-    "wikidata": "https://www.wikidata.org/wiki/Q106766601",
+    "wikidata": "https://www.wikidata.org/wiki/Q20423282",
     "_merged": [
      {
       "source": "Wikidata",
@@ -2951,7 +2959,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q106766601",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q20423282",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0140 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5769,7 +5785,7 @@
     "title": "Little Girl in an Armchair",
     "year": "1878",
     "location": "Spencer Museum of Art",
-    "city": "Douglas County",
+    "city": "Lawrence",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Little%20Girl%20in%20an%20Armchair.jpg?width=500",
@@ -5793,7 +5809,8 @@
     "museum_id": "spencer-museum-of-art",
     "location_src": "Spencer Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Douglas County"
    }
   },
   {

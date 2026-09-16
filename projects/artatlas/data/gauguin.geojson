@@ -4131,7 +4131,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "qid": "Q56216668",
     "wikidata": "https://www.wikidata.org/wiki/Q56216668",
@@ -4144,7 +4144,8 @@
     },
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -5806,13 +5807,14 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "qid": "Q2504917",
     "wikidata": "https://www.wikidata.org/wiki/Q2504917",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -7175,7 +7177,16 @@
     "country": "Japan",
     "location_src": "Pola Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q79790711",
+    "wikidata": "https://www.wikidata.org/wiki/Q79790711",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0115 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -7839,7 +7850,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "qid": "Q97769945",
     "wikidata": "https://www.wikidata.org/wiki/Q97769945",
@@ -7852,7 +7863,8 @@
     },
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -9555,7 +9567,16 @@
     "location_src": "Fogg Museum",
     "venue_of": "Harvard Art Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q67091027",
+    "wikidata": "https://www.wikidata.org/wiki/Q67091027",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0116 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -9993,7 +10014,16 @@
     "country": "United States",
     "location_src": "Minneapolis Institute of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q20891430",
+    "wikidata": "https://www.wikidata.org/wiki/Q20891430",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0118 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -10197,7 +10227,16 @@
     "location_src": "Musée d'Orsay",
     "kind": "museum",
     "form": "painting",
-    "city_src": "7th arrondissement of Paris"
+    "city_src": "7th arrondissement of Paris",
+    "qid": "Q17495755",
+    "wikidata": "https://www.wikidata.org/wiki/Q17495755",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0119 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -12387,7 +12426,16 @@
     ],
     "location_src": "Museum of Modern Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q19883456",
+    "wikidata": "https://www.wikidata.org/wiki/Q19883456",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0120 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

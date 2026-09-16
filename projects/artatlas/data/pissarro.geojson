@@ -2077,7 +2077,16 @@
     "museum_id": "deji-art-museum",
     "location_src": "Deji Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q135472475",
+    "wikidata": "https://www.wikidata.org/wiki/Q135472475",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0224 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -12705,7 +12714,7 @@
     "title": "Landscape with Farm Buildings and Palm Trees",
     "year": "1856",
     "location": "National Art Gallery",
-    "city": "Capital District",
+    "city": "Caracas",
     "country": "Venezuela",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20Paisaje%20tropical.jpg?width=500",
@@ -12719,7 +12728,8 @@
     "museum_id": "national-art-gallery-2",
     "location_src": "National Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Capital District"
    }
   },
   {

@@ -2214,7 +2214,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-fine-arts-of-algiers",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q83647727",
     "_merged": [
      {
       "source": "Wikidata",
@@ -2229,7 +2229,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q83647727",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0256 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -2688,7 +2696,7 @@
     },
     "museum_id": "clark-art-institute",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q80569576",
     "_merged": [
      {
       "source": "Wikidata",
@@ -2701,7 +2709,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q80569576",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0257 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3376,7 +3392,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "barnes-foundation",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q28129791",
     "_merged": [
      {
       "source": "Wikidata",
@@ -3389,7 +3405,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q28129791",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0259 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3421,7 +3445,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "alte-nationalgalerie",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683366",
     "_merged": [
      {
       "source": "Wikidata",
@@ -3435,7 +3459,15 @@
     "form": "painting",
     "qid_rejected": "Q150",
     "qid_rejected_as": "natural language, language, modern language",
-    "city_src": "Bezirk Mitte"
+    "city_src": "Bezirk Mitte",
+    "qid": "Q18683366",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0260 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3467,7 +3499,7 @@
     },
     "museum_id": "national-gallery-of-art",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q20189761",
     "_merged": [
      {
       "source": "Wikidata",
@@ -3480,7 +3512,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q20189761",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0261 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3584,7 +3624,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "barnes-foundation",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q28129814",
     "_merged": [
      {
       "source": "Wikidata",
@@ -3597,7 +3637,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q28129814",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0262 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3913,7 +3961,7 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q19905164",
     "_merged": [
      {
       "source": "Wikidata",
@@ -3926,7 +3974,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q19905164",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0263 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4003,7 +4059,7 @@
     },
     "museum_id": "virginia-museum-of-fine-arts",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q85224949",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4016,7 +4072,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q85224949",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0264 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4046,12 +4110,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "fondation-valentim",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q140464255",
     "location_src": "Fondation Valentim",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q140464255",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0265 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4121,7 +4193,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "cleveland-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q60514285",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4134,7 +4206,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q60514285",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0266 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4786,7 +4866,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "botero-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q3564208",
+    "wikidata": "https://www.wikidata.org/wiki/Q66363872",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4800,7 +4880,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3564208",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q66363872",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0268 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4869,7 +4957,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "nationalmuseum",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "wikidata": "https://www.wikidata.org/wiki/Q18599143",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4882,7 +4970,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "qid_rejected_as": "natural language, language, modern language",
+    "qid": "Q18599143",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0269 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5110,7 +5206,16 @@
      "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
      "coord": "MediaWiki coordinates API"
     },
-    "placeless": true
+    "placeless": true,
+    "qid": "Q30880867",
+    "wikidata": "https://www.wikidata.org/wiki/Q30880867",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0271 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

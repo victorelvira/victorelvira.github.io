@@ -480,7 +480,16 @@
     "museum_id": "palazzo-vecchio",
     "location_src": "Palazzo Vecchio",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q67205784",
+    "wikidata": "https://www.wikidata.org/wiki/Q67205784",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0008 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -973,7 +982,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthistorisches-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q118190483",
+    "wikidata": "https://www.wikidata.org/wiki/Q27979302",
     "_merged": [
      {
       "source": "Wikidata",
@@ -986,7 +995,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q118190483",
-    "qid_rejected_as": "group of paintings"
+    "qid_rejected_as": "group of paintings",
+    "qid": "Q27979302",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0010 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1020,7 +1037,16 @@
     "museum_id": "louvre",
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18572243",
+    "wikidata": "https://www.wikidata.org/wiki/Q18572243",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0011 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3892,7 +3918,7 @@
     "title": "Mary Magdalene (Young Florentine Woman portrayed as the Magdalene)",
     "year": "1565",
     "location": "Spencer Museum of Art",
-    "city": "Douglas County",
+    "city": "Lawrence",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Angelo%20Bronzino%20-%20Maria%20Magdalena.jpg?width=500",
@@ -3916,7 +3942,8 @@
     "museum_id": "spencer-museum-of-art",
     "location_src": "Spencer Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Douglas County"
    }
   },
   {

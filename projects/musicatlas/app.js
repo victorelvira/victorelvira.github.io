@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.50.0";
-const BUILD_AT = "2026-09-15 21:38";
+const DATA_V = "0.53.0";
+const BUILD_AT = "2026-09-15 23:38";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
@@ -396,22 +396,7 @@ function srcDots(w){
     Array.from({length:n},(_,i)=>`<span class="cc ${i===0?worst:"single"}" style="cursor:default"></span>`).join("")+`</span>`;
 }
 
-/* ---------- the composer picker (artatlas's painter popover) ---------- */
-function renderPicker(){
-  const box=document.getElementById("picker");
-  if(!box.dataset.built){
-    box.innerHTML=`<button id="comp-btn" type="button" aria-expanded="false"></button>
-      <div id="comp-pop" hidden>
-        <input id="comp-search" class="pop-search" placeholder="Search composers…" autocomplete="off">
-        <div class="pop-actions"><button data-act="all">All</button><button data-act="none">None</button></div>
-        <ul id="comp-list" class="pop-list"></ul></div>`;
-    box.dataset.built="1";
-    const btn=box.querySelector("#comp-btn"), pop=box.querySelector("#comp-pop")
-          s=box.querySelector("#comp-search");
-    btn.addEventListener("click",()=>{ const open=pop.hidden; pop.hidden=!open;
-      btn.setAttribute("aria-expanded",String(open));
-      if(open){ s.value=""; listComposers(); s.focus(); } });
-    /* One delegated listener: the table is re-rendered constantly, so binding per grip
+/* One delegated listener: the table is re-rendered constantly, so binding per grip
    would leak handlers on every draw. */
 document.addEventListener("mousedown", e=>{
   const g=e.target.closest && e.target.closest("[data-grip]");
@@ -429,12 +414,43 @@ document.addEventListener("dblclick", e=>{
   saveColW(); renderStage();
 }, true);
 
-document.addEventListener("click",e=>{ if(!pop.hidden&&!box.contains(e.target)){
-      pop.hidden=true; btn.setAttribute("aria-expanded","false"); }});
-    document.addEventListener("keydown",e=>{ if(e.key==="Escape") pop.hidden=true; });
+/* ---------- the composer picker ----------
+   NO FLOTA. Era un popover que caía encima de la tabla, y Víctor, 2026-09-15: "no me
+   gusta que flote, en general... side by side mejor". Tenía razón y el motivo es el
+   mismo que el de la ficha: elegir compositores es una tarea que se hace MIRANDO la
+   tabla, marcas uno y ves cuánto encoge el catálogo. Un panel que tapa justo eso te
+   obliga a cerrarlo para ver el efecto de lo que acabas de hacer, abrirlo otra vez para
+   la siguiente, y así treinta y una veces.
+   Ahora es una columna más de #main, a la izquierda del catálogo y a la misma altura,
+   y por eso tampoco se cierra al pulsar fuera: pulsar fuera es lo que vas a hacer todo
+   el rato. Se cierra con su ×, con el botón o con Escape. */
+function renderPicker(){
+  const box=document.getElementById("picker");
+  if(!box.dataset.built){
+    box.innerHTML=`<button id="comp-btn" type="button" aria-expanded="false"></button>`;
+    const pop=document.createElement("aside");
+    pop.id="comp-pop"; pop.hidden=true;
+    pop.innerHTML=`<div class="pop-top"><b>Composers</b>
+        <button class="pop-x" data-act="close" aria-label="Close">×</button></div>
+      <input id="comp-search" class="pop-search" placeholder="Search composers…" autocomplete="off">
+      <div class="pop-actions"><button data-act="all">All</button><button data-act="none">None</button></div>
+      <ul id="comp-list" class="pop-list"></ul>`;
+    document.getElementById("main").prepend(pop);
+    box.dataset.built="1";
+    const btn=box.querySelector("#comp-btn"),
+          s=pop.querySelector("#comp-search");
+    const show=open=>{ pop.hidden=!open;
+      document.body.classList.toggle("comp-open",open);
+      btn.setAttribute("aria-expanded",String(open));
+      if(open){ s.value=""; listComposers(); s.focus(); } };
+    btn.addEventListener("click",()=>show(pop.hidden));
+    document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&!pop.hidden) show(false); });
     s.addEventListener("input",listComposers);
     pop.addEventListener("click",e=>{
       const act=e.target.closest("[data-act]");
+      /* `close` va antes que nada: comparte atributo con `all`/`none` y el ternario de
+         abajo lo habría leído como "ninguno", vaciando el catálogo al cerrar. */
+      if(act && act.dataset.act==="close") return show(false);
       if(act){ state.comp = act.dataset.act==="all" ? new Set() : new Set(["∅"]);
         listComposers(); return draw(); }
       const only=e.target.closest("[data-only]");
@@ -471,9 +487,8 @@ function listComposers(){
     groups.get(g).sort((a,b)=>(a.born||0)-(b.born||0)).map(c=>
       `<li class="prow"><label><input type="checkbox" data-slug="${c.slug}" ${chosen(c.slug)?"checked":""}>
          <span class="sw" style="background:${compColour(c.slug)}"></span>
-         <span>${esc(c.name)}</span>
-         <span class="pyr">${c.born||""}–${String(c.died||"").slice(2)}</span>
-         <span class="pyr">· ${c.n_works||0}</span></label>
+         <span class="pwho"><span class="pname" title="${esc(c.name)}">${esc(c.name)}</span>
+           <span class="pyr">${c.born||""}–${String(c.died||"").slice(2)} · ${c.n_works||0} works</span></span></label>
        <button class="only" data-only="${c.slug}">only</button></li>`).join("")
   ).join("") : `<li class="pop-empty">No composer matches.</li>`;
 }
@@ -508,12 +523,31 @@ const COLS=[
    zero-width columns meant for Key and Scoring and printed on top of each other.
    The cells, the headers and the <col> widths are all generated from this one list,
    so they cannot disagree. */
-function liveCols(){
-  const narrow = document.body.classList.contains("rec-open");
-  return COLS.filter(c => !(narrow && (c.id==="key" || c.id==="scoring"
-                                       || c.id==="date" || c.id==="dur"
-                                       || c.id==="rec")));
-}
+/* LAS COLUMNAS SE QUITAN POR FALTA DE SITIO, NO POR ABRIR UNA FICHA.
+   Antes, abrir el panel quitaba CINCO columnas (tonalidad, plantilla, fecha, duración y
+   grabaciones) mirara lo ancha que fuera la pantalla. En un monitor de PC sobra espacio
+   para la tabla entera **y** el panel al lado, y aun así la tabla salía mutilada: el lector
+   pulsaba una obra para saber más y perdía la mitad de lo que estaba viendo.
+
+   Ahora se mide el hueco que de verdad queda y solo se quita lo que no cabe, y en orden:
+   primero lo más prescindible. En una pantalla ancha no se quita nada. Víctor, 2026-09-15. */
+const COL_W = {comp:104, cat:118, work:220, key:104, scoring:190, date:132, dur:74,
+               score:62, audio:74, rec:78, src:60};
+/* el orden en que se van cayendo cuando falta sitio, de lo que menos se echa en falta a
+   lo que más. `work` y `comp` no están: sin ellas la fila no dice qué obra es. */
+const COL_DROP = ["rec", "dur", "date", "scoring", "key", "src", "cat"];
+
+/* NO SE QUITA NINGUNA COLUMNA. NUNCA.
+   Hubo dos versiones peores antes de esta. La primera quitaba cinco columnas en cuanto se
+   abría la ficha, mirara lo ancha que fuera la pantalla. La segunda las quitaba solo cuando
+   no cabían, lo cual es mejor pero sigue siendo lo mismo: **el lector abre una obra para
+   saber MÁS y pierde información de la tabla**, que es exactamente al revés de lo que ha
+   pedido.
+
+   Ahora la tabla mantiene sus once columnas y, cuando el hueco no da, **se desplaza a lo
+   ancho**, que es lo que hace cualquier tabla y no le esconde nada a nadie. Víctor,
+   2026-09-15. */
+function liveCols(){ return COLS; }
 /* THE LAST WORD OF A NAME IS NOT ALWAYS THE SURNAME. "Johann Strauss II" ends in a
    regnal numeral, so taking the last token filed the Blue Danube under "II" and printed
    the composer column as "ll". The numeral is part of how the name is written and is
@@ -635,8 +669,16 @@ const CELL = {
   src: w => srcDots(w),
 };
 function rowHTML(w,isPart){
-  const cells = liveCols().map(c =>
-    `<td class="${c.cls}">${CELL[c.id](w,isPart)}</td>`).join("");
+  /* EL TÍTULO ENTERO AL PASAR EL RATÓN.
+     La columna tiene un ancho fijo y los títulos largos se cortan con puntos suspensivos,
+     así que "Concerto for flute, oboe, violin, bassoon, and continuo…" no se podía leer sin
+     abrir la ficha. El `title` del navegador lo enseña entero, con el compositor delante
+     para que sirva también cuando esa columna no se ve. Víctor, 2026-09-15. */
+  const cells = liveCols().map(c => {
+    const tip = c.id==="title"
+      ? ` title="${esc(titleOf(w))}${w.composer?" · "+esc(w.composer):""}"` : "";
+    return `<td class="${c.cls}"${tip}>${CELL[c.id](w,isPart)}</td>`;
+  }).join("");
   return `<tr class="${isPart?"part":""}${state.sel===w.id?" sel":""}" data-id="${esc(w.id)}">${cells}</tr>`;
 }
 /* Free means free: only Public Domain and the CC licences without NC or ND are
@@ -1843,7 +1885,8 @@ document.addEventListener("mouseover",e=>{
     d.classList.remove("dragging"); document.body.classList.remove("resizing");
     const w=parseInt(getComputedStyle(document.documentElement).getPropertyValue("--rec-w"),10);
     if(w) try{ localStorage.setItem("musicatlas.recw", String(w)); }catch(_){}
-    remapSoon(); });        // the divider resizes the map's box too
+    remapSoon();            // the divider resizes the map's box too
+    renderStage(); });      // ...y cambia cuántas columnas caben en lo que queda
 })();
 
 document.querySelector(".brand").addEventListener("click",e=>{
@@ -1865,6 +1908,11 @@ Promise.all([
   BYID=new Map(WORKS.map(x=>[x.id,x]));
   document.getElementById("build").textContent=`v${DATA_V} · ${BUILD_AT}`;
   readHash(); draw(); watchScroll();
+  /* Cambiar el ancho de la ventana cambia cuántas columnas caben, así que la tabla se
+     rehace. Con retardo: redibujar 300 filas en cada píxel de un arrastre es un derroche
+     y se nota. */
+  let rz;
+  addEventListener("resize", () => { clearTimeout(rz); rz=setTimeout(renderStage, 180); });
   /* el estado inicial SUSTITUYE la entrada en blanco con la que llega el navegador, en
      vez de añadirse detrás: si no, el primer atrás no hacía nada visible. */
   writeHashFirst();

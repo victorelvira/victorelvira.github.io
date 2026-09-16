@@ -1462,7 +1462,16 @@
     ],
     "location_src": "Wallraf–Richartz Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18602634",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602634",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0109 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -2298,7 +2307,7 @@
     "museum_id": "metropolitan-museum-of-art",
     "city": "New York",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q232087",
+    "wikidata": "https://www.wikidata.org/wiki/Q17281208",
     "wga_url": "https://www.wga.hu/html/f/friedric/2/213fried.html",
     "_merged": [
      {
@@ -2311,7 +2320,15 @@
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q232087"
+    "qid_shared": "Q232087",
+    "qid": "Q17281208",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0112 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

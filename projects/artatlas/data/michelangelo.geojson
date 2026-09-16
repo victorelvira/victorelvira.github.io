@@ -2718,7 +2718,15 @@
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
     "museum_id": "casa-buonarroti",
-    "location_src": "Casa Buonarroti"
+    "location_src": "Casa Buonarroti",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Bozzetto per un crocifisso)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2929,7 +2937,15 @@
     },
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
-    "city_src": "Royal Borough of Kensington and Chelsea"
+    "city_src": "Royal Borough of Kensington and Chelsea",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Bozzetto for the Young Slave)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2988,7 +3004,15 @@
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
     "museum_id": "casa-buonarroti",
-    "location_src": "Casa Buonarroti"
+    "location_src": "Casa Buonarroti",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3018,7 +3042,15 @@
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
     "museum_id": "casa-buonarroti",
-    "location_src": "Casa Buonarroti"
+    "location_src": "Casa Buonarroti",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3048,7 +3080,15 @@
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
     "museum_id": "casa-buonarroti",
-    "location_src": "Casa Buonarroti"
+    "location_src": "Casa Buonarroti",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (bronze, terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3168,7 +3208,15 @@
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
     "museum_id": "casa-buonarroti",
-    "location_src": "Casa Buonarroti"
+    "location_src": "Casa Buonarroti",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3198,7 +3246,15 @@
      "source": "Wikidata: sculptures by Michelangelo (Q5592)"
     },
     "museum_id": "casa-buonarroti",
-    "location_src": "Casa Buonarroti"
+    "location_src": "Casa Buonarroti",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3401,7 +3457,15 @@
     "location_src": "Victoria and Albert Museum",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/BLW_Model_of_a_slave.jpg",
     "_image_src": "commons category Category:Model of a slave by Michelangelo, V&A London",
-    "city_src": "Royal Borough of Kensington and Chelsea"
+    "city_src": "Royal Borough of Kensington and Chelsea",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Model of a slave)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",

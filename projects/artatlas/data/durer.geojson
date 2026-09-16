@@ -195,7 +195,16 @@
     "museum_id": "albertina",
     "location_src": "Albertina",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q112091669",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091669",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0058 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1258,7 +1267,16 @@
     ],
     "location_src": "Museum of Fine Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q50906843",
+    "wikidata": "https://www.wikidata.org/wiki/Q50906843",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0060 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1461,13 +1479,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "gemaldegalerie-berlin",
-    "wikidata": "https://www.wikidata.org/wiki/Q3937735",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937772",
     "wga_url": "https://www.wga.hu/html/d/durer/1/05/01veneti.html",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
     "form": "painting",
     "qid_shared": "Q3937735",
-    "city_src": "Bezirk Mitte"
+    "city_src": "Bezirk Mitte",
+    "qid": "Q3937772",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0061 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

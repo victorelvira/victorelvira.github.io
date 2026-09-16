@@ -2,8 +2,8 @@
    the map as one view among others. Data built by scripts/build.py into sportsatlas/data/. */
 "use strict";
 
-const DATA_V = "0.5.6";
-const BUILD_AT = "2026-09-15 21:44";
+const DATA_V = "0.5.8";
+const BUILD_AT = "2026-09-15 23:34";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -634,7 +634,7 @@ function relayout() {
 
 /* What gets a page of its own on a wide screen: a tournament or season of one year, a team, a competition. What they
    lead to (a player, a venue) opens in the card beside the page. */
-const PAGE_TYPES = new Set(["edition", "team", "comp"]);
+const PAGE_TYPES = new Set(["edition", "team", "comp", "about"]);
 const wide = () => innerWidth >= 1000;
 // one ground, two sports: the Wikidata item is the same, so the card says what the other sport played there
 async function otherSportVenue(id) {
@@ -646,6 +646,7 @@ async function otherSportVenue(id) {
   return `<div class="note">The same ground in ${other}: ${eds.slice(0, 6).map(e => `<a href="#${other}/editions?p=edition%3A${encodeURIComponent(e.id)}&o=venue%3A${id}">${esc(e.title)}</a>`).join(", ")}${eds.length > 6 ? ` and ${eds.length - 6} more` : ""}.</div>`;
 }
 async function cardHtml(d, type, id) {
+  if (type === "about") return aboutHtml();
   if (type === "edition" && d.ed[id]) return cardEdition(d, d.ed[id]);
   if (type === "venue" && d.venue[id]) return cardVenue(d, d.venue[id]) + await otherSportVenue(id);
   if (type === "comp" && d.comp[id]) return cardCompetition(d, d.comp[id]);
@@ -683,6 +684,59 @@ async function describe(ref, title) {
   tag.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": kind, name: title, url: location.href, ...(same.length ? { sameAs: same } : {}) });
 }
 
+/* About: what the atlas is, how it is read and checked, its sources and licences, and the open data. Numbers are
+   read from the published data, never typed. */
+async function aboutHtml() {
+  const [f, t] = await Promise.all([loadIndex("football"), loadIndex("tennis")]);
+  const pkg = await getJSON("../open/datapackage.json").catch(() => null);
+  const n = (d, k) => d.idx.editions.reduce((a, e) => a + (e[k] || 0), 0);
+  const ext = a => `<a href="${a[1]}" target="_blank" rel="noopener">${a[0]}</a>`;
+  const JOINS = { football_matches: "edition_id, home_team_id, away_team_id, venue_wikidata", football_goals: "edition_id, player_id, credited_team_id",
+    football_teams: "team_id, wikidata, external ids", football_players: "player_id, wikidata, fjelstul_player_id, external ids",
+    football_squads: "player_id, edition_id, team_id", football_team_lineage: "from_team_id, to_team_id", football_editions: "edition_id, competition_id",
+    tennis_matches: "edition_id, player1_id, player2_id, winner_id", tennis_players: "player_id, wikidata, tennis_abstract_ids, external ids",
+    tennis_editions: "edition_id, competition_id, champion_id", venues: "wikidata" };
+  return `<p class="kick"><span class="dot"></span>About</p>
+    <h2>Sports Atlas</h2>
+    <div class="about">
+    <p>A historical atlas of football and tennis: every match of the great competitions, table first, each one traced to
+    the page it was read from. Football: ${fmt(n(f, "matches"))} matches in ${fmt(f.idx.editions.length)} tournaments and seasons
+    (World Cups, Euros, the European club cups, La Liga, the Premier League). Tennis: ${fmt(n(t, "matches"))} singles matches in
+    ${fmt(t.idx.editions.length)} editions, men's and women's (Grand Slams, Masters 1000 and WTA 1000, ATP and WTA Finals, Olympics).</p>
+
+    <h3>How it is read</h3>
+    <p>The English Wikipedia leads: its match boxes, draws, results grids, squads and infoboxes are read as they are written,
+    from a saved copy of each page. A player or a club is the page its link lands on, never a name that looks alike. Where
+    the sources disagree (a season whose results do not give its table, a draw that does not add up, goals that do not make
+    the score) the atlas says so on the card instead of guessing, and nothing is patched to look coherent.</p>
+    <p>Other open sources check it: engsoccerdata's league results (joined by results, never by names), the Fjelstul World
+    Cup Database's goals and squads (joined by Wikipedia page), and Jeff Sackmann's ATP and WTA results and rankings (joined
+    by the draw, confirmed by Wikidata id). Their agreement is counted, and shown where it fails.</p>
+
+    <h3>Sources and licences</h3>
+    <table class="mini"><tbody>
+      <tr><td>${ext(["English Wikipedia", "https://en.wikipedia.org"])}</td><td class="written">matches, draws, squads, tables, goals · CC BY-SA 4.0</td></tr>
+      <tr><td>${ext(["Wikidata", "https://www.wikidata.org"])}</td><td class="written">places, coordinates, grounds, external ids · CC0</td></tr>
+      <tr><td>${ext(["engsoccerdata", "https://github.com/jalapic/engsoccerdata"])} (James Curley)</td><td class="written">league dates and a check on scores · GPL</td></tr>
+      <tr><td>${ext(["Fjelstul World Cup Database", "https://github.com/jfjelstul/worldcup"])}</td><td class="written">a check on World Cup scorers and squads · © 2023 Joshua C. Fjelstul, Ph.D., ${ext(["CC BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/legalcode"])}</td></tr>
+      <tr><td>tennis_atp, tennis_wta (Jeff Sackmann / ${ext(["Tennis Abstract", "http://www.tennisabstract.com/"])})</td><td class="written">a check on the draws, and ATP and WTA rankings · ${ext(["CC BY-NC-SA 4.0", "https://creativecommons.org/licenses/by-nc-sa/4.0/"])}</td></tr>
+      <tr><td>Wikimedia Commons</td><td class="written">flags, almost all public domain, each file's licence recorded</td></tr>
+      <tr><td>Club crests</td><td class="written">belong to their clubs; shown, as Wikipedia shows them, to identify the club the atlas informs about; any is removed on request</td></tr>
+      <tr><td>Esri</td><td class="written">map tiles</td></tr>
+    </tbody></table>
+
+    <h3>Open data</h3>
+    <p>Everything in the atlas, as ${pkg ? pkg.resources.length : ""} CSV tables that join by Wikipedia page, Wikidata item and the ids of
+    the other datasets (Transfermarkt, BDFútbol, ATP, WTA, Olympedia…), described as a Frictionless Data Package.</p>
+    <p><a class="dl" href="sportsatlas/open/sports-atlas-data.zip">Download all tables (CSV, zip)</a><a class="dl" href="sportsatlas/open/datapackage.json" target="_blank" rel="noopener">datapackage.json</a><a class="dl" href="sportsatlas/open/README.md" target="_blank" rel="noopener">README</a></p>
+    ${pkg ? `<table class="mini"><thead><tr><th>Table</th><th class="num">Rows</th><th>Joins by</th></tr></thead><tbody>${pkg.resources.map(r => `<tr><td>${esc(r.name)}</td><td class="num">${fmt(r.rows)}</td><td class="written">${esc(JOINS[r.name] || "competition_id")}</td></tr>`).join("")}</tbody></table>` : ""}
+    <p class="written">Wikipedia-derived tables are CC BY-SA 4.0; the ranking columns and tennis_abstract_ids derive from tennis_atp and tennis_wta and are for non-commercial use.</p>
+
+    <h3>Version</h3>
+    <p class="written">v${DATA_V} · ${BUILD_AT}. A personal project by ${ext(["Víctor Elvira", "https://victorelvira.github.io"])}.</p>
+    </div>`;
+}
+
 async function openPage(ref, silent) {
   const i = ref.indexOf(":");
   const type = ref.slice(0, i), id = ref.slice(i + 1);
@@ -715,17 +769,20 @@ async function openPage(ref, silent) {
   });
   hoverPaths(body);
   if (!silent) writeHash(true);
-  describe(ref, $("#page-body h2")?.textContent || "");
+  describe(ref, ref === "about:" ? "About" : $("#page-body h2")?.textContent || "");
+  $("#about-tab").setAttribute("aria-pressed", ref === "about:");
 }
 function closePage(silent) {
   if (!S.page && $("#page").hidden) return;
   S.page = "";
   describe("", "");
+  $("#about-tab").setAttribute("aria-pressed", "false");
   $("#page").hidden = true;
   $("#subbar").hidden = $("#stage").hidden = false;
   if (!silent) writeHash(true);
   relayout();
 }
+$("#about-tab").addEventListener("click", () => openCard("about:"));
 $("#page-back").addEventListener("click", () => navDepth > 0 ? history.back() : closePage());
 $("#page-table").addEventListener("click", () => { closeCard(true); closePage(); });
 $("#page-body").addEventListener("click", e => {
@@ -762,7 +819,7 @@ async function openCard(ref, silent) {
   const od = $("#open-draw");
   if (od) od.addEventListener("click", async () => openDraw(d.ed[id], await edition(id)));
   hoverPaths($("#rec-body"));
-  if (!S.page) describe(ref, $("#rec-body h2")?.textContent || "");
+  if (!S.page) describe(ref, ref === "about:" ? "About" : $("#rec-body h2")?.textContent || "");
 }
 
 const TENNIS_GROUP = { slam: "Grand Slam", masters: "Masters 1000", finals: "ATP Finals", olympics: "Olympic Games",
@@ -897,10 +954,101 @@ function scorersBlock(x, noun) {
     <table class="mini"><tbody>${x.scorers.map(([k, n, g, t]) => `<tr${k.startsWith("name:") ? "" : ` data-go data-open="fplayer:${esc(k)}"`}><td>${k.startsWith("name:") ? esc(n) : lnk("fplayer:" + k, n)}</td><td class="muted">${t ? lnk("team:" + t, shown.get(t) || t.slice(t.indexOf(":") + 1)) : ""}</td><td class="num">${g}</td></tr>`).join("")}</tbody></table>`;
 }
 
-function cardTournament(d, e, x, comp) {
-  const all = d.idx.editions.filter(y => y.comp === e.comp);
-  const gpm = y => y.matches ? y.goals / y.matches : 0;
-  const maxG = Math.max(...all.map(gpm));
+/* A knockout stage's place in the bracket: 0 the final, 1 the semi-finals… Stages that are not a standard knockout
+   round (groups, a final round group, the first rounds of the old club cups) stay out of the bracket. */
+function koRank(stage) {
+  const s = (stage || "").toLowerCase();
+  if (/^final$/.test(s)) return 0;
+  if (/^semi-?finals?$/.test(s)) return 1;
+  if (/^quarter-?finals?$/.test(s)) return 2;
+  if (/^round of 16$|^eighth-?finals?$/.test(s)) return 3;
+  if (/^round of 32$/.test(s)) return 4;
+  return null;
+}
+// How far a team went in one edition, from its record: 1 champion … 6 group or earlier round
+function finishLevel(fin) {
+  const s = (fin || "").toLowerCase();
+  if (s === "champion") return 1;
+  if (s === "runner-up") return 2;
+  if (/third|fourth|semi/.test(s)) return 3;
+  if (/quarter/.test(s)) return 4;
+  if (/round of (16|32)|second round|play-?off/.test(s)) return 5;
+  return 6;
+}
+const FINISH_NAMES = ["", "Champion", "Final", "Semi-finals", "Quarter-finals", "Round of 16", "Groups or earlier"];
+
+/* The bracket drawn from the final backwards: each tie sits beside the ties its two teams came from. */
+function bracketHtml(x, e, team) {
+  const rounds = new Map();
+  for (const m of x.matches) {
+    const r = koRank(m.stage);
+    if (r == null || !m.k1 || !m.k2) continue;
+    const key = [m.k1, m.k2].sort().join("|");
+    if (!rounds.has(r)) rounds.set(r, new Map());
+    const ties = rounds.get(r);
+    if (!ties.has(key)) ties.set(key, { a: m.k1, b: m.k2, na: m.t1, nb: m.t2, ms: [] });
+    ties.get(key).ms.push(m);
+  }
+  if (!rounds.has(0)) return "";
+  const depth = Math.max(...rounds.keys());
+  const inRound = (r, k) => [...(rounds.get(r) || new Map()).values()].find(t => t.a === k || t.b === k);
+  // order: the final, then for each tie the ties of its first and second team one round earlier
+  const order = new Map([[0, [...rounds.get(0).values()]]]);
+  for (let r = 1; r <= depth; r++) {
+    const seen = new Set(), list = [];
+    for (const t of order.get(r - 1) || []) for (const k of [t.a, t.b]) { const u = inRound(r, k); if (u && !seen.has(u)) { seen.add(u); list.push(u); } }
+    for (const u of (rounds.get(r) || new Map()).values()) if (!seen.has(u)) list.push(u);
+    order.set(r, list);
+  }
+  const winner = (t, r) => r === 0 ? (e.champion_key && (t.a === e.champion_key || t.b === e.champion_key) ? e.champion_key : null)
+    : (inRound(r - 1, t.a) ? t.a : inRound(r - 1, t.b) ? t.b : null);
+  const goalsOf = (t, k) => t.ms.sort((p, q) => (p.date || "").localeCompare(q.date || "")).map(m => {
+    const g = m.k1 === k ? m.g1 : m.g2, o = m.k1 === k ? m.g2 : m.g1;
+    const pen = m.pens ? (m.k1 === k ? m.pens[0] : m.pens[1]) : null;
+    return m.played ? `${g}${pen != null ? `<sup title="penalty shoot-out">(${pen})</sup>` : ""}` : "–";
+  }).join(" ");
+  const box = (t, r) => {
+    const w = winner(t, r);
+    const line = (k, n) => `<div class="bt${w === k ? " w" : ""}"><span class="bn">${team(n, k)}</span><span class="bs">${goalsOf(t, k)}</span></div>`;
+    const aet = t.ms.some(m => m.aet) ? `<div class="bx" title="after extra time">after extra time</div>` : "";
+    return `<div class="tie">${line(t.a, t.na)}${line(t.b, t.nb)}${aet}</div>`;
+  };
+  const cols = [];
+  for (let r = depth; r >= 0; r--) cols.push(`<div class="bcol"><div class="bhead">${["Final", "Semi-finals", "Quarter-finals", "Round of 16", "Round of 32"][r]}</div><div class="bties">${order.get(r).map(t => box(t, r)).join("")}</div></div>`);
+  return `<h4 class="sec">The knockout stage</h4><div class="kbracket-scroll"><div class="kbracket">${cols.join("")}</div></div>`;
+}
+
+/* Where each team of this edition's last four finished in every edition of the competition (batalladedatos' paths). */
+function pathsHtml(d, e, teams, team) {
+  const all = d.idx.editions.filter(y => y.comp === e.comp).sort((a, b) => a.year - b.year);
+  const byKey = new Map(teams.map(t => [t.key, t]));
+  const four = teams.filter(t => t.r.some(r => r.e === e.id && finishLevel(r.fin) <= 3))
+    .sort((a, b) => finishLevel(a.r.find(r => r.e === e.id).fin) - finishLevel(b.r.find(r => r.e === e.id).fin)).slice(0, 4);
+  if (four.length < 2 || all.length < 3) return "";
+  const W = 640, H = 210, L = 108, R = 12, T = 12, B = 24;
+  const X = i => L + i / (all.length - 1) * (W - L - R), Y = lv => T + (lv - 1) / 5 * (H - T - B);
+  const COLORS = ["#0072B2", "#D55E00", "#009E73", "#CC79A7"];  // Okabe–Ito: told apart with any colour vision
+  const grid = [1, 2, 3, 4, 5, 6].map(lv => `<line x1="${L}" x2="${W - R}" y1="${Y(lv)}" y2="${Y(lv)}" class="grid"/><text x="${L - 8}" y="${Y(lv) + 4}" text-anchor="end">${FINISH_NAMES[lv]}</text>`).join("");
+  const yrs = all.filter((y, i) => i === 0 || i === all.length - 1 || i % Math.ceil(all.length / 8) === 0).map(y => `<text x="${X(all.indexOf(y))}" y="${H - 6}" text-anchor="middle">${y.year}</text>`).join("");
+  const series = four.map((t, si) => {
+    const pts = all.map((y, i) => { const r = t.r.find(z => z.e === y.id); return r ? { i, lv: finishLevel(r.fin), y } : null; });
+    let path = "", prev = null, gaps = "";
+    for (const p of pts) {
+      if (!p) continue;
+      if (prev) (p.i === prev.i + 1 ? (path += `L${X(p.i)},${Y(p.lv)}`) : (gaps += `M${X(prev.i)},${Y(prev.lv)}L${X(p.i)},${Y(p.lv)}`, path += `M${X(p.i)},${Y(p.lv)}`));
+      else path += `M${X(p.i)},${Y(p.lv)}`;
+      prev = p;
+    }
+    const dots = pts.filter(Boolean).map(p => `<circle cx="${X(p.i)}" cy="${Y(p.lv)}" r="${p.y.id === e.id ? 5 : p.lv === 1 ? 4 : 2.6}" fill="${COLORS[si]}" class="${p.y.id === e.id ? "now" : ""}" data-open="edition:${p.y.id}"><title>${esc(t.name)} · ${p.y.year}: ${FINISH_NAMES[p.lv]}</title></circle>`).join("");
+    return `<g><path d="${gaps}" stroke="${COLORS[si]}" class="gap"/><path d="${path}" stroke="${COLORS[si]}" class="line"/>${dots}</g>`;
+  }).join("");
+  return `<div><h4 class="sec">Where this edition's last four went, every ${esc(d.comp[e.comp].short)}</h4>
+    <div class="legend">${four.map((t, i) => `<span><i style="background:${COLORS[i]}"></i>${team(t.name, t.key)}</span>`).join("")}<span class="written">dashed: editions it did not play</span></div>
+    <svg class="paths" viewBox="0 0 ${W} ${H}" role="img" aria-label="Finish of each semi-finalist in every edition">${grid}${yrs}<line x1="${X(all.findIndex(y => y.id === e.id))}" x2="${X(all.findIndex(y => y.id === e.id))}" y1="${T}" y2="${H - B}" class="nowline"/>${series}</svg></div>`;
+}
+
+async function cardTournament(d, e, x, comp) {
+  const teams = await loadTeams();
   const stages = [];
   for (const m of x.matches) {
     let s = stages.find(z => z.name === m.stage);
@@ -913,23 +1061,32 @@ function cardTournament(d, e, x, comp) {
     if (!m.played) return `<div class="match np"><div class="d">${month(m.date)}</div><div class="t1">${team(m.t1, m.k1)}</div><div class="sc">not played</div><div>${team(m.t2, m.k2)}</div><div class="where">Scheduled at ${esc(m.stadium)} · <a href="${WIKI(m.src.page)}#${encodeURIComponent((m.src.section || "").replace(/ /g, "_"))}" target="_blank" rel="noopener">why, on Wikipedia</a></div></div>`;
     const w1 = m.g1 > m.g2 || (m.g1 === m.g2 && m.pens && m.pens[0] > m.pens[1]);
     const w2 = m.g2 > m.g1 || (m.g1 === m.g2 && m.pens && m.pens[1] > m.pens[0]);
-    const extra = [m.aet ? "a.e.t." : "", m.pens ? `${m.pens[0]}–${m.pens[1]} pens` : ""].filter(Boolean).join(" · ");
+    const extra = [m.aet ? "after extra time" : "", m.pens ? `${m.pens[0]}–${m.pens[1]} on penalties` : ""].filter(Boolean).join(" · ");
     return `<div class="match"><div class="d">${m.date ? month(m.date) : m.leg ? `<span title="The page gives this leg only as a score in a two-legged tie: no date">Leg ${m.leg}</span>` : ""}</div><div class="t1 ${w1 ? "w" : ""}">${team(m.t1, m.k1)}</div><div class="sc">${m.g1}–${m.g2}${extra ? `<small>${extra}</small>` : ""}</div><div class="${w2 ? "w" : ""}">${team(m.t2, m.k2)}</div>
       <div class="where">${m.venue ? lnk("venue:" + m.venue, m.stadium) : esc(m.stadium)}${m.ground_basis === "home" ? ` <span title="The page gives no ground for this leg: the home club's ground that season, from Wikidata. To be confirmed by a source for the match.">(home ground, to be confirmed)</span>` : ""}${m.attendance ? ` · ${fmt(m.attendance)}` : ""}</div>${goalLine(m)}</div>`;
   };
   const dec = e.declared || {};
   const agree = dec.matches && +dec.matches === e.matches;
+  // the hosts: the first thing a World Cup or a Euro is known by
+  const hosts = comp.kind === "cup" ? "" : (e.host || "").split(/,\s*/).filter(Boolean);
+  const hostBand = hosts.length ? `<div class="hosts"><span class="written">Hosted by</span> ${hosts.map(h => `<span class="host">${imgFor("nat:" + h)}${esc(h)}</span>`).join("")}</div>` : "";
+  const bracket = bracketHtml(x, e, team);
+  const ko = stages.filter(s => bracket && koRank(s.name) != null);
+  // groups in their own order (A, B, C…, 1, 2…), the matches outside the bracket (third place) after them
+  const rest = stages.filter(s => !ko.includes(s)).map((s, i) => ({ s, i }))
+    .sort((a, b) => { const ga = /^group /i.test(a.s.name), gb = /^group /i.test(b.s.name);
+      return ga && gb ? a.s.name.localeCompare(b.s.name, "en", { numeric: true }) : ga !== gb ? (ga ? -1 : 1) : a.i - b.i; })
+    .map(x => x.s);
   return `<p class="kick"><span class="dot"></span>${compLnk(d, e.comp)} · ${esc(e.label || e.year)}</p>
-    <h2>${esc(e.title)}</h2>${playedAs(d, e)}${edActions(d, e)}${comp.note ? `<div class="note">${esc(comp.note)}</div>` : ""}
-    <p class="sub">${e.host ? (comp.kind === "cup" ? `${esc(e.host)}. ` : `Hosted by ${esc(e.host)}. `) : ""}${e.teams} teams, ${e.matches} matches, ${e.goals} goals.</p>
-    ${e.champion ? `<div class="champ">${CUP}<div><div class="who">${team(e.champion, e.champion_key)}</div><div class="how">beat ${team(e.runner_up, e.runner_key)}${e.final ? ` in the final, ${esc(e.final)}` : ", who finished second in the final round"}</div></div></div>` : ""}
-    <div class="keyfacts"><span class="kf big">${(gpm(e)).toFixed(2)} goals per match</span>${agree ? `<span class="kf">${e.matches} of ${dec.matches} matches read, as the infobox declares</span>` : dec.matches ? `<span class="kf warn">${e.matches} read, infobox declares ${esc(dec.matches)}</span>` : ""}</div>
-    <h4 class="sec">Goals per match, every ${esc(comp.short)}</h4>
-    <div class="cols">${all.map(y => `<div class="c${y.id === e.id ? " on" : ""}" style="height:${gpm(y) / maxG * 100}%" data-open="edition:${y.id}" title="${y.year}: ${gpm(y).toFixed(2)}"></div>`).join("")}</div>
-    <div class="cols-axis"><span>${all[0].year}</span><span>${all[all.length - 1].year}</span></div>
-    ${scorersBlock(x, "matches")}
+    <h2>${esc(e.title)}</h2>${hostBand}${playedAs(d, e)}${edActions(d, e)}${comp.note ? `<div class="note">${esc(comp.note)}</div>` : ""}
+    <p class="sub">${comp.kind === "cup" && e.host ? `${esc(e.host)}. ` : ""}${e.teams} teams, ${e.matches} matches, ${e.goals} goals${e.matches ? ` (${(e.goals / e.matches).toFixed(2)} a match)` : ""}.</p>
+    ${e.champion ? `<div class="champ">${CUP}<div><div class="who">${team(e.champion, e.champion_key)}</div><div class="how">beat ${team(e.runner_up, e.runner_key)}${e.final ? ` in the final, ${esc(e.final.replace(/a\.e\.t\./g, "after extra time").replace(/\((\d+)–(\d+) p\)/g, "($1–$2 on penalties)"))}` : ", who finished second in the final round"}</div></div></div>` : ""}
+    <div class="keyfacts">${agree ? `<span class="kf">${e.matches} of ${dec.matches} matches read, as the infobox declares</span>` : dec.matches ? `<span class="kf warn">${e.matches} read, infobox declares ${esc(dec.matches)}</span>` : ""}</div>
+    ${bracket}
+    <div class="duo">${pathsHtml(d, e, teams, team)}<div>${scorersBlock(x, "matches")}</div></div>
     ${x.fjelstul ? `<p class="sub">Scorers checked against the Fjelstul World Cup Database (Joshua C. Fjelstul, CC BY-SA 4.0): the same scorers and minutes in ${fmt(x.fjelstul.matches_agree)} of ${fmt(x.fjelstul.matches)} matches, ${fmt(x.fjelstul.goals_agree)} of its ${fmt(x.fjelstul.their_goals)} goals. Where it differs the match says so; hover to read its version.</p>` : ""}
-    ${stages.map(s => `<div class="stage-h"><span>${esc(s.name)}</span><em>${s.ms.length}</em></div>${s.ms.map(row).join("")}`).join("")}
+    ${rest.map(s => `<div class="stage-h"><span>${esc(s.name)}</span><em>${s.ms.length}</em></div>${s.ms.map(row).join("")}`).join("")}
+    ${ko.length ? `<details class="ko-detail"><summary class="btn">The knockout matches in detail: grounds, crowds, scorers</summary>${ko.map(s => `<div class="stage-h"><span>${esc(s.name)}</span><em>${s.ms.length}</em></div>${s.ms.map(row).join("")}`).join("")}</details>` : ""}
     <p class="links">Read from <a href="${WIKI(e.wiki)}" target="_blank" rel="noopener">${esc(e.wiki)}</a> and its group and knockout pages. Grounds as the source names them for that tournament.</p>`;
 }
 

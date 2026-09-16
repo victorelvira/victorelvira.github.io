@@ -7275,7 +7275,7 @@
     "painter": "Rembrandt",
     "title": "Portrait of Nicolas van Bambeeck in a Picture Frame",
     "year": "1641",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "location": "Royal Museums of Fine Arts of Belgium",
     "attribution": "generally accepted",
@@ -7302,7 +7302,8 @@
     },
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -7761,7 +7762,16 @@
     ],
     "location_src": "Dulwich Picture Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q11824948",
+    "wikidata": "https://www.wikidata.org/wiki/Q11824948",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0247 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -9472,7 +9482,16 @@
     ],
     "location_src": "Drumlanrig Castle",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q12121888",
+    "wikidata": "https://www.wikidata.org/wiki/Q12121888",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0248 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -10854,7 +10873,16 @@
     ],
     "location_src": "National Gallery of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q21520005",
+    "wikidata": "https://www.wikidata.org/wiki/Q21520005",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0251 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -10935,7 +10963,16 @@
     "country": "France",
     "location_src": "Musée Granet",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q21597702",
+    "wikidata": "https://www.wikidata.org/wiki/Q21597702",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0252 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -12931,7 +12968,16 @@
     ],
     "location_src": "Uffizi Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18226128",
+    "wikidata": "https://www.wikidata.org/wiki/Q18226128",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0253 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

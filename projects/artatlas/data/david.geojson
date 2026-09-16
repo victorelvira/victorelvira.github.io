@@ -1422,7 +1422,7 @@
     "painter": "Jacques-Louis David",
     "title": "Portrait of flautist François Devienne",
     "year": "1792",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "location": "Royal Museums of Fine Arts of Belgium",
     "attribution": "generally accepted",
@@ -1451,7 +1451,8 @@
     ],
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -1531,14 +1532,15 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "qid": "Q636537",
     "wikidata": "https://www.wikidata.org/wiki/Q636537",
     "wga_url": "https://www.wga.hu/html/d/david_j/3/302david.html",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -2098,7 +2100,16 @@
     "museum_id": "philadelphia-museum-of-art",
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q20808829",
+    "wikidata": "https://www.wikidata.org/wiki/Q20808829",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0055 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -2834,7 +2845,7 @@
     "painter": "Jacques-Louis David",
     "title": "Mars Being Disarmed by Venus",
     "year": "1822–1825",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "location": "Royal Museums of Fine Arts of Belgium",
     "attribution": "generally accepted",
@@ -2856,7 +2867,8 @@
     "wga_url": "https://www.wga.hu/html/d/david_j/5/505david.html",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -3971,7 +3983,7 @@
     "title": "Portrait of a boy",
     "year": "",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis%20David%20-%20Portait%20d%27un%20jeune%20gar%C3%A7on.jpg?width=500",
@@ -3985,7 +3997,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {

@@ -1291,3 +1291,6 @@ body.galaxy-painters #galaxy-hint, body.galaxy-painters #galaxy-legend { display
 /* a title a machine translated: a small robot, full colour only on hover */
 .mt-mark { font-size: .78em; opacity: .55; cursor: help; margin-left: 2px; filter: grayscale(.4); }
 .mt-mark:hover { opacity: 1; filter: none; }
+
+.tag.model { background: #efe6d6; color: #7a5a2a; font-size: 10px; padding: 1px 5px; border-radius: 3px; vertical-align: 1px; white-space: nowrap; }
+.wc-title .tag.model { font-size: 11px; font-weight: 500; }

@@ -6,8 +6,8 @@
 <title>Sports Atlas · where the great competitions were played</title>
 <meta name="description" content="World Cups, Euros, European club cups, La Liga and the Premier League; Grand Slams, Masters, WTA 1000, Finals and Olympics in men's and women's singles, read from Wikipedia.">
 <link rel="icon" type="image/svg+xml" href="sportsatlas/favicon.svg">
-<link rel="stylesheet" href="sportsatlas/vendor/leaflet.css?v=0.5.6">
-<link rel="stylesheet" href="sportsatlas/style.css?v=0.5.6">
+<link rel="stylesheet" href="sportsatlas/vendor/leaflet.css?v=0.5.8">
+<link rel="stylesheet" href="sportsatlas/style.css?v=0.5.8">
 </head>
 <body>
 <nav id="navbar">
@@ -27,6 +27,7 @@
     <button role="tab" data-sport="tennis" aria-selected="false">Tennis</button>
   </div>
   <div id="totals"></div>
+  <button id="about-tab" type="button">About</button>
 </header>
 
 <div id="modes">
@@ -52,12 +53,11 @@
   <aside id="rec" hidden><button class="close" aria-label="Close">×</button><button id="rec-back" class="back" hidden>← Back</button><div id="rec-body"></div></aside>
 </main>
 
-<footer><b>Open data:</b> <a href="sportsatlas/open/sports-atlas-data.zip">all tables as CSV</a> · <a href="sportsatlas/open/datapackage.json">datapackage.json</a> · <a href="sportsatlas/open/README.md">how they join</a>. Matches, draws, squads and tables read from the <a href="https://en.wikipedia.org">English Wikipedia</a> (CC BY-SA 4.0); places from <a href="https://www.wikidata.org">Wikidata</a> (CC0); World Cup scorers checked against the <a href="https://github.com/jfjelstul/worldcup">Fjelstul World Cup Database</a> (© 2023 Joshua C. Fjelstul, Ph.D., <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA 4.0</a>); league dates also from James Curley's <a href="https://github.com/jalapic/engsoccerdata">engsoccerdata</a> (GPL); tennis draws checked against, and ATP and WTA ranks from, Jeff Sackmann / <a href="http://www.tennisabstract.com/">Tennis Abstract</a>'s tennis_atp and tennis_wta (<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>). Flags from Wikimedia Commons (almost all public domain; each file's licence is recorded). Club crests belong to their clubs and are shown, as Wikipedia shows them, to identify the club the atlas informs about; any will be removed on request. Where a source does not add up, the atlas says so instead of guessing.</footer>
 
 <div id="tip"></div>
 <div id="drawer" hidden></div>
 
-<script src="sportsatlas/vendor/leaflet.js?v=0.5.6"></script>
-<script src="sportsatlas/app.js?v=0.5.6"></script>
+<script src="sportsatlas/vendor/leaflet.js?v=0.5.8"></script>
+<script src="sportsatlas/app.js?v=0.5.8"></script>
 </body>
 </html>

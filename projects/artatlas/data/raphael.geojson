@@ -190,7 +190,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pinacoteca-civica-tosio-martinengo",
-    "wikidata": "https://www.wikidata.org/wiki/Q1778000",
+    "wikidata": "https://www.wikidata.org/wiki/Q3616853",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/02baron0.html",
     "_merged": [
      {
@@ -203,7 +203,15 @@
     "location_src": "Pinacoteca Civica Tosio Martinengo",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q1778000"
+    "qid_shared": "Q1778000",
+    "qid": "Q3616853",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0232 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -236,7 +244,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "wikidata": "https://www.wikidata.org/wiki/Q1778000",
+    "wikidata": "https://www.wikidata.org/wiki/Q3616854",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/02baron0.html",
     "_merged": [
      {
@@ -249,7 +257,15 @@
     "location_src": "Louvre",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q1778000"
+    "qid_shared": "Q1778000",
+    "qid": "Q3616854",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0233 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -570,7 +586,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-museum-of-ancient-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q598913",
+    "wikidata": "https://www.wikidata.org/wiki/Q63110871",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/03citta.html",
     "_merged": [
      {
@@ -583,7 +599,15 @@
     "location_src": "National Museum of Ancient Art",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q598913"
+    "qid_shared": "Q598913",
+    "qid": "Q63110871",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0234 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1235,7 +1259,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q27033728",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911609",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
      {
@@ -1248,7 +1272,15 @@
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q27033728"
+    "qid_shared": "Q27033728",
+    "qid": "Q19911609",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0236 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1281,7 +1313,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "wikidata": "https://www.wikidata.org/wiki/Q27033728",
+    "wikidata": "https://www.wikidata.org/wiki/Q26705837",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
      {
@@ -1294,7 +1326,15 @@
     "location_src": "National Gallery",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q27033728"
+    "qid_shared": "Q27033728",
+    "qid": "Q26705837",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0237 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1362,7 +1402,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "dulwich-picture-gallery",
-    "wikidata": "https://www.wikidata.org/wiki/Q27033728",
+    "wikidata": "https://www.wikidata.org/wiki/Q23929176",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
      {
@@ -1375,7 +1415,15 @@
     "location_src": "Dulwich Picture Gallery",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q27033728"
+    "qid_shared": "Q27033728",
+    "qid": "Q23929176",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0238 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1408,7 +1456,7 @@
     },
     "museum_id": "dulwich-picture-gallery",
     "country": "United Kingdom",
-    "wikidata": "https://www.wikidata.org/wiki/Q27033728",
+    "wikidata": "https://www.wikidata.org/wiki/Q23929146",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "_merged": [
      {
@@ -1421,7 +1469,15 @@
     "location_src": "Dulwich Picture Gallery",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q27033728"
+    "qid_shared": "Q27033728",
+    "qid": "Q23929146",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0239 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1696,7 +1752,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "wikidata": "https://www.wikidata.org/wiki/Q2713620",
+    "wikidata": "https://www.wikidata.org/wiki/Q3910086",
     "wga_url": "https://www.wga.hu/html/r/raphael/3umbtrip/31anside.html",
     "_merged": [
      {
@@ -1709,7 +1765,15 @@
     "location_src": "National Gallery",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q2713620"
+    "qid_shared": "Q2713620",
+    "qid": "Q3910086",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0240 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4834,7 +4898,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "wikidata": "https://www.wikidata.org/wiki/Q3464523",
+    "wikidata": "https://www.wikidata.org/wiki/Q2310025",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4846,7 +4910,15 @@
     "location_src": "Louvre",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q3464523"
+    "qid_shared": "Q3464523",
+    "qid": "Q2310025",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0244 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

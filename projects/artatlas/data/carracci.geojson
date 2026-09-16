@@ -327,7 +327,7 @@
     "painter": "Annibale Carracci",
     "title": "Diana Surprised by Actaeon",
     "year": "",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "location": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
@@ -353,7 +353,8 @@
       "source": "reading fix (fix_century_dates.py)",
       "note": "Wikidata gives 1550 with century precision: a century, not a year, and outside the painter's life (1560-1609)"
      }
-    }
+    },
+    "city_src": "Brussels-Capital Region"
    }
   },
   {

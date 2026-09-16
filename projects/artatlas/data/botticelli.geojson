@@ -3278,7 +3278,16 @@
     "location_src": "Pushkin Museum",
     "kind": "museum",
     "form": "painting",
-    "city_src": "Khamovniki District"
+    "city_src": "Khamovniki District",
+    "qid": "Q28797591",
+    "wikidata": "https://www.wikidata.org/wiki/Q28797591",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0001 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3477,7 +3486,16 @@
     "location_src": "Fogg Museum",
     "venue_of": "Harvard Art Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q106860038",
+    "wikidata": "https://www.wikidata.org/wiki/Q106860038",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0002 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3805,7 +3823,16 @@
     ],
     "location_src": "Kelvingrove Art Gallery and Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q1114806",
+    "wikidata": "https://www.wikidata.org/wiki/Q1114806",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0003 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4493,7 +4520,16 @@
     "location_src": "North Carolina Museum of Art",
     "kind": "museum",
     "form": "painting",
-    "country": "United States"
+    "country": "United States",
+    "qid": "Q120985146",
+    "wikidata": "https://www.wikidata.org/wiki/Q120985146",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0004 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4579,7 +4615,16 @@
     ],
     "location_src": "Uffizi Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q115652286",
+    "wikidata": "https://www.wikidata.org/wiki/Q115652286",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0005 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4612,7 +4657,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "wikidata": "https://www.wikidata.org/wiki/Q21813258",
+    "wikidata": "https://www.wikidata.org/wiki/Q3636752",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4625,7 +4670,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q21813258",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q3636752",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0006 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4658,7 +4711,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "wikidata": "https://www.wikidata.org/wiki/Q21813258",
+    "wikidata": "https://www.wikidata.org/wiki/Q3998130",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4671,7 +4724,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q21813258",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q3998130",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0007 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -6943,7 +7004,7 @@
     "title": "Simonetta Vespucci as Maria Lactans",
     "year": "1490",
     "location": "Kreuzlingen",
-    "city": "Kreuzlingen District",
+    "city": "Kreuzlingen",
     "country": "Switzerland",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro-Botticelli-%28attributed-to%29%20Allegorical-Portrait-of-a-Woman.jpg?width=500",
@@ -6967,7 +7028,8 @@
     "museum_id": "kreuzlingen",
     "location_src": "Kreuzlingen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Kreuzlingen District"
    }
   },
   {
@@ -7157,7 +7219,7 @@
     "title": "Madonna and Child with an Angel",
     "year": "1490",
     "location": "Bob Jones University Museum and Gallery",
-    "city": "Greenville County",
+    "city": "Greenville",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20-%20madonna%20and%20child%20with%20an%20angel%20-%20bob%20jones%20university.jpg?width=500",
@@ -7181,7 +7243,8 @@
     "museum_id": "bob-jones-university-museum-and-gallery",
     "location_src": "Bob Jones University Museum and Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Greenville County"
    }
   },
   {

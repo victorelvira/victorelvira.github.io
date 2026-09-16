@@ -305,7 +305,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-granet",
-    "wikidata": "https://www.wikidata.org/wiki/Q504",
+    "wikidata": "https://www.wikidata.org/wiki/Q64212416",
     "_merged": [
      {
       "source": "Wikidata",
@@ -319,7 +319,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q504",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q64212416",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0018 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3522,7 +3530,16 @@
     "country": "United States",
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q20808609",
+    "wikidata": "https://www.wikidata.org/wiki/Q20808609",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0020 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4316,7 +4333,16 @@
     ],
     "location_src": "Portland Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q108274734",
+    "wikidata": "https://www.wikidata.org/wiki/Q108274734",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0021 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4428,7 +4454,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "auckland-art-gallery",
-    "city": "Auckland Region",
+    "city": "Auckland",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4440,7 +4466,8 @@
     "country": "New Zealand",
     "location_src": "Auckland Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Auckland Region"
    }
   },
   {
@@ -5447,7 +5474,16 @@
     "country": "Germany",
     "location_src": "Hamburger Kunsthalle",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q64075857",
+    "wikidata": "https://www.wikidata.org/wiki/Q64075857",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0023 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -6567,7 +6603,16 @@
     "country": "United States",
     "location_src": "Rhode Island School of Design Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q64513932",
+    "wikidata": "https://www.wikidata.org/wiki/Q64513932",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0025 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -8998,7 +9043,16 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q25410156",
+    "wikidata": "https://www.wikidata.org/wiki/Q25410156",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0026 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -9716,7 +9770,16 @@
     ],
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q27971731",
+    "wikidata": "https://www.wikidata.org/wiki/Q27971731",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0027 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -11132,7 +11195,16 @@
     ],
     "location_src": "Carnegie Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q28143754",
+    "wikidata": "https://www.wikidata.org/wiki/Q28143754",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0028 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -11672,7 +11744,16 @@
     ],
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q20808608",
+    "wikidata": "https://www.wikidata.org/wiki/Q20808608",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0029 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -12399,7 +12480,16 @@
     "location_src": "Musée d'Orsay",
     "kind": "museum",
     "form": "painting",
-    "city_src": "7th arrondissement of Paris"
+    "city_src": "7th arrondissement of Paris",
+    "qid": "Q17495244",
+    "wikidata": "https://www.wikidata.org/wiki/Q17495244",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0030 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -13330,7 +13420,16 @@
     "country": "Japan",
     "location_src": "Ohara Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q28797019",
+    "wikidata": "https://www.wikidata.org/wiki/Q28797019",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0031 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -13489,7 +13588,16 @@
     ],
     "location_src": "Beyeler Foundation",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q63989252",
+    "wikidata": "https://www.wikidata.org/wiki/Q63989252",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0032 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -15238,7 +15346,16 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q20265488",
+    "wikidata": "https://www.wikidata.org/wiki/Q20265488",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0033 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -15322,7 +15439,16 @@
     "location_src": "Musée d'Orsay",
     "kind": "museum",
     "form": "painting",
-    "city_src": "7th arrondissement of Paris"
+    "city_src": "7th arrondissement of Paris",
+    "qid": "Q17490823",
+    "wikidata": "https://www.wikidata.org/wiki/Q17490823",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0034 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -15363,7 +15489,16 @@
     ],
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17277873",
+    "wikidata": "https://www.wikidata.org/wiki/Q17277873",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0035 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -15826,7 +15961,16 @@
     ],
     "location_src": "Saint Louis Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q64485099",
+    "wikidata": "https://www.wikidata.org/wiki/Q64485099",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0037 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -17224,7 +17368,16 @@
     ],
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q20190321",
+    "wikidata": "https://www.wikidata.org/wiki/Q20190321",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0039 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -17715,7 +17868,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "wikidata": "https://www.wikidata.org/wiki/Q17277950",
+    "wikidata": "https://www.wikidata.org/wiki/Q1165042",
     "_merged": [
      {
       "source": "Wikidata",
@@ -17729,7 +17882,15 @@
     "form": "painting",
     "qid_rejected": "Q17277950",
     "qid_rejected_as": "painting series",
-    "city_src": "7th arrondissement of Paris"
+    "city_src": "7th arrondissement of Paris",
+    "qid": "Q1165042",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0041 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -18146,7 +18307,16 @@
     ],
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q27970742",
+    "wikidata": "https://www.wikidata.org/wiki/Q27970742",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0042 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -18812,7 +18982,16 @@
     ],
     "location_src": "Museum of Modern Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18688316",
+    "wikidata": "https://www.wikidata.org/wiki/Q18688316",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0043 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -19184,7 +19363,16 @@
     ],
     "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q21730727",
+    "wikidata": "https://www.wikidata.org/wiki/Q21730727",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0044 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -20415,7 +20603,16 @@
     ],
     "location_src": "Art Institute of Chicago",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q20268125",
+    "wikidata": "https://www.wikidata.org/wiki/Q20268125",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0045 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -21362,7 +21559,7 @@
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q3494409",
+    "wikidata": "https://www.wikidata.org/wiki/Q20808604",
     "_merged": [
      {
       "source": "Wikidata",
@@ -21375,7 +21572,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3494409",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q20808604",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0046 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -21577,7 +21782,7 @@
     "museum_id": "philadelphia-museum-of-art",
     "city": "Philadelphia",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q3494409",
+    "wikidata": "https://www.wikidata.org/wiki/Q20808602",
     "_merged": [
      {
       "source": "Wikidata",
@@ -21590,7 +21795,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3494409",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q20808602",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0047 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -21622,7 +21835,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "the-nelson-atkins-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q3494409",
+    "wikidata": "https://www.wikidata.org/wiki/Q28778014",
     "_merged": [
      {
       "source": "Wikidata",
@@ -21635,7 +21848,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3494409",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q28778014",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0048 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -21667,7 +21888,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q3494409",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911958",
     "_merged": [
      {
       "source": "Wikidata",
@@ -21680,7 +21901,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3494409",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q19911958",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0049 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -21712,7 +21941,7 @@
     "museum_id": "kunsthaus-zurich",
     "city": "Zurich",
     "country": "Switzerland",
-    "wikidata": "https://www.wikidata.org/wiki/Q3494409",
+    "wikidata": "https://www.wikidata.org/wiki/Q3823217",
     "_merged": [
      {
       "source": "Wikidata",
@@ -21725,7 +21954,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3494409",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q3823217",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0050 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -22068,7 +22305,7 @@
     "museum_id": "cleveland-museum-of-art",
     "city": "Cleveland",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q3494409",
+    "wikidata": "https://www.wikidata.org/wiki/Q60517723",
     "_merged": [
      {
       "source": "Wikidata",
@@ -22081,7 +22318,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3494409",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q60517723",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0051 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -22484,7 +22729,7 @@
     "museum_id": "kunstmuseum-basel",
     "city": "Basel",
     "country": "Switzerland",
-    "wikidata": "https://www.wikidata.org/wiki/Q3494409",
+    "wikidata": "https://www.wikidata.org/wiki/Q64255035",
     "_merged": [
      {
       "source": "Wikidata",
@@ -22497,7 +22742,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3494409",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q64255035",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0053 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -22529,7 +22782,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "pushkin-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q3494409",
+    "wikidata": "https://www.wikidata.org/wiki/Q64256137",
     "_merged": [
      {
       "source": "Wikidata",
@@ -22543,7 +22796,15 @@
     "form": "painting",
     "qid_rejected": "Q3494409",
     "qid_rejected_as": "painting series",
-    "city_src": "Khamovniki District"
+    "city_src": "Khamovniki District",
+    "qid": "Q64256137",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0054 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -23453,7 +23714,7 @@
     "title": "La Montagne Sainte-Victoire",
     "year": "1889",
     "location": "Seattle",
-    "city": "King County",
+    "city": "Seattle",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Montagne%20Sainte-Victoire%2C%20ca.%201889%20-%20Paul%20C%C3%A9zanne.jpg?width=500",
@@ -23474,7 +23735,8 @@
     "museum_id": "seattle",
     "location_src": "Seattle",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "King County"
    }
   },
   {
@@ -27755,7 +28017,7 @@
     "title": "La Maison Rondest, quartier de l'Hermitage, Pontoise (The House and the Tree)",
     "year": "1874",
     "location": "Los Angeles",
-    "city": "Los Angeles County",
+    "city": "Los Angeles",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Maison%20Rondest%2C%20quartier%20de%20l%27Hermitage%2C%20Pontoise%2C%20par%20Paul%20C%C3%A9zanne%2C%20Yorck.jpg?width=500",
@@ -27775,7 +28037,8 @@
     "museum_id": "los-angeles",
     "location_src": "Los Angeles",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Los Angeles County"
    }
   },
   {
@@ -27866,7 +28129,7 @@
     "title": "Compotier, assiette et pommes (Still Life with Apples in a Bowl)",
     "year": "1879",
     "location": "Copenhagen",
-    "city": "Capital Region of Denmark",
+    "city": "Copenhagen",
     "country": "Denmark",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Compotier%2C%20assiette%20et%20pommes%2C%20par%20Paul%20C%C3%A9zanne.jpg?width=500",
@@ -27886,7 +28149,8 @@
     "museum_id": "copenhagen",
     "location_src": "Copenhagen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Capital Region of Denmark"
    }
   },
   {

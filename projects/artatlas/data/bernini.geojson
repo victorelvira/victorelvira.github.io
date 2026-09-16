@@ -491,7 +491,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "vatican-museums",
-    "location_src": "Vatican Museums"
+    "location_src": "Vatican Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -1780,7 +1788,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "frick-collection",
-    "location_src": "The Frick Collection"
+    "location_src": "The Frick Collection",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -1830,7 +1846,7 @@
     "kind": "museum",
     "year": "1653",
     "location": "Fort Worth",
-    "city": "Denton County",
+    "city": "Fort Worth",
     "country": "United States",
     "material": "terracotta",
     "medium": "terracotta",
@@ -1839,7 +1855,16 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "fort-worth",
-    "location_src": "Fort Worth"
+    "location_src": "Fort Worth",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Modello for the Fountain of the Moor)"
+     }
+    },
+    "city_src": "Denton County"
    },
    "geometry": {
     "type": "Point",
@@ -1859,7 +1884,7 @@
     "kind": "museum",
     "year": "1668",
     "location": "Fort Worth",
-    "city": "Denton County",
+    "city": "Fort Worth",
     "country": "United States",
     "material": "terracotta",
     "medium": "terracotta",
@@ -1868,7 +1893,16 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "fort-worth",
-    "location_src": "Fort Worth"
+    "location_src": "Fort Worth",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    },
+    "city_src": "Denton County"
    },
    "geometry": {
     "type": "Point",
@@ -2194,7 +2228,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "museo-di-roma",
-    "location_src": "Museo di Roma"
+    "location_src": "Museo di Roma",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2223,7 +2265,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "accademia-di-san-luca",
-    "location_src": "Accademia di San Luca"
+    "location_src": "Accademia di San Luca",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Lion (Preparatory Sculpture))"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2252,7 +2302,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "ca-d-oro",
-    "location_src": "Ca' d'Oro"
+    "location_src": "Ca' d'Oro",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2283,6 +2341,14 @@
     "location_src": "Bologna",
     "venue_src": "P195",
     "city_src": "Metropolitan City of Bologna",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta, wax, wood)"
+     }
+    },
     "kind": "museum"
    },
    "geometry": {
@@ -2340,7 +2406,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "vatican-museums",
-    "location_src": "Vatican Museums"
+    "location_src": "Vatican Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2602,7 +2676,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2632,7 +2714,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (gesso, gold leaf, terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2692,7 +2782,15 @@
     },
     "museum_id": "florence",
     "location_src": "Florence",
-    "city_src": "Metropolitan City of Florence"
+    "city_src": "Metropolitan City of Florence",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2722,7 +2820,15 @@
     },
     "museum_id": "skulpturensammlung-und-museum-fur-byzantinische-kunst",
     "location_src": "Skulpturensammlung und Museum für Byzantinische Kunst",
-    "city_src": "Bezirk Mitte"
+    "city_src": "Bezirk Mitte",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2751,7 +2857,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "hermitage-museum",
-    "location_src": "Hermitage Museum"
+    "location_src": "Hermitage Museum",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2778,7 +2892,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "kimbell-art-museum",
-    "location_src": "Kimbell Art Museum"
+    "location_src": "Kimbell Art Museum",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Model for the Fountain of the Moor)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2808,7 +2930,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2836,7 +2966,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "hermitage-museum",
-    "location_src": "Hermitage Museum"
+    "location_src": "Hermitage Museum",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2921,7 +3059,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "museo-di-palazzo-venezia",
-    "location_src": "Palazzo Venezia"
+    "location_src": "Palazzo Venezia",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Study of a Horse)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2950,7 +3096,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "hermitage-museum",
-    "location_src": "Hermitage Museum"
+    "location_src": "Hermitage Museum",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2979,7 +3133,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "galleria-borghese",
-    "location_src": "Galleria Borghese"
+    "location_src": "Galleria Borghese",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Model for the Equestrian Sculpture of Louis XIV)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3008,7 +3170,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "detroit-institute-of-arts",
-    "location_src": "Detroit Institute of Arts"
+    "location_src": "Detroit Institute of Arts",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Modell of a Chair of St. Peter)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3067,7 +3237,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3096,7 +3274,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "museo-horne",
-    "location_src": "Museo Horne"
+    "location_src": "Museo Horne",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Model of an Angel and Cherub)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3126,7 +3312,15 @@
     },
     "museum_id": "victoria-and-albert-museum",
     "location_src": "Victoria and Albert Museum",
-    "city_src": "Royal Borough of Kensington and Chelsea"
+    "city_src": "Royal Borough of Kensington and Chelsea",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3156,7 +3350,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3185,7 +3387,15 @@
     },
     "museum_id": "louvre",
     "location_src": "Department of Sculptures of the Louvre",
-    "city": "Paris"
+    "city": "Paris",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3215,7 +3425,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3272,7 +3490,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "kimbell-art-museum",
-    "location_src": "Kimbell Art Museum"
+    "location_src": "Kimbell Art Museum",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3302,7 +3528,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3332,7 +3566,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3390,7 +3632,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "hermitage-museum",
-    "location_src": "Hermitage Museum"
+    "location_src": "Hermitage Museum",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3420,7 +3670,15 @@
     },
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums"
+    "venue_of": "Harvard Art Museums",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3538,7 +3796,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "hermitage-museum",
-    "location_src": "Hermitage Museum"
+    "location_src": "Hermitage Museum",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -3741,7 +4007,15 @@
      "source": "Wikidata: sculptures by Bernini (Q160538)"
     },
     "museum_id": "rijksmuseum",
-    "location_src": "Rijksmuseum"
+    "location_src": "Rijksmuseum",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-09-15",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (terracotta)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",

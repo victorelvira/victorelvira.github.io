@@ -93,8 +93,8 @@ const PAINTERS = [
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.12.17";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-15 21:50";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.12.22";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-16 02:27";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -157,6 +157,12 @@ function wTitle(p) {
     if (t2) return t2;
   }
   return mtTitle(p) || p.title || "";
+}
+// a sculptor's model or sketch (mark_models.py): said on the work, so a terracotta Saint Longinus is not
+// taken for the colossus in Saint Peter's
+function modelTag(p) {
+  if (!p || !p.model || /\b(model|modello|modell|bozzetto|sketch|study|boceto|modelo|estudio|esquisse|étude|maquette)\b/i.test(wTitle(p))) return "";
+  return ` <span class="tag model">${esc(t("model or sketch"))}</span>`;       // not when the title already says so
 }
 // the robot beside a title that a machine translated (plain-text contexts get it as a character)
 function mtMark(p) {
@@ -593,6 +599,15 @@ function inYear(p) {
 // accepts either — you find a museum by typing it the way you know it, in any of our languages.
 // Loaded once, lazily: it is only needed the first time somebody types.
 let musI18n = null, musI18nSearch = new Map();
+// "town, province, country" for Spain and Italy only (Víctor: elsewhere it is clutter). museum_id → {lang: name}
+let museumProvinces = {};
+fetch("artatlas/data/museum_provinces.json?v=" + DATA_V).then(r => r.ok ? r.json() : {}).then(d => { museumProvinces = d || {}; }).catch(() => {});
+function provName(p) {
+  const pr = p && p.museum_id && museumProvinces[p.museum_id];
+  if (!pr) return "";
+  const n = pr[LANG] || pr.en || "";
+  return deacc(n) === deacc(ctyName(p.city)) ? "" : n;       // "Madrid, Madrid" says nothing twice
+}
 function loadMuseumNames() {
   if (musI18n) return;
   musI18n = {};                                   // set immediately so we only ever fetch once
@@ -744,7 +759,7 @@ function placePopup(feats) {
       `${provLine(p0, HEAD_SKIP_PAINTED)}</div>`;
   } else {
     const kindTxt = KIND_LABEL[p0.kind] || "";
-    const where = [cityLink(p0.city, p0.country), countryLink(p0.country)].filter(Boolean).join(", ");
+    const where = [cityLink(p0.city, p0.country), esc(provName(p0)), countryLink(p0.country)].filter(Boolean).join(", ");
     // the venue name is a button → opens this museum in the side list (filters to it)
     head = `<div class="hd"><button type="button" class="nm pop-museum" data-museum="${esc(museumKey(p0))}"` +
       ` title="${esc(t("Show this museum"))}">${esc(locName(p0) || t("Location"))}<span class="pm-arrow"> ↗</span></button>` +
@@ -769,7 +784,7 @@ function placePopup(feats) {
       ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" ${capAttrs(p, p0.location || "")} alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
     return `<li class="pop-work" data-i="${i}">${thumb}<div class="wk">` +
-      `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${yr}${att}${st}</div>` +
+      `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${yr}${modelTag(p)}${att}${st}</div>` +
       `<div class="by">${painterTag(p)}</div>` +
       `${factsRow}${desc}<div class="lk">${linksRow(p)}</div>` +
       `${provLine(p, WORK_SKIP)}</div></li>`;
@@ -1385,7 +1400,7 @@ function renderWorksTable() {
     return `<tr data-ri="${i}">` +
       `<td class="c-img">${thumb}</td>` +
       `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${painterLink(p.painter)}</td>` +
-      `<td class="c-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}</td>` +
+      `<td class="c-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${modelTag(p)}</td>` +
       `<td class="c-year">${esc(p.year || "")}</td>` +
       `<td class="c-medium">${esc(p.medium || "")}</td>` +
       `<td class="c-dim">${esc(p.dimensions || "")}</td>` +
@@ -1919,7 +1934,7 @@ function panelRowHTML(w, grpKey) {
   // with no venue headers above it, a row has to say where the work is itself
   const venue = panelSort === "museum" ? "" : locName(p);
   return `<li data-i="${i}"${fold}>${thumb}<div>` +
-    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${disputedMark(p)}</div>` +
+    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${modelTag(p)}${disputedMark(p)}</div>` +
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div>` +
     (venue ? `<div class="sub wvenue">${museumLink(p, esc(venue))}${p.city ? ", " + cityLink(p.city, p.country) : ""}</div>` : "") +
     `</div></li>`;
@@ -2530,13 +2545,15 @@ function openWorkCard(w) {
     ? `<img class="th wc-img" src="${esc(fullImage(p.image))}" data-full="${esc(fullImage(p.image))}"${capAttrs(p)} alt="">`
     : `<div class="wc-noimg">${esc(t("no image on Wikimedia Commons"))}</div>`;
   const row = (k, v) => v ? `<div class="wc-row"><span class="wc-k">${k}</span><span>${v}</span></div>` : "";
-  const venue = [museumLink(p), cityLink(p.city, p.country), countryLink(p.country)].filter(Boolean).join(", ");
+  // a "venue" that is the town itself (works known only to be in Houston) does not say Houston twice
+  const sameTown = deacc(locName(p)) === deacc(ctyName(p.city));
+  const venue = [museumLink(p), sameTown ? "" : cityLink(p.city, p.country), esc(provName(p)), countryLink(p.country)].filter(Boolean).join(", ");
   const attr = (p.attribution && !ATTR_ACCEPTED.has(p.attribution))
     ? esc(p.attribution) + (p.attribution_note ? ` · <span class="wc-note">${esc(p.attribution_note)}</span>` : "") : "";
   const links = linksRow(p);
   document.getElementById("wc-body").innerHTML =
     `<div class="wc-imgwrap">${img}</div>` +
-    `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}</h3>` +
+    `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${modelTag(p)}</h3>` +
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
     row(t("Where"), venue
       + (p.venue_of ? ` <span class="wc-venueof">· ${esc(p.venue_of)}</span>` : "")

@@ -47,16 +47,28 @@ body{font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:va
   background:var(--sand);border:1px solid var(--sand-line);border-radius:999px;padding:7px 15px;
   box-shadow:0 1px 3px rgba(0,0,0,.1)}
 #comp-btn:hover{background:#e7dcc6;border-color:var(--sand-line)}
-#comp-pop{position:absolute;top:calc(100% + 4px);left:0;z-index:900;width:min(340px,92vw);
-  background:#fff;border:1px solid var(--line);border-radius:10px;
-  box-shadow:0 6px 24px rgba(0,0,0,.16);padding:10px}
+/* El panel de compositores NO FLOTA: es la columna izquierda de #main, a la misma altura
+   que el catálogo, para poder marcar un compositor y ver a la vez cuánto encoge la tabla.
+   Sin sombra ni esquinas redondeadas, porque las dos dicen "estoy por encima" y ya no lo
+   está. Víctor, 2026-09-15. */
+#comp-pop{display:flex;flex-direction:column;min-height:0;overflow:auto;background:#fff;
+  border-right:1px solid var(--line);padding:10px 12px}
 #comp-pop[hidden]{display:none}
+.pop-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.pop-top b{font:600 9.5px/1 system-ui,-apple-system,sans-serif;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--faint)}
+.pop-x{border:1px solid var(--line);background:var(--bar);color:var(--muted);cursor:pointer;
+  width:22px;height:22px;border-radius:50%;font-size:13px;line-height:1;padding:0}
+.pop-x:hover{border-color:var(--bad);color:var(--bad)}
 .pop-search{width:100%;padding:8px 10px;font:inherit;font-size:14px;border:1px solid var(--line);
   border-radius:6px}
 .pop-actions{display:flex;gap:6px;margin:6px 0}
 .pop-actions button{flex:1;font:inherit;font-size:12px;padding:3px;cursor:pointer;
   border:1px solid var(--line);border-radius:6px;background:#faf7f1;color:var(--muted)}
-.pop-list{list-style:none;margin:0;padding:0;max-height:min(60vh,440px);overflow-y:auto}
+.pop-list{list-style:none;margin:0;padding:0;min-height:0;flex:1;overflow-y:auto}
+/* La lista ya no necesita su propio tope de altura: el panel es una columna con
+   altura propia y scrollea ella. Dos scrolls anidados era lo que hacía falta cuando
+   el panel caía flotando sobre la página. */
 .pop-list .prow{display:flex;align-items:center}
 .pop-list .prow label{flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:8px;
   padding:5px 4px;cursor:pointer;font-size:13px}
@@ -67,7 +79,12 @@ body{font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:va
 .pop-list .prow:hover .only,.pop-list .prow:focus-within .only{opacity:.8}
 .pop-list .prow .only:hover{opacity:1;text-decoration:underline;background:var(--sand)}
 .pop-list .sw{width:12px;height:12px;border-radius:3px;flex:0 0 auto}
-.pop-list .pyr{color:var(--muted);font-size:11px;font-variant-numeric:tabular-nums}
+/* En una columna de 290 px "Johann Sebastian Bach 1685-750 · 1587" ocupaba tres líneas y
+   ninguna se leía. El nombre manda y va entero en su renglón; las fechas y el recuento,
+   que son referencia y no identidad, bajan a un segundo renglón pequeño. */
+.pop-list .pwho{min-width:0;display:flex;flex-direction:column;line-height:1.25}
+.pop-list .pname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pop-list .pyr{color:var(--faint);font-size:10.5px;font-variant-numeric:tabular-nums}
 .pop-h{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
   color:var(--muted);padding:7px 4px 2px;display:flex;align-items:center;gap:6px}
 .pop-h .grp-only{margin-left:auto;border:0;background:none;color:var(--muted);font:inherit;
@@ -152,8 +169,16 @@ table.cat{width:100%;border-collapse:collapse;font-size:13.5px;table-layout:fixe
    a floor underneath it would be surplus that table-layout:fixed shares out among all
    ten columns, which is the bug the exact sum exists to prevent. 2026-09-14. */
 body:not(.colw) table.cat{min-width:1180px}
+/* Con la ficha abierta la tabla NO se recorta: mantiene su ancho y `#scroll` la desplaza.
+   Quitar columnas al abrir una obra es quitarle información a quien acaba de pedir más. */
 body.colw table.cat{width:auto}
-#stage{overflow-x:auto}
+/* La barra horizontal va en #scroll, NO en #stage.
+   #stage es tan alto como todas las filas dibujadas, así que su barra horizontal queda al
+   final de esa altura, a miles de píxeles del ojo: la tabla se desbordaba y no había con
+   qué desplazarla. En #scroll la barra se queda pegada al borde inferior del panel y
+   siempre está a mano. Se vio al abrir el selector y la ficha a la vez, con 764 px para
+   una tabla de 1 180. 2026-09-15. */
+#stage{overflow-x:visible}   /* #scroll ya es overflow:auto en los dos ejes */
 table.cat col.k-comp{width:104px} table.cat col.k-cat{width:118px}
 table.cat col.k-key{width:104px} table.cat col.k-scoring{width:190px}
 table.cat col.k-date{width:132px} table.cat col.k-dur{width:74px}
@@ -174,7 +199,10 @@ table.cat tbody tr.sel{background:var(--sand)}
 .c-comp{white-space:nowrap;font-size:12.5px;color:var(--muted)}
 .c-cat{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink);font-size:12.5px}
 .c-cat .alt{color:var(--faint);font-size:11px}
-.c-title{font-family:var(--serif);font-size:15px;line-height:1.3}
+/* Al tamaño del compositor. Estaba en 15 px contra los 12,5 de las columnas de al lado,
+   y con la serifa encima: cantaba demasiado para lo que es, una celda más de la fila.
+   Víctor, 2026-09-15. */
+.c-title{font-family:var(--serif);font-size:12.5px;line-height:1.35}
 .c-title .parts{color:var(--faint);font-family:system-ui,sans-serif;font-size:11px;margin-left:6px}
 .c-key{white-space:nowrap;color:var(--ink);font-size:12.5px;overflow:hidden}
 .c-scoring{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -193,7 +221,7 @@ table.cat tbody tr.sel{background:var(--sand)}
   border:1px solid rgba(0,0,0,.12)}
 .caret{display:inline-block;width:14px;color:var(--faint);cursor:pointer;font-size:10px;user-select:none}
 tr.part td{background:#fdfbf7}
-tr.part .c-title{padding-left:24px;font-size:14px}
+tr.part .c-title{padding-left:24px;font-size:12px}
 .flagdot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-left:6px;vertical-align:1px}
 .flag-lost{background:var(--faint)} .flag-ver{background:var(--maj)}
 #more{display:block;margin:16px auto;padding:7px 18px;border:1px solid var(--line);background:#fff;
@@ -427,6 +455,11 @@ body.rec-paged #rec .whose{margin-right:122px}
    big red circle on a phone (it covers everything). */
 #main{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
 body.rec-open #main{grid-template-columns:minmax(0,1fr) 6px minmax(0,var(--rec-w,440px))}
+/* Con el selector abierto entra una columna por delante. Las tres pueden convivir en un
+   monitor de PC, que es justo lo que pidió: dos paneles y la tabla, side by side. */
+body.comp-open #main{grid-template-columns:minmax(0,290px) minmax(0,1fr)}
+body.comp-open.rec-open #main{
+  grid-template-columns:minmax(0,290px) minmax(0,1fr) 6px minmax(0,var(--rec-w,440px))}
 #scroll{min-height:0;overflow:auto}
 #divider{display:none;cursor:col-resize;background:transparent;transition:background .12s}
 body.rec-open #divider{display:block}
@@ -445,6 +478,15 @@ body.rec-open #rec{display:block}
 #rec .close:hover{border-color:var(--bad);color:var(--bad)}
 #rec .close:active{transform:scale(.94)}
 
+@media(max-width:900px){
+  /* Debajo de ~900 px las tres columnas dejan a la tabla sin nada que enseñar, así que
+     el selector pasa a ocupar el ancho entero y la tabla se va abajo. Sigue sin flotar:
+     empuja, no tapa. */
+  body.comp-open #main,
+  body.comp-open.rec-open #main{grid-template-columns:minmax(0,1fr)}
+  body.comp-open #scroll,body.comp-open #divider,body.comp-open #rec{display:none}
+  #comp-pop{border-right:0;border-bottom:1px solid var(--line);max-height:70vh}
+}
 @media(max-width:640px){
   /* on a phone it IS a layer over everything, so the cross goes back to the big
      circle everyone recognises */

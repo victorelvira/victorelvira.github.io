@@ -147,7 +147,16 @@
     ],
     "location_src": "Brooklyn Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17646925",
+    "wikidata": "https://www.wikidata.org/wiki/Q17646925",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0068 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1629,7 +1638,7 @@
     "museum_id": "metropolitan-museum-of-art",
     "city": "New York",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q2063138",
+    "wikidata": "https://www.wikidata.org/wiki/Q17813915",
     "_merged": [
      {
       "source": "Wikidata",
@@ -1642,7 +1651,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q2063138",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17813915",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0072 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -2789,7 +2806,16 @@
     ],
     "location_src": "Tokyo Fuji Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17816172",
+    "wikidata": "https://www.wikidata.org/wiki/Q17816172",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0075 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -2830,7 +2856,16 @@
     ],
     "location_src": "Museo Nacional de San Carlos",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17818728",
+    "wikidata": "https://www.wikidata.org/wiki/Q17818728",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0076 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -2862,7 +2897,7 @@
     "museum_id": "gemaldegalerie-alte-meister-2",
     "city": "Kassel",
     "country": "Germany",
-    "wikidata": "https://www.wikidata.org/wiki/Q17564400",
+    "wikidata": "https://www.wikidata.org/wiki/Q17564429",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/05-1638/46noport.html",
     "_merged": [
      {
@@ -2875,7 +2910,15 @@
     "location_src": "Gemäldegalerie Alte Meister",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q17564400"
+    "qid_shared": "Q17564400",
+    "qid": "Q17564429",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0077 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3223,7 +3266,16 @@
     "country": "United States",
     "location_src": "Detroit Institute of Arts",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17863944",
+    "wikidata": "https://www.wikidata.org/wiki/Q17863944",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0078 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3306,7 +3358,16 @@
     ],
     "location_src": "Szépmüvészeti Múzeum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17863777",
+    "wikidata": "https://www.wikidata.org/wiki/Q17863777",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0079 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3676,7 +3737,16 @@
     "country": "United Kingdom",
     "location_src": "Woburn Abbey",
     "kind": "church",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17904407",
+    "wikidata": "https://www.wikidata.org/wiki/Q17904407",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0081 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4060,7 +4130,7 @@
     "museum_id": "sao-paulo-museum-of-art",
     "city": "São Paulo",
     "country": "Brazil",
-    "wikidata": "https://www.wikidata.org/wiki/Q15429921",
+    "wikidata": "https://www.wikidata.org/wiki/Q17906243",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4073,7 +4143,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q15429921",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17906243",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0083 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4155,7 +4233,16 @@
     ],
     "location_src": "Nationalmuseum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17905390",
+    "wikidata": "https://www.wikidata.org/wiki/Q17905390",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0084 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5004,7 +5091,16 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q17985764",
+    "wikidata": "https://www.wikidata.org/wiki/Q17985764",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0087 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5428,7 +5524,16 @@
     ],
     "location_src": "National Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18010861",
+    "wikidata": "https://www.wikidata.org/wiki/Q18010861",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0090 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5510,7 +5615,16 @@
     ],
     "location_src": "Louvre",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18010319",
+    "wikidata": "https://www.wikidata.org/wiki/Q18010319",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0092 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5551,7 +5665,16 @@
     ],
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18032401",
+    "wikidata": "https://www.wikidata.org/wiki/Q18032401",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0093 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5583,7 +5706,7 @@
     "museum_id": "statens-museum-for-kunst",
     "city": "Copenhagen",
     "country": "Denmark",
-    "wikidata": "https://www.wikidata.org/wiki/Q9191",
+    "wikidata": "https://www.wikidata.org/wiki/Q17645192",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5597,7 +5720,15 @@
     "form": "painting",
     "qid_rejected": "Q9191",
     "qid_rejected_as": "human",
-    "city_src": "Copenhagen Municipality"
+    "city_src": "Copenhagen Municipality",
+    "qid": "Q17645192",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0094 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5639,7 +5770,16 @@
     "country": "United States",
     "location_src": "Taft Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18010852",
+    "wikidata": "https://www.wikidata.org/wiki/Q18010852",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0095 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5681,7 +5821,16 @@
     "country": "United States",
     "location_src": "Taft Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18010834",
+    "wikidata": "https://www.wikidata.org/wiki/Q18010834",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0096 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5877,7 +6026,16 @@
     ],
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18011386",
+    "wikidata": "https://www.wikidata.org/wiki/Q18011386",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0098 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5958,7 +6116,16 @@
     ],
     "location_src": "Liechtenstein Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18011385",
+    "wikidata": "https://www.wikidata.org/wiki/Q18011385",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0099 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -6179,7 +6346,16 @@
     ],
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18011394",
+    "wikidata": "https://www.wikidata.org/wiki/Q18011394",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0100 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -6262,7 +6438,16 @@
     ],
     "location_src": "Yale University Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18059542",
+    "wikidata": "https://www.wikidata.org/wiki/Q18059542",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0101 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -6431,7 +6616,16 @@
     ],
     "location_src": "National Gallery of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18025591",
+    "wikidata": "https://www.wikidata.org/wiki/Q18025591",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0103 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -6552,7 +6746,16 @@
     ],
     "location_src": "Thyssen-Bornemisza Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18056778",
+    "wikidata": "https://www.wikidata.org/wiki/Q18056778",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0105 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -6754,7 +6957,16 @@
     ],
     "location_src": "Christ Church Picture Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18059588",
+    "wikidata": "https://www.wikidata.org/wiki/Q18059588",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0107 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -6956,7 +7168,16 @@
     ],
     "location_src": "Kunsthaus Zürich",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q18060374",
+    "wikidata": "https://www.wikidata.org/wiki/Q18060374",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0108 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -7478,7 +7699,7 @@
     "title": "Portrait of Johannes Hoornbeek",
     "year": "1645",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20107%20WGA%20version.jpg?width=500",
@@ -7499,7 +7720,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -7853,7 +8075,7 @@
     "title": "Right half of Gijsbert Claesz. van Campen family portrait",
     "year": "1620",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20009.jpg?width=500",
@@ -7867,7 +8089,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -8628,7 +8851,7 @@
     "title": "Portrait of a family in a landscape - three temporarily united fragments",
     "year": "1624",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Van%20Campen%20Family%20in%20a%20Landscape.jpg?width=500",
@@ -8642,7 +8865,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {

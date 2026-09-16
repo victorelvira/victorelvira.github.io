@@ -2696,7 +2696,16 @@
     "title": "Portrait Miniature of Katherine Howard",
     "_title_src": "holbein list (Wikipedia), matched by image",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q113531313",
+    "wikidata": "https://www.wikidata.org/wiki/Q113531313",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0136 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

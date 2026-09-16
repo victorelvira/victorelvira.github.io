@@ -661,7 +661,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery",
-    "wikidata": "https://www.wikidata.org/wiki/Q124004799",
+    "wikidata": "https://www.wikidata.org/wiki/Q18688231",
     "_merged": [
      {
       "source": "Wikidata",
@@ -674,7 +674,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q124004799",
-    "qid_rejected_as": "artistic theme, group of paintings"
+    "qid_rejected_as": "artistic theme, group of paintings",
+    "qid": "Q18688231",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0225 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

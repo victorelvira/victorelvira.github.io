@@ -10807,7 +10807,16 @@
     "country": "United Kingdom",
     "location_src": "Petworth House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q52253938",
+    "wikidata": "https://www.wikidata.org/wiki/Q52253938",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0272 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -20625,7 +20634,7 @@
     "title": "Yachting at Cowes",
     "year": "",
     "location": "Auckland Art Gallery",
-    "city": "Auckland Region",
+    "city": "Auckland",
     "country": "New Zealand",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Yachting%20at%20Cowes%20-%201955-15%20-%20Auckland%20Art%20Gallery.jpg?width=500",
@@ -20639,7 +20648,8 @@
     "museum_id": "auckland-art-gallery",
     "location_src": "Auckland Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Auckland Region"
    }
   },
   {

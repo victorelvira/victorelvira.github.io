@@ -752,7 +752,16 @@
     ],
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q4352168",
+    "wikidata": "https://www.wikidata.org/wiki/Q4352168",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0666 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -1263,7 +1272,16 @@
       "url": "https://www.wikidata.org/wiki/Q4473883"
      }
     ],
-    "placeless": true
+    "placeless": true,
+    "qid": "Q4473883",
+    "wikidata": "https://www.wikidata.org/wiki/Q4473883",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0667 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3482,7 +3500,16 @@
     "museum_id": "apsley-house",
     "location_src": "Apsley House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q118895689",
+    "wikidata": "https://www.wikidata.org/wiki/Q118895689",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0668 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4499,7 +4526,16 @@
     ],
     "location_src": "Colección Várez Fisa",
     "kind": "private",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q6371667",
+    "wikidata": "https://www.wikidata.org/wiki/Q6371667",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0669 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -5085,7 +5121,16 @@
     "museum_id": "collection-of-the-dukes-of-alba",
     "location_src": "Collection of the Dukes of Alba",
     "kind": "private",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q3937443",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937443",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0670 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {

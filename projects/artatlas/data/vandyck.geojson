@@ -466,7 +466,7 @@
     "title": "Portrait of the Sculptor François Duquesnoy",
     "year": "1622",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthonis%20van%20Dyck%20024.jpg?width=500",
@@ -491,7 +491,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -1303,7 +1304,7 @@
     "title": "Portrait of Jean-Charles de la Faille",
     "year": "1629",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck-%20Portret%20van%20pater%20Jan-Karel%20Della%20Faille%20s.j.jpg?width=500",
@@ -1335,7 +1336,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -3113,7 +3115,16 @@
     "country": "United Kingdom",
     "location_src": "Petworth House",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q52253239",
+    "wikidata": "https://www.wikidata.org/wiki/Q52253239",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0277 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -3584,7 +3595,16 @@
     "country": "Australia",
     "location_src": "National Gallery of Victoria",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q20424870",
+    "wikidata": "https://www.wikidata.org/wiki/Q20424870",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0278 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4546,7 +4566,16 @@
     "country": "Spain",
     "location_src": "Museo del Prado",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q27699845",
+    "wikidata": "https://www.wikidata.org/wiki/Q27699845",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0280 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -4827,7 +4856,16 @@
     "country": "Spain",
     "location_src": "Royal Academy of Fine Arts of San Fernando",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q89980755",
+    "wikidata": "https://www.wikidata.org/wiki/Q89980755",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-15",
+      "source": "proposal wq-0281 (data/decisions/work_qid.csv)",
+      "note": "applied without the pen after verify_work_qid.py checked it live: same P18 file, no other item uses it, same creator, a work of art"
+     }
+    }
    }
   },
   {
@@ -8432,7 +8470,7 @@
     "title": "Portrait of an old man",
     "year": "1621",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoon%20van%20Dyck-Portrait%20of%20old%20man%20mg%203006.jpg?width=500",
@@ -8446,7 +8484,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -8463,7 +8502,7 @@
     "title": "Four Studies of a Head of a Moor",
     "year": "1640",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20-%20Four%20Studies%20of%20a%20Head%20of%20a%20Moor%20-%20Google%20Art%20Project.jpg?width=500",
@@ -8487,7 +8526,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -13840,7 +13880,7 @@
     "title": "The Scorning of Christ (Christ Mocked)",
     "year": "",
     "location": "Auckland Art Gallery",
-    "city": "Auckland Region",
+    "city": "Auckland",
     "country": "New Zealand",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giuseppe%20Crespi%20-%20The%20Scorning%20of%20Christ%20%28Christ%20Mocked%29%20-%201887-1-48%20-%20Auckland%20Art%20Gallery.jpg?width=500",
@@ -13854,7 +13894,8 @@
     "museum_id": "auckland-art-gallery",
     "location_src": "Auckland Art Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Auckland Region"
    }
   },
   {
@@ -21511,7 +21552,7 @@
     "title": "Portrait of Porzia Imperiale and Her Daughter",
     "year": "1624",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20Porzia%20Imperiale%20and%20Her%20Daughter%20-%20WGA07423.jpg?width=500",
@@ -21525,7 +21566,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -28573,7 +28615,7 @@
     "title": "Christ on the Cross with Mary Magdalene and Saints",
     "year": "1630",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Calvaire%2C%20Inv.%203014.jpg?width=500",
@@ -28597,7 +28639,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -28614,7 +28657,7 @@
     "title": "Man in Oval Frame",
     "year": "1619",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20-%20Brussels%20Man-in-Oval%202746.jpg?width=500",
@@ -28638,7 +28681,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -29644,7 +29688,7 @@
     "title": "Portrait of Alexandre della Faille (1589-1653)",
     "year": "1632",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Portrait%20d%27Alexandre%20della%20Faille%201589-1653%2C%20secr%C3%A9taire%20de%20la%20ville%20d%27Anvers%2C%20Inv.%20575.jpg?width=500",
@@ -29668,7 +29712,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -33394,7 +33439,7 @@
     "title": "Saint Anthony of Padua",
     "year": "1632",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoon%20van%20dyck%2C%20sant%27antonio%20da%20padova.JPG?width=500",
@@ -33418,7 +33463,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -33435,7 +33481,7 @@
     "title": "Saint Francis of Assisi",
     "year": "1632",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoon%20van%20dyck%2C%20san%20francesco%20d%27assisi.JPG?width=500",
@@ -33459,7 +33505,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -33476,7 +33523,7 @@
     "title": "Study of hands",
     "year": "1630",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20%28d%27apr%C3%A8s%29%20-%20Etude%20de%20mains%2C%20Inv.%204324.jpg?width=500",
@@ -33500,7 +33547,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -33517,7 +33565,7 @@
     "title": "Portrait of Jean Charles de Cordes",
     "year": "1618",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Peter%20Paul%20Rubens%20ou%20Antoon%20van%20Dyck%20-%20Portrait%20de%20Jean%20Charles%20de%20Cordes%2C%20apr%C3%A8s%201574%20-%201641%2C%20Inv.%202618.jpg?width=500",
@@ -33541,7 +33589,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -34326,7 +34375,7 @@
     "title": "Portrait of a Gentleman",
     "year": "1640",
     "location": "Philadelphia",
-    "city": "Philadelphia County",
+    "city": "Philadelphia",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Portrait%20of%20a%20Gentleman.jpg?width=500",
@@ -34350,7 +34399,8 @@
     "museum_id": "philadelphia",
     "location_src": "Philadelphia",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Philadelphia County"
    }
   },
   {
@@ -36605,7 +36655,7 @@
     "title": "Mother of Sorrows",
     "year": "1630",
     "location": "Bob Jones University Museum and Gallery",
-    "city": "Greenville County",
+    "city": "Greenville",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20-%20Mother%20of%20Sorrows.jpg?width=500",
@@ -36629,7 +36679,8 @@
     "museum_id": "bob-jones-university-museum-and-gallery",
     "location_src": "Bob Jones University Museum and Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Greenville County"
    }
   },
   {
@@ -36769,7 +36820,7 @@
     "title": "Portrait of cardinal Domenico Rivarola (1575-1627)",
     "year": "1640",
     "location": "Des Moines",
-    "city": "Polk County",
+    "city": "Des Moines",
     "country": "United States",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Portrait%20of%20cardinal%20Domenico%20Rivarola%20%281575-1627%29.jpg?width=500",
@@ -36793,7 +36844,8 @@
     "museum_id": "des-moines",
     "location_src": "Des Moines",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Polk County"
    }
   },
   {
@@ -38041,7 +38093,7 @@
     "title": "Portrait of an unknown 70 year old man",
     "year": "1613",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Portrait%20d%27un%20homme%20%C3%A2g%C3%A9%2C%20Inv.%206858.jpg?width=500",
@@ -38055,7 +38107,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -38072,7 +38125,7 @@
     "title": "Head of a man in profile looking up",
     "year": "1617",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20-%20Etude%20de%20t%C3%AAte%2C%20Inv.%20216.jpg?width=500",
@@ -38096,7 +38149,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -39801,7 +39855,7 @@
     "title": "Drunken Silenus, supported by two bacchantes",
     "year": "1620",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoon%20Van%20Dyck%20-%20Sil%C3%A8ne%20ivre%20soutenu%20par%20un%20faune%20et%20une%20bacchante.jpg?width=500",
@@ -39825,7 +39879,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
@@ -39842,7 +39897,7 @@
     "title": "The Martyrdom of St. Peter",
     "year": "1621",
     "location": "Royal Museums of Fine Arts of Belgium",
-    "city": "Brussels-Capital Region",
+    "city": "Brussels",
     "country": "Belgium",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Dyck%20%28attribu%C3%A9%20%C3%A0%29%20-%20Le%20martyre%20de%20saint%20Pierre%2C%20Inv.%20215.jpg?width=500",
@@ -39856,7 +39911,8 @@
     "museum_id": "royal-museums-of-fine-arts-of-belgium",
     "location_src": "Royal Museums of Fine Arts of Belgium",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "city_src": "Brussels-Capital Region"
    }
   },
   {
