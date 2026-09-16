@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gentilicios de España · cómo se llama la gente de cada pueblo</title>
+  <link rel="icon" href="gentilicios/favicon.svg">
+  <meta name="description" content="Los gentilicios de los 8.132 municipios de España, con todas sus versiones, apodos, etimologías e historia, cada dato con su fuente exacta.">
+  <meta name="author" content="Víctor Elvira">
+  <meta name="theme-color" content="#3a2317">
+  <link rel="stylesheet" href="gentilicios/vendor/leaflet.css">
+  <link rel="stylesheet" href="gentilicios/style.css?v=0.1.0">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build" title="Versión y última actualización"></span>
+  </nav>
+
+  <header id="bar">
+    <a class="brand" href="gentilicios.html" title="Recargar (quita filtros)">
+      <img class="mark" src="gentilicios/favicon.svg" width="28" height="28" alt="">
+      <div>
+        <strong>Gentilicios de España</strong>
+        <small>cómo se llama la gente de cada pueblo, y por qué</small>
+      </div>
+    </a>
+    <div id="stats" class="stats">cargando…</div>
+  </header>
+
+  <div id="modes">
+    <span id="view-tabs">
+      <button type="button" id="v-map" class="view-btn active">🗺 Mapa</button>
+      <button type="button" id="v-table" class="view-btn">▦ Tabla</button>
+    </span>
+    <span id="colour-modes" title="Qué colorea el mapa">
+      <button type="button" class="mode-btn active" data-mode="sources">Fuentes</button>
+      <button type="button" class="mode-btn" data-mode="curious">Curiosos</button>
+      <button type="button" class="mode-btn" data-mode="ety">Etimología e historia</button>
+    </span>
+    <span id="filter-wrap">
+      <input id="filter" type="search" placeholder="Buscar pueblo, gentilicio o provincia…" autocomplete="off">
+      <div id="suggest" hidden></div>
+    </span>
+  </div>
+
+  <div id="main">
+    <div id="mapwrap">
+      <div id="map"></div>
+      <div id="legend"></div>
+      <button type="button" id="go-canarias" class="chip btn" title="Ir a Canarias">Canarias ↘</button>
+    </div>
+    <aside id="panel">
+      <div id="panel-body"></div>
+    </aside>
+    <section id="table-view" hidden>
+      <div id="table-tools">
+        <label class="chip toggle"><input type="checkbox" id="t-curious"><span>Solo curiosos</span></label>
+        <label class="chip toggle"><input type="checkbox" id="t-empty"><span>Solo sin gentilicio</span></label>
+        <select id="t-ccaa" class="chip"><option value="">Todas las comunidades</option></select>
+        <span id="t-count" class="muted"></span>
+      </div>
+      <div id="table-scroll">
+        <table id="table">
+          <thead><tr>
+            <th data-k="n">Municipio</th><th data-k="p">Provincia</th><th data-k="c">Comunidad</th>
+            <th data-k="g">Gentilicios</th><th data-k="nick">Apodos</th><th data-k="ns" class="num">Fuentes</th>
+            <th data-k="cu">Curioso</th><th data-k="ety" class="num">Etim.</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <button type="button" id="t-more" class="chip btn" hidden>Mostrar más</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="gentilicios/vendor/leaflet.js"></script>
+  <script src="gentilicios/app.js?v=0.1.0"></script>
+</body>
+</html>

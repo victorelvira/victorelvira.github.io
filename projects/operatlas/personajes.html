@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · characters</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#faf6ec;--panel:#fffdf8;--panel2:#f1eadb;--line:#e7decb;--txt:#2b2620;--dim:#867a64;--accent:#9d2933}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  #app{display:grid;grid-template-columns:340px 1fr;grid-template-rows:auto 1fr;flex:1;min-height:0}
+  header{grid-column:1/3;display:flex;align-items:center;gap:20px;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px}.brand span{color:var(--accent)}
+  nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)} nav a.on{color:var(--accent);background:var(--panel2)}
+  header .count{color:var(--dim);font-size:13px;margin-left:auto}
+  .backbtn{display:none;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);
+    color:var(--txt);font-size:13px;border-radius:8px;padding:7px 12px;cursor:pointer;margin:0 0 16px}
+  .backbtn:hover{border-color:var(--accent)}
+  @media(max-width:720px){#app{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+    aside{border-right:0;border-bottom:1px solid var(--line)} main{padding:18px;display:none} header .count{display:none}
+    #app.detail aside{display:none} #app.detail main{display:block} #app.detail .backbtn{display:inline-flex}}
+  aside{background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+  .filters{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+  input{width:100%;padding:8px 10px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;color:var(--txt);font-size:13px}
+  .ctlrow{display:flex;gap:8px;align-items:center}
+  .toggle{cursor:pointer;user-select:none}
+  .toggle.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+  #sortSel{flex:1;padding:5px 8px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;color:var(--dim);font-size:11.5px}
+  .voicefilter{display:flex;flex-wrap:wrap;gap:5px}
+  .vf{font-size:11px;padding:3px 9px;border-radius:14px;border:1px solid var(--line);background:var(--panel2);color:var(--dim);cursor:pointer}
+  .vf.on{color:#14100e;font-weight:600}
+  #list{overflow:auto;flex:1}
+  .row{padding:9px 14px;border-bottom:1px solid var(--line);cursor:pointer;display:flex;gap:9px;align-items:baseline}
+  .row:hover,.row.sel{background:var(--panel2)} .row.sel{box-shadow:inset 3px 0 0 var(--accent)}
+  .row .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;align-self:center}
+  .row .t{font-size:13.5px;font-weight:600}.row .c{font-size:11.5px;color:var(--dim)}
+  main{overflow:auto;padding:26px 34px}
+  .empty{color:var(--dim);margin-top:40px;text-align:center}
+  .fh1{font-size:26px;font-weight:700;margin:0}
+  .voicetag{display:inline-block;padding:3px 12px;border-radius:16px;font-size:12.5px;font-weight:600;color:#14100e;margin:10px 0 4px}
+  .fsub{color:var(--dim);margin:8px 0 18px;font-size:14px}
+  .fdesc{font-size:15px;line-height:1.55;color:#dcd4c6;max-width:620px;margin:0 0 20px}
+  .krow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:6px 13px;font-size:12.5px;color:var(--dim)}
+  .chip b{color:var(--txt);font-weight:600}
+  .lnk{color:var(--txt);border-bottom:1px dotted #8a7d69;cursor:pointer}.lnk:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .section{margin-top:16px;border-top:1px solid var(--line);padding-top:16px;max-width:640px}
+  .section .ttl{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);margin-bottom:10px}
+  .rel-item{display:flex;justify-content:space-between;gap:10px;padding:7px 10px;border-radius:7px;cursor:pointer;background:var(--panel)}
+  .rel-item:hover{background:var(--panel2)}
+  .rel-item .rt b{color:var(--accent)} .rel-item .why{font-size:11px;color:var(--dim)}
+  .attr{display:block;margin-top:16px;font-size:11px;color:#867a67}.attr a{color:#867a67}
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#f1eadb;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#2b2620;font-weight:700;text-decoration:none}#navbar .nav-sep{color:#b3a68d}
+  #navbar .nav-home{color:#d8cbb2;text-decoration:none}#navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}.brand{cursor:pointer}
+  /* nav-tiers */
+  nav .nav-div{display:inline-block;width:1px;height:16px;background:var(--line);margin:0 8px;vertical-align:middle}
+  nav a.lens{font-size:12px;color:#948873} nav a.lens:hover{color:var(--txt);background:var(--panel2)} nav a.lens.on{color:var(--accent)}
+
+  /* elegant-type */
+  body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,.brand,.fh1,.hero h1,.marca{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;font-weight:600;letter-spacing:.01em}
+  .brand{font-size:22px;letter-spacing:.02em}
+  .fh1,.hero h1{font-weight:600;letter-spacing:.008em}
+  h2{font-weight:600}
+
+  /* master-logo */
+  .marca{cursor:pointer;white-space:nowrap}
+  .marca .p,.marca .oa,.marca .sp{color:var(--txt)}
+  .marca .oa,.marca .sp{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;
+    transition:max-width .6s cubic-bezier(.4,0,.2,1),opacity .45s ease,transform .55s ease}
+  .marca .oa{max-width:var(--wa,1ch)}
+  .marca .sp{max-width:var(--wsp,.35ch)}
+  .marca .w2{display:inline-block;color:var(--txt);transition:color .6s ease}
+  .marca.on .oa{max-width:0;opacity:0;transform:translateX(.14em)}
+  .marca.on .sp{max-width:0}
+  .marca.on .w2{color:var(--accent)}
+  .marca.on:hover .oa{max-width:var(--wa);opacity:1;transform:none}
+  .marca.on:hover .sp{max-width:var(--wsp)}
+  .marca.on:hover .w2{color:var(--txt)}
+  @media(prefers-reduced-motion:reduce){.marca .oa,.marca .sp,.marca .w2{transition:none}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+<div id="app">
+  <header>
+    <span class="brand"><img class="emblem" src="favicon.svg" alt=""><span class="marca"><span class="p">Oper</span><span class="oa">a</span><span class="sp"> </span><span class="w2">Atlas</span></span></span>
+    <nav>
+      <a href="nucleo.html">Operas</a>
+      <a href="empezar.html">Start here</a>
+      <a href="jugar.html">Play</a>
+      <a href="compositores.html">Composers</a>
+      <a href="personajes.html" class="on">Characters</a>
+      <span class="nav-div"></span>
+      <a href="conexiones.html" class="lens">Connections</a>
+      <a href="timeline.html" class="lens">Timeline</a>
+      <a href="analisis.html" class="lens">Trends</a>
+      <a href="pulso.html" class="lens">Pulse</a>
+      <a href="duraciones.html" class="lens">Durations</a>
+      <a href="mapa.html" class="lens">Map</a>
+    </nav>
+    <span class="count" id="count">loading…</span>
+  </header>
+  <aside>
+    <div class="filters">
+      <input id="q" type="text" placeholder="search character, opera or singer…" autocomplete="off">
+      <div class="ctlrow">
+        <span class="vf toggle" id="mainToggle">★ main roles</span>
+        <select id="sortSel">
+          <option value="notable">most notable</option>
+          <option value="az">A–Z</option>
+          <option value="opera">by opera</option>
+        </select>
+      </div>
+      <div class="voicefilter" id="vf"></div>
+    </div>
+    <div id="list"></div>
+  </aside>
+  <main id="ficha"><div class="empty">Pick a character from the list →<br><br>
+    <span style="font-size:12.5px">Every character is read from the opera's Wikipedia "Roles" table — voice type, description and the singer who created the part.</span></div></main>
+</div>
+<script>
+// voice types, high→low, with a colour each (used here and in the statistics view)
+const VOICES=[["soprano","#e08cc0"],["mezzo-soprano","#cf9ac6"],["contralto","#b6a0c6"],
+  ["countertenor","#8bb6c9"],["tenor","#e0b24e"],["baritone","#8aa6bf"],["bass-baritone","#6f8fb0"],
+  ["bass","#5f7f9f"],["treble","#9cbf94"],["spoken","#8a9096"],["silent","#8a7d69"]];
+const VC=Object.fromEntries(VOICES); const VORDER=Object.fromEntries(VOICES.map((v,i)=>[v[0],i]));
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const escA=s=>esc(s).replace(/'/g,'&#39;');
+let DATA=[], sel=null, F={q:'',voice:null,main:false,sort:'notable'};
+
+function go(id){location.href='nucleo.html?opera='+encodeURIComponent(id.title||id);}
+function openOpera(title){location.href='nucleo.html?opera='+encodeURIComponent(title);}
+window.openOpera=openOpera;
+
+function renderVF(){
+  const present=[...new Set(DATA.map(c=>c.voice).filter(Boolean))].sort((a,b)=>VORDER[a]-VORDER[b]);
+  $('#vf').innerHTML=present.map(v=>{
+    const on=F.voice===v;
+    return `<span class="vf ${on?'on':''}" data-v="${escA(v)}" style="${on?`background:${VC[v]};border-color:${VC[v]}`:''}">${esc(v)}</span>`;
+  }).join('');
+  $('#vf').querySelectorAll('.vf').forEach(el=>el.onclick=()=>{F.voice=F.voice===el.dataset.v?null:el.dataset.v;draw();});
+}
+function match(c){
+  if(F.main && !c.main) return false;
+  if(F.voice && c.voice!==F.voice) return false;
+  if(F.q){const q=F.q;return (c.name+' '+c.opera+' '+c.composer+' '+(c.premiere||'')).toLowerCase().includes(q);}
+  return true;
+}
+const SORTS={notable:(a,b)=>b.score-a.score||a.name.localeCompare(b.name),
+             az:(a,b)=>a.name.localeCompare(b.name),
+             opera:(a,b)=>a.opera.localeCompare(b.opera)||a.rank-b.rank};
+function selectChar(id){sel=id;renderFicha(DATA.find(c=>c.id===id));draw();document.getElementById('app').classList.add('detail');$('#ficha').scrollTop=0;window.scrollTo(0,0);}
+window.selectChar=selectChar;
+function back(){document.getElementById('app').classList.remove('detail');} window.back=back;
+
+function renderFicha(c){
+  if(!c){return;}
+  const col=VC[c.voice]||'#8a9096';
+  const others=c.recur?DATA.filter(x=>x.norm===c.norm&&x.opera_id!==c.opera_id):[];
+  const same=DATA.filter(x=>x.opera_id===c.opera_id&&x.id!==c.id).sort((a,b)=>VORDER[a.voice]-VORDER[b.voice]);
+  $('#ficha').innerHTML=`
+    <button class="backbtn" onclick="back()">← all characters</button>
+    <h1 class="fh1">${esc(c.name)}</h1>
+    ${c.voice?`<div class="voicetag" style="background:${col}">${esc(c.voice)}</div>`:''}
+    <div class="fsub">in <span class="lnk" onclick="openOpera('${escA(c.opera)}')"><b>${esc(c.opera)}</b></span> · ${esc(c.composer)}${c.year?' · '+c.year:''}</div>
+    ${c.desc?`<div class="fdesc">${esc(c.desc)}</div>`:''}
+    <div class="krow">
+      ${c.opera_category?`<span class="chip">${esc(c.opera_category)}</span>`:''}
+      ${c.premiere?`<span class="chip">created by <b>${esc(c.premiere)}</b></span>`:''}
+    </div>
+    ${others.length?`<div class="section"><div class="ttl">The same character elsewhere</div>${
+      others.map(o=>`<div class="rel-item" data-id="${o.id}"><span class="rt"><b>${esc(o.opera)}</b> · ${esc(o.composer)}</span><span class="why">${esc(o.voice||'')}</span></div>`).join('')}</div>`:''}
+    ${same.length?`<div class="section"><div class="ttl">Others on stage in ${esc(c.opera)}</div>${
+      same.map(o=>`<div class="rel-item" data-id="${o.id}"><span class="rt">${esc(o.name)}</span><span class="why" style="color:${VC[o.voice]||'#a99b87'}">${esc(o.voice||'')}</span></div>`).join('')}</div>`:''}
+    <span class="attr">Characters & voice types from Wikipedia · CC BY-SA</span>`;
+  $('#ficha').querySelectorAll('.rel-item').forEach(el=>el.onclick=()=>selectChar(+el.dataset.id));
+}
+
+function draw(){
+  F.q=$('#q').value.toLowerCase().trim();
+  renderVF();
+  let list=DATA.filter(match).sort(SORTS[F.sort]||SORTS.notable);
+  $('#count').textContent=`${list.length} characters`+(list.length<DATA.length?` (of ${DATA.length})`:'');
+  $('#list').innerHTML=list.slice(0,500).map(c=>`
+    <div class="row ${sel===c.id?'sel':''}" data-id="${c.id}">
+      <span class="dot" style="background:${VC[c.voice]||'#8a9096'}"></span>
+      <div style="min-width:0"><div class="t">${esc(c.name)}</div><div class="c">${esc(c.opera)} · ${esc(c.composer)}</div></div>
+    </div>`).join('');
+  $('#list').querySelectorAll('.row').forEach(r=>r.onclick=()=>selectChar(+r.dataset.id));
+}
+$('#q').oninput=draw;
+$('#mainToggle').onclick=()=>{F.main=!F.main;$('#mainToggle').classList.toggle('on',F.main);draw();};
+$('#sortSel').onchange=e=>{F.sort=e.target.value;draw();};
+
+fetch('characters.json').then(r=>r.json()).then(d=>{
+  DATA=d; draw();
+  const params=new URLSearchParams(location.search);
+  const pv=params.get('voice'); if(pv){F.voice=pv;}
+  const pc=params.get('char');
+  if(pc){const c=DATA.find(x=>x.name===pc);if(c)selectChar(c.id);}
+  draw();
+}).catch(e=>{$('#count').textContent='Error loading characters.json — '+e;});
+$('.brand').addEventListener('click',()=>location.href='index.html');
+</script>
+<script>/* master-logo-js */(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function initAll(){document.querySelectorAll('.marca').forEach(function(m){
+    if(m.dataset.mi) return; m.dataset.mi='1';
+    var oa=m.querySelector('.oa'), sp=m.querySelector('.sp'); if(!oa||!sp) return;
+    var measure=function(){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');};
+    measure(); addEventListener('resize',measure);
+    if(reduce){m.classList.add('on');}
+    else{requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(function(){m.classList.add('on');},650);});});}
+  });}
+  initAll(); if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){
+    document.querySelectorAll('.marca').forEach(function(m){var oa=m.querySelector('.oa'),sp=m.querySelector('.sp');if(oa&&sp){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');}});});}
+})();</script>
+</body>
+</html>

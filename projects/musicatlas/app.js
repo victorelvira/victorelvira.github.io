@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.53.0";
-const BUILD_AT = "2026-09-15 23:38";
+const DATA_V = "0.55.5";
+const BUILD_AT = "2026-09-16 21:57";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
@@ -167,9 +167,24 @@ const ENHARM={Gb:"F#","C#":"Db","D#":"Eb","A#":"Bb","G#":"Ab",Cb:"B",Fb:"E","E#"
 function keyParts(k){ if(!k||k==="various") return null;
   const m=String(k).match(/^([A-G][b#]?)\s+(major|minor)$/);
   return m?{tonic:ENHARM[m[1]]||m[1],mode:m[2]}:null; }
+/* EL COLOR ES LA ARMADURA, NO LA TÓNICA. La menor toma el tono de su relativa mayor
+   (la menor con do mayor, mi menor con sol), porque comparten armadura y así las ve un
+   músico. Antes la menor tomaba el de su propia tónica, y en la rueda quedaban pegadas
+   dos cuñas de colores que no tenían nada que ver. 2026-09-16. */
 function keyColour(k){ const p=keyParts(k); if(!p) return "#e8e2d8";
-  const h=(FIFTHS.indexOf(p.tonic)*30+18+360)%360;
-  return p.mode==="major"?`hsl(${h} 46% 74%)`:`hsl(${h} 40% 52%)`; }
+  const i=FIFTHS.indexOf(p.tonic), pos=p.mode==="minor"?(i+9)%12:i;
+  const h=(pos*30+18+360)%360;
+  return p.mode==="major"?`hsl(${h} 50% 70%)`:`hsl(${h} 42% 50%)`; }
+/* Como lo escribe un músico: B♭, F♯, y la menor con la tónica que se usa de verdad
+   (do♯ menor, no re♭ menor), que en los datos está plegada a una sola grafía. */
+const KEY_SHOW_MAJ={Db:"D♭",Ab:"A♭",Eb:"E♭",Bb:"B♭","F#":"F♯"};
+const KEY_SHOW_MIN={Db:"C♯",Ab:"G♯",Eb:"E♭",Bb:"B♭","F#":"F♯"};
+const keyShow=(t,mode)=>mode==="minor"?(KEY_SHOW_MIN[t]||t):(KEY_SHOW_MAJ[t]||t);
+/* El ♭ y el ♯ no existen en la serif de la casa, y el navegador los tomaba de otra fuente
+   con un hueco delante ("B ♭"). Van en su propio tspan/span, con una fuente que sí los
+   tiene y pegados a la letra. */
+const accSvg=s2=>esc(s2).replace(/([♭♯])/g,'<tspan class="acc">$1</tspan>');
+const accHtml=s2=>esc(s2).replace(/([♭♯])/g,'<span class="acc">$1</span>');
 
 /* ---------- catalogue numbers, written as a musician writes them ---------- */
 const CATNAME={opus:"Op.",brown:"B.",chominski:"C.",kobylanska:"KK",wn:"WN",bwv:"BWV",
@@ -332,6 +347,7 @@ const FACETS=[
     if(w.versions) o.push("more than one version");
     if(isUntitled(w)) o.push("no title anywhere");
     if(w.nk) o.push("a name and nothing else");
+    if(w.ae) o.push("attributed elsewhere");
     if((F(w,"date_composed")||{}).suspect) o.push("date outside the composer's life");
     return o}}
 ];
@@ -721,7 +737,7 @@ function scoreCell(w){
 function audioCell(w){
   const here=(w.au||0)+(w.ar||0), off=(w.media||{}).free_recordings||0, bits=[];
   if(here) bits.push(`<button class="play" data-play="${esc(w.id)}"
-    title="${here} recording${here>1?"s":""} you can play here">▶${here}</button>`);
+    title="${here} recording${here>1?"s":""} you can play here"><span class="pi">▶</span><span class="pn">${here}</span></button>`);
   const u=SRC_URL.imslp(w);
   if(off && u) bits.push(`<a class="offsite" href="${u}" target="_blank" rel="noopener"
     onclick="event.stopPropagation()"
@@ -932,7 +948,6 @@ function renderMapNow(host){
    Added, because the subject earns it: the life drawn as a pale bar behind. */
 const TL_MODES = [["composer","By composer"],["period","By period"],
                   ["family","By kind"],["all","All together"]];
-const ROW_H = 34;
 
 function renderTimeline(host){
   const pool=WORKS.filter(w=>isWork(w)&&(state.comp.size===0||w.composer_slugs.some(s2=>state.comp.has(s2)))
@@ -957,10 +972,20 @@ function renderTimeline(host){
 
   const total=m=>[...m.values()].reduce((a,b)=>a+b,0);
   const years=[...byGroup.values()].flatMap(m=>[...m.keys()]);
-  const lo=Math.min(...years)-2, hi=Math.max(...years)+2;
+  /* El eje cubre también las VIDAS, no solo los años con obra. Buxtehude nació en 1637 y
+     su primera obra fechada es de 1680: con el eje empezando en las obras, su banda de
+     vida arrancaba a la izquierda del eje y se pintaba encima de su nombre. */
+  const lives=state.tlMode==="composer"
+    ? [...byGroup.keys()].map(compOf).flatMap(c=>[c.born,c.died]).filter(Boolean) : [];
+  const lo=Math.min(...years,...lives)-2, hi=Math.max(...years,...lives)+2;
   const LEFT=state.tlMode==="composer"?226:150;
+  /* LA ALTURA DE FILA DEPENDE DE CUÁNTAS FILAS HAY. Con 31 compositores 34 px es lo que
+     cabe; con cuatro periodos o con "todos juntos" era el mismo listón de 34 px en medio
+     de un panel vacío, y una sola barra de Bach en 1725 medía 22 px. Ahora una vista de
+     pocas filas crece hasta parecer lo que es, un perfil de la producción. 2026-09-16. */
+  const rowH = byGroup.size===1 ? 190 : byGroup.size<=5 ? 78 : byGroup.size<=12 ? 46 : 38;
   const avail=Math.max(520,(host.clientWidth||host.parentElement.clientWidth||900)-8);
-  const W=Math.round(LEFT+(avail-LEFT)*state.tlZoom), H=byGroup.size*ROW_H+46;
+  const W=Math.round(LEFT+(avail-LEFT)*state.tlZoom), H=byGroup.size*rowH+46;
   const x=y=>LEFT+((y-lo)/(hi-lo))*(W-LEFT-26);
   const bw=Math.max(1.6,Math.min(14,(W-LEFT-26)/(hi-lo)*0.82));
 
@@ -979,10 +1004,12 @@ function renderTimeline(host){
       <text class="tick" x="${x(yy).toFixed(1)}" y="16" text-anchor="middle">${yy}</text>`);
 
   const rows=order.map((g,i)=>{
-    const base=34+i*ROW_H+ROW_H-14, maxH=ROW_H-12;
+    const base=34+i*rowH+rowH-12, maxH=rowH-12;
     const c=state.tlMode==="composer"?compOf(g):null;
     const label=c?c.name:(g==="all"?"every composer":g);
-    const life=c&&c.born?`<line class="life" x1="${x(c.born).toFixed(1)}" y1="${base-3}" x2="${x(c.died||c.born).toFixed(1)}" y2="${base-3}" stroke="${compColour(g)}"/>`:"";
+    // la vida, como una banda bajo las barras: las barras se leen como lo escrito DENTRO de ella
+    const life=c&&c.born?`<rect class="life" x="${x(c.born).toFixed(1)}" y="${(base-2).toFixed(1)}"
+      width="${Math.max(2,x(c.died||c.born)-x(c.born)).toFixed(1)}" height="7" rx="3.5" fill="${compColour(g)}"/>`:"";
     const bars=[...byGroup.get(g).entries()].sort((a,b)=>a[0]-b[0]).map(([yy,per])=>{
       // Square root, not linear. Bach's 245 works in 1725 against Chopin's typical
       // eight flattened every other row to a hairline: true to the numbers, useless
@@ -1015,26 +1042,63 @@ function renderTimeline(host){
 
 
 function renderFifths(host){
-  const counts={};
+  /* EL CÍRCULO DE QUINTAS COMO LO DIBUJA UN MÚSICO.
+     Fuera las mayores, dentro su RELATIVA menor (do mayor sobre la menor), que es lo que
+     significa el diagrama: vecinas que comparten armadura. La versión anterior ponía
+     dentro la menor de la misma tónica (do mayor sobre do menor), que no es un círculo de
+     quintas sino dos pegados. Y a su lado, las tonalidades más escritas, porque una rueda
+     dice dónde hay mucho pero no cuánto, y "¿cuál es la tonalidad favorita de Mozart?" es
+     la pregunta que la gente trae. 2026-09-16. */
+  const counts={}; let keyed=0, pool=0;
   WORKS.filter(w=>isWork(w)&&(state.comp.size===0||w.composer_slugs.some(s2=>state.comp.has(s2))))
-    .forEach(w=>{const p=keyParts(val(w,"key"));
-      if(p) counts[p.tonic+"|"+p.mode]=(counts[p.tonic+"|"+p.mode]||0)+1;});
+    .forEach(w=>{ pool++; const p=keyParts(val(w,"key"));
+      if(p){ counts[p.tonic+"|"+p.mode]=(counts[p.tonic+"|"+p.mode]||0)+1; keyed++; }});
   const max=Math.max(1,...Object.values(counts));
-  const cx=280,cy=270,R=[[112,168],[60,108]],segs=[];
-  FIFTHS.forEach((t,i)=>["major","minor"].forEach((mode,ring)=>{
-    const n=counts[t+"|"+mode]||0, a0=(i*30-105)*Math.PI/180, a1=(i*30-75)*Math.PI/180, [r0,r1]=R[ring];
-    const on=state.f.key&&state.f.key.has(t+" "+mode);
-    const P=(r,a)=>`${(cx+r*Math.cos(a)).toFixed(1)} ${(cy+r*Math.sin(a)).toFixed(1)}`;
-    const am=(a0+a1)/2, tr=(r0+r1)/2;
-    segs.push(`<path class="seg" d="M${P(r0,a0)}A${r0} ${r0} 0 0 1 ${P(r0,a1)}L${P(r1,a1)}A${r1} ${r1} 0 0 0 ${P(r1,a0)}Z"
-      fill="${n?keyColour(t+" "+mode):"#f0ebe3"}" fill-opacity="${n?(0.3+0.7*n/max).toFixed(2):1}"
-      stroke="${on?"#241a12":"rgba(0,0,0,.08)"}" stroke-width="${on?2:1}" data-key="${t} ${mode}">
-      <title>${t} ${mode}, ${n} works</title></path>
-      <text x="${cx+tr*Math.cos(am)}" y="${cy+tr*Math.sin(am)-1}" text-anchor="middle">${t}${mode==="minor"?"m":""}</text>
-      <text class="cnt" x="${cx+tr*Math.cos(am)}" y="${cy+tr*Math.sin(am)+8}" text-anchor="middle">${n||""}</text>`);
-  }));
-  host.innerHTML=`<svg id="fifths" viewBox="95 85 370 370">${segs.join("")}</svg>
-    <p class="hint">outer ring major · inner minor · click a wedge to keep only that key</p>`;
+  const cx=0, cy=0, RMAJ=[128,204], RMIN=[62,124], segs=[];
+  const P=(r,a)=>`${(cx+r*Math.cos(a)).toFixed(1)} ${(cy+r*Math.sin(a)).toFixed(1)}`;
+  const wedge=(tonic,mode,i,[r0,r1],big)=>{
+    const n=counts[tonic+"|"+mode]||0, a0=(i*30-105)*Math.PI/180, a1=(i*30-75)*Math.PI/180;
+    const on=state.f.key&&state.f.key.has(tonic+" "+mode), am=(a0+a1)/2, tr=(r0+r1)/2;
+    // raíz cuadrada, igual que la línea de tiempo: re mayor con 918 no deja en blanco al resto
+    const op=n?(0.22+0.78*Math.sqrt(n/max)).toFixed(2):1;
+    const lx=cx+tr*Math.cos(am), ly=cy+tr*Math.sin(am);
+    return `<path class="seg${on?" on":""}" d="M${P(r0,a0)}A${r0} ${r0} 0 0 1 ${P(r0,a1)}L${P(r1,a1)}A${r1} ${r1} 0 0 0 ${P(r1,a0)}Z"
+      fill="${n?keyColour(tonic+" "+mode):"#f3eee6"}" fill-opacity="${op}" data-key="${tonic} ${mode}">
+      <title>${keyShow(tonic,mode)} ${mode}, ${n} works</title></path>
+      <text class="kl${big?" big":""}" x="${lx.toFixed(1)}" y="${(ly-(big?2:1)).toFixed(1)}" text-anchor="middle">${
+        accSvg(mode==="minor"?keyShow(tonic,mode).toLowerCase():keyShow(tonic,mode))}</text>
+      <text class="cnt" x="${lx.toFixed(1)}" y="${(ly+(big?15:12)).toFixed(1)}" text-anchor="middle">${n||""}</text>`;
+  };
+  FIFTHS.forEach((t,i)=>{
+    segs.push(wedge(t,"major",i,RMAJ,true));
+    segs.push(wedge(FIFTHS[(i+3)%12],"minor",i,RMIN,false));   // su relativa: C -> a
+  });
+  const maj=Object.entries(counts).filter(([k])=>k.endsWith("|major")).reduce((a,[,n])=>a+n,0);
+  const top=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  const rank=top.map(([k,n])=>{ const [t,mode]=k.split("|"), key=t+" "+mode;
+    const on=state.f.key&&state.f.key.has(key);
+    return `<button class="krow seg${on?" on":""}" data-key="${esc(key)}">
+      <span class="kname">${accHtml(keyShow(t,mode))} <i>${mode}</i></span>
+      <span class="kbar"><span style="width:${(100*n/top[0][1]).toFixed(1)}%;background:${keyColour(key)}"></span></span>
+      <span class="kn">${n}</span></button>`; }).join("");
+
+  host.innerHTML=`<div class="fifths-wrap">
+      <svg id="fifths" viewBox="-214 -214 428 428" role="img" aria-label="Circle of fifths">
+        ${segs.join("")}
+        <circle class="hub" cx="0" cy="0" r="58"/>
+        <text class="hubn" x="0" y="4" text-anchor="middle">${keyed.toLocaleString("en")}</text>
+        <text class="hubl" x="0" y="22" text-anchor="middle">works with a key</text>
+      </svg>
+      <div class="krank">
+        <h4>The keys they wrote in most</h4>
+        ${rank}
+        <p class="kfoot"><b>${keyed?Math.round(100*maj/keyed):0}%</b> major ·
+          <b>${keyed?100-Math.round(100*maj/keyed):0}%</b> minor ·
+          ${(pool-keyed).toLocaleString("en")} with no key</p>
+      </div>
+    </div>
+    <p class="hint">outside, the major keys round the circle of fifths · inside, each one's relative minor ·
+      click a wedge or a bar to keep only that key</p>`;
 }
 
 /* BIPARTITE, not radial. With four composers a ring round a single hub read fine;
@@ -1330,6 +1394,12 @@ function drawRec(row){
      ${w.premiere_place?`<p class="premiere">first heard at <b>${esc(w.premiere_place.v)}</b>
        <a href="${esc(w.premiere_place.article||"")}" target="_blank" rel="noopener"
           title="from the Wikipedia list of this composer's compositions">↗</a></p>`:""}
+     ${w.attributed_to?`<p class="reattr"><b>${t("IMSLP attributes this to")}
+        ${esc(w.attributed_to.who)}.</b> ${t("It sits under")}
+        ${esc(c.name||w.composer)} ${t("here because that is where the source filed it.")}
+        <a href="${esc(w.attributed_to.url)}" target="_blank" rel="noopener"
+           onclick="event.stopPropagation()">${t("the page it now points at")} ↗</a>
+        <span class="why">${t("Nothing has been removed: the two attributions are both on record and this is the disagreement, said out loud.")}</span></p>`:""}
      ${parent?`<p class="inpart">part of <button data-goto="${esc(parent.id)}">${titleOf(parent)}</button></p>`:""}
      ${vers?`<p class="vers">More than one version on record: ${vers}</p>`:""}
      ${w.joined_by?`<p class="joined">Two sources were joined here. ${esc(w.joined_by)}</p>`:""}
@@ -1691,6 +1761,7 @@ let BACK = false;                  // mientras el navegador nos mueve, no escrib
 function hashNow(){
   const p=[state.lens];
   if(state.sub!=="works") p.push("sub="+state.sub);
+  if(state.lens==="time" && state.tlMode!=="composer") p.push("tl="+state.tlMode);
   if(state.comp.size) p.push("c="+[...state.comp].join(","));
   if(state.q) p.push("q="+encodeURIComponent(state.q));
   Object.entries(state.f).forEach(([k,s])=>{ if(s&&s.size) p.push(k+"="+[...s].join(",")); });
@@ -1729,6 +1800,7 @@ function readHash(){
                     document.getElementById("q").value=m[2]; }
     else if(m[1]==="c") state.comp=new Set(m[2].split(","));
     else if(m[1]==="sub") state.sub=m[2];
+    else if(m[1]==="tl"){ if(TL_MODES.some(([k])=>k===m[2])) state.tlMode=m[2]; }
     else if(m[1]==="w") state.sel=m[2];
     else if(m[1]==="p") state.person=m[2];
     else state.f[m[1]]=new Set(m[2].split(","));

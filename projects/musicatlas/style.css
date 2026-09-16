@@ -212,10 +212,17 @@ table.cat tbody tr.sel{background:var(--sand)}
 .c-media a{color:var(--accent);text-decoration:none}
 .c-media a:hover{text-decoration:underline}
 .c-media b{color:var(--accent)}
-.c-media .play{border:0;background:var(--sand);color:var(--hot);border-radius:999px;
-  width:19px;height:19px;line-height:1;font-size:11px;cursor:pointer;padding:0;margin-right:5px;
-  border:1px solid var(--sand-line);vertical-align:-2px}
-.c-media .play:hover{background:var(--hot);color:#fff}
+/* El ▶ va FUERA del círculo y el círculo abraza solo el número. Antes era un círculo fijo
+   de 19 px con "▶12" dentro, y con dos cifras el texto se salía por los lados (Víctor,
+   2026-09-16). Ahora el número vive en una píldora con ancho mínimo de círculo, que crece
+   lo que haga falta: una cifra sigue siendo un círculo, dos son una píldora. */
+.c-media .play{border:0;background:none;color:var(--hot);cursor:pointer;padding:0;margin-right:5px;
+  display:inline-flex;align-items:center;gap:3px;font:inherit;line-height:1;vertical-align:-2px}
+.c-media .play .pi{font-size:9px}
+.c-media .play .pn{display:inline-block;min-width:19px;height:19px;line-height:17px;padding:0 5px;
+  box-sizing:border-box;text-align:center;border-radius:999px;background:var(--sand);
+  border:1px solid var(--sand-line);font-size:11px;font-variant-numeric:tabular-nums}
+.c-media .play:hover .pn{background:var(--hot);border-color:var(--hot);color:#fff}
 .dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 .sw{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:-1px;
   border:1px solid rgba(0,0,0,.12)}
@@ -227,10 +234,37 @@ tr.part .c-title{padding-left:24px;font-size:12px}
 #more{display:block;margin:16px auto;padding:7px 18px;border:1px solid var(--line);background:#fff;
   border-radius:8px;cursor:pointer;font:inherit;font-size:13px;color:var(--ink)}
 
-#fifths{display:block;margin:0 auto;max-width:300px}
-#fifths .seg{cursor:pointer} #fifths .seg:hover{filter:brightness(1.06)}
-#fifths text{font-size:9px;fill:var(--ink);pointer-events:none;font-variant-numeric:tabular-nums}
-#fifths .cnt{font-size:7px;fill:var(--faint)}
+/* la rueda y su ranking, lado a lado; en móvil se apilan */
+.fifths-wrap{display:flex;gap:40px;align-items:center;justify-content:center;flex-wrap:wrap;
+  padding:14px 8px 4px}
+#fifths{display:block;width:min(430px,88vw);height:auto;flex:0 0 auto}
+#fifths .seg{cursor:pointer;stroke:#fbf8f3;stroke-width:1.6;transition:filter .12s}
+#fifths .seg:hover{filter:brightness(1.07) saturate(1.1)}
+#fifths .seg.on{stroke:var(--ink);stroke-width:2.6}
+#fifths text{pointer-events:none;font-variant-numeric:tabular-nums}
+#fifths .kl{font:600 12px/1 var(--serif);fill:#2b231b}
+#fifths .kl.big{font-size:17px}
+#fifths .acc,.krank .acc{font-family:"Apple Symbols","Segoe UI Symbol","Noto Music",system-ui,sans-serif;font-weight:400}
+#fifths .acc{font-size:.92em}
+.krank .acc{margin-left:1px}
+#fifths .cnt{font:500 9.5px/1 system-ui,-apple-system,sans-serif;fill:#2b231b;opacity:.62}
+#fifths .hub{fill:#fbf8f3;stroke:var(--line);stroke-width:1}
+#fifths .hubn{font:600 21px/1 var(--serif);fill:var(--ink)}
+#fifths .hubl{font:9px/1 system-ui,-apple-system,sans-serif;fill:var(--faint);letter-spacing:.04em}
+.krank{width:min(340px,88vw);flex:0 0 auto}
+.krank h4{margin:0 0 10px;font:600 9.5px/1 system-ui,-apple-system,sans-serif;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--faint)}
+.krank .krow{display:grid;grid-template-columns:96px 1fr 40px;align-items:center;gap:10px;width:100%;
+  border:0;background:none;padding:4px 6px;margin:0 -6px;border-radius:6px;cursor:pointer;font:inherit;text-align:left}
+.krank .krow:hover{background:var(--sand)}
+.krank .krow.on{background:var(--sand);box-shadow:inset 0 0 0 1px var(--sand-line)}
+.krank .kname{font:600 14px/1.2 var(--serif);color:var(--ink);white-space:nowrap}
+.krank .kname i{font:italic 400 12px var(--serif);color:var(--muted)}
+.krank .kbar{height:9px;border-radius:999px;background:#f1ebe2;overflow:hidden}
+.krank .kbar span{display:block;height:100%;border-radius:999px}
+.krank .kn{font-size:12px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.krank .kfoot{margin:12px 0 0;font-size:12px;color:var(--muted)}
+.krank .kfoot b{color:var(--ink);font-variant-numeric:tabular-nums}
 #graph{display:block;margin:0 auto;max-width:720px}
 #graph .edge{stroke:var(--faint);fill:none;opacity:.4}
 #graph .edge.hot{stroke:var(--accent);opacity:1;stroke-width:1.5}
@@ -243,11 +277,11 @@ tr.part .c-title{padding-left:24px;font-size:12px}
 #tl-modes button+button{border-left:1px solid var(--line)}
 #tl-modes button[aria-pressed=true]{background:var(--hot);color:#fff;font-weight:600}
 .tlscroll{overflow-x:auto;max-height:46vh;overflow-y:auto}
-#timeline .grid{stroke:var(--line2);stroke-width:1}
-#timeline .tick{font-size:10px;fill:var(--faint);font-variant-numeric:tabular-nums}
-#timeline .tlab{font-size:11.5px;fill:var(--ink)}
-#timeline .life{stroke-width:7;opacity:.13;stroke-linecap:round}
-#timeline .axis{stroke:var(--line);stroke-width:1}
+#timeline .grid{stroke:var(--line2);stroke-width:1;stroke-dasharray:2 4}
+#timeline .tick{font-size:10.5px;fill:var(--faint);font-variant-numeric:tabular-nums}
+#timeline .tlab{font:13px var(--serif);fill:var(--ink)}
+#timeline .life{opacity:.24}
+#timeline .axis{stroke:var(--line2);stroke-width:1}
 #timeline .tbar{cursor:pointer}
 #timeline .tbar:hover rect{opacity:.72}
 #timeline .tbar:hover .hit{opacity:1;fill:rgba(0,0,0,.045)}
@@ -683,3 +717,16 @@ body.lens-game #instrument{flex:1;min-height:0;overflow-y:auto}
   border-radius:999px;background:var(--sand-line);color:var(--hot);font-size:9.5px;
   font-weight:700}
 #facets .axis.open.has .n{background:rgba(255,255,255,.28);color:#fff}
+
+/* LA REATRIBUCIÓN SE DICE, NO SE ESCONDE.
+   170 obras tienen una página de IMSLP que redirige a la de otro compositor: el
+   Magnificat BWV Anh.21 "de Bach" a Melchior Hoffmann, los cuartetos op. 3 "de Haydn" a
+   Roman Hoffstetter. Hasta hoy no se veía por ningún lado. No es un error ni una alarma:
+   es un desacuerdo entre fuentes, que es de lo que va este atlas, así que se dibuja como
+   un dato y no como un warning rojo. 2026-09-16. */
+.reattr{margin:10px 0 0;padding:9px 11px;border-left:3px solid var(--maj,#b08a3c);
+  background:var(--soft,#faf8f4);font-size:12.5px;line-height:1.5;color:var(--muted)}
+.reattr b{color:var(--ink)}
+.reattr a{color:var(--accent)}
+.reattr .why{display:block;margin-top:4px;color:var(--faint);font-size:11px;font-style:italic}
+

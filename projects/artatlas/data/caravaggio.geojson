@@ -2302,7 +2302,7 @@
     "country": "Italy",
     "location": "Palazzo Barberini",
     "kind": "museum",
-    "attribution": "disputed",
+    "attribution": "generally accepted",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "145 × 195 cm",
@@ -2325,9 +2325,10 @@
     },
     "_overrides": {
      "attribution": {
-      "at": "2026-08-18",
-      "source": "Wikipedia: List of paintings by Caravaggio (2026), Notes column",
-      "note": "'Disputed attribution. Also attributed to Louis Finson.' (Toulouse Judith)"
+      "at": "2026-09-16",
+      "source": "correction of the 2026-08-18 entry for Q2470123 (Víctor noticed the Judith was missing)",
+      "was": "disputed",
+      "note": "The 2026-08-18 entry put the dispute of the OTHER 'Judith Beheading Holofernes' (1607, the Toulouse Judith, J. Tomilson Hill collection, Wikidata Q64869205, 'also attributed to Louis Finson') on the Barberini Judith (Q2470123, Galleria Nazionale d'Arte Antica, c. 1599), because the two share a title. The Barberini Judith is not disputed."
      },
      "creation": {
       "at": "2026-08-23",

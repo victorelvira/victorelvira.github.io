@@ -93,8 +93,8 @@ const PAINTERS = [
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.12.22";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-16 02:27";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.12.29";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-16 22:13";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -258,6 +258,118 @@ function setLang(lang, opts) {
     if (b) setLang(b.dataset.lang);
   });
 })();
+// ── Mis cuadros: favourites (♥) and seen paintings ──
+// For EVERY reader, kept only in their own browser (localStorage): nothing is sent anywhere, so the atlas stores
+// no one's data (Víctor, 2026-09-16: "the simplest, and the fewest legal problems"). A list travels between
+// devices as a link (?mis=…, the favourites) or a file (everything). In a browser that holds Víctor's key (typed
+// once after opening ?yo, forgotten with ?yo=off) the same list ALSO syncs with his Google Sheet
+// (tools/mis_cuadros/): the sheet is the truth there, and a queue keeps actions until the sheet confirms them.
+const ME_ENDPOINT = "";   // the /exec URL of the Apps Script web app, once Víctor has deployed it
+const me = { key: null, fav: new Set(), seen: new Set(), queue: [] };
+function lsGet(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } }
+function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* private mode */ } }
+(function initMe() {
+  // `?yo` asks for the key in a box, so it never sits in the address or the browser history; `?yo=off` forgets it
+  const sp = new URLSearchParams(location.search);
+  if (sp.has("yo")) {
+    const yo = sp.get("yo");
+    if (yo === "off") lsSet("atlasMeKey", null);
+    else {
+      const k = (window.prompt("Mis cuadros: pega tu clave") || "").trim();
+      if (k.length >= 24) { lsSet("atlasMeKey", k); lsSet("atlasMeUpload", true); }   // first sync sends what this browser already had
+    }
+  }
+  me.key = lsGet("atlasMeKey", null);
+  const c = lsGet("atlasMeCache", {});
+  me.fav = new Set(c.fav || []); me.seen = new Set(c.seen || []); me.queue = lsGet("atlasMeQueue", []);
+})();
+const meOn = () => true;                      // the list itself: every reader
+const meSync = () => !!(me.key && ME_ENDPOINT);  // the sheet: only Víctor's browsers
+function workId(p) { return p.qid || `${p.painter}|${p.title}|${p.museum_id || p.location || ""}`; }
+// A list must survive the atlas changing under it. A QID never changes; the fallback id of a work without one
+// does, when the work later gains a QID (534 did on 2026-09-16) or its museum is renamed. So, once the works are
+// loaded, every saved id that no longer matches a work is looked up by what it was made of: painter + title +
+// museum first, then painter + title if that names a single work, and rewritten to the work's id today. An id
+// that still matches nothing is KEPT, never dropped: the work may come back.
+function meRemap() {
+  if (!me.fav.size && !me.seen.size) return;
+  const now = new Set(), full = new Map(), loose = new Map();
+  for (const w of works) {
+    const p = w.p, id = workId(p); now.add(id);
+    full.set(`${p.painter}|${p.title}|${p.museum_id || p.location || ""}`, id);
+    const k = `${p.painter}|${p.title}`; loose.set(k, loose.has(k) && loose.get(k) !== id ? null : id);
+  }
+  let moved = 0;
+  const fix = set => new Set([...set].map(id => {
+    if (now.has(id) || /^Q\d+$/.test(id)) return id;
+    const parts = id.split("|"), hit = full.get(id) || loose.get(`${parts[0]}|${parts[1]}`);
+    if (hit) { moved++; return hit; }
+    return id;
+  }));
+  me.fav = fix(me.fav); me.seen = fix(me.seen);
+  if (moved) meSave();
+}
+function meSave() { lsSet("atlasMeCache", { fav: [...me.fav], seen: [...me.seen] }); lsSet("atlasMeQueue", me.queue); }
+function meOk(p) {
+  if (!state.me || !meOn()) return true;
+  const id = workId(p);
+  return state.me === "fav" ? me.fav.has(id) : state.me === "seen" ? me.seen.has(id) : !me.seen.has(id);
+}
+async function meCall(params) {
+  if (!ME_ENDPOINT || !me.key) return null;
+  const url = ME_ENDPOINT + "?" + new URLSearchParams({ key: me.key, ...params });
+  try { const r = await fetch(url, { redirect: "follow" }); return r.ok ? await r.json() : null; } catch (e) { return null; }
+}
+let meFlushing = false;
+async function meFlush() {                 // send queued actions in order; keep any the sheet did not confirm
+  if (meFlushing || !ME_ENDPOINT) return;
+  meFlushing = true;
+  try {
+    while (me.queue.length) {
+      const res = await meCall(me.queue[0]);
+      if (!res || !res.ok) break;
+      me.queue.shift(); meSave();
+    }
+  } finally { meFlushing = false; }
+}
+async function meLoad() {
+  if (!meSync()) return;
+  if (lsGet("atlasMeUpload", false)) {        // a key just typed: what this browser had joins the sheet first
+    for (const id of me.fav) me.queue.push({ action: "fav", id, label: "" });
+    for (const id of me.seen) me.queue.push({ action: "seen", id, label: "" });
+    lsSet("atlasMeUpload", false); meSave();
+  }
+  await meFlush();
+  const res = await meCall({ action: "list" });
+  if (res && res.ok) {
+    me.fav = new Set(res.fav); me.seen = new Set(res.seen);
+    for (const a of me.queue) {             // actions still on their way count already
+      if (a.action === "fav") me.fav.add(a.id); else if (a.action === "unfav") me.fav.delete(a.id); else me.seen.add(a.id);
+    }
+    meSave(); if (typeof refresh === "function" && places.length) refresh();
+  }
+}
+function meDo(action, p) {
+  const id = workId(p);
+  if (action === "fav") me.fav.add(id); else if (action === "unfav") me.fav.delete(id);
+  else { if (me.seen.has(id)) return; me.seen.add(id); }
+  if (me.key) me.queue.push({ action, id, label: `${p.painter} · ${p.title}` });
+  meSave(); meFlush();
+}
+function favMark(p) { return me.fav.has(workId(p)) ? ` <span class="fav-mark" aria-label="♥">♥</span>` : ""; }
+// moving a list between devices: a link carries the favourites (QIDs, which is nearly all of them), a file
+// carries everything. Importing adds to the list, it never removes.
+function meLink() {
+  const q = [...me.fav].filter(id => /^Q\d+$/.test(id)).map(id => id.slice(1));
+  return location.origin + location.pathname + "?mis=" + q.join(".");
+}
+function meImport(fav, seen) {
+  let n = 0;
+  for (const id of fav || []) if (!me.fav.has(id)) { me.fav.add(id); n++; if (me.key) me.queue.push({ action: "fav", id, label: "" }); }
+  for (const id of seen || []) if (!me.seen.has(id)) { me.seen.add(id); if (me.key) me.queue.push({ action: "seen", id, label: "" }); }
+  meSave(); meFlush(); return n;
+}
+
 // ── the back button undoes the last step instead of leaving the atlas ──
 // Batalla de Flores learned it in the street: plenty of people navigate ONLY with the back button,
 // and every URL change here used replaceState, so "back" threw them out of the site after one
@@ -560,7 +672,7 @@ let panelVis = [];   // works currently listed in the panel
 // different questions — "where can I see it?" and "what is it?" — so two different sets of chips.
 const state = { mode: "current", museum: true, church: true, private: true, public: true,
                 painting: true, sculpture: true,
-                acceptedOnly: true, museumFilter: null, place: null, near: null, q: "",
+                acceptedOnly: true, museumFilter: null, place: null, me: "", near: null, q: "",
                 yearMin: -Infinity, yearMax: Infinity, painters: {} };
 
 // museum index (derived from the works): each venue with its painters + work count
@@ -641,7 +753,7 @@ function passesAll(p) {
   const painterOk = state.painters[p.painter] !== false;
   const attrOk = !state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution);
   const museumOk = !state.museumFilter || museumKey(p) === state.museumFilter;
-  return painterOk && kindOk && formOk && attrOk && museumOk && placeOk(p) && inYear(p) && matchesQ(p);
+  return painterOk && kindOk && formOk && attrOk && museumOk && placeOk(p) && meOk(p) && inYear(p) && matchesQ(p);
 }
 // active coordinate per map: current location, or where it was painted (map 2)
 function activeCoord(f) {
@@ -784,7 +896,7 @@ function placePopup(feats) {
       ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}" ${capAttrs(p, p0.location || "")} alt="" loading="lazy">`
       : `<span class="th ph"></span>`;
     return `<li class="pop-work" data-i="${i}">${thumb}<div class="wk">` +
-      `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${yr}${modelTag(p)}${att}${st}</div>` +
+      `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${favMark(p)}${mtMark(p)}${yr}${modelTag(p)}${att}${st}</div>` +
       `<div class="by">${painterTag(p)}</div>` +
       `${factsRow}${desc}<div class="lk">${linksRow(p)}</div>` +
       `${provLine(p, WORK_SKIP)}</div></li>`;
@@ -886,6 +998,7 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
     applyHash();                       // #caravaggio or #leonardo/painted → preset
     if (applyPainterParam()) { updatePainterBtn(); renderPainterList(); }   // ?p=munch,goya wins over the hash
     buildMarkers();
+    meRemap();                         // saved favourites follow works whose id changed since
     hist.restoring = true;             // arriving on an address is not a step
     try {
       deepLink();                        // ?w=<qid> opens that painting's ficha; ?m=<id> its museum
@@ -1201,6 +1314,17 @@ function goFrom(el) {
   else if (el.dataset.goCity) { const [city, country = ""] = el.dataset.goCity.split("|"); goPlace({ kind: "city", city, country }); }
   else if (el.dataset.goCountry) goPlace({ kind: "country", country: el.dataset.goCountry });
 }
+// a heart on a tile: toggles the favourite without opening the ficha
+document.addEventListener("click", e => {
+  const h = e.target.closest && e.target.closest(".gfav");
+  if (!h) return;
+  e.preventDefault(); e.stopPropagation();
+  const cell = h.closest(".gcell"), host = h.closest("#table-gallery") ? tGalVis : panelVis;
+  const w = host[+h.dataset.favI]; if (!w) return;
+  const on = !me.fav.has(workId(w.p)); meDo(on ? "fav" : "unfav", w.p);
+  h.classList.toggle("on", on); h.textContent = on ? "♥" : "♡";
+  if (state.me) refresh();
+}, true);
 // capture phase: a name sits inside rows and tiles that open the ficha on click; the name wins
 document.addEventListener("click", e => {
   const el = e.target.closest && e.target.closest(".golink");
@@ -1280,6 +1404,45 @@ document.querySelectorAll('.filters input[data-kind], .filters input[data-form]'
     refresh();
   });
 });
+(function wireMe() {
+  const chip = document.getElementById("me-chip"), sel = document.getElementById("me-filter");
+  if (!chip) return;
+  chip.hidden = false;
+  sel.addEventListener("change", () => {
+    const v = sel.value;
+    if (v === "link") {
+      const url = meLink(), n = url.split("?mis=")[1].split(".").filter(Boolean).length;
+      if (!n) toast(t("No favourites yet"));
+      else if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => toast(t("Link to my list copied ✓"))).catch(() => toast(url));
+      else toast(url);
+    } else if (v === "save") {
+      const blob = new Blob([JSON.stringify({ atlas: "artatlas", version: 1, at: new Date().toISOString(), fav: [...me.fav], seen: [...me.seen] }, null, 1)], { type: "application/json" });
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "mis-cuadros.json"; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    } else if (v === "load") {
+      const inp = document.createElement("input"); inp.type = "file"; inp.accept = "application/json,.json";
+      inp.onchange = () => {
+        const f = inp.files && inp.files[0]; if (!f) return;
+        f.text().then(txt => { const d = JSON.parse(txt); toast(`${t("Added to my list")}: ${meImport(d.fav, d.seen)}`); refresh(); })
+          .catch(() => toast(t("That file is not a list of paintings")));
+      };
+      inp.click();
+    } else { state.me = v; refresh(); return; }
+    sel.value = state.me;                          // the actions are not filters: go back to the filter shown
+  });
+  // ?mis=… : a list sent from another device
+  const mis = new URLSearchParams(location.search).get("mis");
+  if (mis) {
+    const ids = mis.split(".").filter(x => /^\d+$/.test(x)).map(x => "Q" + x);
+    if (ids.length && window.confirm(t("Add N paintings to your favourites in this browser?").replace("N", ids.length))) {
+      toast(`${t("Added to my list")}: ${meImport(ids, [])}`);
+    }
+    history.replaceState(history.state, "", urlWith(sp => sp.delete("mis")));
+  }
+  meLoad();
+  window.addEventListener("online", meFlush);
+})();
+if (new URLSearchParams(location.search).has("yo")) history.replaceState(history.state, "", urlWith(sp => sp.delete("yo")));   // the key never stays in the address
 document.getElementById("accepted-only").addEventListener("change", e => {
   state.acceptedOnly = e.target.checked; refresh();
 });
@@ -1327,7 +1490,7 @@ function tablePass(p) {
   return state.painters[p.painter] !== false
     && (!state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution))
     && (!state.museumFilter || museumKey(p) === state.museumFilter)
-    && placeOk(p) && inYear(p) && matchesQ(p);
+    && placeOk(p) && meOk(p) && inYear(p) && matchesQ(p);
 }
 function tableRows() {
   const rows = allFeatures.map(f => f.properties).filter(tablePass);   // tablePass includes the text filter
@@ -1400,7 +1563,7 @@ function renderWorksTable() {
     return `<tr data-ri="${i}">` +
       `<td class="c-img">${thumb}</td>` +
       `<td class="c-painter"><span class="sw" style="background:${colorFor(p.painter)}"></span>${painterLink(p.painter)}</td>` +
-      `<td class="c-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${modelTag(p)}</td>` +
+      `<td class="c-title">${esc(wTitle(p) || t("Untitled"))}${favMark(p)}${mtMark(p)}${modelTag(p)}</td>` +
       `<td class="c-year">${esc(p.year || "")}</td>` +
       `<td class="c-medium">${esc(p.medium || "")}</td>` +
       `<td class="c-dim">${esc(p.dimensions || "")}</td>` +
@@ -1769,13 +1932,14 @@ function tileHTML(w, vis, grp) {
     ? `<img class="th" src="${esc(p.image)}" data-full="${esc(fullImage(p.image))}"${capAttrs(p)} alt="" loading="lazy">`
     : `<span class="th ph"></span>`;
   const share = p.qid ? `<button class="gshare" data-i="${i}" title="${esc(t("Share this painting"))}" aria-label="${esc(t("Share"))}">🔗</button>` : "";
+  const heart = meOn() ? `<button type="button" class="gfav${me.fav.has(workId(p)) ? " on" : ""}" data-fav-i="${i}" aria-label="♥">${me.fav.has(workId(p)) ? "♥" : "♡"}</button>` : "";
   const style = grp && grp.color ? ` style="background:${grp.color}${grp.edge ? `;--edge:${grp.edge}` : ""}"` : "";
   const nameTag = grp && grp.label ? `<div class="mlabel">${esc(grp.label)}</div>` : "";
   const placeAttr = grp && grp.key ? ` data-place="${esc(grp.key)}"` : "";
   // every tile of a museum carries the same data-mus, so hovering the colour field can light up the
   // museum's whole run (data-place stays on the FIRST tile only — it is the marker→list scroll target)
   const musAttr = grp && grp.mus != null ? ` data-mus="${grp.mus}"` : "";
-  return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}${placeAttr}${musAttr}>${share}${nameTag}` +
+  return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}${placeAttr}${musAttr}>${share}${heart}${nameTag}` +
     `<div class="gcard">${img}<div class="gmeta">` +
     // under a painter's colour field their name is already written above the whole run, so the card
     // spends its two lines on what is not known yet: the title, and where the work hangs
@@ -1934,7 +2098,7 @@ function panelRowHTML(w, grpKey) {
   // with no venue headers above it, a row has to say where the work is itself
   const venue = panelSort === "museum" ? "" : locName(p);
   return `<li data-i="${i}"${fold}>${thumb}<div>` +
-    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${modelTag(p)}${disputedMark(p)}</div>` +
+    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${favMark(p)}${mtMark(p)}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${modelTag(p)}${disputedMark(p)}</div>` +
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div>` +
     (venue ? `<div class="sub wvenue">${museumLink(p, esc(venue))}${p.city ? ", " + cityLink(p.city, p.country) : ""}</div>` : "") +
     `</div></li>`;
@@ -2561,6 +2725,7 @@ function openWorkCard(w) {
     row(t("Technique"), esc(p.medium || "")) + row(t("Size"), esc(p.dimensions || "")) + row(t("Attribution"), attr) +
     (links ? `<div class="wc-links">${links}</div>` : "") +
     `<div class="wc-actions"><button type="button" class="wc-share">${t("🔗 Share")}</button>` +
+    (meOn() ? `<button type="button" class="wc-fav${me.fav.has(workId(p)) ? " on" : ""}">${me.fav.has(workId(p)) ? "♥ " + t("Favourite") : "♡ " + t("Favourite")}</button>` : "") +
     (p.placeless ? "" : `<button type="button" class="wc-map">${t("📍 On the map")}</button>`) +
     `<span class="wc-hint">${t("or just copy the address bar")}</span></div>` +
     `<div class="wc-aff" id="wc-affinity"></div>` +
@@ -2573,6 +2738,7 @@ function openWorkCard(w) {
   renderSimilar(p.qid);   // "visually similar" (CLIP neighbours) — fills in async when available
   renderForYou(p.qid);    // "more you might like" — from your browsing history (localStorage)
   recordSeen(p.qid);      // remember this view for future "for you" suggestions
+  if (meOn()) meDo("seen", p);   // Mis cuadros: opening the ficha is "seen"
   // reflect the open painting in the address bar → copying the URL shares this exact work
   if (p.qid) histStep(urlWith(sp => { sp.set("w", p.qid); }));   // ficha to ficha is a step too
 }
@@ -2598,6 +2764,12 @@ function flyToWork(w) {
 }
 workCard.addEventListener("click", e => {
   if (e.target.closest(".wc-share") && wcWork) { shareWork(wcWork.p); return; }
+  const fb = e.target.closest(".wc-fav");
+  if (fb && wcWork) {
+    const on = !me.fav.has(workId(wcWork.p)); meDo(on ? "fav" : "unfav", wcWork.p);
+    fb.classList.toggle("on", on); fb.textContent = (on ? "♥ " : "♡ ") + t("Favourite");
+    return;
+  }
   if (e.target.closest(".wc-map") && wcWork) { const w = wcWork; closeWorkCard(); flyToWork(w); return; }
   const sim = e.target.closest(".wc-sim");
   if (sim) { const x = works.find(y => y.p.qid === sim.dataset.qid); if (x) openWorkCard(x); return; }  // hop to a similar work
@@ -2633,6 +2805,7 @@ function restoreFromHistory(e) {
     const b = document.body.classList;
     const now = b.contains("show-galaxy") ? "similar" : b.contains("show-chart") ? "timeline"
       : b.contains("show-game") ? "game" : b.contains("show-table") ? "table" : null;
+    let crossed = want !== now;                        // did going back undo a real step (a view, a filter)?
     if (want !== now) {
       if (!want) setTableView(false);                     // back to the map (turns every other view off)
       else if (want === "table") setTableView(true);
@@ -2646,19 +2819,22 @@ function restoreFromHistory(e) {
       PAINTERS.forEach(p => { state.painters[p.name] = focus ? p === focus : true; });
     }
     if (PAINTERS.map(p => state.painters[p.name] !== false).join() !== before) {
-      updatePainterBtn(); renderPainterList(); refresh();
+      updatePainterBtn(); renderPainterList(); refresh(); crossed = true;
     }
     const m = sp.get("m");
-    if (m && m !== state.museumFilter && museumIndex.some(x => x.key === m)) selectMuseum(m, { stay: true });
-    else if (!m && state.museumFilter) clearMuseum();
+    if (m && m !== state.museumFilter && museumIndex.some(x => x.key === m)) { selectMuseum(m, { stay: true }); crossed = true; }
+    else if (!m && state.museumFilter) { clearMuseum(); crossed = true; }
     const pl = placeFromURL();
-    if (placeKey(pl) !== placeKey(state.place)) { state.place = pl; renderPlaceChip(); refresh(); }
+    if (placeKey(pl) !== placeKey(state.place)) { state.place = pl; renderPlaceChip(); refresh(); crossed = true; }
     const w = sp.get("w");
     if (w) {
       if (!wcWork || wcWork.p.qid !== w) { const hit = works.find(x => x.p.qid === w); if (hit) openWorkCard(hit); }
     } else if (!workCard.hidden) closeWorkCard();
-    const mv = e.state && e.state.mapv;                  // a name had flown the map away from here
-    if (mv && view.map && !view.table) map.setView([mv[0], mv[1]], mv[2]);
+    // a name had flown the map away from here: fly back, but ONLY when back really undid that step. Closing an
+    // enlarged picture or a ficha is also a "back", onto an entry that may still remember an old view, and the
+    // map must stay where the reader left it (Víctor: "cuando cierro la galería se me vuelve a cambiar el mapa")
+    const mv = e.state && e.state.mapv;
+    if (mv && crossed && view.map && !view.table) map.setView([mv[0], mv[1]], mv[2]);
   } finally { hist.restoring = false; }
 }
 function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum key> → that museum

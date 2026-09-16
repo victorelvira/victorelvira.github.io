@@ -5,16 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Operatlas · core</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0f1113; --panel:#171a1d; --panel2:#1e2225; --line:#2b3035;
-    --txt:#e8e6e1; --dim:#9aa0a6; --accent:#c9a24b;
-    --a1:#c9a24b; --a2:#7fa6c9; --a3:#c97f7f; --a4:#8bc98b; --a5:#b18bc9; --a6:#c9b48b;
+    --bg:#faf6ec; --panel:#fffdf8; --panel2:#f1eadb; --line:#e7decb;
+    --txt:#2b2620; --dim:#867a64; --accent:#9d2933;
+    --a1:#c9ad74; --a2:#8aa6bf; --a3:#c98b86; --a4:#9cbf94; --a5:#b6a0c6; --a6:#cbb488;
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
-  #app{display:grid;grid-template-columns:340px 1fr;grid-template-rows:auto 1fr;flex:1;min-height:0}
-  header{grid-column:1/3;display:flex;align-items:center;gap:20px;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+  #app{display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr;flex:1;min-height:0}
+  #app > main{display:none}
+  #app.detail{grid-template-columns:360px 1fr}
+  #app.detail > main{display:block}
+  header{grid-column:1/-1;display:flex;align-items:center;gap:20px;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
   .brand{font-size:19px;font-weight:600;letter-spacing:.4px}
   .brand span{color:var(--accent)}
   nav{display:flex;gap:4px}
@@ -22,16 +26,35 @@
   nav a:hover{background:var(--panel2);color:var(--txt)}
   nav a.on{color:var(--accent);background:var(--panel2)}
   header .count{color:var(--dim);font-size:13px;margin-left:auto}
+  .backbtn{display:none;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--line);
+    color:var(--txt);font-size:13px;border-radius:8px;padding:7px 12px;cursor:pointer;margin:0 0 16px}
+  .backbtn:hover{border-color:var(--accent)}
   @media(max-width:720px){
-    #app{grid-template-columns:1fr;grid-template-rows:auto auto 1fr}
-    aside{border-right:0;border-bottom:1px solid var(--line);max-height:40vh}
-    main{padding:18px}
+    #app{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+    #app.detail{grid-template-columns:1fr}
+    .otbl th:nth-child(n+3),.otbl td:nth-child(n+3){display:none}
+    aside{border-right:0;border-bottom:1px solid var(--line)}
+    main{padding:18px;display:none}
     header .count{display:none}
+    /* master–detail: list full-screen; selecting an opera opens the ficha over it */
+    #app.detail aside{display:none}
+    #app.detail main{display:block}
+    #app.detail .backbtn{display:inline-flex}
   }
   aside{background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
   .filters{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
   input,select{width:100%;padding:8px 10px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;color:var(--txt);font-size:13px}
   #list{overflow:auto;flex:1}
+  .otbl{width:100%;border-collapse:collapse;font-size:13px}
+  .otbl thead th{text-align:left;padding:9px 16px;font-size:10.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--dim);border-bottom:1px solid var(--line);cursor:pointer;position:sticky;top:0;background:var(--bg);white-space:nowrap;z-index:1}
+  .otbl th.on{color:var(--accent)} .otbl th:hover{color:var(--txt)}
+  .otbl tbody td{padding:10px 16px;border-bottom:1px solid var(--line);vertical-align:middle}
+  .otbl tbody tr{cursor:pointer} .otbl tbody tr:hover{background:var(--panel2)}
+  .otbl td.tt{font-weight:600;font-size:14px}
+  .otbl td.cat{color:var(--dim);font-size:12px}
+  .otbl td.num{font-variant-numeric:tabular-nums;color:var(--dim);text-align:right;width:70px}
+  .popbar{display:inline-block;width:90px;height:6px;border-radius:3px;background:var(--panel2)}
+  .popbar span{display:block;height:6px;border-radius:3px;background:var(--accent);opacity:.85}
   .row{padding:9px 14px;border-bottom:1px solid var(--line);cursor:pointer;display:flex;justify-content:space-between;gap:8px;align-items:center}
   .row:hover,.row.sel{background:var(--panel2)}
   .row.sel{box-shadow:inset 3px 0 0 var(--accent)}
@@ -48,22 +71,39 @@
   .chip b{color:var(--txt);font-weight:600}
   .flavor{margin-bottom:22px}
   .flavor .ttl{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--dim);margin-bottom:8px;display:flex;gap:8px;align-items:center}
-  .flavor .ttl .src{color:#5f666c;text-transform:none;letter-spacing:0}
+  .flavor .ttl .src{color:#867a67;text-transform:none;letter-spacing:0}
   .bar{display:flex;height:30px;border-radius:6px;overflow:hidden;max-width:640px}
-  .seg{display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;color:#0d0f10;white-space:nowrap;overflow:hidden;border-right:1px solid #0f1113aa;text-shadow:0 1px 0 #ffffff30}
+  .seg{display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;color:#14100e;white-space:nowrap;overflow:hidden;border-right:1px solid #14100eaa;text-shadow:0 1px 0 #ffffff30}
   .tot{margin-top:6px;font-size:12px;color:var(--accent)}
   .boxrow{display:flex;align-items:center;gap:9px;margin-top:9px}
-  .boxrow .bx{font-size:11px;color:#5f666c;font-variant-numeric:tabular-nums}
-  .pending{color:#5f666c;font-size:13px;font-style:italic;border:1px dashed var(--line);border-radius:7px;padding:10px 12px;max-width:640px}
-  .legend{margin-top:6px;font-size:11px;color:#5f666c}
+  .boxrow .bx{font-size:11px;color:#867a67;font-variant-numeric:tabular-nums}
+  .pending{color:#867a67;font-size:13px;font-style:italic;border:1px dashed var(--line);border-radius:7px;padding:10px 12px;max-width:640px}
+  .legend{margin-top:6px;font-size:11px;color:#867a67}
+  .tactruler{position:relative;height:15px;max-width:660px}
+  .tactlab{position:absolute;font-size:10px;color:#867a67;white-space:nowrap;padding-left:3px;border-left:1px solid var(--line)}
+  .tband{position:relative;display:flex;height:32px;border-radius:5px;overflow:hidden;max-width:660px;margin-top:2px}
+  .tseg{display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:600;overflow:hidden;white-space:nowrap;min-width:0}
+  .tactdiv{position:absolute;top:0;bottom:0;width:2px;background:#2b2620;opacity:.85;pointer-events:none}
+  .tband:hover .tseg{opacity:.55}
+  .tseg{transition:filter .08s}
+  .tseg:hover{opacity:1!important;filter:brightness(1.1) saturate(1.15);box-shadow:inset 0 0 0 2px #2b2620}
+  .tiptt{position:fixed;pointer-events:none;background:#2b2620;color:#faf6ec;padding:4px 11px;border-radius:6px;font-size:14px;opacity:0;transition:opacity .1s;z-index:999;white-space:nowrap;box-shadow:0 4px 16px #0003;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.02em}
+  .ribbon{display:flex;flex-wrap:wrap;gap:2px;max-width:660px;margin-top:2px}
+  .voiceleg{display:flex;flex-wrap:wrap;gap:12px;margin-top:9px;font-size:11px;color:var(--dim)}
+  .voiceleg .vl{display:flex;align-items:center;gap:5px}
+  .voiceleg .vldot{width:8px;height:8px;border-radius:50%}
+  .snum{display:inline-block;width:10px;height:20px;border-radius:2px}
+  .formsum{margin-top:8px;font-size:11.5px;color:#867a67;display:flex;flex-wrap:wrap;gap:10px}
+  .formsum b{font-weight:600}
   .cast{margin:0 0 22px;max-width:660px;line-height:2}
   .cast .ct{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--dim);margin-right:8px}
-  .cch{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:2px 10px;font-size:12.5px;margin:0 4px 4px 0}
-  .cch.recur{border-color:var(--accent);cursor:pointer}
-  .syn{font-size:14px;line-height:1.55;color:#c8cace;max-width:660px;margin:2px 0 22px}
-  .syn .attr{display:block;margin-top:7px;font-size:11px;color:#5f666c}
-  .syn .attr a{color:#5f666c}
-  .lnk{color:var(--txt);border-bottom:1px dotted #6b7278;cursor:pointer}
+  .cch{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:2px 10px;font-size:12.5px;margin:0 4px 4px 0;cursor:pointer}
+  .cch:hover{border-color:#8a7d69}
+  .cch.recur{border-color:var(--accent)}
+  .syn{font-size:14px;line-height:1.55;color:#dcd4c6;max-width:660px;margin:2px 0 22px}
+  .syn .attr{display:block;margin-top:7px;font-size:11px;color:#867a67}
+  .syn .attr a{color:#867a67}
+  .lnk{color:var(--txt);border-bottom:1px dotted #8a7d69;cursor:pointer}
   .lnk:hover{color:var(--accent);border-bottom-color:var(--accent)}
   .facetbar{display:flex;flex-wrap:wrap;gap:6px;min-height:0}
   .facetchip{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--accent);border-radius:16px;padding:4px 6px 4px 11px;font-size:12px;color:var(--txt)}
@@ -80,13 +120,42 @@
 
   /* barra de identidad compartida (misma en todos los proyectos) */
   body{display:flex;flex-direction:column;min-height:100vh}
-  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
-  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
-  #navbar .nav-sep{color:#8a7f72}
-  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#f1eadb;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#2b2620;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#b3a68d}
+  #navbar .nav-home{color:#d8cbb2;text-decoration:none}
   #navbar a:hover{text-decoration:underline}
   .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
   .brand,header h1{cursor:pointer}
+
+  /* nav-tiers */
+  nav .nav-div{display:inline-block;width:1px;height:16px;background:var(--line);margin:0 8px;vertical-align:middle}
+  nav a.lens{font-size:12px;color:#948873}
+  nav a.lens:hover{color:var(--txt);background:var(--panel2)}
+  nav a.lens.on{color:var(--accent)}
+
+  /* elegant-type */
+  body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,.brand,.fh1,.hero h1,.marca{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;font-weight:600;letter-spacing:.01em}
+  .brand{font-size:22px;letter-spacing:.02em}
+  .fh1,.hero h1{font-weight:600;letter-spacing:.008em}
+  h2{font-weight:600}
+
+  /* master-logo */
+  .marca{cursor:pointer;white-space:nowrap}
+  .marca .p,.marca .oa,.marca .sp{color:var(--txt)}
+  .marca .oa,.marca .sp{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;
+    transition:max-width .6s cubic-bezier(.4,0,.2,1),opacity .45s ease,transform .55s ease}
+  .marca .oa{max-width:var(--wa,1ch)}
+  .marca .sp{max-width:var(--wsp,.35ch)}
+  .marca .w2{display:inline-block;color:var(--txt);transition:color .6s ease}
+  .marca.on .oa{max-width:0;opacity:0;transform:translateX(.14em)}
+  .marca.on .sp{max-width:0}
+  .marca.on .w2{color:var(--accent)}
+  .marca.on:hover .oa{max-width:var(--wa);opacity:1;transform:none}
+  .marca.on:hover .sp{max-width:var(--wsp)}
+  .marca.on:hover .w2{color:var(--txt)}
+  @media(prefers-reduced-motion:reduce){.marca .oa,.marca .sp,.marca .w2{transition:none}}
 </style>
 </head>
 <body>
@@ -98,16 +167,20 @@
 
 <div id="app">
   <header>
-    <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+    <span class="brand"><img class="emblem" src="favicon.svg" alt=""><span class="marca"><span class="p">Oper</span><span class="oa">a</span><span class="sp"> </span><span class="w2">Atlas</span></span></span>
     <nav>
-      <a href="index.html">Discover</a>
-      <a href="compositores.html">Composers</a>
       <a href="nucleo.html" class="on">Operas</a>
-      <a href="conexiones.html">Connections</a>
-      <a href="timeline.html">Timeline</a>
-      <a href="pulso.html">Pulse</a>
-      <a href="duraciones.html">Durations</a>
-      <a href="mapa.html">Map</a>
+      <a href="empezar.html">Start here</a>
+      <a href="jugar.html">Play</a>
+      <a href="compositores.html">Composers</a>
+      <a href="personajes.html">Characters</a>
+      <span class="nav-div"></span>
+      <a href="conexiones.html" class="lens">Connections</a>
+      <a href="timeline.html" class="lens">Timeline</a>
+      <a href="analisis.html" class="lens">Trends</a>
+      <a href="pulso.html" class="lens">Pulse</a>
+      <a href="duraciones.html" class="lens">Durations</a>
+      <a href="mapa.html" class="lens">Map</a>
     </nav>
     <span class="count" id="count">loading…</span>
   </header>
@@ -122,6 +195,15 @@
 </div>
 <script>
 const COLORS=['--a1','--a2','--a3','--a4','--a5','--a6'];
+// voice types high→low with a colour each (shared with the Characters page)
+const VC={"soprano":"#e08cc0","mezzo-soprano":"#cf9ac6","contralto":"#b6a0c6","countertenor":"#8bb6c9",
+  "tenor":"#e0b24e","baritone":"#8aa6bf","bass-baritone":"#6f8fb0","bass":"#5f7f9f","treble":"#9cbf94",
+  "spoken":"#8a9096","silent":"#8a7d69"};
+// form families for the musical-numbers ribbon
+const FAMCOL={orchestral:'#8b9bc9',solo:'#e0b24e',ensemble2:'#8aa6bf',ensemble3:'#8bc9a6',
+  ensemble4:'#b6a0c6',ensemble:'#b6a0c6',choral:'#c96f6f',vocal:'#8a7d69'};
+const FAMLABEL={orchestral:'orchestral',solo:'aria/solo',ensemble2:'duet',ensemble3:'trio',
+  ensemble4:'quartet',ensemble:'ensemble',choral:'chorus',vocal:'recitative/scene'};
 const PXMIN=3.4;
 let DATA=[], MAXPOP=1, sel=null;
 const $=s=>document.querySelector(s);
@@ -144,7 +226,7 @@ function flavor(title, src, acts, note){
   return `<div class="flavor"><div class="ttl">${title} <span class="src">${src}</span></div>`+
     (bars || `<div class="pending">${note}</div>`)+`</div>`;
 }
-// duración PÚBLICA = MusicBrainz (barras por act, o barra de total). theopera101 = validación oculta.
+// duración PÚBLICA = MusicBrainz (barras por act, o barra de total).
 function durBlock(o){
   const dr=o.dur_range;
   let inner;
@@ -159,11 +241,11 @@ function durBlock(o){
       const W=240,H=24,span=t.max-t.min,X=v=>1+((v-t.min)/span)*(W-2);
       box=`<div class="boxrow"><span class="bx">${hhmm(t.min)}</span>`+
         `<svg width="${W}" height="${H}">`+
-        `<line x1="${X(t.min)}" y1="${H/2}" x2="${X(t.max)}" y2="${H/2}" stroke="#5f666c"/>`+
-        `<line x1="${X(t.min)}" y1="5" x2="${X(t.min)}" y2="${H-5}" stroke="#5f666c"/>`+
-        `<line x1="${X(t.max)}" y1="5" x2="${X(t.max)}" y2="${H-5}" stroke="#5f666c"/>`+
-        `<rect x="${X(t.q1)}" y="4" width="${Math.max(X(t.q3)-X(t.q1),1)}" height="${H-8}" fill="#c9a24b33" stroke="#c9a24b"/>`+
-        `<line x1="${X(t.med)}" y1="3" x2="${X(t.med)}" y2="${H-3}" stroke="#c9a24b" stroke-width="2.5"/>`+
+        `<line x1="${X(t.min)}" y1="${H/2}" x2="${X(t.max)}" y2="${H/2}" stroke="#867a67"/>`+
+        `<line x1="${X(t.min)}" y1="5" x2="${X(t.min)}" y2="${H-5}" stroke="#867a67"/>`+
+        `<line x1="${X(t.max)}" y1="5" x2="${X(t.max)}" y2="${H-5}" stroke="#867a67"/>`+
+        `<rect x="${X(t.q1)}" y="4" width="${Math.max(X(t.q3)-X(t.q1),1)}" height="${H-8}" fill="#c9ad7433" stroke="#c9ad74"/>`+
+        `<line x1="${X(t.med)}" y1="3" x2="${X(t.med)}" y2="${H-3}" stroke="#c9ad74" stroke-width="2.5"/>`+
         `</svg><span class="bx">${hhmm(t.max)}</span></div>`;
     }
     inner=`<div class="bar">${segs}</div>`+
@@ -177,7 +259,57 @@ function durBlock(o){
   return `<div class="flavor"><div class="ttl">Duration by act <span class="src">recordings · MusicBrainz</span></div>${inner}${val}</div>`;
 }
 
-let F={q:'', facet:null};
+// tonality continuum (from a real score): blocks that change exactly where the music modulates,
+// with act divisions. Colour = key (circle of fifths); deeper = minor.
+const PC={C:0,D:2,E:4,F:5,G:7,A:9,B:11}, COF={0:0,7:1,2:2,9:3,4:4,11:5,6:6,1:7,8:8,3:9,10:10,5:11};
+const ACTLAB={"0":"Prologue","1":"Act I","2":"Act II","3":"Act III","4":"Act IV","5":"Act V"};
+const prettyKey=k=>(k||'').replace('-','♭').replace('#','♯').replace(' minor','m').replace(' major','');
+function keyFill(k){const m=/^([A-G])([#-]?)\s+(major|minor)/.exec(k||''); if(!m) return ['#e7decb','#867a67'];
+  let pc=PC[m[1]]; if(m[2]==='#')pc=(pc+1)%12; if(m[2]==='-')pc=(pc+11)%12;
+  const hue=(COF[pc]||0)*30, minor=m[3]==='minor';
+  return minor?[`hsl(${hue},38%,44%)`,'#faf6ec']:[`hsl(${hue},56%,64%)`,'#2b2620'];}
+function tonalityBlock(o){
+  const t=o.tonality, cells=t&&t.cells; if(!cells||!cells.length) return '';
+  const total=cells.length, isCont=t.kind==='continuous';
+  let segs;
+  if(isCont){ segs=[]; let cur=null;
+    cells.forEach(c=>{const key=c.key||'?';
+      if(cur&&cur.key===key&&cur.act===c.act){cur.n++;} else {cur={key,act:c.act,n:1};segs.push(cur);}}); }
+  else segs=cells.map(c=>({key:c.key||'?',n:1,title:c.title,tempo:c.tempo,instruments:c.instruments}));
+  const acts=[]; let pa='\u0000';
+  cells.forEach((c,i)=>{if(c.act!==pa){acts.push({act:c.act,pct:i/total*100});pa=c.act;}});
+  const showActs=isCont&&acts.length>1;
+  const band=segs.map(s=>{const [bg,tc]=keyFill(s.key); const w=s.n/total*100;
+    const lab=isCont?(s.act&&showActs?(ACTLAB[s.act]||''):'')
+      :(s.title||'')+(s.tempo?' · ~'+s.tempo+' bpm':'')+(s.instruments&&s.instruments.length?' · '+s.instruments.slice(0,4).join(', '):'');
+    return `<span class="tseg" data-k="${escA(prettyKey(s.key))}" data-a="${escA(lab)}" style="width:${w}%;background:${bg};color:${tc}">${w>5?esc(prettyKey(s.key)):''}</span>`;}).join('');
+  const divs=showActs?acts.slice(1).map(a=>`<span class="tactdiv" style="left:${a.pct}%"></span>`).join(''):'';
+  const ruler=showActs?`<div class="tactruler">`+acts.map(a=>`<span class="tactlab" style="left:${a.pct}%">${ACTLAB[a.act]||''}</span>`).join('')+`</div>`:'';
+  const legend=isCont?'A continuous strip through the opera: each block holds one key, a new block begins where it modulates · dark lines = acts'
+    :(t.kind==='selected'?'The key of the opera’s famous numbers (open scores are scarce, so not the whole work) · hover for tempo and forces'
+      :'The key of each number, in order · hover a block');
+  const ttl=t.expert?'Tonality through the complete score':(isCont?'Tonality through the score':'Tonality of the famous numbers');
+  return `<div class="flavor"><div class="ttl">${ttl} <span class="src">${esc(t.source)} · ${esc(t.license)}</span></div>
+    ${ruler}<div class="tband">${band}${divs}</div>
+    ${(t.instruments&&t.instruments.length)?`<div class="legend" style="margin-top:8px"><b style="color:var(--txt)">Complete score, all voices</b> · ${t.instruments.length} staves: ${t.instruments.map(esc).join(', ')}</div>`:''}
+    <div class="legend">${legend} · colour = key (circle of fifths) · deeper = minor</div></div>`;
+}
+function structBlock(o){
+  const s=o.structure; if(!s||!s.numbers||!s.numbers.length) return '';
+  const cells=s.numbers.map(n=>{
+    const col=n.family?(FAMCOL[n.family]||'#8a7d69'):'#22272b';
+    const t=(n.act?'Act '+n.act+' · ':'')+(n.title||'').replace(/^.*?:\s*/,'')+(n.type?' — '+n.type:'');
+    return `<span class="snum" style="background:${col}" title="${escA(t)}"></span>`;
+  }).join('');
+  const cnt={}; s.numbers.forEach(n=>{if(n.family)cnt[n.family]=(cnt[n.family]||0)+1;});
+  const order=['orchestral','solo','ensemble2','ensemble3','ensemble4','ensemble','choral','vocal'];
+  const summary=order.filter(f=>cnt[f]).map(f=>`<span style="color:${FAMCOL[f]}"><b>${cnt[f]}</b> ${FAMLABEL[f]}</span>`).join('');
+  const note=s.ordered?'':' · order approximate';
+  return `<div class="flavor"><div class="ttl">Musical numbers <span class="src">${s.n} numbers · from titles${note}</span></div>
+    <div class="ribbon">${cells}</div><div class="formsum">${summary}</div></div>`;
+}
+
+let F={q:'', facet:null, sort:'perf', dir:-1};
 const escA=s=>esc(s).replace(/'/g,'&#39;');
 // atributo clicable -> fija una faceta
 function lnk(type,value,label){
@@ -188,7 +320,7 @@ function setFacet(type,value){ F.facet={type,value}; draw(); }
 function clearFacet(){ F.facet=null; draw(); }
 window.setFacet=setFacet; window.clearFacet=clearFacet;
 
-const FLABEL={composer:'composer',librettist:'librettist',based_on:'source',language:'language',style:'era',city:'city',decade:'decade',character:'character'};
+const FLABEL={composer:'composer',librettist:'librettist',based_on:'source',language:'language',style:'era',category:'category',city:'city',decade:'decade',character:'character'};
 let CHARS={};
 function facetMatch(o,f){
   switch(f.type){
@@ -197,8 +329,9 @@ function facetMatch(o,f){
     case 'based_on': return (o.based_on||[]).includes(f.value);
     case 'language': return o.language===f.value;
     case 'style': return o.style===f.value;
+    case 'category': return o.category===f.value;
     case 'city': return o.ob_city===f.value;
-    case 'character': return (o.cast||[]).includes(f.value);
+    case 'character': return (o.roles||[]).some(r=>r.role===f.value);
     case 'decade': return o.year && Math.floor(o.year/10)*10===+f.value;
   } return true;
 }
@@ -227,6 +360,7 @@ function related(o){
 }
 
 function renderFicha(o){
+  const cat=o.category?`<span class="chip">${lnk('category',o.category)}</span>`:'';
   const era=o.style?`<span class="chip">${lnk('style',o.style)}</span>`:'';
   const lang=o.language?`<span class="chip">language ${lnk('language',o.language)}</span>`:'';
   const roles='';  // recuento de roles inflado (variantes de producción) -> oculto
@@ -235,62 +369,103 @@ function renderFicha(o){
   const lib=(o.librettist||[]).length?`<span class="chip">libretto ${o.librettist.map(l=>lnk('librettist',l)).join(', ')}</span>`:'';
   const src=(o.based_on||[]).length?`<span class="chip">based on ${o.based_on.map(s=>lnk('based_on',s)).join(', ')}</span>`:'';
   const poppct=Math.round(100*Math.sqrt(o.perfs/MAXPOP));
-  const pop=`<span class="chip">repertory <span style="display:inline-block;width:70px;height:6px;border-radius:3px;background:#2b3035;vertical-align:middle;margin-left:4px"><span style="display:block;height:6px;border-radius:3px;width:${poppct}%;background:var(--accent)"></span></span></span>`;
+  const pop=`<span class="chip">repertory <span style="display:inline-block;width:70px;height:6px;border-radius:3px;background:#352c24;vertical-align:middle;margin-left:4px"><span style="display:block;height:6px;border-radius:3px;width:${poppct}%;background:var(--accent)"></span></span></span>`;
   const rel=related(o);
   const relHtml=rel.length?`<div class="related"><div class="ttl">Related operas</div><div class="rel">`+
     rel.map(r=>`<div class="rel-item" data-i="${DATA.indexOf(r.p)}"><span class="rt"><b>${esc(r.p.title)}</b> · ${esc(r.p.composer)}</span><span class="why">${esc(r.why)}</span></div>`).join('')+
     `</div></div>`:'';
   $('#ficha').innerHTML=`
+    <button class="backbtn" onclick="back()">← all operas</button>
     <h1 class="fh1">${esc(o.title)}</h1>
-    <div class="fsub">${lnk('composer',o.composer)}${o.original&&o.original!=o.title?' · <span style="color:#7f868c">'+esc(o.original)+'</span>':''}</div>
-    <div class="chips">${era}${lang}${lib}${src}${roles}${prem}${pop}</div>
+    <div class="fsub">${lnk('composer',o.composer)}${o.original&&o.original!=o.title?' · <span style="color:#978a76">'+esc(o.original)+'</span>':''}</div>
+    <div class="chips">${cat}${era}${lang}${lib}${src}${roles}${prem}${pop}</div>
     ${o.synopsis?`<div class="syn">${esc(o.synopsis)}${o.synopsis_url?`<span class="attr">${esc(o.synopsis_src||'')} · <a href="${esc(o.synopsis_url)}" target="_blank" rel="noopener">source</a></span>`:''}</div>`:''}
-    ${(o.cast||[]).length?`<div class="cast"><span class="ct">cast</span>${o.cast.map(c=>{
-        const rec=(CHARS[c]||0)>1;
-        return `<span class="cch${rec?' recur':''}" ${rec?`data-t="character" data-v="${escA(c)}" onclick="setFacet(this.dataset.t,this.dataset.v)"`:''}>${esc(c)}</span>`;
-      }).join('')}</div>`:''}
+    ${(o.roles||[]).length?`<div class="cast"><span class="ct">cast</span>${o.roles.map(r=>{
+        const rec=(CHARS[r.role]||0)>1, col=VC[r.voice]||'#8a9096';
+        return `<span class="cch${rec?' recur':''}" data-char="${escA(r.role)}" title="${escA(r.voice||'')}${r.desc?' — '+escA(r.desc):''}"><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${col};margin-right:6px;vertical-align:middle"></span>${esc(r.role)}${rec?' <span style="color:var(--accent)">↗</span>':''}</span>`;
+      }).join('')}<div class="voiceleg">${[...new Set(o.roles.map(r=>r.voice).filter(Boolean))].sort((a,b)=>Object.keys(VC).indexOf(a)-Object.keys(VC).indexOf(b)).map(v=>`<span class="vl"><span class="vldot" style="background:${VC[v]||'#8a9096'}"></span>${esc(v)}</span>`).join('')}</div></div>`:''}
     ${durBlock(o)}
-    ${flavor('Gross duration (live performance)','your videos', o.gross_acts, 'Pending: extract from your video collection (ffprobe).')}
     <div class="legend">Colours = Act I, II, III… · width = minutes</div>
+    ${tonalityBlock(o)}
+    ${structBlock(o)}
     ${relHtml}`;
   $('#ficha').querySelectorAll('.rel-item').forEach(el=>el.onclick=()=>selectOpera(+el.dataset.i));
+  $('#ficha').querySelectorAll('.cch[data-char]').forEach(el=>el.onclick=()=>location.href='personajes.html?char='+encodeURIComponent(el.dataset.char));
 }
 
-function selectOpera(idx){ sel=idx; renderFicha(DATA[idx]); draw(); $('#ficha').scrollTop=0; }
+function selectOpera(idx){ sel=idx; document.getElementById('app').classList.add('detail'); renderFicha(DATA[idx]); draw(); $('#ficha').scrollTop=0; window.scrollTo(0,0); }
 window.selectOpera=selectOpera;
+function back(){ document.getElementById('app').classList.remove('detail'); sel=null; draw(); } window.back=back;
 
 function renderFacet(){
   if(!F.facet){ $('#facet').innerHTML=''; return; }
   $('#facet').innerHTML=`<span class="facetchip"><span class="k">${FLABEL[F.facet.type]||F.facet.type}:</span> ${esc(F.facet.value)} <span class="x" onclick="clearFacet()">✕</span></span>`;
 }
 
+const COLS=[['title','Title'],['composer','Composer'],['category','Category'],['year','Premiere'],['perf','Repertory']];
+function cmp(k,dir){return (a,b)=>{let va,vb;
+  if(k==='perf'){va=a.perfs||0;vb=b.perfs||0;}
+  else if(k==='year'){va=a.year||0;vb=b.year||0;}
+  else{va=(a[k]||'').toString().toLowerCase();vb=(b[k]||'').toString().toLowerCase();}
+  return va<vb?-dir:va>vb?dir:0;};}
+function popbar(o){return Math.round(100*Math.sqrt(o.perfs/MAXPOP));}
 function draw(){
   F.q=$('#q').value.toLowerCase().trim();
   renderFacet();
-  let list=DATA.filter(match);
-  $('#count').textContent=`${list.length} operas`+(list.length<DATA.length?` (de ${DATA.length})`:'');
-  $('#list').innerHTML=list.slice(0,400).map(o=>{
-    const idx=DATA.indexOf(o);
-    const d=o.mb_total_min?hhmm(o.mb_total_min):'';
-    return `<div class="row ${sel===idx?'sel':''}" data-i="${idx}">
-      <div style="min-width:0"><div class="t">${esc(o.title)}</div><div class="c">${esc(o.composer)}</div>
-        <div class="pop" style="width:${Math.round(100*Math.sqrt(o.perfs/MAXPOP))}%"></div></div>
-      <div class="d">${d}</div></div>`;
-  }).join('');
-  $('#list').querySelectorAll('.row').forEach(r=>r.onclick=()=>selectOpera(+r.dataset.i));
+  let list=DATA.filter(match).sort(cmp(F.sort,F.dir));
+  $('#count').textContent=`${list.length} operas`+(list.length<DATA.length?` (of ${DATA.length})`:'');
+  const detail=document.getElementById('app').classList.contains('detail');
+  if(detail){
+    $('#list').innerHTML=list.slice(0,600).map(o=>{const idx=DATA.indexOf(o);
+      return `<div class="row ${sel===idx?'sel':''}" data-i="${idx}">
+        <div style="min-width:0"><div class="t">${esc(o.title)}</div><div class="c">${esc(o.composer)}${o.year?' · '+o.year:''}</div>
+        <div class="pop" style="width:${popbar(o)}%"></div></div></div>`;}).join('');
+    $('#list').querySelectorAll('.row').forEach(r=>r.onclick=()=>selectOpera(+r.dataset.i));
+  } else {
+    let h=`<table class="otbl"><thead><tr>`+COLS.map(([k,lab])=>`<th data-k="${k}" class="${F.sort===k?'on':''}">${lab}${F.sort===k?(F.dir<0?' ▾':' ▴'):''}</th>`).join('')+`</tr></thead><tbody>`;
+    h+=list.slice(0,700).map(o=>{const idx=DATA.indexOf(o);
+      return `<tr data-i="${idx}"><td class="tt">${esc(o.title)}</td><td>${esc(o.composer)}</td><td class="cat">${o.category?esc(o.category):''}</td><td class="num">${o.year||''}</td><td><span class="popbar"><span style="width:${popbar(o)}%"></span></span></td></tr>`;}).join('')+`</tbody></table>`;
+    $('#list').innerHTML=h;
+    $('#list').querySelectorAll('tr[data-i]').forEach(r=>r.onclick=()=>selectOpera(+r.dataset.i));
+    $('#list').querySelectorAll('th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;F.dir=(F.sort===k)?-F.dir:((k==='title'||k==='composer'||k==='category')?1:-1);F.sort=k;draw();});
+  }
 }
 $('#q').oninput=draw;
 
 fetch('core.json').then(r=>r.json()).then(d=>{
   DATA=d; MAXPOP=Math.max(...d.map(o=>o.perfs||1));
-  DATA.forEach(o=>(o.cast||[]).forEach(c=>CHARS[c]=(CHARS[c]||0)+1));  // characters recurrentes
+  DATA.forEach(o=>(o.roles||[]).forEach(r=>CHARS[r.role]=(CHARS[r.role]||0)+1));  // characters recurrentes
   const params=new URLSearchParams(location.search);
-  const pc=params.get('composer'), po=params.get('opera');
+  const pc=params.get('composer'), po=params.get('opera'), pcat=params.get('category'),
+        pchar=params.get('character');
   if(pc) F.facet={type:'composer',value:pc};
+  else if(pcat) F.facet={type:'category',value:pcat};
+  else if(pchar) F.facet={type:'character',value:pchar};
   draw();
-  if(po){const i=DATA.findIndex(o=>o.title===po||o.title_en===po);if(i>=0)selectOpera(i);}
+  if(po){const cand=DATA.map((o,i)=>i).filter(i=>DATA[i].title===po||DATA[i].title_en===po)
+      .sort((a,b)=>(DATA[b].perfs||0)-(DATA[a].perfs||0));
+    if(cand.length)selectOpera(cand[0]);}
 }).catch(e=>{$('#count').textContent='Error loading core.json — '+e;});
+// interactive tonality tooltip (follows the cursor over the key blocks)
+(function(){const tip=document.createElement('div');tip.className='tiptt';document.body.appendChild(tip);
+  document.addEventListener('mousemove',e=>{const s=e.target.closest&&e.target.closest('.tseg[data-k]');
+    if(s){tip.innerHTML=s.dataset.k+(s.dataset.a?' <span style="opacity:.6;font-size:11px">· '+s.dataset.a+'</span>':'');
+      tip.style.opacity='1';tip.style.left=Math.min(e.clientX+14,innerWidth-90)+'px';tip.style.top=(e.clientY-30)+'px';}
+    else tip.style.opacity='0';});})();
 </script>
 <script>/*brand-home*/(document.querySelector(".brand")||document.querySelector("header h1"))&&(document.querySelector(".brand")||document.querySelector("header h1")).addEventListener("click",()=>location.href="index.html");</script>
+<script>/* master-logo-js */(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function initAll(){document.querySelectorAll('.marca').forEach(function(m){
+    if(m.dataset.mi) return; m.dataset.mi='1';
+    var oa=m.querySelector('.oa'), sp=m.querySelector('.sp'); if(!oa||!sp) return;
+    var measure=function(){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');};
+    measure(); addEventListener('resize',measure);
+    if(reduce){m.classList.add('on');}
+    else{requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(function(){m.classList.add('on');},650);});});}
+  });}
+  initAll(); if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){
+    document.querySelectorAll('.marca').forEach(function(m){var oa=m.querySelector('.oa'),sp=m.querySelector('.sp');if(oa&&sp){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');}});});}
+})();</script>
 </body>
 </html>

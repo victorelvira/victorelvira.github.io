@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Operatlas · durations</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0f1113; --panel:#171a1d; --panel2:#1e2225; --line:#2b3035;
-    --txt:#e8e6e1; --dim:#9aa0a6; --accent:#c9a24b;
+    --bg:#faf6ec; --panel:#fffdf8; --panel2:#f1eadb; --line:#e7decb;
+    --txt:#2b2620; --dim:#867a64; --accent:#9d2933;
     /* un color por act */
-    --a1:#c9a24b; --a2:#7fa6c9; --a3:#c97f7f; --a4:#8bc98b; --a5:#b18bc9; --a6:#c9b48b;
+    --a1:#c9ad74; --a2:#8aa6bf; --a3:#c98b86; --a4:#9cbf94; --a5:#b6a0c6; --a6:#cbb488;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--txt);
@@ -27,31 +28,64 @@
   .scalerow{display:flex;align-items:center;gap:0;height:18px;margin:0 0 4px 300px;
     color:var(--dim);font-size:10px;position:relative}
   .row{display:flex;align-items:center;gap:0;padding:5px 0;border-bottom:1px solid #20242700}
-  .row:hover{background:#ffffff08}
+  .row:hover{background:#00000006}
   .label{width:300px;min-width:300px;padding-right:14px;text-align:right}
   .label .t{font-size:13.5px;font-weight:600}
   .label .c{font-size:11.5px;color:var(--dim)}
   .bar{display:flex;height:26px;border-radius:5px;overflow:hidden;box-shadow:0 1px 0 #0006}
   .seg{display:flex;align-items:center;justify-content:center;font-size:11px;
-    font-weight:600;color:#0d0f10;white-space:nowrap;overflow:hidden;
-    border-right:1px solid #0f1113aa;text-shadow:0 1px 0 #ffffff30}
+    font-weight:600;color:#14100e;white-space:nowrap;overflow:hidden;
+    border-right:1px solid #14100eaa;text-shadow:0 1px 0 #ffffff30}
   .seg.small{font-size:0}
   .total{margin-left:10px;font-size:12px;color:var(--accent);
     font-variant-numeric:tabular-nums;white-space:nowrap}
-  .nodata{background:repeating-linear-gradient(45deg,#2b3035,#2b3035 6px,#232629 6px,#232629 12px);
+  .nodata{background:repeating-linear-gradient(45deg,#352c24,#352c24 6px,#232629 6px,#232629 12px);
     color:var(--dim);text-shadow:none}
   .legend{margin:2px 0 10px 300px;display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--dim)}
   .legend b{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 
   /* barra de identidad compartida (misma en todos los proyectos) */
   body{display:flex;flex-direction:column;min-height:100vh}
-  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
-  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
-  #navbar .nav-sep{color:#8a7f72}
-  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#f1eadb;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#2b2620;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#b3a68d}
+  #navbar .nav-home{color:#d8cbb2;text-decoration:none}
   #navbar a:hover{text-decoration:underline}
   .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
   .brand,header h1{cursor:pointer}
+  header nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap;margin-left:18px}
+  header nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  header nav a:hover{background:var(--panel2);color:var(--txt)}
+  header nav a.on{color:var(--accent);background:var(--panel2)}
+
+  /* nav-tiers */
+  nav .nav-div{display:inline-block;width:1px;height:16px;background:var(--line);margin:0 8px;vertical-align:middle}
+  nav a.lens{font-size:12px;color:#948873}
+  nav a.lens:hover{color:var(--txt);background:var(--panel2)}
+  nav a.lens.on{color:var(--accent)}
+
+  /* elegant-type */
+  body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,.brand,.fh1,.hero h1,.marca{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;font-weight:600;letter-spacing:.01em}
+  .brand{font-size:22px;letter-spacing:.02em}
+  .fh1,.hero h1{font-weight:600;letter-spacing:.008em}
+  h2{font-weight:600}
+
+  /* master-logo */
+  .marca{cursor:pointer;white-space:nowrap}
+  .marca .p,.marca .oa,.marca .sp{color:var(--txt)}
+  .marca .oa,.marca .sp{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;
+    transition:max-width .6s cubic-bezier(.4,0,.2,1),opacity .45s ease,transform .55s ease}
+  .marca .oa{max-width:var(--wa,1ch)}
+  .marca .sp{max-width:var(--wsp,.35ch)}
+  .marca .w2{display:inline-block;color:var(--txt);transition:color .6s ease}
+  .marca.on .oa{max-width:0;opacity:0;transform:translateX(.14em)}
+  .marca.on .sp{max-width:0}
+  .marca.on .w2{color:var(--accent)}
+  .marca.on:hover .oa{max-width:var(--wa);opacity:1;transform:none}
+  .marca.on:hover .sp{max-width:var(--wsp)}
+  .marca.on:hover .w2{color:var(--txt)}
+  @media(prefers-reduced-motion:reduce){.marca .oa,.marca .sp,.marca .w2{transition:none}}
 </style>
 </head>
 <body>
@@ -62,7 +96,21 @@
 </nav>
 
 <header>
-  <h1><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span> · durations by act</h1>
+  <h1><img class="emblem" src="favicon.svg" alt=""><span class="marca"><span class="p">Oper</span><span class="oa">a</span><span class="sp"> </span><span class="w2">Atlas</span></span> · durations by act</h1>
+  <nav>
+      <a href="nucleo.html">Operas</a>
+      <a href="empezar.html">Start here</a>
+      <a href="jugar.html">Play</a>
+      <a href="compositores.html">Composers</a>
+      <a href="personajes.html">Characters</a>
+      <span class="nav-div"></span>
+      <a href="conexiones.html" class="lens">Connections</a>
+      <a href="timeline.html" class="lens">Timeline</a>
+      <a href="analisis.html" class="lens">Trends</a>
+      <a href="pulso.html" class="lens">Pulse</a>
+      <a href="duraciones.html" class="lens on">Durations</a>
+      <a href="mapa.html" class="lens">Map</a>
+    </nav>
   <span class="sub" id="sub">loading…</span>
   <div class="controls">
     <input type="text" id="q" placeholder="filter…" autocomplete="off">
@@ -98,7 +146,7 @@ function draw(){
   // escala superior
   const maxmin=Math.max(...DATA.map(o=>o.total_min||0));
   let sc='';for(let m=0;m<=maxmin;m+=30){sc+=`<span style="position:absolute;left:${m*PXMIN}px">${m?m+'′':'0'}</span>`;}
-  sc+=`<span style="position:absolute;left:0;top:-1px;color:#565c62">min →</span>`;
+  sc+=`<span style="position:absolute;left:0;top:-1px;color:#b3a68d">min →</span>`;
   $('#scale').innerHTML=sc;$('#scale').style.width=(maxmin*PXMIN+40)+'px';
   // filas
   $('#rows').innerHTML=list.map(o=>{
@@ -125,9 +173,9 @@ function draw(){
 }
 $('#q').oninput=draw;$('#sort').onchange=draw;
 
-// Duración pública = MusicBrainz (desde core.json). theopera101 no se publica.
+// Duración pública = MusicBrainz (desde core.json).
 fetch('core.json').then(r=>r.json()).then(d=>{
-  DATA=d.filter(o=>(o.mb_acts&&o.mb_acts.length)||o.mb_total_min).map(o=>{
+  DATA=d.filter(o=>!o.is_arrangement&&((o.mb_acts&&o.mb_acts.length)||o.mb_total_min)).map(o=>{
     const acts=(o.mb_acts||[]).map(a=>({name:a.name,min:a.min}));
     const total=o.mb_total_min||acts.reduce((s,a)=>s+a.min,0);
     return {opera:o.title, composer:o.composer, acts, total_min:total,
@@ -135,10 +183,23 @@ fetch('core.json').then(r=>r.json()).then(d=>{
   });
   const names=['Act I','Act II','Act III','Act IV','Act V','Act VI'];
   $('#legend').innerHTML=names.map((n,i)=>`<span><b style="background:var(${COLORS[i]})"></b>${n}</span>`).join('')
-    +`<span style="margin-left:8px">· width = minutes · <span style="color:#c9a24b">recording duration · MusicBrainz</span></span>`;
+    +`<span style="margin-left:8px">· width = minutes · <span style="color:#c9ad74">recording duration · MusicBrainz</span></span>`;
   draw();
 }).catch(e=>{$('#sub').textContent='Error loading core.json — '+e;});
 </script>
 <script>/*brand-home*/(document.querySelector(".brand")||document.querySelector("header h1"))&&(document.querySelector(".brand")||document.querySelector("header h1")).addEventListener("click",()=>location.href="index.html");</script>
+<script>/* master-logo-js */(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function initAll(){document.querySelectorAll('.marca').forEach(function(m){
+    if(m.dataset.mi) return; m.dataset.mi='1';
+    var oa=m.querySelector('.oa'), sp=m.querySelector('.sp'); if(!oa||!sp) return;
+    var measure=function(){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');};
+    measure(); addEventListener('resize',measure);
+    if(reduce){m.classList.add('on');}
+    else{requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(function(){m.classList.add('on');},650);});});}
+  });}
+  initAll(); if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){
+    document.querySelectorAll('.marca').forEach(function(m){var oa=m.querySelector('.oa'),sp=m.querySelector('.sp');if(oa&&sp){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');}});});}
+})();</script>
 </body>
 </html>

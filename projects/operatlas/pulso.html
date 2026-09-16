@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Operatlas · pulse</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;--up:#8bc98b;--down:#c97f7f}
+  :root{--bg:#faf6ec;--panel:#fffdf8;--panel2:#f1eadb;--line:#e7decb;--txt:#2b2620;--dim:#867a64;--accent:#9d2933;--up:#9cbf94;--down:#c98b86}
   *{box-sizing:border-box}
   html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
   header{display:flex;align-items:center;gap:20px;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
@@ -14,7 +15,7 @@
   nav{display:flex;gap:4px;flex-wrap:wrap}
   nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
   nav a:hover{background:var(--panel2);color:var(--txt)} nav a.on{color:var(--accent);background:var(--panel2)}
-  .wrap{max-width:1080px;margin:0 auto;padding:24px 22px 70px}
+  .wrap{width:100%;max-width:min(1720px,94vw);margin:0 auto;padding:24px 22px 70px}
   h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin:32px 0 12px;font-weight:600}
   .lead{color:var(--dim);font-size:14px;margin:2px 0 4px}
   .chartbox{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
@@ -28,17 +29,46 @@
   .row .pct{font-size:12.5px;font-variant-numeric:tabular-nums;width:52px;text-align:right}
   .row .n{font-size:12px;color:var(--dim);width:52px;text-align:right}
   .spark{width:70px;height:22px;flex-shrink:0}
-  .note{color:#5f666c;font-size:11.5px;margin-top:10px}
+  .note{color:#867a67;font-size:11.5px;margin-top:10px}
 
   /* barra de identidad compartida (misma en todos los proyectos) */
   body{display:flex;flex-direction:column;min-height:100vh}
-  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
-  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
-  #navbar .nav-sep{color:#8a7f72}
-  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#f1eadb;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#2b2620;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#b3a68d}
+  #navbar .nav-home{color:#d8cbb2;text-decoration:none}
   #navbar a:hover{text-decoration:underline}
   .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
   .brand,header h1{cursor:pointer}
+
+  /* nav-tiers */
+  nav .nav-div{display:inline-block;width:1px;height:16px;background:var(--line);margin:0 8px;vertical-align:middle}
+  nav a.lens{font-size:12px;color:#948873}
+  nav a.lens:hover{color:var(--txt);background:var(--panel2)}
+  nav a.lens.on{color:var(--accent)}
+
+  /* elegant-type */
+  body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,.brand,.fh1,.hero h1,.marca{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;font-weight:600;letter-spacing:.01em}
+  .brand{font-size:22px;letter-spacing:.02em}
+  .fh1,.hero h1{font-weight:600;letter-spacing:.008em}
+  h2{font-weight:600}
+
+  /* master-logo */
+  .marca{cursor:pointer;white-space:nowrap}
+  .marca .p,.marca .oa,.marca .sp{color:var(--txt)}
+  .marca .oa,.marca .sp{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;
+    transition:max-width .6s cubic-bezier(.4,0,.2,1),opacity .45s ease,transform .55s ease}
+  .marca .oa{max-width:var(--wa,1ch)}
+  .marca .sp{max-width:var(--wsp,.35ch)}
+  .marca .w2{display:inline-block;color:var(--txt);transition:color .6s ease}
+  .marca.on .oa{max-width:0;opacity:0;transform:translateX(.14em)}
+  .marca.on .sp{max-width:0}
+  .marca.on .w2{color:var(--accent)}
+  .marca.on:hover .oa{max-width:var(--wa);opacity:1;transform:none}
+  .marca.on:hover .sp{max-width:var(--wsp)}
+  .marca.on:hover .w2{color:var(--txt)}
+  @media(prefers-reduced-motion:reduce){.marca .oa,.marca .sp,.marca .w2{transition:none}}
 </style>
 </head>
 <body>
@@ -49,17 +79,21 @@
 </nav>
 
 <header>
-  <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+  <span class="brand"><img class="emblem" src="favicon.svg" alt=""><span class="marca"><span class="p">Oper</span><span class="oa">a</span><span class="sp"> </span><span class="w2">Atlas</span></span></span>
   <nav>
-    <a href="index.html">Discover</a>
-    <a href="compositores.html">Composers</a>
-    <a href="nucleo.html">Operas</a>
-    <a href="conexiones.html">Connections</a>
-    <a href="timeline.html">Timeline</a>
-    <a href="pulso.html" class="on">Pulse</a>
-    <a href="duraciones.html">Durations</a>
-    <a href="mapa.html">Map</a>
-  </nav>
+      <a href="nucleo.html">Operas</a>
+      <a href="empezar.html">Start here</a>
+      <a href="jugar.html">Play</a>
+      <a href="compositores.html">Composers</a>
+      <a href="personajes.html">Characters</a>
+      <span class="nav-div"></span>
+      <a href="conexiones.html" class="lens">Connections</a>
+      <a href="timeline.html" class="lens">Timeline</a>
+      <a href="analisis.html" class="lens">Trends</a>
+      <a href="pulso.html" class="lens on">Pulse</a>
+      <a href="duraciones.html" class="lens">Durations</a>
+      <a href="mapa.html" class="lens">Map</a>
+    </nav>
 </header>
 <div class="wrap">
   <h2 style="margin-top:6px">The pulse of opera</h2>
@@ -99,30 +133,30 @@ fetch('pulse.json').then(r=>r.json()).then(P=>{
   let g='';
   // grid horizontal
   for(let k=0;k<=4;k++){const v=maxY*k/4;const y=Y(v);
-    g+=`<line x1="${mL}" y1="${y}" x2="${W-mR}" y2="${y}" stroke="#2b3035" stroke-width="1"/>`;
-    g+=`<text x="${mL-8}" y="${y+4}" fill="#5f666c" font-size="11" text-anchor="end">${Math.round(v/1000)}k</text>`;}
+    g+=`<line x1="${mL}" y1="${y}" x2="${W-mR}" y2="${y}" stroke="#352c24" stroke-width="1"/>`;
+    g+=`<text x="${mL-8}" y="${y+4}" fill="#867a67" font-size="11" text-anchor="end">${Math.round(v/1000)}k</text>`;}
   // etiquetas de año
-  yr.forEach((y,i)=>{if(y%4===0||y===yr[n-1])g+=`<text x="${X(i)}" y="${H-8}" fill="#9aa0a6" font-size="11" text-anchor="middle">${y}</text>`;});
+  yr.forEach((y,i)=>{if(y%4===0||y===yr[n-1])g+=`<text x="${X(i)}" y="${H-8}" fill="#a99b87" font-size="11" text-anchor="middle">${y}</text>`;});
   // área + línea (sólida hasta año parcial, punteada el resto)
   const solid=tot.map((v,i)=>i<=partialIdx-1?[X(i),Y(v)]:null).filter(Boolean);
   const area=`M${solid.map(p=>p.join(',')).join(' L')} L${X(partialIdx-1)},${Y(0)} L${X(0)},${Y(0)} Z`;
-  g+=`<path d="${area}" fill="#c9a24b18"/>`;
-  g+=`<polyline points="${solid.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#c9a24b" stroke-width="2.5"/>`;
-  g+=`<polyline points="${[X(partialIdx-1),Y(tot[partialIdx-1])].join(',')} ${[X(partialIdx),Y(tot[partialIdx])].join(',')}" fill="none" stroke="#c9a24b" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>`;
+  g+=`<path d="${area}" fill="#c9ad7418"/>`;
+  g+=`<polyline points="${solid.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#c9ad74" stroke-width="2.5"/>`;
+  g+=`<polyline points="${[X(partialIdx-1),Y(tot[partialIdx-1])].join(',')} ${[X(partialIdx),Y(tot[partialIdx])].join(',')}" fill="none" stroke="#c9ad74" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>`;
   // marcar COVID 2020
   const ci=yr.indexOf(2020);
-  if(ci>=0){g+=`<circle cx="${X(ci)}" cy="${Y(tot[ci])}" r="4" fill="#c97f7f"/>`;
-    g+=`<text x="${X(ci)}" y="${Y(tot[ci])-12}" fill="#c97f7f" font-size="12" text-anchor="middle" font-weight="600">COVID 2020</text>`;}
+  if(ci>=0){g+=`<circle cx="${X(ci)}" cy="${Y(tot[ci])}" r="4" fill="#c98b86"/>`;
+    g+=`<text x="${X(ci)}" y="${Y(tot[ci])-12}" fill="#c98b86" font-size="12" text-anchor="middle" font-weight="600">COVID 2020</text>`;}
   // pico
   const pi=tot.indexOf(Math.max(...tot));
-  g+=`<circle cx="${X(pi)}" cy="${Y(tot[pi])}" r="4" fill="#c9a24b"/>`;
-  g+=`<text x="${X(pi)}" y="${Y(tot[pi])-12}" fill="#c9a24b" font-size="12" text-anchor="middle" font-weight="600">peak ${yr[pi]}</text>`;
+  g+=`<circle cx="${X(pi)}" cy="${Y(tot[pi])}" r="4" fill="#c9ad74"/>`;
+  g+=`<text x="${X(pi)}" y="${Y(tot[pi])-12}" fill="#c9ad74" font-size="12" text-anchor="middle" font-weight="600">peak ${yr[pi]}</text>`;
   $('#chart').innerHTML=g;
 
   // ==== sparkline helper ====
   const spark=s=>{const mx=Math.max(...s,1);const w=70,h=22;
     const pts=s.map((v,i)=>`${(i/(s.length-1))*w},${h-2-(v/mx)*(h-4)}`).join(' ');
-    return `<svg class="spark" viewBox="0 0 ${w} ${h}"><polyline points="${pts}" fill="none" stroke="#9aa0a6" stroke-width="1.5"/></svg>`;};
+    return `<svg class="spark" viewBox="0 0 ${w} ${h}"><polyline points="${pts}" fill="none" stroke="#a99b87" stroke-width="1.5"/></svg>`;};
 
   // ==== auge / declive ====
   const ops=Object.values(P.operas);
@@ -149,12 +183,25 @@ fetch('pulse.json').then(r=>r.json()).then(P=>{
   const top=ops.map(o=>({o,r:sumR(o,2020,2025)})).sort((a,b)=>b.r-a.r).slice(0,20);
   const half=Math.ceil(top.length/2);
   const col=arr=>arr.map((x,i)=>`<div class="row" onclick="go('${esc(x.o.title).replace(/'/g,'&#39;')}')">
-    <span class="n" style="color:#5f666c">#${top.indexOf(x)+1}</span>
+    <span class="n" style="color:#867a67">#${top.indexOf(x)+1}</span>
     <span class="t">${esc(x.o.title)} <small>${esc(x.o.composer)}</small></span>
     <span class="n">${x.r.toLocaleString('es')}</span></div>`).join('');
   $('#top').innerHTML=`<div>${col(top.slice(0,half))}</div><div>${col(top.slice(half))}</div>`;
 }).catch(e=>{$('#chart').outerHTML='Error loading pulse.json — '+e;});
 </script>
 <script>/*brand-home*/(document.querySelector(".brand")||document.querySelector("header h1"))&&(document.querySelector(".brand")||document.querySelector("header h1")).addEventListener("click",()=>location.href="index.html");</script>
+<script>/* master-logo-js */(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function initAll(){document.querySelectorAll('.marca').forEach(function(m){
+    if(m.dataset.mi) return; m.dataset.mi='1';
+    var oa=m.querySelector('.oa'), sp=m.querySelector('.sp'); if(!oa||!sp) return;
+    var measure=function(){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');};
+    measure(); addEventListener('resize',measure);
+    if(reduce){m.classList.add('on');}
+    else{requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(function(){m.classList.add('on');},650);});});}
+  });}
+  initAll(); if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){
+    document.querySelectorAll('.marca').forEach(function(m){var oa=m.querySelector('.oa'),sp=m.querySelector('.sp');if(oa&&sp){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');}});});}
+})();</script>
 </body>
 </html>

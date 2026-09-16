@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Operatlas · composer</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#0f1113;--panel:#171a1d;--panel2:#1e2225;--line:#2b3035;--txt:#e8e6e1;--dim:#9aa0a6;--accent:#c9a24b;
-    --baroque:#c9b48b;--classic:#7fa6c9;--romantic:#c9a24b;--modern:#c97f7f;--contemp:#8bc98b}
+  :root{--bg:#faf6ec;--panel:#fffdf8;--panel2:#f1eadb;--line:#e7decb;--txt:#2b2620;--dim:#867a64;--accent:#9d2933;
+    --baroque:#cbb488;--classic:#8aa6bf;--romantic:#c9ad74;--modern:#c98b86;--contemp:#9cbf94}
   *{box-sizing:border-box}
   html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
   header{display:flex;align-items:center;gap:20px;padding:12px 22px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5;flex-wrap:wrap}
@@ -21,13 +22,13 @@
   .portrait{width:150px;height:180px;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:var(--panel2);flex-shrink:0}
   .htext h1{margin:0;font-size:30px;font-weight:700}
   .htext .dates{color:var(--accent);font-size:15px;margin:6px 0}
-  .htext .desc{color:#c8cace;font-size:14px;line-height:1.5;max-width:560px;margin-top:8px}
+  .htext .desc{color:#dcd4c6;font-size:14px;line-height:1.5;max-width:560px;margin-top:8px}
   .stats{display:flex;gap:26px;margin:20px 0 6px;flex-wrap:wrap}
   .stat .n{font-size:26px;font-weight:700;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
   .stat .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
   h2{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin:30px 0 12px;font-weight:600}
   .mini{position:relative;height:56px;border-bottom:1px solid var(--line);margin-bottom:6px}
-  .mini .dot{position:absolute;top:50%;transform:translate(-50%,-50%);border-radius:50%;cursor:pointer;border:1px solid #0f1113}
+  .mini .dot{position:absolute;top:50%;transform:translate(-50%,-50%);border-radius:50%;cursor:pointer;border:1px solid #14100e}
   .mini .dot:hover{outline:2px solid var(--txt)}
   .mini .yl{position:absolute;bottom:2px;font-size:10px;color:var(--dim);transform:translateX(-50%)}
   .ops{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
@@ -42,13 +43,42 @@
 
   /* barra de identidad compartida (misma en todos los proyectos) */
   body{display:flex;flex-direction:column;min-height:100vh}
-  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#1d2321;font-size:12.5px;flex:0 0 auto}
-  #navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;letter-spacing:.2px}
-  #navbar .nav-sep{color:#8a7f72}
-  #navbar .nav-home{color:#cbbfae;text-decoration:none}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#f1eadb;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#2b2620;font-weight:700;text-decoration:none;letter-spacing:.2px}
+  #navbar .nav-sep{color:#b3a68d}
+  #navbar .nav-home{color:#d8cbb2;text-decoration:none}
   #navbar a:hover{text-decoration:underline}
   .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
   .brand,header h1{cursor:pointer}
+
+  /* nav-tiers */
+  nav .nav-div{display:inline-block;width:1px;height:16px;background:var(--line);margin:0 8px;vertical-align:middle}
+  nav a.lens{font-size:12px;color:#948873}
+  nav a.lens:hover{color:var(--txt);background:var(--panel2)}
+  nav a.lens.on{color:var(--accent)}
+
+  /* elegant-type */
+  body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,.brand,.fh1,.hero h1,.marca{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;font-weight:600;letter-spacing:.01em}
+  .brand{font-size:22px;letter-spacing:.02em}
+  .fh1,.hero h1{font-weight:600;letter-spacing:.008em}
+  h2{font-weight:600}
+
+  /* master-logo */
+  .marca{cursor:pointer;white-space:nowrap}
+  .marca .p,.marca .oa,.marca .sp{color:var(--txt)}
+  .marca .oa,.marca .sp{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;
+    transition:max-width .6s cubic-bezier(.4,0,.2,1),opacity .45s ease,transform .55s ease}
+  .marca .oa{max-width:var(--wa,1ch)}
+  .marca .sp{max-width:var(--wsp,.35ch)}
+  .marca .w2{display:inline-block;color:var(--txt);transition:color .6s ease}
+  .marca.on .oa{max-width:0;opacity:0;transform:translateX(.14em)}
+  .marca.on .sp{max-width:0}
+  .marca.on .w2{color:var(--accent)}
+  .marca.on:hover .oa{max-width:var(--wa);opacity:1;transform:none}
+  .marca.on:hover .sp{max-width:var(--wsp)}
+  .marca.on:hover .w2{color:var(--txt)}
+  @media(prefers-reduced-motion:reduce){.marca .oa,.marca .sp,.marca .w2{transition:none}}
 </style>
 </head>
 <body>
@@ -59,17 +89,21 @@
 </nav>
 
 <header>
-  <span class="brand"><img class="emblem" src="favicon.svg" alt="">Oper<span>atlas</span></span>
+  <span class="brand"><img class="emblem" src="favicon.svg" alt=""><span class="marca"><span class="p">Oper</span><span class="oa">a</span><span class="sp"> </span><span class="w2">Atlas</span></span></span>
   <nav>
-    <a href="index.html">Discover</a>
-    <a href="compositores.html" class="on">Composers</a>
-    <a href="nucleo.html">Operas</a>
-    <a href="conexiones.html">Connections</a>
-    <a href="timeline.html">Timeline</a>
-    <a href="pulso.html">Pulse</a>
-    <a href="duraciones.html">Durations</a>
-    <a href="mapa.html">Map</a>
-  </nav>
+      <a href="nucleo.html">Operas</a>
+      <a href="empezar.html">Start here</a>
+      <a href="jugar.html">Play</a>
+      <a href="compositores.html">Composers</a>
+      <a href="personajes.html">Characters</a>
+      <span class="nav-div"></span>
+      <a href="conexiones.html" class="lens">Connections</a>
+      <a href="timeline.html" class="lens">Timeline</a>
+      <a href="analisis.html" class="lens">Trends</a>
+      <a href="pulso.html" class="lens">Pulse</a>
+      <a href="duraciones.html" class="lens">Durations</a>
+      <a href="mapa.html" class="lens">Map</a>
+    </nav>
 </header>
 <div class="wrap" id="wrap"><a class="back" href="compositores.html">← all composers</a><div id="body"></div></div>
 <div id="tip"></div>
@@ -82,7 +116,7 @@ const name=new URLSearchParams(location.search).get('c');
 Promise.all([fetch('core.json').then(r=>r.json()), fetch('composers.json').then(r=>r.json())])
 .then(([core,comps])=>{
   const ops=core.filter(o=>o.composer===name);
-  if(!ops.length){$('#body').innerHTML='<p style="color:#9aa0a6;margin-top:30px">Composer not found.</p>';return;}
+  if(!ops.length){$('#body').innerHTML='<p style="color:#a99b87;margin-top:30px">Composer not found.</p>';return;}
   const c=comps[name]||{};
   const MAXP=Math.max(...core.map(o=>o.perfs||1));
   const dated=ops.filter(o=>o.wd_year).sort((a,b)=>a.wd_year-b.wd_year);
@@ -118,8 +152,8 @@ Promise.all([fetch('core.json').then(r=>r.json()), fetch('composers.json').then(
       <div class="stat"><div class="n">${top?esc(top.title):'—'}</div><div class="l">best known</div></div>
     </div>
     ${dated.length?`<h2>Their operas over time</h2><div class="mini">${mini}</div>`:''}
-    ${libs.length?`<h2>Frequent librettists</h2><div class="chips">${libs.map(([l,n])=>`<a class="chip" href="nucleo.html?composer=${encodeURIComponent(name)}">${esc(l)} <span style="color:#5f666c">${n}</span></a>`).join('')}</div>`:''}
-    ${srcs.length?`<h2>Sources they adapted</h2><div class="chips">${srcs.map(([s,n])=>`<span class="chip">${esc(s)} <span style="color:#5f666c">${n}</span></span>`).join('')}</div>`:''}
+    ${libs.length?`<h2>Frequent librettists</h2><div class="chips">${libs.map(([l,n])=>`<a class="chip" href="nucleo.html?composer=${encodeURIComponent(name)}">${esc(l)} <span style="color:#867a67">${n}</span></a>`).join('')}</div>`:''}
+    ${srcs.length?`<h2>Sources they adapted</h2><div class="chips">${srcs.map(([s,n])=>`<span class="chip">${esc(s)} <span style="color:#867a67">${n}</span></span>`).join('')}</div>`:''}
     <h2>All their operas (${ops.length})</h2>
     <div class="ops">${listOps.map(o=>`<div class="op" onclick="location.href='nucleo.html?opera=${encodeURIComponent(o.title)}'">
       <span class="t">${esc(o.title)}</span><span class="y">${o.wd_year||''}</span></div>`).join('')}</div>`;
@@ -134,5 +168,18 @@ Promise.all([fetch('core.json').then(r=>r.json()), fetch('composers.json').then(
 }).catch(e=>{$('#body').innerHTML='Error: '+e;});
 </script>
 <script>/*brand-home*/(document.querySelector(".brand")||document.querySelector("header h1"))&&(document.querySelector(".brand")||document.querySelector("header h1")).addEventListener("click",()=>location.href="index.html");</script>
+<script>/* master-logo-js */(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function initAll(){document.querySelectorAll('.marca').forEach(function(m){
+    if(m.dataset.mi) return; m.dataset.mi='1';
+    var oa=m.querySelector('.oa'), sp=m.querySelector('.sp'); if(!oa||!sp) return;
+    var measure=function(){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');};
+    measure(); addEventListener('resize',measure);
+    if(reduce){m.classList.add('on');}
+    else{requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(function(){m.classList.add('on');},650);});});}
+  });}
+  initAll(); if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){
+    document.querySelectorAll('.marca').forEach(function(m){var oa=m.querySelector('.oa'),sp=m.querySelector('.sp');if(oa&&sp){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');}});});}
+})();</script>
 </body>
 </html>

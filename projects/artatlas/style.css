@@ -1294,3 +1294,15 @@ body.galaxy-painters #galaxy-hint, body.galaxy-painters #galaxy-legend { display
 
 .tag.model { background: #efe6d6; color: #7a5a2a; font-size: 10px; padding: 1px 5px; border-radius: 3px; vertical-align: 1px; white-space: nowrap; }
 .wc-title .tag.model { font-size: 11px; font-weight: 500; }
+
+/* ── Mis cuadros (only with the key) ── */
+#me-chip[hidden] { display: none !important; }
+.chip.me select { border: 0; background: transparent; font: inherit; color: inherit; cursor: pointer; padding: 0; }
+.fav-mark { color: #c0392b; font-size: .85em; margin-left: 3px; }
+.gcell .gfav { position: absolute; top: 8px; right: 40px; z-index: 3; width: 24px; height: 24px; border-radius: 50%; border: 0;
+  background: rgba(255,255,255,.85); color: #c0392b; font-size: 14px; line-height: 24px; cursor: pointer; padding: 0; opacity: 0; transition: opacity .12s; }
+.gcell:hover .gfav, .gcell .gfav.on, .gcell .gfav:focus-visible { opacity: 1; }
+.gallery.grouped .gcell .gfav, .gallery.grouped .gcell .gshare { top: 21px; }
+@media (hover: none) { .gcell .gfav { opacity: .92; } }
+.wc-fav { border: 1px solid var(--line); background: #fff; border-radius: 16px; padding: 4px 12px; cursor: pointer; font: inherit; color: var(--ink); }
+.wc-fav.on { color: #c0392b; border-color: #e3b3ab; background: #fbeeec; }

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operatlas · trends</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#faf6ec;--panel:#fffdf8;--panel2:#f1eadb;--line:#e7decb;--txt:#2b2620;--dim:#867a64;--accent:#9d2933}
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt)}
+  header{display:flex;align-items:center;gap:20px;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+  .brand{font-size:19px;font-weight:600;letter-spacing:.4px;cursor:pointer}.brand span{color:var(--accent)}
+  nav{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+  nav a{color:var(--dim);text-decoration:none;font-size:13px;padding:5px 11px;border-radius:6px}
+  nav a:hover{background:var(--panel2);color:var(--txt)} nav a.on{color:var(--accent);background:var(--panel2)}
+  nav .nav-div{display:inline-block;width:1px;height:16px;background:var(--line);margin:0 8px}
+  nav a.lens{font-size:12px;color:#948873} nav a.lens:hover{color:var(--txt);background:var(--panel2)} nav a.lens.on{color:var(--accent)}
+  .wrap{max-width:1000px;margin:0 auto;padding:24px 22px 80px}
+  h1{font-size:26px;margin:0 0 4px}.lead{color:var(--dim);font-size:14px;margin:0 0 26px;max-width:640px}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);margin:34px 0 4px}
+  .sublead{color:#978a76;font-size:12.5px;margin:0 0 16px;max-width:640px}
+  .catrow{display:grid;grid-template-columns:150px 1fr 54px;align-items:center;gap:10px;margin-bottom:5px;cursor:pointer}
+  .catrow:hover .catname{color:var(--txt)}
+  .catname{font-size:12.5px;color:var(--dim);text-align:right}
+  .catname b{color:var(--txt)}
+  .stack{display:flex;height:22px;border-radius:4px;overflow:hidden;background:#efe7d6}
+  .stack span{display:block}
+  .catn{font-size:11px;color:#867a67;text-align:right;font-variant-numeric:tabular-nums}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0 0}
+  .legend .li{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--dim)}
+  .legend .sw{width:11px;height:11px;border-radius:3px}
+  select{padding:8px 10px;background:var(--panel2);border:1px solid var(--line);border-radius:7px;color:var(--txt);font-size:13px;min-width:220px}
+  .arc{margin-top:8px}
+  .op{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:center;margin-bottom:3px;cursor:pointer}
+  .op:hover .optitle{color:var(--accent)}
+  .opyear{font-size:11px;color:#867a67;text-align:right;font-variant-numeric:tabular-nums}
+  .opbar{display:flex;align-items:center;gap:8px}
+  .opbar .b{height:15px;border-radius:3px;min-width:2px}
+  .optitle{font-size:12.5px}.opcat{font-size:10.5px;color:#867a67}
+  .heat{display:grid;gap:2px;margin-top:6px}
+  .heatcell{height:16px;border-radius:2px}
+  .hx{font-size:9.5px;color:#c4b596;text-align:center;overflow:visible;white-space:nowrap}
+  .hx-year{color:var(--txt);font-weight:600;font-size:10.5px}
+  .hy{font-size:11px;color:var(--dim);text-align:right;padding-right:6px;white-space:nowrap;overflow:hidden}
+  .tonrow{display:grid;grid-template-columns:150px 1fr;align-items:end;gap:14px;margin-bottom:14px}
+  .tonname{font-size:13px;color:var(--dim);text-align:right;line-height:1.35;padding-bottom:2px}
+  .tonname b{color:var(--txt);font-size:16px;font-family:'Cormorant Garamond',Georgia,serif}
+  .tonchart{min-width:0;position:relative}
+  .tonruler{position:relative;height:15px}
+  .actlab{position:absolute;font-size:10px;color:#867a67;white-space:nowrap;padding-left:3px;border-left:1px solid var(--line)}
+  .tonband{position:relative;display:flex;height:34px;border-radius:5px;overflow:hidden;box-shadow:0 1px 0 #0000000d}
+  .tseg{display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:600;
+    overflow:hidden;white-space:nowrap;min-width:0}
+  .actdiv{position:absolute;top:0;bottom:0;width:2px;background:#2b2620;opacity:.85;pointer-events:none}
+  .tseg{transition:filter .08s}
+  .tband:hover .tseg,.tonband:hover .tseg{opacity:.55}
+  .tseg:hover{opacity:1!important;filter:brightness(1.1) saturate(1.15);box-shadow:inset 0 0 0 2px #2b2620}
+  .tiptt{position:fixed;pointer-events:none;background:#2b2620;color:#faf6ec;padding:4px 11px;border-radius:6px;
+    font-size:14px;opacity:0;transition:opacity .1s;z-index:999;white-space:nowrap;box-shadow:0 4px 16px #0003;
+    font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;letter-spacing:.02em}
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #navbar{display:flex;align-items:center;gap:7px;padding:5px 16px;background:#f1eadb;font-size:12.5px;flex:0 0 auto}
+  #navbar .wordmark{color:#2b2620;font-weight:700;text-decoration:none}#navbar .nav-sep{color:#b3a68d}
+  #navbar .nav-home{color:#d8cbb2;text-decoration:none}#navbar a:hover{text-decoration:underline}
+  .emblem{width:17px;height:17px;vertical-align:-3px;margin-right:6px}
+
+  /* nav-tiers */
+  nav .nav-div{display:inline-block;width:1px;height:16px;background:var(--line);margin:0 8px;vertical-align:middle}
+  nav a.lens{font-size:12px;color:#948873}
+  nav a.lens:hover{color:var(--txt);background:var(--panel2)}
+  nav a.lens.on{color:var(--accent)}
+
+  /* elegant-type */
+  body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  h1,h2,h3,.brand,.fh1,.hero h1,.marca{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif !important;font-weight:600;letter-spacing:.01em}
+  .brand{font-size:22px;letter-spacing:.02em}
+  .fh1,.hero h1{font-weight:600;letter-spacing:.008em}
+  h2{font-weight:600}
+
+  /* master-logo */
+  .marca{cursor:pointer;white-space:nowrap}
+  .marca .p,.marca .oa,.marca .sp{color:var(--txt)}
+  .marca .oa,.marca .sp{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;
+    transition:max-width .6s cubic-bezier(.4,0,.2,1),opacity .45s ease,transform .55s ease}
+  .marca .oa{max-width:var(--wa,1ch)}
+  .marca .sp{max-width:var(--wsp,.35ch)}
+  .marca .w2{display:inline-block;color:var(--txt);transition:color .6s ease}
+  .marca.on .oa{max-width:0;opacity:0;transform:translateX(.14em)}
+  .marca.on .sp{max-width:0}
+  .marca.on .w2{color:var(--accent)}
+  .marca.on:hover .oa{max-width:var(--wa);opacity:1;transform:none}
+  .marca.on:hover .sp{max-width:var(--wsp)}
+  .marca.on:hover .w2{color:var(--txt)}
+  @media(prefers-reduced-motion:reduce){.marca .oa,.marca .sp,.marca .w2{transition:none}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+  <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+  <span class="nav-sep">·</span>
+  <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+</nav>
+<header>
+  <span class="brand"><img class="emblem" src="favicon.svg" alt=""><span class="marca"><span class="p">Oper</span><span class="oa">a</span><span class="sp"> </span><span class="w2">Atlas</span></span></span>
+  <nav>
+      <a href="nucleo.html">Operas</a>
+      <a href="empezar.html">Start here</a>
+      <a href="jugar.html">Play</a>
+      <a href="compositores.html">Composers</a>
+      <a href="personajes.html">Characters</a>
+      <span class="nav-div"></span>
+      <a href="conexiones.html" class="lens">Connections</a>
+      <a href="timeline.html" class="lens">Timeline</a>
+      <a href="analisis.html" class="lens on">Trends</a>
+      <a href="pulso.html" class="lens">Pulse</a>
+      <a href="duraciones.html" class="lens">Durations</a>
+      <a href="mapa.html" class="lens">Map</a>
+    </nav>
+</header>
+<div class="wrap">
+  <h1>Trends</h1>
+  <p class="lead">Reading the corpus as a whole: which voices each kind of opera leans on, when the
+  genres rose and fell, and how a single composer's output changed across a career. Everything below
+  is computed live from the fields in the fichas — nothing pre-baked.</p>
+
+  <h2>Vocal profile by category</h2>
+  <p class="sublead">Share of each voice type among the named roles of every opera in a category.
+  A quick way to compare, say, the tenor-and-soprano world of <i>verismo</i> with the lower-voiced
+  weight of French <i>grand opéra</i>. Click a category to see its operas.</p>
+  <div id="voicebycat"></div>
+  <div class="legend" id="vlegend"></div>
+
+  <h2>When the genres rose and fell</h2>
+  <p class="sublead">Premieres per decade, by category (darker = more). The diagonal drift from
+  <i>opera seria</i> and <i>tragédie lyrique</i> toward <i>opera buffa</i>, <i>grand opéra</i> and
+  <i>verismo</i> is the shape of operatic history.</p>
+  <div id="heat" style="overflow-x:auto"></div>
+
+  <h2>A composer's arc</h2>
+  <p class="sublead">Every opera we hold for one composer, by premiere year; bar length = median
+  running time, colour = category. Pick Verdi to watch bel-canto brevity grow into the long
+  through-composed dramas.</p>
+  <select id="composer"></select>
+  <div class="arc" id="arc"></div>
+
+  <h2>Tonality as the opera unfolds — from real scores</h2>
+  <p class="sublead">The dream was a tonal map of every opera; almost none survives as a complete analysable score, so
+  this is honest about where each line comes from (see <a href="acerca.html" style="color:var(--accent)">the note on the music</a>).
+  <b>Complete operas, all voices</b>: Weber's <i>Der Freischütz</i> (scholarly MEI edition), Wagner's whole
+  <i>Ring</i>, Peri's <i>L'Euridice</i> (with expert harmonic analysis), and six Moniuszko operas number by
+  number. <b>Famous numbers</b> of the great Italian/French repertoire — Traviata, Tosca, Bohème, Carmen… —
+  the key of each iconic aria or overture. Hue = key (circle of fifths); brighter = major. Hover any block.</p>
+  <div id="tonality"></div>
+
+  <p style="margin-top:40px;color:#867a67;font-size:12px">Categories from Wikidata genre; voices from
+  Wikipedia role tables; years from Wikidata. Tonality from CC-BY symbolic scores
+  (<a href="https://github.com/pl-wnifc/humdrum-polish-scores" target="_blank" rel="noopener" style="color:#6f767c">NIFC humdrum-polish-scores</a>)
+  analysed with music21. Operas without a stated category, roles or score are omitted from the
+  relevant chart, so counts are of what is <i>known</i>, not of everything.</p>
+</div>
+<script>
+const VOICES=[["soprano","#e08cc0"],["mezzo-soprano","#cf9ac6"],["contralto","#b6a0c6"],
+  ["countertenor","#8bb6c9"],["tenor","#e0b24e"],["baritone","#8aa6bf"],["bass-baritone","#6f8fb0"],
+  ["bass","#5f7f9f"],["treble","#9cbf94"],["spoken","#8a9096"]];
+const VC=Object.fromEntries(VOICES), VORD=Object.fromEntries(VOICES.map((v,i)=>[v[0],i]));
+const CATCOL={"Opera seria":"#c98b8b","Tragédie lyrique":"#c9ad74","Grand opéra":"#b6a0c6",
+  "Verismo":"#c95f5f","Opera buffa":"#9cbf94","Opéra comique":"#8aa6bf","Opéra bouffe":"#8bc9c9",
+  "Operetta":"#c9c98b","Singspiel":"#cbb488","Opera semiseria":"#b0a68b","Comic opera":"#9bc98b",
+  "Farsa":"#8bc9a6","Drame lyrique":"#a68bc9","Zarzuela":"#c98bb4","Opera":"#8a7d69"};
+const $=s=>document.querySelector(s);
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const catcol=c=>CATCOL[c]||"#8a7d69";
+
+fetch('core.json').then(r=>r.json()).then(ALL=>{
+  const D=ALL.filter(o=>!o.is_arrangement);   // arreglos/reducciones fuera de la estadística
+  // ---- 1) voice profile by category ----
+  const byCat={};   // cat -> {voice:count}
+  D.forEach(o=>{ if(!o.category) return;
+    (o.roles||[]).forEach(r=>{ if(!r.voice||!(r.voice in VC)) return;
+      (byCat[o.category]=byCat[o.category]||{})[r.voice]=(byCat[o.category][r.voice]||0)+1; });});
+  const cats=Object.entries(byCat).map(([c,m])=>({c,m,n:Object.values(m).reduce((a,b)=>a+b,0)}))
+    .filter(x=>x.n>=20).sort((a,b)=>b.n-a.n);
+  $('#voicebycat').innerHTML=cats.map(({c,m,n})=>{
+    const segs=VOICES.filter(([v])=>m[v]).map(([v,col])=>{
+      const pct=100*m[v]/n; return `<span style="width:${pct}%;background:${col}" title="${v}: ${Math.round(pct)}% (${m[v]})"></span>`;
+    }).join('');
+    return `<div class="catrow" data-cat="${esc(c)}"><div class="catname"><b>${esc(c)}</b></div>
+      <div class="stack">${segs}</div><div class="catn">${n}</div></div>`;
+  }).join('');
+  $('#vlegend').innerHTML=VOICES.map(([v,col])=>`<span class="li"><span class="sw" style="background:${col}"></span>${v}</span>`).join('');
+  $('#voicebycat').querySelectorAll('.catrow').forEach(el=>el.onclick=()=>location.href='nucleo.html?category='+encodeURIComponent(el.dataset.cat));
+
+  // ---- 2) category × decade heatmap ----
+  const cend=Object.keys(CATCOL).filter(c=>c!=="Opera");
+  const decs=[...new Set(D.filter(o=>o.year&&o.category&&o.category!=="Opera").map(o=>Math.floor(o.year/10)*10))].sort((a,b)=>a-b);
+  const grid={}; let mx=0;
+  D.forEach(o=>{ if(!o.year||!o.category||o.category==="Opera") return;
+    const d=Math.floor(o.year/10)*10, k=o.category+'|'+d; grid[k]=(grid[k]||0)+1; mx=Math.max(mx,grid[k]); });
+  const usedCats=cend.filter(c=>decs.some(d=>grid[c+'|'+d]));
+  let html=`<div class="heat" style="grid-template-columns:130px repeat(${decs.length},1fr);min-width:${130+decs.length*26}px">`;
+  html+=`<div></div>`+decs.map(d=>`<div class="hx${d%50===0?' hx-year':''}">${d%50===0?d:"·"}</div>`).join('');
+  usedCats.forEach(c=>{
+    html+=`<div class="hy">${esc(c)}</div>`+decs.map(d=>{
+      const v=grid[c+'|'+d]||0, a=v?0.15+0.85*v/mx:0;
+      return `<div class="heatcell" title="${esc(c)} · ${d}s: ${v}" style="background:${v?catcol(c):'#efe7d6'};opacity:${v?a:1}"></div>`;
+    }).join('');
+  });
+  html+=`</div>`; $('#heat').innerHTML=html;
+
+  // ---- 3) composer arc ----
+  const byComp={};D.forEach(o=>{(byComp[o.composer]=byComp[o.composer]||[]).push(o);});
+  const comps=Object.entries(byComp).map(([c,ops])=>({c,n:ops.filter(o=>o.year).length}))
+    .filter(x=>x.n>=3).sort((a,b)=>b.n-a.n);
+  $('#composer').innerHTML=comps.map(x=>`<option value="${esc(x.c)}">${esc(x.c)} (${x.n})</option>`).join('');
+  function arc(name){
+    const ops=(byComp[name]||[]).filter(o=>o.year).sort((a,b)=>a.year-b.year);
+    const maxd=Math.max(...ops.map(o=>o.mb_total_min||0),120);
+    $('#arc').innerHTML=ops.map(o=>{
+      const d=o.mb_total_min||0, w=d?Math.max(d/maxd*300,3):0;
+      return `<div class="op" onclick="location.href='nucleo.html?opera='+encodeURIComponent('${esc(o.title).replace(/'/g,'&#39;')}')">
+        <div class="opyear">${o.year}</div>
+        <div class="opbar"><div class="b" style="width:${w}px;background:${catcol(o.category)}"></div>
+          <span class="optitle">${esc(o.title)}</span>
+          <span class="opcat">${o.category?esc(o.category):''}${d?' · '+Math.floor(d/60)+'h'+String(d%60).padStart(2,'0'):''}</span></div>
+      </div>`;
+    }).join('');
+  }
+  $('#composer').onchange=e=>arc(e.target.value);
+  const pref=comps.find(x=>/Verdi/.test(x.c))||comps[0];
+  if(pref){$('#composer').value=pref.c; arc(pref.c);}
+}).catch(e=>{$('#voicebycat').textContent='Error loading core.json — '+e;});
+
+// ---- tonality timelines from real scores ----
+const PC={C:0,D:2,E:4,F:5,G:7,A:9,B:11};
+const COF={0:0,7:1,2:2,9:3,4:4,11:5,6:6,1:7,8:8,3:9,10:10,5:11}; // pitch-class -> circle-of-fifths index
+function cof(k){
+  const m=/^([A-G])([#-]?)\s+(major|minor)/.exec(k||''); if(!m) return null;
+  let pc=PC[m[1]]; if(m[2]==='#')pc=(pc+1)%12; if(m[2]==='-')pc=(pc+11)%12;
+  return {i:COF[pc], minor:m[3]==='minor'};
+}
+const pretty=k=>(k||'').replace('-','♭').replace('#','♯').replace(' minor','m').replace(' major','');
+const ACTLAB={"0":"Prologue","1":"Act I","2":"Act II","3":"Act III","4":"Act IV","5":"Act V"};
+// fill + text colour for a key (circle-of-fifths hue; major bright, minor deep)
+function keyFill(k){const c=cof(k); if(!c) return ['#efe7d6','#867a67'];
+  const hue=c.i*30; return c.minor?[`hsl(${hue},38%,44%)`,'#faf6ec']:[`hsl(${hue},56%,64%)`,'#2b2620'];}
+
+fetch('tonality.json').then(r=>r.json()).then(T=>{
+  const KR={continuous:0,selected:1,numbers:2};
+  const rows=Object.values(T).sort((a,b)=>(KR[a.kind]-KR[b.kind])||b.cells.length-a.cells.length);
+  $('#tonality').innerHTML=rows.map(o=>{
+    const total=o.cells.length; if(!total) return '';
+    const isCont=o.kind==='continuous';
+    let segs;
+    if(isCont){ segs=[]; let cur=null;
+      o.cells.forEach(c=>{const key=c.key||'?';
+        if(cur&&cur.key===key&&cur.act===c.act){cur.n++;} else {cur={key,act:c.act,n:1};segs.push(cur);}}); }
+    else segs=o.cells.map(c=>({key:c.key||'?',n:1,title:c.title,tempo:c.tempo,instruments:c.instruments}));
+    const acts=[]; let pa='\u0000';
+    o.cells.forEach((c,i)=>{if(c.act!==pa){acts.push({act:c.act,pct:i/total*100});pa=c.act;}});
+    const showActs = isCont && acts.length>1;
+    const band=segs.map(s=>{const [bg,tc]=keyFill(s.key); const w=s.n/total*100;
+      const lab = isCont ? (s.act&&showActs?(ACTLAB[s.act]||''):'')
+        : (s.title||'')+(s.tempo?' \u00b7 ~'+s.tempo+' bpm':'')+(s.instruments&&s.instruments.length?' \u00b7 '+s.instruments.slice(0,4).join(', '):'');
+      return `<span class="tseg" data-k="${esc(pretty(s.key))}" data-a="${esc(lab)}" style="width:${w}%;background:${bg};color:${tc}">${w>4.5?esc(pretty(s.key)):''}</span>`;}).join('');
+    const divs = showActs?acts.slice(1).map(a=>`<span class="actdiv" style="left:${a.pct}%"></span>`).join(''):'';
+    const ruler = showActs?acts.map(a=>`<span class="actlab" style="left:${a.pct}%">${ACTLAB[a.act]||''}</span>`).join(''):'';
+    const unit=isCont?`${o.n_acts} act${o.n_acts>1?'s':''} \u00b7 scanned`:(o.kind==='selected'?`${total} famous numbers`:`${total} numbers, in order`);
+    return `<div class="tonrow"><div class="tonname"><b>${esc(o.opera)}</b><br>
+        <span style="font-size:11px">${esc(o.composer.split(' ').slice(-1)[0])}</span><br>
+        <span style="font-size:10.5px;color:#867a67">${unit}</span></div>
+      <div class="tonchart"><div class="tonruler">${ruler}</div><div class="tonband">${band}${divs}</div></div></div>`;
+  }).join('')+`<div style="font-size:11.5px;color:#867a67;margin-top:12px;max-width:680px">Three kinds of source, all real scores: <b>Wagner’s Ring</b> scanned window-by-window across each act (Wagner Ring Dataset); the <b>famous numbers</b> of the great Italian/French operas, each a block of its own key (PDMX / MuseScore, CC0); and <b>Moniuszko’s</b> operas number-by-number in order (NIFC). Colour = key (circle of fifths), deeper = minor. Hover any block for its key, tempo and forces.</div>`;
+}).catch(e=>{$('#tonality').innerHTML='<div style="color:#867a67;font-size:12.5px">Tonality data not available.</div>';});
+
+// interactive tonality tooltip (follows the cursor over the key blocks)
+(function(){
+  const tip=document.createElement('div'); tip.className='tiptt'; document.body.appendChild(tip);
+  document.addEventListener('mousemove',e=>{
+    const s=e.target.closest && e.target.closest('.tseg[data-k]');
+    if(s){ tip.innerHTML=s.dataset.k+(s.dataset.a?' <span style="opacity:.6;font-size:11px">· '+s.dataset.a+'</span>':'');
+      tip.style.opacity='1'; tip.style.left=Math.min(e.clientX+14,innerWidth-90)+'px'; tip.style.top=(e.clientY-30)+'px'; }
+    else tip.style.opacity='0';
+  });
+})();
+$('.brand').addEventListener('click',()=>location.href='index.html');
+</script>
+<script>/* master-logo-js */(function(){
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function initAll(){document.querySelectorAll('.marca').forEach(function(m){
+    if(m.dataset.mi) return; m.dataset.mi='1';
+    var oa=m.querySelector('.oa'), sp=m.querySelector('.sp'); if(!oa||!sp) return;
+    var measure=function(){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');};
+    measure(); addEventListener('resize',measure);
+    if(reduce){m.classList.add('on');}
+    else{requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(function(){m.classList.add('on');},650);});});}
+  });}
+  initAll(); if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){
+    document.querySelectorAll('.marca').forEach(function(m){var oa=m.querySelector('.oa'),sp=m.querySelector('.sp');if(oa&&sp){m.style.setProperty('--wa',oa.scrollWidth+'px');m.style.setProperty('--wsp',sp.scrollWidth+'px');}});});}
+})();</script>
+</body>
+</html>

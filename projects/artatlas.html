@@ -20,10 +20,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://victorelvira.github.io/projects/artatlas/og.jpg">
   <meta property="og:url" content="https://victorelvira.github.io/projects/artatlas.html">
-  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.12.22">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.12.29">
 </head>
 <body>
   <nav id="navbar">
@@ -67,6 +66,18 @@
       <label class="chip form scu" title="Show sculpture"><input type="checkbox" data-form="sculpture" checked> 🗿 Sculpture</label>
       <label class="chip toggle att" title="Show only works of accepted attribution: hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked><span>Accepted only</span></label>
       <button id="locate" class="chip btn" type="button" title="Find the painting nearest to your location">📍 Near me</button>
+      <label id="me-chip" class="chip me" hidden title="My paintings: your favourites and the ones you have seen, kept only in this browser">
+        <select id="me-filter" aria-label="My paintings">
+          <option value="">My paintings: all</option>
+          <option value="fav">♥ Favourites</option>
+          <option value="seen">👁 Seen</option>
+          <option value="unseen">Not seen yet</option>
+          <option disabled>──────────</option>
+          <option value="link">🔗 Copy a link to my list</option>
+          <option value="save">⬇ Save my list to a file</option>
+          <option value="load">⬆ Load a list from a file</option>
+        </select>
+      </label>
     </div>
     </div>
   </header>
@@ -311,7 +322,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.12.22"></script>
+  <script src="artatlas/app.js?v=1.12.29"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>
