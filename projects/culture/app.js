@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.29.9";
+const DATA_V = "0.29.11";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -1824,16 +1824,30 @@ $("traces-table").querySelector("thead").addEventListener("click", (e) => {
   else tableSort = { key: th.dataset.k, dir: th.dataset.k === "rank" ? -1 : 1 };
   renderTable();
 });
+// Hiding the map's box and showing it again moved the view (Leaflet measured it at 0 × 0 while hidden and recentred:
+// back from Top people the map stood over the Atlantic). The view is kept and put back once the box has a size.
+let viewWhileHidden = null;
+function hideMain() {
+  if ($("main").style.display !== "none") viewWhileHidden = [map.getCenter(), map.getZoom()];
+  $("main").style.display = "none";
+}
+function showMain() {
+  $("main").style.display = "flex";
+  map.invalidateSize({ pan: false });
+  if (viewWhileHidden) { map.setView(viewWhileHidden[0], viewWhileHidden[1], { animate: false }); viewWhileHidden = null; }
+}
 function setTable(on) {
   tableOn = on;
   if (on) { startLongTail(); setTop(false); }
-  $("table").hidden = !on; $("main").style.display = on ? "none" : "flex";
+  $("table").hidden = !on; if (on) hideMain(); else if (!topOn) showMain();
   $("v-table").classList.toggle("active", on); $("v-map").classList.toggle("active", !on);
-  if (on) renderTable(); else map.invalidateSize();
+  if (on) renderTable();
   syncURL();
 }
-$("v-table").addEventListener("click", () => setTable(true));
-$("v-map").addEventListener("click", () => { setTop(false); setTable(false); });
+// on a phone the open filters sit above whatever view is chosen: choosing one folds them away (as Top people does)
+const foldOnPhone = () => { if (narrow() && !document.body.classList.contains("folded")) $("fold").click(); };
+$("v-table").addEventListener("click", () => { foldOnPhone(); setTable(true); });
+$("v-map").addEventListener("click", () => { foldOnPhone(); setTop(false); setTable(false); });
 $("v-top").addEventListener("click", () => setTop(true));
 
 /* ── TOP PEOPLE (0.27): the ranking, and how it is made ─────────────────────────────────────────────
@@ -1848,13 +1862,13 @@ function setTop(on) {
   $("v-top").classList.toggle("active", on);
   if (on) {
     $("table").hidden = true; tableOn = false; $("v-table").classList.remove("active");
-    $("main").style.display = "none"; $("v-map").classList.remove("active");
+    hideMain(); $("v-map").classList.remove("active");
     // on a phone the open filters sit above the list: the tap that asks for the list folds them away
     if (matchMedia("(max-width: 720px)").matches && !document.body.classList.contains("folded")) $("fold").click();
     if (!topJob) topJob = fetch(`culture/data/top.json?v=${DATA_V}`).then((r) => r.json()).then((d) => { TOP = d; initTop(); });
     else if (TOP) renderTop();
   } else if (!tableOn) {
-    $("main").style.display = "flex"; $("v-map").classList.add("active"); map.invalidateSize();
+    showMain(); $("v-map").classList.add("active");
   }
   syncURL();
 }
