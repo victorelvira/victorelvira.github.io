@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.5.0";
-const BUILD_AT = "2026-09-17 09:29";
+const DATA_V = "0.5.1";
+const BUILD_AT = "2026-09-17 09:44";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 // ---------- vocabulary ----------
@@ -88,18 +88,16 @@ const principalSources = m => {
 };
 const spanishCount = m => m.g.filter(f => kindOk(f) && langGroup(f.l) === "es").length;
 const KIND_WORD = { dem: "gentilicios", nick: "apodos", both: "gentilicios y apodos" };
+// 0 (none) in paper grey, then 1, 2, 3, 4, 5+ clearly darker step by step (Víctor, 2026-09-17)
+const SCALE_NG = ["#ebe5da", "#9cc3bb", "#5f9c91", "#2e6b6b", "#1b4747", "#0b2626"];
+const SCALE_SRC = ["#ebe5da", "#d9ae78", "#b97c43", "#8a4f2a", "#5e3219", "#321a0c"];
+const SCALE_LABELS = ["5 o más", "4", "3", "2", "1"];
 function colourOf(m) {
   if (mode === "ga") return GA_COL[m.ga || ""];
   if (mode === "sx") return SX_COL[SX_COL[m.sx] ? m.sx : "otro"] || "#ebe5da";
   if (mode === "ol") return OL_COL[m.ol] || OL_COL[""];
-  if (mode === "sources") {
-    const n = principalSources(m);
-    return n === 0 ? "#ebe5da" : n === 1 ? "#e6c89c" : n === 2 ? "#c9905a" : n <= 4 ? "#8a4f2a" : "#4a2614";
-  }
-  if (mode === "ng") {
-    const n = spanishCount(m);
-    return n === 0 ? "#ebe5da" : n === 1 ? "#cfe0dc" : n === 2 ? "#8fb8b0" : n <= 4 ? "#2e6b6b" : "#173b3b";
-  }
+  if (mode === "sources") return SCALE_SRC[Math.min(principalSources(m), 5)];
+  if (mode === "ng") return SCALE_NG[Math.min(spanishCount(m), 5)];
   if (mode === "curious") return m.cu ? "#7b3fb0" : (m.g.length ? "#e7e0d4" : "#f3efe8");
   if (mode === "ety") return m.ety && m.hist ? "#1f4f4f" : m.ety ? "#2e6b6b" : m.hist ? "#8fb8b0" : "#ebe5da";
 }
@@ -124,12 +122,10 @@ function legend() {
   const count = f => fmt(MUNIS.filter(f).length);
   const rows = {
     sources: [[KINDS === "dem" ? "Fuentes del gentilicio principal" : KINDS === "nick" ? "Fuentes del apodo más citado" : "Fuentes (gentilicio principal o apodo)", null],
-      ["#4a2614", "5 o más", m => principalSources(m) >= 5], ["#8a4f2a", "3 o 4", m => principalSources(m) >= 3 && principalSources(m) <= 4],
-      ["#c9905a", "2", m => principalSources(m) === 2], ["#e6c89c", "1", m => principalSources(m) === 1],
+      ...[5, 4, 3, 2, 1].map(n => [SCALE_SRC[n], n === 5 ? "5 o más" : String(n), m => Math.min(principalSources(m), 5) === n]),
       ["#ebe5da", { dem: "sin gentilicio en español", nick: "sin apodo", both: "ni gentilicio ni apodo" }[KINDS], m => principalSources(m) === 0]],
     ng: [[`${KIND_WORD[KINDS][0].toUpperCase()}${KIND_WORD[KINDS].slice(1)} en español`, null],
-      ["#173b3b", "5 o más", m => spanishCount(m) >= 5], ["#2e6b6b", "3 o 4", m => spanishCount(m) >= 3 && spanishCount(m) <= 4],
-      ["#8fb8b0", "2", m => spanishCount(m) === 2], ["#cfe0dc", "1", m => spanishCount(m) === 1],
+      ...[5, 4, 3, 2, 1].map(n => [SCALE_NG[n], n === 5 ? "5 o más" : String(n), m => Math.min(spanishCount(m), 5) === n]),
       ["#ebe5da", "ninguno", m => spanishCount(m) === 0]],
     curious: [["Gentilicio curioso", null],
       ["#7b3fb0", "no se parece al nombre", m => m.cu], ["#e7e0d4", "se parece", m => !m.cu && m.g.length],
@@ -479,7 +475,13 @@ async function select(id, fly) {
   const formBlock = f => {
     const key = (f.k === "nick" ? "nick|" : "dem|") + f.m;
     let cs = byForm.get(key) || [];
-    if (f.f) cs = cs.concat(byForm.get((f.k === "nick" ? "nick|" : "dem|") + f.f) || []);
+    const vars = f.v || [];
+    const extra = new Set(vars.map(v => v[0]));
+    if (f.f && !extra.has(f.f)) extra.add(f.f);
+    for (const x of extra) cs = cs.concat(byForm.get((f.k === "nick" ? "nick|" : "dem|") + x) || []);
+    const VT = { fem: "femenino", pl: "plural", fem_pl: "femenino plural" };
+    const varLine = vars.length ? `<div class="vars" title="Regla R001: femenino y plural se muestran dentro del masculino singular y no cuentan como formas distintas">${
+      ["fem", "pl", "fem_pl"].filter(k => vars.some(v => v[1] === k)).map(k => `${VT[k]}: <i>${vars.filter(v => v[1] === k).map(v => esc(v[0])).join(", ")}</i>`).join(" · ")}</div>` : "";
     return `<details class="form"><summary>
       <span class="fm">${esc(f.m)}</span>${f.f && f.f !== f.m ? `<span class="ff">${esc(f.f)}</span>` : ""}
       ${f.l.map(l => `<span class="badge lang">${esc(LANG_LABEL[l] || l)}</span>`).join("")}
@@ -487,6 +489,7 @@ async function select(id, fly) {
       ${f.cu ? `<span class="badge cur" title="Calculado: no comparte comienzo ni sílabas con ningún nombre del municipio">curioso</span>` : ""}
       ${f.go === "nombre_antiguo" || f.go === "otra_lengua" ? `<span class="badge orig" title="Deducido por nosotros: el gentilicio comparte raíz con ese nombre, que da la fuente indicada">← ${esc((f.ge || "").replace(/ \(([^)]*)\)$/, ""))}</span>` : ""}
       <span class="badge nsrc" title="Fuentes distintas">${f.n} ${f.n === 1 ? "fuente" : "fuentes"}</span>
+      ${varLine}
     </summary>${cs.map(claimHTML).join("")}</details>`;
   };
   const dems = m.g.filter(f => f.k === "dem"), nicks = m.g.filter(f => f.k === "nick");
