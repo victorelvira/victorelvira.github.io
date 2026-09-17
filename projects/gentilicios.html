@@ -9,7 +9,7 @@
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#3a2317">
   <link rel="stylesheet" href="gentilicios/vendor/leaflet.css">
-  <link rel="stylesheet" href="gentilicios/style.css?v=0.5.1">
+  <link rel="stylesheet" href="gentilicios/style.css?v=0.6.0">
 </head>
 <body>
   <nav id="navbar">
@@ -34,6 +34,15 @@
     <span id="view-tabs">
       <button type="button" id="v-map" class="view-btn active">🗺 Mapa</button>
       <button type="button" id="v-table" class="view-btn">▦ Tabla</button>
+      <button type="button" id="v-pop" class="view-btn pop" hidden title="Otra pestaña: población y territorio, no gentilicios">📈 Población</button>
+    </span>
+    <span id="pop-modes" hidden>
+      <span class="pop-banner"><b>Población y territorio</b><small>datos del INE y Wikidata · no son gentilicios</small></span>
+      <button type="button" class="pmode-btn active" data-pmode="dens"><b>Densidad</b><small>hab./km², 2025</small></button>
+      <button type="button" class="pmode-btn" data-pmode="chp"><b>Desde el máximo</b><small>cuánto ha perdido o ganado</small></button>
+      <button type="button" class="pmode-btn" data-pmode="pky"><b>Año del máximo</b><small>cuándo tuvo más gente</small></button>
+      <button type="button" class="pmode-btn" data-pmode="tr"><b>Trayectoria</b><small>forma de la curva 1900-2025</small></button>
+      <button type="button" class="pmode-btn" data-pmode="alt"><b>Altitud</b><small>metros, Wikidata</small></button>
     </span>
     <span id="colour-modes" title="Qué colorea el mapa">
       <button type="button" class="mode-btn active" data-group="formas"><b>Nº de formas</b><small>cuántos gentilicios y apodos</small></button>
@@ -92,6 +101,6 @@
   </div>
 
   <script src="gentilicios/vendor/leaflet.js"></script>
-  <script src="gentilicios/app.js?v=0.5.1"></script>
+  <script src="gentilicios/app.js?v=0.6.0"></script>
 </body>
 </html>

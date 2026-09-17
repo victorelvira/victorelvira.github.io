@@ -730,3 +730,90 @@ body.lens-game #instrument{flex:1;min-height:0;overflow-y:auto}
 .reattr a{color:var(--accent)}
 .reattr .why{display:block;margin-top:4px;color:var(--faint);font-size:11px;font-style:italic}
 
+
+/* ================= MÓVIL, REHECHO (2026-09-17) =================
+   Evaluado a 375 px antes de tocar nada. Lo que había:
+   1. las filas se salían por la derecha y se comían el audio y las grabaciones. Era una
+      regresión mía de la v0.53: el suelo de 1 180 px de la tabla (`body:not(.colw)`) ganaba
+      en especificidad al `min-width:0` del móvil, y al pasar la barra horizontal a #scroll
+      cada tarjeta medía 1 180 px;
+   2. la cabecera se comía 290 de 812 px antes de la primera obra;
+   3. las pestañas de vista no cabían: "Who knew whom" y "Play" no se veían y "By key" se
+      partía en dos líneas;
+   4. el pie ocupaba dos líneas fijas para decir "hover a dot" en una pantalla sin ratón;
+   5. la ficha de compositores eran números sueltos sin decir de qué;
+   6. el grafo de quién conoció a quién, encogido a 375 px, era ilegible.
+   Todo en un solo bloque al final, para que gane por orden y se lea junto. */
+@media(max-width:640px){
+  /* --- 1. las tarjetas caben --- */
+  body table.cat, body:not(.colw) table.cat, body.colw table.cat{min-width:0!important;width:100%!important}
+  #scroll{overflow-x:hidden}
+  table.cat tr{padding:11px 44px 12px 16px}
+  .c-comp{margin-right:6px}
+  .c-cat{display:inline-block!important;font-size:11.5px;margin:0}
+  .c-cat .alt{display:none}
+  .c-title{font-size:16px;line-height:1.28;margin:3px 0 5px}
+  table.cat td.c-key,table.cat td.c-scoring,table.cat td.c-num,table.cat td.c-media,table.cat td.c-rec{
+    display:inline-flex!important;align-items:center;margin:0 10px 3px 0;font-size:12px;white-space:nowrap}
+  table.cat td:empty{display:none!important}
+  /* una fecha en prosa ("1829-30 (08-07 to 12-16); revised 1832...") se corta, no empuja */
+  table.cat td.c-num{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+  table.cat td.c-rec::after{content:"recordings";margin-left:4px;font-size:10.5px;color:var(--faint)}
+  .c-src{top:13px;right:14px}
+
+  /* --- 2 y 3. cabecera compacta: marca y compositores en una línea, búsqueda con su "?",
+     pestañas que se deslizan --- */
+  #navbar{padding-left:14px;padding-right:14px}
+  #bar{flex-wrap:nowrap;padding:8px 14px;gap:10px}
+  .brand{flex:1 1 auto;min-width:0}
+  .brand>span{min-width:0}
+  .brand strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px}
+  #comp-btn{flex:0 0 auto;white-space:nowrap;font-size:12.5px;padding:6px 11px}
+  #comp-btn .opt{display:none}
+  .brand .mark{width:26px;height:26px}
+  .brand strong{font-size:15.5px}
+  #modes{flex-wrap:wrap;padding:4px 14px 8px;gap:8px}
+  #q{order:1;flex:1 1 0;min-width:0;font-size:16px;padding:8px 12px}  /* 16 px: iOS no hace zoom */
+  #whatis{order:2;flex:0 0 auto;width:38px;height:38px;padding:0;font-size:0;border-radius:50%}
+  #whatis::after{content:"?";font-size:17px;font-weight:700}
+  #view-tabs{order:3;flex:1 1 100%;display:flex;overflow-x:auto;scroll-snap-type:x proximity;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  #view-tabs::-webkit-scrollbar{display:none}
+  #view-tabs button{flex:0 0 auto;white-space:nowrap;scroll-snap-align:start;padding:8px 14px;font-size:13px}
+  .chip-sep{display:none}
+  #t-parts{order:4} #t-doubt{order:5}
+  #t-parts,#t-doubt{font-size:12px;padding:4px 10px;white-space:nowrap}
+  #facets{padding:6px 14px}
+  #subbar{flex-wrap:wrap;gap:6px 10px;padding:8px 14px}
+  #count{font-size:12.5px}
+
+  /* --- 4. el pie, una línea --- */
+  footer{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px;padding:6px 14px}
+  footer .foot-hover{display:none}
+
+  /* --- 5. compositores: cada número dice qué es --- */
+  table.cat td[data-l]::after{content:attr(data-l);margin-left:4px;font-size:10.5px;color:var(--faint)}
+  table.cat td.c-lived{color:var(--muted)}
+
+  /* --- 6. el grafo de conocidos se desliza en vez de encogerse --- */
+  body.lens-acq #instrument{overflow-x:auto}
+  .acqsvg{min-width:900px}
+  #instrument{padding:8px 14px 0}
+
+  /* la ficha: asa arriba, que es lo que dice "esto se desliza" */
+  #rec{padding-top:26px}
+  #rec::before{content:"";position:absolute;top:9px;left:50%;width:38px;height:4px;margin-left:-19px;
+    border-radius:999px;background:var(--line)}
+  #rec .whose .yrs{white-space:nowrap}
+
+  /* línea de tiempo: los modos en una fila que se desliza, como las pestañas */
+  /* (la nota de "7 244 obras sin fecha no se ven" se queda: es un dato, no decoración) */
+  #tl-modes{max-width:100%;overflow-x:auto;scrollbar-width:none}
+  #tl-modes::-webkit-scrollbar{display:none}
+  #tl-modes button,.tlbar .chip{white-space:nowrap;flex:0 0 auto}
+  .tlbar .hint{flex:1 1 100%;text-align:left;font-size:11px}
+  #timeline .tlab{font-size:12px}
+
+  table.cat td.c-num a{color:var(--accent)}
+}

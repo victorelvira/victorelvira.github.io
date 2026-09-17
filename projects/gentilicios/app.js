@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.5.1";
-const BUILD_AT = "2026-09-17 09:47";
+const DATA_V = "0.6.0";
+const BUILD_AT = "2026-09-17 15:13";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 // ---------- vocabulary ----------
@@ -59,7 +59,7 @@ let MUNIS = [], BY_ID = new Map(), SOURCES = {}, V = DATA_V;
 const CLAIMS_BY = new Map(), PROV_LOADED = new Map();
 const HOVER = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 const isMobile = () => window.matchMedia("(max-width: 760px)").matches;
-let mode = "ng", selected = null, layer = null, map = null;
+let VIEW = "map", mode = "ng", selected = null, layer = null, map = null;
 const layersById = new Map();
 
 // ---------- colours ----------
@@ -93,6 +93,7 @@ const SCALE_NG = ["#ebe5da", "#9cc3bb", "#5f9c91", "#2e6b6b", "#1b4747", "#0b262
 const SCALE_SRC = ["#ebe5da", "#d9ae78", "#b97c43", "#8a4f2a", "#5e3219", "#321a0c"];
 const SCALE_LABELS = ["5 o más", "4", "3", "2", "1"];
 function colourOf(m) {
+  if (VIEW === "pop") return popColour(m);
   if (mode === "ga") return GA_COL[m.ga || ""];
   if (mode === "sx") return SX_COL[SX_COL[m.sx] ? m.sx : "otro"] || "#ebe5da";
   if (mode === "ol") return OL_COL[m.ol] || OL_COL[""];
@@ -119,6 +120,7 @@ const VARIANT_NOTE = {
 };
 let group = "formas";
 function legend() {
+  if (VIEW === "pop") return popLegend();
   const count = f => fmt(MUNIS.filter(f).length);
   const rows = {
     sources: [[KINDS === "dem" ? "Fuentes del gentilicio principal" : KINDS === "nick" ? "Fuentes del apodo más citado" : "Fuentes (gentilicio principal o apodo)", null],
@@ -213,7 +215,7 @@ function initMap(geo) {
       }
       // phone: a tap opens the bubble and "Más detalles" opens the ficha; desktop: the side panel is already
       // there, so a click opens the ficha directly (Víctor, 2026-09-17)
-      l.on("click", e => { l.closeTooltip(); isMobile() ? showPopup(f.id, e.latlng) : select(f.id, false); });
+      l.on("click", e => { l.closeTooltip(); if (VIEW === "pop") return popFicha(f.id); isMobile() ? showPopup(f.id, e.latlng) : select(f.id, false); });
     },
   }).addTo(map);
   legend();
@@ -388,7 +390,7 @@ const IMG_KIND = { coat_of_arms: "Escudo", flag: "Bandera", image: "Imagen" };
 const SRC_NAME_CTX = { ine_padron: "INE, padrón", ine_hecho_1900: "INE, censos", wikidata: "Wikidata", gisco_lau: "Eurostat GISCO" };
 function srcLink(ctx, field, label) {
   const s = ctx && ctx.src && ctx.src[field];
-  return s ? ` <a class="srcl" href="${esc(s.u)}" target="_blank" rel="noopener" title="Fuente: ${esc(SRC_NAME_CTX[s.s] || s.s)}, consultado ${esc(s.r)}">${esc(label || SRC_NAME_CTX[s.s] || s.s)}</a>` : "";
+  return s ? ` <a class="srcl" href="${esc(s.u)}" target="_blank" rel="noopener" title="Fuente: ${esc(SRC_NAME_CTX[s.s] || s.s)}">${esc(label || SRC_NAME_CTX[s.s] || s.s)}</a>` : "";
 }
 function contextHTML(m, ctx) {
   if (!ctx) return "";
@@ -427,14 +429,15 @@ function loadClaims(pc) {
 
 function claimHTML(c) {
   let loc = "";
-  try { const o = JSON.parse(c.lc || "{}"); loc = Object.entries(o).filter(([k]) => k !== "revid").map(([k, v]) => `${k} ${v}`).join(" · "); } catch (e) {}
+  const js = (x, d) => { if (x == null || x === "") return d; if (typeof x !== "string") return x; try { return JSON.parse(x); } catch (e) { return d; } };
+  try { const o = js(c.lc, {}); loc = Object.entries(o).filter(([k]) => k !== "revid").map(([k, v]) => `${k} ${v}`).join(" · "); } catch (e) {}
   let cites = "";
   try {
-    const ci = JSON.parse(c.ci || "[]");
+    const ci = js(c.ci, []);
     if (ci.length) cites = "cita: " + ci.map(x => typeof x === "string" ? x : Object.entries(x).map(([k, v]) => `${k}=${v}`).join(" ")).join("; ");
   } catch (e) {}
   let notes = "";
-  try { const pn = JSON.parse(c.pn || "[]"); if (pn.length) notes = pn.map(x => typeof x === "string" ? x : JSON.stringify(x)).join("; "); } catch (e) {}
+  try { const pn = js(c.pn, []); if (pn.length) notes = pn.map(x => typeof x === "string" ? x : JSON.stringify(x)).join("; "); } catch (e) {}
   const kind = c.hk ? `<span class="badge kind">${esc(KIND_LABEL[c.hk] || c.hk)}</span> ` : "";
   const level = c.lv === "transcribed" ? "transcrito de un escaneo" : c.lv === "deduced" ? "deducido por nosotros" : "";
   const human = [loc.replace(/^(page|volume|vol|pdf_page|printed_page) /, m => ({ "page ": "pág. ", "volume ": "tomo ", "vol ": "tomo ", "pdf_page ": "pág. PDF ", "printed_page ": "pág. " })[m] || m), "consultado " + c.r, level].filter(Boolean);
@@ -548,8 +551,14 @@ async function select(id, fly) {
   if (dems.length === 1) { const d = body.querySelector("details.form"); if (d) d.open = true; }
 }
 
-function fromHash() {
-  const id = decodeURIComponent(location.hash.slice(1));
+let REDIRECTS = null;
+async function fromHash() {
+  let id = decodeURIComponent(location.hash.slice(1));
+  if (/^ine:\d+$/.test(id) && !BY_ID.has(id)) {
+    // an old INE code (merged or renamed municipality) leads to the current one
+    if (!REDIRECTS) REDIRECTS = await fetch(`gentilicios/data/redirects.json?v=${V}`).then(r => r.ok ? r.json() : {}).catch(() => ({}));
+    if (REDIRECTS[id]) { id = REDIRECTS[id]; history.replaceState(null, "", "#" + id); }
+  }
   if (BY_ID.has(id)) select(id, true);
   else if (/^(prov|ccaa|comarca|isla):/.test(id)) {
     const go = (n = 0) => TERR.has(id) ? openTerritory(id) : n < 30 && setTimeout(() => go(n + 1), 200);
@@ -608,11 +617,22 @@ function initSearch() {
 // ---------- table ----------
 let sortKey = "n", sortDir = 1, shown = 300;
 function showView(v) {
+  const was = VIEW;
+  VIEW = v;
   document.getElementById("v-map").classList.toggle("active", v === "map");
   document.getElementById("v-table").classList.toggle("active", v === "table");
+  document.getElementById("v-pop").classList.toggle("active", v === "pop");
   document.getElementById("table-view").hidden = v !== "table";
-  document.getElementById("colour-modes").style.visibility = v === "map" ? "" : "hidden";
-  if (v === "table") { shown = 300; renderTable(); } else map.invalidateSize();
+  document.getElementById("colour-modes").hidden = v === "pop";
+  document.getElementById("colour-modes").style.visibility = v === "table" ? "hidden" : "";
+  document.getElementById("pop-modes").hidden = v !== "pop";
+  document.body.classList.toggle("view-pop", v === "pop");
+  if (v === "table") { shown = 300; renderTable(); return; }
+  map.invalidateSize();
+  restyle();
+  // the side panel follows the tab: the same town's population ficha or gentilicio ficha
+  if (v === "pop") { selected ? popFicha(selected) : popIntro(); }
+  else if (was === "pop") { selected ? select(selected, false) : intro(); }
 }
 function initTable() {
   document.getElementById("v-map").addEventListener("click", () => showView("map"));
@@ -766,4 +786,133 @@ fetch("gentilicios/data/build.json", { cache: "no-store" }).then(r => r.json()).
   GRAPH = g;
   const wait = () => (MUNIS.length && map) ? initRoute() : setTimeout(wait, 200);
   wait();
+}).catch(() => {});
+
+// ---------- population and territory tab (not gentilicios) ----------
+let POP = null, pmode = "dens";
+const TR_LABEL = { growth: "crece", stable: "estable", peak_mid_century_then_decline: "máximo a mediados de siglo y caída",
+  decline_since_early_1900s: "cae desde principios del XX", decline_then_partial_recovery: "cae y se recupera en parte",
+  decline_since_1980s_or_later: "cae desde los 80 o después" };
+const TR_COL = { growth: "#2e6b6b", stable: "#8fb8b0", decline_then_partial_recovery: "#d9a441",
+  decline_since_1980s_or_later: "#e39a6b", peak_mid_century_then_decline: "#b6465f", decline_since_early_1900s: "#6e1f33" };
+const BIN = (v, cuts, cols) => { if (v == null) return "#ebe5da"; for (let i = 0; i < cuts.length; i++) if (v < cuts[i]) return cols[i]; return cols[cols.length - 1]; };
+const DENS = { cuts: [1, 10, 50, 200, 1000], cols: ["#e8f0f5", "#b9d3e3", "#7fb0cf", "#3f82b0", "#1d5687", "#0b2d4f"],
+  labels: ["menos de 1", "1-10", "10-50", "50-200", "200-1.000", "más de 1.000"] };
+const CHP = { cuts: [-90, -75, -50, -25, -2], cols: ["#4a0f1f", "#8a2238", "#c0485b", "#e3908a", "#f1cdb9", "#8fb8b0"],
+  labels: ["pierde más del 90 %", "75-90 %", "50-75 %", "25-50 %", "hasta 25 %", "en su máximo (o casi)"] };
+const ALT = { cuts: [200, 500, 800, 1100], cols: ["#e9efe1", "#c3d3a8", "#99ad72", "#6f7f45", "#4a3b26"],
+  labels: ["menos de 200 m", "200-500", "500-800", "800-1.100", "más de 1.100"] };
+const PKY = { cuts: [1920, 1950, 1970, 1991, 2010], cols: ["#3b1e54", "#6a3d8f", "#9b6fbd", "#c9a6dc", "#9cc3bb", "#2e6b6b"],
+  labels: ["1900-1910", "1920-1940", "1950-1960", "1970-1981", "1991-2009", "2010-2025"] };
+
+function popColour(m) {
+  const p = POP && POP.m[m.id];
+  if (!p) return "#ebe5da";
+  if (pmode === "dens") return BIN(p.d, DENS.cuts, DENS.cols);
+  if (pmode === "chp") return BIN(p.chp, CHP.cuts, CHP.cols);
+  if (pmode === "alt") return BIN(p.alt, ALT.cuts, ALT.cols);
+  if (pmode === "pky") return BIN(p.pky, PKY.cuts, PKY.cols);
+  return TR_COL[p.tr] || "#ebe5da";
+}
+function popLegend() {
+  const el = document.getElementById("legend");
+  if (!POP) { el.innerHTML = `<div class="lt">cargando…</div>`; return; }
+  const vals = Object.values(POP.m);
+  const binRows = (spec, key) => spec.cols.map((c, i) => {
+    const lo = i ? spec.cuts[i - 1] : -Infinity, hi = i < spec.cuts.length ? spec.cuts[i] : Infinity;
+    const n = vals.filter(p => p[key] != null && p[key] >= lo && p[key] < hi).length;
+    return `<div class="lr"><span class="sw" style="background:${c}"></span>${spec.labels[i]}<span class="ln">${fmt(n)}</span></div>`;
+  }).join("") + `<div class="lr"><span class="sw" style="background:#ebe5da"></span>sin dato<span class="ln">${fmt(MUNIS.length - vals.filter(p => p[key] != null).length)}</span></div>`;
+  const title = { dens: "Densidad 2025 (hab./km²)", chp: "Cambio desde el máximo", pky: "Año de máxima población", tr: "Trayectoria 1900-2025", alt: "Altitud" }[pmode];
+  const note = { dens: "INE padrón 2025 entre superficie (Wikidata o Eurostat)",
+    chp: "población 2025 frente al máximo 1900-2025; solo años comparables",
+    pky: "censos 1900-1991 (de hecho) y padrón 1996-2025 (de derecho)",
+    tr: "clasificación nuestra de la curva, descrita en el informe",
+    alt: "Wikidata: dato flojo, a veces es la cumbre y no el pueblo; se cambiará por el del IGN" }[pmode];
+  const body = pmode === "dens" ? binRows(DENS, "d") : pmode === "chp" ? binRows(CHP, "chp") : pmode === "alt" ? binRows(ALT, "alt")
+    : pmode === "pky" ? binRows(PKY, "pky")
+    : Object.keys(TR_COL).map(k => `<div class="lr"><span class="sw" style="background:${TR_COL[k]}"></span>${TR_LABEL[k]}<span class="ln">${fmt(vals.filter(p => p.tr === k).length)}</span></div>`).join("");
+  el.innerHTML = `<div class="lt">${title}</div>${body}<div class="note">${note}</div>`;
+}
+
+function popChart(p) {
+  const W = 360, H = 170, L = 48, R = 8, T = 10, B = 22;
+  const ys = POP.years, vals = p.v, nc = new Set(p.nc);
+  const maxV = Math.max(1, ...vals.filter(v => v != null));
+  const x = yr => L + (yr - 1900) / (2025 - 1900) * (W - L - R), y = v => T + (1 - v / maxV) * (H - T - B);
+  let s = `<svg viewBox="0 0 ${W} ${H}" class="popchart" role="img" aria-label="Población 1900-2025">`;
+  for (const tv of [0, maxV / 2, maxV]) s += `<line x1="${L}" x2="${W - R}" y1="${y(tv)}" y2="${y(tv)}" class="grid"/><text x="${L - 4}" y="${y(tv) + 3}" class="ax" text-anchor="end">${fmt(Math.round(tv))}</text>`;
+  for (const yr of [1900, 1950, 2000, 2025]) s += `<text x="${x(yr)}" y="${H - 6}" class="ax" text-anchor="middle">${yr}</text>`;
+  const pad = ys.map((yr, i) => [yr, vals[i]]).filter(([yr, v]) => v != null && yr >= 1996);
+  if (pad.length) s += `<polyline class="pad" points="${pad.map(([yr, v]) => `${x(yr)},${y(v)}`).join(" ")}"/>`;
+  ys.forEach((yr, i) => {
+    const v = vals[i];
+    if (v == null || yr > 1991) return;
+    s += `<circle cx="${x(yr)}" cy="${y(v)}" r="3.2" class="${nc.has(i) ? "cen nc" : "cen"}"><title>${yr}: ${fmt(v)}${nc.has(i) ? " (no comparable)" : ""}</title></circle>`;
+  });
+  if (p.pky) {
+    const i = ys.indexOf(p.pky);
+    if (i >= 0 && vals[i] != null) s += `<circle cx="${x(p.pky)}" cy="${y(vals[i])}" r="5.5" class="peak"><title>máximo: ${fmt(p.pk)} en ${p.pky}</title></circle>`;
+  }
+  return s + `</svg>`;
+}
+
+function popIntro() {
+  const body = document.getElementById("panel-body");
+  if (!POP) { body.innerHTML = `<p class="empty">cargando población…</p>`; return; }
+  const vals = Object.values(POP.m);
+  const lost = th => vals.filter(p => p.chp != null && p.chp <= -th).length;
+  body.innerHTML = `<div class="intro pop">
+    <div class="pop-flag">Población y territorio · no son gentilicios</div>
+    <h2>¿Cuánta gente vive en cada pueblo, y cuánta vivió?</h2>
+    <p>Series del INE para cada municipio, en su territorio actual: censos de 1900 a 1991 y padrón de 1996 a 2025. Pulsa un pueblo para ver su curva.</p>
+    <div class="kpis">
+      <div class="kpi"><b>${fmt(lost(50))}</b><span>municipios han perdido más de la mitad desde su máximo</span></div>
+      <div class="kpi"><b>${fmt(lost(75))}</b><span>más del 75 %</span></div>
+      <div class="kpi"><b>${fmt(lost(90))}</b><span>más del 90 %</span></div>
+      <div class="kpi"><b>${fmt(vals.filter(p => p.c96 != null && p.c96 < 0).length)}</b><span>pierden población de 1996 a 2025</span></div>
+    </div>
+    <p class="note">Censos: población de hecho (quien estaba esa noche). Padrón: población de derecho (empadronados). Los municipios fusionados suman sus antiguos municipios; los años con territorio que hoy es de otro se marcan y no cuentan para el máximo.</p>
+  </div>`;
+}
+
+function popFicha(id) {
+  const m = BY_ID.get(id), p = POP && POP.m[id];
+  if (!m || !p) return;
+  selected = id; restyle(); openPanel(); document.body.classList.add("has-ficha");
+  history.replaceState(null, "", "#" + id);
+  const pct = v => v == null ? "·" : `${v > 0 ? "+" : ""}${String(v).replace(".", ",")} %`;
+  document.getElementById("panel-body").innerHTML = `<div class="ficha pop">
+    <div class="pop-flag">Población y territorio · no son gentilicios</div>
+    <h2>${esc(m.n)}</h2>
+    <div class="where">${esc(m.p === m.c ? m.p : m.p + " · " + m.c)}</div>
+    ${popChart(p)}
+    <div class="kpis">
+      <div class="kpi"><b>${p.v[p.v.length - 1] != null ? fmt(p.v[p.v.length - 1]) : "·"}</b><span>habitantes en 2025</span></div>
+      <div class="kpi"><b>${p.pk != null ? fmt(p.pk) : "·"}</b><span>máximo${p.pky ? `, en ${p.pky}` : ""}</span></div>
+      <div class="kpi"><b>${pct(p.chp)}</b><span>desde el máximo</span></div>
+      <div class="kpi"><b>${pct(p.c96)}</b><span>de 1996 a 2025</span></div>
+      <div class="kpi"><b>${p.d != null ? fmt(Math.round(p.d * 10) / 10) : "·"}</b><span>hab./km²</span></div>
+      <div class="kpi"><b>${p.alt != null ? fmt(p.alt) + " m" : "·"}</b><span>altitud${p.alts && p.alts !== "referenced" ? " (Wikidata, sin referencia)" : ""}</span></div>
+    </div>
+    <p>Trayectoria: <b>${esc(TR_LABEL[p.tr] || p.tr || "·")}</b></p>
+    ${p.nc.length ? `<p class="note warn">Años con territorio que hoy pertenece a otro municipio (círculos vacíos): no cuentan para el máximo.</p>` : ""}
+    <p class="note">Fuente: INE, censos 1900-1991 y padrón continuo 1996-2025. No hay padrón de 1997.</p>
+    <button type="button" class="chip btn" id="to-gent">Ver sus gentilicios →</button>
+  </div>`;
+  document.getElementById("to-gent").addEventListener("click", () => { showView("map"); select(id, false); });
+  document.getElementById("panel").scrollTop = 0;
+}
+
+fetch("gentilicios/data/build.json", { cache: "no-store" }).then(r => r.json()).then(b =>
+  fetch(`gentilicios/data/population.json?v=${b.v}`)).then(r => r.ok ? r.json() : null).then(d => {
+  if (!d) return;
+  POP = d;
+  document.getElementById("v-pop").hidden = false;
+  document.getElementById("v-pop").addEventListener("click", () => showView("pop"));
+  document.querySelectorAll(".pmode-btn").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".pmode-btn").forEach(x => x.classList.toggle("active", x === b));
+    pmode = b.dataset.pmode; restyle();
+  }));
+  if (VIEW === "pop") { restyle(); popIntro(); }
 }).catch(() => {});

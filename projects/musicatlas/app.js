@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.55.5";
-const BUILD_AT = "2026-09-16 21:57";
+const DATA_V = "0.56.1";
+const BUILD_AT = "2026-09-17 15:11";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
@@ -180,6 +180,11 @@ function keyColour(k){ const p=keyParts(k); if(!p) return "#e8e2d8";
 const KEY_SHOW_MAJ={Db:"D♭",Ab:"A♭",Eb:"E♭",Bb:"B♭","F#":"F♯"};
 const KEY_SHOW_MIN={Db:"C♯",Ab:"G♯",Eb:"E♭",Bb:"B♭","F#":"F♯"};
 const keyShow=(t,mode)=>mode==="minor"?(KEY_SHOW_MIN[t]||t):(KEY_SHOW_MAJ[t]||t);
+/* LA MISMA GRAFÍA EN TODAS PARTES. La rueda decía E♭ y la columna Key "Eb major": a quien lee
+   música le salta a la vista. Se cambia solo lo que se PINTA, con la tónica tal como la
+   escribe la fuente (C♯ menor no se convierte en D♭); el valor que se compara, se filtra y
+   se busca sigue siendo "Eb major", así que buscar "eb" o "e flat" funciona igual. 2026-09-17. */
+const keyPretty=k=>String(k||"").replace(/^([A-G])([b#])(?=\s+(major|minor)\b)/,(m,l,a)=>l+(a==="b"?"♭":"♯"));
 /* El ♭ y el ♯ no existen en la serif de la casa, y el navegador los tomaba de otra fuente
    con un hueco delante ("B ♭"). Van en su propio tspan/span, con una fuente que sí los
    tiene y pegados a la letra. */
@@ -484,11 +489,13 @@ function renderPicker(){
     });
   }
   const n = state.comp.size===0 ? COMPOSERS.length : state.comp.has("∅") ? 0 : state.comp.size;
-  const label = n===COMPOSERS.length ? `All ${COMPOSERS.length} composers`
+  /* "All" va en su propio span para que el móvil lo pueda callar: en 375 px "All 31
+     composers" y el nombre del atlas no cabían juntos y se cortaba el nombre. */
+  const label = n===COMPOSERS.length ? `<span class="opt">All </span>${COMPOSERS.length} composers`
     : n===0 ? "No composer" : n===1
       ? (COMPOSERS.find(c=>state.comp.has(c.slug))||{}).name
       : `${n} composers`;
-  box.querySelector("#comp-btn").innerHTML = `♪ ${esc(label)} ▾`;
+  box.querySelector("#comp-btn").innerHTML = `♪ ${n===COMPOSERS.length?label:esc(label)} ▾`;
 }
 const chosen = slug => state.comp.size===0 ? true : state.comp.has(slug);
 function listComposers(){
@@ -668,7 +675,7 @@ const CELL = {
       + titleOf(w) + flags
       + (kids.length&&!isPart?`<span class="parts">${kids.length} pieces</span>`:""); },
   key: w => { const k=show(w,"key"); return k
-    ? `<span class="sw" style="background:${keyColour(val(w,"key"))}"></span>${esc(k)}${mark(w,"key")}` : ""; },
+    ? `<span class="sw" style="background:${keyColour(val(w,"key"))}"></span>${accHtml(keyPretty(k))}${mark(w,"key")}` : ""; },
   scoring: w => { const e=ensemble(w); return e ? esc(e)+mark(w,"instrumentation") : ""; },
   date: w => esc(fmtDate(show(w,"date_composed"))) + (F(w,"date_composed")?mark(w,"date_composed"):""),
   dur: w => fmtDur(seconds(w)),
@@ -801,15 +808,15 @@ function renderComposers(){
     const comm=`https://commons.wikimedia.org/wiki/Category:Audio_files_of_music_by_${encodeURIComponent((c.name||"").replace(/ /g,"_"))}`;
     return `<tr data-comp="${c.slug}">
       <td class="c-title"><span class="dot" style="background:${compColour(c.slug)}"></span>${esc(c.name)}</td>
-      <td class="c-num">${c.born||"?"}–${c.died||"?"}</td>
+      <td class="c-num c-lived">${c.born||"?"}–${c.died||"?"}</td>
       <td class="c-comp">${esc(period(c))}</td>
-      <td class="c-num"><b>${ws.length}</b></td>
-      <td class="c-num">${three}</td>
-      <td class="c-num">${dis}</td>
-      <td class="c-num">${scores||""}</td>
-      <td class="c-num">${play||""}</td>
+      <td class="c-num" data-l="works"><b>${ws.length}</b></td>
+      <td class="c-num" data-l="3 sources">${three}</td>
+      <td class="c-num" data-l="disagree">${dis}</td>
+      <td class="c-num" data-l="scores">${scores||""}</td>
+      <td class="c-num" data-l="plays here">${play||""}</td>
       <td class="c-scoring">${[...cs].slice(0,5).join(" · ")}</td>
-      <td class="c-num">${ys.length?Math.min(...ys)+"–"+Math.max(...ys):""}</td>
+      <td class="c-num" data-l="dated">${ys.length?Math.min(...ys)+"–"+Math.max(...ys):""}</td>
       <td class="c-num"><a href="${comm}" target="_blank" rel="noopener"
         onclick="event.stopPropagation()" title="more recordings on Wikimedia Commons than we can attach to individual works">Commons ↗</a></td></tr>`;
   }).join("");
@@ -978,7 +985,11 @@ function renderTimeline(host){
   const lives=state.tlMode==="composer"
     ? [...byGroup.keys()].map(compOf).flatMap(c=>[c.born,c.died]).filter(Boolean) : [];
   const lo=Math.min(...years,...lives)-2, hi=Math.max(...years,...lives)+2;
-  const LEFT=state.tlMode==="composer"?226:150;
+  /* En el móvil los nombres completos con fechas ocupaban 230 de 375 px y dejaban las
+     barras en una franja de dedo. Allí va solo el apellido, sin fechas (la banda de vida
+     ya las dibuja), y el gráfico se queda con el resto. 2026-09-17. */
+  const narrow = (host.clientWidth||innerWidth) < 600;
+  const LEFT=state.tlMode==="composer"?(narrow?92:226):(narrow?104:150);
   /* LA ALTURA DE FILA DEPENDE DE CUÁNTAS FILAS HAY. Con 31 compositores 34 px es lo que
      cabe; con cuatro periodos o con "todos juntos" era el mismo listón de 34 px en medio
      de un panel vacío, y una sola barra de Bach en 1725 medía 22 px. Ahora una vista de
@@ -1026,7 +1037,7 @@ function renderTimeline(host){
         <rect class="hit" x="${(x(yy)-Math.max(bw,4)/2).toFixed(1)}" y="${(base-maxH).toFixed(1)}"
           width="${Math.max(bw,4).toFixed(1)}" height="${maxH}" fill="transparent"/></g>`;}).join("");
     return `${life}<line class="axis" x1="${LEFT}" y1="${base}" x2="${(W-24)}" y2="${base}"/>
-      <text class="tlab" x="${LEFT-12}" y="${base-1}" text-anchor="end">${esc(label.length>26?label.split(" ").slice(-1)[0]:label)}${c&&c.born?` <tspan fill="#a89e91">${c.born}–${c.died||""}</tspan>`:""}</text>${bars}`;
+      <text class="tlab" x="${LEFT-12}" y="${base-1}" text-anchor="end">${esc(narrow&&c?label.split(" ").slice(-1)[0]:label.length>26?label.split(" ").slice(-1)[0]:label)}${c&&c.born&&!narrow?` <tspan fill="#a89e91">${c.born}–${c.died||""}</tspan>`:""}</text>${bars}`;
   }).join("");
 
   host.innerHTML=
@@ -1213,6 +1224,19 @@ function recNav(){
   const nx = BYID.get(seq[i+1]);
   if(nx && !LOADED.has(nx.composer_slug)) loadDetail(nx.composer_slug);
 }
+/* EN EL MÓVIL LA FICHA SE PASA CON EL DEDO. Las flechas ‹ › miden 10 px y están junto a la
+   cruz; en una pantalla táctil lo natural es deslizar. Solo un gesto claramente horizontal
+   (más de 60 px, y el doble en horizontal que en vertical), para no robarle el scroll a quien
+   baja por la ficha leyendo. 2026-09-17. */
+(()=>{ let x0=null, y0=null;
+  const rec=document.getElementById("rec"); if(!rec) return;
+  rec.addEventListener("touchstart",e=>{ const t0=e.touches[0]; x0=t0.clientX; y0=t0.clientY; },{passive:true});
+  rec.addEventListener("touchend",e=>{
+    if(x0==null) return; const t1=e.changedTouches[0], dx=t1.clientX-x0, dy=t1.clientY-y0; x0=null;
+    if(Math.abs(dx)>60 && Math.abs(dx)>2*Math.abs(dy) && document.body.classList.contains("rec-paged"))
+      moveRec(dx<0?1:-1);
+  },{passive:true});
+})();
 function moveRec(step){
   const seq = recSeq(), i = seq.indexOf(state.sel);
   if(i < 0) return;
@@ -1344,7 +1368,7 @@ function drawRec(row){
   const head=[
     val(w,"form") && {t:show(w,"form"), cls:"k-form"},
     w.forces && {t:w.forces, cls:"k-forces"},
-    show(w,"key") && {t:show(w,"key"), cls:"k-key", sw:keyColour(val(w,"key"))},
+    show(w,"key") && {t:keyPretty(show(w,"key")), cls:"k-key", sw:keyColour(val(w,"key"))},
     /* the chip takes the YEAR; IMSLP's free text can run to a whole sentence
        ("1831 (Grand polonaise brillante), 1834 (Andante spianato)") which is worth
        reading in the table below and useless squeezed into a pill */
