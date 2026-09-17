@@ -1,6 +1,6 @@
 "use strict";
 const DATA_V = "0.4.7";
-const BUILD_AT = "2026-09-17 09:08";
+const BUILD_AT = "2026-09-17 09:24";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 // ---------- vocabulary ----------
