@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.4.5";
-const BUILD_AT = "2026-09-17 08:59";
+const DATA_V = "0.4.7";
+const BUILD_AT = "2026-09-17 09:08";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 // ---------- vocabulary ----------
@@ -59,7 +59,7 @@ let MUNIS = [], BY_ID = new Map(), SOURCES = {}, V = DATA_V;
 const CLAIMS_BY = new Map(), PROV_LOADED = new Map();
 const HOVER = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 const isMobile = () => window.matchMedia("(max-width: 760px)").matches;
-let mode = "sources", selected = null, layer = null, map = null;
+let mode = "sx", selected = null, layer = null, map = null;
 const layersById = new Map();
 
 // ---------- colours ----------
@@ -74,13 +74,31 @@ const OL_LABEL = { latin: "latín", arabic: "árabe", basque: "euskera", prerrom
 const GA_COL = { nombre_antiguo: "#7b3fb0", otra_lengua: "#2e6b6b", sin_relacion: "#b6465f", nombre_actual: "#e6c89c", "": "#ebe5da" };
 const GA_LABEL = { nombre_antiguo: "de un nombre antiguo o latino", otra_lengua: "del nombre en otra lengua de España",
   sin_relacion: "no se parece a ningún nombre recogido", nombre_actual: "del nombre actual", "": "sin gentilicio" };
+// per town: sources behind the principal Spanish form (each form has its own count; the principal is the one shown
+// first), and distinct Spanish forms without apodos (other languages would inflate bilingual areas)
+// "kinds" selector (Víctor, 2026-09-17): gentilicios, apodos or both, inside the same map
+let KINDS = "dem";   // "dem" | "nick" | "both"
+const kindOk = f => KINDS === "both" || f.k === KINDS;
+const principalSources = m => {
+  const dem = m.g.find(f => f.pr && f.k === "dem" && langGroup(f.l) === "es");
+  const nick = m.g.filter(f => f.k === "nick" && langGroup(f.l) === "es").reduce((a, f) => Math.max(a, f.n), 0);
+  if (KINDS === "dem") return dem ? dem.n : 0;
+  if (KINDS === "nick") return nick;
+  return Math.max(dem ? dem.n : 0, nick);
+};
+const spanishCount = m => m.g.filter(f => kindOk(f) && langGroup(f.l) === "es").length;
+const KIND_WORD = { dem: "gentilicios", nick: "apodos", both: "gentilicios y apodos" };
 function colourOf(m) {
   if (mode === "ga") return GA_COL[m.ga || ""];
   if (mode === "sx") return SX_COL[SX_COL[m.sx] ? m.sx : "otro"] || "#ebe5da";
   if (mode === "ol") return OL_COL[m.ol] || OL_COL[""];
   if (mode === "sources") {
-    const n = m.ns;
-    return n === 0 ? "#ebe5da" : n === 1 ? "#e6c89c" : n === 2 ? "#c9905a" : "#8a4f2a";
+    const n = principalSources(m);
+    return n === 0 ? "#ebe5da" : n === 1 ? "#e6c89c" : n === 2 ? "#c9905a" : n <= 4 ? "#8a4f2a" : "#4a2614";
+  }
+  if (mode === "ng") {
+    const n = spanishCount(m);
+    return n === 0 ? "#ebe5da" : n === 1 ? "#cfe0dc" : n === 2 ? "#8fb8b0" : n <= 4 ? "#2e6b6b" : "#173b3b";
   }
   if (mode === "curious") return m.cu ? "#7b3fb0" : (m.g.length ? "#e7e0d4" : "#f3efe8");
   if (mode === "ety") return m.ety && m.hist ? "#1f4f4f" : m.ety ? "#2e6b6b" : m.hist ? "#8fb8b0" : "#ebe5da";
@@ -88,13 +106,18 @@ function colourOf(m) {
 function legend() {
   const count = f => fmt(MUNIS.filter(f).length);
   const rows = {
-    sources: [["Fuentes con gentilicio", null],
-      ["#8a4f2a", "3 o más", m => m.ns >= 3], ["#c9905a", "2", m => m.ns === 2],
-      ["#e6c89c", "1", m => m.ns === 1], ["#ebe5da", "sin documentar", m => m.ns === 0]],
+    sources: [[KINDS === "dem" ? "Fuentes del gentilicio principal" : KINDS === "nick" ? "Fuentes del apodo más citado" : "Fuentes (gentilicio principal o apodo)", null],
+      ["#4a2614", "5 o más", m => principalSources(m) >= 5], ["#8a4f2a", "3 o 4", m => principalSources(m) >= 3 && principalSources(m) <= 4],
+      ["#c9905a", "2", m => principalSources(m) === 2], ["#e6c89c", "1", m => principalSources(m) === 1],
+      ["#ebe5da", { dem: "sin gentilicio en español", nick: "sin apodo", both: "ni gentilicio ni apodo" }[KINDS], m => principalSources(m) === 0]],
+    ng: [[`${KIND_WORD[KINDS][0].toUpperCase()}${KIND_WORD[KINDS].slice(1)} en español`, null],
+      ["#173b3b", "5 o más", m => spanishCount(m) >= 5], ["#2e6b6b", "3 o 4", m => spanishCount(m) >= 3 && spanishCount(m) <= 4],
+      ["#8fb8b0", "2", m => spanishCount(m) === 2], ["#cfe0dc", "1", m => spanishCount(m) === 1],
+      ["#ebe5da", "ninguno", m => spanishCount(m) === 0]],
     curious: [["Gentilicio curioso", null],
       ["#7b3fb0", "no se parece al nombre", m => m.cu], ["#e7e0d4", "se parece", m => !m.cu && m.g.length],
       ["#f3efe8", "sin gentilicio", m => !m.g.length]],
-    sx: [["Sufijo del gentilicio principal", null]].concat(SX_ORDER.map(k => [SX_COL[k], k === "" ? "sin gentilicio" : k === "otro" ? "otros" : k,
+    sx: [["Sufijo del gentilicio principal", null]].concat(SX_ORDER.map(k => [SX_COL[k], k === "" ? "sin gentilicio en español" : k === "otro" ? "otros" : k,
       mm => (SX_COL[mm.sx] ? mm.sx : "otro") === k && (k !== "otro" || mm.sx)])),
     ga: [["De dónde sale el gentilicio", null]].concat(Object.keys(GA_COL).map(k => [GA_COL[k], GA_LABEL[k], mm => (mm.ga || "") === k])),
     ol: [["Origen del nombre, según las fuentes", null]].concat(Object.keys(OL_COL).map(k => [OL_COL[k], OL_LABEL[k], mm => (mm.ol || "") === k])),
@@ -107,8 +130,13 @@ function legend() {
     : `<div class="lt">${c}</div>`).join("") +
     (mode === "curious" ? `<div class="note">calculado: comparamos el gentilicio con el nombre</div>` : "") +
     (mode === "sx" ? `<div class="note">del gentilicio principal en español</div>` : "") +
+    (mode === "ng" ? `<div class="note">formas distintas en español; las otras lenguas, en la ficha</div>` : "") +
+    (mode === "sources" ? `<div class="note">cada forma tiene sus fuentes</div>` : "") +
     (mode === "ga" ? `<div class="note">deducido: comparamos cada gentilicio con los nombres actuales, antiguos y en otras lenguas que dan las fuentes</div>` : "") +
-    (mode === "ol" ? `<div class="note">la lengua que nombran las hipótesis; local, en revisión</div>` : "");
+    (mode === "ol" ? `<div class="note">la lengua que nombran las hipótesis</div>` : "") +
+    (mode === "ng" || mode === "sources" ? `<div class="kinds" role="group" aria-label="Qué formas">${["dem", "nick", "both"].map(k =>
+      `<button type="button" data-kinds="${k}" class="${KINDS === k ? "active" : ""}">${{ dem: "Gentilicios", nick: "Apodos", both: "Ambos" }[k]}</button>`).join("")}</div>` : "");
+  document.querySelectorAll("#legend [data-kinds]").forEach(b => b.addEventListener("click", () => { KINDS = b.dataset.kinds; restyle(); }));
 }
 function restyle() {
   if (!layer) return;
@@ -166,7 +194,8 @@ function initMap(geo) {
         l.on("mouseover", () => {
           const m = BY_ID.get(f.id);
           const g = mainForms(m);
-          l.bindTooltip(`<b>${esc(m.n)}</b>${g ? esc(g) : "<i>sin gentilicio documentado</i>"}`, { className: "mt", sticky: true, direction: "top" }).openTooltip();
+          const nk = m.g.filter(f => f.k === "nick" && langGroup(f.l) !== "fx").slice(0, 2).map(f => f.m).join(", ");
+          l.bindTooltip(`<b>${esc(m.n)}</b>${g ? esc(g) : "<i>sin gentilicio documentado</i>"}${nk ? `<br><span class="tk">apodo: <i>${esc(nk)}</i></span>` : ""}`, { className: "mt", sticky: true, direction: "top" }).openTooltip();
           if (m.id !== selected) l.setStyle({ weight: 1.4, color: "#241a12" });
         });
         l.on("mouseout", () => { if (f.id !== selected) l.setStyle({ weight: .35, color: "#fff" }); });

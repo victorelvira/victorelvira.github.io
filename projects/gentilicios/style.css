@@ -287,3 +287,8 @@ details.tech[open] { display: block; margin-top: 3px; font-size: 11px; word-brea
 .rb-title { font-weight: 700; font-size: 13.5px; margin: 0 2px 6px; }
 .rb-exp { font-weight: 400; color: var(--muted); font-style: italic; }
 #route-btn { order: 10; }
+#legend .kinds { display: flex; margin-top: 6px; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+#legend .kinds button { flex: 1; border: 0; background: #fff; font: inherit; font-size: 11.5px; padding: 3px 6px; cursor: pointer; }
+#legend .kinds button + button { border-left: 1px solid var(--line); }
+#legend .kinds button.active { background: #3a2317; color: #fff; }
+.mt .tk { color: #5b4a3c; font-size: 12px; }
