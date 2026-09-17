@@ -2,8 +2,8 @@
    the map as one view among others. Data built by scripts/build.py into sportsatlas/data/. */
 "use strict";
 
-const DATA_V = "0.5.8";
-const BUILD_AT = "2026-09-15 23:34";
+const DATA_V = "0.7.0";
+const BUILD_AT = "2026-09-17 16:51";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -62,7 +62,7 @@ async function loadMatches(sport) {
   const d = D[sport];
   if (d.matches) return d.matches;
   const files = sport === "football" ? d.idx.competitions.map(c => `football/matches-${c.id}.json`)
-    : ["slams", "masters", "finals", "olympics", "slams_w", "wta1000", "wta_finals", "olympics_w"].map(x => `tennis/matches-${x}.json`);
+    : ["slams", "masters", "atp500", "finals", "olympics", "slams_w", "wta1000", "wta_finals", "olympics_w"].map(x => `tennis/matches-${x}.json`);
   const packs = await Promise.all(files.map(f => getJSON(f).catch(() => ({ words: [], cols: [], rows: [] }))));
   d.matches = packs.flatMap(unpack).filter(r => d.ed[r[0]]);
   return d.matches;
@@ -214,6 +214,8 @@ function chrome() {
     const other = d.idx.competitions.filter(c => w ? (c.group === "finals_w" || c.group === "olympics_w") : (c.group === "finals" || c.group === "olympics"));
     h += `<div class="fg">${chip("c", slams.map(c => c.id).join(","), "Grand Slams")}${slams.map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div><span class="chip-sep"></span>`;
     h += `<div class="fg">${chip("c", masters.map(c => c.id).join(","), w ? "WTA 1000" : "Masters 1000")}${masters.filter(c => count(c.id)).map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div>`;
+    const five = w ? [] : d.idx.competitions.filter(c => c.group === "atp500");
+    if (five.length) h += `<span class="chip-sep"></span><div class="fg">${chip("c", five.map(c => c.id).join(","), "ATP 500")}${five.filter(c => count(c.id)).map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div>`;
     h += `<span class="chip-sep"></span><div class="fg"><span class="lbl">Also</span>${other.map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div>`;
     if (S.view === "matches") {
       h += `<span class="chip-sep"></span><div class="fg"><span class="lbl">Round</span>${["Final", "Semifinals", "Quarterfinals", "Earlier"].map(r => chip("r", r, r)).join("")}</div>`;
@@ -293,6 +295,28 @@ function renderTable() {
 function filterClick(e) {
   const m = e.target.closest("[data-matches]");
   if (m) { e.preventDefault(); e.stopPropagation(); S.page = ""; S.open = ""; S.view = "matches"; S.ed = m.dataset.matches; S.comps.clear(); S.rounds.clear(); S.y0 = S.y1 = null; S.q = ""; S.sort = null; S.limit = 300; pushNext = true; render(); return true; }
+  // a fact that opens the table on exactly those matches: {"q": name, "comps": [...], "rounds": [...]}
+  const tb = e.target.closest("[data-table]");
+  if (tb) {
+    e.preventDefault(); e.stopPropagation();
+    const f = JSON.parse(tb.dataset.table);
+    S.page = ""; S.open = ""; S.view = "matches"; S.ed = ""; S.y0 = S.y1 = null; S.sort = null; S.limit = 300;
+    S.q = f.q || ""; S.comps = new Set(f.comps || []); S.rounds = new Set(f.rounds || []);
+    if (f.g) S.g = f.g;
+    pushNext = true; render(); return true;
+  }
+  // a fact that unfolds its list in place
+  const fb = e.target.closest("[data-fact]");
+  if (fb) {
+    e.preventDefault(); e.stopPropagation();
+    const root = fb.closest("#page-body, #rec-body");
+    const panel = root && root.querySelector(`.fact-panel[data-for="${fb.dataset.fact}"]`);
+    const open = panel && panel.hidden;
+    root.querySelectorAll(".fact-panel").forEach(x => { x.hidden = true; });
+    root.querySelectorAll("[data-fact]").forEach(x => x.setAttribute("aria-pressed", "false"));
+    if (panel && open) { panel.hidden = false; fb.setAttribute("aria-pressed", "true"); }
+    return true;
+  }
   const c = e.target.closest("[data-comp]");
   if (c) { e.preventDefault(); e.stopPropagation(); S.page = ""; S.comps = new Set([c.dataset.comp]); S.limit = 300; render(); return true; }
   const q = e.target.closest("[data-q]");
@@ -453,7 +477,7 @@ async function viewPlayers(d) {
       const r = p.r.filter(x => compOn(x[4]) && inYears(x[3]));
       if (!r.length) continue;
       const t = r.filter(x => x[2] === "Champion");
-      rows.push({ p, n: r.length, titles: t.length, slams: t.filter(x => x[5] === "slams" || x[5] === "slams_w").length, masters: t.filter(x => x[5] === "masters" || x[5] === "wta1000").length,
+      rows.push({ p, n: r.length, titles: t.length, slams: t.filter(x => x[5] === "slams" || x[5] === "slams_w").length, masters: t.filter(x => x[5] === "masters" || x[5] === "wta1000").length, five: t.filter(x => x[5] === "atp500").length,
         finals: r.filter(x => x[1] <= 0).length, y0: r[0][3], y1: r[r.length - 1][3] });
     }
     current = {
@@ -464,6 +488,7 @@ async function viewPlayers(d) {
         { k: "titles", l: "Titles", v: x => x.titles, r: x => x.titles ? `<span class="win">${x.titles}</span>` : "", cls: "num", num: true },
         { k: "slams", l: "Slams", v: x => x.slams, r: x => x.slams || "", cls: "num", num: true },
         { k: "masters", l: S.g === "w" ? "WTA 1000" : "Masters", v: x => x.masters, r: x => x.masters || "", cls: "num", num: true },
+        ...(S.g === "w" ? [] : [{ k: "five", l: "500", v: x => x.five, r: x => x.five || "", cls: "num", num: true, hide: true }]),
         { k: "finals", l: "Finals", v: x => x.finals, r: x => x.finals || "", cls: "num", num: true, hide: true },
         { k: "n", l: "Editions", v: x => x.n, cls: "num", num: true },
         { k: "span", l: "Years", v: x => `${x.y0}–${x.y1}`, s: x => x.y0, cls: "yr", hide: true },
@@ -634,7 +659,7 @@ function relayout() {
 
 /* What gets a page of its own on a wide screen: a tournament or season of one year, a team, a competition. What they
    lead to (a player, a venue) opens in the card beside the page. */
-const PAGE_TYPES = new Set(["edition", "team", "comp", "about"]);
+const PAGE_TYPES = new Set(["edition", "team", "comp", "about", "player"]);
 const wide = () => innerWidth >= 1000;
 // one ground, two sports: the Wikidata item is the same, so the card says what the other sport played there
 async function otherSportVenue(id) {
@@ -702,7 +727,7 @@ async function aboutHtml() {
     <p>A historical atlas of football and tennis: every match of the great competitions, table first, each one traced to
     the page it was read from. Football: ${fmt(n(f, "matches"))} matches in ${fmt(f.idx.editions.length)} tournaments and seasons
     (World Cups, Euros, the European club cups, La Liga, the Premier League). Tennis: ${fmt(n(t, "matches"))} singles matches in
-    ${fmt(t.idx.editions.length)} editions, men's and women's (Grand Slams, Masters 1000 and WTA 1000, ATP and WTA Finals, Olympics).</p>
+    ${fmt(t.idx.editions.length)} editions, men's and women's (Grand Slams, Masters 1000 and WTA 1000, ATP 500 from 2009, ATP and WTA Finals, Olympics).</p>
 
     <h3>How it is read</h3>
     <p>The English Wikipedia leads: its match boxes, draws, results grids, squads and infoboxes are read as they are written,
@@ -822,7 +847,7 @@ async function openCard(ref, silent) {
   if (!S.page) describe(ref, ref === "about:" ? "About" : $("#rec-body h2")?.textContent || "");
 }
 
-const TENNIS_GROUP = { slam: "Grand Slam", masters: "Masters 1000", finals: "ATP Finals", olympics: "Olympic Games",
+const TENNIS_GROUP = { slam: "Grand Slam", masters: "Masters 1000", atp500: "ATP 500", finals: "ATP Finals", olympics: "Olympic Games",
   slam_w: "Grand Slam · women", wta1000: "WTA 1000 · women", finals_w: "WTA Finals", olympics_w: "Olympic Games · women" };
 const CUP = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9.5 17h5"/></svg>`;
 const month = iso => { if (!iso) return ""; const [, m, dd] = iso.split("-"); return `${+dd} ${["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+m - 1]}`; };
@@ -1025,11 +1050,11 @@ function pathsHtml(d, e, teams, team) {
   const four = teams.filter(t => t.r.some(r => r.e === e.id && finishLevel(r.fin) <= 3))
     .sort((a, b) => finishLevel(a.r.find(r => r.e === e.id).fin) - finishLevel(b.r.find(r => r.e === e.id).fin)).slice(0, 4);
   if (four.length < 2 || all.length < 3) return "";
-  const W = 640, H = 210, L = 108, R = 12, T = 12, B = 24;
+  const W = 640, H = 230, L = 108, R = 12, T = 26, B = 24;
   const X = i => L + i / (all.length - 1) * (W - L - R), Y = lv => T + (lv - 1) / 5 * (H - T - B);
   const COLORS = ["#0072B2", "#D55E00", "#009E73", "#CC79A7"];  // Okabe–Ito: told apart with any colour vision
-  const grid = [1, 2, 3, 4, 5, 6].map(lv => `<line x1="${L}" x2="${W - R}" y1="${Y(lv)}" y2="${Y(lv)}" class="grid"/><text x="${L - 8}" y="${Y(lv) + 4}" text-anchor="end">${FINISH_NAMES[lv]}</text>`).join("");
-  const yrs = all.filter((y, i) => i === 0 || i === all.length - 1 || i % Math.ceil(all.length / 8) === 0).map(y => `<text x="${X(all.indexOf(y))}" y="${H - 6}" text-anchor="middle">${y.year}</text>`).join("");
+  const grid = [1, 2, 3, 4, 5, 6].map(lv => `<line x1="${L}" x2="${W - R}" y1="${Y(lv)}" y2="${Y(lv)}" class="axis-line"/><text class="axis-label" x="${L - 8}" y="${Y(lv) + 4}" text-anchor="end">${FINISH_NAMES[lv]}</text>`).join("");
+  const yrs = all.filter((y, i) => i === 0 || i === all.length - 1 || i % Math.ceil(all.length / 8) === 0).map(y => `<text class="axis-label" x="${X(all.indexOf(y))}" y="${H - 6}" text-anchor="middle">${y.year}</text>`).join("");
   const series = four.map((t, si) => {
     const pts = all.map((y, i) => { const r = t.r.find(z => z.e === y.id); return r ? { i, lv: finishLevel(r.fin), y } : null; });
     let path = "", prev = null, gaps = "";
@@ -1040,11 +1065,12 @@ function pathsHtml(d, e, teams, team) {
       prev = p;
     }
     const dots = pts.filter(Boolean).map(p => `<circle cx="${X(p.i)}" cy="${Y(p.lv)}" r="${p.y.id === e.id ? 5 : p.lv === 1 ? 4 : 2.6}" fill="${COLORS[si]}" class="${p.y.id === e.id ? "now" : ""}" data-open="edition:${p.y.id}"><title>${esc(t.name)} · ${p.y.year}: ${FINISH_NAMES[p.lv]}</title></circle>`).join("");
-    return `<g><path d="${gaps}" stroke="${COLORS[si]}" class="gap"/><path d="${path}" stroke="${COLORS[si]}" class="line"/>${dots}</g>`;
+    const cups = pts.filter(p => p && p.lv === 1).map(p => TROPHY(X(p.i), Y(p.lv)).replace('class="trophy"', `class="trophy" style="fill:${COLORS[si]}"`)).join("");
+    return `<g><path d="${gaps}" stroke="${COLORS[si]}" class="gap"/><path d="${path}" stroke="${COLORS[si]}" class="line"/>${dots}${cups}</g>`;
   }).join("");
   return `<div><h4 class="sec">Where this edition's last four went, every ${esc(d.comp[e.comp].short)}</h4>
     <div class="legend">${four.map((t, i) => `<span><i style="background:${COLORS[i]}"></i>${team(t.name, t.key)}</span>`).join("")}<span class="written">dashed: editions it did not play</span></div>
-    <svg class="paths" viewBox="0 0 ${W} ${H}" role="img" aria-label="Finish of each semi-finalist in every edition">${grid}${yrs}<line x1="${X(all.findIndex(y => y.id === e.id))}" x2="${X(all.findIndex(y => y.id === e.id))}" y1="${T}" y2="${H - B}" class="nowline"/>${series}</svg></div>`;
+    <svg class="chart paths" viewBox="0 0 ${W} ${H}" role="img" aria-label="Finish of each semi-finalist in every edition">${grid}${yrs}<line x1="${X(all.findIndex(y => y.id === e.id))}" x2="${X(all.findIndex(y => y.id === e.id))}" y1="${T}" y2="${H - B}" class="nowline"/>${series}</svg></div>`;
 }
 
 async function cardTournament(d, e, x, comp) {
@@ -1185,7 +1211,7 @@ function hoverPaths(root) {
 }
 function openDraw(e, x) {
   const dr = $("#drawer");
-  dr.innerHTML = `<div class="sheet" role="dialog" aria-label="Full draw"><div class="sheet-h"><div class="ttl"><h3>${esc(e.title)}</h3><div class="sub">Men's singles · ${e.players} players · hover a name to follow the path, click it to open the player</div></div>
+  dr.innerHTML = `<div class="sheet" role="dialog" aria-label="Full draw"><div class="sheet-h"><div class="ttl"><h3>${esc(e.title)}</h3><div class="sub">${/_w$/.test(e.comp) ? "Women's" : "Men's"} singles · ${e.players} players · ${matchMedia("(hover: none)").matches ? "tap a name to open the player" : "hover a name to follow the path, click it to open the player"}</div></div>
     <input type="search" id="draw-q" placeholder="Find a player in this draw"><button class="x" aria-label="Close">×</button></div>
     <div class="bracket-scroll"><div class="bracket">${x.draw.map(r => `<div class="round"><div class="round-name">${esc(r.name)} · ${r.matches.length}</div><div class="slots">${r.matches.map(mcard).join("")}</div></div>`).join("")}</div></div></div>`;
   dr.hidden = false;
@@ -1222,23 +1248,91 @@ function rankChart(flat, titles) {
   const pts = [];
   for (let i = 0; i < flat.length; i += 2) pts.push({ ym: flat[i], r: flat[i + 1] });
   if (pts.length < 2) return "";
-  const W = 600, H = 170, L = 34, R = 8, T = 10, B = 22;
   const t = ym => Math.floor(ym / 100) + ((ym % 100) - 1) / 12;
   const x0 = t(pts[0].ym), x1 = t(pts[pts.length - 1].ym) + 1 / 12;
+  const H = 170, L = 34, R = 8, T = 10, B = 22;
   const worst = Math.max(...pts.map(p => p.r)), top = Math.max(10, Math.pow(10, Math.ceil(Math.log10(worst))));
-  const X = v => L + (v - x0) / (x1 - x0) * (W - L - R), Y = r => T + Math.log10(r) / Math.log10(top) * (H - T - B);
-  // a gap of more than three months in the file breaks the line rather than inventing the months between
-  let path = "", prev = null;
-  for (const p of pts) { path += `${prev && t(p.ym) - t(prev.ym) > 0.26 ? "M" : prev ? "L" : "M"}${X(t(p.ym)).toFixed(1)},${Y(p.r).toFixed(1)}`; prev = p; }
+  const Y = r => T + Math.log10(r) / Math.log10(top) * (H - T - B);
   const ticks = [1, 10, 100, 1000].filter(v => v <= top);
-  const years = []; for (let y = Math.ceil(x0); y <= x1; y += Math.max(1, Math.round((x1 - x0) / 6))) years.push(y);
-  const marks = titles.map(tt => `<line x1="${X(tt.y + 0.5).toFixed(1)}" x2="${X(tt.y + 0.5).toFixed(1)}" y1="${H - B}" y2="${H - B + 5}" class="tmark"><title>${esc(tt.name)}</title></line>`).join("");
-  const hits = pts.map(p => `<circle cx="${X(t(p.ym)).toFixed(1)}" cy="${Y(p.r).toFixed(1)}" r="4" class="hit"><title>${String(p.ym).slice(0, 4)}-${String(p.ym).slice(4)}: No. ${p.r}</title></circle>`).join("");
-  return `<svg class="rank" viewBox="0 0 ${W} ${H}" role="img" aria-label="ATP ranking by month">
+  return zoomable({ from: x0, to: x1, W: chartW(600), H, L, R, draw: (W, X) => {
+    // a gap of more than three months in the file breaks the line rather than inventing the months between
+    let path = "", prev = null;
+    for (const p of pts) { path += `${prev && t(p.ym) - t(prev.ym) > 0.26 ? "M" : prev ? "L" : "M"}${X(t(p.ym)).toFixed(1)},${Y(p.r).toFixed(1)}`; prev = p; }
+    const step = yearStep((x1 - x0) * chartW(600) / W, 6 * chartW(600) / 600);
+    const years = []; for (let y = Math.ceil(x0 / step) * step; y <= x1; y += step) years.push(y);
+    const marks = titles.map(tt => `<line x1="${X(tt.y + 0.5).toFixed(1)}" x2="${X(tt.y + 0.5).toFixed(1)}" y1="${H - B}" y2="${H - B + 5}" class="tmark"><title>${esc(tt.name)}</title></line>`).join("");
+    const hits = pts.map(p => `<circle cx="${X(t(p.ym)).toFixed(1)}" cy="${Y(p.r).toFixed(1)}" r="4" class="hit"><title>${String(p.ym).slice(0, 4)}-${String(p.ym).slice(4)}: No. ${p.r}</title></circle>`).join("");
+    return `<svg class="rank" viewBox="0 0 ${W} ${H}" role="img" aria-label="Ranking by month">
     ${ticks.map(v => `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" class="grid"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${v}</text>`).join("")}
     ${years.map(y => `<text x="${X(y)}" y="${H - 6}" text-anchor="middle">${y}</text>`).join("")}
     <path d="${path}" class="line"/>${marks}${hits}</svg>`;
+  } });
 }
+
+/* A chart over years that can be stretched and scrolled (as the artatlas timeline): − and + change the pixels per
+   year, the plot scrolls sideways (drag or trackpad), and the y labels stay pinned on the left as a frozen strip.
+   Each chart keeps its drawing function, so a zoom redraws at the new width instead of stretching circles and text. */
+const ZOOMS = new Map();
+let zoomSeq = 0;
+const yearStep = (span, n) => [1, 2, 5, 10, 20, 25, 50].find(s => span / s <= n) || 50;
+// the width a chart is designed at: its own on a wide screen, the screen's on a phone, so its 10-unit text stays 10 px
+const chartW = base => Math.round(Math.min(base, Math.max(320, innerWidth - 32)));
+function zoomable(spec) {
+  const id = "z" + (++zoomSeq);
+  if (ZOOMS.size > 200) ZOOMS.delete(ZOOMS.keys().next().value);
+  ZOOMS.set(id, { ...spec, k: 1 });
+  return `<div class="zc" data-z="${id}"><div class="zc-bar"><button type="button" data-zoom="out" title="Shorten the years" aria-label="Zoom out" disabled>−</button><button type="button" data-zoom="in" title="Stretch the years" aria-label="Zoom in">+</button><button type="button" data-zoom="fit" title="Back to all the years" hidden>all</button></div>${zoomDraw(id)}</div>`;
+}
+function zoomDraw(id) {
+  const z = ZOOMS.get(id), W = Math.round(z.W * z.k);
+  const X = v => z.L + (v - z.from) / Math.max(1e-9, z.to - z.from) * (W - z.L - z.R);
+  const svg = z.draw(W, X);
+  // the same drawing twice: once scrolling, once cut to its label strip and pinned over the left edge
+  return `<div class="zc-scroll"><div class="zc-inner" style="width:${(z.k * 100).toFixed(2)}%">${svg}</div></div>`
+    + (z.k > 1 ? `<div class="zc-y" style="width:${(z.L / z.W * 100).toFixed(3)}%"><div style="width:${(z.k * z.W / z.L * 100).toFixed(2)}%">${svg.replace(/<title>[^<]*<\/title>/g, "")}</div></div>` : "");
+}
+// the plot's own width in pixels (the scrolling part between the label strip and the right margin)
+const zoomPlotW = (box, z) => box.querySelector(".zc-inner").clientWidth * (1 - (z.L + z.R) / (z.W * z.k));
+function zoomRedraw(box) {
+  const z = ZOOMS.get(box.dataset.z);
+  box.querySelectorAll(".zc-scroll, .zc-y").forEach(n => n.remove());
+  box.insertAdjacentHTML("beforeend", zoomDraw(box.dataset.z));
+  box.querySelector("[data-zoom=fit]").hidden = z.k <= 1;
+  box.querySelector("[data-zoom=out]").disabled = z.k <= 1;
+  return box.querySelector(".zc-scroll");
+}
+/* Zoom so that years y0..y1 fill the view, and scroll to them (used by links and by the thumbnail capture). */
+function zoomTo(box, y0, y1) {
+  const z = ZOOMS.get(box.dataset.z);
+  if (!z) return;
+  // the pinned label strip covers the first L units of the view, so the years must fill what is left of it
+  z.k = Math.max(1, Math.min(40, (1 - z.L / z.W) * (z.to - z.from) / Math.max(0.5, y1 - y0) + (z.L + z.R) / z.W));
+  const sc = zoomRedraw(box);
+  sc.scrollLeft = Math.max(0, (y0 - z.from) / (z.to - z.from) * zoomPlotW(box, z));
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-zoom]");
+  if (!b) return;
+  e.preventDefault(); e.stopPropagation();
+  const box = b.closest(".zc"), z = box && ZOOMS.get(box.dataset.z);
+  if (!z) return;
+  const sc = box.querySelector(".zc-scroll");
+  const L = sc.clientWidth * z.L / (z.W * z.k) * z.k;  // label strip in pixels, the same at any zoom
+  // keep the year in the middle of the view where it is
+  const mid = (sc.scrollLeft + (sc.clientWidth + L) / 2 - L) / Math.max(1, zoomPlotW(box, z));
+  z.k = b.dataset.zoom === "fit" ? 1 : Math.max(1, Math.min(40, z.k * (b.dataset.zoom === "in" ? 1.6 : 1 / 1.6)));
+  const sc2 = zoomRedraw(box);
+  sc2.scrollLeft = Math.max(0, mid * zoomPlotW(box, z) - (sc2.clientWidth - L) / 2);
+}, true);
+// drag to pan a stretched chart
+document.addEventListener("pointerdown", e => {
+  const sc = e.target.closest(".zc-scroll");
+  if (!sc || e.button !== 0 || sc.scrollWidth <= sc.clientWidth || e.target.closest("[data-open]")) return;
+  const x = e.clientX, left = sc.scrollLeft;
+  const move = ev => { sc.scrollLeft = left - (ev.clientX - x); sc.classList.add("dragging"); };
+  const up = () => { sc.classList.remove("dragging"); removeEventListener("pointermove", move); removeEventListener("pointerup", up); };
+  addEventListener("pointermove", move); addEventListener("pointerup", up);
+});
 
 async function cardTennisPlayer(d, id) {
   const ps = await loadPlayers("tennis");
@@ -1246,7 +1340,7 @@ async function cardTennisPlayer(d, id) {
   if (!p) return `<h2>Player not found</h2>`;
   const titles = p.r.filter(r => r[2] === "Champion");
   focusEds = new Set(p.r.map(r => r[0]));
-  const groups = [["slams", "Grand Slams"], ["masters", "Masters 1000"], ["finals", "ATP Finals"], ["olympics", "Olympic Games"],
+  const groups = [["slams", "Grand Slams"], ["masters", "Masters 1000"], ["atp500", "ATP 500"], ["finals", "ATP Finals"], ["olympics", "Olympic Games"],
     ["slams_w", "Grand Slams"], ["wta1000", "WTA 1000 (Tier I, Premier Mandatory and Premier 5)"], ["wta_finals", "WTA Finals"], ["olympics_w", "Olympic Games"]].map(([k, l]) => [l, p.r.filter(r => r[5] === k)]).filter(g => g[1].length);
   const all = await loadMatches("tennis");
   let w = 0, l = 0;
@@ -1272,10 +1366,23 @@ async function cardTennisPlayer(d, id) {
   return `<p class="kick"><span class="dot"></span>Player${p.flag ? ` · <button class="lnk f" data-q="${esc(p.flag)}" title="Filter by ${esc(p.flag)}">${esc(p.flag)}</button>` : ""}</p>
     <h2>${esc(p.name)}</h2>
     <p class="sub">${p.r.length} appearance${p.r.length > 1 ? "s" : ""} in these draws, ${p.r[0][3]} to ${p.r[p.r.length - 1][3]}.</p>
-    <div class="keyfacts"><span class="kf big">${titles.length} title${titles.length === 1 ? "" : "s"}</span>${[["slams", "Grand Slam"], ["slams_w", "Grand Slam"], ["masters", "Masters 1000"], ["wta1000", "WTA 1000"], ["finals", "ATP Finals"], ["wta_finals", "WTA Finals"], ["olympics", "Olympic gold"], ["olympics_w", "Olympic gold"]].map(([k, l]) => titles.filter(r => r[5] === k).length ? `<span class="kf">${titles.filter(r => r[5] === k).length} ${l}</span>` : "").join("")}<span class="kf">${p.r.filter(r => r[1] <= 0).length} finals</span>${w + l ? `<span class="kf">won ${fmt(w)} · lost ${fmt(l)} · ${Math.round(w / (w + l) * 100)}%</span>` : ""}</div>
+    ${(() => {
+      const byGroup = keys => titles.filter(r => keys.includes(r[5]));
+      const compsOf = keys => d.idx.competitions.filter(c => p.r.some(r => keys.includes(r[5]) && r[4] === c.id)).map(c => c.id);
+      const groupsDef = [["Grand Slam", ["slams", "slams_w"]], ["Masters 1000", ["masters"]], ["ATP 500", ["atp500"]], ["WTA 1000", ["wta1000"]], ["ATP Finals", ["finals"]], ["WTA Finals", ["wta_finals"]], ["Olympic gold", ["olympics", "olympics_w"]]];
+      const finalsPlayed = p.r.filter(r => r[1] <= 0 && r[2] !== "Round robin");
+      const g = p.r.some(r => /(_w|wta1000|wta_finals)$/.test(r[5])) ? "w" : "m";
+      return factsBlock([
+        { big: true, label: `${titles.length} title${titles.length === 1 ? "" : "s"}`, panel: editionChips(d, titles.map(r => r[0]).reverse()), table: { g, q: p.name, rounds: ["Final"] }, tableLabel: "Show their finals in the table" },
+        ...groupsDef.filter(([, k]) => byGroup(k).length).map(([l, k]) => ({ label: `${byGroup(k).length} ${l}`, panel: editionChips(d, byGroup(k).map(r => r[0]).reverse()), table: { g, q: p.name, comps: compsOf(k), rounds: ["Final"] }, tableLabel: `Show their ${l} finals in the table` })),
+        { label: `${finalsPlayed.length} finals`, panel: editionChips(d, finalsPlayed.map(r => r[0]).reverse()), table: { g, q: p.name, rounds: ["Final"] } },
+        ...(w + l ? [{ label: `won ${fmt(w)} · lost ${fmt(l)} · ${Math.round(w / (w + l) * 100)}%`, table: { g, q: p.name }, tableLabel: `Show all ${fmt(w + l)} matches in the table` }] : []),
+      ]);
+    })()}
+    ${playerHistory(d, p)}
+    <p class="sub written">The Davis Cup and the Billie Jean King Cup are not in the atlas yet.</p>
     ${rankBlock}
     ${top.length > 1 ? `<h4 class="sec">Most frequent opponents in these draws</h4><table class="mini"><thead><tr><th>Opponent</th><th class="num">Played</th><th class="num">Won</th><th class="num">Lost</th></tr></thead><tbody>${top.map(o => `<tr data-go data-open="player:${esc(o.id)}"><td>${esc(o.name)}</td><td class="num">${o.w + o.l}</td><td class="num">${o.w}</td><td class="num">${o.l}</td></tr>`).join("")}</tbody></table>` : ""}
-    ${groups.map(([l, rs]) => `<h4 class="sec">${l}</h4><table class="mini"><tbody>${rs.map(r => `<tr data-go data-open="edition:${r[0]}"><td>${edLnk(d, r[0])}</td><td>${d.comp[r[4]] ? compLnk(d, r[4]) : esc(r[4])}</td><td class="num">${pill(r)}</td></tr>`).join("")}</tbody></table>`).join("")}
     ${await elsewhere(id)}
     ${id.startsWith("name:") ? `<p class="links">No Wikipedia article: the name as the draw writes it.</p>` : `<p class="links"><a href="${WIKI(id)}" target="_blank" rel="noopener">${esc(id)}</a> on Wikipedia.</p>`}`;
 }
@@ -1345,6 +1452,115 @@ async function lineageSection(ts, t) {
   return `<h4 class="sec">Lineage</h4><ul class="lineage">${rows.join("")}</ul>`;
 }
 
+/* Facts you can open: each number on a card unfolds the editions behind it, and sends the table to those matches. */
+function factsBlock(facts) {
+  const buttons = facts.map((f, i) => f.panel || f.table
+    ? `<button class="kf${f.big ? " big" : ""} fact" data-fact="f${i}" aria-pressed="false">${f.label}</button>`
+    : `<span class="kf${f.big ? " big" : ""}">${f.label}</span>`).join("");
+  const panels = facts.map((f, i) => f.panel || f.table ? `<div class="fact-panel" data-for="f${i}" hidden>
+      ${f.panel || ""}${f.table ? `<button class="btn" data-table='${esc(JSON.stringify(f.table))}'>${esc(f.tableLabel || "Show these matches in the table")}</button>` : ""}</div>` : "").join("");
+  return `<div class="keyfacts">${buttons}</div>${panels}`;
+}
+function editionChips(d, eids) {
+  return `<div class="ed-chips">${eids.map(eid => `<button class="chip" data-open="edition:${esc(eid)}">${esc(d.ed[eid]?.title || eid)}</button>`).join("")}</div>`;
+}
+
+/* A career line, as batalladedatos draws its groups: the finish in each edition (best at the top), a cup where it
+   won, a dashed stretch across editions held but not played. One chart per competition, all on the same years. */
+const TROPHY = (cx, cy) => `<g class="trophy" transform="translate(${(cx - 6).toFixed(1)} ${(cy - 21).toFixed(1)}) scale(0.75)" aria-hidden="true"><path d="M4 2h8v3a4 4 0 0 1-8 0V2z"/><path d="M2 3h2v2a2 2 0 0 1-2-2zM14 3h-2v2a2 2 0 0 0 2-2z"/><path d="M7 9h2v3H7zM5 12h6v2H5z"/></g>`;
+function trajectory({ points, held, levels, from, to, numeric }) {
+  if (!points.length) return "";
+  const worst = numeric ? Math.max(4, ...points.map(p => p.lv)) : levels.length - 1;
+  const L = numeric ? 34 : 112, R = 14, T = 26, B = 22;
+  const rows = numeric ? Math.min(worst, 10) : worst;
+  const H = T + B + Math.max(3, rows) * 17;
+  const span = Math.max(1, to - from);
+  const Y = lv => T + (lv - 1) / Math.max(1, worst - 1) * (H - T - B);
+  const ticks = numeric ? [...new Set([1, 2, 3, Math.round(worst / 2), worst])].filter(v => v >= 1 && v <= worst) : levels.map((_, i) => i).slice(1);
+  const best = new Map();
+  for (const p of points) if (!best.has(p.year) || p.lv < best.get(p.year).lv) best.set(p.year, p);
+  const line = [...best.values()].sort((a, b) => a.year - b.year);
+  return zoomable({ from, to: from + span, W: chartW(640), H, L, R, draw: (W, X) => {
+    const grid = ticks.map(v => `<line class="axis-line" x1="${L}" x2="${W - R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/><text class="axis-label" x="${L - 6}" y="${(Y(v) + 3).toFixed(1)}" text-anchor="end">${numeric ? ordinal(v) : esc(levels[v])}</text>`).join("");
+    const step = yearStep(span * chartW(640) / W, 9 * chartW(640) / 640);
+    const years = [];
+    for (let y = Math.ceil(from / step) * step; y <= to; y += step) years.push(y);
+    const axis = years.map(y => `<line class="axis-line faint" x1="${X(y).toFixed(1)}" x2="${X(y).toFixed(1)}" y1="${T - 8}" y2="${H - B}"/><text class="axis-label" x="${X(y).toFixed(1)}" y="${H - B + 14}" text-anchor="middle">${y}</text>`).join("");
+    const solid = [], gaps = [];
+    for (let i = 1; i < line.length; i++) {
+      const a = line[i - 1], b = line[i];
+      const seg = `M${X(a.year).toFixed(1)} ${Y(a.lv).toFixed(1)}L${X(b.year).toFixed(1)} ${Y(b.lv).toFixed(1)}`;
+      (held.some(y => y > a.year && y < b.year) ? gaps : solid).push(seg);
+    }
+    const dots = points.map(p => `<circle class="serie-dot${p.lv === 1 ? " won" : ""}" cx="${X(p.year).toFixed(1)}" cy="${Y(p.lv).toFixed(1)}" r="${p.lv === 1 ? 4.2 : 3.2}" data-open="edition:${esc(p.eid)}"><title>${esc(p.tip)}</title></circle>`).join("");
+    const cups = points.filter(p => p.lv === 1).map(p => TROPHY(X(p.year), Y(p.lv))).join("");
+    return `<svg class="chart traj" viewBox="0 0 ${W} ${H}" role="img">${grid}${axis}<path class="serie-line" d="${solid.join("")}"/>${gaps.length ? `<path class="serie-line serie-ausencia" d="${gaps.join("")}"/>` : ""}${dots}${cups}</svg>`;
+  } });
+}
+
+/* A team's history, competition by competition: national teams in their tournaments, clubs in their international
+   cups and then their leagues. Each with its line, its numbers, and its editions folded underneath. */
+const FOOT_ORDER = ["worldcup", "euro", "ucl", "uel", "cwc", "fairs", "laliga", "premier"];
+const CUP_LEVELS = ["", "Champion", "Final", "Semi-finals", "Quarter-finals", "Last 16", "Groups or earlier"];
+function teamHistory(d, t) {
+  const from = Math.min(...t.r.map(r => r.y)), to = Math.max(...t.r.map(r => r.y));
+  const ord = n => { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
+  const fin = r => r.fin === "Champion" ? `<span class="pill gold">Champion</span>` : r.fin === "Runner-up" ? `<span class="pill final">Runner-up</span>` : /^\d+$/.test(r.fin) ? `<span class="pill">${ord(+r.fin)}</span>` : `<span class="pill">${esc(r.fin)}</span>`;
+  const groups = [["National teams", ["worldcup", "euro"]], ["International", ["ucl", "uel", "cwc", "fairs"]], ["National", ["laliga", "premier"]]];
+  return groups.map(([gname, comps]) => {
+    const secs = comps.map(c => {
+      const rs = t.r.filter(r => r.c === c).sort((a, b) => a.y - b.y || a.e.localeCompare(b.e));
+      if (!rs.length) return "";
+      const league = d.comp[c]?.kind === "league";
+      const held = d.idx.editions.filter(e => e.comp === c).map(e => e.year);
+      const lv = r => league ? (r.fin === "Champion" ? 1 : +r.fin || 20) : finishLevel(r.fin);
+      const points = rs.map(r => ({ year: r.y, lv: lv(r), eid: r.e, tip: `${d.ed[r.e]?.title || r.l}: ${r.fin}` }));
+      const titles = rs.filter(r => r.fin === "Champion").length;
+      const bestLv = Math.min(...points.map(p => p.lv));
+      const p = rs.reduce((a, r) => a + (r.p || 0), 0), w = rs.reduce((a, r) => a + (r.w || 0), 0);
+      return `<section class="hist"><h3>${compLnk(d, c)}</h3>
+        <p class="sub">${rs.length} ${league ? "season" : "edition"}${rs.length === 1 ? "" : "s"}, ${rs[0].y} to ${rs[rs.length - 1].y} · ${titles ? `<b>${titles} title${titles === 1 ? "" : "s"}</b>` : `best: ${league ? ordinal(bestLv) : CUP_LEVELS[bestLv].toLowerCase()}`} · ${fmt(p)} matches, ${fmt(w)} won</p>
+        ${trajectory({ points, held, levels: CUP_LEVELS, from, to, numeric: league })}
+        <details><summary>Edition by edition</summary><table class="mini"><thead><tr><th>Edition</th><th class="num">P</th><th class="num">W</th><th class="num">D</th><th class="num">L</th><th class="num">Goals</th><th class="num">Finish</th></tr></thead>
+        <tbody>${rs.slice().reverse().map(r => `<tr class="${r.fin === "Champion" ? "c" : ""}" data-go data-open="edition:${r.e}"><td>${edLnk(d, r.e)}</td><td class="num">${r.p}</td><td class="num">${r.w}</td><td class="num">${r.d}</td><td class="num">${r.l_}</td><td class="num">${r.gf}–${r.ga}</td><td class="num">${fin(r)}</td></tr>`).join("")}</tbody></table></details></section>`;
+    }).join("");
+    return secs && t.kind === "national" && gname !== "National teams" ? "" : secs ? `${t.kind === "club" ? `<h4 class="sec grp">${gname === "International" ? "International competitions" : "National league"}</h4>` : ""}${secs}` : "";
+  }).join("");
+}
+
+/* A player's career, event by event: the Grand Slams, then the 1000s, the Finals and the Olympics. */
+const TENNIS_LEVELS = ["", "Won", "Final", "Semi-finals", "Quarter-finals", "Last 16", "Last 32", "Last 64", "Earlier"];
+const FINALS_LEVELS = ["", "Won", "Final", "Semi-finals", "Round robin"];
+function tennisLevel(r) {
+  if (r[2] === "Champion") return 1;
+  if (r[2] === "Round robin") return 4;
+  return Math.min(8, (r[1] || 0) + 2);
+}
+function playerHistory(d, p) {
+  const from = Math.min(...p.r.map(r => r[3])), to = Math.max(...p.r.map(r => r[3]));
+  const sets = [["Grand Slams", ["slams", "slams_w"]], ["Masters 1000", ["masters"]], ["ATP 500", ["atp500"]], ["WTA 1000", ["wta1000"]], ["ATP Finals", ["finals"]], ["WTA Finals", ["wta_finals"]], ["Olympic Games", ["olympics", "olympics_w"]]];
+  const order = d.idx.competitions.map(c => c.id);
+  return sets.map(([name, keys]) => {
+    const rs = p.r.filter(r => keys.includes(r[5]));
+    if (!rs.length) return "";
+    const comps = [...new Set(rs.map(r => r[4]))].sort((a, b) => order.indexOf(a) - order.indexOf(b));
+    const finals = keys.includes("finals") || keys.includes("wta_finals");
+    const secs = comps.map(c => {
+      const cr = rs.filter(r => r[4] === c).sort((a, b) => a[3] - b[3]);
+      const held = d.idx.editions.filter(e => e.comp === c).map(e => e.year);
+      const points = cr.map(r => ({ year: r[3], lv: finals ? Math.min(4, tennisLevel(r)) : tennisLevel(r), eid: r[0], tip: `${d.ed[r[0]]?.title || r[0]}: ${r[2]}` }));
+      const titles = cr.filter(r => r[2] === "Champion").length;
+      const levels = finals ? FINALS_LEVELS : TENNIS_LEVELS;
+      const bestLv = Math.min(...points.map(x => x.lv));
+      return `<section class="hist"><h3>${compLnk(d, c)}</h3>
+        <p class="sub">${cr.length} appearance${cr.length === 1 ? "" : "s"}, ${cr[0][3]} to ${cr[cr.length - 1][3]} · ${titles ? `<b>${titles} title${titles === 1 ? "" : "s"}</b>` : `best: ${levels[bestLv].toLowerCase()}`}</p>
+        ${trajectory({ points, held, levels, from, to })}
+        <details><summary>Year by year</summary><table class="mini"><tbody>${cr.slice().reverse().map(r => `<tr class="${r[2] === "Champion" ? "c" : ""}" data-go data-open="edition:${r[0]}"><td>${edLnk(d, r[0])}</td><td class="num">${r[2] === "Champion" ? `<span class="pill gold">Won</span>` : r[2] === "Runner-up" ? `<span class="pill final">Final</span>` : `<span class="pill">${esc(r[2])}</span>`}</td></tr>`).join("")}</tbody></table></details></section>`;
+    }).join("");
+    return `<h4 class="sec grp">${name}</h4>${secs}`;
+  }).join("");
+}
+
 async function cardTeam(d, key) {
   const ts = await loadTeams();
   const t = ts.find(x => x.key === key);
@@ -1361,12 +1577,16 @@ async function cardTeam(d, key) {
   return `<p class="kick"><span class="dot"></span>${t.kind === "national" ? "National team" : "Club"}</p>
     <h2>${imgFor(t.key)}${esc(t.name)}</h2>
     <p class="sub">${t.kind === "national" ? `${t.r.length} tournament${t.r.length === 1 ? "" : "s"}` : clubSpan(d, t.r)} in the atlas, ${t.r[0].y} to ${t.r[t.r.length - 1].y}.</p>
-    <div class="keyfacts"><span class="kf big">${titles.length} title${titles.length === 1 ? "" : "s"}</span><span class="kf">${fmt(sum("p"))} matches</span><span class="kf">${fmt(sum("w"))} won · ${fmt(sum("d"))} drawn · ${fmt(sum("l_"))} lost</span><span class="kf">goals ${fmt(sum("gf"))}–${fmt(sum("ga"))}</span></div>
+    ${factsBlock([
+      { big: true, label: `${titles.length} title${titles.length === 1 ? "" : "s"}`, panel: titles.length ? editionChips(d, titles.map(r => r.e).reverse()) : "" },
+      ...[...new Set(titles.map(r => r.c))].sort((a, b) => FOOT_ORDER.indexOf(a) - FOOT_ORDER.indexOf(b)).map(c => ({ label: `${titles.filter(r => r.c === c).length} ${esc(d.comp[c]?.short || c)}`, panel: editionChips(d, titles.filter(r => r.c === c).map(r => r.e).reverse()), table: { q: t.name, comps: [c], rounds: d.comp[c]?.kind === "league" ? [] : ["Final"] }, tableLabel: d.comp[c]?.kind === "league" ? "Show these leagues' matches in the table" : "Show its finals in the table" })),
+      { label: `${fmt(sum("p"))} matches`, table: { q: t.name }, tableLabel: `Show all ${fmt(sum("p"))} matches in the table` },
+      { label: `${fmt(sum("w"))} won · ${fmt(sum("d"))} drawn · ${fmt(sum("l_"))} lost` },
+      { label: `goals ${fmt(sum("gf"))}–${fmt(sum("ga"))}` },
+    ])}
     ${line.length ? `<div class="keyfacts"><span class="kf lineage" title="Its own record plus the teams whose record it carries (Lineage below). Each team keeps its own card.">with its lineage: ${lineTitles} title${lineTitles === 1 ? "" : "s"}, ${fmt(lineRows.reduce((a, r) => a + (r.p || 0), 0))} matches, as ${[t, ...line].map(x => esc(line.some(y => y !== x && y.name === x.name) || (x !== t && x.name === t.name) ? x.key.slice(x.key.indexOf(":") + 1) : x.name)).join(", ")}</span></div>` : ""}
     ${lineage}
-    ${t.kind === "club" ? positions(t, d) : ""}
-    <table class="mini"><thead><tr><th>Edition</th><th>Competition</th><th class="num">P</th><th class="num">W</th><th class="num">D</th><th class="num">L</th><th class="num">Goals</th><th class="num">Finish</th></tr></thead>
-    <tbody>${t.r.map(r => `<tr class="${r.fin === "Champion" ? "c" : ""}" data-go data-open="edition:${r.e}"><td>${edLnk(d, r.e)}</td><td>${d.comp[r.c] ? compLnk(d, r.c) : esc(r.c)}</td><td class="num">${r.p}</td><td class="num">${r.w}</td><td class="num">${r.d}</td><td class="num">${r.l_}</td><td class="num">${r.gf}–${r.ga}</td><td class="num">${/^\d+$/.test(r.fin) ? `<span class="pill">${ord(+r.fin)}</span>` : fin(r)}</td></tr>`).join("")}</tbody></table>
+    ${teamHistory(d, t)}
     ${t.kind === "club" ? await elsewhere(key.slice(5)) : ""}
     <p class="links">${t.kind === "national" ? "Teams are kept as they played: West Germany and Germany, the Soviet Union and Russia, each have their own record. The lineage is added beside it, marked, from what the teams' Wikipedia articles say." : `Club identity is the Wikipedia page the season tables link to${key.startsWith("club:") ? `: <a href="${WIKI(key.slice(5))}" target="_blank" rel="noopener">${esc(key.slice(5))}</a>` : ""}.`}</p>`;
 }
