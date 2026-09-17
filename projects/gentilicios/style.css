@@ -53,6 +53,11 @@ body {
 .view-btn, .mode-btn {
   border: 0; background: transparent; padding: 5px 13px; font: inherit; font-size: 13px; cursor: pointer; color: var(--ink);
 }
+.mode-btn { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.15; padding: 4px 13px; text-align: left; }
+.mode-btn b { font-weight: 600; font-size: 13px; }
+.mode-btn small { font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+.mode-btn.active small { color: #d8c7a6; }
+#colour-modes { border-radius: 14px; }
 .view-btn + .view-btn, .mode-btn + .mode-btn { border-left: 1px solid var(--line); }
 .view-btn.active, .mode-btn.active { background: #3a2317; color: #fff; }
 #filter-wrap { position: relative; margin-left: auto; flex: 0 1 340px; }
@@ -211,6 +216,7 @@ body.has-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
   .stats { margin-left: 0; font-size: 11.5px; flex: 1 1 100%; }
   #modes { padding: 6px 10px; gap: 6px; }
   .view-btn, .mode-btn { padding: 5px 9px; font-size: 12.5px; white-space: nowrap; }
+  .mode-btn small { font-size: 9.5px; }
   #colour-modes { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
   #colour-modes::-webkit-scrollbar { display: none; }
   #about-btn { display: inline-flex; padding: 4px 9px; }
@@ -292,3 +298,4 @@ details.tech[open] { display: block; margin-top: 3px; font-size: 11px; word-brea
 #legend .kinds button + button { border-left: 1px solid var(--line); }
 #legend .kinds button.active { background: #3a2317; color: #fff; }
 .mt .tk { color: #5b4a3c; font-size: 12px; }
+#legend .kinds + .kinds { margin-top: 4px; }

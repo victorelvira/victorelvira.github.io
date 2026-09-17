@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.4.7";
-const BUILD_AT = "2026-09-17 09:24";
+const DATA_V = "0.5.0";
+const BUILD_AT = "2026-09-17 09:29";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 // ---------- vocabulary ----------
@@ -59,7 +59,7 @@ let MUNIS = [], BY_ID = new Map(), SOURCES = {}, V = DATA_V;
 const CLAIMS_BY = new Map(), PROV_LOADED = new Map();
 const HOVER = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 const isMobile = () => window.matchMedia("(max-width: 760px)").matches;
-let mode = "sx", selected = null, layer = null, map = null;
+let mode = "ng", selected = null, layer = null, map = null;
 const layersById = new Map();
 
 // ---------- colours ----------
@@ -103,6 +103,23 @@ function colourOf(m) {
   if (mode === "curious") return m.cu ? "#7b3fb0" : (m.g.length ? "#e7e0d4" : "#f3efe8");
   if (mode === "ety") return m.ety && m.hist ? "#1f4f4f" : m.ety ? "#2e6b6b" : m.hist ? "#8fb8b0" : "#ebe5da";
 }
+// 4 map groups, each with its variants chosen in the legend (Víctor, 2026-09-17: 7 buttons were too many)
+const GROUPS = {
+  formas: [["ng", "Nº de formas"]],
+  forma: [["sx", "Sufijo"], ["curious", "Curioso"]],
+  origen: [["ol", "Pueblo"], ["ga", "Gentilicio"]],
+  doc: [["sources", "Nº de fuentes"], ["ety", "Etimología e historia"]],
+};
+const VARIANT_NOTE = {
+  ng: "formas distintas en español; las de otras lenguas, en la ficha",
+  sx: "terminación del gentilicio principal en español",
+  curious: "calculado: el gentilicio no se parece al nombre del pueblo",
+  ol: "lengua de la que viene el nombre del pueblo, según las hipótesis",
+  ga: "deducido: de qué nombre sale el gentilicio (actual, antiguo, en otra lengua)",
+  sources: "fuentes distintas de la forma principal; cada forma tiene las suyas",
+  ety: "qué hay recogido sobre el nombre y la historia del pueblo",
+};
+let group = "formas";
 function legend() {
   const count = f => fmt(MUNIS.filter(f).length);
   const rows = {
@@ -119,8 +136,8 @@ function legend() {
       ["#f3efe8", "sin gentilicio", m => !m.g.length]],
     sx: [["Sufijo del gentilicio principal", null]].concat(SX_ORDER.map(k => [SX_COL[k], k === "" ? "sin gentilicio en español" : k === "otro" ? "otros" : k,
       mm => (SX_COL[mm.sx] ? mm.sx : "otro") === k && (k !== "otro" || mm.sx)])),
-    ga: [["De dónde sale el gentilicio", null]].concat(Object.keys(GA_COL).map(k => [GA_COL[k], GA_LABEL[k], mm => (mm.ga || "") === k])),
-    ol: [["Origen del nombre, según las fuentes", null]].concat(Object.keys(OL_COL).map(k => [OL_COL[k], OL_LABEL[k], mm => (mm.ol || "") === k])),
+    ga: [["Raíz del gentilicio", null]].concat(Object.keys(GA_COL).map(k => [GA_COL[k], GA_LABEL[k], mm => (mm.ga || "") === k])),
+    ol: [["Lengua de origen del nombre", null]].concat(Object.keys(OL_COL).map(k => [OL_COL[k], OL_LABEL[k], mm => (mm.ol || "") === k])),
     ety: [["Etimología e historia", null],
       ["#1f4f4f", "las dos", m => m.ety && m.hist], ["#2e6b6b", "etimología", m => m.ety && !m.hist],
       ["#8fb8b0", "historia", m => m.hist && !m.ety], ["#ebe5da", "nada todavía", m => !m.ety && !m.hist]],
@@ -128,14 +145,12 @@ function legend() {
   document.getElementById("legend").innerHTML = rows.map(([c, l, f]) => f
     ? `<div class="lr"><span class="sw" style="background:${c}"></span>${l}<span class="ln">${count(f)}</span></div>`
     : `<div class="lt">${c}</div>`).join("") +
-    (mode === "curious" ? `<div class="note">calculado: comparamos el gentilicio con el nombre</div>` : "") +
-    (mode === "sx" ? `<div class="note">del gentilicio principal en español</div>` : "") +
-    (mode === "ng" ? `<div class="note">formas distintas en español; las otras lenguas, en la ficha</div>` : "") +
-    (mode === "sources" ? `<div class="note">cada forma tiene sus fuentes</div>` : "") +
-    (mode === "ga" ? `<div class="note">deducido: comparamos cada gentilicio con los nombres actuales, antiguos y en otras lenguas que dan las fuentes</div>` : "") +
-    (mode === "ol" ? `<div class="note">la lengua que nombran las hipótesis</div>` : "") +
+    `<div class="note">${esc(VARIANT_NOTE[mode] || "")}</div>` +
+    (GROUPS[group].length > 1 ? `<div class="kinds" role="group" aria-label="Variante">${GROUPS[group].map(([k, label]) =>
+      `<button type="button" data-variant="${k}" class="${mode === k ? "active" : ""}">${esc(label)}</button>`).join("")}</div>` : "") +
     (mode === "ng" || mode === "sources" ? `<div class="kinds" role="group" aria-label="Qué formas">${["dem", "nick", "both"].map(k =>
       `<button type="button" data-kinds="${k}" class="${KINDS === k ? "active" : ""}">${{ dem: "Gentilicios", nick: "Apodos", both: "Ambos" }[k]}</button>`).join("")}</div>` : "");
+  document.querySelectorAll("#legend [data-variant]").forEach(b => b.addEventListener("click", () => { mode = b.dataset.variant; restyle(); }));
   document.querySelectorAll("#legend [data-kinds]").forEach(b => b.addEventListener("click", () => { KINDS = b.dataset.kinds; restyle(); }));
 }
 function restyle() {
@@ -208,7 +223,9 @@ function initMap(geo) {
   legend();
   document.querySelectorAll(".mode-btn").forEach(b => b.addEventListener("click", () => {
     document.querySelectorAll(".mode-btn").forEach(x => x.classList.toggle("active", x === b));
-    mode = b.dataset.mode; restyle();
+    group = b.dataset.group;
+    if (!GROUPS[group].some(([k]) => k === mode)) mode = GROUPS[group][0][0];
+    restyle();
   }));
   document.getElementById("go-canarias").addEventListener("click", () => map.flyTo([28.3, -15.8], 8));
 }

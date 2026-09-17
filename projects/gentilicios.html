@@ -9,7 +9,7 @@
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#3a2317">
   <link rel="stylesheet" href="gentilicios/vendor/leaflet.css">
-  <link rel="stylesheet" href="gentilicios/style.css?v=0.4.7">
+  <link rel="stylesheet" href="gentilicios/style.css?v=0.5.0">
 </head>
 <body>
   <nav id="navbar">
@@ -36,13 +36,10 @@
       <button type="button" id="v-table" class="view-btn">▦ Tabla</button>
     </span>
     <span id="colour-modes" title="Qué colorea el mapa">
-      <button type="button" class="mode-btn active" data-mode="sx">Sufijos</button>
-      <button type="button" class="mode-btn" data-mode="curious">Curiosos</button>
-      <button type="button" class="mode-btn" data-mode="ga">De dónde sale el gentilicio</button>
-      <button type="button" class="mode-btn" data-mode="ol">Origen del nombre</button>
-      <button type="button" class="mode-btn" data-mode="ety">Etimología e historia</button>
-      <button type="button" class="mode-btn" data-mode="ng" title="Formas distintas en español: gentilicios, apodos o ambos">Nº de formas</button>
-      <button type="button" class="mode-btn" data-mode="sources" title="Fuentes distintas: del gentilicio principal, del apodo más citado o de ambos">Nº de fuentes</button>
+      <button type="button" class="mode-btn active" data-group="formas"><b>Nº de formas</b><small>cuántos gentilicios y apodos</small></button>
+      <button type="button" class="mode-btn" data-group="forma"><b>Forma</b><small>cómo es el gentilicio</small></button>
+      <button type="button" class="mode-btn" data-group="origen"><b>Origen</b><small>de qué lengua o nombre viene</small></button>
+      <button type="button" class="mode-btn" data-group="doc"><b>Fuentes</b><small>qué hay documentado</small></button>
     </span>
     <button type="button" id="about-btn" class="chip btn" title="Qué es esto y los curiosos">ℹ︎ Acerca</button>
     <span id="filter-wrap">
@@ -95,6 +92,6 @@
   </div>
 
   <script src="gentilicios/vendor/leaflet.js"></script>
-  <script src="gentilicios/app.js?v=0.4.7"></script>
+  <script src="gentilicios/app.js?v=0.5.0"></script>
 </body>
 </html>
