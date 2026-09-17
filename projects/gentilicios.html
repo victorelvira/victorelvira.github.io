@@ -9,7 +9,7 @@
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#3a2317">
   <link rel="stylesheet" href="gentilicios/vendor/leaflet.css">
-  <link rel="stylesheet" href="gentilicios/style.css?v=0.1.0">
+  <link rel="stylesheet" href="gentilicios/style.css?v=0.4.5">
 </head>
 <body>
   <nav id="navbar">
@@ -38,21 +38,38 @@
     <span id="colour-modes" title="Qué colorea el mapa">
       <button type="button" class="mode-btn active" data-mode="sources">Fuentes</button>
       <button type="button" class="mode-btn" data-mode="curious">Curiosos</button>
+      <button type="button" class="mode-btn" data-mode="sx">Sufijos</button>
+      <button type="button" class="mode-btn" data-mode="ol">Origen del nombre</button>
+      <button type="button" class="mode-btn" data-mode="ga">De dónde sale el gentilicio</button>
       <button type="button" class="mode-btn" data-mode="ety">Etimología e historia</button>
     </span>
+    <button type="button" id="about-btn" class="chip btn" title="Qué es esto y los curiosos">ℹ︎ Acerca</button>
     <span id="filter-wrap">
       <input id="filter" type="search" placeholder="Buscar pueblo, gentilicio o provincia…" autocomplete="off">
       <div id="suggest" hidden></div>
     </span>
+    <button type="button" id="route-btn" class="chip btn" title="Ruta entre dos pueblos, cruzando términos municipales" hidden>🧭 Ruta</button>
   </div>
 
   <div id="main">
     <div id="mapwrap">
       <div id="map"></div>
       <div id="legend"></div>
+      <div id="route-box" hidden>
+        <div class="rb-title">Ruta entre pueblos <span class="rb-exp">(experimental)</span></div>
+        <div class="rb-row"><input id="r-from" type="search" placeholder="Desde…" autocomplete="off"><div class="rb-sug" hidden></div></div>
+        <div class="rb-row"><input id="r-to" type="search" placeholder="Hasta…" autocomplete="off"><div class="rb-sug" hidden></div></div>
+        <div class="rb-opts">
+          <label><input type="radio" name="r-mode" value="hops" checked> menos pueblos</label>
+          <label><input type="radio" name="r-mode" value="km"> menos km</label>
+          <button type="button" id="r-close" class="rb-x" aria-label="Cerrar la ruta">✕</button>
+        </div>
+        <div id="r-result" class="rb-res"></div>
+      </div>
       <button type="button" id="go-canarias" class="chip btn" title="Ir a Canarias">Canarias ↘</button>
     </div>
-    <aside id="panel">
+    <aside id="panel" aria-label="Ficha">
+      <button id="detail-close" class="detail-close" type="button" aria-label="Cerrar la ficha">✕</button>
       <div id="panel-body"></div>
     </aside>
     <section id="table-view" hidden>
@@ -66,7 +83,7 @@
         <table id="table">
           <thead><tr>
             <th data-k="n">Municipio</th><th data-k="p">Provincia</th><th data-k="c">Comunidad</th>
-            <th data-k="g">Gentilicios</th><th data-k="nick">Apodos</th><th data-k="ns" class="num">Fuentes</th>
+            <th data-k="g">Gentilicios</th><th data-k="nick">Apodos</th><th data-k="pop" class="num">Hab.</th><th data-k="ns" class="num">Fuentes</th>
             <th data-k="cu">Curioso</th><th data-k="ety" class="num">Etim.</th>
           </tr></thead>
           <tbody></tbody>
@@ -77,6 +94,6 @@
   </div>
 
   <script src="gentilicios/vendor/leaflet.js"></script>
-  <script src="gentilicios/app.js?v=0.1.0"></script>
+  <script src="gentilicios/app.js?v=0.4.5"></script>
 </body>
 </html>
