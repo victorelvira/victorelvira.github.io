@@ -1,6 +1,6 @@
 "use strict";
 const DATA_V = "0.6.0";
-const BUILD_AT = "2026-09-17 15:13";
+const BUILD_AT = "2026-09-18 15:03";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 // ---------- vocabulary ----------
@@ -297,6 +297,35 @@ function loadContext(pc) {
   return CTX_LOADED.get(pc);
 }
 
+// ---------- "parecidos": same name, similar name, similar gentilicio (computed by us, phase graph) ----------
+const SIM = new Map(), SIM_LOADED = new Map();
+function loadSimilar(pc) {
+  if (!SIM_LOADED.has(pc)) {
+    SIM_LOADED.set(pc, fetch(`gentilicios/data/similar/${pc}.json?v=${V}`).then(r => r.ok ? r.json() : {}).then(d => {
+      for (const [e, s] of Object.entries(d)) SIM.set(e, s);
+    }).catch(() => {}));
+  }
+  return SIM_LOADED.get(pc);
+}
+const simLink = x => `<a href="#${esc(x.i)}">${esc(x.n)}</a> <span class="sp">(${esc(x.p)})</span>`;
+function similarHTML(s) {
+  if (!s || (!s.hom && !s.sn && !s.sg && !s.sd)) return "";
+  const rows = [];
+  if (s.sd) for (const x of s.sd) rows.push(`<li><span class="sk">Mismo gentilicio</span><span class="sv"><i>${esc(x.f)}</i>
+    ${x.n > x.o.length + 1 ? `en <b>${x.n}</b> pueblos` : ""}: ${x.o.map(simLink).join(" · ")}${x.n > x.o.length + 1 ? " y más" : ""}</span></li>`);
+  if (s.hom) rows.push(`<li><span class="sk">Mismo nombre</span><span class="sv">${s.hom.map(x =>
+    `${simLink(x)}${x.g ? `: <i>${esc(x.g)}</i>` : ""}`).join(" · ")}</span></li>`);
+  if (s.sn) rows.push(`<li><span class="sk">Nombre parecido</span><span class="sv">${s.sn.map(x =>
+    `${simLink(x)} <span class="sj">${x.km} km</span>`).join(" · ")}</span></li>`);
+  if (s.sg) rows.push(`<li><span class="sk">Gentilicio parecido</span><span class="sv">${s.sg.map(x =>
+    `<i>${esc(x.b)}</i>, ${simLink(x)} <span class="sj">${x.km} km</span>`).join(" · ")}</span></li>`);
+  return `<div class="h3">Parecidos</div>
+    <p class="note">Cruce nuestro, no lo dice ninguna fuente: pueblos a los que alguna fuente da este mismo gentilicio,
+      pueblos con el mismo nombre (quitados acentos y artículos) y los que más se le parecen en letras (3-gramas, 0,6 o
+      más). La distancia es en línea recta entre centros.</p>
+    <ul class="simlist">${rows.join("")}</ul>`;
+}
+
 // ---------- territories: provinces, comunidades, comarcas, islands ----------
 let TERR = new Map(), MUNI_TERR = {};
 const LEVEL_LABEL = { prov: "Provincia", ccaa: "Comunidad autónoma", comarca: "Comarca", isla: "Isla" };
@@ -466,7 +495,7 @@ async function select(id, fly) {
   const body = document.getElementById("panel-body");
   body.innerHTML = `<div class="ficha"><h2>${esc(m.n)}</h2><div class="where">${esc(m.p)} · ${esc(m.c)}</div><p class="empty">cargando fuentes…</p></div>`;
   document.getElementById("panel").scrollTop = 0;
-  await Promise.all([loadClaims(m.pc), loadContext(m.pc)]);
+  await Promise.all([loadClaims(m.pc), loadContext(m.pc), loadSimilar(m.pc)]);
   if (selected !== id) return;
   const cl = (CLAIMS_BY.get(id) || []).concat(...(m.pd || []).map(s => CLAIMS_BY.get(s.id) || []));
   const byForm = new Map();
@@ -543,6 +572,7 @@ async function select(id, fly) {
     ${ety.length ? `<p class="note warn">Citas literales de cada fuente. La separación en hipótesis la hace un programa y a veces junta dos o parte una: en revisión.</p>${langSections(ety, c => c.l, grouped)}` : `<p class="empty">Sin etimología recogida todavía.</p>`}
     <div class="h3">Historia</div>
     ${hist.length ? langSections(hist, c => c.l, grouped) : `<p class="empty">Sin datos históricos todavía.</p>`}
+    ${similarHTML(SIM.get(id))}
     <p class="note">Pulsa una forma para ver qué dice cada fuente, con la cita literal y el enlace.</p>
   </div>`;
   bindTerrLinks(body);

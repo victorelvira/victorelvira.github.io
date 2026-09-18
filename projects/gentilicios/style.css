@@ -155,6 +155,15 @@ body.has-ficha .detail-close:hover { border-color: var(--rose); color: var(--ros
 .curlist .cg { font-style: italic; color: var(--cur); }
 .curlist .cp { color: var(--muted); font-size: 12px; margin-left: auto; white-space: nowrap; }
 
+.simlist { list-style: none; margin: 6px 0 0; padding: 0; font-size: 13px; }
+.simlist li { display: flex; gap: 8px; align-items: baseline; padding: 4px 0; border-top: 1px solid var(--line); }
+.simlist li:first-child { border-top: 0; }
+.simlist .sk { flex: 0 0 8.5em; color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; }
+.simlist .sv { flex: 1; }
+.simlist .sv a { color: var(--accent); text-decoration: none; }
+.simlist .sv a:hover { text-decoration: underline; }
+.simlist .sp, .simlist .sj { color: var(--muted); font-size: 12px; }
+
 .ficha .back { border: 0; background: none; color: var(--accent); font: inherit; font-size: 13px; cursor: pointer; padding: 0; margin-bottom: 8px; }
 .ficha h2 { font-size: 22px; margin: 0; line-height: 1.15; }
 .ficha .where { color: var(--muted); margin: 3px 0 8px; }
