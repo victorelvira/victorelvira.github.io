@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.29.11";
+const DATA_V = "0.30.5";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -1675,9 +1675,10 @@ function renderPanel() {
       rows.sort((a, z) => z.rank - a.rank);
       // one thing in a place is ONE entry: the person, and under it what and where (Víctor, 2026-09-15: "Cristóbal
       // Colón" as a heading with "Christopher Columbus" inside it read as two things). A heading only groups several.
-      if (rows.length === 1 && siteIdx !== selectedSite) { panelPlan.push({ single: rows[0] }); continue; }
-      panelPlan.push({ grp: { siteIdx, n: rows.length } });
-      if (!folded.has(siteIdx)) for (const r of rows) panelPlan.push({ r });
+      // 0.30: ONE shape for every place, whatever it holds: the place as the heading, its people under it
+      // (Víctor, 2026-09-18: "no se ve la jerarquía entre sitios y personas"). One person or twenty.
+      panelPlan.push({ grp: { siteIdx, n: rows.length, best: rows[0], people: people.length } });
+      if (people.length && !(rows.length > 1 && folded.has(siteIdx))) for (const r of rows) panelPlan.push({ r, inGrp: true });
     }
   } else {
     const cmp = { rank: (a, z) => z.rank - a.rank,
@@ -1688,34 +1689,54 @@ function renderPanel() {
   panelCursor = 0; ul.innerHTML = ""; appendChunk();
 }
 
-function singleRowHTML(r) {
-  const s = SITES[r.site], title = siteTitle(r), isPerson = /^(ev:)?Q\d+$/.test(r.qid);
+/* ── THE LIST'S ROWS (0.30) ─────────────────────────────────────────────────────────────────────
+ * One system for every order (Víctor, 2026-09-18: "más claro, más ligero, más bonito"): a row says WHO on its
+ * first line and WHERE on its second, in grey. No boxes: what can be seen, the kind of thing and the town are
+ * words, said once. In "grouped by place" the heading is the PLACE and its people hang under it, indented. */
+const siteKindWord = (i) => capital(({ grave: "grave", cemetery: "cemetery", plaque: "plaque", house: "house",
+  statue: "statue", museum: "museum", church: "church", battle: "battlefield", event: "event", stolperstein: "stolperstein",
+  building: "building" })[VOCAB.siteKind[SITES[i][S_KIND]]] || VOCAB.siteKind[SITES[i][S_KIND]] || "");
+function whereLine(r) {
+  const s = SITES[r.site], title = siteTitle(r), town = whereOf(s);
   const kind = capital(plain("what", VOCAB.what[r.what]));
-  const sub = [isPerson ? (title === kind ? kind : title) : kind, whereOf(s)].filter(Boolean).join(" · ");
-  return `<li class="row single" data-qid="${esc(r.qid)}" data-site="${r.site}" title="${isPerson ? "Open this person" : "Open this place"}">` +
-    `<span class="dot" style="background:${colourFor(colourKey(r))}"></span>` +
-    `<span class="nm">${esc(r.name)}</span><span class="yr">${lifeStr(r)}</span>` +
-    `<span class="sub">${esc(sub)}</span></li>`;
+  return [title === kind ? kind : title, title === kind ? town : (town || "")].filter(Boolean)
+    .filter((x, i, a) => a.indexOf(x) === i).join(" · ");
 }
 function personRowHTML(w) {
   const r = w.r, k = w.sites.size;
-  const title = siteTitle(r);
-  const where = k > 1 ? `${k} places` : title !== SITES[r.site][S_NAME] ? (whereOf(SITES[r.site]).split(",")[0] || title) : title;
-  return `<li class="row person" data-qid="${esc(r.qid)}" data-site="${r.site}" title="Open this person">` +
+  return `<li class="row two" data-qid="${esc(r.qid)}" data-site="${r.site}">` +
     `<span class="dot" style="background:${colourFor(colourKey(r))}"></span>` +
     `<span class="nm">${esc(r.name)}</span><span class="yr">${lifeStr(r)}</span>` +
-    `<span class="tags"><span class="badge where">${esc(where.length > 28 ? where.slice(0, 27) + "…" : where)}</span></span></li>`;
+    `<span class="sub">${esc(k > 1 ? `${k} places here` : whereLine(r))}</span></li>`;
 }
-function rowHTML(r, flat) {
-  const acc = VOCAB.access[r.access], mk = VOCAB.marking[r.marking];
-  return `<li class="row" data-qid="${esc(r.qid)}" data-site="${r.site}" title="Open this person">` +
+function placeHeadHTML(g) {
+  const i = g.siteIdx, s = SITES[i], r = g.best;
+  const onlyThem = g.n === 1 && g.people;
+  const title = onlyThem ? siteTitle(r) : s[S_NAME];
+  // "Always visible" is what most of the list is; only the exceptions are said (hours, from outside, gone)
+  const kind = siteKindWord(i), acc = VOCAB.access[r.access] === "open-air" ? "" : plain("access", VOCAB.access[r.access]);
+  const sub = [title === kind ? "" : kind, acc, whereOf(s)].filter(Boolean).join(" · ");
+  const fold = g.n > 1;
+  const open = !folded.has(i);
+  return `<li class="grp${fold ? " foldable" : ""}${open ? " open" : ""}" data-site="${i}">` +
+    `<span class="g-ic">${WHAT_ICON[VOCAB.siteKind[s[S_KIND]]] || WHAT_ICON[VOCAB.what[r.what]] || "·"}</span>` +
+    `<span class="g-t"><span class="gname">${esc(title)}</span>${sub ? `<span class="gwhere">${esc(sub)}</span>` : ""}</span>` +
+    (fold ? `<span class="g-n">${g.n}</span><span class="g-chev" aria-hidden="true"></span>` : "") + `</li>`;
+}
+// the verb a place already says: "Buried" under a grave or a cemetery, "Remembered" under a statue or a plaque
+const saidByPlace = (r) => { const v = VOCAB.verb[r.verb], k = VOCAB.siteKind[SITES[r.site][S_KIND]];
+  return v === "commemorated" || (v === "buried" && ["grave", "cemetery"].includes(k)); };
+function rowHTML(r, flat, inGrp) {
+  const person = /^(ev:)?Q\d+$/.test(r.qid);
+  if (inGrp) return `<li class="row in-grp" data-qid="${esc(r.qid)}" data-site="${r.site}">` +
     `<span class="dot" style="background:${colourFor(colourKey(r))}"></span>` +
     `<span class="nm">${esc(r.name)}</span><span class="yr">${lifeStr(r)}</span>` +
-    `<span class="tags">` +
-    (flat ? `<span class="badge">${esc(SITES[r.site][S_NAME].slice(0, 22))}</span>` : "") +
-    (acc !== "unknown" ? `<span class="badge acc-${esc(acc)}">${esc((LABEL.access[acc] || acc).replace(/^[^\p{L}]+/u, ""))}</span>` : "") +
-    (mk !== "unknown" ? `<span class="badge">${esc(plain("marking", mk))}</span>` : "") +
-    `</span></li>`;
+    // "Remembered" under a statue says nothing; born, lived, died, buried here do
+    `<span class="vb">${saidByPlace(r) ? "" : esc(capital(plain("verb", VOCAB.verb[r.verb])))}</span></li>`;
+  return `<li class="row two${person ? "" : " single"}" data-qid="${esc(r.qid)}" data-site="${r.site}">` +
+    `<span class="dot" style="background:${colourFor(colourKey(r))}"></span>` +
+    `<span class="nm">${esc(r.name)}</span><span class="yr">${lifeStr(r)}</span>` +
+    `<span class="sub">${esc(person ? whereLine(r) : [siteKindWord(r.site), whereOf(SITES[r.site])].filter(Boolean).join(" · "))}</span></li>`;
 }
 function appendChunk() {
   const ul = $("worklist");
@@ -1724,12 +1745,7 @@ function appendChunk() {
   for (let i = panelCursor; i < end; i++) {
     const it = panelPlan[i];
     if (it.grp) {
-      const s = SITES[it.grp.siteIdx];
-      html += `<li class="grp" data-site="${it.grp.siteIdx}">` +
-        `<span>${folded.has(it.grp.siteIdx) ? "▸" : "▾"}</span>` +
-        `<span class="gname">${esc(s[S_NAME])}` +
-        (whereOf(s) ? `<span class="gwhere">${esc(whereOf(s))}</span>` : "") + `</span>` +
-        `<span class="gsub">${it.grp.n} ${it.grp.n === 1 ? "person" : "people"}</span></li>`;
+      html += placeHeadHTML(it.grp);
       // the place a pin was tapped for: its card (kind, access, hours, words, photo) opens its group
       if (it.grp.siteIdx === selectedSite) {
         const pl = places.find((x) => x.siteIdx === selectedSite);
@@ -1738,9 +1754,8 @@ function appendChunk() {
         const hd = box.querySelector(".hd");
         if (hd) html += `<li class="grp-card card"><button type="button" class="grp-card-x" title="Close this card">✕</button>${hd.outerHTML}</li>`;
       }
-    } else if (it.single) html += singleRowHTML(it.single);
-    else if (it.person) html += personRowHTML(it.person);
-    else html += rowHTML(it.r, it.flat);
+    } else if (it.person) html += personRowHTML(it.person);
+    else html += rowHTML(it.r, it.flat, it.inGrp);
   }
   ul.insertAdjacentHTML("beforeend", html);
   const card = ul.querySelector("li.grp-card:not([data-filled])");
@@ -1763,7 +1778,11 @@ $("worklist").addEventListener("click", (e) => {
   }
   if (e.target.closest("li.grp-card")) return;            // its links and pictures act on their own
   const g = e.target.closest("li.grp");
-  if (g) { const i = +g.dataset.site; folded.has(i) ? folded.delete(i) : folded.add(i); renderPanel(); return; }
+  if (g) {
+    const i = +g.dataset.site;
+    if (g.classList.contains("foldable")) { folded.has(i) ? folded.delete(i) : folded.add(i); renderPanel(); return; }
+    const st = SITES[i]; map.setView([st[S_LAT], st[S_LON]], Math.max(map.getZoom(), 16)); return;
+  }
   const row = e.target.closest("li.row");
   if (!row) return;
   // A name opens the person; a row without one (near-me lists places) flies to the place.
