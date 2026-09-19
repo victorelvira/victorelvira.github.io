@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nombres de España · cómo se llama la gente de cada pueblo</title>
+  <link rel="icon" href="nombres/favicon.svg">
+  <meta name="description" content="Los nombres y apellidos de cada municipio de España, rankings, cómo cambian con las generaciones y de dónde vienen, cada dato con su fuente.">
+  <meta name="author" content="Víctor Elvira">
+  <meta name="theme-color" content="#1d2b36">
+  <link rel="stylesheet" href="nombres/vendor/leaflet.css">
+  <link rel="stylesheet" href="nombres/style.css?v=0.4.0">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build" title="Versión y última actualización"></span>
+  </nav>
+
+  <header id="bar">
+    <a class="brand" href="nombres.html" title="Recargar (quita filtros)">
+      <img class="mark" src="nombres/favicon.svg" width="28" height="28" alt="">
+      <div>
+        <strong>Nombres de España</strong>
+        <small>cómo se llama la gente de cada pueblo, y de dónde vienen sus nombres</small>
+      </div>
+    </a>
+    <div id="stats" class="stats">cargando…</div>
+  </header>
+
+  <div id="modes">
+    <span id="view-tabs">
+      <button type="button" class="view-btn active" data-view="map">🗺 Mapa</button>
+      <button type="button" class="view-btn" data-view="rank">🏆 Rankings</button>
+      <button type="button" class="view-btn" data-view="evo">📈 Evolución</button>
+    </span>
+    <span id="sex-wrap"><span class="sex-lbl">Ver</span>
+      <span id="sex-tabs" class="seg big" title="Nombres de mujer, de hombre o apellidos">
+        <button type="button" class="seg-btn active" data-sex="M">♀ Nombres de mujer</button>
+        <button type="button" class="seg-btn" data-sex="H">♂ Nombres de hombre</button>
+        <button type="button" class="seg-btn" data-sex="A">Apellidos</button>
+      </span>
+    </span>
+    <span id="filter-wrap">
+      <input id="filter" type="search" placeholder="Buscar nombre, apellido o pueblo…" autocomplete="off">
+      <div id="suggest" hidden></div>
+    </span>
+  </div>
+  <div id="modes2">
+    <span id="colour-modes" title="Qué colorea el mapa">
+      <button type="button" class="mode-btn active" data-mode="top"><b>El más común</b><small>el nº 1 de cada sitio</small></button>
+      <button type="button" class="mode-btn" data-mode="char"><b>Característico</b><small>el que más destaca frente a España</small></button>
+      <button type="button" class="mode-btn" data-mode="age"><b>Generación</b><small>nombres de mayores o de jóvenes</small></button>
+      <button type="button" class="mode-btn" data-mode="conc"><b>Variedad</b><small>cuánto se repiten los 10 primeros</small></button>
+    </span>
+    <button type="button" id="about-btn" class="chip btn" title="Qué es esto, fuentes y método">ℹ︎ Acerca</button>
+  </div>
+
+  <div id="main">
+    <div id="mapwrap">
+      <div id="map"></div>
+      <div id="legend"></div>
+      <div id="sel-chip" hidden></div>
+      <button type="button" id="go-canarias" class="chip btn" title="Ir a Canarias">Canarias ↘</button>
+    </div>
+    <section id="rankwrap" hidden></section>
+    <section id="evowrap" hidden></section>
+    <aside id="panel" aria-label="Ficha">
+      <button id="detail-close" class="detail-close" type="button" aria-label="Cerrar la ficha">✕</button>
+      <div id="panel-body"></div>
+    </aside>
+  </div>
+
+  <div id="tip" hidden></div>
+  <script src="nombres/vendor/leaflet.js"></script>
+  <script src="nombres/app.js?v=0.4.0"></script>
+</body>
+</html>
