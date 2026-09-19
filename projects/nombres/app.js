@@ -1,7 +1,7 @@
 /* Nombres de España · map, rankings and evolution of names and surnames (INE). */
 "use strict";
-const DATA_V = "0.5.0";
-const BUILD_AT = "2026-09-19 13:50";
+const DATA_V = "0.5.2";
+const BUILD_AT = "2026-09-19 14:20";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -249,6 +249,7 @@ async function restyle() {
     chip.querySelector("button").onclick = () => { state.sel = null; writeHash(); restyle(); syncSummary(); };
   } else chip.hidden = true;
 }
+$("#legend").addEventListener("click", () => { if (isPhone()) $("#legend").classList.toggle("open"); });
 function setLegend(title, rows, note) {
   $("#legend").innerHTML = `<div class="lt">${title}</div>` + rows.map(([c, t, n]) =>
     `<div class="lr"><span class="sw" style="background:${c}"></span><span>${esc(t)}</span>${n != null ? `<span class="ln">${fmt(n)}</span>` : ""}</div>`).join("") +
@@ -343,6 +344,7 @@ async function openPlace(k) {
     const lst = a[sex] || [];
     h += `<h3>${SEXNAME[sex]} · los más comunes <span class="h3n">(${fmt(lst.length)} nombres con 5 o más)</span></h3>`;
     h += listTable(lst.slice(0, 10).map(([key, count, permil]) => ({sex, key, count, permil, badge: exBadge(sex, key)})));
+    if (lst.length > 10) h += `<button type="button" class="more-btn" data-rankall="${sex}">Ver los ${fmt(lst.length)} →</button>`;
     const ch = characteristic(sex, lst);
     if (ch.length) h += `<div class="note" style="margin-top:8px"><b>Característicos de aquí</b> <span class="badge calc">calculado</span>: ${ch.map(([key, r]) => `${nameLink(sex, key)} <small class="muted">×${fmt1(r)}</small>`).join(", ")}</div>`;
   }
@@ -350,6 +352,7 @@ async function openPlace(k) {
   h += `<h3>Apellidos · los más comunes <span class="h3n">(${fmt(A.length)} con 5 o más)</span></h3>`;
   if (A.length) {
     h += listTable(A.slice(0, 15).map(r => ({sex: "A", key: r[0], count: r[1], permil: r[2], badge: exBadge("A", r[0]), extra: r[5] ? ` · ${fmt(r[5])} con los dos` : ""})));
+    if (A.length > 15) h += `<button type="button" class="more-btn" data-rankall="A">Ver los ${fmt(A.length)} →</button>`;
     h += `<div class="note">Como primer apellido, por cada 1.000 habitantes.</div>`;
     const ch = characteristic("A", A);
     if (ch.length) h += `<div class="note" style="margin-top:8px"><b>Apellidos característicos de aquí</b> <span class="badge calc">calculado</span>: ${ch.map(([key, r]) => `${nameLink("A", key)} <small class="muted">×${fmt1(r)}</small>`).join(", ")}</div>`;
@@ -368,6 +371,7 @@ async function openPlace(k) {
   h += `<p class="note">Fuente: INE, consulta de nombres y apellidos por ${isMuni ? "municipio" : "provincia"} de residencia, censo anual de población a 1-1-2025.</p>`;
   showPanel(h + "</div>");
   $("#panel-body [data-rank]")?.addEventListener("click", () => { state.rankArea = k; setView("rank"); });
+  $$("#panel-body [data-rankall]").forEach(b => b.onclick = () => { state.rankArea = k; state.sex = b.dataset.rankall; state.rankN = 0; setView("rank"); });
   $$("#panel-body svg.bump").forEach(svg => wireBump(svg.id, svg.id.includes("-H") ? "H" : svg.id.includes("-A") ? "A" : "M"));
 }
 // ---------- treemap (squarified): one tile per name, area proportional to the people who carry it
@@ -654,7 +658,8 @@ async function renderRank() {
   opts.push(`<optgroup label="Por nacionalidad (residentes en toda España)">${(PLACES.xs || []).map(c => [c, PLACES.country?.[c] || c]).sort((a, b) => a[1].localeCompare(b[1], "es")).map(([c, n]) => `<option value="x${c}">${esc(n)}</option>`).join("")}</optgroup>`);
   let rows = [];
   if (state.rankArea === "ES") {
-    rows = IDX[sex].map(r => sex === "A" ? {key: r[0], count: r[1], permil: r[6], n2: r[2], nb: r[3]} : {key: r[0], count: r[1], permil: r[5], age: r[2]});
+    // Spain: only names with a national figure (surnames outside the INE's national top 5 000 have none)
+    rows = IDX[sex].filter(r => r[1] != null).map(r => sex === "A" ? {key: r[0], count: r[1], permil: r[6], n2: r[2], nb: r[3]} : {key: r[0], count: r[1], permil: r[5], age: r[2]});
   } else {
     const a = await areaData(state.rankArea);
     rows = (a?.[sex] || []).map(r => sex === "A" ? {key: r[0], count: r[1], permil: r[2], n2: r[3], nb: r[5]} : {key: r[0], count: r[1], permil: r[2], age: idxRow(sex, r[0])?.[2]});
@@ -677,7 +682,7 @@ async function renderRank() {
     <div class="rank-title">${esc(title)}</div>
     ${tmHTML}
     <p class="note">${fmt(all)} ${sex === "A" ? "apellidos" : "nombres"} con dato${hidden ? ` · ${fmt(hidden)} ocultos por llevarlos sobre todo extranjeros (siguen contados en el total)` : ""}. ${sex === "A" ? "Primer apellido por cada 1.000 habitantes." : `Por cada 1.000 ${sex === "H" ? "hombres" : "mujeres"}.`} Pulsa uno para ver su ficha y su mapa.</p>
-    <table class="rank-table"><thead><tr><th class="v">#</th><th>${sex === "A" ? "Apellido" : "Nombre"}</th><th class="v">${sex === "A" ? "1.er apellido" : "Personas"}</th><th class="v">‰</th><th></th>${sex === "A" ? `<th class="v">2.º apellido</th><th class="v">los dos</th>` : `<th class="v">Edad media</th>`}<th class="v">Extranjeros</th></tr></thead>
+    <table class="rank-table ${sex === "A" ? "sur" : ""}"><thead><tr><th class="v">#</th><th>${sex === "A" ? "Apellido" : "Nombre"}</th><th class="v">${sex === "A" ? "1.er apellido" : "Personas"}</th><th class="v">‰</th><th></th>${sex === "A" ? `<th class="v">2.º apellido</th><th class="v">los dos</th>` : `<th class="v">Edad media</th>`}<th class="v">Extranjeros</th></tr></thead>
     <tbody>${shown.map(r => {
       const ir = idxRow(sex, r.key); const share = ir ? (sex === "A" ? ir[4] : ir[3]) : null, bound = ir ? (sex === "A" ? ir[5] : ir[4]) : 0;
       return `<tr><td class="v muted">${r.rank}</td><td class="n" data-name="${sex}:${esc(r.key)}">${esc(disp(sex, r.key))}</td><td class="v">${fmt(r.count)}</td><td class="v">${fmt2(r.permil)}</td>
@@ -685,6 +690,7 @@ async function renderRank() {
       ${sex === "A" ? `<td class="v">${fmt(r.n2)}</td><td class="v">${fmt(r.nb)}</td>` : `<td class="v">${r.age ? fmt1(r.age) : ""}</td>`}
       <td class="v muted">${share == null ? "" : bound === 1 ? "<" + share + " %" : bound === 2 ? "casi todos" : share + " %"}</td></tr>`;
     }).join("")}</tbody></table>
+    ${shown.length < rows.length ? `<p style="text-align:center;margin:12px 0"><button type="button" class="chip btn" id="r-all">Mostrar todos (${fmt(rows.length)})</button></p>` : ""}
     <p class="note">Edad media y extranjeros: cifras de toda España para ese nombre (INE). Fuente: INE, censo anual de población a 1-1-2025.</p>`;
   $("#r-area").value = state.rankArea;
   if ($("#r-area").value !== state.rankArea) { state.rankArea = "ES"; return renderRank(); }
@@ -692,12 +698,13 @@ async function renderRank() {
   $("#r-area").onchange = e => { state.rankArea = e.target.value; writeHash(); renderRank(); };
   $("#r-ex").onchange = e => { state.hideEx = e.target.checked; renderRank(); };
   $("#r-n").onchange = e => { state.rankN = +e.target.value; renderRank(); };
+  $("#r-all")?.addEventListener("click", () => { const y = $("#rankwrap").scrollTop; state.rankN = 0; renderRank().then(() => $("#rankwrap").scrollTop = y); });
 }
 
 // ---------- evolution view
 function bump(series, xs, xlabel, maxRank, id, width) {
   // series: Map name -> {label, ranks: {x: rank}}; drawn at the real width so text stays 11 px
-  const W = width || Math.max(480, Math.min(1060, ($("#evowrap").clientWidth || 900) - 70)), H = 36 + maxRank * (width ? 24 : 32);
+  const W = width || Math.max(560, Math.min(1060, ($("#evowrap").clientWidth || 900) - 70)), H = 36 + maxRank * (width ? 24 : 32);
   const L = W < 640 ? 92 : 120, R = W < 640 ? 92 : 120, T = 22, B = 26;
   const x = i => L + i * (W - L - R) / (xs.length - 1), y = r => T + (r - 1) * (H - T - B) / (maxRank - 1);
   let g = "";
@@ -718,7 +725,8 @@ function bump(series, xs, xlabel, maxRank, id, width) {
     if (!labels && first >= 0) labels += `<text class="lbl" x="${x(first)}" y="${y(s.ranks[xs[first]]) - 9}" text-anchor="middle">${esc(s.label)}</text>`;
     g += `<g class="s" data-k="${esc(key)}">${segs.map(p => `<polyline class="ln" points="${p.join(" ")}"/>`).join("")}${dots}${labels}</g>`;
   }
-  return `<svg class="ch bump" id="${id}" viewBox="0 0 ${W} ${H}">${grid}${ranksL}${g}</svg>`;
+  // at its own pixel width inside a horizontal scroller, so a phone scrolls it instead of shrinking the text
+  return `<div class="scrollx"><svg class="ch bump" id="${id}" viewBox="0 0 ${W} ${H}" style="width:${W}px;max-width:none">${grid}${ranksL}${g}</svg></div>`;
 }
 function wireBump(id, sex) {
   const svg = document.getElementById(id);
@@ -769,7 +777,7 @@ async function renderEvo() {
   for (const [k, s] of gser) if (!Object.values(s.ranks).some(r => r <= maxR)) gser.delete(k);
   w.innerHTML = `<div class="evo-grid">
     <div class="card"><h2>Los nombres de los bebés, año a año</h2>
-      <p class="note">Los 10 nombres más puestos cada año. Pasa el ratón por una línea para seguirla; púlsala para ver su ficha.</p>
+      <p class="note">Los 10 nombres más puestos cada año. Toca una línea o pasa el ratón por encima para seguirla; púlsala para ver su ficha.</p>
       <div class="tools"><select id="nb-area">${ccaaOpts.join("")}</select>${seg("nb-sex", state.nbSex)}</div>
       ${bump(ser, years, y => "’" + y.slice(2), maxR, "bump-nb")}
       ${regional ? `<p class="note">${esc(SRCNOTE[SERIES_IDX.nb[state.nbArea]?.src] || "")}. Aquí se guardan los 15 primeros de cada año.</p>` : ""}
@@ -824,8 +832,8 @@ function renderStats() {
 let SEARCH = [];
 function buildSearch() {
   for (const sex of ["M", "H", "A"]) IDX[sex].forEach((r, i) => SEARCH.push({t: sex, key: r[0], n: norm(disp(sex, r[0])), label: disp(sex, r[0]), w: r[1] || r[7] || 0, floor: !r[1], rank: i}));
-  for (const [ine, m] of Object.entries(PLACES.muni)) SEARCH.push({t: "m", key: "m" + ine, n: norm(m.n), label: m.n, sub: PLACES.prov[m.p]?.n, w: 1e9});
-  for (const [pc, p] of Object.entries(PLACES.prov)) SEARCH.push({t: "p", key: "p" + pc, n: norm(p.n), label: p.n, sub: "provincia", w: 2e9});
+  for (const [ine, m] of Object.entries(PLACES.muni)) { const v = PLACES.v["m" + ine] || {}; SEARCH.push({t: "m", key: "m" + ine, n: norm(m.n), n2: norm(m.n.replace(/^(.*), (El|La|Los|Las|Lo|L'|A|O|As|Os|Es|Sa|Ses|Els|Les|Et)$/i, "$2 $1").replace(/^L' /, "L")), label: m.n, sub: PLACES.prov[m.p]?.n, w: (v.popH || 0) + (v.popM || 0)}); }
+  for (const [pc, p] of Object.entries(PLACES.prov)) SEARCH.push({t: "p", key: "p" + pc, n: norm(p.n), label: p.n, sub: "provincia", w: 1});
 }
 const KIND = {M: "mujer", H: "hombre", A: "apellido", m: "municipio", p: "provincia"};
 let sugIdx = -1, sugItems = [];
@@ -833,13 +841,18 @@ function suggest(q) {
   const box = $("#suggest");
   const nq = norm(q);
   if (nq.length < 2) { box.hidden = true; return; }
-  const starts = [], inner = [];
+  // best matches of EACH kind (towns, provinces, women's and men's names, surnames), so a common start like "mar" still
+  // shows Marbella beside María; exact matches first, then by how many people carry it
+  const groups = {p: [], m: [], M: [], H: [], A: []};
   for (const s of SEARCH) {
-    if (s.n.startsWith(nq)) starts.push(s); else if (nq.length >= 3 && s.n.includes(nq)) inner.push(s);
-    if (starts.length > 400) break;
+    const st = s.n.startsWith(nq) || (s.n2 && s.n2.startsWith(nq));
+    if (st || (nq.length >= 3 && s.n.includes(nq))) groups[s.t].push([s, (s.n === nq ? 2 : st ? 1 : 0) * 1e12 + s.w]);
   }
-  const score = s => (s.n === nq ? 1e12 : 0) + (s.t === "m" || s.t === "p" ? 5e8 : 0) + s.w;
-  sugItems = [...starts.sort((a, b) => score(b) - score(a)), ...inner.sort((a, b) => score(b) - score(a))].slice(0, 14);
+  const per = {p: 3, m: 5, M: 4, H: 4, A: 4};
+  sugItems = [];
+  for (const k of ["p", "m", "M", "H", "A"]) sugItems.push(...groups[k].sort((a, b) => b[1] - a[1]).slice(0, per[k]).map(x => x[0]));
+  const exact = sugItems.filter(s => s.n === nq);
+  sugItems = [...exact, ...sugItems.filter(s => s.n !== nq)];
   sugIdx = -1;
   box.innerHTML = sugItems.map((s, i) => `<div class="sug" data-i="${i}"><span class="kind">${KIND[s.t]}</span><span class="sn">${esc(s.label)}</span><span class="ss">${s.t === "m" || s.t === "p" ? esc(s.sub || "") : (s.floor ? (s.w ? "≥" + fmt(s.w) : "local") : fmt(s.w)) + (s.t === "A" ? " 1.er ap." : " pers.")}</span></div>`).join("") || `<div class="sug muted">Nada con "${esc(q)}"</div>`;
   box.hidden = false;

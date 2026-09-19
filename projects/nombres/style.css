@@ -41,6 +41,7 @@ a { color: var(--accent); }
 
 #modes { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 7px 16px; background: #fbf9f5; border-bottom: 1px solid var(--line); z-index: 450; }
 #view-tabs, .cmodes, .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: #fff; }
+.view-btn { white-space: nowrap; }
 .view-btn, .mode-btn, .seg-btn { border: 0; background: transparent; padding: 5px 13px; font: inherit; font-size: 13px; cursor: pointer; color: var(--ink); }
 .mode-btn { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.15; padding: 4px 13px; text-align: left; }
 .mode-btn b { font-weight: 600; font-size: 13px; }
@@ -159,7 +160,7 @@ svg.ch .hit { fill: transparent; cursor: default; }
 .rank-table td.n:hover { color: var(--accent); text-decoration: underline; }
 .rank-table .b { height: 8px; background: var(--s1); border-radius: 0 4px 4px 0; min-width: 2px; }
 
-.evo-grid { display: grid; grid-template-columns: 1fr; gap: 26px; max-width: 1100px; }
+.evo-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; max-width: 1100px; }
 .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
 .card h2 { font-family: Georgia, serif; font-size: 20px; margin: 0 0 2px; font-weight: 600; }
 .card .note { margin-bottom: 8px; }
@@ -219,7 +220,12 @@ body.view-evo #modes2 { display: none; }
   #bar .mark { width: 22px; height: 22px; }
   .brand strong { font-size: 14.5px; }
   .stats { display: none; }
-  #modes { padding: 5px 8px; gap: 6px; flex-wrap: nowrap; }
+  #modes { padding: 5px 8px; gap: 6px; flex-wrap: nowrap; position: relative; z-index: 1300; }  /* the search suggestions open above the options bar */
+  #suggest { position: fixed; top: auto; left: 6px; right: 6px; max-height: 62vh; }
+  .sug { padding: 5px 6px; gap: 6px; }
+  .sug .sn { font-size: 13.5px; }
+  .sug .kind { font-size: 9.5px; min-width: 46px; }
+  .sug .ss { font-size: 11px; }
   #modes .cmodes, .about-open.desk { display: none; }
   .view-btn { padding: 5px 9px; }
   .view-btn .vl { display: none; }
@@ -244,7 +250,23 @@ body.view-evo #modes2 { display: none; }
   #sex-tabs { display: flex; }
   #sex-tabs .seg-btn { flex: 1; padding: 7px 6px; font-size: 13px; }
   .about-open.mob { display: inline-flex; align-self: flex-start; }
-  #legend { font-size: 11px; padding: 5px 7px; max-width: 160px; bottom: 16px; left: 6px; }
+  #legend { font-size: 11px; padding: 5px 7px; max-width: 160px; bottom: 16px; left: 6px; cursor: pointer; }
+  #legend:not(.open) .lr:nth-child(n+6) { display: none; }
+  #legend:not(.open)::after { content: "más ▾"; display: block; font-size: 10.5px; color: var(--accent); margin-top: 2px; }
+  #legend.open::after { content: "menos ▴"; display: block; font-size: 10.5px; color: var(--accent); margin-top: 2px; }
+  /* rankings: no bar column, and for surnames no "both" column, so the table fits a phone */
+  .rank-table { font-size: 13px; }
+  .rank-table th, .rank-table td { padding: 4px 5px; }
+  .rank-table th:nth-child(5), .rank-table td:nth-child(5) { display: none; }
+  .rank-table.sur th:nth-child(6), .rank-table.sur td:nth-child(6),
+  .rank-table.sur th:nth-child(7), .rank-table.sur td:nth-child(7) { display: none; }
+  .rank-table th { font-size: 10px; white-space: normal; letter-spacing: 0; }
+  .rank-table td.n { word-break: break-word; }
+  .rank-title { font-size: 19px; }
+  .tools select { max-width: 100%; }
+  .scrollx { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -4px; }
+  .card { padding: 12px 10px; }
+  .card h2 { font-size: 17.5px; }
   #legend .note { display: none; }
   #legend .sw { width: 11px; height: 11px; }
   #go-canarias { top: 74px; }
