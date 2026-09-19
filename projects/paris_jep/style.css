@@ -2,3 +2,5 @@
 .lang-toggle{display:inline-flex;padding:0;border:1px solid currentColor;border-radius:4px;background:transparent;color:inherit;cursor:pointer;overflow:hidden;font:inherit;font-size:.75rem;font-weight:600;letter-spacing:.05em}
 .lang-toggle span{padding:.3rem .5rem;opacity:.55}
 .lang-toggle span.on{background:#7a4a2b;color:#fff;opacity:1}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%}.dot.free{background:#5c9150}.dot.booking{background:#5a67a8}.dot.full{background:#c0604c}.dot.unknown{background:#b3aca2}
+.dot.mixed{background:#c9a13b}.card summary .status+.status{margin-left:4px}.filter-meta{flex-wrap:wrap;row-gap:6px}

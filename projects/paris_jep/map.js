@@ -48,7 +48,7 @@ export function updateMap(places) {
     groups.get(key).push(p);
   }
   for (const group of groups.values()) {
-    const p = group[0], title = group.map(p => p.Name).join(' · ');
+    const p = group[0], title = group.map(p => `${p.Access} ${p.Name}`).join(' · ');
     const marker = L.marker([Number(p.Latitude), Number(p.Longitude)], {
       title, alt: title, placeCount: group.length,
       icon: L.divIcon({ className: 'place-marker', html: `<span style="background:${colors[p.Priority]}">${group.length > 1 ? group.length : symbols[p.Priority]}</span>`, iconSize: [28, 28], iconAnchor: [14, 14] })

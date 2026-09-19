@@ -12,11 +12,13 @@ export function scheduleMatches(raw, from, to, includeUnknown=false){
   // "journée", "dès", "+" and "jusqu'à" lack precise bounds.
   return includeUnknown;
 }
-export function filterPlaces(places,{priorities=[],access='',day='any',from='',to='',includeUnknown=false}={}){
+export function filterPlaces(places,{priorities=[],entries=[],hideFull=false,verifiedOnly=false,day='any',from='',to='',includeUnknown=false}={}){
   if(from && to && minutes(from)>minutes(to))return [];
   return places.filter(p=>{
     if(priorities.length && !priorities.includes(p.Priority))return false;
-    if(access && p.Access!==access)return false;
+    if(entries.length && !entries.includes(p.Entry))return false;
+    if(hideFull && p.Full)return false;
+    if(verifiedOnly && !p.Verified)return false;
     if(day==='any' && !from && !to)return true;
     const match=d=>scheduleMatches(p[d],from,to,includeUnknown);
     if(day==='both')return match('Saturday') && match('Sunday');
