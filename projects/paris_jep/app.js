@@ -95,7 +95,7 @@ function setView(visible) {
 $('#view-list').addEventListener('click', () => setView(false));
 $('#view-map').addEventListener('click', () => setView(true));
 $('#fit-map').addEventListener('click', fitPlaces);
-function reset() { document.querySelectorAll('[name=priority]').forEach(i => i.checked = false); $('[name=day][value=any]').checked = true; $('#access').value = ''; $('#from').value = ''; $('#to').value = ''; $('#unknown').checked = false; render(); }
+function reset() { document.querySelectorAll('[name=priority]').forEach(i => i.checked = false); $('[name=day][value=any]').checked = true; $('#access').value = '🟢'; $('#from').value = ''; $('#to').value = ''; $('#unknown').checked = false; render(); }
 document.querySelectorAll('.filters input, .filters select').forEach(i => i.addEventListener('change', render));
 $('#reset').addEventListener('click', reset);
 if(document.modelContext?.registerTool){
