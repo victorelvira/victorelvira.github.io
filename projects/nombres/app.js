@@ -1,7 +1,7 @@
 /* Nombres de España · map, rankings and evolution of names and surnames (INE). */
 "use strict";
 const DATA_V = "0.4.0";
-const BUILD_AT = "2026-09-19 13:00";
+const BUILD_AT = "2026-09-19 13:33";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
