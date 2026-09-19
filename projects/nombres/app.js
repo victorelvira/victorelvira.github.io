@@ -1,7 +1,7 @@
 /* Nombres de España · map, rankings and evolution of names and surnames (INE). */
 "use strict";
-const DATA_V = "0.4.0";
-const BUILD_AT = "2026-09-19 13:33";
+const DATA_V = "0.5.0";
+const BUILD_AT = "2026-09-19 13:50";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -79,7 +79,7 @@ function writeHash() {
 }
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
-  state.view = ["map", "rank", "evo"].includes(p.get("v")) ? p.get("v") : "map";
+  state.view = ["map", "rank", "evo", "stats"].includes(p.get("v")) ? p.get("v") : "map";
   state.mode = ["top", "char", "age", "conc"].includes(p.get("c")) ? p.get("c") : "top";
   state.sex = ["H", "M", "A"].includes(p.get("s")) ? p.get("s") : "M";
   const n = p.get("n");
@@ -111,7 +111,7 @@ async function initMap() {
       l.on("click", () => openPlace(hasMuniData(ine) ? "m" + ine : "p" + pc));
     },
   }).addTo(map);
-  if (innerWidth < 760) map.setView([40, -3.7], 5.25);
+  map.fitBounds([[35.9, -9.4], [43.8, 3.4]]);  // the peninsula and the Balearics, whatever the screen width
   $("#go-canarias").onclick = () => map.flyTo([28.3, -15.8], 7.5);
 }
 function showMapTip(e, f) {
@@ -140,6 +140,25 @@ function placeVal(ine) {
   if (mv) return {v: mv, prov: false};
   const p = PLACES.muni[ine]?.p;
   return {v: PLACES.v["p" + p], prov: true};
+}
+
+// R007: the eight men's nº 1 names take the series colours in order of towns; each woman's name takes the colour of
+// the man's name it most often shares the nº 1 with (one-to-one, largest counts first), so the regions keep their colour
+let STATS = null;
+function topColours(sex, counts) {
+  const byCount = m => [...m.entries()].sort((a, b) => b[1] - a[1]).map(x => x[0]);
+  if (sex === "A" || !STATS) return new Map(byCount(counts).slice(0, 8).map((n, i) => [n, SERIES[i]]));
+  const cH = new Map(), cM = new Map();
+  for (const [h, m, c] of STATS.cross) { cH.set(h, (cH.get(h) || 0) + c); cM.set(m, (cM.get(m) || 0) + c); }
+  const men = new Map(byCount(cH).slice(0, 8).map((n, i) => [n, SERIES[i]]));
+  if (sex === "H") return men;
+  const women = new Map(), used = new Set(), topW = byCount(cM).slice(0, 8);
+  for (const [h, m, c] of STATS.cross) {
+    if (!topW.includes(m) || women.has(m) || !men.has(h) || used.has(men.get(h))) continue;
+    women.set(m, men.get(h)); used.add(men.get(h));
+  }
+  for (const m of topW) if (!women.has(m)) { const free = SERIES.find(c => !used.has(c)); if (free) { women.set(m, free); used.add(free); } }
+  return new Map([...women.entries()].sort((a, b) => SERIES.indexOf(a[1]) - SERIES.indexOf(b[1])));
 }
 
 async function restyle() {
@@ -181,16 +200,16 @@ async function restyle() {
     if (mode === "top") {
       const counts = new Map();
       for (const f of geo.features) { const {v} = placeVal(f.id.slice(4)); const t = v?.["t" + sex]; if (t) counts.set(t, (counts.get(t) || 0) + 1); }
-      const top = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(x => x[0]);
-      const col = new Map(top.map((n, i) => [n, SERIES[i]]));
+      const col = topColours(sex, counts);
+      const top = [...col.keys()];
       for (const f of geo.features) {
         const ine = f.id.slice(4), {v, prov} = placeVal(ine), t = v?.["t" + sex];
         unitValue[ine] = {fill: t ? (col.get(t) || OTHER) : v ? FEW : NONE, op: prov && anyMuni ? .55 : 1,
           label: t ? `nº 1: <b style="display:inline">${esc(disp(sex, t))}</b>${prov ? " <i>(provincia)</i>" : ""}` : v ? "<i>ninguno llega a 5 personas</i>" : "<i>sin dato</i>"};
       }
-      top.forEach((n, i) => legend.push([SERIES[i], disp(sex, n), counts.get(n)]));
+      top.forEach(n => legend.push([col.get(n), disp(sex, n), counts.get(n)]));
       legend.push([OTHER, "otro"]);
-      note = anyMuni ? "Número de municipios a la derecha." : "Por ahora, por provincia: los datos de cada municipio se están descargando.";
+      note = "Número de municipios a la derecha." + (sex !== "A" ? " Colores emparejados: cada nombre de mujer lleva el color del nombre de hombre con el que más pueblos comparte el nº 1." : "");
       setLegend(`Nº 1 · ${SEXNAME[sex].toLowerCase()}`, legend, note);
     } else if (mode === "char") {
       const br = [2, 3, 5, 10, 20];
@@ -217,9 +236,9 @@ async function restyle() {
       const lo = [Math.min(...vals), ...br];
       pal.slice(0, br.length + 1).forEach((c, i) => legend.push([c, `${fmt1(lo[i])}${i < br.length ? " a " + fmt1(br[i]) : " o más"}${mode === "age" ? " años" : " %"}`]));
       note = mode === "age" ? "Media de la edad que tienen, en toda España, las personas con los nombres de aquí. Alta: nombres de generaciones mayores." :
-        "Parte de la gente que lleva uno de los 10 nombres más repetidos del sitio. Alta: poca variedad.";
+        "Parte de la gente que lleva uno de los 10 nombres más repetidos del sitio. Más oscuro: los nombres se repiten más (menos variedad).";
       if (sex === "A") note = "Solo para nombres de pila: se muestra mujeres. " + note;
-      setLegend(`${mode === "age" ? "Generación" : "Variedad"} · ${SEXNAME[s].toLowerCase()}`, legend, note);
+      setLegend(`${mode === "age" ? "Generación" : "Repetición"} · ${SEXNAME[s].toLowerCase()}`, legend, note);
     }
   }
   layer.eachLayer(l => { const u = unitValue[l.feature.id.slice(4)] || {}; l.setStyle({fillColor: u.fill || NONE, fillOpacity: u.op ?? 1}); });
@@ -227,7 +246,7 @@ async function restyle() {
   if (state.sel) {
     chip.hidden = false;
     chip.innerHTML = `<span>${esc(disp(state.sel.sex, state.sel.key))} <small style="opacity:.75">${state.sel.sex === "A" ? "apellido" : state.sel.sex === "H" ? "hombres" : "mujeres"}</small></span><button type="button" title="Quitar">✕</button>`;
-    chip.querySelector("button").onclick = () => { state.sel = null; writeHash(); restyle(); };
+    chip.querySelector("button").onclick = () => { state.sel = null; writeHash(); restyle(); syncSummary(); };
   } else chip.hidden = true;
 }
 function setLegend(title, rows, note) {
@@ -252,10 +271,12 @@ function showPanel(html) {
   $("#panel").scrollTop = 0;
   document.body.classList.add("has-ficha");
 }
+const isPhone = () => matchMedia("(max-width: 760px)").matches;
 function closePanel() {
   document.body.classList.remove("has-ficha");
   state.place = null;
-  if (state.view === "map") showWelcome();
+  // on a phone the ficha covers the map: closing must leave the map, not reopen the welcome text over it
+  if (state.view === "map" && !isPhone()) showWelcome();
   writeHash();
 }
 $("#detail-close").onclick = closePanel;
@@ -381,7 +402,8 @@ function treemapHTML(rows, sex, W, H, unit) {
     const col = pal[Math.min(pal.length - 1, Math.floor(10 * i / Math.max(rows.length, 1)))];
     const light = Math.floor(10 * i / Math.max(rows.length, 1)) >= 8;
     const big = w > 54 && h > 30, fs = Math.max(10, Math.min(22, Math.sqrt(w * h) / 6));
-    return `<div class="t ${light ? "light" : ""}" data-name="${sex}:${esc(r.key)}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${col};font-size:${fs}px"
+    // positions in % so the mosaic fits its box whatever width it finally gets
+    return `<div class="t ${light ? "light" : ""}" data-name="${sex}:${esc(r.key)}" style="left:${100 * x / W}%;top:${100 * y / H}%;width:${100 * w / W}%;height:${100 * h / H}%;background:${col};font-size:${fs}px"
       data-tip="<b>${esc(disp(sex, r.key))}</b>${fmt(r.count)} ${unit}${r.permil ? " · " + fmt2(r.permil) + " ‰" : ""}">${big ? `<b>${esc(disp(sex, r.key))}</b>${h > 44 ? `<small>${fmt(r.count)}</small>` : ""}` : ""}</div>`;
   }).join("")}</div>`;
 }
@@ -457,7 +479,8 @@ function characteristic(sex, lst) {
 }
 
 async function openName(sex, key) {
-  state.sel = {sex, key}; if (state.sex !== sex) { state.sex = sex; syncButtons(); }
+  state.sel = {sex, key}; if (state.sex !== sex) state.sex = sex;
+  syncButtons();
   writeHash();
   if (state.view === "map") restyle();
   const d = await nameData(sex, key) || {};
@@ -616,7 +639,7 @@ function showAbout() {
   <ul>
     <li><b>Característico</b>: el nombre cuyo tanto por mil en el sitio es más veces el de España (con al menos 10 personas y al menos el doble).</li>
     <li><b>Generación</b>: media de la edad media nacional de los nombres que lleva la gente del sitio (no es la edad de la gente del pueblo, aunque se le parece).</li>
-    <li><b>Variedad</b>: parte de la población que lleva uno de los 10 nombres más comunes del sitio.</li>
+    <li><b>Repetición</b>: parte de la población que lleva uno de los 10 nombres más comunes del sitio. Cuanto más alta, menos variedad.</li>
   </ul>
   <p class="note">Hecho sin ánimo de lucro. Cada dato lleva su fuente.</p></div>`);
 }
@@ -768,6 +791,35 @@ async function renderEvo() {
   wireBump("bump-nb", state.nbSex); wireBump("bump-gen", state.genSex);
 }
 
+// ---------- pairs between the sexes (R007, R008)
+function renderStats() {
+  const w = $("#statswrap");
+  if (!STATS) { w.innerHTML = "<p class='note'>Sin datos.</p>"; return; }
+  const H = STATS.topH.slice(0, 10), M = STATS.topM.slice(0, 10);
+  const cell = new Map(STATS.cross.map(([h, m, c, p]) => [h + "|" + m, [c, p]]));
+  const max = Math.max(...STATS.cross.map(x => x[2]));
+  const shade = c => c ? SEQ[Math.min(SEQ.length - 1, Math.floor(SEQ.length * Math.sqrt(c / max) * .999))] : "#f6f3ee";
+  let x = `<table class="xt"><thead><tr><th></th>${M.map(m => `<th>${nameLink("M", m)}</th>`).join("")}</tr></thead><tbody>` +
+    H.map(h => `<tr><th>${nameLink("H", h)}</th>${M.map(m => { const [c, p] = cell.get(h + "|" + m) || [0, 0]; const i = c ? SEQ.indexOf(shade(c)) : -1;
+      return `<td class="${i >= 3 ? "dk" : ""} ${c ? "" : "zero"}" style="background:${shade(c)}" data-tip="<b>${esc(disp("H", h))} y ${esc(disp("M", m))}</b>${c ? `nº 1 a la vez en ${fmt(c)} municipios (${fmt(p)} habitantes)` : "nunca a la vez"}">${c || "·"}</td>`; }).join("")}</tr>`).join("") + "</tbody></table>";
+  const {H: cH, M: cM, r} = STATS.corr;
+  const best = (i, byRow) => (byRow ? cM.map((m, j) => [m, r[i][j]]) : cH.map((h, j) => [h, r[j][i]])).sort((a, b) => b[1] - a[1]).slice(0, 3);
+  const bar = v => `<small>${fmt2(v)}</small>`;
+  const pairsH = cH.slice(0, 24).map((h, i) => `<div class="pair"><span class="a">${nameLink("H", h)}</span><span class="bs">${best(i, true).map(([m, v]) => `<span>${nameLink("M", m)} ${bar(v)}</span>`).join("")}</span></div>`).join("");
+  const pairsM = cM.slice(0, 24).map((m, j) => `<div class="pair"><span class="a">${nameLink("M", m)}</span><span class="bs">${best(j, false).map(([h, v]) => `<span>${nameLink("H", h)} ${bar(v)}</span>`).join("")}</span></div>`).join("");
+  w.innerHTML = `<div class="evo-grid">
+    <div class="card"><h2>El nº 1 de hombre y el nº 1 de mujer de cada pueblo</h2>
+      <p class="note">En cuántos municipios el nombre de hombre más común (filas) y el de mujer más común (columnas) son esa pareja. Por eso en el mapa "El más común" cada nombre de mujer lleva el color del de hombre con el que más coincide: Antonio y María, Manuel y María Carmen, Jordi y Montserrat.</p>
+      <div style="overflow-x:auto">${x}</div>
+      <p class="note">Calculado a partir del INE (censo 1-1-2025), con los ${fmt(STATS.cross.reduce((a, b) => a + b[2], 0))} municipios que tienen los dos nº 1. <span class="badge calc">calculado</span></p></div>
+    <div class="card"><h2>Nombres que suben y bajan juntos</h2>
+      <p class="note">Para cada uno de los nombres más comunes, los tres del otro sexo cuyo tanto por mil sube y baja con el suyo de un pueblo a otro (correlación de 0 a 1; 1 = van siempre a la par). Aparecen dos efectos: la forma femenina del mismo nombre (Antonio y Antonia, Francisco y Francisca), que suele ser de la misma familia o la misma devoción local, y la generación (David y Laura, Alejandro y Lucía), porque los pueblos con más jóvenes tienen más de los dos.</p>
+      <h3 style="font-size:12px;text-transform:uppercase;color:var(--muted);margin:14px 0 4px">Hombres → mujeres</h3><div class="pairs">${pairsH}</div>
+      <h3 style="font-size:12px;text-transform:uppercase;color:var(--muted);margin:16px 0 4px">Mujeres → hombres</h3><div class="pairs">${pairsM}</div>
+      <p class="note">Correlación de Pearson del tanto por mil en los ${fmt(STATS.corr.towns)} municipios de 2.000 habitantes o más, entre los 40 nombres más comunes de cada sexo en España; un nombre que no aparece en un pueblo cuenta como 0 (lo llevan menos de 5 personas). Que dos nombres vayan juntos no quiere decir que sean de las mismas personas ni de las mismas parejas. <span class="badge calc">calculado</span></p></div>
+  </div>`;
+}
+
 // ---------- search
 let SEARCH = [];
 function buildSearch() {
@@ -811,27 +863,42 @@ $("#suggest").addEventListener("mousedown", e => { const el = e.target.closest("
 $("#filter").addEventListener("blur", () => setTimeout(() => $("#suggest").hidden = true, 150));
 
 // ---------- views and buttons
+const MODE_NAME = {top: "El más común", char: "Característico", age: "Generación", conc: "Repetición"};
+const SEX_LONG = {M: "Nombres de mujer", H: "Nombres de hombre", A: "Apellidos"};
+function syncSummary() {
+  const s = state.view === "map" ? `${MODE_NAME[state.mode]} · ${SEX_LONG[state.sex]}` : SEX_LONG[state.sex];
+  $("#mob-sum").textContent = state.sel && state.view === "map" ? `${disp(state.sel.sex, state.sel.key)} en el mapa` : s;
+}
+$("#mob-toggle").onclick = () => {
+  const open = !document.body.classList.contains("filters-open");
+  document.body.classList.toggle("filters-open", open);
+  $("#mob-toggle").setAttribute("aria-expanded", open);
+  $("#mob-toggle .ti").textContent = open ? "−" : "＋";
+};
+function closeFilters() { document.body.classList.remove("filters-open"); $("#mob-toggle .ti").textContent = "＋"; $("#mob-toggle").setAttribute("aria-expanded", "false"); }
 function syncButtons() {
   $$(".view-btn").forEach(b => b.classList.toggle("active", b.dataset.view === state.view));
   $$(".mode-btn").forEach(b => b.classList.toggle("active", b.dataset.mode === state.mode));
   $$("#sex-tabs .seg-btn").forEach(b => b.classList.toggle("active", b.dataset.sex === state.sex));
-  document.body.classList.remove("view-map", "view-rank", "view-evo");
+  document.body.classList.remove("view-map", "view-rank", "view-evo", "view-stats");
   document.body.classList.add("view-" + state.view);
+  if ($("#mob-sum")) syncSummary();
 }
 function setView(v) {
   state.view = v; syncButtons(); writeHash();
-  $("#mapwrap").hidden = v !== "map"; $("#rankwrap").hidden = v !== "rank"; $("#evowrap").hidden = v !== "evo";
+  $("#mapwrap").hidden = v !== "map"; $("#rankwrap").hidden = v !== "rank"; $("#evowrap").hidden = v !== "evo"; $("#statswrap").hidden = v !== "stats";
   if (v === "map" && map) { setTimeout(() => map.invalidateSize(), 0); restyle(); }
   if (v === "rank") renderRank();
   if (v === "evo") renderEvo();
+  if (v === "stats") renderStats();
 }
 $$(".view-btn").forEach(b => b.onclick = () => setView(b.dataset.view));
-$$(".mode-btn").forEach(b => b.onclick = () => { state.mode = b.dataset.mode; state.sel = null; syncButtons(); writeHash(); restyle(); });
+$$(".mode-btn").forEach(b => b.onclick = () => { state.mode = b.dataset.mode; state.sel = null; syncButtons(); writeHash(); restyle(); closeFilters(); });
 $$("#sex-tabs .seg-btn").forEach(b => b.onclick = () => {
-  state.sex = b.dataset.sex; state.sel = null; syncButtons(); writeHash();
+  state.sex = b.dataset.sex; state.sel = null; syncButtons(); writeHash(); closeFilters();
   if (state.view === "map") restyle(); else if (state.view === "rank") renderRank();
 });
-$("#about-btn").onclick = showAbout;
+$$(".about-open").forEach(b => b.onclick = () => { closeFilters(); showAbout(); });
 document.querySelector(".brand").addEventListener("click", e => { e.preventDefault(); history.replaceState(null, "", location.pathname); location.reload(); });
 
 // ---------- start
@@ -841,6 +908,7 @@ document.querySelector(".brand").addEventListener("click", e => { e.preventDefau
   [IDX, PLACES, NB, GEN, SOURCES] = await Promise.all([J("index.json"), J("places.json"), J("newborns.json"), J("gen.json"), J("sources.json")]);
   SOURCES = SOURCES || {};
   SERIES_IDX = (await J("series.json")) || SERIES_IDX;
+  STATS = await J("stats.json");
   // surnames outside the national top 5 000: [name, floor] -> the same row shape as the others
   for (const [n, fl] of IDX.Ax || []) IDX.A.push([n, null, null, null, null, 0, null, fl]);
   for (const s of ["H", "M", "A"]) for (const r of IDX[s]) IDXMAP[s].set(r[0], r);
@@ -854,5 +922,6 @@ document.querySelector(".brand").addEventListener("click", e => { e.preventDefau
   await mapReady;
   if (state.sel) openName(state.sel.sex, state.sel.key);
   else if (state.place) openPlace(state.place);
-  else showWelcome();
+  else if (!isPhone()) showWelcome();
+  else $("#panel-body").innerHTML = "";
 })();

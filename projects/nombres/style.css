@@ -40,17 +40,30 @@ a { color: var(--accent); }
 .stats b { color: var(--ink); }
 
 #modes { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 7px 16px; background: #fbf9f5; border-bottom: 1px solid var(--line); z-index: 450; }
-#view-tabs, #colour-modes, .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: #fff; }
+#view-tabs, .cmodes, .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: #fff; }
 .view-btn, .mode-btn, .seg-btn { border: 0; background: transparent; padding: 5px 13px; font: inherit; font-size: 13px; cursor: pointer; color: var(--ink); }
 .mode-btn { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.15; padding: 4px 13px; text-align: left; }
 .mode-btn b { font-weight: 600; font-size: 13px; }
 .mode-btn small { font-size: 10.5px; color: var(--muted); white-space: nowrap; }
 .mode-btn.active small { color: #bcd3e6; }
-#colour-modes { border-radius: 14px; }
+.cmodes { border-radius: 14px; }
 .view-btn + .view-btn, .mode-btn + .mode-btn, .seg-btn + .seg-btn { border-left: 1px solid var(--line); }
 .view-btn.active, .mode-btn.active, .seg-btn.active { background: var(--accent-dark); color: #fff; }
-body.view-rank #colour-modes, body.view-evo #colour-modes { display: none; }
-body.view-evo #sex-tabs { display: none; }
+body.view-rank .cmodes, body.view-evo .cmodes, body.view-stats .cmodes { display: none; }
+body.view-stats #modes2 { display: none; }
+#statswrap { flex: 1 1 auto; overflow-y: auto; min-width: 0; padding: 16px 20px 40px; }
+.xt { border-collapse: collapse; font-size: 12.5px; }
+.xt th { font-weight: 600; font-size: 11.5px; color: var(--muted); padding: 3px 5px; text-align: right; white-space: nowrap; }
+.xt thead th { writing-mode: vertical-rl; transform: rotate(180deg); text-align: left; vertical-align: bottom; height: 110px; }
+.xt td { width: 44px; height: 30px; text-align: center; border: 2px solid #fff; font-variant-numeric: tabular-nums; cursor: default; }
+.xt td.dk { color: #fff; }
+.xt td.zero { color: #cfc8bc; }
+.pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 4px 28px; }
+.pair { display: flex; align-items: center; gap: 8px; font-size: 13.5px; padding: 3px 0; border-bottom: 1px solid #f1ede6; }
+.pair .a { min-width: 118px; font-weight: 600; }
+.pair .bs { display: flex; flex-wrap: wrap; gap: 4px 10px; }
+.pair .bs span small { color: var(--muted); }
+@media (max-width: 760px) { #statswrap { padding: 12px 10px 40px; } .xt td { width: 30px; height: 26px; font-size: 11px; } .xt thead th { height: 90px; } }
 #filter-wrap { position: relative; margin-left: auto; flex: 0 1 340px; }
 #filter { width: 100%; padding: 6px 12px; font: inherit; font-size: 14px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
 #filter:focus { outline: 2px solid #bcd3e6; border-color: #8fb3cf; }
@@ -173,7 +186,7 @@ svg.bump g.s { cursor: pointer; }
   #modes { padding: 6px 10px; gap: 6px; }
   .mode-btn small { display: none; }
   #filter-wrap { flex: 1 1 100%; order: 10; }
-  #panel { position: absolute; inset: 0; max-width: none; z-index: 900; display: none; border-left: 0; }
+  #panel { position: absolute; inset: 0; max-width: none; z-index: 1150; display: none; border-left: 0; }
   body.has-ficha #panel { display: block; }
   body.has-ficha .detail-close { width: 44px; height: 44px; background: var(--rose); color: #fff; border: 0; font-size: 20px; box-shadow: 0 2px 10px rgba(0,0,0,.25); }
   #rankwrap, #evowrap { padding: 12px 12px 40px; }
@@ -181,14 +194,13 @@ svg.bump g.s { cursor: pointer; }
 }
 #sel-chip[hidden], #suggest[hidden], #tip[hidden] { display: none; }
 
-/* 0.4.0: who (women, men, surnames) is its own group on the first row; how the map is coloured goes below */
-#modes2 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 6px 16px; background: #fbf9f5; border-bottom: 1px solid var(--line); z-index: 440; }
-body.view-rank #modes2, body.view-evo #modes2 { display: none; }
-#sex-wrap { display: inline-flex; align-items: center; gap: 8px; }
-.sex-lbl { font-size: 11.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; }
-.seg.big .seg-btn { padding: 7px 16px; font-size: 14px; font-weight: 600; }
-.seg.big { border-width: 1.5px; border-color: #c9d8e5; }
-#modes { border-bottom: 1px solid var(--line); }
+/* 0.4.1: how the map is coloured is the parent (first row); women / men / surnames go below it */
+#modes2 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 6px 16px; background: #fbf9f5; border-bottom: 1px solid var(--line); z-index: 440; position: relative; }
+body.view-evo #modes2 { display: none; }
+#f-content { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+#mob-toggle, .cmodes.mob, .about-open.mob { display: none; }
+.seg.big .seg-btn { padding: 6px 15px; font-size: 13.5px; font-weight: 600; }
+.seg.big { border-color: #c9d8e5; }
 
 /* treemap */
 .tm { position: relative; width: 100%; border-radius: 10px; overflow: hidden; background: #fff; }
@@ -199,7 +211,42 @@ body.view-rank #modes2, body.view-evo #modes2 { display: none; }
 .tm .t.light { color: var(--ink); }
 .tm-card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; max-width: 980px; }
 .tm-card h3 { margin: 0 0 4px; font-family: Georgia, serif; font-size: 18px; font-weight: 600; }
+/* phone: everything packed at the top so the map shows; the options fold into one small bar that opens on tap
+   (as in Paris JEP), showing what is chosen now */
 @media (max-width: 760px) {
-  .seg.big .seg-btn { padding: 6px 10px; font-size: 13px; }
-  #modes2 { padding: 6px 10px; }
+  #navbar { padding: 3px 10px; font-size: 11.5px; }
+  #bar { padding: 5px 10px; gap: 6px; }
+  #bar .mark { width: 22px; height: 22px; }
+  .brand strong { font-size: 14.5px; }
+  .stats { display: none; }
+  #modes { padding: 5px 8px; gap: 6px; flex-wrap: nowrap; }
+  #modes .cmodes, .about-open.desk { display: none; }
+  .view-btn { padding: 5px 9px; }
+  .view-btn .vl { display: none; }
+  body.view-map .view-btn.active .vl, body.view-rank .view-btn.active .vl, body.view-evo .view-btn.active .vl { display: inline; }
+  #filter-wrap { flex: 1 1 auto; order: 0; margin-left: 0; min-width: 0; }
+  #filter { padding: 5px 10px; font-size: 14px; }
+  #modes2 { padding: 0 8px; z-index: 1200; }
+  #sex-tabs .nd { display: none; }
+  #sex-tabs .ns { text-transform: capitalize; }
+  #mob-toggle { display: flex; align-items: center; gap: 6px; width: 100%; border: 0; background: none; padding: 7px 2px; font: inherit; font-size: 13px; font-weight: 600; color: var(--ink); text-align: left; cursor: pointer; }
+  #mob-toggle .ti { margin-left: auto; font-size: 16px; color: var(--muted); }
+  #mob-sum { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #f-content { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 10px;
+    background: #fbf9f5; border-bottom: 1px solid #d8cfc1; padding: 10px 10px 12px; box-shadow: 0 8px 18px rgba(0,0,0,.14); z-index: 950; }
+  body.filters-open #f-content { display: flex; }
+  .cmodes.mob { display: grid; grid-template-columns: 1fr 1fr; border-radius: 12px; }
+  body.view-rank .cmodes.mob, body.view-evo .cmodes.mob { display: none; }
+  .cmodes.mob .mode-btn small { display: block; white-space: normal; font-size: 10.5px; }
+  .cmodes.mob .mode-btn { border-left: 0; border-top: 1px solid var(--line); }
+  .cmodes.mob .mode-btn:nth-child(-n+2) { border-top: 0; }
+  .cmodes.mob .mode-btn:nth-child(even) { border-left: 1px solid var(--line); }
+  #sex-tabs { display: flex; }
+  #sex-tabs .seg-btn { flex: 1; padding: 7px 6px; font-size: 13px; }
+  .about-open.mob { display: inline-flex; align-self: flex-start; }
+  #legend { font-size: 11px; padding: 5px 7px; max-width: 160px; bottom: 16px; left: 6px; }
+  #legend .note { display: none; }
+  #legend .sw { width: 11px; height: 11px; }
+  #go-canarias { top: 74px; }
+  #sel-chip { font-size: 13px; top: 6px; }
 }
