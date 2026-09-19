@@ -1,7 +1,7 @@
 /* Nombres de España · map, rankings and evolution of names and surnames (INE). */
 "use strict";
-const DATA_V = "0.5.2";
-const BUILD_AT = "2026-09-19 14:20";
+const DATA_V = "0.5.3";
+const BUILD_AT = "2026-09-19 14:26";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -887,8 +887,9 @@ $("#mob-toggle").onclick = () => {
   document.body.classList.toggle("filters-open", open);
   $("#mob-toggle").setAttribute("aria-expanded", open);
   $("#mob-toggle .ti").textContent = open ? "−" : "＋";
+  $("#mob-toggle .tl").textContent = open ? "cerrar" : "más filtros";
 };
-function closeFilters() { document.body.classList.remove("filters-open"); $("#mob-toggle .ti").textContent = "＋"; $("#mob-toggle").setAttribute("aria-expanded", "false"); }
+function closeFilters() { document.body.classList.remove("filters-open"); $("#mob-toggle .ti").textContent = "＋"; $("#mob-toggle .tl").textContent = "más filtros"; $("#mob-toggle").setAttribute("aria-expanded", "false"); }
 function syncButtons() {
   $$(".view-btn").forEach(b => b.classList.toggle("active", b.dataset.view === state.view));
   $$(".mode-btn").forEach(b => b.classList.toggle("active", b.dataset.mode === state.mode));
