@@ -4,9 +4,9 @@ const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true;
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const statuses = { 'COMPLET': 'Completo', 'SANS RÉSERVATION': 'Sin reserva', 'RÉSERVATION': 'Con reserva', 'COMPLET activités JEP': 'Actividades JEP completas', 'ACCÈS LIBRE': 'Acceso libre', 'PARTIEL': 'Acceso parcial', 'TICKETS SUR PLACE': 'Entradas en el lugar', 'GRATUIT': 'Gratuito', 'COMPLET / RÉSERVATION': 'Completo / con reserva', 'À VÉRIFIER': 'Por verificar', 'COMPLET / ANNULATIONS': 'Completo / cancelaciones' };
+const statuses = { 'COMPLET': 'Completo', 'SANS RÉSERVATION': 'Sin reserva', 'RÉSERVATION': 'Con reserva', 'COMPLET activités JEP': 'Actividades JEP completas', 'ACCÈS LIBRE': 'Acceso libre', 'PARTIEL': 'Acceso parcial', 'TICKETS SUR PLACE': 'Entradas en el lugar', 'GRATUIT': 'Gratuito', 'COMPLET / RÉSERVATION': 'Completo / con reserva', 'À VÉRIFIER': 'Por verificar', 'COMPLET / ANNULATIONS': 'Completo / cancelaciones', 'BILLETTERIE': 'Taquilla', '2e PASSAGE — PARTICIPATION / ACCÈS À VÉRIFIER': 'Participación por verificar' };
 const statusClass = { '🟢': 'free', '🎟️': 'reservation', '🟡': 'partial', '🔴': 'full', '🟠': 'full', '⚪': 'unknown' };
-const priority = { '⭐': ['★ Alta', '', 0], '◼': ['■ Media', 'medium', 1], '○': ['○ Baja', 'low', 2] };
+const priority = { '⭐': ['★★★ A', '', 0], '◼': ['★★ B', 'medium', 1], '○': ['★ C', 'low', 2] };
 function schedule(value) {
   if (value === '?') return '<span class="unconfirmed">Por confirmar</span>';
   if (value === '—') return '<span class="closed">Sin visita</span>';
@@ -18,9 +18,11 @@ function meta(p) {
   return `<div class="card-top"><span class="priority-badge ${cls}">${label}</span><span class="district">${p.Arrondissement === 'Paris' ? 'París' : `${esc(p.Arrondissement)} arrondissement`}</span></div>`;
 }
 const status = p => `<span class="status ${statusClass[p.Access] || 'unknown'}" title="${esc(p.Status)}">${esc(statuses[p.Status] || p.Status)}</span>`;
+// A link shared by several places (or a guide article) is a generic listing, not the place's own page.
+const generic = url => /sortiraparis\.com|\/guides?\//.test(url) || places.filter(q => q['JEP / booking link'] === url).length > 2;
 function detailBody(p) {
   const booking = safeLink(p['JEP / booking link']), route = safeLink(p['Google Maps']);
-  return `<p class="address">${esc(p.Address)}</p><div class="schedules"><div class="schedule"><strong>Sábado 19</strong>${schedule(p.Saturday)}</div><div class="schedule"><strong>Domingo 20</strong>${schedule(p.Sunday)}</div></div><div class="card-links">${booking ? `<a href="${booking}" target="_blank" rel="noopener noreferrer">Información / reservas ↗</a>` : ''}${route ? `<a href="${route}" target="_blank" rel="noopener noreferrer">Cómo llegar ↗</a>` : ''}</div>${p.Latitude ? (p.geocoding?.type === 'street' ? '<p class="detail-location">Ubicación aproximada en la vía.</p>' : '') : '<p class="location-pending">Ubicación por precisar · disponible en la lista.</p>'}`;
+  return `<p class="address">${esc(p.Address)}</p><div class="schedules"><div class="schedule"><strong>Sábado 19</strong>${schedule(p.Saturday)}</div><div class="schedule"><strong>Domingo 20</strong>${schedule(p.Sunday)}</div></div><div class="card-links">${booking ? `<a href="${booking}" target="_blank" rel="noopener noreferrer">${generic(booking) ? 'Artículo general JEP ↗' : 'Información / reservas ↗'}</a>` : ''}<a href="https://www.google.com/search?q=${encodeURIComponent(p.Name + ' journées du patrimoine 2026')}" target="_blank" rel="noopener noreferrer">Buscar programa ↗</a>${route ? `<a href="${route}" target="_blank" rel="noopener noreferrer">Cómo llegar ↗</a>` : ''}</div>${p.Latitude ? (p.geocoding?.type === 'street' ? '<p class="detail-location">Ubicación aproximada en la vía.</p>' : '') : '<p class="location-pending">Ubicación por precisar · disponible en la lista.</p>'}`;
 }
 function card(p) {
   return `<details class="card" id="place-${p.id}" data-card="${p.id}"><summary>${meta(p)}<h3>${esc(p.Name)}</h3>${status(p)}</summary><div class="card-body">${detailBody(p)}${p.Latitude ? `<button type="button" class="show-on-map" data-place="${p.id}">Ver en el mapa</button>` : ''}</div></details>`;
@@ -56,7 +58,7 @@ $('#list').addEventListener('toggle', e => {
 }, true);
 $('#list').addEventListener('click', e => {
   const button = e.target.closest('[data-place]'); if (!button) return;
-  const id = Number(button.dataset.place); setView(true); focusPlace(id);
+  const id = Number(button.dataset.place); setView(true); requestAnimationFrame(() => focusPlace(id, true));
   if (mobile()) selectPlace(id, { origin: 'map' });
 });
 $('#close-detail').addEventListener('click', () => $('#place-dialog').close());

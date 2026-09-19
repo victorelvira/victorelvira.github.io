@@ -1,7 +1,7 @@
 let map, layer, latest = [], visible = true, dirty = false, tileFailed = false;
 const markers = new Map();
 const colors = { '⭐': '#a1782b', '◼': '#37666a', '○': '#867d70' };
-const symbols = { '⭐': '★', '◼': '■', '○': '○' };
+const symbols = { '⭐': 'A', '◼': 'B', '○': 'C' };
 const emitSelection = group => window.dispatchEvent(new CustomEvent('place-selected', { detail: group.map(p => p.id) }));
 function report() {
   const count = latest.filter(p => p.Latitude && p.Longitude).length;
@@ -73,10 +73,11 @@ export function setMapVisible(value) {
   map.invalidateSize({ pan: false });
   if (dirty) updateMap(latest);
 }
-export function focusPlace(id) {
+export function focusPlace(id, zoom = false) {
   const marker = markers.get(id);
   if (!marker || !map) return;
-  const select = () => { map.panTo(marker.getLatLng()); highlightPlace(id); };
+  // zoom=true ("show on map" button): always zoom in close, otherwise the click looks like it did nothing.
+  const select = () => { zoom ? map.setView(marker.getLatLng(), Math.max(map.getZoom(), 17)) : map.panTo(marker.getLatLng()); highlightPlace(id); };
   if (layer.zoomToShowLayer) layer.zoomToShowLayer(marker, select);
   else { map.setView(marker.getLatLng(), 16); select(); }
 }
