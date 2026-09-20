@@ -2,7 +2,7 @@ import { filterPlaces, minutes } from './filters.mjs?v=2.0';
 import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.0';
 const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true;
-const VERSION = '2.0', BUILD_AT = '2026-09-20 12:44';   // stamped by scripts/stamp_build.py at deploy — do not edit
+const VERSION = '2.0', BUILD_AT = '2026-09-20 14:31';   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
