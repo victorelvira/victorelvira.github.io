@@ -1,10 +1,10 @@
-import { filterPlaces, minutes } from './filters.mjs?v=2.9';
-import { markOf, markButtons, toggleMark } from './marks.js?v=2.9';
-import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.9';
+import { filterPlaces, minutes } from './filters.mjs?v=0.9.0';
+import { markOf, markButtons, toggleMark } from './marks.js?v=0.9.0';
+import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=0.9.0';
 const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true, view = 'map';
-const VERSION = '2.9', BUILD_AT = '2026-09-20 15:05';   // stamped by scripts/stamp_build.py at deploy — do not edit
-{ const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
+const DATA_V = '0.9.0', BUILD_AT = '2026-09-21 01:09';   // stamped by scripts/stamp_build.py at deploy — do not edit
+{ const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${DATA_V} · ${BUILD_AT}` : `v${DATA_V}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const statuses = { 'COMPLET': 'Completo', 'SANS RÉSERVATION': 'Sin reserva', 'RÉSERVATION': 'Con reserva', 'COMPLET activités JEP': 'Actividades JEP completas', 'ACCÈS LIBRE': 'Acceso libre', 'PARTIEL': 'Acceso parcial', 'TICKETS SUR PLACE': 'Entradas en el lugar', 'GRATUIT': 'Gratuito', 'COMPLET / RÉSERVATION': 'Completo / con reserva', 'À VÉRIFIER': 'Por verificar', 'COMPLET / ANNULATIONS': 'Completo / cancelaciones', 'BILLETTERIE': 'Taquilla', 'INSCRIPTIONS COMPLÈTES': 'Inscripciones completas', 'ACCÈS LIBRE — AUCUNE RÉSERVATION': 'Acceso libre', 'COMPLET — invitation obligatoire': 'Completo · sólo invitación', '2e PASSAGE — PARTICIPATION / ACCÈS À VÉRIFIER': 'Participación por verificar' };
@@ -200,7 +200,7 @@ if(document.modelContext?.registerTool){
   window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
 }
 try {
-  const response = await fetch(new URL(`./places.json?v=${VERSION}`, import.meta.url));
+  const response = await fetch(new URL(`./places.json?v=${DATA_V}`, import.meta.url));
   if (!response.ok) throw new Error('No se pudo cargar la selección.');
   places = await response.json(); places.forEach((p, i) => p.id = i);
   places.sort((a, b) => (priority[a.Priority]?.[2] ?? 4) - (priority[b.Priority]?.[2] ?? 4));
