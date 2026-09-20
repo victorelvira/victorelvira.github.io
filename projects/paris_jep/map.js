@@ -1,6 +1,6 @@
 let map, layer, latest = [], visible = true, dirty = false, tileFailed = false;
 const markers = new Map();
-import { markOf } from './marks.js?v=2.7';
+import { markOf } from './marks.js?v=2.9';
 const colors = { '✦': '#8a5b12', '⭐': '#a1782b', '◼': '#37666a', '○': '#867d70' };
 const MUTED = '#b6b1a8';   // a discarded place keeps its pin, in grey: still there, no longer shouting
 const symbols = { '✦': '★', '⭐': 'A', '◼': 'B', '○': 'C' };
@@ -24,9 +24,12 @@ function ensureMap() {
   layer = L.markerClusterGroup ? L.markerClusterGroup({
     maxClusterRadius: 42, showCoverageOnHover: false, spiderfyOnMaxZoom: true,
     iconCreateFunction(cluster) {
-      const n = cluster.getAllChildMarkers().reduce((sum, marker) => sum + marker.options.placeCount, 0);
+      const children = cluster.getAllChildMarkers();
+      const n = children.reduce((sum, marker) => sum + marker.options.placeCount, 0);
       const size = n >= 20 ? 44 : n >= 5 ? 37 : 32;
-      return L.divIcon({ className: 'cluster-marker', html: `<span>${n}</span>`, iconSize: [size, size] });
+      // A heart hidden inside a cluster would be invisible until you zoomed in: the number wears the ring.
+      const loved = children.some(marker => marker.options.loved);
+      return L.divIcon({ className: `cluster-marker${loved ? ' loved' : ''}`, html: `<span>${n}</span>`, iconSize: [size, size] });
     }
   }) : L.layerGroup();
   layer.addTo(map);
@@ -53,7 +56,7 @@ export function updateMap(places) {
   for (const group of groups.values()) {
     const p = group[0], title = group.map(p => `${p.Access} ${p.Name}`).join(' · ');
     const marker = L.marker([Number(p.Latitude), Number(p.Longitude)], {
-      title, alt: title, placeCount: group.length,
+      title, alt: title, placeCount: group.length, loved: group.some(q => markOf(q) === 'love'),
       icon: L.divIcon({ className: 'place-marker', html: `<span class="${p.Priority === '✦' ? 'aplus ' : ''}${markOf(p) === 'hide' ? 'muted' : markOf(p) === 'love' ? 'loved' : ''}" style="background:${markOf(p) === 'hide' ? MUTED : colors[p.Priority]}">${group.length > 1 ? group.length : symbols[p.Priority]}</span>`, iconSize: [28, 28], iconAnchor: [14, 14] })
     });
     const label = document.createElement('span'); label.textContent = title;

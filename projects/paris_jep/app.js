@@ -1,9 +1,9 @@
-import { filterPlaces, minutes } from './filters.mjs?v=2.7';
-import { markOf, markButtons, toggleMark } from './marks.js?v=2.7';
-import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.7';
+import { filterPlaces, minutes } from './filters.mjs?v=2.9';
+import { markOf, markButtons, toggleMark } from './marks.js?v=2.9';
+import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.9';
 const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true, view = 'map';
-const VERSION = '2.7', BUILD_AT = '2026-09-20 14:59';   // stamped by scripts/stamp_build.py at deploy — do not edit
+const VERSION = '2.9', BUILD_AT = '2026-09-20 15:05';   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -79,21 +79,26 @@ $('#filter-toggle').addEventListener('click', () => {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { $('.filters').classList.remove('expanded'); $('#filter-toggle').setAttribute('aria-expanded', 'false'); $('.toggle-icon').textContent = '＋ pulsa'; } });
 // "Ahora" is the wall clock rounded down to the half hour; the rest are fixed hours.
 const openValue = () => { const v = $('[name=open]:checked').value; if (v !== 'now') return v; const d = new Date(); return `${String(d.getHours()).padStart(2, '0')}:${d.getMinutes() < 30 ? '00' : '30'}`; };
-export function readFilters() { return { priorities: [...document.querySelectorAll('[name=priority]:checked')].map(i => i.value), entries: [...document.querySelectorAll('[name=entry]:checked')].map(i => i.value), day: $('[name=day]:checked').value, openAt: openValue(), includeUnknown: $('#unknown').checked, hideFull: $('#hide-full').checked, verifiedOnly: $('#verified').checked }; }
+export function readFilters() { return { priorities: [...document.querySelectorAll('[name=priority]:checked')].map(i => i.value), entries: [...document.querySelectorAll('[name=entry]:checked')].map(i => i.value), day: $('[name=day]:checked').value, openAt: openValue(), includeUnknown: $('#unknown').checked, hideFull: $('#hide-full').checked, verifiedOnly: $('#verified').checked, hideCrossed: $('#hide-crossed').checked, onlyHearts: $('#only-hearts').checked }; }
 export function render() {
-  const f = readFilters(); filtered = filterPlaces(places, f); selectedId = null;
+  const f = readFilters();
+  filtered = filterPlaces(places, f).filter(p => {
+    const mark = markOf(p);
+    return f.onlyHearts ? mark === 'love' : !(f.hideCrossed && mark === 'hide');
+  });
+  selectedId = null;
   if ($('#place-dialog').open) $('#place-dialog').close();
     $('#count').textContent = filtered.length;
   const unknownHidden = f.openAt && !f.includeUnknown ? places.filter(p => !filterPlaces([p], { ...f, openAt: '', includeUnknown: true }).length ? false : !filterPlaces([p], f).length && filterPlaces([p], { ...f, includeUnknown: true }).length).length : 0;
   $('#time-hint').textContent = unknownHidden ? `${unknownHidden} lugares con horario sin confirmar quedan fuera.` : f.openAt ? 'Lugares con visita a esa hora o más tarde.' : 'Elige una hora para ver lo que sigue abierto.';
-    const active = Number(!!f.priorities.length) + Number(!!f.entries.length) + Number(f.day !== 'any') + Number(!!f.openAt);
+    const active = Number(!!f.onlyHearts) + Number(!f.hideCrossed) + Number(!!f.priorities.length) + Number(!!f.entries.length) + Number(f.day !== 'any') + Number(!!f.openAt);
   // Collapsed on a phone, the toggle is the only place the filters are visible: it names them, briefly.
   const DAYS = { Saturday: 'Sáb.', Sunday: 'Dom.', both: 'Ambos' }, ENTRIES = { free: 'Libre', booking: 'Reserva', mixed: 'Mixto', unknown: 'Sin info' };
   const summary = [
-    f.priorities.length ? f.priorities.map(p => priority[p][0].split(' ')[1]).join('') : '',
+    f.priorities.length ? f.priorities.map(p => priority[p][0].split(' ')[1]).join('/') : '',
     DAYS[f.day] || '', { '': '', now: 'ahora' }[$('[name=open]:checked').value] ?? $('[name=open]:checked').value.slice(0, 2) + 'h',
     f.entries.length === 4 ? '' : f.entries.map(e => ENTRIES[e]).join('/'),
-    f.verifiedOnly ? 'verificados' : '', f.hideFull ? '' : 'con completos',
+    f.verifiedOnly ? 'verificados' : '', f.hideFull ? '' : 'con completos', f.onlyHearts ? '♥ sólo' : '', f.hideCrossed ? '' : 'con ✕',
   ].filter(Boolean);
   $('#filter-count').textContent = `(${[...summary, `${filtered.length} lugares`].join(' · ')})`;
   $('#result-note').textContent = active ? `${filtered.length} de ${places.length} · ${f.includeUnknown ? 'Incluye horarios pendientes' : 'Por prioridad'}` : 'Por prioridad · toda tu selección';
@@ -172,21 +177,24 @@ $('#fit-map').addEventListener('click', fitPlaces);
 const JEP = { '2026-09-19': 'Saturday', '2026-09-20': 'Sunday' };
 function applyDefaults() {
   const today = JEP[new Date().toLocaleDateString('sv')] || 'any';
+  // The point of the atlas is the rare stuff: it opens on A+ and A, with discarded places out of the way.
+  document.querySelectorAll('[name=priority]').forEach(i => i.checked = i.value === '✦' || i.value === '⭐');
+  $('#hide-crossed').checked = true; $('#only-hearts').checked = false;
   $(`[name=day][value=${today}]`).checked = true;
   $(`[name=open][value="${today === 'any' ? '' : 'now'}"]`).checked = true;
 }
-function reset() { document.querySelectorAll('[name=priority]').forEach(i => i.checked = false);  document.querySelectorAll('[name=entry]').forEach(i => i.checked = i.value === 'free'); $('#hide-full').checked = true; $('#verified').checked = false; applyDefaults(); $('#unknown').checked = false; render(); }
+function reset() {  document.querySelectorAll('[name=entry]').forEach(i => i.checked = i.value === 'free'); $('#hide-full').checked = true; $('#verified').checked = false; applyDefaults(); $('#unknown').checked = false; render(); }
 document.querySelectorAll('.filters input, .filters select').forEach(i => i.addEventListener('change', render));
 $('#reset').addEventListener('click', reset);
 if(document.modelContext?.registerTool){
   const lifecycle=new AbortController();
-  try{Promise.resolve(document.modelContext.registerTool({name:'filter_places',title:'Filtrar lugares de París JEP',description:'Actualiza los filtros visibles y devuelve los lugares de la selección que coinciden. No confirma reservas ni disponibilidad.',inputSchema:{type:'object',properties:{priorities:{type:'array',items:{type:'string',enum:['✦','⭐','◼','○']}},entries:{type:'array',items:{type:'string',enum:['free','booking','mixed','unknown']}},hideFull:{type:'boolean'},verifiedOnly:{type:'boolean'},day:{type:'string',enum:['any','Saturday','Sunday','both']},openAt:{type:'string'},includeUnknown:{type:'boolean'}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:true},execute(input){
+  try{Promise.resolve(document.modelContext.registerTool({name:'filter_places',title:'Filtrar lugares de París JEP',description:'Actualiza los filtros visibles y devuelve los lugares de la selección que coinciden. No confirma reservas ni disponibilidad.',inputSchema:{type:'object',properties:{priorities:{type:'array',items:{type:'string',enum:['✦','⭐','◼','○']}},entries:{type:'array',items:{type:'string',enum:['free','booking','mixed','unknown']}},hideFull:{type:'boolean'},verifiedOnly:{type:'boolean'},hideCrossed:{type:'boolean'},onlyHearts:{type:'boolean'},day:{type:'string',enum:['any','Saturday','Sunday','both']},openAt:{type:'string'},includeUnknown:{type:'boolean'}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:true},execute(input){
     if(!input||typeof input!=='object'||Array.isArray(input))throw new Error('Se esperaba un objeto de filtros.');
-    const allowed=['priorities','entries','hideFull','verifiedOnly','day','openAt','includeUnknown'];if(Object.keys(input).some(k=>!allowed.includes(k)))throw new Error('Filtro desconocido.');
+    const allowed=['priorities','entries','hideFull','verifiedOnly','day','openAt','includeUnknown','hideCrossed','onlyHearts'];if(Object.keys(input).some(k=>!allowed.includes(k)))throw new Error('Filtro desconocido.');
     const f={...readFilters(),...input};
     if(!Array.isArray(f.priorities)||f.priorities.some(p=>!['✦','⭐','◼','○'].includes(p))||!Array.isArray(f.entries)||f.entries.some(e=>!['free','booking','mixed','unknown'].includes(e))||!['any','Saturday','Sunday','both'].includes(f.day)||typeof f.includeUnknown!=='boolean')throw new Error('Valor de filtro inválido.');
     for(const t of [f.openAt])if(typeof t!=='string'||!/^$|^(?:[01]\d|2[0-3]):[0-5]\d$/.test(t))throw new Error('Usa una hora HH:MM.');
-        document.querySelectorAll('[name=priority]').forEach(i=>i.checked=f.priorities.includes(i.value));document.querySelectorAll('[name=day]').forEach(i=>i.checked=i.value===f.day);document.querySelectorAll('[name=entry]').forEach(i=>i.checked=f.entries.includes(i.value));$('#hide-full').checked=!!f.hideFull;$('#verified').checked=!!f.verifiedOnly;document.querySelectorAll('[name=open]').forEach(i=>i.checked=i.value===f.openAt);$('#unknown').checked=f.includeUnknown;
+        document.querySelectorAll('[name=priority]').forEach(i=>i.checked=f.priorities.includes(i.value));document.querySelectorAll('[name=day]').forEach(i=>i.checked=i.value===f.day);document.querySelectorAll('[name=entry]').forEach(i=>i.checked=f.entries.includes(i.value));$('#hide-full').checked=!!f.hideFull;$('#verified').checked=!!f.verifiedOnly;$('#hide-crossed').checked=!!f.hideCrossed;$('#only-hearts').checked=!!f.onlyHearts;document.querySelectorAll('[name=open]').forEach(i=>i.checked=i.value===f.openAt);$('#unknown').checked=f.includeUnknown;
     const result=render();return {count:result.length,places:result.map(p=>({name:p.Name,saturday:p.Saturday,sunday:p.Sunday,status:p.Status}))};
   }},{signal:lifecycle.signal})).catch(()=>{});}catch{}
   window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
