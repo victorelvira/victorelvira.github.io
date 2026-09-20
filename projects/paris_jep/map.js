@@ -1,6 +1,6 @@
 let map, layer, latest = [], visible = true, dirty = false, tileFailed = false;
 const markers = new Map();
-import { markOf } from './marks.js?v=2.5';
+import { markOf } from './marks.js?v=2.6';
 const colors = { '⭐': '#a1782b', '◼': '#37666a', '○': '#867d70' };
 const MUTED = '#b6b1a8';   // a discarded place keeps its pin, in grey: still there, no longer shouting
 const symbols = { '⭐': 'A', '◼': 'B', '○': 'C' };

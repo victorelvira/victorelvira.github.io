@@ -1,9 +1,9 @@
-import { filterPlaces, minutes } from './filters.mjs?v=2.5';
-import { markOf, markButtons, toggleMark } from './marks.js?v=2.5';
-import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.5';
+import { filterPlaces, minutes } from './filters.mjs?v=2.6';
+import { markOf, markButtons, toggleMark } from './marks.js?v=2.6';
+import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.6';
 const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true, view = 'map';
-const VERSION = '2.5', BUILD_AT = '2026-09-20 14:47';   // stamped by scripts/stamp_build.py at deploy — do not edit
+const VERSION = '2.6', BUILD_AT = '2026-09-20 14:52';   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
