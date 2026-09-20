@@ -14,3 +14,4 @@
 #navbar .build{margin-left:auto;color:#8a7f72;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:11px}
 .hours{flex-wrap:wrap}
 @media(max-width:760px){#navbar{font-size:11px;padding:4px 12px}#navbar .nav-home{overflow:hidden;text-overflow:ellipsis}}
+#filter-count{font-weight:700;color:var(--ink)}.toggle-icon{font-size:14px;font-weight:600;color:var(--accent)}

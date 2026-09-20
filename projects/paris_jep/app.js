@@ -2,7 +2,7 @@ import { filterPlaces, minutes } from './filters.mjs?v=2.0';
 import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.0';
 const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true;
-const VERSION = '2.0', BUILD_AT = '2026-09-20 12:00';   // stamped by scripts/stamp_build.py at deploy — do not edit
+const VERSION = '2.0', BUILD_AT = '2026-09-20 12:21';   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -72,9 +72,9 @@ $('#place-dialog').addEventListener('click', e => { if (e.target === $('#place-d
 $('#filter-toggle').addEventListener('click', () => {
   const open = $('.filters').classList.toggle('expanded');
   $('#filter-toggle').setAttribute('aria-expanded', String(open));
-  $('.toggle-icon').textContent = open ? '−' : '＋';
+  $('.toggle-icon').textContent = open ? '− cerrar' : '＋ pulsa';
 });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') { $('.filters').classList.remove('expanded'); $('#filter-toggle').setAttribute('aria-expanded', 'false'); $('.toggle-icon').textContent = '＋'; } });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { $('.filters').classList.remove('expanded'); $('#filter-toggle').setAttribute('aria-expanded', 'false'); $('.toggle-icon').textContent = '＋ pulsa'; } });
 // "Ahora" is the wall clock rounded down to the half hour; the rest are fixed hours.
 const openValue = () => { const v = $('[name=open]:checked').value; if (v !== 'now') return v; const d = new Date(); return `${String(d.getHours()).padStart(2, '0')}:${d.getMinutes() < 30 ? '00' : '30'}`; };
 export function readFilters() { return { priorities: [...document.querySelectorAll('[name=priority]:checked')].map(i => i.value), entries: [...document.querySelectorAll('[name=entry]:checked')].map(i => i.value), day: $('[name=day]:checked').value, openAt: openValue(), includeUnknown: $('#unknown').checked, hideFull: $('#hide-full').checked, verifiedOnly: $('#verified').checked }; }
@@ -85,7 +85,7 @@ export function render() {
   const unknownHidden = f.openAt && !f.includeUnknown ? places.filter(p => !filterPlaces([p], { ...f, openAt: '', includeUnknown: true }).length ? false : !filterPlaces([p], f).length && filterPlaces([p], { ...f, includeUnknown: true }).length).length : 0;
   $('#time-hint').textContent = unknownHidden ? `${unknownHidden} lugares con horario sin confirmar quedan fuera.` : f.openAt ? 'Lugares con visita a esa hora o más tarde.' : 'Elige una hora para ver lo que sigue abierto.';
     const active = Number(!!f.priorities.length) + Number(!!f.entries.length) + Number(f.day !== 'any') + Number(!!f.openAt);
-  $('#filter-count').textContent = active ? `${active} activos · ${filtered.length} lugares` : 'Prioridad · entrada · día · horario';
+  $('#filter-count').textContent = active ? `(${active} activos · ${filtered.length} lugares)` : `(${filtered.length} lugares · sin filtros)`;
   $('#result-note').textContent = active ? `${filtered.length} de ${places.length} · ${f.includeUnknown ? 'Incluye horarios pendientes' : 'Por prioridad'}` : 'Por prioridad · toda tu selección';
   $('#list').innerHTML = filtered.length ? filtered.map(card).join('') : `<div class="empty"><h3>No hay lugares con estos filtros</h3><p>Prueba otro día, amplía el horario o incluye horarios por confirmar.</p><button id="empty-reset" type="button">Restablecer filtros</button></div>`;
   $('#list').scrollTop = 0;
@@ -102,7 +102,14 @@ function setView(visible) {
 $('#view-list').addEventListener('click', () => setView(false));
 $('#view-map').addEventListener('click', () => setView(true));
 $('#fit-map').addEventListener('click', fitPlaces);
-function reset() { document.querySelectorAll('[name=priority]').forEach(i => i.checked = false); $('[name=day][value=any]').checked = true; document.querySelectorAll('[name=entry]').forEach(i => i.checked = i.value === 'free'); $('#hide-full').checked = true; $('#verified').checked = false; $('[name=open][value=""]').checked = true; $('#unknown').checked = false; render(); }
+// During the weekend the useful default is "today, from now on"; afterwards, no day or hour filter.
+const JEP = { '2026-09-19': 'Saturday', '2026-09-20': 'Sunday' };
+function applyDefaults() {
+  const today = JEP[new Date().toLocaleDateString('sv')] || 'any';
+  $(`[name=day][value=${today}]`).checked = true;
+  $(`[name=open][value="${today === 'any' ? '' : 'now'}"]`).checked = true;
+}
+function reset() { document.querySelectorAll('[name=priority]').forEach(i => i.checked = false);  document.querySelectorAll('[name=entry]').forEach(i => i.checked = i.value === 'free'); $('#hide-full').checked = true; $('#verified').checked = false; applyDefaults(); $('#unknown').checked = false; render(); }
 document.querySelectorAll('.filters input, .filters select').forEach(i => i.addEventListener('change', render));
 $('#reset').addEventListener('click', reset);
 if(document.modelContext?.registerTool){
@@ -123,6 +130,7 @@ try {
   if (!response.ok) throw new Error('No se pudo cargar la selección.');
   places = await response.json(); places.forEach((p, i) => p.id = i);
   places.sort((a, b) => (priority[a.Priority]?.[2] ?? 3) - (priority[b.Priority]?.[2] ?? 3));
+  applyDefaults();
   render();
 } catch {
   $('#list').innerHTML = '<div class="empty"><h3>No se pudo cargar la selección</h3><p>Comprueba tu conexión y vuelve a cargar la página.</p><button id="retry">Volver a intentar</button></div>';
