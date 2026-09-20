@@ -1,15 +1,15 @@
-import { filterPlaces, minutes } from './filters.mjs?v=2.6';
-import { markOf, markButtons, toggleMark } from './marks.js?v=2.6';
-import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.6';
+import { filterPlaces, minutes } from './filters.mjs?v=2.7';
+import { markOf, markButtons, toggleMark } from './marks.js?v=2.7';
+import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.7';
 const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true, view = 'map';
-const VERSION = '2.6', BUILD_AT = '2026-09-20 14:52';   // stamped by scripts/stamp_build.py at deploy — do not edit
+const VERSION = '2.7', BUILD_AT = '2026-09-20 14:59';   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const statuses = { 'COMPLET': 'Completo', 'SANS RÉSERVATION': 'Sin reserva', 'RÉSERVATION': 'Con reserva', 'COMPLET activités JEP': 'Actividades JEP completas', 'ACCÈS LIBRE': 'Acceso libre', 'PARTIEL': 'Acceso parcial', 'TICKETS SUR PLACE': 'Entradas en el lugar', 'GRATUIT': 'Gratuito', 'COMPLET / RÉSERVATION': 'Completo / con reserva', 'À VÉRIFIER': 'Por verificar', 'COMPLET / ANNULATIONS': 'Completo / cancelaciones', 'BILLETTERIE': 'Taquilla', 'INSCRIPTIONS COMPLÈTES': 'Inscripciones completas', 'ACCÈS LIBRE — AUCUNE RÉSERVATION': 'Acceso libre', 'COMPLET — invitation obligatoire': 'Completo · sólo invitación', '2e PASSAGE — PARTICIPATION / ACCÈS À VÉRIFIER': 'Participación por verificar' };
 const statusClass = { '🟢': 'free', '🎟️': 'reservation', '🟡': 'partial', '🔴': 'full', '🟠': 'full', '⚪': 'unknown' };
-const priority = { '⭐': ['★★★ A', '', 0], '◼': ['★★ B', 'medium', 1], '○': ['★ C', 'low', 2] };
+const priority = { '✦': ['★★★★ A+', 'aplus', 0], '⭐': ['★★★ A', '', 1], '◼': ['★★ B', 'medium', 2], '○': ['★ C', 'low', 3] };
 function schedule(value) {
   if (value === '?') return '<span class="unconfirmed">Por confirmar</span>';
   if (value === '—') return '<span class="closed">Sin visita</span>';
@@ -130,7 +130,7 @@ const scheduleCell = v => {
 };
 let sortBy = 'Priority', sortAsc = true;
 const sortValue = (p, key) => key === 'mark' ? ({ love: 0, '': 1, hide: 2 })[markOf(p)]
-  : key === 'Priority' ? (priority[p.Priority]?.[2] ?? 3)
+  : key === 'Priority' ? (priority[p.Priority]?.[2] ?? 4)
   : key === 'Arrondissement' ? parseInt(p.Arrondissement) || 99
   : key === 'Saturday' || key === 'Sunday' ? (p[key].match(/\d{2}:\d{2}/)?.[0] || '99:99')
   : String(p[key] ?? '').toLowerCase();
@@ -180,11 +180,11 @@ document.querySelectorAll('.filters input, .filters select').forEach(i => i.addE
 $('#reset').addEventListener('click', reset);
 if(document.modelContext?.registerTool){
   const lifecycle=new AbortController();
-  try{Promise.resolve(document.modelContext.registerTool({name:'filter_places',title:'Filtrar lugares de París JEP',description:'Actualiza los filtros visibles y devuelve los lugares de la selección que coinciden. No confirma reservas ni disponibilidad.',inputSchema:{type:'object',properties:{priorities:{type:'array',items:{type:'string',enum:['⭐','◼','○']}},entries:{type:'array',items:{type:'string',enum:['free','booking','mixed','unknown']}},hideFull:{type:'boolean'},verifiedOnly:{type:'boolean'},day:{type:'string',enum:['any','Saturday','Sunday','both']},openAt:{type:'string'},includeUnknown:{type:'boolean'}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:true},execute(input){
+  try{Promise.resolve(document.modelContext.registerTool({name:'filter_places',title:'Filtrar lugares de París JEP',description:'Actualiza los filtros visibles y devuelve los lugares de la selección que coinciden. No confirma reservas ni disponibilidad.',inputSchema:{type:'object',properties:{priorities:{type:'array',items:{type:'string',enum:['✦','⭐','◼','○']}},entries:{type:'array',items:{type:'string',enum:['free','booking','mixed','unknown']}},hideFull:{type:'boolean'},verifiedOnly:{type:'boolean'},day:{type:'string',enum:['any','Saturday','Sunday','both']},openAt:{type:'string'},includeUnknown:{type:'boolean'}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:true},execute(input){
     if(!input||typeof input!=='object'||Array.isArray(input))throw new Error('Se esperaba un objeto de filtros.');
     const allowed=['priorities','entries','hideFull','verifiedOnly','day','openAt','includeUnknown'];if(Object.keys(input).some(k=>!allowed.includes(k)))throw new Error('Filtro desconocido.');
     const f={...readFilters(),...input};
-    if(!Array.isArray(f.priorities)||f.priorities.some(p=>!['⭐','◼','○'].includes(p))||!Array.isArray(f.entries)||f.entries.some(e=>!['free','booking','mixed','unknown'].includes(e))||!['any','Saturday','Sunday','both'].includes(f.day)||typeof f.includeUnknown!=='boolean')throw new Error('Valor de filtro inválido.');
+    if(!Array.isArray(f.priorities)||f.priorities.some(p=>!['✦','⭐','◼','○'].includes(p))||!Array.isArray(f.entries)||f.entries.some(e=>!['free','booking','mixed','unknown'].includes(e))||!['any','Saturday','Sunday','both'].includes(f.day)||typeof f.includeUnknown!=='boolean')throw new Error('Valor de filtro inválido.');
     for(const t of [f.openAt])if(typeof t!=='string'||!/^$|^(?:[01]\d|2[0-3]):[0-5]\d$/.test(t))throw new Error('Usa una hora HH:MM.');
         document.querySelectorAll('[name=priority]').forEach(i=>i.checked=f.priorities.includes(i.value));document.querySelectorAll('[name=day]').forEach(i=>i.checked=i.value===f.day);document.querySelectorAll('[name=entry]').forEach(i=>i.checked=f.entries.includes(i.value));$('#hide-full').checked=!!f.hideFull;$('#verified').checked=!!f.verifiedOnly;document.querySelectorAll('[name=open]').forEach(i=>i.checked=i.value===f.openAt);$('#unknown').checked=f.includeUnknown;
     const result=render();return {count:result.length,places:result.map(p=>({name:p.Name,saturday:p.Saturday,sunday:p.Sunday,status:p.Status}))};
@@ -192,10 +192,10 @@ if(document.modelContext?.registerTool){
   window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
 }
 try {
-  const response = await fetch(new URL('./places.json', import.meta.url));
+  const response = await fetch(new URL(`./places.json?v=${VERSION}`, import.meta.url));
   if (!response.ok) throw new Error('No se pudo cargar la selección.');
   places = await response.json(); places.forEach((p, i) => p.id = i);
-  places.sort((a, b) => (priority[a.Priority]?.[2] ?? 3) - (priority[b.Priority]?.[2] ?? 3));
+  places.sort((a, b) => (priority[a.Priority]?.[2] ?? 4) - (priority[b.Priority]?.[2] ?? 4));
   applyDefaults();
   render();
 } catch {

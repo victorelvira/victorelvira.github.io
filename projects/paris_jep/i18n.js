@@ -4,7 +4,7 @@ const lang = (() => { try { return new URLSearchParams(location.search).get('lan
 const FR = [
   ['Mapa y lista', 'Carte et liste'], ['Mapa', 'Carte'], ['y lista', 'et liste'], ['Fichas', 'Fiches'], ['Tabla', 'Tableau'], ['Lugar', 'Lieu'], ['Arr.', 'Arr.'], ['Prio.', 'Prio.'], ['completo', 'complet'], ['Lista', 'Liste'],
   ['19–20 septiembre', '19–20 septembre'], ['Filtros', 'Filtres'], ['Prioridad · entrada · día · horario', 'Priorité · entrée · jour · horaire'],
-  ['Prioridad', 'Priorité'], ['★ Alta', '★ Haute'], ['■ Media', '■ Moyenne'], ['○ Baja', '○ Basse'], ['Alta', 'Haute'], ['Media', 'Moyenne'], ['Baja', 'Basse'],
+  ['Prioridad', 'Priorité'], ['Lo más excepcional, elegido a mano', 'Le plus exceptionnel, choisi à la main'], ['■ Media', '■ Moyenne'], ['○ Baja', '○ Basse'], ['Alta', 'Haute'], ['Media', 'Moyenne'], ['Baja', 'Basse'],
   ['Entrada', 'Entrée'], ['Todas las entradas', 'Toutes les entrées'], ['Sin reserva / acceso libre', 'Sans réservation / accès libre'],
   ['Actividades JEP completas', 'Activités JEP complètes'], ['Completo / con reserva', 'Complet / réservation'], ['Completo / cancelaciones', 'Complet / annulations'],
   ['Con reserva', 'Sur réservation'], ['Sin reserva', 'Sans réservation'], ['Acceso parcial', 'Accès partiel'], ['Acceso libre', 'Accès libre'],

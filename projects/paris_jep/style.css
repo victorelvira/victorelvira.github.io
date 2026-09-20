@@ -58,3 +58,13 @@
 .place-marker span.loved{box-shadow:0 0 0 3px #c0392b,0 2px 7px #30221166}
 @media(max-width:760px){.places-table th:nth-child(7){width:62px}.mark-btn{width:26px;height:24px}}
 .mark-btn.hide.on{background:#efece7;border-color:#cfc7ba}
+
+.priority-options label:first-child b{color:#8a5b12}
+.priority-options label:nth-child(2) b{color:#987026}
+.priority-options label:nth-child(3) b{color:#37666a}
+.priority-options label:nth-child(4) b{color:#80786e}
+.priority-badge.aplus{color:#8a5b12;font-weight:700}
+.legend-aplus{color:#8a5b12;font-weight:600}
+/* A+ wears a gold band, a hearted place a red one; both can show at once. */
+.place-marker span.aplus{box-shadow:0 0 0 3px #d9b45e,0 2px 7px #30221166}
+.place-marker span.aplus.loved{box-shadow:0 0 0 3px #c0392b,0 0 0 6px #d9b45e,0 2px 7px #30221166}

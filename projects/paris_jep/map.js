@@ -1,9 +1,9 @@
 let map, layer, latest = [], visible = true, dirty = false, tileFailed = false;
 const markers = new Map();
-import { markOf } from './marks.js?v=2.6';
-const colors = { '⭐': '#a1782b', '◼': '#37666a', '○': '#867d70' };
+import { markOf } from './marks.js?v=2.7';
+const colors = { '✦': '#8a5b12', '⭐': '#a1782b', '◼': '#37666a', '○': '#867d70' };
 const MUTED = '#b6b1a8';   // a discarded place keeps its pin, in grey: still there, no longer shouting
-const symbols = { '⭐': 'A', '◼': 'B', '○': 'C' };
+const symbols = { '✦': '★', '⭐': 'A', '◼': 'B', '○': 'C' };
 const emitSelection = group => window.dispatchEvent(new CustomEvent('place-selected', { detail: group.map(p => p.id) }));
 function report() {
   const count = latest.filter(p => p.Latitude && p.Longitude).length;
@@ -54,7 +54,7 @@ export function updateMap(places) {
     const p = group[0], title = group.map(p => `${p.Access} ${p.Name}`).join(' · ');
     const marker = L.marker([Number(p.Latitude), Number(p.Longitude)], {
       title, alt: title, placeCount: group.length,
-      icon: L.divIcon({ className: 'place-marker', html: `<span class="${markOf(p) === 'hide' ? 'muted' : markOf(p) === 'love' ? 'loved' : ''}" style="background:${markOf(p) === 'hide' ? MUTED : colors[p.Priority]}">${group.length > 1 ? group.length : symbols[p.Priority]}</span>`, iconSize: [28, 28], iconAnchor: [14, 14] })
+      icon: L.divIcon({ className: 'place-marker', html: `<span class="${p.Priority === '✦' ? 'aplus ' : ''}${markOf(p) === 'hide' ? 'muted' : markOf(p) === 'love' ? 'loved' : ''}" style="background:${markOf(p) === 'hide' ? MUTED : colors[p.Priority]}">${group.length > 1 ? group.length : symbols[p.Priority]}</span>`, iconSize: [28, 28], iconAnchor: [14, 14] })
     });
     const label = document.createElement('span'); label.textContent = title;
     marker.bindTooltip(label, { direction: 'top', offset: [0, -12] });
