@@ -2,7 +2,7 @@ import { filterPlaces, minutes } from './filters.mjs?v=2.0';
 import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.0';
 const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true;
-const VERSION = '2.0', BUILD_AT = '2026-09-20 12:21';   // stamped by scripts/stamp_build.py at deploy — do not edit
+const VERSION = '2.0', BUILD_AT = '2026-09-20 12:44';   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -85,7 +85,15 @@ export function render() {
   const unknownHidden = f.openAt && !f.includeUnknown ? places.filter(p => !filterPlaces([p], { ...f, openAt: '', includeUnknown: true }).length ? false : !filterPlaces([p], f).length && filterPlaces([p], { ...f, includeUnknown: true }).length).length : 0;
   $('#time-hint').textContent = unknownHidden ? `${unknownHidden} lugares con horario sin confirmar quedan fuera.` : f.openAt ? 'Lugares con visita a esa hora o más tarde.' : 'Elige una hora para ver lo que sigue abierto.';
     const active = Number(!!f.priorities.length) + Number(!!f.entries.length) + Number(f.day !== 'any') + Number(!!f.openAt);
-  $('#filter-count').textContent = active ? `(${active} activos · ${filtered.length} lugares)` : `(${filtered.length} lugares · sin filtros)`;
+  // Collapsed on a phone, the toggle is the only place the filters are visible: it names them, briefly.
+  const DAYS = { Saturday: 'Sáb.', Sunday: 'Dom.', both: 'Ambos' }, ENTRIES = { free: 'Libre', booking: 'Reserva', mixed: 'Mixto', unknown: 'Sin info' };
+  const summary = [
+    f.priorities.length ? f.priorities.map(p => priority[p][0].split(' ')[1]).join('') : '',
+    DAYS[f.day] || '', { '': '', now: 'ahora' }[$('[name=open]:checked').value] ?? $('[name=open]:checked').value.slice(0, 2) + 'h',
+    f.entries.length === 4 ? '' : f.entries.map(e => ENTRIES[e]).join('/'),
+    f.verifiedOnly ? 'verificados' : '', f.hideFull ? '' : 'con completos',
+  ].filter(Boolean);
+  $('#filter-count').textContent = `(${[...summary, `${filtered.length} lugares`].join(' · ')})`;
   $('#result-note').textContent = active ? `${filtered.length} de ${places.length} · ${f.includeUnknown ? 'Incluye horarios pendientes' : 'Por prioridad'}` : 'Por prioridad · toda tu selección';
   $('#list').innerHTML = filtered.length ? filtered.map(card).join('') : `<div class="empty"><h3>No hay lugares con estos filtros</h3><p>Prueba otro día, amplía el horario o incluye horarios por confirmar.</p><button id="empty-reset" type="button">Restablecer filtros</button></div>`;
   $('#list').scrollTop = 0;
