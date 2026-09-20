@@ -37,3 +37,21 @@
 .places-table .t-stars,.places-table .t-entry{display:none}
 .places-table th:nth-child(5),.places-table th:nth-child(6){width:34px}
 .places-table td:nth-child(5),.places-table td:nth-child(6){text-align:center;padding-left:2px;padding-right:2px}.places-table td,.places-table th button{padding:6px 5px}.places-table th:nth-child(2){width:32px}.places-table th:nth-child(3),.places-table th:nth-child(4){width:78px}.places-table th:nth-child(5){width:52px}.places-table th:nth-child(6){width:64px}.places-table td:nth-child(3),.places-table td:nth-child(4){font-size:10.5px}}
+
+.marks{display:inline-flex;gap:3px;float:right;margin-left:6px}
+.mark-btn{border:1px solid var(--line);background:var(--paper);border-radius:5px;width:28px;height:26px;padding:0;font-size:13px;line-height:1;color:#b3aca2}
+.mark-btn:hover{border-color:#b9ad99}
+.mark-btn.love.on{background:#fdeef0;border-color:#e8bcc4;color:#b4405a}
+.mark-btn.hide.on{color:#6e675d}
+.card.mark-hide{opacity:.5}
+.card.mark-hide h3{text-decoration:line-through}
+.card.mark-love{border-left-color:#b4405a}
+.places-table tr.mark-hide{opacity:.5}
+.places-table tr.mark-hide td:first-child b{text-decoration:line-through}
+.places-table th:nth-child(7){width:70px}
+.places-table td:nth-child(7){padding:4px 6px}
+.places-table .marks{float:none}
+.detail-content .marks{float:right}
+.place-marker span.loved{box-shadow:0 0 0 3px #b4405a99,0 1px 6px #30221160}
+@media(max-width:760px){.places-table th:nth-child(7){width:62px}.mark-btn{width:26px;height:24px}}
+.mark-btn.hide.on{background:#efece7;border-color:#cfc7ba}
