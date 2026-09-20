@@ -2,7 +2,7 @@
 // (also the ones app.js/map.js render later, via a MutationObserver). Toggle reloads the page.
 const lang = (() => { try { return new URLSearchParams(location.search).get('lang') || localStorage.getItem('jep-lang') || 'es'; } catch { return 'es'; } })();
 const FR = [
-  ['Mapa y lista', 'Carte et liste'], ['Mapa', 'Carte'], ['y lista', 'et liste'], ['Lista', 'Liste'],
+  ['Mapa y lista', 'Carte et liste'], ['Mapa', 'Carte'], ['y lista', 'et liste'], ['Fichas', 'Fiches'], ['Tabla', 'Tableau'], ['Lugar', 'Lieu'], ['Arr.', 'Arr.'], ['Prio.', 'Prio.'], ['completo', 'complet'], ['Lista', 'Liste'],
   ['19–20 septiembre', '19–20 septembre'], ['Filtros', 'Filtres'], ['Prioridad · entrada · día · horario', 'Priorité · entrée · jour · horaire'],
   ['Prioridad', 'Priorité'], ['★ Alta', '★ Haute'], ['■ Media', '■ Moyenne'], ['○ Baja', '○ Basse'], ['Alta', 'Haute'], ['Media', 'Moyenne'], ['Baja', 'Basse'],
   ['Entrada', 'Entrée'], ['Todas las entradas', 'Toutes les entrées'], ['Sin reserva / acceso libre', 'Sans réservation / accès libre'],

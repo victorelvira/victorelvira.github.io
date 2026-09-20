@@ -1,8 +1,8 @@
-import { filterPlaces, minutes } from './filters.mjs?v=2.0';
-import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.0';
+import { filterPlaces, minutes } from './filters.mjs?v=2.4';
+import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.4';
 const $ = s => document.querySelector(s);
-let places = [], filtered = [], selectedId = null, mapVisible = true;
-const VERSION = '2.0', BUILD_AT = '2026-09-20 14:31';   // stamped by scripts/stamp_build.py at deploy — do not edit
+let places = [], filtered = [], selectedId = null, mapVisible = true, view = 'map';
+const VERSION = '2.4', BUILD_AT = '2026-09-20 14:42';   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -64,7 +64,7 @@ $('#list').addEventListener('toggle', e => {
 }, true);
 $('#list').addEventListener('click', e => {
   const button = e.target.closest('[data-place]'); if (!button) return;
-  const id = Number(button.dataset.place); setView(true); requestAnimationFrame(() => focusPlace(id, true));
+  const id = Number(button.dataset.place); setView('map'); requestAnimationFrame(() => focusPlace(id, true));
   if (mobile()) selectPlace(id, { origin: 'map' });
 });
 $('#close-detail').addEventListener('click', () => $('#place-dialog').close());
@@ -95,20 +95,65 @@ export function render() {
   ].filter(Boolean);
   $('#filter-count').textContent = `(${[...summary, `${filtered.length} lugares`].join(' · ')})`;
   $('#result-note').textContent = active ? `${filtered.length} de ${places.length} · ${f.includeUnknown ? 'Incluye horarios pendientes' : 'Por prioridad'}` : 'Por prioridad · toda tu selección';
-  $('#list').innerHTML = filtered.length ? filtered.map(card).join('') : `<div class="empty"><h3>No hay lugares con estos filtros</h3><p>Prueba otro día, amplía el horario o incluye horarios por confirmar.</p><button id="empty-reset" type="button">Restablecer filtros</button></div>`;
+  $('#list').className = view === 'table' ? 'table-wrap' : 'cards';
+  $('#list').innerHTML = filtered.length ? (view === 'table' ? table(filtered) : filtered.map(card).join('')) : `<div class="empty"><h3>No hay lugares con estos filtros</h3><p>Prueba otro día, amplía el horario o incluye horarios por confirmar.</p><button id="empty-reset" type="button">Restablecer filtros</button></div>`;
   $('#list').scrollTop = 0;
   $('#empty-reset')?.addEventListener('click', reset);
+  $('#list').querySelectorAll('th[data-sort] button').forEach(b => b.addEventListener('click', () => {
+    const key = b.parentElement.dataset.sort;
+    sortAsc = sortBy === key ? !sortAsc : true; sortBy = key; render();
+  }));
   updateMap(filtered); return filtered;
 }
-function setView(visible) {
-  mapVisible = visible;
-  $('.results-body').classList.toggle('map-visible', visible);
-  $('#view-map').setAttribute('aria-pressed', String(visible)); $('#view-list').setAttribute('aria-pressed', String(!visible));
-  if ($('#place-dialog').open) $('#place-dialog').close();
-  setMapVisible(visible);
+// --- table view ----------------------------------------------------------
+// The same filtered places as the map and the cards, read as a list: what is open, where, and how
+// you get in, in one screen. Sorting is per column and the day columns follow the day filter.
+const COLUMNS = [
+  ['Name', 'Lugar', p => `<b>${esc(p.Name)}</b>${p.Rare ? ' <span class="t-rare" title="Apertura excepcional">✶</span>' : ''}`],
+  ['Arrondissement', 'Arr.', p => esc((p.Arrondissement || '').replace('e', ''))],
+  ['Saturday', 'Sáb.', p => scheduleCell(p.Saturday)],
+  ['Sunday', 'Dom.', p => scheduleCell(p.Sunday)],
+  ['Priority', 'Prio.', p => { const [label, cls] = priority[p.Priority] || ['', '']; const [stars, letter] = label.split(' ');
+    return `<span class="priority-badge ${cls}"><span class="t-stars">${stars}</span><span class="t-letter">${letter || ''}</span></span>`; }],
+  ['Entry', 'Entrada', p => { const label = { free: 'Libre', booking: 'Reserva', mixed: 'Mixto', unknown: 'Sin info' }[p.Entry];
+    return `<i class="dot ${p.Entry}" title="${label}"></i><span class="t-entry"> ${label}${p.Full ? ' <span class="t-full">completo</span>' : ''}</span>`; }],
+];
+// A venue with a dozen tour slots would own the row: show the first three and keep the rest in the tooltip.
+const scheduleCell = v => {
+  if (v === '—') return '<span class="closed">—</span>';
+  if (v === '?') return '<span class="unconfirmed">?</span>';
+  const spans = v.split(';');
+  return `<span title="${esc(spans.join(' · '))}">${esc(spans.slice(0, 3).join(' · '))}${spans.length > 3 ? ` +${spans.length - 3}` : ''}</span>`;
+};
+let sortBy = 'Priority', sortAsc = true;
+const sortValue = (p, key) => key === 'Priority' ? (priority[p.Priority]?.[2] ?? 3)
+  : key === 'Arrondissement' ? parseInt(p.Arrondissement) || 99
+  : key === 'Saturday' || key === 'Sunday' ? (p[key].match(/\d{2}:\d{2}/)?.[0] || '99:99')
+  : String(p[key] ?? '').toLowerCase();
+function table(rows) {
+  const sorted = [...rows].sort((a, b) => {
+    const x = sortValue(a, sortBy), y = sortValue(b, sortBy);
+    return (x < y ? -1 : x > y ? 1 : 0) * (sortAsc ? 1 : -1);
+  });
+  const head = COLUMNS.map(([key, label]) => `<th data-sort="${key}" aria-sort="${sortBy === key ? (sortAsc ? 'ascending' : 'descending') : 'none'}"><button type="button">${label}${sortBy === key ? (sortAsc ? ' ▲' : ' ▼') : ''}</button></th>`).join('');
+  const body = sorted.map(p => `<tr data-row="${p.id}" tabindex="0">${COLUMNS.map(([, , cell]) => `<td>${cell(p)}</td>`).join('')}</tr>`).join('');
+  const day = $('[name=day]:checked').value;
+  return `<table class="places-table${day === 'Saturday' ? ' only-sat' : day === 'Sunday' ? ' only-sun' : ''}"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
 }
-$('#view-list').addEventListener('click', () => setView(false));
-$('#view-map').addEventListener('click', () => setView(true));
+function setView(next) {
+  view = next; mapVisible = next === 'map';
+  $('.results-body').classList.toggle('map-visible', mapVisible);
+  for (const v of ['map', 'list', 'table']) $(`#view-${v}`).setAttribute('aria-pressed', String(view === v));
+  if ($('#place-dialog').open) $('#place-dialog').close();
+  setMapVisible(mapVisible);
+  render();
+}
+$('#view-list').addEventListener('click', () => setView('list'));
+$('#view-map').addEventListener('click', () => setView('map'));
+$('#view-table').addEventListener('click', () => setView('table'));
+// A row is the whole place: tapping it opens the same detail sheet the map and the cards open.
+$('#list').addEventListener('click', e => { const row = e.target.closest('[data-row]'); if (row) showSheet(places.find(p => p.id === Number(row.dataset.row))); });
+$('#list').addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.matches('[data-row]')) showSheet(places.find(p => p.id === Number(e.target.dataset.row))); });
 $('#fit-map').addEventListener('click', fitPlaces);
 // During the weekend the useful default is "today, from now on"; afterwards, no day or hour filter.
 const JEP = { '2026-09-19': 'Saturday', '2026-09-20': 'Sunday' };

@@ -5,7 +5,7 @@
 <title>Paris · Patrimonio 2026</title><meta name="description" content="El atlas de tus visitas a las Jornadas Europeas del Patrimonio de París. 659 lugares, con filtros de prioridad, entrada, día y horario.">
 <meta property="og:title" content="Paris · Patrimonio 2026"><meta property="og:description" content="Tu atlas para el fin de semana del patrimonio en París. Filtra 659 lugares por prioridad, entrada, día y horario."><meta property="og:type" content="website"><meta property="og:url" content="https://victorelvira.github.io/projects/paris_jep.html"><meta property="og:image" content="https://victorelvira.github.io/projects/paris_jep/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Paris · Patrimonio 2026"><meta name="twitter:description" content="659 lugares para explorar el 19–20 de septiembre."><meta name="twitter:image" content="https://victorelvira.github.io/projects/paris_jep/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%237a4a2b'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-family='Georgia' font-size='29' fill='white'%3EP%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="paris_jep/vendor/leaflet.css"><link rel="stylesheet" href="paris_jep/vendor/MarkerCluster.css"><link rel="stylesheet" href="paris_jep/style.css?v=2.0">
+<link rel="stylesheet" href="paris_jep/vendor/leaflet.css"><link rel="stylesheet" href="paris_jep/vendor/MarkerCluster.css"><link rel="stylesheet" href="paris_jep/style.css?v=2.4">
 </head>
 <body>
 <nav id="navbar">
@@ -16,7 +16,7 @@
 </nav>
 <header class="topbar">
 <a class="brand" href="paris_jep.html"><span class="monogram">P.</span><span><h1>Paris <span class="brand-divider">/</span> Patrimonio</h1><span class="brand-sub">JOURNÉES EUROPÉENNES DU PATRIMOINE · 2026</span></span></a>
-<div class="topbar-right"><button id="lang-toggle" class="lang-toggle" type="button" title="Español / Français"><span data-l="es">ES</span><span data-l="fr">FR</span></button><span class="edition">19–20 septiembre</span><div class="view-switch" aria-label="Vista"><button id="view-map" type="button" aria-pressed="true">Mapa <span class="desktop-only">y lista</span></button><button id="view-list" type="button" aria-pressed="false">Lista</button></div></div>
+<div class="topbar-right"><button id="lang-toggle" class="lang-toggle" type="button" title="Español / Français"><span data-l="es">ES</span><span data-l="fr">FR</span></button><span class="edition">19–20 septiembre</span><div class="view-switch" aria-label="Vista"><button id="view-map" type="button" aria-pressed="true">Mapa <span class="desktop-only">y lista</span></button><button id="view-list" type="button" aria-pressed="false">Fichas</button><button id="view-table" type="button" aria-pressed="false">Tabla</button></div></div>
 </header>
 <aside class="filters" aria-label="Filtros"><button id="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-content">Filtros <span id="filter-count"></span><span class="toggle-icon" aria-hidden="true">＋ pulsa</span></button>
 <div id="filter-content">
@@ -34,5 +34,5 @@
 <section class="list-panel" aria-label="Lista de lugares"><div class="results-heading"><div><h2><span id="count">659</span> lugares</h2><p id="result-note">Por prioridad · toda tu selección</p></div><span class="list-caption">PARÍS / 2026</span></div><div id="list" class="cards" aria-live="polite"><p class="loading">Cargando lugares…</p></div><div class="data-note"><span id="map-note">Localizando tu selección…</span><span>Horarios según tu dataset. Confirma en la ficha del lugar.</span><a href="https://ignf.github.io/cartes.gouv.fr-documentation/fr/guides-utilisateur/utiliser-les-services-de-la-geoplateforme/geocodage/" target="_blank" rel="noopener noreferrer">Direcciones: IGN</a></div></section>
 </main>
 <dialog id="place-dialog" aria-labelledby="dialog-title"><div class="dialog-handle" aria-hidden="true"></div><button id="close-detail" class="close-detail" aria-label="Cerrar ficha" type="button">×</button><div id="dialog-content"></div></dialog>
-<script src="paris_jep/vendor/leaflet.js"></script><script src="paris_jep/vendor/leaflet.markercluster.js"></script><script src="paris_jep/i18n.js?v=2.0"></script><script type="module" src="paris_jep/app.js?v=2.0"></script>
+<script src="paris_jep/vendor/leaflet.js"></script><script src="paris_jep/vendor/leaflet.markercluster.js"></script><script src="paris_jep/i18n.js?v=2.4"></script><script type="module" src="paris_jep/app.js?v=2.4"></script>
 </body></html>
