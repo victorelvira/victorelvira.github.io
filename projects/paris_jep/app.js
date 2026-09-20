@@ -1,7 +1,9 @@
-import { filterPlaces, minutes } from './filters.mjs';
-import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js';
+import { filterPlaces, minutes } from './filters.mjs?v=2.0';
+import { updateMap, focusPlace, highlightPlace, setMapVisible, fitPlaces } from './map.js?v=2.0';
 const $ = s => document.querySelector(s);
 let places = [], filtered = [], selectedId = null, mapVisible = true;
+const VERSION = '2.0', BUILD_AT = '2026-09-20 12:00';   // stamped by scripts/stamp_build.py at deploy — do not edit
+{ const b = document.getElementById('build'); if (b) b.textContent = BUILD_AT ? `v${VERSION} · ${BUILD_AT}` : `v${VERSION}`; }
 const mobile = () => matchMedia('(max-width:760px)').matches;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const statuses = { 'COMPLET': 'Completo', 'SANS RÉSERVATION': 'Sin reserva', 'RÉSERVATION': 'Con reserva', 'COMPLET activités JEP': 'Actividades JEP completas', 'ACCÈS LIBRE': 'Acceso libre', 'PARTIEL': 'Acceso parcial', 'TICKETS SUR PLACE': 'Entradas en el lugar', 'GRATUIT': 'Gratuito', 'COMPLET / RÉSERVATION': 'Completo / con reserva', 'À VÉRIFIER': 'Por verificar', 'COMPLET / ANNULATIONS': 'Completo / cancelaciones', 'BILLETTERIE': 'Taquilla', 'INSCRIPTIONS COMPLÈTES': 'Inscripciones completas', 'ACCÈS LIBRE — AUCUNE RÉSERVATION': 'Acceso libre', 'COMPLET — invitation obligatoire': 'Completo · sólo invitación', '2e PASSAGE — PARTICIPATION / ACCÈS À VÉRIFIER': 'Participación por verificar' };
@@ -73,18 +75,19 @@ $('#filter-toggle').addEventListener('click', () => {
   $('.toggle-icon').textContent = open ? '−' : '＋';
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { $('.filters').classList.remove('expanded'); $('#filter-toggle').setAttribute('aria-expanded', 'false'); $('.toggle-icon').textContent = '＋'; } });
-export function readFilters() { return { priorities: [...document.querySelectorAll('[name=priority]:checked')].map(i => i.value), entries: [...document.querySelectorAll('[name=entry]:checked')].map(i => i.value), day: $('[name=day]:checked').value, from: $('#from').value, to: $('#to').value, includeUnknown: $('#unknown').checked, hideFull: $('#hide-full').checked, verifiedOnly: $('#verified').checked }; }
+// "Ahora" is the wall clock rounded down to the half hour; the rest are fixed hours.
+const openValue = () => { const v = $('[name=open]:checked').value; if (v !== 'now') return v; const d = new Date(); return `${String(d.getHours()).padStart(2, '0')}:${d.getMinutes() < 30 ? '00' : '30'}`; };
+export function readFilters() { return { priorities: [...document.querySelectorAll('[name=priority]:checked')].map(i => i.value), entries: [...document.querySelectorAll('[name=entry]:checked')].map(i => i.value), day: $('[name=day]:checked').value, openAt: openValue(), includeUnknown: $('#unknown').checked, hideFull: $('#hide-full').checked, verifiedOnly: $('#verified').checked }; }
 export function render() {
   const f = readFilters(); filtered = filterPlaces(places, f); selectedId = null;
   if ($('#place-dialog').open) $('#place-dialog').close();
-  const invalid = f.from && f.to && minutes(f.from) > minutes(f.to);
-  $('#count').textContent = filtered.length;
-  $('#time-hint').textContent = invalid ? 'La hora final debe ser posterior a la inicial.' : 'Visitas que coinciden con tu franja. «Ambos»: los dos días.';
-  $('#to').setAttribute('aria-invalid', String(!!invalid));
-  const active = Number(!!f.priorities.length) + Number(!!f.entries.length) + Number(f.day !== 'any') + Number(!!(f.from || f.to));
+    $('#count').textContent = filtered.length;
+  const unknownHidden = f.openAt && !f.includeUnknown ? places.filter(p => !filterPlaces([p], { ...f, openAt: '', includeUnknown: true }).length ? false : !filterPlaces([p], f).length && filterPlaces([p], { ...f, includeUnknown: true }).length).length : 0;
+  $('#time-hint').textContent = unknownHidden ? `${unknownHidden} lugares con horario sin confirmar quedan fuera.` : f.openAt ? 'Lugares con visita a esa hora o más tarde.' : 'Elige una hora para ver lo que sigue abierto.';
+    const active = Number(!!f.priorities.length) + Number(!!f.entries.length) + Number(f.day !== 'any') + Number(!!f.openAt);
   $('#filter-count').textContent = active ? `${active} activos · ${filtered.length} lugares` : 'Prioridad · entrada · día · horario';
   $('#result-note').textContent = active ? `${filtered.length} de ${places.length} · ${f.includeUnknown ? 'Incluye horarios pendientes' : 'Por prioridad'}` : 'Por prioridad · toda tu selección';
-  $('#list').innerHTML = filtered.length ? filtered.map(card).join('') : `<div class="empty"><h3>${invalid ? 'Revisa tu franja horaria' : 'No hay lugares con estos filtros'}</h3><p>${invalid ? 'La hora «Hasta» debe ser igual o posterior a «Desde».' : 'Prueba otro día, amplía el horario o incluye horarios por confirmar.'}</p><button id="empty-reset" type="button">Restablecer filtros</button></div>`;
+  $('#list').innerHTML = filtered.length ? filtered.map(card).join('') : `<div class="empty"><h3>No hay lugares con estos filtros</h3><p>Prueba otro día, amplía el horario o incluye horarios por confirmar.</p><button id="empty-reset" type="button">Restablecer filtros</button></div>`;
   $('#list').scrollTop = 0;
   $('#empty-reset')?.addEventListener('click', reset);
   updateMap(filtered); return filtered;
@@ -99,19 +102,18 @@ function setView(visible) {
 $('#view-list').addEventListener('click', () => setView(false));
 $('#view-map').addEventListener('click', () => setView(true));
 $('#fit-map').addEventListener('click', fitPlaces);
-function reset() { document.querySelectorAll('[name=priority]').forEach(i => i.checked = false); $('[name=day][value=any]').checked = true; document.querySelectorAll('[name=entry]').forEach(i => i.checked = i.value === 'free'); $('#hide-full').checked = true; $('#verified').checked = false; $('#from').value = ''; $('#to').value = ''; $('#unknown').checked = false; render(); }
+function reset() { document.querySelectorAll('[name=priority]').forEach(i => i.checked = false); $('[name=day][value=any]').checked = true; document.querySelectorAll('[name=entry]').forEach(i => i.checked = i.value === 'free'); $('#hide-full').checked = true; $('#verified').checked = false; $('[name=open][value=""]').checked = true; $('#unknown').checked = false; render(); }
 document.querySelectorAll('.filters input, .filters select').forEach(i => i.addEventListener('change', render));
 $('#reset').addEventListener('click', reset);
 if(document.modelContext?.registerTool){
   const lifecycle=new AbortController();
-  try{Promise.resolve(document.modelContext.registerTool({name:'filter_places',title:'Filtrar lugares de París JEP',description:'Actualiza los filtros visibles y devuelve los lugares de la selección que coinciden. No confirma reservas ni disponibilidad.',inputSchema:{type:'object',properties:{priorities:{type:'array',items:{type:'string',enum:['⭐','◼','○']}},entries:{type:'array',items:{type:'string',enum:['free','booking','mixed','unknown']}},hideFull:{type:'boolean'},verifiedOnly:{type:'boolean'},day:{type:'string',enum:['any','Saturday','Sunday','both']},from:{type:'string'},to:{type:'string'},includeUnknown:{type:'boolean'}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:true},execute(input){
+  try{Promise.resolve(document.modelContext.registerTool({name:'filter_places',title:'Filtrar lugares de París JEP',description:'Actualiza los filtros visibles y devuelve los lugares de la selección que coinciden. No confirma reservas ni disponibilidad.',inputSchema:{type:'object',properties:{priorities:{type:'array',items:{type:'string',enum:['⭐','◼','○']}},entries:{type:'array',items:{type:'string',enum:['free','booking','mixed','unknown']}},hideFull:{type:'boolean'},verifiedOnly:{type:'boolean'},day:{type:'string',enum:['any','Saturday','Sunday','both']},openAt:{type:'string'},includeUnknown:{type:'boolean'}},additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:true},execute(input){
     if(!input||typeof input!=='object'||Array.isArray(input))throw new Error('Se esperaba un objeto de filtros.');
-    const allowed=['priorities','entries','hideFull','verifiedOnly','day','from','to','includeUnknown'];if(Object.keys(input).some(k=>!allowed.includes(k)))throw new Error('Filtro desconocido.');
+    const allowed=['priorities','entries','hideFull','verifiedOnly','day','openAt','includeUnknown'];if(Object.keys(input).some(k=>!allowed.includes(k)))throw new Error('Filtro desconocido.');
     const f={...readFilters(),...input};
     if(!Array.isArray(f.priorities)||f.priorities.some(p=>!['⭐','◼','○'].includes(p))||!Array.isArray(f.entries)||f.entries.some(e=>!['free','booking','mixed','unknown'].includes(e))||!['any','Saturday','Sunday','both'].includes(f.day)||typeof f.includeUnknown!=='boolean')throw new Error('Valor de filtro inválido.');
-    for(const t of [f.from,f.to])if(typeof t!=='string'||!/^$|^(?:[01]\d|2[0-3]):[0-5]\d$/.test(t))throw new Error('Usa una hora HH:MM.');
-    if(f.from&&f.to&&minutes(f.from)>minutes(f.to))throw new Error('Franja horaria invertida.');
-    document.querySelectorAll('[name=priority]').forEach(i=>i.checked=f.priorities.includes(i.value));document.querySelectorAll('[name=day]').forEach(i=>i.checked=i.value===f.day);document.querySelectorAll('[name=entry]').forEach(i=>i.checked=f.entries.includes(i.value));$('#hide-full').checked=!!f.hideFull;$('#verified').checked=!!f.verifiedOnly;$('#from').value=f.from;$('#to').value=f.to;$('#unknown').checked=f.includeUnknown;
+    for(const t of [f.openAt])if(typeof t!=='string'||!/^$|^(?:[01]\d|2[0-3]):[0-5]\d$/.test(t))throw new Error('Usa una hora HH:MM.');
+        document.querySelectorAll('[name=priority]').forEach(i=>i.checked=f.priorities.includes(i.value));document.querySelectorAll('[name=day]').forEach(i=>i.checked=i.value===f.day);document.querySelectorAll('[name=entry]').forEach(i=>i.checked=f.entries.includes(i.value));$('#hide-full').checked=!!f.hideFull;$('#verified').checked=!!f.verifiedOnly;document.querySelectorAll('[name=open]').forEach(i=>i.checked=i.value===f.openAt);$('#unknown').checked=f.includeUnknown;
     const result=render();return {count:result.length,places:result.map(p=>({name:p.Name,saturday:p.Saturday,sunday:p.Sunday,status:p.Status}))};
   }},{signal:lifecycle.signal})).catch(()=>{});}catch{}
   window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});

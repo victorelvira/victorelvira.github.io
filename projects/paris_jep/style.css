@@ -6,3 +6,11 @@
 .dot.mixed{background:#c9a13b}.card summary .status+.status{margin-left:4px}.filter-meta{flex-wrap:wrap;row-gap:6px}
 .activities{margin:0 0 12px;padding:0 0 0 17px;font-size:12.5px;line-height:1.5;color:var(--muted)}.activities li{margin:2px 0}
 .status.rare{background:#f6efe2;border-color:#e2d2b4;color:#8a6a2f}
+#navbar{display:flex;align-items:center;gap:6px;flex-wrap:nowrap;padding:5px 14px;background:var(--ink);font-size:12.5px;flex-shrink:0}
+#navbar .wordmark{color:#fff;font-weight:700;text-decoration:none;white-space:nowrap}
+#navbar .nav-sep{color:#8a7f72}
+#navbar .nav-home{color:#cbbfae;text-decoration:none;white-space:nowrap}
+#navbar a:hover{text-decoration:underline}
+#navbar .build{margin-left:auto;color:#8a7f72;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:11px}
+.hours{flex-wrap:wrap}
+@media(max-width:760px){#navbar{font-size:11px;padding:4px 12px}#navbar .nav-home{overflow:hidden;text-overflow:ellipsis}}
