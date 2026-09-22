@@ -482,6 +482,7 @@
     var expGrid = document.getElementById("pp-grid-exp");
     if (expTitle) expTitle.hidden = !(expGrid && !expGrid.hidden);
     relabelCount(shown);
+    updateSummary();
   }
 
   function relabelCount(shown) {
