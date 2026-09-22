@@ -39,7 +39,8 @@ function injectFooter() {
                     .then(commits => {
                         const d = new Date(commits[0].commit.committer.date);
                         lastUpdateElement.textContent = 'Last updated: ' +
-                            d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+                            d.toLocaleString('en-GB', { year: 'numeric', month: 'long', day: 'numeric',
+                                                        hour: '2-digit', minute: '2-digit' });
                     })
                     .catch(() => {});
             }
