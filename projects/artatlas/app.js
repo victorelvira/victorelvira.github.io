@@ -93,8 +93,8 @@ const PAINTERS = [
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.12.29";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-16 22:13";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.12.31";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-22 09:33";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -1068,13 +1068,39 @@ function buildPainterSelect() {
   const pop = document.getElementById("painters-pop");
   const search = document.getElementById("painters-search");
 
+  // On a phone the button lives in a rail that scrolls sideways, so the popover cannot hang from it:
+  // a 340px panel inside the rail widens it, and focusing the search box makes the browser scroll
+  // that box into view, which slides the button up and to the right under the finger that just
+  // tapped it. There the panel is fixed to the screen, pinned to the left margin under the bar, the
+  // rail is put back at its start so the button is where the reader left it, and the keyboard is not
+  // summoned: on a small screen the list matters more than the search box.
+  // The panel hangs from the screen, not from the button, and lives outside the rail: a sideways
+  // scroller clips whatever is inside it, so a panel left in there was simply not drawn.
+  document.body.appendChild(pop);
+  const railed = () => {
+    const rail = document.getElementById("bar-rail");
+    return !!rail && getComputedStyle(rail).overflowX !== "visible";
+  };
+  const placePop = () => {
+    const r = btn.getBoundingClientRect();
+    pop.style.setProperty("--pop-top", Math.round(r.bottom + 6) + "px");
+    pop.style.setProperty("--pop-left", Math.round(r.left) + "px");
+  };
   btn.addEventListener("click", () => {
     const open = pop.hidden;
     pop.hidden = !open; btn.setAttribute("aria-expanded", String(open));
-    if (open) { search.value = ""; renderPainterList(); search.focus(); }
+    if (!open) return;
+    search.value = ""; renderPainterList();
+    const rail = document.getElementById("bar-rail");
+    if (railed() && rail) rail.scrollLeft = 0;    // put the rail back at its start: the button stays put
+    placePop();
+    if (!railed()) search.focus();                // on a phone the list matters more than the keyboard
   });
+  addEventListener("resize", () => { if (!pop.hidden) placePop(); });
   document.addEventListener("click", e => {
-    if (!pop.hidden && !box.contains(e.target)) { pop.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+    if (!pop.hidden && !box.contains(e.target) && !pop.contains(e.target)) {   // the panel now lives in <body>
+      pop.hidden = true; btn.setAttribute("aria-expanded", "false");
+    }
   });
   document.addEventListener("keydown", e => { if (e.key === "Escape") pop.hidden = true; });
   search.addEventListener("input", renderPainterList);

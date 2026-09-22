@@ -43,6 +43,9 @@ body {
 .stats { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; margin-left: auto; }
 
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+/* a chip wraps to the next line rather than being squeezed: the row used to shrink the last one
+   (the "My paintings" select) to a sliver, and its text spilled out of the pill */
+.filters > * { flex: 0 0 auto; }
 .chip {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px;
@@ -78,8 +81,10 @@ body {
 /* primary control: the painter selector sits beside the title, a touch larger than the chips */
 .painters.primary #painters-btn { padding: 7px 15px; font-size: 14px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
 #painters-btn[aria-expanded="true"] { background: #e0d3b8; border-color: #b89a68; }
+/* fixed, not hung from the button: it sits in <body>, and app.js sets --pop-top/--pop-left from
+   the button's corner each time it opens */
 #painters-pop {
-  position: absolute; top: calc(100% + 4px); left: 0; z-index: 900;
+  position: fixed; top: var(--pop-top, 86px); left: var(--pop-left, 12px); z-index: 900;
   width: min(340px, 92vw);
   background: #fff; border: 1px solid var(--line); border-radius: 10px;
   box-shadow: 0 6px 24px rgba(0,0,0,.16); padding: 10px;
@@ -1034,6 +1039,11 @@ body.chrome-collapsed #navbar, body.chrome-collapsed #bar { display: none; }
     padding-right: 4px; }
   .chip { font-size: 11.5px; padding: 3px 9px; white-space: nowrap; flex: 0 0 auto; }
   #painters .pbtn { font-size: 12px; padding: 4px 11px; }
+  /* the painter list is fixed to the screen, not hung from a button that sits in a sideways rail:
+     inside the rail it widened the strip and the button slid away under the finger (app.js sets
+     --pop-top to the button's bottom edge when it opens) */
+  #painters-pop { left: 10px; right: 10px; width: auto; }
+  #painters-pop .pop-list { max-height: calc(100vh - var(--pop-top, 86px) - 120px); }
 
   /* ── view tabs: one line, never three ──
      "🗺 Map & list" wrapped onto three lines inside its own tab and made the row 87px tall. The tabs,
@@ -1297,7 +1307,11 @@ body.galaxy-painters #galaxy-hint, body.galaxy-painters #galaxy-legend { display
 
 /* ── Mis cuadros (only with the key) ── */
 #me-chip[hidden] { display: none !important; }
-.chip.me select { border: 0; background: transparent; font: inherit; color: inherit; cursor: pointer; padding: 0; }
+/* the pill must be as wide as its select: a bare <select> contributes almost nothing to the
+   label's intrinsic width, so the pill came out 26px and the text spilled out of it */
+.chip.me { min-width: max-content; }
+.chip.me select { border: 0; background: transparent; font: inherit; color: inherit; cursor: pointer; padding: 0;
+  max-width: 180px; text-overflow: ellipsis; }   /* the longest option must not widen the pill */
 .fav-mark { color: #c0392b; font-size: .85em; margin-left: 3px; }
 .gcell .gfav { position: absolute; top: 8px; right: 40px; z-index: 3; width: 24px; height: 24px; border-radius: 50%; border: 0;
   background: rgba(255,255,255,.85); color: #c0392b; font-size: 14px; line-height: 24px; cursor: pointer; padding: 0; opacity: 0; transition: opacity .12s; }
