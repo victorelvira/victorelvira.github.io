@@ -57,6 +57,22 @@
       .pp-chip:hover{ background:#e0e5e8; color:#212529; }
       .pp-chip.active{ background:var(--accent, #0e7c86); color:#fff; }
       #pp-count{ display:block; margin-top:.1rem; }
+
+      /* Movil: filtros plegados tras un boton (patron paris_jep). En escritorio
+         el boton se oculta y los filtros se muestran siempre. */
+      #pp-filter-toggle{ display:none; }
+      @media (max-width: 767px){
+        #pp-filter-toggle{
+          display:flex; align-items:center; gap:.5rem; width:100%;
+          border:1px solid #e5e8ec; border-radius:.6rem; padding:.55rem .8rem;
+          background:#fff; font-size:.9rem; font-weight:600; color:#212529;
+          text-align:left; margin-bottom:.6rem;
+        }
+        #pp-filter-summary{ font-weight:400; color:#8a939b; }
+        .pp-toggle-icon{ margin-left:auto; font-size:1.05rem; color:var(--accent,#0e7c86); }
+        .pp-filters{ display:none; margin-bottom:.4rem; }
+        .pp-filters.open{ display:flex; }
+      }
     </style>
   <!-- OG:auto (social preview) -->
   <meta property="og:type" content="website">
@@ -84,7 +100,13 @@
     </div>
     <p class="text-muted mt-2 mb-3" style="max-width:60ch;" data-i18n="intro">These are experimental projects that bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.</p>
 
-    <!-- Filtros (construidos por JS a partir de los data-* de cada tarjeta) -->
+    <!-- Filtros (construidos por JS a partir de los data-* de cada tarjeta).
+         En movil se pliegan tras este boton; en escritorio el boton se oculta. -->
+    <button type="button" id="pp-filter-toggle" aria-expanded="false" aria-controls="pp-filters">
+        <span id="pp-filter-label">Filters</span>
+        <span id="pp-filter-summary"></span>
+        <span class="pp-toggle-icon" aria-hidden="true">＋</span>
+    </button>
     <div id="pp-filters" class="pp-filters"></div>
     <span id="pp-count" class="text-muted small"></span>
 
@@ -383,7 +405,8 @@
     type:   { ongoing: { en: "Ongoing", es: "Permanente" }, event: { en: "Event", es: "Evento" } },
     count:  { en: function (n, t) { return "Showing " + n + " of " + t; },
               es: function (n, t) { return "Mostrando " + n + " de " + t; } },
-    none:   { en: "No projects match these filters.", es: "Ningún proyecto coincide con estos filtros." }
+    none:   { en: "No projects match these filters.", es: "Ningún proyecto coincide con estos filtros." },
+    toggle: { en: "Filters", es: "Filtros" }
   };
   var ORDER = { lang: ["es", "en", "fr", "it", "de", "pt"],
                 theme: ["art", "music", "sports", "culture", "cantabria", "climate", "language"],
