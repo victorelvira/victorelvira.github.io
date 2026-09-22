@@ -45,6 +45,18 @@
       .lang-badge{ font-size: .68rem; letter-spacing: .03em; }
       /* que toda la tarjeta sea clicable pero el título mantenga su color */
       .project-card .stretched-link{ color: inherit; text-decoration: none; }
+
+      /* Filtros de proyectos (idioma / tema / tipo) */
+      .pp-filters{ display:flex; flex-direction:column; gap:.5rem; margin-bottom:.25rem; }
+      .pp-fgroup{ display:flex; flex-wrap:wrap; align-items:center; gap:.4rem; }
+      .pp-fgroup .pp-flabel{ font-size:.72rem; text-transform:uppercase; letter-spacing:.04em;
+                             color:#8a939b; min-width:4.6rem; }
+      .pp-chip{ border:none; border-radius:999px; padding:.22rem .75rem; font-size:.8rem;
+                font-weight:500; background:#eceff1; color:#566169; cursor:pointer;
+                transition:background-color .15s ease, color .15s ease; }
+      .pp-chip:hover{ background:#e0e5e8; color:#212529; }
+      .pp-chip.active{ background:var(--accent, #0e7c86); color:#fff; }
+      #pp-count{ display:block; margin-top:.1rem; }
     </style>
   <!-- OG:auto (social preview) -->
   <meta property="og:type" content="website">
@@ -70,15 +82,20 @@
             <a href="#" id="lang-es" class="text-reset text-decoration-none">ES</a>
         </div>
     </div>
-    <p class="text-muted mt-2 mb-0" style="max-width:60ch;" data-i18n="intro">These are experimental projects that bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.</p>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mt-1">
+    <p class="text-muted mt-2 mb-3" style="max-width:60ch;" data-i18n="intro">These are experimental projects that bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.</p>
+
+    <!-- Filtros (construidos por JS a partir de los data-* de cada tarjeta) -->
+    <div id="pp-filters" class="pp-filters"></div>
+    <span id="pp-count" class="text-muted small"></span>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mt-1" id="pp-grid-main">
         <!-- Interactive Atlas of Painting -->
-        <div class="col">
+        <div class="col" data-lang="es en" data-theme="art" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#181410; background-image:url('/projects/artatlas/og.jpg');"></div>
                 <div class="card-body">
                     <h5 class="card-title">Interactive Atlas of Painting
-                        <span class="badge bg-secondary lang-badge align-middle">EN</span>
+                        <span class="badge bg-secondary lang-badge align-middle">ES · EN</span>
                     </h5>
                     <p class="card-text text-muted" data-i18n="atlas">
                         Explore the great painters' masterpieces with interactive maps, timelines
@@ -90,7 +107,7 @@
         </div>
 
         <!-- Culture Atlas -->
-        <div class="col">
+        <div class="col" data-lang="en" data-theme="culture" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/culture/og.jpg');"></div>
                 <div class="card-body">
@@ -107,7 +124,7 @@
         </div>
 
         <!-- Classical Music Atlas -->
-        <div class="col">
+        <div class="col" data-lang="en" data-theme="music" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/musicatlas/og.jpg');"></div>
                 <div class="card-body">
@@ -124,7 +141,7 @@
         </div>
 
         <!-- Sports Atlas -->
-        <div class="col">
+        <div class="col" data-lang="en" data-theme="sports" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/sportsatlas/og.jpg');"></div>
                 <div class="card-body">
@@ -141,7 +158,7 @@
         </div>
 
         <!-- Batalla de Flores -->
-        <div class="col">
+        <div class="col" data-lang="es" data-theme="culture cantabria" data-type="event">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#221716; background-image:url('https://batalladedatos.es/batalla_de_flores/og.jpg');"></div>
                 <div class="card-body">
@@ -158,7 +175,7 @@
         </div>
 
         <!-- New Year's Concert -->
-        <div class="col">
+        <div class="col" data-lang="en" data-theme="music" data-type="event">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#101626; background-image:url('/projects/nyc/og.jpg');"></div>
                 <div class="card-body">
@@ -174,14 +191,31 @@
             </div>
         </div>
 
+        <!-- Journées du Patrimoine (Paris) -->
+        <div class="col" data-lang="es fr" data-theme="culture" data-type="event">
+            <div class="card project-card">
+                <div class="project-thumb og" style="background-color:#1a1f2b; background-image:url('/projects/paris_jep/og.png');"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Journées du Patrimoine (Paris)
+                        <span class="badge bg-secondary lang-badge align-middle">ES · FR</span>
+                    </h5>
+                    <p class="card-text text-muted" data-i18n="paris">
+                        France's Heritage Days in Paris: which monuments and places open, where they are,
+                        and when you can visit.
+                    </p>
+                    <a href="/projects/paris_jep.html" class="stretched-link" aria-label="Abrir Journées du Patrimoine (Paris)"></a>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <h2 class="mt-5 mb-3" data-i18n="exp_title">Experimental</h2>
+    <h2 class="mt-5 mb-3" id="pp-exp-title" data-i18n="exp_title">Experimental</h2>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="pp-grid-exp">
 
         <!-- Planes de Cantabria -->
-        <div class="col">
+        <div class="col" data-lang="es" data-theme="cantabria" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb" style="background:#18BC9C;">
                     <i class="fa-solid fa-calendar-days"></i>
@@ -200,7 +234,7 @@
         </div>
 
         <!-- Frontones -->
-        <div class="col">
+        <div class="col" data-lang="es" data-theme="sports cantabria" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb" style="background:#3498DB;">
                     <i class="fa-solid fa-table-tennis-paddle-ball"></i>
@@ -218,7 +252,7 @@
         </div>
 
         <!-- Laredo frente al clima -->
-        <div class="col">
+        <div class="col" data-lang="es" data-theme="climate cantabria" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb" style="background:#E67E22;">
                     <i class="fa-solid fa-temperature-half"></i>
@@ -237,7 +271,7 @@
         </div>
 
         <!-- Gentilicios de España -->
-        <div class="col">
+        <div class="col" data-lang="es" data-theme="language" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb" style="background:#B5562B;">
                     <i class="fa-solid fa-map-location-dot"></i>
@@ -308,6 +342,9 @@
     gentilicios: {
       en: "Demonyms of Spain, on an interactive map.",
       es: "Gentilicios de España, en un mapa interactivo." },
+    paris: {
+      en: "France's Heritage Days in Paris: which monuments and places open, where they are, and when you can visit.",
+      es: "Jornadas del Patrimonio en París: qué monumentos y lugares abren, dónde están y cuándo se pueden visitar." },
     exp_title: {
       en: "Experimental",
       es: "Experimental" },
@@ -316,7 +353,10 @@
       es: "Proyectos más en bruto, en construcción." },
   };
 
+  var currentLang = "en";
+
   function aplicar(lang) {
+    currentLang = lang;
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var t = T[el.getAttribute("data-i18n")];
       if (t && t[lang]) el.textContent = t[lang];
@@ -325,6 +365,117 @@
     document.getElementById("lang-en").classList.toggle("active", lang === "en");
     document.getElementById("lang-es").classList.toggle("active", lang === "es");
     try { localStorage.setItem("lang", lang); } catch (e) {}
+    relabelFilters();
+  }
+
+  // ===== Filtros de proyectos: idioma / tema / tipo =====
+  // Los chips se construyen a partir de los data-* de cada tarjeta, asi que
+  // anadir un proyecto nuevo (con sus data-lang/theme/type) actualiza los
+  // filtros solo, sin tocar este codigo. Por defecto: "Todos" en cada grupo.
+  var LABELS = {
+    groups: { lang: { en: "Language", es: "Idioma" }, theme: { en: "Theme", es: "Tema" }, type: { en: "Type", es: "Tipo" } },
+    all:    { en: "All", es: "Todos" },
+    lang:   { es: "ES", en: "EN", fr: "FR", it: "IT", de: "DE", pt: "PT" },
+    theme:  { art: { en: "Art", es: "Arte" }, music: { en: "Music", es: "Música" },
+              sports: { en: "Sports", es: "Deporte" }, culture: { en: "Culture", es: "Cultura" },
+              cantabria: { en: "Cantabria", es: "Cantabria" }, climate: { en: "Climate", es: "Clima" },
+              language: { en: "Language", es: "Lengua" } },
+    type:   { ongoing: { en: "Ongoing", es: "Permanente" }, event: { en: "Event", es: "Evento" } },
+    count:  { en: function (n, t) { return "Showing " + n + " of " + t; },
+              es: function (n, t) { return "Mostrando " + n + " de " + t; } },
+    none:   { en: "No projects match these filters.", es: "Ningún proyecto coincide con estos filtros." }
+  };
+  var ORDER = { lang: ["es", "en", "fr", "it", "de", "pt"],
+                theme: ["art", "music", "sports", "culture", "cantabria", "climate", "language"],
+                type: ["ongoing", "event"] };
+
+  var cards = Array.prototype.slice.call(document.querySelectorAll("#pp-grid-main > .col, #pp-grid-exp > .col"));
+  var selected = { lang: "all", theme: "all", type: "all" };
+
+  function tokens(card, group) { return (card.getAttribute("data-" + group) || "").split(/\s+/).filter(Boolean); }
+
+  function presentValues(group) {
+    var set = {};
+    cards.forEach(function (c) { tokens(c, group).forEach(function (v) { set[v] = 1; }); });
+    var ordered = ORDER[group].filter(function (v) { return set[v]; });
+    var extra = Object.keys(set).filter(function (v) { return ORDER[group].indexOf(v) < 0; });
+    return ordered.concat(extra);
+  }
+
+  function chipLabel(group, value, lang) {
+    if (value === "all") return LABELS.all[lang];
+    if (group === "lang") return LABELS.lang[value] || value.toUpperCase();
+    var m = LABELS[group][value];
+    return (m && m[lang]) || value;
+  }
+
+  function buildFilters() {
+    var host = document.getElementById("pp-filters");
+    host.innerHTML = "";
+    ["lang", "theme", "type"].forEach(function (group) {
+      var vals = ["all"].concat(presentValues(group));
+      if (vals.length <= 2) return; // un solo valor real: el filtro no aporta
+      var row = document.createElement("div");
+      row.className = "pp-fgroup"; row.setAttribute("data-group", group);
+      var lab = document.createElement("span");
+      lab.className = "pp-flabel"; lab.setAttribute("data-flabel", group);
+      row.appendChild(lab);
+      vals.forEach(function (value) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "pp-chip" + (selected[group] === value ? " active" : "");
+        b.setAttribute("data-group", group);
+        b.setAttribute("data-value", value);
+        b.addEventListener("click", function () {
+          selected[group] = value;
+          row.querySelectorAll(".pp-chip").forEach(function (x) {
+            x.classList.toggle("active", x.getAttribute("data-value") === value);
+          });
+          applyFilters();
+        });
+        row.appendChild(b);
+      });
+      host.appendChild(row);
+    });
+  }
+
+  function matches(card) {
+    return ["lang", "theme", "type"].every(function (group) {
+      var v = selected[group];
+      return v === "all" || tokens(card, group).indexOf(v) >= 0;
+    });
+  }
+
+  function applyFilters() {
+    var shown = 0;
+    cards.forEach(function (c) { var ok = matches(c); c.hidden = !ok; if (ok) shown++; });
+    ["main", "exp"].forEach(function (k) {
+      var grid = document.getElementById("pp-grid-" + k);
+      if (!grid) return;
+      var any = Array.prototype.some.call(grid.children, function (c) { return !c.hidden; });
+      grid.hidden = !any;
+    });
+    var expTitle = document.getElementById("pp-exp-title");
+    var expGrid = document.getElementById("pp-grid-exp");
+    if (expTitle) expTitle.hidden = !(expGrid && !expGrid.hidden);
+    relabelCount(shown);
+  }
+
+  function relabelCount(shown) {
+    var el = document.getElementById("pp-count");
+    if (!el) return;
+    if (typeof shown !== "number") shown = cards.filter(function (c) { return !c.hidden; }).length;
+    el.textContent = shown === 0 ? LABELS.none[currentLang] : LABELS.count[currentLang](shown, cards.length);
+  }
+
+  function relabelFilters() {
+    document.querySelectorAll("#pp-filters .pp-flabel").forEach(function (l) {
+      l.textContent = LABELS.groups[l.getAttribute("data-flabel")][currentLang];
+    });
+    document.querySelectorAll("#pp-filters .pp-chip").forEach(function (b) {
+      b.textContent = chipLabel(b.getAttribute("data-group"), b.getAttribute("data-value"), currentLang);
+    });
+    relabelCount();
   }
 
   var lang;
@@ -334,7 +485,9 @@
     // El conmutador manual y localStorage mandan sobre esto.
     lang = /^es/i.test(navigator.language || "") ? "es" : "en";
   }
-  aplicar(lang);
+  buildFilters();
+  aplicar(lang);     // fija currentLang y etiqueta los chips
+  applyFilters();    // estado inicial: todo visible + contador
 
   document.getElementById("lang-en").addEventListener("click", function (e) { e.preventDefault(); aplicar("en"); });
   document.getElementById("lang-es").addEventListener("click", function (e) { e.preventDefault(); aplicar("es"); });
