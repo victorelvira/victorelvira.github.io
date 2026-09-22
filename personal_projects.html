@@ -98,7 +98,7 @@
             <a href="#" id="lang-es" class="text-reset text-decoration-none">ES</a>
         </div>
     </div>
-    <p class="text-muted mt-2 mb-3" style="max-width:60ch;" data-i18n="intro">These are experimental projects that bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.</p>
+    <p class="text-muted mt-2 mb-3" data-i18n="intro">These projects attempt to bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.</p>
 
     <!-- Filtros (construidos por JS a partir de los data-* de cada tarjeta).
          En movil se pliegan tras este boton; en escritorio el boton se oculta. -->
@@ -112,7 +112,7 @@
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mt-1" id="pp-grid-main">
         <!-- Interactive Atlas of Painting -->
-        <div class="col" data-lang="es en" data-theme="art" data-type="ongoing">
+        <div class="col" data-lang="es en" data-theme="culture" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#181410; background-image:url('/projects/artatlas/og.jpg');"></div>
                 <div class="card-body">
@@ -332,8 +332,8 @@
       en: "Personal projects",
       es: "Proyectos personales" },
     intro: {
-      en: "These are experimental projects that bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.",
-      es: "Proyectos experimentales para explorar datos de forma visual e interactiva. Están en distintas fases de desarrollo, así que es muy probable que contengan errores (de código y de datos)." },
+      en: "These projects attempt to bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.",
+      es: "Estos proyectos intentan dar vida a los datos de forma visual e interactiva. Están en distintas fases de desarrollo, así que es muy probable que contengan bugs y algunos errores en los datos." },
     nyc: {
       en: "The Vienna Philharmonic's New Year's Concerts: compositions, composers, conductors, and statistics.",
       es: "Los Conciertos de Año Nuevo de la Filarmónica de Viena: composiciones, compositores, directores y estadísticas." },
@@ -398,8 +398,8 @@
     groups: { lang: { en: "Language", es: "Idioma" }, theme: { en: "Theme", es: "Tema" }, type: { en: "Type", es: "Tipo" } },
     all:    { en: "All", es: "Todos" },
     lang:   { es: "ES", en: "EN", fr: "FR", it: "IT", de: "DE", pt: "PT" },
-    theme:  { art: { en: "Art", es: "Arte" }, music: { en: "Music", es: "Música" },
-              sports: { en: "Sports", es: "Deporte" }, culture: { en: "Culture", es: "Cultura" },
+    theme:  { culture: { en: "History & art", es: "Historia y arte" }, music: { en: "Music", es: "Música" },
+              sports: { en: "Sports", es: "Deporte" },
               cantabria: { en: "Cantabria", es: "Cantabria" }, climate: { en: "Climate", es: "Clima" },
               language: { en: "Language", es: "Lengua" } },
     type:   { ongoing: { en: "Ongoing", es: "Permanente" }, event: { en: "Event", es: "Evento" } },
@@ -409,7 +409,7 @@
     toggle: { en: "Filters", es: "Filtros" }
   };
   var ORDER = { lang: ["es", "en", "fr", "it", "de", "pt"],
-                theme: ["art", "music", "sports", "culture", "cantabria", "climate", "language"],
+                theme: ["culture", "music", "sports", "cantabria", "climate", "language"],
                 type: ["ongoing", "event"] };
 
   var cards = Array.prototype.slice.call(document.querySelectorAll("#pp-grid-main > .col, #pp-grid-exp > .col"));
@@ -492,6 +492,22 @@
     el.textContent = shown === 0 ? LABELS.none[currentLang] : LABELS.count[currentLang](shown, cards.length);
   }
 
+  // Resumen de lo marcado (para el boton plegable en movil): valores activos
+  // o "Todos" si no hay ningun filtro puesto.
+  function activeSummary() {
+    var parts = ["lang", "theme", "type"]
+      .filter(function (g) { return selected[g] !== "all"; })
+      .map(function (g) { return chipLabel(g, selected[g], currentLang); });
+    return parts.length ? parts.join(" · ") : LABELS.all[currentLang];
+  }
+
+  function updateSummary() {
+    var lab = document.getElementById("pp-filter-label");
+    var sum = document.getElementById("pp-filter-summary");
+    if (lab) lab.textContent = LABELS.toggle[currentLang];
+    if (sum) sum.textContent = activeSummary();
+  }
+
   function relabelFilters() {
     document.querySelectorAll("#pp-filters .pp-flabel").forEach(function (l) {
       l.textContent = LABELS.groups[l.getAttribute("data-flabel")][currentLang];
@@ -500,6 +516,7 @@
       b.textContent = chipLabel(b.getAttribute("data-group"), b.getAttribute("data-value"), currentLang);
     });
     relabelCount();
+    updateSummary();
   }
 
   var lang;
@@ -515,6 +532,17 @@
 
   document.getElementById("lang-en").addEventListener("click", function (e) { e.preventDefault(); aplicar("en"); });
   document.getElementById("lang-es").addEventListener("click", function (e) { e.preventDefault(); aplicar("es"); });
+
+  // Boton plegable de filtros (solo visible en movil)
+  var ftBtn = document.getElementById("pp-filter-toggle");
+  if (ftBtn) {
+    ftBtn.addEventListener("click", function () {
+      var open = document.getElementById("pp-filters").classList.toggle("open");
+      ftBtn.setAttribute("aria-expanded", String(open));
+      var ic = ftBtn.querySelector(".pp-toggle-icon");
+      if (ic) ic.textContent = open ? "−" : "＋";
+    });
+  }
 })();
 </script>
 
