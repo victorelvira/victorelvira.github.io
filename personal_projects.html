@@ -411,7 +411,7 @@
               sports: { en: "Sports", es: "Deporte" },
               cantabria: { en: "Cantabria", es: "Cantabria" }, climate: { en: "Climate", es: "Clima" },
               language: { en: "Language", es: "Lengua" } },
-    type:   { ongoing: { en: "Ongoing", es: "Permanente" }, event: { en: "Event", es: "Evento" } },
+    type:   { ongoing: { en: "Permanent", es: "Permanente" }, event: { en: "Event", es: "Evento" } },
     count:  { en: function (n, t) { return "Showing " + n + " of " + t; },
               es: function (n, t) { return "Mostrando " + n + " de " + t; } },
     none:   { en: "No projects match these filters.", es: "Ningún proyecto coincide con estos filtros." },
@@ -444,7 +444,7 @@
   function buildFilters() {
     var host = document.getElementById("pp-filters");
     host.innerHTML = "";
-    ["lang", "theme", "type"].forEach(function (group) {
+    ["theme", "type", "lang"].forEach(function (group) {
       var vals = ["all"].concat(presentValues(group));
       if (vals.length <= 2) return; // un solo valor real: el filtro no aporta
       var row = document.createElement("div");
@@ -504,7 +504,7 @@
   // Resumen de lo marcado (para el boton plegable en movil): valores activos
   // o "Todos" si no hay ningun filtro puesto.
   function activeSummary() {
-    var parts = ["lang", "theme", "type"]
+    var parts = ["theme", "type", "lang"]
       .filter(function (g) { return selected[g] !== "all"; })
       .map(function (g) { return chipLabel(g, selected[g], currentLang); });
     return parts.length ? parts.join(" · ") : LABELS.all[currentLang];
