@@ -47,10 +47,15 @@
       .project-card .stretched-link{ color: inherit; text-decoration: none; }
 
       /* Filtros de proyectos (idioma / tema / tipo) */
-      .pp-filters{ display:flex; flex-direction:column; gap:.5rem; margin-bottom:.25rem; }
-      .pp-fgroup{ display:flex; flex-wrap:wrap; align-items:center; gap:.4rem; }
-      .pp-fgroup .pp-flabel{ font-size:.72rem; text-transform:uppercase; letter-spacing:.04em;
-                             color:#8a939b; min-width:4.6rem; }
+      .pp-filters{ display:flex; flex-direction:column; gap:.6rem; margin-bottom:.25rem; }
+      /* Cada grupo (Theme / Type / Language) va en su propio recuadro sutil,
+         para asociar visualmente la etiqueta con sus chips. */
+      .pp-fgroup{ display:flex; flex-wrap:wrap; align-items:center; gap:.4rem;
+                  border:1px solid #e4e8eb; border-radius:.7rem; padding:.4rem .6rem;
+                  background:#fbfcfd; }
+      .pp-fgroup .pp-flabel{ font-size:.7rem; text-transform:uppercase; letter-spacing:.05em;
+                             font-weight:600; color:#7c858d; min-width:0;
+                             padding-right:.15rem; }
       .pp-chip{ border:none; border-radius:999px; padding:.22rem .75rem; font-size:.8rem;
                 font-weight:500; background:#eceff1; color:#566169; cursor:pointer;
                 transition:background-color .15s ease, color .15s ease; }
