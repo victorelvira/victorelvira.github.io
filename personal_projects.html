@@ -73,6 +73,15 @@
         .pp-filters{ display:none; margin-bottom:.4rem; }
         .pp-filters.open{ display:flex; }
       }
+
+      /* PC ancho: los tres selectores en fila (izquierda -> derecha) y lo mas
+         compactos posible: etiqueta EN LINEA con sus chips; solo envuelven si
+         no caben. */
+      @media (min-width: 992px){
+        .pp-filters{ flex-direction:row; flex-wrap:wrap; column-gap:1.6rem; row-gap:.5rem; align-items:center; }
+        .pp-fgroup{ align-items:center; }
+        .pp-fgroup .pp-flabel{ min-width:0; }
+      }
     </style>
   <!-- OG:auto (social preview) -->
   <meta property="og:type" content="website">
