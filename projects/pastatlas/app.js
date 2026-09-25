@@ -1,8 +1,8 @@
 
 "use strict";
 /* Pastatlas: Italian pasta shapes x sauces. Conventions: ../../LLM.md (shared) and ../LLM.md (project). */
-const DATA_V = "0.8.0";          /* version = cache-bust; bump per LLM.md section 3 */
-const BUILD_AT = "2026-09-25 23:45";              /* stamped by scripts/stamp_build.py when deploying */
+const DATA_V = "0.8.1";          /* version = cache-bust; bump per LLM.md section 3 */
+const BUILD_AT = "2026-09-25 23:55";              /* stamped by scripts/stamp_build.py when deploying */
 
 /* Data lives in pastatlas/data/*.json and is loaded by boot() at the bottom of this file.
    base.json, i18n.json, popularity.json, sources.json, media.json: edited by hand or by research.
@@ -68,8 +68,15 @@ const areaOfReg = r => POP.areas.find(a=>a.regs.includes(r));
 const store = {get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let lang = store.get("pasta-lang",null) || "it";
 let view = "matrix", sel = {type:"cell",p:"trofie",s:"pesto"}, layer = "pasta", atlasPick = null, bubble = null; /* bubble = {r, x, y} in map-box pixels */
-const F = {dough:new Set(), fresh:"all", fam:new Set(), area:new Set(), diet:new Set(store.get("pasta-diet",[]))};
-let scope = store.get("pasta-scope","pop");
+/* Each tab filters on its own: the matrix, the map and the profiles keep separate filters and scope.
+   Dietary preferences belong to the reader, so all tabs share the same set. */
+const DIETSET = new Set(store.get("pasta-diet",[]));
+const newF = () => ({dough:new Set(), fresh:"all", fam:new Set(), area:new Set(), diet:DIETSET});
+const FV = {matrix:newF(), atlas:newF(), cards:newF()};
+const SCOPE = {matrix:store.get("pasta-scope-matrix","pop"), atlas:store.get("pasta-scope-atlas","all"), cards:store.get("pasta-scope-cards","all")};
+const fview = () => (view==="atlas"||view==="cards") ? view : "matrix";
+let F = FV.matrix, scope = SCOPE.matrix;          /* the current tab's filters, switched by syncTab() */
+function syncTab(){ F=FV[fview()]; scope=SCOPE[fview()]; }
 let showPop = store.get("pasta-pop",true);
 let groupP = store.get("pasta-gp","shape"), groupS = store.get("pasta-gs","fam");
 
@@ -163,9 +170,11 @@ function mapSVG({p=[],s=[],d=[],cls={},pins=[]}={}){
 }
 
 /* ================= RENDER: chrome & filters ================= */
+const scopeSeg = v => `<span class="seg" role="group">${["pop","core","all"].map(k=>`<button data-scope="${k}" data-scopeview="${v}" aria-pressed="${SCOPE[v]===k}">${esc(t({pop:"scPop",core:"scCore",all:"scAll"}[k]))}</button>`).join("")}</span>`;
 function renderText(){
   document.documentElement.lang=lang;
-  $("t-sub").textContent=t("sub"); $("t-filters").textContent=t("filters");
+  $("t-sub").textContent=t("sub"); $("t-filters").textContent=`${t("filters")} · ${t({matrix:"vMatrix",atlas:"vAtlas",cards:"vCards"}[fview()])}`;
+  $("atlasScope").innerHTML=scopeSeg("atlas"); $("cardsScope").innerHTML=scopeSeg("cards");
   document.querySelectorAll("#viewSeg button").forEach(b=>{b.textContent=t({matrix:"vMatrix",atlas:"vAtlas",cards:"vCards",why:"vWhy"}[b.dataset.view]);b.setAttribute("aria-pressed",b.dataset.view===view)});
   ["geoEyebrow","geoTitle","fine","atlasEyebrow","atlasTitle"].forEach(k=>$("t-"+k).textContent=t(k));
   document.querySelectorAll("#langSeg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===lang));
@@ -175,7 +184,7 @@ function renderText(){
       <span class="k"><span class="cell c2 popc" style="width:18px;height:16px;margin:0;display:inline-block;cursor:default"></span>${esc(t("legDot"))}</span>`:"");
   const opt=(o,v,cur)=>`<option value="${v}"${v===cur?" selected":""}>${esc(t(o))}</option>`;
   $("groupby").innerHTML=`<label>${esc(t("groupP"))}<select id="gp">${opt("gNone","none",groupP)}${opt("gShape","shape",groupP)}${opt("gDough","dough",groupP)}${opt("gArea","area",groupP)}</select></label>
-    <span class="seg" role="group" id="scopeSeg"><button data-scope="pop" aria-pressed="${scope==="pop"}">${esc(t("scPop"))}</button><button data-scope="core" aria-pressed="${scope==="core"}">${esc(t("scCore"))}</button><button data-scope="all" aria-pressed="${scope==="all"}">${esc(t("scAll"))}</button></span>
+    ${scopeSeg("matrix")}
     <label class="poptoggle"><input type="checkbox" id="popT"${showPop?" checked":""}>${esc(t("pop"))}</label>
     <label>${esc(t("groupS"))}<select id="gs">${opt("gNone","none",groupS)}${opt("gFam","fam",groupS)}${opt("gArea","area",groupS)}</select></label>`;
   $("rules").innerHTML=RULES.map(r=>`<div class="rule"><b>${esc(L(r.t))}</b><span>${esc(L(r.d))}</span></div>`).join("");
@@ -520,7 +529,7 @@ function renderCredits(){
   $("credits").innerHTML=`<summary>${esc(t("credits"))} <small class="fine" style="font-family:var(--mono);font-size:12px">(${rows.length})</small></summary><p class="fine" style="margin-top:8px">${esc(t("creditsNote"))}</p><ol>${rows.map(([x,m])=>`<li>${esc(x.n)}: ${esc(m.author||"")}, <a href="${esc(m.commons)}" target="_blank" rel="noopener">${esc(m.license||"")}</a></li>`).join("")}</ol>`;
   $("credits").open=open;
 }
-function renderAll(){ renderText(); renderBiblio(); renderCredits(); renderCards(); $("cardsView").hidden = view!=="cards"; renderFilters(); renderMatrix(); renderPanel(); renderAtlas(); $("matrixView").hidden = view!=="matrix"; $("whyView").hidden = view!=="why"; document.querySelector(".layout").classList.toggle("wide", view!=="matrix"); }
+function renderAll(){ syncTab(); renderText(); renderBiblio(); renderCredits(); renderCards(); $("cardsView").hidden = view!=="cards"; renderFilters(); renderMatrix(); renderPanel(); renderAtlas(); $("matrixView").hidden = view!=="matrix"; $("whyView").hidden = view!=="why"; document.querySelector(".layout").classList.toggle("wide", view!=="matrix"); }
 function refreshData(){ renderFilters(); renderMatrix(); renderPanel(); renderAtlas(); renderCards(); }
 const small = () => window.innerWidth<=1100;
 function openPanel(){ if(!small()) return; $("panel").classList.add("open"); $("scrim").hidden=false; }
@@ -540,15 +549,15 @@ document.addEventListener("click",e=>{
   if(b.dataset.lang){ lang=b.dataset.lang; store.set("pasta-lang",lang); return renderAll(); }
   if(b.dataset.view){ view=b.dataset.view; renderAll(); return writeURL(true); }
   if(b.dataset.cards){ cardKind=b.dataset.cards; return renderCards(); }
-  if(b.dataset.scope){ scope=b.dataset.scope; store.set("pasta-scope",scope); renderText(); return refreshData(); }
+  if(b.dataset.scope){ const v=b.dataset.scopeview; SCOPE[v]=b.dataset.scope; store.set("pasta-scope-"+v,SCOPE[v]); syncTab(); renderText(); return refreshData(); }
   if(b.dataset.layer){ layer=b.dataset.layer; atlasPick=null; bubble=null; return renderAtlas(); }
   if(b.dataset.f){
     const g=b.dataset.f,k=b.dataset.k;
     if(g==="fresh") F.fresh=k; else { F[g].has(k)?F[g].delete(k):F[g].add(k); }
-    if(g==="diet") store.set("pasta-diet",[...F.diet]);
+    if(g==="diet") store.set("pasta-diet",[...DIETSET]);
     return refreshData();
   }
-  if(b.dataset.clear){ if(b.dataset.clear==="diet"){F.diet.clear();store.set("pasta-diet",[])} else {F.dough.clear();F.fam.clear();F.area.clear();F.fresh="all"} return refreshData(); }
+  if(b.dataset.clear){ if(b.dataset.clear==="diet"){DIETSET.clear();store.set("pasta-diet",[])} else {F.dough.clear();F.fam.clear();F.area.clear();F.fresh="all"} return refreshData(); }
   if(b.classList.contains("cell")){ select({type:"cell",p:b.dataset.p,s:b.dataset.s},false); return showCellBubble(b); }
   if(b.classList.contains("rowh")) return select({type:"pasta",p:b.dataset.p});
   if(b.classList.contains("colh")) return select({type:"sauce",s:b.dataset.s});
@@ -589,7 +598,7 @@ $("mx").addEventListener("mouseleave",()=>$("mx").querySelectorAll("tr.hl,th.hl"
 function stateToHash(){
   const q=new URLSearchParams();
   q.set("view",view); q.set("lang",lang);
-  if(scope!=="pop") q.set("scope",scope);
+  if(scope!==({matrix:"pop",atlas:"all",cards:"all"})[fview()]) q.set("scope",scope);
   if(sel.type==="cell") q.set("sel",`${sel.p}.${sel.s}`); else if(sel.type==="pasta") q.set("p",sel.p);
   else if(sel.type==="sauce") q.set("s",sel.s); else if(sel.type==="region") q.set("r",sel.r);
   if(view==="atlas") q.set("layer",layer);
@@ -604,11 +613,13 @@ function readURL(){
   const one=(k,ok,set)=>{ const v=q.get(k); if(v!==null&&ok(v)) set(v); };
   one("view",v=>["matrix","atlas","cards","why"].includes(v),v=>view=v);
   one("lang",v=>v in LI,v=>lang=v);
-  one("scope",v=>["pop","core","all"].includes(v),v=>scope=v);
+  syncTab();
+  one("scope",v=>["pop","core","all"].includes(v),v=>{ SCOPE[fview()]=v; scope=v; });
   one("layer",v=>["pasta","sauce","dish","pop"].includes(v),v=>layer=v);
   one("cards",v=>["p","s"].includes(v),v=>cardKind=v);
   one("fresh",v=>["all","fresh","dried"].includes(v),v=>F.fresh=v);
-  for(const k of ["dough","fam","area","diet"]) one(k,()=>true,v=>{ F[k]=new Set(v.split(",").filter(Boolean)); });
+  for(const k of ["dough","fam","area"]) one(k,()=>true,v=>{ F[k]=new Set(v.split(",").filter(Boolean)); });
+  one("diet",()=>true,v=>{ DIETSET.clear(); v.split(",").filter(k=>k in DIET).forEach(k=>DIETSET.add(k)); });
   one("sel",v=>{const [a,b]=v.split(".");return pById(a)&&sById(b)},v=>{const [a,b]=v.split(".");sel={type:"cell",p:a,s:b}});
   one("p",v=>pById(v),v=>sel={type:"pasta",p:v});
   one("s",v=>sById(v),v=>sel={type:"sauce",s:v});

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Pastatlas · Italian pasta shapes and sauces</title>
-  <link rel="icon" href="pastatlas/favicon.svg?v=0.8.0" type="image/svg+xml">
+  <link rel="icon" href="pastatlas/favicon.svg?v=0.8.1" type="image/svg+xml">
   <meta name="description" content="Pastatlas: which Italian pasta shape goes with which sauce, where each one comes from, with sources. 59 shapes, 58 sauces, 77 canonical dishes across all 20 regions. Italian, Spanish and English.">
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#211C15">
@@ -17,8 +17,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://victorelvira.github.io/projects/pastatlas/og.jpg">
   <meta property="og:url" content="https://victorelvira.github.io/projects/pastatlas.html">
-  <link rel="stylesheet" href="pastatlas/vendor/fonts/fonts.css?v=0.8.0">
-  <link rel="stylesheet" href="pastatlas/style.css?v=0.8.0">
+  <link rel="stylesheet" href="pastatlas/vendor/fonts/fonts.css?v=0.8.1">
+  <link rel="stylesheet" href="pastatlas/style.css?v=0.8.1">
 </head>
 <body>
   <nav id="navbar">
@@ -30,7 +30,7 @@
 <div class="wrap">
   <header class="top">
     <a class="brand" href="pastatlas.html" title="Reload Pastatlas (clears filters)">
-      <img class="mark" src="pastatlas/favicon.svg?v=0.8.0" width="40" height="40" alt="">
+      <img class="mark" src="pastatlas/favicon.svg?v=0.8.1" width="40" height="40" alt="">
       <div><h1>Past<em>atlas</em></h1><p id="t-sub"></p></div>
     </a>
     <div class="controls">
@@ -61,7 +61,7 @@
         <div class="mx-scroll" id="mxScroll"><table class="mx" id="mx"></table></div>
       </section>
       <section id="cardsView" hidden>
-        <div class="toolbar"><div class="seg" role="group" id="cardSeg"><button data-cards="p" aria-pressed="true"></button><button data-cards="s" aria-pressed="false"></button></div><span class="fine" id="cardCount"></span></div>
+        <div class="toolbar"><div class="seg" role="group" id="cardSeg"><button data-cards="p" aria-pressed="true"></button><button data-cards="s" aria-pressed="false"></button></div><span id="cardsScope"></span><span class="fine" id="cardCount"></span></div>
         <div class="cards" id="cards"></div>
       </section>
       <section id="whyView" class="principles" hidden>
@@ -77,6 +77,7 @@
         <h2 class="sec" id="t-atlasTitle"></h2>
         <div class="atlas-grid">
           <div>
+            <div id="atlasScope" style="margin-bottom:8px"></div>
             <div class="seg" role="group" id="layerSeg" style="margin-bottom:10px">
               <button data-layer="pasta"></button><button data-layer="sauce"></button><button data-layer="dish"></button><button data-layer="pop"></button>
             </div>
@@ -93,6 +94,6 @@
   <div class="scrim" id="scrim" hidden></div>
   </div>
 </div>
-  <script src="pastatlas/app.js?v=0.8.0" defer></script>
+  <script src="pastatlas/app.js?v=0.8.1" defer></script>
 </body>
 </html>
