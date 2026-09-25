@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.33.1";
+const DATA_V = "0.34.1";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -45,7 +45,8 @@ const LABEL = {
          power: "Politics and power", faith: "Religion", sport: "Sport", trade: "Business",
          other: "Other", nobody: "No person named" },
   verb: { born: "was born", lived: "lived", worked: "worked", died: "died", buried: "is buried",
-          commemorated: "is remembered", built: "built it", exhibited: "is exhibited", happened: "happened" },
+          commemorated: "is remembered", built: "built it", exhibited: "is exhibited", happened: "happened",
+          dedicated: "a church is dedicated to them" },
   // The chip carries the SAME mark the map draws on a pin holding one thing (VERB_MARK below):
   // the filter row teaches you to read the map instead of being a second vocabulary.
   //
@@ -56,7 +57,7 @@ const LABEL = {
   // consistency.
   verbChip: { born: "🌱 Born", lived: "🔑 Lived", worked: "🛠️ Worked", died: "🕯️ Died",
               buried: "⚱️ Buried", commemorated: "💐 Remembered", built: "📐 Built",
-              exhibited: "🖼️ Exhibited", happened: "🗓️ Happened" },
+              exhibited: "🖼️ Exhibited", happened: "🗓️ Happened", dedicated: "⛪ Dedicated" },
 };
 // The same words without their mark, for running text (a card's line, a list badge, the table). A value the
 // sources do not know says nothing: "? Unknown" on a card read as a broken field.
@@ -228,9 +229,10 @@ function recomputeRankCut() {
  */
 const ALL = ["map", "panel", "table"];
 const SEC_VERBS = { life: ["happened", "born", "lived", "worked", "died", "buried"], work: ["built", "exhibited"],
-                    remembered: ["commemorated"] };
+                    remembered: ["commemorated"], dedicated: ["dedicated"] };
 const DIMENSIONS = [
-  { id: "what",    family: true, appliesTo: ALL, test: (r) => state.what[r.what] !== false },
+  // a chosen person is shown whole (0.34): a saint's churches with "Church" off, as the dial and the timeline already do
+  { id: "what",    family: true, appliesTo: ALL, test: (r) => state.what[r.what] !== false || (!!state.person && r.qid === state.person) },
   { id: "mount",   family: true, appliesTo: ALL, test: (r) => state.mount[r.mount] !== false },
   { id: "access",  family: true, appliesTo: ALL, test: (r) => state.access[r.access] !== false },
   { id: "marking", family: true, appliesTo: ALL, test: (r) => state.marking[r.marking] !== false },
@@ -392,7 +394,8 @@ const CARD_MAX = 40;
 
 // What a person did at THIS place, in words. The chips say "died"; a card says "died here".
 const HERE = { born: "born here", lived: "lived here", worked: "worked here", died: "died here",
-  buried: "buried here", commemorated: "remembered here", built: "built this", exhibited: "work on show here" };
+  buried: "buried here", commemorated: "remembered here", built: "built this", exhibited: "work on show here",
+  dedicated: "the church is dedicated to them" };
 
 // A Commons picture that opens large when tapped (the sibling's thumbnails do the same).
 const pic = (file, cls, w, cap) =>
@@ -1079,14 +1082,22 @@ function openPerson(qid, keepScroll) {
         verbs: ["happened", "born", "lived", "worked", "died", "buried"] },
       { key: "work", title: "Their work", note: "what they built, and where their work is shown",
         verbs: ["built", "exhibited"] },
+      { key: "dedicated", title: "Churches dedicated to them", note: "churches, chapels and cathedrals under their name",
+        verbs: ["dedicated"] },
       { key: "remembered", title: "Remembered",
         note: isEvent ? "memorials of it, wherever they stand"
                       : "put up in their memory, anywhere: they need not have been there",
         verbs: ["commemorated"] },
     ];
-    const secOf = (r) => (SECTIONS.find((x) => x.verbs.includes(VOCAB.verb[r.verb])) || SECTIONS[2]).key;
+    const LIFEWORK = ["life", "work"], SEC_MAX = 60;
+    const secOf = (r) => (SECTIONS.find((x) => x.verbs.includes(VOCAB.verb[r.verb])) || { key: "remembered" }).key;
     const bySec = Object.fromEntries(SECTIONS.map((x) => [x.key, []]));
     sorted.forEach((r, i) => bySec[secOf(r)].push([r, i]));
+    // their churches, the best known first: the cathedral of Santiago before a chapel in Jamestown (0.34)
+    if (bySec.dedicated && bySec.dedicated.length > 1) {
+      const fame = churchFame();
+      bySec.dedicated.sort((a, z) => (fame.get(z[0].site) || 0) - (fame.get(a[0].site) || 0));
+    }
     const shown = SECTIONS.filter((x) => bySec[x.key].length);
     const knewSlot = `<div class="sh-sec sh-knew" data-sec="knew" data-q="${esc(qid)}" hidden></div>`;
     const items = shown.map((x) =>
@@ -1094,9 +1105,14 @@ function openPerson(qid, keepScroll) {
       `<span class="sh-sec-n">${bySec[x.key].length}</span>` +
       `<button type="button" class="sh-sec-fit" data-sec="${x.key}" title="Show only these on the map">On the map</button></div>` +
       (x.note ? `<div class="sh-sec-note">${x.note}</div>` : "") +
-      `<ul class="sh-list">${bySec[x.key].map(([r, i]) => itemHTML(r, i)).join("")}</ul></div>` +
-      (x.key !== "remembered" && !shown.slice(shown.indexOf(x) + 1).some((y) => y.key !== "remembered") ? knewSlot : "")).join("") +
-      (shown.every((x) => x.key === "remembered") ? knewSlot : "") +
+      `<ul class="sh-list">${bySec[x.key].slice(0, SEC_MAX).map(([r, i]) => itemHTML(r, i)).join("")}` +
+      // Mary has 4 500 churches: the card lists the first ones, "On the map" shows every one
+      (bySec[x.key].length > SEC_MAX ? `<li class="sh-more">…and ${(bySec[x.key].length - SEC_MAX).toLocaleString()} more. "On the map" shows them all.</li>` : "") +
+      `</ul></div>` +
+      // people they knew come right after their life and work, before what others made in their name
+      (LIFEWORK.includes(x.key) && !shown.slice(shown.indexOf(x) + 1).some((y) => LIFEWORK.includes(y.key)) ? knewSlot : "")).join("") +
+      (shown.every((x) => !LIFEWORK.includes(x.key)) ? knewSlot : "") +
+      `<div class="sh-sec sh-patron" data-sec="patron" data-q="${esc(qid)}" hidden></div>` +
       `<div class="sh-sec sh-streets" data-sec="streets" data-q="${esc(qid)}" hidden></div>`;
 
     const scrollWas = $("sheet-body").scrollTop;
@@ -1132,7 +1148,7 @@ function openPerson(qid, keepScroll) {
     $("sheet-body").scrollTop = keepScroll ? scrollWas : 0;
     fillSummary($("sheet-body").querySelector(".sh-sum"));
     if (!isEvent) fillKnew($("sheet-body").querySelector(".sh-knew"));
-    if (!isEvent) fillStreets($("sheet-body").querySelector(".sh-streets"));
+    if (!isEvent) { fillStreets($("sheet-body").querySelector(".sh-streets")); fillPatron($("sheet-body").querySelector(".sh-patron")); }
     $("sheet-body").scrollTop = 0;
     $("sheet-body").querySelectorAll(".sh-trace").forEach((li) => li.addEventListener("click", () => {
       const r = sorted[+li.dataset.i];
@@ -1428,6 +1444,44 @@ function fillStreets(box) {
       if (narrow()) closeSheet();
       const b = L.latLngBounds(list.map((r) => [r[2], r[3]]));
       if (list.length === 1) map.setView([list[0][2], list[0][3]], 16); else map.fitBounds(b, { padding: [40, 40], maxZoom: 15 });
+    });
+  });
+}
+// A church's own renown (its Wikipedia editions), read from the church layer at the same site: sorts a saint's
+// churches. Built once the long tail is in, and again if it arrives later.
+let churchFameMap = null, churchFameAt = 0;
+function churchFame() {
+  if (churchFameMap && churchFameAt === TRACES.length) return churchFameMap;
+  churchFameMap = new Map(); churchFameAt = TRACES.length;
+  for (const r of TRACES) if (r.qid.startsWith("ch:") && r.rank > (churchFameMap.get(r.site) || 0)) churchFameMap.set(r.site, r.rank);
+  return churchFameMap;
+}
+// PATRON SAINT OF (0.34): the towns and places whose patron they are, from ../_fuentes/santos_lugares (P417), in
+// the same shard as the streets. Wikidata knows the patron of 1 142 of Spain's 8 132 towns: "at least these".
+function fillPatron(box) {
+  if (!box) return;
+  const qid = box.dataset.q;
+  needStreets(qid).then((S) => {
+    const list = S && S.pt && S.pt[qid];
+    if (!list || !list.length || !box.isConnected) return;
+    box.innerHTML = `<div class="sh-sec-h"><span class="sh-sec-t">Patron saint of</span><span class="sh-sec-n">${list.length}</span>` +
+      `<button type="button" class="sh-sec-fit pt-map">On the map</button></div>` +
+      `<div class="sh-sec-note">towns, cities and places under their patronage · the ones Wikidata knows</div>` +
+      `<ul class="st-list">${list.slice(0, 60).map((r, i) => `<li data-i="${i}"><span class="st-n">${esc(r[0])}</span>` +
+        `${S.w && S.w[r[3]] ? `<span class="st-w">${esc(S.w[r[3]])}</span>` : ""}</li>`).join("")}` +
+      (list.length > 60 ? `<li class="st-more">…and ${list.length - 60} more</li>` : "") + `</ul>`;
+    box.hidden = false;
+    const marks = list.map((r) => [r[0], "square", r[1], r[2], 1]);
+    box.querySelectorAll("li[data-i]").forEach((li) => li.addEventListener("click", () => {
+      const r = list[+li.dataset.i];
+      if (narrow()) closeSheet();
+      map.setView([r[1], r[2]], 13); showStreetMarks(qid, marks);
+    }));
+    box.querySelector(".pt-map").addEventListener("click", () => {
+      showStreetMarks(qid, marks);
+      if (narrow()) closeSheet();
+      if (list.length === 1) map.setView([list[0][1], list[0][2]], 12);
+      else map.fitBounds(L.latLngBounds(list.map((r) => [r[1], r[2]])), { padding: [40, 40], maxZoom: 12 });
     });
   });
 }
@@ -1766,7 +1820,7 @@ function placeHeadHTML(g) {
 }
 // the verb a place already says: "Buried" under a grave or a cemetery, "Remembered" under a statue or a plaque
 const saidByPlace = (r) => { const v = VOCAB.verb[r.verb], k = VOCAB.siteKind[SITES[r.site][S_KIND]];
-  return v === "commemorated" || (v === "buried" && ["grave", "cemetery"].includes(k)); };
+  return v === "commemorated" || v === "dedicated" || (v === "buried" && ["grave", "cemetery"].includes(k)); };
 function rowHTML(r, flat, inGrp) {
   const person = /^(ev:)?Q\d+$/.test(r.qid);
   if (inGrp) return `<li class="row in-grp" data-qid="${esc(r.qid)}" data-site="${r.site}">` +

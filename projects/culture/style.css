@@ -747,3 +747,4 @@ a.sh-share:hover{color:var(--sky);text-decoration:underline}
 }
 #share-view .ic-share{margin-right:5px}
 @media (max-width:720px){ #share-view .lbl{display:none} #share-view .ic-share{margin-right:0;width:14px;height:14px} }
+.sh-list .sh-more{list-style:none;color:var(--stone);font-size:12px;padding:8px 2px;font-style:italic}
