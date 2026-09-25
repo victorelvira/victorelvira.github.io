@@ -93,8 +93,8 @@ const PAINTERS = [
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.12.31";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-22 09:33";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.14.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-24 23:46";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -173,13 +173,14 @@ function loadWorkTitles(lang) {
   workI18nLang = lang; workI18n = null; workMT = null;
   if (lang === "es") fetch(`artatlas/data/work_mt.${lang}.json?v=` + DATA_V)
     .then(r => r.ok ? r.json() : null)
-    .then(d => { if (d && workI18nLang === lang) { workMT = { q: d.q || {}, t: d.t || {} }; if (places.length) refresh(); } })
+    .then(d => { if (d && workI18nLang === lang) { workMT = { q: d.q || {}, t: d.t || {} }; hayGen++; if (places.length) refresh(); } })
     .catch(() => {});
   fetch(`artatlas/data/work_i18n.${lang}.json?v=` + DATA_V)
     .then(r => r.ok ? r.json() : null)
     .then(d => {
       if (!d || workI18nLang !== lang) return;    // the reader changed language while it was in flight
       workI18n = d.t || {};
+      hayGen++;                                   // translated titles are searchable too
       if (places.length) refresh();
     })
     .catch(() => { /* no titles for this language → the English one, nothing breaks */ });
@@ -357,6 +358,19 @@ function meDo(action, p) {
   meSave(); meFlush();
 }
 function favMark(p) { return me.fav.has(workId(p)) ? ` <span class="fav-mark" aria-label="♥">♥</span>` : ""; }
+// A favourite painter rides in the same list as a favourite painting, under an id no work can have
+// ("painter|munch"), so it syncs, exports and imports with everything else and needs no second store.
+const painterId = slug => "painter|" + slug;
+function favPainter(slug) { return me.fav.has(painterId(slug)); }
+function togglePainterFav(slug, name) {
+  const id = painterId(slug), on = !me.fav.has(id);
+  if (on) me.fav.add(id); else me.fav.delete(id);
+  if (me.key) me.queue.push({ action: on ? "fav" : "unfav", id, label: name });
+  meSave(); meFlush();
+  renderPainterList(); renderMuseumChip();
+  toast(on ? `♥ ${name}` : `♡ ${name}`);
+}
+function myPainters() { return PAINTERS.filter(p => favPainter(p.slug)); }
 // moving a list between devices: a link carries the favourites (QIDs, which is nearly all of them), a file
 // carries everything. Importing adds to the list, it never removes.
 function meLink() {
@@ -672,7 +686,7 @@ let panelVis = [];   // works currently listed in the panel
 // different questions — "where can I see it?" and "what is it?" — so two different sets of chips.
 const state = { mode: "current", museum: true, church: true, private: true, public: true,
                 painting: true, sculpture: true,
-                acceptedOnly: true, museumFilter: null, place: null, me: "", near: null, q: "",
+                acceptedOnly: true, museumFilter: null, place: null, theme: null, me: "", near: null, q: "",
                 yearMin: -Infinity, yearMax: Infinity, painters: {} };
 
 // museum index (derived from the works): each venue with its painters + work count
@@ -734,18 +748,29 @@ function loadMuseumNames() {
       musI18n = d.m || {};
       for (const [mid, names] of Object.entries(musI18n))
         musI18nSearch.set(mid, deacc(Object.values(names).join(" ")));
+      hayGen++;                                   // the museum names are in: rebuild the search text
       if (state.q) refresh();                     // the answer arrived after they typed: redo it
     })
     .catch(() => {});
 }
+// Every word must appear somewhere in the work, not all of them in the same field: "brera cara"
+// finds the Caravaggio at Brera, which is how anyone types when they are standing in the museum.
+// `venue_of` is the institution a building belongs to: typing "Royal Collection" has to find both
+// Buckingham and Windsor, and "Bavarian State Painting Collections" all four Pinakotheken.
+function haystack(p) {
+  const key = LANG + "|" + hayGen;
+  if (p._hay === undefined || p._hayKey !== key) {
+    p._hay = deacc([p.painter, p.title, wTitle(p), p.location, p.city, ctyName(p.city), p.country,
+                    p.year, p.medium, p.venue_of].filter(Boolean).join(" "))
+           + " " + ((p.museum_id && musI18nSearch.get(p.museum_id)) || "");   // the museum in other languages
+    p._hayKey = key;
+  }
+  return p._hay;
+}
 function matchesQ(p) {
-  if (!state.q) return true;
-  // `venue_of` is the institution a building belongs to: typing "Royal Collection" has to find both
-  // Buckingham and Windsor, and "Bavarian State Painting Collections" all four Pinakotheken
-  if ([p.painter, p.title, wTitle(p), p.location, p.city, ctyName(p.city), p.country, p.year, p.medium, p.venue_of]
-      .some(v => deacc(v).includes(state.q))) return true;
-  const other = p.museum_id && musI18nSearch.get(p.museum_id);   // the museum in another language
-  return !!other && other.includes(state.q);
+  if (!state.qw || !state.qw.length) return true;
+  const hay = haystack(p);
+  return state.qw.every(w => hay.includes(w));
 }
 function passesAll(p) {
   const kindOk = state.mode === "painted" ? true : state[p.kind || "museum"] !== false;   // no venue type on map 2
@@ -753,7 +778,7 @@ function passesAll(p) {
   const painterOk = state.painters[p.painter] !== false;
   const attrOk = !state.acceptedOnly || ATTR_ACCEPTED.has(p.attribution);
   const museumOk = !state.museumFilter || museumKey(p) === state.museumFilter;
-  return painterOk && kindOk && formOk && attrOk && museumOk && placeOk(p) && meOk(p) && inYear(p) && matchesQ(p);
+  return painterOk && kindOk && formOk && attrOk && museumOk && placeOk(p) && themeOk(p) && meOk(p) && inYear(p) && matchesQ(p);
 }
 // active coordinate per map: current location, or where it was painted (map 2)
 function activeCoord(f) {
@@ -905,8 +930,68 @@ function placePopup(feats) {
   return `<div class="card">${head}<ul class="works">${items}</ul></div>`;
 }
 
+// ══ The filter row folds behind one button ═══════════════════════════════════════════════════════
+// Only the painter button stays out: it is the control that gets used. Everything else (venue kinds,
+// painting or sculpture, accepted attribution, my paintings, undated) lives behind "Filters", with a
+// summary beside it naming only what departs from the default — so a folded bar still tells the
+// truth about what you are looking at. The shape is Paris_JEP's, which Víctor asked for.
+const FILTER_DEFAULTS = { museum: true, church: true, private: true, public: true,
+                          painting: true, sculpture: true, acceptedOnly: true };
+function filterSummary() {
+  const out = [];
+  const KIND = { museum: "Museums", church: "Churches", private: "Private", public: "Outdoors" };
+  const off = Object.keys(KIND).filter(k => state[k] === false);
+  if (off.length) out.push(t("no") + " " + off.map(k => t(KIND[k]).toLowerCase()).join(", "));
+  if (state.painting === false) out.push(t("sculpture only"));
+  if (state.sculpture === false && state.painting !== false) out.push(t("paintings only"));
+  if (!state.acceptedOnly) out.push(t("with disputed"));
+  if (state.me === "fav") out.push("♥");
+  else if (state.me === "seen") out.push("👁");
+  else if (state.me === "unseen") out.push(t("not seen"));
+  if (state.undatedOnly) out.push(t("undated"));
+  return out;
+}
+function renderFilterSummary() {
+  const el = document.getElementById("filters-summary");
+  if (!el) return;
+  const bits = filterSummary();
+  el.textContent = bits.length ? bits.join(" · ") : "";
+  el.classList.toggle("on", bits.length > 0);
+  document.getElementById("filters-toggle")?.classList.toggle("touched", bits.length > 0);
+}
+function toggleFilters(show) {
+  const box = document.getElementById("filters"), btn = document.getElementById("filters-toggle");
+  if (!box || !btn) return;
+  const open = show === undefined ? box.hidden : show;
+  box.hidden = !open;
+  btn.setAttribute("aria-expanded", String(open));
+  btn.querySelector(".ft-caret").textContent = open ? "▴" : "▾";
+  if (open) {                                   // the same trick as the painter list: fixed, off the rail
+    const r = btn.getBoundingClientRect();
+    box.style.setProperty("--pop-top", Math.round(r.bottom + 6) + "px");
+    box.style.setProperty("--pop-left", Math.round(r.left) + "px");
+  }
+  try { localStorage.setItem("atlasFiltersOpen", open ? "1" : "0"); } catch (e) { /* private mode */ }
+}
+function wireFilterFold() {
+  const box = document.getElementById("filters"), btn = document.getElementById("filters-toggle");
+  if (!box || !btn) return;
+  document.body.appendChild(box);               // a sideways-scrolling rail clips what it holds
+  btn.querySelector(".ft-label").textContent = t("Filters");
+  btn.addEventListener("click", () => toggleFilters());
+  document.addEventListener("click", e => {
+    if (!box.hidden && !box.contains(e.target) && !btn.contains(e.target)) toggleFilters(false);
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !box.hidden) toggleFilters(false); });
+  let open = false;
+  try { open = localStorage.getItem("atlasFiltersOpen") === "1"; } catch (e) { /* private mode */ }
+  toggleFilters(open);
+  renderFilterSummary();
+}
+
 function refresh() {
   updateLegend();
+  renderFilterSummary();
   let workCount = 0, shownPlaces = 0;
   const countries = new Set();
   for (const pl of places) {
@@ -1006,6 +1091,7 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
     } finally { hist.restoring = false; }
     window.addEventListener("popstate", restoreFromHistory);
     map.on("moveend", renderPanel);
+    map.on("moveend", writeMapView);
     // clicking the venue name at the top of a popup → open that museum in the side list
     map.on("popupopen", e => {
       const feats = e.popup._source && e.popup._source.options.feats;
@@ -1119,6 +1205,8 @@ function buildPainterSelect() {
 
 // unified search: painters (toggle) + museums (filter to that venue)
 const deacc = s => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+function setQ(v) { state.q = v; state.qw = v ? v.split(/\s+/).filter(Boolean) : []; }
+let hayGen = 0;   // bumped when a name table arrives, so the cached search text is rebuilt
 function renderPainterList() {
   const q = deacc((document.getElementById("painters-search")?.value || "").trim());  // accent-insensitive
   const ul = document.getElementById("painters-list");
@@ -1141,6 +1229,9 @@ function renderPainterList() {
     const yr = BORN[p.slug] ? ` <span class="pyr">${esc(t("b."))} ${BORN[p.slug]}</span>` : "";
     return `<li class="prow"><label><input type="checkbox" data-painter="${esc(p.name)}"${on ? " checked" : ""}>` +
       `<span class="sw" style="background:${on ? colorFor(p.name) : "#cfc7bd"}"></span>${esc(pName(p.name))}${yr}</label>` +
+      `<button type="button" class="pfav${favPainter(p.slug) ? " on" : ""}" data-pfav="${esc(p.slug)}" ` +
+      `data-pname="${esc(pName(p.name))}" title="${esc(t("One of my painters"))}" ` +
+      `aria-label="${esc(t("One of my painters"))}">${favPainter(p.slug) ? "♥" : "♡"}</button>` +
       `<button type="button" class="only" data-only="${esc(p.name)}">${esc(t("only"))}</button></li>`;
   };
   const pnt = PAINTERS.filter(p => deacc(p.name).includes(q) || deacc(nickOf(p)).includes(q));
@@ -1186,6 +1277,10 @@ function renderPainterList() {
     refresh(); updatePainterBtn(); renderPainterList(); painterTweak();
   }));
   // "only" (Kayak-style): deselect everyone, keep just this painter
+  ul.querySelectorAll("button[data-pfav]").forEach(b => b.addEventListener("click", e => {
+    e.preventDefault(); e.stopPropagation();
+    togglePainterFav(b.dataset.pfav, b.dataset.pname);
+  }));
   ul.querySelectorAll("button[data-only]").forEach(b => b.addEventListener("click", e => {
     e.preventDefault(); e.stopPropagation();
     PAINTERS.forEach(p => { state.painters[p.name] = p.name === b.dataset.only; });
@@ -1222,6 +1317,7 @@ function renderPainterList() {
 function selectMuseum(key, { stay = false, url = true } = {}) {
   state.museumFilter = key;
   if (state.place) { state.place = null; renderPlaceChip(); }   // a museum is narrower than any city: one at a time
+  if (state.theme) { state.theme = null; renderThemeChip(); }   // and narrower than any theme
   const mu = museumIndex.find(m => m.key === key);
   const pop = document.getElementById("painters-pop");
   pop.hidden = true; document.getElementById("painters-btn").setAttribute("aria-expanded", "false");
@@ -1229,7 +1325,7 @@ function selectMuseum(key, { stay = false, url = true } = {}) {
     if (view.table && !stay) setTableView(false);
     if (!view.table && view.map) map.setView([mu.lat, mu.lon], 14);
   }
-  if (url) histStep(urlWith(sp => { sp.set("m", key); sp.delete("c"); sp.delete("k"); }));
+  if (url) histStep(urlWith(sp => { sp.set("m", key); ["c", "k", "th"].forEach(x => sp.delete(x)); }));
   renderMuseumChip(); refresh();
 }
 
@@ -1295,6 +1391,33 @@ function fitVisible(delay) {
 }
 let mapWas = null;
 function noteMap() { mapWas = (view.map && !view.table) ? [map.getCenter().lat, map.getCenter().lng, map.getZoom()] : null; }
+
+// ── the map view lives in the address, not only in the history entry ──
+// iOS drops a tab that has been in the background for a few minutes and reloads it when you come
+// back. The museum survived, because it is in the address; where you were looking did not, so the
+// map opened far away, "as if it had forgotten what I was clicking" (Víctor, at Brera). Centre and
+// zoom now ride in ?mv=lat,lon,z, written without adding a history step, so a reload — and a shared
+// link — return to the same patch of ground.
+const MV_PLACES = 4;                                   // ~11 m: enough, and keeps the address short
+let mvT = null, mvHold = false;
+function writeMapView() {
+  if (hist.restoring || mvHold || !view.map || view.table || typeof map === "undefined") return;
+  clearTimeout(mvT);
+  mvT = setTimeout(() => {
+    const c = map.getCenter();
+    const mv = [c.lat.toFixed(MV_PLACES), c.lng.toFixed(MV_PLACES), map.getZoom()].join(",");
+    if (new URLSearchParams(location.search).get("mv") === mv) return;
+    histTweak(urlWith(sp => sp.set("mv", mv)));
+  }, 400);                                             // panning fires moveend all the way: write once
+}
+function mapViewFromURL() {
+  const raw = new URLSearchParams(location.search).get("mv");
+  if (!raw) return null;
+  const [lat, lon, z] = raw.split(",").map(Number);
+  const ok = Number.isFinite(lat) && Number.isFinite(lon) && Number.isFinite(z)
+    && Math.abs(lat) <= 90 && Math.abs(lon) <= 180 && z >= 1 && z <= 19;
+  return ok ? [lat, lon, z] : null;
+}
 function goPainter(name) {
   const pa = PAINTERS.find(p => p.name === name);
   if (!pa) return;
@@ -1303,9 +1426,10 @@ function goPainter(name) {
   PAINTERS.forEach(p => { state.painters[p.name] = p === pa; });
   state.museumFilter = null; renderMuseumChip();
   state.place = null; renderPlaceChip();
+  state.theme = null; renderThemeChip();
   updatePainterBtn(); renderPainterList(); refresh();
   if (!view.table && view.map) fitVisible(left ? 160 : 0);
-  writeGoStep(lbEntry, left, sp => { ["m", "c", "k"].forEach(x => sp.delete(x)); setPainterParam(sp); });
+  writeGoStep(lbEntry, left, sp => { ["m", "c", "k", "th"].forEach(x => sp.delete(x)); setPainterParam(sp); });
   toast(`${t("Showing only")} ${pName(name)}`);
 }
 // · a city or a country: its works, every painter, no museum; the map fits them
@@ -1315,10 +1439,11 @@ function goPlace(pl) {
   PAINTERS.forEach(p => { state.painters[p.name] = true; });
   state.museumFilter = null; renderMuseumChip();
   state.place = pl; renderPlaceChip();
+  state.theme = null; renderThemeChip();
   updatePainterBtn(); renderPainterList(); refresh();
   if (!view.table && view.map) fitVisible(left ? 160 : 0);
   writeGoStep(lbEntry, left, sp => {
-    ["p", "m", "c", "k"].forEach(x => sp.delete(x));
+    ["p", "m", "c", "k", "th"].forEach(x => sp.delete(x));
     if (pl.kind === "city") sp.set("c", `${pl.city}|${pl.country}`); else sp.set("k", pl.country);
   });
 }
@@ -1378,9 +1503,20 @@ function renderMuseumChip() {
     el = document.createElement("span"); el.id = "museum-chip"; el.className = "chip mchip";
     document.getElementById("painters").after(el);
   }
-  el.innerHTML = `🏛 ${esc(mu ? locName({ location: mu.location, museum_id: mu.key }) : "Museum")}${mu && mu.city ? ", " + esc(ctyName(mu.city)) : ""} ` +
-    `<button type="button" aria-label="Clear museum">✕</button>`;
-  el.querySelector("button").addEventListener("click", clearMuseum);
+  // standing in a museum, the thing worth knowing at a glance: which of MY painters hang here
+  const mine = mu ? myPainters().filter(p => mu.painters.has(p.name)) : [];
+  const mineTag = mine.length
+    ? ` <button type="button" class="mc-mine" title="${esc(mine.map(p => pName(p.name)).join(" · "))}">` +
+      `♥ ${mine.length}</button>` : "";
+  el.innerHTML = `🏛 ${esc(mu ? locName({ location: mu.location, museum_id: mu.key }) : "Museum")}${mu && mu.city ? ", " + esc(ctyName(mu.city)) : ""}${mineTag} ` +
+    `<button type="button" class="mc-x" aria-label="Clear museum">✕</button>`;
+  el.querySelector(".mc-x").addEventListener("click", clearMuseum);
+  // pressing it leaves only those painters on, here: "what of mine is in this room"
+  el.querySelector(".mc-mine")?.addEventListener("click", () => {
+    PAINTERS.forEach(p => { state.painters[p.name] = mine.includes(p); });
+    updatePainterBtn(); renderPainterList(); refresh(); painterTweak();
+    toast(`${t("Showing only")} ${mine.map(p => pName(p.name)).join(", ")}`);
+  });
 }
 
 // the city or country the atlas is narrowed to: a chip beside the museum's, with its own ✕
@@ -1401,6 +1537,71 @@ function clearPlace() {
   const sp = new URLSearchParams(location.search);
   if (sp.has("c") || sp.has("k")) histStep(urlWith(q => { q.delete("c"); q.delete("k"); }));
   renderPlaceChip(); refresh();
+}
+// ══ Themes: what the painting shows ══════════════════════════════════════════════════════════════
+// Wikidata says what many paintings depict; build_work_themes.py keeps only the values that are a
+// theme by their own definition (an artistic theme, a gospel episode, a biblical figure, a saint, a
+// god) and that at least eight works carry. A ficha shows them under the title, and pressing one
+// ("Crucifixion") opens every other Crucifixion in the atlas. 243 themes over 4,690 works.
+let THEMES = null, themeWork = null, themesP = null;
+function loadThemes() {
+  if (themesP) return themesP;
+  themesP = fetch("artatlas/data/work_themes.json?v=" + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { if (d) { THEMES = d.t || {}; themeWork = d.w || {}; } return THEMES; })
+    .catch(() => null);                          // no theme file → no tags, nothing else breaks
+  return themesP;
+}
+function themesOf(p) {
+  return (themeWork && p && p.qid && themeWork[p.qid]) || [];
+}
+function themeOk(p) {
+  if (!state.theme) return true;
+  return themesOf(p).includes(state.theme);
+}
+function themeName(id) { return (THEMES && THEMES[id] && THEMES[id].l) || id; }
+// · a theme: every work that shows it, every painter, no museum; the map fits them
+function goTheme(id) {
+  noteMap();
+  const lbEntry = leaveOverlays(), left = leaveUnfilteredViews();
+  PAINTERS.forEach(x => { state.painters[x.name] = true; });
+  state.museumFilter = null; renderMuseumChip();
+  state.place = null; renderPlaceChip();
+  state.theme = id; renderThemeChip();
+  updatePainterBtn(); renderPainterList(); refresh();
+  if (!view.table && view.map) fitVisible(left ? 160 : 0);
+  writeGoStep(lbEntry, left, sp => { ["p", "m", "c", "k"].forEach(x => sp.delete(x)); sp.set("th", id); });
+  toast(`${t("Showing")} ${themeName(id)}`);
+}
+function renderThemeChip() {
+  let el = document.getElementById("theme-chip");
+  if (!state.theme) { if (el) el.remove(); return; }
+  if (!el) {
+    el = document.createElement("span"); el.id = "theme-chip"; el.className = "chip mchip";
+    (document.getElementById("place-chip") || document.getElementById("painters")).after(el);
+  }
+  el.innerHTML = `🖼 ${esc(themeName(state.theme))} <button type="button" aria-label="${esc(t("Clear"))}">✕</button>`;
+  el.querySelector("button").addEventListener("click", clearTheme);
+}
+function clearTheme() {
+  state.theme = null;
+  if (new URLSearchParams(location.search).has("th")) histStep(urlWith(q => q.delete("th")));
+  renderThemeChip(); refresh();
+}
+// the tags under a ficha's title, filled once the table has arrived
+function renderThemeTags(p) {
+  const box = document.getElementById("wc-themes");
+  if (!box) return;
+  loadThemes().then(() => {
+    if (!box.isConnected || wcWork !== p) return;             // the reader moved on while it loaded
+    const ids = themesOf(p.p || p);
+    if (!ids.length) return;
+    box.innerHTML = ids.map(id =>
+      `<button type="button" class="wtheme" data-theme="${esc(id)}" title="${esc(t("Show every work with this theme"))}">` +
+      `${esc(themeName(id))}<span class="wt-n">${(THEMES[id] || {}).n || ""}</span></button>`).join("");
+    box.querySelectorAll(".wtheme").forEach(b =>
+      b.addEventListener("click", () => goTheme(b.dataset.theme)));
+  });
 }
 function placeFromURL() {                  // ?c=Paris|France (a city) · ?k=France (a country)
   const sp = new URLSearchParams(location.search);
@@ -1430,6 +1631,8 @@ document.querySelectorAll('.filters input[data-kind], .filters input[data-form]'
     refresh();
   });
 });
+wireFilterFold();
+
 (function wireMe() {
   const chip = document.getElementById("me-chip"), sel = document.getElementById("me-filter");
   if (!chip) return;
@@ -1747,12 +1950,12 @@ document.getElementById("v-mapview").addEventListener("click", () => { setTableV
     loadMuseumNames();                            // first keystroke → fetch the museum name table
     syncClear();
     clearTimeout(qt);
-    qt = setTimeout(() => { state.q = v; refresh(); }, 140);   // debounce: refresh rebuilds markers
+    qt = setTimeout(() => { setQ(v); refresh(); }, 140);        // debounce: refresh rebuilds markers
   });
   const wipe = () => {                            // ✕ or Esc → empty the box and show everything again
     clearTimeout(qt);
     box.value = ""; syncClear();
-    if (state.q) { state.q = ""; refresh(); }
+    if (state.q) { setQ(""); refresh(); }
     box.focus();
   };
   clearBtn.addEventListener("click", wipe);
@@ -1929,6 +2132,9 @@ function periodRuns(flat) {
 
 function panelSorter(sort) {
   const yr = w => { const y = yearNum(w.p); return y == null ? Infinity : y; };
+  // standing in a museum, what you want first is the ones you marked (Víctor, at Brera)
+  if (sort === "fav") return (a, z) => (me.fav.has(workId(z.p)) ? 1 : 0) - (me.fav.has(workId(a.p)) ? 1 : 0)
+    || yr(a) - yr(z) || cmpText(a.p.title, z.p.title);
   if (sort === "year") return (a, z) => yr(a) - yr(z) || cmpText(pName(a.p.painter), pName(z.p.painter));
   if (sort === "painter") return (a, z) => cmpText(pName(a.p.painter), pName(z.p.painter)) || yr(a) - yr(z);
   return (a, z) => cmpText(a.p.title, z.p.title) || yr(a) - yr(z);   // title
@@ -2383,6 +2589,19 @@ document.getElementById("worklist").addEventListener("keydown", e => {
     foldAll.title = anyOpen ? t("Unfold every group") : t("Fold every group");
   });
 
+  // ▶ Walk: the pictures now listed, one by one and full screen — the museum visit, on the phone.
+  // It opens the first thumbnail; the lightbox's own arrows (and a swipe) do the rest, and they
+  // already pull in the next chunk when they reach the end of what is rendered.
+  const walk = document.getElementById("pv-walk");
+  if (walk) walk.addEventListener("click", () => {
+    const ul = document.getElementById("worklist");
+    let guard = 0;
+    while (!ul.querySelector("img.th[data-full]") && panelHasMore() && guard++ < 50) appendPanelChunk();
+    const first = ul.querySelector("img.th[data-full]");
+    if (first) openLightboxFrom(first);
+    else toast(t("Nothing to walk through here"));
+  });
+
   sortSel.value = panelSort;                      // the order survives a reload
   sortSel.addEventListener("change", e => {
     panelSort = e.target.value;
@@ -2754,11 +2973,13 @@ function openWorkCard(w) {
     (meOn() ? `<button type="button" class="wc-fav${me.fav.has(workId(p)) ? " on" : ""}">${me.fav.has(workId(p)) ? "♥ " + t("Favourite") : "♡ " + t("Favourite")}</button>` : "") +
     (p.placeless ? "" : `<button type="button" class="wc-map">${t("📍 On the map")}</button>`) +
     `<span class="wc-hint">${t("or just copy the address bar")}</span></div>` +
+    `<div class="wc-themes" id="wc-themes"></div>` +
     `<div class="wc-aff" id="wc-affinity"></div>` +
     `<div class="wc-similar" id="wc-subject"></div>` +
     `<div class="wc-similar" id="wc-similar"></div>` +
     `<div class="wc-similar" id="wc-foryou"></div></div>`;
   workCard.hidden = false;
+  renderThemeTags(w);        // "Crucifixion", "Saint Jerome"… — press one to see every other
   renderAffinity(p.painter); // "painters like this one" (style affinity) — fills in async
   renderSubject(p.qid);   // "more on this subject" (shared title words) — instant, no embeddings
   renderSimilar(p.qid);   // "visually similar" (CLIP neighbours) — fills in async when available
@@ -2852,6 +3073,11 @@ function restoreFromHistory(e) {
     else if (!m && state.museumFilter) { clearMuseum(); crossed = true; }
     const pl = placeFromURL();
     if (placeKey(pl) !== placeKey(state.place)) { state.place = pl; renderPlaceChip(); refresh(); crossed = true; }
+    const th = sp.get("th") || null;
+    if (th !== state.theme) {
+      state.theme = th; renderThemeChip(); refresh(); crossed = true;
+      if (th && !THEMES) loadThemes().then(() => { renderThemeChip(); refresh(); });   // labels arrive late
+    }
     const w = sp.get("w");
     if (w) {
       if (!wcWork || wcWork.p.qid !== w) { const hit = works.find(x => x.p.qid === w); if (hit) openWorkCard(hit); }
@@ -2867,11 +3093,26 @@ function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum k
   const q = new URLSearchParams(location.search);
   const w = q.get("w"), m = q.get("m");
   const pl = placeFromURL();                     // the list under a ficha is part of the address too
+  const mv = mapViewFromURL();                   // ?mv= wins: it is the last thing the reader saw
+  const th = q.get("th");
   if (pl && !m) { state.place = pl; renderPlaceChip(); refresh(); }
+  if (th) loadThemes().then(() => {              // the table arrives after the map: apply it then
+    if (!THEMES || !THEMES[th]) return;
+    state.theme = th; renderThemeChip(); refresh();
+    if (!mv && !m && view.map && !view.table) fitVisible(120);
+  });
   // a shared "only Munch" or "Madrid" link must open ON its works, not on the default view with 0 in sight
-  if (!m && (pl || q.has("p")) && view.map && !view.table) fitVisible(250);
-  if (w) { const hit = works.find(x => x.p.qid === w); if (hit) return openWorkCard(hit); }
-  if (m && museumIndex.some(x => x.key === m)) selectMuseum(m);
+  if (!mv && !m && (pl || q.has("p")) && view.map && !view.table) fitVisible(250);
+  if (w) { const hit = works.find(x => x.p.qid === w); if (hit) openWorkCard(hit); }
+  else if (m && museumIndex.some(x => x.key === m)) selectMuseum(m);
+  if (mv && view.map && !view.table) {           // after any fit or museum zoom above, and last
+    mvHold = true;
+    setTimeout(() => {
+      map.invalidateSize();
+      map.setView([mv[0], mv[1]], mv[2], { animate: false });
+      mvHold = false;
+    }, 320);
+  }
 }
 // Wikimedia Commons occasionally resets HTTP/2 under a burst of thumbnail requests
 // (big popup/table). Degrade a failed thumbnail to the neutral placeholder box instead

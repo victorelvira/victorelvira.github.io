@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://victorelvira.github.io/projects/artatlas.html">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.12.31">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.14.0">
 </head>
 <body>
   <nav id="navbar">
@@ -55,7 +55,12 @@
     <div id="bar-rail">
     <span id="painters" class="painters primary"></span>
     <div id="stats" class="stats">…</div>
-    <div class="filters">
+    <!-- everything except the painter button folds behind one quiet button, with a summary of what
+         is set beside it (the shape Víctor liked in Paris_JEP) -->
+    <button type="button" id="filters-toggle" class="chip ftoggle" aria-expanded="false" aria-controls="filters">
+      <span class="ft-label">Filters</span><span id="filters-summary" class="ft-sum"></span><span class="ft-caret" aria-hidden="true">▾</span>
+    </button>
+    <div class="filters" id="filters" hidden>
       <label class="chip kind mus"><input type="checkbox" data-kind="museum" checked> Museums</label>
       <label class="chip kind igl"><input type="checkbox" data-kind="church" checked> Churches</label>
       <label class="chip kind pri"><input type="checkbox" data-kind="private" checked> Private</label>
@@ -131,9 +136,11 @@
             <option value="year">🕰 by year</option>
             <option value="painter">🎨 by painter</option>
             <option value="title">🔤 by title</option>
+            <option value="fav">♥ favourites first</option>
           </select></label>
           <input id="thumb-size" type="range" min="72" max="240" value="112" title="Thumbnail size" hidden>
           <button type="button" id="pv-fold" class="pvbtn fold" title="Fold every group">⊟</button>
+          <button type="button" id="pv-walk" class="pvbtn" title="Walk through these works one by one, full screen">▶ Walk</button>
           <button type="button" id="pv-list" class="pvbtn active" title="List view">☰ List</button>
           <button type="button" id="pv-grid" class="pvbtn" title="Thumbnails">▦ Miniature</button>
         </span>
@@ -322,7 +329,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.12.31"></script>
+  <script src="artatlas/app.js?v=1.14.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

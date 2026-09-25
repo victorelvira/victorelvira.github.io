@@ -1320,3 +1320,51 @@ body.galaxy-painters #galaxy-hint, body.galaxy-painters #galaxy-legend { display
 @media (hover: none) { .gcell .gfav { opacity: .92; } }
 .wc-fav { border: 1px solid var(--line); background: #fff; border-radius: 16px; padding: 4px 12px; cursor: pointer; font: inherit; color: var(--ink); }
 .wc-fav.on { color: #c0392b; border-color: #e3b3ab; background: #fbeeec; }
+
+/* ── themes: what the painting shows ──
+   Tags under a ficha's title; pressing one opens every other work with that theme. Quiet by
+   default (this is a label, not a call to action), warmer under the cursor. */
+.wc-themes { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 2px; }
+.wc-themes:empty { display: none; }
+.wtheme {
+  font: inherit; font-size: 12px; line-height: 1.5; cursor: pointer;
+  padding: 2px 9px; border: 1px solid #e0d5bf; border-radius: 999px;
+  background: #faf6ec; color: #6a523a;
+}
+.wtheme:hover { background: #f1e6d2; border-color: #cbb68e; color: #4a3722; }
+.wt-n { font-size: 10px; color: #a3937c; margin-left: 5px; }
+.wtheme:hover .wt-n { color: #8a7458; }
+#theme-chip .tc-n { font-size: 10.5px; color: var(--muted); margin-left: 4px; }
+
+/* ── my painters: a heart on the painter row, and how many of them hang in this museum ── */
+.pop-list .prow .pfav {
+  border: 0; background: none; cursor: pointer; font-size: 13px; line-height: 1;
+  color: #c9bfb2; padding: 2px 4px; opacity: 0; transition: opacity .12s;
+}
+.pop-list .prow:hover .pfav, .pop-list .prow .pfav.on, .pop-list .prow .pfav:focus-visible { opacity: 1; }
+.pop-list .prow .pfav.on { color: #c0392b; }
+@media (hover: none) { .pop-list .prow .pfav { opacity: .75; } }
+.mc-mine { border: 0; background: #f6e7e4; color: #b0392b; border-radius: 999px;
+  font: inherit; font-size: 11px; padding: 1px 7px; margin-left: 5px; cursor: pointer; }
+.mc-mine:hover { background: #efd8d3; }
+
+/* ── the folded filter row ──
+   One quiet button beside the painter selector; the row itself becomes a panel fixed to the screen
+   (it used to sit inside the sideways rail, which clips what it holds). The summary names only what
+   departs from the default, so the folded bar still says what you are looking at. */
+.ftoggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #4a3d31; }
+.ftoggle .ft-sum { color: var(--muted); font-size: 11.5px; }
+.ftoggle .ft-sum.on { color: #8a5a2a; }
+.ftoggle.touched { border-color: #cdb489; background: #fbf5e9; }
+.ftoggle .ft-caret { font-size: 10px; color: #9a8d7f; }
+#filters {
+  position: fixed; top: var(--pop-top, 86px); left: var(--pop-left, 12px); z-index: 900;
+  width: min(560px, calc(100vw - 20px));
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,.16); padding: 10px;
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+}
+#filters[hidden] { display: none !important; }
+@media (max-width: 640px), (max-height: 520px) and (max-width: 1000px) {
+  #filters { left: 10px; right: 10px; width: auto; max-height: calc(100vh - var(--pop-top, 86px) - 20px); overflow: auto; }
+}
