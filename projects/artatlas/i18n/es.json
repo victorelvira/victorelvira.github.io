@@ -299,7 +299,10 @@
   "sculpture only": "solo escultura",
   "paintings only": "solo pintura",
   "with disputed": "con atribución dudosa",
-  "not seen": "sin ver"
+  "not seen": "sin ver",
+  "Masters": "Maestros",
+  "The master-and-pupil tree is not built yet.": "El árbol de maestros y discípulos aún no está construido.",
+  "Who taught whom": "Quién enseñó a quién"
  },
  "units": {
   "works": "obras",
@@ -320,7 +323,8 @@
  "blocks": {
   "chart-legend-note": "Cada punto = un año · más grande = más obras",
   "galaxy-method": "\n        <p>Cada cuadro pasa por un modelo de imagen <b>CLIP</b> (ViT-B/32, de código abierto) que convierte la\n        imagen en un vector de 512 números que recoge <em>cómo se ve</em> (composición, paleta, tema,\n        factura), sin pies de foto ni etiquetas. Dos obras son «parecidas» cuando sus vectores apuntan en la misma\n        dirección (<b>similitud del coseno</b>); de ahí salen <em>Lo más parecido</em> y <em>Pintores más cercanos a esta obra</em>\n        en la ficha de cada cuadro.</p>\n        <p>Este mapa coloca en 2-D todas las obras procesadas con <b>t-SNE</b>, de modo que los cuadros que se parecen\n        quedan cerca. Los puntos se pueden colorear por pintor, época o escuela, o por el <b>color dominante</b>\n        de cada obra (la media de sus píxeles), que se calcula a la vez. <em>Pintores más cercanos a esta obra</em> y\n        las sugerencias <em>«Si te gusta…, prueba con»</em> promedian los vectores de un pintor en una «huella» y comparan huellas.</p>\n        <p>Todo se calcula <b>fuera de línea</b> y se publica en ficheros pequeños ya calculados: la página no ejecuta ninguna IA.\n        La cobertura crece a medida que se procesan más obras. Imágenes © de sus fuentes, vía Wikimedia Commons.</p>\n      ",
-  "pm-hint": "Cada pintor es la media de sus cuadros, <b>cada museo cuenta una vez</b> y sin las fotos en blanco y negro · más cerca = pintan más parecido · círculo hueco = posición que los datos no garantizan · <b>pulsa un pintor</b>"
+  "pm-hint": "Cada pintor es la media de sus cuadros, <b>cada museo cuenta una vez</b> y sin las fotos en blanco y negro · más cerca = pintan más parecido · círculo hueco = posición que los datos no garantizan · <b>pulsa un pintor</b>",
+  "pt-hint": "Una línea va del <b>maestro al discípulo</b>, según lo registra Wikidata · de izquierda a derecha, por año de nacimiento · los pintores del atlas son los puntos de color, los demás son el andamiaje que los une · <b>pulsa un pintor</b> para ver solo sus obras"
  },
  "painters": {
   "Titian": "Tiziano",

@@ -93,8 +93,8 @@ const PAINTERS = [
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
 ];
-const DATA_V = "1.14.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-24 23:46";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.15.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-25 11:49";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -3817,6 +3817,7 @@ function applyGalaxyURL() {
   if (v === "similar") {
     setGalaxyView(true);
     if (sp.get("gwhat") === "painters") loadPainterMap().then(d => { if (Object.keys(d).length) setGalaxyWhat("painters"); });
+    if (sp.get("gwhat") === "tree") loadPainterTree().then(d => { if (d) setGalaxyWhat("tree"); });
     if (sp.get("g3") === "1") window._setGalaxy3D && window._setGalaxy3D(true);
   } else if (v === "timeline" && typeof setChartView === "function") setChartView(true);
   else if (v === "game" && typeof setGameView === "function") setGameView(true);
@@ -3902,17 +3903,138 @@ function pmSide(name) {
   if (isMobile()) side.scrollIntoView({ behavior: "smooth", block: "nearest" });   // on a phone the panel sits under the map
 }
 function setGalaxyWhat(what) {
-  galaxyWhat = what === "painters" ? "painters" : "works";
+  galaxyWhat = ["painters", "tree"].includes(what) ? what : "works";
   document.body.classList.toggle("galaxy-painters", galaxyWhat === "painters");
+  document.body.classList.toggle("galaxy-tree", galaxyWhat === "tree");
   document.querySelectorAll("#galaxy-what [data-what]").forEach(b => b.classList.toggle("active", b.dataset.what === galaxyWhat));
   document.getElementById("painter-map").hidden = galaxyWhat !== "painters";
-  document.getElementById("galaxy-body").hidden = galaxyWhat === "painters";
-  if (galaxyWhat === "painters") drawPainterMap(); else galaxyRedraw();
+  document.getElementById("painter-tree").hidden = galaxyWhat !== "tree";
+  document.getElementById("galaxy-body").hidden = galaxyWhat !== "works";
+  if (galaxyWhat === "painters") drawPainterMap();
+  else if (galaxyWhat === "tree") drawPainterTree();
+  else galaxyRedraw();
 }
+
+// ══ Who taught whom ══════════════════════════════════════════════════════════════════════════════
+// Wikidata records master and pupil (P1066/P802). Walked three steps out from the atlas' painters it
+// gives 4,558 names, which is a hairball; build_painter_tree.py keeps the 400 that say something
+// about us — ours, whoever taught or was taught by one of ours, and the bridges between two of ours.
+// Drawn with time running left to right and one lane per painter, so a lineage reads as a staircase
+// down the centuries: Masaccio → Filippo Lippi → Botticelli → … → Bronzino.
+let treeData = null, treeP = null, ptSel = null;
+function loadPainterTree() {
+  if (treeP) return treeP;
+  treeP = fetch("artatlas/data/painter_tree.json?v=" + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { treeData = d && d.n ? d : null; return treeData; })
+    .catch(() => null);
+  return treeP;
+}
+function ptName(node) { return node.s ? pName(PAINTERS.find(p => p.slug === node.s)?.name || node.l) : node.l; }
+async function drawPainterTree() {
+  const data = await loadPainterTree();
+  const svg = document.getElementById("pt-svg"), stage = document.getElementById("pt-stage");
+  if (!svg || !stage) return;
+  if (!data) { svg.innerHTML = ""; stage.dataset.empty = t("The master-and-pupil tree is not built yet."); return; }
+  const nodes = data.n, edges = data.e;
+  const ids = Object.keys(nodes).filter(q => nodes[q].b);          // no birth year → nowhere to stand
+  if (!ids.length) return;
+  const years = ids.map(q => nodes[q].b);
+  const y0 = Math.min(...years) - 10, y1 = Math.max(...years) + 10;
+  const W = Math.max(900, stage.clientWidth), LANE = 15, P = 26;
+  const X = yr => P + ((yr - y0) / (y1 - y0)) * (W - 2 * P - 90);
+  // Order matters more than packing: walked in birth order alone, a master and his pupil land twenty
+  // lanes apart and the lineage is unreadable. So we walk each family depth-first from its oldest
+  // painter, which puts a pupil on the line under his master, and only then pack the lanes.
+  const kids = {}, hasMaster = {};
+  for (const [a, b] of edges) {
+    if (!(a in nodes) || !(b in nodes)) continue;
+    (kids[a] = kids[a] || []).push(b);
+    hasMaster[b] = true;
+  }
+  const byBirth = ids.slice().sort((a, z) => nodes[a].b - nodes[z].b);
+  const order = [], done = new Set();
+  const visit = q => {
+    if (done.has(q) || !(q in nodes) || !nodes[q].b) return;
+    done.add(q); order.push(q);
+    (kids[q] || []).slice().sort((a, z) => (nodes[a].b || 0) - (nodes[z].b || 0)).forEach(visit);
+  };
+  byBirth.filter(q => !hasMaster[q]).forEach(visit);   // roots first: nobody taught them
+  byBirth.forEach(visit);                              // then whatever a cycle or a stray left out
+
+  // One family, one block of lanes. Packing names into any free lane fits more on screen but tears
+  // the lineages apart: a pupil twenty rows below his master is not a tree, it is a list. So lanes
+  // are reused only inside the same connected family, and each family starts below the last.
+  const parent = {};
+  const find = q => (parent[q] === undefined || parent[q] === q) ? (parent[q] = q) : (parent[q] = find(parent[q]));
+  const union = (a, b) => { const ra = find(a), rb = find(b); if (ra !== rb) parent[ra] = rb; };
+  ids.forEach(q => find(q));
+  for (const [a, b] of edges) if (a in nodes && b in nodes && nodes[a].b && nodes[b].b) union(a, b);
+  const family = {}, lane = {};
+  for (const q of order) (family[find(q)] = family[find(q)] || []).push(q);
+  let next = 0;
+  for (const members of Object.values(family).sort((a, z) => nodes[a[0]].b - nodes[z[0]].b)) {
+    const laneEnd = [];
+    for (const q of members) {
+      const x = X(nodes[q].b), w = ptName(nodes[q]).length * 6.4 + 22;
+      let i = laneEnd.findIndex(end => end < x);
+      if (i < 0) { i = laneEnd.length; laneEnd.push(0); }
+      laneEnd[i] = x + w;
+      lane[q] = next + i;
+    }
+    next += laneEnd.length;
+  }
+  const laneCount = next;
+  const H = Math.max(360, P * 2 + laneCount * LANE);
+  const Y = q => P + lane[q] * LANE + LANE / 2;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H);
+
+  const near = ptSel ? new Set([ptSel, ...edges.filter(e => e.includes(ptSel)).flat()]) : null;
+  let out = "";
+  for (let c = Math.ceil(y0 / 50) * 50; c < y1; c += 50) {         // a faint rule every fifty years
+    out += `<line class="pt-rule" x1="${X(c).toFixed(1)}" y1="${P - 12}" x2="${X(c).toFixed(1)}" y2="${H - 6}"/>` +
+           `<text class="pt-year" x="${X(c).toFixed(1)}" y="${P - 16}">${c}</text>`;
+  }
+  for (const [a, b] of edges) {                                     // master → pupil
+    if (!(a in lane) || !(b in lane)) continue;
+    const x1 = X(nodes[a].b), yy1 = Y(a), x2 = X(nodes[b].b), yy2 = Y(b);
+    const dim = near && !(near.has(a) && near.has(b));
+    out += `<path class="pt-edge${dim ? " dim" : ""}" d="M${x1.toFixed(1)},${yy1.toFixed(1)} C${((x1 + x2) / 2).toFixed(1)},${yy1.toFixed(1)} ${((x1 + x2) / 2).toFixed(1)},${yy2.toFixed(1)} ${x2.toFixed(1)},${yy2.toFixed(1)}"/>`;
+  }
+  for (const q of order) {
+    const n = nodes[q], x = X(n.b), y = Y(q), mine = !!n.a;
+    const dim = near && !near.has(q);
+    const col = mine && n.s ? colorFor(PAINTERS.find(p => p.slug === n.s)?.name || "") : "#b9ae9e";
+    out += `<g class="pt-node${mine ? " mine" : ""}${dim ? " dim" : ""}" data-pt="${esc(q)}"` +
+      `${n.s ? ` data-slug="${esc(n.s)}"` : ""}>` +
+      `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${mine ? 5 : 3}" style="fill:${mine ? col : "none"};stroke:${col}"/>` +
+      `<text x="${(x + (mine ? 8 : 6)).toFixed(1)}" y="${(y + 3.5).toFixed(1)}">${esc(ptName(n))}` +
+      `<title>${esc(ptName(n))}${n.b ? ` (${n.b}${n.d ? "–" + n.d : ""})` : ""}${n.c ? " · " + esc(n.c) : ""}</title></text></g>`;
+  }
+  svg.innerHTML = out;
+}
+(function wirePainterTree() {
+  const svg = document.getElementById("pt-svg"); if (!svg) return;
+  svg.addEventListener("click", e => {
+    const g = e.target.closest("[data-pt]"); if (!g) return;
+    const slug = g.dataset.slug;
+    if (slug) {                                   // one of ours: show only their works, as everywhere else
+      const p = PAINTERS.find(x => x.slug === slug);
+      if (p) { setGalaxyWhat("works"); goPainter(p.name); return; }
+    }
+    ptSel = ptSel === g.dataset.pt ? null : g.dataset.pt;          // a stranger: light up their line
+    drawPainterTree();
+  });
+  addEventListener("resize", () => { if (galaxyWhat === "tree") drawPainterTree(); });
+})();
 (function wirePainterMap() {
   const seg = document.getElementById("galaxy-what"); if (!seg) return;
   seg.hidden = true;
   loadPainterMap().then(d => { seg.hidden = !Object.keys(d).length; });
+  loadPainterTree().then(d => {                    // no tree file → no Masters button, nothing breaks
+    const b = seg.querySelector('[data-what="tree"]');
+    if (b && !d) b.remove(); else if (b) seg.hidden = false;
+  });
   seg.addEventListener("click", e => {
     const b = e.target.closest("[data-what]"); if (!b) return;
     setGalaxyWhat(b.dataset.what); syncGalaxyURL(true);

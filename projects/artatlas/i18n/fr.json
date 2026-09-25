@@ -299,7 +299,10 @@
   "sculpture only": "sculpture seule",
   "paintings only": "peinture seule",
   "with disputed": "avec attributions douteuses",
-  "not seen": "non vues"
+  "not seen": "non vues",
+  "Masters": "Maîtres",
+  "The master-and-pupil tree is not built yet.": "L'arbre des maîtres et élèves n'est pas encore construit.",
+  "Who taught whom": "Qui a enseigné à qui"
  },
  "units": {
   "works": "œuvres",
@@ -320,7 +323,8 @@
  "blocks": {
   "chart-legend-note": "Chaque point = une année · plus gros = plus d'œuvres",
   "galaxy-method": "\n        <p>Chaque tableau passe par un modèle d'image <b>CLIP</b> (ViT-B/32, open source) qui transforme\n        l'image en un vecteur de 512 nombres décrivant <em>ce à quoi elle ressemble</em> (composition, palette, sujet,\n        facture), sans légende ni étiquette. Deux œuvres sont « semblables » quand leurs vecteurs pointent dans la même\n        direction (<b>similarité cosinus</b>) ; c'est ce qui alimente <em>Les plus ressemblants</em> et <em>Peintres les plus proches de cette œuvre</em>\n        dans la fiche de chaque tableau.</p>\n        <p>Cette carte dispose en 2-D toutes les œuvres traitées avec <b>t-SNE</b>, si bien que les tableaux qui se ressemblent\n        se retrouvent voisins. Les points peuvent être colorés par peintre, époque ou école, ou par la <b>couleur dominante</b>\n        de chaque œuvre (la moyenne de ses pixels), calculée au même moment. <em>Peintres les plus proches de cette œuvre</em> et\n        les suggestions <em>« Si vous aimez…, essayez »</em> font la moyenne des vecteurs d'un peintre en une « empreinte » et comparent les empreintes.</p>\n        <p>Tout est calculé <b>hors ligne</b> et publié sous forme de petits fichiers précalculés : la page n'exécute aucune IA.\n        La couverture s'étend à mesure que d'autres œuvres sont traitées. Images © leurs sources, via Wikimedia Commons.</p>\n      ",
-  "pm-hint": "Chaque peintre est la moyenne de ses tableaux, <b>chaque musée compte une fois</b> et sans les photos en noir et blanc · plus proche = peignent plus pareil · cercle creux = position que les données ne garantissent pas · <b>cliquez un peintre</b>"
+  "pm-hint": "Chaque peintre est la moyenne de ses tableaux, <b>chaque musée compte une fois</b> et sans les photos en noir et blanc · plus proche = peignent plus pareil · cercle creux = position que les données ne garantissent pas · <b>cliquez un peintre</b>",
+  "pt-hint": "Une ligne va du <b>maître à l'élève</b>, selon Wikidata · de gauche à droite, par année de naissance · les peintres de l'atlas sont les points colorés, les autres sont l'échafaudage qui les relie · <b>cliquez un peintre</b> pour ne voir que ses œuvres"
  },
  "painters": {
   "Titian": "Titien",

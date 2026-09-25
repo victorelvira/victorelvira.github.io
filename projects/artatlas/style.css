@@ -1368,3 +1368,21 @@ body.galaxy-painters #galaxy-hint, body.galaxy-painters #galaxy-legend { display
 @media (max-width: 640px), (max-height: 520px) and (max-width: 1000px) {
   #filters { left: 10px; right: 10px; width: auto; max-height: calc(100vh - var(--pop-top, 86px) - 20px); overflow: auto; }
 }
+
+/* ── who taught whom ── */
+#painter-tree { flex: 1; min-height: 0; overflow: auto; background: #fbf8f2; }
+#pt-stage { min-height: 100%; padding: 4px 8px 16px; }
+#pt-svg { display: block; }
+.pt-rule { stroke: #e7dfd0; stroke-width: 1; }
+.pt-year { fill: #a2988a; font: 10px/1 system-ui, sans-serif; text-anchor: middle; }
+.pt-edge { fill: none; stroke: #b39c74; stroke-width: 1.2; opacity: .85; }
+.pt-edge.dim { opacity: .13; }
+.pt-node text { font: 11px/1 Georgia, serif; fill: #7b6f61; cursor: pointer; }
+.pt-node.mine text { fill: #2f2419; font-size: 11.5px; }
+.pt-node.dim { opacity: .3; }
+.pt-node:hover text { fill: #000; }
+.pt-node circle { stroke-width: 1.4; }
+body.galaxy-tree #pt-hint { display: inline; }
+#pt-hint { display: none; }
+body.galaxy-tree #galaxy-dim, body.galaxy-tree #galaxy-colorby, body.galaxy-tree .galaxy-mini,
+body.galaxy-tree #galaxy-hint, body.galaxy-tree #galaxy-legend, body.galaxy-tree #pm-hint { display: none; }
