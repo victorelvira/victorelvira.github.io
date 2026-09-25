@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.30.5";
+const DATA_V = "0.31.2";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -482,7 +482,9 @@ function sitePopup(siteIdx, rows) {
     (where ? `<div class="where">📍 ${esc(where)}</div>` : "") +
     (area && !["battle", "event"].includes(kind)
       ? `<div class="where approx">◌ somewhere around here: the source gives ${kind === "settlement" ? "the town" : "the square or the area"}, not the exact spot</div>` : "") +
-    `<div class="meta">${esc(meta)}</div>${hoursBlock}${ins}</div>` +
+    `<div class="meta">${esc(meta)}` +
+    // this place, as a link: the address already carries it (place=lat,lon)
+    ` · <a href="#" class="sh-share" data-share="" title="Share this place">${ICON_SHARE}Share</a></div>${hoursBlock}${ins}</div>` +
     (items ? `<ul class="people">${items}${more}</ul>` : "") + `</div>`;
 }
 
@@ -1112,6 +1114,7 @@ function openPerson(qid, keepScroll) {
         ? ` · <a class="sh-sib" href="https://victorelvira.github.io/projects/artatlas.html#${esc(pf[2])}"` +
           ` target="_blank" rel="noopener" title="Their paintings, on the Atlas of Painting">` +
           `Their paintings</a>` : "") +
+      ` · <a href="#" class="sh-share" data-share="${esc(qid.replace(/^ev:/, ""))}" title="Share this person">${ICON_SHARE}Share</a>` +
       `</div></div></div>` +
       `<div class="sh-actions">` +
       (shown.length > 1 ? `<button type="button" id="sh-fit-all">All their places on the map</button>` : "") +
@@ -1631,6 +1634,40 @@ let panelSort = "person", sortBeforePin = null;
 // freezes the area the list covers; the first time the reader moves the map themselves, the list
 // follows the map again.
 let listArea = null;
+/* ── SHARING (0.31) ─────────────────────────────────────────────────────────────────────────────
+ * Víctor, 2026-09-21: "que cada item sea compartible, o la visión actual, o todo". The address already IS the
+ * view (D17), so sharing is handing it over; the phone's own sheet does the rest, as in Batalla de Flores.
+ * A person is shared through their preview page (culture/p/<qid>.html, gen_share_pages.py) when they have one,
+ * so WhatsApp and the rest unfurl with their portrait instead of the atlas's generic card. */
+const ICON_SHARE = `<svg class="ic-share" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12.5" cy="3.5" r="2.1"/>` +
+  `<circle cx="3.5" cy="8" r="2.1"/><circle cx="12.5" cy="12.5" r="2.1"/>` +
+  `<path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.5" fill="none"/></svg>`;
+let toastT = 0;
+function toast(msg) {
+  let el = $("toast");
+  if (!el) { el = document.createElement("div"); el.id = "toast"; document.body.appendChild(el); }
+  el.textContent = msg; el.classList.add("on");
+  clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("on"), 1800);
+}
+async function share() {
+  // ONLY the url: WhatsApp glues a title behind the link and the link stops being tappable (the sibling's scar).
+  // The address already names the person and the place, so one url serves all three buttons. A preview page per
+  // person (gen_share_pages.py) would unfurl with their portrait, and is not shipped: 10 000 files is 10 000
+  // things for Dropbox to sync (Víctor, 2026-09-21). It waits for a domain of its own.
+  const url = location.href;
+  try {
+    if (navigator.share) { await navigator.share({ url }); return; }
+    await navigator.clipboard.writeText(url);
+    toast(t("Link copied"));
+  } catch (e) { if (e && e.name !== "AbortError") toast(url); }
+}
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-share]");
+  if (!b) return;
+  e.preventDefault(); e.stopPropagation();
+  share(b.dataset.share);
+});
+
 function renderPanel() {
   if (panelIO) panelIO.disconnect();
   const b = listArea || map.getBounds();
