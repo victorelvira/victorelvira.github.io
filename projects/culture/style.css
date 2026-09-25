@@ -719,3 +719,31 @@ a.sh-share:hover{color:var(--sky);text-decoration:underline}
 #toast.on{opacity:.96;transform:translateX(-50%) translateY(0)}
 #share-view{margin-left:2px}
 @media (max-width:720px){ #share-view{padding:3px 8px} }
+
+/* ── the card, 0.32: a bigger face, quieter buttons, tighter lines ── */
+.sh-por{width:88px;height:88px;flex:0 0 88px}
+.sh-name{font-size:19.5px;letter-spacing:-.01em}
+.sh-life{font-size:12.5px}
+.sh-occ{font-size:13px;margin-top:3px}
+.sh-sum{font-size:13px;line-height:1.45;margin-top:5px}
+.sh-count{color:var(--ink-soft);font-weight:500}
+.sh-links{margin-top:5px;font-size:12px}
+#sh-fit-all,#sh-contemp{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;
+  padding:5px 12px;font:inherit;font-size:12px;cursor:pointer}
+#sh-fit-all:hover,#sh-contemp:hover{background:var(--paper-2)}
+.sh-sec-h{border-bottom-width:1px;padding-bottom:4px}
+.sh-sec-t{font-size:12px;letter-spacing:.06em;color:var(--ink)}
+.sh-sec-fit{border-radius:999px;font-size:11.5px;color:var(--ink-soft)}
+.sh-sec-note{font-size:11.5px;margin:4px 0 2px;font-style:italic}
+.sh-trace{padding:9px 2px}
+.sh-trace .wt{font-size:13.5px;font-weight:600}
+.sh-trace .fx{font-size:12px;margin-top:2px}
+@media (max-width:720px){
+  .sh-por{width:84px;height:84px;flex:0 0 84px}
+  .sh-name{font-size:19px}
+  .sh-sum{font-size:13.5px}
+  .sh-trace .wt{font-size:15px}
+  .sh-trace .fx{font-size:12.5px}
+}
+#share-view .ic-share{margin-right:5px}
+@media (max-width:720px){ #share-view .lbl{display:none} #share-view .ic-share{margin-right:0;width:14px;height:14px} }

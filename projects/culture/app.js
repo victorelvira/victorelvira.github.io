@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.31.2";
+const DATA_V = "0.33.1";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -199,9 +199,14 @@ let rankCut = 0;
 // 0.27: it counts PEOPLE, not traces (a person with thirty statues took thirty of the hundred), and it
 // can count them HERE (in the map's current bounds) or in the WORLD. Víctor: "quizás necesitamos los dos".
 let heldBack = 0;
+// At street scale the dial stops choosing (0.33). "The 500 best known here" is how to read a continent; in a street,
+// what you can walk to is what you want, and a plaque to a local poet is as much there as Cervantes' (Víctor,
+// 2026-09-25: "me siguen faltando placas y estatuas en algunos sitios").
+const STREET_ZOOM = 15;
+const dialSleeps = () => state.topWhere === "here" && map.getZoom() >= STREET_ZOOM;
 function recomputeRankCut() {
   heldBack = 0;
-  if (!state.topN) { rankCut = 0; return; }
+  if (!state.topN || dialSleeps()) { rankCut = 0; return; }
   const here = state.topWhere === "here" ? map.getBounds() : null;
   const best = new Map();
   for (const r of TRACES) {
@@ -475,7 +480,7 @@ function sitePopup(siteIdx, rows) {
   // card, like a statue. Both are asked for; the one that has nothing removes itself.
   const ins = (kind === "plaque" && !s[S_OSM] ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "") +
     // a museum's photo, kind and website, fetched the same way (build.py, culture/data/cards/)
-    (["museum", "statue", "battle", "event", "plaque", "grave"].includes(kind) ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "");
+    (["museum", "statue", "battle", "event", "plaque", "grave", "church"].includes(kind) ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "");
   const where = whereOf(s);
   const area = rows.every((r) => r.flags & F_APPROX);
   return `<div class="card"><div class="hd"><div class="nm">${esc(s[S_NAME])}</div>` +
@@ -981,8 +986,7 @@ $("preset-living").addEventListener("click", () => {
 });
 
 $("reset").addEventListener("click", () => {
-  for (const fam of ["what", "mount", "access", "marking", "dom", "verb"])
-    VOCAB[fam].forEach((_, i) => { state[fam][i] = true; });
+  resetFamilies();
   state.topN = TOP_DEFAULT; state.topWhere = "here"; state.q = ""; state.site = null;
   state.person = null; state.personName = ""; state.personSec = null; modeBack = null;
   $("filter").value = ""; $("filter-clear").hidden = true;
@@ -1071,13 +1075,13 @@ function openPerson(qid, keepScroll) {
     const isEvent = qid.startsWith("ev:");
     const SECTIONS = [
       { key: "life", title: isEvent ? "Where it happened" : "Their life",
-        note: isEvent ? "" : "where they were born, lived, worked, died or lie",
+        note: isEvent ? "" : "where they were born, lived, worked, died or lie",   // said once, in six words
         verbs: ["happened", "born", "lived", "worked", "died", "buried"] },
-      { key: "work", title: "Their work", note: "what they built, and where their work is on show",
+      { key: "work", title: "Their work", note: "what they built, and where their work is shown",
         verbs: ["built", "exhibited"] },
       { key: "remembered", title: "Remembered",
         note: isEvent ? "memorials of it, wherever they stand"
-                      : "statues, plaques and memorials put up in their memory: they need not have been there",
+                      : "put up in their memory, anywhere: they need not have been there",
         verbs: ["commemorated"] },
     ];
     const secOf = (r) => (SECTIONS.find((x) => x.verbs.includes(VOCAB.verb[r.verb])) || SECTIONS[2]).key;
@@ -1362,7 +1366,7 @@ function fillKnew(box) {
       `<span class="kn-r">${esc(REL_WORD[x.rel] || x.rel)}</span> ${esc(x.row.name)}</button>`).join("");
     box.innerHTML = `<div class="sh-sec-h"><span class="sh-sec-t">People they knew</span><span class="sh-sec-n">${list.length}</span>` +
       `<button type="button" class="sh-sec-fit kn-map" title="Them and the people they knew, together on the map">Together on the map</button></div>` +
-      `<div class="sh-sec-note">family, love, teachers and students, work: relations that mean they met (Wikidata)</div>` +
+      `<div class="sh-sec-note">family, love, teachers, students, work: ties that mean they met</div>` +
       svg + `<div class="kn-chips">${chips}</div>`;
     box.hidden = false;
     // touch a name: its line lights up; tap it: their card
@@ -1682,7 +1686,7 @@ function renderPanel() {
   const held = state.topN && !state.person && heldBack
     ? `<button type="button" id="ph-all" class="ph-more" title="Show everyone, not only the best known">+${heldBack.toLocaleString()} less known ${state.topWhere === "here" ? "here" : "in the world"}</button>` : "";
   $("panel-head").innerHTML = `<b>${nPeople.toLocaleString()}</b>` +
-    `<span class="ph-tail"> ${nPeople === 1 ? "person" : "people"} in view${state.topN && !state.person ? ` · the best known ${state.topWhere === "here" ? "here" : "in the world"}` : ""}</span>` + held;
+    `<span class="ph-tail"> ${nPeople === 1 ? "person" : "people"} in view${state.topN && !state.person && !dialSleeps() ? ` · the best known ${state.topWhere === "here" ? "here" : "in the world"}` : dialSleeps() && state.topN ? " · everyone, at street scale" : ""}</span>` + held;
   const ul = $("worklist");
   if (!vis.length) {
     ul.innerHTML = `<li class="empty">${t("Pan or zoom the map. Whoever is in view is listed here.")}</li>`;
@@ -2338,7 +2342,7 @@ $("chrome-toggle").addEventListener("click", () => {
 function foldSummary() {
   let n = 0;
   for (const fam of ["what", "access", "marking", "verb", "dom"])
-    if (VOCAB[fam] && VOCAB[fam].some((_, i) => state[fam][i] === false)) n++;
+    if (VOCAB[fam] && VOCAB[fam].some((x, i) => (state[fam][i] !== false) !== defaultOn(fam, x))) n++;
   if (state.topN !== TOP_DEFAULT || state.topWhere !== "here") n++;     // the default is not a filter the reader set
   if (state.person) n++;
   if (state.living) n++;
@@ -2443,6 +2447,14 @@ function absorb(d) {
  * showing MORE than its author saw is the honest failure; showing less, invisibly, is not.
  */
 const URL_FAMS = ["what", "mount", "access", "marking", "dom", "verb"];
+// What is shown before the reader touches anything (0.33). Víctor, 2026-09-25: "el atlas es de cultura, voy a querer
+// museos e iglesias, y que aparezcan por defecto sin marcar": the institutions are there, one tap away, and the map
+// opens on people. A museum that is somebody's house is filed as a house, so it stays on.
+const OFF_BY_DEFAULT = { what: ["museum", "church"] };
+const defaultOn = (fam, v) => !(OFF_BY_DEFAULT[fam] || []).includes(v);
+function resetFamilies() {
+  for (const fam of URL_FAMS) if (VOCAB[fam]) VOCAB[fam].forEach((v, i) => { state[fam][i] = defaultOn(fam, v); });
+}
 let urlTimer = null, urlBooted = false;
 
 function viewToURL() {
@@ -2450,7 +2462,7 @@ function viewToURL() {
   for (const fam of URL_FAMS) {
     const v = VOCAB[fam];
     if (!v) continue;
-    if (v.some((_, i) => state[fam][i] === false))
+    if (v.some((x, i) => (state[fam][i] !== false) !== defaultOn(fam, x)))
       p.set(fam, v.filter((_, i) => state[fam][i] !== false).join(",") || "none");
   }
   if (state.topN !== TOP_DEFAULT || state.topWhere !== "here") p.set("top", `${state.topN}${state.topN ? "-" + state.topWhere : ""}`);
@@ -2528,7 +2540,7 @@ function applyURL() {
   for (const fam of URL_FAMS) {
     const v = VOCAB[fam];
     if (!v) continue;
-    if (!p.has(fam)) { v.forEach((_, i) => { state[fam][i] = true; }); continue; }
+    if (!p.has(fam)) { v.forEach((x, i) => { state[fam][i] = defaultOn(fam, x); }); continue; }
     const on = new Set(p.get(fam) === "none" ? [] : p.get(fam).split(","));
     v.forEach((name, i) => { state[fam][i] = on.has(name); });
   }
@@ -2609,8 +2621,7 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     VOCAB = d.vocab; BUILD_AT = d.built;
     absorb(d);
     $("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
-    for (const fam of ["what", "mount", "access", "marking", "dom", "verb"])
-      VOCAB[fam].forEach((_, i) => { state[fam][i] = true; });
+    resetFamilies();
     const years = TRACES.map((r) => r.died ?? r.born).filter((y) => y != null).sort((a, b) => a - b);
     buildTimeline(years[Math.floor(years.length * 0.01)] || -500, years.at(-1) || 2026);
     indexPeople();
