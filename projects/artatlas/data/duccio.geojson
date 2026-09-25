@@ -2472,6 +2472,107 @@
     "location_src": "Uffizi Gallery",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.33954,
+     43.31548
+    ]
+   },
+   "properties": {
+    "painter": "Duccio",
+    "title": "Crucifix workshop Duccio",
+    "year": "",
+    "location": "Museo della Società di esecutori di pie disposizioni",
+    "city": "Siena",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Siena%2C%20museo%20pie%20disposizione%2C%20crocifisso%20di%20dietisalvi%20di%20speme.jpg?width=500",
+    "qid": "Q18611087",
+    "wikidata": "https://www.wikidata.org/wiki/Q18611087",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18611087",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museo-della-societa-di-esecutori-di-pie-disposizioni",
+    "location_src": "Museo della Società di esecutori di pie disposizioni",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.32869444,
+     43.31758333
+    ]
+   },
+   "properties": {
+    "painter": "Duccio",
+    "title": "Maestà - Backside",
+    "year": "",
+    "location": "Siena Cathedral",
+    "city": "Siena",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Maest%20001%20duccio%20siena%20duomo.jpg?width=500",
+    "qid": "Q136752841",
+    "wikidata": "https://www.wikidata.org/wiki/Q136752841",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q136752841",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "siena-cathedral",
+    "location_src": "Siena Cathedral",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.33954,
+     43.31548
+    ]
+   },
+   "properties": {
+    "painter": "Duccio",
+    "title": "Crucifixion Triptych.",
+    "year": "1500",
+    "location": "Museo della Società di esecutori di pie disposizioni",
+    "city": "Siena",
+    "country": "Italy",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Duccio%20di%20Buoninsegna%20cat02.jpg?width=500",
+    "qid": "Q141351023",
+    "wikidata": "https://www.wikidata.org/wiki/Q141351023",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141351023",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museo-della-societa-di-esecutori-di-pie-disposizioni",
+    "location_src": "Museo della Società di esecutori di pie disposizioni",
+    "kind": "museum",
+    "form": "painting",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-09-25",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, after death (1255–1319) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
   }
  ]
 }

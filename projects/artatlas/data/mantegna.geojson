@@ -4445,6 +4445,130 @@
     "location_src": "Louvre",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.8,
+     45.16111
+    ]
+   },
+   "properties": {
+    "painter": "Mantegna",
+    "title": "Camera degli Sposi - 1. Court Scene",
+    "year": "1500",
+    "location": "Camera degli Sposi",
+    "city": "Mantua",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrea%20Mantegna%20-%20Camera%20picta%2C%20la%20corte%2001.jpg?width=500",
+    "qid": "Q15980184",
+    "wikidata": "https://www.wikidata.org/wiki/Q15980184",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q15980184",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "camera-degli-sposi",
+    "location_src": "Camera degli Sposi",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.879788,
+     45.410566
+    ]
+   },
+   "properties": {
+    "painter": "Mantegna",
+    "title": "Assumption of the Virgin",
+    "year": "1453",
+    "location": "Church of the Eremitani",
+    "city": "Padua",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mantegna%2C%20assunzione%20della%20vergine.JPG?width=500",
+    "qid": "Q3627395",
+    "wikidata": "https://www.wikidata.org/wiki/Q3627395",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3627395",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "church-of-the-eremitani",
+    "location_src": "Church of the Eremitani",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.78692,
+     45.15035
+    ]
+   },
+   "properties": {
+    "painter": "Mantegna",
+    "title": "Occasio and Poenitentia",
+    "year": "1500",
+    "location": "MACA - Mantova Collezioni Antiche",
+    "city": "Mantua",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Scuola%20di%20mantegna%2C%20Occasio%20e%20Poenitentia.jpg?width=500",
+    "qid": "Q3880642",
+    "wikidata": "https://www.wikidata.org/wiki/Q3880642",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3880642",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "maca-mantova-collezioni-antiche",
+    "location_src": "MACA - Mantova Collezioni Antiche",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.88053,
+     45.40137
+    ]
+   },
+   "properties": {
+    "painter": "Mantegna",
+    "title": "Monogram of Christ between two saints",
+    "year": "1452",
+    "location": "Basilica of Saint Anthony of Padua",
+    "city": "Padua",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mantegna%2C%20Christogram%20w.Sts%20Anthony%20%2BBernardino%2C%20Anthonian%20Museum%2C%20Padua.jpg?width=500",
+    "qid": "Q3998779",
+    "wikidata": "https://www.wikidata.org/wiki/Q3998779",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3998779",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "basilica-of-saint-anthony-of-padua",
+    "location_src": "Basilica of Saint Anthony of Padua",
+    "kind": "church",
+    "form": "painting"
+   }
   }
  ]
 }

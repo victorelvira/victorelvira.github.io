@@ -4394,7 +4394,15 @@
     "location_src": "Ny Carlsberg Glyptotek",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q50697763"
+    "qid_shared": "Q50697763",
+    "qid": "Q50697763",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q50697763 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -7325,7 +7333,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "the-nelson-atkins-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q129097749",
+    "wikidata": "https://www.wikidata.org/wiki/Q4949676",
     "_merged": [
      {
       "source": "Wikidata",
@@ -7338,7 +7346,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q129097749",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q4949676",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q4949676 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -28982,12 +28998,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "shelburne-museum-vermont-house",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q47781086",
     "location_src": "Shelburne Museum Vermont House",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q5074352",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q47781086",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q47781086 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -29581,12 +29605,20 @@
     },
     "museum_id": "art-gallery-of-ontario",
     "country": "Canada",
-    "wikidata": "https://www.wikidata.org/wiki/Q5074352",
+    "wikidata": "https://www.wikidata.org/wiki/Q50012973",
     "location_src": "Art Gallery of Ontario",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q5074352",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q50012973",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q50012973 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -30772,7 +30804,7 @@
     },
     "museum_id": "national-gallery-of-art",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q113482581",
     "_merged": [
      {
       "source": "Wikidata",
@@ -30785,7 +30817,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q468623",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q113482581",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q113482581 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -30910,12 +30950,20 @@
     "museum_id": "palais-des-beaux-arts-de-lille",
     "city": "Lille",
     "country": "France",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q25452449",
     "location_src": "Palais des Beaux-Arts de Lille",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q468623",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q25452449",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q25452449 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -31178,14 +31226,22 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "princeton-art-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q468623",
+    "wikidata": "https://www.wikidata.org/wiki/Q106767908",
     "city": "Princeton",
     "country": "United States",
     "location_src": "Princeton University Art Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q468623",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q106767908",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q106767908 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -48767,6 +48823,1074 @@
     },
     "museum_id": "st-gallen-museum-of-art",
     "location_src": "St. Gallen Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.26738,
+     48.85928
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Glycines",
+    "year": "1919",
+    "location": "Musée Marmottan Monet",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Glycines%20W1903%20-%20Mus%C3%A9e%20Marmottan-Monet.jpg?width=500",
+    "qid": "Q63952039",
+    "wikidata": "https://www.wikidata.org/wiki/Q63952039",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q63952039",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-marmottan-monet",
+    "location_src": "Musée Marmottan Monet",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "16th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.26738,
+     48.85928
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Glycines",
+    "year": "1919",
+    "location": "Musée Marmottan Monet",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Glycines%20W1903%20-%20Mus%C3%A9e%20Marmottan-Monet.jpg?width=500",
+    "qid": "Q105099615",
+    "wikidata": "https://www.wikidata.org/wiki/Q105099615",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q105099615",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-marmottan-monet",
+    "location_src": "Musée Marmottan Monet",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "16th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.11436,
+     42.37409
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "View of the Seine, Lavacourt",
+    "year": "1880",
+    "location": "Fogg Museum",
+    "city": "Cambridge",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20-%20View%20of%20the%20Seine%2C%20Lavacourt%2C%201880.jpg?width=500",
+    "qid": "Q106875235",
+    "wikidata": "https://www.wikidata.org/wiki/Q106875235",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q106875235",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum",
+    "kind": "museum",
+    "form": "painting",
+    "venue_of": "Harvard Art Museums"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.26738,
+     48.85928
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "London. Parliament. Reflections on the Thames",
+    "year": "1905",
+    "location": "Musée Marmottan Monet",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%2C%20Londres%2C%20Le%20Parlement%2C%20Reflets%20sur%20la%20Tamise%2C%201905%2C%20huile%20sur%20toile%2C%20Mus%C3%A9e%20Marmottan%20Monet%2C%20Paris.jpg?width=500",
+    "qid": "Q47781362",
+    "wikidata": "https://www.wikidata.org/wiki/Q47781362",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q47781362",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-marmottan-monet",
+    "location_src": "Musée Marmottan Monet",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "16th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.0752,
+     35.10931
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Peupliers près de Giverny, temps couvert",
+    "year": "1891",
+    "location": "MOA Museum of Art",
+    "city": "Atami",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20Poplars-at-giverny%20MOA%20W1291.jpg?width=500",
+    "qid": "Q49473320",
+    "wikidata": "https://www.wikidata.org/wiki/Q49473320",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q49473320",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "moa-museum-of-art",
+    "location_src": "MOA Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.26738,
+     48.85928
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Agapanthes",
+    "year": "1900",
+    "location": "Musée Marmottan Monet",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20Agapanthes%20Marmottan%20%28cropped%29.jpg?width=500",
+    "qid": "Q50415959",
+    "wikidata": "https://www.wikidata.org/wiki/Q50415959",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50415959",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-marmottan-monet",
+    "location_src": "Musée Marmottan Monet",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "16th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.26738,
+     48.85928
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "The rose-way in Giverny",
+    "year": "1920",
+    "location": "Musée Marmottan Monet",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet-%20Der%20Rosenweg%20in%20Giverny.jpeg?width=500",
+    "qid": "Q50415971",
+    "wikidata": "https://www.wikidata.org/wiki/Q50415971",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50415971",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-marmottan-monet",
+    "location_src": "Musée Marmottan Monet",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "16th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60603,
+     55.74703
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Seagulls, the River Thames and the Houses of Parliament",
+    "year": "1904",
+    "location": "Pushkin Museum",
+    "city": "Moscow",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seagulls%2C%20the%20Thames%20%26%20Houses%20of%20Parliament%20by%20Claude%20Monet%2C%20Pushkin%20Museum.JPG?width=500",
+    "qid": "Q50433805",
+    "wikidata": "https://www.wikidata.org/wiki/Q50433805",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50433805",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Khamovniki District"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60603,
+     55.74703
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Luncheon on the Grass",
+    "year": "1866",
+    "location": "Pushkin Museum",
+    "city": "Moscow",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Le%20D%C3%A9jeuner%20sur%20l%27herbe%20%281866%29%20-%20Pushkin%20Museum%20%D0%96-3307.jpg?width=500",
+    "qid": "Q50434651",
+    "wikidata": "https://www.wikidata.org/wiki/Q50434651",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50434651",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Khamovniki District"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Luncheon on the Grass, Central Panel",
+    "year": "1866",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Le%20D%C3%A9jeuner%20sur%20l%27herbe%2C%20partie%20centrale.jpg?width=500",
+    "qid": "Q141420094",
+    "wikidata": "https://www.wikidata.org/wiki/Q141420094",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141420094",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Chrysanths",
+    "year": "1878",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20051.jpg?width=500",
+    "qid": "Q17491064",
+    "wikidata": "https://www.wikidata.org/wiki/Q17491064",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17491064",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Luncheon on the Grass, Left Panel",
+    "year": "1866",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Le%20D%C3%A9jeuner%20sur%20l%27herbe%2C%20partie%20gauche.jpg?width=500",
+    "qid": "Q17492904",
+    "wikidata": "https://www.wikidata.org/wiki/Q17492904",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17492904",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "London, the Houses of Parliament, Sunlight Opening in Fog",
+    "year": "1904",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/London%2C%20the%20Houses%20of%20Parliament%2C%20Sunlight%20Opening%20in%20Fog%2C%20by%20Claude%20Monet.jpg?width=500",
+    "qid": "Q17493907",
+    "wikidata": "https://www.wikidata.org/wiki/Q17493907",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17493907",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Haystacks, end of Summer",
+    "year": "1891",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Haystacks%2C%20end%20of%20Summer%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q17494280",
+    "wikidata": "https://www.wikidata.org/wiki/Q17494280",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17494280",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.39278,
+     43.65361
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Vétheuil en été",
+    "year": "1879",
+    "location": "Art Gallery of Ontario",
+    "city": "Toronto",
+    "country": "Canada",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20-%20V%C3%A9theuil%20in%20Summer%2C%201879.jpg?width=500",
+    "qid": "Q116241579",
+    "wikidata": "https://www.wikidata.org/wiki/Q116241579",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116241579",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "art-gallery-of-ontario",
+    "location_src": "Art Gallery of Ontario",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.38557,
+     33.79005
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Le Parlement, symphonie en bleu",
+    "year": "1903",
+    "location": "High Museum of Art",
+    "city": "Atlanta",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Houses%20of%20Parliament%20in%20the%20Fog%20by%20Claude%20Monet%2C%20High%20Museum%20of%20Art.jpg?width=500",
+    "qid": "Q117435339",
+    "wikidata": "https://www.wikidata.org/wiki/Q117435339",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q117435339",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "high-museum-of-art",
+    "location_src": "High Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09417,
+     42.33944
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "View of the Sea at Sunset",
+    "year": "1862",
+    "location": "Museum of Fine Arts Boston",
+    "city": "Boston",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20-%20View%20of%20the%20Sea%20at%20Sunset%2C%20about%201862%2C%2022.604.jpg?width=500",
+    "qid": "Q130243141",
+    "wikidata": "https://www.wikidata.org/wiki/Q130243141",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q130243141",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.96363,
+     40.67121
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Houses of Parliament, Sunlight Effect (Le Parlement, effet de soleil)",
+    "year": "1903",
+    "location": "Brooklyn Museum",
+    "city": "Brooklyn",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Houses%20of%20Parliament%2C%20Sunlight%20Effect%20%28Le%20Parlement%2C%20effet%20de%20soleil%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q28777013",
+    "wikidata": "https://www.wikidata.org/wiki/Q28777013",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28777013",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "brooklyn-museum",
+    "location_src": "Brooklyn Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.57111,
+     48.14989
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Le Pont sur la Seine à Argenteuil",
+    "year": "1874",
+    "location": "Neue Pinakothek",
+    "city": "Munich",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20w313.jpg?width=500",
+    "qid": "Q30093031",
+    "wikidata": "https://www.wikidata.org/wiki/Q30093031",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q30093031",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "neue-pinakothek",
+    "location_src": "Neue Pinakothek",
+    "kind": "museum",
+    "form": "painting",
+    "venue_of": "Bavarian State Painting Collections"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62389,
+     41.87944
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Houses of Parliament, London",
+    "year": "1900",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%2C%20Houses%20of%20Parliament%2C%20London%2C%201900-1903%2C%201933.1164%2C%20Art%20Institute%20of%20Chicago.jpg?width=500",
+    "qid": "Q20267587",
+    "wikidata": "https://www.wikidata.org/wiki/Q20267587",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20267587",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62389,
+     41.87944
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Venice, Palazzo Dario",
+    "year": "1908",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20-%20Venice%2C%20Palazzo%20Dario%2C%201908.jpg?width=500",
+    "qid": "Q20268687",
+    "wikidata": "https://www.wikidata.org/wiki/Q20268687",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20268687",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62389,
+     41.87944
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Stack of Wheat",
+    "year": "1890",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Stack%20of%20Wheat%20-%201983.29%20-%20Art%20Institute%20of%20Chicago.jpg?width=500",
+    "qid": "Q20268689",
+    "wikidata": "https://www.wikidata.org/wiki/Q20268689",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20268689",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62389,
+     41.87944
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Branch of the Seine near Giverny (Mist), from the series \"Mornings on the Seine\"",
+    "year": "1897",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20-%20Branch%20of%20the%20Seine%20near%20Giverny%20%28Mist%29%2C%20from%20the%20series%20%E2%80%9CMornings%20on%20the%20Seine%E2%80%9D%2C%201897.jpg?width=500",
+    "qid": "Q20269967",
+    "wikidata": "https://www.wikidata.org/wiki/Q20269967",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20269967",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Luncheon on the Grass",
+    "year": "1866",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Le%20dejeurner%20sur%20l%27herbe%20%28left%20panel%29.jpg?width=500",
+    "qid": "Q1167912",
+    "wikidata": "https://www.wikidata.org/wiki/Q1167912",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1167912",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62389,
+     41.87944
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Bordighera",
+    "year": "1884",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bordighera.jpg?width=500",
+    "qid": "Q3236083",
+    "wikidata": "https://www.wikidata.org/wiki/Q3236083",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3236083",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Rouen Cathedral, Portal and Tower Saint-Romain, Morning Light",
+    "year": "1893",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%20-%20Cath%C3%A9drale%20de%20Rouen.%20Harmonie%20blanche.jpg?width=500",
+    "qid": "Q3820706",
+    "wikidata": "https://www.wikidata.org/wiki/Q3820706",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3820706",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     37.60603,
+     55.74703
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Belle-Île Rocks",
+    "year": "1886",
+    "location": "Pushkin Museum",
+    "city": "Moscow",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27The%20Pyramids%20at%20Port-Coton%27%20by%20Claude%20Monet%2C%201886%2C%20Pushkin%20Museum.jpg?width=500",
+    "qid": "Q3952498",
+    "wikidata": "https://www.wikidata.org/wiki/Q3952498",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3952498",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "pushkin-museum",
+    "location_src": "Pushkin Museum",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Khamovniki District"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.10262,
+     49.48504
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Le Parlement de Londres, effet de brouillard",
+    "year": "1903",
+    "location": "Museum of modern art André Malraux - MuMa",
+    "city": "Le Havre",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20-%20Le%20Parlement%20de%20Londres%2C%20effet%20de%20brouillard%2C%201903.jpg?width=500",
+    "qid": "Q56812706",
+    "wikidata": "https://www.wikidata.org/wiki/Q56812706",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q56812706",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museum-of-modern-art-andre-malraux-muma",
+    "location_src": "Museum of modern art André Malraux - MuMa",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -72.63638,
+     42.3185
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Field of Poppies",
+    "year": "1890",
+    "location": "Smith College Museum of Art",
+    "city": "Northampton",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20-%20Wildenstein%201996%2C%201251.png?width=500",
+    "qid": "Q83901250",
+    "wikidata": "https://www.wikidata.org/wiki/Q83901250",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q83901250",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "smith-college-museum-of-art",
+    "location_src": "Smith College Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     31.2197,
+     30.0356
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Bridge over the Water-Lilies",
+    "year": "1899",
+    "location": "Mohamed Mahmoud Khalil Museum",
+    "city": "Giza Governorate",
+    "country": "Egypt",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet%20-%20Wildenstein%201996%2C%201520.png?width=500",
+    "qid": "Q84056394",
+    "wikidata": "https://www.wikidata.org/wiki/Q84056394",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q84056394",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "mohamed-mahmoud-khalil-museum",
+    "location_src": "Mohamed Mahmoud Khalil Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.06228,
+     52.39517
+    ]
+   },
+   "properties": {
+    "painter": "Claude Monet",
+    "title": "Le Palais Contarini",
+    "year": "1908",
+    "location": "Museum Barberini",
+    "city": "Potsdam",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/MB-Mon-31%20Monet%20Der-Palazzo-Contarini.jpg?width=500",
+    "qid": "Q66486301",
+    "wikidata": "https://www.wikidata.org/wiki/Q66486301",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q66486301",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museum-barberini",
+    "location_src": "Museum Barberini",
     "kind": "museum",
     "form": "painting"
    }

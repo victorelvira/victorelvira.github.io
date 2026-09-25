@@ -3708,12 +3708,20 @@
     "museum_id": "wallraf-richartz-museum",
     "city": "Cologne",
     "country": "Germany",
-    "wikidata": "https://www.wikidata.org/wiki/Q11729456",
+    "wikidata": "https://www.wikidata.org/wiki/Q21178779",
     "location_src": "Wallraf–Richartz Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q11729456",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q21178779",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q21178779 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -40117,6 +40125,89 @@
     },
     "museum_id": "cannon-hall",
     "location_src": "Cannon Hall",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     17.61941,
+     59.7038
+    ]
+   },
+   "properties": {
+    "painter": "Anthony van Dyck",
+    "title": "Mary Villiers, Duchess of Richmond and Lennox (1622 – 85)",
+    "year": "1640",
+    "location": "Skokloster Castle",
+    "city": "Håbo",
+    "country": "Sweden",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20Villiers%2C%20Duchess%20of%20Richmond%20and%20Lennox%20%281622%20%E2%80%93%2085%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q40861917",
+    "wikidata": "https://www.wikidata.org/wiki/Q40861917",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q40861917",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "skokloster-castle",
+    "location_src": "Skokloster Castle",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Håbo Municipality"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.31361,
+     59.94056
+    ]
+   },
+   "properties": {
+    "painter": "Anthony van Dyck",
+    "title": "Rest on the Flight into Egypt (Madonna with Partridges)",
+    "year": "1632",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20and%20Pauwel%20de%20Vos%20-%20Rest%20on%20the%20Flight%20into%20Egypt%20%28Madonna%20with%20Partridges%29.jpg?width=500",
+    "qid": "Q27974869",
+    "wikidata": "https://www.wikidata.org/wiki/Q27974869",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27974869",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum",
     "kind": "museum",
     "form": "painting"
    }

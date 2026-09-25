@@ -4423,6 +4423,88 @@
     "location_src": "Galleria Borghese",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.05552,
+     43.81645
+    ]
+   },
+   "properties": {
+    "painter": "Andrea del Sarto",
+    "title": "Triumph of Caesar",
+    "year": "1525",
+    "location": "Villa Medicea of Poggio a Caiano",
+    "city": "Poggio a Caiano",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrea%20del%20Sarto%20-%20Triumph%20of%20Caesar%20-%20WGA00382.jpg?width=500",
+    "qid": "Q633527",
+    "wikidata": "https://www.wikidata.org/wiki/Q633527",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q633527",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "villa-medicea-of-poggio-a-caiano",
+    "location_src": "Villa Medicea of Poggio a Caiano",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.26128,
+     43.7769
+    ]
+   },
+   "properties": {
+    "painter": "Andrea del Sarto",
+    "title": "Madonna with the Sack",
+    "year": "1525",
+    "location": "Santissima Annunziata",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrea%20del%20Sarto%20-%20Madonna%20del%20sacco%20%28Madonna%20with%20the%20Sack%29%20-%20WGA00409.jpg?width=500",
+    "qid": "Q3213751",
+    "wikidata": "https://www.wikidata.org/wiki/Q3213751",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3213751",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "santissima-annunziata",
+    "location_src": "Santissima Annunziata",
+    "kind": "church",
+    "form": "painting"
+   }
   }
  ]
 }

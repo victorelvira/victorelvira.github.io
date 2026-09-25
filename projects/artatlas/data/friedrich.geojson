@@ -1424,7 +1424,15 @@
     "location_src": "Galerie Neue Meister",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q232087"
+    "qid_shared": "Q232087",
+    "qid": "Q232087",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q232087 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1905,13 +1913,21 @@
     "museum_id": "neue-pinakothek",
     "city": "Munich",
     "country": "Germany",
-    "wikidata": "https://www.wikidata.org/wiki/Q1423223",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602483",
     "wga_url": "https://www.wga.hu/html/f/friedric/3/305fried.html",
     "location_src": "Neue Pinakothek",
     "venue_of": "Bavarian State Painting Collections",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q1423223"
+    "qid_shared": "Q1423223",
+    "qid": "Q18602483",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18602483 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -8144,6 +8160,294 @@
     "kind": "museum",
     "form": "painting",
     "city_src": "Bezirk Mitte"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.00306,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Landscape with Pavilion",
+    "year": "1797",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Landschaft%20mit%20Pavillon%20HKH.jpg?width=500",
+    "qid": "Q18602464",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602464",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602464",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.367,
+     52.5084
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Franz und Daniel aus Schillers \"Die Räuber\"",
+    "year": "1799",
+    "location": "Kupferstichkabinett Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Franz%20und%20Daniel%20aus%20Schillers%20%22Die%20R%C3%A4uber%22.jpg?width=500",
+    "qid": "Q133176273",
+    "wikidata": "https://www.wikidata.org/wiki/Q133176273",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q133176273",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kupferstichkabinett-berlin",
+    "location_src": "Kupferstichkabinett Berlin",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.00306,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Emilias Kilde bei Kopenhagen",
+    "year": "1797",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Emilias%20Kilde%20bei%20Kopenhagen.jpg?width=500",
+    "qid": "Q124584807",
+    "wikidata": "https://www.wikidata.org/wiki/Q124584807",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124584807",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.31361,
+     59.94056
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "The Rock Gates in Neurathen",
+    "year": "1837",
+    "location": "Hermitage Museum",
+    "city": "Saint Petersburg",
+    "country": "Russia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Das%20Neurathener%20Felsentor.jpg?width=500",
+    "qid": "Q18602613",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602613",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602613",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.367,
+     52.5084
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Amalie und Franz Moor aus Schillers \"Die Räuber\"",
+    "year": "1799",
+    "location": "Kupferstichkabinett Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/FCDc023d%200119%20Berlin%20850484%204252202.jpg?width=500",
+    "qid": "Q134289351",
+    "wikidata": "https://www.wikidata.org/wiki/Q134289351",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q134289351",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kupferstichkabinett-berlin",
+    "location_src": "Kupferstichkabinett Berlin",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.367,
+     52.5084
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "View through dunes to the sea",
+    "year": "1824",
+    "location": "Kupferstichkabinett Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%20-%20Blick%20durch%20D%C3%BCnen%20auf%20das%20Meer%2C%201824.jpg?width=500",
+    "qid": "Q106930255",
+    "wikidata": "https://www.wikidata.org/wiki/Q106930255",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q106930255",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kupferstichkabinett-berlin",
+    "location_src": "Kupferstichkabinett Berlin",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.74444,
+     51.05194
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Frederiksberger Quelle bei Kopenhagen",
+    "year": "1797",
+    "location": "Galerie Neue Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Frederiksberger%20Quelle%20bei%20Kopenhagen%20-%20Staatliche%20Kunstsammlungen%20Dresden%2C%20Kupferstichkabinett.jpg?width=500",
+    "qid": "Q124515759",
+    "wikidata": "https://www.wikidata.org/wiki/Q124515759",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124515759",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "galerie-neue-meister",
+    "location_src": "Galerie Neue Meister",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.00306,
+     53.555
+    ]
+   },
+   "properties": {
+    "painter": "Caspar David Friedrich",
+    "title": "Die Luisenquelle in Frederiksdahl",
+    "year": "1797",
+    "location": "Hamburger Kunsthalle",
+    "city": "Hamburg-Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20-%20Die%20Luisenquelle%20in%20Frederiksdahl%20-%20Hamburger%20Kunsthalle%2C%20Kupferstichkabinett.jpg?width=500",
+    "qid": "Q124570449",
+    "wikidata": "https://www.wikidata.org/wiki/Q124570449",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124570449",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "hamburger-kunsthalle",
+    "location_src": "Hamburger Kunsthalle",
+    "kind": "museum",
+    "form": "painting"
    }
   }
  ]

@@ -5040,6 +5040,48 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Jacques-Louis David",
+    "title": "The Coronation of Gabo Napoleon",
+    "year": "1807",
+    "location": "Louvre",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Le%20Sacre%20de%20Napol%C3%A9on%20-%20Jacques-Louis%20David%20-%20Mus%C3%A9e%20du%20Louvre%20Peintures%20INV%203699%20%3B%20MR%201437.jpg?width=500",
+    "qid": "Q1231009",
+    "wikidata": "https://www.wikidata.org/wiki/Q1231009",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1231009",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "1st arrondissement of Paris"
+   }
   }
  ]
 }

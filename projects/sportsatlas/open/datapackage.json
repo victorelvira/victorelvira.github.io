@@ -642,8 +642,8 @@
    "format": "csv",
    "mediatype": "text/csv",
    "encoding": "utf-8",
-   "bytes": 386502,
-   "hash": "b0d07126ccba9633557991c1f4ce44fc",
+   "bytes": 409789,
+   "hash": "32ec0158dfdd376e8719139092191d4b",
    "rows": 1939,
    "schema": {
     "fields": [
@@ -701,6 +701,18 @@
      },
      {
       "name": "surface",
+      "type": "string"
+     },
+     {
+      "name": "court",
+      "type": "string"
+     },
+     {
+      "name": "indoor",
+      "type": "string"
+     },
+     {
+      "name": "court_from",
       "type": "string"
      }
     ]
@@ -891,14 +903,260 @@
    }
   },
   {
+   "name": "olympic_games",
+   "path": "olympic_games.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 3834,
+   "hash": "0090a130f1efd1d6e8fc8f71f2b03aa7",
+   "rows": 33,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "year",
+      "type": "string"
+     },
+     {
+      "name": "title",
+      "type": "string"
+     },
+     {
+      "name": "host_city",
+      "type": "string"
+     },
+     {
+      "name": "host_country",
+      "type": "string"
+     },
+     {
+      "name": "held",
+      "type": "string"
+     },
+     {
+      "name": "committees",
+      "type": "string"
+     },
+     {
+      "name": "athletes",
+      "type": "string"
+     },
+     {
+      "name": "events",
+      "type": "string"
+     },
+     {
+      "name": "events_read",
+      "type": "string"
+     },
+     {
+      "name": "golds",
+      "type": "string"
+     },
+     {
+      "name": "sports",
+      "type": "string"
+     },
+     {
+      "name": "disciplines",
+      "type": "string"
+     },
+     {
+      "name": "venue_wikidata",
+      "type": "string"
+     },
+     {
+      "name": "wikipedia",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "olympic_disciplines",
+   "path": "olympic_disciplines.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 4255,
+   "hash": "d33c70f79491993daf5f88da01a56149",
+   "rows": 66,
+   "schema": {
+    "fields": [
+     {
+      "name": "code",
+      "type": "string"
+     },
+     {
+      "name": "discipline",
+      "type": "string"
+     },
+     {
+      "name": "sport",
+      "type": "string"
+     },
+     {
+      "name": "federation",
+      "type": "string"
+     },
+     {
+      "name": "pictogram_file",
+      "type": "string"
+     },
+     {
+      "name": "games",
+      "type": "string"
+     },
+     {
+      "name": "events",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "olympic_programme",
+   "path": "olympic_programme.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 27339,
+   "hash": "6752cc64956fbacb9fbb0aa5ab6a3f22",
+   "rows": 893,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "code",
+      "type": "string"
+     },
+     {
+      "name": "events",
+      "type": "string"
+     },
+     {
+      "name": "demonstration",
+      "type": "string"
+     },
+     {
+      "name": "committees",
+      "type": "string"
+     },
+     {
+      "name": "athletes",
+      "type": "string"
+     },
+     {
+      "name": "shown_as",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "olympic_medals",
+   "path": "olympic_medals.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 46570,
+   "hash": "8dc8157e743237ffe56bf3c2c19ab587",
+   "rows": 1431,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "noc",
+      "type": "string"
+     },
+     {
+      "name": "committee",
+      "type": "string"
+     },
+     {
+      "name": "gold",
+      "type": "string"
+     },
+     {
+      "name": "silver",
+      "type": "string"
+     },
+     {
+      "name": "bronze",
+      "type": "string"
+     },
+     {
+      "name": "host",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
+   "name": "olympic_medallists",
+   "path": "olympic_medallists.csv",
+   "format": "csv",
+   "mediatype": "text/csv",
+   "encoding": "utf-8",
+   "bytes": 3010957,
+   "hash": "bacf54359d4cf63f16bb70dd93b7cff4",
+   "rows": 37557,
+   "schema": {
+    "fields": [
+     {
+      "name": "edition_id",
+      "type": "string"
+     },
+     {
+      "name": "sport",
+      "type": "string"
+     },
+     {
+      "name": "event",
+      "type": "string"
+     },
+     {
+      "name": "medal",
+      "type": "string"
+     },
+     {
+      "name": "noc",
+      "type": "string"
+     },
+     {
+      "name": "athlete_wikipedia",
+      "type": "string"
+     },
+     {
+      "name": "athlete",
+      "type": "string"
+     },
+     {
+      "name": "team_size",
+      "type": "string"
+     }
+    ]
+   }
+  },
+  {
    "name": "venues",
    "path": "venues.csv",
    "format": "csv",
    "mediatype": "text/csv",
    "encoding": "utf-8",
-   "bytes": 103639,
-   "hash": "37bc8c8cb1e63d19126266428c47a6b9",
-   "rows": 1270,
+   "bytes": 105433,
+   "hash": "ae98ea33db2f2429e8f3dbf1f797dd1d",
+   "rows": 1291,
    "schema": {
     "fields": [
      {

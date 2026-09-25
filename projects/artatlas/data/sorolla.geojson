@@ -11856,6 +11856,37 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.42307,
+     36.72134
+    ]
+   },
+   "properties": {
+    "painter": "Joaquín Sorolla",
+    "title": "Playing the Guitar",
+    "year": "1889",
+    "location": "Carmen Thyssen Museum",
+    "city": "Málaga",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joaqu%C3%ADn%20Sorolla%20y%20Bastida%20-%20Tocando%20la%20guitarra%20%28ca.%201889%29.jpg?width=500",
+    "qid": "Q124173650",
+    "wikidata": "https://www.wikidata.org/wiki/Q124173650",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124173650",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "carmen-thyssen-museum",
+    "location_src": "Carmen Thyssen Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

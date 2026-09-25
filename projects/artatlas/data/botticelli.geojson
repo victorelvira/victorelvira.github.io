@@ -7443,6 +7443,88 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.09647,
+     43.88083
+    ]
+   },
+   "properties": {
+    "painter": "Botticelli",
+    "title": "Painted crucifix",
+    "year": "1500",
+    "location": "Palazzo Pretorio Museum",
+    "city": "Prato",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Museo%20dell%27opera%20del%20duomo%2C%20prato%2C%20crocifisso%20attribuito%20al%20Botticelli%2C.jpg?width=500",
+    "qid": "Q126008829",
+    "wikidata": "https://www.wikidata.org/wiki/Q126008829",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q126008829",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "palazzo-pretorio-museum",
+    "location_src": "Palazzo Pretorio Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Botticelli",
+    "title": "Madonna and Child with the Young St. John the Baptist",
+    "year": "1500",
+    "location": "Louvre",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2004%20Louvre.jpg?width=500",
+    "qid": "Q9500247",
+    "wikidata": "https://www.wikidata.org/wiki/Q9500247",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q9500247",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

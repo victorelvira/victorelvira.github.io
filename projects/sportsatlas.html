@@ -15,8 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://victorelvira.github.io/projects/sportsatlas/og.jpg">
 <link rel="icon" type="image/svg+xml" href="sportsatlas/favicon.svg">
-<link rel="stylesheet" href="sportsatlas/vendor/leaflet.css?v=0.7.0">
-<link rel="stylesheet" href="sportsatlas/style.css?v=0.7.0">
+<link rel="stylesheet" href="sportsatlas/style.css?v=0.9.0">
 </head>
 <body>
 <nav id="navbar">
@@ -34,6 +33,7 @@
   <div id="sport-tabs" role="tablist" aria-label="Sport">
     <button role="tab" data-sport="football" aria-selected="true">Football</button>
     <button role="tab" data-sport="tennis" aria-selected="false">Tennis</button>
+    <button role="tab" data-sport="olympics" aria-selected="false">Olympics</button>
   </div>
   <div id="totals"></div>
   <button id="about-tab" type="button">About</button>
@@ -54,7 +54,8 @@
 <main id="content">
   <div id="subbar"><span id="count"></span><span class="right" id="active"></span></div>
   <div id="stage">
-    <div id="tl-wrap" hidden><svg id="tl"></svg></div>
+    <div id="tl-wrap" hidden><div id="tl-tools"><button type="button" data-tlz="out" title="Shorten the years" aria-label="Zoom out" disabled>−</button><button type="button" data-tlz="in" title="Stretch the years" aria-label="Zoom in">+</button><button type="button" data-tlz="fit" title="Back to all the years" hidden>all</button></div><div id="tl-scroll"><svg id="tl"></svg></div><svg id="tl-lbl" aria-hidden="false"></svg></div>
+    <div id="tl-key" hidden></div>
     <div id="scroll"><table class="cat" id="table"></table><button id="more" hidden>Show more</button></div>
     <div id="mapview" hidden><div id="map"></div></div>
   </div>
@@ -66,7 +67,6 @@
 <div id="tip"></div>
 <div id="drawer" hidden></div>
 
-<script src="sportsatlas/vendor/leaflet.js?v=0.7.0"></script>
-<script src="sportsatlas/app.js?v=0.7.0"></script>
+<script src="sportsatlas/app.js?v=0.9.0"></script>
 </body>
 </html>

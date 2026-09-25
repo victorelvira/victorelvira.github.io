@@ -9329,6 +9329,47 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.7369,
+     51.0528
+    ]
+   },
+   "properties": {
+    "painter": "Guido Reni",
+    "title": "Maria watching over the sleeping Child",
+    "year": "1616",
+    "location": "Gemäldegalerie Alte Meister",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mar%C3%ADa%20inclinada%20ante%20el%20Ni%C3%B1o%20Jes%C3%BAs%20dormido%20-%20Guido%20Reni.jpg?width=500",
+    "qid": "Q50323583",
+    "wikidata": "https://www.wikidata.org/wiki/Q50323583",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50323583",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Bologna",
+    "creation_lat": 44.493889,
+    "creation_lon": 11.342778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "gemaldegalerie-alte-meister",
+    "location_src": "Gemäldegalerie Alte Meister",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

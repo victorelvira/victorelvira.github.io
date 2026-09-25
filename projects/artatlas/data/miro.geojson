@@ -3201,6 +3201,130 @@
     "location_src": "Art Institute of Chicago",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.15331,
+     41.36833
+    ]
+   },
+   "properties": {
+    "painter": "Joan Miró",
+    "title": "Mural for IBM",
+    "year": "1978",
+    "location": "Museu Nacional d'Art de Catalunya",
+    "city": "Sants-Montjuïc",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Presentaci%C3%B3%20Mural%20per%20a%20IBM.jpg?width=500",
+    "qid": "Q20100734",
+    "wikidata": "https://www.wikidata.org/wiki/Q20100734",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20100734",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museu-nacional-d-art-de-catalunya",
+    "location_src": "Museu Nacional d'Art de Catalunya",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.44407,
+     49.4801
+    ]
+   },
+   "properties": {
+    "painter": "Joan Miró",
+    "title": "Miró Wall",
+    "year": "1979",
+    "location": "Wilhelm-Hack-Museum",
+    "city": "Ludwigshafen",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hack-Museum%20Fassade.jpg?width=500",
+    "qid": "Q325212",
+    "wikidata": "https://www.wikidata.org/wiki/Q325212",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q325212",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "wilhelm-hack-museum",
+    "location_src": "Wilhelm-Hack-Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.07584,
+     41.30245
+    ]
+   },
+   "properties": {
+    "painter": "Joan Miró",
+    "title": "Wall of the Barcelona Airport",
+    "year": "1970",
+    "location": "Terminal 2",
+    "city": "El Prat de Llobregat",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Terminal%20B.JPG?width=500",
+    "qid": "Q16160869",
+    "wikidata": "https://www.wikidata.org/wiki/Q16160869",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16160869",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "terminal-2",
+    "location_src": "Terminal 2",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69115,
+     40.45289
+    ]
+   },
+   "properties": {
+    "painter": "Joan Miró",
+    "title": "Wall of the Conferences and Exhibitions Palace of Madrid",
+    "year": "1979",
+    "location": "Palacio de Congresos",
+    "city": "Cuatro Caminos",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20de%20Congresos%20y%20Exposiciones%20%28Madrid%29%2001%20Kopie.jpg?width=500",
+    "qid": "Q18696668",
+    "wikidata": "https://www.wikidata.org/wiki/Q18696668",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18696668",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "palacio-de-congresos",
+    "location_src": "Palacio de Congresos",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

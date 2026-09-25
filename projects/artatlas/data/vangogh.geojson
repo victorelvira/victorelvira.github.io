@@ -221,7 +221,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q5326908",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022720",
     "_merged": [
      {
       "source": "Wikidata",
@@ -235,7 +235,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q5326908",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q24022720",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24022720 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -487,12 +495,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "van-gogh-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q5175552",
+    "wikidata": "https://www.wikidata.org/wiki/Q19833790",
     "location_src": "Van Gogh Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q5175552",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q19833790",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q19833790 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1328,13 +1344,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "von-der-heydt-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7158404",
+    "wikidata": "https://www.wikidata.org/wiki/Q26220161",
     "country": "Germany",
     "location_src": "Von der Heydt Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7158404",
-    "qid_rejected_as": "study, painting series"
+    "qid_rejected_as": "study, painting series",
+    "qid": "Q26220161",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26220161 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1367,12 +1391,20 @@
     },
     "museum_id": "museo-soumaya",
     "country": "Mexico",
-    "wikidata": "https://www.wikidata.org/wiki/Q7158404",
+    "wikidata": "https://www.wikidata.org/wiki/Q18203251",
     "location_src": "Museo Soumaya",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7158404",
-    "qid_rejected_as": "study, painting series"
+    "qid_rejected_as": "study, painting series",
+    "qid": "Q18203251",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18203251 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1569,13 +1601,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "noordbrabants-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7973327",
+    "wikidata": "https://www.wikidata.org/wiki/Q26220097",
     "country": "Netherlands",
     "location_src": "Noordbrabants Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7973327",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26220097",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26220097 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2670,7 +2710,7 @@
     },
     "museum_id": "norton-simon-museum",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q7913353",
+    "wikidata": "https://www.wikidata.org/wiki/Q26220110",
     "_merged": [
      {
       "source": "Wikidata",
@@ -2683,7 +2723,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7913353",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26220110",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26220110 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2915,13 +2963,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "noordbrabants-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7158404",
+    "wikidata": "https://www.wikidata.org/wiki/Q24826396",
     "country": "Netherlands",
     "location_src": "Noordbrabants Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7158404",
-    "qid_rejected_as": "study, painting series"
+    "qid_rejected_as": "study, painting series",
+    "qid": "Q24826396",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24826396 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -3061,13 +3117,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-des-beaux-arts-de-caen",
-    "wikidata": "https://www.wikidata.org/wiki/Q7158404",
+    "wikidata": "https://www.wikidata.org/wiki/Q26220160",
     "country": "France",
     "location_src": "Musée des Beaux-Arts",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7158404",
-    "qid_rejected_as": "study, painting series"
+    "qid_rejected_as": "study, painting series",
+    "qid": "Q26220160",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26220160 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -4185,12 +4249,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "van-gogh-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7158404",
+    "wikidata": "https://www.wikidata.org/wiki/Q19833816",
     "location_src": "Van Gogh Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7158404",
-    "qid_rejected_as": "study, painting series"
+    "qid_rejected_as": "study, painting series",
+    "qid": "Q19833816",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q19833816 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -4923,7 +4995,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "van-gogh-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7158404",
+    "wikidata": "https://www.wikidata.org/wiki/Q19835828",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4936,7 +5008,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7158404",
-    "qid_rejected_as": "study, painting series"
+    "qid_rejected_as": "study, painting series",
+    "qid": "Q19835828",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q19835828 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -5369,7 +5449,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7158404",
+    "wikidata": "https://www.wikidata.org/wiki/Q26220084",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5383,7 +5463,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7158404",
-    "qid_rejected_as": "study, painting series"
+    "qid_rejected_as": "study, painting series",
+    "qid": "Q26220084",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26220084 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -11854,13 +11942,21 @@
     },
     "museum_id": "fogg-museum",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q7617209",
+    "wikidata": "https://www.wikidata.org/wiki/Q26220234",
     "location_src": "Fogg Museum",
     "venue_of": "Harvard Art Museums",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7617209",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26220234",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26220234 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -13567,12 +13663,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hammer-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7617209",
+    "wikidata": "https://www.wikidata.org/wiki/Q28146911",
     "location_src": "Hammer Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7617209",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q28146911",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q28146911 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -13604,13 +13708,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7617209",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022738",
     "country": "Netherlands",
     "location_src": "Kröller-Müller Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7617209",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q24022738",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24022738 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -16439,7 +16551,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q838798",
+    "wikidata": "https://www.wikidata.org/wiki/Q24020201",
     "_merged": [
      {
       "source": "Wikidata",
@@ -16453,7 +16565,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q838798",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q24020201",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24020201 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -17285,12 +17405,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "wallraf-richartz-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q838798",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221153",
     "location_src": "Wallraf–Richartz Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q838798",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26221153",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26221153 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -17758,7 +17886,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "van-gogh-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7402375",
+    "wikidata": "https://www.wikidata.org/wiki/Q26220262",
     "_merged": [
      {
       "source": "Wikidata",
@@ -17771,7 +17899,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7402375",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26220262",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26220262 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -19891,7 +20027,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "van-gogh-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q724377",
+    "wikidata": "https://www.wikidata.org/wiki/Q18713070",
     "_merged": [
      {
       "source": "Wikidata",
@@ -19904,7 +20040,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q724377",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q18713070",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18713070 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -20487,14 +20631,22 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museum-folkwang",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399534",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221125",
     "country": "Germany",
     "location_src": "Museum Folkwang",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3399534",
     "qid_rejected_as": "painting series",
-    "city_src": "Stadtbezirk II (Essen)"
+    "city_src": "Stadtbezirk II (Essen)",
+    "qid": "Q26221125",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26221125 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -20892,7 +21044,7 @@
     },
     "museum_id": "national-gallery-of-art",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q3399534",
+    "wikidata": "https://www.wikidata.org/wiki/Q9248352",
     "_merged": [
      {
       "source": "Wikidata",
@@ -20905,7 +21057,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3399534",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q9248352",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q9248352 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -22593,12 +22753,20 @@
     },
     "museum_id": "national-gallery-of-canada",
     "country": "Canada",
-    "wikidata": "https://www.wikidata.org/wiki/Q7400771",
+    "wikidata": "https://www.wikidata.org/wiki/Q11714093",
     "location_src": "National Gallery of Canada",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7400771",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q11714093",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q11714093 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -22827,12 +22995,20 @@
     "museum_id": "kunsthaus-zurich",
     "city": "Zurich",
     "country": "Switzerland",
-    "wikidata": "https://www.wikidata.org/wiki/Q7991819",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221204",
     "location_src": "Kunsthaus Zürich",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7991819",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26221204",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26221204 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -23068,7 +23244,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7774378",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022750",
     "_merged": [
      {
       "source": "Wikidata",
@@ -23082,7 +23258,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7774378",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q24022750",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24022750 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -23115,12 +23299,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q2271805",
+    "wikidata": "https://www.wikidata.org/wiki/Q18689458",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q2271805",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q18689458",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18689458 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -23152,7 +23344,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7087213",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022809",
     "_merged": [
      {
       "source": "Wikidata",
@@ -23166,7 +23358,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7087213",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q24022809",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24022809 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -24675,12 +24875,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "hammer-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7400771",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221180",
     "location_src": "Hammer Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7400771",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26221180",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26221180 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -25006,13 +25214,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q5168586",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221195",
     "country": "Netherlands",
     "location_src": "Kröller-Müller Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q5168586",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26221195",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26221195 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -26149,12 +26365,20 @@
     },
     "museum_id": "goulandris-museum-of-contemporary-art",
     "city": "Athens",
-    "wikidata": "https://www.wikidata.org/wiki/Q7087213",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221184",
     "location_src": "Goulandris Museum of Contemporary Art",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7087213",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26221184",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26221184 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -27700,12 +27924,20 @@
     "museum_id": "sao-paulo-museum-of-art",
     "city": "São Paulo",
     "country": "Brazil",
-    "wikidata": "https://www.wikidata.org/wiki/Q7087213",
+    "wikidata": "https://www.wikidata.org/wiki/Q11815452",
     "location_src": "São Paulo Museum of Art",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7087213",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q11815452",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q11815452 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -27901,7 +28133,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_shared": "Q5287337",
-    "city_src": "7th arrondissement of Paris"
+    "city_src": "7th arrondissement of Paris",
+    "qid": "Q5287337",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q5287337 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -28345,7 +28585,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "musee-d-orsay",
-    "wikidata": "https://www.wikidata.org/wiki/Q17023954",
+    "wikidata": "https://www.wikidata.org/wiki/Q843044",
     "_merged": [
      {
       "source": "Wikidata",
@@ -28359,7 +28599,15 @@
     "form": "painting",
     "qid_rejected": "Q17023954",
     "qid_rejected_as": "painting series",
-    "city_src": "7th arrondissement of Paris"
+    "city_src": "7th arrondissement of Paris",
+    "qid": "Q843044",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q843044 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -29207,13 +29455,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7125093",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022748",
     "country": "Netherlands",
     "location_src": "Kröller-Müller Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7125093",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q24022748",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24022748 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -29871,13 +30127,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7991819",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022806",
     "country": "Netherlands",
     "location_src": "Kröller-Müller Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7991819",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q24022806",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24022806 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -29947,12 +30211,20 @@
     "museum_id": "dallas-museum-of-art",
     "city": "Dallas",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q7991819",
+    "wikidata": "https://www.wikidata.org/wiki/Q18650971",
     "location_src": "Dallas Museum of Art",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7991819",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q18650971",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18650971 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -30287,13 +30559,21 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kroller-muller-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q5326908",
+    "wikidata": "https://www.wikidata.org/wiki/Q24020413",
     "country": "Netherlands",
     "location_src": "Kröller-Müller Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q5326908",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q24020413",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q24020413 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -30931,12 +31211,20 @@
     "museum_id": "van-gogh-museum",
     "city": "Amsterdam",
     "country": "Netherlands",
-    "wikidata": "https://www.wikidata.org/wiki/Q5326908",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221256",
     "location_src": "Van Gogh Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q5326908",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q26221256",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q26221256 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -32410,12 +32698,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "louvre",
-    "wikidata": "https://www.wikidata.org/wiki/Q7158404",
+    "wikidata": "https://www.wikidata.org/wiki/Q85314709",
     "location_src": "Louvre",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7158404",
-    "qid_rejected_as": "study, painting series"
+    "qid_rejected_as": "study, painting series",
+    "qid": "Q85314709",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q85314709 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -33111,7 +33407,16 @@
     "country": "Netherlands",
     "location_src": "Kröller-Müller Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "qid": "Q66504212",
+    "wikidata": "https://www.wikidata.org/wiki/Q66504212",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q66504212 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -33262,12 +33567,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "van-gogh-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q7400771",
+    "wikidata": "https://www.wikidata.org/wiki/Q126777268",
     "location_src": "Van Gogh Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q7400771",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q126777268",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q126777268 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -38236,6 +38549,1913 @@
     },
     "museum_id": "minneapolis-institute-of-art",
     "location_src": "Minneapolis Institute of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The pink orchard",
+    "year": "1888",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20De%20roze%20boomgaard%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18689436",
+    "wikidata": "https://www.wikidata.org/wiki/Q18689436",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18689436",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Sunflowers",
+    "year": "1889",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Zonnebloemen%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18689440",
+    "wikidata": "https://www.wikidata.org/wiki/Q18689440",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18689440",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Montmartre: behind the Moulin de la Galette",
+    "year": "1887",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Montmartre-%20achter%20de%20Moulin%20de%20la%20Galette%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18689453",
+    "wikidata": "https://www.wikidata.org/wiki/Q18689453",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18689453",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Garden with courting couples - Square Saint-Pierre",
+    "year": "1887",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Tuin%20in%20Montmartre%20met%20geliefden%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18689455",
+    "wikidata": "https://www.wikidata.org/wiki/Q18689455",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18689455",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -94.58096,
+     39.04497
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Portrait of Gijsbertus de Groot",
+    "year": "1885",
+    "location": "The Nelson-Atkins Museum of Art",
+    "city": "Kansas City",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Kopf%20eines%20jungen%20Bauern%20mit%20M%C3%BCtze2.jpeg?width=500",
+    "qid": "Q26220159",
+    "wikidata": "https://www.wikidata.org/wiki/Q26220159",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26220159",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Corridor in the Asylum",
+    "year": "1889",
+    "location": "Metropolitan Museum of Art",
+    "city": "New York",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Corridor%20in%20the%20Asylum%20MET%20DT365509.jpg?width=500",
+    "qid": "Q26221337",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221337",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221337",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Portrait of Willemina Jacoba ('Willemien') van Gogh",
+    "year": "1881",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Portrait%20possibly%20of%20Willemina%20Jacoba%20%28%27Willemien%27%29%20van%20Gogh%20-%20F849%20JH11.jpg?width=500",
+    "qid": "Q26221249",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221249",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221249",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Old Man at the Fireside",
+    "year": "1881",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/An%20Old%20Man%20Putting%20Dry%20Rice%20on%20the%20Hearth%201881%20Vincent%20van%20Gogh.jpg?width=500",
+    "qid": "Q26221253",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221253",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221253",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Young Scheveningen Woman Knitting, Facing Right",
+    "year": "",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Scheveningen%20Woman%20Knitting%20%28F870%29.jpg?width=500",
+    "qid": "Q26221255",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221255",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221255",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Old Woman Seen from Behind",
+    "year": "1882",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Old%20Woman%20Seen%20from%20Behind%20F913.jpg?width=500",
+    "qid": "Q26221259",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221259",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221259",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.15916,
+     34.14623
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Back Garden of Sien's Mother's House",
+    "year": "1882",
+    "location": "Norton Simon Museum",
+    "city": "Pasadena",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20De%20tuin%20achter%20het%20huis%20van%20de%20moeder%20van%20Sien%20in%20Den%20Haag.jpg?width=500",
+    "qid": "Q26221269",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221269",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221269",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The timber auction",
+    "year": "1884",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Die%20Holzauktion.jpeg?width=500",
+    "qid": "Q26221292",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221292",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221292",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Pollard birches",
+    "year": "1884",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van-Gogh%20kopfbirken-schafhirt.jpg?width=500",
+    "qid": "Q26221296",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221296",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221296",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "A way with the entrance to a viewpoint",
+    "year": "",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Weg%20mit%20Eingang%20zu%20einem%20Aussichtspunkt.jpeg?width=500",
+    "qid": "Q26221301",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221301",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221301",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Yellow House (Vincent's House)",
+    "year": "1888",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Das%20gelbe%20Haus%20%28Vincents%20Haus%291.jpeg?width=500",
+    "qid": "Q26221303",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221303",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221303",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.11436,
+     42.37409
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Blue Cart / Harvest at La Crau",
+    "year": "1888",
+    "location": "Fogg Museum",
+    "city": "Cambridge",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20La%20charrette%20bleue%20%28Fogg%20Art%20Museum%29.jpg?width=500",
+    "qid": "Q26221329",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221329",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221329",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "fogg-museum",
+    "location_src": "Fogg Museum",
+    "kind": "museum",
+    "form": "painting",
+    "venue_of": "Harvard Art Museums"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.73167,
+     47.51111
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Courtyard of the Hospital at Arles",
+    "year": "1889",
+    "location": "Am Römerholz",
+    "city": "Winterthur",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Garten%20des%20Hospitals%20in%20Arles1.jpeg?width=500",
+    "qid": "Q26221134",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221134",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221134",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "am-romerholz-2",
+    "location_src": "Am Römerholz",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.61167,
+     41.50889
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Large Plane Trees (Road Menders at Saint-Rémy)",
+    "year": "1889",
+    "location": "Cleveland Museum of Art",
+    "city": "Cleveland",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Large%20Plane%20Trees%20%28Road%20Menders%20at%20Saint-R%C3%A9my%29%2C%20by%20Vincent%20van%20Gogh%2C%20Cleveland%20Museum%20of%20Art%2C%201947.209.jpg?width=500",
+    "qid": "Q26221185",
+    "wikidata": "https://www.wikidata.org/wiki/Q26221185",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26221185",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "cleveland-museum-of-art",
+    "location_src": "Cleveland Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Portrait of Paul-Eugène Milliet, Second Lieutenant of the Zouaves",
+    "year": "1888",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Paul-Eug%C3%A8ne%20Milliet%20-%20Vincent%20Van%20Gogh.jpg?width=500",
+    "qid": "Q3399454",
+    "wikidata": "https://www.wikidata.org/wiki/Q3399454",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3399454",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Hôpital Saint-Paul à Saint-Rémy-de-Provence",
+    "year": "1889",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hospital%20in%20Saint-Remy.jpg?width=500",
+    "qid": "Q3703013",
+    "wikidata": "https://www.wikidata.org/wiki/Q3703013",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3703013",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Women carrying sacks of coal in the snow",
+    "year": "1882",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Women%20carrying%20sacks%20of%20coal%20in%20the%20snow%20-%20Vincent%20Van%20Gogh.jpg?width=500",
+    "qid": "Q3713983",
+    "wikidata": "https://www.wikidata.org/wiki/Q3713983",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3713983",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Blossoming Almond Branch in a Glass",
+    "year": "1888",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Sprig%20of%20flowering%20almond%20in%20a%20glass%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3929901",
+    "wikidata": "https://www.wikidata.org/wiki/Q3929901",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3929901",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Flowering meadow with trees and dandelions",
+    "year": "1890",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Flowering%20meadow%20with%20trees%20and%20dandelions%20-%20Vincent%20Van%20Gogh.jpg?width=500",
+    "qid": "Q9339733",
+    "wikidata": "https://www.wikidata.org/wiki/Q9339733",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q9339733",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.18139,
+     39.96583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Sunflowers",
+    "year": "1889",
+    "location": "Philadelphia Museum of Art",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20Willem%20van%20Gogh%2C%20Dutch%20-%20Sunflowers%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20809059",
+    "wikidata": "https://www.wikidata.org/wiki/Q20809059",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20809059",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "philadelphia-museum-of-art",
+    "location_src": "Philadelphia Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.00417,
+     51.4417
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Wheatfield behind Saint Paul's Hospital with a Reaper",
+    "year": "1889",
+    "location": "Museum Folkwang",
+    "city": "Essen",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Wheat%20Field%20Behind%20Saint-Paul%20Hospital%20with%20a%20Reaper%20-%20Google%20Art%20%26%20Culture.jpg?width=500",
+    "qid": "Q21693144",
+    "wikidata": "https://www.wikidata.org/wiki/Q21693144",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21693144",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museum-folkwang",
+    "location_src": "Museum Folkwang",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Stadtbezirk II (Essen)"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69493,
+     40.41604
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Stevedores in Arles",
+    "year": "1888",
+    "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20De%20aflader%20in%20Arles.jpg?width=500",
+    "qid": "Q21711763",
+    "wikidata": "https://www.wikidata.org/wiki/Q21711763",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21711763",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69493,
+     40.41604
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Watermill at Gennep",
+    "year": "1884",
+    "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Watermolen%20in%20Gennep.jpg?width=500",
+    "qid": "Q21712190",
+    "wikidata": "https://www.wikidata.org/wiki/Q21712190",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21712190",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Sunflowers",
+    "year": "1888",
+    "location": "National Gallery",
+    "city": "London",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20Willem%20van%20Gogh%20127.jpg?width=500",
+    "qid": "Q21948567",
+    "wikidata": "https://www.wikidata.org/wiki/Q21948567",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21948567",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Head of a Woman (KM 111.262)",
+    "year": "1885",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Kopf%20einer%20B%C3%A4uerin%20mit%20gr%C3%BCnlicher%20Haube.jpeg?width=500",
+    "qid": "Q24020216",
+    "wikidata": "https://www.wikidata.org/wiki/Q24020216",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24020216",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Self portrait by Vincent van Gogh",
+    "year": "1887",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Self-portrait%20-%20Vincent%20van%20Gogh.jpg?width=500",
+    "qid": "Q24020402",
+    "wikidata": "https://www.wikidata.org/wiki/Q24020402",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24020402",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Sower (Sower at Sunset)",
+    "year": "1888",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sower%20at%20Sunset%20-%20Vincent%20Van%20Gogh.jpg?width=500",
+    "qid": "Q24020423",
+    "wikidata": "https://www.wikidata.org/wiki/Q24020423",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24020423",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Woman at Table",
+    "year": "1885",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20B%C3%A4uerin%20bei%20der%20Mahlzeit.jpeg?width=500",
+    "qid": "Q24020463",
+    "wikidata": "https://www.wikidata.org/wiki/Q24020463",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24020463",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Flowering peach tree",
+    "year": "1888",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Bl%C3%BChender%20Pfirsichbaum.jpeg?width=500",
+    "qid": "Q24022739",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022739",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24022739",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Les Peiroulets Ravine",
+    "year": "1889",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ravine%20-%20Vincent%20Van%20Gogh.jpg?width=500",
+    "qid": "Q24022746",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022746",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24022746",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Enclosed Wheat Field with Rising Sun",
+    "year": "1889",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Enclosed%20Wheat%20Field%20with%20Rising%20Sun%20%28KM%20106.596%29.jpg?width=500",
+    "qid": "Q24022751",
+    "wikidata": "https://www.wikidata.org/wiki/Q24022751",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q24022751",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Road in Etten",
+    "year": "1881",
+    "location": "Metropolitan Museum of Art",
+    "city": "New York",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Road%20in%20Etten%20MET%20DP359031.jpg?width=500",
+    "qid": "Q29385302",
+    "wikidata": "https://www.wikidata.org/wiki/Q29385302",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29385302",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.81694,
+     52.09583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Woman Grinding Coffee",
+    "year": "1882",
+    "location": "Kröller-Müller Museum",
+    "city": "Otterlo",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Woman%20Grinding%20Coffee%20f889%20jh75.jpg?width=500",
+    "qid": "Q105156532",
+    "wikidata": "https://www.wikidata.org/wiki/Q105156532",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q105156532",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kroller-muller-museum",
+    "location_src": "Kröller-Müller Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Apples",
+    "year": "1887",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Appels%20-%20s0131V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19836013",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836013",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836013",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Sunset in Montmartre",
+    "year": "1887",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Zonsondergang%20te%20Montmartre%20-%20s0133M1970%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19836037",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836037",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836037",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.77194,
+     35.67889
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Windmills on Montmartre",
+    "year": "1886",
+    "location": "Artizon Museum",
+    "city": "Kyōbashi",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Windmills%20on%20Montmartre%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18689429",
+    "wikidata": "https://www.wikidata.org/wiki/Q18689429",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18689429",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "artizon-museum",
+    "location_src": "Artizon Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Langlois bridge",
+    "year": "1888",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20De%20brug%20van%20Langlois%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18689435",
+    "wikidata": "https://www.wikidata.org/wiki/Q18689435",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18689435",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Wheatfield with a Reaper",
+    "year": "1889",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Korenveld%20met%20maaier%20-%20s0049V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19833776",
+    "wikidata": "https://www.wikidata.org/wiki/Q19833776",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19833776",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Portrait of an Old Woman",
+    "year": "1885",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portret%20van%20een%20oude%20vrouw%20-%20s0010V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19835838",
+    "wikidata": "https://www.wikidata.org/wiki/Q19835838",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19835838",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Dish with Citrus Fruit",
+    "year": "1887",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Schotel%20met%20citrusvruchten%20-%20s0193V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19836124",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836124",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836124",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Sunflowers Gone to Seed",
+    "year": "1887",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Uitgebloeide%20zonnebloemen%20-%20s0121V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19836156",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836156",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836156",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Seascape near Les Saintes-Maries-de-la-Mer",
+    "year": "1888",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Zeegezicht%20bij%20Les%20Saintes-Maries-de-la-Mer%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q19836177",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836177",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836177",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Grapes",
+    "year": "1887",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Druiven%20-%20s0194V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19836197",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836197",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836197",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Ravine with a Small Stream",
+    "year": "1889",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ravijn%20met%20beekje%20-%20s0118V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19836211",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836211",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836211",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Butterflies and Poppies",
+    "year": "1889",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vlinders%20en%20klaprozen%20-%20s0188V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19836310",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836310",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836310",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.8811,
+     52.3583
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Portrait of Etienne-Lucien Martin",
+    "year": "1887",
+    "location": "Van Gogh Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portret%20van%20Etienne-Lucien%20Martin%20-%20s0125V1962%20-%20Van%20Gogh%20Museum.jpg?width=500",
+    "qid": "Q19836327",
+    "wikidata": "https://www.wikidata.org/wiki/Q19836327",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19836327",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "van-gogh-museum",
+    "location_src": "Van Gogh Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.46869,
+     37.7715
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "Shelter on Montmartre",
+    "year": "1886",
+    "location": "Fine Arts Museums of San Francisco",
+    "city": "San Francisco",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Shelter%20on%20Montmartre%20%281887%29.jpg?width=500",
+    "qid": "Q19868602",
+    "wikidata": "https://www.wikidata.org/wiki/Q19868602",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19868602",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "fine-arts-museums-of-san-francisco",
+    "location_src": "Fine Arts Museums of San Francisco",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Flowering Orchard",
+    "year": "1888",
+    "location": "Metropolitan Museum of Art",
+    "city": "New York",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20Van%20Gogh%200021.jpg?width=500",
+    "qid": "Q19911620",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911620",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19911620",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.47334,
+     51.91421
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "A Weaver's Cottage",
+    "year": "1884",
+    "location": "Museum Boijmans Van Beuningen",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20A%20Weaver%27s%20Cottage%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q19924843",
+    "wikidata": "https://www.wikidata.org/wiki/Q19924843",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19924843",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.3047,
+     51.6864
+    ]
+   },
+   "properties": {
+    "painter": "Vincent van Gogh",
+    "title": "The Garden of the Vicarage at Nuenen",
+    "year": "1885",
+    "location": "Noordbrabants Museum",
+    "city": "'s-Hertogenbosch",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/De%20tuin%20van%20de%20pastorie%20te%20Nuenen%2C%20van%20Gogh%2C%201885.jpg?width=500",
+    "qid": "Q77604432",
+    "wikidata": "https://www.wikidata.org/wiki/Q77604432",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q77604432",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "noordbrabants-museum",
+    "location_src": "Noordbrabants Museum",
     "kind": "museum",
     "form": "painting"
    }

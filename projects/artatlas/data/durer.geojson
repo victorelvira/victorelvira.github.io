@@ -1314,7 +1314,15 @@
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q3937735"
+    "qid_shared": "Q3937735",
+    "qid": "Q3937735",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q3937735 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -5658,6 +5666,747 @@
     },
     "museum_id": "kunsthalle-bremen",
     "location_src": "Kunsthalle Bremen",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Great Piece of Turf",
+    "year": "1503",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20The%20Large%20Piece%20of%20Turf%2C%201503%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q254794",
+    "wikidata": "https://www.wikidata.org/wiki/Q254794",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q254794",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Young Hare",
+    "year": "1502",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Hare%2C%201502%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q699388",
+    "wikidata": "https://www.wikidata.org/wiki/Q699388",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q699388",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Little Owl",
+    "year": "1502",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20K%C3%A4uzchen%2C%20Albertina%203123.jpg?width=500",
+    "qid": "Q112091493",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091493",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091493",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Small Piece of Turf",
+    "year": "1495",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Das%20kleine%20Rasenst%C3%BCck%2C%20Albertina%203077.jpg?width=500",
+    "qid": "Q112091494",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091494",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091494",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Columbine",
+    "year": "1495",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Akelei%2C%20Albertina%203182.jpg?width=500",
+    "qid": "Q112091498",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091498",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091498",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Swallowwort",
+    "year": "1495",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Sch%C3%B6llkraut%2C%20Albertina%203184.jpg?width=500",
+    "qid": "Q112091665",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091665",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091665",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Courtyard of Innsbruck Castle (Without Clouds)",
+    "year": "1495",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Hof%20der%20Innsbrucker%20Burg%20%28ohne%20Wolken%29%2C%20Albertina%203057.jpg?width=500",
+    "qid": "Q112091667",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091667",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091667",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Courtyard of Innsbruck Castle With Clouds",
+    "year": "1495",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Hof%20der%20Innsbrucker%20Burg%20%28mit%20Wolken%29%2C%20Albertina%203058.jpg?width=500",
+    "qid": "Q112091668",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091668",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091668",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Innsbruck from the North",
+    "year": "1495",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Innsbruck%20von%20Norden%2C%20Albertina%203056.jpg?width=500",
+    "qid": "Q112091670",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091670",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091670",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Violet Bouquet",
+    "year": "1495",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Veilchenstrau%C3%9F%2C%20Albertina%203076.jpg?width=500",
+    "qid": "Q112091671",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091671",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091671",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3725,
+     48.20833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Four Medicinal Herbs",
+    "year": "1495",
+    "location": "Vienna",
+    "city": "Austria",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/D%C3%BCrer%20-%20Die%20vier%20Heilkr%C3%A4uter%2C%20Albertina%203183.jpg?width=500",
+    "qid": "Q112091672",
+    "wikidata": "https://www.wikidata.org/wiki/Q112091672",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112091672",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vienna",
+    "location_src": "Vienna",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.81361,
+     53.07278
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Blue-Flowered Iris",
+    "year": "1503",
+    "location": "Kunsthalle Bremen",
+    "city": "Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Blau%20bl%C3%BChende%20Schwertlilie%20%28ca.%201503%29.jpg?width=500",
+    "qid": "Q110596438",
+    "wikidata": "https://www.wikidata.org/wiki/Q110596438",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q110596438",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.89139
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Lot and his daughters",
+    "year": "",
+    "location": "National Gallery of Art",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Lot%20und%20seine%20T%C3%B6chter%20%28NGA%29.jpg?width=500",
+    "qid": "Q84574488",
+    "wikidata": "https://www.wikidata.org/wiki/Q84574488",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q84574488",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "national-gallery-of-art",
+    "location_src": "National Gallery of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.07556,
+     49.44833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of Barbara Holper",
+    "year": "1490",
+    "location": "Germanisches Nationalmuseum",
+    "city": "Nuremberg",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20072.jpg?width=500",
+    "qid": "Q3937468",
+    "wikidata": "https://www.wikidata.org/wiki/Q3937468",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3937468",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "germanisches-nationalmuseum",
+    "location_src": "Germanisches Nationalmuseum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25528,
+     43.76833
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Portrait of the artist's father",
+    "year": "1490",
+    "location": "Uffizi Gallery",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Ritratto%20del%20padre%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18683052",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683052",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18683052",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "uffizi-gallery",
+    "location_src": "Uffizi Gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Bearded Saint in a Forest",
+    "year": "1516",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Bearded%20Saint%20in%20a%20Forest%2C%20c.%201516%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18683054",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683054",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18683054",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Dead Blue Roller",
+    "year": "1500",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Dead%20Blue%20Roller%2C%201500%20%28or%201512%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18683056",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683056",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18683056",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Wing of a European Roller",
+    "year": "1500",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Der%20Fl%C3%BCgel%20einer%20Blauracke%20%28ca.%201500%29.jpg?width=500",
+    "qid": "Q21151884",
+    "wikidata": "https://www.wikidata.org/wiki/Q21151884",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21151884",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "View of the Arco Valley",
+    "year": "1495",
+    "location": "Louvre",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vue%20du%20val%20d%27Arco%20dans%20le%20Tyrol%20m%C3%A9ridional%20-%20Mus%C3%A9e%20du%20Louvre%20Arts%20graphiques%20INV%2018579%2C%20Recto.jpg?width=500",
+    "qid": "Q26422904",
+    "wikidata": "https://www.wikidata.org/wiki/Q26422904",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26422904",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.81361,
+     53.07278
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "View of Nuremberg",
+    "year": "1500",
+    "location": "Kunsthalle Bremen",
+    "city": "Mitte",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%20-%20Ansicht%20von%20N%C3%BCrnberg%20%281495-1500%29.jpg?width=500",
+    "qid": "Q54811135",
+    "wikidata": "https://www.wikidata.org/wiki/Q54811135",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q54811135",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kunsthalle-bremen",
+    "location_src": "Kunsthalle Bremen",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.89139
+    ]
+   },
+   "properties": {
+    "painter": "Albrecht Dürer",
+    "title": "Tuft of Cowslips",
+    "year": "1526",
+    "location": "National Gallery of Art",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Albrecht%20D%C3%BCrer%2C%20Tuft%20of%20Cowslips%2C%201526%2C%20NGA%2074162.jpg?width=500",
+    "qid": "Q64534014",
+    "wikidata": "https://www.wikidata.org/wiki/Q64534014",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64534014",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "national-gallery-of-art",
+    "location_src": "National Gallery of Art",
     "kind": "museum",
     "form": "painting"
    }

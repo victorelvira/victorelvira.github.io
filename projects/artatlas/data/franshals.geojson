@@ -313,14 +313,22 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "frans-hals-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q2202637",
+    "wikidata": "https://www.wikidata.org/wiki/Q17522235",
     "city": "Haarlem",
     "country": "Netherlands",
     "location_src": "Frans Hals Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q2202637",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17522235",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17522235 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -983,12 +991,20 @@
     "museum_id": "mauritshuis",
     "city": "The Hague",
     "country": "Netherlands",
-    "wikidata": "https://www.wikidata.org/wiki/Q16859703",
+    "wikidata": "https://www.wikidata.org/wiki/Q17275957",
     "location_src": "Mauritshuis",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q16859703",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17275957",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17275957 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1055,14 +1071,22 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "staatliches-museum-schwerin",
-    "wikidata": "https://www.wikidata.org/wiki/Q17577635",
+    "wikidata": "https://www.wikidata.org/wiki/Q17577872",
     "wga_url": "https://www.wga.hu/html/h/hals/frans/03-1630/28boyflu.html",
     "city": "Mecklenburg-Vorpommern",
     "country": "Germany",
     "location_src": "Staatliches Museum Schwerin",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q17577635"
+    "qid_shared": "Q17577635",
+    "qid": "Q17577872",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17577872 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1099,7 +1123,15 @@
     "location_src": "Staatliches Museum Schwerin",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q17577635"
+    "qid_shared": "Q17577635",
+    "qid": "Q17577635",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17577635 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1691,13 +1723,21 @@
     "museum_id": "gemaldegalerie-berlin",
     "city": "Berlin",
     "country": "Germany",
-    "wikidata": "https://www.wikidata.org/wiki/Q832264",
+    "wikidata": "https://www.wikidata.org/wiki/Q17817562",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q832264",
     "qid_rejected_as": "human",
-    "city_src": "Bezirk Mitte"
+    "city_src": "Bezirk Mitte",
+    "qid": "Q17817562",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17817562 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2202,7 +2242,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "allentown-art-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q17309990",
+    "wikidata": "https://www.wikidata.org/wiki/Q18120961",
     "_merged": [
      {
       "source": "Wikidata",
@@ -2217,7 +2257,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q17309990",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q18120961",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18120961 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2679,14 +2727,22 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "frans-hals-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q15430593",
+    "wikidata": "https://www.wikidata.org/wiki/Q17522229",
     "city": "Haarlem",
     "country": "Netherlands",
     "location_src": "Frans Hals Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q15430593",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17522229",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17522229 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2955,7 +3011,15 @@
     "location_src": "Gemäldegalerie Alte Meister",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q17564400"
+    "qid_shared": "Q17564400",
+    "qid": "Q17564400",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17564400 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -3117,12 +3181,20 @@
     "museum_id": "cleveland-museum-of-art",
     "city": "Cleveland",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q16863608",
+    "wikidata": "https://www.wikidata.org/wiki/Q17861783",
     "location_src": "Cleveland Museum of Art",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q16863608",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17861783",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17861783 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -4274,7 +4346,7 @@
     "museum_id": "national-gallery",
     "city": "London",
     "country": "United Kingdom",
-    "wikidata": "https://www.wikidata.org/wiki/Q3175473",
+    "wikidata": "https://www.wikidata.org/wiki/Q17907497",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4287,7 +4359,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q3175473",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17907497",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17907497 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -4363,7 +4443,7 @@
     "museum_id": "john-and-mable-ringling-museum-of-art",
     "city": "Sarasota",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q16859799",
+    "wikidata": "https://www.wikidata.org/wiki/Q17643515",
     "_merged": [
      {
       "source": "Wikidata",
@@ -4376,7 +4456,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q16859799",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17643515",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17643515 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -5204,7 +5292,7 @@
     },
     "museum_id": "wadsworth-atheneum",
     "city": "Hartford",
-    "wikidata": "https://www.wikidata.org/wiki/Q2271523",
+    "wikidata": "https://www.wikidata.org/wiki/Q17643376",
     "_merged": [
      {
       "source": "Wikidata",
@@ -5218,7 +5306,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q2271523",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17643376",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17643376 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -6479,13 +6575,21 @@
     "museum_id": "gemaldegalerie-berlin",
     "city": "Berlin",
     "country": "Germany",
-    "wikidata": "https://www.wikidata.org/wiki/Q17363969",
+    "wikidata": "https://www.wikidata.org/wiki/Q18056688",
     "location_src": "Gemäldegalerie Berlin",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q17363969",
     "qid_rejected_as": "human",
-    "city_src": "Bezirk Mitte"
+    "city_src": "Bezirk Mitte",
+    "qid": "Q18056688",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18056688 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -6517,7 +6621,7 @@
     "museum_id": "art-gallery-of-ontario",
     "city": "Toronto",
     "country": "Canada",
-    "wikidata": "https://www.wikidata.org/wiki/Q759626",
+    "wikidata": "https://www.wikidata.org/wiki/Q17776399",
     "_merged": [
      {
       "source": "Wikidata",
@@ -6530,7 +6634,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q759626",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17776399",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17776399 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -6903,7 +7015,7 @@
     "museum_id": "musee-de-picardie",
     "city": "Amiens",
     "country": "France",
-    "wikidata": "https://www.wikidata.org/wiki/Q18061888",
+    "wikidata": "https://www.wikidata.org/wiki/Q18059736",
     "_merged": [
      {
       "source": "Wikidata",
@@ -6916,7 +7028,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q18061888",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q18059736",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18059736 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -10028,6 +10148,254 @@
     },
     "museum_id": "museum-boijmans-van-beuningen",
     "location_src": "Museum Boijmans Van Beuningen",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.19569,
+     55.9509
+    ]
+   },
+   "properties": {
+    "painter": "Frans Hals",
+    "title": "Portrait of Pieter Verdonck",
+    "year": "1627",
+    "location": "Scottish National Gallery",
+    "city": "City of Edinburgh",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Verdonck%20-%20WGA11086.jpg?width=500",
+    "qid": "Q17644447",
+    "wikidata": "https://www.wikidata.org/wiki/Q17644447",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17644447",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     5.12417,
+     52.08722
+    ]
+   },
+   "properties": {
+    "painter": "Frans Hals",
+    "title": "Portrait of Nicolaas Stenius",
+    "year": "1650",
+    "location": "Museum Catharijneconvent",
+    "city": "Utrecht",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Nicolaas%20Stenius%201650.jpg?width=500",
+    "qid": "Q18011066",
+    "wikidata": "https://www.wikidata.org/wiki/Q18011066",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18011066",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museum-catharijneconvent",
+    "location_src": "Museum Catharijneconvent",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.80222,
+     42.27306
+    ]
+   },
+   "properties": {
+    "painter": "Frans Hals",
+    "title": "Portrait of Frans Post",
+    "year": "1655",
+    "location": "Worcester Art Museum",
+    "city": "Worcester",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20-%20Frans%20Post%20%28Worcester%20Art%20Museum%29.jpg?width=500",
+    "qid": "Q18058930",
+    "wikidata": "https://www.wikidata.org/wiki/Q18058930",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18058930",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "worcester-art-museum",
+    "location_src": "Worcester Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.47334,
+     51.91421
+    ]
+   },
+   "properties": {
+    "painter": "Frans Hals",
+    "title": "Portrait of a man called Johannes Saeckma",
+    "year": "1635",
+    "location": "Museum Boijmans Van Beuningen",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Frans%20Hals%20%28I%29%20122.jpg?width=500",
+    "qid": "Q17866274",
+    "wikidata": "https://www.wikidata.org/wiki/Q17866274",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17866274",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.88528,
+     52.36
+    ]
+   },
+   "properties": {
+    "painter": "Frans Hals",
+    "title": "Portrait of Maritge Claesdr Vooght (....-1644)",
+    "year": "1639",
+    "location": "Rijksmuseum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Maritge%20Claesdr.%20Voogt%20%281577-1644%29%20by%20Frans%20Hals%20027.jpg?width=500",
+    "qid": "Q17341971",
+    "wikidata": "https://www.wikidata.org/wiki/Q17341971",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17341971",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "rijksmuseum",
+    "location_src": "Rijksmuseum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.949,
+     40.4437
+    ]
+   },
+   "properties": {
+    "painter": "Frans Hals",
+    "title": "Portrait of Pieter van der Morsch",
+    "year": "1616",
+    "location": "Carnegie Museum of Art",
+    "city": "Pittsburgh",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hals%2C%20Frans%20-%20Pieter%20Cornelisz.%20van%20der%20Morsch.jpg?width=500",
+    "qid": "Q17627174",
+    "wikidata": "https://www.wikidata.org/wiki/Q17627174",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17627174",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "carnegie-museum-of-art",
+    "location_src": "Carnegie Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.55944,
+     41.65833
+    ]
+   },
+   "properties": {
+    "painter": "Frans Hals",
+    "title": "Van Campen Family Portrait in a Landscape (left half)",
+    "year": "1620",
+    "location": "Toledo Museum of Art",
+    "city": "Toledo",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Family%20Portrait%20in%20a%20Landscape.jpg?width=500",
+    "qid": "Q17627383",
+    "wikidata": "https://www.wikidata.org/wiki/Q17627383",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17627383",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "toledo-museum-of-art",
+    "location_src": "Toledo Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.50333,
+     39.1025
+    ]
+   },
+   "properties": {
+    "painter": "Frans Hals",
+    "title": "Portrait of Michiel de Wael",
+    "year": "1634",
+    "location": "Taft Museum of Art",
+    "city": "Cincinnati",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Hals%2C%20Frans%20-%20Captain%20Michiel%20de%20Wael.jpg?width=500",
+    "qid": "Q17642214",
+    "wikidata": "https://www.wikidata.org/wiki/Q17642214",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17642214",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "taft-museum-of-art",
+    "location_src": "Taft Museum of Art",
     "kind": "museum",
     "form": "painting"
    }

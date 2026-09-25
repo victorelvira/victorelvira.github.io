@@ -52690,6 +52690,88 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.56662,
+     48.14521
+    ]
+   },
+   "properties": {
+    "painter": "Rubens",
+    "title": "Landscape with Pan and Syrinx",
+    "year": "1613",
+    "location": "Munich Central Collecting Point",
+    "city": "Munich",
+    "country": "allied-occupied Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Landscape%20with%20Pan%20and%20Syrinx%20by%20Sir%20Peter%20Paul%20Rubens%20Jan%20Breughel%20the%20Younger.jpg?width=500",
+    "qid": "Q111046267",
+    "wikidata": "https://www.wikidata.org/wiki/Q111046267",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q111046267",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "munich-central-collecting-point",
+    "location_src": "Munich Central Collecting Point",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     21.02472,
+     52.23167
+    ]
+   },
+   "properties": {
+    "painter": "Rubens",
+    "title": "Joan of Arc kneeling in armor",
+    "year": "1622",
+    "location": "National Museum in Warsaw",
+    "city": "Śródmieście",
+    "country": "Poland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rubens%20Joan%20of%20Arc%20kneeling%20in%20armor.jpg?width=500",
+    "qid": "Q28885836",
+    "wikidata": "https://www.wikidata.org/wiki/Q28885836",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28885836",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Antwerp",
+    "creation_lat": 51.217778,
+    "creation_lon": 4.400278,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-museum-in-warsaw",
+    "location_src": "National Museum in Warsaw",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

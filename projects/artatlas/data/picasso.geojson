@@ -9871,6 +9871,68 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     20.94559,
+     52.24515
+    ]
+   },
+   "properties": {
+    "painter": "Pablo Picasso",
+    "title": "Syrenka",
+    "year": "1948",
+    "location": "Koło",
+    "city": "Warsaw",
+    "country": "Poland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Syrenka%20Picassa%20mural.jpg?width=500",
+    "qid": "Q29351056",
+    "wikidata": "https://www.wikidata.org/wiki/Q29351056",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q29351056",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "ko-o",
+    "location_src": "Koło",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.30611,
+     48.84972
+    ]
+   },
+   "properties": {
+    "painter": "Pablo Picasso",
+    "title": "The Fall of Icarus",
+    "year": "1958",
+    "location": "UNESCO",
+    "city": "",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Culture%20of%20peace%2C%20Paris%2C%20Maison%20de%20l%27UNESCO%20-%20UNESCO%20-%20PHOTO0000003622%200001.tiff?width=500",
+    "qid": "Q28681534",
+    "wikidata": "https://www.wikidata.org/wiki/Q28681534",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28681534",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "unesco",
+    "location_src": "UNESCO",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

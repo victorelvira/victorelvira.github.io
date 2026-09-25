@@ -1124,6 +1124,211 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.06472,
+     42.35944
+    ]
+   },
+   "properties": {
+    "painter": "Diego Rivera",
+    "title": "Detroit Industry Murals",
+    "year": "1933",
+    "location": "Detroit Institute of Arts",
+    "city": "Detroit",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Detroit%20Institute%20of%20Arts%202025b.jpg?width=500",
+    "qid": "Q5265945",
+    "wikidata": "https://www.wikidata.org/wiki/Q5265945",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q5265945",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Mexico City",
+    "creation_lat": 19.433333,
+    "creation_lon": -99.133333,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "detroit-institute-of-arts",
+    "location_src": "Detroit Institute of Arts",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.13139,
+     19.4325
+    ]
+   },
+   "properties": {
+    "painter": "Diego Rivera",
+    "title": "The History of Mexico",
+    "year": "1929",
+    "location": "National Palace",
+    "city": "Cuauhtémoc",
+    "country": "Mexico",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Palacio%20Nacional%20Murals%20view.JPG?width=500",
+    "qid": "Q16685337",
+    "wikidata": "https://www.wikidata.org/wiki/Q16685337",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16685337",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Mexico City",
+    "creation_lat": 19.433333,
+    "creation_lon": -99.133333,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-palace",
+    "location_src": "National Palace",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.40105,
+     37.78572
+    ]
+   },
+   "properties": {
+    "painter": "Diego Rivera",
+    "title": "Pan American Unity",
+    "year": "1940",
+    "location": "San Francisco Museum of Modern Art",
+    "city": "San Francisco",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pan%20American%20Unity%2C%20Diego%20Rivera%2C%20in%20it%27s%20temporary%20haunt.jpg?width=500",
+    "qid": "Q17141952",
+    "wikidata": "https://www.wikidata.org/wiki/Q17141952",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17141952",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Mexico City",
+    "creation_lat": 19.433333,
+    "creation_lon": -99.133333,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "san-francisco-museum-of-modern-art",
+    "location_src": "San Francisco Museum of Modern Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.19211,
+     19.33193
+    ]
+   },
+   "properties": {
+    "painter": "Diego Rivera",
+    "title": "La universidad, la familia y el deporte en México",
+    "year": "1949",
+    "location": "Universitary Olympic Stadium",
+    "city": "Ciudad Universitaria",
+    "country": "Mexico",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Estadio%20Ol%C3%ADmpico%20Universitario%20-%208.jpg?width=500",
+    "qid": "Q72209880",
+    "wikidata": "https://www.wikidata.org/wiki/Q72209880",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q72209880",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Mexico City",
+    "creation_lat": 19.433333,
+    "creation_lon": -99.133333,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "universitary-olympic-stadium",
+    "location_src": "Universitary Olympic Stadium",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.13139,
+     19.4325
+    ]
+   },
+   "properties": {
+    "painter": "Diego Rivera",
+    "title": "La Gran Tenochtitlan Vista Desde el Mercado de Tlatelolco",
+    "year": "1945",
+    "location": "National Palace",
+    "city": "Cuauhtémoc",
+    "country": "Mexico",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Gran%20Tenochtitlan.JPG?width=500",
+    "qid": "Q130899407",
+    "wikidata": "https://www.wikidata.org/wiki/Q130899407",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q130899407",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Mexico City",
+    "creation_lat": 19.433333,
+    "creation_lon": -99.133333,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-palace",
+    "location_src": "National Palace",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

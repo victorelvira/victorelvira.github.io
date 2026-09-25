@@ -57,7 +57,7 @@ button{font:inherit;color:inherit}
 #facets{display:flex;gap:6px 12px;align-items:center;flex-wrap:nowrap;overflow-x:auto;padding:6px 16px;
   background:var(--bar);border-bottom:1px solid var(--line);font-size:13px;scrollbar-width:thin}
 #facets .fg{display:flex;gap:5px;align-items:center;flex:0 0 auto}
-#facets .lbl{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);font-weight:700;margin-right:2px}
+#facets .lbl{font-size:12px;color:var(--muted);font-weight:500;margin-right:4px}
 .chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;
   background:#fff;cursor:pointer;user-select:none;font-size:13px;color:var(--ink);white-space:nowrap}
 .chip:hover{border-color:var(--sand-line)}
@@ -87,7 +87,7 @@ button{font:inherit;color:inherit}
 /* the table */
 table.cat{width:100%;border-collapse:collapse;font-size:13.5px}
 table.cat thead th{position:sticky;top:0;background:var(--paper);z-index:2;text-align:left;font-size:10px;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--muted);font-weight:700;padding:8px 10px;border-bottom:1px solid var(--line);
+  color:var(--muted);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--line);
   cursor:pointer;white-space:nowrap;user-select:none}
 table.cat thead th:hover{color:var(--ink)}
 table.cat thead th .dir{color:var(--accent)}
@@ -124,9 +124,17 @@ td .lnk.f{color:inherit}
 .empty{padding:40px 20px;text-align:center;color:var(--muted)}
 
 /* timeline strip over the editions table */
-#tl-wrap{padding:8px 16px 4px;border-bottom:1px solid var(--line);background:var(--bar);overflow-x:auto}
-#tl{display:block;width:100%;min-width:760px}
-#tl .lbl{font-size:11.5px;fill:var(--ink)}
+#tl-wrap{position:relative;padding:8px 16px 4px;border-bottom:1px solid var(--line);background:var(--bar)}
+#tl-scroll{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin}
+#tl-scroll.dragging{cursor:grabbing;user-select:none}
+#tl{display:block;min-width:760px}
+/* the names, pinned over the left edge while the years scroll under them */
+#tl-lbl{position:absolute;left:16px;top:8px;background:linear-gradient(90deg,var(--bar) 92%,rgba(255,255,255,0));pointer-events:auto}
+#tl-tools{position:absolute;right:18px;top:4px;z-index:2;display:flex;gap:2px}
+#tl-tools button{border:1px solid var(--line2);background:#fff;color:var(--accent);font:12px/1 system-ui,sans-serif;min-width:22px;height:20px;border-radius:4px;cursor:pointer;padding:0 5px}
+#tl-tools button:disabled{opacity:.35;cursor:default}
+#tl .grid.minor{stroke-dasharray:2 3}
+#tl .lbl,#tl-lbl .lbl{font-size:11.5px;fill:var(--ink)}
 #tl .axis{font-size:10px;fill:var(--faint);font-variant-numeric:tabular-nums}
 #tl .grid{stroke:var(--line2)}
 #tl .war{fill:rgba(36,26,18,.045)}
@@ -146,13 +154,13 @@ td .lnk.f{color:inherit}
 #rec .back:hover{text-decoration:underline}
 #rec .back+#rec-body{clear:both}
 #rec .close:hover{color:var(--ink);background:var(--paper)}
-:is(#rec,#page) .kick{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;margin:0 0 3px}
-:is(#rec,#page) h2{margin:0 30px 6px 0;font:600 23px/1.2 var(--serif)}
+:is(#rec,#page) .kick{font:italic 13px/1.3 var(--serif);color:var(--muted);margin:0 0 3px}
+:is(#rec,#page) h2{margin:0 30px 6px 0;font:600 26px/1.16 var(--serif);letter-spacing:-.2px}
 :is(#rec,#page) .sub{color:var(--muted);font-size:13px;margin:0 0 12px}
-:is(#rec,#page) h4.sec{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:700;margin:18px 0 6px;
+:is(#rec,#page) h4.sec{font:600 12.5px/1.2 system-ui,sans-serif;color:var(--muted);margin:18px 0 6px;
   padding-top:10px;border-top:1px solid var(--line)}
 :is(#rec,#page) dl{margin:10px 0;display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:13.5px}
-:is(#rec,#page) dt{color:var(--faint);font-size:9.5px;text-transform:uppercase;letter-spacing:.09em;padding-top:3px;font-weight:700}
+:is(#rec,#page) dt{color:var(--muted);font-size:12px;padding-top:3px;font-weight:500}
 :is(#rec,#page) dd{margin:0}
 :is(#rec,#page) .written{color:var(--faint);font-size:12px}
 :is(#rec,#page) details summary{list-style:none;margin:4px 0 8px}
@@ -178,7 +186,7 @@ ul.lineage .written{font-size:12px}
 table.mini{width:100%;border-collapse:collapse;font-size:12.5px}
 /* on a full-screen page a table at full width spreads its numbers apart: keep it at reading width */
 #page-body>table.mini{max-width:760px}
-table.mini th{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);text-align:left;padding:4px 6px;
+table.mini th{font-size:11.5px;color:var(--muted);font-weight:500;text-align:left;padding:4px 6px;
   border-bottom:1px solid var(--line);font-weight:700;white-space:nowrap}
 table.mini th.num,table.mini td.num{text-align:right}
 table.mini td{padding:4px 6px;border-bottom:1px solid var(--line2);font-variant-numeric:tabular-nums}
@@ -188,7 +196,7 @@ table.mini tr[data-go]{cursor:pointer}
 table.mini tr[data-go]:hover td{background:var(--paper)}
 
 .stage-h{display:flex;justify-content:space-between;align-items:baseline;margin:16px 0 4px}
-.stage-h span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.stage-h span{font:600 12px/1.2 system-ui,sans-serif;color:var(--muted)}
 .stage-h em{font-style:normal;font-size:11px;color:var(--faint)}
 .match{display:grid;grid-template-columns:48px 1fr 66px 1fr;gap:8px;align-items:center;padding:6px 2px;border-top:1px solid var(--line2);font-size:13.5px}
 .match .d{color:var(--faint);font-size:11px;font-variant-numeric:tabular-nums}
@@ -275,7 +283,7 @@ td.edc{font-family:var(--serif);font-size:14.5px;white-space:nowrap}
 .bracket-scroll{overflow:auto;flex:1;min-width:0;min-height:0;padding:6px 18px 30px}
 .bracket{display:flex;gap:22px;min-height:100%;width:max-content}
 .bracket .round{display:flex;flex-direction:column;width:212px;flex:none}
-.bracket .round-name{position:sticky;top:0;z-index:2;background:#fff;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+.bracket .round-name{position:sticky;top:0;z-index:2;background:#fff;font-size:12px;font-weight:600;
   color:var(--muted);font-weight:700;padding:6px 0 8px;border-bottom:1px solid var(--line);margin-bottom:8px}
 .bracket .slots{display:flex;flex-direction:column;justify-content:space-around;flex:1;gap:5px}
 
@@ -369,7 +377,7 @@ td .lnk>img.badge.crest{margin-top:.1em}
 .kbracket-scroll{overflow-x:auto;margin:6px 0 14px;padding-bottom:6px}
 .kbracket{display:flex;gap:14px;min-width:max-content}
 .bcol{display:flex;flex-direction:column;min-width:170px}
-.bhead{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 6px}
+.bhead{font:600 12px/1.2 system-ui,sans-serif;color:var(--muted);margin:0 0 6px}
 .bties{flex:1;display:flex;flex-direction:column;justify-content:space-around;gap:8px}
 .tie{border:1px solid var(--line);border-radius:8px;background:#fff;padding:3px 0;font-size:12.5px}
 .tie .bt{display:flex;justify-content:space-between;gap:10px;padding:2px 8px;color:var(--muted)}
@@ -434,3 +442,60 @@ svg.paths .trophy path{fill:inherit}
 .zc-inner>svg{display:block;width:100%;height:auto;margin:0}
 .zc-y{position:absolute;left:0;top:0;overflow:hidden;pointer-events:none;background:linear-gradient(90deg,#fff 94%,rgba(255,255,255,0))}
 .zc-y>div>svg{display:block;width:100%;height:auto;margin:0}
+
+/* Tennis: the court and the tier. Surface colours checked for colour-blind separation (all pairs), and always written
+   in words beside the colour; the tier is a badge with its name. */
+:root{--clay:#e3894a;--grass:#2d6b33;--hard:#4a86c8;--carpet:#8a3f7a;--wood:#9a7a4a}
+.surf{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--ink);white-space:nowrap;line-height:1.2}
+.surf::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--sc,#ccc);flex:none}
+.s-clay{--sc:var(--clay)} .s-grass{--sc:var(--grass)} .s-hard{--sc:var(--hard)} .s-carpet{--sc:var(--carpet)} .s-wood{--sc:var(--wood)}
+#tl .mk.s-clay,#tl .mk.s-grass,#tl .mk.s-hard,#tl .mk.s-carpet,#tl .mk.s-wood{fill:var(--sc)}
+.surfchip::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--sc);margin-right:6px;vertical-align:0}
+.tier{display:inline-block;font:700 9.5px/1 system-ui,sans-serif;letter-spacing:.04em;padding:3px 5px 2px;border-radius:4px;margin-right:6px;
+  vertical-align:1px;white-space:nowrap;border:1px solid transparent}
+.tier.gs{background:var(--hot);color:#fff}
+.tier.k1{background:var(--gold);color:#fff}
+.tier.k5{background:#fff;color:var(--hot);border-color:var(--sand-line)}
+.tier.fin{background:var(--sand);color:var(--hot)}
+.tier.oly{background:#fff;color:var(--muted);border-color:var(--line)}
+.chip.tierchip.gs{border-color:var(--hot)} .chip.tierchip.k1{border-color:var(--gold)} .chip.tierchip.k5{border-style:dashed}
+.kf.surfkf::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--sc);margin-right:6px}
+/* the timeline's category headers: click to fold a category into one row */
+#tl-lbl .tlg{cursor:pointer}
+#tl-lbl .tlg-hit{fill:transparent}
+#tl-lbl .tlg:hover .tlg-hit{fill:rgba(36,26,18,.035)}
+#tl-lbl .tlg-l{font:600 11.5px system-ui,sans-serif;fill:var(--muted)}
+#tl .tlg-line,#tl-lbl .tlg-line{stroke:var(--line);stroke-width:1}
+#tl-lbl .lbl.folded{fill:var(--faint);font-style:italic}
+#tl .mk.stack{opacity:.55}
+#tl-lbl .tlg:focus{outline:none} #tl-lbl .tlg:focus-visible .tlg-hit{fill:var(--sand)}
+
+/* the Olympic Games: pictograms (public domain, from Commons), the programme of a Games, and how a discipline stands */
+img.picto{width:20px;height:20px;object-fit:contain;vertical-align:-5px;margin-right:8px}
+h2 img.picto{width:34px;height:34px;vertical-align:-6px;margin-right:10px}
+.oly-prog{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}
+.oly-sp{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:999px;
+  padding:3px 10px 3px 6px;font:inherit;font-size:12.5px;cursor:pointer}
+.oly-sp:hover{border-color:var(--sand-line);background:var(--paper)}
+.oly-sp img.picto{width:16px;height:16px;margin:0}
+.oly-sp .n{color:var(--faint);font-variant-numeric:tabular-nums}
+.oly-sp.demo{border-style:dashed;color:var(--muted)}
+.pill.oly-always{background:var(--sand);color:var(--hot)}
+.pill.oly-now{background:#fff;border:1px solid var(--line)}
+.pill.oly-gone{background:#fff;border:1px dashed var(--sand-line);color:var(--muted)}
+.pill.oly-demo{background:#fff;border:1px dotted var(--line);color:var(--faint)}
+#tl .mk.demo{opacity:.4}
+/* the timeline's marks: a band for the years a competition ran, and a mark as tall as that edition was big */
+#tl .band{fill:var(--sport);opacity:.18}
+#tl .band.stack{opacity:.08}
+#tl .mk-y{font-size:8.5px;fill:var(--faint)}
+
+/* the colour key under the timeline: what a mark's colour means in this sport */
+#tl-key{display:flex;flex-wrap:wrap;gap:4px 14px;padding:2px 16px 6px;background:var(--bar);border-bottom:1px solid var(--line);
+  font-size:11.5px;color:var(--muted);align-items:center}
+#tl-key .k{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+#tl-key i{width:10px;height:10px;border-radius:2px;background:var(--c);display:inline-block}
+#tl-key .what{color:var(--faint)}
+#tl-lbl .tlg-tri{fill:var(--faint)}
+#tl-lbl .tlg:hover .tlg-tri{fill:var(--accent)}
+/* a mark's colour carries its meaning (the court, the champion's country, the continent): it is set on the mark itself */

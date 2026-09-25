@@ -1364,12 +1364,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "isabella-stewart-gardner-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q27033728",
+    "wikidata": "https://www.wikidata.org/wiki/Q27034683",
     "wga_url": "https://www.wga.hu/html/r/raphael/1early/07colonn.html",
     "location_src": "Isabella Stewart Gardner Museum",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q27033728"
+    "qid_shared": "Q27033728",
+    "qid": "Q27034683",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q27034683 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -9439,6 +9447,742 @@
     "kind": "museum",
     "form": "painting",
     "_year_was": "1850"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.45639,
+     41.90361
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Cardinal and Theological Virtues",
+    "year": "",
+    "location": "Apostolic Palace",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Virt%C3%B9%20e%20due%20scene%2003.jpg?width=500",
+    "qid": "Q131557878",
+    "wikidata": "https://www.wikidata.org/wiki/Q131557878",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q131557878",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "apostolic-palace",
+    "location_src": "Apostolic Palace",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.70289,
+     35.81019
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "St. Jerome Punishing the Heretic Sabinian",
+    "year": "1500",
+    "location": "North Carolina Museum of Art",
+    "city": "Raleigh",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raffaello%20Sanzio%20-%20St.%20Jerome%20Punishing%20the%20Heretic%20Sabinian.jpg?width=500",
+    "qid": "Q74089447",
+    "wikidata": "https://www.wikidata.org/wiki/Q74089447",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q74089447",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "north-carolina-museum-of-art",
+    "location_src": "North Carolina Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Stanza di Eliodoro",
+    "year": "1511",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raffael%20Staza%20di%20Eliodoro.jpg?width=500",
+    "qid": "Q774018",
+    "wikidata": "https://www.wikidata.org/wiki/Q774018",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q774018",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Coronation of Charlemagne",
+    "year": "800",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael-%20Coronation%20of%20Charlemagne%202.jpg?width=500",
+    "qid": "Q1450935",
+    "wikidata": "https://www.wikidata.org/wiki/Q1450935",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1450935",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-09-25",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 800, before birth (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Oath of Leo III",
+    "year": "1516",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Leo%20III%20by%20Rafael.jpg?width=500",
+    "qid": "Q1619548",
+    "wikidata": "https://www.wikidata.org/wiki/Q1619548",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1619548",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Baptism of Constantine",
+    "year": "1524",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20Baptism%20Constantine.jpg?width=500",
+    "qid": "Q1996917",
+    "wikidata": "https://www.wikidata.org/wiki/Q1996917",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1996917",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-09-25",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1524, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.45277,
+     41.90573
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Oddi Altarpiece",
+    "year": "1502",
+    "location": "Pinacoteca Vaticana",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/PalaOddiRaffaello.jpg?width=500",
+    "qid": "Q2344357",
+    "wikidata": "https://www.wikidata.org/wiki/Q2344357",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2344357",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "pinacoteca-vaticana",
+    "location_src": "Pinacoteca Vaticana",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Vision of the Cross",
+    "year": "1520",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20Vision%20Cross.jpg?width=500",
+    "qid": "Q2405750",
+    "wikidata": "https://www.wikidata.org/wiki/Q2405750",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2405750",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.49214,
+     41.91421
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Deposition",
+    "year": "1507",
+    "location": "Galleria Borghese",
+    "city": "Rome",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raffaello%2C%20pala%20baglioni%2C%20deposizione.jpg?width=500",
+    "qid": "Q2500226",
+    "wikidata": "https://www.wikidata.org/wiki/Q2500226",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2500226",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "galleria-borghese",
+    "location_src": "Galleria Borghese",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Roma Capitale"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Mass at Bolsena",
+    "year": "1512",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Massatbolsena.jpg?width=500",
+    "qid": "Q2529969",
+    "wikidata": "https://www.wikidata.org/wiki/Q2529969",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2529969",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Fire in the Borgo",
+    "year": "1514",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20-%20Fire%20in%20the%20Borgo.jpg?width=500",
+    "qid": "Q2531790",
+    "wikidata": "https://www.wikidata.org/wiki/Q2531790",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2531790",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Battle of Ostia",
+    "year": "1514",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20Ostia.jpg?width=500",
+    "qid": "Q2564496",
+    "wikidata": "https://www.wikidata.org/wiki/Q2564496",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2564496",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.22584,
+     45.53453
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Baronci Altarpiece",
+    "year": "1500",
+    "location": "Tosio Martinengo Gallery",
+    "city": "Brescia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raffaello%20%28da%29%2C%20copia%20settecentesca%20della%20pala%20baronci%2C%20pinacoteca%20di%20citt%C3%A0%20di%20castello.jpg?width=500",
+    "qid": "Q1778000",
+    "wikidata": "https://www.wikidata.org/wiki/Q1778000",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q1778000",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "tosio-martinengo-gallery",
+    "location_src": "Tosio Martinengo Gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Ansidei Madonna",
+    "year": "1505",
+    "location": "National Gallery",
+    "city": "London",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/PalaAnsidei.jpg?width=500",
+    "qid": "Q2713620",
+    "wikidata": "https://www.wikidata.org/wiki/Q2713620",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2713620",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Meeting of Leo the Great and Attila",
+    "year": "1513",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/0%20Chambre%20de%20Rapha%C3%ABl%20-%20Rencontre%20de%20L%C3%A9on%20le%20Grand%20et%20d%27Attila.JPG?width=500",
+    "qid": "Q2716974",
+    "wikidata": "https://www.wikidata.org/wiki/Q2716974",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2716974",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4544,
+     41.9064
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Liberation of Saint Peter",
+    "year": "1514",
+    "location": "Vatican Museums",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Deliveranceofstpeter.jpg?width=500",
+    "qid": "Q2719737",
+    "wikidata": "https://www.wikidata.org/wiki/Q2719737",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2719737",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "vatican-museums",
+    "location_src": "Vatican Museums",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Saint Margaret and the Dragon",
+    "year": "1518",
+    "location": "Kunsthistorisches Museum",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raffaello%20Santi%20gen.%20Raffael%2C%20Kunsthistorisches%20Museum%20Wien%2C%20Gem%C3%A4ldegalerie%20-%20Hl.%20Margarete%20-%20GG%20171%20-%20Kunsthistorisches%20Museum.jpg?width=500",
+    "qid": "Q3464523",
+    "wikidata": "https://www.wikidata.org/wiki/Q3464523",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3464523",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Portrait of Pope Julius II",
+    "year": "1511",
+    "location": "National Gallery",
+    "city": "London",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pope%20Julius%20II.jpg?width=500",
+    "qid": "Q11918714",
+    "wikidata": "https://www.wikidata.org/wiki/Q11918714",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11918714",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.45639,
+     41.90361
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "The Apostles",
+    "year": "1517",
+    "location": "Apostolic Palace",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Marcantonio%20raimondi%2C%20san%20giuda%20taddeo.jpg?width=500",
+    "qid": "Q3620750",
+    "wikidata": "https://www.wikidata.org/wiki/Q3620750",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3620750",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "apostolic-palace",
+    "location_src": "Apostolic Palace",
+    "kind": "museum",
+    "form": "painting"
    }
   }
  ]

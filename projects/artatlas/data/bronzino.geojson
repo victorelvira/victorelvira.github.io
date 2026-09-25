@@ -4345,6 +4345,160 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25746,
+     43.77032
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Temptation of Saint Benedict",
+    "year": "1540",
+    "location": "Chiostro degli aranci",
+    "city": "",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/04%20agnolo%20bronzino%2C%20tentazione%20di%20benedetto.JPG?width=500",
+    "qid": "Q118950365",
+    "wikidata": "https://www.wikidata.org/wiki/Q118950365",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118950365",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "chiostro-degli-aranci",
+    "location_src": "Chiostro degli aranci",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.253888888,
+     43.775
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Martyrdom of Saint Lawrence",
+    "year": "1560",
+    "location": "Basilica of San Lorenzo",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20Martyrdom%20of%20St%20Lawrence.jpg?width=500",
+    "qid": "Q132148000",
+    "wikidata": "https://www.wikidata.org/wiki/Q132148000",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q132148000",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "basilica-of-san-lorenzo",
+    "location_src": "Basilica of San Lorenzo",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.256388888,
+     43.769166666
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Ceiling of the Chapel of Eleonora of Toledo",
+    "year": "1540",
+    "location": "Cappella di Eleonora",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20Ceiling%20of%20the%20Chapel%20of%20Eleonora%20of%20Toledo%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q67204094",
+    "wikidata": "https://www.wikidata.org/wiki/Q67204094",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q67204094",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "cappella-di-eleonora",
+    "location_src": "Cappella di Eleonora",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.256388888,
+     43.769166666
+    ]
+   },
+   "properties": {
+    "painter": "Bronzino",
+    "title": "Moses Striking the Rock and the Gathering of Manna",
+    "year": "",
+    "location": "Cappella di Eleonora",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Agnolo%20Bronzino%20-%20The%20falling%20of%20the%20Manna%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q67204099",
+    "wikidata": "https://www.wikidata.org/wiki/Q67204099",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q67204099",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "cappella-di-eleonora",
+    "location_src": "Cappella di Eleonora",
+    "kind": "church",
+    "form": "painting"
+   }
   }
  ]
 }

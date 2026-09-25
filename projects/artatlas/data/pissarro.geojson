@@ -23431,6 +23431,151 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     51.47167,
+     35.81083
+    ]
+   },
+   "properties": {
+    "painter": "Camille Pissarro",
+    "title": "untitled",
+    "year": "",
+    "location": "Niavaran Complex",
+    "city": "Shemiranat County",
+    "country": "Iran",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Untitled%20painting%20by%20Camille%20Pissarro.jpg?width=500",
+    "qid": "Q108523008",
+    "wikidata": "https://www.wikidata.org/wiki/Q108523008",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q108523008",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "niavaran-complex",
+    "location_src": "Niavaran Complex",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.475,
+     34.0775
+    ]
+   },
+   "properties": {
+    "painter": "Camille Pissarro",
+    "title": "Louveciennes, Route de Saint-Germain",
+    "year": "1871",
+    "location": "Getty Center",
+    "city": "Los Angeles",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20%28French%20-%20Louveciennes%2C%20Route%20de%20Saint-Germain%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q21407867",
+    "wikidata": "https://www.wikidata.org/wiki/Q21407867",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21407867",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Pontoise",
+    "creation_lat": 49.0516,
+    "creation_lon": 2.1017,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center",
+    "kind": "museum",
+    "form": "painting",
+    "venue_of": "J. Paul Getty Museum"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Camille Pissarro",
+    "title": "Heumahd",
+    "year": "1885",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pissaro%20-%20Heumahd.jpeg?width=500",
+    "qid": "Q22132754",
+    "wikidata": "https://www.wikidata.org/wiki/Q22132754",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22132754",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -66.9152,
+     10.51
+    ]
+   },
+   "properties": {
+    "painter": "Camille Pissarro",
+    "title": "Végétation tropicale",
+    "year": "1853",
+    "location": "Central Bank of Venezuela",
+    "city": "",
+    "country": "Venezuela",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vegetacion%20Tropical%20Camille%20Pissarro.JPG?width=500",
+    "qid": "Q141243712",
+    "wikidata": "https://www.wikidata.org/wiki/Q141243712",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141243712",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "central-bank-of-venezuela",
+    "location_src": "Central Bank of Venezuela",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

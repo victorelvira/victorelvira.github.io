@@ -92,9 +92,15 @@ const PAINTERS = [
   { slug: "giordano", name: "Luca Giordano", file: "artatlas/data/giordano.geojson" },
   { slug: "guercino", name: "Guercino", file: "artatlas/data/guercino.geojson" },
   { slug: "batoni", name: "Pompeo Batoni", file: "artatlas/data/batoni.geojson" },
+  // 2026-09-25: the ones the museum sweep and Brera asked for. Bramante painted as well as built
+  // (the Christ at the Column hangs in Brera), Canova is sculpture from end to end, like Bernini,
+  // and Orazio stands on his own besides closing the Gentileschi family.
+  { slug: "bramante", name: "Bramante", file: "artatlas/data/bramante.geojson" },
+  { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
+  { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.15.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-25 11:49";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.18.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-25 22:21";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -479,6 +485,7 @@ const PALETTE = [
   "#6a8f4a", "#b0417a", "#417a8f", "#8f6a41", "#7a41b0", "#41a06a", "#a0552f", "#4a6a8f",
   "#9c8f3f", "#6a417a", "#2f7a5a", "#8f414a", "#5a8f2f", "#417a6a", "#8f5a7a", "#3f5a7a", "#5a8f7b",
   "#d9601c", "#5c2a3e", "#9aa832", "#c24f9c", "#2a5c4a", "#3d9bd6",   // 2026-09-15: one per painter, Miró no longer borrows Caravaggio's
+  "#7b6a4e", "#356b8c", "#a3453f",                                   // 2026-09-25: Bramante, Canova, Orazio Gentileschi
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
@@ -540,6 +547,7 @@ const ERA_OF = {
   dali: "6", miro: "6", klimt: "6",
   // added 2026-09-15
   munch: ["5", "6"], romerodetorres: "5", giordano: "3", guercino: "3", batoni: "4",
+  bramante: "2", canova: "4", oraziogentileschi: "3",
 };
 const erasOf = slug => [].concat(ERA_OF[slug] || []);
 
@@ -567,6 +575,7 @@ const SCHOOL_OF = {
   bronzino: "it", carracci: "it", reni: "it", guardi: "it",
   turner: "en", friedrich: "de", delacroix: "fr", zuloaga: "es", dali: "es", miro: "es", klimt: "at",
   munch: "no", romerodetorres: "es", giordano: "it", guercino: "it", batoni: "it",
+  bramante: "it", canova: "it", oraziogentileschi: "it",
 };
 const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
 
@@ -587,11 +596,12 @@ const BORN = {
   reni: 1575, tiepolo: 1696, canaletto: 1697, guardi: 1712, friedrich: 1774, turner: 1775,
   delacroix: 1798, zuloaga: 1870, miro: 1893, dali: 1904, klimt: 1862,
   munch: 1863, romerodetorres: 1874, giordano: 1634, guercino: 1591, batoni: 1708,
+  bramante: 1444, canova: 1757, oraziogentileschi: 1563,
 };
 const bornOf = slug => BORN[slug] || 9999;
 
 // death year per painter (Wikidata P570) — for the Timeline life-span labels
-const DIED = { munch: 1944, romerodetorres: 1930, giordano: 1705, guercino: 1666, batoni: 1787, bernini: 1680, klimt: 1918, artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
+const DIED = { bramante: 1514, canova: 1822, oraziogentileschi: 1639, munch: 1944, romerodetorres: 1930, giordano: 1705, guercino: 1666, batoni: 1787, bernini: 1680, klimt: 1918, artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
 const diedOf = slug => DIED[slug] || null;
 
 // short label per painter for the selector button (the first name is often wrong — "Ignacio"
@@ -615,6 +625,7 @@ const NICK = {
   perugino: "Perugino", bronzino: "Bronzino", carracci: "Carracci", reni: "Reni",
   guardi: "Guardi", zuloaga: "Zuloaga", dali: "Dalí", miro: "Miró", klimt: "Klimt",
   munch: "Munch", romerodetorres: "Romero de Torres", giordano: "Giordano", guercino: "Guercino", batoni: "Batoni",
+  bramante: "Bramante", canova: "Canova", oraziogentileschi: "Orazio",
 };
 const nickOf = p => NICK[p.slug] || (p.name || "").split(" ")[0];
 let painterGroupBy = "period";   // "period" | "school"
@@ -992,6 +1003,8 @@ function wireFilterFold() {
 function refresh() {
   updateLegend();
   renderFilterSummary();
+  if (typeof galaxyRedraw === "function" && document.body.classList.contains("show-galaxy")
+      && galaxyWhat === "works") galaxyRedraw();
   let workCount = 0, shownPlaces = 0;
   const countries = new Set();
   for (const pl of places) {
@@ -1318,6 +1331,7 @@ function selectMuseum(key, { stay = false, url = true } = {}) {
   state.museumFilter = key;
   if (state.place) { state.place = null; renderPlaceChip(); }   // a museum is narrower than any city: one at a time
   if (state.theme) { state.theme = null; renderThemeChip(); }   // and narrower than any theme
+  clearSearchBox();
   const mu = museumIndex.find(m => m.key === key);
   const pop = document.getElementById("painters-pop");
   pop.hidden = true; document.getElementById("painters-btn").setAttribute("aria-expanded", "false");
@@ -1368,6 +1382,7 @@ function leaveUnfilteredViews() {
 function writeGoStep(lbEntry, left, mutate) {
   const url = urlWith(sp => {
     sp.delete("w");
+    if (!state.q) sp.delete("q");               // the search box was emptied on the way here
     if (left) ["view", "gcb", "gnm", "gt", "g3"].forEach(k => sp.delete(k));
     mutate(sp);
   });
@@ -1422,6 +1437,7 @@ function goPainter(name) {
   const pa = PAINTERS.find(p => p.name === name);
   if (!pa) return;
   noteMap();
+  clearSearchBox();
   const lbEntry = leaveOverlays(), left = leaveUnfilteredViews();
   PAINTERS.forEach(p => { state.painters[p.name] = p === pa; });
   state.museumFilter = null; renderMuseumChip();
@@ -1435,6 +1451,7 @@ function goPainter(name) {
 // · a city or a country: its works, every painter, no museum; the map fits them
 function goPlace(pl) {
   noteMap();
+  clearSearchBox();
   const lbEntry = leaveOverlays(), left = leaveUnfilteredViews();
   PAINTERS.forEach(p => { state.painters[p.name] = true; });
   state.museumFilter = null; renderMuseumChip();
@@ -1543,26 +1560,52 @@ function clearPlace() {
 // theme by their own definition (an artistic theme, a gospel episode, a biblical figure, a saint, a
 // god) and that at least eight works carry. A ficha shows them under the title, and pressing one
 // ("Crucifixion") opens every other Crucifixion in the atlas. 243 themes over 4,690 works.
-let THEMES = null, themeWork = null, themesP = null;
+let THEMES = null, themeWork = null, themeTitle = null, themesP = null;
 function loadThemes() {
   if (themesP) return themesP;
   themesP = fetch("artatlas/data/work_themes.json?v=" + DATA_V)
     .then(r => r.ok ? r.json() : null)
-    .then(d => { if (d) { THEMES = d.t || {}; themeWork = d.w || {}; } return THEMES; })
+    .then(d => { if (d) { THEMES = d.t || {}; themeWork = d.w || {}; themeTitle = d.y || {}; } return THEMES; })
     .catch(() => null);                          // no theme file → no tags, nothing else breaks
   return themesP;
 }
+// Two sources, kept apart: Wikidata says what the painting depicts, or the title says it outright
+// ("The Crucifixion"). The second reaches the 1,800 works with no QID, which the first never can, so
+// it is worth having — but it is a reading, not a record, and the tag says so.
 function themesOf(p) {
-  return (themeWork && p && p.qid && themeWork[p.qid]) || [];
+  if (!p) return [];
+  if (themeWork && p.qid && themeWork[p.qid]) return themeWork[p.qid];
+  return (themeTitle && themeTitle[workId(p)]) || [];
+}
+function themeFromTitle(p) {
+  return !!(themeTitle && !(themeWork && p.qid && themeWork[p.qid]) && themeTitle[workId(p)]);
 }
 function themeOk(p) {
   if (!state.theme) return true;
   return themesOf(p).includes(state.theme);
 }
 function themeName(id) { return (THEMES && THEMES[id] && THEMES[id].l) || id; }
+// Three kinds of tag, told apart by one glyph: what the painting shows (no glyph — it is the
+// commonest), where it is (a place a painter returned to), and who is in it.
+const THEME_GLYPH = { place: "📍", series: "📍", person: "👤" };
+function themeGlyph(id) { return (THEMES && THEMES[id] && THEME_GLYPH[THEMES[id].f]) || ""; }
+// Going somewhere by pressing a name empties the search box. You typed "crucifix" to find one
+// painting, opened it, pressed its Crucifixion tag: the words you typed have done their job, and
+// leaving them on would silently hide most of the 213 (Víctor).
+function clearSearchBox() {
+  if (!state.q) return;
+  // the ?q= goes with it; writeGoStep writes the address right after this
+  const box = document.getElementById("filter");
+  if (box) { box.value = ""; box.dispatchEvent(new Event("blurwipe")); }
+  setQ("");
+  const wrap = document.getElementById("filter-wrap"), x = document.getElementById("filter-clear");
+  if (wrap) wrap.classList.remove("has-q");
+  if (x) x.hidden = true;
+}
 // · a theme: every work that shows it, every painter, no museum; the map fits them
 function goTheme(id) {
   noteMap();
+  clearSearchBox();
   const lbEntry = leaveOverlays(), left = leaveUnfilteredViews();
   PAINTERS.forEach(x => { state.painters[x.name] = true; });
   state.museumFilter = null; renderMuseumChip();
@@ -1580,7 +1623,8 @@ function renderThemeChip() {
     el = document.createElement("span"); el.id = "theme-chip"; el.className = "chip mchip";
     (document.getElementById("place-chip") || document.getElementById("painters")).after(el);
   }
-  el.innerHTML = `🖼 ${esc(themeName(state.theme))} <button type="button" aria-label="${esc(t("Clear"))}">✕</button>`;
+  el.innerHTML = `${themeGlyph(state.theme) || "🖼"} ${esc(themeName(state.theme))} ` +
+    `<button type="button" aria-label="${esc(t("Clear"))}">✕</button>`;
   el.querySelector("button").addEventListener("click", clearTheme);
 }
 function clearTheme() {
@@ -1596,11 +1640,22 @@ function renderThemeTags(p) {
     if (!box.isConnected || wcWork !== p) return;             // the reader moved on while it loaded
     const ids = themesOf(p.p || p);
     if (!ids.length) return;
-    box.innerHTML = ids.map(id =>
-      `<button type="button" class="wtheme" data-theme="${esc(id)}" title="${esc(t("Show every work with this theme"))}">` +
-      `${esc(themeName(id))}<span class="wt-n">${(THEMES[id] || {}).n || ""}</span></button>`).join("");
-    box.querySelectorAll(".wtheme").forEach(b =>
-      b.addEventListener("click", () => goTheme(b.dataset.theme)));
+    const guess = themeFromTitle(p.p || p);
+    // a Sacra Conversazione can carry fifteen: show the five broadest and let the reader ask for the rest
+    const SHOWN = 5, extra = ids.length - SHOWN;
+    const tag = id =>
+      `<button type="button" class="wtheme${guess ? " guess" : ""}" data-theme="${esc(id)}" ` +
+      `title="${esc(guess ? t("Read from the title, not from Wikidata") : t("Show every work with this theme"))}">` +
+      `${themeGlyph(id) ? themeGlyph(id) + " " : ""}${esc(themeName(id))}` +
+      `<span class="wt-n">${(THEMES[id] || {}).n || ""}</span></button>`;
+    const paint = all => {
+      box.innerHTML = (all ? ids : ids.slice(0, SHOWN)).map(tag).join("") +
+        (!all && extra > 0 ? `<button type="button" class="wtheme more">+${extra}</button>` : "");
+      box.querySelectorAll(".wtheme[data-theme]").forEach(b =>
+        b.addEventListener("click", () => goTheme(b.dataset.theme)));
+      box.querySelector(".wtheme.more")?.addEventListener("click", () => paint(true));
+    };
+    paint(false);
   });
 }
 function placeFromURL() {                  // ?c=Paris|France (a city) · ?k=France (a country)
@@ -1950,12 +2005,15 @@ document.getElementById("v-mapview").addEventListener("click", () => { setTableV
     loadMuseumNames();                            // first keystroke → fetch the museum name table
     syncClear();
     clearTimeout(qt);
-    qt = setTimeout(() => { setQ(v); refresh(); }, 140);        // debounce: refresh rebuilds markers
+    qt = setTimeout(() => {
+      setQ(v); refresh();
+      histTweak(urlWith(sp => v ? sp.set("q", v) : sp.delete("q")));   // typing is a tweak, not a step
+    }, 140);                                                  // debounce: refresh rebuilds markers
   });
   const wipe = () => {                            // ✕ or Esc → empty the box and show everything again
     clearTimeout(qt);
     box.value = ""; syncClear();
-    if (state.q) { setQ(""); refresh(); }
+    if (state.q) { setQ(""); refresh(); histTweak(urlWith(sp => sp.delete("q"))); }
     box.focus();
   };
   clearBtn.addEventListener("click", wipe);
@@ -2867,7 +2925,11 @@ async function renderAffinity(name) {
   const known = new Set(PAINTERS.map(p => p.name));
   const chips = rec.near.filter(n => known.has(n)).slice(0, 6);
   if (!chips.length) return;
-  host.innerHTML = `<span class="wc-aff-h">${esc(t("If you like N, try").replace("N", pName(name)))}</span>` +
+  // Two different questions, and the answers looked like one list split in two (Víctor). This one is
+  // about the PAINTER: their whole body of work against everyone else's, museum by museum, so the
+  // answer is the same whichever Caravaggio you are looking at.
+  host.innerHTML = `<span class="wc-aff-h" title="${esc(t("Across all their paintings: each painter is the average of their work"))}">` +
+    `${esc(t("If you like N, try").replace("N", pName(name)))}</span>` +
     chips.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}">` +
       `<span class="pdot" style="background:${colorFor(n)}"></span>${esc(pName(n))}</button>`).join("");
 }
@@ -2938,9 +3000,16 @@ async function renderSimilar(qid) {
     ? `<div class="wc-sim-h">${label}</div><div class="wc-sim-row">` +
       arr.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " · " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`
     : "";
-  const painterLine = nearPainters.length
-    ? `<div class="wc-aff" style="margin-top:12px"><span class="wc-aff-h">${t("Painters nearest this work")}</span>` +
-      nearPainters.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}"><span class="pdot" style="background:${colorFor(n)}"></span>${esc(pName(n))}</button>`).join("") + `</div>`
+  // …and this one is about THIS painting: who painted the pictures shown just above, the ones that
+  // look most like it. When it says the same as the painter answer, it says nothing: it is dropped.
+  const affNames = new Set([...document.querySelectorAll("#wc-affinity [data-painter-only]")]
+    .map(b => b.dataset.painterOnly));
+  const fresh = nearPainters.filter(n => !affNames.has(n));
+  const painterLine = fresh.length
+    ? `<div class="wc-aff" style="margin-top:12px"><span class="wc-aff-h" ` +
+      `title="${esc(t("The painters of the pictures just above, the ones that look most like this one"))}">` +
+      `${t("Painters of these neighbours")}</span>` +
+      fresh.map(n => `<button type="button" class="wc-aff-chip" data-painter-only="${esc(n)}"><span class="pdot" style="background:${colorFor(n)}"></span>${esc(pName(n))}</button>`).join("") + `</div>`
     : "";
   const out = thumbRow(t("Visually closest · same painter"), same) + thumbRow(t("Visually closest · other painters"), other) + painterLine;
   if (out) host.innerHTML = out;
@@ -2963,6 +3032,7 @@ function openWorkCard(w) {
   document.getElementById("wc-body").innerHTML =
     `<div class="wc-imgwrap">${img}</div>` +
     `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${modelTag(p)}</h3>` +
+    `<div class="wc-themes" id="wc-themes"></div>` +          // what it shows, right under its name
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
     row(t("Where"), venue
       + (p.venue_of ? ` <span class="wc-venueof">· ${esc(p.venue_of)}</span>` : "")
@@ -2973,7 +3043,6 @@ function openWorkCard(w) {
     (meOn() ? `<button type="button" class="wc-fav${me.fav.has(workId(p)) ? " on" : ""}">${me.fav.has(workId(p)) ? "♥ " + t("Favourite") : "♡ " + t("Favourite")}</button>` : "") +
     (p.placeless ? "" : `<button type="button" class="wc-map">${t("📍 On the map")}</button>`) +
     `<span class="wc-hint">${t("or just copy the address bar")}</span></div>` +
-    `<div class="wc-themes" id="wc-themes"></div>` +
     `<div class="wc-aff" id="wc-affinity"></div>` +
     `<div class="wc-similar" id="wc-subject"></div>` +
     `<div class="wc-similar" id="wc-similar"></div>` +
@@ -3095,6 +3164,12 @@ function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum k
   const pl = placeFromURL();                     // the list under a ficha is part of the address too
   const mv = mapViewFromURL();                   // ?mv= wins: it is the last thing the reader saw
   const th = q.get("th");
+  const qq = q.get("q");                         // ?q=crucifixion — a shared search
+  if (qq) {
+    const box = document.getElementById("filter");
+    if (box) { box.value = qq; box.dispatchEvent(new Event("input", { bubbles: true })); }
+    else setQ(deacc(qq));
+  }
   if (pl && !m) { state.place = pl; renderPlaceChip(); refresh(); }
   if (th) loadThemes().then(() => {              // the table arrives after the map: apply it then
     if (!THEMES || !THEMES[th]) return;
@@ -3242,7 +3317,7 @@ const gSlugOf = p => GAME_SLUG_OF_NAME[p.painter];
 const G_NOPTS = { easy: 3, medium: 3, hard: 5 };   // Hard shows 5 choices instead of 3
 const G = { diff: "easy", mode: "mixed", right: 0, total: 0, q: null, answered: false };
 // each difficulty keeps its OWN in-progress game (score + pending question) so switching level and
-// back can't re-roll an unanswered question to dodge it (Lorena). Only answering or Reset moves on.
+// back can't re-roll an unanswered question to dodge it. Only answering or Reset moves on.
 const gStash = { easy: null, medium: null, hard: null };
 function gSaveLevel(d) { gStash[d] = { right: G.right, total: G.total, q: G.q, answered: G.answered, streak: gStreak }; }
 function gLoadLevel(d) {
@@ -3374,7 +3449,7 @@ function gAnswer(i) {
   if (info) info.innerHTML = gInfoHTML(q.work, q.kind);   // fills the reserved column; empty→invisible via CSS
   gScore();
 }
-// ── records, saved on this device (localStorage), kept SEPARATELY per difficulty (Lorena) ──
+// ── records, saved on this device (localStorage), kept SEPARATELY per difficulty ──
 const GS_KEY = "atlasGameStats";
 function gBlankLevel() { return { all: { right: 0, total: 0 }, best: 0, day: { date: "", right: 0, total: 0 } }; }
 function gLoadStats() {
@@ -3719,6 +3794,9 @@ function renderGalaxy() {
 }
 function drawGalaxy() {
   const plane = document.getElementById("galaxy-plane"); if (!plane || !galaxyCoords) return;
+  // while a search is on, what survives it is drawn larger: 80 lit dots among 19,000 grey ones are
+  // invisible at their usual size
+  plane.classList.toggle("gx-searching", !!state.q);
   if (!galaxyByQid) { galaxyByQid = new Map(); for (const w of works) if (w.p.qid) galaxyByQid.set(w.p.qid, w); }
   const S = 1800, PAD = 46;
   plane.style.width = (S + PAD * 2) + "px"; plane.style.height = (S + PAD * 2) + "px";
@@ -3728,13 +3806,17 @@ function drawGalaxy() {
     const x = (PAD + xy[0] / 1000 * S).toFixed(0), y = (PAD + xy[1] / 1000 * S).toFixed(0);
     const fill = (galaxyColorBy === "color" && xy.length >= 5) ? `rgb(${xy[2]},${xy[3]},${xy[4]})` : galaxyColorOf(w);
     const aSlug = GAME_SLUG_OF_NAME[w.p.painter] || "";
-    html += `<i class="gx-dot" data-qid="${qid}" data-a="${aSlug}" style="left:${x}px;top:${y}px;background:${fill}"></i>`;
+    // What you type filters the cloud too: a work the filters leave out fades to almost nothing
+    // instead of vanishing, so the shape of the whole stays as the background of the answer (Víctor).
+    const out = !passesAll(w.p);
+    html += `<i class="gx-dot${out ? " gx-out" : ""}" data-qid="${qid}" data-a="${aSlug}" ` +
+      `style="left:${x}px;top:${y}px;background:${out ? "" : fill}"></i>`;
     if (galaxyTitles || galaxyNames === "dots") {
       const parts = [];
       if (galaxyTitles) parts.push(w.p.title || "Untitled");
       if (galaxyNames === "dots") parts.push(w.p.painter || "");
       const txt = parts.filter(Boolean).join(" · ");
-      if (txt) html += `<span class="gx-lab" style="left:${(+x + 6)}px;top:${y}px">${esc(txt)}</span>`;
+      if (txt) html += `<span class="gx-lab${out ? " gx-out" : ""}" style="left:${(+x + 6)}px;top:${y}px">${esc(txt)}</span>`;
     }
     n++;
   }

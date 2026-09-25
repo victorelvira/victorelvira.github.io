@@ -4358,6 +4358,119 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.33092,
+     44.80334
+    ]
+   },
+   "properties": {
+    "painter": "Correggio",
+    "title": "Assumption of the Virgin",
+    "year": "1526",
+    "location": "Parma Cathedral",
+    "city": "Parma",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedral%20%28Parma%29%20-%20Assumption%20by%20Correggio.jpg?width=500",
+    "qid": "Q771210",
+    "wikidata": "https://www.wikidata.org/wiki/Q771210",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q771210",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Parma",
+    "creation_lat": 44.801472,
+    "creation_lon": 10.328,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "parma-cathedral",
+    "location_src": "Parma Cathedral",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.33219,
+     44.802925
+    ]
+   },
+   "properties": {
+    "painter": "Correggio",
+    "title": "Vision of St. John on Patmos",
+    "year": "1520",
+    "location": "San Giovanni Evangelista",
+    "city": "Parma",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/San%20Giovanni%20Evangelista%20%28Parma%29%20-%20Dome.jpg?width=500",
+    "qid": "Q3699558",
+    "wikidata": "https://www.wikidata.org/wiki/Q3699558",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3699558",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Parma",
+    "creation_lat": 44.801472,
+    "creation_lon": 10.328,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "san-giovanni-evangelista",
+    "location_src": "San Giovanni Evangelista",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.92066,
+     44.64825
+    ]
+   },
+   "properties": {
+    "painter": "Correggio",
+    "title": "Madonna with child and Saints Quirinus and Francis",
+    "year": "1505",
+    "location": "Galleria Estense",
+    "city": "Modena",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Correggio%2C%20Madonna%20col%20Bambino%20tra%20i%20santi%20Quirino%20e%20Francesco.jpg?width=500",
+    "qid": "Q3842586",
+    "wikidata": "https://www.wikidata.org/wiki/Q3842586",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3842586",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "galleria-estense",
+    "location_src": "Galleria Estense",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

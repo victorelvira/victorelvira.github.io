@@ -2,8 +2,8 @@
    the map as one view among others. Data built by scripts/build.py into sportsatlas/data/. */
 "use strict";
 
-const DATA_V = "0.7.0";
-const BUILD_AT = "2026-09-17 16:51";
+const DATA_V = "0.9.0";
+const BUILD_AT = "2026-09-25 22:12";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -22,7 +22,7 @@ document.querySelector(".brand").addEventListener("click", e => {
 
 /* ------------------------------------------------------------------ data */
 
-const D = { football: {}, tennis: {} };   // per sport: idx, comp, ed, venue, matches, players, teams
+const D = { football: {}, tennis: {}, olympics: {} };   // per sport: idx, comp, ed, venue, matches, players, teams
 const cache = {};
 
 async function getJSON(path) {
@@ -41,7 +41,7 @@ function unpack(p) {
 }
 
 // flags and crests (R48): a flag by the name a team or a country is shown under, a crest by club page
-let IMG = { flag: {}, crest: {} };
+let IMG = { flag: {}, crest: {}, pictogram: {}, ioc: {} };
 const SHOW_IMAGES = true;  // one switch to take every flag and crest off the web
 const imgFor = key => {
   if (!SHOW_IMAGES || !key) return "";
@@ -50,10 +50,13 @@ const imgFor = key => {
 };
 async function loadIndex(sport) {
   const d = D[sport];
-  if (!IMG.loaded) { IMG = await getJSON("images.json").catch(() => ({ flag: {}, crest: {} })); IMG.loaded = true; }
+  // the flags every table needs come first; crests and the Olympic images only with the sport that draws them
+  if (!IMG.loaded) { IMG = { ...IMG, ...await getJSON("images.json").catch(() => ({})) }; IMG.loaded = true; }
+  if (sport === "football" && !IMG.crestLoaded) { IMG.crest = (await getJSON("images-crests.json").catch(() => ({}))).crest || {}; IMG.crestLoaded = true; }
+  if (sport === "olympics" && !IMG.olyLoaded) { Object.assign(IMG, await getJSON("images-olympics.json").catch(() => ({}))); IMG.olyLoaded = true; }
   if (d.idx) return d;
   d.idx = await getJSON(`${sport}/index.json`);
-  d.comp = Object.fromEntries(d.idx.competitions.map(c => [c.id, c]));
+  d.comp = Object.fromEntries((d.idx.competitions || d.idx.sports || []).map(c => [c.id, c]));
   d.ed = Object.fromEntries(d.idx.editions.map(e => [e.id, e]));
   d.venue = Object.fromEntries(d.idx.venues.map(v => [v.id, v]));
   return d;
@@ -85,17 +88,19 @@ const FOOTBALL_GROUP_NAME = c => FOOTBALL_GROUPS.national.includes(c) ? "Nationa
 const VIEWS = {
   football: [["matches", "Matches"], ["editions", "Tournaments & seasons"], ["teams", "Teams"], ["players", "Players"], ["map", "Map"]],
   tennis: [["matches", "Matches"], ["editions", "Editions"], ["players", "Players"], ["map", "Map"]],
+  olympics: [["editions", "Games"], ["sports", "Sports"], ["countries", "Countries"], ["athletes", "Medallists"], ["map", "Map"]],
 };
-const S = { sport: "football", g: "m", page: "", view: "editions", comps: new Set(), rounds: new Set(), ed: "", y0: null, y1: null, q: "", sort: null, open: "", limit: 300 };
+const S = { sport: "football", g: "m", page: "", view: "editions", comps: new Set(), rounds: new Set(), surf: new Set(), ed: "", y0: null, y1: null, q: "", sort: null, open: "", limit: 300 };
 
 function readHash() {
   const [path, query = ""] = location.hash.replace(/^#\/?/, "").split("?");
   const [sport, view] = path.split("/");
   const p = new URLSearchParams(query);
-  S.sport = sport === "tennis" ? "tennis" : "football";
+  S.sport = ["tennis", "olympics"].includes(sport) ? sport : "football";
   S.view = VIEWS[S.sport].some(v => v[0] === view) ? view : "editions";
   S.comps = new Set((p.get("c") || "").split(",").filter(Boolean));
   S.rounds = new Set((p.get("r") || "").split(",").filter(Boolean));
+  S.surf = new Set((p.get("sf") || "").split(",").filter(x => SURF[x]));
   const y = (p.get("y") || "").split("-").map(Number);
   S.y0 = y[0] || null; S.y1 = y[1] || null;
   S.q = p.get("q") || "";
@@ -113,6 +118,7 @@ function writeHash(push = false) {
   const p = new URLSearchParams();
   if (S.comps.size) p.set("c", [...S.comps].join(","));
   if (S.rounds.size) p.set("r", [...S.rounds].join(","));
+  if (S.sport === "tennis" && S.surf.size) p.set("sf", [...S.surf].join(","));
   if (S.y0 || S.y1) p.set("y", `${S.y0 || ""}-${S.y1 || ""}`);
   if (S.q) p.set("q", S.q);
   if (S.sort) p.set("s", S.sort.key + (S.sort.dir < 0 ? "-" : ""));
@@ -131,6 +137,15 @@ const inYears = y => (!S.y0 || y >= S.y0) && (!S.y1 || y <= S.y1);
 // tennis shows one tour at a time: men's or women's singles (S.g), never both in one table
 const genderOn = c => S.sport !== "tennis" || !!(D.tennis.comp && D.tennis.comp[c] && D.tennis.comp[c].women) === (S.g === "w");
 const compOn = c => genderOn(c) && (!S.comps.size || S.comps.has(c));
+// the court: a family read from each edition's page (or Jeff Sackmann's file where the page gives none)
+const SURF = { clay: "Clay", grass: "Grass", hard: "Hard", carpet: "Carpet", wood: "Wood" };
+const surfOn = e => S.sport !== "tennis" || !S.surf.size || (e && S.surf.has(e.surf));
+const surfPill = (e, long) => e && e.surf ? `<span class="surf s-${e.surf}" title="${esc(e.surface || SURF[e.surf])}${e.surf_basis === "tennis_atp" ? " (from Jeff Sackmann's tennis_atp: the page gives none)" : ""}">${SURF[e.surf]}${e.indoor ? (long ? " · indoor" : " (i)") : ""}</span>` : "";
+// the tier of a tennis competition, as a badge: a Grand Slam, a 1000, a 500, the Finals, the Olympics
+const TIER = { slam: ["Grand Slam", "gs", 0], slam_w: ["Grand Slam", "gs", 0], masters: ["1000", "k1", 1], wta1000: ["1000", "k1", 1], atp500: ["500", "k5", 2],
+  finals: ["Finals", "fin", 3], finals_w: ["Finals", "fin", 3], olympics: ["Olympics", "oly", 4], olympics_w: ["Olympics", "oly", 4] };
+const tierOf = c => TIER[(D.tennis.comp && D.tennis.comp[c] || {}).group];
+const tierBadge = c => { const t = tierOf(c); return t ? `<span class="tier ${t[1]}">${t[0]}</span>` : ""; };
 
 /* ------------------------------------------------------------------ chrome */
 
@@ -157,7 +172,7 @@ for (const id of ["y0", "y1"]) {
 }
 $("#facets").addEventListener("click", e => {
   const b = e.target.closest("[data-f]"); if (!b) return;
-  const set = b.dataset.f === "c" ? S.comps : S.rounds;
+  const set = b.dataset.f === "c" ? S.comps : b.dataset.f === "sf" ? S.surf : S.rounds;
   const vals = b.dataset.v.split(",");
   const on = vals.every(v => set.has(v));
   if (e.altKey || e.metaKey) { set.clear(); vals.forEach(v => set.add(v)); }
@@ -171,6 +186,7 @@ $("#active").addEventListener("click", e => {
   if (k === "y") { S.y0 = S.y1 = null; }
   if (k === "c") S.comps.clear();
   if (k === "r") S.rounds.clear();
+  if (k === "sf") S.surf.clear();
   if (k === "e") S.ed = "";
   render();
 });
@@ -185,7 +201,8 @@ function chrome() {
   $("#view-tabs").innerHTML = VIEWS[S.sport].map(([k, l]) => `<button data-view="${k}" aria-pressed="${k === S.view}">${l}</button>`).join("");
   // rewrite the box only when the search really changed: "Real " typed must keep its space for the next letter
   if ($("#q").value.trim() !== S.q) $("#q").value = S.q;
-  $("#q").placeholder = S.sport === "tennis" ? "Filter by player or tournament" : "Filter by team, player, tournament";
+  $("#q").placeholder = S.sport === "tennis" ? "Filter by player or tournament"
+    : S.sport === "olympics" ? "Filter by Games, host, sport or committee" : "Filter by team, player, tournament";
   const years = d.idx.editions.map(e => e.year);
   $("#y0").placeholder = Math.min(...years); $("#y1").placeholder = Math.max(...years);
   $("#y0").value = S.y0 || ""; $("#y1").value = S.y1 || "";
@@ -193,13 +210,19 @@ function chrome() {
   const matches = eds.reduce((a, e) => a + (e.matches || 0), 0);
   $("#totals").innerHTML = S.sport === "football"
     ? `<b>${fmt(matches)}</b> matches · <b>${fmt(eds.length)}</b> tournaments and seasons`
-    : `<b>${fmt(matches)}</b> matches · <b>${fmt(eds.length)}</b> editions`;
+    : S.sport === "olympics"
+      ? `<b>${fmt(eds.filter(e => e.held).length)}</b> Games · <b>${fmt(eds.reduce((a, e) => a + (e.events || 0), 0))}</b> events · <b>${fmt((d.idx.sports || []).length)}</b> disciplines`
+      : `<b>${fmt(matches)}</b> matches · <b>${fmt(eds.length)}</b> editions`;
 
   // facets: competitions, then rounds for the match table
   const count = c => eds.filter(e => e.comp === c && inYears(e.year)).length;
-  const chip = (f, v, label, n) => `<span class="chip" role="button" tabindex="0" data-f="${f}" data-v="${esc(v)}" aria-pressed="${v.split(",").every(x => (f === "c" ? S.comps : S.rounds).has(x))}">${esc(label)}${n != null ? ` <span class="n">${fmt(n)}</span>` : ""}</span>`;
+  const setOf = f => f === "c" ? S.comps : f === "sf" ? S.surf : S.rounds;
+  const chip = (f, v, label, n, cls = "") => `<span class="chip${cls ? " " + cls : ""}" role="button" tabindex="0" data-f="${f}" data-v="${esc(v)}" aria-pressed="${v.split(",").every(x => setOf(f).has(x))}">${esc(label)}${n != null ? ` <span class="n">${fmt(n)}</span>` : ""}</span>`;
   let h = "";
-  if (S.sport === "football") {
+  if (S.sport === "olympics") {
+    // the Games need no competition chips: a discipline is a row of its own table, and the years narrow the rest
+    h = "";
+  } else if (S.sport === "football") {
     // national teams, then clubs: their international cups, then their national leagues
     const grp = (label, ids) => `<div class="fg">${chip("c", ids.join(","), label)}${ids.map(c => chip("c", c, d.comp[c].short, count(c))).join("")}</div>`;
     h += grp("National teams", FOOTBALL_GROUPS.national) + `<span class="chip-sep"></span>`;
@@ -212,10 +235,13 @@ function chrome() {
     const w = S.g === "w";
     const slams = d.idx.competitions.filter(c => c.group === (w ? "slam_w" : "slam")), masters = d.idx.competitions.filter(c => c.group === (w ? "wta1000" : "masters"));
     const other = d.idx.competitions.filter(c => w ? (c.group === "finals_w" || c.group === "olympics_w") : (c.group === "finals" || c.group === "olympics"));
-    h += `<div class="fg">${chip("c", slams.map(c => c.id).join(","), "Grand Slams")}${slams.map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div><span class="chip-sep"></span>`;
-    h += `<div class="fg">${chip("c", masters.map(c => c.id).join(","), w ? "WTA 1000" : "Masters 1000")}${masters.filter(c => count(c.id)).map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div>`;
+    // the courts first: they are also the key to the timeline's colours
+    const surfN = f => eds.filter(e => e.surf === f && genderOn(e.comp) && (!S.comps.size || S.comps.has(e.comp)) && inYears(e.year)).length;
+    h += `<div class="fg">${["clay", "grass", "hard", "carpet"].filter(f => surfN(f)).map(f => chip("sf", f, SURF[f], surfN(f), "surfchip s-" + f)).join("")}</div><span class="chip-sep"></span>`;
+    h += `<div class="fg">${chip("c", slams.map(c => c.id).join(","), "Grand Slams", null, "tierchip gs")}${slams.map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div><span class="chip-sep"></span>`;
+    h += `<div class="fg">${chip("c", masters.map(c => c.id).join(","), w ? "WTA 1000" : "Masters 1000", null, "tierchip k1")}${masters.filter(c => count(c.id)).map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div>`;
     const five = w ? [] : d.idx.competitions.filter(c => c.group === "atp500");
-    if (five.length) h += `<span class="chip-sep"></span><div class="fg">${chip("c", five.map(c => c.id).join(","), "ATP 500")}${five.filter(c => count(c.id)).map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div>`;
+    if (five.length) h += `<span class="chip-sep"></span><div class="fg">${chip("c", five.map(c => c.id).join(","), "ATP 500", null, "tierchip k5")}${five.filter(c => count(c.id)).map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div>`;
     h += `<span class="chip-sep"></span><div class="fg"><span class="lbl">Also</span>${other.map(c => chip("c", c.id, c.short, count(c.id))).join("")}</div>`;
     if (S.view === "matches") {
       h += `<span class="chip-sep"></span><div class="fg"><span class="lbl">Round</span>${["Final", "Semifinals", "Quarterfinals", "Earlier"].map(r => chip("r", r, r)).join("")}</div>`;
@@ -229,6 +255,7 @@ function chrome() {
   if (S.comps.size) act.push(`<span class="mchip">${S.comps.size} competition${S.comps.size > 1 ? "s" : ""}<button data-clear="c" aria-label="Clear">×</button></span>`);
   if (S.ed && d.ed[S.ed]) act.push(`<span class="mchip">${esc(d.ed[S.ed].title)}<button data-clear="e" aria-label="Clear">×</button></span>`);
   if (S.rounds.size) act.push(`<span class="mchip">${[...S.rounds].join(", ")}<button data-clear="r" aria-label="Clear">×</button></span>`);
+  if (S.sport === "tennis" && S.surf.size) act.push(`<span class="mchip">${[...S.surf].map(x => SURF[x].toLowerCase()).join(", ")}<button data-clear="sf" aria-label="Clear">×</button></span>`);
   $("#active").innerHTML = act.join("");
 }
 
@@ -287,7 +314,7 @@ function renderTable() {
     : `<tbody><tr><td class="empty">Nothing matches these filters.</td></tr></tbody>`;
   $("#more").hidden = list.length <= S.limit;
   $("#more").textContent = `Show more · ${fmt(list.length - S.limit)} left`;
-  $("#count").innerHTML = `<b>${fmt(list.length)}</b> ${list.length === 1 ? current.noun : current.noun.replace(/(ch|s)$/, "$1e") + "s"}${current.note ? ` · ${current.note}` : ""}`;
+  $("#count").innerHTML = `<b>${fmt(list.length)}</b> ${list.length === 1 || current.noun.endsWith("s") ? current.noun : current.noun.replace(/(ch)$/, "$1e") + "s"}${current.note ? ` · ${current.note}` : ""}`;
 }
 
 /* Two kinds of link besides opening a card: a competition name narrows the table to that competition, a country
@@ -301,7 +328,7 @@ function filterClick(e) {
     e.preventDefault(); e.stopPropagation();
     const f = JSON.parse(tb.dataset.table);
     S.page = ""; S.open = ""; S.view = "matches"; S.ed = ""; S.y0 = S.y1 = null; S.sort = null; S.limit = 300;
-    S.q = f.q || ""; S.comps = new Set(f.comps || []); S.rounds = new Set(f.rounds || []);
+    S.q = f.q || ""; S.comps = new Set(f.comps || []); S.rounds = new Set(f.rounds || []); S.surf = new Set(f.surf || []);
     if (f.g) S.g = f.g;
     pushNext = true; render(); return true;
   }
@@ -344,11 +371,16 @@ async function render() {
   $("#scroll").hidden = isMap;
   $("#mapview").hidden = !isMap;
   $("#tl-wrap").hidden = S.view !== "editions";
+  $("#tl-key").hidden = !["editions", "map"].includes(S.view);
   if (isMap) { $("#count").innerHTML = ""; await renderMap(); }
   else {
     $("#count").textContent = "Loading…";
+    if (S.sport === "olympics") await loadOlympics();
     if (S.view === "matches") await viewMatches(d);
-    if (S.view === "editions") viewEditions(d);
+    if (S.view === "editions") S.sport === "olympics" ? viewGames(d) : viewEditions(d);
+    if (S.view === "sports") viewSports(d);
+    if (S.view === "countries") viewCountries(d);
+    if (S.view === "athletes") await viewMedallists(d);
     if (S.view === "players") await viewPlayers(d);
     if (S.view === "teams") await viewTeams(d);
     renderTable();
@@ -398,7 +430,7 @@ async function viewMatches(d) {
       note: (S.ed ? /^(laliga|premier)-/.test(S.ed) : (S.comps.has("laliga") || S.comps.has("premier") || !S.comps.size)) ? "league dates from the clubs' season articles, else from engsoccerdata" : "",
       cols: [
         { k: "when", l: "Date", v: r => r[1] || "", s: r => (r[1] || String(d.ed[r[0]].year)), cls: "yr" },
-        { k: "ed", l: "Edition", v: r => d.ed[r[0]].title, s: r => d.ed[r[0]].year + d.ed[r[0]].comp, r: r => edLnk(d, r[0], "f"), cls: "comp" },
+        { k: "ed", l: "Edition", v: r => d.ed[r[0]].title, s: r => d.ed[r[0]].year + d.ed[r[0]].comp, r: r => edLnk(d, r[0], "f"), cls: "edc" },
         { k: "comp", l: "Competition", v: r => d.comp[d.ed[r[0]].comp].short, r: r => compLnk(d, d.ed[r[0]].comp), cls: "comp", hide: true },
         { k: "stage", l: "Stage", v: r => r[2], cls: "stagecell", hide: true },
         { k: "t1", l: "Home / team 1", v: r => r[3], r: r => lnk("team:" + r[11], r[3], res(r) === 1 ? "w" : ""), cls: "team r" },
@@ -411,14 +443,15 @@ async function viewMatches(d) {
   } else {
     const rows = all.filter(r => {
       const e = d.ed[r[0]];
-      return (!S.ed || r[0] === S.ed) && compOn(e.comp) && inYears(e.year) && (!S.rounds.size || S.rounds.has(roundGroup(r[2], r[1]))) && hit(r[3], r[4], e.title, e.name_then);
+      return (!S.ed || r[0] === S.ed) && compOn(e.comp) && surfOn(e) && inYears(e.year) && (!S.rounds.size || S.rounds.has(roundGroup(r[2], r[1]))) && hit(r[3], r[4], e.title, e.name_then);
     });
     const W = r => r[5] === 2 ? 4 : 3, L = r => r[5] === 2 ? 3 : 4;
     current = {
       noun: "match", rows, open: r => "edition:" + r[0],
       cols: [
-        { k: "year", l: "Edition", v: r => d.ed[r[0]].title, s: r => d.ed[r[0]].year, r: r => edLnk(d, r[0], "f"), cls: "comp" },
-        { k: "comp", l: "Tournament", v: r => d.comp[d.ed[r[0]].comp].short, r: r => compLnk(d, d.ed[r[0]].comp), cls: "comp hide-s" },
+        { k: "year", l: "Edition", v: r => d.ed[r[0]].title, s: r => d.ed[r[0]].year, r: r => edLnk(d, r[0], "f"), cls: "edc" },
+        { k: "comp", l: "Tournament", v: r => d.comp[d.ed[r[0]].comp].short, s: r => (tierOf(d.ed[r[0]].comp) || [, , 9])[2] + d.comp[d.ed[r[0]].comp].short, r: r => tierBadge(d.ed[r[0]].comp) + compLnk(d, d.ed[r[0]].comp), cls: "comp hide-s" },
+        { k: "surf", l: "Surface", v: r => d.ed[r[0]].surf || "", r: r => surfPill(d.ed[r[0]]), hide: true },
         { k: "round", l: "Round", v: r => r[1], s: r => r[2], cls: "stagecell" },
         { k: "w", l: "Winner", v: r => r[W(r)], r: r => lnk("player:" + r[W(r) + 4], r[W(r)], r[5] ? "w" : "") + flag(r[W(r) + 6]), cls: "team" },
         { k: "score", l: "Score", v: r => r[6], cls: "tennis-score" },
@@ -431,7 +464,7 @@ async function viewMatches(d) {
 const flag = f => f ? `<span class="flag">${esc(f)}</span>` : "";
 
 function viewEditions(d) {
-  const rows = d.idx.editions.filter(e => compOn(e.comp) && inYears(e.year) && hit(e.title, e.name_then, e.champion, e.runner_up, e.host));
+  const rows = d.idx.editions.filter(e => compOn(e.comp) && surfOn(e) && inYears(e.year) && hit(e.title, e.name_then, e.champion, e.runner_up, e.host));
   drawTimeline(d, rows);
   const reading = e => e.reading === "check" ? `<span class="pill warn" title="The source does not fully add up; see the card">check</span>` : e.reading === "no_draw" ? `<span class="pill">no draw</span>` : "";
   if (S.sport === "football") {
@@ -455,11 +488,11 @@ function viewEditions(d) {
       noun: "edition", rows, open: e => "edition:" + e.id,
       cols: [
         { k: "year", l: "Edition", v: e => e.title, s: e => e.year, r: e => edLnk(d, e.id), cls: "edc" },
-        { k: "comp", l: "Tournament", v: e => d.comp[e.comp].short, r: e => compLnk(d, e.comp), cls: "comp" },
+        { k: "comp", l: "Tournament", v: e => d.comp[e.comp].short, s: e => (tierOf(e.comp) || [, , 9])[2] + d.comp[e.comp].short, r: e => tierBadge(e.comp) + compLnk(d, e.comp), cls: "comp" },
+        { k: "surf", l: "Surface", v: e => e.surf || "", r: e => surfPill(e), hide: true },
         { k: "champ", l: "Champion", v: e => e.champion, r: e => e.champion ? lnk("player:" + e.champion_id, e.champion, "w") : `<span class="muted">${e.matches ? "" : "not held or no draw"}</span>`, cls: "name" },
         { k: "runner", l: "Runner-up", v: e => e.runner_up, r: e => e.runner_up ? lnk("player:" + e.runner_id, e.runner_up) : "", cls: "muted hide-s" },
         { k: "final", l: "Final", v: e => e.final, cls: "tennis-score", hide: true },
-        { k: "surface", l: "Surface", v: e => e.surface, cls: "muted", hide: true },
         { k: "players", l: "Players", v: e => e.players, cls: "num", num: true, hide: true },
         { k: "reading", l: "", v: e => e.reading || "", r: reading },
       ],
@@ -474,7 +507,7 @@ async function viewPlayers(d) {
     const rows = [];
     for (const p of ps) {
       if (!hit(p.name, p.flag)) continue;
-      const r = p.r.filter(x => compOn(x[4]) && inYears(x[3]));
+      const r = p.r.filter(x => compOn(x[4]) && inYears(x[3]) && surfOn(d.ed[x[0]]));
       if (!r.length) continue;
       const t = r.filter(x => x[2] === "Champion");
       rows.push({ p, n: r.length, titles: t.length, slams: t.filter(x => x[5] === "slams" || x[5] === "slams_w").length, masters: t.filter(x => x[5] === "masters" || x[5] === "wta1000").length, five: t.filter(x => x[5] === "atp500").length,
@@ -558,37 +591,176 @@ async function viewTeams(d) {
 /* ------------------------------------------------------------------ timeline */
 
 let focusEds = null;
+/* The timeline's rows go by category, each under a header that folds it: the Grand Slams, then the 1000s, the 500s,
+   the Finals and the Olympics; in football the national teams, the clubs' international cups, their leagues. A folded
+   category draws all its editions on one row. Which are folded is remembered in this browser only. */
+const TL_K = { football: 1, tennis: 1, olympics: 1 };
+/* The colour of a mark says something in every sport: the court in tennis, the champion's country in football, the
+   continent that hosted those Games in the Olympics. Five hues, checked for colour-blind separation in this order,
+   and every one of them named in the key under the timeline; what has no answer stays grey. */
+const HUES = ["#2f6db5", "#e3894a", "#2d6b33", "#8a3f7a", "#b9922b"];
+const GREY = "#b9b2a6";
+const CONTINENT = { Europe: HUES[0], Americas: HUES[1], Asia: HUES[2], Oceania: HUES[3], Africa: HUES[4] };
+let tlKey = [];   // [[what, colour]] of the timeline as it is drawn now
+function markColours(eds) {
+  if (S.sport === "tennis") {
+    tlKey = ["clay", "grass", "hard", "carpet"].filter(f => eds.some(e => e.surf === f)).map(f => [SURF[f], `var(--${f})`]);
+    return e => e.surf ? `var(--${e.surf})` : GREY;
+  }
+  if (S.sport === "olympics") {
+    const cont = e => (D.olympics.ed[e.ed || e.id] || {}).continent || "";
+    const seen = [...new Set(eds.map(cont))].filter(Boolean);
+    tlKey = Object.keys(CONTINENT).filter(c => seen.includes(c)).map(c => [c, CONTINENT[c]]);
+    return e => CONTINENT[cont(e)] || GREY;
+  }
+  // football: the countries that won most of what is on screen take the five hues, the rest share grey
+  const n = new Map();
+  for (const e of eds) if (e.champ_country) n.set(e.champ_country, (n.get(e.champ_country) || 0) + 1);
+  const top = [...n.entries()].sort((a, b) => b[1] - a[1]).slice(0, HUES.length).map(([c]) => c);
+  const of = Object.fromEntries(top.map((c, i) => [c, HUES[i]]));
+  tlKey = top.map(c => [c, of[c]]).concat(n.size > top.length ? [["other countries", GREY]] : []);
+  return e => of[e.champ_country] || GREY;
+}  // how far the years are stretched, per sport
+const TL_FOLD = (() => { try { return new Set(JSON.parse(localStorage.getItem("tlFold") || "[]")); } catch { return new Set(); } })();
+function tlGroups(d) {
+  const w = S.g === "w", by = gs => (d.idx.competitions || []).filter(c => gs.includes(c.group));
+  if (S.sport === "olympics") {
+    // the three answers the Games ask of their programme: what never left, what is on it now, what is gone
+    const pick = want => d.idx.sports.filter(x => discStatus(d, x.id)[0] === want);
+    return [["always", "In every Games", pick("in every Games")], ["now", "On the programme now", pick("on the programme")],
+            ["gone", "Gone from it", [...pick("gone"), ...pick("demonstration only")]]];
+  }
+  return S.sport === "tennis"
+    ? [["slams", "Grand Slams", by([w ? "slam_w" : "slam"])], ["k1", w ? "WTA 1000" : "Masters 1000", by([w ? "wta1000" : "masters"])],
+       ["k5", "ATP 500", w ? [] : by(["atp500"])], ["other", "Finals, Olympics", by(w ? ["finals_w", "olympics_w"] : ["finals", "olympics"])]]
+    : [["national", "National teams", FOOTBALL_GROUPS.national], ["international", "Clubs · international", FOOTBALL_GROUPS.international],
+       ["leagues", "Clubs · national", FOOTBALL_GROUPS.leagues]].map(([k, l, ids]) => [k, l, ids.map(id => d.comp[id]).filter(Boolean)]);
+}
 function drawTimeline(d, rows) {
   const svg = $("#tl");
-  const comps = d.idx.competitions.filter(c => d.idx.editions.some(e => e.comp === c.id && inYears(e.year)) && compOn(c.id));
-  const W = Math.max(760, svg.clientWidth || 900), LEFT = 120, RIGHT = 10, TOP = 16;
-  const ROW = comps.length > 8 ? 13 : 18;
+  const tlEds = S.sport === "olympics" ? D.olympics.tlEds : d.idx.editions.map(e => ({ ...e, size: e.matches || 0 }));
+  const shown = c => tlEds.some(e => e.comp === c.id && inYears(e.year)) && (S.sport === "olympics" || compOn(c.id));
+  const groups = tlGroups(d).map(([k, l, cs]) => [k, l, cs.filter(shown)]).filter(g => g[2].length);
+  const lines = [];  // one per header, one per competition row (or one for a folded category)
+  for (const [k, l, cs] of groups) {
+    const folded = TL_FOLD.has(S.sport + ":" + k);
+    lines.push({ head: true, k, l, n: cs.length, folded });
+    if (folded) lines.push({ comps: cs, label: `${cs.length} ${S.sport === "tennis" ? "tournaments" : S.sport === "olympics" ? "disciplines" : "competitions"}` });
+    else cs.forEach(c => lines.push({ comps: [c], label: c.short || c.name }));
+  }
+  const rowsN = lines.filter(x => !x.head).length;
+  const sc = $("#tl-scroll"), K = TL_K[S.sport];
+  const W = Math.round(Math.max(760, sc.clientWidth || 900) * K), LEFT = 132, RIGHT = 10, TOP = 16, HEAD = 17;
+  const ROW = rowsN > 8 ? 13 : 18;
   const years = d.idx.editions.map(e => e.year);
   const Y0 = Math.min(...years) - 1, Y1 = Math.max(...years) + 1;
   const x = y => LEFT + (y - Y0) / (Y1 - Y0) * (W - LEFT - RIGHT);
-  const H = TOP + comps.length * ROW + 18;
+  const bodyH = lines.reduce((a, ln) => a + (ln.head ? HEAD : ROW), 0);
+  const H = TOP + bodyH + 18;
   const vis = new Set(rows.map(e => e.id));
   let s = "";
-  for (const [a, b, n] of WAR) if (a > Y0) s += `<rect class="war" x="${x(a)}" y="${TOP - 3}" width="${x(b + 1) - x(a)}" height="${comps.length * ROW + 4}"/><text class="war-l" x="${(x(a) + x(b + 1)) / 2}" y="${TOP - 5}" text-anchor="middle">${n}</text>`;
-  for (let y = Math.ceil(Y0 / 10) * 10; y <= Y1; y += 10) s += `<line class="grid" x1="${x(y)}" x2="${x(y)}" y1="${TOP - 3}" y2="${TOP + comps.length * ROW}"/><text class="axis" x="${x(y)}" y="${H - 3}" text-anchor="middle">${y}</text>`;
-  const mw = Math.max(2, (W - LEFT - RIGHT) / (Y1 - Y0) * .6);
-  comps.forEach((c, i) => {
-    const cy = TOP + i * ROW;
-    s += `<text class="lbl" x="0" y="${cy + ROW / 2 + 4}">${esc(c.short)}</text>`;
-    for (const e of d.idx.editions.filter(e => e.comp === c.id)) {
-      const off = !vis.has(e.id) || (focusEds && !focusEds.has(e.id));
-      s += `<rect class="mk${off ? " off" : ""}" data-id="${e.id}" x="${x(e.year) - mw / 2 + (e.id.endsWith("-dec") ? mw : 0)}" y="${cy + 2}" width="${mw}" height="${ROW - 5}" rx="1"/>`;
+  for (const [a, b, n] of WAR) if (a > Y0) s += `<rect class="war" x="${x(a)}" y="${TOP - 3}" width="${x(b + 1) - x(a)}" height="${bodyH + 4}"/><text class="war-l" x="${(x(a) + x(b + 1)) / 2}" y="${TOP - 5}" text-anchor="middle">${n}</text>`;
+  const step = [1, 2, 5, 10, 20].find(st => (x(Y0 + st) - x(Y0)) >= 44) || 20;  // a year label every 44 px at least
+  for (let y = Math.ceil(Y0 / step) * step; y <= Y1; y += step) s += `<line class="grid${y % 10 ? " minor" : ""}" x1="${x(y)}" x2="${x(y)}" y1="${TOP - 3}" y2="${TOP + bodyH}"/><text class="axis" x="${x(y)}" y="${H - 3}" text-anchor="middle">${y}</text>`;
+  const mw = Math.max(2, Math.min(26, (W - LEFT - RIGHT) / (Y1 - Y0) * .6));
+  const colourOf = markColours(tlEds);
+  let cy = TOP, lbl = "";
+  for (const ln of lines) {
+    if (ln.head) {
+      s += `<line class="tlg-line" x1="0" x2="${W - RIGHT}" y1="${cy + HEAD - 2}" y2="${cy + HEAD - 2}"/>`;
+      // the names live in a strip pinned over the left edge, so they stay as the years scroll
+      lbl += `<g class="tlg" data-g="${ln.k}" role="button" tabindex="0" aria-expanded="${!ln.folded}"><rect class="tlg-hit" x="0" y="${cy}" width="${LEFT - 4}" height="${HEAD}"/>`
+        + `<line class="tlg-line" x1="0" x2="${LEFT}" y1="${cy + HEAD - 2}" y2="${cy + HEAD - 2}"/>`
+        + `<path class="tlg-tri" d="${ln.folded ? "M2 3.5L9 7L2 10.5Z" : "M2 4.5L9 4.5L5.5 11Z"}" transform="translate(0 ${cy + 1})"/>`
+        + `<text class="tlg-l" x="14" y="${cy + HEAD - 5}">${esc(ln.l)}</text></g>`;
+      cy += HEAD;
+      continue;
     }
-  });
+    lbl += `<text class="lbl${ln.comps.length > 1 ? " folded" : ""}" x="12" y="${cy + ROW / 2 + 4}">${esc(ln.label)}</text>`;
+    const base = cy + ROW - 3, tall = ROW - 5;
+    for (const c of ln.comps) {
+      const es = tlEds.filter(e => e.comp === c.id).sort((a, b) => a.year - b.year);
+      if (!es.length) continue;
+      // the years this competition ran, as a band: then a gap is a break with a meaning (a war, a cup that ended),
+      // not empty paper. A run breaks when a gap is far longer than that competition's own cadence.
+      const gaps = es.slice(1).map((e, i) => e.year - es[i].year).sort((a, b) => a - b);
+      const usual = gaps.length ? gaps[Math.floor(gaps.length / 2)] : 1;
+      const runs = [[es[0]]];
+      for (const e of es.slice(1)) {
+        const prev = runs[runs.length - 1];
+        (e.year - prev[prev.length - 1].year > Math.max(2, usual * 2.5) ? runs.push([e]) : prev.push(e));
+      }
+      for (const run of runs) {
+        const a = x(run[0].year), b = x(run[run.length - 1].year);
+        s += `<rect class="band${ln.comps.length > 1 ? " stack" : ""}" style="fill:${colourOf(run[Math.floor(run.length / 2)])}" x="${(a - mw / 2 - 1).toFixed(1)}" y="${(base - tall * .62).toFixed(1)}" width="${Math.max(mw + 2, b - a + mw + 2).toFixed(1)}" height="${(tall * .62).toFixed(1)}" rx="2"/>`;
+      }
+      // the mark is as tall as the edition was big (its matches, or the events of that discipline), never a bare dot
+      const top = Math.max(...es.map(e => e.size || 0), 1);
+      for (const e of es) {
+        const off = !vis.has(e.ed || e.id) || (focusEds && !focusEds.has(e.id));
+        const h = Math.max(3, Math.min(1, (e.size || 0) / top) * tall);
+        s += `<rect class="mk${off ? " off" : ""}${S.sport === "tennis" && e.surf ? " s-" + e.surf : ""}${e.demo ? " demo" : ""}${ln.comps.length > 1 ? " stack" : ""}" style="fill:${colourOf(e)}" data-id="${e.ed || e.id}" x="${(x(e.year) - mw / 2 + (e.id.endsWith("-dec") ? mw : 0)).toFixed(1)}" y="${(base - h).toFixed(1)}" width="${mw.toFixed(1)}" height="${h.toFixed(1)}" rx="1"/>`;
+      }
+      // once the years are far enough apart, each mark says which year it is
+      if (x(Y0 + 1) - x(Y0) > 26 && ln.comps.length === 1) {
+        for (const e of es) s += `<text class="mk-y" x="${x(e.year).toFixed(1)}" y="${(base - tall - 1).toFixed(1)}" text-anchor="middle">${e.year}</text>`;
+      }
+    }
+    cy += ROW;
+  }
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.style.width = W + "px";
   svg.style.height = H + "px";
   svg.innerHTML = s;
+  const strip = $("#tl-lbl");
+  strip.setAttribute("viewBox", `0 0 ${LEFT} ${H}`);
+  strip.style.width = LEFT + "px";
+  strip.style.height = H + "px";
+  strip.innerHTML = lbl;
+  renderKey();
+  $("#tl-tools [data-tlz=out]").disabled = K <= 1;
+  $("#tl-tools [data-tlz=fit]").hidden = K <= 1;
+  TL_GEOM = { LEFT, RIGHT, W, Y0, Y1 };
 }
-$("#tl").addEventListener("click", e => { const m = e.target.closest(".mk"); if (m) openCard("edition:" + m.dataset.id); });
+let TL_GEOM = null;
+function tlRedraw() {
+  const d = D[S.sport];
+  drawTimeline(d, d.idx.editions.filter(e => S.sport === "olympics" ? inYears(e.year) && hit(e.title, e.city, e.country)
+    : compOn(e.comp) && surfOn(e) && inYears(e.year) && hit(e.title, e.name_then, e.champion, e.runner_up, e.host)));
+}
+$("#tl-tools").addEventListener("click", e => {
+  const b = e.target.closest("[data-tlz]"); if (!b || !TL_GEOM) return;
+  const sc = $("#tl-scroll"), g = TL_GEOM;
+  // keep the year in the middle of what is visible (right of the pinned names) where it is
+  const yearAt = px => g.Y0 + (px - g.LEFT) / (g.W - g.LEFT - g.RIGHT) * (g.Y1 - g.Y0);
+  const mid = yearAt(sc.scrollLeft + (sc.clientWidth + g.LEFT) / 2);
+  TL_K[S.sport] = b.dataset.tlz === "fit" ? 1 : Math.max(1, Math.min(24, TL_K[S.sport] * (b.dataset.tlz === "in" ? 1.6 : 1 / 1.6)));
+  tlRedraw();
+  const n = TL_GEOM, xm = n.LEFT + (mid - n.Y0) / (n.Y1 - n.Y0) * (n.W - n.LEFT - n.RIGHT);
+  sc.scrollLeft = Math.max(0, xm - (sc.clientWidth + n.LEFT) / 2);
+});
+/* The key of what the colours mean, under the timeline and under the map. */
+function renderKey() {
+  const key = $("#tl-key");
+  key.innerHTML = `<span class="what">${S.sport === "tennis" ? "Court:" : S.sport === "olympics" ? "Held in:" : "Champion from:"}</span>`
+    + tlKey.map(([what, c]) => `<span class="k"><i style="--c:${c}"></i>${esc(what)}</span>`).join("");
+  key.hidden = !tlKey.length || !["editions", "map"].includes(S.view);
+}
+
+function toggleTlGroup(k) {
+  const key = S.sport + ":" + k;
+  TL_FOLD.has(key) ? TL_FOLD.delete(key) : TL_FOLD.add(key);
+  try { localStorage.setItem("tlFold", JSON.stringify([...TL_FOLD])); } catch { }
+  tlRedraw();
+}
+$("#tl-lbl").addEventListener("click", e => { const g = e.target.closest(".tlg"); if (g) toggleTlGroup(g.dataset.g); });
+$("#tl-lbl").addEventListener("keydown", e => { const g = e.target.closest(".tlg"); if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleTlGroup(g.dataset.g); } });
+$("#tl").addEventListener("click", e => { const m = e.target.closest(".mk"); if (m && !$("#tl-scroll").dataset.dragged) openCard("edition:" + m.dataset.id); });
 $("#tl").addEventListener("mousemove", e => {
   const m = e.target.closest(".mk"); if (!m) return hideTip();
   const ed = D[S.sport].ed[m.dataset.id];
-  showTip(e, `<b>${esc(ed.title)}</b><br>${ed.champion ? "Champion · " + esc(ed.champion) : "No champion recorded"}`);
+  if (!ed) return hideTip();
+  showTip(e, `<b>${esc(ed.title)}</b><br>${S.sport === "olympics" ? (ed.held ? `${esc(ed.city)} · ${fmt(ed.events)} events` : "not held") : ed.champion ? "Champion · " + esc(ed.champion) : "No champion recorded"}`);
 });
 $("#tl").addEventListener("mouseleave", hideTip);
 const tip = $("#tip");
@@ -600,11 +772,323 @@ function showTip(ev, html) {
 }
 function hideTip() { tip.classList.remove("on"); }
 
+/* ------------------------------------------------------------------ the Olympic Games
+
+   A third atlas beside football and tennis, and never mixed with them: the Summer Games, edition by edition, with the
+   programme of each (discipline by discipline, with the events it awarded and the pictogram Wikipedia draws for it)
+   and the medal table by National Olympic Committee, as each Games' own article and medal table state them. */
+
+const OLY_MEDALS = ["gold", "silver", "bronze"];
+async function loadOlympics() {
+  const d = D.olympics;
+  if (!d.med) {
+    const [med, prog] = await Promise.all([getJSON("olympics/medals.json"), getJSON("olympics/programme.json")]);
+    d.med = unpack(med);
+    d.prog = unpack(prog);
+    d.disc = {};
+    for (const p of d.prog) {
+      const y = +p[0].slice(7);
+      const x = d.disc[p[1]] = d.disc[p[1]] || { years: [], demo: [], events: 0, then: {} };
+      (p[3] ? x.demo : x.years).push(y);
+      x.events += p[2];
+      if (p[6]) x.then[y] = p[6];
+    }
+    // the timeline draws one row per discipline: a mark where it was on that programme
+    d.tlEds = d.prog.map(p => ({ id: `${p[0]}|${p[1]}`, comp: p[1], year: +p[0].slice(7), demo: !!p[3], ed: p[0], size: p[2] }));
+  }
+  return d;
+}
+const lastGames = d => Math.max(...d.idx.editions.filter(e => e.held).map(e => e.year));
+function discStatus(d, code) {
+  const x = d.disc[code] || { years: [] };
+  const held = d.idx.editions.filter(e => e.held).map(e => e.year);
+  if (!x.years.length) return ["demonstration only", "oly-demo"];
+  if (held.every(y => x.years.includes(y))) return ["in every Games", "oly-always"];
+  return x.years.includes(lastGames(d)) ? ["on the programme", "oly-now"] : ["gone", "oly-gone"];
+}
+const picto = code => IMG.pictogram[code] ? `<img class="picto" src="sportsatlas/${IMG.pictogram[code]}" alt="" loading="lazy">` : "";
+const iocFlag = (code, year) => {
+  const src = IMG.ioc[`${code}|${year}`] || Object.entries(IMG.ioc).filter(([k]) => k.startsWith(code + "|")).sort().pop()?.[1];
+  return src ? `<img class="badge" src="sportsatlas/${src}" alt="" loading="lazy">` : "";
+};
+const nocName = (d, code, year) => (d.med.find(m => m[1] === code && (!year || m[0] === `summer-${year}`)) || d.med.find(m => m[1] === code) || [, , code])[2];
+
+function viewGames(d) {
+  const rows = d.idx.editions.filter(e => inYears(e.year) && hit(e.title, e.city, e.country));
+  drawTimeline(d, rows);
+  current = {
+    noun: "Games", rows, open: e => "edition:" + e.id,
+    cols: [
+      { k: "year", l: "Games", v: e => e.title, s: e => e.year, r: e => edLnk(d, e.id), cls: "edc" },
+      { k: "city", l: "Host", v: e => e.city, r: e => e.held ? esc(e.city) : `<span class="muted">not held</span>`, cls: "name" },
+      { k: "country", l: "Country", v: e => e.country, cls: "muted" },
+      { k: "nations", l: "Committees", v: e => e.nations || null, cls: "num", num: true },
+      { k: "athletes", l: "Athletes", v: e => e.athletes || null, cls: "num", num: true },
+      { k: "sports", l: "Sports", v: e => e.sports || null, cls: "num", num: true },
+      { k: "events", l: "Events", v: e => e.events || null, cls: "num", num: true },
+      { k: "reading", l: "", v: e => e.reading || "", r: e => e.reading === "check" ? `<span class="pill warn" title="The sources do not agree on how many events there were; see the card">check</span>` : "" },
+    ],
+  };
+  if (!S.sort) S.sort = { key: "year", dir: -1 };
+}
+
+function viewSports(d) {
+  const rows = d.idx.sports.map(x => {
+    const s = d.disc[x.id] || { years: [], demo: [], events: 0 };
+    const [status, cls] = discStatus(d, x.id);
+    const all = [...s.years, ...s.demo];
+    return { x, n: s.years.length, demo: s.demo.length, events: s.events, first: Math.min(...all), last: Math.max(...all), status, cls };
+  }).filter(r => hit(r.x.name, r.x.sport, r.x.body, r.status));
+  current = {
+    noun: "discipline", rows, open: r => "disc:" + r.x.id,
+    cols: [
+      { k: "name", l: "Discipline", v: r => r.x.name, r: r => `${picto(r.x.id)}<button class="lnk" data-open="disc:${esc(r.x.id)}">${esc(r.x.name)}</button>`, cls: "name" },
+      { k: "sport", l: "Sport", v: r => r.x.sport, r: r => r.x.sport === r.x.name ? `<span class="muted">—</span>` : esc(r.x.sport), cls: "muted" },
+      { k: "code", l: "Code", v: r => r.x.id, cls: "muted hide-s" },
+      { k: "status", l: "On the programme", v: r => r.status, r: r => `<span class="pill ${r.cls}">${esc(r.status)}</span>` },
+      { k: "n", l: "Games", v: r => r.n, cls: "num", num: true },
+      { k: "first", l: "First", v: r => r.first, cls: "yr" },
+      { k: "last", l: "Last", v: r => r.last, cls: "yr" },
+      { k: "events", l: "Events", v: r => r.events, cls: "num", num: true },
+      { k: "body", l: "Federation", v: r => r.x.body, cls: "muted", hide: true },
+    ],
+  };
+  if (!S.sort) S.sort = { key: "n", dir: -1 };
+}
+
+function viewCountries(d) {
+  const by = new Map();
+  for (const m of d.med) {
+    const e = d.ed[m[0]];
+    if (!inYears(e.year)) continue;
+    const r = by.get(m[1]) || { code: m[1], name: m[2], games: 0, g: 0, s: 0, b: 0, last: 0 };
+    r.g += m[3]; r.s += m[4]; r.b += m[5]; r.games++;
+    if (e.year > r.last) { r.last = e.year; r.name = m[2]; }
+    by.set(m[1], r);
+  }
+  const rows = [...by.values()].filter(r => hit(r.name, r.code)).map(r => ({ ...r, total: r.g + r.s + r.b }));
+  current = {
+    noun: "committee", rows, open: r => "noc:" + r.code,
+    cols: [
+      { k: "name", l: "Committee", v: r => r.name, r: r => `${iocFlag(r.code, r.last)}<button class="lnk" data-open="noc:${esc(r.code)}">${esc(r.name)}</button>`, cls: "name" },
+      { k: "code", l: "Code", v: r => r.code, cls: "muted hide-s" },
+      { k: "games", l: "Games with a medal", v: r => r.games, cls: "num", num: true },
+      { k: "g", l: "Gold", v: r => r.g, r: r => `<span class="win">${r.g}</span>`, cls: "num", num: true },
+      { k: "s", l: "Silver", v: r => r.s, cls: "num", num: true },
+      { k: "b", l: "Bronze", v: r => r.b, cls: "num", num: true },
+      { k: "total", l: "Total", v: r => r.total, cls: "num", num: true },
+      { k: "last", l: "Last", v: r => r.last, cls: "yr", hide: true },
+    ],
+  };
+  if (!S.sort) S.sort = { key: "g", dir: -1 };
+}
+
+/* Every medal of every event, person by person: loaded when the medallists are asked for, not before. */
+async function loadMedallists() {
+  const d = D.olympics;
+  if (!d.win) {
+    d.win = unpack(await getJSON("olympics/medallists.json"));
+    d.byPerson = new Map();
+    for (const w of d.win) {
+      if (!w[5] && !w[6]) continue;  // a team medal whose members the source does not name
+      const id = w[5] || `name:${w[6]}`;
+      const p = d.byPerson.get(id) || { id, name: w[6] || id, nocs: new Set(), g: 0, s: 0, b: 0, rows: [] };
+      p[w[3][0] === "g" ? "g" : w[3][0] === "s" ? "s" : "b"]++;
+      p.nocs.add(w[4]);
+      p.rows.push(w);
+      p.name = w[6] || p.name;
+      d.byPerson.set(id, p);
+    }
+  }
+  return d;
+}
+
+/* Which tennis edition of the atlas is the Olympic tournament of each Games, so the two atlases point at each other. */
+async function olyTennisLink(d) {
+  if (d.tennisAt) return d.tennisAt;
+  const t = await loadIndex("tennis").catch(() => null);
+  d.tennisAt = {};
+  for (const e of (t ? t.idx.editions : [])) if (e.comp === "olympics") d.tennisAt[e.year] = e.id;
+  return d.tennisAt;
+}
+
+async function viewMedallists(d) {
+  await loadMedallists();
+  const rows = [];
+  for (const p of d.byPerson.values()) {
+    const rs = p.rows.filter(w => inYears(d.ed[w[0]].year));
+    if (!rs.length || !hit(p.name, ...p.nocs)) continue;
+    const years = rs.map(w => d.ed[w[0]].year);
+    rows.push({ p, g: rs.filter(w => w[3] === "gold").length, s: rs.filter(w => w[3] === "silver").length,
+                b: rs.filter(w => w[3] === "bronze").length, n: rs.length, y0: Math.min(...years), y1: Math.max(...years),
+                noc: rs[rs.length - 1][4], games: new Set(rs.map(w => w[0])).size });
+  }
+  current = {
+    noun: "medallist", rows, open: r => "athlete:" + r.p.id,
+    note: "a team medal counts once for each of its members, as the sources list them",
+    cols: [
+      { k: "name", l: "Medallist", v: r => r.p.name, r: r => `${iocFlag(r.noc, r.y1)}<button class="lnk" data-open="athlete:${esc(r.p.id)}">${esc(r.p.name)}</button>`, cls: "name" },
+      { k: "noc", l: "Committee", v: r => r.noc, r: r => `<button class="lnk f" data-open="noc:${esc(r.noc)}">${esc(r.noc)}</button>`, cls: "muted" },
+      { k: "g", l: "Gold", v: r => r.g, r: r => r.g ? `<span class="win">${r.g}</span>` : "", cls: "num", num: true },
+      { k: "s", l: "Silver", v: r => r.s, r: r => r.s || "", cls: "num", num: true },
+      { k: "b", l: "Bronze", v: r => r.b, r: r => r.b || "", cls: "num", num: true },
+      { k: "n", l: "Medals", v: r => r.n, cls: "num", num: true },
+      { k: "games", l: "Games", v: r => r.games, cls: "num", num: true, hide: true },
+      { k: "span", l: "Years", v: r => `${r.y0}–${r.y1}`, s: r => r.y0, cls: "yr" },
+    ],
+  };
+  if (!S.sort) S.sort = { key: "g", dir: -1 };
+}
+
+/* One medallist: every medal, Games by Games, with the event it was won in. */
+function cardAthlete(d, id) {
+  const p = d.byPerson.get(id);
+  if (!p) return `<h2>Medallist not found</h2>`;
+  const rs = p.rows.slice().sort((a, b) => d.ed[a[0]].year - d.ed[b[0]].year || a[1].localeCompare(b[1]));
+  const years = rs.map(w => d.ed[w[0]].year);
+  const byGames = [...new Set(rs.map(w => w[0]))];
+  const M = { gold: ["Gold", "gold"], silver: ["Silver", "final"], bronze: ["Bronze", ""] };
+  return `<p class="kick"><span class="dot"></span>Olympic medallist · ${[...p.nocs].map(esc).join(", ")}</p>
+    <h2>${iocFlag(rs[rs.length - 1][4], years[years.length - 1])}${esc(p.name)}</h2>
+    <p class="sub">${p.rows.length} medal${p.rows.length === 1 ? "" : "s"} in ${byGames.length} Games, ${Math.min(...years)} to ${Math.max(...years)}.</p>
+    ${factsBlock([
+      { big: true, label: `${p.g + p.s + p.b} medals` },
+      ...(p.g ? [{ label: `${p.g} gold` }] : []), ...(p.s ? [{ label: `${p.s} silver` }] : []), ...(p.b ? [{ label: `${p.b} bronze` }] : []),
+      { label: `${byGames.length} Games`, panel: `<p class="sub">${byGames.map(e => d.ed[e].title).join(" · ")}</p>` },
+    ])}
+    <table class="mini"><thead><tr><th>Games</th><th>Sport</th><th>Event</th><th>Medal</th></tr></thead>
+    <tbody>${rs.slice().reverse().map(w => `<tr class="${w[3] === "gold" ? "c" : ""}" data-go data-open="edition:${esc(w[0])}"><td>${edLnk(d, w[0])}</td><td>${esc(w[1])}</td><td>${esc(w[2])}${w[7] > 1 ? ` <span class="written">team of ${w[7]}</span>` : ""}</td><td><span class="pill ${M[w[3]][1]}">${M[w[3]][0]}</span></td></tr>`).join("")}</tbody></table>`;
+}
+
+/* One Games: who hosted it, what was on its programme, and its medal table. */
+function cardGames(d, id) {  // needs the medallists loaded when it is opened (cardHtml does it)
+  const e = d.ed[id];
+  if (!e) return `<h2>Games not found</h2>`;
+  if (!e.held) {
+    return `<p class="kick"><span class="dot"></span>Summer Olympic Games · ${e.year}</p><h2>${esc(e.title)}</h2>
+      <div class="note"><b>Not held.</b> The Games of ${e.year} were awarded but never took place; the article is kept here so the gap is visible.</div>`;
+  }
+  const prog = d.prog.filter(p => p[0] === id).sort((a, b) => b[2] - a[2] || a[1].localeCompare(b[1]));
+  const med = d.med.filter(m => m[0] === id).sort((a, b) => b[3] - a[3] || b[4] - a[4] || b[5] - a[5]);
+  const v = d.venue[(e.venues || [])[0]];
+  const disagree = e.reading === "check";
+  return `<p class="kick"><span class="dot"></span>Summer Olympic Games · ${e.year}</p>
+    <h2>${esc(e.title)}</h2>
+    <p class="sub">${esc(e.city)}${e.country ? `, ${esc(e.country)}` : ""}${e.opening ? ` · ${esc(e.opening)} to ${esc(e.closing)}` : ""}.</p>
+    ${factsBlock([
+      { big: true, label: `${fmt(e.events)} events`, panel: `<p class="sub">In ${e.sports} sports and ${e.disciplines} disciplines, as the programme lists them.</p>` },
+      { label: `${fmt(e.nations)} committees` },
+      { label: `${fmt(e.athletes)} athletes` },
+      { label: `${fmt(med.reduce((a, m) => a + m[3] + m[4] + m[5], 0))} medals in the table` },
+    ].filter(f => !/\bNaN|^0 /.test(f.label)))}
+    ${disagree ? `<div class="note warn"><b>The sources do not agree on how many events there were.</b> The programme adds up to ${fmt(e.events_read)}, the edition's infobox says ${fmt(e.events)}, and its medal table gives ${fmt(e.golds)} golds. All three are shown; none is corrected.</div>` : ""}
+    <dl>
+      ${v ? `<dt>Main venue</dt><dd>${lnk("venue:" + v.id, v.name)}</dd>` : e.stadium ? `<dt>Main venue</dt><dd>${esc(e.stadium)}</dd>` : ""}
+      ${e.opened_by ? `<dt>Opened by</dt><dd>${esc(e.opened_by)}</dd>` : ""}
+      <dt>Golds in the table</dt><dd>${fmt(e.golds)}</dd>
+    </dl>
+    <h4 class="sec">The programme</h4>
+    <div class="oly-prog">${prog.map(p => `<button class="oly-sp${p[3] ? " demo" : ""}" data-open="disc:${esc(p[1])}" title="${esc(d.comp[p[1]] ? d.comp[p[1]].short : p[1])}${p[6] ? `, shown that year as ${p[6]}` : ""}${p[3] ? ", a demonstration sport that year" : ""}">${picto(p[1])}<span class="nm">${esc((d.comp[p[1]] || {}).short || p[1])}</span><span class="n">${p[3] ? "demo" : p[2]}</span></button>`).join("")}</div>
+    ${olyTop(d, w => w[0] === id, "Most medals at these Games")}
+    ${d.tennisAt && d.tennisAt[e.year] ? `<p class="sub"><a href="#tennis/editions?p=edition%3A${encodeURIComponent(d.tennisAt[e.year])}">The tennis tournament of these Games</a> is in the tennis atlas, draw by draw.</p>` : ""}
+    <h4 class="sec">Medal table</h4>
+    <table class="mini"><thead><tr><th>Committee</th><th class="num">Gold</th><th class="num">Silver</th><th class="num">Bronze</th><th class="num">Total</th></tr></thead>
+    <tbody>${med.map(m => `<tr class="${m[6] ? "c" : ""}" data-go data-open="noc:${esc(m[1])}"><td>${iocFlag(m[1], e.year)}${esc(m[2])}${m[6] ? ` <span class="written">host</span>` : ""}</td><td class="num">${m[3]}</td><td class="num">${m[4]}</td><td class="num">${m[5]}</td><td class="num"><b>${m[3] + m[4] + m[5]}</b></td></tr>`).join("")}</tbody></table>`;
+}
+
+/* The people with most medals among the rows a filter keeps: used on a Games and on a committee. */
+function olyTop(d, keep, title, n = 8) {
+  if (!d.byPerson) return "";
+  const rows = [];
+  for (const p of d.byPerson.values()) {
+    const rs = p.rows.filter(keep);
+    if (!rs.length) continue;
+    rows.push({ p, g: rs.filter(w => w[3] === "gold").length, n: rs.length });
+  }
+  rows.sort((a, b) => b.g - a.g || b.n - a.n || a.p.name.localeCompare(b.p.name));
+  if (!rows.length) return "";
+  return `<h4 class="sec">${esc(title)}</h4><div class="oly-prog">${rows.slice(0, n).map(r =>
+    `<button class="oly-sp" data-open="athlete:${esc(r.p.id)}"><span class="nm">${esc(r.p.name)}</span><span class="n">${r.g ? `${r.g}G ` : ""}${r.n}</span></button>`).join("")}</div>`;
+}
+
+/* One National Olympic Committee: its medals Games by Games, and where they came from. */
+function cardNoc(d, code) {
+  const rs = d.med.filter(m => m[1] === code).sort((a, b) => d.ed[a[0]].year - d.ed[b[0]].year);
+  if (!rs.length) return `<h2>Committee not found</h2>`;
+  const g = rs.reduce((a, m) => a + m[3], 0), s = rs.reduce((a, m) => a + m[4], 0), b = rs.reduce((a, m) => a + m[5], 0);
+  const last = rs[rs.length - 1];
+  const points = rs.map(m => ({ year: d.ed[m[0]].year, lv: Math.max(1, rankOf(d, m[0], code)), eid: m[0], tip: `${d.ed[m[0]].title}: ${m[3]} gold, ${m[4]} silver, ${m[5]} bronze` }));
+  const held = d.idx.editions.filter(e => e.held).map(e => e.year);
+  const names = [...new Set(rs.map(m => m[2]))];
+  return `<p class="kick"><span class="dot"></span>National Olympic Committee · ${esc(code)}</p>
+    <h2>${iocFlag(code, last ? d.ed[last[0]].year : 0)}${esc(last[2])}</h2>
+    <p class="sub">${rs.length} Games with a medal, ${d.ed[rs[0][0]].year} to ${d.ed[last[0]].year}.${names.length > 1 ? ` Shown as ${names.map(esc).join(", ")} over the years.` : ""}</p>
+    ${factsBlock([
+      { big: true, label: `${fmt(g + s + b)} medals` },
+      { label: `${fmt(g)} gold` }, { label: `${fmt(s)} silver` }, { label: `${fmt(b)} bronze` },
+    ])}
+    ${olyTop(d, w => w[4] === code, "Its most decorated")}
+    <h4 class="sec">Where it finished</h4>
+    ${trajectory({ points, held, levels: [], from: Math.min(...held), to: Math.max(...held), numeric: true })}
+    <details open><summary>Games by Games</summary><table class="mini"><thead><tr><th>Games</th><th class="num">Gold</th><th class="num">Silver</th><th class="num">Bronze</th><th class="num">Place</th></tr></thead>
+    <tbody>${rs.slice().reverse().map(m => `<tr data-go data-open="edition:${esc(m[0])}"><td>${edLnk(d, m[0])}</td><td class="num">${m[3]}</td><td class="num">${m[4]}</td><td class="num">${m[5]}</td><td class="num">${ordinal(rankOf(d, m[0], code))}</td></tr>`).join("")}</tbody></table></details>`;
+}
+/* Where a committee finished in a Games: the place its gold, then silver, then bronze give it in that medal table. */
+function rankOf(d, eid, code) {
+  const table = d.med.filter(m => m[0] === eid).sort((a, b) => b[3] - a[3] || b[4] - a[4] || b[5] - a[5]);
+  const key = m => `${m[3]}|${m[4]}|${m[5]}`;
+  const mine = table.find(m => m[1] === code);
+  return mine ? table.findIndex(m => key(m) === key(mine)) + 1 : 0;
+}
+
+/* One discipline: the Games it was on, with the events it awarded, and the names it was shown under. */
+function cardDisc(d, code) {
+  const x = d.comp[code];
+  const s = d.disc[code] || { years: [], demo: [], then: {} };
+  if (!x) return `<h2>Discipline not found</h2>`;
+  const [status, cls] = discStatus(d, code);
+  const rs = d.prog.filter(p => p[1] === code).sort((a, b) => d.ed[a[0]].year - d.ed[b[0]].year);
+  const held = d.idx.editions.filter(e => e.held).map(e => e.year);
+  const points = rs.filter(p => !p[3]).map(p => ({ year: d.ed[p[0]].year, lv: p[2], eid: p[0], tip: `${d.ed[p[0]].title}: ${p[2]} events` }));
+  const gaps = held.filter(y => !s.years.includes(y) && !s.demo.includes(y));
+  return `<p class="kick"><span class="dot"></span>Olympic discipline${x.sport !== x.name ? ` · ${esc(x.sport)}` : ""} · ${esc(code)}</p>
+    <h2>${picto(code)}${esc(x.name)}</h2>
+    <p class="sub"><span class="pill ${cls}">${esc(status)}</span> ${s.years.length} Games${s.demo.length ? `, and ${s.demo.length} more as a demonstration` : ""}${x.body ? ` · ${esc(x.body)}` : ""}</p>
+    ${factsBlock([
+      { big: true, label: `${fmt(s.events)} events` },
+      { label: `${s.years.length} Games`, panel: `<p class="sub">${s.years.join(", ")}</p>` },
+      ...(s.demo.length ? [{ label: `${s.demo.length} as demonstration`, panel: `<p class="sub">${s.demo.join(", ")}</p>` }] : []),
+      ...(gaps.length ? [{ label: `absent from ${gaps.length} Games`, panel: `<p class="sub">${gaps.join(", ")}</p>` }] : []),
+    ])}
+    ${points.length > 1 ? `<h4 class="sec">Events it awarded</h4>${trajectory({ points, held, levels: [], from: Math.min(...held), to: Math.max(...held), numeric: true })}` : ""}
+    ${Object.keys(s.then).length ? `<div class="note"><b>Shown under other names.</b> ${Object.entries(s.then).map(([y, n]) => `${y}: ${esc(n)}`).join(" · ")}</div>` : ""}
+    <details><summary>Games by Games</summary><table class="mini"><tbody>${rs.slice().reverse().map(p => `<tr data-go data-open="edition:${esc(p[0])}"><td>${edLnk(d, p[0])}</td><td class="num">${p[3] ? `<span class="pill">demonstration</span>` : `${p[2]} event${p[2] === 1 ? "" : "s"}`}</td><td class="num">${p[4] ? `${p[4]} committees` : ""}</td><td class="num">${p[5] ? `${fmt(p[5])} athletes` : ""}</td></tr>`).join("")}</tbody></table></details>`;
+}
+
 /* ------------------------------------------------------------------ map (one view among others) */
 
 let map, layer;
+/* Leaflet is only needed by the map: it is fetched the first time a map is drawn, not on every page. */
+let leafletReady = null;
+function loadLeaflet() {
+  if (!leafletReady) {
+    leafletReady = new Promise((ok, ko) => {
+      const css = document.createElement("link");
+      css.rel = "stylesheet"; css.href = `sportsatlas/vendor/leaflet.css?v=${DATA_V}`;
+      document.head.appendChild(css);
+      const js = document.createElement("script");
+      js.src = `sportsatlas/vendor/leaflet.js?v=${DATA_V}`;
+      js.onload = ok; js.onerror = () => ko(new Error("Leaflet did not load"));
+      document.head.appendChild(js);
+    });
+  }
+  return leafletReady;
+}
+
 async function renderMap() {
+  await loadLeaflet();
   const d = D[S.sport];
+  if (S.sport === "olympics") await loadOlympics();
   if (!map) {
     map = L.map("map", { worldCopyJump: true, minZoom: 2 }).setView([35, 0], 2);
     L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
@@ -615,15 +1099,21 @@ async function renderMap() {
   setTimeout(() => map.invalidateSize(), 30);
   layer.clearLayers();
   const color = getComputedStyle(document.body).getPropertyValue("--sport").trim();
+  // a ground's colour says the same as a mark's: the court played on, the country that won there, the continent
+  const eachEd = S.sport === "olympics" ? d.idx.editions : d.idx.editions;
+  const colourOf = markColours(S.sport === "olympics" ? D.olympics.tlEds : eachEd);
+  renderKey();
+  const commonest = list => { const n = new Map(); for (const c of list) n.set(c, (n.get(c) || 0) + 1); return [...n.entries()].sort((a, b) => b[1] - a[1])[0][0]; };
   const pts = [];
   let n = 0;
   for (const v of d.idx.venues) {
     if (v.lat == null) continue;
-    const eds = v.editions.map(id => d.ed[id]).filter(e => e && compOn(e.comp) && inYears(e.year) && hit(v.name, e.title, e.champion));
+    const eds = v.editions.map(id => d.ed[id]).filter(e => e && compOn(e.comp) && surfOn(e) && inYears(e.year) && hit(v.name, e.title, e.champion));
     if (!eds.length) continue;
     n++;
     const yrs = eds.map(e => e.year);
-    L.circleMarker([v.lat, v.lon], { radius: 4 + Math.sqrt(eds.length) * 1.6, color: "#fff", weight: 1.2, fillColor: color, fillOpacity: .85 })
+    const fill = commonest(eds.map(e => colourOf(S.sport === "olympics" ? { ed: e.id, id: e.id } : e))) || color;
+    L.circleMarker([v.lat, v.lon], { radius: 4 + Math.sqrt(eds.length) * 1.6, color: "#fff", weight: 1.2, fillColor: fill, fillOpacity: .85 })
       .bindTooltip(`<b>${esc(v.name)}</b><br>${eds.length} edition${eds.length > 1 ? "s" : ""} · ${Math.min(...yrs)}${yrs.length > 1 ? "–" + Math.max(...yrs) : ""}`, { className: "vt", direction: "top" })
       .on("click", () => openCard("venue:" + v.id)).addTo(layer);
     pts.push([v.lat, v.lon]);
@@ -659,7 +1149,7 @@ function relayout() {
 
 /* What gets a page of its own on a wide screen: a tournament or season of one year, a team, a competition. What they
    lead to (a player, a venue) opens in the card beside the page. */
-const PAGE_TYPES = new Set(["edition", "team", "comp", "about", "player"]);
+const PAGE_TYPES = new Set(["edition", "team", "comp", "about", "player", "noc", "disc", "athlete"]);
 const wide = () => innerWidth >= 1000;
 // one ground, two sports: the Wikidata item is the same, so the card says what the other sport played there
 async function otherSportVenue(id) {
@@ -672,6 +1162,13 @@ async function otherSportVenue(id) {
 }
 async function cardHtml(d, type, id) {
   if (type === "about") return aboutHtml();
+  if (S.sport === "olympics") {
+    await loadOlympics();
+    if (type === "edition") { await loadMedallists(); await olyTennisLink(d); return cardGames(d, id); }
+    if (type === "noc") { await loadMedallists(); return cardNoc(d, id); }
+    if (type === "disc") return cardDisc(d, id);
+    if (type === "athlete") { await loadMedallists(); return cardAthlete(d, id); }
+  }
   if (type === "edition" && d.ed[id]) return cardEdition(d, d.ed[id]);
   if (type === "venue" && d.venue[id]) return cardVenue(d, d.venue[id]) + await otherSportVenue(id);
   if (type === "comp" && d.comp[id]) return cardCompetition(d, d.comp[id]);
@@ -712,7 +1209,7 @@ async function describe(ref, title) {
 /* About: what the atlas is, how it is read and checked, its sources and licences, and the open data. Numbers are
    read from the published data, never typed. */
 async function aboutHtml() {
-  const [f, t] = await Promise.all([loadIndex("football"), loadIndex("tennis")]);
+  const [f, t, o] = await Promise.all([loadIndex("football"), loadIndex("tennis"), loadIndex("olympics")]);
   const pkg = await getJSON("../open/datapackage.json").catch(() => null);
   const n = (d, k) => d.idx.editions.reduce((a, e) => a + (e[k] || 0), 0);
   const ext = a => `<a href="${a[1]}" target="_blank" rel="noopener">${a[0]}</a>`;
@@ -724,10 +1221,13 @@ async function aboutHtml() {
   return `<p class="kick"><span class="dot"></span>About</p>
     <h2>Sports Atlas</h2>
     <div class="about">
-    <p>A historical atlas of football and tennis: every match of the great competitions, table first, each one traced to
-    the page it was read from. Football: ${fmt(n(f, "matches"))} matches in ${fmt(f.idx.editions.length)} tournaments and seasons
+    <p>A historical atlas of football, tennis and the Olympic Games: every match of the great competitions, table first,
+    each one traced to the page it was read from. Football: ${fmt(n(f, "matches"))} matches in ${fmt(f.idx.editions.length)} tournaments and seasons
     (World Cups, Euros, the European club cups, La Liga, the Premier League). Tennis: ${fmt(n(t, "matches"))} singles matches in
-    ${fmt(t.idx.editions.length)} editions, men's and women's (Grand Slams, Masters 1000 and WTA 1000, ATP 500 from 2009, ATP and WTA Finals, Olympics).</p>
+    ${fmt(t.idx.editions.length)} editions, men's and women's (Grand Slams, Masters 1000 and WTA 1000, ATP 500 from 2009, ATP and WTA Finals, Olympics).
+    The Summer Olympic Games: ${fmt(o.idx.editions.filter(e => e.held).length)} Games from 1896, their programme discipline by discipline
+    (${fmt(o.idx.sports.length)} disciplines, with the pictogram Wikipedia draws for each) and the medal table of each, committee by committee.
+    Medals by athlete are not read yet.</p>
 
     <h3>How it is read</h3>
     <p>The English Wikipedia leads: its match boxes, draws, results grids, squads and infoboxes are read as they are written,
@@ -1179,9 +1679,12 @@ function cardDraw(d, e, x, comp) {
   const group = TENNIS_GROUP[comp.group] || "Tennis";
   const warn = x.reading === "check" ? `<div class="note warn"><b>The draw does not fully add up in the source.</b> Reading it left a player with no defeat or a match too many, so a round may show a gap or a duplicate. Listed for review, not patched.</div>` : "";
   const none = !draw.length ? `<div class="note"><b>No draw to show.</b> ${e.year === 2020 ? "The 2020 edition was cancelled." : "The page for this edition has no draw we can read."}</div>` : "";
-  return `<p class="kick"><span class="dot"></span>${group} · ${compLnk(d, e.comp)} · ${e.year}</p>
+  return `<p class="kick">${tierBadge(e.comp)} ${group} · ${compLnk(d, e.comp)} · ${e.year}</p>
     <h2>${esc(e.title)}</h2>${playedAs(d, e)}${edActions(d, e)}
-    <p class="sub">${comp.women ? "Women's" : "Men's"} singles${e.players ? `, ${e.players} players` : ""}${e.surface ? `, on ${esc(e.surface.toLowerCase())}` : ""}.</p>
+    <p class="sub">${surfPill(e, true)} ${comp.women ? "Women's" : "Men's"} singles${e.players ? `, ${e.players} players` : ""}${e.surface && e.surf_basis !== "tennis_atp" ? `, on ${esc(e.surface.toLowerCase())} as the page writes it` : ""}.</p>
+    ${e.surf_basis === "tennis_atp" ? `<div class="note">The edition's pages give no surface; <b>${SURF[e.surf].toLowerCase()}</b> is Jeff Sackmann's tennis_atp.</div>` : ""}
+    ${/^olympics/.test(e.comp) ? `<p class="sub"><a href="#olympics/editions?p=edition%3Asummer-${e.year}">The Games these draws belong to</a> are in the Olympic atlas, with their programme and medal table.</p>` : ""}
+    ${e.surf_atp ? `<div class="note warn"><b>The sources differ on the court.</b> The page writes “${esc(e.surface)}”; Jeff Sackmann's tennis_atp gives ${esc(e.surf_atp)}. Both are shown, neither is corrected.</div>` : ""}
     ${e.champion ? `<div class="champ">${CUP}<div><div class="who">${lnk("player:" + e.champion_id, e.champion)}</div><div class="how">beat ${lnk("player:" + e.runner_id, e.runner_up)} in the final${e.final ? `, ${esc(e.final)}` : ""}</div></div></div>` : ""}
     <dl>
       <dt>Venue</dt><dd>${v ? lnk("venue:" + v.id, v.name) : '<span class="written">not stated in the source</span>'}${x.venue_written && v && x.venue_written !== v.name ? `<div class="written">written as “${esc(x.venue_written)}”</div>` : ""}</dd>
@@ -1326,11 +1829,12 @@ document.addEventListener("click", e => {
 }, true);
 // drag to pan a stretched chart
 document.addEventListener("pointerdown", e => {
-  const sc = e.target.closest(".zc-scroll");
+  const sc = e.target.closest(".zc-scroll, #tl-scroll");
   if (!sc || e.button !== 0 || sc.scrollWidth <= sc.clientWidth || e.target.closest("[data-open]")) return;
   const x = e.clientX, left = sc.scrollLeft;
-  const move = ev => { sc.scrollLeft = left - (ev.clientX - x); sc.classList.add("dragging"); };
-  const up = () => { sc.classList.remove("dragging"); removeEventListener("pointermove", move); removeEventListener("pointerup", up); };
+  delete sc.dataset.dragged;
+  const move = ev => { if (Math.abs(ev.clientX - x) > 4) { sc.scrollLeft = left - (ev.clientX - x); sc.classList.add("dragging"); sc.dataset.dragged = "1"; } };
+  const up = () => { sc.classList.remove("dragging"); removeEventListener("pointermove", move); removeEventListener("pointerup", up); setTimeout(() => delete sc.dataset.dragged, 0); };
   addEventListener("pointermove", move); addEventListener("pointerup", up);
 });
 
@@ -1375,6 +1879,7 @@ async function cardTennisPlayer(d, id) {
       return factsBlock([
         { big: true, label: `${titles.length} title${titles.length === 1 ? "" : "s"}`, panel: editionChips(d, titles.map(r => r[0]).reverse()), table: { g, q: p.name, rounds: ["Final"] }, tableLabel: "Show their finals in the table" },
         ...groupsDef.filter(([, k]) => byGroup(k).length).map(([l, k]) => ({ label: `${byGroup(k).length} ${l}`, panel: editionChips(d, byGroup(k).map(r => r[0]).reverse()), table: { g, q: p.name, comps: compsOf(k), rounds: ["Final"] }, tableLabel: `Show their ${l} finals in the table` })),
+        ...["clay", "grass", "hard", "carpet"].map(f => [f, titles.filter(r => d.ed[r[0]]?.surf === f)]).filter(([, t]) => t.length).map(([f, t]) => ({ label: `${t.length} on ${f}`, cls: "s-" + f, panel: editionChips(d, t.map(r => r[0]).reverse()), table: { g, q: p.name, rounds: ["Final"], surf: [f] }, tableLabel: `Show their finals on ${f} in the table` })),
         { label: `${finalsPlayed.length} finals`, panel: editionChips(d, finalsPlayed.map(r => r[0]).reverse()), table: { g, q: p.name, rounds: ["Final"] } },
         ...(w + l ? [{ label: `won ${fmt(w)} · lost ${fmt(l)} · ${Math.round(w / (w + l) * 100)}%`, table: { g, q: p.name }, tableLabel: `Show all ${fmt(w + l)} matches in the table` }] : []),
       ]);
@@ -1455,7 +1960,7 @@ async function lineageSection(ts, t) {
 /* Facts you can open: each number on a card unfolds the editions behind it, and sends the table to those matches. */
 function factsBlock(facts) {
   const buttons = facts.map((f, i) => f.panel || f.table
-    ? `<button class="kf${f.big ? " big" : ""} fact" data-fact="f${i}" aria-pressed="false">${f.label}</button>`
+    ? `<button class="kf${f.big ? " big" : ""}${f.cls ? " surfkf " + f.cls : ""} fact" data-fact="f${i}" aria-pressed="false">${f.label}</button>`
     : `<span class="kf${f.big ? " big" : ""}">${f.label}</span>`).join("");
   const panels = facts.map((f, i) => f.panel || f.table ? `<div class="fact-panel" data-for="f${i}" hidden>
       ${f.panel || ""}${f.table ? `<button class="btn" data-table='${esc(JSON.stringify(f.table))}'>${esc(f.tableLabel || "Show these matches in the table")}</button>` : ""}</div>` : "").join("");
@@ -1552,7 +2057,8 @@ function playerHistory(d, p) {
       const titles = cr.filter(r => r[2] === "Champion").length;
       const levels = finals ? FINALS_LEVELS : TENNIS_LEVELS;
       const bestLv = Math.min(...points.map(x => x.lv));
-      return `<section class="hist"><h3>${compLnk(d, c)}</h3>
+      const courts = [...new Set(cr.map(r => d.ed[r[0]]?.surf).filter(Boolean))].map(f => surfPill({ surf: f })).join(" ");
+      return `<section class="hist"><h3>${tierBadge(c)}${compLnk(d, c)} ${courts}</h3>
         <p class="sub">${cr.length} appearance${cr.length === 1 ? "" : "s"}, ${cr[0][3]} to ${cr[cr.length - 1][3]} · ${titles ? `<b>${titles} title${titles === 1 ? "" : "s"}</b>` : `best: ${levels[bestLv].toLowerCase()}`}</p>
         ${trajectory({ points, held, levels, from, to })}
         <details><summary>Year by year</summary><table class="mini"><tbody>${cr.slice().reverse().map(r => `<tr class="${r[2] === "Champion" ? "c" : ""}" data-go data-open="edition:${r[0]}"><td>${edLnk(d, r[0])}</td><td class="num">${r[2] === "Champion" ? `<span class="pill gold">Won</span>` : r[2] === "Runner-up" ? `<span class="pill final">Final</span>` : `<span class="pill">${esc(r[2])}</span>`}</td></tr>`).join("")}</tbody></table></details></section>`;

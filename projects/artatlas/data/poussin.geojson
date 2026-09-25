@@ -12231,6 +12231,170 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Nicolas Poussin",
+    "title": "Winter",
+    "year": "1662",
+    "location": "Louvre",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%2C%20Nicolas%20-%20L%27Hiver%20ou%20Le%20D%C3%A9luge%20-%201660-1664.jpg?width=500",
+    "qid": "Q25445132",
+    "wikidata": "https://www.wikidata.org/wiki/Q25445132",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q25445132",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Nicolas Poussin",
+    "title": "Autumn",
+    "year": "1662",
+    "location": "Louvre",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Four-seasons-autumn.jpg?width=500",
+    "qid": "Q26251901",
+    "wikidata": "https://www.wikidata.org/wiki/Q26251901",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26251901",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Nicolas Poussin",
+    "title": "Spring",
+    "year": "1662",
+    "location": "Louvre",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Le%20Printemps.jpg?width=500",
+    "qid": "Q26251915",
+    "wikidata": "https://www.wikidata.org/wiki/Q26251915",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26251915",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.1283,
+     51.5089
+    ]
+   },
+   "properties": {
+    "painter": "Nicolas Poussin",
+    "title": "Eucharist",
+    "year": "1638",
+    "location": "National Gallery",
+    "city": "London",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Eucharist%20I%20%281637-1640%29%20Nicholas%20Poussin.jpg?width=500",
+    "qid": "Q26713336",
+    "wikidata": "https://www.wikidata.org/wiki/Q26713336",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26713336",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-gallery",
+    "location_src": "National Gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

@@ -12307,6 +12307,99 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.0273,
+     39.8628
+    ]
+   },
+   "properties": {
+    "painter": "El Greco",
+    "title": "Retablos del Hospital Tavera (El Greco)",
+    "year": "1608",
+    "location": "Tavera Hospital",
+    "city": "Toledo",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retaules%20central%20i%20laterals%20de%20l%27Hospital%20Tavera.jpg?width=500",
+    "qid": "Q106103842",
+    "wikidata": "https://www.wikidata.org/wiki/Q106103842",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q106103842",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "tavera-hospital",
+    "location_src": "Tavera Hospital",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.02869,
+     39.85936
+    ]
+   },
+   "properties": {
+    "painter": "El Greco",
+    "title": "Altarpiece of the church of the monastery of Santo Domingo el Antiguo",
+    "year": "1577",
+    "location": "Monastery of Saint Dominic of Silos",
+    "city": "Toledo",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Convento%20Santo%20Domingo%20el%20Antiguo3.jpg?width=500",
+    "qid": "Q6106649",
+    "wikidata": "https://www.wikidata.org/wiki/Q6106649",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q6106649",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "monastery-of-saint-dominic-of-silos",
+    "location_src": "Monastery of Saint Dominic of Silos",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69028,
+     40.43333
+    ]
+   },
+   "properties": {
+    "painter": "El Greco",
+    "title": "Allegory of the Order of the Camaldolese",
+    "year": "1600",
+    "location": "Instituto Valencia of Don Juan",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/RomualdGreco.jpg?width=500",
+    "qid": "Q16527161",
+    "wikidata": "https://www.wikidata.org/wiki/Q16527161",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16527161",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "instituto-valencia-of-don-juan",
+    "location_src": "Instituto Valencia of Don Juan",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

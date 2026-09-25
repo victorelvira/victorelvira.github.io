@@ -511,7 +511,15 @@
     "location_src": "Basílica de Nuestra Señora del Pilar",
     "kind": "church",
     "form": "painting",
-    "qid_shared": "Q3825362"
+    "qid_shared": "Q3825362",
+    "qid": "Q3825362",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q3825362 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -3367,7 +3375,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "national-gallery-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q18602798",
+    "wikidata": "https://www.wikidata.org/wiki/Q860950",
     "_merged": [
      {
       "source": "Wikidata",
@@ -3380,7 +3388,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q18602798",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q860950",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q860950 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -13278,7 +13294,15 @@
     "location_src": "Museo del Prado",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q2983399"
+    "qid_shared": "Q2983399",
+    "qid": "Q2983399",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q2983399 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -13740,7 +13764,15 @@
     "location_src": "Museo del Prado",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q8209964"
+    "qid_shared": "Q8209964",
+    "qid": "Q8209964",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q8209964 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -22943,6 +22975,170 @@
     "museum_id": "marquess-of-la-romana",
     "location_src": "Marquess of la Romana",
     "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.6922,
+     40.4139
+    ]
+   },
+   "properties": {
+    "painter": "Goya",
+    "title": "The Victorious Hannibal Seeing Italy from the Alps for the First Time",
+    "year": "1770",
+    "location": "Museo del Prado",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/An%C3%ADbal%20vencedor%20que%20por%20primera%20vez%20mira%20Italia%20desde%20los%20Alpes%20-%20Francisco%20Goya.jpg?width=500",
+    "qid": "Q3825595",
+    "wikidata": "https://www.wikidata.org/wiki/Q3825595",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3825595",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Zaragoza",
+    "creation_lat": 41.65,
+    "creation_lon": -0.883333,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museo-del-prado",
+    "location_src": "Museo del Prado",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.725597,
+     40.425363
+    ]
+   },
+   "properties": {
+    "painter": "Goya",
+    "title": "Scene from the life of Saint Anthony of Padua",
+    "year": "1798",
+    "location": "Royal Chapel of St. Anthony of La Florida",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20y%20Lucientes%20041.jpg?width=500",
+    "qid": "Q9263741",
+    "wikidata": "https://www.wikidata.org/wiki/Q9263741",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q9263741",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "royal-chapel-of-st-anthony-of-la-florida",
+    "location_src": "Royal Chapel of St. Anthony of La Florida",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.71545,
+     40.4157
+    ]
+   },
+   "properties": {
+    "painter": "Goya",
+    "title": "Maria Luisa of Parma in Court Dress",
+    "year": "1799",
+    "location": "Royal Collections Gallery",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Queen%20Maria%20Luisa%20of%20Spain%20by%20Goya.jpg?width=500",
+    "qid": "Q123047614",
+    "wikidata": "https://www.wikidata.org/wiki/Q123047614",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q123047614",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "royal-collections-gallery",
+    "location_src": "Royal Collections Gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.878327,
+     41.656882
+    ]
+   },
+   "properties": {
+    "painter": "Goya",
+    "title": "Regina Martyrum",
+    "year": "1780",
+    "location": "Basilica of Our Lady of the Pillar",
+    "city": "Zaragoza",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Regina%20Martyrum%20por%20Goya.jpg?width=500",
+    "qid": "Q112799390",
+    "wikidata": "https://www.wikidata.org/wiki/Q112799390",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q112799390",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "basilica-of-our-lady-of-the-pillar",
+    "location_src": "Basilica of Our Lady of the Pillar",
+    "kind": "church",
     "form": "painting"
    }
   }

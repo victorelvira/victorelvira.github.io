@@ -6008,12 +6008,18 @@
      "creation": {
       "at": "2026-08-23",
       "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     },
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q7232301 by normalised title + year (±8), same creator (merge_wd_extras)"
      }
     },
     "museum_id": "national-museum-of-serbia",
     "location_src": "National Museum of Serbia",
     "form": "painting",
-    "qid_shared": "Q7232301"
+    "qid_shared": "Q7232301",
+    "qid": "Q7232301"
    }
   },
   {
@@ -14626,6 +14632,47 @@
     "museum_id": "coleccion-santander",
     "location_src": "Colección Santander",
     "kind": "private",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -46.65583,
+     -23.56111
+    ]
+   },
+   "properties": {
+    "painter": "Tintoretto",
+    "title": "Ecce Homo or Pontius Pilate Presenting Christ to the Crowd",
+    "year": "1546",
+    "location": "São Paulo Museum of Art",
+    "city": "São Paulo",
+    "country": "Brazil",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto%20-%20ecce%20homo%20masp.JPG?width=500",
+    "qid": "Q122155250",
+    "wikidata": "https://www.wikidata.org/wiki/Q122155250",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q122155250",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art",
+    "kind": "museum",
     "form": "painting"
    }
   }

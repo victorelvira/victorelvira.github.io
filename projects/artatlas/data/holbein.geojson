@@ -8299,6 +8299,48 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.475,
+     34.0775
+    ]
+   },
+   "properties": {
+    "painter": "Hans Holbein the Younger",
+    "title": "E Cosi Desio me Mena",
+    "year": "1533",
+    "location": "Getty Center",
+    "city": "Los Angeles",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/E%20Cosi%20Desio%20me%20Mena%2C%20by%20Hans%20Holbein%20the%20Younger.jpg?width=500",
+    "qid": "Q141293046",
+    "wikidata": "https://www.wikidata.org/wiki/Q141293046",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141293046",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "getty-center",
+    "location_src": "Getty Center",
+    "kind": "museum",
+    "form": "painting",
+    "venue_of": "J. Paul Getty Museum"
+   }
   }
  ]
 }

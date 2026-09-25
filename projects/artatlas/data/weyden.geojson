@@ -3125,6 +3125,88 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69493,
+     40.41604
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Portrait of an Unknown Man",
+    "year": "1455",
+    "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20026.jpg?width=500",
+    "qid": "Q27038656",
+    "wikidata": "https://www.wikidata.org/wiki/Q27038656",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27038656",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.39435,
+     51.20882
+    ]
+   },
+   "properties": {
+    "painter": "Rogier van der Weyden",
+    "title": "Croy family shield",
+    "year": "1460",
+    "location": "Royal Museum of Fine Arts Antwerp",
+    "city": "Antwerp",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Croyblazon.jpg?width=500",
+    "qid": "Q21614521",
+    "wikidata": "https://www.wikidata.org/wiki/Q21614521",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21614521",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "royal-museum-of-fine-arts-antwerp",
+    "location_src": "Royal Museum of Fine Arts Antwerp",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

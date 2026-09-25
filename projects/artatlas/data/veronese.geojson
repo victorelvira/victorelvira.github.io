@@ -12373,6 +12373,78 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.879722222,
+     45.396388888
+    ]
+   },
+   "properties": {
+    "painter": "Veronese",
+    "title": "Martyrdom of Saint Justina",
+    "year": "1575",
+    "location": "Abbey of Santa Giustina",
+    "city": "Padua",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Padua%20%284%29.jpg?width=500",
+    "qid": "Q130491906",
+    "wikidata": "https://www.wikidata.org/wiki/Q130491906",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q130491906",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "abbey-of-santa-giustina",
+    "location_src": "Abbey of Santa Giustina",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.926769,
+     45.670884
+    ]
+   },
+   "properties": {
+    "painter": "Veronese",
+    "title": "Time and Fame",
+    "year": "1540",
+    "location": "Dome of Castlefranco Veneto",
+    "city": "Castelfranco Veneto",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Veronese%20Tempo%20e%20fama.jpg?width=500",
+    "qid": "Q141431764",
+    "wikidata": "https://www.wikidata.org/wiki/Q141431764",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141431764",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "dome-of-castlefranco-veneto",
+    "location_src": "Dome of Castlefranco Veneto",
+    "kind": "church",
+    "form": "painting"
+   }
   }
  ]
 }

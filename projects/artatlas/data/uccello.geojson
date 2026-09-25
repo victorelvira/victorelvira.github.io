@@ -1318,6 +1318,129 @@
     "location_src": "National Gallery",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.256944444,
+     43.773055555
+    ]
+   },
+   "properties": {
+    "painter": "Paolo Uccello",
+    "title": "Funerary Monument to Sir John Hawkwood",
+    "year": "1436",
+    "location": "Florence Cathedral",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20uccello%2C%20Monumento%20equestre%20di%20John%20Hawkwood%2C%201436%2C%2001.JPG?width=500",
+    "qid": "Q2604153",
+    "wikidata": "https://www.wikidata.org/wiki/Q2604153",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2604153",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "florence-cathedral",
+    "location_src": "Florence Cathedral",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.3467,
+     44.4972
+    ]
+   },
+   "properties": {
+    "painter": "Paolo Uccello",
+    "title": "Adoration of the child",
+    "year": "1430",
+    "location": "San Martino",
+    "city": "Bologna",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20uccello%2C%20adorazione%20del%20bambino%2C%20bologna%2001.jpg?width=500",
+    "qid": "Q15965560",
+    "wikidata": "https://www.wikidata.org/wiki/Q15965560",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q15965560",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "san-martino-2",
+    "location_src": "San Martino",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25933,
+     43.7782
+    ]
+   },
+   "properties": {
+    "painter": "Paolo Uccello",
+    "title": "Beccuto Madonna",
+    "year": "1420",
+    "location": "Museum of San Marco",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20uccello%2C%20madonna%20del%20beccuto.jpg?width=500",
+    "qid": "Q15974341",
+    "wikidata": "https://www.wikidata.org/wiki/Q15974341",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q15974341",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museum-of-san-marco",
+    "location_src": "Museum of San Marco",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

@@ -17721,6 +17721,234 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.56662,
+     48.14521
+    ]
+   },
+   "properties": {
+    "painter": "Paul Gauguin",
+    "title": "two women of Tahiti",
+    "year": "1902",
+    "location": "Munich Central Collecting Point",
+    "city": "Munich",
+    "country": "allied-occupied Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%20La%20Chevelure%20fleurie.jpg?width=500",
+    "qid": "Q110287897",
+    "wikidata": "https://www.wikidata.org/wiki/Q110287897",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q110287897",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "munich-central-collecting-point",
+    "location_src": "Munich Central Collecting Point",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57194,
+     55.6725
+    ]
+   },
+   "properties": {
+    "painter": "Paul Gauguin",
+    "title": "Still Life with Onion and Japanese Woodcut",
+    "year": "1889",
+    "location": "Ny Carlsberg Glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Still%20Life%20with%20Onion%20and%20Japanese%20Woodcut%20by%20Paul%20Gauguin%2C%201889%20-%20Ny%20Carlsberg%20Glyptotek%20-%20Copenhagen%20-%20DSC09468.JPG?width=500",
+    "qid": "Q76424034",
+    "wikidata": "https://www.wikidata.org/wiki/Q76424034",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q76424034",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "location_src": "Ny Carlsberg Glyptotek",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.74654,
+     47.85515
+    ]
+   },
+   "properties": {
+    "painter": "Paul Gauguin",
+    "title": "Deux têtes de bretonnes",
+    "year": "1894",
+    "location": "Pont-Aven museum",
+    "city": "Pont-Aven",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%20Deux%20tetes.jpg?width=500",
+    "qid": "Q93740512",
+    "wikidata": "https://www.wikidata.org/wiki/Q93740512",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q93740512",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "pont-aven-museum",
+    "location_src": "Pont-Aven museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.74654,
+     47.85515
+    ]
+   },
+   "properties": {
+    "painter": "Paul Gauguin",
+    "title": "Love Each Other",
+    "year": "1894",
+    "location": "Pont-Aven museum",
+    "city": "Pont-Aven",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%2C%20Aimez-vous%20les%20uns%20les%20autres%2C%20F33.jpg?width=500",
+    "qid": "Q93740808",
+    "wikidata": "https://www.wikidata.org/wiki/Q93740808",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q93740808",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "pont-aven-museum",
+    "location_src": "Pont-Aven museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.80222,
+     42.27306
+    ]
+   },
+   "properties": {
+    "painter": "Paul Gauguin",
+    "title": "Mademoiselle Manthey",
+    "year": "1884",
+    "location": "Worcester Art Museum",
+    "city": "Worcester",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%20-%20Mademoiselle%20Manthey%2C%201884.jpg?width=500",
+    "qid": "Q94962587",
+    "wikidata": "https://www.wikidata.org/wiki/Q94962587",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q94962587",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "worcester-art-museum",
+    "location_src": "Worcester Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     140.45653,
+     37.76792
+    ]
+   },
+   "properties": {
+    "painter": "Paul Gauguin",
+    "title": "Enfance de Bretagne",
+    "year": "1889",
+    "location": "Fukushima Prefectural Museum of Art",
+    "city": "Fukushima",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%201889%20Enfance%20de%20Bretagne.jpg?width=500",
+    "qid": "Q95627405",
+    "wikidata": "https://www.wikidata.org/wiki/Q95627405",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q95627405",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "fukushima-prefectural-museum-of-art",
+    "location_src": "Fukushima Prefectural Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.73611,
+     48.57944
+    ]
+   },
+   "properties": {
+    "painter": "Paul Gauguin",
+    "title": "Breton Landscape",
+    "year": "1890",
+    "location": "Strasbourg Museum of Modern and Contemporary Art",
+    "city": "Strasbourg",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin-Paysage%20breton.jpg?width=500",
+    "qid": "Q105104857",
+    "wikidata": "https://www.wikidata.org/wiki/Q105104857",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q105104857",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "strasbourg-museum-of-modern-and-contemporary-art",
+    "location_src": "Strasbourg Museum of Modern and Contemporary Art",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

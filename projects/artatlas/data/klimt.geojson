@@ -4590,6 +4590,47 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.38083,
+     48.19139
+    ]
+   },
+   "properties": {
+    "painter": "Gustav Klimt",
+    "title": "Beethoven Frieze",
+    "year": "1901",
+    "location": "Österreichische Galerie Belvedere",
+    "city": "Landstraße",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Beethovenfires%20total.jpg?width=500",
+    "qid": "Q684689",
+    "wikidata": "https://www.wikidata.org/wiki/Q684689",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q684689",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Vienna",
+    "creation_lat": 48.2083,
+    "creation_lon": 16.3725,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

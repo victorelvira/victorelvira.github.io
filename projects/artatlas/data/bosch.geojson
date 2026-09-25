@@ -115,12 +115,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "museo-del-prado",
-    "wikidata": "https://www.wikidata.org/wiki/Q321303",
+    "wikidata": "https://www.wikidata.org/wiki/Q118678886",
     "wga_url": "https://www.wga.hu/html/b/bosch/3garden/wings/20right.html",
     "location_src": "Museo del Prado",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q321303"
+    "qid_shared": "Q321303",
+    "qid": "Q118678886",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q118678886 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {

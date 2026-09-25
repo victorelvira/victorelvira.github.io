@@ -2357,7 +2357,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "dulwich-picture-gallery",
-    "wikidata": "https://www.wikidata.org/wiki/Q17343011",
+    "wikidata": "https://www.wikidata.org/wiki/Q17343012",
     "_merged": [
      {
       "source": "Wikidata",
@@ -2370,7 +2370,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q17343011",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q17343012",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q17343012 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -6858,7 +6866,7 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q2592423",
+    "wikidata": "https://www.wikidata.org/wiki/Q18760265",
     "_merged": [
      {
       "source": "Wikidata",
@@ -6871,7 +6879,15 @@
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q2592423",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q18760265",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18760265 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -24780,6 +24796,407 @@
     },
     "museum_id": "villa-de-laak",
     "location_src": "Villa De Laak",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.89083,
+     52.37028
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Young Woman in Fantasy Costume",
+    "year": "1633",
+    "location": "Amsterdam Museum",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jonge%20vrouw%20in%20gefantaseerde%20kleding%20Rijksmuseum%20SK-A-4057.jpeg?width=500",
+    "qid": "Q17336120",
+    "wikidata": "https://www.wikidata.org/wiki/Q17336120",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17336120",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "amsterdam-museum",
+    "location_src": "Amsterdam Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Portrait of a Man Seated",
+    "year": "1632",
+    "location": "Kunsthistorisches Museum",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Harmensz.%20van%20Rijn%20161.jpg?width=500",
+    "qid": "Q21468826",
+    "wikidata": "https://www.wikidata.org/wiki/Q21468826",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21468826",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.3616,
+     48.20388
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Portrait of a Woman holding Gloves",
+    "year": "1632",
+    "location": "Kunsthistorisches Museum",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Harmensz.%20van%20Rijn%20162.jpg?width=500",
+    "qid": "Q21468829",
+    "wikidata": "https://www.wikidata.org/wiki/Q21468829",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21468829",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kunsthistorisches-museum",
+    "location_src": "Kunsthistorisches Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     6.0956,
+     50.7735
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Portrait of a man, possibly Harder Rijcksen (after1600-1637)",
+    "year": "1632",
+    "location": "Suermondt-Ludwig-Museum",
+    "city": "Aachen",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Portrait%20of%20a%20Young%20Man.jpg?width=500",
+    "qid": "Q21509305",
+    "wikidata": "https://www.wikidata.org/wiki/Q21509305",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21509305",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "suermondt-ludwig-museum",
+    "location_src": "Suermondt-Ludwig-Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -94.58096,
+     39.04497
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Youth with a Black Cap",
+    "year": "1666",
+    "location": "The Nelson-Atkins Museum of Art",
+    "city": "Kansas City",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Harmensz.%20van%20Rijn%20-%20Young%20Man%20in%20a%20Black%20Beret%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q21520403",
+    "wikidata": "https://www.wikidata.org/wiki/Q21520403",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21520403",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "the-nelson-atkins-museum-of-art",
+    "location_src": "The Nelson-Atkins Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.3358,
+     48.8611
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Self-portrait with architectural elements in the background",
+    "year": "1639",
+    "location": "Louvre",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%2C%20autoritratto%20col%20tocco%20su%20sfondo%20architettonico%2C%201639%2002.jpg?width=500",
+    "qid": "Q18226124",
+    "wikidata": "https://www.wikidata.org/wiki/Q18226124",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18226124",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "louvre",
+    "location_src": "Louvre",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.28861,
+     55.87194
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "The Entombment of Christ",
+    "year": "1635",
+    "location": "Hunterian Museum and Art Gallery",
+    "city": "Glasgow City",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Harmensz.%20van%20Rijn%20054.jpg?width=500",
+    "qid": "Q18433275",
+    "wikidata": "https://www.wikidata.org/wiki/Q18433275",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18433275",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "location_src": "Glasgow",
+    "museum_id": "hunterian-museum-and-art-gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.36472,
+     52.50861
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Minerva",
+    "year": "1631",
+    "location": "Gemäldegalerie Berlin",
+    "city": "Berlin",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20-%20Minerva%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18688698",
+    "wikidata": "https://www.wikidata.org/wiki/Q18688698",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18688698",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "gemaldegalerie-berlin",
+    "location_src": "Gemäldegalerie Berlin",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Bezirk Mitte"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.15302,
+     51.51745
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Self-Portrait in a Black Cap",
+    "year": "1637",
+    "location": "Wallace Collection",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Self-portrait%20%28Wallace%29.jpg?width=500",
+    "qid": "Q19844638",
+    "wikidata": "https://www.wikidata.org/wiki/Q19844638",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19844638",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "wallace-collection",
+    "location_src": "Wallace Collection",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Rembrandt",
+    "title": "Hendrickje Stoffels (1626–1663)",
+    "year": "1650",
+    "location": "Metropolitan Museum of Art",
+    "city": "New York",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20van%20Rijn%2C%20Portrait%20of%20Hendrickje%20Stoffels%20%281650s%29.jpg?width=500",
+    "qid": "Q19911539",
+    "wikidata": "https://www.wikidata.org/wiki/Q19911539",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19911539",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
     "form": "painting"
    }

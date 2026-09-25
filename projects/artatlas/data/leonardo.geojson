@@ -1462,6 +1462,37 @@
     "location_src": "Pinacoteca Vaticana",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.171111111,
+     45.465833333
+    ]
+   },
+   "properties": {
+    "painter": "Leonardo da Vinci",
+    "title": "Three lunettes above the Last Supper",
+    "year": "",
+    "location": "Santa Maria delle Grazie",
+    "city": "Senigallia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Three%20lunettes%20above%20the%20Last%20Supper.jpg?width=500",
+    "qid": "Q105338178",
+    "wikidata": "https://www.wikidata.org/wiki/Q105338178",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q105338178",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "santa-maria-delle-grazie",
+    "location_src": "Santa Maria delle Grazie",
+    "kind": "church",
+    "form": "painting"
+   }
   }
  ]
 }

@@ -8110,6 +8110,127 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     0.11944,
+     52.20028
+    ]
+   },
+   "properties": {
+    "painter": "Annibale Carracci",
+    "title": "St Roch and the Angel",
+    "year": "1550",
+    "location": "Fitzwilliam Museum",
+    "city": "Cambridge",
+    "country": "United Kingdom",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20%281560-1609%29%20-%20St%20Roch%20and%20the%20Angel%20-%20134%20-%20Fitzwilliam%20Museum.jpg?width=500",
+    "qid": "Q50811592",
+    "wikidata": "https://www.wikidata.org/wiki/Q50811592",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50811592",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "fitzwilliam-museum",
+    "location_src": "Fitzwilliam Museum",
+    "kind": "museum",
+    "form": "painting",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-09-25",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.34235,
+     44.49637
+    ]
+   },
+   "properties": {
+    "painter": "Annibale Carracci",
+    "title": "Enchantment of Medea (Carracci)",
+    "year": "1584",
+    "location": "Palazzo Fava",
+    "city": "Bologna",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Fregio%20di%20Giasone%20e%20Medea%2016%20ludovico%20o%20annibale%20carracci%2C%20incantesimo%20di%20medea%2C%201584%20ca..JPG?width=500",
+    "qid": "Q57530131",
+    "wikidata": "https://www.wikidata.org/wiki/Q57530131",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q57530131",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Bologna",
+    "creation_lat": 44.493889,
+    "creation_lon": 11.342778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "palazzo-fava",
+    "location_src": "Palazzo Fava",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.18359,
+     41.3824
+    ]
+   },
+   "properties": {
+    "painter": "Annibale Carracci",
+    "title": "Miracle of the Roses of St Didacus",
+    "year": "1605",
+    "location": "Reial Acadèmia Catalana de Belles Arts de Sant Jordi",
+    "city": "Sant Pere, Santa Caterina i la Ribera",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Milagro%20de%20las%20rosas%20de%20San%20Diego.jpg?width=500",
+    "qid": "Q19242670",
+    "wikidata": "https://www.wikidata.org/wiki/Q19242670",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19242670",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "reial-academia-catalana-de-belles-arts-de-sant-jordi",
+    "location_src": "Reial Acadèmia Catalana de Belles Arts de Sant Jordi",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

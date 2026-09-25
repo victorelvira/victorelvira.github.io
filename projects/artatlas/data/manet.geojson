@@ -1155,14 +1155,22 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "kunsthalle-mannheim",
-    "wikidata": "https://www.wikidata.org/wiki/Q1212269",
+    "wikidata": "https://www.wikidata.org/wiki/Q20267393",
     "city": "Mannheim",
     "country": "Germany",
     "location_src": "Kunsthalle Mannheim",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q1212269",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q20267393",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q20267393 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1841,7 +1849,15 @@
     "location_src": "Musée des Beaux-Arts de Tournai",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q2860945"
+    "qid_shared": "Q2860945",
+    "qid": "Q2860945",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q2860945 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -2908,13 +2924,21 @@
     "museum_id": "alte-nationalgalerie",
     "city": "Berlin",
     "country": "Germany",
-    "wikidata": "https://www.wikidata.org/wiki/Q106766601",
+    "wikidata": "https://www.wikidata.org/wiki/Q18684783",
     "location_src": "Alte Nationalgalerie",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q106766601",
     "qid_rejected_as": "painting series",
-    "city_src": "Bezirk Mitte"
+    "city_src": "Bezirk Mitte",
+    "qid": "Q18684783",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q18684783 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -12334,6 +12358,499 @@
     "location_src": "National Museum Cardiff",
     "kind": "museum",
     "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     133.77067,
+     34.59615
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Woman Wearing a Hat with Silk Gauze",
+    "year": "1881",
+    "location": "Ohara Museum of Art",
+    "city": "Kurashiki",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Woman%20wearing%20a%20hat%20with%20silk%20gauze.jpg?width=500",
+    "qid": "Q124704977",
+    "wikidata": "https://www.wikidata.org/wiki/Q124704977",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124704977",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "ohara-museum-of-art",
+    "location_src": "Ohara Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.2136,
+     42.7078
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Interior at Arcachon (Mme Manet and Léon Leenhoff)",
+    "year": "1871",
+    "location": "Clark Art Institute",
+    "city": "Massachusetts",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20Interiour%20in%20Arcachon.jpg?width=500",
+    "qid": "Q141541721",
+    "wikidata": "https://www.wikidata.org/wiki/Q141541721",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141541721",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "clark-art-institute",
+    "location_src": "Clark Art Institute",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.02114,
+     35.25671
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Woman on a Bench",
+    "year": "1879",
+    "location": "Pola Museum of Art",
+    "city": "Sengokuhara",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Woman%20on%20a%20Bench.jpg?width=500",
+    "qid": "Q79790775",
+    "wikidata": "https://www.wikidata.org/wiki/Q79790775",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q79790775",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "pola-museum-of-art",
+    "location_src": "Pola Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     132.45806,
+     34.39867
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Woman with a Gray Plumed Hat",
+    "year": "1882",
+    "location": "Hiroshima Museum of Art",
+    "city": "Motomachi",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20M%C3%A9ry%20Laurent%20au%20chapeau%20garni%20de%20fleurs.jpg?width=500",
+    "qid": "Q83179676",
+    "wikidata": "https://www.wikidata.org/wiki/Q83179676",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q83179676",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "hiroshima-museum-of-art",
+    "location_src": "Hiroshima Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     136.91978,
+     35.2889
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Mme. Martin in a Black Hat with Roses",
+    "year": "1881",
+    "location": "Menard Art Museum",
+    "city": "Komaki",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Portrait%20de%20Jeanne%20Martin%20au%20Chapeau%20orn%C3%A9%20d%27une%20Rose.jpg?width=500",
+    "qid": "Q96216689",
+    "wikidata": "https://www.wikidata.org/wiki/Q96216689",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q96216689",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "menard-art-museum",
+    "location_src": "Menard Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.28861,
+     55.87194
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Portrait of a Woman",
+    "year": "1882",
+    "location": "Hunterian Museum and Art Gallery",
+    "city": "Glasgow City",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Portrait%20de%20Dame.jpg?width=500",
+    "qid": "Q97173320",
+    "wikidata": "https://www.wikidata.org/wiki/Q97173320",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q97173320",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "location_src": "Glasgow",
+    "museum_id": "hunterian-museum-and-art-gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.77194,
+     35.67889
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Méry Laurent",
+    "year": "1882",
+    "location": "Artizon Museum",
+    "city": "Kyōbashi",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20-%20M%C3%A9ry%20Laurent%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18684775",
+    "wikidata": "https://www.wikidata.org/wiki/Q18684775",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18684775",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "artizon-museum",
+    "location_src": "Artizon Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.20462,
+     19.44066
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Girl in Brown Hat",
+    "year": "1882",
+    "location": "Museo Soumaya",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Young%20Girl%20in%20a%20Brown%20Hat.jpg?width=500",
+    "qid": "Q21050281",
+    "wikidata": "https://www.wikidata.org/wiki/Q21050281",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21050281",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museo-soumaya",
+    "location_src": "Museo Soumaya",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -46.65583,
+     -23.56111
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Bathers on the Seine - Academy",
+    "year": "1874",
+    "location": "São Paulo Museum of Art",
+    "city": "São Paulo",
+    "country": "Brazil",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20-%20Banhistas%20no%20Sena%20%28Academia%29.jpg?width=500",
+    "qid": "Q141500876",
+    "wikidata": "https://www.wikidata.org/wiki/Q141500876",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141500876",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -4.30773,
+     55.83094
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "In the Café",
+    "year": "1880",
+    "location": "Burrell Collection",
+    "city": "Glasgow City",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard%20Manet%20028.jpg?width=500",
+    "qid": "Q141531937",
+    "wikidata": "https://www.wikidata.org/wiki/Q141531937",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141531937",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "burrell-collection",
+    "location_src": "Burrell Collection",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.20694,
+     50.6314
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Portrait de femme",
+    "year": "1882",
+    "location": "Arp Museum Bahnhof Rolandseck",
+    "city": "Remagen",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20La%20Femme%20a%20chapeau%20noir.jpg?width=500",
+    "qid": "Q50984017",
+    "wikidata": "https://www.wikidata.org/wiki/Q50984017",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q50984017",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "arp-museum-bahnhof-rolandseck-2",
+    "location_src": "Arp Museum Bahnhof Rolandseck",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Édouard Manet",
+    "title": "Portrait de Mademoiselle Hecht, de profil en chapeau",
+    "year": "1882",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Portrait%20de%20Mademoiselle%20Hecht%20en%20chapeau.jpg?width=500",
+    "qid": "Q61890657",
+    "wikidata": "https://www.wikidata.org/wiki/Q61890657",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q61890657",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
    }
   }
  ]

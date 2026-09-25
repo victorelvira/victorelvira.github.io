@@ -7770,6 +7770,119 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.15167,
+     51.50347
+    ]
+   },
+   "properties": {
+    "painter": "Velázquez",
+    "title": "Portrait of a Man (possibly José Nieto)",
+    "year": "",
+    "location": "Apsley House",
+    "city": "City of Westminster",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20061.jpg?width=500",
+    "qid": "Q140590906",
+    "wikidata": "https://www.wikidata.org/wiki/Q140590906",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q140590906",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "apsley-house",
+    "location_src": "Apsley House",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.37083,
+     39.47917
+    ]
+   },
+   "properties": {
+    "painter": "Velázquez",
+    "title": "Self Portrait",
+    "year": "1650",
+    "location": "Museu de Belles Arts de València",
+    "city": "Valencia",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Diego%20Vel%C3%A1zquez%20Autorretrato%2045%20x%2038%20cm%20-%20Colecci%C3%B3n%20Real%20Academia%20de%20Bellas%20Artes%20de%20San%20Carlos%20-%20Museo%20de%20Bellas%20Artes%20de%20Valencia.jpg?width=500",
+    "qid": "Q3630736",
+    "wikidata": "https://www.wikidata.org/wiki/Q3630736",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3630736",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Madrid",
+    "creation_lat": 40.4169,
+    "creation_lon": -3.7033,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museu-de-belles-arts-de-valencia",
+    "location_src": "Museu de Belles Arts de València",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -6.25255,
+     53.34091
+    ]
+   },
+   "properties": {
+    "painter": "Velázquez",
+    "title": "Kitchen Scene with the Supper in Emmaus",
+    "year": "1618",
+    "location": "National Gallery of Ireland",
+    "city": "Dublin City",
+    "country": "Ireland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20mulata%2C%20by%20Diego%20Vel%C3%A1zquez.jpg?width=500",
+    "qid": "Q64689806",
+    "wikidata": "https://www.wikidata.org/wiki/Q64689806",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64689806",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Seville",
+    "creation_lat": 37.388611,
+    "creation_lon": -5.995,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-gallery-of-ireland",
+    "location_src": "National Gallery of Ireland",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

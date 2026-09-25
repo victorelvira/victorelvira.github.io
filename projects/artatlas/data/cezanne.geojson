@@ -15787,12 +15787,20 @@
      "coord": "MediaWiki coordinates API"
     },
     "museum_id": "metropolitan-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q17277950",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126478",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q17277950",
-    "qid_rejected_as": "painting series"
+    "qid_rejected_as": "painting series",
+    "qid": "Q28126478",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q28126478 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -28853,6 +28861,1486 @@
     ],
     "museum_id": "galleria-d-arte-moderna-di-milano",
     "location_src": "Galleria d'arte moderna di Milano",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.6578,
+     40.3472
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Three Pears",
+    "year": "1889",
+    "location": "Princeton Art Museum",
+    "city": "Princeton",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1888%2C%20C%C3%A9zanne%2C%20Three%20Pears.jpg?width=500",
+    "qid": "Q130753906",
+    "wikidata": "https://www.wikidata.org/wiki/Q130753906",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q130753906",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Gardanne (Horizontal View) (Gardanne [vue horizontale])",
+    "year": "1885",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Gardanne%20%28Horizontal%20View%29%20%28Gardanne%20%28vue%20horizontale%29%29%20-%20BF917%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126456",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126456",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126456",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.16361,
+     39.95278
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "The Chaîne de l'Étoile Mountains (La Chaîne de l'Étoile avec le Pilon du Roi)",
+    "year": "1885",
+    "location": "Philadelphia",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20The%20Cha%C3%AEne%20de%20l%27Etoile%20Mountains%20%28La%20Cha%C3%AEne%20de%20l%27Etoile%20avec%20le%20Pilon%20du%20Roi%29%20-%20BF650%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126464",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126464",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126464",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "philadelphia",
+    "location_src": "Philadelphia",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Philadelphia County"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Bibémus Quarry (Carrière de Bibémus)",
+    "year": "1895",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Bib%C3%A9mus%20Quarry%20%28Carri%C3%A8re%20de%20Bib%C3%A9mus%29%20-%20BF34%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126477",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126477",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126477",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "The Coach House (La Remise à Château Noir)",
+    "year": "1890",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20The%20Coach%20House%20%28La%20Remise%20%C3%A0%20Ch%C3%A2teau%20Noir%29%20-%20BF651%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126483",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126483",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126483",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Leaning Smoker (Fumeur accoudé)",
+    "year": "1890",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Leaning%20Smoker%20%28Fumeur%20accoud%C3%A9%29%20-%20BF653%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126484",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126484",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126484",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Group of Bathers (Groupe de baigneurs)",
+    "year": "1893",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Group%20of%20Bathers%20%28Groupe%20de%20baigneurs%29%20-%20BF101%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126490",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126490",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126490",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Mont Saint-Victoire (La Montagne Sainte-Victoire)",
+    "year": "1900",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Mont%20Sainte-Victoire%20%28La%20Montagne%20Sainte-Victoire%29%20-%20BF652%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126505",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126505",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126505",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Mont Saint-Victoire (La Montagne Sainte-Victoire)",
+    "year": "1900",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Mont%20Sainte-Victoire%20%28La%20Montagne%20Sainte-Victoire%29%20-%20BF654%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126507",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126507",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126507",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Trees (Arbres)",
+    "year": "1900",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Trees%20%28Arbres%29%20-%20BF655%20-%20Barnes%20Foundation.jpg?width=500",
+    "qid": "Q28126509",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126509",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126509",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.17281,
+     39.96064
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "The Flowered Vase (Le Vase Fleuri)",
+    "year": "1896",
+    "location": "Barnes Foundation",
+    "city": "Philadelphia",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Cezanne%20Vase%20fleuri.jpg?width=500",
+    "qid": "Q28126513",
+    "wikidata": "https://www.wikidata.org/wiki/Q28126513",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28126513",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "barnes-foundation",
+    "location_src": "Barnes Foundation",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Cinq baigneurs (Five Bathers)",
+    "year": "1877",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cinq%20baigneurs%2C%20par%20Paul%20C%C3%A9zanne%2C%20mus%C3%A9e%20d%27Orsay%2C%20FWN%20934.jpg?width=500",
+    "qid": "Q17493643",
+    "wikidata": "https://www.wikidata.org/wiki/Q17493643",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17493643",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Self-portraits",
+    "year": "1875",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20de%20l%27artiste%2C%20par%20Paul%20C%C3%A9zanne%2C%20FWN%20434.jpg?width=500",
+    "qid": "Q17495197",
+    "wikidata": "https://www.wikidata.org/wiki/Q17495197",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q17495197",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Château Noir and Mont Sainte-Victoire",
+    "year": "1890",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Ch%C3%A2teau%20Noir%20and%20Mont%20Sainte-Victoire%2C%20c.%201890-1895%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18688318",
+    "wikidata": "https://www.wikidata.org/wiki/Q18688318",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18688318",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Baigneuses (Bathers)",
+    "year": "1874",
+    "location": "Metropolitan Museum of Art",
+    "city": "New York",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Baigneuses%2C%20par%20Paul%20C%C3%A9zanne%2C%20Metropolitan%20Museum%20of%20Art.jpg?width=500",
+    "qid": "Q19905310",
+    "wikidata": "https://www.wikidata.org/wiki/Q19905310",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19905310",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.89139
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Antony Valabrègue",
+    "year": "1866",
+    "location": "National Gallery of Art",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Antony%20Valabr%C3%A8gue.jpg?width=500",
+    "qid": "Q20188674",
+    "wikidata": "https://www.wikidata.org/wiki/Q20188674",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20188674",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-gallery-of-art",
+    "location_src": "National Gallery of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.47471,
+     37.55642
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Victor Chocquet",
+    "year": "1877",
+    "location": "Virginia Museum of Fine Arts",
+    "city": "Richmond",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Portrait%20of%20Victor%20Chocquet%20%28c.%201877%29.jpg?width=500",
+    "qid": "Q64212661",
+    "wikidata": "https://www.wikidata.org/wiki/Q64212661",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64212661",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "virginia-museum-of-fine-arts",
+    "location_src": "Virginia Museum of Fine Arts",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.46869,
+     37.7715
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Intérieur de forêt (Forest Interior)",
+    "year": "1898",
+    "location": "Fine Arts Museums of San Francisco",
+    "city": "San Francisco",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Int%C3%A9rieur%20de%20for%C3%AAt%2C%20par%20Paul%20C%C3%A9zanne%2C%20Yorck.jpg?width=500",
+    "qid": "Q20198272",
+    "wikidata": "https://www.wikidata.org/wiki/Q20198272",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20198272",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "fine-arts-museums-of-san-francisco",
+    "location_src": "Fine Arts Museums of San Francisco",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -3.69493,
+     40.41604
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Bottle, Carafe, Jug and Lemons",
+    "year": "1902",
+    "location": "Thyssen-Bornemisza Museum",
+    "city": "Madrid",
+    "country": "Spain",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Bouteille%2C%20carafe%2C%20broc%20et%20citrons.jpg?width=500",
+    "qid": "Q21712118",
+    "wikidata": "https://www.wikidata.org/wiki/Q21712118",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21712118",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "thyssen-bornemisza-museum",
+    "location_src": "Thyssen-Bornemisza Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32254,
+     48.86384
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Flowers in a Blue Vase 1880",
+    "year": "1880",
+    "location": "Musée de l'Orangerie",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Flowers%20in%20a%20Blue%20Vase%20by%20Paul%20C%C3%A9zanne%2C%201880.JPG?width=500",
+    "qid": "Q22337841",
+    "wikidata": "https://www.wikidata.org/wiki/Q22337841",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22337841",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-de-l-orangerie",
+    "location_src": "Musée de l'Orangerie",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32254,
+     48.86384
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Nature morte, rose et fruits (Flowers and Fruits)",
+    "year": "1880",
+    "location": "Musée de l'Orangerie",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Fleurs%20et%20fruits%20%28Orangerie%29.jpg?width=500",
+    "qid": "Q22337842",
+    "wikidata": "https://www.wikidata.org/wiki/Q22337842",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q22337842",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "musee-de-l-orangerie",
+    "location_src": "Musée de l'Orangerie",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.38083,
+     48.19139
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Pommes, carafe et sucrier",
+    "year": "1901",
+    "location": "Österreichische Galerie Belvedere",
+    "city": "Landstraße",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Stillleben%20mit%20blauer%20Flasche%2C%20Zuckerdose%20und%20%C3%84pfeln%20-%201941%20-%20%C3%96sterreichische%20Galerie%20Belvedere.jpg?width=500",
+    "qid": "Q27999381",
+    "wikidata": "https://www.wikidata.org/wiki/Q27999381",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27999381",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "osterreichische-galerie-belvedere",
+    "location_src": "Österreichische Galerie Belvedere",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.0,
+     53.55
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Moulin sur une rivière (Landscape with Mill)",
+    "year": "1904",
+    "location": "Hamburg",
+    "city": "Germany",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Moulin%20sur%20une%20rivi%C3%A8re%2C%20par%20Paul%20C%C3%A9zanne%2C%20Yorck.jpg?width=500",
+    "qid": "Q64285634",
+    "wikidata": "https://www.wikidata.org/wiki/Q64285634",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64285634",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "hamburg",
+    "location_src": "Hamburg",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.4,
+     49.0119
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Senke mit Bäumen",
+    "year": "1890",
+    "location": "Staatliche Kunsthalle Karlsruhe",
+    "city": "Karlsruhe",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Senke%20mit%20B%C3%A4umen%20%281890-1892%29.jpg?width=500",
+    "qid": "Q137477813",
+    "wikidata": "https://www.wikidata.org/wiki/Q137477813",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q137477813",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "staatliche-kunsthalle-karlsruhe",
+    "location_src": "Staatliche Kunsthalle Karlsruhe",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.69891,
+     45.42954
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Portrait de paysan (Portrait of a Peasant)",
+    "year": "1905",
+    "location": "National Gallery of Canada",
+    "city": "Ottawa",
+    "country": "Canada",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20de%20paysan%2C%20par%20Paul%20C%C3%A9zanne%2C%20FWN%20542.jpg?width=500",
+    "qid": "Q59530115",
+    "wikidata": "https://www.wikidata.org/wiki/Q59530115",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q59530115",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "national-gallery-of-canada",
+    "location_src": "National Gallery of Canada",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.5125,
+     39.1
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Le Pont des Trois Sautets (The River at the Bridge of Trois Sautets)",
+    "year": "1906",
+    "location": "Cincinnati",
+    "city": "Hamilton County",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20The%20Bridge%20of%20Trois-Sautets%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q64156565",
+    "wikidata": "https://www.wikidata.org/wiki/Q64156565",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64156565",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "cincinnati",
+    "location_src": "Cincinnati",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.87562,
+     42.93245
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Sous-bois (Under the Trees)",
+    "year": "1883",
+    "location": "Buffalo AKG Art Museum",
+    "city": "Buffalo",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Sous-bois%20%28Under%20the%20Trees%29%20-%20RCA1941-2%20-%20Albright%E2%80%93Knox%20Art%20Gallery.tiff?width=500",
+    "qid": "Q77591338",
+    "wikidata": "https://www.wikidata.org/wiki/Q77591338",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q77591338",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "buffalo-akg-art-museum",
+    "location_src": "Buffalo AKG Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.6578,
+     40.3472
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "La citerne au parc de Château Noir",
+    "year": "1895",
+    "location": "Princeton Art Museum",
+    "city": "Princeton",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1895%2C%20C%C3%A9zanne%2C%20Cistern%20in%20the%20Park%20of%20Ch%C3%A2teau%20Noir.jpg?width=500",
+    "qid": "Q64236883",
+    "wikidata": "https://www.wikidata.org/wiki/Q64236883",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64236883",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.6578,
+     40.3472
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Rochers à Bibémus",
+    "year": "1887",
+    "location": "Princeton Art Museum",
+    "city": "Princeton",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1887%2C%20C%C3%A9zanne%2C%20Rocks%20at%20Bib%C3%A9mus.jpg?width=500",
+    "qid": "Q64239112",
+    "wikidata": "https://www.wikidata.org/wiki/Q64239112",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64239112",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.6578,
+     40.3472
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "La Montagne Sainte-Victoire vue des Lauves en hiver",
+    "year": "1900",
+    "location": "Princeton Art Museum",
+    "city": "Princeton",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1900%2C%20C%C3%A9zanne%2C%20Mont%20Sainte%20Victoire.jpg?width=500",
+    "qid": "Q64239490",
+    "wikidata": "https://www.wikidata.org/wiki/Q64239490",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64239490",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.6578,
+     40.3472
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Arbre tordu et citerne dans le parc de Château Noir",
+    "year": "1900",
+    "location": "Princeton Art Museum",
+    "city": "Princeton",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1900%2C%20C%C3%A9zanne%2C%20Trees%20and%20Cistern%20in%20the%20Park%20of%20Ch%C3%A2teau%20Noir.jpg?width=500",
+    "qid": "Q64243671",
+    "wikidata": "https://www.wikidata.org/wiki/Q64243671",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64243671",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9631,
+     40.7794
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Nature morte avec pastèque et grenades",
+    "year": "1900",
+    "location": "Metropolitan Museum of Art",
+    "city": "New York",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Still-Life%20with%20a%20Watermelon%20and%20Pomegranates%20MET%20DT4962.jpg?width=500",
+    "qid": "Q64218589",
+    "wikidata": "https://www.wikidata.org/wiki/Q64218589",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64218589",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "metropolitan-museum-of-art",
+    "location_src": "Metropolitan Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.6578,
+     40.3472
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Pin et rochers près des grottes au-dessus de Château Noir",
+    "year": "1900",
+    "location": "Princeton Art Museum",
+    "city": "Princeton",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/1900%2C%20C%C3%A9zanne%2C%20Pine%20Tree%20in%20Front%20of%20the%20Caves%20above%20Ch%C3%A2teau%20Noir.jpg?width=500",
+    "qid": "Q64235288",
+    "wikidata": "https://www.wikidata.org/wiki/Q64235288",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64235288",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "princeton-art-museum",
+    "location_src": "Princeton Art Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.12722,
+     51.49083
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "La Montagne Sainte-Victoire vue des Lauves",
+    "year": "1902",
+    "location": "Tate Britain",
+    "city": "London",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20Mont%20Sainte%20Victoire%20von%20Lauves%20aus%20gesehen.jpg?width=500",
+    "qid": "Q64252234",
+    "wikidata": "https://www.wikidata.org/wiki/Q64252234",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64252234",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "tate-britain",
+    "location_src": "Tate Britain",
+    "kind": "museum",
+    "form": "painting",
+    "venue_of": "Tate"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.9775,
+     40.7617
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "La Montagne Sainte-Victoire vue des Lauves",
+    "year": "1902",
+    "location": "Museum of Modern Art",
+    "city": "New York",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Montagne%20Sainte-Victoire%20vue%20des%20Lauves%2C%20par%20Paul%20C%C3%A9zanne%2C%20RW595%20MoMA.jpg?width=500",
+    "qid": "Q64253294",
+    "wikidata": "https://www.wikidata.org/wiki/Q64253294",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64253294",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museum-of-modern-art",
+    "location_src": "Museum of Modern Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.57194,
+     55.6725
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Women Bathing",
+    "year": "1900",
+    "location": "Ny Carlsberg Glyptotek",
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/C%C3%A9zanne%20Women%20Bathing.jpg?width=500",
+    "qid": "Q4247390",
+    "wikidata": "https://www.wikidata.org/wiki/Q4247390",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q4247390",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "ny-carlsberg-glyptotek",
+    "location_src": "Ny Carlsberg Glyptotek",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "Copenhagen Municipality"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.67388,
+     50.10322
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Allée des marronniers au Jas de Bouffan",
+    "year": "1884",
+    "location": "Städel Museum",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Avenue%20of%20Chestnut%20Trees%20at%20the%20Jas%20de%20Bouffan%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q19820266",
+    "wikidata": "https://www.wikidata.org/wiki/Q19820266",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19820266",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.47334,
+     51.91421
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "View of the Château Noir",
+    "year": "1880",
+    "location": "Museum Boijmans Van Beuningen",
+    "city": "Rotterdam",
+    "country": "Netherlands",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20View%20of%20the%20Ch%C3%A2teau%20Noir%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q19969229",
+    "wikidata": "https://www.wikidata.org/wiki/Q19969229",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19969229",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "museum-boijmans-van-beuningen",
+    "location_src": "Museum Boijmans Van Beuningen",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.98156,
+     40.7488
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "The Terrace at the Garden at Les Lauves",
+    "year": "1902",
+    "location": "The Morgan Library & Museum",
+    "city": "Manhattan",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20The%20Terrace%20at%20the%20Garden%20at%20Les%20Lauves%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q64350281",
+    "wikidata": "https://www.wikidata.org/wiki/Q64350281",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64350281",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "the-morgan-library-museum",
+    "location_src": "The Morgan Library & Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62389,
+     41.87944
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Le pistachier dans la cour de Château Noir, II",
+    "year": "",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Pistachio%20Tree%20at%20Ch%C3%A2teau%20Noir.jpg?width=500",
+    "qid": "Q64355069",
+    "wikidata": "https://www.wikidata.org/wiki/Q64355069",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64355069",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.54806,
+     47.37028
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Paysage en Provence",
+    "year": "1880",
+    "location": "Kunsthaus Zürich",
+    "city": "Zurich",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20Landschaft%20in%20der%20Provence.jpg?width=500",
+    "qid": "Q64364651",
+    "wikidata": "https://www.wikidata.org/wiki/Q64364651",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64364651",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kunsthaus-zurich",
+    "location_src": "Kunsthaus Zürich",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.67388,
+     50.10322
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Rochers",
+    "year": "1850",
+    "location": "Städel Museum",
+    "city": "Frankfurt",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rochers%2C%20par%20Paul%20C%C3%A9zanne%2C%20mus%C3%A9e%20St%C3%A4del.jpg?width=500",
+    "qid": "Q64364686",
+    "wikidata": "https://www.wikidata.org/wiki/Q64364686",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64364686",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "stadel-museum",
+    "location_src": "Städel Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.80089,
+     32.78756
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Still Life with Apples, a Bottle and a Milk Pot.",
+    "year": "1900",
+    "location": "Dallas Museum of Art",
+    "city": "Dallas",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20Still%20Life%20with%20Apples%20a%20Bottle%20and%20a%20Milk%20Pot.jpg?width=500",
+    "qid": "Q64405366",
+    "wikidata": "https://www.wikidata.org/wiki/Q64405366",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64405366",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "dallas-museum-of-art",
+    "location_src": "Dallas Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.62389,
+     41.87944
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Trois crânes",
+    "year": "1902",
+    "location": "Art Institute of Chicago",
+    "city": "Chicago",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cezanne%20-%20Stilleben%20mit%20drei%20Totensch%C3%A4del.jpg?width=500",
+    "qid": "Q64408710",
+    "wikidata": "https://www.wikidata.org/wiki/Q64408710",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64408710",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "art-institute-of-chicago",
+    "location_src": "Art Institute of Chicago",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -118.15916,
+     34.14623
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Still Life",
+    "year": "1500",
+    "location": "Norton Simon Museum",
+    "city": "Pasadena",
+    "country": "United States",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20166.jpg?width=500",
+    "qid": "Q64435751",
+    "wikidata": "https://www.wikidata.org/wiki/Q64435751",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64435751",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum",
+    "kind": "museum",
+    "form": "painting",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-09-25",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1500, before birth (1839–1906) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -0.11771,
+     51.51157
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Pommes, bouteille et dossier de chaise",
+    "year": "1904",
+    "location": "Courtauld Gallery",
+    "city": "London",
+    "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Apples%2C%20Bottle%20and%20Chairback%2C%20Courtauld%20Gallery.jpg?width=500",
+    "qid": "Q64483905",
+    "wikidata": "https://www.wikidata.org/wiki/Q64483905",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64483905",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "courtauld-gallery",
+    "location_src": "Courtauld Gallery",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.69222,
+     35.68972
+    ]
+   },
+   "properties": {
+    "painter": "Paul Cézanne",
+    "title": "Pot and Soup Tureen",
+    "year": "1889",
+    "location": "National Museum of Western Art",
+    "city": "Tokyo",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20C%C3%A9zanne%20-%20Pot%20and%20Soup%20Tureen%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q64484172",
+    "wikidata": "https://www.wikidata.org/wiki/Q64484172",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q64484172",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "national-museum-of-western-art",
+    "location_src": "National Museum of Western Art",
     "kind": "museum",
     "form": "painting"
    }

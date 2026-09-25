@@ -568,12 +568,20 @@
     "museum_id": "kunsthistorisches-museum",
     "city": "Vienna",
     "country": "Austria",
-    "wikidata": "https://www.wikidata.org/wiki/Q699091",
+    "wikidata": "https://www.wikidata.org/wiki/Q15293656",
     "location_src": "Kunsthistorisches Museum",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q699091",
-    "qid_rejected_as": "group of paintings"
+    "qid_rejected_as": "group of paintings",
+    "qid": "Q15293656",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q15293656 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -1113,7 +1121,15 @@
     "location_src": "Museo del Prado",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q1198007"
+    "qid_shared": "Q1198007",
+    "qid": "Q1198007",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q1198007 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {

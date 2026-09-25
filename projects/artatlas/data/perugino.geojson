@@ -5977,6 +5977,509 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.103656,
+     43.028385
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Martyrdom of Saint Sebastian",
+    "year": "1505",
+    "location": "chiesa di San Sebastiano",
+    "city": "Panicale",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Perugino%20cat71.jpg?width=500",
+    "qid": "Q690427",
+    "wikidata": "https://www.wikidata.org/wiki/Q690427",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q690427",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "chiesa-di-san-sebastiano",
+    "location_src": "chiesa di San Sebastiano",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.454433,
+     41.902956
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Delivery of the Keys",
+    "year": "1480",
+    "location": "Sistine Chapel",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Entrega%20de%20las%20llaves%20a%20San%20Pedro%20%28Perugino%29.jpg?width=500",
+    "qid": "Q2620028",
+    "wikidata": "https://www.wikidata.org/wiki/Q2620028",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2620028",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "sistine-chapel",
+    "location_src": "Sistine Chapel",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.38833,
+     43.11111
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Caton d'Utique",
+    "year": "1497",
+    "location": "Collegio del Cambio",
+    "city": "Perugia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Perugino%20-%20Cato%20-%20WGA17247.jpg?width=500",
+    "qid": "Q2942973",
+    "wikidata": "https://www.wikidata.org/wiki/Q2942973",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q2942973",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "collegio-del-cambio",
+    "location_src": "Collegio del Cambio",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.38833,
+     43.11111
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Fortitude and Temperance with Six Antique Heroes",
+    "year": "1497",
+    "location": "Collegio del Cambio",
+    "city": "Perugia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Perugino%2C%20Fortitude%20and%20Temperance%20with%20Six%20Antique%20Heroes%2000.jpg?width=500",
+    "qid": "Q3076883",
+    "wikidata": "https://www.wikidata.org/wiki/Q3076883",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3076883",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "collegio-del-cambio",
+    "location_src": "Collegio del Cambio",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.38833,
+     43.11111
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "The Almighty with Prophets and Sybils",
+    "year": "1497",
+    "location": "Collegio del Cambio",
+    "city": "Perugia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Perugino%2C%20The%20Almighty%20with%20Prophets%20and%20Sybils.jpg?width=500",
+    "qid": "Q3205460",
+    "wikidata": "https://www.wikidata.org/wiki/Q3205460",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3205460",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "collegio-del-cambio",
+    "location_src": "Collegio del Cambio",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.25129,
+     43.77731
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Last Supper",
+    "year": "1493",
+    "location": "Cenacolo di Fuligno",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Cenacolo%20di%20Fuligno%20di%20Pietro%20Perugino.JPG?width=500",
+    "qid": "Q3208044",
+    "wikidata": "https://www.wikidata.org/wiki/Q3208044",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3208044",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "cenacolo-di-fuligno",
+    "location_src": "Cenacolo di Fuligno",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.6722391,
+     42.9898901
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Pieta between St. John and Mary Magdalene.",
+    "year": "1521",
+    "location": "Collegiate church Santa Maria Maggiore",
+    "city": "Spello",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Perugino%20cat94a.jpg?width=500",
+    "qid": "Q3211640",
+    "wikidata": "https://www.wikidata.org/wiki/Q3211640",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3211640",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "collegiate-church-santa-maria-maggiore",
+    "location_src": "Collegiate church Santa Maria Maggiore",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.3921,
+     43.1129
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Holy Trinity",
+    "year": "1505",
+    "location": "San Severo Chapel",
+    "city": "Perugia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raffaello%2C%20trinit%C3%A0%20%281505-1508%29%20e%20santi%20del%20perugino%20%281521%29%2C%2001.jpg?width=500",
+    "qid": "Q3213322",
+    "wikidata": "https://www.wikidata.org/wiki/Q3213322",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3213322",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "san-severo-chapel",
+    "location_src": "San Severo Chapel",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.454433,
+     41.902956
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Moses Leaving for Egypt",
+    "year": "1482",
+    "location": "Sistine Chapel",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Perugino%20cat13d.jpg?width=500",
+    "qid": "Q3228268",
+    "wikidata": "https://www.wikidata.org/wiki/Q3228268",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3228268",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "sistine-chapel",
+    "location_src": "Sistine Chapel",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.38833,
+     43.11111
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Adoration of the Child",
+    "year": "1497",
+    "location": "Collegio del Cambio",
+    "city": "Perugia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Perugino%2C%20nativit%C3%A0%2C%20collegio%20del%20cambio.jpg?width=500",
+    "qid": "Q3337024",
+    "wikidata": "https://www.wikidata.org/wiki/Q3337024",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3337024",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "collegio-del-cambio",
+    "location_src": "Collegio del Cambio",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.38833,
+     43.11111
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Famous Men of Antiquity (1)",
+    "year": "1490",
+    "location": "Collegio del Cambio",
+    "city": "Perugia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Perugino%2C%20prudenza%20e%20giustizia%2002.jpg?width=500",
+    "qid": "Q3408564",
+    "wikidata": "https://www.wikidata.org/wiki/Q3408564",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3408564",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "collegio-del-cambio",
+    "location_src": "Collegio del Cambio",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.38833,
+     43.11111
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Transfiguration",
+    "year": "1497",
+    "location": "Collegio del Cambio",
+    "city": "Perugia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Perugino%2C%20trasfigurazione%2C%20collegio%20del%20cambio.jpg?width=500",
+    "qid": "Q3537507",
+    "wikidata": "https://www.wikidata.org/wiki/Q3537507",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3537507",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "collegio-del-cambio",
+    "location_src": "Collegio del Cambio",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.38833,
+     43.11111
+    ]
+   },
+   "properties": {
+    "painter": "Pietro Perugino",
+    "title": "Self-portrait of Pietro Perugino",
+    "year": "1500",
+    "location": "Collegio del Cambio",
+    "city": "Perugia",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pietro%20Perugino%20031.jpg?width=500",
+    "qid": "Q131048472",
+    "wikidata": "https://www.wikidata.org/wiki/Q131048472",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q131048472",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "collegio-del-cambio",
+    "location_src": "Collegio del Cambio",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }

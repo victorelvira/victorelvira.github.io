@@ -825,7 +825,7 @@ body.show-chart #timeline, body.show-chart #filter-wrap, body.show-chart #mapopt
 }
 
 /* Game & Timeline: hide the map-only chrome (painter selector, filters, stats) — not needed there,
-   and it wastes space on mobile (Lorena) */
+   and it wastes space on mobile */
 body.show-game #painters, body.show-game .filters, body.show-game .stats,
 body.show-chart #painters, body.show-chart .filters, body.show-chart .stats { display: none; }
 
@@ -1324,7 +1324,7 @@ body.galaxy-painters #galaxy-hint, body.galaxy-painters #galaxy-legend { display
 /* ── themes: what the painting shows ──
    Tags under a ficha's title; pressing one opens every other work with that theme. Quiet by
    default (this is a label, not a call to action), warmer under the cursor. */
-.wc-themes { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 2px; }
+.wc-themes { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 10px; }
 .wc-themes:empty { display: none; }
 .wtheme {
   font: inherit; font-size: 12px; line-height: 1.5; cursor: pointer;
@@ -1386,3 +1386,12 @@ body.galaxy-tree #pt-hint { display: inline; }
 #pt-hint { display: none; }
 body.galaxy-tree #galaxy-dim, body.galaxy-tree #galaxy-colorby, body.galaxy-tree .galaxy-mini,
 body.galaxy-tree #galaxy-hint, body.galaxy-tree #galaxy-legend, body.galaxy-tree #pm-hint { display: none; }
+/* a theme read off the title rather than recorded in Wikidata: same tag, drawn as a suggestion */
+.wtheme.guess { border-style: dashed; color: #8a7458; }
+.wtheme.more { color: #a3937c; border-style: dotted; }
+/* a work the filters leave out: still there, all but gone */
+.gx-dot.gx-out { background: #ded8cd !important; opacity: .38; pointer-events: none; }
+.gx-dot.gx-out:hover { transform: translate(-50%, -50%); box-shadow: none; }
+.gx-lab.gx-out { opacity: .18; }
+.gx-searching .gx-dot:not(.gx-out) { width: 14px; height: 14px; box-shadow: 0 0 0 2px #fffdf8, 0 1px 5px rgba(0,0,0,.35); z-index: 6; }
+.gx-searching .gx-dot.gx-out { background: #e6e1d8 !important; opacity: .3; }

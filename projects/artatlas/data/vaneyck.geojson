@@ -1980,6 +1980,179 @@
     "kind": "church",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.68548,
+     45.0711
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Birth of John the Baptist",
+    "year": "1423",
+    "location": "Turin City Museum of Ancient Art",
+    "city": "Turin",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/14th-century%20painters%20-%20Les%20Tr%C3%A8s%20Belles%20Heures%20de%20Notre%20Dame%20de%20Jean%20de%20Berry%20-%20WGA16014.jpg?width=500",
+    "qid": "Q11789743",
+    "wikidata": "https://www.wikidata.org/wiki/Q11789743",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11789743",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "The Hague",
+    "creation_lat": 52.08,
+    "creation_lon": 4.31,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "turin-city-museum-of-ancient-art",
+    "location_src": "Turin City Museum of Ancient Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.68548,
+     45.0711
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Page from the Très Belles Heures de Notre Dame de Jean de Berry",
+    "year": "1450",
+    "location": "Turin City Museum of Ancient Art",
+    "city": "Turin",
+    "country": "Italy",
+    "attribution": "copy or later version",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20van%20Eyck%20-%20The%20Hours%20of%20Milan-Turin.%20The%20Mass%20for%20the%20Dead%2C%20Friedl%C3%A4nder%2C%20ENP%2C%20vol.%201%2C%20nr.%20034.jpg?width=500",
+    "qid": "Q131705647",
+    "wikidata": "https://www.wikidata.org/wiki/Q131705647",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q131705647",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "turin-city-museum-of-ancient-art",
+    "location_src": "Turin City Museum of Ancient Art",
+    "kind": "museum",
+    "form": "painting",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-09-25",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1450, after death (1390–1441) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.68548,
+     45.0711
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "Birth of John the Baptist",
+    "year": "1420",
+    "location": "Turin City Museum of Ancient Art",
+    "city": "Turin",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/14th-century%20painters%20-%20Les%20Tr%C3%A8s%20Belles%20Heures%20de%20Notre%20Dame%20de%20Jean%20de%20Berry%20-%20WGA16014.jpg?width=500",
+    "qid": "Q131922856",
+    "wikidata": "https://www.wikidata.org/wiki/Q131922856",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q131922856",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "turin-city-museum-of-ancient-art",
+    "location_src": "Turin City Museum of Ancient Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.727059,
+     51.052974
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "St Christopher leading the pilgrims",
+    "year": "1432",
+    "location": "St Bavo's Cathedral",
+    "city": "Ghent",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20and%20Hubert%20van%20Eyck.jpg%20-%20St%20Christopher%20and%20the%20pilgrims.jpg?width=500",
+    "qid": "Q138008993",
+    "wikidata": "https://www.wikidata.org/wiki/Q138008993",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q138008993",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "st-bavo-s-cathedral",
+    "location_src": "St Bavo's Cathedral",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     3.727059,
+     51.052974
+    ]
+   },
+   "properties": {
+    "painter": "Jan van Eyck",
+    "title": "The hermits",
+    "year": "1432",
+    "location": "St Bavo's Cathedral",
+    "city": "Ghent",
+    "country": "Belgium",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20and%20Hubert%20van%20Eyck.jpg%20-%20The%20hermits.jpg?width=500",
+    "qid": "Q138009279",
+    "wikidata": "https://www.wikidata.org/wiki/Q138009279",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q138009279",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "st-bavo-s-cathedral",
+    "location_src": "St Bavo's Cathedral",
+    "kind": "church",
+    "form": "painting"
+   }
   }
  ]
 }

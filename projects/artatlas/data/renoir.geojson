@@ -3806,12 +3806,20 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "country": "United States",
-    "wikidata": "https://www.wikidata.org/wiki/Q971215",
+    "wikidata": "https://www.wikidata.org/wiki/Q728373",
     "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
     "form": "painting",
     "qid_rejected": "Q971215",
-    "qid_rejected_as": "human"
+    "qid_rejected_as": "human",
+    "qid": "Q728373",
+    "_overrides": {
+     "qid": {
+      "at": "2026-09-25",
+      "source": "Wikidata reconciliation",
+      "note": "matched to Q728373 by normalised title + year (±8), same creator (merge_wd_extras)"
+     }
+    }
    }
   },
   {
@@ -38622,6 +38630,787 @@
     },
     "museum_id": "yamagata-museum-of-art",
     "location_src": "Yamagata Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.20462,
+     19.44066
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Portrait of a girl",
+    "year": "1880",
+    "location": "Museo Soumaya",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Retrato%20de%20una%20ni%C3%B1a%20-%20Renoir%2C%201880.JPG?width=500",
+    "qid": "Q18418958",
+    "wikidata": "https://www.wikidata.org/wiki/Q18418958",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18418958",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museo-soumaya",
+    "location_src": "Museo Soumaya",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     16.36833,
+     48.20472
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Elisabeth Maître",
+    "year": "1879",
+    "location": "Albertina",
+    "city": "Vienna",
+    "country": "Austria",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Portrait%20of%20a%20Young%20Girl%20%28Elisabeth%20Ma%C3%AEtre%29%2C%201879%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18683372",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683372",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18683372",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "albertina",
+    "location_src": "Albertina",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     1.44206,
+     43.6003
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Portrait de jeune fille",
+    "year": "1879",
+    "location": "Fondation Bemberg",
+    "city": "Toulouse",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bemberg%20Fondation%20Toulouse%20-%20Portrait%20de%20jeune%20fille%20-%20Pierre-Auguste%20Renoir%20pastel%201879%2056x43%20Inv.2156.jpg?width=500",
+    "qid": "Q83507934",
+    "wikidata": "https://www.wikidata.org/wiki/Q83507934",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q83507934",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "fondation-bemberg",
+    "location_src": "Fondation Bemberg",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -121.314,
+     37.9603
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "La Toilette",
+    "year": "1889",
+    "location": "Haggin Museum",
+    "city": "Stockton",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Renoir--Haggin--La-Toilette-pastel-THM0245-copy.jpg?width=500",
+    "qid": "Q86471897",
+    "wikidata": "https://www.wikidata.org/wiki/Q86471897",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q86471897",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "haggin-museum",
+    "location_src": "Haggin Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.15695,
+     43.66758
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Vallée de la Cagne et la baou de Saint-Jeannet",
+    "year": "1905",
+    "location": "musée Renoir",
+    "city": "Cagnes-sur-Mer",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Vall%C3%A9e%20de%20la%20Cagne%20et%20la%20baou%20de%20Saint-Jeannet%20-%20Pierre-Auguste%20Renoir%20-%20Mus%C3%A9e%20Renoir%20de%20Cagnes-sur-Mer-9811%20%28without%20frame%29.jpg?width=500",
+    "qid": "Q141371281",
+    "wikidata": "https://www.wikidata.org/wiki/Q141371281",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141371281",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Cagnes-sur-Mer",
+    "creation_lat": 43.6644,
+    "creation_lon": 7.1489,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "musee-renoir",
+    "location_src": "Musée Renoir",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.06333,
+     38.91417
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Head of a Child",
+    "year": "1877",
+    "location": "Dumbarton Oaks",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Renoir%20Head%20of%20a%20child.JPG?width=500",
+    "qid": "Q96748470",
+    "wikidata": "https://www.wikidata.org/wiki/Q96748470",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q96748470",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "dumbarton-oaks",
+    "location_src": "Dumbarton Oaks",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -77.02,
+     38.89139
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Camille Monet und ihr Sohn Jean in Argenteuil",
+    "year": "1874",
+    "location": "National Gallery of Art",
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Madame%20Monet%20and%20her%20Son.jpg?width=500",
+    "qid": "Q139895039",
+    "wikidata": "https://www.wikidata.org/wiki/Q139895039",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q139895039",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "national-gallery-of-art",
+    "location_src": "National Gallery of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -122.26634,
+     37.8708
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "La Méditerranée",
+    "year": "1909",
+    "location": "Berkeley Art Museum and Pacific Film Archive",
+    "city": "Berkeley",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Renoir%20-%20La%20Mediterranee%2C%201908-1910.jpg?width=500",
+    "qid": "Q107318700",
+    "wikidata": "https://www.wikidata.org/wiki/Q107318700",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107318700",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Cagnes-sur-Mer",
+    "creation_lat": 43.6644,
+    "creation_lon": 7.1489,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "berkeley-art-museum-and-pacific-film-archive",
+    "location_src": "Berkeley Art Museum and Pacific Film Archive",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -71.09417,
+     42.33944
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Boating Couple (said to be Aline Charigot and Renoir)",
+    "year": "1881",
+    "location": "Museum of Fine Arts Boston",
+    "city": "Boston",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Boating%20Couple%20%28said%20to%20be%20Aline%20Charigot%20and%20Renoir%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q108281574",
+    "wikidata": "https://www.wikidata.org/wiki/Q108281574",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q108281574",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -74.07337,
+     4.5967
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Paysage de l'Île-de-France",
+    "year": "1883",
+    "location": "Botero Museum",
+    "city": "Bogotá",
+    "country": "Colombia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Paisaje%20de%20L%27Ile%20de%20France.jpg?width=500",
+    "qid": "Q108333695",
+    "wikidata": "https://www.wikidata.org/wiki/Q108333695",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q108333695",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "botero-museum",
+    "location_src": "Botero Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     30.51444,
+     50.44111
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "La Jeune Mère",
+    "year": "1898",
+    "location": "Khanenko Museum",
+    "city": "Kyiv",
+    "country": "Ukraine",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20La%20Jeune%20M%C3%A8re.jpg?width=500",
+    "qid": "Q141388041",
+    "wikidata": "https://www.wikidata.org/wiki/Q141388041",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141388041",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "khanenko-museum",
+    "location_src": "Khanenko Museum",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     4.83361,
+     45.76694
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Laveuse",
+    "year": "1910",
+    "location": "Museum of Fine Arts of Lyon",
+    "city": "Lyon",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Laveuse%20-%20Pierre-Auguste%20Renoir%20-%20Mus%C3%A9e%20Renoir%20de%20Cagnes-sur-Mer-9822%20%28without%20frame%29.jpg?width=500",
+    "qid": "Q141393544",
+    "wikidata": "https://www.wikidata.org/wiki/Q141393544",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q141393544",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Cagnes-sur-Mer",
+    "creation_lat": 43.6644,
+    "creation_lon": 7.1489,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museum-of-fine-arts-of-lyon",
+    "location_src": "Museum of Fine Arts of Lyon",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "1st arrondissement of Lyon"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.3074,
+     47.04956
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Nude from Behind",
+    "year": "1879",
+    "location": "Rosengart Collection",
+    "city": "Lucerne",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre%20Auguste%20Renoir%20-%20Nude%20from%20Behind%20-%20Rosengart%20collection.jpg?width=500",
+    "qid": "Q67959128",
+    "wikidata": "https://www.wikidata.org/wiki/Q67959128",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q67959128",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "rosengart-collection",
+    "location_src": "Rosengart Collection",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32254,
+     48.86384
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Gabrielle and Jean",
+    "year": "1895",
+    "location": "Musée de l'Orangerie",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gabrielle%20et%20Jean%2C%20by%20Pierre-Auguste%20Renoir%2C%20from%20C2RMF%20cropped.jpg?width=500",
+    "qid": "Q3756784",
+    "wikidata": "https://www.wikidata.org/wiki/Q3756784",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3756784",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "musee-de-l-orangerie",
+    "location_src": "Musée de l'Orangerie",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     2.32653,
+     48.85997
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Portrait of Madame Charpentier",
+    "year": "1876",
+    "location": "Musée d'Orsay",
+    "city": "Paris",
+    "country": "France",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Madame%20Charpentier%20-%2001.jpg?width=500",
+    "qid": "Q11702934",
+    "wikidata": "https://www.wikidata.org/wiki/Q11702934",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11702934",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "musee-d-orsay",
+    "location_src": "Musée d'Orsay",
+    "kind": "museum",
+    "form": "painting",
+    "city_src": "7th arrondissement of Paris"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     8.56176,
+     47.35305
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Harvesters",
+    "year": "1873",
+    "location": "Foundation E.G. Bührle Collection",
+    "city": "Zurich",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Les%20Moissonneurs.jpg?width=500",
+    "qid": "Q131364532",
+    "wikidata": "https://www.wikidata.org/wiki/Q131364532",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q131364532",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "foundation-e-g-buhrle-collection",
+    "location_src": "Foundation E.G. Bührle Collection",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.39278,
+     43.65361
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Le concert",
+    "year": "1918",
+    "location": "Art Gallery of Ontario",
+    "city": "Toronto",
+    "country": "Canada",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Le%20Concert.jpg?width=500",
+    "qid": "Q116241584",
+    "wikidata": "https://www.wikidata.org/wiki/Q116241584",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116241584",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Cagnes-sur-Mer",
+    "creation_lat": 43.6644,
+    "creation_lon": 7.1489,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "art-gallery-of-ontario",
+    "location_src": "Art Gallery of Ontario",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     130.70053,
+     32.80753
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Girl with Flowers on her Chest",
+    "year": "1900",
+    "location": "Kumamoto Prefectural Museum of Art",
+    "city": "Chūō-ku",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Renoir%20-%20young-girl-in-a-hat.jpg%21PinterestLarge.jpg?width=500",
+    "qid": "Q124215434",
+    "wikidata": "https://www.wikidata.org/wiki/Q124215434",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124215434",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "kumamoto-prefectural-museum-of-art",
+    "location_src": "Kumamoto Prefectural Museum of Art",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     139.77194,
+     35.67889
+    ]
+   },
+   "properties": {
+    "painter": "Pierre-Auguste Renoir",
+    "title": "Portrait d'une jeune fille",
+    "year": "1887",
+    "location": "Artizon Museum",
+    "city": "Kyōbashi",
+    "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-AugusteRenoir-1887-YoungGirl.png?width=500",
+    "qid": "Q124254589",
+    "wikidata": "https://www.wikidata.org/wiki/Q124254589",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q124254589",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "artizon-museum",
+    "location_src": "Artizon Museum",
     "kind": "museum",
     "form": "painting"
    }

@@ -1303,6 +1303,88 @@
     "location_src": "Staatliche Museen zu Berlin",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.24403,
+     43.768448
+    ]
+   },
+   "properties": {
+    "painter": "Masaccio",
+    "title": "Baptism of the Neophytes",
+    "year": "1425",
+    "location": "Brancacci Chapel",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Battesimo%20dei%20neofiti%202.jpg?width=500",
+    "qid": "Q3220280",
+    "wikidata": "https://www.wikidata.org/wiki/Q3220280",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3220280",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "brancacci-chapel",
+    "location_src": "Brancacci Chapel",
+    "kind": "church",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.249367,
+     43.7743
+    ]
+   },
+   "properties": {
+    "painter": "Masaccio",
+    "title": "Holy Trinity",
+    "year": "1420",
+    "location": "Basilica of Santa Maria Novella",
+    "city": "Florence",
+    "country": "Italy",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Masaccio%20-%20Trinity%20-%20Santa%20Maria%20Novella.jpg?width=500",
+    "qid": "Q977200",
+    "wikidata": "https://www.wikidata.org/wiki/Q977200",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q977200",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Florence",
+    "creation_lat": 43.771389,
+    "creation_lon": 11.254167,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "basilica-of-santa-maria-novella",
+    "location_src": "Basilica of Santa Maria Novella",
+    "kind": "church",
+    "form": "painting"
+   }
   }
  ]
 }

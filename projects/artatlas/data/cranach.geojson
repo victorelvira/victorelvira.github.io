@@ -24411,6 +24411,99 @@
     "form": "painting",
     "_year_was": "1600"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     13.74,
+     51.05
+    ]
+   },
+   "properties": {
+    "painter": "Lucas Cranach the Elder",
+    "title": "Two Dead Bohemian Waxwings",
+    "year": "1530",
+    "location": "Kupferstich-Kabinett",
+    "city": "Dresden",
+    "country": "Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20the%20Elder%20-%20Two%20Dead%20Bohemian%20Waxwings%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q28790535",
+    "wikidata": "https://www.wikidata.org/wiki/Q28790535",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28790535",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kupferstich-kabinett",
+    "location_src": "Kupferstich-Kabinett",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     7.59419,
+     47.55403
+    ]
+   },
+   "properties": {
+    "painter": "Lucas Cranach the Elder",
+    "title": "Study of the Head of a Peasant",
+    "year": "1525",
+    "location": "Kunstmuseum Basel",
+    "city": "Basel",
+    "country": "Switzerland",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20%28I%29%20-%20Kopf%20eines%20b%C3%A4urischen%20Mannes%20%28Kunstmuseum%20Basel%29.jpg?width=500",
+    "qid": "Q136471336",
+    "wikidata": "https://www.wikidata.org/wiki/Q136471336",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q136471336",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "kunstmuseum-basel",
+    "location_src": "Kunstmuseum Basel",
+    "kind": "museum",
+    "form": "painting"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.56662,
+     48.14521
+    ]
+   },
+   "properties": {
+    "painter": "Lucas Cranach the Elder",
+    "title": "Johann the Steadfast, Elector of Saxony (1530s)",
+    "year": "1532",
+    "location": "Munich Central Collecting Point",
+    "city": "Munich",
+    "country": "allied-occupied Germany",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Lucas%20Cranach%20%28I%29%20-%20Kurf%C3%BCrst%20Johann%20der%20Best%C3%A4ndige%20von%20Sachsen%20%281532-33%29.jpg?width=500",
+    "qid": "Q62058235",
+    "wikidata": "https://www.wikidata.org/wiki/Q62058235",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q62058235",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "munich-central-collecting-point",
+    "location_src": "Munich Central Collecting Point",
+    "kind": "museum",
+    "form": "painting"
+   }
   }
  ]
 }
