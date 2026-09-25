@@ -1,0 +1,586 @@
+{
+ "sub": {
+  "it": "Formati di pasta e condimenti italiani: abbinamenti, origini e fonti.",
+  "es": "Formatos de pasta y salsas italianas: combinaciones, orígenes y fuentes.",
+  "en": "Italian pasta shapes and sauces: pairings, origins and sources."
+ },
+ "vMatrix": {
+  "it": "Matrice",
+  "es": "Matriz",
+  "en": "Matrix"
+ },
+ "vAtlas": {
+  "it": "Mappa",
+  "es": "Mapa",
+  "en": "Map"
+ },
+ "vWhy": {
+  "it": "Perché funziona",
+  "es": "Por qué funciona",
+  "en": "Why it works"
+ },
+ "vCards": {
+  "it": "Schede",
+  "es": "Fichas",
+  "en": "Profiles"
+ },
+ "corner": {
+  "it": "Pasta ↓  Condimento →",
+  "es": "Pasta ↓  Salsa →",
+  "en": "Pasta ↓  Sauce →"
+ },
+ "r": [
+  {
+   "it": "Insolito",
+   "es": "Inusual",
+   "en": "Unusual"
+  },
+  {
+   "it": "Compatibile",
+   "es": "Compatible",
+   "en": "Compatible"
+  },
+  {
+   "it": "Tradizionale",
+   "es": "Tradicional",
+   "en": "Traditional"
+  },
+  {
+   "it": "Canonico",
+   "es": "Canónico",
+   "en": "Canonical"
+  }
+ ],
+ "rd": [
+  {
+   "it": "Abbinamento insolito in Italia.",
+   "es": "Combinación inusual en Italia.",
+   "en": "An unusual pairing in Italy."
+  },
+  {
+   "it": "Non è un piatto con nome proprio, ma forma e condimento funzionano.",
+   "es": "No es un plato con nombre propio, pero forma y salsa funcionan.",
+   "en": "Not a named dish, but shape and sauce work together."
+  },
+  {
+   "it": "Abbinamento comune in Italia.",
+   "es": "Combinación habitual en Italia.",
+   "en": "A common pairing in Italy."
+  },
+  {
+   "it": "Piatto regionale con nome proprio.",
+   "es": "Plato regional con nombre propio.",
+   "en": "A named regional dish."
+  }
+ ],
+ "filters": {
+  "it": "Filtri e preferenze",
+  "es": "Filtros y preferencias",
+  "en": "Filters and preferences"
+ },
+ "fDough": {
+  "it": "Materia prima della pasta",
+  "es": "Materia prima de la pasta",
+  "en": "What the pasta is made of"
+ },
+ "fFresh": {
+  "it": "Fresca o secca",
+  "es": "Fresca o seca",
+  "en": "Fresh or dried"
+ },
+ "all": {
+  "it": "Tutte",
+  "es": "Todas",
+  "en": "All"
+ },
+ "fIng": {
+  "it": "Il condimento contiene",
+  "es": "La salsa lleva",
+  "en": "Sauce contains"
+ },
+ "fDiet": {
+  "it": "Le mie preferenze",
+  "es": "Mis preferencias",
+  "en": "My preferences"
+ },
+ "fDietNote": {
+  "it": "Nascondono sempre ciò che non puoi mangiare; restano salvate in questo browser.",
+  "es": "Ocultan siempre lo que no puedes comer; se guardan en este navegador.",
+  "en": "Always hide what you can't eat; saved in this browser."
+ },
+ "clear": {
+  "it": "Azzera",
+  "es": "Borrar",
+  "en": "Clear"
+ },
+ "showing": {
+  "it": "formati × condimenti",
+  "es": "formatos × salsas",
+  "en": "shapes × sauces"
+ },
+ "groupP": {
+  "it": "Formati per",
+  "es": "Formatos por",
+  "en": "Shapes by"
+ },
+ "groupS": {
+  "it": "Condimenti per",
+  "es": "Salsas por",
+  "en": "Sauces by"
+ },
+ "gNone": {
+  "it": "nessuno",
+  "es": "ninguno",
+  "en": "none"
+ },
+ "gShape": {
+  "it": "forma",
+  "es": "forma",
+  "en": "shape"
+ },
+ "gDough": {
+  "it": "materia prima",
+  "es": "materia prima",
+  "en": "raw material"
+ },
+ "gArea": {
+  "it": "area",
+  "es": "zona",
+  "en": "area"
+ },
+ "gFam": {
+  "it": "famiglia",
+  "es": "familia",
+  "en": "family"
+ },
+ "empty": {
+  "it": "Nessun abbinamento con questi filtri.",
+  "es": "Ninguna combinación con estos filtros.",
+  "en": "No pairings match these filters."
+ },
+ "geoEyebrow": {
+  "it": "Principi e fonti",
+  "es": "Principios y fuentes",
+  "en": "Principles and sources"
+ },
+ "geoTitle": {
+  "it": "La geometria (e la geografia) dietro la matrice",
+  "es": "La geometría (y la geografía) detrás de la matriz",
+  "en": "The geometry (and geography) behind the matrix"
+ },
+ "fine": {
+  "it": "Origini, ricette e piatti canonici (★★★) sono verificati con le fonti qui sotto. Le valutazioni ★★ e ★ restano un giudizio nostro basato sulla tradizione.",
+  "es": "Orígenes, recetas y platos canónicos (★★★) están contrastados con las fuentes de abajo. Las valoraciones ★★ y ★ siguen siendo un juicio propio basado en la tradición.",
+  "en": "Origins, recipes and canonical dishes (★★★) are checked against the sources below. ★★ and ★ ratings remain our own judgement based on tradition."
+ },
+ "atlasEyebrow": {
+  "it": "Da dove vengono",
+  "es": "De dónde vienen",
+  "en": "Where they come from"
+ },
+ "atlasTitle": {
+  "it": "Mappa delle origini",
+  "es": "Mapa de orígenes",
+  "en": "Map of origins"
+ },
+ "lPasta": {
+  "it": "Formati",
+  "es": "Formatos",
+  "en": "Shapes"
+ },
+ "lSauce": {
+  "it": "Condimenti",
+  "es": "Salsas",
+  "en": "Sauces"
+ },
+ "lDish": {
+  "it": "Piatti",
+  "es": "Platos",
+  "en": "Dishes"
+ },
+ "qPasta": {
+  "it": "Dove è nato ogni formato di pasta?",
+  "es": "¿Dónde nació cada formato de pasta?",
+  "en": "Where was each pasta shape born?"
+ },
+ "qSauce": {
+  "it": "Dove è nato ogni condimento?",
+  "es": "¿Dónde nació cada salsa?",
+  "en": "Where was each sauce born?"
+ },
+ "qDish": {
+  "it": "Dove è nato ogni piatto canonico? Non sempre coincide con l'origine della pasta o del condimento.",
+  "es": "¿Dónde nació cada plato canónico? No siempre coincide con el origen de la pasta o de la salsa.",
+  "en": "Where was each canonical dish born? Not always where its pasta or sauce came from."
+ },
+ "keyShade": {
+  "it": "Più scuro = più voci nate lì, tenendo conto dei filtri. Clicca una regione.",
+  "es": "Más oscuro = más entradas nacidas allí, según los filtros. Pulsa una región.",
+  "en": "Darker = more items born there, given the filters. Click a region."
+ },
+ "pasta": {
+  "it": "Pasta",
+  "es": "Pasta",
+  "en": "Pasta"
+ },
+ "sauce": {
+  "it": "Condimento",
+  "es": "Salsa",
+  "en": "Sauce"
+ },
+ "dish": {
+  "it": "Piatto",
+  "es": "Plato",
+  "en": "Dish"
+ },
+ "shape": {
+  "it": "Forma",
+  "es": "Forma",
+  "en": "Shape"
+ },
+ "dough": {
+  "it": "Impasto",
+  "es": "Masa",
+  "en": "Dough"
+ },
+ "ings": {
+  "it": "Ingredienti",
+  "es": "Ingredientes",
+  "en": "Ingredients"
+ },
+ "wants": {
+  "it": "Cosa chiede il condimento",
+  "es": "Qué pide la salsa",
+  "en": "What the sauce wants"
+ },
+ "best": {
+  "it": "Condimenti migliori",
+  "es": "Mejores salsas",
+  "en": "Best sauces"
+ },
+ "bestP": {
+  "it": "Formati migliori",
+  "es": "Mejores formatos",
+  "en": "Best shapes"
+ },
+ "also": {
+  "it": "Funziona anche con",
+  "es": "También funciona con",
+  "en": "Also works with"
+ },
+ "avoid": {
+  "it": "Da evitare",
+  "es": "Mejor evitar",
+  "en": "Avoid"
+ },
+ "alt": {
+  "it": "Altri formati per questo condimento",
+  "es": "Otros formatos para esta salsa",
+  "en": "Other shapes for this sauce"
+ },
+ "hint": {
+  "it": "",
+  "es": "",
+  "en": ""
+ },
+ "hiddenN": {
+  "it": "nascosti dai filtri",
+  "es": "ocultos por los filtros",
+  "en": "hidden by filters"
+ },
+ "outFilter": {
+  "it": "Questa selezione è nascosta dai filtri attuali.",
+  "es": "Esta selección está oculta por los filtros actuales.",
+  "en": "This selection is hidden by the current filters."
+ },
+ "mkP": {
+  "it": "regione della pasta",
+  "es": "región de la pasta",
+  "en": "pasta's region"
+ },
+ "mkS": {
+  "it": "regione del condimento",
+  "es": "región de la salsa",
+  "en": "sauce's region"
+ },
+ "mkD": {
+  "it": "luogo del piatto",
+  "es": "lugar del plato",
+  "en": "where the dish is from"
+ },
+ "items": {
+  "it": "voci",
+  "es": "entradas",
+  "en": "items"
+ },
+ "rx": {
+  "it": "Sacrilegio",
+  "es": "Sacrilegio",
+  "en": "Sacrilege"
+ },
+ "rdx": {
+  "it": "Rifiutato apertamente in Italia (con fonte).",
+  "es": "Rechazado abiertamente en Italia (con fuente).",
+  "en": "Openly rejected in Italy (sourced)."
+ },
+ "pop": {
+  "it": "Popolarità",
+  "es": "Popularidad",
+  "en": "Popularity"
+ },
+ "legBar": {
+  "it": "% di italiani che mette il condimento tra i 3 piatti di pasta preferiti (UIF/AstraRicerche 2026)",
+  "es": "% de italianos que pone la salsa entre sus 3 platos de pasta favoritos (UIF/AstraRicerche 2026)",
+  "en": "% of Italians who put the sauce among their 3 favourite pasta dishes (UIF/AstraRicerche 2026)"
+ },
+ "legRank": {
+  "it": "posizione tra i formati più consumati (UIF/Doxa 2021)",
+  "es": "puesto entre los formatos más consumidos (UIF/Doxa 2021)",
+  "en": "rank among the most-eaten shapes (UIF/Doxa 2021)"
+ },
+ "legDot": {
+  "it": "piatto preciso in classifica",
+  "es": "plato concreto en la clasificación",
+  "en": "exact dish in the ranking"
+ },
+ "wiki": {
+  "it": "Wikipedia",
+  "es": "Wikipedia",
+  "en": "Wikipedia"
+ },
+ "close": {
+  "it": "Chiudi",
+  "es": "Cerrar",
+  "en": "Close"
+ },
+ "credits": {
+  "it": "Crediti fotografici",
+  "es": "Créditos de las fotos",
+  "en": "Photo credits"
+ },
+ "creditsNote": {
+  "it": "Foto da Wikimedia Commons con licenza libera; autore e licenza di ciascuna.",
+  "es": "Fotos de Wikimedia Commons con licencia libre; autor y licencia de cada una.",
+  "en": "Photos from Wikimedia Commons under free licences; author and licence for each."
+ },
+ "fArea": {
+  "it": "Zona d'origine",
+  "es": "Zona de origen",
+  "en": "Area of origin"
+ },
+ "scPop": {
+  "it": "Più popolari",
+  "es": "Más populares",
+  "en": "Most popular"
+ },
+ "scCore": {
+  "it": "Classici",
+  "es": "Clásicos",
+  "en": "Classics"
+ },
+ "scAll": {
+  "it": "Tutta Italia",
+  "es": "Toda Italia",
+  "en": "All of Italy"
+ },
+ "uncDish": {
+  "it": "attribuzione incerta",
+  "es": "atribución incierta",
+  "en": "uncertain attribution"
+ },
+ "popLeg": {
+  "it": "% di italiani che lo mette tra i 3 piatti di pasta preferiti (UIF/AstraRicerche 2026)",
+  "es": "% de italianos que lo pone entre sus 3 platos de pasta favoritos (UIF/AstraRicerche 2026)",
+  "en": "% of Italians who put it among their 3 favourite pasta dishes (UIF/AstraRicerche 2026)"
+ },
+ "popRank": {
+  "it": "in Italia",
+  "es": "en Italia",
+  "en": "in Italy"
+ },
+ "popGen": {
+  "it": "«ragù» nel sondaggio è generico, non solo bolognese",
+  "es": "«ragù» en la encuesta es genérico, no solo boloñés",
+  "en": "'ragù' in the survey is generic, not only Bolognese"
+ },
+ "popOthers": {
+  "it": "Altre classifiche",
+  "es": "Otras clasificaciones",
+  "en": "Other rankings"
+ },
+ "popCities": {
+  "it": "I più ordinati a domicilio",
+  "es": "Los más pedidos a domicilio",
+  "en": "Most ordered for delivery"
+ },
+ "popArea": {
+  "it": "Tendenza nella zona",
+  "es": "Tendencia en la zona",
+  "en": "Trend in the area"
+ },
+ "popShape": {
+  "it": "formato più consumato in Italia",
+  "es": "formato más consumido en Italia",
+  "en": "most-eaten shape in Italy"
+ },
+ "popNone": {
+  "it": "Non compare nelle classifiche trovate.",
+  "es": "No aparece en las clasificaciones encontradas.",
+  "en": "Not in the rankings found."
+ },
+ "lPop": {
+  "it": "Popolarità",
+  "es": "Popularidad",
+  "en": "Popularity"
+ },
+ "qPop": {
+  "it": "Cosa si ordina davvero, città per città (Just Eat), e cosa preferisce ogni zona (YouGov). Spesso non coincide con la tradizione.",
+  "es": "Qué se pide de verdad, ciudad por ciudad (Just Eat), y qué prefiere cada zona (YouGov). A menudo no coincide con la tradición.",
+  "en": "What people actually order, city by city (Just Eat), and what each area prefers (YouGov). Often not what tradition says."
+ },
+ "keyPop": {
+  "it": "Colore = zona YouGov. Cerchi = città con dati di consegna. Clicca per i dettagli.",
+  "es": "Color = zona YouGov. Círculos = ciudades con datos de reparto. Pulsa para ver detalles.",
+  "en": "Colour = YouGov area. Circles = cities with delivery data. Click for details."
+ },
+ "noCityData": {
+  "it": "Nessun dato di consegna per città in questa regione.",
+  "es": "No hay datos de reparto por ciudad en esta región.",
+  "en": "No city delivery data in this region."
+ },
+ "showF": {
+  "it": "Mostra filtri",
+  "es": "Mostrar filtros",
+  "en": "Show filters"
+ },
+ "hideF": {
+  "it": "Nascondi filtri",
+  "es": "Ocultar filtros",
+  "en": "Hide filters"
+ },
+ "seeSheet": {
+  "it": "Scheda completa nel pannello →",
+  "es": "Ficha completa en el panel →",
+  "en": "Full details in the panel →"
+ },
+ "typical": {
+  "it": "Tipico di",
+  "es": "Típico de",
+  "en": "Typical of"
+ },
+ "origins": {
+  "it": "Origini",
+  "es": "Orígenes",
+  "en": "Origins"
+ },
+ "variants": {
+  "it": "Varianti",
+  "es": "Variantes",
+  "en": "Variants"
+ },
+ "sources": {
+  "it": "Fonti",
+  "es": "Fuentes",
+  "en": "Sources"
+ },
+ "fits": {
+  "it": "adatta alle tue preferenze",
+  "es": "encaja con tus preferencias",
+  "en": "fits your preferences"
+ },
+ "onlyVar": {
+  "it": "La ricetta base non rispetta le tue preferenze; alcune varianti sì.",
+  "es": "La receta base no encaja con tus preferencias; algunas variantes sí.",
+  "en": "The base recipe doesn’t fit your preferences; some variants do."
+ },
+ "unc": {
+  "it": "origine incerta",
+  "es": "origen incierto",
+  "en": "origin uncertain"
+ },
+ "noSrc": {
+  "it": "Nessuna fonte specifica per questo abbinamento: è una valutazione nostra.",
+  "es": "No hay fuente específica para esta combinación: es una valoración propia.",
+  "en": "No specific source for this pairing: it’s our own judgement."
+ },
+ "biblio": {
+  "it": "Bibliografia",
+  "es": "Bibliografía",
+  "en": "Bibliography"
+ },
+ "biblioNote": {
+  "it": "Pagine consultate per verificare origini, ricette e piatti. Molte sono Wikipedia in italiano, dove mancavano fonti istituzionali.",
+  "es": "Páginas consultadas para verificar orígenes, recetas y platos. Muchas son Wikipedia en italiano, donde no había fuentes institucionales.",
+  "en": "Pages consulted to check origins, recipes and dishes. Many are Italian Wikipedia, where no institutional source was found."
+ },
+ "usedFor": {
+  "it": "usata per",
+  "es": "usada para",
+  "en": "used for"
+ },
+ "region": {
+  "it": "Regione",
+  "es": "Región",
+  "en": "Region"
+ },
+ "openSheet": {
+  "it": "Clicca di nuovo: scheda della regione →",
+  "es": "Pulsa otra vez: ficha de la región →",
+  "en": "Click again: region sheet →"
+ },
+ "nPasta": {
+  "it": "formati",
+  "es": "formatos",
+  "en": "shapes"
+ },
+ "nSauce": {
+  "it": "condimenti",
+  "es": "salsas",
+  "en": "sauces"
+ },
+ "nDish": {
+  "it": "piatti",
+  "es": "platos",
+  "en": "dishes"
+ },
+ "dishesHere": {
+  "it": "Piatti canonici nati qui",
+  "es": "Platos canónicos nacidos aquí",
+  "en": "Canonical dishes born here"
+ },
+ "pastaHere": {
+  "it": "Formati nati qui",
+  "es": "Formatos nacidos aquí",
+  "en": "Shapes born here"
+ },
+ "sauceHere": {
+  "it": "Condimenti nati qui",
+  "es": "Salsas nacidas aquí",
+  "en": "Sauces born here"
+ },
+ "localPairs": {
+  "it": "Abbinamenti tutti locali",
+  "es": "Combinaciones cien por cien locales",
+  "en": "All-local pairings"
+ },
+ "localNote": {
+  "it": "Pasta e condimento nati entrambi in questa regione.",
+  "es": "Pasta y salsa nacidas ambas en esta región.",
+  "en": "Pasta and sauce both born in this region."
+ },
+ "bestWith": {
+  "it": "meglio con",
+  "es": "mejor con",
+  "en": "best with"
+ },
+ "nothingHere": {
+  "it": "Nessun formato, condimento o piatto della lista nasce qui (con i filtri attuali).",
+  "es": "Ningún formato, salsa o plato de la lista nace aquí (con los filtros actuales).",
+  "en": "No shape, sauce or dish on the list comes from here (with the current filters)."
+ },
+ "none": {
+  "it": "Niente qui con questi filtri.",
+  "es": "Nada aquí con estos filtros.",
+  "en": "Nothing here with these filters."
+ }
+}

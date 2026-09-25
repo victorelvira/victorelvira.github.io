@@ -1,0 +1,5261 @@
+{
+ "ing": {
+  "gallina": [
+   "gallina/cappone",
+   "gallina/capón",
+   "hen/capon",
+   "pollame"
+  ],
+  "anatra": [
+   "anatra",
+   "pato",
+   "duck",
+   "pollame"
+  ],
+  "lepre": [
+   "lepre",
+   "liebre",
+   "hare",
+   "selvaggina"
+  ],
+  "agnello": [
+   "agnello",
+   "cordero",
+   "lamb",
+   "agnello"
+  ],
+  "pajata": [
+   "pajata (intestino di vitello)",
+   "pajata (intestino de ternera)",
+   "pajata (veal intestine)",
+   "manzo"
+  ],
+  "speck": [
+   "speck",
+   "speck",
+   "speck",
+   "maiale"
+  ],
+  "prosciutto": [
+   "prosciutto",
+   "jamón",
+   "prosciutto",
+   "maiale"
+  ],
+  "lardo": [
+   "lardo",
+   "manteca de cerdo",
+   "lard",
+   "maiale"
+  ],
+  "nduja": [
+   "'nduja",
+   "'nduja",
+   "'nduja",
+   "maiale"
+  ],
+  "tartufo": [
+   "tartufo",
+   "trufa",
+   "truffle",
+   "funghi"
+  ],
+  "montasio": [
+   "Montasio",
+   "Montasio",
+   "Montasio",
+   "formaggio"
+  ],
+  "ricottaaff": [
+   "ricotta affumicata",
+   "ricotta ahumada",
+   "smoked ricotta",
+   "formaggio"
+  ],
+  "ricottaf": [
+   "ricotta fresca",
+   "ricotta fresca",
+   "fresh ricotta",
+   "formaggio"
+  ],
+  "mozzarella": [
+   "fior di latte",
+   "mozzarella fior di latte",
+   "fior di latte mozzarella",
+   "formaggio"
+  ],
+  "caciocavallo": [
+   "caciocavallo",
+   "caciocavallo",
+   "caciocavallo",
+   "formaggio"
+  ],
+  "besciamella": [
+   "besciamella",
+   "bechamel",
+   "béchamel",
+   "latte"
+  ],
+  "papavero": [
+   "semi di papavero",
+   "semillas de amapola",
+   "poppy seeds",
+   null
+  ],
+  "mais": [
+   "farina di mais tostata",
+   "harina de maíz tostada",
+   "toasted cornmeal",
+   null
+  ],
+  "maggiorana": [
+   "maggiorana",
+   "mejorana",
+   "marjoram",
+   null
+  ],
+  "cannella": [
+   "cannella",
+   "canela",
+   "cinnamon",
+   null
+  ],
+  "menta": [
+   "menta",
+   "menta",
+   "mint",
+   null
+  ],
+  "aglione": [
+   "aglione della Valdichiana",
+   "ajo gigante de la Valdichiana",
+   "Valdichiana giant garlic",
+   null
+  ],
+  "finocchietto": [
+   "finocchietto selvatico",
+   "hinojo silvestre",
+   "wild fennel",
+   "verdure"
+  ],
+  "zucca": [
+   "zucca",
+   "calabaza",
+   "pumpkin",
+   "verdure"
+  ],
+  "spinaci": [
+   "spinaci",
+   "espinacas",
+   "spinach",
+   "verdure"
+  ],
+  "barbabietola": [
+   "barbabietola",
+   "remolacha",
+   "beetroot",
+   "verdure"
+  ],
+  "erbe": [
+   "erbe selvatiche (preboggion)",
+   "hierbas silvestres (preboggion)",
+   "wild herbs (preboggion)",
+   "verdure"
+  ],
+  "cruschi": [
+   "peperoni cruschi di Senise",
+   "pimientos crujientes de Senise",
+   "crisp Senise peppers",
+   "verdure"
+  ],
+  "piselli": [
+   "piselli",
+   "guisantes",
+   "peas",
+   "legumi"
+  ],
+  "ceci": [
+   "ceci",
+   "garbanzos",
+   "chickpeas",
+   "legumi"
+  ],
+  "fagioli": [
+   "fagioli borlotti",
+   "alubias borlotti",
+   "borlotti beans",
+   "legumi"
+  ],
+  "sardine": [
+   "sarde fresche",
+   "sardinas frescas",
+   "fresh sardines",
+   "mare"
+  ],
+  "arselle": [
+   "arselle",
+   "tellinas",
+   "arselle clams",
+   "mare"
+  ],
+  "amaretti": [
+   "amaretti",
+   "amaretti",
+   "amaretti biscuits",
+   "noci"
+  ],
+  "pane": [
+   "pane raffermo",
+   "pan duro",
+   "stale bread",
+   null
+  ]
+ },
+ "fam": {
+  "pollame": {
+   "it": "Pollame",
+   "es": "Aves",
+   "en": "Poultry"
+  },
+  "agnello": {
+   "it": "Agnello",
+   "es": "Cordero",
+   "en": "Lamb"
+  },
+  "legumi": {
+   "it": "Legumi",
+   "es": "Legumbres",
+   "en": "Pulses"
+  }
+ },
+ "city": {
+  "Alba": [
+   44.7,
+   8.035
+  ],
+  "Aosta": [
+   45.737,
+   7.32
+  ],
+  "Gressoney": [
+   45.78,
+   7.827
+  ],
+  "Bergamo": [
+   45.698,
+   9.677
+  ],
+  "Mantova": [
+   45.156,
+   10.791
+  ],
+  "Cremona": [
+   45.133,
+   10.023
+  ],
+  "Bolzano": [
+   46.498,
+   11.355
+  ],
+  "Brunico": [
+   46.796,
+   11.936
+  ],
+  "Cortina d'Ampezzo": [
+   46.54,
+   12.136
+  ],
+  "Tolmezzo": [
+   46.404,
+   13.014
+  ],
+  "Varese Ligure": [
+   44.378,
+   9.595
+  ],
+  "Ferrara": [
+   44.838,
+   11.62
+  ],
+  "Forlimpopoli": [
+   44.188,
+   12.128
+  ],
+  "Thiene": [
+   45.722,
+   11.448
+  ],
+  "Montepulciano": [
+   43.093,
+   11.781
+  ],
+  "Lucca": [
+   43.843,
+   10.503
+  ],
+  "Pontremoli": [
+   44.376,
+   9.879
+  ],
+  "Spoleto": [
+   42.734,
+   12.738
+  ],
+  "Norcia": [
+   42.793,
+   13.093
+  ],
+  "Terni": [
+   42.564,
+   12.643
+  ],
+  "Macerata": [
+   43.298,
+   13.453
+  ],
+  "Campofilone": [
+   43.08,
+   13.815
+  ],
+  "Teramo": [
+   42.659,
+   13.704
+  ],
+  "Elice": [
+   42.521,
+   13.97
+  ],
+  "Lanciano": [
+   42.231,
+   14.39
+  ],
+  "L'Aquila": [
+   42.35,
+   13.4
+  ],
+  "Campobasso": [
+   41.56,
+   14.663
+  ],
+  "Sorrento": [
+   40.626,
+   14.376
+  ],
+  "Amalfi": [
+   40.634,
+   14.602
+  ],
+  "Lecce": [
+   40.352,
+   18.172
+  ],
+  "Potenza": [
+   40.64,
+   15.806
+  ],
+  "Senise": [
+   40.145,
+   16.288
+  ],
+  "Venosa": [
+   40.961,
+   15.817
+  ],
+  "Vibo Valentia": [
+   38.676,
+   16.1
+  ],
+  "Spilinga": [
+   38.628,
+   15.905
+  ],
+  "Gioia Tauro": [
+   38.426,
+   15.899
+  ],
+  "Cagliari": [
+   39.223,
+   9.122
+  ],
+  "Lanusei": [
+   39.878,
+   9.54
+  ]
+ },
+ "dough": {
+  "pane": {
+   "l": {
+    "it": "Pane, uova e formaggio",
+    "es": "Pan, huevo y queso",
+    "en": "Bread, egg and cheese"
+   },
+   "d": {
+    "it": "Impasto di pane raffermo o pangrattato con uova (e formaggio).",
+    "es": "Masa de pan duro o pan rallado con huevo (y queso).",
+    "en": "Dough of stale bread or breadcrumbs with egg (and cheese)."
+   }
+  },
+  "segale": {
+   "l": {
+    "it": "Segale e grano tenero",
+    "es": "Centeno y trigo blando",
+    "en": "Rye and soft wheat"
+   },
+   "d": {
+    "it": "Farina di segale e di grano tenero con uova.",
+    "es": "Harina de centeno y de trigo blando con huevo.",
+    "en": "Rye and soft-wheat flour with egg."
+   }
+  },
+  "integrale": {
+   "l": {
+    "it": "Farina integrale e crusca",
+    "es": "Harina integral y salvado",
+    "en": "Wholemeal and bran"
+   },
+   "d": {
+    "it": "Farina integrale ricca di crusca.",
+    "es": "Harina integral rica en salvado.",
+    "en": "Bran-rich wholemeal flour."
+   }
+  },
+  "semolauovo": {
+   "l": {
+    "it": "Semola e uova",
+    "es": "Sémola y huevo",
+    "en": "Semolina and egg"
+   },
+   "d": {
+    "it": "Semola di grano duro impastata con uova.",
+    "es": "Sémola de trigo duro amasada con huevo.",
+    "en": "Durum semolina kneaded with egg."
+   }
+  }
+ },
+ "shape": {
+  "filled": {
+   "g": "filled",
+   "d": {
+    "it": "Pasta ripiena: il ripieno è il protagonista, il condimento resta leggero (burro, brodo, sugo d'arrosto).",
+    "es": "Pasta rellena: el relleno es el protagonista y el aliño se queda ligero (mantequilla, caldo, jugo de asado).",
+    "en": "Filled pasta: the filling is the star, so the dressing stays light (butter, broth, roast juices)."
+   }
+  },
+  "sheet": {
+   "g": "sheet",
+   "d": {
+    "it": "Sfoglia larga da stratificare al forno con ragù, besciamella e formaggio.",
+    "es": "Lámina ancha para gratinar en capas con ragú, bechamel y queso.",
+    "en": "Wide sheet layered and baked with ragù, béchamel and cheese."
+   }
+  },
+  "grain": {
+   "g": "small",
+   "d": {
+    "it": "Palline tostate di semola: si cuociono come un risotto nel sugo.",
+    "es": "Bolitas tostadas de sémola: se cuecen como un risotto en la salsa.",
+    "en": "Toasted semolina pellets: cooked like risotto in the sauce."
+   }
+  },
+  "ring": {
+   "g": "small",
+   "d": {
+    "it": "Anellini di semola: tengono la forma nei timballi al forno.",
+    "es": "Anillitos de sémola: aguantan la forma en los timbales al horno.",
+    "en": "Little semolina rings: they hold their shape in baked timballi."
+   }
+  },
+  "disc": {
+   "g": "short",
+   "d": {
+    "it": "Dischetto stampato: i disegni in rilievo trattengono condimenti leggeri.",
+    "es": "Disco estampado: el relieve retiene aliños ligeros.",
+    "en": "Stamped disc: the embossed pattern holds light dressings."
+   }
+  }
+ },
+ "shapeG": {
+  "filled": {
+   "it": "Ripiene",
+   "es": "Rellenas",
+   "en": "Filled"
+  },
+  "sheet": {
+   "it": "Sfoglie e al forno",
+   "es": "Láminas y al horno",
+   "en": "Sheets and baked"
+  }
+ },
+ "sfam": {
+  "brodo": {
+   "it": "Brodi",
+   "es": "Caldos",
+   "en": "Broths"
+  },
+  "legumi": {
+   "it": "Legumi",
+   "es": "Legumbres",
+   "en": "Pulses"
+  },
+  "forno": {
+   "it": "Al forno",
+   "es": "Al horno",
+   "en": "Baked"
+  }
+ },
+ "pasta": [
+  {
+   "id": "tajarin",
+   "n": "Tajarin",
+   "reg": [
+    "PIE"
+   ],
+   "city": "Alba",
+   "sh": "ribbon",
+   "dough": "uovo",
+   "fresh": true,
+   "d": {
+    "it": "Tagliolini delle Langhe ricchissimi di tuorli: la dose classica è circa 40 tuorli per chilo di farina.",
+    "es": "Tagliolini de las Langhe riquísimos en yema: la proporción clásica es unas 40 yemas por kilo de harina.",
+    "en": "Langhe tagliolini packed with yolks: the classic ratio is about 40 yolks per kilo of flour."
+   }
+  },
+  {
+   "id": "plin",
+   "n": "Agnolotti del plin",
+   "reg": [
+    "PIE"
+   ],
+   "city": "Alba",
+   "sh": "filled",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "manzo",
+    "maiale",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "«Plin» in piemontese è il pizzicotto che chiude ogni tasca di ripieno d'arrosto. Prodotto tradizionale (PAT) del Piemonte.",
+    "es": "«Plin» en piamontés es el pellizco que cierra cada bolsita de relleno de asado. Producto tradicional (PAT) del Piamonte.",
+    "en": "'Plin' is Piedmontese for the pinch that seals each pocket of roast-meat filling. A Piedmont traditional product (PAT)."
+   }
+  },
+  {
+   "id": "chnefflene",
+   "n": "Chnéfflene",
+   "reg": [
+    "VDA"
+   ],
+   "city": "Gressoney",
+   "sh": "dumpling",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "uovo",
+    "latte"
+   ],
+   "shd": {
+    "it": "Gnocchetti Walser di pastella, fatti cadere nell'acqua bollente da una grattugia a fori larghi.",
+    "es": "Ñoquis walser de masa líquida que caen al agua hirviendo desde un rallador de agujeros grandes.",
+    "en": "Walser batter dumplings dropped into boiling water through a wide-holed grater."
+   },
+   "d": {
+    "it": "Piatto Walser dell'alta valle del Lys (Gressoney): «bottoncini» di pastella con uova e latte.",
+    "es": "Plato walser del alto valle del Lys (Gressoney): «botoncitos» de masa con huevo y leche.",
+    "en": "A Walser dish from the upper Lys valley (Gressoney): little 'buttons' of egg-and-milk batter."
+   }
+  },
+  {
+   "id": "casoncelli",
+   "n": "Casoncelli",
+   "reg": [
+    "LOM"
+   ],
+   "city": "Bergamo",
+   "sh": "filled",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "manzo",
+    "maiale",
+    "parmigiano",
+    "amaretti"
+   ],
+   "d": {
+    "it": "Mezzelune ripiene di 6–8 cm contese tra Bergamo e Brescia; alcuni ripieni aggiungono amaretti, uvetta e pera.",
+    "es": "Medialunas rellenas de 6–8 cm que se disputan Bérgamo y Brescia; algunos rellenos añaden amaretti, pasas y pera.",
+    "en": "6–8 cm filled half-moons claimed by both Bergamo and Brescia; some fillings add amaretti, raisins and pear."
+   }
+  },
+  {
+   "id": "tortelli",
+   "n": "Tortelli di zucca",
+   "reg": [
+    "LOM"
+   ],
+   "city": "Mantova",
+   "sh": "filled",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "zucca",
+    "amaretti",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "Il piatto della vigilia di Natale a Mantova: zucca addolcita con amaretti e mostarda di mele.",
+    "es": "El plato de Nochebuena en Mantua: calabaza endulzada con amaretti y mostarda de manzana.",
+    "en": "Mantua's Christmas Eve dish: pumpkin sweetened with amaretti and apple mostarda."
+   }
+  },
+  {
+   "id": "marubini",
+   "n": "Marubini",
+   "reg": [
+    "LOM"
+   ],
+   "city": "Cremona",
+   "sh": "filled",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "manzo",
+    "maiale",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "Tondi ripieni di carne di Cremona, De.Co. dal 2003.",
+    "es": "Pasta redonda rellena de carne de Cremona, De.Co. desde 2003.",
+    "en": "Cremona's round meat-filled pasta, a De.Co. product since 2003."
+   }
+  },
+  {
+   "id": "canederli",
+   "n": "Canederli",
+   "reg": [
+    "TAA"
+   ],
+   "city": "Bolzano",
+   "sh": "dumpling",
+   "dough": "pane",
+   "fresh": true,
+   "fill": [
+    "pane",
+    "uovo",
+    "latte",
+    "speck"
+   ],
+   "shd": {
+    "it": "Grossi gnocchi di pane raffermo, uova e latte, spesso con speck.",
+    "es": "Grandes albóndigas de pan duro, huevo y leche, a menudo con speck.",
+    "en": "Large dumplings of stale bread, egg and milk, often with speck."
+   },
+   "d": {
+    "it": "I Knödel altoatesini: per tradizione non si tagliano mai col coltello.",
+    "es": "Los Knödel del Alto Adigio: por tradición nunca se cortan con cuchillo.",
+    "en": "South Tyrol's Knödel: by custom they are never cut with a knife."
+   }
+  },
+  {
+   "id": "schlutzkrapfen",
+   "n": "Schlutzkrapfen",
+   "reg": [
+    "TAA"
+   ],
+   "city": "Brunico",
+   "sh": "filled",
+   "dough": "segale",
+   "fresh": true,
+   "fill": [
+    "spinaci",
+    "ricottaf"
+   ],
+   "d": {
+    "it": "Mezzelune della Val Pusteria con pasta di segale e ripieno di spinaci e ricotta.",
+    "es": "Medialunas del Val Pusteria con masa de centeno y relleno de espinacas y ricotta.",
+    "en": "Val Pusteria half-moons with a rye dough and spinach-ricotta filling."
+   }
+  },
+  {
+   "id": "spatzle",
+   "n": "Spätzle",
+   "reg": [
+    "TAA"
+   ],
+   "city": "Bolzano",
+   "sh": "dumpling",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "uovo",
+    "spinaci"
+   ],
+   "shd": {
+    "it": "Gnocchetti irregolari di pastella passati nell'apposita grattugia; in Alto Adige spesso verdi di spinaci.",
+    "es": "Ñoquis irregulares de masa pasados por su rallador; en el Alto Adigio, a menudo verdes de espinaca.",
+    "en": "Irregular batter noodles pushed through a spätzle grater; in South Tyrol often green with spinach."
+   },
+   "d": {
+    "it": "Gli Spinatspatzln altoatesini, di influenza austro-tedesca.",
+    "es": "Los Spinatspatzln del Alto Adigio, de influencia austroalemana.",
+    "en": "South Tyrol's Spinatspatzln, of Austro-German influence."
+   }
+  },
+  {
+   "id": "casunziei",
+   "n": "Casunziei",
+   "reg": [
+    "VEN"
+   ],
+   "city": "Cortina d'Ampezzo",
+   "sh": "filled",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "barbabietola",
+    "patate"
+   ],
+   "d": {
+    "it": "Mezzelune ladine di Cortina ripiene di barbabietola rossa e patate: un segno dell'influenza austro-ungarica.",
+    "es": "Medialunas ladinas de Cortina rellenas de remolacha y patata: huella de la influencia austrohúngara.",
+    "en": "Ladin half-moons from Cortina filled with beetroot and potato: a trace of Austro-Hungarian influence."
+   }
+  },
+  {
+   "id": "cjarsons",
+   "n": "Cjarsons",
+   "reg": [
+    "FVG"
+   ],
+   "city": "Tolmezzo",
+   "sh": "filled",
+   "dough": "tenero",
+   "fresh": true,
+   "fill": [
+    "patate",
+    "ricottaf",
+    "uvetta",
+    "cannella"
+   ],
+   "d": {
+    "it": "Ravioli dolce-salati della Carnia, senza uova; le spezie del ripieno si legano ai «cramârs», venditori ambulanti che le portavano dai loro viaggi.",
+    "es": "Raviolis agridulces de Carnia, sin huevo; las especias del relleno se asocian a los «cramârs», vendedores ambulantes que las traían de sus viajes.",
+    "en": "Sweet-savoury Carnic ravioli with an eggless dough; the spices are linked to the cramârs, pedlars who brought them home."
+   }
+  },
+  {
+   "id": "blecs",
+   "n": "Blecs",
+   "reg": [
+    "FVG"
+   ],
+   "city": "Tolmezzo",
+   "sh": "shortribbon",
+   "dough": "saraceno",
+   "fresh": true,
+   "d": {
+    "it": "Triangoli irregolari di grano saraceno; «blecs» significa «toppe» di stoffa.",
+    "es": "Triángulos irregulares de trigo sarraceno; «blecs» significa «parches» de tela.",
+    "en": "Irregular buckwheat triangles; 'blecs' means cloth 'patches'."
+   }
+  },
+  {
+   "id": "trenette",
+   "n": "Trenette",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Genova",
+   "sh": "flat",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Lunghe e a sezione ellittica, molto vicine alle linguine: la pasta genovese del pesto.",
+    "es": "Largas y de sección elíptica, muy parecidas a las linguine: la pasta genovesa del pesto.",
+    "en": "Long with an elliptical section, very close to linguine: Genoa's pesto pasta."
+   }
+  },
+  {
+   "id": "pansoti",
+   "n": "Pansoti",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Recco",
+   "sh": "filled",
+   "dough": "tenero",
+   "fresh": true,
+   "fill": [
+    "erbe",
+    "ricottaf"
+   ],
+   "d": {
+    "it": "«Panciuti»: ravioli senza carne ripieni di erbe selvatiche (preboggion) e prescinsêua.",
+    "es": "«Barrigones»: raviolis sin carne rellenos de hierbas silvestres (preboggion) y prescinsêua.",
+    "en": "'Pot-bellied' meatless ravioli filled with wild herbs (preboggion) and prescinsêua curd."
+   }
+  },
+  {
+   "id": "corzetti",
+   "n": "Corzetti",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Varese Ligure",
+   "sh": "disc",
+   "dough": "uovo",
+   "fresh": true,
+   "d": {
+    "it": "Dischi stampati su entrambi i lati con timbri di legno, ancora intagliati a mano a Varese Ligure.",
+    "es": "Discos estampados por ambas caras con sellos de madera, aún tallados a mano en Varese Ligure.",
+    "en": "Discs stamped on both sides with wooden stamps, still hand-carved in Varese Ligure."
+   }
+  },
+  {
+   "id": "tortellini",
+   "n": "Tortellini",
+   "reg": [
+    "EMR"
+   ],
+   "city": "Bologna",
+   "sh": "filled",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "maiale",
+    "prosciutto",
+    "parmigiano",
+    "uovo"
+   ],
+   "d": {
+    "it": "Ripieno di lombo di maiale, prosciutto, mortadella e Parmigiano, depositato dalla Dotta Confraternita del Tortellino il 7 dicembre 1974.",
+    "es": "Relleno de lomo de cerdo, jamón, mortadela y parmesano, registrado por la Dotta Confraternita del Tortellino el 7 de diciembre de 1974.",
+    "en": "Filling of pork loin, prosciutto, mortadella and Parmigiano, registered by the Dotta Confraternita del Tortellino on 7 December 1974."
+   }
+  },
+  {
+   "id": "lasagne",
+   "n": "Lasagne",
+   "reg": [
+    "EMR"
+   ],
+   "city": "Bologna",
+   "sh": "sheet",
+   "dough": "uovo",
+   "fresh": true,
+   "d": {
+    "it": "Sfoglie verdi di spinaci: la ricetta dell'Accademia è depositata a Bologna dal 4 luglio 2003.",
+    "es": "Láminas verdes de espinaca: la receta de la Accademia está registrada en Bolonia desde el 4 de julio de 2003.",
+    "en": "Spinach-green sheets: the Accademia's recipe was registered in Bologna on 4 July 2003."
+   }
+  },
+  {
+   "id": "cappellacci",
+   "n": "Cappellacci di zucca",
+   "reg": [
+    "EMR"
+   ],
+   "city": "Ferrara",
+   "sh": "filled",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "zucca",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "IGP di Ferrara a forma di cappello di paglia, ripieni di zucca violina, formaggio e noce moscata.",
+    "es": "IGP de Ferrara con forma de sombrero de paja, rellenos de calabaza violina, queso y nuez moscada.",
+    "en": "Ferrara PGI shaped like a straw hat, filled with violina squash, cheese and nutmeg."
+   }
+  },
+  {
+   "id": "passatelli",
+   "n": "Passatelli",
+   "reg": [
+    "EMR"
+   ],
+   "city": "Forlimpopoli",
+   "sh": "rustic",
+   "dough": "pane",
+   "fresh": true,
+   "fill": [
+    "pane",
+    "uovo",
+    "parmigiano"
+   ],
+   "shd": {
+    "it": "Cilindretti di pangrattato, uova e Parmigiano passati allo schiacciapatate: nati per il brodo.",
+    "es": "Cilindros de pan rallado, huevo y parmesano pasados por un pasapurés: nacidos para el caldo.",
+    "en": "Strands of breadcrumbs, egg and Parmigiano pressed through a ricer: made for broth."
+   },
+   "d": {
+    "it": "Romagnoli; Artusi, nato a Forlimpopoli, li dà come ricetta n. 20.",
+    "es": "De la Romaña; Artusi, nacido en Forlimpopoli, los da como receta n.º 20.",
+    "en": "From Romagna; Artusi, born in Forlimpopoli, gives them as recipe no. 20."
+   }
+  },
+  {
+   "id": "tordelli",
+   "n": "Tordelli lucchesi",
+   "reg": [
+    "TOS"
+   ],
+   "city": "Lucca",
+   "sh": "filled",
+   "dough": "uovo",
+   "fresh": true,
+   "fill": [
+    "manzo",
+    "maiale",
+    "pane",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "Mezzelune ripiene di carne avanzata, pane bagnato nel brodo e verdure: il piatto della domenica a Lucca.",
+    "es": "Medialunas rellenas de carne sobrante, pan mojado en caldo y verduras: el plato del domingo en Lucca.",
+    "en": "Half-moons filled with leftover meat, broth-soaked bread and greens: Lucca's Sunday dish."
+   }
+  },
+  {
+   "id": "testaroli",
+   "n": "Testaroli",
+   "reg": [
+    "TOS"
+   ],
+   "city": "Pontremoli",
+   "sh": "sheet",
+   "dough": "tenero",
+   "fresh": true,
+   "shd": {
+    "it": "Pastella cotta nei «testi» di ghisa, tagliata a rombi e solo scottata in acqua: una delle paste più antiche.",
+    "es": "Masa cocida en «testi» de hierro, cortada en rombos y solo escaldada: una de las pastas más antiguas.",
+    "en": "Batter cooked in cast-iron testi, cut into diamonds and only briefly dipped in water: one of the oldest pastas."
+   },
+   "d": {
+    "it": "Della Lunigiana (Pontremoli), al confine con la Liguria.",
+    "es": "De la Lunigiana (Pontremoli), en la frontera con Liguria.",
+    "en": "From the Lunigiana (Pontremoli), on the Ligurian border."
+   }
+  },
+  {
+   "id": "strangozzi",
+   "n": "Strangozzi",
+   "reg": [
+    "UMB"
+   ],
+   "city": "Spoleto",
+   "sh": "flat",
+   "dough": "tenero",
+   "fresh": true,
+   "d": {
+    "it": "Strisce senza uova lunghe circa 30 cm; il nome ricorderebbe le stringhe di cuoio.",
+    "es": "Tiras sin huevo de unos 30 cm; el nombre recordaría a los cordones de cuero.",
+    "en": "Eggless strips about 30 cm long; the name is said to recall leather shoelaces."
+   }
+  },
+  {
+   "id": "ciriole",
+   "n": "Ciriole",
+   "reg": [
+    "UMB"
+   ],
+   "city": "Terni",
+   "sh": "rustic",
+   "dough": "tenero",
+   "fresh": true,
+   "d": {
+    "it": "Spaghettoni ternani senza uova; il nome viene dal latino «cereus», bianco come la cera.",
+    "es": "Espaguetones de Terni sin huevo; el nombre viene del latín «cereus», blanco como la cera.",
+    "en": "Eggless thick strands from Terni; the name comes from Latin cereus, wax-white."
+   }
+  },
+  {
+   "id": "vincisgrassi",
+   "n": "Vincisgrassi",
+   "reg": [
+    "MAR"
+   ],
+   "city": "Macerata",
+   "sh": "sheet",
+   "dough": "uovo",
+   "fresh": true,
+   "d": {
+    "it": "Lasagna maceratese al forno in 7–8 strati; STG europea dal 2022.",
+    "es": "Lasaña de Macerata al horno en 7–8 capas; ETG europea desde 2022.",
+    "en": "Macerata's baked lasagne in 7–8 layers; an EU TSG since 2022."
+   }
+  },
+  {
+   "id": "maccheroncini",
+   "n": "Maccheroncini di Campofilone",
+   "reg": [
+    "MAR"
+   ],
+   "city": "Campofilone",
+   "sh": "ribbon",
+   "dough": "uovo",
+   "fresh": false,
+   "d": {
+    "it": "IGP dal 2013: 7–10 uova per chilo e fili spessi appena 0,3–0,7 mm; cuociono in circa un minuto.",
+    "es": "IGP desde 2013: 7–10 huevos por kilo e hilos de apenas 0,3–0,7 mm; se cuecen en un minuto.",
+    "en": "PGI since 2013: 7–10 eggs per kilo and strands just 0.3–0.7 mm thick; they cook in about a minute."
+   }
+  },
+  {
+   "id": "chitarra",
+   "n": "Chitarra",
+   "reg": [
+    "ABR"
+   ],
+   "city": "Teramo",
+   "sh": "long",
+   "dough": "semolauovo",
+   "fresh": true,
+   "shd": {
+    "it": "Sezione quadrata: la sfoglia si preme sui fili tesi della «chitarra», a circa 2 mm l'uno dall'altro.",
+    "es": "Sección cuadrada: la lámina se prensa sobre los hilos tensos de la «guitarra», a unos 2 mm entre sí.",
+    "en": "Square section: the sheet is pressed through the taut wires of the 'guitar', about 2 mm apart."
+   },
+   "d": {
+    "it": "Maccheroni alla chitarra, prodotto tradizionale (PAT) d'Abruzzo; a Roma lo stesso formato si chiama tonnarelli.",
+    "es": "Maccheroni alla chitarra, producto tradicional (PAT) de los Abruzos; en Roma el mismo formato se llama tonnarelli.",
+    "en": "Maccheroni alla chitarra, an Abruzzo traditional product (PAT); in Rome the same shape is called tonnarelli."
+   }
+  },
+  {
+   "id": "mugnaia",
+   "n": "Maccheroni alla mugnaia",
+   "reg": [
+    "ABR"
+   ],
+   "city": "Elice",
+   "sh": "rustic",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "Un unico filo lunghissimo tirato a mano; Elice ne fa una sagra ogni agosto.",
+    "es": "Un único hilo larguísimo estirado a mano; Elice le dedica una fiesta cada agosto.",
+    "en": "A single very long hand-pulled strand; Elice holds a festival for it every August."
+   }
+  },
+  {
+   "id": "sagne",
+   "n": "Sagne",
+   "reg": [
+    "ABR",
+    "MOL"
+   ],
+   "city": "Lanciano",
+   "sh": "shortribbon",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "Rombi di semola e acqua, comuni ad Abruzzo e Molise, cotti tradizionalmente con i legumi.",
+    "es": "Rombos de sémola y agua, comunes a Abruzos y Molise, cocidos tradicionalmente con legumbres.",
+    "en": "Semolina-and-water diamonds shared by Abruzzo and Molise, traditionally cooked with pulses."
+   }
+  },
+  {
+   "id": "cavatelli",
+   "n": "Cavatelli",
+   "reg": [
+    "MOL"
+   ],
+   "city": "Campobasso",
+   "sh": "cup",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "Nel registro PAT del Molise; si fanno trascinando un dito su un pezzetto di pasta che si arriccia su sé stesso.",
+    "es": "En el registro PAT de Molise; se hacen arrastrando un dedo sobre un trocito de masa que se enrosca.",
+    "en": "On Molise's PAT register; made by dragging a finger over a piece of dough so it curls in on itself."
+   }
+  },
+  {
+   "id": "scialatielli",
+   "n": "Scialatielli",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Amalfi",
+   "sh": "shortribbon",
+   "dough": "semola",
+   "fresh": true,
+   "fill": [
+    "latte",
+    "pecorino"
+   ],
+   "d": {
+    "it": "Inventati dallo chef amalfitano Enrico Cosentino, premiato nel 1978; l'impasto ha latte, formaggio e basilico.",
+    "es": "Inventados por el chef de Amalfi Enrico Cosentino, premiado en 1978; la masa lleva leche, queso y albahaca.",
+    "en": "Created by Amalfi chef Enrico Cosentino, who won a prize with them in 1978; the dough has milk, cheese and basil."
+   }
+  },
+  {
+   "id": "tria",
+   "n": "Tria",
+   "reg": [
+    "PUG"
+   ],
+   "city": "Lecce",
+   "sh": "shortribbon",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "Dall'arabo «itriyah»; nella ciceri e tria una parte della pasta si frigge.",
+    "es": "Del árabe «itriyah»; en la ciceri e tria parte de la pasta se fríe.",
+    "en": "From Arabic itriyah; in ciceri e tria part of the pasta is fried."
+   }
+  },
+  {
+   "id": "strascinati",
+   "n": "Strascinati",
+   "reg": [
+    "BAS",
+    "PUG"
+   ],
+   "city": "Potenza",
+   "sh": "cup",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "Il pezzo di pasta si «trascina» sulla spianatoia con tre dita: ne esce una conchiglia larga.",
+    "es": "El trozo de masa se «arrastra» sobre la tabla con tres dedos: sale una concha ancha.",
+    "en": "The dough is 'dragged' across the board with three fingers, leaving a wide shell."
+   }
+  },
+  {
+   "id": "lagane",
+   "n": "Lagane",
+   "reg": [
+    "BAS",
+    "CAL",
+    "CAM"
+   ],
+   "city": "Venosa",
+   "sh": "shortribbon",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "Orazio, nato a Venosa, cita porri, ceci e «laganum»: tra i primi riferimenti scritti alla pasta.",
+    "es": "Horacio, nacido en Venosa, cita puerros, garbanzos y «laganum»: una de las primeras referencias escritas a la pasta.",
+    "en": "Horace, born in Venosa, mentions leeks, chickpeas and laganum: one of the earliest written references to pasta."
+   }
+  },
+  {
+   "id": "fileja",
+   "n": "Fileja",
+   "reg": [
+    "CAL"
+   ],
+   "city": "Vibo Valentia",
+   "sh": "hollow",
+   "dough": "semola",
+   "fresh": true,
+   "shd": {
+    "it": "Arrotolati a mano su un sottile stelo che lascia il buco centrale: raccolgono sughi piccanti e grassi.",
+    "es": "Enrollados a mano sobre un tallo fino que deja el agujero central: recogen salsas picantes y grasas.",
+    "en": "Hand-rolled around a thin stem that leaves the central hole: they catch spicy, fatty sauces."
+   },
+   "d": {
+    "it": "Detti anche maccheroni al ferretto; si arrotolano su un ramoscello di ginestra.",
+    "es": "También llamados maccheroni al ferretto; se enrollan sobre una ramita de retama.",
+    "en": "Also called maccheroni al ferretto; rolled around a broom-plant stem."
+   }
+  },
+  {
+   "id": "struncatura",
+   "n": "Struncatura",
+   "reg": [
+    "CAL"
+   ],
+   "city": "Gioia Tauro",
+   "sh": "flat",
+   "dough": "integrale",
+   "fresh": false,
+   "d": {
+    "it": "Un tempo vietata perché fatta con gli scarti di molitura; oggi è nell'Arca del Gusto di Slow Food.",
+    "es": "Antes prohibida porque se hacía con restos de molienda; hoy está en el Arca del Gusto de Slow Food.",
+    "en": "Once illegal because it was made from mill sweepings; now on Slow Food's Ark of Taste."
+   }
+  },
+  {
+   "id": "anelletti",
+   "n": "Anelletti",
+   "reg": [
+    "SIC"
+   ],
+   "city": "Palermo",
+   "sh": "ring",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Anellini palermitani, pensati per i timballi al forno.",
+    "es": "Anillitos de Palermo, pensados para los timbales al horno.",
+    "en": "Palermo's little rings, made for baked timballi."
+   }
+  },
+  {
+   "id": "fregola",
+   "n": "Fregola",
+   "reg": [
+    "SAR"
+   ],
+   "city": "Cagliari",
+   "sh": "grain",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Semola e acqua lavorate a mano in palline e tostate in forno: per questo hanno colori diversi.",
+    "es": "Sémola y agua trabajadas a mano en bolitas y tostadas al horno: por eso tienen tonos distintos.",
+    "en": "Semolina rubbed by hand into pellets and oven-toasted, hence their mixed shades."
+   }
+  },
+  {
+   "id": "culurgiones",
+   "n": "Culurgiones",
+   "reg": [
+    "SAR"
+   ],
+   "city": "Lanusei",
+   "sh": "filled",
+   "dough": "semola",
+   "fresh": true,
+   "fill": [
+    "patate",
+    "pecorino",
+    "menta"
+   ],
+   "d": {
+    "it": "IGP d'Ogliastra dal 2015: fagottini chiusi con una piega a spiga di grano, ripieni di patate, pecorino e menta.",
+    "es": "IGP de Ogliastra desde 2015: saquitos cerrados con un pliegue en espiga, rellenos de patata, pecorino y menta.",
+    "en": "Ogliastra PGI since 2015: purses sealed with a wheat-ear pleat, filled with potato, pecorino and mint."
+   }
+  }
+ ],
+ "sauces": [
+  {
+   "id": "brodo",
+   "n": "Brodo di carne",
+   "reg": [
+    "EMR",
+    "LOM",
+    "TAA",
+    "PIE"
+   ],
+   "city": "Bologna",
+   "g": "brodo",
+   "ing": [
+    "manzo",
+    "gallina",
+    "soffritto"
+   ],
+   "d": {
+    "it": "Per i tortellini la Confraternita vuole brodo di manzo e gallina; a Natale, di cappone.",
+    "es": "Para los tortellini la Confraternita exige caldo de ternera y gallina; en Navidad, de capón.",
+    "en": "For tortellini the Confraternita requires beef and hen broth; at Christmas, capon."
+   },
+   "w": {
+    "it": "Il brodo accoglie paste ripiene o compatte che non si sfaldano.",
+    "es": "El caldo acoge pastas rellenas o compactas que no se deshacen.",
+    "en": "Broth takes filled or compact pastas that don't fall apart."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Tre brodi",
+      "es": "Tres caldos",
+      "en": "Three broths"
+     },
+     "c": {
+      "it": "manzo, gallina e maiale cotti a parte e poi uniti",
+      "es": "ternera, gallina y cerdo cocidos por separado y luego unidos",
+      "en": "beef, hen and pork cooked separately then combined"
+     },
+     "where": "Cremona",
+     "add": [
+      "maiale"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "arrosto",
+   "n": "Sugo d'arrosto",
+   "reg": [
+    "PIE"
+   ],
+   "city": "Alba",
+   "g": "ragu",
+   "ing": [
+    "manzo",
+    "maiale",
+    "burro",
+    "soffritto",
+    "rosmarino"
+   ],
+   "d": {
+    "it": "Il fondo dello stesso arrosto che riempie i plin: pasta e condimento nascono da un unico arrosto della domenica.",
+    "es": "El fondo del mismo asado que rellena los plin: pasta y aliño salen de un único asado de domingo.",
+    "en": "The juices of the same roast that fills the plin: pasta and sauce come from one Sunday roast."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Al tovagliolo",
+      "es": "En servilleta",
+      "en": "In a napkin"
+     },
+     "c": {
+      "it": "senza condimento, serviti asciutti in un tovagliolo",
+      "es": "sin aliño, servidos secos en una servilleta",
+      "en": "no sauce, served dry in a napkin"
+     },
+     "where": "Langhe",
+     "add": [],
+     "rm": [
+      "manzo",
+      "maiale",
+      "burro",
+      "soffritto",
+      "rosmarino"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tartufobianco",
+   "n": "Burro e tartufo bianco",
+   "reg": [
+    "PIE"
+   ],
+   "city": "Alba",
+   "g": "burro",
+   "ing": [
+    "burro",
+    "parmigiano",
+    "tartufo"
+   ],
+   "d": {
+    "it": "Il tartufo bianco d'Alba (Tuber magnatum) non si cuoce mai: si lamella crudo sulla pasta al burro.",
+    "es": "La trufa blanca de Alba (Tuber magnatum) nunca se cocina: se lamina en crudo sobre la pasta con mantequilla.",
+    "en": "Alba white truffle (Tuber magnatum) is never cooked: it is shaved raw over buttered pasta."
+   }
+  },
+  {
+   "id": "fonduta",
+   "n": "Fonduta di fontina",
+   "reg": [
+    "VDA"
+   ],
+   "city": "Aosta",
+   "g": "burro",
+   "ing": [
+    "fontina",
+    "latte",
+    "burro"
+   ],
+   "d": {
+    "it": "«Alla bava»: la Fontina DOP fusa nel latte fa i fili sulla forchetta.",
+    "es": "«Alla bava»: la fontina DOP fundida en leche hace hilos en el tenedor.",
+    "en": "'Alla bava': Fontina DOP melted in milk pulls into strings on the fork."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Walser",
+      "es": "Walser",
+      "en": "Walser"
+     },
+     "c": {
+      "it": "toma di Gressoney al posto della fontina, con panna e speck",
+      "es": "toma de Gressoney en lugar de fontina, con nata y speck",
+      "en": "Gressoney toma instead of fontina, with cream and speck"
+     },
+     "where": "Gressoney",
+     "add": [
+      "panna",
+      "speck"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "anatra",
+   "n": "Ragù d'anatra",
+   "reg": [
+    "VEN"
+   ],
+   "city": "Thiene",
+   "g": "ragu",
+   "ing": [
+    "anatra",
+    "burro",
+    "cipolla"
+   ],
+   "d": {
+    "it": "«Co l'arna»: i bigoli si cuociono nel brodo dell'anatra; a Zanè la festa è il primo weekend di ottobre.",
+    "es": "«Co l'arna»: los bigoli se cuecen en el caldo del pato; en Zanè la fiesta es el primer fin de semana de octubre.",
+    "en": "'Co l'arna': the bigoli cook in the duck's own broth; Zanè's festival is on the first weekend of October."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Al pomodoro",
+      "es": "Con tomate",
+      "en": "With tomato"
+     },
+     "c": {
+      "it": "anatra sfilacciata nel sugo di pomodoro",
+      "es": "pato desmenuzado en salsa de tomate",
+      "en": "shredded duck in tomato sauce"
+     },
+     "where": "Veneto",
+     "add": [
+      "pomodoro"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "papavero",
+   "n": "Burro e semi di papavero",
+   "reg": [
+    "VEN",
+    "TAA"
+   ],
+   "city": "Cortina d'Ampezzo",
+   "g": "burro",
+   "ing": [
+    "burro",
+    "papavero",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "I semi di papavero rivelano l'influenza mitteleuropea nelle Dolomiti ladine.",
+    "es": "Las semillas de amapola revelan la influencia centroeuropea en los Dolomitas ladinos.",
+    "en": "Poppy seeds reveal Central European influence in the Ladin Dolomites."
+   }
+  },
+  {
+   "id": "speck",
+   "n": "Panna e speck",
+   "reg": [
+    "TAA"
+   ],
+   "city": "Bolzano",
+   "g": "burro",
+   "unc": true,
+   "ing": [
+    "panna",
+    "speck",
+    "burro",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "Condimento diffuso in Alto Adige per gli spätzle; più popolare che codificato.",
+    "es": "Aliño extendido en el Alto Adigio para los spätzle; más popular que codificado.",
+    "en": "A common South Tyrolean dressing for spätzle; popular rather than codified."
+   }
+  },
+  {
+   "id": "ricotta",
+   "n": "Burro e ricotta affumicata",
+   "reg": [
+    "FVG"
+   ],
+   "city": "Tolmezzo",
+   "g": "burro",
+   "ing": [
+    "burro",
+    "ricottaaff",
+    "cannella"
+   ],
+   "d": {
+    "it": "La ricotta affumicata della Carnia grattugiata sopra, con burro fuso e cannella: dolce e salato insieme.",
+    "es": "Ricotta ahumada de Carnia rallada por encima, con mantequilla fundida y canela: dulce y salado a la vez.",
+    "en": "Grated smoked Carnic ricotta, melted butter and cinnamon: sweet and savoury at once."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con salvia",
+      "es": "Con salvia",
+      "en": "With sage"
+     },
+     "c": {
+      "it": "salvia nel burro",
+      "es": "salvia en la mantequilla",
+      "en": "sage in the butter"
+     },
+     "where": "Carnia",
+     "add": [
+      "salvia"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "morchia",
+   "n": "Morchia",
+   "reg": [
+    "FVG"
+   ],
+   "city": "Tolmezzo",
+   "g": "burro",
+   "unc": true,
+   "ing": [
+    "burro",
+    "mais",
+    "salvia",
+    "montasio"
+   ],
+   "d": {
+    "it": "Burro con farina di mais tostata, salvia e Montasio; «morchia» era il fondo bruno del burro in padella.",
+    "es": "Mantequilla con harina de maíz tostada, salvia y Montasio; «morchia» era el poso tostado de la mantequilla.",
+    "en": "Butter with toasted cornmeal, sage and Montasio; 'morchia' was the browned butter residue in the pan."
+   }
+  },
+  {
+   "id": "noci",
+   "n": "Salsa di noci",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Recco",
+   "g": "crudi",
+   "ing": [
+    "noce",
+    "pane",
+    "latte",
+    "aglio",
+    "maggiorana",
+    "parmigiano",
+    "olio"
+   ],
+   "d": {
+    "it": "Pestata nel mortaio e allungata col latte; i pansoti si condiscono solo così.",
+    "es": "Machacada en mortero y aligerada con leche; los pansoti solo se aliñan así.",
+    "en": "Pounded in a mortar and thinned with milk; pansoti are dressed only this way."
+   }
+  },
+  {
+   "id": "pinoli",
+   "n": "Pinoli e maggiorana",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Varese Ligure",
+   "g": "burro",
+   "ing": [
+    "burro",
+    "pinoli",
+    "aglio",
+    "maggiorana",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "Nel Levante i corzetti si condiscono con questa salsa bianca, non col pesto di basilico.",
+    "es": "En el Levante los corzetti se aliñan con esta salsa blanca, no con pesto de albahaca.",
+    "en": "In the Levante corzetti take this white sauce, not basil pesto."
+   }
+  },
+  {
+   "id": "aglione",
+   "n": "Aglione",
+   "reg": [
+    "TOS"
+   ],
+   "city": "Montepulciano",
+   "g": "pomodoro",
+   "ing": [
+    "aglione",
+    "pomodoro",
+    "olio",
+    "peperoncino"
+   ],
+   "d": {
+    "it": "L'aglione della Valdichiana (PAT) è un aglio gigante e dolce, coltivato dal Cinquecento.",
+    "es": "El ajo gigante de la Valdichiana (PAT) es suave y se cultiva desde el siglo XVI.",
+    "en": "Valdichiana aglione (PAT) is a giant, mild garlic grown since the 1500s."
+   }
+  },
+  {
+   "id": "lepre",
+   "n": "Sugo di lepre",
+   "reg": [
+    "TOS"
+   ],
+   "city": "Firenze",
+   "g": "ragu",
+   "ing": [
+    "lepre",
+    "soffritto",
+    "vino",
+    "pomodoro"
+   ],
+   "d": {
+    "it": "Artusi (1895) dà le «Pappardelle colla lepre» alla ricetta n. 72; in Toscana si dice «sulla lepre».",
+    "es": "Artusi (1895) da las «Pappardelle colla lepre» en la receta n.º 72; en Toscana se dice «sulla lepre».",
+    "en": "Artusi (1895) gives 'Pappardelle colla lepre' as recipe no. 72; Tuscans say 'sulla lepre'."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "In bianco, col sangue",
+      "es": "En blanco, con sangre",
+      "en": "White, with blood"
+     },
+     "c": {
+      "it": "versione antica senza pomodoro, legata col sangue della lepre",
+      "es": "versión antigua sin tomate, ligada con la sangre de la liebre",
+      "en": "older version without tomato, thickened with the hare's blood"
+     },
+     "where": "Toscana",
+     "add": [],
+     "rm": [
+      "pomodoro"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "toscano",
+   "n": "Ragù toscano",
+   "reg": [
+    "TOS"
+   ],
+   "city": "Lucca",
+   "g": "ragu",
+   "ing": [
+    "manzo",
+    "maiale",
+    "soffritto",
+    "vino",
+    "pomodoro"
+   ],
+   "d": {
+    "it": "A Lucca è semplicemente «il sugo», e ogni famiglia ha il suo.",
+    "es": "En Lucca es simplemente «la salsa», y cada familia tiene la suya.",
+    "en": "In Lucca it's simply 'the sauce', and every family has its own."
+   }
+  },
+  {
+   "id": "tartufo",
+   "n": "Tartufo nero",
+   "reg": [
+    "UMB"
+   ],
+   "city": "Norcia",
+   "g": "verdure",
+   "ing": [
+    "tartufo",
+    "olio",
+    "aglio"
+   ],
+   "d": {
+    "it": "Nel 2011 gli strangozzi al tartufo nero di Norcia e Spoleto sono stati scelti come piatto simbolo dell'Umbria.",
+    "es": "En 2011 los strangozzi con trufa negra de Norcia y Spoleto se eligieron como plato emblema de Umbría.",
+    "en": "In 2011 strangozzi with Norcia and Spoleto black truffle were chosen as Umbria's emblematic dish."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con acciuga",
+      "es": "Con anchoa",
+      "en": "With anchovy"
+     },
+     "c": {
+      "it": "qualche acciuga sciolta nell'olio",
+      "es": "unas anchoas deshechas en el aceite",
+      "en": "a few anchovies melted into the oil"
+     },
+     "where": "Umbria",
+     "add": [
+      "acciughe"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "spoletina",
+   "n": "Alla spoletina",
+   "reg": [
+    "UMB"
+   ],
+   "city": "Spoleto",
+   "g": "pomodoro",
+   "ing": [
+    "pomodoro",
+    "aglio",
+    "prezzemolo",
+    "olio",
+    "peperoncino"
+   ],
+   "d": {
+    "it": "Il sugo quotidiano degli strangozzi a Spoleto: pomodoro, aglio, prezzemolo e peperoncino, senza carne.",
+    "es": "La salsa diaria de los strangozzi en Spoleto: tomate, ajo, perejil y guindilla, sin carne.",
+    "en": "Spoleto's everyday strangozzi sauce: tomato, garlic, parsley and chilli, no meat."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Alla ternana",
+      "es": "A la ternana",
+      "en": "Terni style"
+     },
+     "c": {
+      "it": "più piccante, a volte con mentuccia",
+      "es": "más picante, a veces con menta",
+      "en": "spicier, sometimes with wild mint"
+     },
+     "where": "Terni",
+     "add": [
+      "menta"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "norcina",
+   "n": "Alla norcina",
+   "reg": [
+    "UMB"
+   ],
+   "city": "Norcia",
+   "g": "ragu",
+   "unc": true,
+   "ing": [
+    "salsiccia",
+    "cipolla",
+    "vino",
+    "ricottaf",
+    "pecorino"
+   ],
+   "d": {
+    "it": "Dai «norcini», i macellai del maiale di Norcia; ricotta o panna è una disputa aperta.",
+    "es": "De los «norcini», los charcuteros de Norcia; ricotta o nata es un debate abierto.",
+    "en": "Named after Norcia's pork butchers, the norcini; ricotta versus cream is an open dispute."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con panna",
+      "es": "Con nata",
+      "en": "With cream"
+     },
+     "c": {
+      "it": "panna al posto della ricotta (comune, discussa)",
+      "es": "nata en lugar de ricotta (habitual, discutida)",
+      "en": "cream instead of ricotta (common, disputed)"
+     },
+     "where": "",
+     "add": [
+      "panna"
+     ],
+     "rm": [
+      "ricottaf"
+     ]
+    },
+    {
+     "n": {
+      "it": "Al tartufo",
+      "es": "Con trufa",
+      "en": "With truffle"
+     },
+     "c": {
+      "it": "tartufo nero sulla salsiccia",
+      "es": "trufa negra sobre la salchicha",
+      "en": "black truffle over the sausage"
+     },
+     "where": "Norcia",
+     "add": [
+      "tartufo"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "marchigiano",
+   "n": "Ragù marchigiano",
+   "reg": [
+    "MAR"
+   ],
+   "city": "Macerata",
+   "g": "ragu",
+   "ing": [
+    "manzo",
+    "maiale",
+    "fegatini",
+    "pomodoro",
+    "vino",
+    "soffritto"
+   ],
+   "d": {
+    "it": "La STG dei vincisgrassi vuole almeno cinque carni più le rigaglie di pollo.",
+    "es": "La ETG de los vincisgrassi exige al menos cinco carnes más menudillos de pollo.",
+    "en": "The vincisgrassi TSG requires at least five meats plus chicken giblets."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Delle massaie",
+      "es": "De las amas de casa",
+      "en": "Housewives' ragù"
+     },
+     "c": {
+      "it": "pezzi di carne cotti a lungo nel pomodoro e poi sfilacciati",
+      "es": "trozos de carne cocidos largo rato en tomate y luego desmenuzados",
+      "en": "chunks of meat slow-cooked in tomato then shredded"
+     },
+     "where": "Campofilone",
+     "add": [],
+     "rm": [
+      "fegatini"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pajata",
+   "n": "Pajata",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "g": "ragu",
+   "ing": [
+    "pajata",
+    "pomodoro",
+    "vino",
+    "pecorino",
+    "peperoncino"
+   ],
+   "d": {
+    "it": "Emblema del «quinto quarto» del Testaccio, il quartiere del mattatoio di Roma.",
+    "es": "Emblema del «quinto quarto» del Testaccio, el barrio del matadero de Roma.",
+    "en": "Emblem of the 'fifth quarter' cooking of Testaccio, Rome's slaughterhouse district."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "D'abbacchio",
+      "es": "De cordero lechal",
+      "en": "Lamb"
+     },
+     "c": {
+      "it": "intestino d'agnello al posto del vitello",
+      "es": "intestino de cordero en lugar de ternera",
+      "en": "lamb intestine instead of veal"
+     },
+     "where": "Roma",
+     "add": [
+      "agnello"
+     ],
+     "rm": [
+      "pajata"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rigaglie",
+   "n": "Rigaglie alla romana",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "g": "ragu",
+   "ing": [
+    "fegatini",
+    "prosciutto",
+    "pomodoro",
+    "vino",
+    "porcini",
+    "burro"
+   ],
+   "d": {
+    "it": "Sugo di rigaglie di pollo e grasso di prosciutto: le «fettuccine alla romana» di casa.",
+    "es": "Salsa de menudillos de pollo y grasa de jamón: las «fettuccine alla romana» caseras.",
+    "en": "Chicken giblets and prosciutto fat: home-style 'fettuccine alla romana'."
+   }
+  },
+  {
+   "id": "pallottine",
+   "n": "Pallottine",
+   "reg": [
+    "ABR"
+   ],
+   "city": "Teramo",
+   "g": "ragu",
+   "ing": [
+    "manzo",
+    "uovo",
+    "pomodoro"
+   ],
+   "d": {
+    "it": "Polpettine minuscole con noce moscata cotte nel pomodoro; le stesse vanno nel timballo di scrippelle.",
+    "es": "Albondiguitas diminutas con nuez moscada cocidas en tomate; las mismas van en el timbal de scrippelle.",
+    "en": "Tiny nutmeg-spiced meatballs simmered in tomato; the same go into Teramo's scrippelle timballo."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Fritte",
+      "es": "Fritas",
+      "en": "Fried"
+     },
+     "c": {
+      "it": "polpettine fritte e aggiunte alla fine",
+      "es": "albondiguitas fritas y añadidas al final",
+      "en": "meatballs fried and added at the end"
+     },
+     "where": "Teramo",
+     "add": [],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "agnello",
+   "n": "Ragù d'agnello",
+   "reg": [
+    "ABR",
+    "MOL"
+   ],
+   "city": "L'Aquila",
+   "g": "ragu",
+   "ing": [
+    "agnello",
+    "pomodoro",
+    "vino",
+    "cipolla",
+    "olio"
+   ],
+   "d": {
+    "it": "Il sugo della pastorizia appenninica, spesso misto con maiale e manzo.",
+    "es": "La salsa del pastoreo de los Apeninos, a menudo mezclada con cerdo y ternera.",
+    "en": "The sauce of Apennine sheep country, often mixed with pork and beef."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Alle tre carni",
+      "es": "Tres carnes",
+      "en": "Three meats"
+     },
+     "c": {
+      "it": "agnello con maiale e manzo",
+      "es": "cordero con cerdo y ternera",
+      "en": "lamb with pork and beef"
+     },
+     "where": "Abruzzo",
+     "add": [
+      "maiale",
+      "manzo"
+     ],
+     "rm": []
+    },
+    {
+     "n": {
+      "it": "Con peperoni",
+      "es": "Con pimientos",
+      "en": "With peppers"
+     },
+     "c": {
+      "it": "con peperoni dolci",
+      "es": "con pimientos dulces",
+      "en": "with sweet peppers"
+     },
+     "where": "Abruzzo",
+     "add": [],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "maiale",
+   "n": "Ragù di maiale",
+   "reg": [
+    "MOL"
+   ],
+   "city": "Campobasso",
+   "g": "ragu",
+   "ing": [
+    "salsiccia",
+    "maiale",
+    "pomodoro",
+    "vino",
+    "aglio",
+    "cipolla"
+   ],
+   "d": {
+    "it": "Il sugo della domenica molisano: salsicce e costine cotte a lungo nel pomodoro.",
+    "es": "La salsa del domingo en Molise: salchichas y costillas cocidas largo rato en tomate.",
+    "en": "Molise's Sunday sauce: sausages and ribs simmered long in tomato."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Sugo vedovo",
+      "es": "Salsa viuda",
+      "en": "Widow's sauce"
+     },
+     "c": {
+      "it": "senza carne, solo un po' di ventricina o lardo",
+      "es": "sin carne, solo algo de ventricina o manteca",
+      "en": "no meat, just a little ventricina or lard"
+     },
+     "where": "Montenero di Bisaccia",
+     "add": [
+      "lardo"
+     ],
+     "rm": [
+      "salsiccia",
+      "maiale"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fagioli",
+   "n": "Fagioli",
+   "reg": [
+    "ABR",
+    "MOL"
+   ],
+   "city": "Lanciano",
+   "g": "legumi",
+   "ing": [
+    "fagioli",
+    "pomodoro",
+    "soffritto",
+    "pancetta",
+    "peperoncino",
+    "olio"
+   ],
+   "d": {
+    "it": "Minestra densa contadina, spesso insaporita con cotenna o osso di prosciutto.",
+    "es": "Sopa espesa campesina, a menudo con corteza o hueso de jamón.",
+    "en": "Thick peasant soup, often flavoured with pork rind or a ham bone."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con ceci o cicerchie",
+      "es": "Con garbanzos o almortas",
+      "en": "With chickpeas or grass peas"
+     },
+     "c": {
+      "it": "ceci o cicerchie al posto dei fagioli",
+      "es": "garbanzos o almortas en lugar de alubias",
+      "en": "chickpeas or grass peas instead of beans"
+     },
+     "where": "",
+     "add": [
+      "ceci"
+     ],
+     "rm": [
+      "fagioli"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "genovese",
+   "n": "Genovese",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Napoli",
+   "g": "ragu",
+   "ing": [
+    "cipolla",
+    "manzo",
+    "vino",
+    "olio",
+    "pecorino"
+   ],
+   "d": {
+    "it": "Ragù bianco napoletano: cipolle e carne cotte tre ore e più finché le cipolle diventano crema. Già nel Cavalcanti (1839).",
+    "es": "Ragú blanco napolitano: cebolla y carne cocidas tres horas o más hasta que la cebolla se vuelve crema. Ya en Cavalcanti (1839).",
+    "en": "Naples' white ragù: onions and beef cooked three hours or more until the onions melt. Already in Cavalcanti (1839)."
+   }
+  },
+  {
+   "id": "sorrentina",
+   "n": "Alla sorrentina",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Sorrento",
+   "g": "forno",
+   "ing": [
+    "pomodoro",
+    "mozzarella",
+    "basilico",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "Pomodoro, fior di latte e basilico, gratinati al forno in coccetti di terracotta.",
+    "es": "Tomate, mozzarella fior di latte y albahaca, gratinados en cazuelitas de barro.",
+    "en": "Tomato, fior di latte and basil, baked in terracotta pots."
+   }
+  },
+  {
+   "id": "braciole",
+   "n": "Ragù di braciole",
+   "reg": [
+    "PUG"
+   ],
+   "city": "Bari",
+   "g": "ragu",
+   "ing": [
+    "pomodoro",
+    "manzo",
+    "aglio",
+    "prezzemolo",
+    "pecorino",
+    "lardo"
+   ],
+   "d": {
+    "it": "Il ragù della domenica barese: involtini (di cavallo nella versione classica) cotti per ore; la carne è il secondo.",
+    "es": "El ragú del domingo en Bari: rollitos (de caballo en la versión clásica) cocidos horas; la carne es el segundo.",
+    "en": "Bari's Sunday ragù: meat rolls (horse in the classic version) simmered for hours; the meat is the second course."
+   }
+  },
+  {
+   "id": "assassina",
+   "n": "All'assassina",
+   "reg": [
+    "PUG"
+   ],
+   "city": "Bari",
+   "g": "pomodoro",
+   "ing": [
+    "pomodoro",
+    "aglio",
+    "peperoncino",
+    "olio"
+   ],
+   "d": {
+    "it": "Inventata nel 1967 da Enzo Francavilla al ristorante Al Sorso Preferito di Bari: spaghetti crudi cotti in padella di ferro finché si bruciacchiano.",
+    "es": "Inventada en 1967 por Enzo Francavilla en el restaurante Al Sorso Preferito de Bari: espaguetis crudos cocidos en sartén de hierro hasta tostarse.",
+    "en": "Invented in 1967 by Enzo Francavilla at Bari's Al Sorso Preferito: raw spaghetti cooked in an iron pan until charred."
+   }
+  },
+  {
+   "id": "ceci",
+   "n": "Ceci",
+   "reg": [
+    "PUG",
+    "BAS",
+    "CAL"
+   ],
+   "city": "",
+   "g": "legumi",
+   "ing": [
+    "ceci",
+    "aglio",
+    "olio",
+    "cipolla"
+   ],
+   "d": {
+    "it": "Pasta e ceci, diffusa in tutto il Sud.",
+    "es": "Pasta con garbanzos, extendida por todo el sur.",
+    "en": "Pasta with chickpeas, found across the South."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Ciceri e tria",
+      "es": "Ciceri e tria",
+      "en": "Ciceri e tria"
+     },
+     "c": {
+      "it": "parte della pasta fritta e sparsa sopra",
+      "es": "parte de la pasta frita y esparcida por encima",
+      "en": "part of the pasta fried and scattered on top"
+     },
+     "where": "Salento",
+     "add": [],
+     "rm": []
+    },
+    {
+     "n": {
+      "it": "Lagane e ceci",
+      "es": "Lagane e ceci",
+      "en": "Lagane e ceci"
+     },
+     "c": {
+      "it": "con pomodoro, peperoncino e peperone crusco",
+      "es": "con tomate, guindilla y pimiento crusco",
+      "en": "with tomato, chilli and crusco pepper"
+     },
+     "where": "Basilicata",
+     "add": [
+      "pomodoro",
+      "peperoncino",
+      "cruschi"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "cruschi",
+   "n": "Peperoni cruschi",
+   "reg": [
+    "BAS"
+   ],
+   "city": "Senise",
+   "g": "verdure",
+   "ing": [
+    "cruschi",
+    "pangrattato",
+    "aglio",
+    "olio"
+   ],
+   "d": {
+    "it": "Peperone di Senise IGP: la polpa sottile secca in fretta e diventa croccante in pochi secondi d'olio bollente.",
+    "es": "Pimiento de Senise IGP: su carne fina se seca rápido y se vuelve crujiente en segundos de aceite caliente.",
+    "en": "Peperone di Senise PGI: its thin flesh dries fast and turns crisp after a few seconds in hot oil."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con cacioricotta",
+      "es": "Con cacioricotta",
+      "en": "With cacioricotta"
+     },
+     "c": {
+      "it": "cacioricotta grattugiato sopra",
+      "es": "cacioricotta rallado por encima",
+      "en": "grated cacioricotta on top"
+     },
+     "where": "Basilicata",
+     "add": [
+      "ricottaf"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "nduja",
+   "n": "'Nduja",
+   "reg": [
+    "CAL"
+   ],
+   "city": "Spilinga",
+   "g": "ragu",
+   "ing": [
+    "nduja",
+    "peperoncino",
+    "pomodoro",
+    "cipolla",
+    "olio"
+   ],
+   "d": {
+    "it": "La 'nduja di Spilinga (PAT) è circa 70% grasso di maiale e 30% peperoncino calabrese.",
+    "es": "La 'nduja de Spilinga (PAT) es aproximadamente 70 % grasa de cerdo y 30 % guindilla calabresa.",
+    "en": "Spilinga 'nduja (PAT) is roughly 70% pork fat and 30% Calabrian chilli."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con cipolla di Tropea",
+      "es": "Con cebolla de Tropea",
+      "en": "With Tropea onion"
+     },
+     "c": {
+      "it": "base di cipolla rossa di Tropea stufata",
+      "es": "base de cebolla roja de Tropea pochada",
+      "en": "a base of slow-cooked Tropea red onion"
+     },
+     "where": "Tropea",
+     "add": [],
+     "rm": []
+    },
+    {
+     "n": {
+      "it": "Con fagioli",
+      "es": "Con alubias",
+      "en": "With beans"
+     },
+     "c": {
+      "it": "con fagioli bianchi",
+      "es": "con alubias blancas",
+      "en": "with white beans"
+     },
+     "where": "Vibo Valentia",
+     "add": [
+      "fagioli"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "ammollicata",
+   "n": "Ammollicata",
+   "reg": [
+    "CAL"
+   ],
+   "city": "Gioia Tauro",
+   "g": "mare",
+   "ing": [
+    "acciughe",
+    "pangrattato",
+    "aglio",
+    "peperoncino",
+    "olio"
+   ],
+   "d": {
+    "it": "Il condimento povero della struncatura: la mollica tostata sostituisce il formaggio.",
+    "es": "El aliño pobre de la struncatura: la miga tostada sustituye al queso.",
+    "en": "Struncatura's poor man's dressing: toasted breadcrumbs stand in for cheese."
+   }
+  },
+  {
+   "id": "sarde",
+   "n": "Con le sarde",
+   "reg": [
+    "SIC"
+   ],
+   "city": "Palermo",
+   "g": "mare",
+   "ing": [
+    "sardine",
+    "finocchietto",
+    "uvetta",
+    "pinoli",
+    "acciughe",
+    "zafferano",
+    "pangrattato"
+   ],
+   "d": {
+    "it": "Agrodolce di impronta araba; si fa da marzo a settembre, quando ci sono sarde fresche e finocchietto.",
+    "es": "Agridulce de huella árabe; se hace de marzo a septiembre, cuando hay sardinas frescas e hinojo silvestre.",
+    "en": "Sweet-and-sour, Arab-influenced; made March to September, when fresh sardines and wild fennel coincide."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "A mare",
+      "es": "A mare",
+      "en": "A mare"
+     },
+     "c": {
+      "it": "senza sarde, solo finocchietto e mollica (di magro)",
+      "es": "sin sardinas, solo hinojo y miga (de vigilia)",
+      "en": "no sardines, just fennel and breadcrumbs (Lenten)"
+     },
+     "where": "Palermo",
+     "add": [],
+     "rm": [
+      "sardine",
+      "acciughe"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "palermitana",
+   "n": "Al forno alla palermitana",
+   "reg": [
+    "SIC"
+   ],
+   "city": "Palermo",
+   "g": "forno",
+   "ing": [
+    "manzo",
+    "piselli",
+    "pomodoro",
+    "caciocavallo",
+    "uovo",
+    "pangrattato"
+   ],
+   "d": {
+    "it": "Timballo al forno con ragù e piselli, caciocavallo e uova sode; risale ai «monzù», i cuochi francesi dell'aristocrazia palermitana.",
+    "es": "Timbal al horno con ragú y guisantes, caciocavallo y huevo duro; se remonta a los «monzù», cocineros franceses de la aristocracia de Palermo.",
+    "en": "Baked timballo with ragù and peas, caciocavallo and boiled eggs; it goes back to the monzù, French cooks of Palermo's aristocracy."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "'Ncasciata",
+      "es": "'Ncasciata",
+      "en": "'Ncasciata"
+     },
+     "c": {
+      "it": "versione messinese con melanzane fritte e prosciutto",
+      "es": "versión de Mesina con berenjena frita y jamón",
+      "en": "Messina version with fried aubergine and ham"
+     },
+     "where": "Messina",
+     "add": [
+      "melanzane",
+      "prosciutto"
+     ],
+     "rm": []
+    }
+   ]
+  },
+  {
+   "id": "arselle",
+   "n": "Arselle",
+   "reg": [
+    "SAR"
+   ],
+   "city": "Cagliari",
+   "g": "mare",
+   "ing": [
+    "arselle",
+    "pomodoro",
+    "aglio",
+    "prezzemolo",
+    "peperoncino"
+   ],
+   "d": {
+    "it": "La fregola cuoce come un risotto nel liquido delle arselle e in un brodetto di pomodoro, e si serve «all'onda».",
+    "es": "La fregola se cuece como un risotto en el jugo de las tellinas y un caldito de tomate, y se sirve «all'onda».",
+    "en": "Fregola cooks like risotto in the clam liquor and a light tomato broth, served loose 'all'onda'."
+   }
+  }
+ ],
+ "dishes": {
+  "plin|arrosto": {
+   "city": "Alba",
+   "reg": "PIE",
+   "n": {
+    "it": "Agnolotti del plin al sugo d'arrosto",
+    "es": "Agnolotti del plin con jugo de asado",
+    "en": "Agnolotti del plin with roast juices"
+   },
+   "t": {
+    "it": "Il piatto della domenica di Langhe e Monferrato.",
+    "es": "El plato de domingo de las Langhe y el Monferrato.",
+    "en": "The Sunday dish of the Langhe and Monferrato."
+   }
+  },
+  "tajarin|tartufobianco": {
+   "city": "Alba",
+   "reg": "PIE",
+   "n": {
+    "it": "Tajarin al tartufo bianco d'Alba",
+    "es": "Tajarin con trufa blanca de Alba",
+    "en": "Tajarin with Alba white truffle"
+   },
+   "t": {
+    "it": "Burro e Parmigiano, poi tartufo crudo a lamelle.",
+    "es": "Mantequilla y parmesano, luego trufa cruda en láminas.",
+    "en": "Butter and Parmigiano, then raw truffle shaved on top."
+   }
+  },
+  "gnocchi|fonduta": {
+   "city": "Aosta",
+   "reg": "VDA",
+   "n": {
+    "it": "Gnocchi alla bava",
+    "es": "Gnocchi alla bava",
+    "en": "Gnocchi alla bava"
+   },
+   "t": {
+    "it": "Rivendicati anche dal Piemonte.",
+    "es": "También los reclama el Piamonte.",
+    "en": "Also claimed by Piedmont."
+   }
+  },
+  "chnefflene|fonduta": {
+   "city": "Gressoney",
+   "reg": "VDA",
+   "n": {
+    "it": "Chnéfflene con fonduta",
+    "es": "Chnéfflene con fonduta",
+    "en": "Chnéfflene with fonduta"
+   },
+   "t": {
+    "it": "Walser della valle del Lys; non è nell'elenco PAT regionale.",
+    "es": "Walser del valle del Lys; no está en la lista PAT regional.",
+    "en": "Walser, from the Lys valley; not on the regional PAT list."
+   }
+  },
+  "casoncelli|burro": {
+   "city": "Bergamo",
+   "reg": "LOM",
+   "n": {
+    "it": "Casoncelli alla bergamasca",
+    "es": "Casoncelli a la bergamasca",
+    "en": "Casoncelli alla bergamasca"
+   },
+   "t": {
+    "it": "Burro, salvia e pancetta croccante.",
+    "es": "Mantequilla, salvia y panceta crujiente.",
+    "en": "Butter, sage and crisp pancetta."
+   }
+  },
+  "tortelli|burro": {
+   "city": "Mantova",
+   "reg": "LOM",
+   "n": {
+    "it": "Tortelli di zucca",
+    "es": "Tortelli di zucca",
+    "en": "Tortelli di zucca"
+   },
+   "t": {
+    "it": "La vigilia di Natale a Mantova, con burro e salvia.",
+    "es": "Nochebuena en Mantua, con mantequilla y salvia.",
+    "en": "Christmas Eve in Mantua, with butter and sage."
+   }
+  },
+  "marubini|brodo": {
+   "city": "Cremona",
+   "reg": "LOM",
+   "n": {
+    "it": "Marubini ai tre brodi",
+    "es": "Marubini en tres caldos",
+    "en": "Marubini in three broths"
+   },
+   "t": {
+    "it": "Brodo di manzo, gallina e maiale cotti a parte.",
+    "es": "Caldo de ternera, gallina y cerdo cocidos por separado.",
+    "en": "Beef, hen and pork broths cooked separately."
+   }
+  },
+  "canederli|brodo": {
+   "city": "Bolzano",
+   "reg": "TAA",
+   "n": {
+    "it": "Canederli in brodo",
+    "es": "Canederli en caldo",
+    "en": "Canederli in broth"
+   },
+   "t": {
+    "it": "Oppure asciutti con burro fuso e Parmigiano.",
+    "es": "O secos con mantequilla fundida y parmesano.",
+    "en": "Or dry with melted butter and Parmigiano."
+   }
+  },
+  "schlutzkrapfen|burro": {
+   "city": "Brunico",
+   "reg": "TAA",
+   "n": {
+    "it": "Schlutzkrapfen al burro fuso",
+    "es": "Schlutzkrapfen con mantequilla",
+    "en": "Schlutzkrapfen with melted butter"
+   },
+   "t": {
+    "it": "Con Parmigiano ed erba cipollina, senza salvia.",
+    "es": "Con parmesano y cebollino, sin salvia.",
+    "en": "With Parmigiano and chives, no sage."
+   }
+  },
+  "spatzle|speck": {
+   "city": "Bolzano",
+   "reg": "TAA",
+   "n": {
+    "it": "Spätzle di spinaci con panna e speck",
+    "es": "Spätzle de espinacas con nata y speck",
+    "en": "Spinach spätzle with cream and speck"
+   },
+   "t": {
+    "it": "Molto diffusi; come «piatto canonico» la fonte è più debole.",
+    "es": "Muy extendidos; como «plato canónico» la fuente es más débil.",
+    "en": "Very common; as a 'canonical dish' the evidence is weaker."
+   },
+   "unc": true
+  },
+  "bigoli|anatra": {
+   "city": "Thiene",
+   "reg": "VEN",
+   "n": {
+    "it": "Bigoli co l'arna",
+    "es": "Bigoli co l'arna",
+    "en": "Bigoli co l'arna"
+   },
+   "t": {
+    "it": "Bigoli cotti nel brodo d'anatra; festa a Zanè a ottobre.",
+    "es": "Bigoli cocidos en caldo de pato; fiesta en Zanè en octubre.",
+    "en": "Bigoli cooked in duck broth; festival in Zanè in October."
+   }
+  },
+  "casunziei|papavero": {
+   "city": "Cortina d'Ampezzo",
+   "reg": "VEN",
+   "n": {
+    "it": "Casunziei all'ampezzana",
+    "es": "Casunziei all'ampezzana",
+    "en": "Casunziei all'ampezzana"
+   },
+   "t": {
+    "it": "Burro fuso, semi di papavero e Parmigiano.",
+    "es": "Mantequilla fundida, semillas de amapola y parmesano.",
+    "en": "Melted butter, poppy seeds and Parmigiano."
+   }
+  },
+  "cjarsons|ricotta": {
+   "city": "Tolmezzo",
+   "reg": "FVG",
+   "n": {
+    "it": "Cjarsons carnici",
+    "es": "Cjarsons de Carnia",
+    "en": "Carnic cjarsons"
+   },
+   "t": {
+    "it": "Dolci e salati: burro, ricotta affumicata e cannella.",
+    "es": "Dulces y salados: mantequilla, ricotta ahumada y canela.",
+    "en": "Sweet and savoury: butter, smoked ricotta and cinnamon."
+   }
+  },
+  "blecs|morchia": {
+   "city": "Tolmezzo",
+   "reg": "FVG",
+   "n": {
+    "it": "Blecs cu la morchia",
+    "es": "Blecs cu la morchia",
+    "en": "Blecs cu la morchia"
+   },
+   "t": {
+    "it": "Le fonti non concordano sull'impasto.",
+    "es": "Las fuentes no coinciden en la masa.",
+    "en": "Sources disagree on the dough."
+   },
+   "unc": true
+  },
+  "trenette|pesto": {
+   "city": "Genova",
+   "reg": "LIG",
+   "n": {
+    "it": "Trenette al pesto avvantaggiate",
+    "es": "Trenette al pesto avvantaggiate",
+    "en": "Trenette al pesto avvantaggiate"
+   },
+   "t": {
+    "it": "Con patate e fagiolini cotti nella stessa pentola.",
+    "es": "Con patatas y judías cocidas en la misma olla.",
+    "en": "With potatoes and green beans boiled in the same pot."
+   }
+  },
+  "pansoti|noci": {
+   "city": "Recco",
+   "reg": "LIG",
+   "n": {
+    "it": "Pansoti con salsa di noci",
+    "es": "Pansoti con salsa de nueces",
+    "en": "Pansoti with walnut sauce"
+   },
+   "t": {
+    "it": "Ravioli di erbe con la salsa di noci.",
+    "es": "Raviolis de hierbas con salsa de nueces.",
+    "en": "Herb ravioli with walnut sauce."
+   }
+  },
+  "corzetti|pinoli": {
+   "city": "Varese Ligure",
+   "reg": "LIG",
+   "n": {
+    "it": "Corzetti con pinoli e maggiorana",
+    "es": "Corzetti con piñones y mejorana",
+    "en": "Corzetti with pine nuts and marjoram"
+   },
+   "t": {
+    "it": "La tradizione del Levante ligure.",
+    "es": "La tradición del Levante ligur.",
+    "en": "The Ligurian Levante tradition."
+   }
+  },
+  "tortellini|brodo": {
+   "city": "Bologna",
+   "reg": "EMR",
+   "n": {
+    "it": "Tortellini in brodo",
+    "es": "Tortellini en caldo",
+    "en": "Tortellini in brodo"
+   },
+   "t": {
+    "it": "Ricetta depositata nel 1974; in brodo di manzo e gallina, a Natale di cappone.",
+    "es": "Receta registrada en 1974; en caldo de ternera y gallina, en Navidad de capón.",
+    "en": "Recipe registered in 1974; in beef-and-hen broth, capon at Christmas."
+   }
+  },
+  "lasagne|bolognese": {
+   "city": "Bologna",
+   "reg": "EMR",
+   "n": {
+    "it": "Lasagne verdi alla bolognese",
+    "es": "Lasaña verde a la boloñesa",
+    "en": "Lasagne verdi alla bolognese"
+   },
+   "t": {
+    "it": "Almeno sei strati di sfoglia verde, ragù, besciamella e Parmigiano.",
+    "es": "Al menos seis capas de lámina verde, ragú, bechamel y parmesano.",
+    "en": "At least six layers of green sheets, ragù, béchamel and Parmigiano."
+   }
+  },
+  "cappellacci|burro": {
+   "city": "Ferrara",
+   "reg": "EMR",
+   "n": {
+    "it": "Cappellacci di zucca",
+    "es": "Cappellacci di zucca",
+    "en": "Cappellacci di zucca"
+   },
+   "t": {
+    "it": "Burro, salvia e Parmigiano; in alternativa ragù.",
+    "es": "Mantequilla, salvia y parmesano; o bien ragú.",
+    "en": "Butter, sage and Parmigiano; ragù as the alternative."
+   }
+  },
+  "passatelli|brodo": {
+   "city": "Forlimpopoli",
+   "reg": "EMR",
+   "n": {
+    "it": "Passatelli in brodo",
+    "es": "Passatelli en caldo",
+    "en": "Passatelli in brodo"
+   },
+   "t": {
+    "it": "La minestra delle feste in Romagna.",
+    "es": "La sopa de fiesta de la Romaña.",
+    "en": "Romagna's festive soup."
+   }
+  },
+  "pici|aglione": {
+   "city": "Montepulciano",
+   "reg": "TOS",
+   "n": {
+    "it": "Pici all'aglione",
+    "es": "Pici all'aglione",
+    "en": "Pici all'aglione"
+   },
+   "t": {
+    "it": "Sugo piccante di pomodoro e aglione della Valdichiana.",
+    "es": "Salsa picante de tomate y ajo gigante de la Valdichiana.",
+    "en": "Spicy tomato sauce with Valdichiana giant garlic."
+   }
+  },
+  "pappardelle|lepre": {
+   "city": "Firenze",
+   "reg": "TOS",
+   "n": {
+    "it": "Pappardelle sulla lepre",
+    "es": "Pappardelle con liebre",
+    "en": "Pappardelle sulla lepre"
+   },
+   "t": {
+    "it": "Il classico fiorentino e toscano.",
+    "es": "El clásico florentino y toscano.",
+    "en": "The Florentine and Tuscan classic."
+   }
+  },
+  "tordelli|toscano": {
+   "city": "Lucca",
+   "reg": "TOS",
+   "n": {
+    "it": "Tordelli lucchesi al ragù",
+    "es": "Tordelli de Lucca con ragú",
+    "en": "Tordelli lucchesi with ragù"
+   },
+   "t": {
+    "it": "Sempre col sugo di carne.",
+    "es": "Siempre con salsa de carne.",
+    "en": "Always with meat sauce."
+   }
+  },
+  "testaroli|pesto": {
+   "city": "Pontremoli",
+   "reg": "TOS",
+   "n": {
+    "it": "Testaroli al pesto",
+    "es": "Testaroli al pesto",
+    "en": "Testaroli al pesto"
+   },
+   "t": {
+    "it": "Oppure con olio e pecorino.",
+    "es": "O con aceite y pecorino.",
+    "en": "Or with oil and pecorino."
+   }
+  },
+  "strangozzi|tartufo": {
+   "city": "Norcia",
+   "reg": "UMB",
+   "n": {
+    "it": "Strangozzi al tartufo nero",
+    "es": "Strangozzi con trufa negra",
+    "en": "Strangozzi with black truffle"
+   },
+   "t": {
+    "it": "Piatto simbolo dell'Umbria dal 2011.",
+    "es": "Plato emblema de Umbría desde 2011.",
+    "en": "Umbria's emblematic dish since 2011."
+   }
+  },
+  "strangozzi|spoletina": {
+   "city": "Spoleto",
+   "reg": "UMB",
+   "n": {
+    "it": "Strangozzi alla spoletina",
+    "es": "Strangozzi a la spoletina",
+    "en": "Strangozzi alla spoletina"
+   },
+   "t": {
+    "it": "Il piatto di tutti i giorni a Spoleto.",
+    "es": "El plato de diario en Spoleto.",
+    "en": "Spoleto's everyday dish."
+   }
+  },
+  "ciriole|spoletina": {
+   "city": "Terni",
+   "reg": "UMB",
+   "n": {
+    "it": "Ciriole alla ternana",
+    "es": "Ciriole a la ternana",
+    "en": "Ciriole alla ternana"
+   },
+   "t": {
+    "it": "Con la variante ternana, più piccante.",
+    "es": "Con la variante de Terni, más picante.",
+    "en": "With the spicier Terni variant."
+   }
+  },
+  "penne|norcina": {
+   "city": "Norcia",
+   "reg": "UMB",
+   "n": {
+    "it": "Pasta alla norcina",
+    "es": "Pasta a la norcina",
+    "en": "Pasta alla norcina"
+   },
+   "t": {
+    "it": "Il formato varia: penne, rigatoni o strangozzi.",
+    "es": "El formato varía: penne, rigatoni o strangozzi.",
+    "en": "The shape varies: penne, rigatoni or strangozzi."
+   },
+   "unc": true
+  },
+  "vincisgrassi|marchigiano": {
+   "city": "Macerata",
+   "reg": "MAR",
+   "n": {
+    "it": "Vincisgrassi alla maceratese",
+    "es": "Vincisgrassi a la maceratense",
+    "en": "Vincisgrassi alla maceratese"
+   },
+   "t": {
+    "it": "Al forno, STG dal 2022; un antenato è nel «Cuoco maceratese» di Nebbia.",
+    "es": "Al horno, ETG desde 2022; un antecedente está en «Il cuoco maceratese» de Nebbia.",
+    "en": "Baked, a TSG since 2022; an ancestor is in Nebbia's Cuoco maceratese."
+   }
+  },
+  "maccheroncini|marchigiano": {
+   "city": "Campofilone",
+   "reg": "MAR",
+   "n": {
+    "it": "Maccheroncini di Campofilone al ragù",
+    "es": "Maccheroncini de Campofilone con ragú",
+    "en": "Maccheroncini di Campofilone with ragù"
+   },
+   "t": {
+    "it": "Col ragù delle massaie e tanto pecorino.",
+    "es": "Con el ragú de las amas de casa y mucho pecorino.",
+    "en": "With the housewives' ragù and plenty of pecorino."
+   }
+  },
+  "rigatoni|pajata": {
+   "city": "Roma",
+   "reg": "LAZ",
+   "n": {
+    "it": "Rigatoni co' la pajata",
+    "es": "Rigatoni con pajata",
+    "en": "Rigatoni co' la pajata"
+   },
+   "t": {
+    "it": "L'emblema del quinto quarto romano.",
+    "es": "El emblema del quinto quarto romano.",
+    "en": "The emblem of Roman quinto quarto cooking."
+   }
+  },
+  "fettuccine|rigaglie": {
+   "city": "Roma",
+   "reg": "LAZ",
+   "n": {
+    "it": "Fettuccine alla romana",
+    "es": "Fettuccine a la romana",
+    "en": "Fettuccine alla romana"
+   },
+   "t": {
+    "it": "Classico della cucina di casa romana.",
+    "es": "Clásico de la cocina casera romana.",
+    "en": "A classic of Roman home cooking."
+   }
+  },
+  "chitarra|pallottine": {
+   "city": "Teramo",
+   "reg": "ABR",
+   "n": {
+    "it": "Chitarra alla teramana con le pallottine",
+    "es": "Chitarra a la teramana con pallottine",
+    "en": "Chitarra alla teramana with pallottine"
+   },
+   "t": {
+    "it": "Piatto delle feste nel Teramano.",
+    "es": "Plato de fiesta en la provincia de Teramo.",
+    "en": "A festive dish of Teramo province."
+   }
+  },
+  "chitarra|agnello": {
+   "city": "L'Aquila",
+   "reg": "ABR",
+   "n": {
+    "it": "Chitarra al ragù d'agnello",
+    "es": "Chitarra con ragú de cordero",
+    "en": "Chitarra with lamb ragù"
+   },
+   "t": {
+    "it": "Spesso un ragù misto di agnello, maiale e manzo.",
+    "es": "A menudo un ragú mixto de cordero, cerdo y ternera.",
+    "en": "Often a mixed ragù of lamb, pork and beef."
+   }
+  },
+  "mugnaia|aglio": {
+   "city": "Elice",
+   "reg": "ABR",
+   "n": {
+    "it": "Maccheroni alla mugnaia aglio e olio",
+    "es": "Maccheroni alla mugnaia con ajo y aceite",
+    "en": "Maccheroni alla mugnaia with garlic and oil"
+   },
+   "t": {
+    "it": "La versione povera originale; oggi è comune anche il ragù.",
+    "es": "La versión pobre original; hoy también es común el ragú.",
+    "en": "The original poor version; meat ragù is equally common today."
+   },
+   "unc": true
+  },
+  "sagne|fagioli": {
+   "city": "Lanciano",
+   "reg": "ABR",
+   "n": {
+    "it": "Sagne e fagioli",
+    "es": "Sagne con alubias",
+    "en": "Sagne e fagioli"
+   },
+   "t": {
+    "it": "Comune ad Abruzzo e Molise.",
+    "es": "Común a Abruzos y Molise.",
+    "en": "Shared by Abruzzo and Molise."
+   }
+  },
+  "cavatelli|maiale": {
+   "city": "Campobasso",
+   "reg": "MOL",
+   "n": {
+    "it": "Cavatelli al sugo di maiale",
+    "es": "Cavatelli con salsa de cerdo",
+    "en": "Cavatelli with pork ragù"
+   },
+   "t": {
+    "it": "Il pranzo della domenica in Molise.",
+    "es": "La comida del domingo en Molise.",
+    "en": "Molise's Sunday lunch."
+   }
+  },
+  "fusilli|agnello": {
+   "city": "Campobasso",
+   "reg": "MOL",
+   "n": {
+    "it": "Fusilli alla molisana",
+    "es": "Fusilli a la molisana",
+    "en": "Fusilli alla molisana"
+   },
+   "t": {
+    "it": "Fusilli freschi arrotolati sul ferretto, ragù d'agnello e pecorino.",
+    "es": "Fusilli frescos enrollados en el ferretto, ragú de cordero y pecorino.",
+    "en": "Fresh fusilli rolled on the ferretto, lamb ragù and pecorino."
+   }
+  },
+  "ziti|genovese": {
+   "city": "Napoli",
+   "reg": "CAM",
+   "n": {
+    "it": "Ziti alla genovese",
+    "es": "Ziti a la genovesa",
+    "en": "Ziti alla genovese"
+   },
+   "t": {
+    "it": "Ziti spezzati a mano (o candele) e pecorino.",
+    "es": "Ziti partidos a mano (o candele) y pecorino.",
+    "en": "Hand-broken ziti (or candele) and pecorino."
+   }
+  },
+  "gnocchi|sorrentina": {
+   "city": "Sorrento",
+   "reg": "CAM",
+   "n": {
+    "it": "Gnocchi alla sorrentina",
+    "es": "Gnocchi a la sorrentina",
+    "en": "Gnocchi alla sorrentina"
+   },
+   "t": {
+    "it": "Gratinati in coccetti di terracotta.",
+    "es": "Gratinados en cazuelitas de barro.",
+    "en": "Baked in terracotta pots."
+   }
+  },
+  "scialatielli|mare": {
+   "city": "Amalfi",
+   "reg": "CAM",
+   "n": {
+    "it": "Scialatielli ai frutti di mare",
+    "es": "Scialatielli con marisco",
+    "en": "Scialatielli ai frutti di mare"
+   },
+   "t": {
+    "it": "Recente (1978) ma ormai il piatto simbolo della Costiera.",
+    "es": "Reciente (1978) pero ya el plato emblema de la Costa Amalfitana.",
+    "en": "Recent (1978) but now the Amalfi Coast's signature dish."
+   }
+  },
+  "orecchiette|braciole": {
+   "city": "Bari",
+   "reg": "PUG",
+   "n": {
+    "it": "Orecchiette al ragù di braciole",
+    "es": "Orecchiette con ragú de braciole",
+    "en": "Orecchiette with braciole ragù"
+   },
+   "t": {
+    "it": "Il pranzo della domenica a Bari.",
+    "es": "La comida del domingo en Bari.",
+    "en": "Sunday lunch in Bari."
+   }
+  },
+  "spaghetti|assassina": {
+   "city": "Bari",
+   "reg": "PUG",
+   "n": {
+    "it": "Spaghetti all'assassina",
+    "es": "Espaguetis all'assassina",
+    "en": "Spaghetti all'assassina"
+   },
+   "t": {
+    "it": "Del 1967: moderni ma ormai iconici a Bari.",
+    "es": "De 1967: modernos pero ya icónicos en Bari.",
+    "en": "From 1967: modern, but iconic in Bari."
+   }
+  },
+  "tria|ceci": {
+   "city": "Lecce",
+   "reg": "PUG",
+   "n": {
+    "it": "Ciceri e tria",
+    "es": "Ciceri e tria",
+    "en": "Ciceri e tria"
+   },
+   "t": {
+    "it": "Parte della pasta si frigge croccante.",
+    "es": "Parte de la pasta se fríe crujiente.",
+    "en": "Part of the pasta is fried crisp."
+   }
+  },
+  "strascinati|cruschi": {
+   "city": "Senise",
+   "reg": "BAS",
+   "n": {
+    "it": "Strascinati con peperoni cruschi e mollica",
+    "es": "Strascinati con pimientos cruschi y miga",
+    "en": "Strascinati with crusco peppers and breadcrumbs"
+   },
+   "t": {
+    "it": "Si usano anche ferretti o cavatelli.",
+    "es": "También se usan ferretti o cavatelli.",
+    "en": "Ferretti or cavatelli are also used."
+   }
+  },
+  "lagane|ceci": {
+   "city": "Venosa",
+   "reg": "BAS",
+   "n": {
+    "it": "Lagane e ceci",
+    "es": "Lagane con garbanzos",
+    "en": "Lagane e ceci"
+   },
+   "t": {
+    "it": "Tradizionali anche in Calabria e nel Cilento.",
+    "es": "Tradicionales también en Calabria y el Cilento.",
+    "en": "Also traditional in Calabria and the Cilento."
+   }
+  },
+  "fileja|nduja": {
+   "city": "Vibo Valentia",
+   "reg": "CAL",
+   "n": {
+    "it": "Fileja alla 'nduja",
+    "es": "Fileja con 'nduja",
+    "en": "Fileja alla 'nduja"
+   },
+   "t": {
+    "it": "'Nduja di Spilinga sciolta nel pomodoro o nella cipolla di Tropea.",
+    "es": "'Nduja de Spilinga fundida en tomate o en cebolla de Tropea.",
+    "en": "Spilinga 'nduja melted into tomato or Tropea onion."
+   }
+  },
+  "struncatura|ammollicata": {
+   "city": "Gioia Tauro",
+   "reg": "CAL",
+   "n": {
+    "it": "Struncatura ammollicata",
+    "es": "Struncatura ammollicata",
+    "en": "Struncatura ammollicata"
+   },
+   "t": {
+    "it": "Il piatto simbolo della Piana di Gioia Tauro.",
+    "es": "El plato emblema de la llanura de Gioia Tauro.",
+    "en": "The emblematic dish of the Gioia Tauro plain."
+   }
+  },
+  "bucatini|sarde": {
+   "city": "Palermo",
+   "reg": "SIC",
+   "n": {
+    "it": "Pasta con le sarde",
+    "es": "Pasta con sardinas",
+    "en": "Pasta con le sarde"
+   },
+   "t": {
+    "it": "Con finocchietto, uvetta, pinoli e zafferano.",
+    "es": "Con hinojo, pasas, piñones y azafrán.",
+    "en": "With wild fennel, raisins, pine nuts and saffron."
+   }
+  },
+  "anelletti|palermitana": {
+   "city": "Palermo",
+   "reg": "SIC",
+   "n": {
+    "it": "Anelletti al forno",
+    "es": "Anelletti al horno",
+    "en": "Anelletti al forno"
+   },
+   "t": {
+    "it": "Il timballo della domenica palermitana.",
+    "es": "El timbal del domingo en Palermo.",
+    "en": "Palermo's Sunday timballo."
+   }
+  },
+  "culurgiones|pomodoro": {
+   "city": "Lanusei",
+   "reg": "SAR",
+   "n": {
+    "it": "Culurgiones al pomodoro",
+    "es": "Culurgiones con tomate",
+    "en": "Culurgiones al pomodoro"
+   },
+   "t": {
+    "it": "Con sugo semplice e pecorino sardo.",
+    "es": "Con salsa sencilla y pecorino sardo.",
+    "en": "With a simple sauce and Sardinian pecorino."
+   }
+  },
+  "fregola|arselle": {
+   "city": "Cagliari",
+   "reg": "SAR",
+   "n": {
+    "it": "Fregola con arselle",
+    "es": "Fregola con tellinas",
+    "en": "Fregola with arselle clams"
+   },
+   "t": {
+    "it": "Cotta come un risotto e servita all'onda.",
+    "es": "Cocida como un risotto y servida «all'onda».",
+    "en": "Cooked like risotto and served loose."
+   }
+  }
+ },
+ "ratings": {
+  "tajarin": {
+   "tartufobianco": 3,
+   "burro": 2,
+   "arrosto": 2,
+   "funghi": 2,
+   "tartufo": 2,
+   "bolognese": 1,
+   "brodo": 1
+  },
+  "plin": {
+   "arrosto": 3,
+   "burro": 2,
+   "brodo": 2,
+   "tartufobianco": 2
+  },
+  "chnefflene": {
+   "fonduta": 3,
+   "burro": 2,
+   "speck": 1
+  },
+  "casoncelli": {
+   "burro": 3
+  },
+  "tortelli": {
+   "burro": 3,
+   "pomodoro": 1
+  },
+  "marubini": {
+   "brodo": 3,
+   "burro": 1
+  },
+  "canederli": {
+   "brodo": 3,
+   "burro": 2
+  },
+  "schlutzkrapfen": {
+   "burro": 3
+  },
+  "spatzle": {
+   "speck": 3,
+   "burro": 2,
+   "formaggi": 1,
+   "fonduta": 1
+  },
+  "casunziei": {
+   "papavero": 3,
+   "burro": 2
+  },
+  "cjarsons": {
+   "ricotta": 3,
+   "burro": 2
+  },
+  "blecs": {
+   "morchia": 3,
+   "burro": 2
+  },
+  "trenette": {
+   "pesto": 3,
+   "noci": 1
+  },
+  "pansoti": {
+   "noci": 3,
+   "burro": 1,
+   "pesto": 1
+  },
+  "corzetti": {
+   "pinoli": 3,
+   "pesto": 2,
+   "noci": 2,
+   "funghi": 1
+  },
+  "tortellini": {
+   "brodo": 3,
+   "formaggi": 1,
+   "bolognese": 1,
+   "burro": 1
+  },
+  "lasagne": {
+   "bolognese": 3,
+   "napoletano": 2,
+   "pesto": 2,
+   "funghi": 1
+  },
+  "cappellacci": {
+   "burro": 3,
+   "bolognese": 2
+  },
+  "passatelli": {
+   "brodo": 3
+  },
+  "tordelli": {
+   "toscano": 3,
+   "burro": 1
+  },
+  "testaroli": {
+   "pesto": 3
+  },
+  "strangozzi": {
+   "tartufo": 3,
+   "spoletina": 3,
+   "norcina": 2,
+   "funghi": 2,
+   "aglio": 1
+  },
+  "ciriole": {
+   "spoletina": 3,
+   "tartufo": 2,
+   "aglio": 1
+  },
+  "vincisgrassi": {
+   "marchigiano": 3
+  },
+  "maccheroncini": {
+   "marchigiano": 3,
+   "bolognese": 1,
+   "burro": 1
+  },
+  "chitarra": {
+   "pallottine": 3,
+   "agnello": 3,
+   "cacio": 2,
+   "amatriciana": 2,
+   "pomodoro": 2,
+   "gricia": 1,
+   "carbonara": 1
+  },
+  "mugnaia": {
+   "aglio": 3,
+   "agnello": 2
+  },
+  "sagne": {
+   "fagioli": 3,
+   "ceci": 2
+  },
+  "cavatelli": {
+   "maiale": 3,
+   "cime": 2,
+   "cinghiale": 2,
+   "pomodoro": 2,
+   "braciole": 2,
+   "agnello": 1
+  },
+  "scialatielli": {
+   "mare": 3,
+   "vongole": 2,
+   "pomodoro": 2
+  },
+  "tria": {
+   "ceci": 3
+  },
+  "strascinati": {
+   "cruschi": 3,
+   "cime": 2,
+   "braciole": 2,
+   "pomodoro": 2
+  },
+  "lagane": {
+   "ceci": 3,
+   "fagioli": 2
+  },
+  "fileja": {
+   "nduja": 3,
+   "pomodoro": 2,
+   "napoletano": 1
+  },
+  "struncatura": {
+   "ammollicata": 3,
+   "aglio": 2
+  },
+  "anelletti": {
+   "palermitana": 3
+  },
+  "fregola": {
+   "arselle": 3,
+   "mare": 2,
+   "vongole": 2
+  },
+  "culurgiones": {
+   "pomodoro": 3,
+   "burro": 2
+  },
+  "pici": {
+   "aglione": 3,
+   "lepre": 1,
+   "toscano": 1
+  },
+  "pappardelle": {
+   "lepre": 3,
+   "anatra": 2,
+   "agnello": 2,
+   "toscano": 1,
+   "tartufo": 1
+  },
+  "tagliatelle": {
+   "tartufo": 2,
+   "tartufobianco": 2,
+   "anatra": 1,
+   "lepre": 1,
+   "marchigiano": 1,
+   "toscano": 1
+  },
+  "fettuccine": {
+   "rigaglie": 3,
+   "tartufo": 1
+  },
+  "bigoli": {
+   "anatra": 3
+  },
+  "gnocchi": {
+   "fonduta": 3,
+   "sorrentina": 3,
+   "speck": 1
+  },
+  "ziti": {
+   "genovese": 3
+  },
+  "paccheri": {
+   "genovese": 2
+  },
+  "rigatoni": {
+   "pajata": 3,
+   "norcina": 2,
+   "genovese": 1,
+   "marchigiano": 1,
+   "maiale": 1,
+   "palermitana": 2
+  },
+  "penne": {
+   "norcina": 3,
+   "genovese": 1
+  },
+  "mezzemaniche": {
+   "pajata": 1,
+   "norcina": 1
+  },
+  "bucatini": {
+   "sarde": 3
+  },
+  "spaghetti": {
+   "sarde": 2,
+   "assassina": 3,
+   "aglione": 1,
+   "spoletina": 1,
+   "ammollicata": 2
+  },
+  "linguine": {
+   "ammollicata": 2
+  },
+  "orecchiette": {
+   "braciole": 3,
+   "cruschi": 1
+  },
+  "fusilli": {
+   "agnello": 3,
+   "maiale": 2,
+   "nduja": 1
+  },
+  "busiate": {
+   "sarde": 1
+  },
+  "trofie": {
+   "noci": 1
+  }
+ },
+ "sources": {
+  "pasta": {
+   "plin": [
+    {
+     "t": "Agnolotti del Plin al sugo di Arrosto",
+     "pub": "Langhe.net",
+     "url": "https://langhe.net/ricetta/agnolotti-al-sugo-di-arrosto/",
+     "sup": "sugo d'arrosto from the same meats; made in Langa villages"
+    },
+    {
+     "t": "Agnolotti del Plin: tradizione del Piemonte",
+     "pub": "Progetto Radici",
+     "url": "https://www.progetto-radici.it/2026/09/13/agnolotti-del-plin-storia-e-tradizione-del-piemonte/",
+     "sup": "PAT del Piemonte; plin = pinch; served with sugo d'arrosto, burro e salvia or al tovagliolo"
+    },
+    {
+     "t": "Ricetta e origini degli Agnolotti del Plin di Langa",
+     "pub": "Visit Murazzano",
+     "url": "https://visitmurazzano.it/agnolotti-del-plin-al-sugo-darrosto/",
+     "sup": "filling of veal/pork/rabbit; sugo d'arrosto"
+    }
+   ],
+   "tajarin": [
+    {
+     "t": "Tajarin d'Alba: storia, ricetta e tradizione",
+     "pub": "Tartufi Ratti",
+     "url": "https://www.tartufiratti.com/tajarin-dalba-pasta-fresca-piemonte/",
+     "sup": "high yolk content; butter+Parmigiano and raw white truffle as classic pairing"
+    }
+   ],
+   "gnocchi": [
+    {
+     "t": "Gnocchi alla bava",
+     "pub": "Consorzio Fontina DOP",
+     "url": "https://www.fontina-dop.it/gnocchi-alla-bava/",
+     "sup": "traditional Aosta Valley recipe: potato gnocchi + Fontina DOP melted in milk"
+    },
+    {
+     "t": "La Cucina Regionale della Valle d'Aosta",
+     "pub": "Quattrocalici",
+     "url": "https://www.quattrocalici.it/regione/valle-d-aosta/cucina/",
+     "sup": "potato gnocchi among typical VdA primi"
+    },
+    {
+     "t": "Gli gnocchi alla sorrentina, un piatto simbolo della tradizione campana",
+     "pub": "TraghettiPer (travel blog)",
+     "url": "https://www.traghettiper-isole-golfo-napoli.it/blog/gli-gnocchi-alla-sorrentina-un-piatto-simbolo-della-tradizione-campana/",
+     "sup": "Sorrento origin legend (Piazza Tasso), ingredients, terracotta pot, 'strangulaprievete' nickname"
+    }
+   ],
+   "chnefflene": [
+    {
+     "t": "La Cucina Regionale della Valle d'Aosta",
+     "pub": "Quattrocalici",
+     "url": "https://www.quattrocalici.it/regione/valle-d-aosta/cucina/",
+     "sup": "chnéfflene = batter buttons with fonduta, cream and speck or braised onion; Walser, upper Lys valley"
+    }
+   ],
+   "casoncelli": [
+    {
+     "t": "Casonsèi de la Bergamasca",
+     "pub": "Camera di commercio di Bergamo",
+     "url": "https://www.bg.camcom.it/bergamo-citta-dei-millesapori/prodotti/primi-piatti/casoncelli",
+     "sup": "half-moon 6-8 cm; condiment butter, grana, pancetta, sage; disputed with Brescia"
+    }
+   ],
+   "tortelli": [
+    {
+     "t": "Tortelli di zucca mantovani",
+     "pub": "Mincio&Dintorni",
+     "url": "https://mincioedintorni.com/enogastronomia/tortelli-di-zucca-mantovani/",
+     "sup": "filling pumpkin/amaretti/mostarda; burro e salvia; Christmas Eve"
+    }
+   ],
+   "marubini": [
+    {
+     "t": "Maruben o Marubini ai tre brodi",
+     "pub": "Nonna Paperina (blog)",
+     "url": "https://www.nonnapaperina.it/2012/10/marubini-maruben/",
+     "sup": "three broths; De.Co. and Accademia recognition 2003"
+    },
+    {
+     "t": "Marubini ai tre brodi",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/cucina-tipica/marubini-ai-tre-brodi/",
+     "sup": "typical Cremona recipe; beef, hen and salame da pentola broth"
+    }
+   ],
+   "canederli": [
+    {
+     "t": "Canederli dall'Alto Adige",
+     "pub": "alto-adige.com",
+     "url": "https://www.alto-adige.com/vacanze-gourmet-alto-adige/specialit%C3%A0-alto-adige/canederli",
+     "sup": "served in brodo or asciutti with butter and Parmigiano; speck/cheese/spinach variants"
+    }
+   ],
+   "schlutzkrapfen": [
+    {
+     "t": "Schlutzkrapfen dall'Alto Adige",
+     "pub": "alto-adige.com",
+     "url": "https://www.alto-adige.com/vacanze-gourmet-alto-adige/specialit%C3%A0-alto-adige/schlutzkrapfen",
+     "sup": "rye+wheat dough, spinach/ricotta filling, melted butter+Parmesan+chives; Val Pusteria"
+    }
+   ],
+   "spatzle": [
+    {
+     "t": "Spinach spätzle with cream and ham",
+     "pub": "Suedtirol.info (IDM Südtirol)",
+     "url": "https://www.suedtirol.info/en/en/eating-and-drinking/plp-recipe/pdp-recipe.FNGBH12L-9F11-NYT8-RBPX-ZS58FKYEKRKD.spinach-spaetzle-with-cream-and-ham--",
+     "sup": "traditional South Tyrolean recipe; cream + ham or Speck Alto Adige"
+    }
+   ],
+   "bigoli": [
+    {
+     "t": "Bigoli co' l'arna di Zanè",
+     "pub": "Associazione Amici delle De.Co. (Veneto)",
+     "url": "https://www.comunidecoveneto.it/2020/05/19/bigoli-co-larna-di-zane/",
+     "sup": "Zanè/Thiene tradition; duck ragù; October festival linked to Madonna del Rosario"
+    }
+   ],
+   "casunziei": [
+    {
+     "t": "Casunziei",
+     "pub": "Wikipedia (EN)",
+     "url": "https://en.wikipedia.org/wiki/Casunziei",
+     "sup": "Cortina version: beet/potato filling; butter, poppy seeds, Parmesan; Agordino honey variant"
+    }
+   ],
+   "cjarsons": [
+    {
+     "t": "Cjarsons: la tradizione della Carnia in un piatto di pasta ripiena",
+     "pub": "PromoTurismoFVG",
+     "url": "https://www.turismofvg.it/it/fvglivexperience/cjarsons-la-tradizione-della-carnia-in-un-piatto-di-pasta-ripiena",
+     "sup": "water-flour dough; melted butter, smoked ricotta, cinnamon; Cramârs history"
+    }
+   ],
+   "blecs": [
+    {
+     "t": "Blecs - La ricetta tipica del Friuli Venezia Giulia",
+     "pub": "Sonia Peronaci",
+     "url": "https://www.soniaperonaci.it/blecs/",
+     "sup": "wheat+buckwheat+corn dough; butter, toasted cornmeal ('morchia'), sage, Montasio"
+    },
+    {
+     "t": "Blécs",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/pasta/blecs/",
+     "sup": "buckwheat; name = patch (from Slovene)"
+    }
+   ],
+   "trenette": [
+    {
+     "t": "Trenette al pesto",
+     "pub": "Wikipedia (IT)",
+     "url": "https://it.wikipedia.org/wiki/Trenette_al_pesto",
+     "sup": "trenette or linguine with pesto, boiled potatoes and green beans; Ligurian"
+    }
+   ],
+   "pansoti": [
+    {
+     "t": "Pansoti con salsa di noci",
+     "pub": "Mangiare in Liguria",
+     "url": "https://www.mangiareinliguria.it/ricette-tipiche-liguri/primi/pansoti-con-salsa-di-noci",
+     "sup": "preboggion/prescinsêua filling; salsa di noci as the condiment"
+    },
+    {
+     "t": "Pansoti in salsa di noci",
+     "pub": "Buonissimo",
+     "url": "https://www.buonissimo.it/lericette/2042_Pansoti_in_salsa_di_noci",
+     "sup": "walnut sauce ingredients: walnuts, bread in milk, garlic, marjoram, Parmigiano, oil"
+    }
+   ],
+   "corzetti": [
+    {
+     "t": "Corzetti liguri",
+     "pub": "Pastificio Dasso Lavagna",
+     "url": "https://www.pastificiodassolavagna.it/prodotti/pasta-fresca-non-ripiena/pasta-speciale/corzetti/",
+     "sup": "local tradition = white pine-nut sauce with butter, garlic, marjoram; alt. pesto, ragù, funghi, noci"
+    },
+    {
+     "t": "Gli antichi corzetti con pesto di maggiorana e pinoli",
+     "pub": "A Small Kitchen in Genoa",
+     "url": "https://www.asmallkitcheningenoa.com/it/corzetti-liguri/",
+     "sup": "stamp carving in Varese Ligure; marjoram-pine nut dressing"
+    }
+   ],
+   "tortellini": [
+    {
+     "t": "La ricetta depositata",
+     "pub": "Dotta Confraternita del Tortellino",
+     "url": "https://www.confraternitadeltortellino.it/la-ricetta-depositata/",
+     "sup": "filling, broth (beef + hen), 5 g weight; must be in brodo"
+    }
+   ],
+   "lasagne": [
+    {
+     "t": "Lasagne Verdi alla bolognese",
+     "pub": "Bologna Welcome",
+     "url": "https://www.bolognawelcome.com/it/altro/ricette-e-prodotti-tipici/lasagne-verdi-alla-bolognese",
+     "sup": "deposited 4 July 2003 at Bologna CCIAA; green sheets, ragù, besciamella, ≥6 layers"
+    }
+   ],
+   "cappellacci": [
+    {
+     "t": "Cappellacci di zucca ferraresi IGP",
+     "pub": "Regione Emilia-Romagna, Agricoltura",
+     "url": "https://agricoltura.regione.emilia-romagna.it/dop-igp/prodotti-dop-e-igp-emilia-romagna/tutte-dop-igp-emilia-romagna/cappellacci-di-zucca-ferraresi-igp",
+     "sup": "province of Ferrara; filling; butter, sage, Parmigiano preferred, ragù alternative; Messisbugo 1549"
+    }
+   ],
+   "passatelli": [
+    {
+     "t": "Asciutti o in brodo, basta che siano passatelli",
+     "pub": "Regione Emilia-Romagna, Agricoltura",
+     "url": "https://agricoltura.regione.emilia-romagna.it/dop-igp/food-valley-news/news/2024/asciutti-o-in-brodo-basta-che-siano-passatelli",
+     "sup": "Romagna origin; ingredients; festive soup in brodo; Artusi #20; PAT"
+    }
+   ],
+   "pici": [
+    {
+     "t": "I pici all'aglione della Valdichiana",
+     "pub": "La Valdichiana",
+     "url": "https://www.lavaldichiana.it/pici-aglione-valdichiana/",
+     "sup": "dish, Valdichiana origin, sauce ingredients, aglione grown since the 16th century"
+    }
+   ],
+   "pappardelle": [
+    {
+     "t": "Pappardelle alla lepre o sulla lepre?",
+     "pub": "Accademia della Crusca",
+     "url": "https://accademiadellacrusca.it/it/consulenza/pappardelle-alla-lepre-o-sulla-lepre/45906",
+     "sup": "Artusi 1895 recipe no. 72; Fucini 1882; Tuscan 'sulla' usage"
+    },
+    {
+     "t": "The recipe for pappardelle alla lepre",
+     "pub": "Visit Tuscany (Regione Toscana)",
+     "url": "https://www.visittuscany.com/en/recipes/the-recipe-for-pappardelle-alla-lepre-with-hare/",
+     "sup": "Tuscan recipe; original version thickened with blood, no tomato"
+    },
+    {
+     "t": "Pappardelle alla lepre",
+     "pub": "Vetrina Toscana",
+     "url": "https://www.vetrina.toscana.it/ricette/pappardelle-alla-lepre/",
+     "sup": "Tuscan recipe and ingredients"
+    }
+   ],
+   "tordelli": [
+    {
+     "t": "I 'tordelli' lucchesi",
+     "pub": "Comune di Lucca",
+     "url": "https://www.comune.lucca.it/progetti/i-tordelli-lucchesi/",
+     "sup": "leftover-meat filling, meat ragù ('sugo'), Sunday/feast dish"
+    },
+    {
+     "t": "Tordelli lucchesi",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/ricette/tordelli-lucchesi/",
+     "sup": "half-moon shape, egg dough, ragù rosso di carne"
+    }
+   ],
+   "testaroli": [
+    {
+     "t": "Testaroli from the Lunigiana: a dish from a distant past",
+     "pub": "Visit Tuscany (Regione Toscana)",
+     "url": "https://www.visittuscany.com/en/flavors/testaroli-lunigiana/",
+     "sup": "dough, cast-iron testi, Pontremoli, pesto or oil and cheese dressing"
+    }
+   ],
+   "strangozzi": [
+    {
+     "t": "Strangozzi al tartufo nero di Norcia",
+     "pub": "Cucina Regionale Italiana",
+     "url": "https://cucinaregionaleitaliana.it/portfolio-items/strangozzi-al-tartufo-nero-di-norcia/",
+     "sup": "2011 World Tourism Day designation; pasta dimensions"
+    },
+    {
+     "t": "Strangozzi al tartufo: storia e ricetta del piatto umbro",
+     "pub": "Santa Maria degli Ancillotti",
+     "url": "https://www.santamariadegliancillotti.com/it/blog/strangozzi-al-tartufo-storia-e-ricetta-del-piatto-umbro-280",
+     "sup": "eggless dough, shoelace etymology, truffle recipe"
+    },
+    {
+     "t": "Strangozzi alla spoletina",
+     "pub": "Umbriatourism (Regione Umbria)",
+     "url": "https://www.umbriatourism.it/en/w/strangozzi-spoletina",
+     "sup": "Spoleto origin, dough, sauce ingredients, etymology"
+    }
+   ],
+   "penne": [
+    {
+     "t": "Penne alla Norcina",
+     "pub": "Saporie",
+     "url": "https://www.saporie.com/ricette-degli-chef/primi-piatti/penne-norcina",
+     "sup": "dish named after Norcia's cured meats; sausage and cream version"
+    }
+   ],
+   "ciriole": [
+    {
+     "t": "Ciriole alla ternana: cosa sono, ricetta e perché si chiama così",
+     "pub": "Cookist",
+     "url": "https://www.cookist.it/ciriole-alla-ternana-cosa-sono-ricetta-e-perche-si-chiama-cosi-la-pasta-icona-di-terni/",
+     "sup": "Terni origin, dough, size, 'cereus' etymology, sauce"
+    }
+   ],
+   "vincisgrassi": [
+    {
+     "t": "Vincisgrassi alla maceratese",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Vincisgrassi_alla_maceratese",
+     "sup": "STG 2022 (OJ L103), ragù of 5+ meats with rigaglie, 7-8 layers, Nebbia 1779"
+    }
+   ],
+   "maccheroncini": [
+    {
+     "t": "Maccheroncini di Campofilone IGP",
+     "pub": "Qualigeo",
+     "url": "https://www.qualigeo.eu/prodotto-qualigeo/maccheroncini-di-campofilone-igp/",
+     "sup": "IGP date, specs, classic dressing of meat ragù and pecorino"
+    },
+    {
+     "t": "Maccheroncini di Campofilone: l'IGP di nicchia",
+     "pub": "InformaCibo",
+     "url": "https://www.informacibo.it/maccheroncini-campofilone-igp/",
+     "sup": "'ragù delle massaie', 15th-century origins, 1-minute cooking"
+    }
+   ],
+   "rigatoni": [
+    {
+     "t": "I rigatoni co' la Pajata: come nasce questo piatto romano?",
+     "pub": "Roma.com",
+     "url": "https://www.roma.com/i-rigatoni-co-la-pajata-come-nasce-questo-piatto-romano/",
+     "sup": "Testaccio/vaccinari origin, sauce ingredients, pecorino"
+    },
+    {
+     "t": "Pasta alla Norma",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Pasta_alla_Norma",
+     "sup": "Catania origin; ingredients; Martoglio/Bellini name story; says 'penne or other pasta'"
+    }
+   ],
+   "fettuccine": [
+    {
+     "t": "Fettuccine alla romana",
+     "pub": "Cookist",
+     "url": "https://www.cookist.it/fettuccine-alla-romana/",
+     "sup": "typical Lazio dish; giblets, prosciutto fat, tomato, egg fettuccine"
+    }
+   ],
+   "chitarra": [
+    {
+     "t": "Spaghetti alla chitarra",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Spaghetti_alla_chitarra",
+     "sup": "Teramo favours tomato sauce with pallottine; Teramo recipe dated to the early 1800s"
+    },
+    {
+     "t": "Maccheroni alla chitarra",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Maccheroni_alla_chitarra",
+     "sup": "PAT status; pallottine in Teramo province"
+    },
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "Teramo pallottine for celebrations"
+    },
+    {
+     "t": "I maccheroni alla chitarra con pallottine",
+     "pub": "Eccellenze d'Abruzzo",
+     "url": "https://www.eccellenzedabruzzo.it/i-maccheroni-alla-chitarra-con-pallottine/",
+     "sup": "pallottine recipe"
+    },
+    {
+     "t": "Maccheroni alla chitarra con ragù di agnello",
+     "pub": "Saporetipico",
+     "url": "https://www.saporetipico.it/ricette-tipiche/maccheroni-alla-chitarra-con-ragu-di-agnello",
+     "sup": "named dish, Teramo area, lamb and pork ragù"
+    },
+    {
+     "t": "Spaghetti alla chitarra",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Spaghetti_alla_chitarra",
+     "sup": "Abruzzo ragù of pork, beef and lamb"
+    }
+   ],
+   "mugnaia": [
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "Elice origin; historically garlic, oil and chili, later meat sauces; August festival"
+    },
+    {
+     "t": "Maccheroni alla molinara",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Maccheroni_alla_molinara",
+     "sup": "dough, shape, Teramo/Pescara, Robert of Anjou story"
+    }
+   ],
+   "sagne": [
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "sagne/tacconelle paired with legumes"
+    },
+    {
+     "t": "Cucina molisana: 20 piatti tipici",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/cucina/cucina-molisana-piatti-tipici-da-provare/",
+     "sup": "sagne shared with Abruzzo, with beans, chickpeas or cicerchie plus pork"
+    }
+   ],
+   "cavatelli": [
+    {
+     "t": "Cavatelli al 'sugo di carne'",
+     "pub": "Guida Turistica del Molise (Slow)",
+     "url": "https://molise.guideslow.it/7144-2/",
+     "sup": "PAT status; ragù of sausage and ribs or pork, lamb and beef"
+    },
+    {
+     "t": "Elenco dei PAT Molise",
+     "pub": "Disciplinare.it",
+     "url": "https://www.disciplinare.it/elenco-dei-prodotti-agroalimentari-tradizionali-pat-molise.html",
+     "sup": "'Cavatelli o Cecatelli (Cavatielli)' and 'Fusilli' in the Molise PAT list"
+    }
+   ],
+   "fusilli": [
+    {
+     "t": "Cucina molisana: 20 piatti tipici",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/cucina/cucina-molisana-piatti-tipici-da-provare/",
+     "sup": "fusilli wound on iron wire; classic lamb sauce with pecorino"
+    },
+    {
+     "t": "Fusilli alla molisana",
+     "pub": "Cucchiaio d'Argento",
+     "url": "https://www.cucchiaio.it/ricetta/ricetta-fusilli-molisana/",
+     "sup": "ragù of lamb, veal and sausage on fresh fusilli"
+    }
+   ],
+   "ziti": [
+    {
+     "t": "Genovese (sugo)",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Genovese_(sugo)",
+     "sup": "Neapolitan onion-and-beef sauce with no tomato; served with hand-broken ziti; documented by Cavalcanti"
+    }
+   ],
+   "scialatielli": [
+    {
+     "t": "Scialatielli ai frutti di mare, la ricetta originale amalfitana del 1978",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/ricette/scialatielli-ai-frutti-di-mare/",
+     "sup": "1978, Enrico Cosentino, seafood, dough with milk/pecorino/basil; listed as a Campania PAT"
+    },
+    {
+     "t": "Scialatielli",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Scialatielli",
+     "sup": "inventor Cosentino, Amalfi; seafood sauce became the standard pairing"
+    }
+   ],
+   "orecchiette": [
+    {
+     "t": "Orecchiette al Ragù di Braciole: pranzo della domenica",
+     "pub": "Puglia.com",
+     "url": "https://www.puglia.com/orecchiette-al-ragu-di-braciole-pranzi-della-domenica-pugliese/",
+     "sup": "typical Sunday dish in Puglia; braciole filling; meat may be horse, beef, veal or pork"
+    }
+   ],
+   "spaghetti": [
+    {
+     "t": "Spaghetti all'assassina",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Spaghetti_all%27assassina",
+     "sup": "1967, Al Sorso Preferito, Enzo Francavilla; ingredients and technique"
+    }
+   ],
+   "tria": [
+    {
+     "t": "Ciceri e tria",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Ciceri_e_tria",
+     "sup": "Salento; tria are semolina ribbons; one third to one half fried"
+    },
+    {
+     "t": "Ciceri e tria, la pasta e ceci salentina che ha il sapore di casa",
+     "pub": "Leccenews24",
+     "url": "https://www.leccenews24.it/turismo/eno-gastronomia/ricetta-ciceri-e-tria-pasta-e-ceci.htm",
+     "sup": "Salento; fried pasta scraps; St Joseph's Day tradition"
+    }
+   ],
+   "strascinati": [
+    {
+     "t": "Pasta con i peperoni cruschi",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Pasta_con_i_peperoni_cruschi",
+     "sup": "Basilicata dish; cavatelli, strascinati or ferretti; breadcrumbs; Senise pepper"
+    },
+    {
+     "t": "Strascinati con peperoni cruschi e mollica",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/cucina-tipica/strascinati-con-i-peperoni-cruschi/",
+     "sup": "typical Basilicata recipe; strascinati shape; ingredients"
+    },
+    {
+     "t": "Peperone di Senise",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Peperone_di_Senise",
+     "sup": "PGI pepper; crusco is essential to Lucanian cooking"
+    }
+   ],
+   "lagane": [
+    {
+     "t": "Lagane e ceci, antica ricetta lucana",
+     "pub": "RicetteGourmet",
+     "url": "https://www.ricettegourmet.com/piatti-tipici-basilicata/lagane-e-ceci/",
+     "sup": "Lucanian dish; Horace of Venosa reference; Vulture brigands"
+    },
+    {
+     "t": "Lagane e ceci",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Lagane_e_ceci",
+     "sup": "Calabrian tradition too; St Joseph's Day 'u cumbitu'; 'pasta del brigante'"
+    }
+   ],
+   "fileja": [
+    {
+     "t": "Fileja",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Fileja",
+     "sup": "Vibo Valentia; semolina and water; rolled on a thin rod; alternative names"
+    },
+    {
+     "t": "Fileja calabresi e Stroncatura: la storia e due ricette tradizionali",
+     "pub": "Il Giornale del Cibo",
+     "url": "https://www.ilgiornaledelcibo.it/fileja-stroncatura-storia-ricette/",
+     "sup": "Vibo/Tropea area; esparto rod; traditional sauce of Tropea onion and 'nduja"
+    },
+    {
+     "t": "Un piatto tutto vibonese: fileja con nduja di Spilinga e fagioli di Caria",
+     "pub": "Vibo Sport e tempo libero",
+     "url": "https://vibosport.it/un-piatto-tutto-vibonese-fileja-con-nduja-di-spilinga-e-fagioli-di-caria/",
+     "sup": "local Vibonese fileja with 'nduja"
+    },
+    {
+     "t": "'Nduja",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/'Nduja",
+     "sup": "Spilinga; PAT; festival every 8 August since 1975"
+    }
+   ],
+   "struncatura": [
+    {
+     "t": "Stroncatura",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Stroncatura",
+     "sup": "Gioia Tauro; made from bran and mill residues; once illegal to sell; Slow Food Ark of Taste"
+    },
+    {
+     "t": "Fileja calabresi e Stroncatura: la storia e due ricette tradizionali",
+     "pub": "Il Giornale del Cibo",
+     "url": "https://www.ilgiornaledelcibo.it/fileja-stroncatura-storia-ricette/",
+     "sup": "struncatura ammuddricata = anchovies, breadcrumbs, chili, garlic, parsley"
+    }
+   ],
+   "bucatini": [
+    {
+     "t": "Pasta con le sarde, ricetta del primo piatto storico palermitano",
+     "pub": "Scatti di Gusto",
+     "url": "https://www.scattidigusto.it/pasta-con-le-sarde-la-ricetta-del-primo-piatto-storico-palermitano",
+     "sup": "bucatini; ingredient list; Palermo; March–September season"
+    }
+   ],
+   "anelletti": [
+    {
+     "t": "La storia degli anelletti al forno alla palermitana",
+     "pub": "Siciliafan",
+     "url": "https://www.siciliafan.it/anelletti-alla-palermitana-storia/",
+     "sup": "Palermo specialty; anelletti mills at Trabia/Termini Imerese; ragù and tuma; ring shape suits timballo"
+    }
+   ],
+   "culurgiones": [
+    {
+     "t": "Culurgionis d'Ogliastra IGP",
+     "pub": "Sardegna Agricoltura (Regione Sardegna)",
+     "url": "https://www.sardegnaagricoltura.it/index.php?xsl=443&s=331449&v=2&c=3592",
+     "sup": "IGP disciplinare: area, dough, potato/cheese filling, wheat-ear closure"
+    },
+    {
+     "t": "Culurgiones: tradizione intrecciata a mano",
+     "pub": "Sardinia Turismo",
+     "url": "https://www.sardiniaturismo.eu/2025/12/20/culurgiones-tradizione-sardegna/",
+     "sup": "usually dressed with tomato sauce and pecorino; butter and sage as an alternative; IGP 2015"
+    }
+   ],
+   "fregola": [
+    {
+     "t": "La fregola con le arselle, uno dei piatti più iconici della Sardegna",
+     "pub": "Fatti Nostri",
+     "url": "https://www.fattinostri.it/la-fregola-con-le-arselle-uno-dei-piatti-piu-iconici-della-sardegna/",
+     "sup": "Cagliari/Sardinia; ingredients incl. tomato and saffron; fregola made of semolina and toasted; cooked risotto-style"
+    }
+   ]
+  },
+  "sauce": {
+   "arrosto": [
+    {
+     "t": "Agnolotti del Plin al sugo di Arrosto",
+     "pub": "Langhe.net",
+     "url": "https://langhe.net/ricetta/agnolotti-al-sugo-di-arrosto/",
+     "sup": "sugo d'arrosto from the same meats; made in Langa villages"
+    },
+    {
+     "t": "Agnolotti del Plin: tradizione del Piemonte",
+     "pub": "Progetto Radici",
+     "url": "https://www.progetto-radici.it/2026/09/13/agnolotti-del-plin-storia-e-tradizione-del-piemonte/",
+     "sup": "PAT del Piemonte; plin = pinch; served with sugo d'arrosto, burro e salvia or al tovagliolo"
+    },
+    {
+     "t": "Ricetta e origini degli Agnolotti del Plin di Langa",
+     "pub": "Visit Murazzano",
+     "url": "https://visitmurazzano.it/agnolotti-del-plin-al-sugo-darrosto/",
+     "sup": "filling of veal/pork/rabbit; sugo d'arrosto"
+    }
+   ],
+   "tartufobianco": [
+    {
+     "t": "Tajarin d'Alba: storia, ricetta e tradizione",
+     "pub": "Tartufi Ratti",
+     "url": "https://www.tartufiratti.com/tajarin-dalba-pasta-fresca-piemonte/",
+     "sup": "high yolk content; butter+Parmigiano and raw white truffle as classic pairing"
+    }
+   ],
+   "fonduta": [
+    {
+     "t": "Gnocchi alla bava",
+     "pub": "Consorzio Fontina DOP",
+     "url": "https://www.fontina-dop.it/gnocchi-alla-bava/",
+     "sup": "traditional Aosta Valley recipe: potato gnocchi + Fontina DOP melted in milk"
+    },
+    {
+     "t": "La Cucina Regionale della Valle d'Aosta",
+     "pub": "Quattrocalici",
+     "url": "https://www.quattrocalici.it/regione/valle-d-aosta/cucina/",
+     "sup": "potato gnocchi among typical VdA primi"
+    },
+    {
+     "t": "La Cucina Regionale della Valle d'Aosta",
+     "pub": "Quattrocalici",
+     "url": "https://www.quattrocalici.it/regione/valle-d-aosta/cucina/",
+     "sup": "chnéfflene = batter buttons with fonduta, cream and speck or braised onion; Walser, upper Lys valley"
+    }
+   ],
+   "burro": [
+    {
+     "t": "Casonsèi de la Bergamasca",
+     "pub": "Camera di commercio di Bergamo",
+     "url": "https://www.bg.camcom.it/bergamo-citta-dei-millesapori/prodotti/primi-piatti/casoncelli",
+     "sup": "half-moon 6-8 cm; condiment butter, grana, pancetta, sage; disputed with Brescia"
+    },
+    {
+     "t": "Tortelli di zucca mantovani",
+     "pub": "Mincio&Dintorni",
+     "url": "https://mincioedintorni.com/enogastronomia/tortelli-di-zucca-mantovani/",
+     "sup": "filling pumpkin/amaretti/mostarda; burro e salvia; Christmas Eve"
+    },
+    {
+     "t": "Schlutzkrapfen dall'Alto Adige",
+     "pub": "alto-adige.com",
+     "url": "https://www.alto-adige.com/vacanze-gourmet-alto-adige/specialit%C3%A0-alto-adige/schlutzkrapfen",
+     "sup": "rye+wheat dough, spinach/ricotta filling, melted butter+Parmesan+chives; Val Pusteria"
+    },
+    {
+     "t": "Cappellacci di zucca ferraresi IGP",
+     "pub": "Regione Emilia-Romagna, Agricoltura",
+     "url": "https://agricoltura.regione.emilia-romagna.it/dop-igp/prodotti-dop-e-igp-emilia-romagna/tutte-dop-igp-emilia-romagna/cappellacci-di-zucca-ferraresi-igp",
+     "sup": "province of Ferrara; filling; butter, sage, Parmigiano preferred, ragù alternative; Messisbugo 1549"
+    }
+   ],
+   "brodo": [
+    {
+     "t": "Maruben o Marubini ai tre brodi",
+     "pub": "Nonna Paperina (blog)",
+     "url": "https://www.nonnapaperina.it/2012/10/marubini-maruben/",
+     "sup": "three broths; De.Co. and Accademia recognition 2003"
+    },
+    {
+     "t": "Marubini ai tre brodi",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/cucina-tipica/marubini-ai-tre-brodi/",
+     "sup": "typical Cremona recipe; beef, hen and salame da pentola broth"
+    },
+    {
+     "t": "Canederli dall'Alto Adige",
+     "pub": "alto-adige.com",
+     "url": "https://www.alto-adige.com/vacanze-gourmet-alto-adige/specialit%C3%A0-alto-adige/canederli",
+     "sup": "served in brodo or asciutti with butter and Parmigiano; speck/cheese/spinach variants"
+    },
+    {
+     "t": "La ricetta depositata",
+     "pub": "Dotta Confraternita del Tortellino",
+     "url": "https://www.confraternitadeltortellino.it/la-ricetta-depositata/",
+     "sup": "filling, broth (beef + hen), 5 g weight; must be in brodo"
+    },
+    {
+     "t": "Asciutti o in brodo, basta che siano passatelli",
+     "pub": "Regione Emilia-Romagna, Agricoltura",
+     "url": "https://agricoltura.regione.emilia-romagna.it/dop-igp/food-valley-news/news/2024/asciutti-o-in-brodo-basta-che-siano-passatelli",
+     "sup": "Romagna origin; ingredients; festive soup in brodo; Artusi #20; PAT"
+    }
+   ],
+   "speck": [
+    {
+     "t": "Spinach spätzle with cream and ham",
+     "pub": "Suedtirol.info (IDM Südtirol)",
+     "url": "https://www.suedtirol.info/en/en/eating-and-drinking/plp-recipe/pdp-recipe.FNGBH12L-9F11-NYT8-RBPX-ZS58FKYEKRKD.spinach-spaetzle-with-cream-and-ham--",
+     "sup": "traditional South Tyrolean recipe; cream + ham or Speck Alto Adige"
+    }
+   ],
+   "anatra": [
+    {
+     "t": "Bigoli co' l'arna di Zanè",
+     "pub": "Associazione Amici delle De.Co. (Veneto)",
+     "url": "https://www.comunidecoveneto.it/2020/05/19/bigoli-co-larna-di-zane/",
+     "sup": "Zanè/Thiene tradition; duck ragù; October festival linked to Madonna del Rosario"
+    }
+   ],
+   "papavero": [
+    {
+     "t": "Casunziei",
+     "pub": "Wikipedia (EN)",
+     "url": "https://en.wikipedia.org/wiki/Casunziei",
+     "sup": "Cortina version: beet/potato filling; butter, poppy seeds, Parmesan; Agordino honey variant"
+    }
+   ],
+   "ricotta": [
+    {
+     "t": "Cjarsons: la tradizione della Carnia in un piatto di pasta ripiena",
+     "pub": "PromoTurismoFVG",
+     "url": "https://www.turismofvg.it/it/fvglivexperience/cjarsons-la-tradizione-della-carnia-in-un-piatto-di-pasta-ripiena",
+     "sup": "water-flour dough; melted butter, smoked ricotta, cinnamon; Cramârs history"
+    }
+   ],
+   "morchia": [
+    {
+     "t": "Blecs - La ricetta tipica del Friuli Venezia Giulia",
+     "pub": "Sonia Peronaci",
+     "url": "https://www.soniaperonaci.it/blecs/",
+     "sup": "wheat+buckwheat+corn dough; butter, toasted cornmeal ('morchia'), sage, Montasio"
+    },
+    {
+     "t": "Blécs",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/pasta/blecs/",
+     "sup": "buckwheat; name = patch (from Slovene)"
+    }
+   ],
+   "pesto": [
+    {
+     "t": "Trenette al pesto",
+     "pub": "Wikipedia (IT)",
+     "url": "https://it.wikipedia.org/wiki/Trenette_al_pesto",
+     "sup": "trenette or linguine with pesto, boiled potatoes and green beans; Ligurian"
+    },
+    {
+     "t": "Testaroli from the Lunigiana: a dish from a distant past",
+     "pub": "Visit Tuscany (Regione Toscana)",
+     "url": "https://www.visittuscany.com/en/flavors/testaroli-lunigiana/",
+     "sup": "dough, cast-iron testi, Pontremoli, pesto or oil and cheese dressing"
+    }
+   ],
+   "noci": [
+    {
+     "t": "Pansoti con salsa di noci",
+     "pub": "Mangiare in Liguria",
+     "url": "https://www.mangiareinliguria.it/ricette-tipiche-liguri/primi/pansoti-con-salsa-di-noci",
+     "sup": "preboggion/prescinsêua filling; salsa di noci as the condiment"
+    },
+    {
+     "t": "Pansoti in salsa di noci",
+     "pub": "Buonissimo",
+     "url": "https://www.buonissimo.it/lericette/2042_Pansoti_in_salsa_di_noci",
+     "sup": "walnut sauce ingredients: walnuts, bread in milk, garlic, marjoram, Parmigiano, oil"
+    }
+   ],
+   "pinoli": [
+    {
+     "t": "Corzetti liguri",
+     "pub": "Pastificio Dasso Lavagna",
+     "url": "https://www.pastificiodassolavagna.it/prodotti/pasta-fresca-non-ripiena/pasta-speciale/corzetti/",
+     "sup": "local tradition = white pine-nut sauce with butter, garlic, marjoram; alt. pesto, ragù, funghi, noci"
+    },
+    {
+     "t": "Gli antichi corzetti con pesto di maggiorana e pinoli",
+     "pub": "A Small Kitchen in Genoa",
+     "url": "https://www.asmallkitcheningenoa.com/it/corzetti-liguri/",
+     "sup": "stamp carving in Varese Ligure; marjoram-pine nut dressing"
+    }
+   ],
+   "bolognese": [
+    {
+     "t": "Lasagne Verdi alla bolognese",
+     "pub": "Bologna Welcome",
+     "url": "https://www.bolognawelcome.com/it/altro/ricette-e-prodotti-tipici/lasagne-verdi-alla-bolognese",
+     "sup": "deposited 4 July 2003 at Bologna CCIAA; green sheets, ragù, besciamella, ≥6 layers"
+    }
+   ],
+   "aglione": [
+    {
+     "t": "I pici all'aglione della Valdichiana",
+     "pub": "La Valdichiana",
+     "url": "https://www.lavaldichiana.it/pici-aglione-valdichiana/",
+     "sup": "dish, Valdichiana origin, sauce ingredients, aglione grown since the 16th century"
+    }
+   ],
+   "lepre": [
+    {
+     "t": "Pappardelle alla lepre o sulla lepre?",
+     "pub": "Accademia della Crusca",
+     "url": "https://accademiadellacrusca.it/it/consulenza/pappardelle-alla-lepre-o-sulla-lepre/45906",
+     "sup": "Artusi 1895 recipe no. 72; Fucini 1882; Tuscan 'sulla' usage"
+    },
+    {
+     "t": "The recipe for pappardelle alla lepre",
+     "pub": "Visit Tuscany (Regione Toscana)",
+     "url": "https://www.visittuscany.com/en/recipes/the-recipe-for-pappardelle-alla-lepre-with-hare/",
+     "sup": "Tuscan recipe; original version thickened with blood, no tomato"
+    },
+    {
+     "t": "Pappardelle alla lepre",
+     "pub": "Vetrina Toscana",
+     "url": "https://www.vetrina.toscana.it/ricette/pappardelle-alla-lepre/",
+     "sup": "Tuscan recipe and ingredients"
+    }
+   ],
+   "toscano": [
+    {
+     "t": "I 'tordelli' lucchesi",
+     "pub": "Comune di Lucca",
+     "url": "https://www.comune.lucca.it/progetti/i-tordelli-lucchesi/",
+     "sup": "leftover-meat filling, meat ragù ('sugo'), Sunday/feast dish"
+    },
+    {
+     "t": "Tordelli lucchesi",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/ricette/tordelli-lucchesi/",
+     "sup": "half-moon shape, egg dough, ragù rosso di carne"
+    }
+   ],
+   "tartufo": [
+    {
+     "t": "Strangozzi al tartufo nero di Norcia",
+     "pub": "Cucina Regionale Italiana",
+     "url": "https://cucinaregionaleitaliana.it/portfolio-items/strangozzi-al-tartufo-nero-di-norcia/",
+     "sup": "2011 World Tourism Day designation; pasta dimensions"
+    },
+    {
+     "t": "Strangozzi al tartufo: storia e ricetta del piatto umbro",
+     "pub": "Santa Maria degli Ancillotti",
+     "url": "https://www.santamariadegliancillotti.com/it/blog/strangozzi-al-tartufo-storia-e-ricetta-del-piatto-umbro-280",
+     "sup": "eggless dough, shoelace etymology, truffle recipe"
+    }
+   ],
+   "spoletina": [
+    {
+     "t": "Strangozzi alla spoletina",
+     "pub": "Umbriatourism (Regione Umbria)",
+     "url": "https://www.umbriatourism.it/en/w/strangozzi-spoletina",
+     "sup": "Spoleto origin, dough, sauce ingredients, etymology"
+    },
+    {
+     "t": "Ciriole alla ternana: cosa sono, ricetta e perché si chiama così",
+     "pub": "Cookist",
+     "url": "https://www.cookist.it/ciriole-alla-ternana-cosa-sono-ricetta-e-perche-si-chiama-cosi-la-pasta-icona-di-terni/",
+     "sup": "Terni origin, dough, size, 'cereus' etymology, sauce"
+    }
+   ],
+   "norcina": [
+    {
+     "t": "Penne alla Norcina",
+     "pub": "Saporie",
+     "url": "https://www.saporie.com/ricette-degli-chef/primi-piatti/penne-norcina",
+     "sup": "dish named after Norcia's cured meats; sausage and cream version"
+    }
+   ],
+   "marchigiano": [
+    {
+     "t": "Vincisgrassi alla maceratese",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Vincisgrassi_alla_maceratese",
+     "sup": "STG 2022 (OJ L103), ragù of 5+ meats with rigaglie, 7-8 layers, Nebbia 1779"
+    },
+    {
+     "t": "Maccheroncini di Campofilone IGP",
+     "pub": "Qualigeo",
+     "url": "https://www.qualigeo.eu/prodotto-qualigeo/maccheroncini-di-campofilone-igp/",
+     "sup": "IGP date, specs, classic dressing of meat ragù and pecorino"
+    },
+    {
+     "t": "Maccheroncini di Campofilone: l'IGP di nicchia",
+     "pub": "InformaCibo",
+     "url": "https://www.informacibo.it/maccheroncini-campofilone-igp/",
+     "sup": "'ragù delle massaie', 15th-century origins, 1-minute cooking"
+    }
+   ],
+   "pajata": [
+    {
+     "t": "I rigatoni co' la Pajata: come nasce questo piatto romano?",
+     "pub": "Roma.com",
+     "url": "https://www.roma.com/i-rigatoni-co-la-pajata-come-nasce-questo-piatto-romano/",
+     "sup": "Testaccio/vaccinari origin, sauce ingredients, pecorino"
+    }
+   ],
+   "rigaglie": [
+    {
+     "t": "Fettuccine alla romana",
+     "pub": "Cookist",
+     "url": "https://www.cookist.it/fettuccine-alla-romana/",
+     "sup": "typical Lazio dish; giblets, prosciutto fat, tomato, egg fettuccine"
+    }
+   ],
+   "pallottine": [
+    {
+     "t": "Spaghetti alla chitarra",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Spaghetti_alla_chitarra",
+     "sup": "Teramo favours tomato sauce with pallottine; Teramo recipe dated to the early 1800s"
+    },
+    {
+     "t": "Maccheroni alla chitarra",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Maccheroni_alla_chitarra",
+     "sup": "PAT status; pallottine in Teramo province"
+    },
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "Teramo pallottine for celebrations"
+    },
+    {
+     "t": "I maccheroni alla chitarra con pallottine",
+     "pub": "Eccellenze d'Abruzzo",
+     "url": "https://www.eccellenzedabruzzo.it/i-maccheroni-alla-chitarra-con-pallottine/",
+     "sup": "pallottine recipe"
+    }
+   ],
+   "agnello": [
+    {
+     "t": "Maccheroni alla chitarra con ragù di agnello",
+     "pub": "Saporetipico",
+     "url": "https://www.saporetipico.it/ricette-tipiche/maccheroni-alla-chitarra-con-ragu-di-agnello",
+     "sup": "named dish, Teramo area, lamb and pork ragù"
+    },
+    {
+     "t": "Spaghetti alla chitarra",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Spaghetti_alla_chitarra",
+     "sup": "Abruzzo ragù of pork, beef and lamb"
+    },
+    {
+     "t": "Cucina molisana: 20 piatti tipici",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/cucina/cucina-molisana-piatti-tipici-da-provare/",
+     "sup": "fusilli wound on iron wire; classic lamb sauce with pecorino"
+    },
+    {
+     "t": "Fusilli alla molisana",
+     "pub": "Cucchiaio d'Argento",
+     "url": "https://www.cucchiaio.it/ricetta/ricetta-fusilli-molisana/",
+     "sup": "ragù of lamb, veal and sausage on fresh fusilli"
+    }
+   ],
+   "aglio": [
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "Elice origin; historically garlic, oil and chili, later meat sauces; August festival"
+    },
+    {
+     "t": "Maccheroni alla molinara",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Maccheroni_alla_molinara",
+     "sup": "dough, shape, Teramo/Pescara, Robert of Anjou story"
+    }
+   ],
+   "fagioli": [
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "sagne/tacconelle paired with legumes"
+    },
+    {
+     "t": "Cucina molisana: 20 piatti tipici",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/cucina/cucina-molisana-piatti-tipici-da-provare/",
+     "sup": "sagne shared with Abruzzo, with beans, chickpeas or cicerchie plus pork"
+    }
+   ],
+   "maiale": [
+    {
+     "t": "Cavatelli al 'sugo di carne'",
+     "pub": "Guida Turistica del Molise (Slow)",
+     "url": "https://molise.guideslow.it/7144-2/",
+     "sup": "PAT status; ragù of sausage and ribs or pork, lamb and beef"
+    },
+    {
+     "t": "Elenco dei PAT Molise",
+     "pub": "Disciplinare.it",
+     "url": "https://www.disciplinare.it/elenco-dei-prodotti-agroalimentari-tradizionali-pat-molise.html",
+     "sup": "'Cavatelli o Cecatelli (Cavatielli)' and 'Fusilli' in the Molise PAT list"
+    }
+   ],
+   "genovese": [
+    {
+     "t": "Genovese (sugo)",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Genovese_(sugo)",
+     "sup": "Neapolitan onion-and-beef sauce with no tomato; served with hand-broken ziti; documented by Cavalcanti"
+    }
+   ],
+   "sorrentina": [
+    {
+     "t": "Gli gnocchi alla sorrentina, un piatto simbolo della tradizione campana",
+     "pub": "TraghettiPer (travel blog)",
+     "url": "https://www.traghettiper-isole-golfo-napoli.it/blog/gli-gnocchi-alla-sorrentina-un-piatto-simbolo-della-tradizione-campana/",
+     "sup": "Sorrento origin legend (Piazza Tasso), ingredients, terracotta pot, 'strangulaprievete' nickname"
+    }
+   ],
+   "mare": [
+    {
+     "t": "Scialatielli ai frutti di mare, la ricetta originale amalfitana del 1978",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/ricette/scialatielli-ai-frutti-di-mare/",
+     "sup": "1978, Enrico Cosentino, seafood, dough with milk/pecorino/basil; listed as a Campania PAT"
+    },
+    {
+     "t": "Scialatielli",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Scialatielli",
+     "sup": "inventor Cosentino, Amalfi; seafood sauce became the standard pairing"
+    }
+   ],
+   "braciole": [
+    {
+     "t": "Orecchiette al Ragù di Braciole: pranzo della domenica",
+     "pub": "Puglia.com",
+     "url": "https://www.puglia.com/orecchiette-al-ragu-di-braciole-pranzi-della-domenica-pugliese/",
+     "sup": "typical Sunday dish in Puglia; braciole filling; meat may be horse, beef, veal or pork"
+    }
+   ],
+   "assassina": [
+    {
+     "t": "Spaghetti all'assassina",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Spaghetti_all%27assassina",
+     "sup": "1967, Al Sorso Preferito, Enzo Francavilla; ingredients and technique"
+    }
+   ],
+   "ceci": [
+    {
+     "t": "Ciceri e tria",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Ciceri_e_tria",
+     "sup": "Salento; tria are semolina ribbons; one third to one half fried"
+    },
+    {
+     "t": "Ciceri e tria, la pasta e ceci salentina che ha il sapore di casa",
+     "pub": "Leccenews24",
+     "url": "https://www.leccenews24.it/turismo/eno-gastronomia/ricetta-ciceri-e-tria-pasta-e-ceci.htm",
+     "sup": "Salento; fried pasta scraps; St Joseph's Day tradition"
+    },
+    {
+     "t": "Lagane e ceci, antica ricetta lucana",
+     "pub": "RicetteGourmet",
+     "url": "https://www.ricettegourmet.com/piatti-tipici-basilicata/lagane-e-ceci/",
+     "sup": "Lucanian dish; Horace of Venosa reference; Vulture brigands"
+    },
+    {
+     "t": "Lagane e ceci",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Lagane_e_ceci",
+     "sup": "Calabrian tradition too; St Joseph's Day 'u cumbitu'; 'pasta del brigante'"
+    }
+   ],
+   "cruschi": [
+    {
+     "t": "Pasta con i peperoni cruschi",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Pasta_con_i_peperoni_cruschi",
+     "sup": "Basilicata dish; cavatelli, strascinati or ferretti; breadcrumbs; Senise pepper"
+    },
+    {
+     "t": "Strascinati con peperoni cruschi e mollica",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/cucina-tipica/strascinati-con-i-peperoni-cruschi/",
+     "sup": "typical Basilicata recipe; strascinati shape; ingredients"
+    },
+    {
+     "t": "Peperone di Senise",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Peperone_di_Senise",
+     "sup": "PGI pepper; crusco is essential to Lucanian cooking"
+    }
+   ],
+   "nduja": [
+    {
+     "t": "Fileja",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Fileja",
+     "sup": "Vibo Valentia; semolina and water; rolled on a thin rod; alternative names"
+    },
+    {
+     "t": "Fileja calabresi e Stroncatura: la storia e due ricette tradizionali",
+     "pub": "Il Giornale del Cibo",
+     "url": "https://www.ilgiornaledelcibo.it/fileja-stroncatura-storia-ricette/",
+     "sup": "Vibo/Tropea area; esparto rod; traditional sauce of Tropea onion and 'nduja"
+    },
+    {
+     "t": "Un piatto tutto vibonese: fileja con nduja di Spilinga e fagioli di Caria",
+     "pub": "Vibo Sport e tempo libero",
+     "url": "https://vibosport.it/un-piatto-tutto-vibonese-fileja-con-nduja-di-spilinga-e-fagioli-di-caria/",
+     "sup": "local Vibonese fileja with 'nduja"
+    },
+    {
+     "t": "'Nduja",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/'Nduja",
+     "sup": "Spilinga; PAT; festival every 8 August since 1975"
+    }
+   ],
+   "ammollicata": [
+    {
+     "t": "Stroncatura",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Stroncatura",
+     "sup": "Gioia Tauro; made from bran and mill residues; once illegal to sell; Slow Food Ark of Taste"
+    },
+    {
+     "t": "Fileja calabresi e Stroncatura: la storia e due ricette tradizionali",
+     "pub": "Il Giornale del Cibo",
+     "url": "https://www.ilgiornaledelcibo.it/fileja-stroncatura-storia-ricette/",
+     "sup": "struncatura ammuddricata = anchovies, breadcrumbs, chili, garlic, parsley"
+    }
+   ],
+   "sarde": [
+    {
+     "t": "Pasta con le sarde, ricetta del primo piatto storico palermitano",
+     "pub": "Scatti di Gusto",
+     "url": "https://www.scattidigusto.it/pasta-con-le-sarde-la-ricetta-del-primo-piatto-storico-palermitano",
+     "sup": "bucatini; ingredient list; Palermo; March–September season"
+    }
+   ],
+   "palermitana": [
+    {
+     "t": "La storia degli anelletti al forno alla palermitana",
+     "pub": "Siciliafan",
+     "url": "https://www.siciliafan.it/anelletti-alla-palermitana-storia/",
+     "sup": "Palermo specialty; anelletti mills at Trabia/Termini Imerese; ragù and tuma; ring shape suits timballo"
+    }
+   ],
+   "norma": [
+    {
+     "t": "Pasta alla Norma",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Pasta_alla_Norma",
+     "sup": "Catania origin; ingredients; Martoglio/Bellini name story; says 'penne or other pasta'"
+    }
+   ],
+   "pomodoro": [
+    {
+     "t": "Culurgionis d'Ogliastra IGP",
+     "pub": "Sardegna Agricoltura (Regione Sardegna)",
+     "url": "https://www.sardegnaagricoltura.it/index.php?xsl=443&s=331449&v=2&c=3592",
+     "sup": "IGP disciplinare: area, dough, potato/cheese filling, wheat-ear closure"
+    },
+    {
+     "t": "Culurgiones: tradizione intrecciata a mano",
+     "pub": "Sardinia Turismo",
+     "url": "https://www.sardiniaturismo.eu/2025/12/20/culurgiones-tradizione-sardegna/",
+     "sup": "usually dressed with tomato sauce and pecorino; butter and sage as an alternative; IGP 2015"
+    }
+   ],
+   "arselle": [
+    {
+     "t": "La fregola con le arselle, uno dei piatti più iconici della Sardegna",
+     "pub": "Fatti Nostri",
+     "url": "https://www.fattinostri.it/la-fregola-con-le-arselle-uno-dei-piatti-piu-iconici-della-sardegna/",
+     "sup": "Cagliari/Sardinia; ingredients incl. tomato and saffron; fregola made of semolina and toasted; cooked risotto-style"
+    }
+   ]
+  },
+  "dish": {
+   "plin|arrosto": [
+    {
+     "t": "Agnolotti del Plin al sugo di Arrosto",
+     "pub": "Langhe.net",
+     "url": "https://langhe.net/ricetta/agnolotti-al-sugo-di-arrosto/",
+     "sup": "sugo d'arrosto from the same meats; made in Langa villages"
+    },
+    {
+     "t": "Agnolotti del Plin: tradizione del Piemonte",
+     "pub": "Progetto Radici",
+     "url": "https://www.progetto-radici.it/2026/09/13/agnolotti-del-plin-storia-e-tradizione-del-piemonte/",
+     "sup": "PAT del Piemonte; plin = pinch; served with sugo d'arrosto, burro e salvia or al tovagliolo"
+    },
+    {
+     "t": "Ricetta e origini degli Agnolotti del Plin di Langa",
+     "pub": "Visit Murazzano",
+     "url": "https://visitmurazzano.it/agnolotti-del-plin-al-sugo-darrosto/",
+     "sup": "filling of veal/pork/rabbit; sugo d'arrosto"
+    }
+   ],
+   "tajarin|tartufobianco": [
+    {
+     "t": "Tajarin d'Alba: storia, ricetta e tradizione",
+     "pub": "Tartufi Ratti",
+     "url": "https://www.tartufiratti.com/tajarin-dalba-pasta-fresca-piemonte/",
+     "sup": "high yolk content; butter+Parmigiano and raw white truffle as classic pairing"
+    }
+   ],
+   "gnocchi|fonduta": [
+    {
+     "t": "Gnocchi alla bava",
+     "pub": "Consorzio Fontina DOP",
+     "url": "https://www.fontina-dop.it/gnocchi-alla-bava/",
+     "sup": "traditional Aosta Valley recipe: potato gnocchi + Fontina DOP melted in milk"
+    },
+    {
+     "t": "La Cucina Regionale della Valle d'Aosta",
+     "pub": "Quattrocalici",
+     "url": "https://www.quattrocalici.it/regione/valle-d-aosta/cucina/",
+     "sup": "potato gnocchi among typical VdA primi"
+    }
+   ],
+   "chnefflene|fonduta": [
+    {
+     "t": "La Cucina Regionale della Valle d'Aosta",
+     "pub": "Quattrocalici",
+     "url": "https://www.quattrocalici.it/regione/valle-d-aosta/cucina/",
+     "sup": "chnéfflene = batter buttons with fonduta, cream and speck or braised onion; Walser, upper Lys valley"
+    }
+   ],
+   "casoncelli|burro": [
+    {
+     "t": "Casonsèi de la Bergamasca",
+     "pub": "Camera di commercio di Bergamo",
+     "url": "https://www.bg.camcom.it/bergamo-citta-dei-millesapori/prodotti/primi-piatti/casoncelli",
+     "sup": "half-moon 6-8 cm; condiment butter, grana, pancetta, sage; disputed with Brescia"
+    }
+   ],
+   "tortelli|burro": [
+    {
+     "t": "Tortelli di zucca mantovani",
+     "pub": "Mincio&Dintorni",
+     "url": "https://mincioedintorni.com/enogastronomia/tortelli-di-zucca-mantovani/",
+     "sup": "filling pumpkin/amaretti/mostarda; burro e salvia; Christmas Eve"
+    }
+   ],
+   "marubini|brodo": [
+    {
+     "t": "Maruben o Marubini ai tre brodi",
+     "pub": "Nonna Paperina (blog)",
+     "url": "https://www.nonnapaperina.it/2012/10/marubini-maruben/",
+     "sup": "three broths; De.Co. and Accademia recognition 2003"
+    },
+    {
+     "t": "Marubini ai tre brodi",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/cucina-tipica/marubini-ai-tre-brodi/",
+     "sup": "typical Cremona recipe; beef, hen and salame da pentola broth"
+    }
+   ],
+   "canederli|brodo": [
+    {
+     "t": "Canederli dall'Alto Adige",
+     "pub": "alto-adige.com",
+     "url": "https://www.alto-adige.com/vacanze-gourmet-alto-adige/specialit%C3%A0-alto-adige/canederli",
+     "sup": "served in brodo or asciutti with butter and Parmigiano; speck/cheese/spinach variants"
+    }
+   ],
+   "schlutzkrapfen|burro": [
+    {
+     "t": "Schlutzkrapfen dall'Alto Adige",
+     "pub": "alto-adige.com",
+     "url": "https://www.alto-adige.com/vacanze-gourmet-alto-adige/specialit%C3%A0-alto-adige/schlutzkrapfen",
+     "sup": "rye+wheat dough, spinach/ricotta filling, melted butter+Parmesan+chives; Val Pusteria"
+    }
+   ],
+   "spatzle|speck": [
+    {
+     "t": "Spinach spätzle with cream and ham",
+     "pub": "Suedtirol.info (IDM Südtirol)",
+     "url": "https://www.suedtirol.info/en/en/eating-and-drinking/plp-recipe/pdp-recipe.FNGBH12L-9F11-NYT8-RBPX-ZS58FKYEKRKD.spinach-spaetzle-with-cream-and-ham--",
+     "sup": "traditional South Tyrolean recipe; cream + ham or Speck Alto Adige"
+    }
+   ],
+   "bigoli|anatra": [
+    {
+     "t": "Bigoli co' l'arna di Zanè",
+     "pub": "Associazione Amici delle De.Co. (Veneto)",
+     "url": "https://www.comunidecoveneto.it/2020/05/19/bigoli-co-larna-di-zane/",
+     "sup": "Zanè/Thiene tradition; duck ragù; October festival linked to Madonna del Rosario"
+    }
+   ],
+   "casunziei|papavero": [
+    {
+     "t": "Casunziei",
+     "pub": "Wikipedia (EN)",
+     "url": "https://en.wikipedia.org/wiki/Casunziei",
+     "sup": "Cortina version: beet/potato filling; butter, poppy seeds, Parmesan; Agordino honey variant"
+    }
+   ],
+   "cjarsons|ricotta": [
+    {
+     "t": "Cjarsons: la tradizione della Carnia in un piatto di pasta ripiena",
+     "pub": "PromoTurismoFVG",
+     "url": "https://www.turismofvg.it/it/fvglivexperience/cjarsons-la-tradizione-della-carnia-in-un-piatto-di-pasta-ripiena",
+     "sup": "water-flour dough; melted butter, smoked ricotta, cinnamon; Cramârs history"
+    }
+   ],
+   "blecs|morchia": [
+    {
+     "t": "Blecs - La ricetta tipica del Friuli Venezia Giulia",
+     "pub": "Sonia Peronaci",
+     "url": "https://www.soniaperonaci.it/blecs/",
+     "sup": "wheat+buckwheat+corn dough; butter, toasted cornmeal ('morchia'), sage, Montasio"
+    },
+    {
+     "t": "Blécs",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/pasta/blecs/",
+     "sup": "buckwheat; name = patch (from Slovene)"
+    }
+   ],
+   "trenette|pesto": [
+    {
+     "t": "Trenette al pesto",
+     "pub": "Wikipedia (IT)",
+     "url": "https://it.wikipedia.org/wiki/Trenette_al_pesto",
+     "sup": "trenette or linguine with pesto, boiled potatoes and green beans; Ligurian"
+    }
+   ],
+   "pansoti|noci": [
+    {
+     "t": "Pansoti con salsa di noci",
+     "pub": "Mangiare in Liguria",
+     "url": "https://www.mangiareinliguria.it/ricette-tipiche-liguri/primi/pansoti-con-salsa-di-noci",
+     "sup": "preboggion/prescinsêua filling; salsa di noci as the condiment"
+    },
+    {
+     "t": "Pansoti in salsa di noci",
+     "pub": "Buonissimo",
+     "url": "https://www.buonissimo.it/lericette/2042_Pansoti_in_salsa_di_noci",
+     "sup": "walnut sauce ingredients: walnuts, bread in milk, garlic, marjoram, Parmigiano, oil"
+    }
+   ],
+   "corzetti|pinoli": [
+    {
+     "t": "Corzetti liguri",
+     "pub": "Pastificio Dasso Lavagna",
+     "url": "https://www.pastificiodassolavagna.it/prodotti/pasta-fresca-non-ripiena/pasta-speciale/corzetti/",
+     "sup": "local tradition = white pine-nut sauce with butter, garlic, marjoram; alt. pesto, ragù, funghi, noci"
+    },
+    {
+     "t": "Gli antichi corzetti con pesto di maggiorana e pinoli",
+     "pub": "A Small Kitchen in Genoa",
+     "url": "https://www.asmallkitcheningenoa.com/it/corzetti-liguri/",
+     "sup": "stamp carving in Varese Ligure; marjoram-pine nut dressing"
+    }
+   ],
+   "tortellini|brodo": [
+    {
+     "t": "La ricetta depositata",
+     "pub": "Dotta Confraternita del Tortellino",
+     "url": "https://www.confraternitadeltortellino.it/la-ricetta-depositata/",
+     "sup": "filling, broth (beef + hen), 5 g weight; must be in brodo"
+    }
+   ],
+   "lasagne|bolognese": [
+    {
+     "t": "Lasagne Verdi alla bolognese",
+     "pub": "Bologna Welcome",
+     "url": "https://www.bolognawelcome.com/it/altro/ricette-e-prodotti-tipici/lasagne-verdi-alla-bolognese",
+     "sup": "deposited 4 July 2003 at Bologna CCIAA; green sheets, ragù, besciamella, ≥6 layers"
+    }
+   ],
+   "cappellacci|burro": [
+    {
+     "t": "Cappellacci di zucca ferraresi IGP",
+     "pub": "Regione Emilia-Romagna, Agricoltura",
+     "url": "https://agricoltura.regione.emilia-romagna.it/dop-igp/prodotti-dop-e-igp-emilia-romagna/tutte-dop-igp-emilia-romagna/cappellacci-di-zucca-ferraresi-igp",
+     "sup": "province of Ferrara; filling; butter, sage, Parmigiano preferred, ragù alternative; Messisbugo 1549"
+    }
+   ],
+   "passatelli|brodo": [
+    {
+     "t": "Asciutti o in brodo, basta che siano passatelli",
+     "pub": "Regione Emilia-Romagna, Agricoltura",
+     "url": "https://agricoltura.regione.emilia-romagna.it/dop-igp/food-valley-news/news/2024/asciutti-o-in-brodo-basta-che-siano-passatelli",
+     "sup": "Romagna origin; ingredients; festive soup in brodo; Artusi #20; PAT"
+    }
+   ],
+   "pici|aglione": [
+    {
+     "t": "I pici all'aglione della Valdichiana",
+     "pub": "La Valdichiana",
+     "url": "https://www.lavaldichiana.it/pici-aglione-valdichiana/",
+     "sup": "dish, Valdichiana origin, sauce ingredients, aglione grown since the 16th century"
+    }
+   ],
+   "pappardelle|lepre": [
+    {
+     "t": "Pappardelle alla lepre o sulla lepre?",
+     "pub": "Accademia della Crusca",
+     "url": "https://accademiadellacrusca.it/it/consulenza/pappardelle-alla-lepre-o-sulla-lepre/45906",
+     "sup": "Artusi 1895 recipe no. 72; Fucini 1882; Tuscan 'sulla' usage"
+    },
+    {
+     "t": "The recipe for pappardelle alla lepre",
+     "pub": "Visit Tuscany (Regione Toscana)",
+     "url": "https://www.visittuscany.com/en/recipes/the-recipe-for-pappardelle-alla-lepre-with-hare/",
+     "sup": "Tuscan recipe; original version thickened with blood, no tomato"
+    },
+    {
+     "t": "Pappardelle alla lepre",
+     "pub": "Vetrina Toscana",
+     "url": "https://www.vetrina.toscana.it/ricette/pappardelle-alla-lepre/",
+     "sup": "Tuscan recipe and ingredients"
+    }
+   ],
+   "tordelli|toscano": [
+    {
+     "t": "I 'tordelli' lucchesi",
+     "pub": "Comune di Lucca",
+     "url": "https://www.comune.lucca.it/progetti/i-tordelli-lucchesi/",
+     "sup": "leftover-meat filling, meat ragù ('sugo'), Sunday/feast dish"
+    },
+    {
+     "t": "Tordelli lucchesi",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/ricette/tordelli-lucchesi/",
+     "sup": "half-moon shape, egg dough, ragù rosso di carne"
+    }
+   ],
+   "testaroli|pesto": [
+    {
+     "t": "Testaroli from the Lunigiana: a dish from a distant past",
+     "pub": "Visit Tuscany (Regione Toscana)",
+     "url": "https://www.visittuscany.com/en/flavors/testaroli-lunigiana/",
+     "sup": "dough, cast-iron testi, Pontremoli, pesto or oil and cheese dressing"
+    }
+   ],
+   "strangozzi|tartufo": [
+    {
+     "t": "Strangozzi al tartufo nero di Norcia",
+     "pub": "Cucina Regionale Italiana",
+     "url": "https://cucinaregionaleitaliana.it/portfolio-items/strangozzi-al-tartufo-nero-di-norcia/",
+     "sup": "2011 World Tourism Day designation; pasta dimensions"
+    },
+    {
+     "t": "Strangozzi al tartufo: storia e ricetta del piatto umbro",
+     "pub": "Santa Maria degli Ancillotti",
+     "url": "https://www.santamariadegliancillotti.com/it/blog/strangozzi-al-tartufo-storia-e-ricetta-del-piatto-umbro-280",
+     "sup": "eggless dough, shoelace etymology, truffle recipe"
+    }
+   ],
+   "strangozzi|spoletina": [
+    {
+     "t": "Strangozzi alla spoletina",
+     "pub": "Umbriatourism (Regione Umbria)",
+     "url": "https://www.umbriatourism.it/en/w/strangozzi-spoletina",
+     "sup": "Spoleto origin, dough, sauce ingredients, etymology"
+    }
+   ],
+   "penne|norcina": [
+    {
+     "t": "Penne alla Norcina",
+     "pub": "Saporie",
+     "url": "https://www.saporie.com/ricette-degli-chef/primi-piatti/penne-norcina",
+     "sup": "dish named after Norcia's cured meats; sausage and cream version"
+    }
+   ],
+   "ciriole|spoletina": [
+    {
+     "t": "Ciriole alla ternana: cosa sono, ricetta e perché si chiama così",
+     "pub": "Cookist",
+     "url": "https://www.cookist.it/ciriole-alla-ternana-cosa-sono-ricetta-e-perche-si-chiama-cosi-la-pasta-icona-di-terni/",
+     "sup": "Terni origin, dough, size, 'cereus' etymology, sauce"
+    }
+   ],
+   "vincisgrassi|marchigiano": [
+    {
+     "t": "Vincisgrassi alla maceratese",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Vincisgrassi_alla_maceratese",
+     "sup": "STG 2022 (OJ L103), ragù of 5+ meats with rigaglie, 7-8 layers, Nebbia 1779"
+    }
+   ],
+   "maccheroncini|marchigiano": [
+    {
+     "t": "Maccheroncini di Campofilone IGP",
+     "pub": "Qualigeo",
+     "url": "https://www.qualigeo.eu/prodotto-qualigeo/maccheroncini-di-campofilone-igp/",
+     "sup": "IGP date, specs, classic dressing of meat ragù and pecorino"
+    },
+    {
+     "t": "Maccheroncini di Campofilone: l'IGP di nicchia",
+     "pub": "InformaCibo",
+     "url": "https://www.informacibo.it/maccheroncini-campofilone-igp/",
+     "sup": "'ragù delle massaie', 15th-century origins, 1-minute cooking"
+    }
+   ],
+   "rigatoni|pajata": [
+    {
+     "t": "I rigatoni co' la Pajata: come nasce questo piatto romano?",
+     "pub": "Roma.com",
+     "url": "https://www.roma.com/i-rigatoni-co-la-pajata-come-nasce-questo-piatto-romano/",
+     "sup": "Testaccio/vaccinari origin, sauce ingredients, pecorino"
+    }
+   ],
+   "fettuccine|rigaglie": [
+    {
+     "t": "Fettuccine alla romana",
+     "pub": "Cookist",
+     "url": "https://www.cookist.it/fettuccine-alla-romana/",
+     "sup": "typical Lazio dish; giblets, prosciutto fat, tomato, egg fettuccine"
+    }
+   ],
+   "chitarra|pallottine": [
+    {
+     "t": "Spaghetti alla chitarra",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Spaghetti_alla_chitarra",
+     "sup": "Teramo favours tomato sauce with pallottine; Teramo recipe dated to the early 1800s"
+    },
+    {
+     "t": "Maccheroni alla chitarra",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Maccheroni_alla_chitarra",
+     "sup": "PAT status; pallottine in Teramo province"
+    },
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "Teramo pallottine for celebrations"
+    },
+    {
+     "t": "I maccheroni alla chitarra con pallottine",
+     "pub": "Eccellenze d'Abruzzo",
+     "url": "https://www.eccellenzedabruzzo.it/i-maccheroni-alla-chitarra-con-pallottine/",
+     "sup": "pallottine recipe"
+    }
+   ],
+   "chitarra|agnello": [
+    {
+     "t": "Maccheroni alla chitarra con ragù di agnello",
+     "pub": "Saporetipico",
+     "url": "https://www.saporetipico.it/ricette-tipiche/maccheroni-alla-chitarra-con-ragu-di-agnello",
+     "sup": "named dish, Teramo area, lamb and pork ragù"
+    },
+    {
+     "t": "Spaghetti alla chitarra",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Spaghetti_alla_chitarra",
+     "sup": "Abruzzo ragù of pork, beef and lamb"
+    }
+   ],
+   "mugnaia|aglio": [
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "Elice origin; historically garlic, oil and chili, later meat sauces; August festival"
+    },
+    {
+     "t": "Maccheroni alla molinara",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Maccheroni_alla_molinara",
+     "sup": "dough, shape, Teramo/Pescara, Robert of Anjou story"
+    }
+   ],
+   "sagne|fagioli": [
+    {
+     "t": "La pasta abruzzese",
+     "pub": "AIFB",
+     "url": "https://www.aifb.it/prodotti-tipici-italiani/la-pasta-abruzzese/",
+     "sup": "sagne/tacconelle paired with legumes"
+    },
+    {
+     "t": "Cucina molisana: 20 piatti tipici",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/cucina/cucina-molisana-piatti-tipici-da-provare/",
+     "sup": "sagne shared with Abruzzo, with beans, chickpeas or cicerchie plus pork"
+    }
+   ],
+   "cavatelli|maiale": [
+    {
+     "t": "Cavatelli al 'sugo di carne'",
+     "pub": "Guida Turistica del Molise (Slow)",
+     "url": "https://molise.guideslow.it/7144-2/",
+     "sup": "PAT status; ragù of sausage and ribs or pork, lamb and beef"
+    },
+    {
+     "t": "Elenco dei PAT Molise",
+     "pub": "Disciplinare.it",
+     "url": "https://www.disciplinare.it/elenco-dei-prodotti-agroalimentari-tradizionali-pat-molise.html",
+     "sup": "'Cavatelli o Cecatelli (Cavatielli)' and 'Fusilli' in the Molise PAT list"
+    }
+   ],
+   "fusilli|agnello": [
+    {
+     "t": "Cucina molisana: 20 piatti tipici",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/cucina/cucina-molisana-piatti-tipici-da-provare/",
+     "sup": "fusilli wound on iron wire; classic lamb sauce with pecorino"
+    },
+    {
+     "t": "Fusilli alla molisana",
+     "pub": "Cucchiaio d'Argento",
+     "url": "https://www.cucchiaio.it/ricetta/ricetta-fusilli-molisana/",
+     "sup": "ragù of lamb, veal and sausage on fresh fusilli"
+    }
+   ],
+   "ziti|genovese": [
+    {
+     "t": "Genovese (sugo)",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Genovese_(sugo)",
+     "sup": "Neapolitan onion-and-beef sauce with no tomato; served with hand-broken ziti; documented by Cavalcanti"
+    }
+   ],
+   "gnocchi|sorrentina": [
+    {
+     "t": "Gli gnocchi alla sorrentina, un piatto simbolo della tradizione campana",
+     "pub": "TraghettiPer (travel blog)",
+     "url": "https://www.traghettiper-isole-golfo-napoli.it/blog/gli-gnocchi-alla-sorrentina-un-piatto-simbolo-della-tradizione-campana/",
+     "sup": "Sorrento origin legend (Piazza Tasso), ingredients, terracotta pot, 'strangulaprievete' nickname"
+    }
+   ],
+   "scialatielli|mare": [
+    {
+     "t": "Scialatielli ai frutti di mare, la ricetta originale amalfitana del 1978",
+     "pub": "Dissapore",
+     "url": "https://www.dissapore.com/ricette/scialatielli-ai-frutti-di-mare/",
+     "sup": "1978, Enrico Cosentino, seafood, dough with milk/pecorino/basil; listed as a Campania PAT"
+    },
+    {
+     "t": "Scialatielli",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Scialatielli",
+     "sup": "inventor Cosentino, Amalfi; seafood sauce became the standard pairing"
+    }
+   ],
+   "orecchiette|braciole": [
+    {
+     "t": "Orecchiette al Ragù di Braciole: pranzo della domenica",
+     "pub": "Puglia.com",
+     "url": "https://www.puglia.com/orecchiette-al-ragu-di-braciole-pranzi-della-domenica-pugliese/",
+     "sup": "typical Sunday dish in Puglia; braciole filling; meat may be horse, beef, veal or pork"
+    }
+   ],
+   "spaghetti|assassina": [
+    {
+     "t": "Spaghetti all'assassina",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/Spaghetti_all%27assassina",
+     "sup": "1967, Al Sorso Preferito, Enzo Francavilla; ingredients and technique"
+    }
+   ],
+   "tria|ceci": [
+    {
+     "t": "Ciceri e tria",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Ciceri_e_tria",
+     "sup": "Salento; tria are semolina ribbons; one third to one half fried"
+    },
+    {
+     "t": "Ciceri e tria, la pasta e ceci salentina che ha il sapore di casa",
+     "pub": "Leccenews24",
+     "url": "https://www.leccenews24.it/turismo/eno-gastronomia/ricetta-ciceri-e-tria-pasta-e-ceci.htm",
+     "sup": "Salento; fried pasta scraps; St Joseph's Day tradition"
+    }
+   ],
+   "strascinati|cruschi": [
+    {
+     "t": "Pasta con i peperoni cruschi",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Pasta_con_i_peperoni_cruschi",
+     "sup": "Basilicata dish; cavatelli, strascinati or ferretti; breadcrumbs; Senise pepper"
+    },
+    {
+     "t": "Strascinati con peperoni cruschi e mollica",
+     "pub": "Gran Consiglio della Forchetta",
+     "url": "https://www.granconsigliodellaforchetta.it/cucina-tipica/strascinati-con-i-peperoni-cruschi/",
+     "sup": "typical Basilicata recipe; strascinati shape; ingredients"
+    },
+    {
+     "t": "Peperone di Senise",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Peperone_di_Senise",
+     "sup": "PGI pepper; crusco is essential to Lucanian cooking"
+    }
+   ],
+   "lagane|ceci": [
+    {
+     "t": "Lagane e ceci, antica ricetta lucana",
+     "pub": "RicetteGourmet",
+     "url": "https://www.ricettegourmet.com/piatti-tipici-basilicata/lagane-e-ceci/",
+     "sup": "Lucanian dish; Horace of Venosa reference; Vulture brigands"
+    },
+    {
+     "t": "Lagane e ceci",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Lagane_e_ceci",
+     "sup": "Calabrian tradition too; St Joseph's Day 'u cumbitu'; 'pasta del brigante'"
+    }
+   ],
+   "fileja|nduja": [
+    {
+     "t": "Fileja",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Fileja",
+     "sup": "Vibo Valentia; semolina and water; rolled on a thin rod; alternative names"
+    },
+    {
+     "t": "Fileja calabresi e Stroncatura: la storia e due ricette tradizionali",
+     "pub": "Il Giornale del Cibo",
+     "url": "https://www.ilgiornaledelcibo.it/fileja-stroncatura-storia-ricette/",
+     "sup": "Vibo/Tropea area; esparto rod; traditional sauce of Tropea onion and 'nduja"
+    },
+    {
+     "t": "Un piatto tutto vibonese: fileja con nduja di Spilinga e fagioli di Caria",
+     "pub": "Vibo Sport e tempo libero",
+     "url": "https://vibosport.it/un-piatto-tutto-vibonese-fileja-con-nduja-di-spilinga-e-fagioli-di-caria/",
+     "sup": "local Vibonese fileja with 'nduja"
+    },
+    {
+     "t": "'Nduja",
+     "pub": "Wikipedia (it)",
+     "url": "https://it.wikipedia.org/wiki/'Nduja",
+     "sup": "Spilinga; PAT; festival every 8 August since 1975"
+    }
+   ],
+   "struncatura|ammollicata": [
+    {
+     "t": "Stroncatura",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Stroncatura",
+     "sup": "Gioia Tauro; made from bran and mill residues; once illegal to sell; Slow Food Ark of Taste"
+    },
+    {
+     "t": "Fileja calabresi e Stroncatura: la storia e due ricette tradizionali",
+     "pub": "Il Giornale del Cibo",
+     "url": "https://www.ilgiornaledelcibo.it/fileja-stroncatura-storia-ricette/",
+     "sup": "struncatura ammuddricata = anchovies, breadcrumbs, chili, garlic, parsley"
+    }
+   ],
+   "bucatini|sarde": [
+    {
+     "t": "Pasta con le sarde, ricetta del primo piatto storico palermitano",
+     "pub": "Scatti di Gusto",
+     "url": "https://www.scattidigusto.it/pasta-con-le-sarde-la-ricetta-del-primo-piatto-storico-palermitano",
+     "sup": "bucatini; ingredient list; Palermo; March–September season"
+    }
+   ],
+   "anelletti|palermitana": [
+    {
+     "t": "La storia degli anelletti al forno alla palermitana",
+     "pub": "Siciliafan",
+     "url": "https://www.siciliafan.it/anelletti-alla-palermitana-storia/",
+     "sup": "Palermo specialty; anelletti mills at Trabia/Termini Imerese; ragù and tuma; ring shape suits timballo"
+    }
+   ],
+   "rigatoni|norma": [
+    {
+     "t": "Pasta alla Norma",
+     "pub": "Wikipedia (en)",
+     "url": "https://en.wikipedia.org/wiki/Pasta_alla_Norma",
+     "sup": "Catania origin; ingredients; Martoglio/Bellini name story; says 'penne or other pasta'"
+    }
+   ],
+   "culurgiones|pomodoro": [
+    {
+     "t": "Culurgionis d'Ogliastra IGP",
+     "pub": "Sardegna Agricoltura (Regione Sardegna)",
+     "url": "https://www.sardegnaagricoltura.it/index.php?xsl=443&s=331449&v=2&c=3592",
+     "sup": "IGP disciplinare: area, dough, potato/cheese filling, wheat-ear closure"
+    },
+    {
+     "t": "Culurgiones: tradizione intrecciata a mano",
+     "pub": "Sardinia Turismo",
+     "url": "https://www.sardiniaturismo.eu/2025/12/20/culurgiones-tradizione-sardegna/",
+     "sup": "usually dressed with tomato sauce and pecorino; butter and sage as an alternative; IGP 2015"
+    }
+   ],
+   "fregola|arselle": [
+    {
+     "t": "La fregola con le arselle, uno dei piatti più iconici della Sardegna",
+     "pub": "Fatti Nostri",
+     "url": "https://www.fattinostri.it/la-fregola-con-le-arselle-uno-dei-piatti-piu-iconici-della-sardegna/",
+     "sup": "Cagliari/Sardinia; ingredients incl. tomato and saffron; fregola made of semolina and toasted; cooked risotto-style"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pastatlas · Italian pasta shapes and sauces</title>
+  <link rel="icon" href="pastatlas/favicon.svg?v=0.8.0" type="image/svg+xml">
+  <meta name="description" content="Pastatlas: which Italian pasta shape goes with which sauce, where each one comes from, with sources. 59 shapes, 58 sauces, 77 canonical dishes across all 20 regions. Italian, Spanish and English.">
+  <meta name="author" content="Víctor Elvira">
+  <meta name="theme-color" content="#211C15">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pastatlas">
+  <meta property="og:description" content="Italian pasta shapes and sauces: pairings, origins and sources.">
+  <meta property="og:image" content="https://victorelvira.github.io/projects/pastatlas/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://victorelvira.github.io/projects/pastatlas/og.jpg">
+  <meta property="og:url" content="https://victorelvira.github.io/projects/pastatlas.html">
+  <link rel="stylesheet" href="pastatlas/vendor/fonts/fonts.css?v=0.8.0">
+  <link rel="stylesheet" href="pastatlas/style.css?v=0.8.0">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build" title="Version and last update"></span>
+  </nav>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="pastatlas.html" title="Reload Pastatlas (clears filters)">
+      <img class="mark" src="pastatlas/favicon.svg?v=0.8.0" width="40" height="40" alt="">
+      <div><h1>Past<em>atlas</em></h1><p id="t-sub"></p></div>
+    </a>
+    <div class="controls">
+      <div class="seg" role="group" id="viewSeg">
+        <button data-view="matrix" aria-pressed="true"></button>
+        <button data-view="atlas" aria-pressed="false"></button>
+        <button data-view="cards" aria-pressed="false"></button>
+        <button data-view="why" aria-pressed="false"></button>
+      </div>
+      <div class="seg lang" role="group" aria-label="Language" id="langSeg">
+        <button data-lang="it">IT</button><button data-lang="es">ES</button><button data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <details class="filters" id="filters">
+    <summary><b id="t-filters"></b><span class="count" id="fcount"></span><span class="active" id="factive"></span><span class="toggle" id="ftoggle"></span></summary>
+    <div class="fgrid" id="fgrid"></div>
+  </details>
+
+  <div class="layout">
+    <main>
+      <section id="matrixView">
+        <div class="toolbar">
+          <div class="legend" id="legend"></div>
+          <div class="groupby" id="groupby"></div>
+        </div>
+        <div class="mx-scroll" id="mxScroll"><table class="mx" id="mx"></table></div>
+      </section>
+      <section id="cardsView" hidden>
+        <div class="toolbar"><div class="seg" role="group" id="cardSeg"><button data-cards="p" aria-pressed="true"></button><button data-cards="s" aria-pressed="false"></button></div><span class="fine" id="cardCount"></span></div>
+        <div class="cards" id="cards"></div>
+      </section>
+      <section id="whyView" class="principles" hidden>
+        <div class="eyebrow" id="t-geoEyebrow"></div>
+        <h2 class="sec" id="t-geoTitle"></h2>
+        <div class="rules" id="rules"></div>
+        <p class="fine" id="t-fine" style="margin-top:16px"></p>
+        <details class="biblio" id="biblio"></details>
+        <details class="biblio credits" id="credits"></details>
+      </section>
+      <section id="atlasView" class="atlas" hidden>
+        <div class="eyebrow" id="t-atlasEyebrow"></div>
+        <h2 class="sec" id="t-atlasTitle"></h2>
+        <div class="atlas-grid">
+          <div>
+            <div class="seg" role="group" id="layerSeg" style="margin-bottom:10px">
+              <button data-layer="pasta"></button><button data-layer="sauce"></button><button data-layer="dish"></button><button data-layer="pop"></button>
+            </div>
+            <p class="layerq" id="layerQ"></p>
+            <div class="mapbox" id="atlasMap"></div>
+            <p class="fine" id="atlasKey" style="margin-top:8px"></p>
+          </div>
+          <div class="regions" id="regionList"></div>
+        </div>
+      </section>
+    </main>
+    <div class="grip" id="grip" role="separator" aria-orientation="vertical" title="Drag to resize"></div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  <div class="scrim" id="scrim" hidden></div>
+  </div>
+</div>
+  <script src="pastatlas/app.js?v=0.8.0" defer></script>
+</body>
+</html>

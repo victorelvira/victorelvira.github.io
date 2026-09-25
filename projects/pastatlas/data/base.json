@@ -1,0 +1,3231 @@
+{
+ "REG": {
+  "PIE": [
+   "Piemonte",
+   "Piamonte",
+   "Piedmont"
+  ],
+  "VDA": [
+   "Valle d'Aosta",
+   "Valle de Aosta",
+   "Aosta Valley"
+  ],
+  "LIG": [
+   "Liguria",
+   "Liguria",
+   "Liguria"
+  ],
+  "LOM": [
+   "Lombardia",
+   "Lombardía",
+   "Lombardy"
+  ],
+  "TAA": [
+   "Trentino-Alto Adige",
+   "Trentino-Alto Adigio",
+   "Trentino-South Tyrol"
+  ],
+  "VEN": [
+   "Veneto",
+   "Véneto",
+   "Veneto"
+  ],
+  "FVG": [
+   "Friuli-Venezia Giulia",
+   "Friuli-Venecia Julia",
+   "Friuli-Venezia Giulia"
+  ],
+  "EMR": [
+   "Emilia-Romagna",
+   "Emilia-Romaña",
+   "Emilia-Romagna"
+  ],
+  "MAR": [
+   "Marche",
+   "Marcas",
+   "Marche"
+  ],
+  "TOS": [
+   "Toscana",
+   "Toscana",
+   "Tuscany"
+  ],
+  "UMB": [
+   "Umbria",
+   "Umbría",
+   "Umbria"
+  ],
+  "LAZ": [
+   "Lazio",
+   "Lacio",
+   "Lazio"
+  ],
+  "CAM": [
+   "Campania",
+   "Campania",
+   "Campania"
+  ],
+  "ABR": [
+   "Abruzzo",
+   "Abruzos",
+   "Abruzzo"
+  ],
+  "MOL": [
+   "Molise",
+   "Molise",
+   "Molise"
+  ],
+  "PUG": [
+   "Puglia",
+   "Apulia",
+   "Apulia"
+  ],
+  "BAS": [
+   "Basilicata",
+   "Basilicata",
+   "Basilicata"
+  ],
+  "CAL": [
+   "Calabria",
+   "Calabria",
+   "Calabria"
+  ],
+  "SIC": [
+   "Sicilia",
+   "Sicilia",
+   "Sicily"
+  ],
+  "SAR": [
+   "Sardegna",
+   "Cerdeña",
+   "Sardinia"
+  ]
+ },
+ "REG_ORDER": [
+  "PIE",
+  "VDA",
+  "LOM",
+  "TAA",
+  "VEN",
+  "FVG",
+  "LIG",
+  "EMR",
+  "TOS",
+  "MAR",
+  "UMB",
+  "LAZ",
+  "ABR",
+  "MOL",
+  "CAM",
+  "PUG",
+  "BAS",
+  "CAL",
+  "SIC",
+  "SAR"
+ ],
+ "AREA": {
+  "nord": {
+   "it": "Nord",
+   "es": "Norte",
+   "en": "North"
+  },
+  "centro": {
+   "it": "Centro",
+   "es": "Centro",
+   "en": "Centre"
+  },
+  "sud": {
+   "it": "Sud",
+   "es": "Sur",
+   "en": "South"
+  },
+  "isole": {
+   "it": "Isole",
+   "es": "Islas",
+   "en": "Islands"
+  }
+ },
+ "CITY": {
+  "Roma": [
+   41.9,
+   12.5
+  ],
+  "Napoli": [
+   40.85,
+   14.27
+  ],
+  "Gragnano": [
+   40.69,
+   14.52
+  ],
+  "Genova": [
+   44.41,
+   8.93
+  ],
+  "Recco": [
+   44.36,
+   9.14
+  ],
+  "Bologna": [
+   44.49,
+   11.34
+  ],
+  "Firenze": [
+   43.77,
+   11.25
+  ],
+  "Siena": [
+   43.32,
+   11.33
+  ],
+  "Bari": [
+   41.12,
+   16.87
+  ],
+  "Trapani": [
+   38.02,
+   12.51
+  ],
+  "Catania": [
+   37.5,
+   15.09
+  ],
+  "Campidano": [
+   39.4,
+   8.9
+  ],
+  "Verona": [
+   45.44,
+   10.99
+  ],
+  "Venezia": [
+   45.44,
+   12.33
+  ],
+  "Teglio": [
+   46.17,
+   10.06
+  ],
+  "Amatrice": [
+   42.63,
+   13.29
+  ],
+  "Maremma": [
+   42.76,
+   11.11
+  ],
+  "Ischia": [
+   40.73,
+   13.9
+  ],
+  "Borgotaro": [
+   44.49,
+   9.77
+  ],
+  "Padova": [
+   45.41,
+   11.88
+  ],
+  "Sori": [
+   44.37,
+   9.1
+  ],
+  "Golfo Paradiso": [
+   44.36,
+   9.14
+  ],
+  "Milano": [
+   45.46,
+   9.19
+  ],
+  "Torino": [
+   45.07,
+   7.69
+  ],
+  "Palermo": [
+   38.12,
+   13.36
+  ],
+  "Pisa": [
+   43.72,
+   10.4
+  ],
+  "Trieste": [
+   45.65,
+   13.78
+  ],
+  "Reggio Emilia": [
+   44.7,
+   10.63
+  ]
+ },
+ "DOUGH": {
+  "semola": {
+   "l": {
+    "it": "Semola di grano duro",
+    "es": "Sémola de trigo duro",
+    "en": "Durum-wheat semolina"
+   },
+   "d": {
+    "it": "Semola di grano duro e acqua.",
+    "es": "Sémola de trigo duro y agua.",
+    "en": "Durum-wheat semolina and water."
+   }
+  },
+  "uovo": {
+   "l": {
+    "it": "Grano tenero e uova",
+    "es": "Trigo blando y huevo",
+    "en": "Soft wheat and egg"
+   },
+   "d": {
+    "it": "Farina di grano tenero e uova: la sfoglia del Nord.",
+    "es": "Harina de trigo blando y huevo: la «sfoglia» del norte.",
+    "en": "Soft-wheat flour and eggs: the northern sfoglia."
+   }
+  },
+  "tenero": {
+   "l": {
+    "it": "Grano tenero e acqua",
+    "es": "Trigo blando y agua",
+    "en": "Soft wheat and water"
+   },
+   "d": {
+    "it": "Farina di grano tenero e acqua, senza uova.",
+    "es": "Harina de trigo blando y agua, sin huevo.",
+    "en": "Soft-wheat flour and water, no egg."
+   }
+  },
+  "saraceno": {
+   "l": {
+    "it": "Grano saraceno",
+    "es": "Trigo sarraceno",
+    "en": "Buckwheat"
+   },
+   "d": {
+    "it": "Grano saraceno con un po' di grano tenero.",
+    "es": "Trigo sarraceno con algo de trigo blando.",
+    "en": "Buckwheat with a little soft wheat."
+   }
+  },
+  "patate": {
+   "l": {
+    "it": "Patate e farina",
+    "es": "Patata y harina",
+    "en": "Potato and flour"
+   },
+   "d": {
+    "it": "Patate lesse e farina di grano tenero.",
+    "es": "Patata cocida y harina de trigo blando.",
+    "en": "Boiled potato and soft-wheat flour."
+   }
+  }
+ },
+ "FRESH": {
+  "fresh": {
+   "it": "Fresca",
+   "es": "Fresca",
+   "en": "Fresh"
+  },
+  "dried": {
+   "it": "Secca",
+   "es": "Seca",
+   "en": "Dried"
+  }
+ },
+ "SHAPE": {
+  "long": {
+   "g": "long",
+   "d": {
+    "it": "Lunga e sottile, a sezione tonda: avvolta in modo uniforme da condimenti lisci, oliosi o emulsionati.",
+    "es": "Larga y fina, de sección redonda: la envuelven por igual las salsas lisas, aceitosas o emulsionadas.",
+    "en": "Long and thin with a round section: evenly coated by smooth, oily or emulsified sauces."
+   }
+  },
+  "flat": {
+   "g": "long",
+   "d": {
+    "it": "Lunga e appiattita: più superficie dello spaghetto, ideale per pesto e sughi di mare.",
+    "es": "Larga y aplanada: más superficie que el espagueti, ideal para pesto y salsas de mar.",
+    "en": "Long and flattened: more surface than spaghetti, ideal for pesto and seafood."
+   }
+  },
+  "hollow": {
+   "g": "long",
+   "d": {
+    "it": "Lunga, spessa e bucata al centro: regge condimenti sapidi e grassi, come quelli al guanciale.",
+    "es": "Larga, gruesa y hueca: aguanta salsas sabrosas y grasas, como las de guanciale.",
+    "en": "Long, thick and hollow: stands up to rich, fatty sauces such as those with guanciale."
+   }
+  },
+  "rustic": {
+   "g": "long",
+   "d": {
+    "it": "Spaghettone spesso e ruvido: vuole condimenti robusti che si attacchino alla superficie.",
+    "es": "Espaguetón grueso y rugoso: pide salsas contundentes que se agarren a la superficie.",
+    "en": "Thick, rough strand: wants robust sauces that cling to the surface."
+   }
+  },
+  "ribbon": {
+   "g": "ribbon",
+   "d": {
+    "it": "Nastro all'uovo, largo e poroso: trattiene ragù di carne e condimenti ricchi.",
+    "es": "Cinta de huevo, ancha y porosa: retiene ragús de carne y salsas ricas.",
+    "en": "Broad, porous egg ribbon: holds meat ragù and rich sauces."
+   }
+  },
+  "shortribbon": {
+   "g": "ribbon",
+   "d": {
+    "it": "Nastri corti e irregolari, spesso tagliati a mano: vanno con legumi, verdure, mare o condimenti rustici.",
+    "es": "Cintas cortas e irregulares, a menudo cortadas a mano: van con legumbres, verduras, marisco o aliños rústicos.",
+    "en": "Short, irregular strips, often hand-cut: they go with pulses, vegetables, seafood or rustic dressings."
+   }
+  },
+  "tube": {
+   "g": "tube",
+   "d": {
+    "it": "Tubo rigato: il sugo entra dentro e si aggrappa alle righe; ottimo con sughi a pezzi.",
+    "es": "Tubo estriado: la salsa entra y se agarra a las estrías; ideal con salsas con tropezones.",
+    "en": "Ridged tube: sauce gets inside and clings to the ridges; great with chunky sauces."
+   }
+  },
+  "ziti": {
+   "g": "tube",
+   "d": {
+    "it": "Tubo lungo e liscio, spezzato a mano prima di cuocerlo: accoglie il ragù denso dentro e fuori.",
+    "es": "Tubo largo y liso que se parte a mano antes de cocerlo: recoge el ragú denso por dentro y por fuera.",
+    "en": "Long smooth tube broken by hand before cooking: takes thick ragù inside and out."
+   }
+  },
+  "bigtube": {
+   "g": "tube",
+   "d": {
+    "it": "Tubo grande e liscio: accoglie pezzi di carne o pesce e condimenti abbondanti.",
+    "es": "Tubo grande y liso: acoge trozos de carne o pescado y salsas abundantes.",
+    "en": "Large smooth tube: takes in pieces of meat or seafood and generous sauce."
+   }
+  },
+  "twist": {
+   "g": "short",
+   "d": {
+    "it": "Forma attorcigliata: intrappola nelle spire condimenti fini e pestati.",
+    "es": "Forma retorcida: atrapa en sus espirales salsas finas y machacadas.",
+    "en": "Twisted shape: traps fine, pounded sauces in its spirals."
+   }
+  },
+  "bow": {
+   "g": "short",
+   "d": {
+    "it": "Farfalla con il centro più spesso dei bordi: adatta a condimenti leggeri e cremosi.",
+    "es": "Mariposa con el centro más grueso que los bordes: va con salsas ligeras y cremosas.",
+    "en": "Bow with a thicker centre than its edges: suits light, creamy dressings."
+   }
+  },
+  "cup": {
+   "g": "small",
+   "d": {
+    "it": "Piccola forma concava: raccoglie pezzetti di verdura o salsiccia della stessa taglia.",
+    "es": "Forma pequeña y cóncava: recoge trocitos de verdura o salchicha de tamaño parecido.",
+    "en": "Small concave shape: cups bits of greens or sausage of similar size."
+   }
+  },
+  "dumpling": {
+   "g": "gnocchi",
+   "d": {
+    "it": "Gnocco morbido di patate: vuole condimenti semplici, burrosi o cremosi.",
+    "es": "Ñoqui blando de patata: pide salsas sencillas, de mantequilla o cremosas.",
+    "en": "Soft potato dumpling: wants simple, buttery or creamy dressings."
+   }
+  }
+ },
+ "SHAPE_G": {
+  "long": {
+   "it": "Lunghe",
+   "es": "Largas",
+   "en": "Long"
+  },
+  "ribbon": {
+   "it": "Nastri",
+   "es": "Cintas",
+   "en": "Ribbons"
+  },
+  "tube": {
+   "it": "Tubi",
+   "es": "Tubos",
+   "en": "Tubes"
+  },
+  "short": {
+   "it": "Corte e ricce",
+   "es": "Cortas y rizadas",
+   "en": "Short and twisted"
+  },
+  "small": {
+   "it": "Piccole e concave",
+   "es": "Pequeñas y cóncavas",
+   "en": "Small and concave"
+  },
+  "gnocchi": {
+   "it": "Gnocchi",
+   "es": "Ñoquis",
+   "en": "Gnocchi"
+  }
+ },
+ "FAM": {
+  "pomodoro": {
+   "it": "Pomodoro",
+   "es": "Tomate",
+   "en": "Tomato"
+  },
+  "maiale": {
+   "it": "Maiale",
+   "es": "Cerdo",
+   "en": "Pork"
+  },
+  "manzo": {
+   "it": "Manzo",
+   "es": "Ternera",
+   "en": "Beef"
+  },
+  "selvaggina": {
+   "it": "Selvaggina",
+   "es": "Caza",
+   "en": "Game"
+  },
+  "mare": {
+   "it": "Pesce e mare",
+   "es": "Pescado y marisco",
+   "en": "Fish & seafood"
+  },
+  "formaggio": {
+   "it": "Formaggio",
+   "es": "Queso",
+   "en": "Cheese"
+  },
+  "latte": {
+   "it": "Burro e latte",
+   "es": "Mantequilla y leche",
+   "en": "Butter & milk"
+  },
+  "uovo": {
+   "it": "Uovo",
+   "es": "Huevo",
+   "en": "Egg"
+  },
+  "verdure": {
+   "it": "Verdure",
+   "es": "Verduras",
+   "en": "Vegetables"
+  },
+  "funghi": {
+   "it": "Funghi",
+   "es": "Setas",
+   "en": "Mushrooms"
+  },
+  "noci": {
+   "it": "Frutta secca",
+   "es": "Frutos secos",
+   "en": "Nuts"
+  },
+  "peperoncino": {
+   "it": "Piccante",
+   "es": "Picante",
+   "en": "Chilli"
+  }
+ },
+ "ING": {
+  "basilico": [
+   {
+    "it": "basilico",
+    "es": "albahaca",
+    "en": "basil"
+   }
+  ],
+  "prezzemolo": [
+   {
+    "it": "prezzemolo",
+    "es": "perejil",
+    "en": "parsley"
+   }
+  ],
+  "salvia": [
+   {
+    "it": "salvia",
+    "es": "salvia",
+    "en": "sage"
+   }
+  ],
+  "aglio": [
+   {
+    "it": "aglio",
+    "es": "ajo",
+    "en": "garlic"
+   }
+  ],
+  "olio": [
+   {
+    "it": "olio d'oliva",
+    "es": "aceite de oliva",
+    "en": "olive oil"
+   }
+  ],
+  "pepe": [
+   {
+    "it": "pepe nero",
+    "es": "pimienta negra",
+    "en": "black pepper"
+   }
+  ],
+  "vino": [
+   {
+    "it": "vino",
+    "es": "vino",
+    "en": "wine"
+   }
+  ],
+  "zafferano": [
+   {
+    "it": "zafferano",
+    "es": "azafrán",
+    "en": "saffron"
+   }
+  ],
+  "olive": [
+   {
+    "it": "olive",
+    "es": "aceitunas",
+    "en": "olives"
+   }
+  ],
+  "capperi": [
+   {
+    "it": "capperi",
+    "es": "alcaparras",
+    "en": "capers"
+   }
+  ],
+  "pinoli": [
+   {
+    "it": "pinoli",
+    "es": "piñones",
+    "en": "pine nuts"
+   },
+   "noci"
+  ],
+  "mandorle": [
+   {
+    "it": "mandorle",
+    "es": "almendras",
+    "en": "almonds"
+   },
+   "noci"
+  ],
+  "parmigiano": [
+   {
+    "it": "Parmigiano",
+    "es": "parmesano",
+    "en": "Parmigiano"
+   },
+   "formaggio"
+  ],
+  "pecorino": [
+   {
+    "it": "Pecorino",
+    "es": "pecorino",
+    "en": "Pecorino"
+   },
+   "formaggio"
+  ],
+  "ricotta": [
+   {
+    "it": "ricotta salata",
+    "es": "ricotta salada",
+    "en": "ricotta salata"
+   },
+   "formaggio"
+  ],
+  "gorgonzola": [
+   {
+    "it": "gorgonzola",
+    "es": "gorgonzola",
+    "en": "gorgonzola"
+   },
+   "formaggio"
+  ],
+  "fontina": [
+   {
+    "it": "fontina",
+    "es": "fontina",
+    "en": "fontina"
+   },
+   "formaggio"
+  ],
+  "casera": [
+   {
+    "it": "Valtellina Casera",
+    "es": "queso Casera",
+    "en": "Valtellina Casera"
+   },
+   "formaggio"
+  ],
+  "burro": [
+   {
+    "it": "burro",
+    "es": "mantequilla",
+    "en": "butter"
+   },
+   "latte"
+  ],
+  "latte": [
+   {
+    "it": "latte",
+    "es": "leche",
+    "en": "milk"
+   },
+   "latte"
+  ],
+  "panna": [
+   {
+    "it": "panna",
+    "es": "nata",
+    "en": "cream"
+   },
+   "latte"
+  ],
+  "guanciale": [
+   {
+    "it": "guanciale",
+    "es": "guanciale (papada)",
+    "en": "guanciale (pork cheek)"
+   },
+   "maiale"
+  ],
+  "pancetta": [
+   {
+    "it": "pancetta",
+    "es": "panceta",
+    "en": "pancetta"
+   },
+   "maiale"
+  ],
+  "salsiccia": [
+   {
+    "it": "salsiccia",
+    "es": "salchicha",
+    "en": "sausage"
+   },
+   "maiale"
+  ],
+  "maiale": [
+   {
+    "it": "maiale",
+    "es": "cerdo",
+    "en": "pork"
+   },
+   "maiale"
+  ],
+  "manzo": [
+   {
+    "it": "manzo",
+    "es": "ternera",
+    "en": "beef"
+   },
+   "manzo"
+  ],
+  "cinghiale": [
+   {
+    "it": "cinghiale",
+    "es": "jabalí",
+    "en": "wild boar"
+   },
+   "selvaggina"
+  ],
+  "uovo": [
+   {
+    "it": "tuorli d'uovo",
+    "es": "yemas de huevo",
+    "en": "egg yolks"
+   },
+   "uovo"
+  ],
+  "pomodoro": [
+   {
+    "it": "pomodoro",
+    "es": "tomate",
+    "en": "tomato"
+   },
+   "pomodoro"
+  ],
+  "melanzane": [
+   {
+    "it": "melanzane",
+    "es": "berenjena",
+    "en": "aubergine"
+   },
+   "verdure"
+  ],
+  "cime": [
+   {
+    "it": "cime di rapa",
+    "es": "grelos",
+    "en": "turnip tops"
+   },
+   "verdure"
+  ],
+  "verza": [
+   {
+    "it": "verza",
+    "es": "col rizada",
+    "en": "savoy cabbage"
+   },
+   "verdure"
+  ],
+  "patate": [
+   {
+    "it": "patate",
+    "es": "patatas",
+    "en": "potatoes"
+   },
+   "verdure"
+  ],
+  "cipolla": [
+   {
+    "it": "cipolla",
+    "es": "cebolla",
+    "en": "onion"
+   },
+   "verdure"
+  ],
+  "soffritto": [
+   {
+    "it": "soffritto (carota, sedano, cipolla)",
+    "es": "sofrito (zanahoria, apio, cebolla)",
+    "en": "soffritto (carrot, celery, onion)"
+   },
+   "verdure"
+  ],
+  "porcini": [
+   {
+    "it": "porcini",
+    "es": "boletus",
+    "en": "porcini"
+   },
+   "funghi"
+  ],
+  "vongole": [
+   {
+    "it": "vongole",
+    "es": "almejas",
+    "en": "clams"
+   },
+   "mare"
+  ],
+  "cozze": [
+   {
+    "it": "cozze",
+    "es": "mejillones",
+    "en": "mussels"
+   },
+   "mare"
+  ],
+  "gamberi": [
+   {
+    "it": "gamberi",
+    "es": "gambas",
+    "en": "prawns"
+   },
+   "mare"
+  ],
+  "calamari": [
+   {
+    "it": "calamari",
+    "es": "calamares",
+    "en": "squid"
+   },
+   "mare"
+  ],
+  "acciughe": [
+   {
+    "it": "acciughe",
+    "es": "anchoas",
+    "en": "anchovies"
+   },
+   "mare"
+  ],
+  "peperoncino": [
+   {
+    "it": "peperoncino",
+    "es": "guindilla",
+    "en": "chilli"
+   },
+   "peperoncino"
+  ],
+  "origano": [
+   {
+    "it": "origano",
+    "es": "orégano",
+    "en": "oregano"
+   }
+  ],
+  "rosmarino": [
+   {
+    "it": "rosmarino",
+    "es": "romero",
+    "en": "rosemary"
+   }
+  ],
+  "uvetta": [
+   {
+    "it": "uvetta",
+    "es": "pasas",
+    "en": "raisins"
+   }
+  ],
+  "pangrattato": [
+   {
+    "it": "mollica tostata",
+    "es": "miga tostada",
+    "en": "toasted breadcrumbs"
+   }
+  ],
+  "fagiolini": [
+   {
+    "it": "fagiolini",
+    "es": "judías verdes",
+    "en": "green beans"
+   },
+   "verdure"
+  ],
+  "bietole": [
+   {
+    "it": "coste",
+    "es": "acelgas",
+    "en": "chard"
+   },
+   "verdure"
+  ],
+  "noce": [
+   {
+    "it": "noci",
+    "es": "nueces",
+    "en": "walnuts"
+   },
+   "noci"
+  ],
+  "sarde": [
+   {
+    "it": "sarde salate",
+    "es": "sardinas en salazón",
+    "en": "salted sardines"
+   },
+   "mare"
+  ],
+  "fegatini": [
+   {
+    "it": "fegatini di pollo",
+    "es": "higaditos de pollo",
+    "en": "chicken livers"
+   },
+   "pollame"
+  ]
+ },
+ "SFAM": {
+  "crudi": {
+   "it": "Pesti a crudo",
+   "es": "Pestos en crudo",
+   "en": "Raw pestos"
+  },
+  "romani": {
+   "it": "Guanciale e pecorino",
+   "es": "Guanciale y pecorino",
+   "en": "Guanciale & pecorino"
+  },
+  "pomodoro": {
+   "it": "Pomodoro",
+   "es": "Tomate",
+   "en": "Tomato"
+  },
+  "ragu": {
+   "it": "Ragù",
+   "es": "Ragús",
+   "en": "Ragùs"
+  },
+  "mare": {
+   "it": "Mare",
+   "es": "Mar",
+   "en": "Sea"
+  },
+  "verdure": {
+   "it": "Olio e verdure",
+   "es": "Aceite y verduras",
+   "en": "Oil & vegetables"
+  },
+  "burro": {
+   "it": "Burro e formaggi",
+   "es": "Mantequilla y quesos",
+   "en": "Butter & cheese"
+  }
+ },
+ "pasta": [
+  {
+   "id": "spaghetti",
+   "n": "Spaghetti",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Gragnano",
+   "sh": "long",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Formato attestato già in Sicilia e Campania; Gragnano ne è la capitale produttiva dalla fine del Cinquecento (Pasta di Gragnano IGP dal 2013).",
+    "es": "Formato documentado ya en Sicilia y Campania; Gragnano es su capital productiva desde finales del siglo XVI (Pasta di Gragnano IGP desde 2013).",
+    "en": "Recorded early in Sicily and Campania; Gragnano has been its production capital since the late 1500s (Pasta di Gragnano PGI since 2013)."
+   },
+   "core": true
+  },
+  {
+   "id": "linguine",
+   "n": "Linguine",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Genova",
+   "sh": "flat",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Spaghetti schiacciati a sezione ellittica; le trenette genovesi sono quasi uguali.",
+    "es": "Espaguetis aplanados de sección elíptica; las trenette genovesas son casi iguales.",
+    "en": "Flattened spaghetti with an elliptical section; Genoa's trenette are nearly identical."
+   },
+   "core": true
+  },
+  {
+   "id": "bucatini",
+   "n": "Bucatini",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "sh": "hollow",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Spaghettoni con un buco al centro: il formato romano dell'amatriciana.",
+    "es": "Espaguetones con un agujero en el centro: el formato romano de la amatriciana.",
+    "en": "Thick spaghetti with a hole down the middle: Rome's amatriciana shape."
+   },
+   "core": true
+  },
+  {
+   "id": "pici",
+   "n": "Pici",
+   "reg": [
+    "TOS"
+   ],
+   "city": "Siena",
+   "sh": "rustic",
+   "dough": "tenero",
+   "fresh": true,
+   "d": {
+    "it": "Spaghettoni senesi di acqua e farina, arrotolati a mano uno per uno.",
+    "es": "Espaguetones de Siena, de agua y harina, enrollados a mano uno a uno.",
+    "en": "Sienese flour-and-water strands, rolled by hand one by one."
+   },
+   "core": true
+  },
+  {
+   "id": "bigoli",
+   "n": "Bigoli",
+   "reg": [
+    "VEN"
+   ],
+   "city": "Padova",
+   "sh": "rustic",
+   "dough": "tenero",
+   "fresh": true,
+   "d": {
+    "it": "Spaghettoni ruvidi estrusi col «bigolaro», torchio attribuito al padovano Bartolomio Veronese (1604). Grano tenero, spesso integrale (bigoli mori).",
+    "es": "Espaguetones rugosos extruidos con el «bigolaro», prensa atribuida al paduano Bartolomio Veronese (1604). Trigo blando, a menudo integral (bigoli mori).",
+    "en": "Rough thick strands pressed through the bigolaro, a press credited to Bartolomio Veronese of Padua (1604). Soft wheat, often wholemeal (bigoli mori)."
+   },
+   "core": true
+  },
+  {
+   "id": "tagliatelle",
+   "n": "Tagliatelle",
+   "reg": [
+    "EMR"
+   ],
+   "city": "Bologna",
+   "sh": "ribbon",
+   "dough": "uovo",
+   "fresh": true,
+   "d": {
+    "it": "Sfoglia all'uovo tirata a mano. Nel 1972 l'Accademia Italiana della Cucina ne ha depositato la misura: 8 mm da cotta, 1/12.270 della Torre degli Asinelli.",
+    "es": "Pasta al huevo estirada a mano. En 1972 la Accademia Italiana della Cucina registró su medida: 8 mm cocida, 1/12.270 de la Torre de los Asinelli.",
+    "en": "Hand-rolled egg pasta. In 1972 the Accademia Italiana della Cucina registered its size: 8 mm cooked, 1/12,270 of the Asinelli Tower."
+   },
+   "core": true
+  },
+  {
+   "id": "fettuccine",
+   "n": "Fettuccine",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "sh": "ribbon",
+   "dough": "uovo",
+   "fresh": true,
+   "d": {
+    "it": "Nastro all'uovo romano, un po' più spesso delle tagliatelle.",
+    "es": "Cinta de huevo romana, algo más gruesa que las tagliatelle.",
+    "en": "Rome's egg ribbon, a little thicker than tagliatelle."
+   },
+   "core": true
+  },
+  {
+   "id": "pappardelle",
+   "n": "Pappardelle",
+   "reg": [
+    "TOS"
+   ],
+   "city": "Firenze",
+   "sh": "ribbon",
+   "dough": "uovo",
+   "fresh": true,
+   "d": {
+    "it": "Larghe 2–3 cm; il nome viene da «pappare», mangiare con gusto. A Firenze il classico è con la lepre.",
+    "es": "De 2–3 cm de ancho; el nombre viene de «pappare», comer con ganas. En Florencia el clásico es con liebre.",
+    "en": "2–3 cm wide; the name comes from pappare, to gobble happily. Florence's classic is with hare."
+   },
+   "core": true
+  },
+  {
+   "id": "pizzoccheri",
+   "n": "Pizzoccheri",
+   "reg": [
+    "LOM"
+   ],
+   "city": "Teglio",
+   "sh": "shortribbon",
+   "dough": "saraceno",
+   "fresh": true,
+   "d": {
+    "it": "L'Accademia di Teglio (2002) usa 80% grano saraceno e 20% frumento; l'IGP (2016) ne chiede almeno il 20%.",
+    "es": "La Academia de Teglio (2002) usa 80 % de trigo sarraceno y 20 % de trigo; la IGP (2016) exige al menos un 20 %.",
+    "en": "Teglio's Academy (2002) uses 80% buckwheat and 20% wheat; the PGI (2016) requires at least 20%."
+   },
+   "core": true
+  },
+  {
+   "id": "rigatoni",
+   "n": "Rigatoni",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "sh": "tube",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Tipici del Centro-Sud (Lazio e Sicilia); le righe si diffondono con le trafile industriali dell'Ottocento. Iconici nelle trattorie romane.",
+    "es": "Típicos del centro-sur (Lacio y Sicilia); las estrías se extienden con las trefilas industriales del XIX. Icónicos en las trattorias romanas.",
+    "en": "Typical of central-southern Italy (Lazio and Sicily); the ridges spread with 19th-century industrial dies. Iconic in Roman trattorias."
+   },
+   "core": true
+  },
+  {
+   "id": "mezzemaniche",
+   "n": "Mezze maniche",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "sh": "tube",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "«Mezze maniche»: rigatoni corti, già citati da Ada Boni in «La cucina romana» (1929).",
+    "es": "«Medias mangas»: rigatoni cortos, ya citados por Ada Boni en «La cucina romana» (1929).",
+    "en": "'Half sleeves': short rigatoni, already listed in Ada Boni's La cucina romana (1929)."
+   },
+   "core": true
+  },
+  {
+   "id": "penne",
+   "n": "Penne",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Genova",
+   "sh": "tube",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Tubi tagliati in diagonale come una penna d'oca; macchina brevettata a Genova l'11 marzo 1865 (Capurro).",
+    "es": "Tubos cortados en diagonal como una pluma; máquina patentada en Génova el 11 de marzo de 1865 (Capurro).",
+    "en": "Tubes cut on the bias like a quill; the cutting machine was patented in Genoa on 11 March 1865 (Capurro)."
+   },
+   "core": true
+  },
+  {
+   "id": "ziti",
+   "n": "Ziti",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Napoli",
+   "sh": "ziti",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Lunghi tubi lisci, la pasta delle feste («zita» = sposa); a Napoli si spezzano a mano per il ragù della domenica.",
+    "es": "Tubos largos y lisos, la pasta de las bodas («zita» = novia); en Nápoles se parten a mano para el ragú del domingo.",
+    "en": "Long smooth tubes, the wedding pasta (zita = bride); in Naples they are broken by hand for the Sunday ragù."
+   },
+   "core": true
+  },
+  {
+   "id": "paccheri",
+   "n": "Paccheri",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Napoli",
+   "sh": "bigtube",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Tubi enormi e lisci; in napoletano «pacchero» è uno schiaffo.",
+    "es": "Tubos enormes y lisos; en napolitano «pacchero» es una bofetada.",
+    "en": "Huge smooth tubes; in Neapolitan a pacchero is a slap."
+   },
+   "core": true
+  },
+  {
+   "id": "fusilli",
+   "n": "Fusilli",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Napoli",
+   "sh": "twist",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Nati avvolgendo la pasta attorno a un ferro da calza (il «ferretto»).",
+    "es": "Nacen de enrollar la masa alrededor de una aguja de hierro (el «ferretto»).",
+    "en": "Born by winding dough around a knitting-needle rod (the ferretto)."
+   },
+   "core": true
+  },
+  {
+   "id": "trofie",
+   "n": "Trofie",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Sori",
+   "sh": "twist",
+   "dough": "tenero",
+   "fresh": true,
+   "d": {
+    "it": "Piccoli riccioli arrotolati sul palmo, tipici del Golfo Paradiso (Sori, Recco, Camogli).",
+    "es": "Pequeños rizos enrollados en la palma, típicos del Golfo Paradiso (Sori, Recco, Camogli).",
+    "en": "Little curls rolled on the palm, from the Golfo Paradiso (Sori, Recco, Camogli)."
+   },
+   "core": true
+  },
+  {
+   "id": "busiate",
+   "n": "Busiate",
+   "reg": [
+    "SIC"
+   ],
+   "city": "Trapani",
+   "sh": "twist",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "Spirali lunghe avvolte attorno alla «busa», uno stelo di ampelodesmo.",
+    "es": "Espirales largas enrolladas alrededor de la «busa», un tallo de carrizo mediterráneo (ampelodesmo).",
+    "en": "Long spirals wound around a busa, a stem of Mediterranean grass (ampelodesmos)."
+   },
+   "core": true
+  },
+  {
+   "id": "farfalle",
+   "n": "Farfalle",
+   "reg": [
+    "LOM",
+    "EMR"
+   ],
+   "city": "",
+   "sh": "bow",
+   "dough": "semola",
+   "fresh": false,
+   "d": {
+    "it": "Quadratini pizzicati al centro; in Emilia, fatti a mano all'uovo, si chiamano strichetti.",
+    "es": "Cuadraditos pellizcados en el centro; en Emilia, hechos a mano con huevo, se llaman strichetti.",
+    "en": "Little squares pinched in the middle; in Emilia, handmade with egg, they are called strichetti."
+   },
+   "core": true
+  },
+  {
+   "id": "orecchiette",
+   "n": "Orecchiette",
+   "reg": [
+    "PUG"
+   ],
+   "city": "Bari",
+   "sh": "cup",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "«Piccole orecchie» trascinate col coltello: a Bari Vecchia si fanno ancora in strada, in Strada Arco Basso.",
+    "es": "«Orejitas» arrastradas con cuchillo: en Bari Vecchia aún se hacen en la calle, en la Strada Arco Basso.",
+    "en": "'Little ears' dragged with a knife; in Bari Vecchia they are still made on Strada Arco Basso."
+   },
+   "core": true
+  },
+  {
+   "id": "malloreddus",
+   "n": "Malloreddus",
+   "reg": [
+    "SAR"
+   ],
+   "city": "Campidano",
+   "sh": "cup",
+   "dough": "semola",
+   "fresh": true,
+   "d": {
+    "it": "Gnocchetti sardi rigati di semola, spesso con zafferano nell'impasto.",
+    "es": "Ñoquis sardos estriados de sémola, a menudo con azafrán en la masa.",
+    "en": "Ridged Sardinian semolina gnocchetti, often with saffron in the dough."
+   },
+   "core": true
+  },
+  {
+   "id": "gnocchi",
+   "n": "Gnocchi",
+   "reg": [
+    "VEN"
+   ],
+   "city": "Verona",
+   "sh": "dumpling",
+   "dough": "patate",
+   "fresh": true,
+   "d": {
+    "it": "Verona li festeggia col «venerdì gnocolar» dal 1531, quando erano di acqua e farina: le patate arrivarono dopo.",
+    "es": "Verona los celebra con el «venerdì gnocolar» desde 1531, cuando eran de agua y harina: la patata llegó después.",
+    "en": "Verona has celebrated them with the venerdì gnocolar since 1531, when they were flour and water: potatoes came later."
+   },
+   "core": true
+  }
+ ],
+ "sauces": [
+  {
+   "id": "pesto",
+   "n": "Pesto genovese",
+   "reg": [
+    "LIG"
+   ],
+   "city": "Genova",
+   "g": "crudi",
+   "ing": [
+    "basilico",
+    "pinoli",
+    "aglio",
+    "parmigiano",
+    "pecorino",
+    "olio"
+   ],
+   "d": {
+    "it": "Basilico Genovese DOP, pinoli, aglio, Parmigiano, Pecorino Fiore Sardo e olio, pestati a crudo nel mortaio. Per il Consorzio l'aglio non si toglie.",
+    "es": "Albahaca genovesa DOP, piñones, ajo, parmesano, pecorino Fiore Sardo y aceite, machacados en crudo en mortero. Para el Consorcio, el ajo no se quita.",
+    "en": "Genoese DOP basil, pine nuts, garlic, Parmigiano, Fiore Sardo pecorino and oil, pounded raw in a mortar. The Consortium says garlic can't be left out."
+   },
+   "w": {
+    "it": "Condimento crudo, fine e oleoso: cerca spire e superfici ruvide dove fermarsi. Mai cotto.",
+    "es": "Salsa cruda, fina y aceitosa: busca espirales y superficies rugosas donde quedarse. Nunca se cocina.",
+    "en": "Raw, fine and oily: looks for spirals and rough surfaces to settle in. Never cooked."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con patate e fagiolini",
+      "es": "Con patatas y judías verdes",
+      "en": "With potatoes and green beans"
+     },
+     "c": {
+      "it": "patate e fagiolini cotti nell'acqua della pasta",
+      "es": "patatas y judías cocidas en el agua de la pasta",
+      "en": "potatoes and green beans boiled with the pasta"
+     },
+     "where": "Liguria",
+     "add": [
+      "patate",
+      "fagiolini"
+     ]
+    },
+    {
+     "n": {
+      "it": "Con noci",
+      "es": "Con nueces",
+      "en": "With walnuts"
+     },
+     "c": {
+      "it": "noci al posto dei (o con i) pinoli",
+      "es": "nueces en lugar de (o junto a) los piñones",
+      "en": "walnuts instead of (or with) pine nuts"
+     },
+     "where": "Liguria",
+     "add": [
+      "noce"
+     ],
+     "rm": [
+      "pinoli"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "trapanese",
+   "n": "Pesto alla trapanese",
+   "reg": [
+    "SIC"
+   ],
+   "city": "Trapani",
+   "g": "crudi",
+   "ing": [
+    "pomodoro",
+    "mandorle",
+    "basilico",
+    "aglio",
+    "pecorino",
+    "olio"
+   ],
+   "d": {
+    "it": "Pomodoro, mandorle, basilico, aglio rosso di Nubia e Pecorino Siciliano: il pesto dei marinai genovesi reinventato a Trapani.",
+    "es": "Tomate, almendras, albahaca, ajo rojo de Nubia y pecorino siciliano: el pesto de los marineros genoveses reinventado en Trápani.",
+    "en": "Tomato, almonds, basil, Nubia red garlic and Pecorino Siciliano: Genoese sailors' pesto reinvented in Trapani."
+   },
+   "w": {
+    "it": "Pesto granuloso e fresco: vuole spirali che trattengano i pezzetti di mandorla.",
+    "es": "Pesto granuloso y fresco: pide espirales que retengan los trocitos de almendra.",
+    "en": "Grainy, fresh pesto: wants spirals that hold the almond crumbs."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con melanzane fritte",
+      "es": "Con berenjena frita",
+      "en": "With fried aubergine"
+     },
+     "c": {
+      "it": "servito con melanzane (o patate) fritte",
+      "es": "servido con berenjena (o patata) frita",
+      "en": "served with fried aubergine (or potatoes)"
+     },
+     "where": "Trapani",
+     "add": [
+      "melanzane"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "carbonara",
+   "n": "Carbonara",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "g": "romani",
+   "ing": [
+    "guanciale",
+    "uovo",
+    "pecorino",
+    "pepe"
+   ],
+   "d": {
+    "it": "Citata per la prima volta nel 1939 e diffusa dopo il 1944. La prima ricetta italiana (1954) usava pancetta, aglio e groviera: il canone di oggi è guanciale, uovo, Pecorino e pepe.",
+    "es": "Citada por primera vez en 1939 y difundida después de 1944. La primera receta italiana (1954) llevaba panceta, ajo y gruyer: el canon actual es guanciale, huevo, pecorino y pimienta.",
+    "en": "First mentioned in 1939 and spread after 1944. The first Italian recipe (1954) used pancetta, garlic and Gruyère: today's canon is guanciale, egg, Pecorino and pepper."
+   },
+   "w": {
+    "it": "Crema d'uovo e formaggio: vuole pasta lunga o tubi rigati, e l'amido dell'acqua di cottura.",
+    "es": "Crema de huevo y queso: pide pasta larga o tubos estriados, y el almidón del agua de cocción.",
+    "en": "Egg-and-cheese cream: wants long pasta or ridged tubes, plus starchy cooking water."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con pancetta",
+      "es": "Con panceta",
+      "en": "With pancetta"
+     },
+     "c": {
+      "it": "pancetta al posto del guanciale",
+      "es": "panceta en lugar de guanciale",
+      "en": "pancetta instead of guanciale"
+     },
+     "where": "",
+     "add": [
+      "pancetta"
+     ],
+     "rm": [
+      "guanciale"
+     ]
+    },
+    {
+     "n": {
+      "it": "Con uova intere",
+      "es": "Con huevos enteros",
+      "en": "With whole eggs"
+     },
+     "c": {
+      "it": "uova intere invece dei soli tuorli",
+      "es": "huevos enteros en vez de solo yemas",
+      "en": "whole eggs instead of yolks only"
+     },
+     "where": ""
+    },
+    {
+     "n": {
+      "it": "Pecorino e Parmigiano",
+      "es": "Pecorino y parmesano",
+      "en": "Pecorino and Parmigiano"
+     },
+     "c": {
+      "it": "metà Parmigiano insieme al Pecorino",
+      "es": "mitad parmesano junto al pecorino",
+      "en": "half Parmigiano alongside the Pecorino"
+     },
+     "where": "",
+     "add": [
+      "parmigiano"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "gricia",
+   "n": "Gricia",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "g": "romani",
+   "ing": [
+    "guanciale",
+    "pecorino",
+    "pepe"
+   ],
+   "d": {
+    "it": "Probabilmente da «gricio», il bottegaio della Roma papale. Figlia della cacio e pepe e «madre» dell'amatriciana, che senza pomodoro si chiama anche amatriciana bianca.",
+    "es": "Probablemente de «gricio», el tendero de la Roma papal. Hija de la cacio e pepe y «madre» de la amatriciana, que sin tomate también se llama amatriciana blanca.",
+    "en": "Probably from gricio, a grocer in Papal Rome. Child of cacio e pepe and 'mother' of amatriciana; without tomato it is also called white amatriciana."
+   },
+   "w": {
+    "it": "Emulsione di grasso e formaggio con pezzi di guanciale: perfetta nei tubi rigati.",
+    "es": "Emulsión de grasa y queso con dados de guanciale: perfecta en tubos estriados.",
+    "en": "Fat-and-cheese emulsion with guanciale pieces: perfect in ridged tubes."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Sfumata al vino",
+      "es": "Con vino",
+      "en": "With wine"
+     },
+     "c": {
+      "it": "un goccio di vino sul guanciale",
+      "es": "un chorrito de vino sobre el guanciale",
+      "en": "a splash of wine on the guanciale"
+     },
+     "where": "Lazio",
+     "add": [
+      "vino"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "amatriciana",
+   "n": "Amatriciana",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Amatrice",
+   "g": "romani",
+   "ing": [
+    "guanciale",
+    "vino",
+    "pomodoro",
+    "pecorino",
+    "peperoncino",
+    "olio",
+    "pepe"
+   ],
+   "d": {
+    "it": "Niente cipolla, aglio o pancetta. La STG «Amatriciana tradizionale» (UE, 2020) protegge il sugo; la ricetta del Comune di Amatrice prescrive gli spaghetti.",
+    "es": "Sin cebolla, ajo ni panceta. La ETG «Amatriciana tradizionale» (UE, 2020) protege la salsa; la receta del ayuntamiento de Amatrice prescribe espaguetis.",
+    "en": "No onion, garlic or pancetta. The EU TSG 'Amatriciana tradizionale' (2020) protects the sauce; the town of Amatrice's recipe specifies spaghetti."
+   },
+   "w": {
+    "it": "Sugo di pomodoro grasso e sapido: pasta lunga robusta o tubi.",
+    "es": "Salsa de tomate grasa y sabrosa: pasta larga robusta o tubos.",
+    "en": "Rich, savoury tomato sauce: sturdy long pasta or tubes."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Alla romana",
+      "es": "A la romana",
+      "en": "Roman style"
+     },
+     "c": {
+      "it": "con cipolla, di solito senza vino né peperoncino; con i bucatini",
+      "es": "con cebolla, normalmente sin vino ni guindilla; con bucatini",
+      "en": "with onion, usually no wine or chilli; with bucatini"
+     },
+     "where": "Roma",
+     "add": [
+      "cipolla"
+     ],
+     "rm": [
+      "vino",
+      "peperoncino"
+     ]
+    },
+    {
+     "n": {
+      "it": "Bianca",
+      "es": "Blanca",
+      "en": "White"
+     },
+     "c": {
+      "it": "senza pomodoro: in pratica è la gricia",
+      "es": "sin tomate: en la práctica es la gricia",
+      "en": "no tomato: in practice it's gricia"
+     },
+     "where": "Lazio",
+     "rm": [
+      "pomodoro",
+      "vino",
+      "peperoncino"
+     ]
+    },
+    {
+     "n": {
+      "it": "Con pancetta",
+      "es": "Con panceta",
+      "en": "With pancetta"
+     },
+     "c": {
+      "it": "pancetta al posto del guanciale (non ammessa dalla STG)",
+      "es": "panceta en lugar de guanciale (no admitida por la ETG)",
+      "en": "pancetta instead of guanciale (not allowed by the TSG)"
+     },
+     "where": "",
+     "add": [
+      "pancetta"
+     ],
+     "rm": [
+      "guanciale"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "cacio",
+   "n": "Cacio e pepe",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "g": "romani",
+   "ing": [
+    "pecorino",
+    "pepe"
+   ],
+   "d": {
+    "it": "Solo Pecorino Romano, pepe nero e acqua di cottura, mantecati in crema.",
+    "es": "Solo pecorino romano, pimienta negra y agua de cocción, ligados en crema.",
+    "en": "Just Pecorino Romano, black pepper and pasta water, whipped into a cream."
+   },
+   "w": {
+    "it": "Emulsione delicata: vuole pasta lunga e ruvida che rilasci amido (a Roma, tonnarelli).",
+    "es": "Emulsión delicada: pide pasta larga y rugosa que suelte almidón (en Roma, tonnarelli).",
+    "en": "Delicate emulsion: wants long, rough pasta that releases starch (tonnarelli, in Rome)."
+   },
+   "v": [],
+   "core": true
+  },
+  {
+   "id": "arrabbiata",
+   "n": "Arrabbiata",
+   "reg": [
+    "LAZ"
+   ],
+   "city": "Roma",
+   "g": "pomodoro",
+   "ing": [
+    "pomodoro",
+    "aglio",
+    "peperoncino",
+    "prezzemolo",
+    "olio"
+   ],
+   "d": {
+    "it": "Pomodoro, aglio e molto peperoncino; il nome allude al rossore che provoca.",
+    "es": "Tomate, ajo y mucha guindilla; el nombre alude al sofoco que provoca.",
+    "en": "Tomato, garlic and plenty of chilli; the name refers to the flush it gives you."
+   },
+   "w": {
+    "it": "Sugo di pomodoro semplice e piccante: tubi rigati che lo raccolgono.",
+    "es": "Salsa de tomate sencilla y picante: tubos estriados que la recojan.",
+    "en": "Simple, spicy tomato: ridged tubes to scoop it up."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con formaggio",
+      "es": "Con queso",
+      "en": "With cheese"
+     },
+     "c": {
+      "it": "pecorino o Parmigiano grattugiato (non tradizionale)",
+      "es": "pecorino o parmesano rallado (no tradicional)",
+      "en": "grated pecorino or Parmigiano (not traditional)"
+     },
+     "where": "",
+     "add": [
+      "pecorino"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "pomodoro",
+   "n": "Pomodoro e basilico",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Napoli",
+   "g": "pomodoro",
+   "ing": [
+    "pomodoro",
+    "basilico",
+    "aglio",
+    "olio"
+   ],
+   "d": {
+    "it": "La prima ricetta scritta di pasta con salsa di pomodoro è nel «Cuoco maceratese» di Antonio Nebbia (1779); la tradizione è soprattutto napoletana.",
+    "es": "La primera receta escrita de pasta con salsa de tomate está en «Il cuoco maceratese» de Antonio Nebbia (1779); la tradición es sobre todo napolitana.",
+    "en": "The first written recipe for pasta with tomato sauce is in Antonio Nebbia's Il cuoco maceratese (1779); the tradition is above all Neapolitan."
+   },
+   "w": {
+    "it": "Sugo liscio e leggero: va con quasi tutto, meglio con pasta di semola lunga o corta rigata.",
+    "es": "Salsa lisa y ligera: va con casi todo, mejor con pasta de sémola larga o corta estriada.",
+    "en": "Smooth, light sauce: goes with almost anything, best with long or ridged short durum pasta."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con cipolla",
+      "es": "Con cebolla",
+      "en": "With onion"
+     },
+     "c": {
+      "it": "soffritto di cipolla invece dell'aglio",
+      "es": "sofrito de cebolla en lugar de ajo",
+      "en": "onion instead of garlic"
+     },
+     "where": "",
+     "add": [
+      "cipolla"
+     ],
+     "rm": [
+      "aglio"
+     ]
+    },
+    {
+     "n": {
+      "it": "Marinara",
+      "es": "Marinara",
+      "en": "Marinara"
+     },
+     "c": {
+      "it": "aglio e origano, senza basilico",
+      "es": "ajo y orégano, sin albahaca",
+      "en": "garlic and oregano, no basil"
+     },
+     "where": "Napoli",
+     "add": [
+      "origano"
+     ],
+     "rm": [
+      "basilico"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "puttanesca",
+   "n": "Puttanesca",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Ischia",
+   "g": "pomodoro",
+   "ing": [
+    "pomodoro",
+    "olive",
+    "capperi",
+    "aglio",
+    "origano",
+    "peperoncino",
+    "olio"
+   ],
+   "d": {
+    "it": "Si attribuisce a Sandro Petti a Ischia nei primi anni '50; il nome compare a stampa nel 1961. La versione napoletana non ha acciughe (le fonti non concordano del tutto).",
+    "es": "Se atribuye a Sandro Petti en Isquia a principios de los 50; el nombre aparece impreso en 1961. La versión napolitana no lleva anchoas (las fuentes no coinciden del todo).",
+    "en": "Credited to Sandro Petti on Ischia in the early 1950s; the name first appears in print in 1961. The Neapolitan version has no anchovies (sources don't fully agree)."
+   },
+   "w": {
+    "it": "Pomodoro saporito con pezzetti: pasta lunga su cui si attacca.",
+    "es": "Tomate sabroso con trocitos: pasta larga a la que se agarre.",
+    "en": "Punchy tomato with small bits: long pasta for it to cling to."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Alla laziale",
+      "es": "A la romana",
+      "en": "Lazio style"
+     },
+     "c": {
+      "it": "con acciughe, prezzemolo invece dell'origano",
+      "es": "con anchoas, perejil en vez de orégano",
+      "en": "with anchovies, parsley instead of oregano"
+     },
+     "where": "Lazio",
+     "add": [
+      "acciughe",
+      "prezzemolo"
+     ],
+     "rm": [
+      "origano"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "norma",
+   "n": "Alla Norma",
+   "reg": [
+    "SIC"
+   ],
+   "city": "Catania",
+   "g": "pomodoro",
+   "ing": [
+    "pomodoro",
+    "melanzane",
+    "ricotta",
+    "basilico",
+    "aglio",
+    "olio"
+   ],
+   "d": {
+    "it": "Pomodoro, melanzane fritte e ricotta salata; il nome viene dalla «Norma» del catanese Vincenzo Bellini.",
+    "es": "Tomate, berenjena frita y ricotta salada; el nombre viene de la «Norma» del catanés Vincenzo Bellini.",
+    "en": "Tomato, fried aubergine and ricotta salata; named after Norma, the opera by Catania's Vincenzo Bellini."
+   },
+   "w": {
+    "it": "Sugo a pezzi con melanzane: maccheroni, rigatoni o spaghetti; a Catania non c'è un solo formato.",
+    "es": "Salsa con trozos de berenjena: macarrones, rigatoni o espaguetis; en Catania no hay un único formato.",
+    "en": "Chunky aubergine sauce: maccheroni, rigatoni or spaghetti; Catania has no single shape."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Al forno",
+      "es": "Al horno",
+      "en": "Baked"
+     },
+     "c": {
+      "it": "gratinata in forno",
+      "es": "gratinada al horno",
+      "en": "baked in the oven"
+     },
+     "where": "Sicilia"
+    },
+    {
+     "n": {
+      "it": "Con ricotta infornata",
+      "es": "Con ricotta horneada",
+      "en": "With baked ricotta"
+     },
+     "c": {
+      "it": "ricotta infornata al posto della salata",
+      "es": "ricotta horneada en lugar de la salada",
+      "en": "baked ricotta instead of ricotta salata"
+     },
+     "where": "Messina"
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "bolognese",
+   "n": "Ragù alla bolognese",
+   "reg": [
+    "EMR"
+   ],
+   "city": "Bologna",
+   "g": "ragu",
+   "ing": [
+    "manzo",
+    "pancetta",
+    "soffritto",
+    "vino",
+    "pomodoro",
+    "latte",
+    "olio"
+   ],
+   "d": {
+    "it": "Depositato dall'Accademia Italiana della Cucina nel 1982 e aggiornato il 20 aprile 2023: latte facoltativo, olio al posto del burro. Esclusi aglio, erbe, vitello e farina.",
+    "es": "Registrado por la Accademia Italiana della Cucina en 1982 y actualizado el 20 de abril de 2023: leche opcional, aceite en lugar de mantequilla. Excluidos ajo, hierbas, ternera lechal y harina.",
+    "en": "Registered by the Accademia Italiana della Cucina in 1982 and updated on 20 April 2023: milk optional, olive oil instead of butter. No garlic, herbs, veal or flour."
+   },
+   "w": {
+    "it": "Ragù macinato, denso e ricco: chiede nastri all'uovo porosi. Mai spaghetti.",
+    "es": "Ragú picado, denso y rico: pide cintas de huevo porosas. Nunca espaguetis.",
+    "en": "Dense, rich minced ragù: asks for porous egg ribbons. Never spaghetti."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con carni miste",
+      "es": "Con carnes mixtas",
+      "en": "Mixed meats"
+     },
+     "c": {
+      "it": "circa 60% manzo e 40% maiale (ammessa)",
+      "es": "aprox. 60 % ternera y 40 % cerdo (admitida)",
+      "en": "about 60% beef and 40% pork (allowed)"
+     },
+     "where": "Bologna",
+     "add": [
+      "maiale"
+     ]
+    },
+    {
+     "n": {
+      "it": "Arricchito",
+      "es": "Enriquecido",
+      "en": "Enriched"
+     },
+     "c": {
+      "it": "con fegatini di pollo, salsiccia, piselli o porcini secchi (ammessi)",
+      "es": "con higaditos de pollo, salchicha, guisantes o boletus secos (admitidos)",
+      "en": "with chicken livers, sausage, peas or dried porcini (allowed)"
+     },
+     "where": "Bologna",
+     "add": [
+      "fegatini",
+      "salsiccia"
+     ]
+    },
+    {
+     "n": {
+      "it": "Senza latte",
+      "es": "Sin leche",
+      "en": "Without milk"
+     },
+     "c": {
+      "it": "il latte è facoltativo dal 2023",
+      "es": "la leche es opcional desde 2023",
+      "en": "milk is optional since 2023"
+     },
+     "where": "Bologna",
+     "rm": [
+      "latte"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "napoletano",
+   "n": "Ragù napoletano",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Napoli",
+   "g": "ragu",
+   "ing": [
+    "manzo",
+    "maiale",
+    "cipolla",
+    "vino",
+    "pomodoro",
+    "olio"
+   ],
+   "d": {
+    "it": "Grossi pezzi di carne che «pippiano» nel pomodoro per ore; la carne si mangia dopo, come secondo.",
+    "es": "Trozos grandes de carne que hierven despacio en tomate durante horas; la carne se come después, de segundo.",
+    "en": "Big cuts of meat that simmer in tomato for hours; the meat is eaten afterwards as a second course."
+   },
+   "w": {
+    "it": "Sugo di pomodoro lungo e denso: ziti spezzati, paccheri, rigatoni.",
+    "es": "Salsa de tomate larga y densa: ziti partidos, paccheri, rigatoni.",
+    "en": "Long-cooked, dense tomato: broken ziti, paccheri, rigatoni."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con braciole",
+      "es": "Con braciole",
+      "en": "With braciole"
+     },
+     "c": {
+      "it": "involtini ripieni di aglio, prezzemolo, pinoli, uvetta e formaggio",
+      "es": "rollitos rellenos de ajo, perejil, piñones, pasas y queso",
+      "en": "meat rolls stuffed with garlic, parsley, pine nuts, raisins and cheese"
+     },
+     "where": "Napoli",
+     "add": [
+      "pinoli",
+      "uvetta",
+      "pecorino"
+     ]
+    },
+    {
+     "n": {
+      "it": "Con salsicce e cotiche",
+      "es": "Con salchichas y cortezas",
+      "en": "With sausage and rind"
+     },
+     "c": {
+      "it": "aggiunte salsicce e cotenne di maiale",
+      "es": "con salchichas y cortezas de cerdo",
+      "en": "adds pork sausage and rind"
+     },
+     "where": "Napoli",
+     "add": [
+      "salsiccia"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "cinghiale",
+   "n": "Ragù di cinghiale",
+   "reg": [
+    "TOS"
+   ],
+   "city": "Maremma",
+   "g": "ragu",
+   "ing": [
+    "cinghiale",
+    "vino",
+    "soffritto",
+    "pomodoro",
+    "olio"
+   ],
+   "d": {
+    "it": "Cinghiale marinato nel vino rosso con alloro e ginepro, stufato a lungo: il ragù della Maremma.",
+    "es": "Jabalí marinado en vino tinto con laurel y enebro, guisado a fuego lento: el ragú de la Maremma.",
+    "en": "Wild boar marinated in red wine with bay and juniper, slowly stewed: the Maremma's ragù."
+   },
+   "w": {
+    "it": "Ragù selvatico e corposo: nastri larghi o pasta spessa tirata a mano.",
+    "es": "Ragú de caza, con cuerpo: cintas anchas o pasta gruesa hecha a mano.",
+    "en": "Gamey, full-bodied ragù: wide ribbons or thick hand-rolled pasta."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "In bianco",
+      "es": "En blanco",
+      "en": "White"
+     },
+     "c": {
+      "it": "senza pomodoro, con rosmarino",
+      "es": "sin tomate, con romero",
+      "en": "no tomato, with rosemary"
+     },
+     "where": "Toscana",
+     "add": [
+      "rosmarino"
+     ],
+     "rm": [
+      "pomodoro"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "campidanese",
+   "n": "Campidanese",
+   "reg": [
+    "SAR"
+   ],
+   "city": "Campidano",
+   "g": "ragu",
+   "ing": [
+    "salsiccia",
+    "cipolla",
+    "pomodoro",
+    "zafferano",
+    "pecorino",
+    "olio"
+   ],
+   "d": {
+    "it": "Salsiccia sarda sbriciolata nel pomodoro con cipolla e zafferano, e Pecorino Sardo.",
+    "es": "Salchicha sarda desmigada en tomate con cebolla y azafrán, y pecorino sardo.",
+    "en": "Sardinian sausage crumbled into tomato with onion and saffron, plus Pecorino Sardo."
+   },
+   "w": {
+    "it": "Salsiccia sbriciolata: forme piccole e rigate che la accolgono.",
+    "es": "Salchicha desmigada: formas pequeñas y estriadas que la acojan.",
+    "en": "Crumbled sausage: small ridged shapes to cradle it."
+   },
+   "v": [],
+   "core": true
+  },
+  {
+   "id": "vongole",
+   "n": "Vongole",
+   "reg": [
+    "CAM"
+   ],
+   "city": "Napoli",
+   "g": "mare",
+   "ing": [
+    "vongole",
+    "aglio",
+    "olio",
+    "prezzemolo",
+    "vino"
+   ],
+   "d": {
+    "it": "Vongole veraci, aglio, olio e prezzemolo, senza formaggio. A Napoli è il piatto della vigilia di Natale; un tempo si usavano i vermicelli.",
+    "es": "Almejas, ajo, aceite y perejil, sin queso. En Nápoles es el plato de Nochebuena; antes se usaban vermicelli.",
+    "en": "Clams, garlic, oil and parsley, no cheese. In Naples it's the Christmas Eve dish; vermicelli were used in the past."
+   },
+   "w": {
+    "it": "Sugo di mare leggero e oleoso: pasta lunga di semola, non all'uovo.",
+    "es": "Salsa de mar ligera y aceitosa: pasta larga de sémola, no de huevo.",
+    "en": "Light, oily seafood sauce: long durum-wheat pasta, not egg pasta."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "In rosso",
+      "es": "En rojo",
+      "en": "Red"
+     },
+     "c": {
+      "it": "con pomodorini",
+      "es": "con tomatitos",
+      "en": "with cherry tomatoes"
+     },
+     "where": "Campania",
+     "add": [
+      "pomodoro"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "mare",
+   "n": "Frutti di mare",
+   "reg": [
+    "CAM",
+    "SIC"
+   ],
+   "city": "",
+   "g": "mare",
+   "unc": true,
+   "ing": [
+    "cozze",
+    "vongole",
+    "gamberi",
+    "calamari",
+    "pomodoro",
+    "aglio",
+    "vino",
+    "olio"
+   ],
+   "d": {
+    "it": "Cozze, vongole, gamberi e calamari. Piatto da ristorante diffuso dagli anni '80; l'origine è contesa tra Campania e Sicilia.",
+    "es": "Mejillones, almejas, gambas y calamares. Plato de restaurante extendido desde los 80; su origen se lo disputan Campania y Sicilia.",
+    "en": "Mussels, clams, prawns and squid. A restaurant dish that spread in the 1980s; Campania and Sicily both claim it."
+   },
+   "w": {
+    "it": "Sugo di mare con pezzi: pasta lunga, o tubi grandi che accolgono i molluschi.",
+    "es": "Salsa de mar con tropezones: pasta larga o tubos grandes que acojan el marisco.",
+    "en": "Chunky seafood: long pasta, or big tubes that hold the shellfish."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "In bianco",
+      "es": "En blanco",
+      "en": "White"
+     },
+     "c": {
+      "it": "senza pomodorini",
+      "es": "sin tomatitos",
+      "en": "no tomatoes"
+     },
+     "where": "",
+     "rm": [
+      "pomodoro"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "salsa",
+   "n": "In salsa",
+   "reg": [
+    "VEN"
+   ],
+   "city": "Venezia",
+   "g": "mare",
+   "ing": [
+    "acciughe",
+    "cipolla",
+    "olio",
+    "pepe"
+   ],
+   "d": {
+    "it": "Cipolle stufate a lungo con acciughe sciolte nell'olio: il piatto veneziano dei giorni di magro (PAT del Veneto).",
+    "es": "Cebolla pochada largo rato con anchoas deshechas en aceite: el plato veneciano de los días de vigilia (PAT del Véneto).",
+    "en": "Onions stewed slowly with anchovies melted into oil: Venice's dish for meatless days (a Veneto PAT product)."
+   },
+   "w": {
+    "it": "Crema scura e sapida: pasta lunga e ruvida che la trattenga.",
+    "es": "Crema oscura y sabrosa: pasta larga y rugosa que la retenga.",
+    "en": "Dark, savoury cream: long, rough pasta to hold it."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con sarde",
+      "es": "Con sardinas",
+      "en": "With sardines"
+     },
+     "c": {
+      "it": "sarde salate al posto delle acciughe: la versione più antica",
+      "es": "sardinas en salazón en vez de anchoas: la versión más antigua",
+      "en": "salted sardines instead of anchovies: the older version"
+     },
+     "where": "Veneto",
+     "add": [
+      "sarde"
+     ],
+     "rm": [
+      "acciughe"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "aglio",
+   "n": "Aglio, olio e peperoncino",
+   "reg": [
+    "CAM",
+    "LAZ"
+   ],
+   "city": "",
+   "g": "verdure",
+   "unc": true,
+   "ing": [
+    "aglio",
+    "olio",
+    "peperoncino",
+    "prezzemolo"
+   ],
+   "d": {
+    "it": "Solo aglio, olio, peperoncino e acqua di cottura. Napoli e Roma se ne contendono l'origine.",
+    "es": "Solo ajo, aceite, guindilla y agua de cocción. Nápoles y Roma se disputan su origen.",
+    "en": "Just garlic, oil, chilli and pasta water. Naples and Rome both claim it."
+   },
+   "w": {
+    "it": "Solo olio aromatizzato: serve pasta lunga che si leghi con l'amido.",
+    "es": "Solo aceite aromatizado: hace falta pasta larga que ligue con el almidón.",
+    "en": "Just flavoured oil: needs long pasta that binds with its own starch."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con alici",
+      "es": "Con anchoas",
+      "en": "With anchovies"
+     },
+     "c": {
+      "it": "con acciughe sciolte nell'olio",
+      "es": "con anchoas deshechas en el aceite",
+      "en": "with anchovies melted into the oil"
+     },
+     "where": "",
+     "add": [
+      "acciughe"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "cime",
+   "n": "Cime di rapa",
+   "reg": [
+    "PUG"
+   ],
+   "city": "Bari",
+   "g": "verdure",
+   "ing": [
+    "cime",
+    "acciughe",
+    "aglio",
+    "peperoncino",
+    "olio"
+   ],
+   "d": {
+    "it": "Le cime cuociono con la pasta nella stessa acqua; tipiche di Bari e Foggia.",
+    "es": "Los grelos se cuecen con la pasta en la misma agua; típicos de Bari y Foggia.",
+    "en": "The greens cook in the same water as the pasta; typical of Bari and Foggia."
+   },
+   "w": {
+    "it": "Verdura a pezzetti e olio: forme concave che raccolgono i pezzi.",
+    "es": "Verdura en trocitos y aceite: formas cóncavas que recogen los trozos.",
+    "en": "Chopped greens and oil: concave shapes that catch the pieces."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con mollica fritta",
+      "es": "Con pan frito",
+      "en": "With fried breadcrumbs"
+     },
+     "c": {
+      "it": "mollica tostata, il «formaggio dei poveri»",
+      "es": "miga tostada, el «queso de los pobres»",
+      "en": "toasted breadcrumbs, the 'poor man's cheese'"
+     },
+     "where": "Puglia",
+     "add": [
+      "pangrattato"
+     ]
+    },
+    {
+     "n": {
+      "it": "Senza acciughe",
+      "es": "Sin anchoas",
+      "en": "Without anchovies"
+     },
+     "c": {
+      "it": "acciughe omesse",
+      "es": "sin anchoas",
+      "en": "anchovies left out"
+     },
+     "where": "",
+     "rm": [
+      "acciughe"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "funghi",
+   "n": "Funghi porcini",
+   "reg": [
+    "TOS",
+    "EMR",
+    "PIE"
+   ],
+   "city": "Borgotaro",
+   "g": "verdure",
+   "ing": [
+    "porcini",
+    "aglio",
+    "prezzemolo",
+    "olio"
+   ],
+   "d": {
+    "it": "Porcini trifolati con aglio e prezzemolo. Il Fungo di Borgotaro è IGP dal 1996.",
+    "es": "Boletus salteados con ajo y perejil. El Fungo di Borgotaro es IGP desde 1996.",
+    "en": "Porcini sautéed with garlic and parsley. Fungo di Borgotaro has been PGI since 1996."
+   },
+   "w": {
+    "it": "Funghi a pezzi e fondo leggero: nastri all'uovo che li accompagnano.",
+    "es": "Setas en trozos y fondo ligero: cintas de huevo que las acompañen.",
+    "en": "Mushroom pieces in a light base: egg ribbons to carry them."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Al pomodoro",
+      "es": "Con tomate",
+      "en": "With tomato"
+     },
+     "c": {
+      "it": "con pelati e Parmigiano: la ricetta di Borgotaro",
+      "es": "con tomate pelado y parmesano: la receta de Borgotaro",
+      "en": "with peeled tomatoes and Parmigiano: the Borgotaro recipe"
+     },
+     "where": "Borgotaro",
+     "add": [
+      "pomodoro",
+      "parmigiano"
+     ]
+    },
+    {
+     "n": {
+      "it": "Con panna",
+      "es": "Con nata",
+      "en": "With cream"
+     },
+     "c": {
+      "it": "con panna",
+      "es": "con nata",
+      "en": "with cream"
+     },
+     "where": "",
+     "add": [
+      "panna"
+     ]
+    }
+   ],
+   "core": true
+  },
+  {
+   "id": "burro",
+   "n": "Burro e salvia",
+   "reg": [
+    "LOM",
+    "PIE",
+    "EMR"
+   ],
+   "city": "",
+   "g": "burro",
+   "ing": [
+    "burro",
+    "salvia",
+    "parmigiano"
+   ],
+   "d": {
+    "it": "Burro fuso con salvia e Parmigiano, per ravioli, tortelli e gnocchi.",
+    "es": "Mantequilla fundida con salvia y parmesano, para raviolis, tortelli y ñoquis.",
+    "en": "Melted butter with sage and Parmigiano, for ravioli, tortelli and gnocchi."
+   },
+   "w": {
+    "it": "Condimento delicato pensato per la pasta ripiena (non in questa matrice) e gli gnocchi.",
+    "es": "Aliño delicado pensado para la pasta rellena (no está en esta matriz) y los ñoquis.",
+    "en": "A delicate dressing designed for filled pasta (not in this matrix) and gnocchi."
+   },
+   "v": [],
+   "core": true
+  },
+  {
+   "id": "formaggi",
+   "n": "Quattro formaggi",
+   "reg": [
+    "LOM"
+   ],
+   "city": "",
+   "g": "burro",
+   "unc": true,
+   "ing": [
+    "gorgonzola",
+    "fontina",
+    "parmigiano",
+    "burro"
+   ],
+   "d": {
+    "it": "Senza ricetta codificata: di solito gorgonzola, fontina e Parmigiano; la panna non è obbligatoria.",
+    "es": "Sin receta codificada: normalmente gorgonzola, fontina y parmesano; la nata no es obligatoria.",
+    "en": "No set recipe: usually gorgonzola, fontina and Parmigiano; cream is optional."
+   },
+   "w": {
+    "it": "Crema densa di formaggio: tubi e gnocchi la trattengono.",
+    "es": "Crema densa de queso: tubos y ñoquis la retienen.",
+    "en": "Thick cheese cream: tubes and gnocchi hold it."
+   },
+   "v": [],
+   "core": true
+  },
+  {
+   "id": "valtellinese",
+   "n": "Alla valtellinese",
+   "reg": [
+    "LOM"
+   ],
+   "city": "Teglio",
+   "g": "burro",
+   "ing": [
+    "verza",
+    "patate",
+    "casera",
+    "parmigiano",
+    "burro",
+    "aglio",
+    "pepe"
+   ],
+   "d": {
+    "it": "Ricetta dell'Accademia di Teglio: verza e patate cotte con la pasta, poi a strati con Casera DOP, grana e burro fuso all'aglio.",
+    "es": "Receta de la Academia de Teglio: col y patata cocidas con la pasta, luego en capas con Casera DOP, grana y mantequilla con ajo.",
+    "en": "The Teglio Academy recipe: cabbage and potato cooked with the pasta, then layered with Casera DOP, grana and garlicky melted butter."
+   },
+   "w": {
+    "it": "Condimento pesante e burroso con verdure: chiede pasta rustica e spessa.",
+    "es": "Aliño contundente de mantequilla con verduras: pide pasta rústica y gruesa.",
+    "en": "Heavy buttery dressing with vegetables: wants thick, rustic pasta."
+   },
+   "v": [
+    {
+     "n": {
+      "it": "Con coste o fagiolini",
+      "es": "Con acelgas o judías",
+      "en": "With chard or green beans"
+     },
+     "c": {
+      "it": "coste o fagiolini al posto della verza, secondo stagione",
+      "es": "acelgas o judías en lugar de col, según temporada",
+      "en": "chard or green beans instead of cabbage, by season"
+     },
+     "where": "Valtellina",
+     "add": [
+      "bietole"
+     ],
+     "rm": [
+      "verza"
+     ]
+    }
+   ],
+   "core": true
+  }
+ ],
+ "ratings": {
+  "spaghetti": {
+   "pomodoro": 3,
+   "pesto": 1,
+   "trapanese": 2,
+   "carbonara": 3,
+   "gricia": 2,
+   "amatriciana": 3,
+   "cacio": 3,
+   "arrabbiata": 2,
+   "puttanesca": 3,
+   "norma": 2,
+   "bolognese": -1,
+   "napoletano": 1,
+   "vongole": 3,
+   "mare": 2,
+   "salsa": 2,
+   "aglio": 3,
+   "cime": 1,
+   "funghi": 1
+  },
+  "linguine": {
+   "pomodoro": 1,
+   "pesto": 2,
+   "trapanese": 1,
+   "carbonara": 1,
+   "cacio": 1,
+   "arrabbiata": 1,
+   "puttanesca": 2,
+   "vongole": 3,
+   "mare": 2,
+   "salsa": 1,
+   "aglio": 2,
+   "funghi": 1
+  },
+  "bucatini": {
+   "pomodoro": 1,
+   "carbonara": 2,
+   "gricia": 2,
+   "amatriciana": 3,
+   "cacio": 2,
+   "arrabbiata": 1,
+   "puttanesca": 1,
+   "norma": 1,
+   "napoletano": 1,
+   "salsa": 1,
+   "aglio": 1
+  },
+  "pici": {
+   "pomodoro": 1,
+   "carbonara": 1,
+   "gricia": 1,
+   "amatriciana": 1,
+   "cacio": 3,
+   "arrabbiata": 1,
+   "bolognese": 2,
+   "cinghiale": 3,
+   "salsa": 1,
+   "aglio": 1,
+   "funghi": 2
+  },
+  "bigoli": {
+   "pomodoro": 1,
+   "carbonara": 1,
+   "gricia": 1,
+   "amatriciana": 1,
+   "cacio": 1,
+   "arrabbiata": 1,
+   "puttanesca": 1,
+   "bolognese": 2,
+   "cinghiale": 1,
+   "salsa": 3,
+   "aglio": 1,
+   "funghi": 1
+  },
+  "tagliatelle": {
+   "pomodoro": 1,
+   "bolognese": 3,
+   "cinghiale": 2,
+   "funghi": 3,
+   "burro": 1,
+   "formaggi": 1
+  },
+  "fettuccine": {
+   "pomodoro": 1,
+   "carbonara": 1,
+   "gricia": 1,
+   "amatriciana": 1,
+   "cacio": 1,
+   "bolognese": 2,
+   "cinghiale": 2,
+   "funghi": 2,
+   "burro": 2,
+   "formaggi": 1
+  },
+  "pappardelle": {
+   "bolognese": 2,
+   "cinghiale": 3,
+   "funghi": 2,
+   "burro": 1
+  },
+  "pizzoccheri": {
+   "funghi": 1,
+   "burro": 2,
+   "formaggi": 1,
+   "valtellinese": 3
+  },
+  "rigatoni": {
+   "pomodoro": 2,
+   "trapanese": 1,
+   "carbonara": 2,
+   "gricia": 3,
+   "amatriciana": 2,
+   "cacio": 1,
+   "arrabbiata": 2,
+   "puttanesca": 1,
+   "norma": 2,
+   "bolognese": 1,
+   "napoletano": 2,
+   "cinghiale": 1,
+   "campidanese": 0,
+   "funghi": 1,
+   "formaggi": 1
+  },
+  "mezzemaniche": {
+   "pomodoro": 2,
+   "carbonara": 2,
+   "gricia": 2,
+   "amatriciana": 2,
+   "cacio": 1,
+   "arrabbiata": 1,
+   "puttanesca": 1,
+   "norma": 1,
+   "bolognese": 1,
+   "napoletano": 1,
+   "funghi": 1,
+   "formaggi": 1
+  },
+  "penne": {
+   "pomodoro": 2,
+   "trapanese": 1,
+   "carbonara": 1,
+   "gricia": 1,
+   "amatriciana": 1,
+   "arrabbiata": 3,
+   "puttanesca": 2,
+   "norma": 2,
+   "bolognese": 1,
+   "napoletano": 1,
+   "funghi": 1,
+   "formaggi": 2
+  },
+  "ziti": {
+   "pomodoro": 1,
+   "arrabbiata": 1,
+   "puttanesca": 1,
+   "norma": 1,
+   "bolognese": 1,
+   "napoletano": 3
+  },
+  "paccheri": {
+   "pomodoro": 2,
+   "amatriciana": 1,
+   "arrabbiata": 1,
+   "puttanesca": 1,
+   "norma": 1,
+   "bolognese": 1,
+   "napoletano": 2,
+   "vongole": 1,
+   "mare": 2
+  },
+  "fusilli": {
+   "pomodoro": 2,
+   "pesto": 2,
+   "trapanese": 1,
+   "arrabbiata": 1,
+   "puttanesca": 1,
+   "norma": 1,
+   "bolognese": 1,
+   "napoletano": 2,
+   "funghi": 1,
+   "formaggi": 1
+  },
+  "trofie": {
+   "pesto": 3,
+   "funghi": 1
+  },
+  "busiate": {
+   "pomodoro": 1,
+   "pesto": 1,
+   "trapanese": 3,
+   "arrabbiata": 1,
+   "norma": 1,
+   "mare": 1
+  },
+  "farfalle": {
+   "pomodoro": 2,
+   "pesto": 1,
+   "arrabbiata": 1,
+   "funghi": 1,
+   "burro": 1,
+   "formaggi": 1
+  },
+  "orecchiette": {
+   "pomodoro": 2,
+   "arrabbiata": 1,
+   "bolognese": 1,
+   "napoletano": 2,
+   "aglio": 1,
+   "norma": 1,
+   "cime": 3
+  },
+  "malloreddus": {
+   "pomodoro": 2,
+   "arrabbiata": 1,
+   "bolognese": 1,
+   "napoletano": 1,
+   "campidanese": 3
+  },
+  "gnocchi": {
+   "pomodoro": 2,
+   "pesto": 2,
+   "amatriciana": 1,
+   "cacio": 1,
+   "arrabbiata": 1,
+   "norma": 1,
+   "bolognese": 2,
+   "napoletano": 2,
+   "cinghiale": 1,
+   "funghi": 1,
+   "burro": 2,
+   "formaggi": 2,
+   "valtellinese": 1
+  }
+ },
+ "dishes": {
+  "trofie|pesto": {
+   "city": "Golfo Paradiso",
+   "reg": "LIG",
+   "n": {
+    "it": "Trofie al pesto",
+    "es": "Trofie al pesto",
+    "en": "Trofie al pesto"
+   },
+   "t": {
+    "it": "Il piatto del Golfo Paradiso, con patate e fagiolini cotti nella stessa acqua.",
+    "es": "El plato del Golfo Paradiso, con patatas y judías verdes cocidas en la misma agua.",
+    "en": "The Golfo Paradiso dish, with potatoes and green beans boiled in the same water."
+   }
+  },
+  "busiate|trapanese": {
+   "city": "Trapani",
+   "reg": "SIC",
+   "n": {
+    "it": "Busiate al pesto trapanese",
+    "es": "Busiate al pesto trapanese",
+    "en": "Busiate al pesto trapanese"
+   },
+   "t": {
+    "it": "Il piatto simbolo di Trapani.",
+    "es": "El plato emblema de Trápani.",
+    "en": "Trapani's signature dish."
+   }
+  },
+  "spaghetti|carbonara": {
+   "city": "Roma",
+   "reg": "LAZ",
+   "n": {
+    "it": "Spaghetti alla carbonara",
+    "es": "Espaguetis a la carbonara",
+    "en": "Spaghetti alla carbonara"
+   },
+   "t": {
+    "it": "Roma, dopoguerra. Nelle trattorie anche rigatoni e mezze maniche.",
+    "es": "Roma, posguerra. En las trattorias también rigatoni y mezze maniche.",
+    "en": "Rome, post-war. Trattorias also serve it with rigatoni and mezze maniche."
+   }
+  },
+  "rigatoni|gricia": {
+   "city": "Roma",
+   "reg": "LAZ",
+   "n": {
+    "it": "Rigatoni alla gricia",
+    "es": "Rigatoni alla gricia",
+    "en": "Rigatoni alla gricia"
+   },
+   "t": {
+    "it": "Un classico delle trattorie romane.",
+    "es": "Un clásico de las trattorias romanas.",
+    "en": "A Roman trattoria classic."
+   }
+  },
+  "spaghetti|amatriciana": {
+   "city": "Amatrice",
+   "reg": "LAZ",
+   "n": {
+    "it": "Spaghetti all'amatriciana",
+    "es": "Espaguetis a la amatriciana",
+    "en": "Spaghetti all'amatriciana"
+   },
+   "t": {
+    "it": "La ricetta del Comune di Amatrice prescrive gli spaghetti; la STG del 2020 riguarda solo il sugo.",
+    "es": "La receta del ayuntamiento de Amatrice prescribe espaguetis; la ETG de 2020 solo regula la salsa.",
+    "en": "The town of Amatrice’s recipe specifies spaghetti; the 2020 TSG only covers the sauce."
+   }
+  },
+  "bucatini|amatriciana": {
+   "city": "Roma",
+   "reg": "LAZ",
+   "n": {
+    "it": "Bucatini all'amatriciana",
+    "es": "Bucatini a la amatriciana",
+    "en": "Bucatini all'amatriciana"
+   },
+   "t": {
+    "it": "La versione di Roma.",
+    "es": "La versión de Roma.",
+    "en": "The Roman version."
+   }
+  },
+  "spaghetti|cacio": {
+   "city": "Roma",
+   "reg": "LAZ",
+   "n": {
+    "it": "Spaghetti cacio e pepe",
+    "es": "Espaguetis cacio e pepe",
+    "en": "Spaghetti cacio e pepe"
+   },
+   "t": {
+    "it": "A Roma il formato preferito sono i tonnarelli.",
+    "es": "En Roma el formato preferido son los tonnarelli.",
+    "en": "In Rome the favourite shape is tonnarelli."
+   }
+  },
+  "penne|arrabbiata": {
+   "city": "Roma",
+   "reg": "LAZ",
+   "n": {
+    "it": "Penne all'arrabbiata",
+    "es": "Penne all'arrabbiata",
+    "en": "Penne all'arrabbiata"
+   },
+   "t": {
+    "it": "Roma.",
+    "es": "Roma.",
+    "en": "Rome."
+   }
+  },
+  "tagliatelle|bolognese": {
+   "city": "Bologna",
+   "reg": "EMR",
+   "n": {
+    "it": "Tagliatelle al ragù",
+    "es": "Tagliatelle al ragú",
+    "en": "Tagliatelle al ragù"
+   },
+   "t": {
+    "it": "Così si mangia a Bologna.",
+    "es": "Así se come en Bolonia.",
+    "en": "This is how Bologna eats it."
+   }
+  },
+  "ziti|napoletano": {
+   "city": "Napoli",
+   "reg": "CAM",
+   "n": {
+    "it": "Ziti al ragù",
+    "es": "Ziti al ragú",
+    "en": "Ziti al ragù"
+   },
+   "t": {
+    "it": "Il ragù della domenica: ziti spezzati a mano. Oggi anche paccheri e rigatoni.",
+    "es": "El ragú del domingo: ziti partidos a mano. Hoy también paccheri y rigatoni.",
+    "en": "The Sunday ragù: hand-broken ziti. Today also paccheri and rigatoni."
+   }
+  },
+  "pappardelle|cinghiale": {
+   "city": "Maremma",
+   "reg": "TOS",
+   "n": {
+    "it": "Pappardelle al cinghiale",
+    "es": "Pappardelle al jabalí",
+    "en": "Pappardelle al cinghiale"
+   },
+   "t": {
+    "it": "Maremma (e Tuscia): non Firenze, dove il classico è con la lepre.",
+    "es": "Maremma (y Tuscia): no Florencia, donde el clásico es con liebre.",
+    "en": "The Maremma (and Tuscia): not Florence, where the classic is with hare."
+   }
+  },
+  "pici|cacio": {
+   "city": "Siena",
+   "reg": "TOS",
+   "n": {
+    "it": "Pici cacio e pepe",
+    "es": "Pici cacio e pepe",
+    "en": "Pici cacio e pepe"
+   },
+   "t": {
+    "it": "Un classico della cucina senese.",
+    "es": "Un clásico de la cocina de Siena.",
+    "en": "A Sienese classic."
+   }
+  },
+  "pici|cinghiale": {
+   "city": "Siena",
+   "reg": "TOS",
+   "n": {
+    "it": "Pici al cinghiale",
+    "es": "Pici al jabalí",
+    "en": "Pici al cinghiale"
+   },
+   "t": {
+    "it": "Siena e la Val d'Orcia.",
+    "es": "Siena y el Val d'Orcia.",
+    "en": "Siena and the Val d'Orcia."
+   }
+  },
+  "spaghetti|vongole": {
+   "city": "Napoli",
+   "reg": "CAM",
+   "n": {
+    "it": "Spaghetti alle vongole",
+    "es": "Espaguetis con almejas",
+    "en": "Spaghetti alle vongole"
+   },
+   "t": {
+    "it": "Napoli, la vigilia di Natale.",
+    "es": "Nápoles, en Nochebuena.",
+    "en": "Naples, on Christmas Eve."
+   }
+  },
+  "linguine|vongole": {
+   "city": "Napoli",
+   "reg": "CAM",
+   "n": {
+    "it": "Linguine alle vongole",
+    "es": "Linguine con almejas",
+    "en": "Linguine alle vongole"
+   },
+   "t": {
+    "it": "Altrettanto classiche.",
+    "es": "Igual de clásicas.",
+    "en": "Just as classic."
+   }
+  },
+  "spaghetti|pomodoro": {
+   "city": "Napoli",
+   "reg": "CAM",
+   "n": {
+    "it": "Spaghetti al pomodoro",
+    "es": "Espaguetis al pomodoro",
+    "en": "Spaghetti al pomodoro"
+   },
+   "t": {
+    "it": "Il piatto nazionale per eccellenza, di tradizione napoletana.",
+    "es": "El plato nacional por excelencia, de tradición napolitana.",
+    "en": "The national dish par excellence, of Neapolitan tradition."
+   }
+  },
+  "spaghetti|puttanesca": {
+   "city": "Ischia",
+   "reg": "CAM",
+   "n": {
+    "it": "Spaghetti alla puttanesca",
+    "es": "Espaguetis a la puttanesca",
+    "en": "Spaghetti alla puttanesca"
+   },
+   "t": {
+    "it": "Tra Ischia e Napoli, anni '50.",
+    "es": "Entre Isquia y Nápoles, años 50.",
+    "en": "Between Ischia and Naples, 1950s."
+   }
+  },
+  "spaghetti|aglio": {
+   "city": "Napoli",
+   "reg": "CAM",
+   "n": {
+    "it": "Spaghetti aglio, olio e peperoncino",
+    "es": "Espaguetis ajo, aceite y guindilla",
+    "en": "Spaghetti aglio, olio e peperoncino"
+   },
+   "t": {
+    "it": "Tre ingredienti e l’acqua di cottura. Napoli e Roma se ne contendono l’origine.",
+    "es": "Tres ingredientes y el agua de cocción. Nápoles y Roma se disputan su origen.",
+    "en": "Three ingredients plus pasta water. Naples and Rome both claim it."
+   }
+  },
+  "orecchiette|cime": {
+   "city": "Bari",
+   "reg": "PUG",
+   "n": {
+    "it": "Orecchiette con le cime di rapa",
+    "es": "Orecchiette con grelos",
+    "en": "Orecchiette con le cime di rapa"
+   },
+   "t": {
+    "it": "Il piatto di Bari.",
+    "es": "El plato de Bari.",
+    "en": "Bari's dish."
+   }
+  },
+  "malloreddus|campidanese": {
+   "city": "Campidano",
+   "reg": "SAR",
+   "n": {
+    "it": "Malloreddus alla campidanese",
+    "es": "Malloreddus a la campidanesa",
+    "en": "Malloreddus alla campidanese"
+   },
+   "t": {
+    "it": "Il piatto delle feste in Sardegna.",
+    "es": "El plato de fiesta de Cerdeña.",
+    "en": "Sardinia's festive dish."
+   }
+  },
+  "tagliatelle|funghi": {
+   "city": "Borgotaro",
+   "reg": "EMR",
+   "n": {
+    "it": "Tagliatelle ai porcini",
+    "es": "Tagliatelle con boletus",
+    "en": "Tagliatelle ai porcini"
+   },
+   "t": {
+    "it": "A Borgotaro i porcini IGP finiscono «nel sugo delle tagliatelle»: un’abitudine locale più che una ricetta fissata.",
+    "es": "En Borgotaro los boletus IGP acaban «en la salsa de las tagliatelle»: una costumbre local más que una receta fija.",
+    "en": "In Borgotaro the PGI porcini go “into the tagliatelle sauce”: a local habit more than a set recipe."
+   }
+  },
+  "bigoli|salsa": {
+   "city": "Venezia",
+   "reg": "VEN",
+   "n": {
+    "it": "Bigoli in salsa",
+    "es": "Bigoli in salsa",
+    "en": "Bigoli in salsa"
+   },
+   "t": {
+    "it": "Piatto di magro della vigilia e del Venerdì Santo.",
+    "es": "Plato de vigilia de Nochebuena y Viernes Santo.",
+    "en": "A meatless dish for Christmas Eve and Good Friday."
+   }
+  },
+  "pizzoccheri|valtellinese": {
+   "city": "Teglio",
+   "reg": "LOM",
+   "n": {
+    "it": "Pizzoccheri alla valtellinese",
+    "es": "Pizzoccheri a la valtellinesa",
+    "en": "Pizzoccheri alla valtellinese"
+   },
+   "t": {
+    "it": "Teglio, Valtellina.",
+    "es": "Teglio, Valtellina.",
+    "en": "Teglio, Valtellina."
+   }
+  }
+ },
+ "notes": {
+  "spaghetti|bolognese": {
+   "it": "Gli «spaghetti bolognese» sono famosi all'estero ma non a Bologna: nel 2019 il sindaco li ha definiti una «fake news».",
+   "es": "Los «espaguetis boloñesa» son famosos fuera, pero no en Bolonia: en 2019 el alcalde los llamó «fake news».",
+   "en": "'Spaghetti bolognese' is famous abroad but not in Bologna: in 2019 the mayor called it “fake news”."
+  },
+  "rigatoni|carbonara": {
+   "it": "Nelle trattorie romane la carbonara con i rigatoni è comunissima.",
+   "es": "En las trattorias romanas la carbonara con rigatoni es habitualísima.",
+   "en": "Roman trattorias very often serve carbonara with rigatoni."
+  },
+  "penne|carbonara": {
+   "it": "Esistono, ma un romano ordinerebbe spaghetti o rigatoni.",
+   "es": "Existen, pero un romano pediría espaguetis o rigatoni.",
+   "en": "It exists, but a Roman would order spaghetti or rigatoni."
+  },
+  "linguine|pesto": {
+   "it": "Il piatto genovese sono le trenette al pesto, con patate e fagiolini; le linguine sono un sostituto accettato, ma le trenette hanno sezione ovale.",
+   "es": "El plato genovés son las trenette al pesto, con patatas y judías; las linguine son un sustituto aceptado, aunque las trenette tienen sección ovalada.",
+   "en": "The Genoese dish is trenette al pesto, with potatoes and green beans; linguine is an accepted substitute, though trenette have an oval section."
+  },
+  "paccheri|napoletano": {
+   "it": "Scelta moderna molto comune; la tradizione della domenica napoletana vuole gli ziti spezzati.",
+   "es": "Opción moderna muy común; la tradición del domingo napolitano pide ziti partidos.",
+   "en": "A very common modern choice; the Neapolitan Sunday tradition calls for broken ziti."
+  },
+  "spaghetti|mare": {
+   "it": "Spaghetti allo scoglio: iconici, ma piatto da ristorante diffuso dagli anni ’80 più che abbinamento storico.",
+   "es": "Espaguetis allo scoglio: icónicos, pero plato de restaurante extendido desde los 80 más que combinación histórica.",
+   "en": "Spaghetti allo scoglio: iconic, but a restaurant dish spread since the 1980s rather than a historic pairing."
+  },
+  "linguine|mare": {
+   "it": "Linguine allo scoglio: come gli spaghetti, un classico da ristorante degli ultimi decenni.",
+   "es": "Linguine allo scoglio: como los espaguetis, un clásico de restaurante de las últimas décadas.",
+   "en": "Linguine allo scoglio: like spaghetti, a restaurant classic of recent decades."
+  },
+  "gnocchi|pesto": {
+   "it": "Gnocchi al pesto: comuni in Liguria.",
+   "es": "Ñoquis al pesto: habituales en Liguria.",
+   "en": "Gnocchi al pesto: common in Liguria."
+  }
+ },
+ "rules": [
+  {
+   "t": {
+    "it": "Lunga e sottile",
+    "es": "Larga y fina",
+    "en": "Long and thin"
+   },
+   "d": {
+    "it": "→ condimenti lisci, oliosi, emulsionati o di mare.",
+    "es": "→ salsas lisas, aceitosas, emulsionadas o de mar.",
+    "en": "→ smooth, oily, emulsified or seafood sauces."
+   }
+  },
+  {
+   "t": {
+    "it": "Nastri larghi all'uovo",
+    "es": "Cintas anchas de huevo",
+    "en": "Broad egg ribbons"
+   },
+   "d": {
+    "it": "→ ragù di carne sostanziosi.",
+    "es": "→ ragús de carne contundentes.",
+    "en": "→ substantial meat ragù."
+   }
+  },
+  {
+   "t": {
+    "it": "Tubi",
+    "es": "Tubos",
+    "en": "Tubes"
+   },
+   "d": {
+    "it": "→ condimenti a pezzi che entrano nella pasta.",
+    "es": "→ salsas con tropezones que entran en la pasta.",
+    "en": "→ chunky sauces that get inside the pasta."
+   }
+  },
+  {
+   "t": {
+    "it": "Superficie rigata",
+    "es": "Superficie estriada",
+    "en": "Ridged surface"
+   },
+   "d": {
+    "it": "→ condimenti che hanno bisogno di aderire.",
+    "es": "→ salsas que necesitan agarrarse.",
+    "en": "→ sauces that need something to cling to."
+   }
+  },
+  {
+   "t": {
+    "it": "Forme attorcigliate",
+    "es": "Formas retorcidas",
+    "en": "Twisted shapes"
+   },
+   "d": {
+    "it": "→ pesto e condimenti fini che restano intrappolati.",
+    "es": "→ pesto y salsas finas que quedan atrapadas.",
+    "en": "→ pesto and fine sauces that get trapped."
+   }
+  },
+  {
+   "t": {
+    "it": "Forme piccole e concave",
+    "es": "Formas pequeñas y cóncavas",
+    "en": "Small concave shapes"
+   },
+   "d": {
+    "it": "→ ingredienti della stessa taglia che ci si adagiano dentro.",
+    "es": "→ ingredientes de tamaño parecido que se acomodan dentro.",
+    "en": "→ ingredients of a similar size that sit inside."
+   }
+  },
+  {
+   "t": {
+    "it": "Uovo al Nord, semola al Sud",
+    "es": "Huevo en el norte, sémola en el sur",
+    "en": "Egg in the north, semolina in the south"
+   },
+   "d": {
+    "it": "→ pasta fresca di grano tenero e uova con ragù e burro; pasta secca di grano duro con olio, pomodoro e mare.",
+    "es": "→ pasta fresca de trigo blando y huevo con ragú y mantequilla; pasta seca de trigo duro con aceite, tomate y mar.",
+    "en": "→ fresh soft-wheat egg pasta with ragù and butter; dried durum pasta with oil, tomato and seafood."
+   }
+  },
+  {
+   "t": {
+    "it": "Semola e mare",
+    "es": "Sémola y mar",
+    "en": "Semolina and seafood"
+   },
+   "d": {
+    "it": "→ mai pasta all'uovo né formaggio con il pesce.",
+    "es": "→ nunca pasta de huevo ni queso con el pescado.",
+    "en": "→ never egg pasta or cheese with seafood."
+   }
+  }
+ ]
+}

@@ -1,0 +1,468 @@
+{
+ "survey": {
+  "t": "Carbonara Day 2026: i piatti di pasta preferiti dagli italiani",
+  "pub": "Unione Italiana Food / AstraRicerche (via Everyeye)",
+  "url": "https://lifestyle.everyeye.it/notizie/classifica-10-piatti-pasta-preferiti-italiani-vince-carbonara-869561.html",
+  "year": 2026,
+  "m": {
+   "it": "Sondaggio online, marzo 2026, 1.004 italiani 18–65: % che mette il piatto tra i suoi 3 preferiti.",
+   "es": "Encuesta online, marzo 2026, 1.004 italianos de 18–65 años: % que pone el plato entre sus 3 favoritos.",
+   "en": "Online survey, March 2026, 1,004 Italians aged 18–65: % putting the dish among their 3 favourites."
+  },
+  "rank": [
+   {
+    "s": "carbonara",
+    "pct": 46
+   },
+   {
+    "s": "vongole",
+    "p": "spaghetti",
+    "pct": 42.6
+   },
+   {
+    "s": "bolognese",
+    "pct": 42.5,
+    "gen": 1
+   },
+   {
+    "s": "amatriciana",
+    "pct": 29.4
+   },
+   {
+    "s": "pomodoro",
+    "pct": 29.3
+   },
+   {
+    "s": "pesto",
+    "pct": 27.5
+   },
+   {
+    "s": "cime",
+    "p": "orecchiette",
+    "pct": 23.5
+   },
+   {
+    "s": "cacio",
+    "pct": 21
+   },
+   {
+    "s": "arrabbiata",
+    "p": "penne",
+    "pct": 20
+   },
+   {
+    "s": "norma",
+    "pct": 18.3
+   }
+  ]
+ },
+ "others": [
+  {
+   "t": "World Pasta Day 2023",
+   "pub": "Deliveroo (ordini)",
+   "url": "https://deliveroo.it/it/more/news-articles/world-pasta-day-2023",
+   "year": 2023,
+   "list": [
+    "Carbonara",
+    "Ragù alla bolognese",
+    "Cacio e pepe",
+    "Pomodoro",
+    "Amatriciana"
+   ]
+  },
+  {
+   "t": "International Pasta Day: 1,5 milioni di piatti",
+   "pub": "Glovo (ordini, via Agenfood)",
+   "url": "https://www.agenfood.it/gastronomia/glovo-celebra-linternational-pasta-day-15-milioni-di-piatti-di-pasta-ordinati/",
+   "year": 2024,
+   "list": [
+    "Carbonara",
+    "Ragù",
+    "Gricia (+382%)"
+   ]
+  },
+  {
+   "t": "Pasta Day 2023",
+   "pub": "YouGov Italia (1.057 persone)",
+   "url": "https://yougov.com/it-it/articoli/47683-pasta-day-2023-usanze-e-preferenze-degli-italiani",
+   "year": 2023,
+   "list": [
+    "Ragù (~20%)",
+    "Carbonara",
+    "Pomodoro"
+   ]
+  },
+  {
+   "t": "La pasta preferita dagli italiani",
+   "pub": "BVA Doxa per TheFork (via Gente d'Italia)",
+   "url": "https://www.genteditalia.org/2019/10/17/la-pasta-preferita-dagli-italiani-la-carbonara-poi-il-ragu/",
+   "year": 2019,
+   "list": [
+    "Carbonara (33%)",
+    "Ragù (25%)",
+    "Pomodoro e basilico"
+   ]
+  }
+ ],
+ "shapes": {
+  "t": "I 10 formati preferiti dagli italiani",
+  "pub": "Unione Italiana Food / Doxa (via Dissapore)",
+  "url": "https://www.dissapore.com/notizie/pasta-i-10-formati-preferiti-dagli-italiani-secondo-unione-italiana-food/",
+  "year": 2021,
+  "rank": {
+   "spaghetti": 1,
+   "penne": 2,
+   "fusilli": 3,
+   "rigatoni": 4,
+   "farfalle": 5,
+   "linguine": 6,
+   "bucatini": 8,
+   "mezzemaniche": 9
+  }
+ },
+ "cities": [
+  {
+   "city": "Roma",
+   "reg": "LAZ",
+   "src": "je24",
+   "top": [
+    [
+     "Spaghetti ai frutti di mare",
+     "spaghetti|mare",
+     "944 kg"
+    ],
+    [
+     "Spaghetti alla carbonara",
+     "spaghetti|carbonara",
+     "543 kg"
+    ],
+    [
+     "Spaghetti alle vongole",
+     "spaghetti|vongole",
+     "375 kg"
+    ]
+   ]
+  },
+  {
+   "city": "Milano",
+   "reg": "LOM",
+   "src": "je24",
+   "top": [
+    [
+     "Spaghetti alla carbonara",
+     "spaghetti|carbonara",
+     "406 kg"
+    ],
+    [
+     "Spaghetti alle vongole",
+     "spaghetti|vongole",
+     "142 kg"
+    ],
+    [
+     "Penne all'arrabbiata",
+     "penne|arrabbiata",
+     "113 kg"
+    ]
+   ]
+  },
+  {
+   "city": "Bologna",
+   "reg": "EMR",
+   "src": "je24",
+   "top": [
+    [
+     "Tagliatelle al ragù",
+     "tagliatelle|bolognese",
+     "988 kg"
+    ],
+    [
+     "Tortellini alla panna",
+     null,
+     "626 kg"
+    ]
+   ]
+  },
+  {
+   "city": "Torino",
+   "reg": "PIE",
+   "src": "je24",
+   "top": [
+    [
+     "Agnolotti al ragù",
+     null,
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Palermo",
+   "reg": "SIC",
+   "src": "je24",
+   "top": [
+    [
+     "Spaghetti con pesce spada e melanzane",
+     null,
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Catania",
+   "reg": "SIC",
+   "src": "je24",
+   "top": [
+    [
+     "Lasagna al pistacchio",
+     null,
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Bari",
+   "reg": "PUG",
+   "src": "je24",
+   "top": [
+    [
+     "Spaghetti all'assassina",
+     null,
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Genova",
+   "reg": "LIG",
+   "src": "je20",
+   "top": [
+    [
+     "Carbonara",
+     "*|carbonara",
+     ""
+    ],
+    [
+     "Amatriciana",
+     "*|amatriciana",
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Napoli",
+   "reg": "CAM",
+   "src": "je20",
+   "top": [
+    [
+     "Carbonara",
+     "*|carbonara",
+     ""
+    ],
+    [
+     "Lasagne",
+     null,
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Firenze",
+   "reg": "TOS",
+   "src": "je20",
+   "top": [
+    [
+     "Tortellini panna e prosciutto",
+     null,
+     ""
+    ],
+    [
+     "Lasagne",
+     null,
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Pisa",
+   "reg": "TOS",
+   "src": "je20",
+   "top": [
+    [
+     "Carbonara",
+     "*|carbonara",
+     ""
+    ],
+    [
+     "Lasagne",
+     null,
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Trieste",
+   "reg": "FVG",
+   "src": "je20",
+   "top": [
+    [
+     "Carbonara",
+     "*|carbonara",
+     ""
+    ],
+    [
+     "Gnocchi alla sorrentina",
+     null,
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Reggio Emilia",
+   "reg": "EMR",
+   "src": "je20",
+   "top": [
+    [
+     "Carbonara",
+     "*|carbonara",
+     ""
+    ]
+   ]
+  },
+  {
+   "city": "Verona",
+   "reg": "VEN",
+   "src": "je18",
+   "top": [
+    [
+     "Spaghetti alle vongole",
+     "spaghetti|vongole",
+     ""
+    ],
+    [
+     "Lasagne",
+     null,
+     ""
+    ]
+   ]
+  }
+ ],
+ "src": {
+  "je24": {
+   "t": "Italiani celebrano la pasta con 30 mila chili ordinati su Just Eat",
+   "pub": "Just Eat (via Agenfood)",
+   "url": "https://www.agenfood.it/gastronomia/italiani-celebrano-la-pasta-con-30-mila-chili-ordinati-su-just-eat/",
+   "year": 2024
+  },
+  "je20": {
+   "t": "World Pasta Day: Just Eat, la carbonara è la più ordinata",
+   "pub": "Just Eat (via ANSA)",
+   "url": "https://www.ansa.it/canale_terraegusto/notizie/in_breve/2020/10/21/world-pasta-dayjust-eat-la-carbonara-e-la-piu-ordinata_45ec68c5-e444-4149-9e88-a54d7a02adb7.html",
+   "year": 2020
+  },
+  "je18": {
+   "t": "Just Eat svela i trend in fatto di pasta città per città",
+   "pub": "Just Eat (via iGizmo)",
+   "url": "https://www.igizmo.it/just-eat-svela-i-trend-in-fatto-di-pasta-citta-per-citta/",
+   "year": 2018
+  },
+  "yg23": {
+   "t": "Pasta Day 2023: usanze e preferenze degli italiani",
+   "pub": "YouGov Italia",
+   "url": "https://yougov.com/it-it/articoli/47683-pasta-day-2023-usanze-e-preferenze-degli-italiani",
+   "year": 2023
+  }
+ },
+ "areas": [
+  {
+   "regs": [
+    "PIE",
+    "VDA",
+    "LIG",
+    "LOM"
+   ],
+   "l": {
+    "it": "Nord-Ovest",
+    "es": "Noroeste",
+    "en": "North-West"
+   },
+   "s": [
+    "pesto",
+    "aglio"
+   ]
+  },
+  {
+   "regs": [
+    "TAA",
+    "VEN",
+    "FVG",
+    "EMR"
+   ],
+   "l": {
+    "it": "Nord-Est",
+    "es": "Noreste",
+    "en": "North-East"
+   },
+   "s": [
+    "bolognese"
+   ],
+   "note": {
+    "it": "ragù al 30%, il valore più alto",
+    "es": "ragú al 30 %, el valor más alto",
+    "en": "ragù at 30%, the highest"
+   }
+  },
+  {
+   "regs": [
+    "TOS",
+    "UMB",
+    "MAR",
+    "LAZ"
+   ],
+   "l": {
+    "it": "Centro",
+    "es": "Centro",
+    "en": "Centre"
+   },
+   "s": [
+    "amatriciana",
+    "gricia"
+   ]
+  },
+  {
+   "regs": [
+    "ABR",
+    "MOL",
+    "CAM",
+    "PUG",
+    "BAS",
+    "CAL"
+   ],
+   "l": {
+    "it": "Sud",
+    "es": "Sur",
+    "en": "South"
+   },
+   "s": [
+    "cime"
+   ]
+  },
+  {
+   "regs": [
+    "SIC",
+    "SAR"
+   ],
+   "l": {
+    "it": "Isole",
+    "es": "Islas",
+    "en": "Islands"
+   },
+   "s": [
+    "norma"
+   ],
+   "note": {
+    "it": "circa 10%",
+    "es": "alrededor del 10 %",
+    "en": "about 10%"
+   }
+  }
+ ]
+}
