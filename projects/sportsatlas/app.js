@@ -2,8 +2,8 @@
    the map as one view among others. Data built by scripts/build.py into sportsatlas/data/. */
 "use strict";
 
-const DATA_V = "0.9.0";
-const BUILD_AT = "2026-09-25 22:12";
+const DATA_V = "0.9.2";
+const BUILD_AT = "2026-09-26 10:01";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -1085,8 +1085,20 @@ function loadLeaflet() {
   return leafletReady;
 }
 
+/* The grounds with their coordinates and their editions: needed by the map and by a ground's own card, not by a table. */
+async function loadVenues(sport) {
+  const d = D[sport];
+  if (!d.venuesFull) {
+    const full = await getJSON(`${sport}/venues.json`).catch(() => []);
+    for (const v of full) d.venue[v.id] = { ...(d.venue[v.id] || {}), ...v };
+    d.venuesFull = full;
+  }
+  return d.venuesFull;
+}
+
 async function renderMap() {
   await loadLeaflet();
+  await loadVenues(S.sport);
   const d = D[S.sport];
   if (S.sport === "olympics") await loadOlympics();
   if (!map) {
@@ -1106,7 +1118,7 @@ async function renderMap() {
   const commonest = list => { const n = new Map(); for (const c of list) n.set(c, (n.get(c) || 0) + 1); return [...n.entries()].sort((a, b) => b[1] - a[1])[0][0]; };
   const pts = [];
   let n = 0;
-  for (const v of d.idx.venues) {
+  for (const v of d.venuesFull) {
     if (v.lat == null) continue;
     const eds = v.editions.map(id => d.ed[id]).filter(e => e && compOn(e.comp) && surfOn(e) && inYears(e.year) && hit(v.name, e.title, e.champion));
     if (!eds.length) continue;
@@ -1155,6 +1167,7 @@ const wide = () => innerWidth >= 1000;
 async function otherSportVenue(id) {
   const other = S.sport === "football" ? "tennis" : "football";
   const od = await loadIndex(other);
+  await loadVenues(other);
   const v = od.venue[id];
   if (!v) return "";
   const eds = v.editions.map(e => od.ed[e]).filter(Boolean).sort((a, b) => a.year - b.year);
@@ -1170,7 +1183,7 @@ async function cardHtml(d, type, id) {
     if (type === "athlete") { await loadMedallists(); return cardAthlete(d, id); }
   }
   if (type === "edition" && d.ed[id]) return cardEdition(d, d.ed[id]);
-  if (type === "venue" && d.venue[id]) return cardVenue(d, d.venue[id]) + await otherSportVenue(id);
+  if (type === "venue") { await loadVenues(S.sport); return d.venue[id] ? cardVenue(d, d.venue[id]) + await otherSportVenue(id) : null; }
   if (type === "comp" && d.comp[id]) return cardCompetition(d, d.comp[id]);
   if (type === "player") return cardTennisPlayer(d, id);
   if (type === "fplayer") return cardFootballPlayer(d, id);
