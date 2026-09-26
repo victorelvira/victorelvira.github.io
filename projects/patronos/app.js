@@ -1,13 +1,19 @@
 "use strict";
-const DATA_V = "0.8.0";
-const BUILD_AT = "2026-09-26 16:35";
+const DATA_V = "0.9.0";
+const BUILD_AT = "2026-09-26 16:51";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
+// One app for every country: the page says which (data-country on <body>), and the data folder follows.
+const COUNTRY = document.body.dataset.country || "es";
+const DIR = COUNTRY === "es" ? "patronos/data/" : `patronos/data/${COUNTRY}/`;
+const CODE_LABEL = {es: "INE", it: "ISTAT"}[COUNTRY] || "código";
+const idOf = f => f.properties.id.split(":")[1];
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
 const fmt = n => n.toLocaleString("es-ES");
 const MONTHS = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 const md = s => { const m = /^(\d\d)-(\d\d)$/.exec(s || ""); return m ? `${+m[2]} de ${MONTHS[+m[1] - 1]}` : ""; };
+const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 const fold = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
 const GROUP = {
@@ -57,13 +63,14 @@ window.addEventListener("popstate", () => { readHash(); renderAll(); });
 
 // ---------- load ----------
 (async function init() {
-  const b = await fetch("patronos/data/build.json", {cache: "no-store"}).then(r => r.json()).catch(() => ({v: DATA_V}));
+  const b = await fetch(`${DIR}build.json`, {cache: "no-store"}).then(r => r.json()).catch(() => ({v: DATA_V}));
   const [data, geo] = await Promise.all([
-    fetch(`patronos/data/patronos.json?v=${b.v}`).then(r => r.json()),
-    fetch(`patronos/data/municipalities.geojson?v=${b.v}`).then(r => r.json()),
+    fetch(`${DIR}patronos.json?v=${b.v}`).then(r => r.json()),
+    fetch(`${DIR}municipalities.geojson?v=${b.v}`).then(r => r.json()),
   ]);
   D = data; BV = b.v;
   prepare();
+  if (!D.meta.churches) $("#churches-btn").hidden = true;
   readHash();
   initMap(geo);
   initControls();
@@ -74,6 +81,7 @@ window.addEventListener("popstate", () => { readHash(); renderAll(); });
 function first(t) { return t.e && t.e.length ? t.e[0] : null; }
 
 function prepare() {
+  for (const d of Object.values(D.devotions)) d.n = cap(d.n);   // "san Rocco" (Italian usage) shown as a name: "San Rocco"
   for (const [ine, t] of Object.entries(D.towns)) {
     const f = first(t);
     if (f) firstCount[f.k] = (firstCount[f.k] || 0) + 1;
@@ -87,15 +95,15 @@ function prepare() {
 
 // ---------- map ----------
 function initMap(geo) {
-  map = L.map("map", {preferCanvas: true, minZoom: 4, maxZoom: 17, zoomSnap: 0.25}).setView([40.2, -3.7], 6);
+  map = L.map("map", {preferCanvas: true, minZoom: 4, maxZoom: 17, zoomSnap: 0.25}).setView(D.meta.center || [40.2, -3.7], D.meta.zoom || 6);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · contornos © EuroGeographics (GISCO)',
     opacity: 0.45, maxZoom: 17,
   }).addTo(map);
   geoLayer = L.geoJSON(geo, {
-    style: f => styleOf(f.properties.id.slice(4)),
+    style: f => styleOf(idOf(f)),
     onEachFeature: (f, layer) => {
-      const ine = f.properties.id.slice(4);
+      const ine = idOf(f);
       layers[ine] = layer;
       layer.on("mousemove", e => showTip(ine, e.originalEvent));
       layer.on("mouseout", hideTip);
@@ -363,7 +371,7 @@ function renderExplain() {
   } else if (state.view === "agree") {
     h = "¿Dicen lo mismo las dos fuentes? " + Object.entries(AGREE).map(([k, a]) => `${sw(a.c)}${a.n} (${fmt(m.agreement[k] || 0)})`).join("") + `${sw(NODATA)}sin dato. Ojo: buena parte de Wikidata se copió de la Wikipedia en italiano, así que coincidir no es confirmarse.`;
   } else {
-    h = `Color: el primer patrón que nombra la ficha del pueblo en Wikipedia (Wikidata si no hay ficha). Los ${topKeys.length} más frecuentes llevan color propio ${sw(OTHER)}el resto ${sw(NODATA)}sin dato (${fmt(no)} pueblos, ${pct} %). Más pálidos: ${fmt(m.text_only)} pueblos cuyo patrón solo se ha leído del texto del artículo (a lápiz). Pulsa un pueblo para ver todos sus patrones y la fuente de cada uno.`;
+    h = `Color: el primer patrón que nombra la ficha del pueblo en Wikipedia (Wikidata si no hay ficha). Los ${topKeys.length} más frecuentes llevan color propio ${sw(OTHER)}el resto ${sw(NODATA)}sin dato (${fmt(no)} pueblos, ${pct} %). ${m.text_only ? `Más pálidos: ${fmt(m.text_only)} pueblos cuyo patrón solo se ha leído del texto del artículo (a lápiz). ` : ""}Pulsa un pueblo para ver todos sus patrones y la fuente de cada uno.`;
   }
   $("#explain").innerHTML = h;
   const go = n => e => { e.stopPropagation(); state.day = n === 0 ? TODAY : shiftDay(state.day, n); writeHash(false); renderAll(); };
@@ -416,7 +424,8 @@ function srcHtml(s) {
   const [src, url, quote, how, extra] = s;
   let ex = extra || "";
   ex = ex.replace(/importado de ([a-z]+wiki(?:, [a-z]+wiki)*)/, (m, w) => "importado de " + w.split(", ").map(x => WIKI[x] || x).join(" y "));
-  const name = {eswiki: "Wikipedia · ficha del pueblo", eswiki_text: "Wikipedia · texto del artículo", wikidata: "Wikidata · P417"}[src];
+  const name = {eswiki: "Wikipedia · ficha del pueblo", eswiki_text: "Wikipedia · texto del artículo", wikidata: "Wikidata · P417",
+    itwiki: "Wikipedia en italiano · ficha del comune"}[src];
   return `<div class="src"><span class="sname">${name}</span> · <a href="${esc(url)}" target="_blank" rel="noopener">ver</a>${ex ? ` · <span class="muted">${esc(ex)}</span>` : ""}
     <div><code>${esc(quote)}</code></div>${how ? `<div class="how">${esc(how)}</div>` : ""}</div>`;
 }
@@ -434,7 +443,7 @@ function renderTown(ine) {
     if (t.a === "partial") h += `<div class="warn">Wikidata nombra además a alguien que la ficha de Wikipedia no incluye (marcado «solo Wikidata»).</div>`;
     for (const e of t.e) {
       const d = D.devotions[e.k];
-      const adv = e.t && e.t !== d.n ? `<div class="adv">como <b>${esc(e.t)}</b></div>` : "";
+      const adv = e.t && e.t !== d.n && d.g !== "santo" ? `<div class="adv">como <b>${esc(e.t)}</b></div>` : "";
       const dd = dayOf(e), day = dd ? `${md(dd.md)} · ${dd.how}` : "";
       const flMatch = dd && t.fl && t.fl.some(f => (dd.all || [dd.md]).includes(f[0]));
       h += `<div class="entry">
@@ -451,8 +460,8 @@ function renderTown(ine) {
       t.fl.map(f => `<li>${md(f[0])}${f[1] ? ` · ${esc(niceName(f[1]))}` : ""}</li>`).join("") + `</ul>` +
       `<p class="small muted">${named ? "Una fiesta local no es necesariamente el patrón (San Isidro, por ejemplo, es fiesta local en cientos de pueblos que tienen otro patrón)." : "Son fechas: no dicen a quién se celebra."}</p></div>`;
   }
-  h += `<div id="churches" class="churchbox"><p class="muted small">Cargando iglesias…</p></div>`;
-  h += `<div class="links">${t.w ? `<a href="https://es.wikipedia.org/wiki/${encodeURIComponent(t.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia</a>` : ""}${t.q ? `<a href="https://www.wikidata.org/wiki/${t.q}" target="_blank" rel="noopener">Wikidata</a>` : ""}<span class="muted">INE ${ine}</span></div></div>${foot()}`;
+  if (D.meta.churches) h += `<div id="churches" class="churchbox"><p class="muted small">Cargando iglesias…</p></div>`;
+  h += `<div class="links">${t.w ? `<a href="https://${D.meta.wiki || "es"}.wikipedia.org/wiki/${encodeURIComponent(t.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia</a>` : ""}${t.q ? `<a href="https://www.wikidata.org/wiki/${t.q}" target="_blank" rel="noopener">Wikidata</a>` : ""}<span class="muted">${CODE_LABEL} ${ine}</span></div></div>${foot()}`;
   $("#panel").innerHTML = h;
   $("#panel .back").addEventListener("click", () => { state.town = null; writeHash(true); renderAll(); });
   $("#panel").querySelectorAll(".who button").forEach(b => b.addEventListener("click", () => selectDev(b.dataset.k, true)));
@@ -479,7 +488,7 @@ function renderDev(k) {
   const byProv = {};
   for (const [ine, t] of towns) (byProv[t.p] = byProv[t.p] || []).push([ine, t]);
   h += Object.entries(byProv).map(([p, l]) => `<div class="small"><b>${esc(p)}</b> <span class="muted">${l.length}</span></div><ul class="towns">${l.map(([ine, t]) => `<li><button type="button" data-ine="${ine}">${esc(t.n)}</button></li>`).join("")}</ul>`).join("");
-  h += `<div class="links">${d.w ? `<a href="https://es.wikipedia.org/wiki/${encodeURIComponent(d.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia</a>` : ""}${d.i ? `<a href="https://www.wikidata.org/wiki/${d.i}" target="_blank" rel="noopener">Wikidata</a>` : ""}</div></div>${foot()}`;
+  h += `<div class="links">${d.w ? `<a href="https://${D.meta.wiki || "es"}.wikipedia.org/wiki/${encodeURIComponent(d.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia</a>` : ""}${d.i ? `<a href="https://www.wikidata.org/wiki/${d.i}" target="_blank" rel="noopener">Wikidata</a>` : ""}</div></div>${foot()}`;
   $("#panel").innerHTML = h;
   $("#panel .back").addEventListener("click", () => { state.dev = null; writeHash(true); renderAll(); });
   $("#panel").querySelectorAll(".towns button").forEach(b => b.addEventListener("click", () => { selectTown(b.dataset.ine, true); zoomTo(b.dataset.ine); }));
