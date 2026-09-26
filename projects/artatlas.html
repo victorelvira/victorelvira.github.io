@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://victorelvira.github.io/projects/artatlas.html">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.18.1">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.19.0">
 </head>
 <body>
   <nav id="navbar">
@@ -49,17 +49,20 @@
       <button type="button" class="langbtn active" data-lang="en">EN</button>
       <button type="button" class="langbtn" data-lang="es">ES</button>
       <button type="button" class="langbtn" data-lang="fr">FR</button>
+      <button type="button" class="langbtn" data-lang="it">IT</button>
     </span>
     <!-- on a phone these three become one sideways-scrolling rail; on a desktop the wrapper
          disappears (display:contents) and the layout is exactly as it was -->
     <div id="bar-rail">
     <span id="painters" class="painters primary"></span>
+    <!-- everything except the painter button folds behind one quiet button, right beside it, with a
+         summary of what is set (the shape Víctor liked in Paris_JEP) -->
+    <button type="button" id="filters-toggle" class="chip ftoggle" aria-expanded="false" aria-controls="filters">
+      <span class="ft-label">Other filters</span><span id="filters-summary" class="ft-sum"></span><span class="ft-caret" aria-hidden="true">▾</span>
+    </button>
     <div id="stats" class="stats">…</div>
     <!-- everything except the painter button folds behind one quiet button, with a summary of what
          is set beside it (the shape Víctor liked in Paris_JEP) -->
-    <button type="button" id="filters-toggle" class="chip ftoggle" aria-expanded="false" aria-controls="filters">
-      <span class="ft-label">Filters</span><span id="filters-summary" class="ft-sum"></span><span class="ft-caret" aria-hidden="true">▾</span>
-    </button>
     <div class="filters" id="filters" hidden>
       <label class="chip kind mus"><input type="checkbox" data-kind="museum" checked> Museums</label>
       <label class="chip kind igl"><input type="checkbox" data-kind="church" checked> Churches</label>
@@ -335,7 +338,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.18.1"></script>
+  <script src="artatlas/app.js?v=1.19.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

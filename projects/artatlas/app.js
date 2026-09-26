@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.18.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-25 22:21";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.19.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-25 22:32";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -113,7 +113,7 @@ const BUILD_AT = "2026-09-25 22:21";   // stamped by scripts/stamp_build.py at d
 //   · names of real things   → museums come from Wikidata (artatlas/data/museum_i18n.json), painters
 //     and countries from small tables in the dictionary. A name is not a string to translate: it is
 //     what the place calls itself.
-const I18N_LANGS = [["en", "EN"], ["es", "ES"], ["fr", "FR"]];
+const I18N_LANGS = [["en", "EN"], ["es", "ES"], ["fr", "FR"], ["it", "IT"]];
 let LANG = "en", DICT = null;
 
 function t(s) { return (DICT && DICT.ui[s]) || s; }
@@ -988,7 +988,7 @@ function wireFilterFold() {
   const box = document.getElementById("filters"), btn = document.getElementById("filters-toggle");
   if (!box || !btn) return;
   document.body.appendChild(box);               // a sideways-scrolling rail clips what it holds
-  btn.querySelector(".ft-label").textContent = t("Filters");
+  btn.querySelector(".ft-label").textContent = t("Other filters");
   btn.addEventListener("click", () => toggleFilters());
   document.addEventListener("click", e => {
     if (!box.hidden && !box.contains(e.target) && !btn.contains(e.target)) toggleFilters(false);
