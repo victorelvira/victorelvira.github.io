@@ -140,8 +140,39 @@ details summary { cursor: pointer; }
 .fl { border: 1px solid var(--line); border-radius: 10px; padding: 7px 11px; margin: 10px 0; background: #fbfaf6; font-size: 13px; }
 .fl ul { margin: 3px 0; padding-left: 18px; }
 .country { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; margin-left: auto; }
-.country .cty { padding: 3px 11px; font-size: 12.5px; color: var(--ink); text-decoration: none; background: #fff; }
+.country .cty { padding: 3px 11px; font-size: 12.5px; color: var(--ink); background: #fff; border: 0; font-family: inherit; cursor: pointer; }
 .country .cty + .cty { border-left: 1px solid var(--line); }
 .country .cty.on { background: var(--ink); color: #fff; }
 .country + .stats { margin-left: 12px; }
 @media (max-width: 760px) { .country .cty { padding: 3px 8px; font-size: 12px; } }
+
+/* links: everything that names something leads to it */
+a.go { color: var(--accent); text-decoration: none; border-bottom: 1px dotted rgba(140,47,57,.45); cursor: pointer; }
+a.go:hover { border-bottom-style: solid; }
+.entry .who a.go { color: var(--ink); font-size: 16px; font-weight: 600; border-bottom: 0; }
+.entry .who a.go:hover { color: var(--accent); text-decoration: underline; }
+a.badge { text-decoration: none; cursor: pointer; }
+a.go.pin { font-size: 11.5px; color: var(--muted); border-bottom: 0; white-space: nowrap; }
+a.go.pin:hover { color: var(--accent); }
+.devlist li[data-go] { cursor: pointer; }
+.arealist { list-style: none; padding: 0; margin: 6px 0; font-size: 12.5px; columns: 2; column-gap: 14px; }
+.arealist li { break-inside: avoid; padding: 1px 0; }
+.towns a.go { border-bottom: 0; }
+
+/* the town card, over the dimmed map (as in the Atlas of Painting) */
+#card { position: fixed; inset: 0; z-index: 2500; background: rgba(20,14,9,.45); display: flex; align-items: center; justify-content: center; padding: 20px; }
+#card[hidden] { display: none; }
+#card .c-card { position: relative; background: var(--bar); border-radius: 12px; width: 100%; max-width: 680px; max-height: 90vh;
+  overflow: auto; box-shadow: 0 10px 50px rgba(0,0,0,.4); padding: 18px 20px 20px; }
+#card-close { position: sticky; top: 0; float: right; margin: -6px -8px 0 8px; z-index: 3; width: 32px; height: 32px; border-radius: 50%;
+  background: #fff; border: 1px solid var(--line); font-size: 15px; cursor: pointer; color: var(--ink); }
+#card-close:hover { background: var(--accent-soft); }
+#card .c-title { margin: 0 0 2px; font-size: 22px; }
+#card .where { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
+body.card-open { overflow: hidden; }
+@media (max-width: 760px) {
+  #card { padding: 6px; align-items: flex-end; }
+  #card .c-card { max-height: 94dvh; border-radius: 14px 14px 10px 10px; padding: 14px 14px 18px; }
+  #card-close { width: 40px; height: 40px; font-size: 18px; background: var(--accent); color: #fff; border: 0; }
+  .arealist { columns: 1; }
+}

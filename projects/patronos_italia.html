@@ -2,62 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Patronos de Italia · el santo de cada comune</title>
-  <link rel="icon" href="patronos/favicon.svg">
-  <meta name="description" content="El patrón de cada uno de los 7.896 comuni de Italia, con la fuente de cada dato y los que aún faltan.">
-  <meta name="author" content="Víctor Elvira">
-  <meta name="theme-color" content="#2a1d2b">
-  <link rel="stylesheet" href="patronos/vendor/leaflet.css">
-  <link rel="stylesheet" href="patronos/style.css?v=0.9.2">
+  <title>Patronos de Italia</title>
+  <meta http-equiv="refresh" content="0; url=patronos.html#c=it">
+  <link rel="canonical" href="patronos.html#c=it">
 </head>
-<body data-country="it">
-  <nav id="navbar">
-    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
-    <span class="nav-sep">·</span>
-    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
-    <span id="build" class="build" title="Versión y última actualización"></span>
-  </nav>
-
-  <header id="bar">
-    <a class="brand" href="patronos_italia.html" title="Recargar (quita la selección)">
-      <img class="mark" src="patronos/favicon.svg" width="28" height="28" alt="">
-      <div>
-        <strong>Patronos de Italia</strong>
-        <small>el santo de cada comune, y quién lo dice</small>
-      </div>
-    </a>
-    <nav class="country" aria-label="País">
-      <a href="patronos.html" class="cty">España</a><a href="patronos_italia.html" class="cty on">Italia</a>
-    </nav>
-    <div id="stats" class="stats">cargando…</div>
-  </header>
-
-  <div id="controls">
-    <span class="tabs" role="tablist">
-      <button type="button" class="tab active" data-view="main" title="Cada pueblo con el color de su primer patrón">Primer patrón</button>
-      <button type="button" class="tab" data-view="group" title="Virgen María, Cristo o un santo">María · Cristo · santos</button>
-      <button type="button" class="tab" data-view="agree" title="¿Coinciden Wikipedia y Wikidata?">Fuentes</button>
-      <button type="button" class="tab" data-view="cal" title="Qué pueblos celebran a su patrón cada día">Calendario</button>
-    </span>
-    <span class="search-wrap">
-      <input id="town-q" type="search" placeholder="Buscar pueblo…" autocomplete="off" aria-label="Buscar pueblo">
-      <div id="town-hits" class="hits" hidden></div>
-    </span>
-    <button type="button" id="churches-btn" class="chip" aria-pressed="false" title="Iglesias e imágenes de santos (Wikidata y OpenStreetMap), al acercarse">⛪ iglesias e imágenes</button>
-    <button type="button" id="nodata" class="chip" aria-pressed="false" title="Resaltar los pueblos de los que aún no hay dato">∅ sin dato</button>
-  </div>
-  <div id="explain" class="explain"></div>
-
-  <main id="main">
-    <div id="map"></div>
-    <div id="drag" title="Arrastra para cambiar el ancho"></div>
-    <aside id="panel"></aside>
-  </main>
-
-  <div id="tip" class="tip" hidden></div>
-
-  <script src="patronos/vendor/leaflet.js"></script>
-  <script src="patronos/app.js?v=0.9.2"></script>
+<body>
+  <p>Italia está ahora en la misma página que España: <a href="patronos.html#c=it">Patronos · Italia</a>.</p>
+  <script>location.replace("patronos.html#c=it" + (location.hash ? "&" + location.hash.slice(1) : ""));</script>
 </body>
 </html>

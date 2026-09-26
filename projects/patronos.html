@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Patronos de España · el santo de cada pueblo</title>
   <link rel="icon" href="patronos/favicon.svg">
-  <meta name="description" content="El patrón y la patrona de cada uno de los 8.132 municipios de España, con la fuente de cada dato y los pueblos de los que aún no se sabe.">
+  <meta name="description" content="El patrón y la patrona de cada municipio de España y de Italia, con la fuente de cada dato y los pueblos de los que aún no se sabe.">
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#2a1d2b">
   <link rel="stylesheet" href="patronos/vendor/leaflet.css">
-  <link rel="stylesheet" href="patronos/style.css?v=0.9.2">
+  <link rel="stylesheet" href="patronos/style.css?v=0.10.0">
 </head>
-<body data-country="es">
+<body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
     <span class="nav-sep">·</span>
@@ -28,7 +28,7 @@
       </div>
     </a>
     <nav class="country" aria-label="País">
-      <a href="patronos.html" class="cty on">España</a><a href="patronos_italia.html" class="cty">Italia</a>
+      <button type="button" class="cty on" data-c="es">España</button><button type="button" class="cty" data-c="it">Italia</button>
     </nav>
     <div id="stats" class="stats">cargando…</div>
   </header>
@@ -55,9 +55,12 @@
     <aside id="panel"></aside>
   </main>
 
+  <div id="card" hidden role="dialog" aria-modal="true" aria-label="Ficha del pueblo">
+    <div class="c-card"><button id="card-close" type="button" aria-label="Cerrar">✕</button><div id="card-body"></div></div>
+  </div>
   <div id="tip" class="tip" hidden></div>
 
   <script src="patronos/vendor/leaflet.js"></script>
-  <script src="patronos/app.js?v=0.9.2"></script>
+  <script src="patronos/app.js?v=0.10.0"></script>
 </body>
 </html>
