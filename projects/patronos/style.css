@@ -1,0 +1,132 @@
+:root {
+  --bg: #f6f2ec; --bar: #fffdf9; --ink: #2a1d2b; --muted: #6e6470; --line: #e4ddd2;
+  --accent: #8c2f39; --accent-soft: #f3e4e2; --gold: #c9962f;
+  --maria: #3f6fae; --cristo: #a8323e; --santo: #c9962f; --dios: #6b4c9a; --unk: #9a9187;
+  --nodata: #ece7df; --other: #cfc5b6;
+  --panel-w: 400px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink); background: var(--bg); display: flex; flex-direction: column; overflow: hidden;
+}
+a { color: var(--accent); }
+
+/* navbar: shared shape, LLM.md §2 */
+#navbar { display: flex; align-items: center; gap: 6px; background: #1d1519; color: #d8cfc4; padding: 3px 12px; font-size: 12px; }
+#navbar a { color: #d8cfc4; text-decoration: none; }
+#navbar a:hover { color: #fff; }
+#navbar .wordmark { font-weight: 600; }
+#navbar .nav-sep { color: #7d7266; }
+#navbar .build { margin-left: auto; color: #8a7f72; font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+#bar { display: flex; align-items: center; gap: 16px; padding: 8px 14px; background: var(--bar); border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.brand strong { display: block; font-size: 17px; letter-spacing: .2px; }
+.brand small { color: var(--muted); font-size: 12px; }
+.stats { margin-left: auto; color: var(--muted); font-size: 12.5px; text-align: right; }
+.stats b { color: var(--ink); }
+
+#controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 7px 14px 4px; background: var(--bar); }
+.tabs { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.tab { border: 0; background: #fff; padding: 5px 11px; font: inherit; font-size: 13px; cursor: pointer; color: var(--ink); }
+.tab + .tab { border-left: 1px solid var(--line); }
+.tab.active { background: var(--ink); color: #fff; }
+.search-wrap { position: relative; }
+#town-q { font: inherit; padding: 5px 9px; border: 1px solid var(--line); border-radius: 8px; width: 220px; background: #fff; }
+.hits { position: absolute; z-index: 1000; top: 32px; left: 0; width: 300px; max-height: 320px; overflow: auto; background: #fff;
+  border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+.hits button { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 6px 10px; font: inherit; cursor: pointer; }
+.hits button:hover, .hits button.on { background: var(--accent-soft); }
+.hits small { color: var(--muted); }
+.chip { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 4px 11px; font: inherit; font-size: 12.5px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.explain { padding: 2px 14px 7px; font-size: 12px; color: var(--muted); background: var(--bar); border-bottom: 1px solid var(--line); }
+.explain .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin: 0 3px 0 8px; }
+
+#main { flex: 1; display: flex; min-height: 0; }
+#map { flex: 1; min-width: 0; background: #dfe6ea; }
+#drag { width: 6px; cursor: col-resize; background: var(--line); }
+#drag:hover { background: var(--gold); }
+#panel { width: var(--panel-w); min-width: 280px; max-width: 70vw; overflow: auto; background: var(--bar); padding: 12px 14px 40px; }
+
+/* panel: list */
+.p-h { display: flex; align-items: baseline; gap: 8px; margin: 2px 0 8px; }
+.p-h h2 { font-size: 16px; margin: 0; }
+.p-h .back { margin-left: auto; font-size: 12.5px; border: 0; background: none; color: var(--accent); cursor: pointer; padding: 0; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+#dev-q { width: 100%; font: inherit; padding: 5px 9px; border: 1px solid var(--line); border-radius: 8px; margin: 4px 0 8px; }
+.devlist { list-style: none; margin: 0; padding: 0; }
+.devlist li { display: flex; align-items: center; gap: 8px; padding: 4px 4px; border-radius: 6px; cursor: pointer; }
+.devlist li:hover { background: var(--accent-soft); }
+.devlist li.sel { background: var(--accent-soft); outline: 1px solid var(--accent); }
+.devlist .sw { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+.devlist .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.devlist .ct { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 12.5px; }
+.devlist .gtag { font-size: 10.5px; color: var(--muted); }
+.more { margin-top: 6px; border: 0; background: none; color: var(--accent); cursor: pointer; font: inherit; font-size: 12.5px; padding: 0; }
+
+/* panel: town record */
+.town h2 { margin: 0 0 2px; font-size: 19px; }
+.town .where { color: var(--muted); font-size: 12.5px; margin-bottom: 10px; }
+.entry { border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; margin: 8px 0; background: #fff; }
+.entry .role { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); }
+.entry .who { font-size: 16px; font-weight: 600; margin: 1px 0; }
+.entry .who button { font: inherit; border: 0; background: none; padding: 0; color: var(--ink); cursor: pointer; text-align: left; }
+.entry .who button:hover { color: var(--accent); text-decoration: underline; }
+.entry .adv { font-size: 13.5px; }
+.entry .day { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.entry .srcs { margin-top: 6px; display: flex; flex-direction: column; gap: 4px; }
+.src { font-size: 12px; background: #faf7f2; border-radius: 6px; padding: 4px 7px; }
+.src .sname { font-weight: 600; }
+.src code { font-size: 11.5px; white-space: pre-wrap; word-break: break-word; color: #4b3f46; }
+.src .how { color: #7a5a1a; }
+.badge { display: inline-block; font-size: 10.5px; border-radius: 999px; padding: 1px 7px; margin-left: 4px; vertical-align: 1px; }
+.b-maria { background: #e3ebf6; color: #274b7a; }
+.b-cristo { background: #f5e1e3; color: #7c1f2a; }
+.b-santo { background: #f6ecd6; color: #6b4b10; }
+.b-dios { background: #ece5f5; color: #4b3272; }
+.b-sin_identificar { background: #eee; color: #555; }
+.b-wo { background: #eef0f3; color: #444; }
+.warn { border-left: 3px solid var(--gold); background: #fbf5e6; padding: 6px 9px; border-radius: 4px; font-size: 12.5px; margin: 8px 0; }
+.nodata { border: 1px dashed var(--line); border-radius: 10px; padding: 12px; color: var(--muted); background: #fff; }
+.links { font-size: 12.5px; margin-top: 12px; }
+.links a { margin-right: 10px; }
+.towns { columns: 2; column-gap: 14px; font-size: 12.5px; padding: 0; list-style: none; margin: 8px 0; }
+.towns li { break-inside: avoid; }
+.towns button { border: 0; background: none; padding: 1px 0; cursor: pointer; color: var(--accent); font: inherit; text-align: left; }
+.foot { margin-top: 18px; font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; }
+
+.tip { position: fixed; z-index: 2000; pointer-events: none; background: rgba(29,21,25,.94); color: #f4ecdf; border-radius: 8px;
+  padding: 6px 9px; font-size: 12.5px; max-width: 280px; box-shadow: 0 4px 16px rgba(0,0,0,.25); }
+.tip b { color: #fff; }
+.tip .tp { color: #cdbfae; font-size: 11.5px; }
+.tip .tl { margin-top: 3px; }
+
+.leaflet-container { font: inherit; }
+
+@media (max-width: 760px) {
+  #bar { padding: 6px 10px; }
+  .stats { display: none; }
+  #controls { padding: 6px 10px 3px; gap: 6px; }
+  .tab { padding: 5px 8px; font-size: 12px; }
+  #town-q { width: 150px; }
+  .explain { padding: 2px 10px 6px; font-size: 11.5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; cursor: pointer; }
+  .explain.open { display: block; }
+  .leaflet-control-attribution { font-size: 9px; }
+  #main { flex-direction: column; }
+  #drag { display: none; }
+  #panel { width: auto; max-width: none; min-width: 0; height: 42vh; flex: none; border-top: 1px solid var(--line); }
+}
+
+/* churches */
+.churchbox { margin-top: 14px; }
+.churchbox h3 { font-size: 15px; margin: 0 0 4px; }
+.churches { list-style: none; padding: 0; margin: 4px 0 8px; font-size: 12.5px; }
+.churches li { padding: 2px 0; border-bottom: 1px dotted var(--line); }
+.churches li.star { background: #fbf3dc; }
+.churches a { color: var(--ink); }
+.lk { border: 0; background: none; padding: 0; font: inherit; color: var(--accent); cursor: pointer; text-decoration: underline; }
+details summary { cursor: pointer; }
