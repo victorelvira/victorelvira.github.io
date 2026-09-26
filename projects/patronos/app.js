@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.5.2";
-const BUILD_AT = "2026-09-26 10:58";
+const DATA_V = "0.6.1";
+const BUILD_AT = "2026-09-26 11:07";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -29,7 +29,7 @@ const WIKI = {itwiki: "la Wikipedia en italiano", eswiki: "la Wikipedia en espa�
 
 let D, map, geoLayer, layers = {}, colorOf = {}, topKeys = [], firstCount = {}, BV = "", CH = null, chLayer = null;
 const TODAY = (() => { const d = new Date(); return `${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; })();
-const state = {view: "main", town: null, dev: null, nodata: false, list: 40, q: "", churches: false, day: TODAY};
+const state = {view: "main", town: null, dev: null, nodata: false, list: 40, q: "", churches: false, day: TODAY, g: ""};
 
 // ---------- URL state (LLM.md §2c: every screen is a link) ----------
 function readHash() {
@@ -382,11 +382,16 @@ function renderCal() {
 function renderList() {
   const all = Object.entries(D.devotions).filter(([, d]) => d.c).sort((a, b) => b[1].c - a[1].c || a[1].n.localeCompare(b[1].n, "es"));
   const q = fold(state.q || "");
-  const rows = q ? all.filter(([, d]) => fold(d.n).includes(q) || fold(d.le || "").includes(q)) : all;
+  const byG = state.g ? all.filter(([, d]) => d.g === state.g) : all;
+  const rows = q ? byG.filter(([, d]) => fold(d.n).includes(q) || fold(d.le || "").includes(q)) : byG;
+  const gc = g => all.filter(([, d]) => d.g === g).length;
   const shown = rows.slice(0, q ? 200 : state.list);
   $("#panel").innerHTML = `
     <div class="p-h"><h2>Patrones</h2><span class="muted small">${fmt(all.length)} distintos · pueblos que los tienen</span></div>
     <input id="dev-q" type="search" placeholder="Buscar santo, Virgen, Cristo…" value="${esc(state.q)}" aria-label="Buscar patrón">
+    <div class="gchips">${[["", "todos", all.length], ["santo", "santos", gc("santo")], ["maria", "María", gc("maria")], ["cristo", "Cristo", gc("cristo")], ["sin_identificar", "sin identificar", gc("sin_identificar")]]
+      .map(([g, n, c]) => `<button type="button" class="chip" data-g="${g}" aria-pressed="${state.g === g}">${n} <span class="muted">${fmt(c)}</span></button>`).join("")}</div>
+    ${state.g === "maria" || state.g === "cristo" ? `<p class="small muted">María y Cristo son una sola entrada cada uno; sus advocaciones están dentro (púlsala).</p>` : ""}
     <ul class="devlist">${shown.map(([k, d]) => `<li data-k="${esc(k)}" class="${k === state.dev ? "sel" : ""}">${sw(colorOf[k] || OTHER)}<span class="nm">${esc(d.n)}${d.g === "sin_identificar" ? ' <span class="gtag">sin identificar</span>' : ""}</span><span class="ct">${fmt(d.c)}</span></li>`).join("")}</ul>
     ${!q && rows.length > shown.length ? `<button class="more" type="button">ver ${fmt(Math.min(rows.length - shown.length, 200))} más</button>` : ""}
     ${q && !rows.length ? `<p class="muted small">Ningún patrón con ese nombre.</p>` : ""}
@@ -395,6 +400,7 @@ function renderList() {
   inp.addEventListener("input", () => { state.q = inp.value; const pos = inp.selectionStart; renderList(); const i2 = $("#dev-q"); i2.focus(); i2.setSelectionRange(pos, pos); });
   $("#panel .devlist").addEventListener("click", e => { const li = e.target.closest("li"); if (li) selectDev(li.dataset.k, true); });
   const more = $("#panel .more"); if (more) more.addEventListener("click", () => { state.list += 200; renderList(); });
+  $("#panel").querySelectorAll(".gchips .chip").forEach(b => b.addEventListener("click", () => { state.g = b.dataset.g; renderList(); }));
 }
 
 function roleText(e) {
@@ -414,7 +420,9 @@ function renderTown(ine) {
   let h = `<div class="p-h"><span class="muted small">Pueblo</span><button class="back" type="button">${state.dev ? "← " + esc(D.devotions[state.dev].n) : "← todos los patrones"}</button></div>
     <div class="town"><h2>${esc(t.n)}</h2><div class="where">${esc(t.p)} · ${esc(t.c)}</div>`;
   if (!t.e || !t.e.length) {
-    h += `<div class="nodata">Todavía no hay dato. La ficha de este pueblo en Wikipedia no dice su patrón, y Wikidata tampoco. No quiere decir que no lo tenga: es lo que falta por completar.</div>`;
+    const parishes = ["Galicia", "Principado de Asturias", "Asturias", "Cantabria"].includes(t.c);
+    h += `<div class="nodata">Todavía no hay dato. La ficha de este pueblo en Wikipedia no dice su patrón, y Wikidata tampoco. No quiere decir que no lo tenga: es lo que falta por completar.` +
+      (parishes ? ` En ${esc(t.c)} un municipio suele reunir varias parroquias o pueblos, y cada uno tiene su patrón, así que a menudo no hay un patrón del municipio entero.` : "") + `</div>`;
   } else {
     if (t.x) h += `<div class="warn">La ficha de este pueblo en Wikipedia no dice su patrón: se ha leído de una frase del artículo (debajo, la frase). Es una propuesta a lápiz, pendiente de confirmar.</div>`;
     if (t.a === "disagree") h += `<div class="warn">Wikipedia y Wikidata no nombran a ningún patrón en común. Se enseñan las dos versiones.</div>`;
@@ -423,13 +431,15 @@ function renderTown(ine) {
       const d = D.devotions[e.k];
       const adv = e.t && e.t !== d.n ? `<div class="adv">como <b>${esc(e.t)}</b></div>` : "";
       const dd = dayOf(e), day = dd ? `${md(dd.md)} · ${dd.how}` : "";
+      const flMatch = dd && t.fl && (dd.all || [dd.md]).some(x => t.fl.includes(x));
       h += `<div class="entry">
         <div class="role">${esc(roleText(e))}${e.wo ? '<span class="badge b-wo">solo Wikidata</span>' : ""}</div>
         <div class="who"><button type="button" data-k="${esc(e.k)}" title="Ver todos los pueblos con este patrón">${esc(d.n)}</button><span class="badge b-${d.g}">${esc(GROUP[d.g].n)}</span></div>
-        ${adv}${day ? `<div class="day">${day}</div>` : ""}
+        ${adv}${day ? `<div class="day">${day}${flMatch ? ` · <span class="ok">✓ es fiesta local oficial del municipio en 2026</span>` : ""}</div>` : ""}
         <div class="srcs">${e.s.map(srcHtml).join("")}</div></div>`;
     }
   }
+  if (t.fl) h += `<p class="small muted">Fiestas locales oficiales en 2026 (Generalitat de Catalunya): ${t.fl.map(md).join(" y ")}. Son fechas, no dicen a quién se celebra.</p>`;
   h += `<div id="churches" class="churchbox"><p class="muted small">Cargando iglesias…</p></div>`;
   h += `<div class="links">${t.w ? `<a href="https://es.wikipedia.org/wiki/${encodeURIComponent(t.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia</a>` : ""}${t.q ? `<a href="https://www.wikidata.org/wiki/${t.q}" target="_blank" rel="noopener">Wikidata</a>` : ""}<span class="muted">INE ${ine}</span></div></div>${foot()}`;
   $("#panel").innerHTML = h;
