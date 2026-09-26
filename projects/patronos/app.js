@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.9.0";
-const BUILD_AT = "2026-09-26 16:51";
+const DATA_V = "0.9.2";
+const BUILD_AT = "2026-09-26 17:57";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -27,6 +27,7 @@ const AGREE = {
   only_eswiki: {n: "solo Wikipedia", c: "#6d8fc4", d: ""},
   only_wikidata: {n: "solo Wikidata", c: "#9b86c2", d: ""},
   only_text: {n: "solo el texto del artículo", c: "#8fb3a8", d: ""},
+  only_fiesta: {n: "solo una fiesta local", c: "#c9b38a", d: ""},
 };
 const NODATA = "#ece7df", OTHER = "#cfc5b6", FADE = "#e9e4dc";
 const PALETTE = ["#e0a526", "#2f8f6b", "#d0672f", "#7a55a8", "#3aa0b8", "#b35c8a", "#6a8f2f", "#8a5a2b",
@@ -249,7 +250,7 @@ function showTip(ine, ev) {
 function hideTip() { tip.hidden = true; }
 // The day of a patron: the town's own (infobox), else the advocation's feast (Wikidata), else the saint's (P841).
 function dayOf(e) {
-  if (e.d) return {md: e.d, how: "según la ficha del pueblo"};
+  if (e.d) return {md: e.d, how: e.s && e.s[0] && e.s[0][0] === "fiesta_local" ? "fecha de la fiesta local oficial" : "según la ficha del pueblo"};
   if (e.fd) return {md: e.fd, how: "fiesta de la advocación en Wikidata"};
   const d = D.devotions[e.k];
   if (d.g === "santo" && d.f) {
@@ -371,7 +372,7 @@ function renderExplain() {
   } else if (state.view === "agree") {
     h = "¿Dicen lo mismo las dos fuentes? " + Object.entries(AGREE).map(([k, a]) => `${sw(a.c)}${a.n} (${fmt(m.agreement[k] || 0)})`).join("") + `${sw(NODATA)}sin dato. Ojo: buena parte de Wikidata se copió de la Wikipedia en italiano, así que coincidir no es confirmarse.`;
   } else {
-    h = `Color: el primer patrón que nombra la ficha del pueblo en Wikipedia (Wikidata si no hay ficha). Los ${topKeys.length} más frecuentes llevan color propio ${sw(OTHER)}el resto ${sw(NODATA)}sin dato (${fmt(no)} pueblos, ${pct} %). ${m.text_only ? `Más pálidos: ${fmt(m.text_only)} pueblos cuyo patrón solo se ha leído del texto del artículo (a lápiz). ` : ""}Pulsa un pueblo para ver todos sus patrones y la fuente de cada uno.`;
+    h = `Color: el primer patrón que nombra la ficha del pueblo en Wikipedia (Wikidata si no hay ficha). Los ${topKeys.length} más frecuentes llevan color propio ${sw(OTHER)}el resto ${sw(NODATA)}sin dato (${fmt(no)} pueblos, ${pct} %). ${m.text_only ? `Más pálidos: ${fmt(m.text_only)} pueblos cuyo patrón solo se ha leído del texto del artículo${m.fiesta_only ? ` y ${fmt(m.fiesta_only)} cuya única pista es una fiesta local con nombre de santo` : ""} (a lápiz). ` : ""}Pulsa un pueblo para ver todos sus patrones y la fuente de cada uno.`;
   }
   $("#explain").innerHTML = h;
   const go = n => e => { e.stopPropagation(); state.day = n === 0 ? TODAY : shiftDay(state.day, n); writeHash(false); renderAll(); };
@@ -425,7 +426,7 @@ function srcHtml(s) {
   let ex = extra || "";
   ex = ex.replace(/importado de ([a-z]+wiki(?:, [a-z]+wiki)*)/, (m, w) => "importado de " + w.split(", ").map(x => WIKI[x] || x).join(" y "));
   const name = {eswiki: "Wikipedia · ficha del pueblo", eswiki_text: "Wikipedia · texto del artículo", wikidata: "Wikidata · P417",
-    itwiki: "Wikipedia en italiano · ficha del comune"}[src];
+    itwiki: "Wikipedia en italiano · ficha del comune", fiesta_local: "Fiesta local oficial"}[src];
   return `<div class="src"><span class="sname">${name}</span> · <a href="${esc(url)}" target="_blank" rel="noopener">ver</a>${ex ? ` · <span class="muted">${esc(ex)}</span>` : ""}
     <div><code>${esc(quote)}</code></div>${how ? `<div class="how">${esc(how)}</div>` : ""}</div>`;
 }
@@ -438,14 +439,17 @@ function renderTown(ine) {
     h += `<div class="nodata">Todavía no hay dato. La ficha de este pueblo en Wikipedia no dice su patrón, y Wikidata tampoco. No quiere decir que no lo tenga: es lo que falta por completar.` +
       (parishes ? ` En ${esc(t.c)} un municipio suele reunir varias parroquias o pueblos, y cada uno tiene su patrón, así que a menudo no hay un patrón del municipio entero.` : "") + `</div>`;
   } else {
-    if (t.x) h += `<div class="warn">La ficha de este pueblo en Wikipedia no dice su patrón: se ha leído de una frase del artículo (debajo, la frase). Es una propuesta a lápiz, pendiente de confirmar.</div>`;
+    if (t.xf) h += `<div class="warn">Ninguna fuente dice el patrón de este pueblo. Lo que sigue son sus fiestas locales oficiales con nombre de santo: una pista indirecta, que puede ser el patrón del pueblo o el de una de sus pedanías. A lápiz.</div>`;
+    else if (t.x) h += `<div class="warn">La ficha de este pueblo en Wikipedia no dice su patrón: se ha leído de una frase del artículo (debajo, la frase). Es una propuesta a lápiz, pendiente de confirmar.</div>`;
     if (t.a === "disagree") h += `<div class="warn">Wikipedia y Wikidata no nombran a ningún patrón en común. Se enseñan las dos versiones.</div>`;
     if (t.a === "partial") h += `<div class="warn">Wikidata nombra además a alguien que la ficha de Wikipedia no incluye (marcado «solo Wikidata»).</div>`;
     for (const e of t.e) {
       const d = D.devotions[e.k];
-      const adv = e.t && e.t !== d.n && d.g !== "santo" ? `<div class="adv">como <b>${esc(e.t)}</b></div>` : "";
+      const advText = e.t && e.t === e.t.toUpperCase() ? niceName(e.t) : e.t;
+      const adv = e.t && e.t !== d.n && d.g !== "santo" ? `<div class="adv">como <b>${esc(advText)}</b></div>` : "";
       const dd = dayOf(e), day = dd ? `${md(dd.md)} · ${dd.how}` : "";
-      const flMatch = dd && t.fl && t.fl.some(f => (dd.all || [dd.md]).includes(f[0]));
+      const fromFiesta = e.s && e.s[0] && e.s[0][0] === "fiesta_local";
+      const flMatch = !fromFiesta && dd && t.fl && t.fl.some(f => (dd.all || [dd.md]).includes(f[0]));
       h += `<div class="entry">
         <div class="role">${esc(roleText(e))}${e.wo ? '<span class="badge b-wo">solo Wikidata</span>' : ""}</div>
         <div class="who"><button type="button" data-k="${esc(e.k)}" title="Ver todos los pueblos con este patrón">${esc(d.n)}</button><span class="badge b-${d.g}">${esc(GROUP[d.g].n)}</span></div>
