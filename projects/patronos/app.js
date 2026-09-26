@@ -1,51 +1,54 @@
 "use strict";
-const DATA_V = "0.10.0";
-const BUILD_AT = "2026-09-26 18:23";
+const DATA_V = "0.11.0";
+const BUILD_AT = "2026-09-26 18:46";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
-const fmt = n => n.toLocaleString("es-ES");
-const MONTHS = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-const md = s => { const m = /^(\d\d)-(\d\d)$/.exec(s || ""); return m ? `${+m[2]} de ${MONTHS[+m[1] - 1]}` : ""; };
 const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
 const fold = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const idOf = f => f.properties.id.split(":")[1];
 
+// ---------- languages: every text comes from patronos/i18n.json ----------
+const LANGS = {es: "es-ES", en: "en-GB", it: "it-IT"};
+let I18N = null;
+function t(k, v = {}) {
+  const s = (I18N[state.lang] && I18N[state.lang][k]) ?? I18N.es[k] ?? k;
+  return typeof s === "string" ? s.replace(/\{(\w+)\}/g, (m, x) => v[x] ?? m) : s;
+}
+const fmt = n => Number(n).toLocaleString(LANGS[state.lang]);
+const md = s => { const m = /^(\d\d)-(\d\d)$/.exec(s || ""); return m ? t("date_fmt", {d: +m[2], m: t("months")[+m[1] - 1]}) : ""; };
+const plural = (n, one, many) => `${fmt(n)} ${n === 1 ? t(one) : t(many)}`;
+
 // Countries live on the same page, one tab each; the data folder follows the country.
 const COUNTRIES = {
-  es: {name: "España", dir: "patronos/data/", code: "INE", center: [40.2, -3.7], zoom: 6},
-  it: {name: "Italia", dir: "patronos/data/it/", code: "ISTAT", center: [42.3, 12.6], zoom: 6},
+  es: {dir: "patronos/data/", code: "INE", center: [40.2, -3.7], zoom: 6, color: "#c0532b"},
+  it: {dir: "patronos/data/it/", code: "ISTAT", center: [42.3, 12.6], zoom: 6, color: "#4a3aa7"},
 };
 
-const GROUP = {
-  maria: {n: "Virgen María", c: "#3f6fae"}, cristo: {n: "Cristo", c: "#a8323e"}, santo: {n: "santo o santa", c: "#c9962f"},
-  dios: {n: "Dios (Trinidad)", c: "#6b4c9a"}, sin_identificar: {n: "sin identificar", c: "#9a9187"},
-};
-const AGREE = {
-  agree: {n: "coinciden", c: "#3f8f5a"}, partial: {n: "Wikidata añade", c: "#e0a526"}, disagree: {n: "no coinciden", c: "#c0392b"},
-  only_eswiki: {n: "solo Wikipedia", c: "#6d8fc4"}, only_wikidata: {n: "solo Wikidata", c: "#9b86c2"},
-  only_text: {n: "solo el texto del artículo", c: "#8fb3a8"}, only_fiesta: {n: "solo una fiesta local", c: "#c9b38a"},
-};
+// Group colours validated with the dataviz validator (light surface): María, Cristo, santo pass all checks;
+// "sin identificar" is the neutral of the set and always carries its legend.
+const GROUP = {maria: "#3f6fae", cristo: "#a8323e", santo: "#a97a22", dios: "#6b4c9a", sin_identificar: "#9a9187"};
+const AGREE = {agree: "#3f8f5a", partial: "#e0a526", disagree: "#c0392b", only_eswiki: "#6d8fc4", only_wikidata: "#9b86c2",
+  only_text: "#8fb3a8", only_fiesta: "#c9b38a"};
 const NODATA = "#ece7df", OTHER = "#cfc5b6", FADE = "#e9e4dc";
 const PALETTE = ["#e0a526", "#2f8f6b", "#d0672f", "#7a55a8", "#3aa0b8", "#b35c8a", "#6a8f2f", "#8a5a2b",
   "#d24b6b", "#c47ac0", "#a8b83a", "#1f6f7a"];
-const WIKI = {itwiki: "la Wikipedia en italiano", eswiki: "la Wikipedia en español", cawiki: "la Wikipedia en catalán", enwiki: "la Wikipedia en inglés"};
-const SRC_NAME = {eswiki: "Wikipedia · ficha del pueblo", eswiki_text: "Wikipedia · texto del artículo", wikidata: "Wikidata · P417",
-  itwiki: "Wikipedia en italiano · ficha del comune", fiesta_local: "Fiesta local oficial"};
 
 let D, map, geoLayer = null, layers = {}, colorOf = {}, topKeys = [], firstCount = {}, BV = "", CH = null, chLayer = null, townIndex = [];
 const cache = {};
 const TODAY = (() => { const d = new Date(); return `${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; })();
-const state = {country: "es", view: "main", town: null, dev: null, area: null, nodata: false, list: 40, q: "", churches: false,
-  day: TODAY, g: ""};
+const state = {country: "es", lang: "es", view: "main", town: null, dev: null, area: null, nodata: false, list: 40, q: "",
+  churches: false, day: TODAY, g: ""};
 const C = () => COUNTRIES[state.country];
 
 // ---------- URL state (LLM.md §2c: every screen is a link) ----------
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   state.country = COUNTRIES[p.get("c")] ? p.get("c") : "es";
-  state.view = ["main", "group", "agree", "cal"].includes(p.get("v")) ? p.get("v") : "main";
+  const nav = (navigator.language || "es").slice(0, 2);
+  state.lang = LANGS[p.get("l")] ? p.get("l") : LANGS[nav] ? nav : "es";
+  state.view = ["main", "group", "agree", "cal", "stats"].includes(p.get("v")) ? p.get("v") : "main";
   state.day = /^\d\d-\d\d$/.test(p.get("dia") || "") ? p.get("dia") : TODAY;
   state.town = p.get("t") || null;
   state.dev = p.get("d") || null;
@@ -56,11 +59,12 @@ function readHash() {
 function validate() {
   if (state.town && !D.towns[state.town]) state.town = null;
   if (state.dev && !D.devotions[state.dev]) state.dev = null;
-  if (state.area && !Object.values(D.towns).some(t => t[state.area.k] === state.area.v)) state.area = null;
+  if (state.area && !Object.values(D.towns).some(tw => tw[state.area.k] === state.area.v)) state.area = null;
 }
 function writeHash(push) {
   const p = new URLSearchParams();
   if (state.country !== "es") p.set("c", state.country);
+  if (state.lang !== "es") p.set("l", state.lang);
   if (state.view !== "main") p.set("v", state.view);
   if (state.town) p.set("t", state.town);
   if (state.dev) p.set("d", state.dev);
@@ -72,18 +76,22 @@ function writeHash(push) {
   if (("#" + p.toString()) === location.hash) return;
   (push ? history.pushState : history.replaceState).call(history, null, "", h);
 }
+let cardPushed = false;
 window.addEventListener("popstate", async () => {
   cardPushed = false;
   const before = state.country;
   readHash();
   if (state.country !== before) await loadCountry(state.country, false);
   validate();
+  applyLang();
   renderAll();
 });
 
 // ---------- load ----------
 (async function init() {
+  I18N = await fetch(`patronos/i18n.json?v=${DATA_V}`).then(r => r.json());
   readHash();
+  applyLang();
   initMap();
   initControls();
   await loadCountry(state.country, !state.town);
@@ -91,6 +99,16 @@ window.addEventListener("popstate", async () => {
   renderAll();
   if (state.town) zoomTo(state.town);
 })();
+
+function applyLang() {
+  document.documentElement.lang = state.lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); el.setAttribute("aria-label", t(el.dataset.i18nPh)); });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+  document.querySelectorAll(".lang .lg").forEach(b => b.classList.toggle("on", b.dataset.l === state.lang));
+  $("#brand-title").textContent = t("title_" + state.country);
+  document.title = t("doc_title", {t: t("title_" + state.country)});
+}
 
 async function fetchCountry(c) {
   if (cache[c]) return cache[c];
@@ -105,7 +123,7 @@ async function fetchCountry(c) {
   return cache[c];
 }
 async function loadCountry(c, fit = true) {
-  $("#stats").textContent = "cargando…";
+  $("#stats").textContent = t("loading");
   const {data, geo, v} = await fetchCountry(c);
   D = data; BV = v; CH = null;
   if (chLayer) { chLayer.remove(); chLayer = null; }
@@ -125,54 +143,57 @@ async function loadCountry(c, fit = true) {
   if (fit) map.setView(C().center, C().zoom);
   $("#churches-btn").hidden = !D.meta.churches;
   document.querySelectorAll(".country .cty").forEach(b => b.classList.toggle("on", b.dataset.c === c));
-  document.title = `Patronos de ${C().name} · el santo de cada pueblo`;
-  $(".brand strong").textContent = `Patronos de ${C().name}`;
-  townIndex = Object.entries(D.towns).map(([ine, t]) => [ine, fold(t.n + " " + (t.n2 || "")), t]);
+  applyLang();
+  townIndex = Object.entries(D.towns).map(([ine, tw]) => [ine, fold(tw.n + " " + (tw.n2 || "")), tw]);
 }
 
-function first(t) { return t.e && t.e.length ? t.e[0] : null; }
+function first(tw) { return tw.e && tw.e.length ? tw.e[0] : null; }
 function prepare() {
   firstCount = {}; colorOf = {};
-  for (const t of Object.values(D.towns)) { const f = first(t); if (f) firstCount[f.k] = (firstCount[f.k] || 0) + 1; }
+  for (const tw of Object.values(D.towns)) { const f = first(tw); if (f) firstCount[f.k] = (firstCount[f.k] || 0) + 1; }
   topKeys = Object.keys(firstCount).filter(k => !k.startsWith("txt:")).sort((a, b) => firstCount[b] - firstCount[a]).slice(0, 14);
   let i = 0;
-  for (const k of topKeys) colorOf[k] = k === "maria" ? GROUP.maria.c : k === "cristo" ? GROUP.cristo.c : PALETTE[i++ % PALETTE.length];
-  const m = D.meta, pct = Math.round(100 * m.with_data / m.towns);
-  $("#stats").innerHTML = `<b>${fmt(m.with_data)}</b> de ${fmt(m.towns)} pueblos con dato (${pct} %) · <b>${fmt(Object.values(D.devotions).filter(d => d.c).length)}</b> patrones distintos`;
+  for (const k of topKeys) colorOf[k] = k === "maria" ? GROUP.maria : k === "cristo" ? GROUP.cristo : PALETTE[i++ % PALETTE.length];
+  statsLine();
+}
+function statsLine() {
+  const m = D.meta;
+  $("#stats").innerHTML = t("stats_line", {a: `<b>${fmt(m.with_data)}</b>`, b: fmt(m.towns), p: Math.round(100 * m.with_data / m.towns),
+    c: `<b>${fmt(Object.values(D.devotions).filter(d => d.c).length)}</b>`});
 }
 
 // ---------- map ----------
 function initMap() {
   map = L.map("map", {preferCanvas: true, minZoom: 4, maxZoom: 17, zoomSnap: 0.25}).setView(COUNTRIES.es.center, 6);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · contornos © EuroGeographics (GISCO)',
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © EuroGeographics (GISCO)',
     opacity: 0.45, maxZoom: 17,
   }).addTo(map);
   map.on("zoomend", restyle);
   map.on("moveend", drawChurches);
   map.on("movestart zoomstart", hideTip);
 }
-const inArea = t => !state.area || t[state.area.k] === state.area.v;
+const inArea = tw => !state.area || tw[state.area.k] === state.area.v;
 function fillOf(ine) {
-  const t = D.towns[ine];
-  const has = t.e && t.e.length;
-  if (!inArea(t)) return "#f3f0ea";
+  const tw = D.towns[ine];
+  const has = tw.e && tw.e.length;
+  if (!inArea(tw)) return "#f3f0ea";
   if (state.dev) {
-    if (has && t.e.some(e => e.k === state.dev)) return devColor(state.dev);
+    if (has && tw.e.some(e => e.k === state.dev)) return devColor(state.dev);
     return has ? FADE : NODATA;
   }
   if (state.nodata) return has ? FADE : "#8d7f70";
   if (!has) return NODATA;
-  if (state.view === "group") return GROUP[D.devotions[t.e[0].k].g].c;
-  if (state.view === "agree") return AGREE[t.a].c;
+  if (state.view === "group") return GROUP[D.devotions[tw.e[0].k].g];
+  if (state.view === "agree") return AGREE[tw.a];
   if (state.view === "cal") {
-    const hit = t.e.find(e => onDay(e, state.day));
+    const hit = tw.e.find(e => onDay(e, state.day));
     if (hit) return devColor(hit.k);
-    return t.e.some(e => dayOf(e)) ? FADE : NODATA;
+    return tw.e.some(e => dayOf(e)) ? FADE : NODATA;
   }
-  return colorOf[t.e[0].k] || OTHER;
+  return colorOf[tw.e[0].k] || OTHER;
 }
-function devColor(k) { return colorOf[k] || (GROUP[D.devotions[k].g] || GROUP.santo).c; }
+function devColor(k) { return colorOf[k] || GROUP[D.devotions[k].g] || GROUP.santo; }
 function styleOf(ine) {
   const sel = ine === state.town;
   const z = map ? map.getZoom() : 6, base = z >= 12 ? 0.25 : z >= 10 ? 0.55 : 0.9;
@@ -183,7 +204,7 @@ function restyle() { for (const ine in layers) layers[ine].setStyle(styleOf(ine)
 function zoomTo(ine) { const l = layers[ine]; if (l) map.fitBounds(l.getBounds(), {maxZoom: 9, padding: [40, 40]}); }
 function zoomArea() {
   const b = L.latLngBounds([]);
-  for (const [ine, t] of Object.entries(D.towns)) if (inArea(t) && layers[ine]) b.extend(layers[ine].getBounds());
+  for (const [ine, tw] of Object.entries(D.towns)) if (inArea(tw) && layers[ine]) b.extend(layers[ine].getBounds());
   if (b.isValid()) map.fitBounds(b, {padding: [30, 30]});
 }
 
@@ -191,31 +212,29 @@ function zoomArea() {
 const tip = $("#tip");
 function place(ev) { tip.style.left = Math.min(ev.clientX + 14, innerWidth - 290) + "px"; tip.style.top = Math.min(ev.clientY + 14, innerHeight - 90) + "px"; }
 function showTip(ine, ev) {
-  const t = D.towns[ine];
-  const names = (t.e || []).map(e => devName(e)).slice(0, 4);
-  tip.innerHTML = `<b>${esc(t.n)}</b> <span class="tp">${esc(t.p)}</span>` +
-    `<div class="tl">${names.length ? names.map(esc).join("<br>") + (t.e.length > 4 ? `<br>y ${t.e.length - 4} más` : "") : "<i>sin dato todavía</i>"}</div>`;
+  const tw = D.towns[ine];
+  const names = (tw.e || []).map(e => devName(e)).slice(0, 4);
+  tip.innerHTML = `<b>${esc(tw.n)}</b> <span class="tp">${esc(tw.p)}</span>` +
+    `<div class="tl">${names.length ? names.map(esc).join("<br>") + (tw.e.length > 4 ? "<br>" + t("tip_more", {n: tw.e.length - 4}) : "") : `<i>${t("tip_nodata")}</i>`}</div>`;
   tip.hidden = false; place(ev);
 }
 function hideTip() { tip.hidden = true; }
 
 // ---------- days ----------
 // The day of a patron: the town's own (infobox or local holiday), else the advocation's feast, else the saint's (P841).
-function dayOf(e) {
-  if (e.d) return {md: e.d, how: e.s && e.s[0] && e.s[0][0] === "fiesta_local" ? "fecha de la fiesta local oficial" : "según la ficha del pueblo"};
-  if (e.fd) return {md: e.fd, how: "fiesta de la advocación en Wikidata"};
-  const d = D.devotions[e.k];
+function dayOf(e, dev = D.devotions) {
+  if (e.d) return {md: e.d, how: e.s && e.s[0] && e.s[0][0] === "fiesta_local" ? "dh_fiesta" : "dh_town"};
+  if (e.fd) return {md: e.fd, how: "dh_adv"};
+  const d = dev[e.k];
   if (d.g === "santo" && d.f) {
     const all = d.f.split(";");
-    if (all.length === 1) return {md: d.f, how: "fiesta litúrgica del santo en Wikidata", all};
+    if (all.length === 1) return {md: d.f, how: "dh_saint", all};
     // several feasts in Wikidata (often the old and the reformed calendar): we do not know which one the town keeps
-    return {md: all.includes(state.day) ? state.day : all[0], all,
-      how: `una de las ${all.length} fiestas del santo en Wikidata; no se sabe cuál celebra el pueblo`};
+    return {md: all.includes(state.day) ? state.day : all[0], all, how: "dh_multi", n: all.length};
   }
   return null;
 }
 const onDay = (e, day) => { const d = dayOf(e); return !!d && (d.all ? d.all.includes(day) : d.md === day); };
-const plural = (n, one, many) => `${fmt(n)} ${n === 1 ? one : many}`;
 function shiftDay(m, n) {
   const d = new Date(2024, +m.slice(0, 2) - 1, +m.slice(3) + n);   // 2024: a leap year, so 29 February exists
   return `${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -227,52 +246,68 @@ function niceName(s) {
 }
 function devName(e) {
   const d = D.devotions[e.k];
-  if ((d.g === "maria" || d.g === "cristo" || d.g === "dios" || d.g === "sin_identificar") && e.t) return e.t;
+  if (d.g !== "santo" && e.t) return e.t;
   return d.n;
 }
+const gName = g => t("g_" + g);
 
 // ---------- links: everything that names something leads to it ----------
-const goDev = (k, label) => `<a class="go" href="#" data-go="dev" data-k="${esc(k)}" title="Todos los pueblos con este patrón">${esc(label ?? D.devotions[k].n)}</a>`;
-const goTown = (ine, label) => `<a class="go" href="#" data-go="town" data-ine="${ine}">${esc(label ?? D.towns[ine].n)}</a>`;
-const goDay = (m, label) => `<a class="go" href="#" data-go="day" data-day="${m}" title="Qué pueblos celebran a su patrón este día">${esc(label ?? md(m))}</a>`;
-const goArea = (k, v) => `<a class="go" href="#" data-go="area" data-a="${k}" data-v="${esc(v)}" title="Resaltar sus pueblos">${esc(v)}</a>`;
-const goGroup = g => `<a class="badge b-${g}" href="#" data-go="group" data-g="${g}" title="Ver este grupo">${esc(GROUP[g].n)}</a>`;
-const goMap = (lat, lon) => `<a class="go pin" href="#" data-go="map" data-lat="${lat}" data-lon="${lon}" title="Verlo en el mapa">📍 en el mapa</a>`;
+const goDev = (k, label, c) => `<a class="go" href="#" data-go="dev" data-k="${esc(k)}"${c ? ` data-c="${c}"` : ""} title="${esc(t("dev_title"))}">${esc(label ?? D.devotions[k].n)}</a>`;
+const goTown = (ine, label, c) => `<a class="go" href="#" data-go="town" data-ine="${ine}"${c ? ` data-c="${c}"` : ""}>${esc(label ?? D.towns[ine].n)}</a>`;
+const goDay = m => `<a class="go" href="#" data-go="day" data-day="${m}" title="${esc(t("day_title"))}">${esc(md(m))}</a>`;
+const goArea = (k, v, c) => `<a class="go" href="#" data-go="area" data-a="${k}" data-v="${esc(v)}"${c ? ` data-c="${c}"` : ""} title="${esc(t("area_title"))}">${esc(v)}</a>`;
+const goGroup = g => `<a class="badge b-${g}" href="#" data-go="group" data-g="${g}" title="${esc(t("group_title"))}">${esc(gName(g))}</a>`;
+const goMap = (lat, lon) => `<a class="go pin" href="#" data-go="map" data-lat="${lat}" data-lon="${lon}" title="${esc(t("pin_title"))}">${esc(t("pin"))}</a>`;
 
-function follow(a) {
+async function follow(a) {
   const go = a.dataset.go;
   hideTip();
+  if (a.dataset.c && a.dataset.c !== state.country) await switchCountry(a.dataset.c, false);
+  if (["dev", "town", "area", "group", "map"].includes(go) && state.view === "stats") state.view = "main";
   if (go === "dev") selectDev(a.dataset.k, true);
   else if (go === "town") { selectTown(a.dataset.ine, true); zoomTo(a.dataset.ine); }
   else if (go === "day") { state.view = "cal"; state.day = a.dataset.day; state.town = null; state.dev = null; writeHash(true); renderAll(); }
   else if (go === "area") { state.area = {k: a.dataset.a, v: a.dataset.v}; state.town = null; state.dev = null; writeHash(true); renderAll(); zoomArea(); }
   else if (go === "group") { state.view = "group"; state.g = a.dataset.g; state.town = null; state.dev = null; writeHash(true); renderAll(); }
-  else if (go === "map") {
-    state.town = null; state.churches = true; writeHash(true); renderAll();
-    map.setView([+a.dataset.lat, +a.dataset.lon], 16);
-  }
-  else if (go === "country") switchCountry(a.dataset.c);
+  else if (go === "map") { state.town = null; state.churches = true; writeHash(true); renderAll(); map.setView([+a.dataset.lat, +a.dataset.lon], 16); }
+  else if (go === "zoom") { const i = state.town; closeTown(); zoomTo(i); }
+  else if (go === "clear") { state.dev = null; writeHash(true); renderAll(); }
+  else if (go === "clear-area") { state.area = null; writeHash(true); renderAll(); }
+  else if (go === "more-unique") { a.closest("section").querySelectorAll(".hide").forEach(x => x.classList.remove("hide")); a.remove(); }
 }
 
 // ---------- controls ----------
 function initControls() {
-  // one delegated handler: every [data-go] anywhere (card, panel, legend) follows its link
+  // one delegated handler: every [data-go] anywhere (card, panel, legend, charts) follows its link
   document.addEventListener("click", e => {
     const a = e.target.closest("[data-go]");
-    if (a) { e.preventDefault(); follow(a); }
+    if (a) { e.preventDefault(); e.stopPropagation(); follow(a); }
+  });
+  // hover on any chart mark: its own bubble
+  document.addEventListener("mousemove", e => {
+    const m = e.target.closest("[data-tip]");
+    if (m) { tip.innerHTML = m.dataset.tip; tip.hidden = false; place(e); }
+    else if (e.target.closest("#statsview")) hideTip();
   });
   document.querySelectorAll(".tab").forEach(b => b.addEventListener("click", () => {
-    state.view = b.dataset.view; state.dev = null; state.nodata = false; writeHash(false); renderAll();
+    state.view = b.dataset.view; state.dev = null; state.nodata = false; state.town = null; writeHash(false); renderAll();
   }));
-  document.querySelectorAll(".country .cty").forEach(b => b.addEventListener("click", e => { e.preventDefault(); switchCountry(b.dataset.c); }));
+  document.querySelectorAll(".country .cty").forEach(b => b.addEventListener("click", () => switchCountry(b.dataset.c)));
+  document.querySelectorAll(".lang .lg").forEach(b => b.addEventListener("click", () => {
+    state.lang = b.dataset.l; applyLang(); statsLine(); writeHash(false); renderAll();
+  }));
   $("#explain").addEventListener("click", e => { if (!e.target.closest("button,a")) $("#explain").classList.toggle("open"); });
   $("#churches-btn").addEventListener("click", () => {
     state.churches = !state.churches; writeHash(false); renderAll();
-    if (state.churches && map.getZoom() < 11) $("#explain").innerHTML += " <b>Acércate más para ver las iglesias.</b>";
+    if (state.churches && map.getZoom() < 11) $("#explain").innerHTML += ` <b>${esc(t("zoom_more"))}</b>`;
   });
-  $("#nodata").addEventListener("click", () => { state.nodata = !state.nodata; state.dev = null; writeHash(false); renderAll(); });
+  $("#nodata").addEventListener("click", () => { state.nodata = !state.nodata; state.dev = null; if (state.view === "stats") state.view = "main"; writeHash(false); renderAll(); });
   document.querySelector(".brand").addEventListener("click", e => {
-    e.preventDefault(); history.replaceState(null, "", location.pathname + (state.country !== "es" ? "#c=" + state.country : "")); location.reload();
+    e.preventDefault();
+    const keep = new URLSearchParams();
+    if (state.country !== "es") keep.set("c", state.country);
+    if (state.lang !== "es") keep.set("l", state.lang);
+    history.replaceState(null, "", location.pathname + (keep.toString() ? "#" + keep : "")); location.reload();
   });
   // the card: ✕, Escape, a click on the dimmed map outside it (Atlas of Painting)
   $("#card-close").addEventListener("click", closeTown);
@@ -282,7 +317,7 @@ function initControls() {
   const q = $("#town-q"), hits = $("#town-hits");
   let sel = 0, found = [];
   const draw = () => {
-    hits.innerHTML = found.map(([ine, , t], i) => `<button type="button" data-ine="${ine}" class="${i === sel ? "on" : ""}">${esc(t.n)} <small>${esc(t.p)}</small></button>`).join("");
+    hits.innerHTML = found.map(([ine, , tw], i) => `<button type="button" data-ine="${ine}" class="${i === sel ? "on" : ""}">${esc(tw.n)} <small>${esc(tw.p)}</small></button>`).join("");
     hits.hidden = !found.length;
   };
   q.addEventListener("input", () => {
@@ -298,7 +333,7 @@ function initControls() {
     else if (e.key === "Escape") { found = []; draw(); }
   });
   hits.addEventListener("click", e => { const b = e.target.closest("button"); if (b) pick(b.dataset.ine); });
-  const pick = ine => { found = []; draw(); q.value = ""; q.blur(); selectTown(ine, true); zoomTo(ine); };
+  const pick = ine => { found = []; draw(); q.value = ""; q.blur(); if (state.view === "stats") state.view = "main"; selectTown(ine, true); zoomTo(ine); };
   document.addEventListener("click", e => { if (!e.target.closest(".search-wrap")) { found = []; draw(); } });
   // resizable panel, remembered (LLM.md §2c)
   try { const w = localStorage.getItem("patronos.panel"); if (w) document.documentElement.style.setProperty("--panel-w", w); } catch (e) {}
@@ -315,17 +350,15 @@ function initControls() {
   });
 }
 
-async function switchCountry(c) {
+async function switchCountry(c, render = true) {
   if (c === state.country) return;
   Object.assign(state, {country: c, town: null, dev: null, area: null, nodata: false, q: "", g: "", list: 40});
   if (c !== "es") state.churches = false;
   await loadCountry(c, true);
-  writeHash(true);
-  renderAll();
+  if (render) { writeHash(true); renderAll(); }
 }
 // Opening a card pushes a history step; closing it steps back when we pushed it (so Back and ✕ agree, as in Batalla
 // de Flores), and only replaces the URL when the card came from a shared link.
-let cardPushed = false;
 function selectTown(ine, push) { cardPushed = !!push; state.town = ine; writeHash(push); renderAll(); }
 function closeTown() {
   if (cardPushed) { cardPushed = false; history.back(); return; }
@@ -338,6 +371,11 @@ function renderAll() {
   document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.view === state.view));
   $("#nodata").setAttribute("aria-pressed", state.nodata ? "true" : "false");
   $("#churches-btn").setAttribute("aria-pressed", state.churches ? "true" : "false");
+  const stats = state.view === "stats";
+  document.body.classList.toggle("stats-mode", stats);
+  $("#statsview").hidden = !stats;
+  if (stats) { renderExplain(); renderStats(); renderCard(); return; }
+  map.invalidateSize();
   drawChurches();
   restyle();
   renderExplain();
@@ -352,64 +390,65 @@ function sw(c) { return `<span class="sw" style="background:${c}"></span>`; }
 function renderExplain() {
   const m = D.meta, no = m.towns - m.with_data, pct = Math.round(100 * no / m.towns);
   let h;
-  if (state.dev) {
+  if (state.view === "stats") h = esc(t("st_intro"));
+  else if (state.dev) {
     const d = D.devotions[state.dev];
-    h = `${sw(devColor(state.dev))}Resaltados: los <b>${fmt(d.c)}</b> pueblos que tienen a <b>${esc(d.n)}</b> entre sus patrones, en cualquier puesto. ${sw(FADE)}otros pueblos con dato ${sw(NODATA)}sin dato. <a class="go" href="#" data-go="clear">quitar</a>`;
+    h = `${sw(devColor(state.dev))}${t("explain_dev", {n: `<b>${fmt(d.c)}</b>`, name: `<b>${esc(d.n)}</b>`})} ${sw(FADE)}${esc(t("other_with_data"))} ${sw(NODATA)}${esc(t("no_data"))}. <a class="go" href="#" data-go="clear">${esc(t("remove"))}</a>`;
   } else if (state.nodata) {
-    h = `${sw("#8d7f70")}Los <b>${fmt(no)}</b> pueblos (${pct} %) de los que ninguna fuente dice el patrón. No quiere decir que no lo tengan: falta el dato.`;
+    h = `${sw("#8d7f70")}${t("explain_nodata", {n: `<b>${fmt(no)}</b>`, p: pct})}`;
   } else if (state.view === "cal") {
-    const n = Object.values(D.towns).filter(t => inArea(t) && (t.e || []).some(e => onDay(e, state.day))).length;
-    h = `<button type="button" class="chip" id="d-prev" aria-label="Día anterior">◀</button> <b>${md(state.day)}</b> <button type="button" class="chip" id="d-next" aria-label="Día siguiente">▶</button>` +
-      `${state.day !== TODAY ? ` <button type="button" class="chip" id="d-today">hoy</button>` : ""} · <b>${plural(n, "pueblo celebra", "pueblos celebran")}</b> a un patrón este día. ` +
-      `La fecha es la de la ficha del pueblo o, si no la da, la del santo o la advocación en Wikidata; la fiesta a menudo se pasa al fin de semana. ${sw(FADE)}con fecha otro día ${sw(NODATA)}sin fecha conocida.`;
+    const n = Object.values(D.towns).filter(tw => inArea(tw) && (tw.e || []).some(e => onDay(e, state.day))).length;
+    h = `<button type="button" class="chip" id="d-prev" aria-label="${esc(t("prev_day"))}">◀</button> <b>${md(state.day)}</b> <button type="button" class="chip" id="d-next" aria-label="${esc(t("next_day"))}">▶</button>` +
+      `${state.day !== TODAY ? ` <button type="button" class="chip" id="d-today">${esc(t("today"))}</button>` : ""} · <b>${t(n === 1 ? "cal_one" : "cal_many", {n: fmt(n)})}</b> ` +
+      `${esc(t("cal_note"))} ${sw(FADE)}${esc(t("cal_other"))} ${sw(NODATA)}${esc(t("cal_nodate"))}.`;
   } else if (state.view === "group") {
-    h = "Color del primer patrón que se nombra: " + Object.entries(GROUP).map(([g, x]) => `${sw(x.c)}<a class="go" href="#" data-go="group" data-g="${g}">${x.n}</a>`).join(" ") + ` ${sw(NODATA)}sin dato (${fmt(no)}, ${pct} %). Las advocaciones de la Virgen cuentan como María, y las imágenes de Cristo como Cristo; la advocación está en la ficha.`;
+    h = esc(t("explain_group")) + " " + Object.keys(GROUP).map(g => `${sw(GROUP[g])}<a class="go" href="#" data-go="group" data-g="${g}">${esc(gName(g))}</a>`).join(" ") + ` ${sw(NODATA)}${esc(t("no_data_n", {n: fmt(no), p: pct}))}. ${esc(t("group_note"))}`;
   } else if (state.view === "agree") {
-    h = "¿Dicen lo mismo las fuentes? " + Object.entries(AGREE).filter(([k]) => m.agreement[k]).map(([k, a]) => `${sw(a.c)}${a.n} (${fmt(m.agreement[k])})`).join(" ") + ` ${sw(NODATA)}sin dato. Ojo: buena parte de Wikidata se copió de la Wikipedia en italiano, así que coincidir no es confirmarse.`;
+    h = esc(t("explain_agree")) + " " + Object.keys(AGREE).filter(k => m.agreement[k]).map(k => `${sw(AGREE[k])}${esc(t("a_" + k))} (${fmt(m.agreement[k])})`).join(" ") + ` ${sw(NODATA)}${esc(t("no_data"))}. ${esc(t("agree_note"))}`;
   } else {
-    h = `Color: el primer patrón que nombra la ficha del pueblo en Wikipedia (Wikidata si no hay ficha). Los ${topKeys.length} más frecuentes llevan color propio ${sw(OTHER)}el resto ${sw(NODATA)}sin dato (${fmt(no)} pueblos, ${pct} %). ${m.text_only || m.fiesta_only ? `Más pálidos: ${m.text_only ? `${fmt(m.text_only)} pueblos cuyo patrón solo se ha leído del texto del artículo` : ""}${m.text_only && m.fiesta_only ? " y " : ""}${m.fiesta_only ? `${fmt(m.fiesta_only)} cuya única pista es una fiesta local con nombre de santo` : ""} (a lápiz). ` : ""}Pulsa un pueblo para abrir su ficha.`;
+    const pale = [m.text_only ? t("pale_text", {n: fmt(m.text_only)}) : "", m.fiesta_only ? t("pale_fiesta", {n: fmt(m.fiesta_only)}) : ""].filter(Boolean);
+    h = `${esc(t("explain_main", {n: topKeys.length}))} ${sw(OTHER)}${esc(t("the_rest"))} ${sw(NODATA)}${esc(t("no_data_n", {n: fmt(no), p: pct}))}. ` +
+      `${pale.length ? `${esc(t("paler"))} ${esc(pale.join(` ${t("and")} `))} ${esc(t("pencil"))}. ` : ""}${esc(t("click_town"))}`;
   }
-  if (state.area) h = `<b>${esc(state.area.v)}</b> resaltada. <a class="go" href="#" data-go="clear-area">quitar</a> · ` + h;
+  if (state.area && state.view !== "stats") h = `<b>${esc(t("area_hl", {name: state.area.v}))}</b> <a class="go" href="#" data-go="clear-area">${esc(t("remove"))}</a> · ` + h;
   $("#explain").innerHTML = h;
   const go = n => e => { e.stopPropagation(); state.day = n === 0 ? TODAY : shiftDay(state.day, n); writeHash(false); renderAll(); };
   if ($("#d-prev")) { $("#d-prev").onclick = go(-1); $("#d-next").onclick = go(1); }
   if ($("#d-today")) $("#d-today").onclick = go(0);
-  const clr = $("#explain [data-go=clear]"); if (clr) clr.onclick = e => { e.preventDefault(); e.stopPropagation(); state.dev = null; writeHash(true); renderAll(); };
-  const clra = $("#explain [data-go=clear-area]"); if (clra) clra.onclick = e => { e.preventDefault(); e.stopPropagation(); state.area = null; writeHash(true); renderAll(); };
 }
 
-function back(label) { return `<button class="back" type="button">← ${esc(label)}</button>`; }
+function back() { return `<button class="back" type="button">← ${esc(t("back_all"))}</button>`; }
 function bindBack(fn) { const b = $("#panel .back"); if (b) b.addEventListener("click", fn); }
 
 function renderCal() {
   const by = {};
-  for (const [ine, t] of Object.entries(D.towns)) if (inArea(t)) for (const e of t.e || []) {
-    if (onDay(e, state.day) && !(by[e.k] || []).some(x => x[0] === ine)) (by[e.k] = by[e.k] || []).push([ine, t, e, dayOf(e)]);
+  for (const [ine, tw] of Object.entries(D.towns)) if (inArea(tw)) for (const e of tw.e || []) {
+    if (onDay(e, state.day) && !(by[e.k] || []).some(x => x[0] === ine)) (by[e.k] = by[e.k] || []).push([ine, tw, e]);
   }
   const keys = Object.keys(by).sort((a, b) => by[b].length - by[a].length);
-  $("#panel").innerHTML = `<div class="p-h"><h2>${md(state.day)}</h2><span class="muted small">${keys.length ? plural(keys.length, "patrón", "patrones") : "ningún patrón con esta fecha"}</span></div>` +
-    keys.map(k => `<div class="calgroup"><div><b>${goDev(k)}</b> <span class="muted small">${plural(by[k].length, "pueblo", "pueblos")}</span></div>` +
-      `<ul class="towns">${by[k].sort((a, b) => a[1].n.localeCompare(b[1].n, "es")).map(([ine, t, e]) => `<li>${goTown(ine)}${e.t && e.t !== D.devotions[k].n && D.devotions[k].g !== "santo" ? ` <span class="muted">(${esc(e.t)})</span>` : ""}</li>`).join("")}</ul></div>`).join("") + foot();
+  $("#panel").innerHTML = `<div class="p-h"><h2>${md(state.day)}</h2><span class="muted small">${keys.length ? plural(keys.length, "patron_one", "patron_many") : esc(t("no_patron_day"))}</span></div>` +
+    keys.map(k => `<div class="calgroup"><div><b>${goDev(k)}</b> <span class="muted small">${plural(by[k].length, "town_one", "town_many")}</span></div>` +
+      `<ul class="towns">${by[k].sort((a, b) => a[1].n.localeCompare(b[1].n, state.lang)).map(([ine, tw, e]) => `<li>${goTown(ine)}${e.t && e.t !== D.devotions[k].n && D.devotions[k].g !== "santo" ? ` <span class="muted">(${esc(e.t)})</span>` : ""}</li>`).join("")}</ul></div>`).join("") + foot();
 }
 
 function renderList() {
-  const all = Object.entries(D.devotions).filter(([, d]) => d.c).sort((a, b) => b[1].c - a[1].c || a[1].n.localeCompare(b[1].n, "es"));
+  const all = Object.entries(D.devotions).filter(([, d]) => d.c).sort((a, b) => b[1].c - a[1].c || a[1].n.localeCompare(b[1].n, state.lang));
   const q = fold(state.q || "");
   const byG = state.g ? all.filter(([, d]) => d.g === state.g) : all;
   const rows = q ? byG.filter(([, d]) => fold(d.n).includes(q) || fold(d.le || "").includes(q)) : byG;
   const gc = g => all.filter(([, d]) => d.g === g).length;
   const shown = rows.slice(0, q ? 200 : state.list);
-  const regions = [...new Set(Object.values(D.towns).map(t => t.c))].sort((a, b) => a.localeCompare(b, "es"));
+  const regions = [...new Set(Object.values(D.towns).map(tw => tw.c))].sort((a, b) => a.localeCompare(b, state.lang));
   $("#panel").innerHTML = `
-    <div class="p-h"><h2>Patrones</h2><span class="muted small">${fmt(all.length)} distintos · pueblos que los tienen</span></div>
-    <input id="dev-q" type="search" placeholder="Buscar santo, Virgen, Cristo…" value="${esc(state.q)}" aria-label="Buscar patrón">
-    <div class="gchips">${[["", "todos", all.length], ["santo", "santos", gc("santo")], ["maria", "María", gc("maria")], ["cristo", "Cristo", gc("cristo")], ["sin_identificar", "sin identificar", gc("sin_identificar")]]
-      .map(([g, n, c]) => `<button type="button" class="chip" data-g="${g}" aria-pressed="${state.g === g}">${n} <span class="muted">${fmt(c)}</span></button>`).join("")}</div>
-    ${state.g === "maria" || state.g === "cristo" ? `<p class="small muted">María y Cristo son una sola entrada cada uno; sus advocaciones están dentro (púlsala).</p>` : ""}
-    <ul class="devlist">${shown.map(([k, d]) => `<li data-go="dev" data-k="${esc(k)}" class="${k === state.dev ? "sel" : ""}">${sw(colorOf[k] || OTHER)}<span class="nm">${esc(d.n)}${d.g === "sin_identificar" ? ' <span class="gtag">sin identificar</span>' : ""}</span><span class="ct">${fmt(d.c)}</span></li>`).join("")}</ul>
-    ${!q && rows.length > shown.length ? `<button class="more" type="button">ver ${fmt(Math.min(rows.length - shown.length, 200))} más</button>` : ""}
-    ${q && !rows.length ? `<p class="muted small">Ningún patrón con ese nombre.</p>` : ""}
-    <div class="small muted" style="margin-top:12px">Por regiones: ${regions.map(r => goArea("c", r)).join(" · ")}</div>
+    <div class="p-h"><h2>${esc(t("list_title"))}</h2><span class="muted small">${esc(t("list_sub", {n: fmt(all.length)}))}</span></div>
+    <input id="dev-q" type="search" placeholder="${esc(t("search_dev"))}" value="${esc(state.q)}" aria-label="${esc(t("search_dev"))}">
+    <div class="gchips">${[["", "chip_all", all.length], ["santo", "chip_santo", gc("santo")], ["maria", "chip_maria", gc("maria")], ["cristo", "chip_cristo", gc("cristo")], ["sin_identificar", "chip_unid", gc("sin_identificar")]]
+      .map(([g, n, c]) => `<button type="button" class="chip" data-g="${g}" aria-pressed="${state.g === g}">${esc(t(n))} <span class="muted">${fmt(c)}</span></button>`).join("")}</div>
+    ${state.g === "maria" || state.g === "cristo" ? `<p class="small muted">${esc(t("maria_note"))}</p>` : ""}
+    <ul class="devlist">${shown.map(([k, d]) => `<li data-go="dev" data-k="${esc(k)}" class="${k === state.dev ? "sel" : ""}">${sw(colorOf[k] || OTHER)}<span class="nm">${esc(d.n)}${d.g === "sin_identificar" ? ` <span class="gtag">${esc(gName("sin_identificar"))}</span>` : ""}</span><span class="ct">${fmt(d.c)}</span></li>`).join("")}</ul>
+    ${!q && rows.length > shown.length ? `<button class="more" type="button">${esc(t("more", {n: fmt(Math.min(rows.length - shown.length, 200))}))}</button>` : ""}
+    ${q && !rows.length ? `<p class="muted small">${esc(t("no_match"))}</p>` : ""}
+    <div class="small muted" style="margin-top:12px">${esc(t("by_region"))} ${regions.map(r => goArea("c", r)).join(" · ")}</div>
     ${foot()}`;
   const inp = $("#dev-q");
   inp.addEventListener("input", () => { state.q = inp.value; const pos = inp.selectionStart; renderList(); const i2 = $("#dev-q"); i2.focus(); i2.setSelectionRange(pos, pos); });
@@ -420,73 +459,87 @@ function renderList() {
 // A province or region: its towns, their first patron, and what is most common there.
 function renderArea() {
   const {k, v} = state.area;
-  const towns = Object.entries(D.towns).filter(([, t]) => t[k] === v).sort((a, b) => a[1].n.localeCompare(b[1].n, "es"));
-  const withData = towns.filter(([, t]) => t.e && t.e.length);
+  const towns = Object.entries(D.towns).filter(([, tw]) => tw[k] === v).sort((a, b) => a[1].n.localeCompare(b[1].n, state.lang));
+  const withData = towns.filter(([, tw]) => tw.e && tw.e.length);
   const cnt = {};
-  for (const [, t] of withData) for (const kk of new Set(t.e.map(e => e.k))) cnt[kk] = (cnt[kk] || 0) + 1;
+  for (const [, tw] of withData) for (const kk of new Set(tw.e.map(e => e.k))) cnt[kk] = (cnt[kk] || 0) + 1;
   const top = Object.entries(cnt).sort((a, b) => b[1] - a[1]).slice(0, 12);
-  const sub = k === "c" ? [...new Set(towns.map(([, t]) => t.p))].sort((a, b) => a.localeCompare(b, "es")) : [];
+  const sub = k === "c" ? [...new Set(towns.map(([, tw]) => tw.p))].sort((a, b) => a.localeCompare(b, state.lang)) : [];
   const region = k === "p" && towns[0] ? towns[0][1].c : "";
-  $("#panel").innerHTML = `<div class="p-h"><span class="muted small">${k === "p" ? "Provincia" : "Región"}</span>${back("todos los patrones")}</div>
+  $("#panel").innerHTML = `<div class="p-h"><span class="muted small">${esc(t(k === "p" ? "area_prov" : "area_reg"))}</span>${back()}</div>
     <div class="town"><h2>${esc(v)}</h2>${region ? `<div class="where">${goArea("c", region)}</div>` : ""}
-    <p><b>${fmt(withData.length)}</b> de ${fmt(towns.length)} pueblos con dato.</p>
-    ${sub.length > 1 ? `<p class="small">Provincias: ${sub.map(p => goArea("p", p)).join(" · ")}</p>` : ""}
-    <p class="small muted">Los patrones más repetidos aquí:</p><ul class="towns">${top.map(([kk, n]) => `<li>${goDev(kk)} <span class="muted">${n}</span></li>`).join("")}</ul>
-    <p class="small muted">Sus pueblos y su primer patrón:</p>
-    <ul class="arealist">${towns.map(([ine, t]) => `<li>${goTown(ine)}${t.e && t.e.length ? ` <span class="muted">·</span> ${goDev(t.e[0].k, devName(t.e[0]))}` : ' <span class="muted">· sin dato</span>'}</li>`).join("")}</ul></div>${foot()}`;
+    <p>${t("area_with", {a: `<b>${fmt(withData.length)}</b>`, b: fmt(towns.length)})}</p>
+    ${sub.length > 1 ? `<p class="small">${esc(t("provinces"))} ${sub.map(p => goArea("p", p)).join(" · ")}</p>` : ""}
+    <p class="small muted">${esc(t("area_top"))}</p><ul class="towns">${top.map(([kk, n]) => `<li>${goDev(kk)} <span class="muted">${n}</span></li>`).join("")}</ul>
+    <p class="small muted">${esc(t("area_towns"))}</p>
+    <ul class="arealist">${towns.map(([ine, tw]) => `<li>${goTown(ine)}${tw.e && tw.e.length ? ` <span class="muted">·</span> ${goDev(tw.e[0].k, devName(tw.e[0]))}` : ` <span class="muted">· ${esc(t("no_data"))}</span>`}</li>`).join("")}</ul></div>${foot()}`;
   bindBack(() => { state.area = null; writeHash(true); renderAll(); });
 }
 
-function roleText(e) { return e.r || "patrón o patrona"; }
+function roleText(e) {
+  const r = (e.r || "").toLowerCase();
+  if (r.startsWith("co")) return t("role_co");
+  if (r === "patrona") return t("role_f");
+  if (r === "patrón" || r === "patrono") return t("role_m");
+  return t("role_any");
+}
+function howText(h) { const [code, arg] = h; return t("how_" + code, {n: arg, x: arg}); }
+function extraText(ex) {
+  if (!ex || !ex.length) return "";
+  const [kind, vals, pref] = ex;
+  let s = kind === "imp" ? t("ex_imp", {x: vals.map(w => (I18N[state.lang]["w_" + w] ? t("w_" + w) : w)).join(` ${t("and")} `)})
+    : kind === "stated" ? t("ex_stated", {x: vals.join(", ")}) : t("ex_" + kind);
+  if (pref) s += " · " + t("ex_pref");
+  return s;
+}
 function srcHtml(s) {
   const [src, url, quote, how, extra] = s;
-  const ex = (extra || "").replace(/importado de ([a-z]+wiki(?:, [a-z]+wiki)*)/, (m, w) => "importado de " + w.split(", ").map(x => WIKI[x] || x).join(" y "));
-  return `<div class="src"><span class="sname">${SRC_NAME[src] || src}</span> · <a href="${esc(url)}" target="_blank" rel="noopener">ver la fuente ↗</a>${ex ? ` · <span class="muted">${esc(ex)}</span>` : ""}
-    <div><code>${esc(quote)}</code></div>${how ? `<div class="how">${esc(how)}</div>` : ""}</div>`;
+  const ex = extraText(extra);
+  const hows = (how || []).map(howText).join("; ");
+  return `<div class="src"><span class="sname">${esc(t("src_" + src))}</span> · <a href="${esc(url)}" target="_blank" rel="noopener">${esc(t("see_source"))}</a>${ex ? ` · <span class="muted">${esc(ex)}</span>` : ""}
+    <div><code>${esc(quote)}</code></div>${hows ? `<div class="how">${esc(hows)}</div>` : ""}</div>`;
 }
 
 // ---------- the town card (opens over the map, closes with ✕, Escape, a click outside or Back) ----------
 function renderCard() {
   const box = $("#card");
-  if (!state.town) { box.hidden = true; document.body.classList.remove("card-open"); return; }
-  const ine = state.town, t = D.towns[ine];
-  let h = `<h2 class="c-title">${esc(t.n)}</h2>${t.n2 ? `<div class="muted small">${esc(t.n2)}</div>` : ""}
-    <div class="where">${goArea("p", t.p)} · ${goArea("c", t.c)} · <span class="muted">${C().code} ${ine}</span></div>`;
-  if (!t.e || !t.e.length) {
-    const parishes = ["Galicia", "Principado de Asturias", "Asturias", "Cantabria"].includes(t.c);
-    h += `<div class="nodata">Todavía no hay dato. Ninguna fuente dice su patrón. No quiere decir que no lo tenga: es lo que falta por completar.` +
-      (parishes ? ` En ${esc(t.c)} un municipio suele reunir varias parroquias o pueblos, y cada uno tiene su patrón, así que a menudo no hay un patrón del municipio entero.` : "") + `</div>`;
+  if (!state.town || !D.towns[state.town]) { box.hidden = true; document.body.classList.remove("card-open"); return; }
+  const ine = state.town, tw = D.towns[ine];
+  let h = `<h2 class="c-title">${esc(tw.n)}</h2>${tw.n2 ? `<div class="muted small">${esc(tw.n2)}</div>` : ""}
+    <div class="where">${goArea("p", tw.p)} · ${goArea("c", tw.c)} · <span class="muted">${C().code} ${ine}</span></div>`;
+  if (!tw.e || !tw.e.length) {
+    const parishes = ["Galicia", "Principado de Asturias", "Asturias", "Cantabria"].includes(tw.c);
+    h += `<div class="nodata">${esc(t("nodata_town"))}${parishes ? " " + esc(t("parishes", {r: tw.c})) : ""}</div>`;
   } else {
-    if (t.xf) h += `<div class="warn">Ninguna fuente dice el patrón de este pueblo. Lo que sigue son sus fiestas locales oficiales con nombre de santo: una pista indirecta, que puede ser el patrón del pueblo o el de una de sus pedanías. A lápiz.</div>`;
-    else if (t.x) h += `<div class="warn">La ficha de este pueblo en Wikipedia no dice su patrón: se ha leído de una frase del artículo (debajo, la frase). Es una propuesta a lápiz, pendiente de confirmar.</div>`;
-    if (t.a === "disagree") h += `<div class="warn">Wikipedia y Wikidata no nombran a ningún patrón en común. Se enseñan las dos versiones.</div>`;
-    if (t.a === "partial") h += `<div class="warn">Wikidata nombra además a alguien que la ficha de Wikipedia no incluye (marcado «solo Wikidata»).</div>`;
-    for (const e of t.e) {
+    if (tw.xf) h += `<div class="warn">${esc(t("warn_fiesta"))}</div>`;
+    else if (tw.x) h += `<div class="warn">${esc(t("warn_text"))}</div>`;
+    if (tw.a === "disagree") h += `<div class="warn">${esc(t("warn_disagree"))}</div>`;
+    if (tw.a === "partial") h += `<div class="warn">${esc(t("warn_partial"))}</div>`;
+    for (const e of tw.e) {
       const d = D.devotions[e.k];
       const advText = e.t && e.t === e.t.toUpperCase() ? niceName(e.t) : e.t;
-      const adv = e.t && e.t !== d.n && d.g !== "santo" ? `<div class="adv">como <b>${esc(advText)}</b></div>` : "";
+      const adv = e.t && e.t !== d.n && d.g !== "santo" ? `<div class="adv">${t("as_adv", {x: `<b>${esc(advText)}</b>`})}</div>` : "";
       const dd = dayOf(e);
       const days = dd ? (dd.all || [dd.md]).map(x => goDay(x)).join(", ") : "";
       const fromFiesta = e.s && e.s[0] && e.s[0][0] === "fiesta_local";
-      const flMatch = !fromFiesta && dd && t.fl && t.fl.some(f => (dd.all || [dd.md]).includes(f[0]));
+      const flMatch = !fromFiesta && dd && tw.fl && tw.fl.some(f => (dd.all || [dd.md]).includes(f[0]));
       h += `<div class="entry">
-        <div class="role">${esc(roleText(e))}${e.wo ? '<span class="badge b-wo">solo Wikidata</span>' : ""}</div>
+        <div class="role">${esc(roleText(e))}${e.wo ? `<span class="badge b-wo">${esc(t("only_wd"))}</span>` : ""}</div>
         <div class="who">${goDev(e.k)} ${goGroup(d.g)}</div>
-        ${adv}${dd ? `<div class="day">${days} · ${esc(dd.how)}${flMatch ? ` · <span class="ok">✓ es fiesta local oficial del municipio</span>` : ""}</div>` : ""}
+        ${adv}${dd ? `<div class="day">${days} · ${esc(t(dd.how, {n: dd.n}))}${flMatch ? ` · <span class="ok">${esc(t("fl_match"))}</span>` : ""}</div>` : ""}
         <div class="srcs">${e.s.map(srcHtml).join("")}</div></div>`;
     }
   }
-  if (t.fl) {
-    const who = {cat: "Generalitat de Catalunya", cyl: "Junta de Castilla y León", ara: "Gobierno de Aragón", mad: "Comunidad de Madrid", eus: "Gobierno Vasco"}[t.fl[0][3]];
-    const named = t.fl.some(f => f[1]);
-    h += `<div class="fl"><b>Fiestas locales oficiales ${t.fl[0][2]}</b> <span class="muted small">(${who})</span><ul>` +
-      t.fl.map(f => `<li>${goDay(f[0])}${f[1] ? ` · ${esc(niceName(f[1]))}` : ""}</li>`).join("") + `</ul>` +
-      `<p class="small muted">${named ? "Una fiesta local no es necesariamente el patrón (San Isidro, por ejemplo, es fiesta local en cientos de pueblos que tienen otro patrón)." : "Son fechas: no dicen a quién se celebra."}</p></div>`;
+  if (tw.fl) {
+    const who = {cat: "Generalitat de Catalunya", cyl: "Junta de Castilla y León", ara: "Gobierno de Aragón", mad: "Comunidad de Madrid", eus: "Eusko Jaurlaritza / Gobierno Vasco"}[tw.fl[0][3]];
+    const named = tw.fl.some(f => f[1]);
+    h += `<div class="fl"><b>${esc(t("fl_title", {y: tw.fl[0][2]}))}</b> <span class="muted small">(${esc(who)})</span><ul>` +
+      tw.fl.map(f => `<li>${goDay(f[0])}${f[1] ? ` · ${esc(niceName(f[1]))}` : ""}</li>`).join("") + `</ul>` +
+      `<p class="small muted">${esc(t(named ? "fl_named" : "fl_dates"))}</p></div>`;
   }
-  if (D.meta.churches) h += `<div id="churches" class="churchbox"><p class="muted small">Cargando iglesias e imágenes…</p></div>`;
-  h += `<div class="links">${t.w ? `<a href="https://${D.meta.wiki || "es"}.wikipedia.org/wiki/${encodeURIComponent(t.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia ↗</a>` : ""}${t.q ? `<a href="https://www.wikidata.org/wiki/${t.q}" target="_blank" rel="noopener">Wikidata ↗</a>` : ""}<a class="go" href="#" data-go="zoom" data-ine="${ine}">ver en el mapa</a></div>`;
+  if (D.meta.churches) h += `<div id="churches" class="churchbox"><p class="muted small">${esc(t("loading_ch"))}</p></div>`;
+  h += `<div class="links">${tw.w ? `<a href="https://${D.meta.wiki || "es"}.wikipedia.org/wiki/${encodeURIComponent(tw.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia ↗</a>` : ""}${tw.q ? `<a href="https://www.wikidata.org/wiki/${tw.q}" target="_blank" rel="noopener">Wikidata ↗</a>` : ""}<a class="go" href="#" data-go="zoom">${esc(t("see_map"))}</a></div>`;
   $("#card-body").innerHTML = h;
-  $("#card-body").querySelector("[data-go=zoom]").onclick = e => { e.preventDefault(); e.stopPropagation(); const i = state.town; closeTown(); zoomTo(i); };
   box.hidden = false; document.body.classList.add("card-open");
   $("#card .c-card").scrollTop = 0;
   fillChurches(ine);
@@ -494,23 +547,24 @@ function renderCard() {
 
 function renderDev(k) {
   const d = D.devotions[k];
-  const towns = Object.entries(D.towns).filter(([, t]) => inArea(t) && t.e && t.e.some(e => e.k === k))
-    .sort((a, b) => a[1].p.localeCompare(b[1].p, "es") || a[1].n.localeCompare(b[1].n, "es"));
-  let h = `<div class="p-h"><span class="muted small">Patrón</span>${back("todos los patrones")}</div>
+  const towns = Object.entries(D.towns).filter(([, tw]) => inArea(tw) && tw.e && tw.e.some(e => e.k === k))
+    .sort((a, b) => a[1].p.localeCompare(b[1].p, state.lang) || a[1].n.localeCompare(b[1].n, state.lang));
+  let h = `<div class="p-h"><span class="muted small">${esc(t("dev_label"))}</span>${back()}</div>
     <div class="town"><h2>${esc(d.n)} ${goGroup(d.g)}</h2>`;
-  if (d.le && d.le !== d.n) h += `<div class="where">En Wikidata: ${esc(d.le)}</div>`;
-  if (d.g === "santo" && d.f) h += `<div class="day small">Fiesta litúrgica según Wikidata: ${d.f.split(";").map(x => goDay(x)).join(", ")}</div>`;
-  if (d.g === "sin_identificar") h += `<div class="warn">Texto que la fuente no enlaza a nadie, o que en otros pueblos enlaza a santos distintos (por ejemplo, «San Antonio» puede ser el Abad o el de Padua). Se enseña tal cual.</div>`;
-  h += `<p><b>${fmt(towns.length)}</b> pueblos${state.area ? ` de ${esc(state.area.v)}` : ""} lo tienen entre sus patrones.${d.im ? ` Hay <b>${fmt(d.im)}</b> imágenes o estatuas que lo representan con lugar conocido.` : ""}${d.ch ? ` Wikidata conoce <b>${fmt(d.ch)}</b> iglesias dedicadas a ${d.g === "santo" ? "él o ella" : "esta devoción"}.` : ""}</p>`;
-  if (d.g === "maria" || d.g === "cristo" || d.g === "dios") {
+  if (d.le && d.le !== d.n) h += `<div class="where">${esc(t("in_wd", {x: d.le}))}</div>`;
+  if (d.g === "santo" && d.f) h += `<div class="day small">${esc(t("feast_wd"))} ${d.f.split(";").map(x => goDay(x)).join(", ")}</div>`;
+  if (d.g === "sin_identificar") h += `<div class="warn">${esc(t("unid_warn"))}</div>`;
+  h += `<p>${state.area ? t("dev_towns_area", {n: `<b>${fmt(towns.length)}</b>`, a: esc(state.area.v)}) : t("dev_towns", {n: `<b>${fmt(towns.length)}</b>`})}` +
+    `${d.im ? " " + t("dev_im", {n: `<b>${fmt(d.im)}</b>`}) : ""}${d.ch ? " " + t("dev_ch", {n: `<b>${fmt(d.ch)}</b>`}) : ""}</p>`;
+  if (d.g !== "santo" && d.g !== "sin_identificar") {
     const adv = {};
-    for (const [, t] of towns) for (const e of t.e) if (e.k === k) { const a = e.t || d.n; adv[a] = (adv[a] || 0) + 1; }
+    for (const [, tw] of towns) for (const e of tw.e) if (e.k === k) { const a = e.t || d.n; adv[a] = (adv[a] || 0) + 1; }
     const list = Object.entries(adv).sort((a, b) => b[1] - a[1]);
-    h += `<p class="small muted">${fmt(list.length)} advocaciones distintas. Las más nombradas:</p><ul class="towns">${list.slice(0, 30).map(([a, n]) => `<li>${esc(a)} <span class="muted">${n}</span></li>`).join("")}</ul>`;
+    h += `<p class="small muted">${esc(t("adv_count", {n: fmt(list.length)}))}</p><ul class="towns">${list.slice(0, 30).map(([a, n]) => `<li>${esc(a)} <span class="muted">${n}</span></li>`).join("")}</ul>`;
   }
   const byProv = {};
-  for (const [ine, t] of towns) (byProv[t.p] = byProv[t.p] || []).push([ine, t]);
-  h += Object.entries(byProv).map(([p, l]) => `<div class="small"><b>${goArea("p", p)}</b> <span class="muted">${l.length}</span></div><ul class="towns">${l.map(([ine]) => `<li>${goTown(ine)}</li>`).join("")}</ul>`).join("");
+  for (const [ine, tw] of towns) (byProv[tw.p] = byProv[tw.p] || []).push(ine);
+  h += Object.entries(byProv).map(([p, l]) => `<div class="small"><b>${goArea("p", p)}</b> <span class="muted">${l.length}</span></div><ul class="towns">${l.map(ine => `<li>${goTown(ine)}</li>`).join("")}</ul>`).join("");
   h += `<div class="links">${d.w ? `<a href="https://${D.meta.wiki || "es"}.wikipedia.org/wiki/${encodeURIComponent(d.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia ↗</a>` : ""}${d.i ? `<a href="https://www.wikidata.org/wiki/${d.i}" target="_blank" rel="noopener">Wikidata ↗</a>` : ""}</div></div>${foot()}`;
   $("#panel").innerHTML = h;
   bindBack(() => { state.dev = null; writeHash(true); renderAll(); });
@@ -547,8 +601,8 @@ async function drawChurches() {
       const star = c[7].some(k => pk.has(k));
       const m = L.circleMarker([c[3], c[4]], {radius: src === "w" ? 5 : 3.5, weight: 1, color: "#fff",
         fillColor: star ? "#e0a526" : src === "w" ? "#2a1d2b" : "#8d7f70", fillOpacity: 0.95});
-      m.on("mousemove", e => tipAt(e, `<b>${esc(c[0] || "(sin nombre en la fuente)")}</b> <span class="tp">${esc(c[1])}${c[2] ? " · " + esc(c[2]) : ""}</span>` +
-        (c[7].length ? `<div class="tl">dedicada a ${c[7].map(k => esc(dedName(k, w.names))).join(", ")}${star ? " ★ patrón del pueblo" : ""}</div>` : "") +
+      m.on("mousemove", e => tipAt(e, `<b>${esc(c[0] || t("unnamed"))}</b> <span class="tp">${esc(c[1])}${c[2] ? " · " + esc(c[2]) : ""}</span>` +
+        (c[7].length ? `<div class="tl">${esc(t("dedicated_to"))} ${c[7].map(k => esc(dedName(k, w.names))).join(", ")}${star ? " " + esc(t("star_patron")) : ""}</div>` : "") +
         `<div class="tp">${esc(D.towns[ine].n)} · ${src === "w" ? "Wikidata" : "OpenStreetMap"}</div>`));
       m.on("mouseout", hideTip);
       m.on("click", () => { hideTip(); selectTown(ine, true); });
@@ -561,8 +615,8 @@ async function drawChurches() {
       if (!b.contains([c[2], c[3]])) continue;
       const star = c[1].some(k => pk.has(k));
       const m = L.circleMarker([c[2], c[3]], {radius: 5.5, weight: 2, color: star ? "#e0a526" : "#fff", fillColor: "#7a55a8", fillOpacity: 0.95});
-      m.on("mousemove", e => tipAt(e, `<b>${esc(c[0] || "(sin nombre en la fuente)")}</b> <span class="tp">imagen o estatua</span>` +
-        (c[1].length ? `<div class="tl">representa a ${c[1].map(k => esc(dedName(k, im.names || {}))).filter(Boolean).join(", ")}${star ? " ★ patrón del pueblo" : ""}</div>` : "") +
+      m.on("mousemove", e => tipAt(e, `<b>${esc(c[0] || t("unnamed"))}</b> <span class="tp">${esc(t("img_statue"))}</span>` +
+        (c[1].length ? `<div class="tl">${esc(t("depicts"))} ${c[1].map(k => esc(dedName(k, im.names || {}))).filter(Boolean).join(", ")}${star ? " " + esc(t("star_patron")) : ""}</div>` : "") +
         `<div class="tp">${esc(D.towns[ine].n)}${c[5] ? " · " + esc(c[5]) : ""} · ${c[9] === "osm" ? "OpenStreetMap" : "Wikidata"}</div>`));
       m.on("mouseout", hideTip);
       m.on("click", () => { hideTip(); selectTown(ine, true); });
@@ -582,8 +636,8 @@ async function fillChurches(ine) {
   const row = (c, src) => {
     const star = c[7].some(k => pk.has(k));
     const link = src === "w" ? `https://www.wikidata.org/wiki/${c[5]}` : `https://www.openstreetmap.org/${c[6]}`;
-    const ded = c[7].length ? ` · dedicada a ${c[7].map(k => dedLink(k, w.names)).join(", ")}` : "";
-    return `<li${star ? ' class="star"' : ""}>${star ? "★ " : ""}<a href="${link}" target="_blank" rel="noopener">${esc(c[0] || "(sin nombre en la fuente)")}</a> <span class="muted">${esc(c[1])}${c[2] ? " · " + esc(c[2]) : ""}${c[8] ? " · patrimonio" : ""}</span>${ded} ${goMap(c[3], c[4])}</li>`;
+    const ded = c[7].length ? ` · ${esc(t("dedicated_to"))} ${c[7].map(k => dedLink(k, w.names)).join(", ")}` : "";
+    return `<li${star ? ' class="star"' : ""}>${star ? "★ " : ""}<a href="${link}" target="_blank" rel="noopener">${esc(c[0] || t("unnamed"))}</a> <span class="muted">${esc(c[1])}${c[2] ? " · " + esc(c[2]) : ""}${c[8] ? " · " + esc(t("heritage")) : ""}</span>${ded} ${goMap(c[3], c[4])}</li>`;
   };
   const nstar = W.concat(O).filter(c => c[7].some(k => pk.has(k))).length;
   const I = im.towns[ine] || [];
@@ -591,24 +645,165 @@ async function fillChurches(ine) {
     const star = c[1].some(k => pk.has(k));
     const link = c[9] === "osm" ? `https://www.openstreetmap.org/${c[4]}` : c[4] ? `https://www.wikidata.org/wiki/${c[4]}` : "";
     const dep = c[1].map(k => dedLink(k, im.names || {})).filter(Boolean).join(", ");
-    const thumb = c[8] ? `<a class="thumb" href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(c[8])}" target="_blank" rel="noopener" title="Wikimedia Commons: autor y licencia"><img loading="lazy" alt="" src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(c[8])}?width=120"></a>` : "";
-    const name = esc(c[0] || "(sin nombre en la fuente)");
+    const thumb = c[8] ? `<a class="thumb" href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(c[8])}" target="_blank" rel="noopener" title="Wikimedia Commons"><img loading="lazy" alt="" src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(c[8])}?width=120"></a>` : "";
+    const name = esc(c[0] || t("unnamed"));
+    const contrib = String(c[9]).startsWith("contribution") ? ` <span class="badge b-wo">${esc(t("contrib"))}${c[9].split(":")[1] === "proposed" ? ", " + esc(t("pencil_short")) : ""}${c[9].split(":")[2] ? " · " + esc(c[9].split(":")[2]) : ""}</span>` : "";
     return `<li class="img${star ? " star" : ""}">${thumb}<div>${star ? "★ " : ""}${link ? `<a href="${link}" target="_blank" rel="noopener">${name}</a>` : `<b>${name}</b>`}` +
-      `${dep ? ` · representa a ${dep}` : ""}${c[5] ? ` <span class="muted">· en ${esc(c[5])}</span>` : ""}${c[6] || c[7] ? ` <span class="muted">· ${esc([c[6], c[7]].filter(Boolean).join(", "))}</span>` : ""}` +
-      `${c[9] === "osm" ? ' <span class="muted">(OpenStreetMap)</span>' : ""}` +
-      `${String(c[9]).startsWith("contribution") ? ` <span class="badge b-wo">aportación${c[9].split(":")[1] === "proposed" ? ", a lápiz" : ""}${c[9].split(":")[2] ? " de " + esc(c[9].split(":")[2]) : ""}</span>` : ""} ${goMap(c[2], c[3])}</div></li>`;
+      `${dep ? ` · ${esc(t("depicts"))} ${dep}` : ""}${c[5] ? ` <span class="muted">· ${esc(t("in_place", {x: c[5]}))}</span>` : ""}${c[6] || c[7] ? ` <span class="muted">· ${esc([c[6], c[7]].filter(Boolean).join(", "))}</span>` : ""}` +
+      `${c[9] === "osm" ? ' <span class="muted">(OpenStreetMap)</span>' : ""}${contrib} ${goMap(c[2], c[3])}</div></li>`;
   };
-  const imgs = I.length ? `<h3>Imágenes y estatuas <span class="muted small">${I.length}</span></h3><ul class="churches">${I.map(irow).join("")}</ul>` +
-    `<p class="muted small">Las fotos son de Wikimedia Commons; pulsa una para ver su autor y su licencia.</p>` : "";
-  box.innerHTML = imgs + `<h3>Iglesias <span class="muted small">${W.length + O.length}</span></h3>` +
-    (W.length + O.length === 0 ? `<p class="muted small">Ni Wikidata ni OpenStreetMap tienen iglesias dentro del término municipal.</p>` : "") +
-    (nstar ? `<p class="small">★ dedicada a un santo patrón del pueblo (según la dedicatoria de Wikidata; con María o Cristo no se marca, porque la advocación puede ser otra).</p>` : "") +
+  const imgs = I.length ? `<h3>${esc(t("h_images"))} <span class="muted small">${I.length}</span></h3><ul class="churches">${I.map(irow).join("")}</ul>` +
+    `<p class="muted small">${esc(t("commons_note"))}</p>` : "";
+  box.innerHTML = imgs + `<h3>${esc(t("h_churches"))} <span class="muted small">${W.length + O.length}</span></h3>` +
+    (W.length + O.length === 0 ? `<p class="muted small">${esc(t("no_churches"))}</p>` : "") +
+    (nstar ? `<p class="small">${esc(t("star_note"))}</p>` : "") +
     (W.length ? `<div class="small muted">Wikidata</div><ul class="churches">${W.map(c => row(c, "w")).join("")}</ul>` : "") +
-    (O.length ? `<details${W.length ? "" : " open"}><summary class="small muted">OpenStreetMap: ${O.length} más</summary><ul class="churches">${O.map(c => row(c, "o")).join("")}</ul></details>` : "") +
-    `<p class="muted small">La dedicatoria solo se da cuando Wikidata la dice; el nombre de la iglesia no se usa para deducirla.</p>`;
+    (O.length ? `<details${W.length ? "" : " open"}><summary class="small muted">${esc(t("osm_more", {n: O.length}))}</summary><ul class="churches">${O.map(c => row(c, "o")).join("")}</ul></details>` : "") +
+    `<p class="muted small">${esc(t("ded_note"))}</p>`;
+}
+
+// ---------- analysis: rankings, rare and local saints, trends, Spain against Italy ----------
+async function renderStats() {
+  const view = $("#statsview");
+  view.innerHTML = `<p class="muted">${esc(t("loading"))}</p>`;
+  const [es, it] = await Promise.all([fetchCountry("es"), fetchCountry("it")]);
+  if (state.view !== "stats") return;
+  const P = {es: es.data, it: it.data};
+  const cur = state.country, DD = P[cur];
+  const cname = c => t("country_" + c);
+  const share = (c, k) => (P[c].devotions[k] ? P[c].devotions[k].c : 0) / P[c].meta.with_data;
+  const pc = x => (Math.round(x * 1000) / 10).toLocaleString(LANGS[state.lang]);
+  const name = (c, k) => P[c].devotions[k] ? P[c].devotions[k].n : "";
+  const both = k => { const a = name("es", k), b = name("it", k); return a && b && fold(a) !== fold(b) ? `${a} / ${b}` : a || b; };
+  let h = "";
+
+  // 1 · key figures, the two countries side by side
+  const fig = c => {
+    const m = P[c].meta, dv = P[c].devotions;
+    const unique = Object.values(dv).filter(d => d.g === "santo" && d.c === 1).length;
+    return `<div class="kcol"><div class="kc-head">${sw(COUNTRIES[c].color)}<b>${esc(cname(c))}</b></div>
+      <div class="kpi"><span class="kv">${pc(m.with_data / m.towns)} %</span><span class="kl">${esc(t("k_with"))} · ${fmt(m.with_data)} / ${fmt(m.towns)}</span></div>
+      <div class="kpi"><span class="kv">${fmt(Object.values(dv).filter(d => d.c).length)}</span><span class="kl">${esc(t("k_distinct"))}</span></div>
+      <div class="kpi"><span class="kv">${pc(share(c, "maria"))} %</span><span class="kl">${esc(t("k_maria"))}</span></div>
+      <div class="kpi"><span class="kv">${pc(share(c, "cristo"))} %</span><span class="kl">${esc(t("k_cristo"))}</span></div>
+      <div class="kpi"><span class="kv">${fmt(unique)}</span><span class="kl">${esc(t("k_unique"))}</span></div></div>`;
+  };
+  h += `<section class="st-sec"><div class="kgrid">${fig("es")}${fig("it")}</div></section>`;
+
+  // 2 · ranking in the current country
+  // saints only: Mary and Christ, grouped, would dwarf every bar (their weight is in the key figures above)
+  const rank = Object.entries(DD.devotions).filter(([, d]) => d.c && d.g === "santo").sort((a, b) => b[1].c - a[1].c).slice(0, 20);
+  const maxR = rank[0][1].c;
+  h += section(t("st_rank", {c: cname(cur)}), t("st_rank_sub"),
+    `<div class="hbars">${rank.map(([k, d]) => hbar(goDev(k), d.c / maxR, fmt(d.c), COUNTRIES[cur].color,
+      `<b>${esc(d.n)}</b><br>${esc(t("towns_n", {n: fmt(d.c)}))} · ${esc(t("pct_towns", {p: pc(d.c / DD.meta.with_data)}))}`, k)).join("")}</div>`,
+    table([t("col_patron"), t("col_towns"), t("col_share")], rank.map(([k, d]) => [d.n, fmt(d.c), pc(d.c / DD.meta.with_data) + " %"])));
+
+  // 3 · Spain and Italy, shared saints
+  const shared = Object.keys(P.es.devotions).filter(k => P.it.devotions[k] && P.es.devotions[k].c && P.it.devotions[k].c && !k.startsWith("txt:"))
+    .sort((a, b) => (share("es", b) + share("it", b)) - (share("es", a) + share("it", a))).slice(0, 20);
+  const maxS = Math.max(...shared.flatMap(k => [share("es", k), share("it", k)]));
+  h += section(t("st_cmp"), t("st_cmp_sub"),
+    legend([["es", cname("es")], ["it", cname("it")]]) +
+    `<div class="pbars">${shared.map(k => `<div class="prow"><div class="plabel">${esc(both(k))}</div><div class="ppair">` +
+      ["es", "it"].map(c => `<div class="pb" data-tip="${esc(`<b>${esc(name(c, k) || both(k))}</b><br>${esc(cname(c))}: ${pc(share(c, k))} % · ${esc(t("towns_n", {n: fmt(P[c].devotions[k].c)}))}`)}">` +
+        `<a href="#" data-go="dev" data-k="${esc(k)}" data-c="${c}" class="bar" style="width:${Math.max(0.5, 100 * share(c, k) / maxS)}%;background:${COUNTRIES[c].color}" aria-label="${esc(cname(c))}"></a><span class="bv">${pc(share(c, k))} %</span></div>`).join("") +
+      `</div></div>`).join("")}</div>`,
+    table([t("col_patron"), cname("es"), cname("it")], shared.map(k => [both(k), pc(share("es", k)) + " %", pc(share("it", k)) + " %"])));
+
+  // 4 · big here, rare there
+  const lop = [];
+  for (const [a, b] of [["es", "it"], ["it", "es"]]) {
+    lop.push(...Object.entries(P[a].devotions).filter(([k, d]) => d.g === "santo" && d.c >= 15 && /^Q\d+$/.test(k))
+      .map(([k]) => [k, a, b, share(a, k), share(b, k)]).filter(x => x[4] < x[3] / 20).sort((x, y) => y[3] - x[3]).slice(0, 8));
+  }
+  h += section(t("st_only"), t("st_only_sub"),
+    `<div class="twocol">${["es", "it"].map(a => `<div><div class="kc-head">${sw(COUNTRIES[a].color)}<b>${esc(cname(a))}</b></div><ul class="plain">` +
+      lop.filter(x => x[1] === a).map(([k, , b, sa, sb]) => `<li>${goDev(k, name(a, k), a)} <span class="muted">${pc(sa)} % · ${esc(cname(b))} ${pc(sb)} %</span></li>`).join("") + `</ul></div>`).join("")}</div>`, "");
+
+  // 5 · Mary, Christ or a saint, by region (100 % stacked)
+  const regs = {};
+  for (const tw of Object.values(DD.towns)) for (const e of tw.e || []) {
+    const g = DD.devotions[e.k].g === "dios" ? "cristo" : DD.devotions[e.k].g;
+    const r = regs[tw.c] = regs[tw.c] || {maria: 0, cristo: 0, santo: 0, sin_identificar: 0, n: 0};
+    r[g]++; r.n++;
+  }
+  const order = ["maria", "cristo", "santo", "sin_identificar"];
+  const regRows = Object.entries(regs).filter(([, r]) => r.n >= 10).sort((a, b) => b[1].maria / b[1].n - a[1].maria / a[1].n);
+  h += section(t("st_groups", {c: cname(cur)}), t("st_groups_sub"),
+    legend(order.map(g => [g, gName(g)]), GROUP) +
+    `<div class="sbars">${regRows.map(([rg, r]) => `<div class="srow"><div class="slabel">${goArea("c", rg)}</div><div class="stack">` +
+      order.filter(g => r[g]).map(g => `<a href="#" data-go="area" data-a="c" data-v="${esc(rg)}" class="seg" style="flex:${r[g]};background:${GROUP[g]}" data-tip="${esc(`<b>${esc(rg)}</b><br>${esc(gName(g))}: ${pc(r[g] / r.n)} %`)}">${r[g] / r.n >= 0.12 ? `<span>${Math.round(100 * r[g] / r.n)}</span>` : ""}</a>`).join("") +
+      `</div></div>`).join("")}</div>`,
+    table([t("col_region"), ...order.map(gName)], regRows.map(([rg, r]) => [rg, ...order.map(g => pc(r[g] / r.n) + " %")])));
+
+  // 6 · the most frequent saint in each region
+  const topReg = Object.keys(regs).map(rg => {
+    const cnt = {};
+    let n = 0;
+    for (const tw of Object.values(DD.towns)) if (tw.c === rg && tw.e && tw.e.length) { n++; for (const k of new Set(tw.e.map(e => e.k))) cnt[k] = (cnt[k] || 0) + 1; }
+    const best = Object.entries(cnt).filter(([k]) => DD.devotions[k].g === "santo").sort((a, b) => b[1] - a[1])[0];
+    return [rg, best, n];
+  }).filter(x => x[1]).sort((a, b) => a[0].localeCompare(b[0], state.lang));
+  h += section(t("st_top_region", {c: cname(cur)}), "",
+    `<ul class="plain cols2">${topReg.map(([rg, [k, c], n]) => `<li>${goArea("c", rg)}: ${goDev(k)} <span class="muted">${pc(c / n)} %</span></li>`).join("")}</ul>`, "");
+
+  // 7 · local saints: 3+ towns, 90 % or more in one region
+  const local = Object.entries(DD.devotions).filter(([k, d]) => d.g === "santo" && d.c >= 3 && /^Q\d+$/.test(k)).map(([k, d]) => {
+    const byR = {};
+    for (const tw of Object.values(DD.towns)) if (tw.e && tw.e.some(e => e.k === k)) byR[tw.c] = (byR[tw.c] || 0) + 1;
+    const [rg, n] = Object.entries(byR).sort((a, b) => b[1] - a[1])[0];
+    return [k, d, rg, n / d.c];
+  }).filter(x => x[3] >= 0.9).sort((a, b) => b[1].c - a[1].c).slice(0, 30);
+  h += section(t("st_local", {c: cname(cur)}), t("st_local_sub"),
+    `<ul class="plain cols2">${local.map(([k, d, rg, s]) => `<li>${goDev(k)} <span class="muted">${esc(t("towns_n", {n: fmt(d.c)}))} · ${esc(t("only_in", {p: Math.round(100 * s), r: rg}))}</span></li>`).join("")}</ul>`, "");
+
+  // 8 · one-town saints
+  const where = {};
+  for (const [ine, tw] of Object.entries(DD.towns)) for (const e of tw.e || []) where[e.k] = ine;
+  const uniq = Object.entries(DD.devotions).filter(([k, d]) => d.g === "santo" && d.c === 1 && /^Q\d+$/.test(k))
+    .sort((a, b) => a[1].n.localeCompare(b[1].n, state.lang));
+  h += section(t("st_unique", {c: cname(cur)}), t("st_unique_sub", {n: fmt(uniq.length)}),
+    `<ul class="plain cols3">${uniq.map(([k], i) => `<li${i >= 60 ? ' class="hide"' : ""}>${goDev(k)} <span class="muted">·</span> ${where[k] ? goTown(where[k]) : ""}</li>`).join("")}</ul>` +
+    (uniq.length > 60 ? `<a class="go" href="#" data-go="more-unique">${esc(t("see_all_unique", {n: fmt(uniq.length)}))}</a>` : ""), "");
+
+  // 9 · patronal feasts by month, Spain and Italy
+  const months = c => {
+    const m = Array(12).fill(0);
+    let n = 0;
+    for (const tw of Object.values(P[c].towns)) for (const e of tw.e || []) { const d = dayOf(e, P[c].devotions); if (d) { m[+d.md.slice(0, 2) - 1]++; n++; } }
+    return m.map(x => x / n);
+  };
+  const mo = {es: months("es"), it: months("it")};
+  const maxM = Math.max(...mo.es, ...mo.it);
+  h += section(t("st_months"), t("st_months_sub"),
+    legend([["es", cname("es")], ["it", cname("it")]]) +
+    `<div class="cols">${t("months_short").map((mn, i) => `<div class="colm"><div class="cpair">` +
+      ["es", "it"].map(c => `<div class="cb" style="height:${100 * mo[c][i] / maxM}%;background:${COUNTRIES[c].color}" data-tip="${esc(`<b>${esc(t("months")[i])}</b><br>${esc(cname(c))}: ${pc(mo[c][i])} %`)}"></div>`).join("") +
+      `</div><div class="cl">${esc(mn)}</div></div>`).join("")}</div>`,
+    table([t("col_month"), cname("es"), cname("it")], t("months").map((mn, i) => [mn, pc(mo.es[i]) + " %", pc(mo.it[i]) + " %"])));
+
+  view.innerHTML = h + `<div class="st-foot">${foot()}</div>`;
+}
+function section(title, sub, body, tbl) {
+  return `<section class="st-sec"><h3>${esc(title)}</h3>${sub ? `<p class="muted small">${esc(sub)}</p>` : ""}${body}` +
+    (tbl ? `<details class="tbl"><summary>${esc(t("table_view"))}</summary>${tbl}</details>` : "") + `</section>`;
+}
+function hbar(label, frac, value, color, tipHtml, k) {
+  return `<div class="hrow" data-tip="${esc(tipHtml)}"><div class="hlabel">${label}</div><div class="htrack"><a href="#" data-go="dev" data-k="${esc(k)}" class="bar" style="width:${Math.max(0.5, frac * 100)}%;background:${color}" aria-hidden="true" tabindex="-1"></a><span class="bv">${value}</span></div></div>`;
+}
+function legend(items, colors) {
+  return `<div class="legend">${items.map(([k, n]) => `<span>${sw((colors || {})[k] || COUNTRIES[k].color)}${esc(n)}</span>`).join("")}</div>`;
+}
+function table(head, rows) {
+  return `<table><thead><tr>${head.map(x => `<th>${esc(x)}</th>`).join("")}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(x => `<td>${esc(x)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 }
 
 function foot() {
-  return `<div class="foot">Fuentes: ${Object.values(D.sources).map(s => `<a href="${s.u}" target="_blank" rel="noopener">${esc(s.n)}</a> (${esc(s.l)}): ${esc(s.d)}`).join(" · ")}
-    ${D.meta.churches ? `Iglesias: <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a> (CC0) y © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">colaboradores de OpenStreetMap</a> (ODbL). ` : ""}Contornos: GISCO © EuroGeographics. Códigos: ${C().code}.</div>`;
+  const src = Object.entries(D.sources).map(([id, s]) => {
+    const d = I18N[state.lang][`sd_${id}_${state.country}`] ? t(`sd_${id}_${state.country}`) : t("sd_" + id);
+    return `<a href="${s.u}" target="_blank" rel="noopener">${esc(t("sn_" + id))}</a> (${esc(s.l)}): ${esc(d)}`;
+  }).join(" · ");
+  return `<div class="foot">${esc(t("foot_sources"))} ${src}
+    ${D.meta.churches ? `${esc(t("foot_churches"))} <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a> (CC0) · © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">${esc(t("osm_contrib"))}</a> (ODbL). ` : ""}${esc(t("foot_contours", {c: C().code}))}</div>`;
 }

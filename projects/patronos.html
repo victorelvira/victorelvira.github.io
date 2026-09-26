@@ -5,62 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Patronos de España · el santo de cada pueblo</title>
   <link rel="icon" href="patronos/favicon.svg">
-  <meta name="description" content="El patrón y la patrona de cada municipio de España y de Italia, con la fuente de cada dato y los pueblos de los que aún no se sabe.">
+  <meta name="description" content="El patrón y la patrona de cada municipio de España y de Italia, con la fuente de cada dato. Patron saints of every town in Spain and Italy. Il santo patrono di ogni comune di Spagna e Italia.">
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#2a1d2b">
   <link rel="stylesheet" href="patronos/vendor/leaflet.css">
-  <link rel="stylesheet" href="patronos/style.css?v=0.10.0">
+  <link rel="stylesheet" href="patronos/style.css?v=0.11.0">
 </head>
 <body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
     <span class="nav-sep">·</span>
     <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
-    <span id="build" class="build" title="Versión y última actualización"></span>
+    <span id="build" class="build"></span>
   </nav>
 
   <header id="bar">
-    <a class="brand" href="patronos.html" title="Recargar (quita la selección)">
+    <a class="brand" href="patronos.html">
       <img class="mark" src="patronos/favicon.svg" width="28" height="28" alt="">
       <div>
-        <strong>Patronos de España</strong>
-        <small>el santo de cada pueblo, y quién lo dice</small>
+        <strong id="brand-title">Patronos de España</strong>
+        <small data-i18n="tagline">el santo de cada pueblo, y quién lo dice</small>
       </div>
     </a>
-    <nav class="country" aria-label="País">
-      <button type="button" class="cty on" data-c="es">España</button><button type="button" class="cty" data-c="it">Italia</button>
+    <nav class="country" aria-label="País / Country / Paese">
+      <button type="button" class="cty on" data-c="es" data-i18n="country_es">España</button><button type="button" class="cty" data-c="it" data-i18n="country_it">Italia</button>
     </nav>
-    <div id="stats" class="stats">cargando…</div>
+    <nav class="lang" aria-label="Idioma / Language / Lingua">
+      <button type="button" class="lg on" data-l="es" title="Español">ES</button><button type="button" class="lg" data-l="en" title="English">EN</button><button type="button" class="lg" data-l="it" title="Italiano">IT</button>
+    </nav>
+    <div id="stats" class="stats"></div>
   </header>
 
   <div id="controls">
     <span class="tabs" role="tablist">
-      <button type="button" class="tab active" data-view="main" title="Cada pueblo con el color de su primer patrón">Primer patrón</button>
-      <button type="button" class="tab" data-view="group" title="Virgen María, Cristo o un santo">María · Cristo · santos</button>
-      <button type="button" class="tab" data-view="agree" title="¿Coinciden Wikipedia y Wikidata?">Fuentes</button>
-      <button type="button" class="tab" data-view="cal" title="Qué pueblos celebran a su patrón cada día">Calendario</button>
+      <button type="button" class="tab active" data-view="main" data-i18n="tab_main">Primer patrón</button>
+      <button type="button" class="tab" data-view="group" data-i18n="tab_group">María · Cristo · santos</button>
+      <button type="button" class="tab" data-view="agree" data-i18n="tab_agree">Fuentes</button>
+      <button type="button" class="tab" data-view="cal" data-i18n="tab_cal">Calendario</button>
+      <button type="button" class="tab" data-view="stats" data-i18n="tab_stats">Análisis</button>
     </span>
     <span class="search-wrap">
-      <input id="town-q" type="search" placeholder="Buscar pueblo…" autocomplete="off" aria-label="Buscar pueblo">
+      <input id="town-q" type="search" data-i18n-ph="search_town" placeholder="Buscar pueblo…" autocomplete="off">
       <div id="town-hits" class="hits" hidden></div>
     </span>
-    <button type="button" id="churches-btn" class="chip" aria-pressed="false" title="Iglesias e imágenes de santos (Wikidata y OpenStreetMap), al acercarse">⛪ iglesias e imágenes</button>
-    <button type="button" id="nodata" class="chip" aria-pressed="false" title="Resaltar los pueblos de los que aún no hay dato">∅ sin dato</button>
+    <button type="button" id="churches-btn" class="chip" aria-pressed="false" data-i18n="btn_churches">⛪ iglesias e imágenes</button>
+    <button type="button" id="nodata" class="chip" aria-pressed="false" data-i18n="btn_nodata">∅ sin dato</button>
   </div>
   <div id="explain" class="explain"></div>
 
   <main id="main">
     <div id="map"></div>
-    <div id="drag" title="Arrastra para cambiar el ancho"></div>
+    <div id="drag"></div>
     <aside id="panel"></aside>
+    <section id="statsview" hidden></section>
   </main>
 
-  <div id="card" hidden role="dialog" aria-modal="true" aria-label="Ficha del pueblo">
-    <div class="c-card"><button id="card-close" type="button" aria-label="Cerrar">✕</button><div id="card-body"></div></div>
+  <div id="card" hidden role="dialog" aria-modal="true">
+    <div class="c-card"><button id="card-close" type="button" data-i18n-aria="close">✕</button><div id="card-body"></div></div>
   </div>
   <div id="tip" class="tip" hidden></div>
 
   <script src="patronos/vendor/leaflet.js"></script>
-  <script src="patronos/app.js?v=0.10.0"></script>
+  <script src="patronos/app.js?v=0.11.0"></script>
 </body>
 </html>
