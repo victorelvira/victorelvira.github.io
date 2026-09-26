@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.7.0";
-const BUILD_AT = "2026-09-26 11:14";
+const DATA_V = "0.7.1";
+const BUILD_AT = "2026-09-26 16:26";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -445,7 +445,7 @@ function renderTown(ine) {
     }
   }
   if (t.fl) {
-    const who = {cat: "Generalitat de Catalunya", cyl: "Junta de Castilla y León", ara: "Gobierno de Aragón"}[t.fl[0][3]];
+    const who = {cat: "Generalitat de Catalunya", cyl: "Junta de Castilla y León", ara: "Gobierno de Aragón", mad: "Comunidad de Madrid", eus: "Gobierno Vasco"}[t.fl[0][3]];
     const named = t.fl.some(f => f[1]);
     h += `<div class="fl"><b>Fiestas locales oficiales ${t.fl[0][2]}</b> <span class="muted small">(${who})</span><ul>` +
       t.fl.map(f => `<li>${md(f[0])}${f[1] ? ` · ${esc(niceName(f[1]))}` : ""}</li>`).join("") + `</ul>` +
