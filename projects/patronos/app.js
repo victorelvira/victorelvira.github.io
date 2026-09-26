@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.6.1";
-const BUILD_AT = "2026-09-26 11:07";
+const DATA_V = "0.7.0";
+const BUILD_AT = "2026-09-26 11:14";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -259,6 +259,11 @@ function shiftDay(md, n) {
   const d = new Date(2024, +md.slice(0, 2) - 1, +md.slice(3) + n);   // 2024: a leap year, so 29 February exists
   return `${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
+// Display only: the source writes "NTRA. SRA. DE LAS AGUAS"; the stored value keeps it as it came.
+function niceName(s) {
+  const small = new Set(["de", "del", "la", "las", "los", "el", "y", "e", "a", "al"]);
+  return s.toLowerCase().split(/(\s+)/).map((w, i) => /^\s+$/.test(w) || (i > 0 && small.has(w)) ? w : w.charAt(0).toUpperCase() + w.slice(1)).join("");
+}
 function devName(e) {
   const d = D.devotions[e.k];
   if ((d.g === "maria" || d.g === "cristo" || d.g === "dios" || d.g === "sin_identificar") && e.t) return e.t;
@@ -431,7 +436,7 @@ function renderTown(ine) {
       const d = D.devotions[e.k];
       const adv = e.t && e.t !== d.n ? `<div class="adv">como <b>${esc(e.t)}</b></div>` : "";
       const dd = dayOf(e), day = dd ? `${md(dd.md)} · ${dd.how}` : "";
-      const flMatch = dd && t.fl && (dd.all || [dd.md]).some(x => t.fl.includes(x));
+      const flMatch = dd && t.fl && t.fl.some(f => (dd.all || [dd.md]).includes(f[0]));
       h += `<div class="entry">
         <div class="role">${esc(roleText(e))}${e.wo ? '<span class="badge b-wo">solo Wikidata</span>' : ""}</div>
         <div class="who"><button type="button" data-k="${esc(e.k)}" title="Ver todos los pueblos con este patrón">${esc(d.n)}</button><span class="badge b-${d.g}">${esc(GROUP[d.g].n)}</span></div>
@@ -439,7 +444,13 @@ function renderTown(ine) {
         <div class="srcs">${e.s.map(srcHtml).join("")}</div></div>`;
     }
   }
-  if (t.fl) h += `<p class="small muted">Fiestas locales oficiales en 2026 (Generalitat de Catalunya): ${t.fl.map(md).join(" y ")}. Son fechas, no dicen a quién se celebra.</p>`;
+  if (t.fl) {
+    const who = {cat: "Generalitat de Catalunya", cyl: "Junta de Castilla y León", ara: "Gobierno de Aragón"}[t.fl[0][3]];
+    const named = t.fl.some(f => f[1]);
+    h += `<div class="fl"><b>Fiestas locales oficiales ${t.fl[0][2]}</b> <span class="muted small">(${who})</span><ul>` +
+      t.fl.map(f => `<li>${md(f[0])}${f[1] ? ` · ${esc(niceName(f[1]))}` : ""}</li>`).join("") + `</ul>` +
+      `<p class="small muted">${named ? "Una fiesta local no es necesariamente el patrón (San Isidro, por ejemplo, es fiesta local en cientos de pueblos que tienen otro patrón)." : "Son fechas: no dicen a quién se celebra."}</p></div>`;
+  }
   h += `<div id="churches" class="churchbox"><p class="muted small">Cargando iglesias…</p></div>`;
   h += `<div class="links">${t.w ? `<a href="https://es.wikipedia.org/wiki/${encodeURIComponent(t.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia</a>` : ""}${t.q ? `<a href="https://www.wikidata.org/wiki/${t.q}" target="_blank" rel="noopener">Wikidata</a>` : ""}<span class="muted">INE ${ine}</span></div></div>${foot()}`;
   $("#panel").innerHTML = h;
