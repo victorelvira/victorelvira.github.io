@@ -9,7 +9,7 @@
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#2a1d2b">
   <link rel="stylesheet" href="patronos/vendor/leaflet.css">
-  <link rel="stylesheet" href="patronos/style.css?v=0.3.2">
+  <link rel="stylesheet" href="patronos/style.css?v=0.5.2">
 </head>
 <body>
   <nav id="navbar">
@@ -35,12 +35,13 @@
       <button type="button" class="tab active" data-view="main" title="Cada pueblo con el color de su primer patrón">Primer patrón</button>
       <button type="button" class="tab" data-view="group" title="Virgen María, Cristo o un santo">María · Cristo · santos</button>
       <button type="button" class="tab" data-view="agree" title="¿Coinciden Wikipedia y Wikidata?">Fuentes</button>
+      <button type="button" class="tab" data-view="cal" title="Qué pueblos celebran a su patrón cada día">Calendario</button>
     </span>
     <span class="search-wrap">
       <input id="town-q" type="search" placeholder="Buscar pueblo…" autocomplete="off" aria-label="Buscar pueblo">
       <div id="town-hits" class="hits" hidden></div>
     </span>
-    <button type="button" id="churches-btn" class="chip" aria-pressed="false" title="Iglesias de Wikidata y OpenStreetMap, al acercarse">⛪ iglesias</button>
+    <button type="button" id="churches-btn" class="chip" aria-pressed="false" title="Iglesias e imágenes de santos (Wikidata y OpenStreetMap), al acercarse">⛪ iglesias e imágenes</button>
     <button type="button" id="nodata" class="chip" aria-pressed="false" title="Resaltar los pueblos de los que aún no hay dato">∅ sin dato</button>
   </div>
   <div id="explain" class="explain"></div>
@@ -54,6 +55,6 @@
   <div id="tip" class="tip" hidden></div>
 
   <script src="patronos/vendor/leaflet.js"></script>
-  <script src="patronos/app.js?v=0.3.2"></script>
+  <script src="patronos/app.js?v=0.5.2"></script>
 </body>
 </html>
