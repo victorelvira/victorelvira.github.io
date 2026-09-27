@@ -1493,6 +1493,70 @@
     "kind": "church",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.392094,
+     45.8562844
+    ]
+   },
+   "properties": {
+    "painter": "Leonardo da Vinci",
+    "title": "City walls of Lecco",
+    "year": "1336",
+    "qid": "Q24939861",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Borgotriangolarelecco.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "City walls of Lecco",
+    "city": "Lecco",
+    "country": "Italy",
+    "medium": "castle",
+    "wikidata": "https://www.wikidata.org/wiki/Q24939861",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q24939861"
+    },
+    "museum_id": "city-walls-of-lecco",
+    "location_src": "City walls of Lecco"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     9.192385613,
+     45.458546911
+    ]
+   },
+   "properties": {
+    "painter": "Leonardo da Vinci",
+    "title": "Mausoleo Trivulzio",
+    "year": "1512",
+    "qid": "Q28668503",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/2869MilanoSNazaro.jpg",
+    "form": "architecture",
+    "kind": "church",
+    "location": "Mausoleo Trivulzio",
+    "city": "Milan",
+    "country": "Italy",
+    "medium": "chapel",
+    "wikidata": "https://www.wikidata.org/wiki/Q28668503",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q28668503"
+    },
+    "museum_id": "mausoleo-trivulzio",
+    "location_src": "Mausoleo Trivulzio"
+   }
   }
  ]
 }

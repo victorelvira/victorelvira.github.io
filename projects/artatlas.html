@@ -22,7 +22,7 @@
   <meta property="og:url" content="https://victorelvira.github.io/projects/artatlas.html">
   <link rel="stylesheet" href="artatlas/vendor/leaflet.css">
   <link rel="stylesheet" href="artatlas/vendor/MarkerCluster.css">
-  <link rel="stylesheet" href="artatlas/style.css?v=1.19.0">
+  <link rel="stylesheet" href="artatlas/style.css?v=1.21.0">
 </head>
 <body>
   <nav id="navbar">
@@ -72,6 +72,7 @@
       <!-- kind of WORK, not kind of place: both on means "everything", which is the default -->
       <label class="chip form pnt" title="Show paintings"><input type="checkbox" data-form="painting" checked> 🖼 Paintings</label>
       <label class="chip form scu" title="Show sculpture"><input type="checkbox" data-form="sculpture" checked> 🗿 Sculpture</label>
+      <label class="chip form arc" title="Show the buildings they designed: a building has never moved and never will"><input type="checkbox" data-form="architecture" checked> 🏛 Architecture</label>
       <label class="chip toggle att" title="Show only works of accepted attribution: hides disputed works and the long tail of undocumented workshop copies"><input type="checkbox" id="accepted-only" checked><span>Accepted only</span></label>
       <button id="locate" class="chip btn" type="button" title="Find the painting nearest to your location">📍 Near me</button>
       <label id="me-chip" class="chip me" hidden title="My paintings: your favourites and the ones you have seen, kept only in this browser">
@@ -110,7 +111,7 @@
     <!-- outside the rail on purpose: on a phone the search box gets a full-width row of its own -->
     <span id="filter-wrap">
       <input id="filter" type="search" placeholder="Filter: title, painter, museum, city…" autocomplete="off"
-             title="Filters every view: map, list and table">
+             title="Filters every view: map, list and table · two words = both of them · &quot;caravaggio or raphael&quot; = either">
       <button type="button" id="filter-clear" title="Clear the filter (Esc)" aria-label="Clear the filter" hidden>✕</button>
     </span>
   </div>
@@ -226,7 +227,7 @@
           <button type="button" class="gbtn" data-what="painters">Painters</button>
           <button type="button" class="gbtn" data-what="tree">Masters</button>
         </span>
-        <span class="chart-legend" id="pt-hint" data-i18n-block="pt-hint">A line runs from <b>master to pupil</b>, as Wikidata records it · left to right, by year of birth · the atlas' own painters are the coloured dots, the rest are the scaffolding that joins them · <b>click a painter</b> to see only their works</span>
+        <span class="chart-legend" id="pt-hint" data-i18n-block="pt-hint">A line runs from <b>master to pupil</b>, as Wikidata records it · left to right, by year of birth · the atlas' own painters are the coloured dots, the rest are the scaffolding that joins them · <b>click a painter</b> to see only their works · a <b>dashed line</b> = one painted the other</span>
         <span class="chart-legend" id="pm-hint" data-i18n-block="pm-hint">Each painter is the average of their paintings, <b>each museum counted once</b> and black-and-white photographs left out · closer = paint more alike · a hollow circle = a place the data cannot vouch for · <b>click a painter</b></span>
         <span class="g-seg" id="galaxy-dim" title="Flat 2-D map or a rotatable 3-D cloud">
           <button type="button" class="gbtn active" data-dim="2d">2D</button>
@@ -338,7 +339,7 @@
 
   <script src="artatlas/vendor/leaflet.js"></script>
   <script src="artatlas/vendor/leaflet.markercluster.js"></script>
-  <script src="artatlas/app.js?v=1.19.0"></script>
+  <script src="artatlas/app.js?v=1.21.0"></script>
 <!-- Tracking: Google Analytics tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHT1L88XYZ"></script>
 <script>

@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.19.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-25 22:32";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.21.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-27 23:15";   // stamped by scripts/stamp_build.py at deploy — do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -779,9 +779,9 @@ function haystack(p) {
   return p._hay;
 }
 function matchesQ(p) {
-  if (!state.qw || !state.qw.length) return true;
+  if (!state.qOr || !state.qOr.length) return true;
   const hay = haystack(p);
-  return state.qw.every(w => hay.includes(w));
+  return state.qOr.some(words => words.every(w => hay.includes(w)));
 }
 function passesAll(p) {
   const kindOk = state.mode === "painted" ? true : state[p.kind || "museum"] !== false;   // no venue type on map 2
@@ -947,14 +947,15 @@ function placePopup(feats) {
 // summary beside it naming only what departs from the default — so a folded bar still tells the
 // truth about what you are looking at. The shape is Paris_JEP's, which Víctor asked for.
 const FILTER_DEFAULTS = { museum: true, church: true, private: true, public: true,
-                          painting: true, sculpture: true, acceptedOnly: true };
+                          painting: true, sculpture: true, architecture: true, acceptedOnly: true };
 function filterSummary() {
   const out = [];
   const KIND = { museum: "Museums", church: "Churches", private: "Private", public: "Outdoors" };
   const off = Object.keys(KIND).filter(k => state[k] === false);
   if (off.length) out.push(t("no") + " " + off.map(k => t(KIND[k]).toLowerCase()).join(", "));
-  if (state.painting === false) out.push(t("sculpture only"));
-  if (state.sculpture === false && state.painting !== false) out.push(t("paintings only"));
+  const FORM = { painting: "paintings", sculpture: "sculpture", architecture: "architecture" };
+  const noForm = Object.keys(FORM).filter(f => state[f] === false);
+  if (noForm.length) out.push(t("no") + " " + noForm.map(f => t(FORM[f]).toLowerCase()).join(", "));
   if (!state.acceptedOnly) out.push(t("with disputed"));
   if (state.me === "fav") out.push("♥");
   else if (state.me === "seen") out.push("👁");
@@ -1218,7 +1219,37 @@ function buildPainterSelect() {
 
 // unified search: painters (toggle) + museums (filter to that venue)
 const deacc = s => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-function setQ(v) { state.q = v; state.qw = v ? v.split(/\s+/).filter(Boolean) : []; }
+// Every word must appear (two words narrow), and "or" (or a bar, or a comma) opens an alternative:
+// "carava or raffa" finds both painters, "brera cara" still means both words in the same work.
+//
+// But "or" is also a word in titles — *Danaë or the Golden Rain*, *The Lute Player or …* — and
+// Víctor spotted it at once: taking it as an operator would make those unsearchable. So the operator
+// only wins when it earns it. Both readings are tried against the whole atlas and the one that finds
+// something is kept; when both find something, the alternative reading wins, because that is what
+// somebody typing "or" almost always means. Quoting the phrase forces the literal reading.
+function splitQ(v) {
+  const quoted = /^".*"$/.test(v.trim());
+  const literal = { or: [v.replace(/^"|"$/g, "").split(/\s+/).filter(Boolean)] };
+  if (quoted) return literal;
+  const parts = v.split(/\s+or\s+|\s*[|,]\s*/).map(x => x.split(/\s+/).filter(Boolean)).filter(a => a.length);
+  if (parts.length < 2) return literal;
+  return { or: parts, alt: literal.or };
+}
+function countQ(groups) {
+  if (typeof works === "undefined" || !works.length) return 1;   // nothing loaded yet: trust the reader
+  let n = 0;
+  for (const w of works) {
+    const hay = haystack(w.p);
+    if (groups.some(words => words.every(x => hay.includes(x)))) { if (++n > 0) break; }
+  }
+  return n;
+}
+function setQ(v) {
+  state.q = v;
+  if (!v) { state.qOr = []; return; }
+  const { or, alt } = splitQ(v);
+  state.qOr = (alt && !countQ(or) && countQ(alt)) ? alt : or;   // the reading that finds something
+}
 let hayGen = 0;   // bumped when a name table arrives, so the cached search text is rebuilt
 function renderPainterList() {
   const q = deacc((document.getElementById("painters-search")?.value || "").trim());  // accent-insensitive
@@ -3347,7 +3378,8 @@ function gAuthorQ() {
   const ds = gTierTake(tiers, G_NOPTS[G.diff] - 1);
   const opts = [{ text: p.painter, correct: true }, ...ds.map(s => ({ text: GAME_NAME_OF_SLUG[s], correct: false }))];
   // Bernini never painted anything: the question has to fit the work it is asking about
-  const ask = p.form === "sculpture" ? t("Who made this?") : t("Who painted this?");
+  const ask = p.form === "sculpture" ? t("Who made this?")
+    : p.form === "architecture" ? t("Who built this?") : t("Who painted this?");
   return { kind: "img", image: p.image, prompt: ask, options: gShuffle(opts), answer: p.painter, work: p };
 }
 
@@ -4071,7 +4103,10 @@ async function drawPainterTree() {
   const Y = q => P + lane[q] * LANE + LANE / 2;
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("width", W); svg.setAttribute("height", H);
 
-  const near = ptSel ? new Set([ptSel, ...edges.filter(e => e.includes(ptSel)).flat()]) : null;
+  const portraits = (data.p || []).filter(([a, b]) => a in lane && b in lane);
+  const near = ptSel ? new Set([ptSel, ...edges.filter(e => e.includes(ptSel)).flat(),
+                                ...portraits.filter(e => e[0] === ptSel || e[1] === ptSel)
+                                  .flatMap(([a, b]) => [a, b])]) : null;
   let out = "";
   for (let c = Math.ceil(y0 / 50) * 50; c < y1; c += 50) {         // a faint rule every fifty years
     out += `<line class="pt-rule" x1="${X(c).toFixed(1)}" y1="${P - 12}" x2="${X(c).toFixed(1)}" y2="${H - 6}"/>` +
@@ -4082,6 +4117,17 @@ async function drawPainterTree() {
     const x1 = X(nodes[a].b), yy1 = Y(a), x2 = X(nodes[b].b), yy2 = Y(b);
     const dim = near && !(near.has(a) && near.has(b));
     out += `<path class="pt-edge${dim ? " dim" : ""}" d="M${x1.toFixed(1)},${yy1.toFixed(1)} C${((x1 + x2) / 2).toFixed(1)},${yy1.toFixed(1)} ${((x1 + x2) / 2).toFixed(1)},${yy2.toFixed(1)} ${x2.toFixed(1)},${yy2.toFixed(1)}"/>`;
+  }
+  // the second kind of line: one painter painted the other. Dashed, and a different colour, because
+  // nothing passes down a portrait — it is company, homage, or a joke among colleagues.
+  for (const [a, b, n] of portraits) {
+    const x1 = X(nodes[a].b), yy1 = Y(a), x2 = X(nodes[b].b), yy2 = Y(b);
+    const dim = near && !(near.has(a) && near.has(b));
+    out += `<path class="pt-portrait${dim ? " dim" : ""}" ` +
+      `d="M${x1.toFixed(1)},${yy1.toFixed(1)} C${((x1 + x2) / 2).toFixed(1)},${yy1.toFixed(1)} ` +
+      `${((x1 + x2) / 2).toFixed(1)},${yy2.toFixed(1)} ${x2.toFixed(1)},${yy2.toFixed(1)}">` +
+      `<title>${esc(ptName(nodes[a]))} ${esc(t("painted"))} ${esc(ptName(nodes[b]))}` +
+      `${n > 1 ? ` (${n})` : ""}</title></path>`;
   }
   for (const q of order) {
     const n = nodes[q], x = X(n.b), y = Y(q), mine = !!n.a;

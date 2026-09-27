@@ -1395,3 +1395,6 @@ body.galaxy-tree #galaxy-hint, body.galaxy-tree #galaxy-legend, body.galaxy-tree
 .gx-lab.gx-out { opacity: .18; }
 .gx-searching .gx-dot:not(.gx-out) { width: 14px; height: 14px; box-shadow: 0 0 0 2px #fffdf8, 0 1px 5px rgba(0,0,0,.35); z-index: 6; }
 .gx-searching .gx-dot.gx-out { background: #e6e1d8 !important; opacity: .3; }
+/* one painter painted the other: dashed, and not the colour of teaching */
+.pt-portrait { fill: none; stroke: #9a7b9c; stroke-width: 1.1; stroke-dasharray: 3 3; opacity: .8; }
+.pt-portrait.dim { opacity: .1; }

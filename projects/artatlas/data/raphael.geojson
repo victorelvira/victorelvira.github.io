@@ -10184,6 +10184,295 @@
     "kind": "museum",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.453416666,
+     41.902222222
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "St. Peter's Basilica",
+    "year": "1506",
+    "qid": "Q12512",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Basilica%20di%20San%20Pietro%20in%20Vaticano%20September%202015-1a.jpg",
+    "form": "architecture",
+    "kind": "church",
+    "location": "St. Peter's Basilica",
+    "city": "Vatican City",
+    "country": "Vatican City",
+    "medium": "major basilica",
+    "wikidata": "https://www.wikidata.org/wiki/Q12512",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q12512"
+    },
+    "museum_id": "st-peter-s-basilica",
+    "location_src": "St. Peter's Basilica"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.47638889,
+     41.91138889
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Chigi Chapel",
+    "year": "1401",
+    "qid": "Q676788",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Maria%20del%20Popolo%20Capella%20Chigi%20Panorama.jpg",
+    "form": "architecture",
+    "kind": "church",
+    "location": "Chigi Chapel",
+    "city": "Rome",
+    "country": "Italy",
+    "medium": "chapel",
+    "wikidata": "https://www.wikidata.org/wiki/Q676788",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q676788"
+    },
+    "museum_id": "chigi-chapel",
+    "location_src": "Chigi Chapel"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.46802,
+     41.89567
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Sant'Eligio degli Orefici",
+    "year": "1575",
+    "qid": "Q976522",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Regola%20-%20S.%20Eligio%20degli%20Orefici.JPG",
+    "form": "architecture",
+    "kind": "church",
+    "location": "Sant'Eligio degli Orefici",
+    "city": "Rome",
+    "country": "Italy",
+    "medium": "church building",
+    "wikidata": "https://www.wikidata.org/wiki/Q976522",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q976522"
+    },
+    "museum_id": "sant-eligio-degli-orefici",
+    "location_src": "Sant'Eligio degli Orefici"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.259361,
+     43.780793
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Palazzo Pandolfini",
+    "year": "",
+    "qid": "Q1228234",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Via%20san%20gallo%2074%2C%20palazzo%20pandolfini%2C%2001.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Palazzo Pandolfini",
+    "city": "Florence",
+    "country": "Italy",
+    "medium": "Palazzo",
+    "wikidata": "https://www.wikidata.org/wiki/Q1228234",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q1228234"
+    },
+    "museum_id": "palazzo-pandolfini",
+    "location_src": "Palazzo Pandolfini"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.45278056,
+     41.92835278
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Villa Madama",
+    "year": "",
+    "qid": "Q1267485",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Il%20giardino%20di%20Villa%20Madama.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Villa Madama",
+    "city": "Rome",
+    "country": "Italy",
+    "medium": "villa",
+    "wikidata": "https://www.wikidata.org/wiki/Q1267485",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q1267485"
+    },
+    "museum_id": "villa-madama",
+    "location_src": "Villa Madama",
+    "city_src": "Roma Capitale"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.47511111,
+     41.89619444
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Palazzo Vidoni-Caffarelli",
+    "year": "",
+    "qid": "Q1498203",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Vidoni%20Roma.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Palazzo Vidoni-Caffarelli",
+    "city": "Rome",
+    "country": "Italy",
+    "medium": "Palazzo",
+    "wikidata": "https://www.wikidata.org/wiki/Q1498203",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q1498203"
+    },
+    "museum_id": "palazzo-vidoni-caffarelli",
+    "location_src": "Palazzo Vidoni-Caffarelli"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.45872222,
+     41.90227778
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Palazzo Branconio dell'Aquila",
+    "year": "1520",
+    "qid": "Q3361286",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Branconio%20dell%20Aquila%2017th%20century%20%28middle%20size%29%20%2816927488%29.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Palazzo Branconio dell'Aquila",
+    "city": "Rome",
+    "country": "Italy",
+    "medium": "Palazzo",
+    "wikidata": "https://www.wikidata.org/wiki/Q3361286",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q3361286"
+    },
+    "museum_id": "palazzo-branconio-dell-aquila",
+    "location_src": "Palazzo Branconio dell'Aquila"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.456388888,
+     41.903611111
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Vatican loggias",
+    "year": "",
+    "qid": "Q3836415",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Loge%20du%202%C3%A8me%20%C3%A9tage%20du%20palais%20apostolique%20du%20Vatican.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Vatican loggias",
+    "city": null,
+    "country": "Vatican City",
+    "medium": "loggia",
+    "wikidata": "https://www.wikidata.org/wiki/Q3836415",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q3836415"
+    },
+    "museum_id": "vatican-loggias",
+    "location_src": "Vatican loggias"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.4595,
+     41.9029
+    ]
+   },
+   "properties": {
+    "painter": "Raphael",
+    "title": "Palazzo Jacopo da Brescia",
+    "year": "",
+    "qid": "Q3890308",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20Jacopo%20da%20brescia.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Palazzo Jacopo da Brescia",
+    "city": "Borgo",
+    "country": "Italy",
+    "medium": "Palazzo",
+    "wikidata": "https://www.wikidata.org/wiki/Q3890308",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q3890308"
+    },
+    "museum_id": "palazzo-jacopo-da-brescia",
+    "location_src": "Palazzo Jacopo da Brescia"
+   }
   }
  ]
 }

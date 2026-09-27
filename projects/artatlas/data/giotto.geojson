@@ -5346,6 +5346,102 @@
     "kind": "church",
     "form": "painting"
    }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.256944444,
+     43.773055555
+    ]
+   },
+   "properties": {
+    "painter": "Giotto",
+    "title": "Florence Cathedral",
+    "year": "1296",
+    "qid": "Q191739",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Florence%20Duomo%20from%20Michelangelo%20hill.jpg",
+    "form": "architecture",
+    "kind": "church",
+    "location": "Florence Cathedral",
+    "city": "Florence",
+    "country": "Italy",
+    "medium": "cathedral",
+    "wikidata": "https://www.wikidata.org/wiki/Q191739",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q191739"
+    },
+    "museum_id": "florence-cathedral",
+    "location_src": "Florence Cathedral"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     11.255805555,
+     43.772805555
+    ]
+   },
+   "properties": {
+    "painter": "Giotto",
+    "title": "Giotto's Campanile",
+    "year": "1298",
+    "qid": "Q1140023",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Catedral%2C%20Florencia%2C%20Italia%2C%202022-09-19%2C%20DD%2095.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Giotto's Campanile",
+    "city": "Florence",
+    "country": "Italy",
+    "medium": "tower",
+    "wikidata": "https://www.wikidata.org/wiki/Q1140023",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q1140023"
+    },
+    "museum_id": "giotto-s-campanile",
+    "location_src": "Giotto's Campanile"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     10.50203333,
+     43.84142778
+    ]
+   },
+   "properties": {
+    "painter": "Giotto",
+    "title": "Fortezza Augusta",
+    "year": "",
+    "qid": "Q3748703",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lucca%2C%20palazzo%20ducale%2000.JPG",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Fortezza Augusta",
+    "city": "Lucca",
+    "country": "Italy",
+    "medium": "fort",
+    "wikidata": "https://www.wikidata.org/wiki/Q3748703",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q3748703"
+    },
+    "museum_id": "fortezza-augusta",
+    "location_src": "Fortezza Augusta"
+   }
   }
  ]
 }
