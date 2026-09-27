@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.14.0";
-const BUILD_AT = "2026-09-27 22:58";
+const DATA_V = "0.15.0";
+const BUILD_AT = "2026-09-28 00:43";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -545,9 +545,11 @@ function renderCard() {
     }
   }
   if (tw.fl) {
-    const who = {cat: "Generalitat de Catalunya", cyl: "Junta de Castilla y León", ara: "Gobierno de Aragón", mad: "Comunidad de Madrid", eus: "Eusko Jaurlaritza / Gobierno Vasco"}[tw.fl[0][3]];
+    const who = {cat: "Generalitat de Catalunya", cyl: "Junta de Castilla y León", ara: "Gobierno de Aragón", mad: "Comunidad de Madrid", eus: "Eusko Jaurlaritza / Gobierno Vasco",
+      gal: "Xunta de Galicia", and: "Junta de Andalucía", can: "Boletín Oficial de Canarias", bal: "Govern de les Illes Balears", clm: "Diario Oficial de Castilla-La Mancha"}[tw.fl[0][3]];
+    const flSrc = D.sources[tw.fl[0][3] === "cat" ? "fiestas_locales" : "fiestas_locales_" + tw.fl[0][3]];
     const named = tw.fl.some(f => f[1]);
-    h += `<div class="fl"><b>${esc(t("fl_title", {y: tw.fl[0][2]}))}</b> <span class="muted small">(${esc(who)})</span><ul>` +
+    h += `<div class="fl"><b>${esc(t("fl_title", {y: tw.fl[0][2]}))}</b> <span class="muted small">(${flSrc ? `<a href="${esc(flSrc.u)}" target="_blank" rel="noopener">${esc(who)} ↗</a>` : esc(who)})</span><ul>` +
       tw.fl.map(f => `<li>${goDay(f[0])}${f[1] ? ` · ${esc(niceName(f[1]))}` : ""}</li>`).join("") + `</ul>` +
       `<p class="small muted">${esc(t(named ? "fl_named" : "fl_dates"))}</p></div>`;
   }
@@ -591,7 +593,8 @@ function loadChurches() {
     fetch(`${C().dir}iglesias.json?v=${BV}`).then(r => r.json()),
     fetch(`${C().dir}iglesias_osm.json?v=${BV}`).then(r => r.json()),
     fetch(`${C().dir}imagenes.json?v=${BV}`).then(r => r.ok ? r.json() : {towns: {}}).catch(() => ({towns: {}})),
-  ]).then(([w, o, im]) => ({w, o, im}));
+    fetch(`${C().dir}parroquias.json?v=${BV}`).then(r => r.ok ? r.json() : {towns: {}}).catch(() => ({towns: {}})),
+  ]).then(([w, o, im, pa]) => ({w, o, im, pa}));
   return CH;
 }
 const KIND_ORDER = ["catedral", "basílica", "colegiata", "iglesia parroquial", "iglesia", "santuario", "monasterio", "convento", "ermita", "capilla", "humilladero"];
@@ -642,7 +645,7 @@ async function drawChurches() {
 async function fillChurches(ine) {
   const box = document.getElementById("churches");
   if (!box) return;
-  const {w, o, im} = await loadChurches();
+  const {w, o, im, pa} = await loadChurches();
   if (state.town !== ine || !document.getElementById("churches")) return;
   const pk = patronKeys(ine);
   const byKind = (a, b) => (KIND_ORDER.indexOf(a[1]) + 99) % 99 - (KIND_ORDER.indexOf(b[1]) + 99) % 99 || a[0].localeCompare(b[0], "es");
@@ -668,7 +671,19 @@ async function fillChurches(ine) {
   };
   const imgs = I.length ? `<h3>${esc(t("h_images"))} <span class="muted small">${I.length}</span></h3><ul class="churches">${I.map(irow).join("")}</ul>` +
     `<p class="muted small">${esc(t("commons_note"))}</p>` : "";
-  box.innerHTML = imgs + `<h3>${esc(t("h_churches"))} <span class="muted small">${W.length + O.length}</span></h3>` +
+  const P = (pa.towns[ine] || []).slice().sort((a, b) => b[3] - a[3] || a[0].localeCompare(b[0], "es"));
+  const prow = p => {
+    const star = p[4].some(k => pk.has(k));
+    const nm = p[5] ? `<a href="https://gl.wikipedia.org/wiki/${encodeURIComponent(p[5].replace(/ /g, "_"))}" target="_blank" rel="noopener">${esc(p[0])}</a>` : esc(p[0]);
+    const tx = p[4].map(k => dedLink(k, pa.names || {})).concat((p[7] || []).map(n => `${esc(n)} <span class="muted">(${esc(t("unid_short"))})</span>`));
+    const sa = tx.length ? ` · ${esc(t("titular"))} ${tx.join(", ")}` : "";
+    return `<li${star ? ' class="star"' : ""}>${star ? "★ " : ""}${nm}${p[3] ? ` <span class="muted">· ${esc(t("parish_capital"))}</span>` : ""}${sa}${p[1] != null ? " " + goMap(p[1], p[2]) : ""}</li>`;
+  };
+  const withT = P.filter(p => p[4].length || (p[7] || []).length).length;
+  const pars = P.length ? `<h3>${esc(t("h_parishes"))} <span class="muted small">${P.length}</span></h3>` +
+    `<p class="muted small">${esc(t(withT ? "parish_note" : "parish_note_none"))}</p>` +
+    (P.length > 12 ? `<details><summary class="small">${esc(t("parish_show", {n: P.length}))}</summary><ul class="churches">${P.map(prow).join("")}</ul></details>` : `<ul class="churches">${P.map(prow).join("")}</ul>`) : "";
+  box.innerHTML = imgs + pars + `<h3>${esc(t("h_churches"))} <span class="muted small">${W.length + O.length}</span></h3>` +
     (W.length + O.length === 0 ? `<p class="muted small">${esc(t("no_churches"))}</p>` : "") +
     (nstar ? `<p class="small">${esc(t("star_note"))}</p>` : "") +
     (W.length ? `<div class="small muted">Wikidata</div><ul class="churches">${W.map(c => row(c, "w")).join("")}</ul>` : "") +
