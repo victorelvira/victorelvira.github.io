@@ -51,8 +51,8 @@
   "tab_cal": "Calendario",
   "tab_stats": "Análisis",
   "search_town": "Buscar pueblo…",
-  "btn_churches": "⛪ iglesias e imágenes",
-  "btn_nodata": "∅ sin dato",
+  "btn_churches": "iglesias e imágenes",
+  "btn_nodata": "sin dato",
   "loading": "cargando…",
   "stats_line": "{a} de {b} pueblos con dato ({p} %) · {c} patrones distintos",
   "close": "Cerrar",
@@ -258,7 +258,10 @@
   "col_in": "región principal",
   "see_all_unique": "ver los {n}",
   "only_in": "{p} % en {r}",
-  "stats_for": "Análisis"
+  "stats_for": "Análisis",
+  "pane_map": "Mapa",
+  "pane_list": "Lista",
+  "title_short": "Patronos"
  },
  "en": {
   "lang_name": "English",
@@ -303,8 +306,8 @@
   "tab_cal": "Calendar",
   "tab_stats": "Analysis",
   "search_town": "Search a town…",
-  "btn_churches": "⛪ churches and images",
-  "btn_nodata": "∅ no data",
+  "btn_churches": "churches and images",
+  "btn_nodata": "no data",
   "loading": "loading…",
   "stats_line": "{a} of {b} towns with data ({p} %) · {c} distinct patrons",
   "close": "Close",
@@ -510,7 +513,10 @@
   "col_in": "main region",
   "see_all_unique": "show all {n}",
   "only_in": "{p} % in {r}",
-  "stats_for": "Analysis view"
+  "stats_for": "Analysis view",
+  "pane_map": "Map",
+  "pane_list": "List",
+  "title_short": "Patron saints"
  },
  "it": {
   "lang_name": "Italiano",
@@ -555,8 +561,8 @@
   "tab_cal": "Calendario delle feste",
   "tab_stats": "Analisi",
   "search_town": "Cerca un comune…",
-  "btn_churches": "⛪ chiese e immagini",
-  "btn_nodata": "∅ senza dato",
+  "btn_churches": "chiese e immagini",
+  "btn_nodata": "senza dato",
   "loading": "caricamento…",
   "stats_line": "{a} di {b} comuni con dato ({p} %) · {c} patroni distinti",
   "close": "Chiudi",
@@ -762,6 +768,9 @@
   "col_in": "regione principale",
   "see_all_unique": "mostra tutti i {n}",
   "only_in": "{p} % in {r}",
-  "stats_for": "Vista di analisi"
+  "stats_for": "Vista di analisi",
+  "pane_map": "Mappa",
+  "pane_list": "Elenco",
+  "title_short": "Patroni"
  }
 }

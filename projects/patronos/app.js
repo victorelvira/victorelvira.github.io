@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.11.0";
-const BUILD_AT = "2026-09-26 18:46";
+const DATA_V = "0.12.1";
+const BUILD_AT = "2026-09-27 11:38";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -106,7 +106,8 @@ function applyLang() {
   document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); el.setAttribute("aria-label", t(el.dataset.i18nPh)); });
   document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
   document.querySelectorAll(".lang .lg").forEach(b => b.classList.toggle("on", b.dataset.l === state.lang));
-  $("#brand-title").textContent = t("title_" + state.country);
+  // on a phone the country is already in its switch next to the title, so the title is the short one
+  $("#brand-title").textContent = matchMedia("(max-width: 760px)").matches ? t("title_short") : t("title_" + state.country);
   document.title = t("doc_title", {t: t("title_" + state.country)});
 }
 
@@ -259,9 +260,18 @@ const goArea = (k, v, c) => `<a class="go" href="#" data-go="area" data-a="${k}"
 const goGroup = g => `<a class="badge b-${g}" href="#" data-go="group" data-g="${g}" title="${esc(t("group_title"))}">${esc(gName(g))}</a>`;
 const goMap = (lat, lon) => `<a class="go pin" href="#" data-go="map" data-lat="${lat}" data-lon="${lon}" title="${esc(t("pin_title"))}">${esc(t("pin"))}</a>`;
 
+// Phones: the panel is a sub-tab of its own ("Lista"), the map takes the screen; picking something in the list comes
+// back to the map so the reader sees what the choice lit up.
+const narrow = () => matchMedia("(max-width: 760px)").matches;
+function setPane(p) {
+  document.body.classList.toggle("pane-list", p === "list");
+  document.querySelectorAll("#panes .pn").forEach(b => b.classList.toggle("on", b.dataset.pane === p));
+  if (p === "map" && map) setTimeout(() => map.invalidateSize(), 0);
+}
 async function follow(a) {
   const go = a.dataset.go;
   hideTip();
+  if (narrow() && a.closest("#panel") && ["dev", "area", "day", "group"].includes(go)) setPane("map");
   if (a.dataset.c && a.dataset.c !== state.country) await switchCountry(a.dataset.c, false);
   if (["dev", "town", "area", "group", "map"].includes(go) && state.view === "stats") state.view = "main";
   if (go === "dev") selectDev(a.dataset.k, true);
@@ -296,6 +306,7 @@ function initControls() {
   document.querySelectorAll(".lang .lg").forEach(b => b.addEventListener("click", () => {
     state.lang = b.dataset.l; applyLang(); statsLine(); writeHash(false); renderAll();
   }));
+  document.querySelectorAll("#panes .pn").forEach(b => b.addEventListener("click", () => setPane(b.dataset.pane)));
   $("#explain").addEventListener("click", e => { if (!e.target.closest("button,a")) $("#explain").classList.toggle("open"); });
   $("#churches-btn").addEventListener("click", () => {
     state.churches = !state.churches; writeHash(false); renderAll();

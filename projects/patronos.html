@@ -9,7 +9,7 @@
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#2a1d2b">
   <link rel="stylesheet" href="patronos/vendor/leaflet.css">
-  <link rel="stylesheet" href="patronos/style.css?v=0.11.0">
+  <link rel="stylesheet" href="patronos/style.css?v=0.12.1">
 </head>
 <body>
   <nav id="navbar">
@@ -48,8 +48,8 @@
       <input id="town-q" type="search" data-i18n-ph="search_town" placeholder="Buscar pueblo…" autocomplete="off">
       <div id="town-hits" class="hits" hidden></div>
     </span>
-    <button type="button" id="churches-btn" class="chip" aria-pressed="false" data-i18n="btn_churches">⛪ iglesias e imágenes</button>
-    <button type="button" id="nodata" class="chip" aria-pressed="false" data-i18n="btn_nodata">∅ sin dato</button>
+    <button type="button" id="churches-btn" class="chip" aria-pressed="false"><span class="ico">⛪</span> <span class="lbl" data-i18n="btn_churches">iglesias e imágenes</span></button>
+    <button type="button" id="nodata" class="chip" aria-pressed="false"><span class="ico">∅</span> <span class="lbl" data-i18n="btn_nodata">sin dato</span></button>
   </div>
   <div id="explain" class="explain"></div>
 
@@ -59,6 +59,9 @@
     <aside id="panel"></aside>
     <section id="statsview" hidden></section>
   </main>
+  <nav id="panes" aria-label="Mapa / Lista">
+    <button type="button" class="pn on" data-pane="map">🗺 <span data-i18n="pane_map">Mapa</span></button><button type="button" class="pn" data-pane="list">☰ <span data-i18n="pane_list">Lista</span></button>
+  </nav>
 
   <div id="card" hidden role="dialog" aria-modal="true">
     <div class="c-card"><button id="card-close" type="button" data-i18n-aria="close">✕</button><div id="card-body"></div></div>
@@ -66,6 +69,6 @@
   <div id="tip" class="tip" hidden></div>
 
   <script src="patronos/vendor/leaflet.js"></script>
-  <script src="patronos/app.js?v=0.11.0"></script>
+  <script src="patronos/app.js?v=0.12.1"></script>
 </body>
 </html>
