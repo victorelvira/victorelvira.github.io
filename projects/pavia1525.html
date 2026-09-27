@@ -63,7 +63,7 @@ h1 .yr{color:var(--imp)}
 .stage{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(300px,1fr);gap:20px;align-items:start}
 @media (max-width:920px){.stage{grid-template-columns:1fr}}
 .mapbox{background:var(--paper);border:1px solid var(--rule);position:relative}
-.mapview{position:relative;height:min(76vh,780px);min-height:420px;overflow:hidden;touch-action:none;cursor:grab;background:var(--land)}
+.mapview{position:relative;height:min(76vh,780px);min-height:420px;overflow:hidden;touch-action:pan-y;cursor:grab;background:var(--land)}
 .mapview.drag{cursor:grabbing}
 .mapview svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 .tools{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px;z-index:2}
@@ -317,6 +317,28 @@ body.story .topnav{display:none}
 .claims li.more .claims{margin-top:10px}
 .draftstamp{margin:6px 0 0;font-family:var(--mono);font-size:.74rem;letter-spacing:.04em}
 .draftstamp a{color:var(--gold);text-decoration:none;border-bottom:1px dotted var(--gold)}
+/* usability: gesture hint, phase chip on the map, floating source sheet */
+.maphint{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--ink) 38%,transparent);color:#fff;font-size:1.05rem;font-weight:500;text-align:center;padding:20px;pointer-events:none;opacity:0;transition:opacity .25s}
+.maphint.on{opacity:1}
+.phasechip{position:absolute;top:10px;left:50%;transform:translateX(-50%);z-index:3;max-width:min(60%,420px);background:color-mix(in srgb,var(--paper) 94%,transparent);border:1px solid var(--rule);padding:4px 12px;font-size:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;color:var(--ink)}
+.phasechip b{font-family:var(--mono);font-weight:500;font-size:.75rem;color:var(--muted);margin-right:6px}
+@media (max-width:560px){.phasechip{top:auto;bottom:40px;max-width:calc(100% - 24px)}}
+.sheet{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 12px);z-index:25;width:min(560px,calc(100% - 24px));max-height:55vh;overflow:auto;background:var(--paper);border:1px solid var(--rule);box-shadow:0 10px 30px color-mix(in srgb,var(--ink) 25%,transparent);padding:14px 16px 12px}
+.sheet[hidden]{display:none!important}
+.sheet .sheetbar{position:sticky;top:-14px;display:flex;justify-content:flex-end;gap:8px;margin:-14px -16px 6px;padding:8px 10px;background:var(--paper);border-bottom:1px solid var(--rule)}
+.sheet .sheetbar button{padding:3px 10px;font-size:.82rem}
+body.story .sheet{display:none}
+.idxsum{font-size:1rem;margin:14px 0 6px;max-width:70ch}
+.idx.basis td.bname{white-space:nowrap;padding-right:14px}
+.idx.basis td.bbar{width:55%}
+.idx.basis .num,.idx.basis th.num{text-align:center;font-family:var(--mono);font-size:.8rem}
+.idx.basis th.num{min-width:104px}
+.pbox{display:inline-block;min-width:22px;text-align:center;font-family:var(--mono);font-size:.72rem;padding:1px 4px;margin:0 3px 3px 0;border:1.5px solid var(--ink)}
+.pbox.reconstruction{border-style:dashed}
+.pbox.illustrative{border-style:dotted;color:var(--muted)}
+.pbox.none{border-color:transparent;color:var(--faint)}
+th .pbox{font-family:var(--body);font-size:.74rem;font-weight:500}
+.dataindex p.sub .bchip{margin:0 2px}
 </style></head>
 <body>
   <nav id="navbar">
@@ -333,7 +355,7 @@ body.story .topnav{display:none}
     <a href="#top" data-it="Mappa" data-es="Mapa">Map</a>
     <a href="#numbers" data-it="Quanti erano" data-es="Cuántos eran">Numbers</a>
     <a href="#method" data-it="Metodo" data-es="Método">Method</a>
-    <a href="#dataindex" data-it="Da dove viene ogni dato" data-es="De dónde sale cada dato">Where data comes from</a>
+    <a href="#dataindex" data-it="Quanto è sicura" data-es="Fiabilidad">How sure</a>
     <a href="#bibwrap" data-it="Fonti" data-es="Fuentes">Sources</a>
     <a href="#prov" data-it="La mappa di base" data-es="El mapa base">Base map</a>
     <a href="#about" data-it="Autore" data-es="Autoría">About</a>
@@ -387,6 +409,8 @@ body.story .topnav{display:none}
         </div>
         <div class="caption" id="caption" hidden aria-live="polite"><p class="eyebrow" id="cap-eye"></p><h2 id="cap-title"></h2><p id="cap-text"></p>
           <div class="cap-nav"><button id="cap-prev" aria-label="Previous phase" data-it-aria="Fase precedente" data-es-aria="Fase anterior">‹</button><button id="cap-play"></button><button id="cap-next" aria-label="Next phase" data-it-aria="Fase successiva" data-es-aria="Fase siguiente">›</button><button id="cap-exit" data-it="Esci" data-es="Salir">Exit</button></div></div>
+        <div class="maphint" id="maphint" aria-hidden="true"></div>
+        <button class="phasechip" id="phasechip" type="button"></button>
         <div class="scalebar" id="scalebar"><span id="sbl">1 km</span><i id="sbi"></i></div>
         <div class="attrib" data-it="Dati cartografici © contributori di OpenStreetMap (ODbL) · Quote: EU-DEM v1.1, Copernicus, tramite OpenTopoData" data-es="Datos cartográficos © colaboradores de OpenStreetMap (ODbL) · Altitud: EU-DEM v1.1, Copernicus, vía OpenTopoData">Map data © OpenStreetMap contributors (ODbL) · Elevation: EU-DEM v1.1, Copernicus, via OpenTopoData</div>
       </div>
@@ -493,7 +517,7 @@ body.story .topnav{display:none}
 </div>
     </div>
     <div class="dataindex" id="dataindex">
-      <div data-it="&lt;h2&gt;Da dove viene ogni dato&lt;/h2&gt;&lt;p class=&quot;sub&quot;&gt;Ogni luogo, linea e unità della mappa, con la fonte della sua posizione. Fai clic su un riferimento per aprire la fonte.&lt;/p&gt;" data-es="&lt;h2&gt;De dónde sale cada dato&lt;/h2&gt;&lt;p class=&quot;sub&quot;&gt;Cada lugar, línea y unidad del mapa, con la fuente de su posición. Pulsa una etiqueta para abrir la fuente.&lt;/p&gt;"><h2>Where each piece of data comes from</h2><p class="sub">Every place, line and unit on the map, with the source of its position. Click any tag to open the source.</p></div>
+      <div data-it="&lt;h2&gt;Quanto è sicuro ogni segno sulla mappa?&lt;/h2&gt;&lt;p class=&quot;sub&quot;&gt;Ogni unità, linea e luogo della mappa è stato messo lì per una ragione, e la ragione non è sempre ugualmente solida. Ogni posizione è di uno di tre tipi, disegnati in modo diverso sulla mappa: &lt;span class=&quot;bchip source&quot;&gt;continuo&lt;/span&gt; una fonte scritta all&#x27;epoca dice dove si trovava; &lt;span class=&quot;bchip reconstruction&quot;&gt;tratteggiato&lt;/span&gt; la ricostruisce uno storico moderno; &lt;span class=&quot;bchip illustrative&quot;&gt;punteggiato&lt;/span&gt; l&#x27;ha collocato questa pagina per seguire il racconto, e nessuna fonte dice dove fosse. Qui sotto: quanti ce ne sono di ogni tipo in ciascuna fase, e poi ogni elemento con il riferimento che lo sostiene. Fai clic su un riferimento per leggerlo.&lt;/p&gt;" data-es="&lt;h2&gt;¿Qué tan seguro es cada elemento del mapa?&lt;/h2&gt;&lt;p class=&quot;sub&quot;&gt;Cada unidad, línea y lugar del mapa está ahí por una razón, y la razón no siempre es igual de sólida. Cada posición es de uno de tres tipos, dibujados de forma distinta en el mapa: &lt;span class=&quot;bchip source&quot;&gt;continuo&lt;/span&gt; una fuente escrita en la época dice dónde estaba; &lt;span class=&quot;bchip reconstruction&quot;&gt;discontinuo&lt;/span&gt; la reconstruye un historiador moderno; &lt;span class=&quot;bchip illustrative&quot;&gt;punteado&lt;/span&gt; la ha colocado esta página para contar la historia, y ninguna fuente dice dónde estaba. Debajo: cuántas hay de cada tipo en cada fase, y después cada elemento con la referencia que lo sostiene. Pulsa una referencia para leerla.&lt;/p&gt;"><h2>How sure is each mark on the map?</h2><p class="sub">Every unit, line and place on the map was put there for a reason, and the reason is not always equally strong. Each position is one of three kinds, drawn differently on the map: <span class="bchip source">solid</span> a source written at the time says where it was; <span class="bchip reconstruction">dashed</span> a modern historian reconstructs it; <span class="bchip illustrative">dotted</span> this page placed it to tell the story, and no source says where it was. Below: how many of each there are in every phase, and then every element with the reference behind it. Click a reference to read it.</p></div>
       <div id="basisfig"></div>
       <div id="idxtables"></div>
     </div>
@@ -528,6 +552,11 @@ body.story .topnav{display:none}
 </div>
     </div>
   </section>
+</div>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-label="Source" aria-live="polite">
+  <div class="sheetbar"><button id="sheet-map" type="button"></button><button id="sheet-close" type="button" aria-label="Close">×</button></div>
+  <div id="sheet-body" class="inspect" style="border:0;padding:0"></div>
 </div>
 
 <div class="lightbox" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-title">
@@ -605,8 +634,8 @@ const UIS = {
        status:{camp:"accampato", hold:"in posizione", march:"in marcia", engaged:"in combattimento", broken:"rotto", withdrawn:"in ritirata", destroyed:"distrutto", captured:"catturato", masked:"coperta, muta", lost:"perduta", garrison:"in città"},
        basis:{source:"Posizione indicata da una fonte", reconstruction:"Posizione da una ricostruzione moderna", illustrative:"Posizione collocata da questa pagina; nessuna fonte la indica"}}
 };
-Object.assign(UIS.en, {moreClaims:n => `More detail and further sources (${n})`, plan:"Plan", linkto:"To link to this phase, add to the page address:", axisMen:"number of men", figHow:"How to read these charts: each row is one source. The dot marks the number that source gives; a bar means the source gives a range (from–to). The horizontal axis is the number of men. Rows are grouped by who wrote them: accounts of the period, or modern historians. Click a row to see the passage.", idxPlaces:"Places", idxLines:"Lines and areas", idxUnits:"Units", colName:"Name", colCoord:"Coordinates", colFrom:"Position from", colLinked:"Tied to the battle by", colBasis:"Basis", colSources:"Sources", colStrength:"Strength figures", colPos:"Positions by phase", basisTitle:"How much of the map rests on sources: unit positions per phase", bS:"stated by a source", bR:"modern reconstruction", bI:"placed by this page", cited:n => `cited ${n}×`, osm:"OpenStreetMap", page:"placed by this page", oman:"default", var:"variant"});
-Object.assign(UIS.it, {moreClaims:n => `Altri dettagli e altre fonti (${n})`, plan:"Pianta", linkto:"Per un link a questa fase, aggiungi all'indirizzo della pagina:", axisMen:"numero di uomini", figHow:"Come leggere questi grafici: ogni riga è una fonte. Il punto indica la cifra che quella fonte dà; una barra significa che la fonte dà un intervallo (da–a). L'asse orizzontale è il numero di uomini. Le righe sono raggruppate per autore: resoconti dell'epoca o storici moderni. Fai clic su una riga per vedere il passo.", idxPlaces:"Luoghi", idxLines:"Linee e aree", idxUnits:"Unità", colName:"Nome", colCoord:"Coordinate", colFrom:"Posizione da", colLinked:"Legato alla battaglia da", colBasis:"Base", colSources:"Fonti", colStrength:"Cifre sulla forza", colPos:"Posizioni per fase", basisTitle:"Quanto della mappa poggia sulle fonti: posizioni delle unità per fase", bS:"indicata da una fonte", bR:"ricostruzione moderna", bI:"collocata da questa pagina", cited:n => `citata ${n} volte`, osm:"OpenStreetMap", page:"collocato da questa pagina", oman:"predefinita", var:"variante"});
+Object.assign(UIS.en, {colPhase:"Phase", colShare:"Unit positions in this phase", idxSum:(n,a,b,c) => `Across the nine phases there are ${n} unit positions: ${a} come from a source written at the time, ${b} from a modern historian's reconstruction, and ${c} were placed by this page.`, idxPlacesHow:"Where each place on the map is (its modern coordinates and where they were taken from) and which sources connect it to the battle.", idxLinesHow:"The park wall, the siege lines and the drawn areas: how sure each line is, and the sources behind it.", idxUnitsHow:"Each unit: its size according to each source, and one box per phase (1–9) showing how sure its position is in that phase; a blank number means it is not on the map in that phase.", hintWheel:"Use Ctrl + scroll (⌘ + scroll on a Mac) to zoom the map", hintTouch:"Use two fingers to move the map", chipAria:"Go to this phase's narrative", backMap:"↑ Back to the map", moreClaims:n => `More detail and further sources (${n})`, plan:"Plan", linkto:"To link to this phase, add to the page address:", axisMen:"number of men", figHow:"How to read these charts: each row is one source. The dot marks the number that source gives; a bar means the source gives a range (from–to). The horizontal axis is the number of men. Rows are grouped by who wrote them: accounts of the period, or modern historians. Click a row to see the passage.", idxPlaces:"Places", idxLines:"Lines and areas", idxUnits:"Units", colName:"Name", colCoord:"Coordinates", colFrom:"Position from", colLinked:"Tied to the battle by", colBasis:"How sure", colSources:"Sources", colStrength:"Strength figures", colPos:"How sure its position is, phase by phase", basisTitle:"How much of the map rests on sources: unit positions per phase", bS:"from a source", bR:"modern reconstruction", bI:"placed by this page", cited:n => `cited ${n}×`, osm:"OpenStreetMap", page:"placed by this page", oman:"default", var:"variant"});
+Object.assign(UIS.it, {colPhase:"Fase", colShare:"Posizioni delle unità in questa fase", idxSum:(n,a,b,c) => `Nelle nove fasi ci sono ${n} posizioni di unità: ${a} vengono da una fonte scritta all'epoca, ${b} dalla ricostruzione di uno storico moderno, e ${c} le ha collocate questa pagina.`, idxPlacesHow:"Dove si trova ogni luogo della mappa (le coordinate di oggi e da dove sono prese) e quali fonti lo collegano alla battaglia.", idxLinesHow:"Il muro del parco, le linee d'assedio e le aree disegnate: quanto è sicura ogni linea e le fonti che la sostengono.", idxUnitsHow:"Ogni unità: la sua consistenza secondo ciascuna fonte, e un riquadro per fase (1–9) che mostra quanto è sicura la sua posizione in quella fase; un numero in chiaro significa che in quella fase non è sulla mappa.", hintWheel:"Usa Ctrl + rotellina (⌘ + rotellina su Mac) per lo zoom della mappa", hintTouch:"Usa due dita per spostare la mappa", chipAria:"Vai al racconto di questa fase", backMap:"↑ Torna alla mappa", moreClaims:n => `Altri dettagli e altre fonti (${n})`, plan:"Pianta", linkto:"Per un link a questa fase, aggiungi all'indirizzo della pagina:", axisMen:"numero di uomini", figHow:"Come leggere questi grafici: ogni riga è una fonte. Il punto indica la cifra che quella fonte dà; una barra significa che la fonte dà un intervallo (da–a). L'asse orizzontale è il numero di uomini. Le righe sono raggruppate per autore: resoconti dell'epoca o storici moderni. Fai clic su una riga per vedere il passo.", idxPlaces:"Luoghi", idxLines:"Linee e aree", idxUnits:"Unità", colName:"Nome", colCoord:"Coordinate", colFrom:"Posizione da", colLinked:"Legato alla battaglia da", colBasis:"Quanto è sicura", colSources:"Fonti", colStrength:"Cifre sulla forza", colPos:"Quanto è sicura la posizione, fase per fase", basisTitle:"Quanto della mappa poggia sulle fonti: posizioni delle unità per fase", bS:"da una fonte", bR:"ricostruzione moderna", bI:"collocata da questa pagina", cited:n => `citata ${n} volte`, osm:"OpenStreetMap", page:"collocato da questa pagina", oman:"predefinita", var:"variante"});
 UIS.es = {source:"Fuente", passage:"Pasaje", says:"Dice", caveat:"Advertencia", online:"En línea", showlist:"Ver en la lista de fuentes ↓",
        located:"Localizado por una fuente", rec:"Reconstrucción moderna", ill:"Colocado por esta página",
        place:"Lugar", existed:" · existía en 1525", later:" · posterior a 1525", coords:"Coordenadas", from:"De", placedby:"colocado por esta página: ",
@@ -621,7 +650,7 @@ UIS.es = {source:"Fuente", passage:"Pasaje", says:"Dice", caveat:"Advertencia", 
        types:{primary:"primaria", secondary:"secundaria", tertiary:"terciaria", data:"datos", visual:"visual"},
        status:{camp:"acampado", hold:"en posición", march:"en marcha", engaged:"en combate", broken:"roto", withdrawn:"en retirada", destroyed:"destruido", captured:"capturado", masked:"tapada, en silencio", lost:"perdida", garrison:"en la ciudad"},
        basis:{source:"Posición indicada por una fuente", reconstruction:"Posición de una reconstrucción moderna", illustrative:"Posición colocada por esta página; ninguna fuente la da"}};
-Object.assign(UIS.es, {moreClaims:n => `Más detalles y otras fuentes (${n})`, plan:"Plano", linkto:"Para enlazar esta fase, añade a la dirección de la página:", axisMen:"número de hombres", figHow:"Cómo leer estos gráficos: cada fila es una fuente. El punto marca la cifra que da esa fuente; una barra significa que la fuente da un intervalo (de–a). El eje horizontal es el número de hombres. Las filas están agrupadas según quién las escribió: relatos de la época o historiadores modernos. Pulsa una fila para ver el pasaje.", idxPlaces:"Lugares", idxLines:"Líneas y áreas", idxUnits:"Unidades", colName:"Nombre", colCoord:"Coordenadas", colFrom:"Posición según", colLinked:"Ligado a la batalla por", colBasis:"Base", colSources:"Fuentes", colStrength:"Cifras de efectivos", colPos:"Posiciones por fase", basisTitle:"Cuánto del mapa se apoya en fuentes: posiciones de unidades por fase", bS:"indicada por una fuente", bR:"reconstrucción moderna", bI:"colocada por esta página", cited:n => `citada ${n} veces`, osm:"OpenStreetMap", page:"colocado por esta página", oman:"por defecto", var:"variante"});
+Object.assign(UIS.es, {colPhase:"Fase", colShare:"Posiciones de unidades en esta fase", idxSum:(n,a,b,c) => `En las nueve fases hay ${n} posiciones de unidades: ${a} vienen de una fuente escrita en la época, ${b} de la reconstrucción de un historiador moderno, y ${c} las ha colocado esta página.`, idxPlacesHow:"Dónde está cada lugar del mapa (sus coordenadas actuales y de dónde salen) y qué fuentes lo relacionan con la batalla.", idxLinesHow:"El muro del parque, las líneas de asedio y las zonas dibujadas: qué tan segura es cada línea y las fuentes que la sostienen.", idxUnitsHow:"Cada unidad: sus efectivos según cada fuente, y una casilla por fase (1–9) que muestra qué tan segura es su posición en esa fase; un número sin recuadro significa que en esa fase no está en el mapa.", hintWheel:"Usa Ctrl + rueda (⌘ + rueda en Mac) para hacer zoom en el mapa", hintTouch:"Usa dos dedos para mover el mapa", chipAria:"Ir al relato de esta fase", backMap:"↑ Volver al mapa", moreClaims:n => `Más detalles y otras fuentes (${n})`, plan:"Plano", linkto:"Para enlazar esta fase, añade a la dirección de la página:", axisMen:"número de hombres", figHow:"Cómo leer estos gráficos: cada fila es una fuente. El punto marca la cifra que da esa fuente; una barra significa que la fuente da un intervalo (de–a). El eje horizontal es el número de hombres. Las filas están agrupadas según quién las escribió: relatos de la época o historiadores modernos. Pulsa una fila para ver el pasaje.", idxPlaces:"Lugares", idxLines:"Líneas y áreas", idxUnits:"Unidades", colName:"Nombre", colCoord:"Coordenadas", colFrom:"Posición según", colLinked:"Ligado a la batalla por", colBasis:"Qué tan segura", colSources:"Fuentes", colStrength:"Cifras de efectivos", colPos:"Qué tan segura es su posición, fase a fase", basisTitle:"Cuánto del mapa se apoya en fuentes: posiciones de unidades por fase", bS:"de una fuente", bR:"reconstrucción moderna", bI:"colocada por esta página", cited:n => `citada ${n} veces`, osm:"OpenStreetMap", page:"colocado por esta página", oman:"por defecto", var:"variante"});
 const T = k => UIS[LANG][k] ?? UIS.en[k];
 const fmt = n => Number(n).toLocaleString({it:"it-IT", es:"es-ES"}[LANG] || "en-US");
 function el(tag, attrs, parent){ const e = document.createElementNS(NS, tag); for (const k in attrs) if (attrs[k] != null) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
@@ -638,9 +667,21 @@ function citeChips(cites){
     return `<button class="cite" data-cite='${esc(JSON.stringify(c))}' title="${esc((s ? s.full : c.s) + (c.loc ? ", " + c.loc : ""))}">${esc(label)}${c.loc ? " " + esc(c.loc) : ""}</button>`;
   }).join("");
 }
+/* The inspector shows whatever was last clicked. openInspector() remembers how to redraw it
+   (so a language switch keeps it) and, if the inspector is off-screen, mirrors it in a floating sheet. */
+let lastInspect = null;
+function openInspector(draw){ lastInspect = draw; draw(); revealInspector(); }
+function inView(el){ const r = el.getBoundingClientRect(); return r.bottom > 70 && r.top < innerHeight - 40 && r.height > 0; }
+function revealInspector(){
+  if (inView($("inspect"))) { $("sheet").hidden = true; return; }
+  $("sheet-body").innerHTML = $("inspect").innerHTML;
+  $("sheet").hidden = false;
+}
+new MutationObserver(() => { if (!$("sheet").hidden) $("sheet-body").innerHTML = $("inspect").innerHTML; }).observe($("inspect"), {childList:true, subtree:true, characterData:true});
 document.addEventListener("click", e => {
   const b = e.target.closest(".cite"); if (!b) return;
-  showCite(JSON.parse(b.dataset.cite));
+  const c = JSON.parse(b.dataset.cite);
+  openInspector(() => showCite(c));
 });
 function showCite(c){
   const s = SRC[c.s] || {full:c.s};
@@ -685,7 +726,7 @@ GEO.farms.forEach(f => { const t = el("text", {x:f.x, y:f.y, class:"farm", "text
   const p = el("path", {d:f.d, class:`feat ${f.kind} b-${f.basis}`, tabindex:0, role:"button"}, $("features"));
   f.el = p;
   f.titleEl = el("title", {}, p); f.titleEl.textContent = f.name;
-  p.addEventListener("click", () => showFeature(f));
+  p.addEventListener("click", () => openInspector(() => showFeature(f)));
   if (f.label) { const [x, y] = f.label.xy; const t = el("text", {x, y, class:"lbl", "font-size":"0.85em"}, $("features")); t.textContent = f.name; }
 });
 function showFeature(f){
@@ -703,7 +744,7 @@ B.places.filter(p => p.show !== false).forEach(p => {
   else el("rect", {class:"mk", x:-4, y:-4, width:8, height:8}, g);
   const t = el("text", {class:"lbl" + (p.big ? " big" : ""), x:p.lx ?? 7, y:p.ly ?? 4, "font-size":p.big ? "1.6em" : "1em", "text-anchor":p.anchor || "start"}, g);
   t.textContent = p.name; p.labelEl = t;
-  const go = () => showPlace(p);
+  const go = () => openInspector(() => showPlace(p));
   g.addEventListener("click", go);
   g.addEventListener("keydown", e => { if (e.key === "Enter") go(); });
 });
@@ -746,7 +787,11 @@ B.units.forEach(u => {
   g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
 });
 let selUnit = null;
-function selectUnit(u){ selUnit = u; B.units.forEach(v => v.g.classList.toggle("sel", v === u)); showUnit(u); }
+function selectUnit(u){ selUnit = u; B.units.forEach(v => v.g.classList.toggle("sel", v === u)); openInspector(() => showUnit(u)); }
+function clearSelection(){
+  selUnit = null; lastInspect = null; B.units.forEach(v => v.g.classList.remove("sel"));
+  $("inspect").innerHTML = `<p class="muted">${T("idle")}</p>`; $("sheet").hidden = true;
+}
 function showUnit(u){
   const k = Math.round(cur), st = effUnits(B.phases[k])[u.id];
   const str = (u.strength || []).map(f => `<div>${f.lo === f.hi ? fmt(f.lo) : fmt(f.lo) + "–" + fmt(f.hi)}${f.unit ? " " + esc(L(f.unit)) : ""} ${citeChips([f])}${f.note ? ` <span class="muted">${esc(L(f.note))}</span>` : ""}</div>`).join("") || `<span class="muted">${T("nofig")}</span>`;
@@ -805,25 +850,41 @@ function zoomAt(f, px, py){
   view.cx = mx - (px - w/2) * view.mpp; view.cy = my - (py - h/2) * view.mpp;
   applyView();
 }
-mv.addEventListener("wheel", e => { e.preventDefault(); const r = mv.getBoundingClientRect(); zoomAt(Math.exp(e.deltaY * 0.0015), e.clientX - r.left, e.clientY - r.top); }, {passive:false});
+// Cooperative gestures: the page keeps scrolling normally; the map zooms with Ctrl/⌘ + wheel
+// (trackpad pinch sends ctrlKey too) and moves with two fingers on touch screens.
+let hintTimer = null;
+function showHint(msg){ $("maphint").textContent = msg; $("maphint").classList.add("on"); clearTimeout(hintTimer); hintTimer = setTimeout(() => $("maphint").classList.remove("on"), 1300); }
+mv.addEventListener("wheel", e => {
+  if (!(e.ctrlKey || e.metaKey) && !document.body.classList.contains("story")) { showHint(T("hintWheel")); return; }
+  e.preventDefault(); const r = mv.getBoundingClientRect(); zoomAt(Math.exp(e.deltaY * 0.0015), e.clientX - r.left, e.clientY - r.top);
+}, {passive:false});
 const ptrs = new Map(); let pinch0 = null, moved = false;
-mv.addEventListener("pointerdown", e => { if (e.target.closest(".layers,.tools")) return; ptrs.set(e.pointerId, [e.clientX, e.clientY]); moved = false; mv.classList.add("drag"); });
+let mid0 = null;
+mv.addEventListener("pointerdown", e => { if (e.target.closest(".layers,.tools,.phasechip")) return; ptrs.set(e.pointerId, [e.clientX, e.clientY]); moved = false; mid0 = null; mv.classList.add("drag"); });
 mv.addEventListener("pointermove", e => {
   if (!ptrs.has(e.pointerId)) return;
   const prev = ptrs.get(e.pointerId); ptrs.set(e.pointerId, [e.clientX, e.clientY]);
+  if (ptrs.size === 1 && e.pointerType === "touch" && !document.body.classList.contains("story")){
+    // one finger on a touch screen scrolls the page; tell the reader how to move the map
+    if (Math.abs(e.clientX - prev[0]) > 2) showHint(T("hintTouch"));
+    return;
+  }
   if (ptrs.size === 1){
     const dx = e.clientX - prev[0], dy = e.clientY - prev[1];
     if (Math.abs(dx) + Math.abs(dy) > 0) { if (!moved && Math.abs(dx) + Math.abs(dy) < 3) return; moved = true; if (!mv.hasPointerCapture(e.pointerId)) mv.setPointerCapture(e.pointerId); }
     view.cx -= dx * view.mpp; view.cy -= dy * view.mpp; applyView();
   } else if (ptrs.size === 2){
     const [a, b] = [...ptrs.values()]; const d = Math.hypot(a[0]-b[0], a[1]-b[1]);
-    if (pinch0){ const r = mv.getBoundingClientRect(); zoomAt(pinch0 / d, (a[0]+b[0])/2 - r.left, (a[1]+b[1])/2 - r.top); }
-    pinch0 = d; moved = true;
+    const mid = [(a[0]+b[0])/2, (a[1]+b[1])/2];
+    if (mid0){ view.cx -= (mid[0] - mid0[0]) * view.mpp; view.cy -= (mid[1] - mid0[1]) * view.mpp; }
+    if (pinch0){ const r = mv.getBoundingClientRect(); zoomAt(pinch0 / d, mid[0] - r.left, mid[1] - r.top); } else applyView();
+    pinch0 = d; mid0 = mid; moved = true;
   }
 });
-const endPtr = e => { ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch0 = null; if (!ptrs.size) mv.classList.remove("drag"); };
+const endPtr = e => { ptrs.delete(e.pointerId); if (ptrs.size < 2) { pinch0 = null; mid0 = null; } if (!ptrs.size) mv.classList.remove("drag"); };
 mv.addEventListener("pointerup", endPtr); mv.addEventListener("pointercancel", endPtr);
 mv.addEventListener("click", e => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+svg.addEventListener("click", e => { if (!e.target.closest(".unit,.place,.feat") && (selUnit || lastInspect)) clearSelection(); });
 mv.addEventListener("keydown", e => {
   if (e.target !== mv) return;
   const step = 80 * view.mpp, k = e.key.toLowerCase();
@@ -902,6 +963,8 @@ function render(t){
     $("ph-link").innerHTML = `${esc(T("linkto"))} <code>#${LANG}-${ph.id}</code>`;
     storyCaption();
     $("ph-eye").textContent = `${T("phase")(k+1, N)} · ${L(ph.time)}`;
+    $("phasechip").innerHTML = `<b>${k+1}/${N}</b>${esc(L(ph.title))}`;
+    $("phasechip").setAttribute("aria-label", T("chipAria"));
     $("ph-title").textContent = L(ph.title);
     $("ph-imgs").innerHTML = (ph.images || []).map((im, j) => `<button data-img="${j}" aria-label="${esc(T("open") + L(im.title))}"><img src="${esc(im.small)}" alt="" loading="lazy" width="${Math.round(74 * im.w / im.h)}" height="74"><span class="cap">${im.id.startsWith("t") ? T("tapestry") + esc(im.id[1]) : im.id === "beltrami" ? T("plan") : T("panel")}</span></button>`).join("");
     $("ph-imgs").hidden = !(ph.images || []).length;
@@ -947,7 +1010,9 @@ $("prev").onclick = () => { stop(); render(Math.max(0, Math.ceil(cur) - 1)); };
 $("next").onclick = () => { stop(); render(Math.min(N - 1, Math.floor(cur) + 1)); };
 $("t").addEventListener("input", e => { stop(); render(e.target.value / 100); });
 document.addEventListener("keydown", e => {
-  if (["INPUT","TEXTAREA"].includes(e.target.tagName) || !$("lb").hidden) return;
+  if (["INPUT","TEXTAREA","SELECT"].includes(e.target.tagName) || !$("lb").hidden) return;
+  const t = e.target;
+  if (t !== document.body && !t.closest(".mapbox,.phase,.controls,.caption,.topnav")) return;   // not while reading tables, sources or charts
   if (e.key === "ArrowRight") $("next").click();
   if (e.key === "ArrowLeft") $("prev").click();
 });
@@ -1016,7 +1081,7 @@ function figure(title, rows){
       if (f.hi !== f.lo) el("line", {x1:sx(f.lo), x2:sx(f.hi), y1:yy, y2:yy, stroke:col, "stroke-width":7, "stroke-linecap":"round"}, g);
       else el("circle", {cx:sx(f.lo), cy:yy, r:5.5, fill:col}, g);
       el("text", {class:"val", x:sx(f.hi) + 10, y:yy + 4}, g).textContent = val;
-      const go = () => showCite(f);
+      const go = () => openInspector(() => showCite(f));
       g.addEventListener("click", go); g.addEventListener("keydown", e => { if (e.key === "Enter") go(); });
     });
   });
@@ -1040,42 +1105,57 @@ $("provtable").innerHTML = `<tr><th>${T("layer")}</th><th>${T("src")}</th><th>${
 const BAS = {source:"S", reconstruction:"R", illustrative:"I"};
 function bchip(b){ return `<span class="bchip ${b}" title="${esc(T({source:"bS", reconstruction:"bR", illustrative:"bI"}[b]))}">${esc(T({source:"bS", reconstruction:"bR", illustrative:"bI"}[b]))}</span>`; }
 function renderIndex(){
-  // 1. basis bars: unit positions per phase, default reconstruction (+ variant where one exists)
-  const rows = [];
+  const WORD = {source:"bS", reconstruction:"bR", illustrative:"bI"};
+  const box = (b, label, title) => `<span class="pbox ${b}" title="${esc(title || T(WORD[b]))}">${esc(label)}</span>`;
+  // 1. counts per phase (default reconstruction first; Oman as a second row where the phases have one)
+  const rows = [], tot = {source:0, reconstruction:0, illustrative:0};
   B.phases.forEach((ph, k) => {
     const sets = [];
-    Object.entries(ph.variants || {}).forEach(([v, d]) => sets.push([`${L(ph.tick)} (${B.variants[v].label})`, {...(ph.units || {}), ...d.units}]));
-    sets.push([ph.variants ? `${L(ph.tick)} (${B.variants.oman.label})` : L(ph.tick), ph.units || {}]);
-    sets.forEach(([label, us]) => {
+    Object.entries(ph.variants || {}).forEach(([v, d]) => sets.push([`${k+1}. ${L(ph.title)}`, B.variants[v].label, {...(ph.units || {}), ...d.units}, true]));
+    sets.push([sets.length ? "" : `${k+1}. ${L(ph.title)}`, ph.variants ? B.variants.oman.label : "", ph.units || {}, !ph.variants]);
+    sets.forEach(([label, sub, us, counts]) => {
       const c = {source:0, reconstruction:0, illustrative:0}; Object.values(us).forEach(u => c[u.basis]++);
+      if (counts) Object.keys(c).forEach(b => tot[b] += c[b]);
       const n = c.source + c.reconstruction + c.illustrative || 1;
-      rows.push(`<div class="basisrow"><span>${esc(label)}</span><div class="basisbar"><i class="b-s" style="width:${100*c.source/n}%"></i><i class="b-r" style="width:${100*c.reconstruction/n}%"></i><i class="b-i" style="width:${100*c.illustrative/n}%"></i></div><span class="num" style="font-family:var(--mono);font-size:.75rem">${c.source}·${c.reconstruction}·${c.illustrative}</span></div>`);
+      rows.push(`<tr><td class="bname">${esc(label)}${sub ? ` <span class="muted">(${esc(sub)})</span>` : ""}</td>
+        <td class="bbar"><div class="basisbar" role="img" aria-label="${c.source} ${esc(T("bS"))}, ${c.reconstruction} ${esc(T("bR"))}, ${c.illustrative} ${esc(T("bI"))}"><i class="b-s" style="width:${100*c.source/n}%"></i><i class="b-r" style="width:${100*c.reconstruction/n}%"></i><i class="b-i" style="width:${100*c.illustrative/n}%"></i></div></td>
+        <td class="num">${c.source}</td><td class="num">${c.reconstruction}</td><td class="num">${c.illustrative}</td></tr>`);
     });
   });
-  $("basisfig").innerHTML = `<h3 class="eyebrow" style="margin:14px 0 6px">${esc(T("basisTitle"))}</h3>${rows.join("")}
-    <div class="basiskey"><span>${bchip("source")}</span><span>${bchip("reconstruction")}</span><span>${bchip("illustrative")}</span></div>`;
+  const all = tot.source + tot.reconstruction + tot.illustrative;
+  $("basisfig").innerHTML = `
+    <p class="idxsum">${T("idxSum")(all, tot.source, tot.reconstruction, tot.illustrative)}</p>
+    <div class="tablewrap"><table class="idx basis">
+      <tr><th>${T("colPhase")}</th><th>${T("colShare")}</th><th class="num">${box("source", T("bS"))}</th><th class="num">${box("reconstruction", T("bR"))}</th><th class="num">${box("illustrative", T("bI"))}</th></tr>
+      ${rows.join("")}</table></div>`;
   // 2. places
   const placeRows = B.places.filter(p => p.show !== false).map(p => {
     const ll = p.lonlat || toLonLat(p.xy), c = p.coord || {};
     const from = c.src === "osm" ? `${T("osm")} <a href="https://www.openstreetmap.org/${esc(c.ref)}" target="_blank" rel="noopener">${esc(c.ref)}</a>` : `${T("page")}: ${esc(L(c.note || ""))}`;
     return `<tr><td>${esc(L(p.name))}</td><td class="num">${ll[1].toFixed(5)}, ${ll[0].toFixed(5)}</td><td>${from}</td><td>${citeChips(p.cites) || "—"}</td></tr>`;
   }).join("");
-  // 3. lines & areas
-  const featRows = (B.features || []).map(f => `<tr><td>${esc(L(f.name))}${f.variant ? ` <span class="muted">(${esc(T("var"))}: ${esc(B.variants[f.variant].label)})</span>` : ""}</td><td>${bchip(f.basis)}</td><td>${citeChips(f.cites)}</td></tr>`).join("");
-  // 4. units: strength sources + positions per phase
+  // 3. lines and areas
+  const featRows = (B.features || []).map(f => `<tr><td>${esc(L(f.name))}${f.variant ? ` <span class="muted">(${esc(B.variants[f.variant].label)})</span>` : ""}</td><td>${box(f.basis, T(WORD[f.basis]))}</td><td>${citeChips(f.cites)}</td></tr>`).join("");
+  // 4. units: size by source, and one box per phase showing how sure its position is
   const unitRows = B.units.map(u => {
-    const pos = B.phases.map((ph, k) => { const st = ph.units?.[u.id]; return st ? `<span title="${esc(L(ph.title))}">${k+1}:${BAS[st.basis]}</span>` : ""; }).filter(Boolean).join(" ");
+    const pos = B.phases.map((ph, k) => { const st = ph.units?.[u.id]; return st ? box(st.basis, String(k+1), `${k+1}. ${L(ph.title)}: ${T(WORD[st.basis])}`) : `<span class="pbox none" title="${esc(`${k+1}. ${L(ph.title)}: ${T("notfield")}`)}">${k+1}</span>`; }).join("");
     const str = (u.strength || []).map(f => `${f.lo === f.hi ? fmt(f.lo) : fmt(f.lo) + "–" + fmt(f.hi)} ${citeChips([f])}`).join("<br>") || "—";
-    return `<tr><td><span class="side-${u.side}">${esc(L(u.name))}</span><br><span class="muted">${esc(L(u.cmd))}</span></td><td>${str}</td><td class="num">${pos}</td></tr>`;
+    return `<tr><td><span class="side-${u.side}">${esc(L(u.name))}</span><br><span class="muted">${esc(L(u.cmd))}</span></td><td>${str}</td><td class="pboxes">${pos}</td></tr>`;
   }).join("");
   $("idxtables").innerHTML = `
-    <details><summary>${esc(T("idxPlaces"))} (${B.places.filter(p => p.show !== false).length})</summary><div class="tablewrap"><table class="idx"><tr><th>${T("colName")}</th><th>${T("colCoord")}</th><th>${T("colFrom")}</th><th>${T("colLinked")}</th></tr>${placeRows}</table></div></details>
-    <details><summary>${esc(T("idxLines"))} (${(B.features || []).length})</summary><div class="tablewrap"><table class="idx"><tr><th>${T("colName")}</th><th>${T("colBasis")}</th><th>${T("colSources")}</th></tr>${featRows}</table></div></details>
-    <details><summary>${esc(T("idxUnits"))} (${B.units.length})</summary><div class="tablewrap"><table class="idx"><tr><th>${T("colName")}</th><th>${T("colStrength")}</th><th>${T("colPos")} (S·R·I)</th></tr>${unitRows}</table></div></details>`;
+    <details><summary>${esc(T("idxPlaces"))} (${B.places.filter(p => p.show !== false).length})</summary><p class="sub">${esc(T("idxPlacesHow"))}</p><div class="tablewrap"><table class="idx"><tr><th>${T("colName")}</th><th>${T("colCoord")}</th><th>${T("colFrom")}</th><th>${T("colLinked")}</th></tr>${placeRows}</table></div></details>
+    <details><summary>${esc(T("idxLines"))} (${(B.features || []).length})</summary><p class="sub">${esc(T("idxLinesHow"))}</p><div class="tablewrap"><table class="idx"><tr><th>${T("colName")}</th><th>${T("colBasis")}</th><th>${T("colSources")}</th></tr>${featRows}</table></div></details>
+    <details><summary>${esc(T("idxUnits"))} (${B.units.length})</summary><p class="sub">${esc(T("idxUnitsHow"))}</p><div class="tablewrap"><table class="idx"><tr><th>${T("colName")}</th><th>${T("colStrength")}</th><th>${T("colPos")}</th></tr>${unitRows}</table></div></details>`;
 }
 // how many claims, figures and positions cite each source (shown in the bibliography)
 const CITE_COUNT = {};
 (function countCites(o){ if (Array.isArray(o)) o.forEach(countCites); else if (o && typeof o === "object") { if (typeof o.s === "string" && SRC[o.s]) CITE_COUNT[o.s] = (CITE_COUNT[o.s] || 0) + 1; Object.values(o).forEach(countCites); } })(B.phases.concat(B.units, B.places, B.features || [], B.figures || []));
+
+$("phasechip").onclick = () => { $("ph-title").scrollIntoView({behavior:"smooth", block:"start"}); $("ph-title").focus({preventScroll:true}); };
+$("sheet-close").onclick = () => { $("sheet").hidden = true; };
+$("sheet-map").onclick = () => { $("sheet").hidden = true; $("top").scrollIntoView({behavior:"smooth"}); };
+$("sheet").addEventListener("click", e => { if (e.target.closest("[data-bib]")) $("sheet").hidden = true; });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("sheet").hidden) $("sheet").hidden = true; });
 
 /* ---------- top menu: highlight the section in view ---------- */
 (function(){
@@ -1128,9 +1208,9 @@ function setLang(lang, save){
   B.units.forEach(u => { u.labelEl.textContent = L(u.short); u.capEl.textContent = T("captured"); u.titleEl.textContent = `${L(u.name)} (${L(u.cmd)})`; u.g.setAttribute("aria-label", `${L(u.name)} (${L(u.cmd)})`); });
   (B.features || []).forEach(f => { f.titleEl.textContent = L(f.name); });
   $("play").textContent = playing ? T("pause") : T("play");
+  $("sheet-map").textContent = T("backMap");
   $("calnote").textContent = T("cal");
-  $("inspect").innerHTML = `<p class="muted">${T("idle")}</p>`;
-  if (selUnit) showUnit(selUnit);
+  if (lastInspect) lastInspect(); else $("inspect").innerHTML = `<p class="muted">${T("idle")}</p>`;
   renderTicks(); renderFigs(); renderBib(); renderIndex();
   lastK = -1; render(cur);
   if (save) { try { localStorage.setItem("pavia-lang", LANG); } catch (e) {} }
