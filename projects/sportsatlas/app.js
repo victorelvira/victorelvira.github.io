@@ -2,8 +2,8 @@
    the map as one view among others. Data built by scripts/build.py into sportsatlas/data/. */
 "use strict";
 
-const DATA_V = "0.10.0";
-const BUILD_AT = "2026-09-27 22:58";
+const DATA_V = "0.10.1";
+const BUILD_AT = "2026-09-27 23:23";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -1651,7 +1651,7 @@ function cardSeason(d, e, x, comp) {
   const alts = x.matches.filter(m => m.alt).length;
   const verdicts = x.matches.filter(m => m.verdict);
   const warn = x.reading === "check"
-    ? `<div class="note warn"><b>The source does not add up.</b> Recounting wins, draws, losses and goals from the results grid does not give the league table on the same page: ${esc(x.reading_detail || "")}. Both are shown as written.${x.esd_gives_table === true ? ` <b>A second source settles it:</b> engsoccerdata's results for this season give exactly this table, so the difference is in the page's results grid${alts ? `; the results where they differ are marked below` : ""}.` : x.esd_gives_table === false ? " engsoccerdata's results do not give this table either." : ""}${x.adds_up_with_majority === true ? " With the score two of three sources give, the grid adds up too." : ""}</div>`
+    ? `<div class="note warn"><b>The source does not add up.</b> Recounting wins, draws, losses and goals from the results grid does not give the league table on the same page: ${esc(x.reading_detail || "")}. Both are shown as written.${x.esd_gives_table === true ? ` <b>A second source settles it:</b> engsoccerdata's results for this season give exactly this table, so the difference is in the page's results grid${alts ? `; the results where they differ are marked below` : ""}.` : x.esd_gives_table === false ? " engsoccerdata's results do not give this table either." : ""}${x.adds_up_with_majority === true ? " With the score two of three sources give, the grid adds up too." : ""}${x.adds_up_with_posit === true ? " <b>Corrected here, and it adds up:</b> the results grid links one club's column to another club (1964–65: Las Palmas written as CD Málaga, which did not play that season); read as the club the same page's table names, every result gives the table. The correction is a pósit at pencil, shown in the atlas's change log." : ""}</div>`
     : x.reading === "no_table" ? `<div class="note"><b>No league table</b> in a form we can read on this page; results only.</div>` : "";
   return `<p class="kick"><span class="dot"></span>${compLnk(d, e.comp)} · ${esc(e.label)}</p>
     <h2>${esc(e.title)}</h2>${playedAs(d, e)}${edActions(d, e)}
@@ -1909,7 +1909,8 @@ async function cardTennisPlayer(d, id) {
     ${playerHistory(d, p)}
     <p class="sub written">The Davis Cup and the Billie Jean King Cup are not in the atlas yet.</p>
     ${rankBlock}
-    ${top.length > 1 ? `<h4 class="sec">Most frequent opponents in these draws</h4><table class="mini"><thead><tr><th>Opponent</th><th class="num">Played</th><th class="num">Won</th><th class="num">Lost</th></tr></thead><tbody>${top.map(o => `<tr data-go data-open="player:${esc(o.id)}"><td>${esc(o.name)}</td><td class="num">${o.w + o.l}</td><td class="num">${o.w}</td><td class="num">${o.l}</td></tr>`).join("")}</tbody></table>` : ""}
+    ${top.length > 1 ? `<h4 class="sec">Most frequent opponents in these draws</h4><table class="mini"><thead><tr><th>Opponent</th><th class="num">Played</th><th class="num">Won</th><th class="num">Lost</th></tr></thead><tbody>${top.map(o => `<tr data-go data-open="player:${esc(o.id)}"><td>${esc(o.name)}</td><td class="num">${o.w + o.l}</td><td class="num">${o.w}</td><td class="num">${o.l}</td></tr>`).join("")}</tbody></table>
+    <p class="sub">Counted over the draws in this atlas only: the Grand Slams, the 1000s, the 500s from 2009, the Finals and the Olympics. Other tour events (the 250s, the WTA's lower tiers) and the Davis and Billie Jean King Cups are not read, so a rivalry can be longer than it shows here.</p>` : ""}
     ${await elsewhere(id)}
     ${id.startsWith("name:") ? `<p class="links">No Wikipedia article: the name as the draw writes it.</p>` : `<p class="links"><a href="${WIKI(id)}" target="_blank" rel="noopener">${esc(id)}</a> on Wikipedia.</p>`}`;
 }
