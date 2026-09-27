@@ -2,8 +2,8 @@
    the map as one view among others. Data built by scripts/build.py into sportsatlas/data/. */
 "use strict";
 
-const DATA_V = "0.9.2";
-const BUILD_AT = "2026-09-26 10:01";
+const DATA_V = "0.10.0";
+const BUILD_AT = "2026-09-27 22:58";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -83,7 +83,7 @@ async function loadTeams() {
 
 /* ------------------------------------------------------------------ state ⇄ address */
 
-const FOOTBALL_GROUPS = { national: ["worldcup", "euro"], international: ["ucl", "uel", "cwc", "fairs"], leagues: ["laliga", "premier"] };
+const FOOTBALL_GROUPS = { national: ["worldcup", "euro"], international: ["ucl", "uel", "cwc", "fairs"], leagues: ["laliga", "segunda", "premier"] };
 const FOOTBALL_GROUP_NAME = c => FOOTBALL_GROUPS.national.includes(c) ? "National teams" : FOOTBALL_GROUPS.international.includes(c) ? "Clubs · international" : "Clubs · national";
 const VIEWS = {
   football: [["matches", "Matches"], ["editions", "Tournaments & seasons"], ["teams", "Teams"], ["players", "Players"], ["map", "Map"]],
@@ -1638,12 +1638,15 @@ function cardSeason(d, e, x, comp) {
   const cell = {};
   for (const m of x.matches) cell[m.h + "|" + m.a] = m;
   const abbr = n => n.replace(/^(Real|Club|CD|CF|FC|UD|RCD|SD|CA|Athletic|Atlético|Sporting|Deportivo)\s+/i, "").slice(0, 3).toUpperCase();
-  const grid = teams.length && x.matches.length ? `<div class="grid-res"><table><thead><tr><th>Home \\ Away</th>${teams.map(a => `<th title="${esc(a)}">${esc(abbr(a))}</th>`).join("")}</tr></thead><tbody>${teams.map(h => `<tr><th>${teamLnk(h)}</th>${teams.map(a => {
+  const gridOf = teams => teams.length && x.matches.length ? `<div class="grid-res"><table><thead><tr><th>Home \\ Away</th>${teams.map(a => `<th title="${esc(a)}">${esc(abbr(a))}</th>`).join("")}</tr></thead><tbody>${teams.map(h => `<tr><th>${teamLnk(h)}</th>${teams.map(a => {
     if (h === a) return `<td class="self"></td>`;
     const m = cell[h + "|" + a];
     if (!m || m.hg == null) return `<td>${m ? "·" : ""}</td>`;
     return `<td class="${m.hg > m.ag ? "hw" : m.hg < m.ag ? "aw" : ""}">${m.hg}–${m.ag}</td>`;
   }).join("")}</tr>`).join("")}</tbody></table></div>` : "";
+  // a season in groups has one matrix per group: no club of one group met a club of another
+  const gnames = [...new Set(t.map(r => r.group || ""))];
+  const grid = gnames.length < 2 ? gridOf(teams) : gnames.map(g => `<p class="sub"><b>${esc(g || "Table")}</b></p>${gridOf(t.filter(r => (r.group || "") === g).map(r => r.team))}`).join("");
   const dated = x.matches.filter(m => m.date).sort((a, b) => a.date.localeCompare(b.date));
   const alts = x.matches.filter(m => m.alt).length;
   const verdicts = x.matches.filter(m => m.verdict);
@@ -1655,9 +1658,15 @@ function cardSeason(d, e, x, comp) {
     <p class="sub">${e.teams} clubs, ${fmt(e.matches)} matches, ${fmt(e.goals)} goals.</p>
     ${e.champion ? `<div class="champ">${CUP}<div><div class="who">${lnk("team:" + (e.champion_key || ""), e.champion)}</div><div class="how">${by[e.champion] ? `${by[e.champion].pts} points, ${by[e.champion].w} wins` : ""}${e.runner_up ? `, ahead of ${teamLnk(e.runner_up)}` : ""}</div></div></div>` : ""}
     ${warn}
-    <h4 class="sec">League table</h4>
-    <table class="mini"><thead><tr><th>#</th><th>Club</th><th class="num">P</th><th class="num">W</th><th class="num">D</th><th class="num">L</th><th class="num">GF</th><th class="num">GA</th><th class="num">Pts</th></tr></thead>
-    <tbody>${t.map(r => `<tr class="${r.pos === 1 ? "c" : ""}" data-go data-open="team:${esc(r.key)}"><td>${r.pos}</td><td>${esc(r.team)}${r.status ? ` <span class="flag">${esc(r.status)}</span>` : ""}</td><td class="num">${r.p}</td><td class="num">${r.w}</td><td class="num">${r.d}</td><td class="num">${r.l}</td><td class="num">${r.gf}</td><td class="num">${r.ga}</td><td class="num"><b>${r.pts}</b>${r.adj ? `<span class="flag">${r.adj > 0 ? "+" : ""}${r.adj}</span>` : ""}</td></tr>`).join("")}</tbody></table>
+    ${(() => {
+      // a season played in groups (the Segunda División) has one table per group, each under its own name
+      const gs = [...new Set(t.map(r => r.group || ""))];
+      const one = rs => `<table class="mini"><thead><tr><th>#</th><th>Club</th><th class="num">P</th><th class="num">W</th><th class="num">D</th><th class="num">L</th><th class="num">GF</th><th class="num">GA</th><th class="num">Pts</th></tr></thead>
+    <tbody>${rs.map(r => `<tr class="${r.pos === 1 ? "c" : ""}" data-go data-open="team:${esc(r.key)}"><td>${r.pos}</td><td>${esc(r.team)}${r.status ? ` <span class="flag">${esc(r.status)}</span>` : ""}</td><td class="num">${r.p}</td><td class="num">${r.w}</td><td class="num">${r.d}</td><td class="num">${r.l}</td><td class="num">${r.gf}</td><td class="num">${r.ga}</td><td class="num"><b>${r.pts}</b>${r.adj ? `<span class="flag">${r.adj > 0 ? "+" : ""}${r.adj}</span>` : ""}</td></tr>`).join("")}</tbody></table>`;
+      if (gs.length < 2) return `<h4 class="sec">League table</h4>${one(t)}`;
+      return `<div class="note">Played in ${gs.length} groups${e.champion ? "" : ", with no single champion named on the season's page"}: each table below is one group, and a club's place is its place in its group.</div>`
+        + gs.map(g => `<h4 class="sec">${esc(g || "Table")}</h4>${one(t.filter(r => (r.group || "") === g))}`).join("");
+    })()}
     ${grid ? `<h4 class="sec">Every result · home down, away across</h4>${grid}` : ""}
     ${verdicts.length ? `<h4 class="sec">Results the sources give differently</h4><table class="mini"><tbody>${verdicts.map(m => `<tr><td>${lnk("team:" + m.hk, m.h)} – ${lnk("team:" + m.ak, m.a)}</td><td class="num">${m.hg}–${m.ag}</td><td class="written">season page; ${esc(m.alt)}. ${esc(m.verdict)}</td></tr>`).join("")}</tbody></table>` : ""}
     ${scorersBlock(x, "results")}
@@ -1986,15 +1995,16 @@ function editionChips(d, eids) {
 /* A career line, as batalladedatos draws its groups: the finish in each edition (best at the top), a cup where it
    won, a dashed stretch across editions held but not played. One chart per competition, all on the same years. */
 const TROPHY = (cx, cy) => `<g class="trophy" transform="translate(${(cx - 6).toFixed(1)} ${(cy - 21).toFixed(1)}) scale(0.75)" aria-hidden="true"><path d="M4 2h8v3a4 4 0 0 1-8 0V2z"/><path d="M2 3h2v2a2 2 0 0 1-2-2zM14 3h-2v2a2 2 0 0 0 2-2z"/><path d="M7 9h2v3H7zM5 12h6v2H5z"/></g>`;
-function trajectory({ points, held, levels, from, to, numeric }) {
+function trajectory({ points, held, levels, from, to, numeric, rule }) {
   if (!points.length) return "";
   const worst = numeric ? Math.max(4, ...points.map(p => p.lv)) : levels.length - 1;
   const L = numeric ? 34 : 112, R = 14, T = 26, B = 22;
-  const rows = numeric ? Math.min(worst, 10) : worst;
+  const rows = numeric ? Math.min(worst, rule ? 16 : 10) : worst;
   const H = T + B + Math.max(3, rows) * 17;
   const span = Math.max(1, to - from);
   const Y = lv => T + (lv - 1) / Math.max(1, worst - 1) * (H - T - B);
-  const ticks = numeric ? [...new Set([1, 2, 3, Math.round(worst / 2), worst])].filter(v => v >= 1 && v <= worst) : levels.map((_, i) => i).slice(1);
+  const ticks = numeric ? (rule ? [...new Set([1, Math.round(rule.at - .5), worst])] : [...new Set([1, 2, 3, Math.round(worst / 2), worst])]).filter(v => v >= 1 && v <= worst)
+    : levels.map((_, i) => i).slice(1);
   const best = new Map();
   for (const p of points) if (!best.has(p.year) || p.lv < best.get(p.year).lv) best.set(p.year, p);
   const line = [...best.values()].sort((a, b) => a.year - b.year);
@@ -2010,22 +2020,24 @@ function trajectory({ points, held, levels, from, to, numeric }) {
       const seg = `M${X(a.year).toFixed(1)} ${Y(a.lv).toFixed(1)}L${X(b.year).toFixed(1)} ${Y(b.lv).toFixed(1)}`;
       (held.some(y => y > a.year && y < b.year) ? gaps : solid).push(seg);
     }
-    const dots = points.map(p => `<circle class="serie-dot${p.lv === 1 ? " won" : ""}" cx="${X(p.year).toFixed(1)}" cy="${Y(p.lv).toFixed(1)}" r="${p.lv === 1 ? 4.2 : 3.2}" data-open="edition:${esc(p.eid)}"><title>${esc(p.tip)}</title></circle>`).join("");
+    // a rule between two tiers (the first and the second division), labelled on the left
+    const tier = rule ? `<line class="tier-rule" x1="${L}" x2="${W - R}" y1="${Y(rule.at).toFixed(1)}" y2="${Y(rule.at).toFixed(1)}"/><text class="axis-label tier-l" x="${L + 4}" y="${(Y(rule.at) + 11).toFixed(1)}" text-anchor="start">${esc(rule.label)} below</text>` : "";
+    const dots = points.map(p => `<circle class="serie-dot${p.lv === 1 ? " won" : ""}${p.cls ? " " + p.cls : ""}" cx="${X(p.year).toFixed(1)}" cy="${Y(p.lv).toFixed(1)}" r="${p.lv === 1 ? 4.2 : 3.2}" data-open="edition:${esc(p.eid)}"><title>${esc(p.tip)}</title></circle>`).join("");
     const cups = points.filter(p => p.lv === 1).map(p => TROPHY(X(p.year), Y(p.lv))).join("");
-    return `<svg class="chart traj" viewBox="0 0 ${W} ${H}" role="img">${grid}${axis}<path class="serie-line" d="${solid.join("")}"/>${gaps.length ? `<path class="serie-line serie-ausencia" d="${gaps.join("")}"/>` : ""}${dots}${cups}</svg>`;
+    return `<svg class="chart traj" viewBox="0 0 ${W} ${H}" role="img">${grid}${axis}${tier}<path class="serie-line" d="${solid.join("")}"/>${gaps.length ? `<path class="serie-line serie-ausencia" d="${gaps.join("")}"/>` : ""}${dots}${cups}</svg>`;
   } });
 }
 
 /* A team's history, competition by competition: national teams in their tournaments, clubs in their international
    cups and then their leagues. Each with its line, its numbers, and its editions folded underneath. */
-const FOOT_ORDER = ["worldcup", "euro", "ucl", "uel", "cwc", "fairs", "laliga", "premier"];
+const FOOT_ORDER = ["worldcup", "euro", "ucl", "uel", "cwc", "fairs", "laliga", "segunda", "premier"];
 const CUP_LEVELS = ["", "Champion", "Final", "Semi-finals", "Quarter-finals", "Last 16", "Groups or earlier"];
 function teamHistory(d, t) {
   const from = Math.min(...t.r.map(r => r.y)), to = Math.max(...t.r.map(r => r.y));
   const ord = n => { const s = ["th", "st", "nd", "rd"], v = n % 100; return n + (s[(v - 20) % 10] || s[v] || s[0]); };
   const fin = r => r.fin === "Champion" ? `<span class="pill gold">Champion</span>` : r.fin === "Runner-up" ? `<span class="pill final">Runner-up</span>` : /^\d+$/.test(r.fin) ? `<span class="pill">${ord(+r.fin)}</span>` : `<span class="pill">${esc(r.fin)}</span>`;
-  const groups = [["National teams", ["worldcup", "euro"]], ["International", ["ucl", "uel", "cwc", "fairs"]], ["National", ["laliga", "premier"]]];
-  return groups.map(([gname, comps]) => {
+  const groups = [["National teams", ["worldcup", "euro"]], ["International", ["ucl", "uel", "cwc", "fairs"]], ["National", ["laliga", "segunda", "premier"]]];
+  return spanishLadder(d, t) + groups.map(([gname, comps]) => {
     const secs = comps.map(c => {
       const rs = t.r.filter(r => r.c === c).sort((a, b) => a.y - b.y || a.e.localeCompare(b.e));
       if (!rs.length) return "";
@@ -2044,6 +2056,27 @@ function teamHistory(d, t) {
     }).join("");
     return secs && t.kind === "national" && gname !== "National teams" ? "" : secs ? `${t.kind === "club" ? `<h4 class="sec grp">${gname === "International" ? "International competitions" : "National league"}</h4>` : ""}${secs}` : "";
   }).join("");
+}
+
+/* A club that went up and down between the first and second divisions, as one line: its place in La Liga, or
+   the number of clubs in La Liga that season plus its place in the Segunda. The rule between them is the division;
+   a season played in groups counts the club's place in its group, and says so. */
+function spanishLadder(d, t) {
+  const one = t.r.filter(r => r.c === "laliga"), two = t.r.filter(r => r.c === "segunda");
+  if (!one.length || !two.length) return "";
+  const size = new Map(d.idx.editions.filter(e => e.comp === "laliga").map(e => [e.label, e.teams || 20]));
+  const at = [...size.values()].reduce((a, b) => Math.max(a, b), 20);
+  const place = r => r.fin === "Champion" ? 1 : +r.fin || 0;
+  const points = [...one.map(r => ({ year: r.y, lv: place(r), eid: r.e, tip: `${d.ed[r.e]?.title || r.l}: ${r.fin === "Champion" ? "champion" : ordinal(place(r))}` })),
+    ...two.map(r => ({ year: r.y, lv: (size.get(r.l) || 20) + place(r), eid: r.e, cls: "tier2",
+      tip: `${d.ed[r.e]?.title || r.l}: ${r.fin === "Champion" ? "champion of the Segunda" : ordinal(place(r)) + " in the Segunda"}${r.grp ? ` (${r.grp})` : ""}` }))]
+    .filter(p => p.lv > 0).sort((a, b) => a.year - b.year);
+  const years = points.map(p => p.year);
+  const ups = two.filter(r => one.some(o => o.y === r.y + 1)).length, downs = one.filter(r => two.some(o => o.y === r.y + 1)).length;
+  return `<h4 class="sec grp">In the Spanish league system</h4><section class="hist"><h3>La Liga and Segunda División</h3>
+    <p class="sub">${one.length} seasons in La Liga, ${two.length} in the Segunda · ${ups} promotion${ups === 1 ? "" : "s"}, ${downs} relegation${downs === 1 ? "" : "s"} read from the seasons it played</p>
+    ${trajectory({ points, held: d.idx.editions.filter(e => e.comp === "laliga" || e.comp === "segunda").map(e => e.year), levels: [], from: Math.min(...years), to: Math.max(...years), numeric: true, rule: { at: at + .5, label: "Segunda División" } })}
+    <p class="sub">A broken line is years the club spent outside both divisions, which the atlas does not read.</p></section>`;
 }
 
 /* A player's career, event by event: the Grand Slams, then the 1000s, the Finals and the Olympics. */

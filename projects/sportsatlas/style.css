@@ -499,3 +499,7 @@ h2 img.picto{width:34px;height:34px;vertical-align:-6px;margin-right:10px}
 #tl-lbl .tlg-tri{fill:var(--faint)}
 #tl-lbl .tlg:hover .tlg-tri{fill:var(--accent)}
 /* a mark's colour carries its meaning (the court, the champion's country, the continent): it is set on the mark itself */
+/* the Spanish league system: one line through both divisions, the rule between them */
+svg.chart .tier-rule{stroke:var(--accent);stroke-width:1;stroke-dasharray:4 3;opacity:.55}
+svg.chart .tier-l{fill:var(--accent);font-style:italic}
+svg.chart .serie-dot.tier2{fill:var(--muted)}
