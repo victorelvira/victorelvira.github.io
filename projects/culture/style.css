@@ -748,3 +748,13 @@ a.sh-share:hover{color:var(--sky);text-decoration:underline}
 #share-view .ic-share{margin-right:5px}
 @media (max-width:720px){ #share-view .lbl{display:none} #share-view .ic-share{margin-right:0;width:14px;height:14px} }
 .sh-list .sh-more{list-style:none;color:var(--stone);font-size:12px;padding:8px 2px;font-style:italic}
+/* 0.35: on a phone the search stays in sight with the filters folded (Víctor: "¿no deja search?") */
+@media (max-width:720px){
+  body.folded #modes{display:block;padding:4px 8px 6px}
+  body.folded #modes > :not(#filter-wrap){display:none}
+  body.folded #filter-wrap{display:block;width:100%}
+  body.folded #filter{width:100%;font-size:16px}
+}
+/* 0.35: the close button sat under the sticky card header (both z-index 2, the header later in the page), so on a
+   phone a place card could not be closed with it. Always above. */
+#sheet-close,#sheet[data-kind="place"] #sheet-close{z-index:6}

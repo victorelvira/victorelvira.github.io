@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.34.1";
+const DATA_V = "0.35.1";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -588,7 +588,7 @@ function cellPopup(c) {
   const top = c.places.slice().sort((a, z) => z.vis.length - a.vis.length);
   const list = top.slice(0, 14).map((pl) => {
     const best = pl.vis.slice().sort((a, z) => z.rank - a.rank)[0];
-    return `<li class="pop-place" data-lat="${pl.lat}" data-lon="${pl.lon}">` +
+    return `<li class="pop-place" data-lat="${pl.lat}" data-lon="${pl.lon}" data-site="${pl.siteIdx}">` +
       `<span class="dot" style="background:${colourFor(colourKey(best))}"></span>` +
       `<div class="wk"><div class="wt">${esc(SITES[pl.siteIdx][S_NAME])}</div>` +
       (whereOf(SITES[pl.siteIdx]) ? `<div class="by dim">${esc(whereOf(SITES[pl.siteIdx]))}</div>` : "") +
@@ -617,9 +617,12 @@ function wirePopupBody(el, dismiss) {
     dismiss();
     openPerson(li.dataset.qid);
   }));
+  // A place in a list of places OPENS that place (0.35). It used to zoom to it and close the list, so the reader had
+  // to find and tap its pin again to see who lies there: Víctor, on a phone at Père-Lachaise, "no deja pinchar en el
+  // cementerio". The map moves there too, without diving to street level.
   el.querySelectorAll(".pop-place").forEach((li) => li.addEventListener("click", () => {
     dismiss();
-    map.setView([+li.dataset.lat, +li.dataset.lon], Math.max(map.getZoom() + 3, 15));
+    openPlaceCard(+li.dataset.site, [+li.dataset.lat, +li.dataset.lon]);
   }));
   const zoom = el.querySelector(".pop-zoom");
   if (zoom) zoom.addEventListener("click", () => {
@@ -647,6 +650,15 @@ map.on("popupopen", (e) => {
   wire();
   if (!PEOPLE) needPeople(() => { if (popup.isOpen()) { popup.setContent(bound); wire(); } });
 });
+function openPlaceCard(siteIdx, at) {
+  map.setView(at, Math.max(map.getZoom(), 16), { animate: false });
+  const pl = places.find((x) => x.siteIdx === siteIdx);
+  if (!pl) return;
+  const rows = pl.rows.filter((r) => passes(r, "map"));
+  if (!narrow()) { revealInPanel({ places: [pl] }); return; }
+  openCard = null; openPlace = placeKey(siteIdx); selectedSite = siteIdx;
+  showPlaceSheet(() => sitePopup(siteIdx, rows.length ? rows : pl.rows)); syncURL();
+}
 // Tapping the map background dismisses a place list, the way tapping outside any sheet should.
 // Only a place list: a person card was opened deliberately and closes deliberately.
 map.on("click", () => { if ($("sheet").dataset.kind === "place") closeSheet(); });
