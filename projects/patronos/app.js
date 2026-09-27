@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.12.1";
-const BUILD_AT = "2026-09-27 11:38";
+const DATA_V = "0.14.0";
+const BUILD_AT = "2026-09-27 22:58";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -30,7 +30,7 @@ const COUNTRIES = {
 // "sin identificar" is the neutral of the set and always carries its legend.
 const GROUP = {maria: "#3f6fae", cristo: "#a8323e", santo: "#a97a22", dios: "#6b4c9a", sin_identificar: "#9a9187"};
 const AGREE = {agree: "#3f8f5a", partial: "#e0a526", disagree: "#c0392b", only_eswiki: "#6d8fc4", only_wikidata: "#9b86c2",
-  only_text: "#8fb3a8", only_fiesta: "#c9b38a"};
+  only_text: "#8fb3a8", only_fiesta: "#c9b38a", only_church: "#b39bc8"};
 const NODATA = "#ece7df", OTHER = "#cfc5b6", FADE = "#e9e4dc";
 const PALETTE = ["#e0a526", "#2f8f6b", "#d0672f", "#7a55a8", "#3aa0b8", "#b35c8a", "#6a8f2f", "#8a5a2b",
   "#d24b6b", "#c47ac0", "#a8b83a", "#1f6f7a"];
@@ -224,7 +224,7 @@ function hideTip() { tip.hidden = true; }
 // ---------- days ----------
 // The day of a patron: the town's own (infobox or local holiday), else the advocation's feast, else the saint's (P841).
 function dayOf(e, dev = D.devotions) {
-  if (e.d) return {md: e.d, how: e.s && e.s[0] && e.s[0][0] === "fiesta_local" ? "dh_fiesta" : "dh_town"};
+  if (e.d) return {md: e.d, how: e.s && e.s[0] && ["fiesta_local", "iglesia_fiesta"].includes(e.s[0][0]) ? "dh_fiesta" : "dh_town"};
   if (e.fd) return {md: e.fd, how: "dh_adv"};
   const d = dev[e.k];
   if (d.g === "santo" && d.f) {
@@ -417,7 +417,8 @@ function renderExplain() {
   } else if (state.view === "agree") {
     h = esc(t("explain_agree")) + " " + Object.keys(AGREE).filter(k => m.agreement[k]).map(k => `${sw(AGREE[k])}${esc(t("a_" + k))} (${fmt(m.agreement[k])})`).join(" ") + ` ${sw(NODATA)}${esc(t("no_data"))}. ${esc(t("agree_note"))}`;
   } else {
-    const pale = [m.text_only ? t("pale_text", {n: fmt(m.text_only)}) : "", m.fiesta_only ? t("pale_fiesta", {n: fmt(m.fiesta_only)}) : ""].filter(Boolean);
+    const pale = [m.text_only ? t("pale_text", {n: fmt(m.text_only)}) : "", m.church_only ? t("pale_church", {n: fmt(m.church_only)}) : "",
+      m.fiesta_only ? t("pale_fiesta", {n: fmt(m.fiesta_only)}) : ""].filter(Boolean);
     h = `${esc(t("explain_main", {n: topKeys.length}))} ${sw(OTHER)}${esc(t("the_rest"))} ${sw(NODATA)}${esc(t("no_data_n", {n: fmt(no), p: pct}))}. ` +
       `${pale.length ? `${esc(t("paler"))} ${esc(pale.join(` ${t("and")} `))} ${esc(t("pencil"))}. ` : ""}${esc(t("click_town"))}`;
   }
@@ -522,7 +523,9 @@ function renderCard() {
     const parishes = ["Galicia", "Principado de Asturias", "Asturias", "Cantabria"].includes(tw.c);
     h += `<div class="nodata">${esc(t("nodata_town"))}${parishes ? " " + esc(t("parishes", {r: tw.c})) : ""}</div>`;
   } else {
-    if (tw.xf) h += `<div class="warn">${esc(t("warn_fiesta"))}</div>`;
+    if (tw.xg) h += `<div class="warn">${esc(t("warn_church"))}</div>`;
+    else if (tw.xf) h += `<div class="warn">${esc(t("warn_fiesta"))}</div>`;
+    else if (tw.xc) h += `<div class="warn">${esc(t("warn_text_ca"))}</div>`;
     else if (tw.x) h += `<div class="warn">${esc(t("warn_text"))}</div>`;
     if (tw.a === "disagree") h += `<div class="warn">${esc(t("warn_disagree"))}</div>`;
     if (tw.a === "partial") h += `<div class="warn">${esc(t("warn_partial"))}</div>`;
@@ -532,7 +535,7 @@ function renderCard() {
       const adv = e.t && e.t !== d.n && d.g !== "santo" ? `<div class="adv">${t("as_adv", {x: `<b>${esc(advText)}</b>`})}</div>` : "";
       const dd = dayOf(e);
       const days = dd ? (dd.all || [dd.md]).map(x => goDay(x)).join(", ") : "";
-      const fromFiesta = e.s && e.s[0] && e.s[0][0] === "fiesta_local";
+      const fromFiesta = e.s && e.s[0] && ["fiesta_local", "iglesia_fiesta"].includes(e.s[0][0]);
       const flMatch = !fromFiesta && dd && tw.fl && tw.fl.some(f => (dd.all || [dd.md]).includes(f[0]));
       h += `<div class="entry">
         <div class="role">${esc(roleText(e))}${e.wo ? `<span class="badge b-wo">${esc(t("only_wd"))}</span>` : ""}</div>
