@@ -1,8 +1,8 @@
 
 "use strict";
 /* Pastatlas: Italian pasta shapes x sauces. Conventions: ../../LLM.md (shared) and ../LLM.md (project). */
-const DATA_V = "0.8.1";          /* version = cache-bust; bump per LLM.md section 3 */
-const BUILD_AT = "2026-09-25 23:55";              /* stamped by scripts/stamp_build.py when deploying */
+const DATA_V = "0.8.2";          /* version = cache-bust; bump per LLM.md section 3 */
+const BUILD_AT = "2026-09-27 23:47";              /* stamped by scripts/stamp_build.py when deploying */
 
 /* Data lives in pastatlas/data/*.json and is loaded by boot() at the bottom of this file.
    base.json, i18n.json, popularity.json, sources.json, media.json: edited by hand or by research.
@@ -396,7 +396,7 @@ function renderPanel(){
       ${SRC.dish[key]?"":`<p class="hiddenby" style="margin-top:16px">${esc(t("noSrc"))}</p>`}
       ${wikiBlock((MEDIA.dish[key]||{}).wiki)}
       ${sourceBlock([{label:SRC.dish[key]?(dish?L(dish.n):`${p.n} × ${s.n}`):"",list:SRC.dish[key]},{label:p.n,list:SRC.pasta[p.id]},{label:s.n,list:SRC.sauce[s.id]}])}`;
-    if(!pastaOK(p)||!sauceOK(s)) h=`<p class="hiddenby">${esc(t("outFilter"))}</p>`+h;
+
   } else if(sel.type==="region"){
     const r=sel.r, {ps,ss,ds}=regionData(r);
     const bestOf=p=>{const b=visS().map(s=>[s,rate(p.id,s.id)]).sort((a,c)=>c[1]-a[1])[0];return b&&b[1]>=2?b[0].n:""};
@@ -436,7 +436,10 @@ function renderPanel(){
       ${wikiBlock((med("s",s.id)||{}).wiki)}
       ${sourceBlock([{list:SRC.sauce[s.id]}])}`;
   }
-  $("panel").innerHTML=`<button class="closep" data-closepanel="1" aria-label="${esc(t("close"))}">×</button>`+h;
+  const views = sel.type==="region" ? ["atlas"] : ["matrix","atlas","cards"];
+  const jumps = views.filter(v=>v!==view).map(v=>`<button class="jumpbtn" data-jump="${v}">${esc(t({matrix:"jumpMatrix",atlas:"jumpAtlas",cards:"jumpCards"}[v]))} →</button>`).join("");
+  const hidden = view!=="why" && !selVisible() ? `<p class="hiddenby hid">${esc(t("hiddenHere"))} <button class="linkbtn" data-widen="1">${esc(t("showAll"))}</button></p>` : "";
+  $("panel").innerHTML=`<button class="closep" data-closepanel="1" aria-label="${esc(t("close"))}">×</button>`+hidden+h+(jumps?`<div class="jumps">${jumps}</div>`:"");
 }
 
 /* ================= RENDER: atlas ================= */
@@ -473,13 +476,30 @@ function renderBubble(){
   el.style.top = (up ? bubble.y-el.offsetHeight-12 : bubble.y+14)+"px";
 }
 function openRegion(r){ bubble=null; atlasPick=r; renderAtlas(); select({type:"region",r}); }
+function selInfo(){
+  if(sel.type==="cell"){ const p=pById(sel.p), s=sById(sel.s), k=sel.p+"|"+sel.s, d=DISH[k];
+    return {regs:[...p.reg,...s.reg,...(d?[d.reg]:[])], ids:new Set([sel.p,sel.s]), dish:d?k:null}; }
+  if(sel.type==="pasta") return {regs:pById(sel.p).reg, ids:new Set([sel.p])};
+  if(sel.type==="sauce") return {regs:sById(sel.s).reg, ids:new Set([sel.s])};
+  return {regs:[sel.r], ids:new Set()};
+}
+/* is the selection visible under the current tab's filters? */
+function selVisible(){
+  if(sel.type==="cell") return pastaOK(pById(sel.p))&&sauceOK(sById(sel.s));
+  if(sel.type==="pasta") return pastaOK(pById(sel.p));
+  if(sel.type==="sauce") return sauceOK(sById(sel.s));
+  return true;
+}
+function widen(){ SCOPE[fview()]="all"; store.set("pasta-scope-"+fview(),"all"); F.dough.clear(); F.fam.clear(); F.area.clear(); F.fresh="all"; syncTab(); }
+const pickBar = () => atlasPick?`<button class="linkbtn backall" data-unpick="1">← ${esc(t("allRegions"))}</button>`:"";
 function renderAtlasPop(){
   const cls={}; POP.areas.forEach((a,i)=>a.regs.forEach(r=>cls[r]="a"+i));
+  selInfo().regs.forEach(r=>cls[r]+=" selreg");
   if(atlasPick) cls[atlasPick]+=" pick";
   $("atlasMap").innerHTML=mapSVG({cls,pins:POP.cities.map(c=>({city:c.city,kind:"popfill",count:1,data:1}))});
   renderBubble();
   const regs = atlasPick ? [atlasPick] : REG_ORDER.filter(r=>POP.cities.some(c=>c.reg===r));
-  $("regionList").innerHTML = POP.areas.map(a=>`<div class="region-card"><h4>${esc(L(a.l))}<small>YouGov 2023</small></h4><div class="tags">${a.s.map(x=>`<button class="tag s" data-open="sauce" data-id="${x}">${esc(sById(x).n)}</button>`).join("")}${a.note?`<span class="fine" style="align-self:center">${esc(L(a.note))}</span>`:""}</div></div>`).join("")
+  $("regionList").innerHTML = pickBar() + POP.areas.map(a=>`<div class="region-card"><h4>${esc(L(a.l))}<small>YouGov 2023</small></h4><div class="tags">${a.s.map(x=>`<button class="tag s" data-open="sauce" data-id="${x}">${esc(sById(x).n)}</button>`).join("")}${a.note?`<span class="fine" style="align-self:center">${esc(L(a.note))}</span>`:""}</div></div>`).join("")
     + regs.map(r=>`<div class="region-card${atlasPick===r?" pick":""}"><h4 data-reg="${r}">${esc(regName(r))}<small>Just Eat</small></h4>${popBlock({reg:r}).replace(/^<div class="sub">/,"<div>")}</div>`).join("");
 }
 function renderAtlas(){
@@ -500,14 +520,15 @@ function renderAtlas(){
     pins=items.filter(x=>x.city).map(x=>({city:x.city,kind:"pt"}));
   }
   const cls={}; for(const r in byReg) cls[r]="h"+Math.min(3,Math.ceil(byReg[r].length/ (layer==="dish"?2:1.5)));
+  const si=selInfo(); si.regs.forEach(r=>cls[r]=(cls[r]||"")+" selreg");
   if(atlasPick) cls[atlasPick]=(cls[atlasPick]||"")+" pick";
   $("atlasMap").innerHTML=mapSVG({cls,pins});
   renderBubble();
   const regs = atlasPick ? [atlasPick] : REG_ORDER.filter(r=>byReg[r]);
   const tag = x => layer==="dish"
-    ? `<button class="tag d" data-open="dishcell" data-id="${x.k}">${esc(L(x.n))}<small>${esc(x.city)}</small></button>`
-    : `<button class="tag ${layer==="pasta"?"p":"s"}" data-open="${layer}" data-id="${x.id}">${esc(x.n)}</button>`;
-  $("regionList").innerHTML = regs.map(r=>{
+    ? `<button class="tag d${si.dish===x.k?" on":""}" data-open="dishcell" data-id="${x.k}">${esc(L(x.n))}<small>${esc(x.city)}</small></button>`
+    : `<button class="tag ${layer==="pasta"?"p":"s"}${si.ids.has(x.id)?" on":""}" data-open="${layer}" data-id="${x.id}">${esc(x.n)}</button>`;
+  $("regionList").innerHTML = pickBar() + regs.map(r=>{
     const xs=byReg[r]||[];
     return `<div class="region-card${atlasPick===r?" pick":""}"><h4 data-reg="${r}">${esc(regName(r))}<small>${xs.length} ${esc(t("items"))}</small></h4><div class="tags">${xs.length?xs.map(tag).join(""):`<span class="fine">${esc(t("none"))}</span>`}</div></div>`;
   }).join("") || `<p class="fine">${esc(t("empty"))}</p>`;
@@ -521,7 +542,7 @@ function renderCards(){
   $("cardCount").textContent=`${items.length} ${t("items")}`;
   $("cards").innerHTML=items.map(x=>{ const m=med(cardKind,x.id);
     const sub = cardKind==="p" ? `${L(DOUGH[x.dough].l)} · ${L(FRESH[x.fresh?"fresh":"dried"])}` : x.ing.slice(0,4).map(i=>L(ING[i][0])).join(", ");
-    return `<button class="card" data-open="${cardKind==="p"?"pasta":"sauce"}" data-id="${x.id}"><span class="ph">${m&&m.img?`<img src="${esc(m.img)}" alt="" loading="lazy">`:esc(x.n[0])}</span><span class="bd"><b>${esc(x.n)}</b><span class="rg">${esc(x.reg.map(regName).join(" · "))}</span><small>${esc(sub)}</small></span></button>`; }).join("");
+    return `<button class="card${selInfo().ids.has(x.id)?" sel":""}" data-open="${cardKind==="p"?"pasta":"sauce"}" data-id="${x.id}"><span class="ph">${m&&m.img?`<img src="${esc(m.img)}" alt="" loading="lazy">`:esc(x.n[0])}</span><span class="bd"><b>${esc(x.n)}</b><span class="rg">${esc(x.reg.map(regName).join(" · "))}</span><small>${esc(sub)}</small></span></button>`; }).join("");
 }
 function renderCredits(){
   const rows=[...Object.entries(MEDIA.pasta).map(([id,m])=>[pById(id),m]),...Object.entries(MEDIA.cond).map(([id,m])=>[sById(id),m])].filter(([x,m])=>x&&m&&m.img);
@@ -529,12 +550,26 @@ function renderCredits(){
   $("credits").innerHTML=`<summary>${esc(t("credits"))} <small class="fine" style="font-family:var(--mono);font-size:12px">(${rows.length})</small></summary><p class="fine" style="margin-top:8px">${esc(t("creditsNote"))}</p><ol>${rows.map(([x,m])=>`<li>${esc(x.n)}: ${esc(m.author||"")}, <a href="${esc(m.commons)}" target="_blank" rel="noopener">${esc(m.license||"")}</a></li>`).join("")}</ol>`;
   $("credits").open=open;
 }
-function renderAll(){ syncTab(); renderText(); renderBiblio(); renderCredits(); renderCards(); $("cardsView").hidden = view!=="cards"; renderFilters(); renderMatrix(); renderPanel(); renderAtlas(); $("matrixView").hidden = view!=="matrix"; $("whyView").hidden = view!=="why"; document.querySelector(".layout").classList.toggle("wide", view!=="matrix"); }
+function renderAll(){ syncTab(); const why=view==="why"; $("filters").hidden=why; $("panel").hidden=why; $("grip").hidden=why; renderText(); renderBiblio(); renderCredits(); renderCards(); $("cardsView").hidden = view!=="cards"; renderFilters(); renderMatrix(); renderPanel(); renderAtlas(); $("matrixView").hidden = view!=="matrix"; $("whyView").hidden = view!=="why"; document.querySelector(".layout").classList.toggle("wide", view!=="matrix"); }
 function refreshData(){ renderFilters(); renderMatrix(); renderPanel(); renderAtlas(); renderCards(); }
 const small = () => window.innerWidth<=1100;
+function goView(v){
+  view=v; bubble=null; showCellBubble(null); closePanel(); renderAll();
+  const y=document.querySelector(".layout").getBoundingClientRect().top+scrollY-8; if(scrollY>y) scrollTo(0,y);
+}
+/* "show this in another view": same record, selected there too, never hidden by that view's filters */
+function jumpTo(v){
+  const si=selInfo();
+  if(v==="atlas"){ layer = sel.type==="sauce"?"sauce" : sel.type==="cell"?(si.dish?"dish":"pasta") : sel.type==="region"?layer : "pasta"; atlasPick=si.regs[0]||null; }
+  if(v==="cards") cardKind = sel.type==="sauce" ? "s" : "p";
+  view=v; syncTab(); if(!selVisible()) widen();
+  goView(v);
+  const target = v==="matrix" ? document.querySelector(".cell.sel, .rowh.on, .colh.on") : v==="cards" ? document.querySelector(".card.sel") : null;
+  if(target) target.scrollIntoView({block:"center",inline:"center"});
+}
 function openPanel(){ if(!small()) return; $("panel").classList.add("open"); $("scrim").hidden=false; }
 function closePanel(){ $("panel").classList.remove("open"); $("scrim").hidden=true; }
-function select(next, open=true){ sel=next; markSel(); renderPanel(); $("panel").scrollTop=0; if(open) openPanel(); writeURL(true); }
+function select(next, open=true){ sel=next; markSel(); renderPanel(); if(view==="atlas") renderAtlas(); if(view==="cards") renderCards(); $("panel").scrollTop=0; if(open) openPanel(); writeURL(true); }
 
 document.addEventListener("click",e=>{
   if(e.target.closest("a")) return;
@@ -547,7 +582,10 @@ document.addEventListener("click",e=>{
   if(bubble && !e.target.closest("#atlasMap [data-reg], #atlasMap [data-city]")){ bubble=null; renderBubble(); }
   const b=e.target.closest("button,[data-reg],[data-city]"); if(!b) return;
   if(b.dataset.lang){ lang=b.dataset.lang; store.set("pasta-lang",lang); return renderAll(); }
-  if(b.dataset.view){ view=b.dataset.view; renderAll(); return writeURL(true); }
+  if(b.dataset.view){ goView(b.dataset.view); return writeURL(true); }
+  if(b.dataset.jump){ jumpTo(b.dataset.jump); return writeURL(true); }
+  if(b.dataset.widen){ widen(); renderText(); refreshData(); return; }
+  if(b.dataset.unpick){ atlasPick=null; return renderAtlas(); }
   if(b.dataset.cards){ cardKind=b.dataset.cards; return renderCards(); }
   if(b.dataset.scope){ const v=b.dataset.scopeview; SCOPE[v]=b.dataset.scope; store.set("pasta-scope-"+v,SCOPE[v]); syncTab(); renderText(); return refreshData(); }
   if(b.dataset.layer){ layer=b.dataset.layer; atlasPick=null; bubble=null; return renderAtlas(); }
