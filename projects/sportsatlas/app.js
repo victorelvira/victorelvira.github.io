@@ -2,8 +2,8 @@
    the map as one view among others. Data built by scripts/build.py into sportsatlas/data/. */
 "use strict";
 
-const DATA_V = "0.10.1";
-const BUILD_AT = "2026-09-27 23:23";
+const DATA_V = "0.11.0";
+const BUILD_AT = "2026-09-27 23:45";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -65,7 +65,7 @@ async function loadMatches(sport) {
   const d = D[sport];
   if (d.matches) return d.matches;
   const files = sport === "football" ? d.idx.competitions.map(c => `football/matches-${c.id}.json`)
-    : ["slams", "masters", "atp500", "finals", "olympics", "slams_w", "wta1000", "wta_finals", "olympics_w"].map(x => `tennis/matches-${x}.json`);
+    : ["slams", "masters", "atp500", "finals", "olympics", "davis", "slams_w", "wta1000", "wta_finals", "olympics_w", "bjk"].map(x => `tennis/matches-${x}.json`);
   const packs = await Promise.all(files.map(f => getJSON(f).catch(() => ({ words: [], cols: [], rows: [] }))));
   d.matches = packs.flatMap(unpack).filter(r => d.ed[r[0]]);
   return d.matches;
@@ -143,7 +143,8 @@ const surfOn = e => S.sport !== "tennis" || !S.surf.size || (e && S.surf.has(e.s
 const surfPill = (e, long) => e && e.surf ? `<span class="surf s-${e.surf}" title="${esc(e.surface || SURF[e.surf])}${e.surf_basis === "tennis_atp" ? " (from Jeff Sackmann's tennis_atp: the page gives none)" : ""}">${SURF[e.surf]}${e.indoor ? (long ? " · indoor" : " (i)") : ""}</span>` : "";
 // the tier of a tennis competition, as a badge: a Grand Slam, a 1000, a 500, the Finals, the Olympics
 const TIER = { slam: ["Grand Slam", "gs", 0], slam_w: ["Grand Slam", "gs", 0], masters: ["1000", "k1", 1], wta1000: ["1000", "k1", 1], atp500: ["500", "k5", 2],
-  finals: ["Finals", "fin", 3], finals_w: ["Finals", "fin", 3], olympics: ["Olympics", "oly", 4], olympics_w: ["Olympics", "oly", 4] };
+  finals: ["Finals", "fin", 3], finals_w: ["Finals", "fin", 3], olympics: ["Olympics", "oly", 4], olympics_w: ["Olympics", "oly", 4],
+  teamcup: ["Team cup", "team", 5], teamcup_w: ["Team cup", "team", 5] };
 const tierOf = c => TIER[(D.tennis.comp && D.tennis.comp[c] || {}).group];
 const tierBadge = c => { const t = tierOf(c); return t ? `<span class="tier ${t[1]}">${t[0]}</span>` : ""; };
 
@@ -234,7 +235,7 @@ function chrome() {
   } else {
     const w = S.g === "w";
     const slams = d.idx.competitions.filter(c => c.group === (w ? "slam_w" : "slam")), masters = d.idx.competitions.filter(c => c.group === (w ? "wta1000" : "masters"));
-    const other = d.idx.competitions.filter(c => w ? (c.group === "finals_w" || c.group === "olympics_w") : (c.group === "finals" || c.group === "olympics"));
+    const other = d.idx.competitions.filter(c => w ? (c.group === "finals_w" || c.group === "olympics_w" || c.group === "teamcup_w") : (c.group === "finals" || c.group === "olympics" || c.group === "teamcup"));
     // the courts first: they are also the key to the timeline's colours
     const surfN = f => eds.filter(e => e.surf === f && genderOn(e.comp) && (!S.comps.size || S.comps.has(e.comp)) && inYears(e.year)).length;
     h += `<div class="fg">${["clay", "grass", "hard", "carpet"].filter(f => surfN(f)).map(f => chip("sf", f, SURF[f], surfN(f), "surfchip s-" + f)).join("")}</div><span class="chip-sep"></span>`;
@@ -511,7 +512,7 @@ async function viewPlayers(d) {
       if (!r.length) continue;
       const t = r.filter(x => x[2] === "Champion");
       rows.push({ p, n: r.length, titles: t.length, slams: t.filter(x => x[5] === "slams" || x[5] === "slams_w").length, masters: t.filter(x => x[5] === "masters" || x[5] === "wta1000").length, five: t.filter(x => x[5] === "atp500").length,
-        finals: r.filter(x => x[1] <= 0).length, y0: r[0][3], y1: r[r.length - 1][3] });
+        finals: r.filter(x => x[1] <= 0 && !TEAMCUP(x[5])).length, y0: r[0][3], y1: r[r.length - 1][3] });
     }
     current = {
       noun: "player", rows, open: x => "player:" + x.p.id,
@@ -632,7 +633,8 @@ function tlGroups(d) {
   }
   return S.sport === "tennis"
     ? [["slams", "Grand Slams", by([w ? "slam_w" : "slam"])], ["k1", w ? "WTA 1000" : "Masters 1000", by([w ? "wta1000" : "masters"])],
-       ["k5", "ATP 500", w ? [] : by(["atp500"])], ["other", "Finals, Olympics", by(w ? ["finals_w", "olympics_w"] : ["finals", "olympics"])]]
+       ["k5", "ATP 500", w ? [] : by(["atp500"])], ["other", "Finals, Olympics", by(w ? ["finals_w", "olympics_w"] : ["finals", "olympics"])],
+       ["team", "Team cup", by([w ? "teamcup_w" : "teamcup"])]]
     : [["national", "National teams", FOOTBALL_GROUPS.national], ["international", "Clubs · international", FOOTBALL_GROUPS.international],
        ["leagues", "Clubs · national", FOOTBALL_GROUPS.leagues]].map(([k, l, ids]) => [k, l, ids.map(id => d.comp[id]).filter(Boolean)]);
 }
@@ -1360,7 +1362,7 @@ async function openCard(ref, silent) {
   if (!S.page) describe(ref, ref === "about:" ? "About" : $("#rec-body h2")?.textContent || "");
 }
 
-const TENNIS_GROUP = { slam: "Grand Slam", masters: "Masters 1000", atp500: "ATP 500", finals: "ATP Finals", olympics: "Olympic Games",
+const TENNIS_GROUP = { slam: "Grand Slam", masters: "Masters 1000", atp500: "ATP 500", finals: "ATP Finals", olympics: "Olympic Games", teamcup: "Davis Cup", teamcup_w: "Billie Jean King Cup",
   slam_w: "Grand Slam · women", wta1000: "WTA 1000 · women", finals_w: "WTA Finals", olympics_w: "Olympic Games · women" };
 const CUP = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8M9.5 17h5"/></svg>`;
 const month = iso => { if (!iso) return ""; const [, m, dd] = iso.split("-"); return `${+dd} ${["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][+m - 1]}`; };
@@ -1445,9 +1447,42 @@ function cardCompetition(d, c) {
 async function cardEdition(d, e) {
   const x = await edition(e.id);
   const comp = d.comp[e.comp];
+  if (TEAMCUP(e.comp)) return cardTeamCup(d, e, x, comp);
   if (comp.kind === "tournament" || comp.kind === "cup") return cardTournament(d, e, x, comp);
   if (comp.kind === "league") return cardSeason(d, e, x, comp);
   return cardDraw(d, e, x, comp);
+}
+
+/* A year of the Davis Cup or the Billie Jean King Cup: its final first, then every tie of the top level stage by stage,
+   and the zones below folded. Each tie shows its rubbers: singles and doubles, the players linked, who won. */
+const TEAMCUP = s => s === "davis" || s === "bjk";
+function tieBox(d, t, open) {
+  const side = (ids, names) => ids.length ? ids.map((id, i) => lnk("player:" + id, names[i] || id)).join(" / ") : `<span class="muted">${esc(names.join(" / ") || "not written")}</span>`;
+  const rub = r => {
+    const sets = r.s1.map((a, i) => `${a}–${r.s2[i]}`).join(", ");
+    return `<tr><td class="num muted">${r.n}${r.d ? " · doubles" : ""}</td><td class="${r.w === 1 ? "w" : ""}">${side(r.p1, r.n1)}</td><td class="tennis-score">${sets || `<span class="muted">not played</span>`}${r.note ? ` <span class="flag">${esc(r.note)}</span>` : ""}</td><td class="${r.w === 2 ? "w" : ""}">${side(r.p2, r.n2)}</td></tr>`;
+  };
+  const head = `<span class="${t.w === 1 ? "win" : ""}">${imgFor("nat:" + t.t1)}${esc(t.t1)}</span> <b>${esc(t.sc1)}–${esc(t.sc2)}</b> <span class="${t.w === 2 ? "win" : ""}">${imgFor("nat:" + t.t2)}${esc(t.t2)}</span>`;
+  const meta = [t.date, t.venue, t.surface].filter(Boolean).map(esc).join(" · ");
+  const warn = t.adds_up === "no" ? `<p class="note warn">The rubbers written here do not give the score this tie states: a dead rubber left unfinished, a walkover, or a slip in the source. Both are shown as written.</p>` : "";
+  return `<details class="tie-box"${open ? " open" : ""}><summary>${head}<span class="sub"> ${meta}</span></summary>${warn}
+    <table class="mini"><tbody>${t.rubbers.map(rub).join("")}</tbody></table></details>`;
+}
+function cardTeamCup(d, e, x, comp) {
+  const fin = x.ties.find(t => t.final);
+  const top = x.ties.filter(t => t.level === "top" && !t.final);
+  const zones = x.ties.filter(t => t.level !== "top");
+  const byStage = new Map();
+  for (const t of top) { const k = t.stage || "Top level"; byStage.set(k, [...(byStage.get(k) || []), t]); }
+  return `<p class="kick">${tierBadge(e.comp)} Team cup · ${compLnk(d, e.comp)} · ${e.year}</p>
+    <h2>${esc(e.title)}</h2>${playedAs(d, e)}${edActions(d, e)}
+    <p class="sub">${fmt(x.ties.length)} ties, ${fmt(e.matches)} singles rubbers, ${comp.women ? "women's" : "men's"} teams.</p>
+    ${e.champion ? `<div class="champ">${CUP}<div><div class="who">${imgFor("nat:" + e.champion)}${esc(e.champion)}</div><div class="how">beat ${imgFor("nat:" + e.runner_up)}${esc(e.runner_up)} in the final, ${esc(e.final)}</div></div></div>`
+      : `<div class="note"><b>No final to show.</b> ${e.year === 1974 ? "South Africa won the 1974 Davis Cup without playing the final: India refused to play it." : e.year === 2020 ? "The finals of 2020 were cancelled." : "The pages read give no final for this year."}</div>`}
+    ${x.ties_not_adding_up ? `<p class="sub">${x.ties_not_adding_up} of the ${x.ties.length} ties have rubbers that do not give their stated score, each marked below.</p>` : ""}
+    ${fin ? `<h4 class="sec">The final</h4>${tieBox(d, fin, true)}` : ""}
+    ${[...byStage.entries()].map(([st, ts]) => `<h4 class="sec">${esc(st)}</h4>${ts.map(t => tieBox(d, t, false)).join("")}`).join("")}
+    ${zones.length ? `<details><summary>The zones below the top level · ${zones.length} ties</summary>${zones.map(t => `<p class="sub"><b>${esc(t.stage || "Zone")}</b></p>${tieBox(d, t, false)}`).join("")}</details>` : ""}`;
 }
 
 /* Where else a player or a club is (R49): the sports databases its Wikidata item names, linked by each property's own
@@ -1896,21 +1931,22 @@ async function cardTennisPlayer(d, id) {
       const byGroup = keys => titles.filter(r => keys.includes(r[5]));
       const compsOf = keys => d.idx.competitions.filter(c => p.r.some(r => keys.includes(r[5]) && r[4] === c.id)).map(c => c.id);
       const groupsDef = [["Grand Slam", ["slams", "slams_w"]], ["Masters 1000", ["masters"]], ["ATP 500", ["atp500"]], ["WTA 1000", ["wta1000"]], ["ATP Finals", ["finals"]], ["WTA Finals", ["wta_finals"]], ["Olympic gold", ["olympics", "olympics_w"]]];
-      const finalsPlayed = p.r.filter(r => r[1] <= 0 && r[2] !== "Round robin");
+      const finalsPlayed = p.r.filter(r => r[1] <= 0 && r[2] !== "Round robin" && !TEAMCUP(r[5]));
+      const cups = p.r.filter(r => TEAMCUP(r[5]) && r[2] === "Won the Cup");
       const g = p.r.some(r => /(_w|wta1000|wta_finals)$/.test(r[5])) ? "w" : "m";
       return factsBlock([
         { big: true, label: `${titles.length} title${titles.length === 1 ? "" : "s"}`, panel: editionChips(d, titles.map(r => r[0]).reverse()), table: { g, q: p.name, rounds: ["Final"] }, tableLabel: "Show their finals in the table" },
         ...groupsDef.filter(([, k]) => byGroup(k).length).map(([l, k]) => ({ label: `${byGroup(k).length} ${l}`, panel: editionChips(d, byGroup(k).map(r => r[0]).reverse()), table: { g, q: p.name, comps: compsOf(k), rounds: ["Final"] }, tableLabel: `Show their ${l} finals in the table` })),
         ...["clay", "grass", "hard", "carpet"].map(f => [f, titles.filter(r => d.ed[r[0]]?.surf === f)]).filter(([, t]) => t.length).map(([f, t]) => ({ label: `${t.length} on ${f}`, cls: "s-" + f, panel: editionChips(d, t.map(r => r[0]).reverse()), table: { g, q: p.name, rounds: ["Final"], surf: [f] }, tableLabel: `Show their finals on ${f} in the table` })),
+        ...(cups.length ? [{ label: `${cups.length} ${cups[0][5] === "bjk" ? "Billie Jean King Cup" : "Davis Cup"}${cups.length === 1 ? "" : "s"} won`, panel: editionChips(d, cups.map(r => r[0]).reverse()) }] : []),
         { label: `${finalsPlayed.length} finals`, panel: editionChips(d, finalsPlayed.map(r => r[0]).reverse()), table: { g, q: p.name, rounds: ["Final"] } },
         ...(w + l ? [{ label: `won ${fmt(w)} · lost ${fmt(l)} · ${Math.round(w / (w + l) * 100)}%`, table: { g, q: p.name }, tableLabel: `Show all ${fmt(w + l)} matches in the table` }] : []),
       ]);
     })()}
     ${playerHistory(d, p)}
-    <p class="sub written">The Davis Cup and the Billie Jean King Cup are not in the atlas yet.</p>
     ${rankBlock}
     ${top.length > 1 ? `<h4 class="sec">Most frequent opponents in these draws</h4><table class="mini"><thead><tr><th>Opponent</th><th class="num">Played</th><th class="num">Won</th><th class="num">Lost</th></tr></thead><tbody>${top.map(o => `<tr data-go data-open="player:${esc(o.id)}"><td>${esc(o.name)}</td><td class="num">${o.w + o.l}</td><td class="num">${o.w}</td><td class="num">${o.l}</td></tr>`).join("")}</tbody></table>
-    <p class="sub">Counted over the draws in this atlas only: the Grand Slams, the 1000s, the 500s from 2009, the Finals and the Olympics. Other tour events (the 250s, the WTA's lower tiers) and the Davis and Billie Jean King Cups are not read, so a rivalry can be longer than it shows here.</p>` : ""}
+    <p class="sub">Counted over what this atlas reads: the Grand Slams, the 1000s, the 500s from 2009, the Finals, the Olympics and the singles rubbers of the Davis and Billie Jean King Cups. Other tour events (the 250s, the WTA's lower tiers) are not read, so a rivalry can be longer than it shows here.</p>` : ""}
     ${await elsewhere(id)}
     ${id.startsWith("name:") ? `<p class="links">No Wikipedia article: the name as the draw writes it.</p>` : `<p class="links"><a href="${WIKI(id)}" target="_blank" rel="noopener">${esc(id)}</a> on Wikipedia.</p>`}`;
 }
@@ -2090,7 +2126,8 @@ function tennisLevel(r) {
 }
 function playerHistory(d, p) {
   const from = Math.min(...p.r.map(r => r[3])), to = Math.max(...p.r.map(r => r[3]));
-  const sets = [["Grand Slams", ["slams", "slams_w"]], ["Masters 1000", ["masters"]], ["ATP 500", ["atp500"]], ["WTA 1000", ["wta1000"]], ["ATP Finals", ["finals"]], ["WTA Finals", ["wta_finals"]], ["Olympic Games", ["olympics", "olympics_w"]]];
+  const sets = [["Grand Slams", ["slams", "slams_w"]], ["Masters 1000", ["masters"]], ["ATP 500", ["atp500"]], ["WTA 1000", ["wta1000"]], ["ATP Finals", ["finals"]], ["WTA Finals", ["wta_finals"]], ["Olympic Games", ["olympics", "olympics_w"]],
+    ["Davis Cup", ["davis"]], ["Billie Jean King Cup", ["bjk"]]];
   const order = d.idx.competitions.map(c => c.id);
   return sets.map(([name, keys]) => {
     const rs = p.r.filter(r => keys.includes(r[5]));
@@ -2100,9 +2137,11 @@ function playerHistory(d, p) {
     const secs = comps.map(c => {
       const cr = rs.filter(r => r[4] === c).sort((a, b) => a[3] - b[3]);
       const held = d.idx.editions.filter(e => e.comp === c).map(e => e.year);
-      const points = cr.map(r => ({ year: r[3], lv: finals ? Math.min(4, tennisLevel(r)) : tennisLevel(r), eid: r[0], tip: `${d.ed[r[0]]?.title || r[0]}: ${r[2]}` }));
-      const titles = cr.filter(r => r[2] === "Champion").length;
-      const levels = finals ? FINALS_LEVELS : TENNIS_LEVELS;
+      const team = keys.some(TEAMCUP);
+      // in a team cup the line is how far the player's nation went: won the Cup, lost the final, or played
+      const points = cr.map(r => ({ year: r[3], lv: team ? (r[2] === "Won the Cup" ? 1 : r[2] === "Final" ? 2 : 3) : finals ? Math.min(4, tennisLevel(r)) : tennisLevel(r), eid: r[0], tip: `${d.ed[r[0]]?.title || r[0]}: ${r[2]}` }));
+      const titles = cr.filter(r => r[2] === "Champion" || r[2] === "Won the Cup").length;
+      const levels = team ? ["", "Won the Cup", "Final", "Played"] : finals ? FINALS_LEVELS : TENNIS_LEVELS;
       const bestLv = Math.min(...points.map(x => x.lv));
       const courts = [...new Set(cr.map(r => d.ed[r[0]]?.surf).filter(Boolean))].map(f => surfPill({ surf: f })).join(" ");
       return `<section class="hist"><h3>${tierBadge(c)}${compLnk(d, c)} ${courts}</h3>

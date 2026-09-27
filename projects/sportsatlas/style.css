@@ -503,3 +503,11 @@ h2 img.picto{width:34px;height:34px;vertical-align:-6px;margin-right:10px}
 svg.chart .tier-rule{stroke:var(--accent);stroke-width:1;stroke-dasharray:4 3;opacity:.55}
 svg.chart .tier-l{fill:var(--accent);font-style:italic}
 svg.chart .serie-dot.tier2{fill:var(--muted)}
+/* the team cups: a tie folds open onto its rubbers */
+.tie-box{border:1px solid var(--line);border-radius:8px;margin:0 0 6px;background:#fff}
+.tie-box>summary{cursor:pointer;padding:6px 10px;font-size:14px;list-style:none}
+.tie-box>summary::-webkit-details-marker{display:none}
+.tie-box[open]>summary{border-bottom:1px solid var(--line2)}
+.tie-box table.mini{margin:4px 8px 8px;width:calc(100% - 16px)}
+.tie-box td.w{font-weight:600}
+.tier.team{background:#fff;color:var(--accent);border-color:var(--accent)}
