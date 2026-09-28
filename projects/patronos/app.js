@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.15.0";
-const BUILD_AT = "2026-09-28 00:43";
+const DATA_V = "0.16.1";
+const BUILD_AT = "2026-09-28 10:32";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
@@ -31,15 +31,16 @@ const COUNTRIES = {
 const GROUP = {maria: "#3f6fae", cristo: "#a8323e", santo: "#a97a22", dios: "#6b4c9a", sin_identificar: "#9a9187"};
 const AGREE = {agree: "#3f8f5a", partial: "#e0a526", disagree: "#c0392b", only_eswiki: "#6d8fc4", only_wikidata: "#9b86c2",
   only_text: "#8fb3a8", only_fiesta: "#c9b38a", only_church: "#b39bc8"};
-const NODATA = "#ece7df", OTHER = "#cfc5b6", FADE = "#e9e4dc";
+const NODATA = "#ece7df", OTHER = "#cfc5b6", FADE = "#e9e4dc", LOCONLY = "#ddd3c3";
 const PALETTE = ["#e0a526", "#2f8f6b", "#d0672f", "#7a55a8", "#3aa0b8", "#b35c8a", "#6a8f2f", "#8a5a2b",
   "#d24b6b", "#c47ac0", "#a8b83a", "#1f6f7a"];
 
 let D, map, geoLayer = null, layers = {}, colorOf = {}, topKeys = [], firstCount = {}, BV = "", CH = null, chLayer = null, townIndex = [];
+let LOC = null, locLayer = null;
 const cache = {};
 const TODAY = (() => { const d = new Date(); return `${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; })();
 const state = {country: "es", lang: "es", view: "main", town: null, dev: null, area: null, nodata: false, list: 40, q: "",
-  churches: false, day: TODAY, g: ""};
+  churches: false, locs: true, day: TODAY, g: ""};
 const C = () => COUNTRIES[state.country];
 
 // ---------- URL state (LLM.md §2c: every screen is a link) ----------
@@ -55,6 +56,7 @@ function readHash() {
   state.area = p.get("p") ? {k: "p", v: p.get("p")} : p.get("r") ? {k: "c", v: p.get("r")} : null;
   state.nodata = p.get("nd") === "1";
   state.churches = p.get("ig") === "1";
+  state.locs = p.get("lc") !== "0";
 }
 function validate() {
   if (state.town && !D.towns[state.town]) state.town = null;
@@ -71,6 +73,7 @@ function writeHash(push) {
   if (state.area) p.set(state.area.k === "p" ? "p" : "r", state.area.v);
   if (state.nodata) p.set("nd", "1");
   if (state.churches) p.set("ig", "1");
+  if (!state.locs) p.set("lc", "0");
   if (state.view === "cal" && state.day !== TODAY) p.set("dia", state.day);
   const h = p.toString() ? "#" + p.toString() : location.pathname;
   if (("#" + p.toString()) === location.hash) return;
@@ -126,8 +129,9 @@ async function fetchCountry(c) {
 async function loadCountry(c, fit = true) {
   $("#stats").textContent = t("loading");
   const {data, geo, v} = await fetchCountry(c);
-  D = data; BV = v; CH = null;
+  D = data; BV = v; CH = null; LOC = null;
   if (chLayer) { chLayer.remove(); chLayer = null; }
+  if (locLayer) { locLayer.remove(); locLayer = null; }
   prepare();
   if (geoLayer) geoLayer.remove();
   layers = {};
@@ -143,6 +147,7 @@ async function loadCountry(c, fit = true) {
   }).addTo(map);
   if (fit) map.setView(C().center, C().zoom);
   $("#churches-btn").hidden = !D.meta.churches;
+  $("#loc-btn").hidden = !D.meta.localities;
   document.querySelectorAll(".country .cty").forEach(b => b.classList.toggle("on", b.dataset.c === c));
   applyLang();
   townIndex = Object.entries(D.towns).map(([ine, tw]) => [ine, fold(tw.n + " " + (tw.n2 || "")), tw]);
@@ -172,6 +177,7 @@ function initMap() {
   }).addTo(map);
   map.on("zoomend", restyle);
   map.on("moveend", drawChurches);
+  map.on("moveend", drawLocalities);
   map.on("movestart zoomstart", hideTip);
 }
 const inArea = tw => !state.area || tw[state.area.k] === state.area.v;
@@ -184,7 +190,7 @@ function fillOf(ine) {
     return has ? FADE : NODATA;
   }
   if (state.nodata) return has ? FADE : "#8d7f70";
-  if (!has) return NODATA;
+  if (!has) return tw.lc && state.locs && ["main", "group"].includes(state.view) ? LOCONLY : NODATA;
   if (state.view === "group") return GROUP[D.devotions[tw.e[0].k].g];
   if (state.view === "agree") return AGREE[tw.a];
   if (state.view === "cal") {
@@ -216,7 +222,8 @@ function showTip(ine, ev) {
   const tw = D.towns[ine];
   const names = (tw.e || []).map(e => devName(e)).slice(0, 4);
   tip.innerHTML = `<b>${esc(tw.n)}</b> <span class="tp">${esc(tw.p)}</span>` +
-    `<div class="tl">${names.length ? names.map(esc).join("<br>") + (tw.e.length > 4 ? "<br>" + t("tip_more", {n: tw.e.length - 4}) : "") : `<i>${t("tip_nodata")}</i>`}</div>`;
+    `<div class="tl">${names.length ? names.map(esc).join("<br>") + (tw.e.length > 4 ? "<br>" + t("tip_more", {n: tw.e.length - 4}) : "") : `<i>${t("tip_nodata")}</i>`}</div>` +
+    (!names.length && tw.lc ? `<div class="tp">${esc(t("tip_locs", {n: tw.lc}))}</div>` : "");
   tip.hidden = false; place(ev);
 }
 function hideTip() { tip.hidden = true; }
@@ -308,6 +315,10 @@ function initControls() {
   }));
   document.querySelectorAll("#panes .pn").forEach(b => b.addEventListener("click", () => setPane(b.dataset.pane)));
   $("#explain").addEventListener("click", e => { if (!e.target.closest("button,a")) $("#explain").classList.toggle("open"); });
+  $("#loc-btn").addEventListener("click", () => {
+    state.locs = !state.locs; writeHash(false); renderAll();
+    if (state.locs && map.getZoom() < 8) $("#explain").innerHTML += ` <b>${esc(t("zoom_more_loc"))}</b>`;
+  });
   $("#churches-btn").addEventListener("click", () => {
     state.churches = !state.churches; writeHash(false); renderAll();
     if (state.churches && map.getZoom() < 11) $("#explain").innerHTML += ` <b>${esc(t("zoom_more"))}</b>`;
@@ -382,12 +393,14 @@ function renderAll() {
   document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.view === state.view));
   $("#nodata").setAttribute("aria-pressed", state.nodata ? "true" : "false");
   $("#churches-btn").setAttribute("aria-pressed", state.churches ? "true" : "false");
+  $("#loc-btn").setAttribute("aria-pressed", state.locs ? "true" : "false");
   const stats = state.view === "stats";
   document.body.classList.toggle("stats-mode", stats);
   $("#statsview").hidden = !stats;
   if (stats) { renderExplain(); renderStats(); renderCard(); return; }
   map.invalidateSize();
   drawChurches();
+  drawLocalities();
   restyle();
   renderExplain();
   if (state.dev) renderDev(state.dev);
@@ -546,7 +559,8 @@ function renderCard() {
   }
   if (tw.fl) {
     const who = {cat: "Generalitat de Catalunya", cyl: "Junta de Castilla y León", ara: "Gobierno de Aragón", mad: "Comunidad de Madrid", eus: "Eusko Jaurlaritza / Gobierno Vasco",
-      gal: "Xunta de Galicia", and: "Junta de Andalucía", can: "Boletín Oficial de Canarias", bal: "Govern de les Illes Balears", clm: "Diario Oficial de Castilla-La Mancha"}[tw.fl[0][3]];
+      gal: "Xunta de Galicia", and: "Junta de Andalucía", can: "Boletín Oficial de Canarias", bal: "Govern de les Illes Balears", clm: "Diario Oficial de Castilla-La Mancha",
+      val: "Diari Oficial de la Generalitat Valenciana", nav: "Boletín Oficial de Navarra", ext: "Junta de Extremadura", rio: "Gobierno de La Rioja"}[tw.fl[0][3]];
     const flSrc = D.sources[tw.fl[0][3] === "cat" ? "fiestas_locales" : "fiestas_locales_" + tw.fl[0][3]];
     const named = tw.fl.some(f => f[1]);
     h += `<div class="fl"><b>${esc(t("fl_title", {y: tw.fl[0][2]}))}</b> <span class="muted small">(${flSrc ? `<a href="${esc(flSrc.u)}" target="_blank" rel="noopener">${esc(who)} ↗</a>` : esc(who)})</span><ul>` +
@@ -594,7 +608,8 @@ function loadChurches() {
     fetch(`${C().dir}iglesias_osm.json?v=${BV}`).then(r => r.json()),
     fetch(`${C().dir}imagenes.json?v=${BV}`).then(r => r.ok ? r.json() : {towns: {}}).catch(() => ({towns: {}})),
     fetch(`${C().dir}parroquias.json?v=${BV}`).then(r => r.ok ? r.json() : {towns: {}}).catch(() => ({towns: {}})),
-  ]).then(([w, o, im, pa]) => ({w, o, im, pa}));
+    loadLocalities(),
+  ]).then(([w, o, im, pa, lo]) => ({w, o, im, pa, lo}));
   return CH;
 }
 const KIND_ORDER = ["catedral", "basílica", "colegiata", "iglesia parroquial", "iglesia", "santuario", "monasterio", "convento", "ermita", "capilla", "humilladero"];
@@ -645,7 +660,7 @@ async function drawChurches() {
 async function fillChurches(ine) {
   const box = document.getElementById("churches");
   if (!box) return;
-  const {w, o, im, pa} = await loadChurches();
+  const {w, o, im, pa, lo} = await loadChurches();
   if (state.town !== ine || !document.getElementById("churches")) return;
   const pk = patronKeys(ine);
   const byKind = (a, b) => (KIND_ORDER.indexOf(a[1]) + 99) % 99 - (KIND_ORDER.indexOf(b[1]) + 99) % 99 || a[0].localeCompare(b[0], "es");
@@ -683,12 +698,59 @@ async function fillChurches(ine) {
   const pars = P.length ? `<h3>${esc(t("h_parishes"))} <span class="muted small">${P.length}</span></h3>` +
     `<p class="muted small">${esc(t(withT ? "parish_note" : "parish_note_none"))}</p>` +
     (P.length > 12 ? `<details><summary class="small">${esc(t("parish_show", {n: P.length}))}</summary><ul class="churches">${P.map(prow).join("")}</ul></details>` : `<ul class="churches">${P.map(prow).join("")}</ul>`) : "";
-  box.innerHTML = imgs + pars + `<h3>${esc(t("h_churches"))} <span class="muted small">${W.length + O.length}</span></h3>` +
+  const LO = (lo.towns[ine] || []).slice().sort((a, b) => a[0].localeCompare(b[0], "es"));
+  const lrow = x => {
+    const star = x[3].some(e => pk.has(e[0]));
+    const link = x[4] ? `https://es.wikipedia.org/wiki/${encodeURIComponent(x[4].replace(/ /g, "_"))}` : x[5] ? `https://www.wikidata.org/wiki/${x[5]}` : "";
+    const nm = link ? `<a href="${link}" target="_blank" rel="noopener">${esc(x[0])}</a>` : esc(x[0]);
+    const pats = x[3].map(e => (D.devotions[e[0]] && D.devotions[e[0]].g === "santo" ? goDev(e[0]) :
+      D.devotions[e[0]] && ["maria", "cristo"].includes(D.devotions[e[0]].g) && e[1] ? `${esc(e[1])} <span class="muted small">(${goDev(e[0])})</span>` : esc(e[1])) +
+      ` <a class="muted small" href="${esc(e[3])}" target="_blank" rel="noopener">${e[2] === "wikidata_loc" ? "Wikidata" : "Wikipedia"} ↗</a>`).join(", ");
+    return `<li${star ? ' class="star"' : ""}>${star ? "★ " : ""}${nm} · ${pats}${x[1] != null ? " " + goMap(x[1], x[2]) : ""}</li>`;
+  };
+  const locs = LO.length ? `<h3>${esc(t("h_localities"))} <span class="muted small">${LO.length}</span></h3>` +
+    `<p class="muted small">${esc(t("loc_note"))}</p>` +
+    (LO.length > 12 ? `<details><summary class="small">${esc(t("loc_show", {n: LO.length}))}</summary><ul class="churches">${LO.map(lrow).join("")}</ul></details>` : `<ul class="churches">${LO.map(lrow).join("")}</ul>`) : "";
+  box.innerHTML = imgs + locs + pars + `<h3>${esc(t("h_churches"))} <span class="muted small">${W.length + O.length}</span></h3>` +
     (W.length + O.length === 0 ? `<p class="muted small">${esc(t("no_churches"))}</p>` : "") +
     (nstar ? `<p class="small">${esc(t("star_note"))}</p>` : "") +
     (W.length ? `<div class="small muted">Wikidata</div><ul class="churches">${W.map(c => row(c, "w")).join("")}</ul>` : "") +
     (O.length ? `<details${W.length ? "" : " open"}><summary class="small muted">${esc(t("osm_more", {n: O.length}))}</summary><ul class="churches">${O.map(c => row(c, "o")).join("")}</ul></details>` : "") +
     `<p class="muted small">${esc(t("ded_note"))}</p>`;
+}
+
+// ---------- villages and localities inside municipalities (Spain): dots on the map, list in the card ----------
+function loadLocalities() {
+  if (!LOC) LOC = D.meta.localities ? fetch(`${C().dir}localidades.json?v=${BV}`).then(r => r.ok ? r.json() : {towns: {}}).catch(() => ({towns: {}}))
+    : Promise.resolve({towns: {}});
+  return LOC;
+}
+async function drawLocalities() {
+  if (!map || !D) return;
+  const show = D.meta.localities && state.locs && map.getZoom() >= 8 && ["main", "group"].includes(state.view) && !state.nodata;
+  if (!show) { if (locLayer) { locLayer.remove(); locLayer = null; } return; }
+  const lo = await loadLocalities();
+  const b = map.getBounds().pad(0.2);
+  if (locLayer) locLayer.remove();
+  locLayer = L.layerGroup();
+  for (const [ine, list] of Object.entries(lo.towns)) {
+    if (!D.towns[ine] || !inArea(D.towns[ine])) continue;
+    for (const x of list) {
+      if (x[1] == null || !b.contains([x[1], x[2]])) continue;
+      const keys = x[3].map(e => e[0]);
+      if (state.dev && !keys.includes(state.dev)) continue;
+      const k = state.dev || keys[0], d = D.devotions[k];
+      const col = !d ? OTHER : state.view === "group" ? GROUP[d.g] || OTHER : devColor(k);
+      const m = L.circleMarker([x[1], x[2]], {radius: map.getZoom() >= 11 ? 5 : 3.5, weight: 1, color: "#fff", fillColor: col, fillOpacity: 0.95});
+      m.on("mousemove", e => { tip.innerHTML = `<b>${esc(x[0])}</b> <span class="tp">${esc(t("locality_of", {m: D.towns[ine].n}))}</span>` +
+        `<div class="tl">${x[3].map(e => esc(D.devotions[e[0]] && D.devotions[e[0]].g === "santo" ? D.devotions[e[0]].n : e[1] || (D.devotions[e[0]] || {}).n || "")).join(", ")}</div>`;
+        tip.hidden = false; place(e.originalEvent); });
+      m.on("mouseout", hideTip);
+      m.on("click", () => { hideTip(); selectTown(ine, true); });
+      locLayer.addLayer(m);
+    }
+  }
+  locLayer.addTo(map);
 }
 
 // ---------- analysis: rankings, rare and local saints, trends, Spain against Italy ----------

@@ -9,7 +9,7 @@
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#2a1d2b">
   <link rel="stylesheet" href="patronos/vendor/leaflet.css">
-  <link rel="stylesheet" href="patronos/style.css?v=0.15.0">
+  <link rel="stylesheet" href="patronos/style.css?v=0.16.1">
 </head>
 <body>
   <nav id="navbar">
@@ -48,6 +48,7 @@
       <input id="town-q" type="search" data-i18n-ph="search_town" placeholder="Buscar pueblo…" autocomplete="off">
       <div id="town-hits" class="hits" hidden></div>
     </span>
+    <button type="button" id="loc-btn" class="chip" aria-pressed="true" hidden><span class="ico">🏘</span> <span class="lbl" data-i18n="btn_localities">pueblos</span></button>
     <button type="button" id="churches-btn" class="chip" aria-pressed="false"><span class="ico">⛪</span> <span class="lbl" data-i18n="btn_churches">iglesias e imágenes</span></button>
     <button type="button" id="nodata" class="chip" aria-pressed="false"><span class="ico">∅</span> <span class="lbl" data-i18n="btn_nodata">sin dato</span></button>
   </div>
@@ -69,6 +70,6 @@
   <div id="tip" class="tip" hidden></div>
 
   <script src="patronos/vendor/leaflet.js"></script>
-  <script src="patronos/app.js?v=0.15.0"></script>
+  <script src="patronos/app.js?v=0.16.1"></script>
 </body>
 </html>
