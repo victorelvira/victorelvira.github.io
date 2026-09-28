@@ -758,3 +758,29 @@ a.sh-share:hover{color:var(--sky);text-decoration:underline}
 /* 0.35: the close button sat under the sticky card header (both z-index 2, the header later in the page), so on a
    phone a place card could not be closed with it. Always above. */
 #sheet-close,#sheet[data-kind="place"] #sheet-close{z-index:6}
+
+/* ── the place card, 0.36 ── */
+.pc{padding:16px 16px 28px}
+#sheet .pc .sh-name{padding-right:40px}
+.pc-kind{color:var(--ink-soft);font-size:13px;margin-top:3px}
+.pc .sh-occ{margin-top:6px;color:var(--ink-soft);font-style:italic}
+.pc-img{display:block;width:100%;max-height:220px;object-fit:cover;border-radius:8px;margin:10px 0 4px}
+.pc .sh-sum{margin-top:8px}
+.pc-facts{margin:8px 0 4px;color:var(--ink-soft)}
+.pc .mx{margin:10px 0 4px}
+.pc .mx .mx-img{width:100%;max-height:240px;object-fit:cover;border-radius:8px}
+.pc .sh-sec{margin-top:16px}
+.pc-list{list-style:none;margin:6px 0 0;padding:0}
+.pc-p{display:flex;gap:10px;align-items:center;padding:7px 2px;border-bottom:1px solid #eeece2;cursor:pointer}
+.pc-p:hover{background:#fff}
+.pc-th{width:38px;height:38px;flex:0 0 38px;border-radius:50%;object-fit:cover;background:var(--paper-2);
+  display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--stone)}
+.pc-n{font-weight:600;font-size:13.5px;line-height:1.25}
+.pc-n .yr{font-weight:400;color:var(--stone);font-size:12px}
+.pc-o{font-size:12px;color:var(--ink-soft)}
+@media (max-width:720px){ .pc-n{font-size:15px} .pc-o{font-size:12.5px} .pc-th{width:42px;height:42px;flex-basis:42px} }
+.pc-photo .pc-img{margin:0 0 12px;max-height:240px}
+#sheet .pc .pc-photo:not(:empty) + .sh-name{padding-right:0}
+.pc .pc-facts a{color:var(--sky);text-decoration:none}
+.pc .ins-q{margin:10px 0 0}
+@media (max-width:720px){ .pc-photo .pc-img{max-height:190px} }

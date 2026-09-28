@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.35.3";
+const DATA_V = "0.36.4";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -562,7 +562,7 @@ function drawMap() {
     m.on("click", (ev) => {
       if (narrow()) return;
       m.closePopup();
-      revealInPanel(c);
+      if (c.places.length === 1) openPlaceFull(c.best.siteIdx); else revealInPanel(c);
     });
     if (c.places.length === 1) {
       m.bindPopup(() => sitePopup(c.best.siteIdx, c.best.vis), { maxWidth: 360, autoPan: false });
@@ -642,7 +642,8 @@ map.on("popupopen", (e) => {
     map.closePopup(popup);
     openCard = null;
     const cell = popup._source && popup._source.cell;
-    openPlace = cell && cell.places.length === 1 ? placeKey(cell.places[0].siteIdx) : null;
+    if (cell && cell.places.length === 1) { openPlaceFull(cell.places[0].siteIdx); return; }
+    openPlace = null;
     showPlaceSheet(render); syncURL(); return;
   }
   if (!narrow()) { map.closePopup(popup); return; }   // wide screen: the list is the card (revealInPanel)
@@ -655,10 +656,97 @@ function openPlaceCard(siteIdx, at) {
   const pl = places.find((x) => x.siteIdx === siteIdx);
   if (!pl) return;
   const rows = pl.rows.filter((r) => passes(r, "map"));
-  if (!narrow()) { revealInPanel({ places: [pl] }); return; }
-  openCard = null; openPlace = placeKey(siteIdx); selectedSite = siteIdx;
-  showPlaceSheet(() => sitePopup(siteIdx, rows.length ? rows : pl.rows)); syncURL();
+  openPlaceFull(siteIdx);
 }
+/* ── THE PLACE CARD (0.36) ─────────────────────────────────────────────────────────────────────────
+ * Víctor, 2026-09-28: "las personas ya tienen ficha… ¿crees que los sitios deberían tener ficha?". A place is read like
+ * a person: what it is and where, the first lines of its Wikipedia and its photo (from its Wikidata item, via the
+ * cards tile), its hours and its words, and then its people in sections, the best known first: who lies here, who was
+ * born or lived here, who is remembered here, to whom the church is dedicated. The same card on a phone (the sheet)
+ * and on a computer (the panel), from a pin, a list, the search or a shared link. */
+const PLACE_SECTIONS = [
+  { title: "Buried here", verbs: ["buried"] }, { title: "Born here", verbs: ["born"] },
+  { title: "Lived or worked here", verbs: ["lived", "worked"] }, { title: "Died here", verbs: ["died"] },
+  { title: "Dedicated to", verbs: ["dedicated"] }, { title: "Their work here", verbs: ["built", "exhibited"] },
+  { title: "What happened here", verbs: ["happened"] }, { title: "Remembered here", verbs: ["commemorated"] }];
+const PC_MAX = 60;
+function placeCardHTML(i, rows) {
+  const s = SITES[i], kind = VOCAB.siteKind[s[S_KIND]] || "", key = `${s[S_LAT]},${s[S_LON]}`;
+  const isPerson = (r) => /^(ev:)?Q\d+$/.test(r.qid);
+  const persons = rows.filter(isPerson), self = rows.find((r) => !isPerson(r)) || rows[0];
+  const acc = self ? VOCAB.access[self.access] : "unknown";
+  const nPeople = new Set(persons.map((r) => r.qid)).size;
+  const facts = [acc !== "open-air" ? plain("access", acc) : "", nPeople ? `${nPeople.toLocaleString()} ${nPeople === 1 ? "person" : "people"}` : "",
+    `<a href="#" class="sh-share" data-share="" title="Share this place">${ICON_SHARE}Share</a>`].filter(Boolean).join(" · ");
+  const row = (r) => {
+    const pf = (PEOPLE && PEOPLE[r.qid]) || null, src = pf && thumb(pf[0], 72);
+    return `<li class="pc-p" data-qid="${esc(r.qid)}">` +
+      (src ? `<img class="pc-th" src="${esc(src)}" alt="" loading="lazy">` : `<span class="pc-th ph">${WHAT_ICON[VOCAB.what[r.what]] || "·"}</span>`) +
+      `<div><div class="pc-n">${esc(r.name)} <span class="yr">${esc(lifeStr(r))}</span></div>` +
+      (pf && pf[1] ? `<div class="pc-o">${esc(pf[1])}</div>` : "") + `</div></li>`;
+  };
+  const secs = PLACE_SECTIONS.map((sec) => {
+    const seen = new Set();
+    const list = persons.filter((r) => sec.verbs.includes(VOCAB.verb[r.verb]))
+      .sort((a, z) => z.rank - a.rank).filter((r) => !seen.has(r.qid) && seen.add(r.qid));
+    if (!list.length) return "";
+    return `<div class="sh-sec"><div class="sh-sec-h"><span class="sh-sec-t">${sec.title}</span><span class="sh-sec-n">${list.length.toLocaleString()}</span></div>` +
+      `<ul class="pc-list">${list.slice(0, PC_MAX).map(row).join("")}` +
+      (list.length > PC_MAX ? `<li class="sh-more">…and ${(list.length - PC_MAX).toLocaleString()} more. The list beside the map has them all.</li>` : "") +
+      `</ul></div>`;
+  }).join("");
+  return `<div class="pc"><div class="pc-photo"></div><div class="sh-name">${esc(s[S_NAME])}</div>` +
+    `<div class="pc-kind">${esc([capital(kind === "settlement" ? "" : kind), whereOf(s)].filter(Boolean).join(" · "))}</div>` +
+    `<div class="sh-sum pc-sum" data-key="${esc(key)}"></div>` +
+    `<div class="sh-links pc-facts">${facts}</div>` +
+    (["museum", "church"].includes(kind) ? `<div class="hrs-slot" data-key="${esc(key)}"></div>` : "") +
+    (kind === "plaque" && !s[S_OSM] ? `<div class="ins" data-key="${esc(key)}"></div>` : "") +
+    `<div class="pc-more"></div>` + secs + `</div>`;
+}
+let placeCardRows = 0, redrawPlaceCard = () => {};
+function openPlaceFull(i) {
+  openCard = null; openPlace = placeKey(i); selectedSite = i;
+  const tok = ++sheetToken;
+  const draw = (keepScroll) => {
+    const rows = TRACES.filter((r) => r.site === i);      // every row at this place, whatever has arrived so far
+    placeCardRows = rows.length;
+    openSheetHTML(placeCardHTML(i, rows), "place", keepScroll);
+    const body = $("sheet-body"), box = body.querySelector(".pc-sum");
+    tileFor("cards", box.dataset.key).then((t) => {
+      const x = t && t[box.dataset.key];
+      if (!box.isConnected) return;
+      if (x && x.img) {
+        body.querySelector(".pc-photo").innerHTML = pic(x.img, "pc-img", 720, SITES[i][S_NAME]);
+        const img = body.querySelector(".pc-photo img");
+        if (img) img.addEventListener("click", () => openLightbox(img.dataset.file, img.dataset.cap));
+      }
+      // the links join the line of facts; a statue's year, material, maker and words get one line and a quote
+      const links = x ? [x.wd ? `<a class="wp-link" data-q="${esc(x.wd)}" href="https://www.wikidata.org/wiki/Special:GoToLinkedPage?site=${LANG}wiki&itemid=${esc(x.wd)}" target="_blank" rel="noopener">Wikipedia</a>` : "",
+        x.wd ? `<a href="https://www.wikidata.org/wiki/${esc(x.wd)}" target="_blank" rel="noopener">Wikidata</a>` : "",
+        x.web ? `<a href="${esc(x.web)}" target="_blank" rel="noopener">Website</a>` : "",
+        x.osm ? `<a href="https://www.openstreetmap.org/${esc(x.osm)}" target="_blank" rel="noopener">OpenStreetMap</a>` : ""].filter(Boolean) : [];
+      if (links.length) body.querySelector(".pc-facts").insertAdjacentHTML("beforeend", " · " + links.join(" · "));
+      if (x) {
+        const when = typeof x.date === "number" ? yearStr(x.date) : (x.date ? `put up ${esc(x.date)}` : "");
+        const facts = [when, x.material ? esc(x.material) : "", x.by ? `by ${esc(x.by)}` : ""].filter(Boolean).join(" · ");
+        body.querySelector(".pc-more").innerHTML = (facts ? `<div class="pc-kind">${facts}</div>` : "") +
+          (x.ins ? `<blockquote class="ins-q">${esc(x.ins)}</blockquote>` : "");
+      }
+      resolveWikipediaLinks();
+      if (!x || !x.wd) { box.remove(); return; }
+      box.dataset.q = x.wd; box.dataset.photo = x.img ? "" : "1";
+      fillSummary(box);
+    });
+  };
+  draw(false);
+  redrawPlaceCard = () => { if (tok === sheetToken && !$("sheet").hidden) draw(true); };
+  if (!PEOPLE) needPeople(() => { if (tok === sheetToken && !$("sheet").hidden) draw(true); });
+  syncURL();
+}
+$("sheet-body").addEventListener("click", (e) => {
+  const li = e.target.closest("li.pc-p");
+  if (li) openPerson(li.dataset.qid);
+});
 // Tapping the map background dismisses a place list, the way tapping outside any sheet should.
 // Only a place list: a person card was opened deliberately and closes deliberately.
 map.on("click", () => { if ($("sheet").dataset.kind === "place") closeSheet(); });
@@ -1250,8 +1338,7 @@ function tryPendingCard() {
       if (pendingCard || openCard) {
         // a card is (or will be) on top: remember the place under it without closing the card
         selectedSite = pl.siteIdx; openPlace = placeKey(pl.siteIdx);
-      } else if (narrow()) { openPlace = placeKey(pl.siteIdx); showPlaceSheet(() => sitePopup(pl.siteIdx, pl.vis || pl.rows)); }
-      else revealInPanel({ places: [pl] });
+      } else openPlaceFull(pl.siteIdx);
     }
   }
   if (pendingCard && byPerson.has(pendingCard)) { const q = pendingCard; pendingCard = null; openPerson(q); }
@@ -1523,6 +1610,10 @@ function fillSummary(box) {
     const text = x.extract.length > max + 10 ? x.extract.slice(0, x.extract.lastIndexOf(" ", max)) + "…" : x.extract;
     // credited in words; the "Wikipedia" link right below it is the link
     box.innerHTML = `${esc(text)} <span class="sh-sum-src">(Wikipedia)</span>`;
+    // a place with no photo of its own takes its Wikipedia article's (0.36)
+    const slot = box.closest(".pc") && box.closest(".pc").querySelector(".pc-photo");
+    if (box.dataset.photo === "1" && x.thumb && slot && !slot.firstChild)
+      slot.innerHTML = `<img class="pc-img" src="${esc(x.thumb)}" alt="">`;
     if (x.description && x.description.length < 90) {
       let occ = box.parentElement.querySelector(".sh-occ");
       if (!occ) { occ = document.createElement("div"); occ.className = "sh-occ"; box.before(occ); }
@@ -1540,7 +1631,8 @@ function fillSummary(box) {
       if (!m) return null;
       return fetch(`https://${m[1]}.wikipedia.org/api/rest_v1/page/summary/${m[2]}`)
         .then((r) => (r.ok ? r.json() : null))
-        .then((s) => (s && s.extract && s.type !== "disambiguation" ? { extract: s.extract, url, description: s.description } : null));
+        .then((s) => (s && s.extract && s.type !== "disambiguation"
+          ? { extract: s.extract, url, description: s.description, thumb: s.thumbnail && s.thumbnail.source } : null));
     })
     .catch(() => null);
   summaries.set(q, job);
@@ -2784,6 +2876,9 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
         tryPendingCard();         // a ?card= person who lives in the long tail arrives here
         // the open card may have just gained traces, or people it knew: redraw it in place
         if (openCard && !$("sheet").hidden && (byPerson.get(openCard) || []).length !== openCardRows) openPerson(openCard, true);
+        // an open place card counts its people again when the rest of them arrive (0.36: Père-Lachaise said 305, not 1 763)
+        if (!openCard && !$("sheet").hidden && $("sheet").dataset.kind === "place" && selectedSite != null &&
+            $("sheet-body").querySelector(".pc") && TRACES.filter((r) => r.site === selectedSite).length !== placeCardRows) redrawPlaceCard();
         else { const kb = document.querySelector("#sheet-body .sh-knew"); if (kb) fillKnew(kb); }
       };
       let settleTimer = 0;
