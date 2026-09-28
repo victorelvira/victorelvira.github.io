@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The atlas in numbers · Interactive Atlas of Painting</title>
+<meta name="description" content="What the Atlas of Painting is made of: where the art is and where it was made, how much of a painter lives in one building, and how complete each painter is.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The atlas in numbers">
+<meta property="og:description" content="Where the art is and where it was made — and how complete the atlas is, painter by painter.">
+<meta property="og:image" content="https://victorelvira.github.io/projects/artatlas/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<style>
+  :root{--bg:#f6f3ee;--paper:#fff;--ink:#241a12;--muted:#736a60;--line:#e5e0d6;--accent:#7a4a2b;
+        --bar:#b08a52;--bar2:#7d9b8f;--serif:Georgia,"Iowan Old Style","Times New Roman",serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--serif)}
+  header{background:var(--paper);border-top:3px solid var(--accent);border-bottom:1px solid var(--line);
+         padding:14px 20px;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  header h1{font-size:21px;margin:0;font-weight:600;letter-spacing:-.3px}
+  header .sub{color:var(--muted);font-size:13px}
+  header nav{margin-left:auto;display:flex;gap:10px;align-items:center}
+  header a{color:var(--accent);font-size:14px}
+  .langs{display:flex;gap:2px}
+  .langs button{font:inherit;font-size:12px;border:1px solid var(--line);background:#faf8f4;
+                color:var(--muted);padding:3px 8px;border-radius:4px;cursor:pointer}
+  .langs button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+  main{max-width:1000px;margin:0 auto;padding:22px 20px 60px}
+  .note{background:#fbf6ec;border:1px solid #e8dcc4;border-left:3px solid var(--bar);
+        padding:12px 15px;border-radius:5px;font-size:14.5px;line-height:1.65;margin:0 0 26px}
+  h2{font-size:19px;margin:34px 0 4px;font-weight:600}
+  h2 + p.lede{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.55}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;margin:14px 0 0}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:11px 13px}
+  .card b{display:block;font-size:23px;line-height:1.15;font-weight:600}
+  .card span{font-size:12px;color:var(--muted)}
+  table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);
+        border-radius:6px;overflow:hidden;font-size:14.5px}
+  th,td{text-align:left;padding:7px 11px;border-bottom:1px solid var(--line)}
+  th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  tr:last-child td{border-bottom:0}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .bar{position:relative;display:block;height:16px;background:#efe9dd;border-radius:3px;min-width:40px}
+  .bar i{position:absolute;inset:0 auto 0 0;background:var(--bar);border-radius:3px}
+  .bar.alt i{background:var(--bar2)}
+  .bar em{position:absolute;right:5px;top:-1px;font:11px/18px system-ui,sans-serif;color:#4a3d31;font-style:normal}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ratio{font-variant-numeric:tabular-nums}
+  .ratio.low{color:#9c4a2f}.ratio.high{color:#4a6a8f}
+  footer{border-top:1px solid var(--line);background:var(--paper);padding:14px 20px;
+         color:var(--muted);font-size:12.5px;text-align:center}
+  @media(max-width:700px){.split{grid-template-columns:1fr}main{padding:16px 13px 40px}
+    table{font-size:13.5px}th,td{padding:6px 8px}}
+</style>
+</head>
+<body>
+<header>
+  <h1 data-s="title">The atlas in numbers</h1>
+  <span class="sub" data-s="built"></span>
+  <nav>
+    <a href="artatlas.html" data-s="back">← back to the atlas</a>
+    <span class="langs" id="langs"></span>
+  </nav>
+</header>
+<main id="main">
+  <p class="note" data-s="caveat"></p>
+  <div id="body"></div>
+</main>
+<footer>
+  <span data-s="foot"></span>
+</footer>
+<script>
+// Self-contained on purpose: this page holds its own small dictionary rather than loading the
+// atlas' one, because its forty strings are its own and nothing else uses them.
+const S = {
+  en: {
+    title: "The atlas in numbers", back: "← back to the atlas",
+    built: d => `built ${d}`,
+    caveat: "<b>What this page does not say.</b> There is no ranking of who painted most: it would measure who is best documented. Munch leads the atlas with 1,418 works because his museum catalogued every sketch, and Frida Kahlo shows 108 here against the single one Wikidata knows. So the questions below are the ones that compare works with works, where the gaps cancel out — and the last table says out loud how complete each painter is.",
+    made: "What the atlas is made of", madeLede: "Everything it holds today, counted.",
+    works: "works", painters: "painters", venues: "venues", cities: "cities", countries: "countries",
+    withQid: "with a Wikidata id", withImage: "with a picture", dated: "with a date",
+    accepted: "of accepted attribution",
+    travel: "Where the art is, and where it was made",
+    travelLede: "Only the works that say both, so this compares works with works: coverage cancels out.",
+    travelled: "are no longer in the country where they were painted",
+    stayed: "are still in it",
+    leftFrom: "Countries the art left", arrivedIn: "Countries it arrived in",
+    routes: "The journeys most travelled", from: "from", to: "to",
+    madeIn: "Where the atlas' art was painted",
+    conc: "How much of a painter lives in one building",
+    concLede: "Painters with at least 25 works. The share is of the works the atlas holds, in their largest single venue.",
+    mostConc: "Concentrated in one place", leastConc: "Spread thinnest",
+    painter: "painter", share: "in one venue", venue: "that venue", spread: "venues",
+    holders: "The buildings that hold the most", museum: "museum", city: "city",
+    cityTable: "The cities that hold the most",
+    century: "Across the centuries", centuryLede: "Only dated works; 1,664 have no date and are not counted here.",
+    themes: "The themes that repeat", themesLede: "What the paintings show, and the room where each theme piles up most.",
+    theme: "theme", room: "where it piles up",
+    coverage: "How complete each painter is",
+    coverageLede: "Ours against every painting Wikidata attributes to them <b>with an image</b>, which is the same gate our harvest uses. The ratio is a warning label, not a score: under 1 we are missing works, over 1 the Wikipedia catalogues reached further than Wikidata can — a 20th-century painter has almost no free images.",
+    ours: "in the atlas", wd: "Wikidata, with a picture", ratio: "ratio",
+    foot: "Interactive Atlas of Painting · data from Wikidata, Wikipedia and Wikimedia Commons",
+  },
+  es: {
+    title: "El atlas en cifras", back: "← volver al atlas",
+    built: d => `calculado el ${d}`,
+    caveat: "<b>Lo que esta página no dice.</b> No hay ninguna lista de quién pintó más: mediría quién está mejor documentado. Munch encabeza el atlas con 1.418 obras porque su museo catalogó hasta el último apunte, y de Frida Kahlo hay aquí 108 frente a la única que conoce Wikidata. Así que abajo están las preguntas que comparan obras con obras, donde los huecos se cancelan, y la última tabla dice en voz alta cómo de completo está cada pintor.",
+    made: "De qué está hecho el atlas", madeLede: "Todo lo que contiene hoy, contado.",
+    works: "obras", painters: "pintores", venues: "sedes", cities: "ciudades", countries: "países",
+    withQid: "con identificador de Wikidata", withImage: "con imagen", dated: "con fecha",
+    accepted: "de atribución aceptada",
+    travel: "Dónde está el arte y dónde se hizo",
+    travelLede: "Solo las obras que dicen las dos cosas, así que esto compara obras con obras: la cobertura se cancela.",
+    travelled: "ya no están en el país donde se pintaron",
+    stayed: "siguen en él",
+    leftFrom: "Países de los que salió el arte", arrivedIn: "Países a los que llegó",
+    routes: "Los viajes más transitados", from: "de", to: "a",
+    madeIn: "Dónde se pintó el arte del atlas",
+    conc: "Cuánto de un pintor vive en un solo edificio",
+    concLede: "Pintores con 25 obras o más. La proporción es sobre lo que el atlas tiene, en su mayor sede.",
+    mostConc: "Concentrados en un sitio", leastConc: "Los más repartidos",
+    painter: "pintor", share: "en una sede", venue: "esa sede", spread: "sedes",
+    holders: "Los edificios que más tienen", museum: "museo", city: "ciudad",
+    cityTable: "Las ciudades que más tienen",
+    century: "A lo largo de los siglos", centuryLede: "Solo obras con fecha; 1.664 no la tienen y no cuentan aquí.",
+    themes: "Los temas que se repiten", themesLede: "Lo que muestran los cuadros, y la sala donde más se acumula cada tema.",
+    theme: "tema", room: "dónde se acumula",
+    coverage: "Cómo de completo está cada pintor",
+    coverageLede: "Lo nuestro frente a todas las pinturas que Wikidata les atribuye <b>con imagen</b>, que es la misma puerta que usa nuestra cosecha. La proporción es una etiqueta de advertencia, no una nota: por debajo de 1 nos faltan obras; por encima, los catálogos de Wikipedia llegaron más lejos de lo que Wikidata puede, porque un pintor del siglo XX casi no tiene imágenes libres.",
+    ours: "en el atlas", wd: "Wikidata, con imagen", ratio: "proporción",
+    foot: "Atlas interactivo de la pintura · datos de Wikidata, Wikipedia y Wikimedia Commons",
+  },
+  fr: {
+    title: "L'atlas en chiffres", back: "← retour à l'atlas",
+    built: d => `calculé le ${d}`,
+    caveat: "<b>Ce que cette page ne dit pas.</b> Aucun classement de qui a le plus peint : il mesurerait qui est le mieux documenté. Munch est en tête avec 1 418 œuvres parce que son musée a catalogué la moindre esquisse, et Frida Kahlo compte ici 108 œuvres contre la seule que connaît Wikidata. Les questions ci-dessous comparent donc des œuvres à des œuvres, là où les lacunes s'annulent, et le dernier tableau dit tout haut à quel point chaque peintre est complet.",
+    made: "Ce dont l'atlas est fait", madeLede: "Tout ce qu'il contient aujourd'hui, compté.",
+    works: "œuvres", painters: "peintres", venues: "lieux", cities: "villes", countries: "pays",
+    withQid: "avec un identifiant Wikidata", withImage: "avec une image", dated: "avec une date",
+    accepted: "d'attribution acceptée",
+    travel: "Où est l'art, et où il a été fait",
+    travelLede: "Seulement les œuvres qui disent les deux : on compare des œuvres à des œuvres, la couverture s'annule.",
+    travelled: "ne sont plus dans le pays où elles ont été peintes",
+    stayed: "y sont toujours",
+    leftFrom: "Pays que l'art a quittés", arrivedIn: "Pays où il est arrivé",
+    routes: "Les trajets les plus fréquentés", from: "de", to: "à",
+    madeIn: "Où l'art de l'atlas a été peint",
+    conc: "Quelle part d'un peintre vit dans un seul bâtiment",
+    concLede: "Peintres avec au moins 25 œuvres. La part porte sur ce que l'atlas détient, dans leur plus grand lieu.",
+    mostConc: "Concentrés en un lieu", leastConc: "Les plus dispersés",
+    painter: "peintre", share: "en un lieu", venue: "ce lieu", spread: "lieux",
+    holders: "Les bâtiments qui en détiennent le plus", museum: "musée", city: "ville",
+    cityTable: "Les villes qui en détiennent le plus",
+    century: "À travers les siècles", centuryLede: "Seulement les œuvres datées ; 1 664 n'ont pas de date.",
+    themes: "Les thèmes qui reviennent", themesLede: "Ce que montrent les tableaux, et la salle où chaque thème s'accumule.",
+    theme: "thème", room: "où il s'accumule",
+    coverage: "À quel point chaque peintre est complet",
+    coverageLede: "Le nôtre face à toutes les peintures que Wikidata leur attribue <b>avec une image</b>, la même porte que notre moisson. Le rapport est une étiquette d'avertissement, pas une note : sous 1 il nous manque des œuvres, au-dessus les catalogues de Wikipédia sont allés plus loin que Wikidata ne peut aller.",
+    ours: "dans l'atlas", wd: "Wikidata, avec image", ratio: "rapport",
+    foot: "Atlas interactif de la peinture · données de Wikidata, Wikipédia et Wikimedia Commons",
+  },
+  it: {
+    title: "L'atlante in cifre", back: "← torna all'atlante",
+    built: d => `calcolato il ${d}`,
+    caveat: "<b>Quello che questa pagina non dice.</b> Nessuna classifica di chi ha dipinto di più: misurerebbe chi è meglio documentato. Munch guida l'atlante con 1.418 opere perché il suo museo ha catalogato ogni schizzo, e di Frida Kahlo qui ce ne sono 108 contro l'unica che Wikidata conosce. Le domande qui sotto confrontano opere con opere, dove le lacune si annullano, e l'ultima tabella dice ad alta voce quanto è completo ogni pittore.",
+    made: "Di cosa è fatto l'atlante", madeLede: "Tutto quello che contiene oggi, contato.",
+    works: "opere", painters: "pittori", venues: "sedi", cities: "città", countries: "paesi",
+    withQid: "con identificativo Wikidata", withImage: "con immagine", dated: "con data",
+    accepted: "di attribuzione accettata",
+    travel: "Dov'è l'arte e dove è stata fatta",
+    travelLede: "Solo le opere che dicono entrambe le cose: si confrontano opere con opere, la copertura si annulla.",
+    travelled: "non sono più nel paese in cui furono dipinte",
+    stayed: "ci sono ancora",
+    leftFrom: "Paesi da cui l'arte è partita", arrivedIn: "Paesi in cui è arrivata",
+    routes: "I viaggi più battuti", from: "da", to: "a",
+    madeIn: "Dove è stata dipinta l'arte dell'atlante",
+    conc: "Quanta parte di un pittore vive in un solo edificio",
+    concLede: "Pittori con almeno 25 opere. La quota è su quello che l'atlante possiede, nella sede maggiore.",
+    mostConc: "Concentrati in un luogo", leastConc: "I più dispersi",
+    painter: "pittore", share: "in una sede", venue: "quella sede", spread: "sedi",
+    holders: "Gli edifici che ne hanno di più", museum: "museo", city: "città",
+    cityTable: "Le città che ne hanno di più",
+    century: "Attraverso i secoli", centuryLede: "Solo opere datate; 1.664 non hanno data.",
+    themes: "I temi che si ripetono", themesLede: "Ciò che i dipinti mostrano, e la sala dove ogni tema si accumula.",
+    theme: "tema", room: "dove si accumula",
+    coverage: "Quanto è completo ogni pittore",
+    coverageLede: "Il nostro contro tutti i dipinti che Wikidata attribuisce loro <b>con un'immagine</b>, la stessa porta della nostra raccolta. Il rapporto è un'etichetta di avvertenza, non un voto: sotto 1 ci mancano opere, sopra i cataloghi di Wikipedia sono andati più lontano di quanto Wikidata possa.",
+    ours: "nell'atlante", wd: "Wikidata, con immagine", ratio: "rapporto",
+    foot: "Atlante interattivo della pittura · dati da Wikidata, Wikipedia e Wikimedia Commons",
+  },
+};
+
+let lang = "en", DATA = null, NAMES = {};   // NAMES: the atlas' own country dictionary, reused here
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num = n => (n == null ? "—" : n.toLocaleString(lang === "en" ? "en-GB" : lang));
+const s = k => S[lang][k] ?? S.en[k] ?? k;
+// A country is called what the atlas calls it in this language: the dictionary already exists, and a
+// page that says "Italy" inside a Spanish sentence looks like a page nobody read.
+const cName = c => (NAMES[lang] && NAMES[lang][c]) || c;
+function loadNames(l) {
+  if (l === "en" || NAMES[l]) return Promise.resolve();
+  return fetch(`artatlas/i18n/${l}.json`).then(r => r.ok ? r.json() : null)
+    .then(d => { if (d) NAMES[l] = d.countries || {}; }).catch(() => {});
+}
+
+function bar(value, max, label, alt) {
+  const pct = max ? Math.max(2, Math.round(value / max * 100)) : 0;
+  return `<span class="bar${alt ? " alt" : ""}"><i style="width:${pct}%"></i><em>${esc(label)}</em></span>`;
+}
+function table(head, rows) {
+  return `<table><thead><tr>${head.map(h => `<th${h.n ? ' class="n"' : ""}>${esc(h.t)}</th>`).join("")}</tr></thead>` +
+         `<tbody>${rows.join("")}</tbody></table>`;
+}
+
+function render() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-s]").forEach(el => {
+    const k = el.dataset.s;
+    if (k === "built") el.textContent = DATA ? s("built")(DATA.built) : "";
+    else if (k === "caveat") el.innerHTML = s("caveat");
+    else el.textContent = s(k);
+  });
+  document.title = s("title") + " · Interactive Atlas of Painting";
+  document.querySelectorAll("#langs button").forEach(b =>
+    b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  if (!DATA) return;
+  const t = DATA.totals, tr = DATA.travel;
+  const maxFrom = Math.max(...tr.from.map(x => x[1]), 1), maxTo = Math.max(...tr.to.map(x => x[1]), 1);
+  const maxMade = Math.max(...tr.made_in.map(x => x[1]), 1);
+  const maxVenue = Math.max(...DATA.venues.map(v => v.works), 1);
+  const maxCity = Math.max(...DATA.cities.map(v => v.works), 1);
+  const maxCent = Math.max(...DATA.by_century.map(c => c.works), 1);
+  const maxTheme = Math.max(...DATA.themes.map(c => c.works), 1);
+  const card = (v, label) => `<div class="card"><b>${num(v)}</b><span>${esc(label)}</span></div>`;
+
+  document.getElementById("body").innerHTML =
+    `<h2>${esc(s("made"))}</h2><p class="lede">${esc(s("madeLede"))}</p>
+     <div class="cards">
+       ${card(t.works, s("works"))}${card(t.painters, s("painters"))}${card(t.venues, s("venues"))}
+       ${card(t.cities, s("cities"))}${card(t.countries, s("countries"))}
+       ${card(t.with_qid, s("withQid"))}${card(t.with_image, s("withImage"))}
+       ${card(t.dated, s("dated"))}${card(t.accepted, s("accepted"))}
+     </div>
+
+     <h2>${esc(s("travel"))}</h2><p class="lede">${esc(s("travelLede"))}</p>
+     <div class="cards">
+       ${card(tr.travelled, s("travelled"))}${card(tr.stayed, s("stayed"))}
+     </div>
+     <div class="split" style="margin-top:14px">
+       <div><h2 style="font-size:15px;margin-top:8px">${esc(s("leftFrom"))}</h2>
+         ${table([{t: s("from")}, {t: ""}], tr.from.map(([c, n]) =>
+           `<tr><td>${esc(cName(c))}</td><td>${bar(n, maxFrom, num(n))}</td></tr>`))}</div>
+       <div><h2 style="font-size:15px;margin-top:8px">${esc(s("arrivedIn"))}</h2>
+         ${table([{t: s("to")}, {t: ""}], tr.to.map(([c, n]) =>
+           `<tr><td>${esc(cName(c))}</td><td>${bar(n, maxTo, num(n), true)}</td></tr>`))}</div>
+     </div>
+     <h2 style="font-size:15px">${esc(s("routes"))}</h2>
+     ${table([{t: s("from")}, {t: s("to")}, {t: s("works"), n: true}],
+        tr.pairs.map(p => `<tr><td>${esc(cName(p.from))}</td><td>${esc(cName(p.to))}</td><td class="n">${num(p.works)}</td></tr>`))}
+     <h2 style="font-size:15px">${esc(s("madeIn"))}</h2>
+     ${table([{t: s("city")}, {t: ""}], tr.made_in.map(([c, n]) =>
+        `<tr><td>${esc(c)}</td><td>${bar(n, maxMade, num(n))}</td></tr>`))}
+
+     <h2>${esc(s("conc"))}</h2><p class="lede">${esc(s("concLede"))}</p>
+     <div class="split">
+       <div><h2 style="font-size:15px;margin-top:8px">${esc(s("mostConc"))}</h2>
+         ${table([{t: s("painter")}, {t: s("share")}, {t: s("venue")}], DATA.concentration.most.map(r =>
+           `<tr><td>${esc(r.painter)}</td><td>${bar(r.share * 100, 100, Math.round(r.share * 100) + "%")}</td>
+            <td>${esc(r.museum)}</td></tr>`))}</div>
+       <div><h2 style="font-size:15px;margin-top:8px">${esc(s("leastConc"))}</h2>
+         ${table([{t: s("painter")}, {t: s("share")}, {t: s("spread"), n: true}], DATA.concentration.least.map(r =>
+           `<tr><td>${esc(r.painter)}</td><td>${bar(r.share * 100, 100, Math.round(r.share * 100) + "%", true)}</td>
+            <td class="n">${num(r.venues)}</td></tr>`))}</div>
+     </div>
+
+     <h2>${esc(s("holders"))}</h2>
+     ${table([{t: s("museum")}, {t: s("city")}, {t: ""}, {t: s("painters"), n: true}], DATA.venues.map(v =>
+        `<tr><td>${esc(v.museum)}</td><td>${esc(v.city)}</td><td>${bar(v.works, maxVenue, num(v.works))}</td>
+         <td class="n">${num(v.painters)}</td></tr>`))}
+
+     <h2>${esc(s("cityTable"))}</h2>
+     ${table([{t: s("city")}, {t: s("countries")}, {t: ""}], DATA.cities.map(v =>
+        `<tr><td>${esc(v.city)}</td><td>${esc(cName(v.country))}</td><td>${bar(v.works, maxCity, num(v.works), true)}</td></tr>`))}
+
+     <h2>${esc(s("century"))}</h2><p class="lede">${esc(s("centuryLede"))}</p>
+     ${table([{t: ""}, {t: ""}], DATA.by_century.filter(c => c.works > 5).map(c =>
+        `<tr><td style="width:6em">${c.century}xx</td><td>${bar(c.works, maxCent, num(c.works))}</td></tr>`))}
+
+     <h2>${esc(s("themes"))}</h2><p class="lede">${esc(s("themesLede"))}</p>
+     ${table([{t: s("theme")}, {t: ""}, {t: s("room")}], DATA.themes.map(th =>
+        `<tr><td><a href="artatlas.html?th=${encodeURIComponent(th.id)}">${esc(th.label)}</a></td>
+         <td>${bar(th.works, maxTheme, num(th.works))}</td><td>${esc(th.top_venue)}</td></tr>`))}
+
+     <h2>${esc(s("coverage"))}</h2><p class="lede">${s("coverageLede")}</p>
+     ${table([{t: s("painter")}, {t: s("ours"), n: true}, {t: s("wd"), n: true}, {t: s("ratio"), n: true}],
+        DATA.coverage.map(r => `<tr><td>${esc(r.name)}</td><td class="n">${num(r.ours)}</td>
+         <td class="n">${num(r.wikidata_with_image)}</td>
+         <td class="n ratio ${r.ratio == null ? "" : r.ratio < 0.8 ? "low" : r.ratio > 1.2 ? "high" : ""}">${
+           r.ratio == null ? "—" : r.ratio.toFixed(2)}</td></tr>`))}`;
+}
+
+document.getElementById("langs").innerHTML = ["en", "es", "fr", "it"]
+  .map(l => `<button type="button" data-lang="${l}">${l.toUpperCase()}</button>`).join("");
+document.getElementById("langs").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  lang = b.dataset.lang;
+  try { localStorage.setItem("atlasLang", lang); } catch (err) { /* private mode */ }
+  loadNames(lang).then(render);
+});
+try { const l = localStorage.getItem("atlasLang"); if (l && S[l]) lang = l; } catch (e) { /* private mode */ }
+const url = new URLSearchParams(location.search).get("lang");
+if (url && S[url]) lang = url;
+render();
+loadNames(lang).then(render);
+fetch("artatlas/data/stats.json?v=1.22.0").then(r => r.json()).then(d => { DATA = d; render(); })
+  .catch(() => { document.getElementById("body").innerHTML = "<p>stats.json is not there yet.</p>"; });
+</script>
+</body>
+</html>
