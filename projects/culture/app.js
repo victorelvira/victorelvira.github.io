@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.35.1";
+const DATA_V = "0.35.3";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -245,7 +245,7 @@ const DIMENSIONS = [
       const a = r.born, b = r.died;
       if (a == null && b == null) return true;
       return (b ?? a) >= state.yearMin && (a ?? b) <= state.yearMax; } },
-  { id: "text", appliesTo: ALL, test: (r) => !state.q || r._s.includes(state.q) },
+  { id: "text", appliesTo: ALL, test: (r) => !state.q || hasWords(r._s, qWords(state.q)) },
   { id: "site", appliesTo: ALL, test: (r) => state.site == null || r.site === state.site },
   // a person the reader chose is shown whole, whatever the dial says
   { id: "renown", appliesTo: ALL, test: (r) => !state.topN || !!state.person || r.rank >= rankCut },
@@ -2099,29 +2099,51 @@ function renderTop() {
  * answer, no mode switch.
  */
 const SUGGEST_MAX = 8;
+// SEARCH BY WORDS (0.35): every word of the query, in any order, anywhere in the name and the town. "cemetery milan"
+// found nothing because it looked for that exact string, and the place is "Monumental cemetery of Milan" (Víctor,
+// 2026-09-28). A word for the kind of place is understood in the reader's languages: cementerio, cimitero, iglesia.
+const KIND_WORDS = { cementerio: "cemetery", cimitero: "cemetery", cimetiere: "cemetery", friedhof: "cemetery",
+  cemiterio: "cemetery", iglesia: "church", chiesa: "church", eglise: "church", kirche: "church", igreja: "church",
+  catedral: "cathedral", cattedrale: "cathedral", museo: "museum", musee: "museum", tumba: "tomb", tomba: "tomb",
+  estatua: "statue", statua: "statue", placa: "plaque", casa: "house" };
+const qWords = (q) => deacc(q).split(/[\s,.;:/-]+/).filter(Boolean).map((w) => KIND_WORDS[w] || w);
+const hasWords = (text, words) => words.every((w) => text.includes(w));
 
+let placeCountMap = null, placeCountAt = 0;
+function placeCounts() {
+  if (placeCountMap && placeCountAt === TRACES.length) return placeCountMap;
+  placeCountMap = new Map(); placeCountAt = TRACES.length;
+  for (const r of TRACES) placeCountMap.set(r.site, (placeCountMap.get(r.site) || 0) + 1);
+  return placeCountMap;
+}
 function findEntities(q) {
   const people = [];
   for (const [qid, rows] of byPerson) {
     if (!rows[0]._s || !qid.startsWith("Q")) continue;       // museums, plaques and events are places
-    if (!deacc(rows[0].name).includes(q)) continue;
+    if (!hasWords(deacc(rows[0].name), qWords(q))) continue;
     let rank = 0;
     for (const r of rows) if (r.rank > rank) rank = r.rank;
     // an exact prefix beats a match buried in the middle: "Goya" must not rank under "Goyau"
+    // a whole word of the name beats a name that merely starts that way: "lorca" is García Lorca, not Lorcán (0.35)
+    const nw = deacc(rows[0].name).split(/[\s-]+/), qw = qWords(q);
     people.push({ qid, name: rows[0].name, rows, rank,
-                  exact: deacc(rows[0].name).startsWith(q) ? 1 : 0 });
+                  exact: qw.every((w) => nw.includes(w)) ? 2 : deacc(rows[0].name).startsWith(deacc(q)) ? 1 : 0 });
   }
   people.sort((a, z) => z.exact - a.exact || z.rank - a.rank || a.name.length - z.name.length);
 
   const seen = new Set();
   const places = [];
-  for (let i = 0; i < SITES.length && places.length < 200; i++) {
+  const words = qWords(q);
+  const count = placeCounts();
+  for (let i = 0; i < SITES.length && places.length < 400; i++) {
     const nm = SITES[i][S_NAME];
-    if (!deacc(nm).includes(q) || seen.has(nm)) continue;
+    if (!hasWords(deacc(nm + " " + whereOf(SITES[i])), words) || seen.has(nm)) continue;
     seen.add(nm);
-    places.push({ i, name: nm });
+    places.push({ i, name: nm, n: count.get(i) || 0, exact: deacc(nm).startsWith(deacc(q)) ? 1 : 0 });
   }
-  return { people: people.slice(0, SUGGEST_MAX), places: places.slice(0, 4) };
+  // the place with the most people first: Milan's Monumental Cemetery before a plaque that mentions a cemetery
+  places.sort((a, z) => z.exact - a.exact || z.n - a.n);
+  return { people: people.slice(0, SUGGEST_MAX), places: places.slice(0, 5) };
 }
 
 function renderSuggest(q) {
@@ -2143,8 +2165,9 @@ function renderSuggest(q) {
   box.innerHTML =
     (people.length ? `<li class="sg-h">People</li>` + people.map(pRow).join("") : "") +
     (places.length ? `<li class="sg-h">Places</li>` + places.map((pl) =>
-      `<li class="sg-place" data-site="${pl.i}"><span class="sg-th ph">${WHAT_ICON[VOCAB.siteKind[SITES[pl.i][S_KIND]]] || "⌖"}</span>` +
-      `<div class="wk"><div class="wt">${esc(pl.name)}</div></div></li>`).join("") : "");
+      `<li class="sg-place" data-site="${pl.i}"><span class="sg-th ph">${WHAT_ICON[VOCAB.siteKind[SITES[pl.i][S_KIND]]] || { cemetery: "🪦", building: "🏛" }[VOCAB.siteKind[SITES[pl.i][S_KIND]]] || "⌖"}</span>` +
+      `<div class="wk"><div class="wt">${esc(pl.name)}</div>` +
+      `<div class="by">${esc([whereOf(SITES[pl.i]), pl.n > 1 ? `${pl.n.toLocaleString()} people` : ""].filter(Boolean).join(" · "))}</div></div></li>`).join("") : "");
   box.hidden = false;
 }
 
@@ -2161,8 +2184,13 @@ $("suggest").addEventListener("click", (e) => {
   const plc = e.target.closest(".sg-place");
   if (plc) {
     $("suggest").hidden = true;
-    const s = SITES[+plc.dataset.site];
-    map.setView([s[S_LAT], s[S_LON]], 16);
+    // a place picked from the search opens: its card, not only the map over it (0.35)
+    const i = +plc.dataset.site, s = SITES[i];
+    // the text filter would hide whoever lies there but does not match the words: the place is the answer now
+    state.q = ""; $("filter").value = ""; $("filter-clear").hidden = true;
+    if (document.activeElement) document.activeElement.blur();
+    refresh();
+    openPlaceCard(i, [s[S_LAT], s[S_LON]]);
   }
 });
 document.addEventListener("click", (e) => {
