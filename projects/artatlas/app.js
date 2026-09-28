@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.22.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-28 00:44";   // stamped by scripts/stamp_build.py at deploy — do not edit
+const DATA_V = "1.22.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-09-28 10:09";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -143,7 +143,7 @@ function ctyName(c) {
 
 // The painting's own title. 32 821 of them across seven languages, but a French reader needs only
 // the French, so they ship one file per language and the file is fetched when that language is
-// chosen — `work_i18n.fr.json` is 348 KB and `work_i18n.ca.json` is 77, and nobody loads both.
+// chosen: `work_i18n.fr.json` is 348 KB and `work_i18n.ca.json` is 77, and nobody loads both.
 // Keyed by QID, which is why the two QID audits had to come first: nine paintings sharing the QID of
 // the *Sunflowers* SERIES would otherwise have been handed the same title in seven languages.
 let workI18n = null, workI18nLang = null;
@@ -215,7 +215,7 @@ function translateDOM(root) {
       el.setAttribute(a, (DICT && DICT.ui[el[store]]) || el[store]);
     }
   });
-  // paragraphs cut up by inline links cannot be translated phrase by phrase — swap them whole
+  // paragraphs cut up by inline links cannot be translated phrase by phrase: swap them whole
   const blocks = (DICT && DICT.blocks) || {};
   document.querySelectorAll("[data-i18n-block]").forEach(el => {
     if (el.__enHTML === undefined) el.__enHTML = el.innerHTML;
@@ -484,13 +484,13 @@ const PALETTE = [
   "#b0692f", "#2f8fb0", "#7a9c3f", "#9c3f7a", "#3f9c7a", "#9c6a3f", "#5f3f9c", "#3f7a9c",
   "#6a8f4a", "#b0417a", "#417a8f", "#8f6a41", "#7a41b0", "#41a06a", "#a0552f", "#4a6a8f",
   "#9c8f3f", "#6a417a", "#2f7a5a", "#8f414a", "#5a8f2f", "#417a6a", "#8f5a7a", "#3f5a7a", "#5a8f7b",
-  "#d9601c", "#5c2a3e", "#9aa832", "#c24f9c", "#2a5c4a", "#3d9bd6",   // 2026-09-15: one per painter, Miró no longer borrows Caravaggio's
-  "#7b6a4e", "#356b8c", "#a3453f",                                   // 2026-09-25: Bramante, Canova, Orazio Gentileschi
+  "#d9601c", "#5c2a3e", "#9aa832", "#c24f9c", "#2a5c4a", "#3d9bd6",  // 2026-09-15: one per painter, Miró no longer borrows Caravaggio's
+  "#7b6a4e", "#356b8c", "#a3453f",                                  // 2026-09-25: Bramante, Canova, Orazio Gentileschi
 ];
 const MULTI_COLOR = "#3f342b";   // a venue holding works by more than one painter
 const LOST_COLOR = "#c0392b";
 const painterColors = Object.fromEntries(PAINTERS.map((p, i) => [p.name, PALETTE[i % PALETTE.length]]));
-painterColors["Gustav Klimt"] = "#c9a227";   // Klimt gold — explicit so palette insertion order can't steal it
+painterColors["Gustav Klimt"] = "#c9a227";   // Klimt gold: explicit so palette insertion order can't steal it
 function colorFor(name) { return painterColors[name] || MULTI_COLOR; }
 // the same colour, watered down: the panel's colour fields have to sit UNDER the pictures without
 // competing with them, so a painter's ground is their map colour mixed into white.
@@ -515,7 +515,7 @@ function pieStyle(counts) {
   return { style: `background:conic-gradient(${stops})`, pie: true };
 }
 
-// art-historical period per painter (one primary bucket each) — groups the painter selector
+// art-historical period per painter (one primary bucket each): groups the painter selector
 const ERAS = [
   { key: "1", label: "Gothic & early Renaissance" },
   { key: "2", label: "High Renaissance & Mannerism" },
@@ -530,12 +530,12 @@ const ERA_OF = {
   ghirlandaio: "1", mantegna: "1", vaneyck: "1", weyden: "1", memling: "1", bosch: "1",
   leonardo: "2", raphael: "2", michelangelo: "2", durer: "2", cranach: "2", holbein: "2", bernini: "3",
   giorgione: "2", titian: "2", correggio: "2", delsarto: "2", parmigianino: "2", bruegel: "2",
-  tintoretto: "2", veronese: "2", elgreco: ["2", "3"],   // Mannerism ↔ Baroque (d. 1614)
+  tintoretto: "2", veronese: "2", elgreco: ["2", "3"],  // Mannerism ↔ Baroque (d. 1614)
   caravaggio: "3", artemisia: "3", rubens: "3", vandyck: "3", rembrandt: "3", vermeer: "3",
   franshals: "3", velazquez: "3", ribera: "3", zurbaran: "3", murillo: "3", poussin: "3",
   lorrain: "3", delatour: "3",
   goya: "4", david: "4",
-  manet: "5", monet: "5", renoir: "5", degas: "5", pissarro: "5", cezanne: ["5", "6"],  // Post-Imp ↔ Modern
+  manet: "5", monet: "5", renoir: "5", degas: "5", pissarro: "5", cezanne: ["5", "6"], // Post-Imp ↔ Modern
   vangogh: "5", gauguin: "5", seurat: "5", sorolla: "5",
   picasso: "6", frida: "6", rivera: "6",
   // added 2026-08-22
@@ -563,10 +563,10 @@ const SCHOOL_OF = {
   giorgione: "it", titian: "it", correggio: "it", delsarto: "it", parmigianino: "it",
   tintoretto: "it", veronese: "it", caravaggio: "it", artemisia: "it",
   velazquez: "es", goya: "es", elgreco: ["es", "it"], ribera: "es", zurbaran: "es", murillo: "es",
-  sorolla: "es", picasso: ["es", "fr"],   // El Greco trained in Venice; Picasso = École de Paris
+  sorolla: "es", picasso: ["es", "fr"],  // El Greco trained in Venice; Picasso = École de Paris
   poussin: "fr", lorrain: "fr", delatour: "fr", david: "fr", manet: "fr", monet: "fr",
   renoir: "fr", degas: "fr", pissarro: "fr", cezanne: "fr", gauguin: "fr", seurat: "fr",
-  rembrandt: "nl", vermeer: "nl", franshals: "nl", vangogh: ["nl", "fr"],   // Dutch, painted in France
+  rembrandt: "nl", vermeer: "nl", franshals: "nl", vangogh: ["nl", "fr"],  // Dutch, painted in France
   vaneyck: "fl", weyden: "fl", memling: "fl", bosch: "fl", bruegel: "fl", rubens: "fl", vandyck: "fl",
   durer: "de", cranach: "de", holbein: "de",
   frida: "mx", rivera: "mx",
@@ -579,7 +579,7 @@ const SCHOOL_OF = {
 };
 const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
 
-// birth year per painter — sorts the selector chronologically WITHIN each group (the eras/schools
+// birth year per painter: sorts the selector chronologically WITHIN each group (the eras/schools
 // are already roughly chronological between groups). Early ones are the accepted "c." estimates.
 const BORN = {
   duccio: 1255, giotto: 1267, vaneyck: 1390, fraangelico: 1395, weyden: 1399, masaccio: 1401,
@@ -600,11 +600,11 @@ const BORN = {
 };
 const bornOf = slug => BORN[slug] || 9999;
 
-// death year per painter (Wikidata P570) — for the Timeline life-span labels
+// death year per painter (Wikidata P570): for the Timeline life-span labels
 const DIED = { bramante: 1514, canova: 1822, oraziogentileschi: 1639, munch: 1944, romerodetorres: 1930, giordano: 1705, guercino: 1666, batoni: 1787, bernini: 1680, klimt: 1918, artemisia: 1653, bellini: 1516, bosch: 1516, botticelli: 1510, bronzino: 1572, bruegel: 1569, canaletto: 1768, caravaggio: 1610, carracci: 1609, cezanne: 1906, correggio: 1534, cranach: 1553, dali: 1989, david: 1825, degas: 1917, delacroix: 1863, delatour: 1652, delsarto: 1530, duccio: 1319, durer: 1528, elgreco: 1614, fraangelico: 1455, franshals: 1666, frida: 1954, friedrich: 1840, gauguin: 1903, ghirlandaio: 1494, giorgione: 1510, giotto: 1337, goya: 1828, guardi: 1793, holbein: 1543, leonardo: 1519, lippi: 1469, lorrain: 1682, manet: 1883, mantegna: 1506, masaccio: 1428, memling: 1494, michelangelo: 1564, miro: 1983, monet: 1926, murillo: 1682, parmigianino: 1540, perugino: 1523, picasso: 1973, piero: 1492, pissarro: 1903, poussin: 1665, raphael: 1520, rembrandt: 1669, reni: 1642, renoir: 1919, ribera: 1652, rivera: 1957, rubens: 1640, seurat: 1891, sorolla: 1923, tiepolo: 1770, tintoretto: 1594, titian: 1576, turner: 1851, uccello: 1475, vandyck: 1641, vaneyck: 1441, vangogh: 1890, velazquez: 1660, vermeer: 1675, veronese: 1588, weyden: 1464, zuloaga: 1945, zurbaran: 1664 };
 const diedOf = slug => DIED[slug] || null;
 
-// short label per painter for the selector button (the first name is often wrong — "Ignacio"
+// short label per painter for the selector button (the first name is often wrong: "Ignacio"
 // for Zuloaga, "Giovanni" for Bellini/Tiepolo). Falls back to the first word.
 const NICK = {
   caravaggio: "Caravaggio", leonardo: "Leonardo", raphael: "Raphael", goya: "Goya",
@@ -638,7 +638,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 // Leaflet measures its container once and believes that number until told otherwise. Telling it
 // inside requestAnimationFrame is a trap: **rAF does not run in a background tab**, so an atlas
 // opened in a tab you are not looking at (a restored session, a ⌘-click) keeps whatever size the
-// container had before the layout settled — and shows a ridiculously small map when you switch to
+// container had before the layout settled: and shows a ridiculously small map when you switch to
 // it. A ResizeObserver on the element itself cannot miss: it fires whenever the box really changes,
 // foreground or not, on load, on resize, on the splitter being dragged.
 new ResizeObserver(() => map.invalidateSize()).observe(document.getElementById("map"));
@@ -678,7 +678,7 @@ legend.addTo(map);
 function updateLegend() {
   if (!legendDiv) return;
   const shown = PAINTERS.filter(p => state.painters[p.name] !== false);
-  // Only useful when focused on a few painters — hidden by default (all/most selected)
+  // Only useful when focused on a few painters: hidden by default (all/most selected)
   // so it never covers the map. Appears once you narrow to a handful.
   if (!shown.length || shown.length > 8 || shown.length === PAINTERS.length) {
     legendDiv.style.display = "none"; return;
@@ -691,10 +691,10 @@ function updateLegend() {
 
 let allFeatures = [];   // raw point features from the geojson
 const places = [];   // {marker, kind, feats, lat, lon, shown}
-const works = [];    // {p (properties), lat, lon, marker} — one per painting, for the side panel
+const works = [];    // {p (properties), lat, lon, marker}: one per painting, for the side panel
 let panelVis = [];   // works currently listed in the panel
 // `museum/church/private/public` are kinds of PLACE; `painting/sculpture` are kinds of WORK. Two
-// different questions — "where can I see it?" and "what is it?" — so two different sets of chips.
+// different questions: "where can I see it?" and "what is it?": so two different sets of chips.
 const state = { mode: "current", museum: true, church: true, private: true, public: true,
                 painting: true, sculpture: true,
                 acceptedOnly: true, museumFilter: null, place: null, theme: null, me: "", near: null, q: "",
@@ -733,7 +733,7 @@ function inYear(p) {
 // accent-insensitive, shared by every view via passesAll + tablePass
 // A museum has one name here and another on its own door: we show "Museum of Fine Arts of Seville",
 // Seville shows "Museo de Bellas Artes de Sevilla". Wikidata knows both (see i18n/), so the filter
-// accepts either — you find a museum by typing it the way you know it, in any of our languages.
+// accepts either: you find a museum by typing it the way you know it, in any of our languages.
 // Loaded once, lazily: it is only needed the first time somebody types.
 let musI18n = null, musI18nSearch = new Map();
 // "town, province, country" for Spain and Italy only (Víctor: elsewhere it is clutter). museum_id → {lang: name}
@@ -798,7 +798,7 @@ function activeCoord(f) {
     return (p.creation_lat != null && p.creation_lon != null) ? [p.creation_lon, p.creation_lat] : null;
   }
   // "Private collection", "Stolen from …": we know the work exists, not where it is. It stays in the
-  // table, in its painter's set and in the galaxy, but it gets no pin — the coordinate in the file is
+  // table, in its painter's set and in the galaxy, but it gets no pin: the coordinate in the file is
   // a city centroid the geocoder invented. Map 2 still shows it, because where it was PAINTED is known.
   return f.properties.placeless ? null : f.geometry.coordinates;
 }
@@ -862,7 +862,7 @@ function pinIcon(colorCounts, n, { disputed = false } = {}) {
   });
 }
 
-// "Wikipedia: ES EN IT · Wikidata" — only the languages that actually have an article.
+// "Wikipedia: ES EN IT · Wikidata": only the languages that actually have an article.
 function linksRow(p) {
   const wp = WIKI_LANGS.filter(l => p["wikipedia_" + l]).map(l =>
     `<a class="tag" href="${esc(p["wikipedia_" + l])}" target="_blank" rel="noopener">${l.toUpperCase()}</a>`);
@@ -944,7 +944,7 @@ function placePopup(feats) {
 // ══ The filter row folds behind one button ═══════════════════════════════════════════════════════
 // Only the painter button stays out: it is the control that gets used. Everything else (venue kinds,
 // painting or sculpture, accepted attribution, my paintings, undated) lives behind "Filters", with a
-// summary beside it naming only what departs from the default — so a folded bar still tells the
+// summary beside it naming only what departs from the default: so a folded bar still tells the
 // truth about what you are looking at. The shape is Paris_JEP's, which Víctor asked for.
 const FILTER_DEFAULTS = { museum: true, church: true, private: true, public: true,
                           painting: true, sculpture: true, architecture: true, acceptedOnly: true };
@@ -1078,7 +1078,7 @@ function buildMarkers() {
   refresh();
 }
 
-// One bundled file (fast: 1 request, minified, no build-provenance) — fall back to the 72
+// One bundled file (fast: 1 request, minified, no build-provenance): fall back to the 72
 // per-painter files if the bundle isn't there (dev before running scripts/bundle_data.py).
 fetch("artatlas/data/all.geojson?v=" + DATA_V)
   .then(r => { if (!r.ok) throw new Error("no bundle"); return r.json(); }).then(gj => [gj])
@@ -1110,7 +1110,7 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
     map.on("popupopen", e => {
       const feats = e.popup._source && e.popup._source.options.feats;
       // On phones a marker popup is taller than the small map and its header/close get cut
-      // off the top. Route it into a fixed bottom sheet instead — always fully visible.
+      // off the top. Route it into a fixed bottom sheet instead: always fully visible.
       if (isMobile()) { openSheet(e.popup.getContent(), feats); map.closePopup(e.popup); return; }
       const el = e.popup.getElement();
       const b = el && el.querySelector(".pop-museum");
@@ -1126,7 +1126,7 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
   });
 
 // slider bounds. The low end is the true earliest year (early works are genuine, just
-// sparse). The high end ignores isolated outliers — mis-dated copies (e.g. a Raphael
+// sparse). The high end ignores isolated outliers: mis-dated copies (e.g. a Raphael
 // "painting" dated 1900) sit alone, so we keep the largest year that has at least MIN
 // works within a W-year window below it.
 function robustBounds(years) {
@@ -1222,7 +1222,7 @@ const deacc = s => (s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").to
 // Every word must appear (two words narrow), and "or" (or a bar, or a comma) opens an alternative:
 // "carava or raffa" finds both painters, "brera cara" still means both words in the same work.
 //
-// But "or" is also a word in titles — *Danaë or the Golden Rain*, *The Lute Player or …* — and
+// But "or" is also a word in titles: *Danaë or the Golden Rain*, *The Lute Player or …*: and
 // Víctor spotted it at once: taking it as an operator would make those unsearchable. So the operator
 // only wins when it earns it. Both readings are tried against the whole atlas and the one that finds
 // something is kept; when both find something, the alternative reading wins, because that is what
@@ -1288,7 +1288,7 @@ function renderPainterList() {
       const keysOf = painterGroupBy === "school" ? schoolsOf : erasOf;
       // ONLY throws everything else away, which is the right verb the first time and the wrong one
       // the second: once you have isolated the Baroque, the next thing you want is to *add* the
-      // Renaissance, not to swap to it. So every group that is not already in shows ALSO beside it —
+      // Renaissance, not to swap to it. So every group that is not already in shows ALSO beside it , 
       // but only while something is left out, since with all 74 painters on there is nothing to add.
       const everythingOn = PAINTERS.every(p => state.painters[p.name] !== false);
       for (const g of groups) {
@@ -1442,8 +1442,8 @@ function noteMap() { mapWas = (view.map && !view.table) ? [map.getCenter().lat, 
 // iOS drops a tab that has been in the background for a few minutes and reloads it when you come
 // back. The museum survived, because it is in the address; where you were looking did not, so the
 // map opened far away, "as if it had forgotten what I was clicking" (Víctor, at Brera). Centre and
-// zoom now ride in ?mv=lat,lon,z, written without adding a history step, so a reload — and a shared
-// link — return to the same patch of ground.
+// zoom now ride in ?mv=lat,lon,z, written without adding a history step, so a reload: and a shared
+// link: return to the same patch of ground.
 const MV_PLACES = 4;                                   // ~11 m: enough, and keeps the address short
 let mvT = null, mvHold = false;
 function writeMapView() {
@@ -1602,7 +1602,7 @@ function loadThemes() {
 }
 // Two sources, kept apart: Wikidata says what the painting depicts, or the title says it outright
 // ("The Crucifixion"). The second reaches the 1,800 works with no QID, which the first never can, so
-// it is worth having — but it is a reading, not a record, and the tag says so.
+// it is worth having: but it is a reading, not a record, and the tag says so.
 function themesOf(p) {
   if (!p) return [];
   if (themeWork && p.qid && themeWork[p.qid]) return themeWork[p.qid];
@@ -1616,7 +1616,7 @@ function themeOk(p) {
   return themesOf(p).includes(state.theme);
 }
 function themeName(id) { return (THEMES && THEMES[id] && THEMES[id].l) || id; }
-// Three kinds of tag, told apart by one glyph: what the painting shows (no glyph — it is the
+// Three kinds of tag, told apart by one glyph: what the painting shows (no glyph: it is the
 // commonest), where it is (a place a painter returned to), and who is in it.
 const THEME_GLYPH = { place: "📍", series: "📍", person: "👤" };
 function themeGlyph(id) { return (THEMES && THEMES[id] && THEME_GLYPH[THEMES[id].f]) || ""; }
@@ -1763,7 +1763,7 @@ document.getElementById("accepted-only").addEventListener("change", e => {
 });
 
 // ── two top-level views: "Map & list" (map + side list, always together) vs "Table" ──
-// The map's own options (Now in / Painted in) live under the map view — they don't apply to
+// The map's own options (Now in / Painted in) live under the map view: they don't apply to
 // the table. The side list always accompanies the map, so there's no separate list toggle.
 const view = { map: true, panel: true };
 function setView() {
@@ -1924,7 +1924,7 @@ function renderMuseumsTable() {
 }
 
 // ── Works table in gallery mode: the same tiles as the map panel, streamed with lazy images ──
-// Optionally grouped by museum — same continuous-grid, colour-per-museum model as the panel:
+// Optionally grouped by museum: same continuous-grid, colour-per-museum model as the panel:
 // one flat tile stream, each tile tagged with its museum's pastel + (first only) its name.
 let tableGallery = true, tGalGroup = true, tGalVis = [];
 let tGalFlat = [], tGalCursor = 0;   // flat stream of {w, grp?}
@@ -2021,7 +2021,7 @@ function setTableView(on) {
 }
 document.getElementById("v-table").addEventListener("click", () => { setTableView(true); if (typeof syncGalaxyURL === "function") syncGalaxyURL(true); });
 document.getElementById("v-mapview").addEventListener("click", () => { setTableView(false); if (typeof syncGalaxyURL === "function") syncGalaxyURL(true); });
-// one common free-text filter — applies to the map, the list/gallery AND the table at once
+// one common free-text filter: applies to the map, the list/gallery AND the table at once
 {
   let qt = 0;
   const box = document.getElementById("filter"), wrap = document.getElementById("filter-wrap");
@@ -2119,7 +2119,7 @@ function setUndated(on, write = true) {
 // ── side panel: the works currently within the map viewport, grouped by venue ──
 // Infinite scroll: render the list in chunks and append more as the user nears the bottom.
 // Only a few thumbnails are ever near the viewport, so this stays smooth on mobile while
-// still reaching every work — nothing is dropped. Lazy <img> means only visible thumbs fetch.
+// still reaching every work: nothing is dropped. Lazy <img> means only visible thumbs fetch.
 const PANEL_CHUNK = 80;
 let panelQueue = [];    // list mode: flat render plan {grp} headers + {w} work rows
 let panelCursor = 0;
@@ -2127,7 +2127,7 @@ let panelFlat = [];     // gallery: a flat stream of {w, grp?} tiles (grp carrie
 let panelFlatCursor = 0;
 // How the side panel is ordered. "museum" is the default and the one the map understands: works
 // clustered by the venue that holds them, which is what a pin on the map *is*. The other three throw
-// the museums away and lay every work out in one run — by date, by painter, or by title — because
+// the museums away and lay every work out in one run: by date, by painter, or by title: because
 // sometimes you are not asking "what is in this museum?" but "what is here, oldest first?".
 // Applies to BOTH the list and the miniatures; grouping by colour only happens under "museum".
 // Which group headers are folded shut. Kept across re-renders on purpose: the panel rebuilds every
@@ -2176,7 +2176,7 @@ function bandLabel(start, step) {
 }
 
 // Contiguous runs of the sorted works: one per painter, or one per time band. Each run carries the
-// ground colour its tiles will share — the painter's own colour, or a place along a ramp from the
+// ground colour its tiles will share: the painter's own colour, or a place along a ramp from the
 // oldest band to the newest, so the panel reads as a timeline you can see at a glance.
 function painterRuns(flat) {
   const runs = [];
@@ -2235,13 +2235,13 @@ let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
 // soft pastel, cycling through this 6-colour palette so no two adjacent museums collide. The tiles
 // flow in one continuous grid with NO gap between them, so a museum's tiles merge their coloured
 // grounds into one continuous field (the museum "background"); the picture cards sit on top in a
-// lighter tone of the same colour. The next museum's colour abuts directly — no gaps, no labels.
+// lighter tone of the same colour. The next museum's colour abuts directly: no gaps, no labels.
 const MUS_PASTELS = ["#e8dcc2", "#d7e3d3", "#d6dced", "#eed9d0", "#e3d6e8", "#d3e3df"];
 // a darker tone of each pastel: the line that runs around the whole colour field of a museum, so
 // where one museum ends and the next begins is visible even when both are pale (Víctor)
 const MUS_EDGES   = ["#b39a63", "#8fae88", "#8f9cc4", "#c79c8b", "#a892b3", "#85aca4"];
 
-// gallery tile — lazy thumbnail (click → lightbox) + caption (click → the work "ficha").
+// gallery tile: lazy thumbnail (click → lightbox) + caption (click → the work "ficha").
 // `vis` is the index array the caption click resolves against (panelVis or the table's own).
 // `grp` (optional) = { color }: the museum's ground colour, painted on the whole cell; the inner
 // .gcard (image + caption) is a lighter card floating on that ground.
@@ -2258,7 +2258,7 @@ function tileHTML(w, vis, grp) {
   const nameTag = grp && grp.label ? `<div class="mlabel">${esc(grp.label)}</div>` : "";
   const placeAttr = grp && grp.key ? ` data-place="${esc(grp.key)}"` : "";
   // every tile of a museum carries the same data-mus, so hovering the colour field can light up the
-  // museum's whole run (data-place stays on the FIRST tile only — it is the marker→list scroll target)
+  // museum's whole run (data-place stays on the FIRST tile only: it is the marker→list scroll target)
   const musAttr = grp && grp.mus != null ? ` data-mus="${grp.mus}"` : "";
   return `<li class="gcell" data-i="${i}" title="${esc(cap)}"${style}${placeAttr}${musAttr}>${share}${heart}${nameTag}` +
     `<div class="gcard">${img}<div class="gmeta">` +
@@ -2293,7 +2293,7 @@ function groupedTileStream(ordered) {
 // The name sits on its museum's colour band, over the museum's FIRST tile. Museums run back-to-back
 // in the same row, so a long name used to print straight over the next museum's band and the two
 // collided into unreadable mush. Each label is now capped at the width its museum really occupies in
-// that row (ellipsis beyond) — and the full name is one hover away: pointing at a museum's COLOUR
+// that row (ellipsis beyond): and the full name is one hover away: pointing at a museum's COLOUR
 // FIELD (the band above the pictures / the gutters between them) writes its whole name out over
 // whatever comes after it, and greys every other museum's ground and name so the museum under the
 // pointer reads as one continuous block.
@@ -2315,7 +2315,7 @@ function fitMuseumLabels(root, all) {
   labs.forEach((lab, i) => { lab.style.maxWidth = widths[i] + "px"; lab.dataset.fit = "1"; });
 }
 // Outline + chamfer: a museum's field is a ragged block of tiles, so its outline is drawn tile by
-// tile — each cell carries a dark line only on the sides that face a different museum (or the edge of
+// tile: each cell carries a dark line only on the sides that face a different museum (or the edge of
 // the grid), and rounds off the corners where two of those sides meet. Gapless neighbours therefore
 // separate with a small notch of panel background + a darker line, instead of two pastels touching.
 const EDGE_SIDES = ["t", "r", "b", "l"];
@@ -2323,7 +2323,7 @@ function paintMuseumEdges(root) {
   if (!root || !root.clientWidth) return;
   // Read the rows off the real layout instead of counting columns. The grid stopped being uniform the
   // moment folding arrived: a folded museum's tiles are display:none but still in the DOM, and its
-  // name strip spans the whole width — so index arithmetic (i % cols) drew every outline one museum
+  // name strip spans the whole width: so index arithmetic (i % cols) drew every outline one museum
   // out of step. Geometry cannot drift like that.
   const cells = [...root.querySelectorAll(".gcell")].filter(c => c.offsetParent !== null);
   if (!cells.length) return;
@@ -2394,7 +2394,7 @@ function wireMuseumFocus(root) {
     root.querySelectorAll(`.gcell[data-mus="${mus}"]`).forEach(c => c.classList.add("mus-on"));
     root.dataset.mus = mus;
     root.classList.add("mus-focus");
-    // a museum sitting at the right edge would run its full name straight into the panel wall —
+    // a museum sitting at the right edge would run its full name straight into the panel wall , 
     // slide the name left instead (over its greyed-out neighbours) so the whole of it is readable
     const lab = root.querySelector(".gcell.mus-on .mlabel");
     if (lab) {
@@ -2484,7 +2484,7 @@ function renderPanel() {
     const k = `${w.lat.toFixed(5)},${w.lon.toFixed(5)}`;
     if (!groups.has(k)) groups.set(k, {
       location: painted ? (w.p.creation_place || t("Unknown")) : (locName(w.p) || t("Location")),
-      city: painted ? "" : (w.p.city || ""), items: [], key: k,   // key = place, to scroll here from a marker
+      city: painted ? "" : (w.p.city || ""), items: [], key: k,  // key = place, to scroll here from a marker
     });
     groups.get(k).items.push(w);
   }
@@ -2517,7 +2517,7 @@ function renderPanel() {
     // Same idea as the museums, one field further out: a run of works that belong together sits on one
     // continuous ground with its name written above it. By painter that ground is the painter's OWN
     // colour from the map; by year it is a place along a sand→dusk ramp, so the panel reads as time.
-    // By title there is nothing to group — an alphabet is not a subject — so those stay plain tiles.
+    // By title there is nothing to group: an alphabet is not a subject: so those stay plain tiles.
     runs = panelSort === "painter" ? painterRuns(flat)
          : panelSort === "year" ? periodRuns(flat) : null;
     if (runs) {
@@ -2547,7 +2547,7 @@ let _revealT = 0;
 function revealMuseumInPanel(key) {
   if (view.table) setTableView(false);               // the list lives under the map view
   if (!view.panel) { view.panel = true; setView(); }
-  if (panelSort !== "museum") {                      // asking "what is in this museum?" — so group by museum
+  if (panelSort !== "museum") {                      // asking "what is in this museum?": so group by museum
     panelSort = "museum";
     const sel = document.getElementById("pv-sort");
     if (sel) sel.value = "museum";
@@ -2560,7 +2560,7 @@ function revealMuseumInPanel(key) {
   let guard = 0;
   while (!ul.querySelector(sel) && panelHasMore() && guard++ < 1000) appendPanelChunk();
   const target = ul.querySelector(sel);
-  if (!target) return;                               // ungrouped gallery has no headers — nothing to scroll to
+  if (!target) return;                               // ungrouped gallery has no headers: nothing to scroll to
   const pr = panel.getBoundingClientRect(), tr = target.getBoundingClientRect();
   const head = document.getElementById("panel-top");           // sticky header sits over the top of the list
   const headH = head ? head.offsetHeight : 0;                  // …offset by its height so the museum isn't hidden under it
@@ -2577,10 +2577,10 @@ function revealMuseumInPanel(key) {
 }
 
 wireMuseumFocus(document.getElementById("worklist"));
-// Folding a group hides its rows in place — no re-render, so the scroll position does not jump and
+// Folding a group hides its rows in place: no re-render, so the scroll position does not jump and
 // the works that were already streamed stay streamed.
 // In the miniature view there is no header bar to click: the group's name lives in the coloured band
-// at the top of its first tile. So the band's label is the handle there — clicking it collapses the
+// at the top of its first tile. So the band's label is the handle there: clicking it collapses the
 // whole colour field down to that strip, which is the same idea the list does with its header.
 function setFoldGallery(mus, folded, relayout = true) {
   folded ? panelFolded.add("mus:" + mus) : panelFolded.delete("mus:" + mus);
@@ -2589,7 +2589,7 @@ function setFoldGallery(mus, folded, relayout = true) {
 }
 
 // Paint the folds onto whatever tiles are on screen. Called after a toggle, and again after every
-// streamed chunk — the panel renders in chunks, so a field folded before its later tiles arrived
+// streamed chunk: the panel renders in chunks, so a field folded before its later tiles arrived
 // would otherwise reappear open one scroll further down.
 function applyGalleryFolds(only) {
   const ul = document.getElementById("worklist");
@@ -2663,7 +2663,7 @@ document.getElementById("worklist").addEventListener("keydown", e => {
   // With 23 museums in view, folding them all turns the panel into an index you can scan.
   const foldAll = document.getElementById("pv-fold");
   if (foldAll) foldAll.addEventListener("click", () => {
-    // Fold every group the *plan* has, not only the ones streamed so far — with 23 museums in view
+    // Fold every group the *plan* has, not only the ones streamed so far: with 23 museums in view
     // most are still below the scroll, and folding what you can see is not folding all.
     const gallery = panelMode === "gallery";
     const keys = gallery
@@ -2678,7 +2678,7 @@ document.getElementById("worklist").addEventListener("keydown", e => {
     foldAll.title = anyOpen ? t("Unfold every group") : t("Fold every group");
   });
 
-  // ▶ Walk: the pictures now listed, one by one and full screen — the museum visit, on the phone.
+  // ▶ Walk: the pictures now listed, one by one and full screen: the museum visit, on the phone.
   // It opens the first thumbnail; the lightbox's own arrows (and a swipe) do the rest, and they
   // already pull in the next chunk when they reach the end of what is rendered.
   const walk = document.getElementById("pv-walk");
@@ -2710,7 +2710,7 @@ document.getElementById("worklist").addEventListener("keydown", e => {
           el.scrollTop + el.clientHeight >= el.scrollHeight - 700) appendPanelChunk();
     });
   });
-  // On a phone the panel has no scrollbar of its own — the page IS the scroller (see the mobile
+  // On a phone the panel has no scrollbar of its own: the page IS the scroller (see the mobile
   // block in style.css), so the window has to be able to ask for the next chunk too.
   window.addEventListener("scroll", () => {
     if (state.near || !panelHasMore()) return;
@@ -2759,7 +2759,7 @@ function fullImage(thumbUrl) {
   return /width=\d+/.test(thumbUrl) ? thumbUrl.replace(/width=\d+/, "width=1600") : thumbUrl;
 }
 // Every image is hosted on Wikimedia Commons (Special:FilePath or upload.wikimedia.org).
-// Derive the file description page so the viewer can see the actual licence — we credit
+// Derive the file description page so the viewer can see the actual licence: we credit
 // the source rather than asserting a licence per file.
 function commonsPage(url) {
   if (!url) return "";
@@ -2895,7 +2895,7 @@ document.addEventListener("click", e => {
 const workCard = document.getElementById("work-card");
 let wcWork = null;
 
-// ── "More on this subject" — works whose TITLE shares the same (rare) subject words ──
+// ── "More on this subject": works whose TITLE shares the same (rare) subject words ──
 // e.g. open a "Saint John the Baptist" → other John the Baptists. TF-IDF over title tokens so the
 // discriminative word (baptist) counts, not the common one (saint). No embeddings needed.
 const SUBJ_STOP = new Set(("the a an of and or in on at to with by from for as after before saint san sant santa " +
@@ -2940,7 +2940,7 @@ function renderSubject(qid) {
     items.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " · " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
 }
 
-// ── "Painters like this one" — style affinity from mean CLIP vectors (painter_affinity.py) ──
+// ── "Painters like this one": style affinity from mean CLIP vectors (painter_affinity.py) ──
 let painterAff = null, painterAffTried = false;
 async function loadPainterAff() {
   if (painterAff || painterAffTried) return painterAff;
@@ -2965,8 +2965,8 @@ async function renderAffinity(name) {
       `<span class="pdot" style="background:${colorFor(n)}"></span>${esc(pName(n))}</button>`).join("");
 }
 
-// ── "More you might like" (#4) — a per-device taste feed: aggregate the visual neighbours of the works
-// you've opened this session/before, minus what you've already seen. No account, no backend — localStorage.
+// ── "More you might like" (#4): a per-device taste feed: aggregate the visual neighbours of the works
+// you've opened this session/before, minus what you've already seen. No account, no backend: localStorage.
 function recordSeen(qid) {
   if (!qid) return;
   try {
@@ -3000,7 +3000,7 @@ async function renderForYou(curQid) {
     out.map(x => `<button type="button" class="wc-sim" data-qid="${x.p.qid}" title="${esc((x.p.painter || "") + " · " + (x.p.title || ""))}"><img src="${esc(x.p.image)}" loading="lazy" alt=""></button>`).join("") + `</div>`;
 }
 
-// "Visually similar" — CLIP nearest-neighbour QIDs, precomputed in artatlas/data/sim_neighbors.json
+// "Visually similar": CLIP nearest-neighbour QIDs, precomputed in artatlas/data/sim_neighbors.json
 let simNeighbors = null;
 async function loadSimNeighbors() {
   if (simNeighbors) return simNeighbors;
@@ -3079,11 +3079,11 @@ function openWorkCard(w) {
     `<div class="wc-similar" id="wc-similar"></div>` +
     `<div class="wc-similar" id="wc-foryou"></div></div>`;
   workCard.hidden = false;
-  renderThemeTags(w);        // "Crucifixion", "Saint Jerome"… — press one to see every other
-  renderAffinity(p.painter); // "painters like this one" (style affinity) — fills in async
-  renderSubject(p.qid);   // "more on this subject" (shared title words) — instant, no embeddings
-  renderSimilar(p.qid);   // "visually similar" (CLIP neighbours) — fills in async when available
-  renderForYou(p.qid);    // "more you might like" — from your browsing history (localStorage)
+  renderThemeTags(w);        // "Crucifixion", "Saint Jerome"…: press one to see every other
+  renderAffinity(p.painter); // "painters like this one" (style affinity): fills in async
+  renderSubject(p.qid);   // "more on this subject" (shared title words): instant, no embeddings
+  renderSimilar(p.qid);   // "visually similar" (CLIP neighbours): fills in async when available
+  renderForYou(p.qid);    // "more you might like": from your browsing history (localStorage)
   recordSeen(p.qid);      // remember this view for future "for you" suggestions
   if (meOn()) meDo("seen", p);   // Mis cuadros: opening the ficha is "seen"
   // reflect the open painting in the address bar → copying the URL shares this exact work
@@ -3100,7 +3100,7 @@ document.getElementById("wc-close").addEventListener("click", closeWorkCard);
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && document.getElementById("lightbox").hidden) closeWorkCard();
 });
-// fly the map to a work (resolve the full work object — table/ficha may hold a {p}-only wrapper)
+// fly the map to a work (resolve the full work object: table/ficha may hold a {p}-only wrapper)
 function flyToWork(w) {
   const full = (w && works.find(x => x.p === w.p)) || w;
   if (!full || full.lat == null || !full.marker) return;
@@ -3134,7 +3134,7 @@ function toast(msg) {
   clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("on"), 1700);
 }
 function shareWork(p) {
-  // share the per-work stub page (carries this painting's og:image so previews unfurl) — it
+  // share the per-work stub page (carries this painting's og:image so previews unfurl): it
   // redirects into the app at ?w=<qid>. Falls back to the app URL if there's no qid.
   const url = p.qid ? new URL("artatlas/w/" + p.qid + ".html", location.href).href : location.href;
   const title = `${p.title || "Painting"}${p.painter ? " · " + p.painter : ""}`;
@@ -3195,7 +3195,7 @@ function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum k
   const pl = placeFromURL();                     // the list under a ficha is part of the address too
   const mv = mapViewFromURL();                   // ?mv= wins: it is the last thing the reader saw
   const th = q.get("th");
-  const qq = q.get("q");                         // ?q=crucifixion — a shared search
+  const qq = q.get("q");                         // ?q=crucifixion: a shared search
   if (qq) {
     const box = document.getElementById("filter");
     if (box) { box.value = qq; box.dispatchEvent(new Event("input", { bubbles: true })); }
@@ -3222,7 +3222,7 @@ function deepLink() {   // ?w=<qid> → open that painting's ficha; ?m=<museum k
 }
 // Wikimedia Commons occasionally resets HTTP/2 under a burst of thumbnail requests
 // (big popup/table). Degrade a failed thumbnail to the neutral placeholder box instead
-// of a broken-image icon. (Capture phase — <img> error events don't bubble.)
+// of a broken-image icon. (Capture phase: <img> error events don't bubble.)
 document.addEventListener("error", e => {
   const img = e.target;
   if (img.tagName === "IMG" && (img.classList.contains("th") || img.classList.contains("tth"))) {
@@ -3338,7 +3338,7 @@ document.getElementById("locate").addEventListener("click", () => {
   }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
 });
 
-// ══ Game: guess the painting — author / date / where / which picture ═══════════════════════════
+// ══ Game: guess the painting: author / date / where / which picture ═══════════════════════════
 // Multiple choice. Difficulty = how CLOSE the wrong options are (Easy: very different; Hard: same
 // era/school/city + 5 choices instead of 3). All questions are generated live from `works`, reusing
 // ERA_OF / SCHOOL_OF / yearNum to pick "far" vs "near" distractors.
@@ -3444,11 +3444,11 @@ function gRender() {
   stage.innerHTML = fig +
     `<div class="g-answer"><div class="g-prompt">${q.prompt}</div>${body}` +
     `<div class="g-foot"><span class="g-feedback"></span><button class="g-next" type="button" hidden>Next →</button></div></div>` +
-    `<aside class="g-info"></aside>`;   // always in the layout (reserves its column) — invisible while empty
+    `<aside class="g-info"></aside>`;   // always in the layout (reserves its column): invisible while empty
 }
 
 // after answering, show whatever we know about the work: title, painter · year, where, size,
-// and a Wikipedia link if the record carries one — "everything we have".
+// and a Wikipedia link if the record carries one: "everything we have".
 function gInfoHTML(p, kind) {
   if (!p) return "";
   const wp = p.wikipedia_en || p.wikipedia || p.wiki;
@@ -3553,7 +3553,7 @@ function setGameView(on) {
     gLoadLevel(G.diff);                     // resume the target level where you left it
     gScore();
     if (!G.q || G.answered) gNewQuestion();  // fresh question only if none pending / already answered
-    else gRender();                          // otherwise restore the unanswered question — no dodging
+    else gRender();                          // otherwise restore the unanswered question: no dodging
   });
   document.getElementById("game-restart").addEventListener("click", () => { G.right = 0; G.total = 0; gStreak = 0; gScore(); gNewQuestion(); });
   document.getElementById("game-reset-all").addEventListener("click", () => {
@@ -3589,7 +3589,7 @@ function setGameView(on) {
 // ∝ how many that year. Group by period or school (same buckets as the painter selector).
 let chartGroup = "individual";   // "individual" | "period" | "school"
 let chartYW = 6.2;               // px per year on the x-axis (the compress/expand control changes it)
-let chartRows = [];              // the rendered rows — the hover tooltip reads from these
+let chartRows = [];              // the rendered rows: the hover tooltip reads from these
 const CHART_GROUP_COLORS = ["#7a4a2b", "#2e6b6b", "#7b3fb0", "#b8862d", "#3a6ea5", "#a03050", "#4a7a3a", "#8a5a8a"];
 function lifeSpan(slug) {
   const b = BORN[slug], d = DIED[slug];
@@ -3666,7 +3666,7 @@ function renderChart() {
   }
   parts.push("</svg>");
   host.innerHTML = parts.join("");
-  // frozen left column of painter names (individual only) — Excel-style, synced vertically on scroll
+  // frozen left column of painter names (individual only): Excel-style, synced vertically on scroll
   const namesEl = document.getElementById("chart-names"), inner = document.getElementById("chart-names-inner");
   if (namesEl && inner) {
     namesEl.hidden = agg;
@@ -3747,7 +3747,7 @@ let galaxyNames = "off";               // painter names: "off" | "dots" (per dot
 let galaxy3D = false;   // 3-D rotatable point cloud (canvas) vs the flat 2-D DOM map
 const CLUSTER_PALETTE = ["#c0392b", "#2a4d8f", "#2e7d5b", "#c8a24a", "#7b3fb0", "#e07b39", "#3a8fb0", "#a0518f", "#6a8f2a", "#8a5a3a", "#d04a7a", "#4aa0a0"];
 let _eraIdx = null, _schoolIdx = null;
-function galaxyColorOf(w) {   // colour a dot by the chosen facet — reveals whether it clusters
+function galaxyColorOf(w) {   // colour a dot by the chosen facet: reveals whether it clusters
   if (galaxyColorBy === "author") return colorFor(w.p.painter);
   if (!_eraIdx) { _eraIdx = Object.fromEntries(ERAS.map((g, i) => [g.key, i])); _schoolIdx = Object.fromEntries(SCHOOLS.map((g, i) => [g.key, i])); }
   const slug = GAME_SLUG_OF_NAME[w.p.painter];
@@ -3774,7 +3774,7 @@ function setAuthorFocus(slug) {
     // grey out every OTHER painter's dots (in any colour mode) so this painter's set pops
     rule += `#galaxy-plane .gx-dot:not([data-a="${slug}"]){background:#7c766b !important;opacity:.8}` +
       `#galaxy-plane .gx-dot[data-a="${slug}"]{opacity:1;z-index:5;box-shadow:0 0 0 1.5px #fff,0 1px 5px rgba(0,0,0,.5)}`;
-    if (galaxyNames === "centroid") {    // keep only the hovered painter's name — coloured and on top
+    if (galaxyNames === "centroid") {    // keep only the hovered painter's name: coloured and on top
       rule += `#galaxy-plane .gx-zone:not([data-a="${slug}"]){opacity:.08}` +
         `#galaxy-plane .gx-zone[data-a="${slug}"]{opacity:1;z-index:20}`;
     }
@@ -4032,7 +4032,7 @@ function setGalaxyWhat(what) {
 // ══ Who taught whom ══════════════════════════════════════════════════════════════════════════════
 // Wikidata records master and pupil (P1066/P802). Walked three steps out from the atlas' painters it
 // gives 4,558 names, which is a hairball; build_painter_tree.py keeps the 400 that say something
-// about us — ours, whoever taught or was taught by one of ours, and the bridges between two of ours.
+// about us: ours, whoever taught or was taught by one of ours, and the bridges between two of ours.
 // Drawn with time running left to right and one lane per painter, so a lineage reads as a staircase
 // down the centuries: Masaccio → Filippo Lippi → Botticelli → … → Bronzino.
 let treeData = null, treeP = null, ptSel = null;
@@ -4119,7 +4119,7 @@ async function drawPainterTree() {
     out += `<path class="pt-edge${dim ? " dim" : ""}" d="M${x1.toFixed(1)},${yy1.toFixed(1)} C${((x1 + x2) / 2).toFixed(1)},${yy1.toFixed(1)} ${((x1 + x2) / 2).toFixed(1)},${yy2.toFixed(1)} ${x2.toFixed(1)},${yy2.toFixed(1)}"/>`;
   }
   // the second kind of line: one painter painted the other. Dashed, and a different colour, because
-  // nothing passes down a portrait — it is company, homage, or a joke among colleagues.
+  // nothing passes down a portrait: it is company, homage, or a joke among colleagues.
   for (const [a, b, n] of portraits) {
     const x1 = X(nodes[a].b), yy1 = Y(a), x2 = X(nodes[b].b), yy2 = Y(b);
     const dim = near && !(near.has(a) && near.has(b));

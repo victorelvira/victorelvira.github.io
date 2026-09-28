@@ -1,5 +1,5 @@
 {
- "_doc": "French for the Atlas. Keyed by the English string itself, so anything not translated here simply stays in English instead of breaking. `blocks` replaces a whole element's HTML by id (paragraphs broken up by inline links, which cannot be translated phrase by phrase). Museum names do NOT live here — they come from Wikidata via artatlas/data/museum_i18n.json.",
+ "_doc": "French for the Atlas. Keyed by the English string itself, so anything not translated here simply stays in English instead of breaking. `blocks` replaces a whole element's HTML by id (paragraphs broken up by inline links, which cannot be translated phrase by phrase). Museum names do NOT live here: they come from Wikidata via artatlas/data/museum_i18n.json.",
  "lang": "fr",
  "ui": {
   "Interactive Atlas of Painting": "Atlas interactif de la peinture",

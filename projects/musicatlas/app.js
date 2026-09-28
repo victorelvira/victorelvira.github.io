@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.56.1";
-const BUILD_AT = "2026-09-17 15:11";
+const DATA_V = "0.59.0";
+const BUILD_AT = "2026-09-27 23:50";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que
@@ -1383,10 +1383,11 @@ function drawRec(row){
        ${mark(w,"catalogue")}${fromPage?`<span class="frompage" title="${esc(fromPage)}">from the page name</span>`:""}</div>` : "";
 
   const ROWS2=[["instrumentation","Scored for"],["date_composed","Composed"],
+    ["date_premiere","First performed"],
     ["duration_measured","Measured in recordings"],["duration_estimated","Editor's estimate"],
     ["dedication","Dedicated to"],["genre","Genre (Wikidata)"],["period_style","Style"]];
   const dl=ROWS2.filter(([f])=>F(w,f)).map(([f,l])=>{
-    let v=show(w,f); if(f==="date_composed") v=fmtDate(v);
+    let v=show(w,f); if(f==="date_composed"||f==="date_premiere") v=fmtDate(v);
     return `<dt>${l}</dt><dd>${esc(Array.isArray(v)?v.join(", "):v)}${mark(w,f)}`
          + `${mergedHTML(w,f)}</dd>`;}).join("");
 
