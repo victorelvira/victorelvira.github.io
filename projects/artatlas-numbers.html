@@ -316,7 +316,7 @@ const url = new URLSearchParams(location.search).get("lang");
 if (url && S[url]) lang = url;
 render();
 loadNames(lang).then(render);
-fetch("artatlas/data/stats.json?v=1.22.1").then(r => r.json()).then(d => { DATA = d; render(); })
+fetch("artatlas/data/stats.json?v=1.22.2").then(r => r.json()).then(d => { DATA = d; render(); })
   .catch(() => { document.getElementById("body").innerHTML = "<p>stats.json is not there yet.</p>"; });
 </script>
 </body>

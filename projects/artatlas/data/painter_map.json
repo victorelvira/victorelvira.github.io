@@ -2,204 +2,204 @@
  "_doc": "Painter fingerprints (museum-balanced, monochrome photos and sculpture left out), their 2-D MDS map and a split-half stability score. Built by scripts/painter_map.py from embeddings_robust.jsonl",
  "painters": {
   "Albrecht Dürer": {
-   "x": 0.644,
-   "y": 0.3605,
+   "x": 0.5845,
+   "y": 0.7497,
    "near": [
     "Lucas Cranach the Elder",
     "Hans Memling",
+    "Giorgione",
     "Titian",
     "Mantegna",
-    "Giovanni Bellini",
     "Rogier van der Weyden",
-    "Jan van Eyck",
-    "Raphael"
+    "Giovanni Bellini",
+    "Jan van Eyck"
    ],
    "sim": [
     0.964,
-    0.953,
-    0.941,
-    0.939,
-    0.935,
-    0.934,
-    0.927,
+    0.951,
+    0.948,
+    0.943,
+    0.936,
+    0.933,
+    0.932,
     0.927
    ],
-   "n_works": 117,
-   "n_museums": 45,
-   "stable": 0.95,
+   "n_works": 139,
+   "n_museums": 46,
+   "stable": 1.0,
    "median_rank": 1
   },
   "Andrea del Sarto": {
-   "x": 0.7745,
-   "y": 0.3855,
+   "x": 0.481,
+   "y": 0.8857,
    "near": [
     "Raphael",
     "Correggio",
     "Parmigianino",
     "Guido Reni",
-    "Murillo",
     "Annibale Carracci",
+    "Murillo",
     "Bronzino",
-    "Titian"
+    "Giovanni Bellini"
    ],
    "sim": [
-    0.979,
+    0.981,
     0.976,
-    0.966,
-    0.955,
-    0.947,
-    0.945,
-    0.943,
-    0.942
+    0.967,
+    0.956,
+    0.948,
+    0.948,
+    0.944,
+    0.939
    ],
-   "n_works": 93,
-   "n_museums": 47,
+   "n_works": 95,
+   "n_museums": 48,
    "stable": 0.95,
    "median_rank": 1
   },
   "Annibale Carracci": {
-   "x": 0.6945,
-   "y": 0.4557,
+   "x": 0.4517,
+   "y": 0.7804,
    "near": [
     "Guercino",
     "Veronese",
     "Guido Reni",
     "Luca Giordano",
-    "Titian",
     "Rubens",
     "Parmigianino",
-    "Correggio"
+    "Correggio",
+    "Caravaggio"
    ],
    "sim": [
-    0.978,
-    0.973,
+    0.977,
     0.973,
     0.972,
-    0.969,
+    0.971,
     0.964,
+    0.96,
     0.959,
-    0.958
+    0.955
    ],
-   "n_works": 183,
-   "n_museums": 77,
+   "n_works": 186,
+   "n_museums": 78,
    "stable": 1.0,
    "median_rank": 1
   },
   "Anthony van Dyck": {
-   "x": 0.7471,
-   "y": 0.6623,
+   "x": 0.2646,
+   "y": 0.7238,
    "near": [
     "Velázquez",
     "Rembrandt",
-    "Frans Hals",
-    "Rubens",
-    "Goya",
     "Titian",
+    "Rubens",
+    "Frans Hals",
+    "Goya",
     "Pompeo Batoni",
     "Murillo"
    ],
    "sim": [
-    0.959,
+    0.958,
     0.945,
-    0.931,
+    0.94,
     0.929,
-    0.927,
-    0.92,
-    0.916,
+    0.929,
+    0.926,
+    0.917,
     0.914
    ],
-   "n_works": 914,
-   "n_museums": 323,
+   "n_works": 917,
+   "n_museums": 324,
    "stable": 1.0,
    "median_rank": 1
   },
   "Artemisia Gentileschi": {
-   "x": 0.7953,
-   "y": 0.5338,
+   "x": 0.3363,
+   "y": 0.8438,
    "near": [
     "Guido Reni",
+    "Orazio Gentileschi",
     "Caravaggio",
     "Guercino",
     "Annibale Carracci",
-    "Titian",
     "Parmigianino",
     "Veronese",
     "Murillo"
    ],
    "sim": [
     0.955,
+    0.955,
     0.948,
     0.945,
-    0.937,
-    0.935,
+    0.936,
     0.93,
-    0.929,
+    0.928,
     0.923
    ],
-   "n_works": 63,
+   "n_works": 62,
    "n_museums": 49,
    "stable": 1.0,
    "median_rank": 1
   },
   "Botticelli": {
-   "x": 0.7247,
-   "y": 0.2349,
+   "x": 0.6283,
+   "y": 0.9151,
    "near": [
     "Fra Filippo Lippi",
     "Pietro Perugino",
-    "Giovanni Bellini",
     "Domenico Ghirlandaio",
+    "Giovanni Bellini",
     "Mantegna",
     "Raphael",
     "Rogier van der Weyden",
-    "Leonardo da Vinci"
+    "Fra Angelico"
    ],
    "sim": [
     0.974,
+    0.971,
     0.97,
-    0.969,
-    0.969,
+    0.97,
     0.964,
     0.961,
     0.945,
     0.939
    ],
-   "n_works": 145,
-   "n_museums": 68,
+   "n_works": 147,
+   "n_museums": 69,
    "stable": 1.0,
    "median_rank": 1
   },
   "Bronzino": {
-   "x": 0.729,
-   "y": 0.3837,
+   "x": 0.5213,
+   "y": 0.8296,
    "near": [
     "Raphael",
     "Parmigianino",
-    "Lucas Cranach the Elder",
     "Andrea del Sarto",
+    "Lucas Cranach the Elder",
     "Titian",
-    "Albrecht Dürer",
+    "Giorgione",
     "Guido Reni",
     "Correggio"
    ],
    "sim": [
+    0.951,
     0.948,
-    0.945,
     0.944,
-    0.943,
-    0.941,
-    0.926,
-    0.925,
-    0.924
+    0.944,
+    0.937,
+    0.931,
+    0.929,
+    0.928
    ],
-   "n_works": 96,
-   "n_museums": 58,
+   "n_works": 100,
+   "n_museums": 61,
    "stable": 0.95,
    "median_rank": 1
   },
   "Camille Pissarro": {
-   "x": 0.0707,
-   "y": 0.7007,
+   "x": 0.5376,
+   "y": 0.0423,
    "near": [
     "Claude Monet",
     "Vincent van Gogh",
@@ -211,23 +211,23 @@
     "Edgar Degas"
    ],
    "sim": [
-    0.927,
+    0.928,
     0.924,
-    0.911,
+    0.91,
     0.91,
     0.903,
-    0.854,
-    0.842,
-    0.842
+    0.853,
+    0.846,
+    0.836
    ],
-   "n_works": 536,
-   "n_museums": 199,
+   "n_works": 539,
+   "n_museums": 200,
    "stable": 1.0,
    "median_rank": 1
   },
   "Canaletto": {
-   "x": 0.238,
-   "y": 0.0,
+   "x": 0.0385,
+   "y": 0.3256,
    "near": [
     "Francesco Guardi",
     "J.M.W. Turner",
@@ -235,45 +235,45 @@
     "Giovanni Battista Tiepolo",
     "Pieter Bruegel the Elder",
     "Nicolas Poussin",
-    "Veronese",
-    "Caspar David Friedrich"
+    "Caspar David Friedrich",
+    "Veronese"
    ],
    "sim": [
     0.967,
-    0.799,
+    0.801,
     0.781,
-    0.716,
-    0.708,
+    0.715,
+    0.71,
     0.707,
-    0.705,
-    0.703
+    0.706,
+    0.706
    ],
-   "n_works": 330,
-   "n_museums": 133,
+   "n_works": 336,
+   "n_museums": 134,
    "stable": 1.0,
    "median_rank": 1
   },
   "Caravaggio": {
-   "x": 0.7388,
-   "y": 0.5125,
+   "x": 0.3796,
+   "y": 0.8108,
    "near": [
     "Guercino",
     "Annibale Carracci",
+    "Orazio Gentileschi",
     "Artemisia Gentileschi",
     "Luca Giordano",
     "Guido Reni",
     "Ribera",
-    "Georges de La Tour",
-    "Titian"
+    "Georges de La Tour"
    ],
    "sim": [
     0.958,
-    0.956,
+    0.955,
+    0.95,
     0.948,
-    0.946,
+    0.945,
     0.945,
     0.937,
-    0.935,
     0.935
    ],
    "n_works": 91,
@@ -282,55 +282,55 @@
    "median_rank": 1
   },
   "Caspar David Friedrich": {
-   "x": 0.2595,
-   "y": 0.8424,
+   "x": 0.356,
+   "y": 0.1531,
    "near": [
     "J.M.W. Turner",
     "Claude Monet",
     "Vincent van Gogh",
     "Camille Pissarro",
-    "Pieter Bruegel the Elder",
     "Claude Lorrain",
-    "Ignacio Zuloaga",
-    "Eugène Delacroix"
+    "Pieter Bruegel the Elder",
+    "Eugène Delacroix",
+    "Ignacio Zuloaga"
    ],
    "sim": [
-    0.874,
+    0.877,
     0.819,
-    0.806,
-    0.803,
+    0.809,
+    0.804,
+    0.797,
     0.796,
-    0.794,
-    0.783,
-    0.783
+    0.789,
+    0.786
    ],
-   "n_works": 155,
-   "n_museums": 60,
+   "n_works": 165,
+   "n_museums": 61,
    "stable": 1.0,
    "median_rank": 1
   },
   "Claude Lorrain": {
-   "x": 0.5738,
-   "y": 1.0,
+   "x": 0.0,
+   "y": 0.4484,
    "near": [
     "J.M.W. Turner",
     "Francesco Guardi",
     "Nicolas Poussin",
-    "Eugène Delacroix",
     "Caspar David Friedrich",
+    "Eugène Delacroix",
     "Canaletto",
     "Annibale Carracci",
     "Veronese"
    ],
    "sim": [
-    0.865,
+    0.861,
     0.839,
-    0.83,
+    0.831,
     0.797,
-    0.794,
+    0.797,
     0.781,
     0.77,
-    0.766
+    0.765
    ],
    "n_works": 194,
    "n_museums": 111,
@@ -338,8 +338,8 @@
    "median_rank": 1
   },
   "Claude Monet": {
-   "x": 0.0048,
-   "y": 0.6531,
+   "x": 0.613,
+   "y": 0.0,
    "near": [
     "Georges Seurat",
     "Camille Pissarro",
@@ -352,106 +352,106 @@
    ],
    "sim": [
     0.941,
+    0.928,
     0.927,
-    0.927,
-    0.912,
-    0.902,
-    0.867,
-    0.862,
+    0.913,
+    0.901,
+    0.868,
+    0.86,
     0.839
    ],
-   "n_works": 913,
-   "n_museums": 261,
+   "n_works": 949,
+   "n_museums": 263,
    "stable": 1.0,
    "median_rank": 1
   },
   "Correggio": {
-   "x": 0.7602,
-   "y": 0.3872,
+   "x": 0.4873,
+   "y": 0.874,
    "near": [
     "Andrea del Sarto",
     "Raphael",
     "Parmigianino",
     "Guido Reni",
     "Annibale Carracci",
-    "Murillo",
     "Leonardo da Vinci",
+    "Murillo",
     "Guercino"
    ],
    "sim": [
     0.976,
-    0.973,
+    0.974,
     0.966,
     0.965,
-    0.958,
-    0.951,
+    0.959,
+    0.95,
     0.95,
     0.947
    ],
-   "n_works": 102,
-   "n_museums": 56,
+   "n_works": 105,
+   "n_museums": 57,
    "stable": 1.0,
    "median_rank": 1
   },
   "Diego Rivera": {
-   "x": 0.1258,
-   "y": 0.2886,
+   "x": 0.9319,
+   "y": 0.3554,
    "near": [
     "Pablo Picasso",
-    "Gustav Klimt",
     "Salvador Dalí",
+    "Gustav Klimt",
     "Edvard Munch",
     "Paul Gauguin",
     "Paul Cézanne",
     "Vincent van Gogh",
-    "Edgar Degas"
+    "Paolo Uccello"
    ],
    "sim": [
-    0.892,
-    0.869,
-    0.869,
-    0.841,
-    0.841,
-    0.826,
-    0.817,
-    0.815
+    0.883,
+    0.877,
+    0.865,
+    0.831,
+    0.828,
+    0.818,
+    0.809,
+    0.807
    ],
-   "n_works": 25,
-   "n_museums": 19,
+   "n_works": 30,
+   "n_museums": 22,
    "stable": 1.0,
    "median_rank": 1
   },
   "Domenico Ghirlandaio": {
-   "x": 0.7171,
-   "y": 0.2091,
+   "x": 0.6655,
+   "y": 0.924,
    "near": [
     "Botticelli",
     "Pietro Perugino",
     "Fra Filippo Lippi",
-    "Piero della Francesca",
     "Mantegna",
+    "Piero della Francesca",
     "Giovanni Bellini",
-    "Rogier van der Weyden",
-    "Fra Angelico"
+    "Fra Angelico",
+    "Rogier van der Weyden"
    ],
    "sim": [
-    0.969,
-    0.967,
-    0.962,
-    0.957,
-    0.955,
+    0.97,
+    0.97,
+    0.966,
+    0.958,
     0.954,
-    0.951,
+    0.95,
+    0.949,
     0.947
    ],
-   "n_works": 79,
-   "n_museums": 43,
-   "stable": 0.9,
+   "n_works": 103,
+   "n_museums": 49,
+   "stable": 1.0,
    "median_rank": 1
   },
   "Duccio": {
-   "x": 0.7153,
-   "y": 0.0564,
+   "x": 0.7977,
+   "y": 1.0,
    "near": [
     "Giotto",
     "Fra Angelico",
@@ -460,30 +460,30 @@
     "Mantegna",
     "Domenico Ghirlandaio",
     "Botticelli",
-    "Pietro Perugino"
+    "Paolo Uccello"
    ],
    "sim": [
     0.982,
-    0.967,
-    0.941,
-    0.936,
-    0.912,
-    0.907,
+    0.97,
+    0.944,
+    0.934,
+    0.913,
+    0.908,
     0.906,
     0.904
    ],
-   "n_works": 58,
-   "n_museums": 25,
-   "stable": 0.35,
-   "median_rank": 2
+   "n_works": 61,
+   "n_museums": 26,
+   "stable": 0.55,
+   "median_rank": 1
   },
   "Edgar Degas": {
-   "x": 0.3027,
-   "y": 0.5781,
+   "x": 0.6072,
+   "y": 0.3302,
    "near": [
     "Édouard Manet",
-    "Joaquín Sorolla",
     "Pierre-Auguste Renoir",
+    "Joaquín Sorolla",
     "Edvard Munch",
     "Paul Gauguin",
     "Ignacio Zuloaga",
@@ -491,23 +491,23 @@
     "Vincent van Gogh"
    ],
    "sim": [
-    0.96,
-    0.933,
-    0.928,
-    0.921,
-    0.913,
-    0.901,
-    0.893,
-    0.887
+    0.95,
+    0.932,
+    0.925,
+    0.922,
+    0.915,
+    0.89,
+    0.89,
+    0.886
    ],
-   "n_works": 333,
-   "n_museums": 105,
+   "n_works": 382,
+   "n_museums": 118,
    "stable": 1.0,
    "median_rank": 1
   },
   "Edvard Munch": {
-   "x": 0.1151,
-   "y": 0.5348,
+   "x": 0.7371,
+   "y": 0.1915,
    "near": [
     "Paul Cézanne",
     "Paul Gauguin",
@@ -519,79 +519,79 @@
     "Georges Seurat"
    ],
    "sim": [
+    0.941,
     0.939,
-    0.937,
-    0.926,
-    0.921,
+    0.927,
+    0.922,
     0.905,
-    0.905,
+    0.904,
     0.9,
-    0.888
+    0.889
    ],
-   "n_works": 1391,
-   "n_museums": 89,
+   "n_works": 1416,
+   "n_museums": 90,
    "stable": 1.0,
    "median_rank": 1
   },
   "El Greco": {
-   "x": 0.6038,
-   "y": 0.4454,
+   "x": 0.5335,
+   "y": 0.6869,
    "near": [
     "Zurbarán",
     "Ribera",
     "Tintoretto",
-    "Annibale Carracci",
     "Titian",
+    "Annibale Carracci",
     "Guido Reni",
     "Guercino",
-    "Rubens"
+    "Albrecht Dürer"
    ],
    "sim": [
     0.944,
-    0.942,
+    0.941,
     0.935,
+    0.929,
     0.925,
-    0.922,
     0.915,
     0.913,
-    0.907
+    0.908
    ],
-   "n_works": 321,
-   "n_museums": 144,
+   "n_works": 324,
+   "n_museums": 145,
    "stable": 1.0,
    "median_rank": 1
   },
   "Eugène Delacroix": {
-   "x": 0.5416,
-   "y": 0.6102,
+   "x": 0.403,
+   "y": 0.5391,
    "near": [
     "Rubens",
     "Giovanni Battista Tiepolo",
     "Goya",
-    "Luca Giordano",
     "Annibale Carracci",
-    "Titian",
+    "Luca Giordano",
     "Tintoretto",
-    "Veronese"
+    "Veronese",
+    "Titian"
    ],
    "sim": [
-    0.932,
-    0.93,
-    0.907,
-    0.907,
+    0.931,
+    0.928,
+    0.909,
     0.905,
-    0.903,
-    0.902,
-    0.897
+    0.905,
+    0.901,
+    0.896,
+    0.895
    ],
-   "n_works": 381,
-   "n_museums": 141,
+   "n_works": 392,
+   "n_museums": 143,
    "stable": 1.0,
    "median_rank": 1
   },
   "Fra Angelico": {
-   "x": 0.6781,
-   "y": 0.1054,
+   "x": 0.7724,
+   "y": 0.9392,
    "near": [
     "Giotto",
     "Duccio",
@@ -603,27 +603,27 @@
     "Paolo Uccello"
    ],
    "sim": [
-    0.972,
-    0.967,
+    0.973,
+    0.97,
     0.965,
-    0.956,
-    0.947,
+    0.957,
+    0.949,
     0.94,
-    0.938,
-    0.934
+    0.939,
+    0.933
    ],
-   "n_works": 164,
-   "n_museums": 62,
+   "n_works": 200,
+   "n_museums": 64,
    "stable": 1.0,
    "median_rank": 1
   },
   "Fra Filippo Lippi": {
-   "x": 0.7396,
-   "y": 0.1509,
+   "x": 0.6914,
+   "y": 0.9775,
    "near": [
     "Botticelli",
-    "Fra Angelico",
     "Domenico Ghirlandaio",
+    "Fra Angelico",
     "Pietro Perugino",
     "Mantegna",
     "Giovanni Bellini",
@@ -632,22 +632,22 @@
    ],
    "sim": [
     0.974,
+    0.966,
     0.965,
-    0.962,
-    0.957,
-    0.952,
+    0.958,
+    0.953,
     0.944,
     0.943,
-    0.936
+    0.939
    ],
    "n_works": 82,
    "n_museums": 38,
-   "stable": 0.95,
+   "stable": 1.0,
    "median_rank": 1
   },
   "Francesco Guardi": {
-   "x": 0.2602,
-   "y": 0.2225,
+   "x": 0.1615,
+   "y": 0.3618,
    "near": [
     "Canaletto",
     "J.M.W. Turner",
@@ -660,50 +660,50 @@
    ],
    "sim": [
     0.967,
-    0.876,
+    0.878,
     0.839,
-    0.795,
-    0.786,
-    0.775,
+    0.793,
+    0.788,
+    0.778,
     0.771,
-    0.768
+    0.769
    ],
-   "n_works": 332,
+   "n_works": 333,
    "n_museums": 117,
    "stable": 1.0,
    "median_rank": 1
   },
   "Frans Hals": {
-   "x": 0.7916,
-   "y": 0.8104,
+   "x": 0.1064,
+   "y": 0.7199,
    "near": [
     "Velázquez",
     "Rembrandt",
     "Anthony van Dyck",
     "Hans Holbein the Younger",
     "Goya",
+    "Titian",
     "Jacques-Louis David",
-    "Pompeo Batoni",
-    "Albrecht Dürer"
+    "Pompeo Batoni"
    ],
    "sim": [
-    0.94,
-    0.935,
-    0.931,
+    0.939,
+    0.934,
+    0.929,
     0.887,
-    0.886,
-    0.855,
+    0.881,
+    0.856,
     0.853,
-    0.833
+    0.85
    ],
-   "n_works": 192,
-   "n_museums": 90,
+   "n_works": 215,
+   "n_museums": 99,
    "stable": 1.0,
    "median_rank": 1
   },
   "Georges Seurat": {
-   "x": 0.0,
-   "y": 0.5483,
+   "x": 0.7352,
+   "y": 0.0556,
    "near": [
     "Claude Monet",
     "Vincent van Gogh",
@@ -718,11 +718,11 @@
     0.941,
     0.927,
     0.919,
+    0.905,
     0.903,
-    0.903,
-    0.888,
-    0.859,
-    0.852
+    0.889,
+    0.858,
+    0.851
    ],
    "n_works": 143,
    "n_museums": 56,
@@ -730,36 +730,64 @@
    "median_rank": 1
   },
   "Georges de La Tour": {
-   "x": 0.7617,
-   "y": 0.5715,
+   "x": 0.4275,
+   "y": 0.6786,
    "near": [
     "Caravaggio",
     "Zurbarán",
     "Ribera",
+    "Orazio Gentileschi",
     "Vermeer",
     "Guercino",
-    "Guido Reni",
-    "Artemisia Gentileschi",
-    "El Greco"
+    "Giorgione",
+    "Guido Reni"
    ],
    "sim": [
     0.935,
     0.934,
     0.909,
+    0.893,
     0.89,
     0.888,
-    0.885,
-    0.884,
-    0.883
+    0.886,
+    0.885
    ],
    "n_works": 50,
    "n_museums": 37,
    "stable": 1.0,
    "median_rank": 1
   },
+  "Giorgione": {
+   "x": 0.51,
+   "y": 0.75,
+   "near": [
+    "Titian",
+    "Albrecht Dürer",
+    "Raphael",
+    "Bronzino",
+    "Parmigianino",
+    "Andrea del Sarto",
+    "Annibale Carracci",
+    "Lucas Cranach the Elder"
+   ],
+   "sim": [
+    0.951,
+    0.948,
+    0.935,
+    0.931,
+    0.927,
+    0.926,
+    0.924,
+    0.923
+   ],
+   "n_works": 37,
+   "n_museums": 21,
+   "stable": 0.9,
+   "median_rank": 1
+  },
   "Giotto": {
-   "x": 0.7169,
-   "y": 0.0689,
+   "x": 0.7833,
+   "y": 0.9818,
    "near": [
     "Duccio",
     "Fra Angelico",
@@ -767,27 +795,27 @@
     "Fra Filippo Lippi",
     "Domenico Ghirlandaio",
     "Mantegna",
-    "Pietro Perugino",
-    "Piero della Francesca"
+    "Piero della Francesca",
+    "Paolo Uccello"
    ],
    "sim": [
     0.982,
-    0.972,
-    0.956,
-    0.936,
+    0.973,
+    0.958,
+    0.939,
+    0.927,
+    0.924,
     0.918,
-    0.917,
-    0.914,
-    0.913
+    0.917
    ],
-   "n_works": 46,
-   "n_museums": 31,
-   "stable": 0.8,
+   "n_works": 121,
+   "n_museums": 35,
+   "stable": 0.85,
    "median_rank": 1
   },
   "Giovanni Battista Tiepolo": {
-   "x": 0.6709,
-   "y": 0.548,
+   "x": 0.3449,
+   "y": 0.7445,
    "near": [
     "Luca Giordano",
     "Rubens",
@@ -799,51 +827,51 @@
     "Tintoretto"
    ],
    "sim": [
-    0.955,
-    0.948,
+    0.956,
+    0.947,
     0.944,
-    0.942,
-    0.939,
-    0.93,
-    0.929,
-    0.922
+    0.94,
+    0.938,
+    0.928,
+    0.928,
+    0.921
    ],
-   "n_works": 244,
-   "n_museums": 107,
+   "n_works": 250,
+   "n_museums": 109,
    "stable": 1.0,
    "median_rank": 1
   },
   "Giovanni Bellini": {
-   "x": 0.7113,
-   "y": 0.2705,
+   "x": 0.6086,
+   "y": 0.8877,
    "near": [
+    "Botticelli",
     "Raphael",
     "Pietro Perugino",
-    "Botticelli",
     "Mantegna",
-    "Domenico Ghirlandaio",
     "Rogier van der Weyden",
-    "Leonardo da Vinci",
-    "Hans Memling"
+    "Domenico Ghirlandaio",
+    "Hans Memling",
+    "Leonardo da Vinci"
    ],
    "sim": [
     0.97,
     0.969,
-    0.969,
-    0.964,
-    0.954,
-    0.952,
-    0.949,
+    0.966,
+    0.962,
+    0.951,
+    0.95,
+    0.948,
     0.948
    ],
-   "n_works": 155,
+   "n_works": 154,
    "n_museums": 79,
    "stable": 1.0,
    "median_rank": 1
   },
   "Goya": {
-   "x": 0.609,
-   "y": 0.6696,
+   "x": 0.3417,
+   "y": 0.5775,
    "near": [
     "Jacques-Louis David",
     "Velázquez",
@@ -851,45 +879,45 @@
     "Anthony van Dyck",
     "Pompeo Batoni",
     "Eugène Delacroix",
-    "Rubens",
-    "Titian"
+    "Titian",
+    "Rubens"
    ],
    "sim": [
-    0.955,
+    0.956,
     0.945,
     0.935,
-    0.927,
+    0.926,
     0.916,
-    0.907,
-    0.892,
-    0.888
+    0.909,
+    0.9,
+    0.895
    ],
-   "n_works": 422,
-   "n_museums": 130,
+   "n_works": 430,
+   "n_museums": 133,
    "stable": 1.0,
    "median_rank": 1
   },
   "Guercino": {
-   "x": 0.7801,
-   "y": 0.4604,
+   "x": 0.4033,
+   "y": 0.8631,
    "near": [
     "Guido Reni",
     "Annibale Carracci",
     "Luca Giordano",
     "Veronese",
     "Caravaggio",
-    "Titian",
     "Murillo",
+    "Orazio Gentileschi",
     "Correggio"
    ],
    "sim": [
     0.978,
-    0.978,
+    0.977,
     0.968,
     0.959,
     0.958,
-    0.956,
     0.955,
+    0.95,
     0.947
    ],
    "n_works": 213,
@@ -898,26 +926,26 @@
    "median_rank": 1
   },
   "Guido Reni": {
-   "x": 0.7459,
-   "y": 0.4533,
+   "x": 0.4336,
+   "y": 0.8336,
    "near": [
     "Guercino",
     "Annibale Carracci",
     "Correggio",
     "Murillo",
-    "Titian",
+    "Orazio Gentileschi",
     "Parmigianino",
-    "Artemisia Gentileschi",
-    "Andrea del Sarto"
+    "Andrea del Sarto",
+    "Artemisia Gentileschi"
    ],
    "sim": [
     0.978,
-    0.973,
+    0.972,
     0.965,
     0.961,
-    0.959,
+    0.96,
+    0.957,
     0.956,
-    0.955,
     0.955
    ],
    "n_works": 226,
@@ -926,64 +954,64 @@
    "median_rank": 1
   },
   "Gustav Klimt": {
-   "x": 0.1399,
-   "y": 0.3733,
+   "x": 0.8647,
+   "y": 0.3177,
    "near": [
-    "Diego Rivera",
     "Edvard Munch",
+    "Diego Rivera",
+    "Edgar Degas",
     "Georges Seurat",
     "Vincent van Gogh",
-    "Edgar Degas",
     "Paul Gauguin",
     "Pablo Picasso",
     "Pierre-Auguste Renoir"
    ],
    "sim": [
-    0.869,
-    0.866,
-    0.859,
+    0.867,
+    0.865,
+    0.863,
     0.858,
-    0.854,
-    0.851,
+    0.857,
+    0.853,
     0.848,
     0.84
    ],
-   "n_works": 108,
+   "n_works": 109,
    "n_museums": 38,
    "stable": 1.0,
    "median_rank": 1
   },
   "Hans Holbein the Younger": {
-   "x": 1.0,
-   "y": 0.586,
+   "x": 0.912,
+   "y": 0.8361,
    "near": [
     "Frans Hals",
-    "Velázquez",
     "Albrecht Dürer",
+    "Velázquez",
     "Lucas Cranach the Elder",
     "Anthony van Dyck",
     "Hans Memling",
     "Rembrandt",
-    "Bronzino"
+    "Titian"
    ],
    "sim": [
     0.887,
     0.885,
-    0.884,
-    0.879,
+    0.885,
+    0.88,
     0.875,
     0.864,
     0.859,
-    0.834
+    0.856
    ],
-   "n_works": 142,
+   "n_works": 143,
    "n_museums": 68,
    "stable": 1.0,
    "median_rank": 1
   },
   "Hans Memling": {
-   "x": 0.6882,
-   "y": 0.2435,
+   "x": 0.6621,
+   "y": 0.8676,
    "near": [
     "Rogier van der Weyden",
     "Lucas Cranach the Elder",
@@ -991,27 +1019,27 @@
     "Giovanni Bellini",
     "Jan van Eyck",
     "Domenico Ghirlandaio",
-    "Pietro Perugino",
-    "Piero della Francesca"
+    "Piero della Francesca",
+    "Pietro Perugino"
    ],
    "sim": [
-    0.969,
+    0.97,
     0.954,
-    0.953,
+    0.951,
     0.948,
     0.946,
-    0.943,
-    0.926,
-    0.925
+    0.934,
+    0.923,
+    0.922
    ],
-   "n_works": 141,
+   "n_works": 143,
    "n_museums": 56,
    "stable": 1.0,
    "median_rank": 1
   },
   "Hieronymus Bosch": {
-   "x": 0.5777,
-   "y": 0.2692,
+   "x": 0.679,
+   "y": 0.743,
    "near": [
     "Mantegna",
     "Rogier van der Weyden",
@@ -1019,31 +1047,31 @@
     "Pieter Bruegel the Elder",
     "Pietro Perugino",
     "Botticelli",
-    "Lucas Cranach the Elder",
+    "Domenico Ghirlandaio",
     "Jan van Eyck"
    ],
    "sim": [
-    0.92,
+    0.919,
     0.917,
-    0.916,
-    0.911,
-    0.905,
+    0.915,
+    0.912,
+    0.904,
     0.904,
     0.902,
     0.902
    ],
-   "n_works": 77,
+   "n_works": 78,
    "n_museums": 36,
    "stable": 1.0,
    "median_rank": 1
   },
   "Ignacio Zuloaga": {
-   "x": 0.3901,
-   "y": 0.5986,
+   "x": 0.5289,
+   "y": 0.4016,
    "near": [
     "Édouard Manet",
-    "Edgar Degas",
     "Joaquín Sorolla",
+    "Edgar Degas",
     "Julio Romero de Torres",
     "Goya",
     "Eugène Delacroix",
@@ -1051,13 +1079,13 @@
     "Velázquez"
    ],
    "sim": [
-    0.922,
-    0.901,
+    0.918,
     0.898,
-    0.891,
+    0.89,
+    0.89,
     0.877,
-    0.863,
-    0.856,
+    0.864,
+    0.858,
     0.853
    ],
    "n_works": 44,
@@ -1066,8 +1094,8 @@
    "median_rank": 1
   },
   "J.M.W. Turner": {
-   "x": 0.343,
-   "y": 0.9086,
+   "x": 0.2313,
+   "y": 0.2031,
    "near": [
     "Francesco Guardi",
     "Caspar David Friedrich",
@@ -1079,23 +1107,23 @@
     "Goya"
    ],
    "sim": [
-    0.876,
-    0.874,
-    0.865,
-    0.839,
-    0.802,
-    0.799,
-    0.792,
-    0.785
+    0.878,
+    0.877,
+    0.861,
+    0.842,
+    0.804,
+    0.801,
+    0.795,
+    0.788
    ],
-   "n_works": 490,
-   "n_museums": 86,
+   "n_works": 623,
+   "n_museums": 89,
    "stable": 1.0,
    "median_rank": 1
   },
   "Jacques-Louis David": {
-   "x": 0.6812,
-   "y": 0.6405,
+   "x": 0.3097,
+   "y": 0.6727,
    "near": [
     "Goya",
     "Pompeo Batoni",
@@ -1103,27 +1131,27 @@
     "Anthony van Dyck",
     "Rubens",
     "Rembrandt",
-    "Titian",
-    "Guido Reni"
+    "Guido Reni",
+    "Titian"
    ],
    "sim": [
-    0.955,
+    0.956,
     0.935,
     0.92,
     0.911,
     0.909,
     0.909,
-    0.906,
-    0.903
+    0.903,
+    0.901
    ],
-   "n_works": 118,
+   "n_works": 119,
    "n_museums": 64,
    "stable": 1.0,
    "median_rank": 1
   },
   "Jan van Eyck": {
-   "x": 0.6806,
-   "y": 0.2054,
+   "x": 0.6871,
+   "y": 0.8886,
    "near": [
     "Rogier van der Weyden",
     "Hans Memling",
@@ -1135,23 +1163,23 @@
     "Fra Angelico"
    ],
    "sim": [
-    0.97,
+    0.969,
     0.946,
-    0.941,
+    0.938,
     0.928,
     0.927,
     0.923,
-    0.923,
-    0.922
+    0.922,
+    0.919
    ],
-   "n_works": 52,
+   "n_works": 57,
    "n_museums": 25,
-   "stable": 0.8,
+   "stable": 0.95,
    "median_rank": 1
   },
   "Joaquín Sorolla": {
-   "x": 0.2757,
-   "y": 0.6245,
+   "x": 0.5484,
+   "y": 0.2787,
    "near": [
     "Édouard Manet",
     "Edgar Degas",
@@ -1163,51 +1191,51 @@
     "Vincent van Gogh"
    ],
    "sim": [
-    0.944,
-    0.933,
+    0.941,
+    0.925,
     0.9,
     0.898,
     0.887,
-    0.885,
+    0.884,
     0.879,
-    0.866
+    0.867
    ],
-   "n_works": 284,
+   "n_works": 285,
    "n_museums": 57,
    "stable": 1.0,
    "median_rank": 1
   },
   "Julio Romero de Torres": {
-   "x": 0.4198,
-   "y": 0.4708,
+   "x": 0.6257,
+   "y": 0.4951,
    "near": [
     "Ignacio Zuloaga",
     "Edgar Degas",
     "Édouard Manet",
     "Joaquín Sorolla",
-    "Titian",
     "Jacques-Louis David",
+    "Zurbarán",
     "Goya",
-    "Zurbarán"
+    "Giorgione"
    ],
    "sim": [
-    0.891,
-    0.872,
-    0.87,
+    0.89,
+    0.869,
+    0.867,
     0.852,
-    0.846,
-    0.839,
-    0.836,
-    0.835
+    0.837,
+    0.835,
+    0.834,
+    0.832
    ],
-   "n_works": 127,
+   "n_works": 133,
    "n_museums": 18,
    "stable": 1.0,
    "median_rank": 1
   },
   "Leonardo da Vinci": {
-   "x": 0.643,
-   "y": 0.3067,
+   "x": 0.6053,
+   "y": 0.8137,
    "near": [
     "Raphael",
     "Correggio",
@@ -1215,55 +1243,55 @@
     "Mantegna",
     "Botticelli",
     "Andrea del Sarto",
-    "Pietro Perugino",
-    "Albrecht Dürer"
+    "Albrecht Dürer",
+    "Pietro Perugino"
    ],
    "sim": [
-    0.958,
+    0.955,
     0.95,
-    0.949,
-    0.947,
+    0.948,
+    0.945,
     0.939,
-    0.938,
-    0.926,
-    0.923
+    0.936,
+    0.923,
+    0.92
    ],
-   "n_works": 32,
+   "n_works": 33,
    "n_museums": 22,
-   "stable": 0.45,
-   "median_rank": 2
+   "stable": 0.8,
+   "median_rank": 1
   },
   "Luca Giordano": {
-   "x": 0.8037,
-   "y": 0.5016,
+   "x": 0.3524,
+   "y": 0.8631,
    "near": [
     "Annibale Carracci",
     "Guercino",
     "Rubens",
     "Nicolas Poussin",
-    "Giovanni Battista Tiepolo",
     "Veronese",
+    "Giovanni Battista Tiepolo",
     "Guido Reni",
     "Caravaggio"
    ],
    "sim": [
-    0.972,
+    0.971,
     0.968,
     0.962,
     0.958,
-    0.955,
-    0.954,
+    0.956,
+    0.956,
     0.949,
-    0.946
+    0.945
    ],
-   "n_works": 295,
-   "n_museums": 121,
+   "n_works": 297,
+   "n_museums": 123,
    "stable": 1.0,
    "median_rank": 1
   },
   "Lucas Cranach the Elder": {
-   "x": 0.6783,
-   "y": 0.3245,
+   "x": 0.6095,
+   "y": 0.795,
    "near": [
     "Albrecht Dürer",
     "Hans Memling",
@@ -1272,7 +1300,7 @@
     "Raphael",
     "Jan van Eyck",
     "Giovanni Bellini",
-    "Mantegna"
+    "Titian"
    ],
    "sim": [
     0.964,
@@ -1281,120 +1309,120 @@
     0.942,
     0.928,
     0.928,
-    0.928,
+    0.927,
     0.925
    ],
-   "n_works": 661,
-   "n_museums": 194,
+   "n_works": 664,
+   "n_museums": 196,
    "stable": 1.0,
    "median_rank": 1
   },
   "Mantegna": {
-   "x": 0.6711,
-   "y": 0.288,
+   "x": 0.6168,
+   "y": 0.8369,
    "near": [
-    "Giovanni Bellini",
     "Botticelli",
+    "Giovanni Bellini",
     "Pietro Perugino",
-    "Raphael",
     "Domenico Ghirlandaio",
+    "Raphael",
     "Fra Filippo Lippi",
     "Leonardo da Vinci",
-    "Michelangelo"
+    "Masaccio"
    ],
    "sim": [
     0.964,
-    0.964,
-    0.959,
+    0.962,
+    0.958,
+    0.958,
     0.956,
-    0.955,
-    0.952,
-    0.947,
-    0.94
+    0.953,
+    0.945,
+    0.942
    ],
-   "n_works": 97,
-   "n_museums": 46,
-   "stable": 0.9,
+   "n_works": 101,
+   "n_museums": 48,
+   "stable": 1.0,
    "median_rank": 1
   },
   "Masaccio": {
-   "x": 0.7075,
-   "y": 0.1427,
+   "x": 0.7245,
+   "y": 0.9478,
    "near": [
     "Giotto",
     "Fra Angelico",
-    "Fra Filippo Lippi",
     "Duccio",
-    "Domenico Ghirlandaio",
+    "Fra Filippo Lippi",
     "Mantegna",
     "Piero della Francesca",
+    "Domenico Ghirlandaio",
     "Pietro Perugino"
    ],
    "sim": [
-    0.956,
-    0.956,
+    0.958,
+    0.957,
+    0.944,
     0.943,
-    0.941,
-    0.94,
-    0.939,
+    0.942,
     0.938,
-    0.936
+    0.938,
+    0.937
    ],
-   "n_works": 23,
-   "n_museums": 12,
-   "stable": 0.15,
-   "median_rank": 7
+   "n_works": 25,
+   "n_museums": 13,
+   "stable": 0.1,
+   "median_rank": 6
   },
   "Michelangelo": {
-   "x": 0.7866,
-   "y": 0.2659,
+   "x": 0.7018,
+   "y": 0.8248,
    "near": [
     "Mantegna",
-    "Botticelli",
-    "Raphael",
-    "Pietro Perugino",
     "Annibale Carracci",
+    "Pietro Perugino",
+    "Botticelli",
     "Veronese",
-    "Giovanni Bellini",
-    "Fra Filippo Lippi"
+    "Raphael",
+    "Nicolas Poussin",
+    "Luca Giordano"
    ],
    "sim": [
-    0.94,
-    0.922,
-    0.915,
-    0.915,
-    0.91,
-    0.908,
-    0.894,
-    0.894
+    0.936,
+    0.907,
+    0.906,
+    0.906,
+    0.904,
+    0.903,
+    0.89,
+    0.889
    ],
-   "n_works": 35,
-   "n_museums": 6,
-   "stable": 0.0,
-   "median_rank": 17
+   "n_works": 54,
+   "n_museums": 8,
+   "stable": 0.5,
+   "median_rank": 1
   },
   "Murillo": {
-   "x": 0.7539,
-   "y": 0.5029,
+   "x": 0.3859,
+   "y": 0.8079,
    "near": [
     "Guido Reni",
     "Guercino",
     "Correggio",
     "Annibale Carracci",
-    "Titian",
     "Andrea del Sarto",
     "Rubens",
-    "Parmigianino"
+    "Parmigianino",
+    "Titian"
    ],
    "sim": [
     0.961,
     0.955,
-    0.951,
-    0.949,
+    0.95,
     0.948,
-    0.947,
+    0.948,
     0.944,
-    0.941
+    0.94,
+    0.939
    ],
    "n_works": 264,
    "n_museums": 120,
@@ -1402,8 +1430,8 @@
    "median_rank": 1
   },
   "Nicolas Poussin": {
-   "x": 0.8462,
-   "y": 0.4777,
+   "x": 0.3285,
+   "y": 0.9019,
    "near": [
     "Luca Giordano",
     "Annibale Carracci",
@@ -1411,46 +1439,74 @@
     "Giovanni Battista Tiepolo",
     "Guercino",
     "Rubens",
-    "Titian",
-    "Guido Reni"
+    "Guido Reni",
+    "Orazio Gentileschi"
    ],
    "sim": [
     0.958,
     0.951,
-    0.949,
-    0.942,
+    0.95,
+    0.94,
     0.933,
     0.93,
-    0.916,
-    0.909
+    0.909,
+    0.907
    ],
-   "n_works": 207,
+   "n_works": 211,
    "n_museums": 72,
    "stable": 1.0,
    "median_rank": 1
   },
+  "Orazio Gentileschi": {
+   "x": 0.4236,
+   "y": 0.8527,
+   "near": [
+    "Guido Reni",
+    "Artemisia Gentileschi",
+    "Annibale Carracci",
+    "Guercino",
+    "Caravaggio",
+    "Correggio",
+    "Parmigianino",
+    "Veronese"
+   ],
+   "sim": [
+    0.96,
+    0.955,
+    0.952,
+    0.95,
+    0.95,
+    0.934,
+    0.932,
+    0.929
+   ],
+   "n_works": 52,
+   "n_museums": 37,
+   "stable": 1.0,
+   "median_rank": 1
+  },
   "Pablo Picasso": {
-   "x": 0.1807,
-   "y": 0.3853,
+   "x": 0.8284,
+   "y": 0.3387,
    "near": [
     "Diego Rivera",
     "Edvard Munch",
     "Edgar Degas",
     "Salvador Dalí",
     "Gustav Klimt",
-    "Paul Cézanne",
     "Paul Gauguin",
+    "Paul Cézanne",
     "Édouard Manet"
    ],
    "sim": [
-    0.892,
+    0.883,
     0.879,
-    0.865,
+    0.87,
     0.857,
     0.848,
-    0.842,
-    0.842,
-    0.837
+    0.843,
+    0.843,
+    0.836
    ],
    "n_works": 33,
    "n_museums": 22,
@@ -1458,64 +1514,64 @@
    "median_rank": 1
   },
   "Paolo Uccello": {
-   "x": 0.5489,
-   "y": 0.1813,
+   "x": 0.7746,
+   "y": 0.7411,
    "near": [
     "Fra Angelico",
     "Piero della Francesca",
     "Mantegna",
     "Domenico Ghirlandaio",
-    "Hieronymus Bosch",
     "Giotto",
+    "Hieronymus Bosch",
     "Masaccio",
     "Fra Filippo Lippi"
    ],
    "sim": [
-    0.934,
-    0.929,
-    0.924,
+    0.933,
+    0.93,
+    0.928,
+    0.918,
     0.917,
-    0.916,
-    0.911,
-    0.911,
-    0.906
+    0.915,
+    0.909,
+    0.905
    ],
-   "n_works": 29,
-   "n_museums": 24,
-   "stable": 0.8,
+   "n_works": 32,
+   "n_museums": 25,
+   "stable": 0.85,
    "median_rank": 1
   },
   "Parmigianino": {
-   "x": 0.7574,
-   "y": 0.4231,
+   "x": 0.4618,
+   "y": 0.8476,
    "near": [
-    "Correggio",
     "Andrea del Sarto",
+    "Correggio",
     "Raphael",
-    "Titian",
     "Annibale Carracci",
     "Guido Reni",
     "Veronese",
-    "Rubens"
+    "Titian",
+    "Bronzino"
    ],
    "sim": [
-    0.966,
+    0.967,
     0.966,
     0.96,
-    0.959,
-    0.959,
-    0.956,
-    0.955,
-    0.945
+    0.96,
+    0.957,
+    0.957,
+    0.949,
+    0.948
    ],
-   "n_works": 57,
-   "n_museums": 32,
+   "n_works": 58,
+   "n_museums": 33,
    "stable": 0.9,
    "median_rank": 1
   },
   "Paul Cézanne": {
-   "x": 0.1278,
-   "y": 0.6055,
+   "x": 0.6439,
+   "y": 0.1484,
    "near": [
     "Paul Gauguin",
     "Vincent van Gogh",
@@ -1527,23 +1583,23 @@
     "Edgar Degas"
    ],
    "sim": [
-    0.959,
-    0.95,
-    0.939,
-    0.912,
-    0.911,
-    0.903,
-    0.902,
-    0.893
+    0.958,
+    0.949,
+    0.941,
+    0.913,
+    0.91,
+    0.905,
+    0.9,
+    0.89
    ],
-   "n_works": 585,
-   "n_museums": 166,
+   "n_works": 630,
+   "n_museums": 172,
    "stable": 1.0,
    "median_rank": 1
   },
   "Paul Gauguin": {
-   "x": 0.1537,
-   "y": 0.5618,
+   "x": 0.6771,
+   "y": 0.2052,
    "near": [
     "Paul Cézanne",
     "Vincent van Gogh",
@@ -1555,23 +1611,23 @@
     "Claude Monet"
    ],
    "sim": [
-    0.959,
-    0.953,
-    0.937,
+    0.958,
+    0.952,
+    0.939,
     0.919,
-    0.913,
+    0.915,
     0.91,
-    0.91,
-    0.902
+    0.909,
+    0.901
    ],
-   "n_works": 383,
-   "n_museums": 146,
+   "n_works": 390,
+   "n_museums": 149,
    "stable": 1.0,
    "median_rank": 1
   },
   "Piero della Francesca": {
-   "x": 0.6243,
-   "y": 0.2057,
+   "x": 0.7298,
+   "y": 0.8175,
    "near": [
     "Domenico Ghirlandaio",
     "Masaccio",
@@ -1579,111 +1635,111 @@
     "Paolo Uccello",
     "Fra Angelico",
     "Hans Memling",
-    "Rogier van der Weyden",
-    "Jan van Eyck"
+    "Jan van Eyck",
+    "Pietro Perugino"
    ],
    "sim": [
-    0.957,
+    0.954,
     0.938,
-    0.936,
-    0.929,
+    0.935,
+    0.93,
     0.926,
-    0.925,
+    0.923,
     0.923,
     0.923
    ],
-   "n_works": 31,
-   "n_museums": 20,
-   "stable": 0.75,
+   "n_works": 46,
+   "n_museums": 22,
+   "stable": 0.9,
    "median_rank": 1
   },
   "Pierre-Auguste Renoir": {
-   "x": 0.2383,
-   "y": 0.6621,
+   "x": 0.5683,
+   "y": 0.2252,
    "near": [
     "Edgar Degas",
     "Édouard Manet",
     "Paul Gauguin",
     "Edvard Munch",
     "Paul Cézanne",
-    "Vincent van Gogh",
     "Joaquín Sorolla",
+    "Vincent van Gogh",
     "Claude Monet"
    ],
    "sim": [
-    0.928,
+    0.932,
     0.925,
-    0.91,
-    0.905,
-    0.902,
-    0.885,
-    0.885,
-    0.862
+    0.909,
+    0.904,
+    0.9,
+    0.884,
+    0.882,
+    0.86
    ],
-   "n_works": 989,
-   "n_museums": 219,
+   "n_works": 1009,
+   "n_museums": 224,
    "stable": 1.0,
    "median_rank": 1
   },
   "Pieter Bruegel the Elder": {
-   "x": 0.3969,
-   "y": 0.3136,
+   "x": 0.7141,
+   "y": 0.5396,
    "near": [
     "Hieronymus Bosch",
     "Eugène Delacroix",
     "Paolo Uccello",
     "Tintoretto",
     "Nicolas Poussin",
-    "Titian",
+    "Albrecht Dürer",
     "Mantegna",
-    "Albrecht Dürer"
+    "Michelangelo"
    ],
    "sim": [
-    0.911,
-    0.854,
-    0.841,
-    0.835,
-    0.829,
+    0.912,
+    0.855,
+    0.843,
+    0.836,
+    0.831,
+    0.826,
     0.824,
-    0.823,
-    0.819
+    0.82
    ],
-   "n_works": 44,
+   "n_works": 46,
    "n_museums": 24,
    "stable": 1.0,
    "median_rank": 1
   },
   "Pietro Perugino": {
-   "x": 0.7484,
-   "y": 0.2057,
+   "x": 0.645,
+   "y": 0.9595,
    "near": [
     "Botticelli",
-    "Giovanni Bellini",
     "Domenico Ghirlandaio",
-    "Mantegna",
+    "Giovanni Bellini",
     "Fra Filippo Lippi",
+    "Mantegna",
     "Raphael",
     "Fra Angelico",
-    "Rogier van der Weyden"
+    "Masaccio"
    ],
    "sim": [
+    0.971,
     0.97,
-    0.969,
-    0.967,
-    0.959,
-    0.957,
-    0.955,
+    0.966,
+    0.958,
+    0.958,
+    0.953,
     0.94,
-    0.939
+    0.937
    ],
-   "n_works": 136,
-   "n_museums": 55,
+   "n_works": 149,
+   "n_museums": 59,
    "stable": 1.0,
    "median_rank": 1
   },
   "Pompeo Batoni": {
-   "x": 0.8758,
-   "y": 0.7294,
+   "x": 0.141,
+   "y": 0.8421,
    "near": [
     "Jacques-Louis David",
     "Anthony van Dyck",
@@ -1691,17 +1747,17 @@
     "Velázquez",
     "Rembrandt",
     "Rubens",
-    "Murillo",
-    "Titian"
+    "Titian",
+    "Murillo"
    ],
    "sim": [
     0.935,
+    0.917,
     0.916,
-    0.916,
-    0.892,
-    0.871,
+    0.891,
+    0.872,
     0.867,
-    0.855,
+    0.861,
     0.855
    ],
    "n_works": 183,
@@ -1710,83 +1766,83 @@
    "median_rank": 1
   },
   "Raphael": {
-   "x": 0.7331,
-   "y": 0.3392,
+   "x": 0.538,
+   "y": 0.8712,
    "near": [
     "Andrea del Sarto",
     "Correggio",
     "Giovanni Bellini",
     "Botticelli",
     "Parmigianino",
-    "Leonardo da Vinci",
     "Mantegna",
+    "Leonardo da Vinci",
     "Pietro Perugino"
    ],
    "sim": [
-    0.979,
-    0.973,
-    0.97,
+    0.981,
+    0.974,
+    0.969,
     0.961,
     0.96,
-    0.958,
     0.956,
-    0.955
+    0.955,
+    0.953
    ],
-   "n_works": 205,
-   "n_museums": 81,
-   "stable": 1.0,
+   "n_works": 224,
+   "n_museums": 82,
+   "stable": 0.95,
    "median_rank": 1
   },
   "Rembrandt": {
-   "x": 0.6831,
-   "y": 0.697,
+   "x": 0.2703,
+   "y": 0.639,
    "near": [
     "Velázquez",
     "Anthony van Dyck",
     "Goya",
     "Frans Hals",
+    "Titian",
     "Jacques-Louis David",
     "Ribera",
-    "Murillo",
-    "Rubens"
+    "Murillo"
    ],
    "sim": [
     0.95,
     0.945,
     0.935,
-    0.935,
+    0.934,
+    0.913,
     0.909,
-    0.903,
-    0.895,
-    0.894
+    0.902,
+    0.895
    ],
-   "n_works": 520,
-   "n_museums": 166,
+   "n_works": 532,
+   "n_museums": 167,
    "stable": 1.0,
    "median_rank": 1
   },
   "Ribera": {
-   "x": 0.7478,
-   "y": 0.5876,
+   "x": 0.3235,
+   "y": 0.7755,
    "near": [
     "El Greco",
     "Caravaggio",
+    "Titian",
     "Guercino",
     "Tintoretto",
-    "Annibale Carracci",
     "Zurbarán",
-    "Guido Reni",
-    "Titian"
+    "Annibale Carracci",
+    "Guido Reni"
    ],
    "sim": [
-    0.942,
+    0.941,
     0.937,
+    0.936,
     0.93,
     0.926,
     0.926,
-    0.926,
-    0.92,
-    0.917
+    0.925,
+    0.92
    ],
    "n_works": 231,
    "n_museums": 123,
@@ -1794,64 +1850,64 @@
    "median_rank": 1
   },
   "Rogier van der Weyden": {
-   "x": 0.716,
-   "y": 0.2321,
+   "x": 0.6497,
+   "y": 0.904,
    "near": [
-    "Jan van Eyck",
     "Hans Memling",
+    "Jan van Eyck",
     "Giovanni Bellini",
     "Domenico Ghirlandaio",
     "Botticelli",
     "Lucas Cranach the Elder",
     "Pietro Perugino",
-    "Albrecht Dürer"
+    "Mantegna"
    ],
    "sim": [
     0.97,
     0.969,
-    0.952,
     0.951,
+    0.947,
     0.945,
     0.942,
-    0.939,
+    0.936,
     0.934
    ],
-   "n_works": 75,
+   "n_works": 77,
    "n_museums": 38,
    "stable": 0.95,
    "median_rank": 1
   },
   "Rubens": {
-   "x": 0.6973,
-   "y": 0.5071,
+   "x": 0.4038,
+   "y": 0.7606,
    "near": [
     "Veronese",
     "Tintoretto",
-    "Titian",
     "Annibale Carracci",
     "Luca Giordano",
-    "Giovanni Battista Tiepolo",
+    "Titian",
     "Guido Reni",
-    "Guercino"
+    "Giovanni Battista Tiepolo",
+    "Parmigianino"
    ],
    "sim": [
     0.972,
     0.968,
     0.964,
-    0.964,
     0.962,
-    0.948,
+    0.959,
     0.947,
-    0.946
+    0.947,
+    0.947
    ],
-   "n_works": 1152,
-   "n_museums": 278,
+   "n_works": 1154,
+   "n_museums": 279,
    "stable": 1.0,
    "median_rank": 1
   },
   "Salvador Dalí": {
-   "x": 0.1624,
-   "y": 0.1599,
+   "x": 1.0,
+   "y": 0.4409,
    "near": [
     "Diego Rivera",
     "Pablo Picasso",
@@ -1863,79 +1919,79 @@
     "Edgar Degas"
    ],
    "sim": [
-    0.869,
+    0.877,
     0.857,
     0.795,
-    0.784,
+    0.788,
     0.761,
+    0.756,
     0.754,
-    0.753,
-    0.748
+    0.749
    ],
    "n_works": 21,
    "n_museums": 11,
-   "stable": 0.2,
-   "median_rank": 3
+   "stable": 0.35,
+   "median_rank": 2
   },
   "Tintoretto": {
-   "x": 0.6752,
-   "y": 0.4583,
+   "x": 0.4653,
+   "y": 0.757,
    "near": [
+    "Titian",
     "Veronese",
     "Rubens",
-    "Titian",
     "Annibale Carracci",
     "Luca Giordano",
-    "Guercino",
     "El Greco",
+    "Guercino",
     "Parmigianino"
    ],
    "sim": [
-    0.97,
+    0.977,
+    0.969,
     0.968,
-    0.965,
-    0.955,
-    0.94,
+    0.954,
+    0.939,
     0.935,
-    0.935,
-    0.931
+    0.934,
+    0.932
    ],
-   "n_works": 327,
+   "n_works": 329,
    "n_museums": 119,
    "stable": 1.0,
    "median_rank": 1
   },
   "Titian": {
-   "x": 0.6814,
-   "y": 0.4456,
+   "x": 0.4608,
+   "y": 0.7446,
    "near": [
-    "Veronese",
-    "Annibale Carracci",
     "Tintoretto",
     "Rubens",
-    "Guido Reni",
+    "Veronese",
+    "Annibale Carracci",
+    "Giorgione",
     "Parmigianino",
-    "Guercino",
-    "Raphael"
+    "Albrecht Dürer",
+    "Anthony van Dyck"
    ],
    "sim": [
-    0.971,
-    0.969,
-    0.965,
-    0.964,
+    0.977,
     0.959,
     0.959,
-    0.956,
-    0.949
+    0.952,
+    0.951,
+    0.949,
+    0.943,
+    0.94
    ],
-   "n_works": 158,
-   "n_museums": 58,
-   "stable": 0.95,
+   "n_works": 321,
+   "n_museums": 120,
+   "stable": 1.0,
    "median_rank": 1
   },
   "Velázquez": {
-   "x": 0.6632,
-   "y": 0.6261,
+   "x": 0.3505,
+   "y": 0.6473,
    "near": [
     "Anthony van Dyck",
     "Rembrandt",
@@ -1943,46 +1999,46 @@
     "Frans Hals",
     "Titian",
     "Jacques-Louis David",
-    "Zurbarán",
-    "Tintoretto"
+    "Giorgione",
+    "Zurbarán"
    ],
    "sim": [
-    0.959,
+    0.958,
     0.95,
     0.945,
-    0.94,
-    0.921,
+    0.939,
+    0.938,
     0.92,
-    0.911,
-    0.905
+    0.919,
+    0.911
    ],
-   "n_works": 153,
+   "n_works": 156,
    "n_museums": 61,
    "stable": 1.0,
    "median_rank": 1
   },
   "Vermeer": {
-   "x": 0.5699,
-   "y": 0.6896,
+   "x": 0.3204,
+   "y": 0.5364,
    "near": [
     "Georges de La Tour",
     "Artemisia Gentileschi",
     "Caravaggio",
     "Zurbarán",
+    "Orazio Gentileschi",
     "Velázquez",
-    "Titian",
-    "Annibale Carracci",
-    "Murillo"
+    "Giorgione",
+    "Annibale Carracci"
    ],
    "sim": [
     0.89,
     0.873,
     0.864,
     0.856,
+    0.855,
     0.854,
-    0.841,
-    0.836,
-    0.834
+    0.852,
+    0.835
    ],
    "n_works": 36,
    "n_museums": 18,
@@ -1990,14 +2046,14 @@
    "median_rank": 1
   },
   "Veronese": {
-   "x": 0.728,
-   "y": 0.4409,
+   "x": 0.4445,
+   "y": 0.8184,
    "near": [
     "Annibale Carracci",
     "Rubens",
-    "Titian",
     "Tintoretto",
     "Guercino",
+    "Titian",
     "Parmigianino",
     "Luca Giordano",
     "Guido Reni"
@@ -2005,49 +2061,49 @@
    "sim": [
     0.973,
     0.972,
-    0.971,
-    0.97,
+    0.969,
     0.959,
-    0.955,
-    0.954,
+    0.959,
+    0.957,
+    0.956,
     0.95
    ],
-   "n_works": 288,
-   "n_museums": 107,
+   "n_works": 290,
+   "n_museums": 109,
    "stable": 1.0,
    "median_rank": 1
   },
   "Vincent van Gogh": {
-   "x": 0.1195,
-   "y": 0.5763,
+   "x": 0.6721,
+   "y": 0.159,
    "near": [
     "Paul Gauguin",
     "Paul Cézanne",
     "Georges Seurat",
-    "Claude Monet",
     "Edvard Munch",
+    "Claude Monet",
     "Camille Pissarro",
     "Edgar Degas",
     "Pierre-Auguste Renoir"
    ],
    "sim": [
-    0.953,
-    0.95,
+    0.952,
+    0.949,
     0.927,
     0.927,
-    0.926,
+    0.927,
     0.924,
-    0.887,
-    0.885
+    0.886,
+    0.882
    ],
-   "n_works": 604,
-   "n_museums": 137,
+   "n_works": 696,
+   "n_museums": 138,
    "stable": 1.0,
    "median_rank": 1
   },
   "Zurbarán": {
-   "x": 0.6334,
-   "y": 0.4295,
+   "x": 0.5203,
+   "y": 0.7233,
    "near": [
     "El Greco",
     "Georges de La Tour",
@@ -2056,7 +2112,7 @@
     "Ribera",
     "Titian",
     "Caravaggio",
-    "Annibale Carracci"
+    "Guercino"
    ],
    "sim": [
     0.944,
@@ -2074,8 +2130,8 @@
    "median_rank": 1
   },
   "Édouard Manet": {
-   "x": 0.3326,
-   "y": 0.6306,
+   "x": 0.5214,
+   "y": 0.3258,
    "near": [
     "Edgar Degas",
     "Joaquín Sorolla",
@@ -2087,17 +2143,17 @@
     "Vincent van Gogh"
    ],
    "sim": [
-    0.96,
-    0.944,
+    0.95,
+    0.941,
     0.925,
-    0.922,
+    0.918,
     0.905,
-    0.892,
-    0.884,
-    0.879
+    0.889,
+    0.882,
+    0.877
    ],
-   "n_works": 297,
-   "n_museums": 116,
+   "n_works": 312,
+   "n_museums": 121,
    "stable": 1.0,
    "median_rank": 1
   }
