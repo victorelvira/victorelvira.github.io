@@ -9,13 +9,14 @@
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#1d2b36">
   <link rel="stylesheet" href="nombres/vendor/leaflet.css">
-  <link rel="stylesheet" href="nombres/style.css?v=0.5.3">
+  <link rel="stylesheet" href="nombres/style.css?v=0.7.1">
 </head>
 <body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
     <span class="nav-sep">·</span>
     <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="lang-pick" title="Idioma · Langue · Language"><button type="button" data-lang="es">ES</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button></span>
     <span id="build" class="build" title="Versión y última actualización"></span>
   </nav>
 
@@ -23,47 +24,59 @@
     <a class="brand" href="nombres.html" title="Recargar (quita filtros)">
       <img class="mark" src="nombres/favicon.svg" width="28" height="28" alt="">
       <div>
-        <strong>Nombres de España</strong>
-        <small>cómo se llama la gente de cada pueblo, y de dónde vienen sus nombres</small>
+        <strong data-t="brand">Nombres de España</strong>
+        <small data-t="tagline">cómo se llama la gente de cada pueblo, y de dónde vienen sus nombres</small>
       </div>
     </a>
+    <a class="sister" data-local="../prenoms_francia/prenoms.html" data-web="prenoms.html" href="prenoms.html"
+       data-t-title="sister.title"><span class="flag">🇫🇷</span><span class="sl" data-t="sister">Nombres de Francia</span> →</a>
     <div id="stats" class="stats">cargando…</div>
   </header>
 
   <div id="modes">
     <span id="view-tabs">
-      <button type="button" class="view-btn active" data-view="map">🗺 <span class="vl">Mapa</span></button>
-      <button type="button" class="view-btn" data-view="rank">🏆 <span class="vl">Rankings</span></button>
-      <button type="button" class="view-btn" data-view="evo">📈 <span class="vl">Evolución</span></button>
-      <button type="button" class="view-btn" data-view="stats">🔗 <span class="vl">Parejas</span></button>
+      <button type="button" class="view-btn active" data-view="map">🗺 <span class="vl" data-t="tab.map">Mapa</span></button>
+      <button type="button" class="view-btn" data-view="rank">🏆 <span class="vl" data-t="tab.rank">Rankings</span></button>
+      <button type="button" class="view-btn" data-view="evo">📈 <span class="vl" data-t="tab.evo">Evolución</span></button>
+      <button type="button" class="view-btn" data-view="stats">🔗 <span class="vl" data-t="tab.stats">Parejas</span></button>
     </span>
     <span id="colour-modes" class="cmodes" title="Qué colorea el mapa">
-        <button type="button" class="mode-btn active" data-mode="top"><b>El más común</b><small>el nº 1 de cada sitio</small></button>
-        <button type="button" class="mode-btn" data-mode="char"><b>Característico</b><small>el que más destaca frente a España</small></button>
-        <button type="button" class="mode-btn" data-mode="age"><b>Generación</b><small>nombres de mayores o de jóvenes</small></button>
-        <button type="button" class="mode-btn" data-mode="conc"><b>Repetición</b><small>cuánto se repiten los 10 primeros</small></button>
+        <button type="button" class="mode-btn active" data-mode="top"><b data-t="mode.top">El más común</b><small data-t="mode.top.sub">el nº 1 de cada sitio</small></button>
+        <button type="button" class="mode-btn" data-mode="char"><b data-t="mode.char">Característico</b><small data-t="mode.char.sub">el que más destaca frente a España</small></button>
+        <button type="button" class="mode-btn" data-mode="age"><b data-t="mode.age">Edad</b><small data-t="mode.age.sub">nombres de mayores o de jóvenes</small></button>
+        <button type="button" class="mode-btn" data-mode="gen"><b data-t="mode.gen">Generación</b><small data-t="mode.gen.sub">el nº 1 de cada década de nacimiento</small></button>
+        <button type="button" class="mode-btn" data-mode="conc"><b data-t="mode.conc">Repetición</b><small data-t="mode.conc.sub">cuánto se repiten los 10 primeros</small></button>
     </span>
-    <button type="button" class="chip btn about-open desk" title="Qué es esto, fuentes y método">ℹ︎ Acerca</button>
+    <span id="decwrap" hidden data-t-title="dec.title">
+      <span class="seg small" id="span-tabs">
+        <button type="button" class="seg-btn active" data-span="one" data-t="span.one">Una</button>
+        <button type="button" class="seg-btn" data-span="range" data-t="span.range">Rango</button>
+      </span>
+      <span id="dec-one"><input id="dec" type="range" min="0" max="10" value="6" step="1"><b id="declab">años 80</b></span>
+      <span id="dec-two" hidden><input id="d1" type="range" min="0" max="10" value="4" step="1"><input id="d2" type="range" min="0" max="10" value="7" step="1"><b id="dlab2">60s-90s</b></span>
+    </span>
+    <button type="button" class="chip btn about-open desk" data-t="about">ℹ︎ Acerca</button>
     <span id="filter-wrap">
-      <input id="filter" type="search" placeholder="Buscar nombre, apellido o pueblo…" autocomplete="off">
+      <input id="filter" type="search" data-t-ph="search.ph" autocomplete="off">
       <div id="suggest" hidden></div>
     </span>
   </div>
   <div id="modes2">
-    <button type="button" id="mob-toggle" aria-expanded="false"><span id="mob-sum">El más común · Nombres de mujer</span><span class="tl">más filtros</span><span class="ti">＋</span></button>
+    <button type="button" id="mob-toggle" aria-expanded="false"><span id="mob-sum">El más común · Nombres de mujer</span><span class="tl" data-t="filters.more">más filtros</span><span class="ti">＋</span></button>
     <div id="f-content">
       <span class="cmodes mob" title="Qué colorea el mapa">
-        <button type="button" class="mode-btn active" data-mode="top"><b>El más común</b><small>el nº 1 de cada sitio</small></button>
-        <button type="button" class="mode-btn" data-mode="char"><b>Característico</b><small>el que más destaca frente a España</small></button>
-        <button type="button" class="mode-btn" data-mode="age"><b>Generación</b><small>nombres de mayores o de jóvenes</small></button>
-        <button type="button" class="mode-btn" data-mode="conc"><b>Repetición</b><small>cuánto se repiten los 10 primeros</small></button>
+        <button type="button" class="mode-btn active" data-mode="top"><b data-t="mode.top">El más común</b><small data-t="mode.top.sub">el nº 1 de cada sitio</small></button>
+        <button type="button" class="mode-btn" data-mode="char"><b data-t="mode.char">Característico</b><small data-t="mode.char.sub">el que más destaca frente a España</small></button>
+        <button type="button" class="mode-btn" data-mode="age"><b data-t="mode.age">Edad</b><small data-t="mode.age.sub">nombres de mayores o de jóvenes</small></button>
+        <button type="button" class="mode-btn" data-mode="gen"><b data-t="mode.gen">Generación</b><small data-t="mode.gen.sub">el nº 1 de cada década de nacimiento</small></button>
+        <button type="button" class="mode-btn" data-mode="conc"><b data-t="mode.conc">Repetición</b><small data-t="mode.conc.sub">cuánto se repiten los 10 primeros</small></button>
       </span>
       <span id="sex-tabs" class="seg big" title="Nombres de mujer, de hombre o apellidos">
-        <button type="button" class="seg-btn active" data-sex="M"><span class="nd">Nombres de </span><span class="ns">mujer</span></button>
-        <button type="button" class="seg-btn" data-sex="H"><span class="nd">Nombres de </span><span class="ns">hombre</span></button>
-        <button type="button" class="seg-btn" data-sex="A">Apellidos</button>
+        <button type="button" class="seg-btn active" data-sex="M"><span data-t="sex.M">Nombres de mujer</span></button>
+        <button type="button" class="seg-btn" data-sex="H"><span data-t="sex.H">Nombres de hombre</span></button>
+        <button type="button" class="seg-btn" data-sex="A"><span data-t="sex.A">Apellidos</span></button>
       </span>
-      <button type="button" class="chip btn about-open mob" title="Qué es esto, fuentes y método">ℹ︎ Acerca de este mapa</button>
+      <button type="button" class="chip btn about-open mob" data-t="about.mob">ℹ︎ Acerca de este mapa</button>
     </div>
   </div>
 
@@ -85,6 +98,7 @@
 
   <div id="tip" hidden></div>
   <script src="nombres/vendor/leaflet.js"></script>
-  <script src="nombres/app.js?v=0.5.3"></script>
+  <script src="nombres/i18n.js?v=0.7.1"></script>
+  <script src="nombres/app.js?v=0.7.1"></script>
 </body>
 </html>

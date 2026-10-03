@@ -33,6 +33,12 @@ body {
 #navbar .nav-home { color: #cbbfae; text-decoration: none; white-space: nowrap; }
 #navbar a:hover { text-decoration: underline; }
 #navbar .build { margin-left: auto; color: #8a7f72; font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* ES · FR · EN picker, same block as in prenoms_francia */
+#lang-pick { margin-left: auto; display: inline-flex; gap: 2px; margin-right: 10px; }
+#lang-pick button { border: 0; background: rgba(255,255,255,.12); color: #cbbfae; font: inherit; font-size: 10.5px; font-weight: 700;
+  letter-spacing: .04em; padding: 2px 6px; border-radius: 4px; cursor: pointer; }
+#lang-pick button.on { background: #fff; color: #1d1a17; }
+#navbar .build { margin-left: 0; }
 
 #bar {
   display: flex; align-items: center; gap: 12px 16px; flex-wrap: wrap;

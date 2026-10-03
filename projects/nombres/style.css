@@ -274,3 +274,31 @@ body.view-evo #modes2 { display: none; }
   #sel-chip { font-size: 13px; top: 6px; }
 }
 #legend:empty { display: none; }
+
+/* 0.6.0: the decade slider of the "Generación" map mode (data by province of birth) */
+#decwrap { display: flex; align-items: center; gap: 8px; flex: 1 1 280px; min-width: 220px; max-width: 460px; }
+#decwrap[hidden] { display: none; }
+#dec-one, #dec-two { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+#dec-one input, #dec-two input { flex: 1; min-width: 50px; accent-color: var(--accent); }
+#dec-two[hidden], #dec-one[hidden] { display: none; }
+#declab, #dlab2 { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; font-size: 13.5px; }
+.seg.small .seg-btn { padding: 3px 9px; font-size: 12px; }
+@media (max-width: 760px) { #decwrap { order: 6; flex: 1 1 100%; max-width: none; } }
+
+/* link to the sibling project (the other country) */
+.sister { display: inline-flex; align-items: center; gap: 6px; margin-left: 14px; padding: 4px 11px; border: 1px solid var(--line);
+  border-radius: 999px; background: #fff; text-decoration: none; color: var(--ink); font-size: 13px; white-space: nowrap; }
+.sister:hover { background: var(--accent-soft); border-color: #bcd3e6; }
+.sister .flag { font-size: 15px; line-height: 1; }
+@media (max-width: 760px) { .sister { margin-left: 8px; padding: 3px 8px; font-size: 12px; } .sister .sl { display: none; } }
+/* language picker in the navbar */
+#lang-pick { margin-left: auto; display: inline-flex; gap: 2px; margin-right: 10px; }
+#lang-pick button { border: 0; background: rgba(255,255,255,.12); color: #cbbfae; font: inherit; font-size: 10.5px; font-weight: 700;
+  letter-spacing: .04em; padding: 2px 6px; border-radius: 4px; cursor: pointer; }
+#lang-pick button.on { background: #fff; color: #1d1a17; }
+#navbar .build { margin-left: 0; }
+/* bump chart: hover previews the colour, a click pins it (0.7.1 / 0.4.1) */
+svg.bump g.s.on .ln, svg.bump g.s.pin .ln { stroke: var(--hl, var(--s1)); stroke-width: 3; }
+svg.bump g.s.on .dot, svg.bump g.s.pin .dot { fill: var(--hl, var(--s1)); }
+svg.bump g.s.on text.lbl, svg.bump g.s.pin text.lbl { font-weight: 700; fill: var(--ink); }
+svg.bump g.s.pin .ln { stroke-width: 3.5; }

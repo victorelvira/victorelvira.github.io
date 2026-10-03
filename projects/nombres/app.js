@@ -1,25 +1,28 @@
 /* Nombres de España · map, rankings and evolution of names and surnames (INE). */
 "use strict";
-const DATA_V = "0.5.3";
-const BUILD_AT = "2026-09-19 14:26";
+const DATA_V = "0.7.1";
+const BUILD_AT = "2026-10-04 00:14";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
-const fmt = n => n == null ? "" : Number(n).toLocaleString("es-ES");
-const fmt1 = n => n == null ? "" : Number(n).toLocaleString("es-ES", {minimumFractionDigits: 1, maximumFractionDigits: 1});
-const fmt2 = n => n == null ? "" : Number(n).toLocaleString("es-ES", {maximumFractionDigits: n < 1 ? 3 : 2});
+const fmt = n => n == null ? "" : Number(n).toLocaleString(T("locale"));
+const fmt1 = n => n == null ? "" : Number(n).toLocaleString(T("locale"), {minimumFractionDigits: 1, maximumFractionDigits: 1});
+const fmt2 = n => n == null ? "" : Number(n).toLocaleString(T("locale"), {maximumFractionDigits: n < 1 ? 3 : 2});
 const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase().replace(/[^A-ZÑÇ' ]/g, " ").replace(/\s+/g, " ").trim();
-const SEXNAME = {H: "Hombres", M: "Mujeres", A: "Apellidos"};
+const SEXNAME = s => T("sex." + s + ".short");
 const SERIES = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"];
 const OTHER = "#c9c2b6", NONE = "#ebe7e0", FEW = "#f4f1eb";
 const SEQ = ["#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"];
 const DIV = ["#1c5cab", "#5598e7", "#9ec5f4", "#f0efec", "#f3b3b2", "#e66767", "#b8302f"];
-const DEC_LABEL = {"1920": "antes de 1930", "1930": "años 30", "1940": "años 40", "1950": "años 50", "1960": "años 60",
-  "1970": "años 70", "1980": "años 80", "1990": "años 90", "2000": "2000-09", "2010": "2010-19", "2020": "2020-24"};
-const DEC_SHORT = {"1920": "<1930", "1930": "30s", "1940": "40s", "1950": "50s", "1960": "60s", "1970": "70s", "1980": "80s",
-  "1990": "90s", "2000": "00s", "2010": "10s", "2020": "20s"};
+const DEC_LABEL = d => T("dec." + d);
+const DECADES = ["1920", "1930", "1940", "1950", "1960", "1970", "1980", "1990", "2000", "2010", "2020"];
+const DEC_NAME = d => T("dec." + d);
+const decList = () => state.decSpan === "one" ? [DECADES[state.dec]] : DECADES.slice(Math.min(state.d1, state.d2), Math.max(state.d1, state.d2) + 1);
+const decLabel = () => state.decSpan === "one" ? DEC_NAME(DECADES[state.dec])
+  : `${DEC_SHORT(DECADES[Math.min(state.d1, state.d2)])}-${DEC_SHORT(DECADES[Math.max(state.d1, state.d2)])}`;
+const DEC_SHORT = d => T("dec.s" + d);
 
 // ---------- data loading
 let HASH = "";
@@ -55,32 +58,37 @@ function disp(sex, key) {
   return titleCase(key);
 }
 const placeName = k => {
-  if (!k || k === "ES") return "España";
+  if (!k || k === "ES") return T("spain");
   const c = k[0], r = k.slice(1);
   if (c === "m" || c === "b") return PLACES.muni[r]?.n || r;
   if (c === "x") return PLACES.country?.[r] || r;
-  if (c === "q") return r === "66" ? "el extranjero" : (PLACES.prov[r]?.n || r);
+  if (c === "q") return r === "66" ? T("rank.born.abroad").toLowerCase() : (PLACES.prov[r]?.n || r);
   return PLACES.prov[r]?.n || r;
 };
 const provOf = k => k[0] === "m" ? PLACES.muni[k.slice(1)]?.p : k.slice(1);
 
 // ---------- state and URL
-const state = {view: "map", mode: "top", sex: "M", sel: null, place: null, rankArea: "ES", hideEx: false, rankN: 100, nbArea: "ES", nbSex: "M", genArea: "00", genSex: "M"};
+const state = {view: "map", mode: "top", dec: 6, decSpan: "one", d1: 4, d2: 7, sex: "M", sel: null, place: null, rankArea: "ES", hideEx: false, rankN: 100, nbArea: "ES", nbSex: "M", genArea: "00", genSex: "M"};
 function writeHash() {
   const p = new URLSearchParams();
   if (state.view !== "map") p.set("v", state.view);
   if (state.mode !== "top") p.set("c", state.mode);
+  if (state.mode === "gen") p.set("g", state.decSpan === "one" ? String(state.dec) : `${state.d1}-${state.d2}`);
   if (state.sex !== "M") p.set("s", state.sex);
   if (state.sel) p.set("n", `${state.sel.sex}:${state.sel.key}`);
   if (state.place) p.set("l", state.place);
   if (state.view === "rank" && state.rankArea !== "ES") p.set("r", state.rankArea);
+  if (LANG !== "es") p.set("l", LANG);
   const h = p.toString();
   history.replaceState(null, "", h ? "#" + h : location.pathname);
 }
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   state.view = ["map", "rank", "evo", "stats"].includes(p.get("v")) ? p.get("v") : "map";
-  state.mode = ["top", "char", "age", "conc"].includes(p.get("c")) ? p.get("c") : "top";
+  state.mode = ["top", "char", "age", "conc", "gen"].includes(p.get("c")) ? p.get("c") : "top";
+  const dp = (p.get("g") || "").split("-").map(Number);
+  if (dp.length === 1 && dp[0] >= 0 && dp[0] <= 10) state.dec = dp[0];
+  if (dp.length === 2 && dp.every(x => x >= 0 && x <= 10)) { state.decSpan = "range"; state.d1 = dp[0]; state.d2 = dp[1]; }
   state.sex = ["H", "M", "A"].includes(p.get("s")) ? p.get("s") : "M";
   const n = p.get("n");
   if (n && n.includes(":")) { const [sex, ...k] = n.split(":"); state.sel = {sex, key: k.join(":")}; state.sex = sex; }
@@ -120,7 +128,7 @@ function showMapTip(e, f) {
   const prov = PLACES.prov[m?.p]?.n || "";
   $("#tip").innerHTML = hasMuniData(ine)
     ? `<b>${esc(m?.n || f.properties.name)}</b><span class="muted">${esc(prov)}</span>${u.label ? "<br>" + u.label : ""}`
-    : `<b>${esc(prov)}</b><span class="muted">provincia · ${esc(m?.n || "")} aún sin dato propio</span>${u.label ? "<br>" + u.label.replace(/ <i>\((provincia|[^)]*dato de la provincia)\)<\/i>/, "") : ""}`;
+    : `<b>${esc(prov)}</b><span class="muted">${T("tip.prov", {town: esc(m?.n || "")})}</span>${u.label ? "<br>" + u.label : ""}`;
   $("#tip").hidden = false; moveTip(e.originalEvent);
 }
 function moveTip(ev) { const t = $("#tip"); if (!ev) return; t.style.left = Math.min(ev.clientX + 14, innerWidth - 270) + "px"; t.style.top = (ev.clientY + 14) + "px"; }
@@ -186,14 +194,13 @@ async function restyle() {
     for (const [ine, u] of Object.entries(unitValue)) {
       u.fill = u.few ? FEW : u.v == null ? NONE : SEQ[binOf(u.v, br)];
       u.op = u.prov && anyMuni ? .55 : 1;
-      u.label = u.few ? `<i>${esc(disp(sex, key))}: menos de 5 personas</i>` : u.v == null ? `<i>sin dato</i>` :
-        `${esc(disp(sex, key))}: <b style="display:inline">${fmt2(u.v)} ‰</b> <i>(${fmt(u.count)} personas${u.prov ? ", dato de la provincia" : ""})</i>`;
+      u.label = u.few ? `<i>${T("tip.few", {name: esc(disp(sex, key))})}</i>` : u.v == null ? `<i>${T("legend.nodata")}</i>` :
+        T("tip.permil", {name: esc(disp(sex, key)), permil: fmt2(u.v), n: fmt(u.count), prov: u.prov ? T("tip.ofprov") : ""});
     }
     const lo = [0, ...br];
-    SEQ.slice(0, br.length + 1).forEach((c, i) => legend.push([c, i === br.length ? `${fmt2(lo[i])} ‰ o más` : `${fmt2(lo[i])} a ${fmt2(br[i])} ‰`]));
-    legend.push([FEW, "menos de 5 personas"]);
-    note = `Por cada 1.000 ${sex === "A" ? "habitantes, como primer apellido" : sex === "H" ? "hombres" : "mujeres"} de cada sitio.` +
-      (anyMuni ? "" : " Aún sin datos por municipio: cada pueblo lleva el valor de su provincia.");
+    SEQ.slice(0, br.length + 1).forEach((c, i) => legend.push([c, i === br.length ? T("legend.permilplus", {a: fmt2(lo[i])}) : T("legend.permilrange", {a: fmt2(lo[i]), b: fmt2(br[i])})]));
+    legend.push([FEW, T("legend.few")]);
+    note = T("map.name.note", {who: T("who." + sex)});
     setLegend(`${esc(disp(sex, key))}`, legend, note);
   } else {
     const sex = state.sex, mode = state.mode;
@@ -205,23 +212,49 @@ async function restyle() {
       for (const f of geo.features) {
         const ine = f.id.slice(4), {v, prov} = placeVal(ine), t = v?.["t" + sex];
         unitValue[ine] = {fill: t ? (col.get(t) || OTHER) : v ? FEW : NONE, op: prov && anyMuni ? .55 : 1,
-          label: t ? `nº 1: <b style="display:inline">${esc(disp(sex, t))}</b>${prov ? " <i>(provincia)</i>" : ""}` : v ? "<i>ninguno llega a 5 personas</i>" : "<i>sin dato</i>"};
+          label: t ? T("map.top.label", {name: esc(disp(sex, t)), prov: prov ? T("tip.provshort") : ""}) : `<i>${T(v ? "legend.none5" : "legend.nodata")}</i>`};
       }
       top.forEach(n => legend.push([col.get(n), disp(sex, n), counts.get(n)]));
-      legend.push([OTHER, "otro"]);
-      note = "Número de municipios a la derecha." + (sex !== "A" ? " Colores emparejados: cada nombre de mujer lleva el color del nombre de hombre con el que más pueblos comparte el nº 1." : "");
-      setLegend(`Nº 1 · ${SEXNAME[sex].toLowerCase()}`, legend, note);
+      legend.push([OTHER, T("legend.other")]);
+      note = T("map.top.note") + (sex !== "A" ? T("map.top.note.paired") : "");
+      setLegend(T("map.top.title", {sex: SEXNAME(sex).toLowerCase()}), legend, note);
     } else if (mode === "char") {
       const br = [2, 3, 5, 10, 20];
       for (const f of geo.features) {
         const ine = f.id.slice(4), {v, prov} = placeVal(ine), k = v?.["k" + sex];
         unitValue[ine] = {fill: k ? SEQ[1 + binOf(k[1], br)] : (v ? SEQ[0] : NONE), op: prov && anyMuni ? .55 : 1,
-          label: k ? `<b style="display:inline">${esc(disp(sex, k[0]))}</b>: ${fmt1(k[1])} veces más que en España${prov ? " <i>(provincia)</i>" : ""}` : v ? "<i>ningún nombre llega al doble que en España</i>" : "<i>sin dato</i>"};
+          label: k ? T("map.char.label", {name: esc(disp(sex, k[0])), ratio: fmt1(k[1]), prov: prov ? T("tip.provshort") : ""}) : `<i>${T(v ? "legend.none2x" : "legend.nodata")}</i>`};
       }
-      legend.push([SEQ[0], "menos del doble"]);
-      br.forEach((b, i) => legend.push([SEQ[1 + i], i === br.length - 1 ? `${b} veces o más` : `${b} a ${br[i + 1]} veces`]));
-      note = "El nombre con más peso aquí comparado con su peso en España (al menos 10 personas). Pasa el ratón para verlo.";
-      setLegend(`Característico · ${SEXNAME[sex].toLowerCase()}`, legend, note);
+      legend.push([SEQ[0], T("legend.under2x")]);
+      br.forEach((b, i) => legend.push([SEQ[1 + i], i === br.length - 1 ? T("legend.timesplus", {a: b}) : T("legend.times", {a: b, b: br[i + 1]})]));
+      note = T("map.char.note");
+      setLegend(T("map.char.title", {sex: SEXNAME(sex).toLowerCase()}), legend, note);
+    } else if (mode === "gen") {
+      // R009: by province of BIRTH and decade of birth; every town of a province takes its province's value
+      const sx = sex === "A" ? "M" : sex;
+      const decs = decList();
+      const perProv = {};
+      for (const [pc, bysex] of Object.entries(GEN.g)) {
+        if (pc === "00") continue;
+        const tally = new Map();
+        for (const d of decs) for (const [n, c] of (bysex[sx]?.[d] || [])) tally.set(n, (tally.get(n) || 0) + (c || 0));
+        const best = [...tally.entries()].sort((a, b) => b[1] - a[1])[0];
+        if (best) perProv[pc] = best;
+      }
+      const counts = new Map();
+      for (const v of Object.values(perProv)) counts.set(v[0], (counts.get(v[0]) || 0) + 1);
+      // this mode has its own palette: the pairing of R007 is about today's residents, not about each generation
+      const col = new Map([...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([n], i) => [n, SERIES[i]]));
+      for (const f of geo.features) {
+        const pc = PLACES.muni[f.id.slice(4)]?.p, b = perProv[pc];
+        unitValue[f.id.slice(4)] = {fill: b ? (col.get(b[0]) || OTHER) : NONE, op: 1,
+          label: b ? T("map.gen.label", {when: esc(decLabel()), name: esc(disp(sx, b[0])), n: fmt(b[1])}) : `<i>${T("legend.nodata")}</i>`};
+      }
+      [...col.keys()].filter(n => counts.get(n)).forEach(n => legend.push([col.get(n), disp(sx, n), counts.get(n)]));
+      if ([...counts.keys()].some(n => !col.has(n))) legend.push([OTHER, T("legend.other")]);
+      note = T("map.gen.note", {when: decLabel()});
+      if (sex === "A") note = T("map.onlywomen") + note;
+      setLegend(T("map.gen.title", {sex: SEXNAME(sx).toLowerCase(), when: decLabel()}), legend, note);
     } else if (mode === "age" || mode === "conc") {
       const s = sex === "A" ? "M" : sex;
       const fld = (mode === "age" ? "age" : "t10") + s;
@@ -231,21 +264,21 @@ async function restyle() {
       for (const f of geo.features) {
         const ine = f.id.slice(4), {v, prov} = placeVal(ine), x = v?.[fld];
         unitValue[ine] = {fill: x == null ? NONE : pal[binOf(x, br)], op: prov && anyMuni ? .55 : 1,
-          label: x == null ? "<i>sin dato</i>" : mode === "age" ? `Edad media de sus nombres: <b style="display:inline">${fmt1(x)} años</b>` : `Con uno de los 10 nombres más comunes: <b style="display:inline">${fmt1(x)} %</b>`};
+          label: x == null ? `<i>${T("legend.nodata")}</i>` : T(mode === "age" ? "map.age.label" : "map.conc.label", {v: fmt1(x)})};
       }
       const lo = [Math.min(...vals), ...br];
-      pal.slice(0, br.length + 1).forEach((c, i) => legend.push([c, `${fmt1(lo[i])}${i < br.length ? " a " + fmt1(br[i]) : " o más"}${mode === "age" ? " años" : " %"}`]));
-      note = mode === "age" ? "Media de la edad que tienen, en toda España, las personas con los nombres de aquí. Alta: nombres de generaciones mayores." :
-        "Parte de la gente que lleva uno de los 10 nombres más repetidos del sitio. Más oscuro: los nombres se repiten más (menos variedad).";
-      if (sex === "A") note = "Solo para nombres de pila: se muestra mujeres. " + note;
-      setLegend(`${mode === "age" ? "Generación" : "Repetición"} · ${SEXNAME[s].toLowerCase()}`, legend, note);
+      const unit = mode === "age" ? T("unit.years") : " %";
+      pal.slice(0, br.length + 1).forEach((c, i) => legend.push([c, i < br.length ? T("legend.range", {a: fmt1(lo[i]), b: fmt1(br[i]), unit}) : T("legend.rangeplus", {a: fmt1(lo[i]), unit})]));
+      note = T(mode === "age" ? "map.age.note" : "map.conc.note");
+      if (sex === "A") note = T("map.onlywomen") + note;
+      setLegend(T(mode === "age" ? "map.age.title" : "map.conc.title", {sex: SEXNAME(s).toLowerCase()}), legend, note);
     }
   }
   layer.eachLayer(l => { const u = unitValue[l.feature.id.slice(4)] || {}; l.setStyle({fillColor: u.fill || NONE, fillOpacity: u.op ?? 1}); });
   const chip = $("#sel-chip");
   if (state.sel) {
     chip.hidden = false;
-    chip.innerHTML = `<span>${esc(disp(state.sel.sex, state.sel.key))} <small style="opacity:.75">${state.sel.sex === "A" ? "apellido" : state.sel.sex === "H" ? "hombres" : "mujeres"}</small></span><button type="button" title="Quitar">✕</button>`;
+    chip.innerHTML = `<span>${esc(disp(state.sel.sex, state.sel.key))} <small style="opacity:.75">${SEXNAME(state.sel.sex).toLowerCase()}</small></span><button type="button">✕</button>`;
     chip.querySelector("button").onclick = () => { state.sel = null; writeHash(); restyle(); syncSummary(); };
   } else chip.hidden = true;
 }
@@ -288,7 +321,7 @@ function exBadge(sex, key) {
   if (!r) return "";
   const share = sex === "A" ? r[4] : r[3], bound = sex === "A" ? r[5] : r[4];
   if (share == null) return "";
-  if ((bound === 0 && share >= 50) || bound === 2) return `<span class="badge ex" title="Según la nacionalidad de quienes lo llevan en toda España (INE)">${bound === 2 ? "sobre todo" : share + " %"} extranjeros</span>`;
+  if ((bound === 0 && share >= 50) || bound === 2) return `<span class="badge ex" title="${T("badge.ex.title")}">${T("badge.ex", {share: bound === 2 ? T("badge.ex.mostly") : share + " %"})}</span>`;
   return "";
 }
 const isForeignMajority = (sex, key) => { const r = idxRow(sex, key); if (!r) return false; const s = sex === "A" ? r[4] : r[3], b = sex === "A" ? r[5] : r[4]; return (b === 0 && s >= 50) || b === 2; };
@@ -319,56 +352,56 @@ async function openPlace(k) {
   const isMuni = k[0] === "m";
   const pc = provOf(k), prov = PLACES.prov[pc];
   const v = PLACES.v[k] || {};
-  let h = `<div class="ficha"><h2>${esc(placeName(k))}</h2><div class="sub">${isMuni ? `${placeLink("p" + pc)}` : "provincia"}${PLACES.ccaa[prov?.c] && PLACES.ccaa[prov?.c] !== prov?.n ? " · " + esc(PLACES.ccaa[prov?.c]) : ""}</div>`;
+  let h = `<div class="ficha"><h2>${esc(placeName(k))}</h2><div class="sub">${isMuni ? `${placeLink("p" + pc)}` : T("place.sub.prov")}${PLACES.ccaa[prov?.c] && PLACES.ccaa[prov?.c] !== prov?.n ? " · " + esc(PLACES.ccaa[prov?.c]) : ""}</div>`;
   if (!a) {
-    if (isMuni && PLACES.v[k]) { showPanel(h + `<div class="note box">Ningún nombre ni apellido lo llevan 5 o más personas aquí, así que el INE no publica ninguno (secreto estadístico).</div><p>${placeLink("p" + pc)}</p></div>`); return; }
-    h += `<div class="note box">${isMuni ? "Los nombres de este municipio aún no se han descargado del INE (la descarga de los 8.132 municipios está en marcha). Mientras, su provincia:" : "Sin datos."}</div>`;
+    if (isMuni && PLACES.v[k]) { showPanel(h + `<div class="note box">${T("place.nobody5")}</div><p>${placeLink("p" + pc)}</p></div>`); return; }
+    h += `<div class="note box">${T(isMuni ? "place.notyet" : "place.nodata")}</div>`;
     if (isMuni) h += `<p>${placeLink("p" + pc)}</p>`;
     showPanel(h + "</div>");
     return;
   }
   h += `<div class="kpis">
-    <div class="kpi"><b>${v.popM ? fmt(v.popM) : "·"}</b><span>mujeres</span></div>
-    <div class="kpi"><b>${v.popH ? fmt(v.popH) : "·"}</b><span>hombres</span></div>
-    <div class="kpi"><b>${fmt1(v.ageM)} / ${fmt1(v.ageH)}</b><span>edad media de sus nombres (M / H) <span class="badge calc">calculado</span></span></div></div>
-    <div class="note">Población deducida de las cifras del INE (personas con el nombre nº 1 y su tanto por mil). Solo aparecen nombres y apellidos que llevan al menos 5 personas aquí.</div>`;
+    <div class="kpi"><b>${v.popM ? fmt(v.popM) : "·"}</b><span>${T("place.kpi.women")}</span></div>
+    <div class="kpi"><b>${v.popH ? fmt(v.popH) : "·"}</b><span>${T("place.kpi.men")}</span></div>
+    <div class="kpi"><b>${fmt1(v.ageM)} / ${fmt1(v.ageH)}</b><span>${T("place.kpi.age")} <span class="badge calc">${T("calc")}</span></span></div></div>
+    <div class="note">${T("place.note.pop")}</div>`;
   {
     const s = state.sex, lst = (a[s] || []).slice(0, 40);
     if (lst.length > 3) {
       const W = Math.min(380, ($("#panel").clientWidth || 400) - 40);
-      h += `<h3>Mosaico · ${s === "A" ? "apellidos" : s === "H" ? "nombres de hombre" : "nombres de mujer"} <span class="h3n">(los 40 primeros; superficie según cuántos lo llevan)</span></h3>` +
-        treemapHTML(lst.map(r => ({key: r[0], count: r[1], permil: r[2]})), s, W, Math.round(W * .72), s === "A" ? "de primer apellido" : "personas");
+      h += `<h3>${T("place.h.mosaic", {what: T("sex." + s).toLowerCase()})} <span class="h3n">${T("place.h.mosaic.sub")}</span></h3>` +
+        treemapHTML(lst.map(r => ({key: r[0], count: r[1], permil: r[2]})), s, W, Math.round(W * .72), T(s === "A" ? "unit.firstsur" : "unit.people"));
     }
   }
   for (const sex of ["M", "H"]) {
     const lst = a[sex] || [];
-    h += `<h3>${SEXNAME[sex]} · los más comunes <span class="h3n">(${fmt(lst.length)} nombres con 5 o más)</span></h3>`;
+    h += `<h3>${T("place.h.top", {sex: T("sex." + sex)})} <span class="h3n">${T("place.h.top.sub", {n: fmt(lst.length)})}</span></h3>`;
     h += listTable(lst.slice(0, 10).map(([key, count, permil]) => ({sex, key, count, permil, badge: exBadge(sex, key)})));
-    if (lst.length > 10) h += `<button type="button" class="more-btn" data-rankall="${sex}">Ver los ${fmt(lst.length)} →</button>`;
+    if (lst.length > 10) h += `<button type="button" class="more-btn" data-rankall="${sex}">${T("place.seeall", {n: fmt(lst.length)})}</button>`;
     const ch = characteristic(sex, lst);
-    if (ch.length) h += `<div class="note" style="margin-top:8px"><b>Característicos de aquí</b> <span class="badge calc">calculado</span>: ${ch.map(([key, r]) => `${nameLink(sex, key)} <small class="muted">×${fmt1(r)}</small>`).join(", ")}</div>`;
+    if (ch.length) h += `<div class="note" style="margin-top:8px"><b>${T("place.char")}</b> <span class="badge calc">${T("calc")}</span>: ${ch.map(([key, r]) => `${nameLink(sex, key)} <small class="muted">×${fmt1(r)}</small>`).join(", ")}</div>`;
   }
   const A = a.A || [];
-  h += `<h3>Apellidos · los más comunes <span class="h3n">(${fmt(A.length)} con 5 o más)</span></h3>`;
+  h += `<h3>${T("place.h.sur")} <span class="h3n">${T("place.h.sur.sub", {n: fmt(A.length)})}</span></h3>`;
   if (A.length) {
-    h += listTable(A.slice(0, 15).map(r => ({sex: "A", key: r[0], count: r[1], permil: r[2], badge: exBadge("A", r[0]), extra: r[5] ? ` · ${fmt(r[5])} con los dos` : ""})));
-    if (A.length > 15) h += `<button type="button" class="more-btn" data-rankall="A">Ver los ${fmt(A.length)} →</button>`;
-    h += `<div class="note">Como primer apellido, por cada 1.000 habitantes.</div>`;
+    h += listTable(A.slice(0, 15).map(r => ({sex: "A", key: r[0], count: r[1], permil: r[2], badge: exBadge("A", r[0]), extra: r[5] ? T("place.sur.both", {n: fmt(r[5])}) : ""})));
+    if (A.length > 15) h += `<button type="button" class="more-btn" data-rankall="A">${T("place.seeall", {n: fmt(A.length)})}</button>`;
+    h += `<div class="note">${T("place.note.sur")}</div>`;
     const ch = characteristic("A", A);
-    if (ch.length) h += `<div class="note" style="margin-top:8px"><b>Apellidos característicos de aquí</b> <span class="badge calc">calculado</span>: ${ch.map(([key, r]) => `${nameLink("A", key)} <small class="muted">×${fmt1(r)}</small>`).join(", ")}</div>`;
-  } else h += `<div class="note">Aún sin descargar.</div>`;
+    if (ch.length) h += `<div class="note" style="margin-top:8px"><b>${T("place.char.sur")}</b> <span class="badge calc">${T("calc")}</span>: ${ch.map(([key, r]) => `${nameLink("A", key)} <small class="muted">×${fmt1(r)}</small>`).join(", ")}</div>`;
+  } else h += `<div class="note">${T("place.notdown")}</div>`;
   // surnames of the people BORN here (they may live anywhere in Spain today)
   const born = await J(`area/${isMuni ? "b" + k.slice(1) : "q" + k.slice(1)}.json`);
   if (born?.A?.length) {
-    h += `<h3>Apellidos de los nacidos aquí <span class="h3n">(vivan donde vivan hoy en España)</span></h3>` +
+    h += `<h3>${T("place.h.born")} <span class="h3n">${T("place.h.born.sub")}</span></h3>` +
       listTable(born.A.slice(0, 15).map(r => ({sex: "A", key: r[0], count: r[1], permil: r[2]})));
     const ch = characteristic("A", born.A);
-    if (ch.length) h += `<div class="note" style="margin-top:8px"><b>Característicos de los nacidos aquí</b> <span class="badge calc">calculado</span>: ${ch.map(([key, r]) => `${nameLink("A", key)} <small class="muted">×${fmt1(r)}</small>`).join(", ")}</div>`;
-    h += `<div class="note">INE, apellidos por ${isMuni ? "municipio" : "provincia"} de nacimiento: primer apellido por cada 1.000 nacidos aquí que residen en España.</div>`;
+    if (ch.length) h += `<div class="note" style="margin-top:8px"><b>${T("place.born.char")}</b> <span class="badge calc">${T("calc")}</span>: ${ch.map(([key, r]) => `${nameLink("A", key)} <small class="muted">×${fmt1(r)}</small>`).join(", ")}</div>`;
+    h += `<div class="note">${T("place.born.note", {level: T(isMuni ? "kind.m" : "kind.p")})}</div>`;
   }
   h += await localSeriesHTML(k);
-  h += `<h3>Más</h3><p class="note"><span class="lnk" data-rank="${esc(k)}" style="color:var(--accent);cursor:pointer">Ver el ranking completo de ${esc(placeName(k))} →</span></p>`;
-  h += `<p class="note">Fuente: INE, consulta de nombres y apellidos por ${isMuni ? "municipio" : "provincia"} de residencia, censo anual de población a 1-1-2025.</p>`;
+  h += `<h3>${T("place.h.more")}</h3><p class="note"><span class="lnk" data-rank="${esc(k)}" style="color:var(--accent);cursor:pointer">${T("place.rankall", {place: esc(placeName(k))})}</span></p>`;
+  h += `<p class="note">${T("place.source", {level: T(isMuni ? "kind.m" : "kind.p")})}</p>`;
   showPanel(h + "</div>");
   $("#panel-body [data-rank]")?.addEventListener("click", () => { state.rankArea = k; setView("rank"); });
   $$("#panel-body [data-rankall]").forEach(b => b.onclick = () => { state.rankArea = k; state.sex = b.dataset.rankall; state.rankN = 0; setView("rank"); });
@@ -413,11 +446,7 @@ function treemapHTML(rows, sex, W, H, unit) {
 }
 
 // ---------- regional series (newborns by area and year; Valencian residents' top 30 by year)
-const SRCNOTE = {
-  IBESTAT: "IBESTAT, nombres de los nacidos (nombres con más de 4 bebés en Baleares, contados en cada municipio e isla)",
-  Idescat: "Idescat, nombres de los nacidos (4 bebés o más en el área)",
-  IECA: "IECA, nombres de los recién nacidos andaluces",
-};
+const SRCNOTE = s => T("src." + s);
 function seriesFromYears(byYear, sex, top) {
   const ser = new Map();
   for (const [y, lst] of Object.entries(byYear)) lst.slice(0, top).forEach(([name], i) => {
@@ -439,33 +468,33 @@ async function localSeriesHTML(k) {
   for (const key of nbKeysFor(k)) {
     const meta = SERIES_IDX.nb[key], d = await J(`nbx/${key.replace(":", "_")}.json`);
     if (!d) continue;
-    const where = meta.level === "k" ? `comarca de ${meta.label}` : meta.level === "i" ? `isla de ${meta.label}` : meta.label;
-    h += `<h3>Bebés año a año <span class="h3n">(${esc(where)}, ${meta.years.join("-")})</span></h3>`;
+    const where = meta.level === "k" ? T("series.comarca", {name: meta.label}) : meta.level === "i" ? T("series.isla", {name: meta.label}) : meta.label;
+    h += `<h3>${T("series.h.babies")} <span class="h3n">${T("series.h.babies.sub", {where: esc(where), years: meta.years.join("-")})}</span></h3>`;
     if (meta.src === "IECA" && meta.level === "m") {
       const ys = Object.keys({...d.M, ...d.H}).sort().reverse();
-      h += `<table class="ones"><thead><tr><th>Año</th><th>Niña nº 1</th><th>Niño nº 1</th></tr></thead><tbody>${ys.map(y =>
+      h += `<table class="ones"><thead><tr><th>${T("evo.col.year")}</th><th>${T("series.girls")} nº 1</th><th>${T("series.boys")} nº 1</th></tr></thead><tbody>${ys.map(y =>
         `<tr><td>${y}</td>${["M", "H"].map(s => `<td>${(d[s][y] || []).map(([n, c]) => `${nameLink(s, n)} <small class="muted">${fmt(c)}</small>`).join(", ")}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
     } else {
       for (const s of ["M", "H"]) {
         const ys = Object.keys(d[s] || {}).sort();
         if (ys.length < 2) continue;
-        h += `<div class="note" style="margin-top:6px"><b style="color:var(--ink)">${s === "M" ? "Niñas" : "Niños"}</b>: los 5 primeros de cada año</div>` +
+        h += `<div class="note" style="margin-top:6px"><b style="color:var(--ink)">${T(s === "M" ? "series.girls" : "series.boys")}</b>${T("series.top5")}</div>` +
           bump(seriesFromYears(d[s], s, 5), ys, y => "’" + y.slice(2), 5, `bx-${key}-${s}`.replace(/[^\w-]/g, ""), width);
       }
     }
-    h += `<div class="note">${esc(SRCNOTE[meta.src] || meta.src)}.</div>`;
+    h += `<div class="note">${esc(SRCNOTE(meta.src))}.</div>`;
   }
   if (SERIES_IDX.rx.includes(k)) {
     const d = await J(`rx/${k}.json`);
     if (d) {
-      h += `<h3>Residentes año a año <span class="h3n">(2011-2022)</span></h3>`;
+      h += `<h3>${T("series.h.res")} <span class="h3n">${T("series.h.res.sub")}</span></h3>`;
       for (const s of ["M", "H", "A"]) {
         const ys = Object.keys(d[s] || {}).sort();
         if (ys.length < 2) continue;
-        h += `<div class="note" style="margin-top:6px"><b style="color:var(--ink)">${SEXNAME[s]}</b>: los 5 más comunes cada año</div>` +
+        h += `<div class="note" style="margin-top:6px"><b style="color:var(--ink)">${T("sex." + s)}</b>${T("series.res.top5")}</div>` +
           bump(seriesFromYears(d[s], s, 5), ys, y => "’" + y.slice(2), 5, `rx-${k}-${s}`, width);
       }
-      h += `<div class="note">IVE (Generalitat Valenciana), estadística de los nombres y los apellidos de la población: los 30 primeros de cada municipio y año. En apellidos, quien lo lleva de primero o de segundo.</div>`;
+      h += `<div class="note">${T("series.res.note")}</div>`;
     }
   }
   return h;
@@ -490,58 +519,60 @@ async function openName(sex, key) {
   const d = await nameData(sex, key) || {};
   const r = idxRow(sex, key);
   const name = disp(sex, key);
-  let h = `<div class="ficha"><h2>${esc(name)}</h2><div class="sub">${sex === "A" ? "apellido" : sex === "H" ? "nombre de hombre" : "nombre de mujer"}${name.toUpperCase() !== key ? "" : ""} · forma del INE: <code>${esc(key)}</code></div>`;
+  let h = `<div class="ficha"><h2>${esc(name)}</h2><div class="sub">${T(sex === "A" ? "name.sub.sur" : "name.sub." + sex)}${T("name.sub.ine", {key: `<code>${esc(key)}</code>`})}</div>`;
   if (sex === "A") {
-    if (r && r[1] == null) h += `<div class="note box">No está entre los 5.000 apellidos más frecuentes de España, así que el INE no da su total nacional.${r[7] ? ` Sumando las provincias donde aparece, lo llevan de primero <b>al menos ${fmt(r[7])}</b> personas.` : " Solo aparece en las listas de algunos municipios."}</div>`;
-    else h += `<div class="kpis"><div class="kpi"><b>${fmt(r?.[1])}</b><span>de primer apellido</span></div>
-      <div class="kpi"><b>${fmt(r?.[2])}</b><span>de segundo</span></div><div class="kpi"><b>${fmt(r?.[3])}</b><span>con los dos</span></div></div>`;
-    if (r?.[6]) h += `<div class="note">${fmt2(r[6])} de cada 1.000 habitantes de España lo llevan de primer apellido.</div>`;
+    if (r && r[1] == null) h += `<div class="note box">${T("name.nofigure")}${r[7] ? T("name.floor", {n: fmt(r[7])}) : T("name.onlylocal")}</div>`;
+    else h += `<div class="kpis"><div class="kpi"><b>${fmt(r?.[1])}</b><span>${T("name.kpi.first")}</span></div>
+      <div class="kpi"><b>${fmt(r?.[2])}</b><span>${T("name.kpi.second")}</span></div><div class="kpi"><b>${fmt(r?.[3])}</b><span>${T("name.kpi.both")}</span></div></div>`;
+    if (r?.[6]) h += `<div class="note">${T("name.note.permil.sur", {permil: fmt2(r[6])})}</div>`;
   } else {
     const rank = r ? IDX[sex].indexOf(r) + 1 : null;
-    h += `<div class="kpis"><div class="kpi"><b>${fmt(r?.[1])}</b><span>personas en España</span></div>
-      <div class="kpi"><b>${rank ? "nº " + fmt(rank) : "·"}</b><span>entre los de ${sex === "H" ? "hombre" : "mujer"}</span></div>
-      <div class="kpi"><b>${r?.[2] ? fmt1(r[2]) : "·"}</b><span>años de edad media</span></div></div>`;
-    if (r?.[5]) h += `<div class="note">${fmt2(r[5])} de cada 1.000 ${sex === "H" ? "hombres" : "mujeres"} de España.</div>`;
+    h += `<div class="kpis"><div class="kpi"><b>${fmt(r?.[1])}</b><span>${T("name.kpi.people")}</span></div>
+      <div class="kpi"><b>${rank ? "nº " + fmt(rank) : "·"}</b><span>${T("name.kpi.rankin", {sex: T("kind." + sex)})}</span></div>
+      <div class="kpi"><b>${r?.[2] ? fmt1(r[2]) : "·"}</b><span>${T("name.kpi.age")}</span></div></div>`;
+    if (r?.[5]) h += `<div class="note">${T("name.note.permil", {permil: fmt2(r[5]), who: T("who." + sex)})}</div>`;
   }
   const ex = exBadge(sex, key);
   if (r) {
     const share = sex === "A" ? r[4] : r[3], bound = sex === "A" ? r[5] : r[4];
-    if (share != null) h += `<div class="note box">${bound === 1 ? `Menos del ${Math.max(share, 1)} %` : bound === 2 ? "Casi todos" : share === 0 ? "Menos del 1 %" : `El ${share} %`} de quienes lo llevan en España ${bound === 2 ? "son" : "tienen"} nacionalidad extranjera. ${ex ? "" : ""}<span class="muted">INE, consulta por nacionalidad.</span></div>`;
+    if (share != null) h += `<div class="note box">${T("name.ex.sentence", {
+      part: bound === 1 ? T("name.ex.less", {share: Math.max(share, 1)}) : bound === 2 ? T("name.ex.most") : share === 0 ? T("name.ex.under1") : T("name.ex.exact", {share}),
+      verb: T(bound === 2 ? "name.ex.are" : "name.ex.have")})}</div>`;
   }
   // etymology
   const ety = d.ety || [];
-  const SHORT = {eswiki: "Wikipedia", eswiktionary: "Wikcionario", wikidata: "Wikidata", rule_patronymic: "deducción por la terminación"};
-  const srcLink = c => { const n = SHORT[c.source_id] || srcName(c.source_id); return c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener" title="${esc(srcName(c.source_id))}, consultado el ${esc(c.retrieved || "")}">${esc(n)}</a>` : esc(n); };
+  const SHORT = {eswiki: "Wikipedia", eswiktionary: "Wikcionario", wikidata: "Wikidata", rule_patronymic: T("name.deduction").replace(/ · $/, "")};
+  const srcLink = c => { const n = SHORT[c.source_id] || srcName(c.source_id); return c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener" title="${esc(srcName(c.source_id))}, ${T("name.consulted", {date: esc(c.retrieved || "")})}">${esc(n)}</a>` : esc(n); };
   const etys = ety.filter(c => c.field === "etymology" || c.field === "origin");
-  const facts = [["origin_language", "Lengua de origen"], ["meaning", "Significado"], ["surname_type", "Tipo de apellido"]]
+  const facts = [["origin_language", T("name.fact.lang")], ["meaning", T("name.fact.meaning")], ["surname_type", T("name.fact.surtype")]]
     .map(([f, label]) => [label, ety.filter(c => c.field === f)]).filter(x => x[1].length);
   const eqs = ety.filter(c => c.field === "equivalent");
-  h += `<h3>De dónde viene</h3>`;
-  if (facts.length) h += facts.map(([label, cs]) => `<div class="note" style="margin:3px 0"><b style="color:var(--ink)">${label}:</b> ${cs.map(c => `${esc(c.value)} <small>(${srcLink(c)}${c.status === "proposed" ? ", sin confirmar" : ""})</small>`).join(" · ")}</div>`).join("");
+  h += `<h3>${T("name.h.origin")}</h3>`;
+  if (facts.length) h += facts.map(([label, cs]) => `<div class="note" style="margin:3px 0"><b style="color:var(--ink)">${label}:</b> ${cs.map(c => `${esc(c.value)} <small>(${srcLink(c)}${c.status === "proposed" ? T("name.unconfirmed") : ""})</small>`).join(" · ")}</div>`).join("");
   if (etys.length) h += etys.map(c => {
     const q = c.quote && c.quote !== c.value && !c.value.startsWith(c.quote.replace(/…$/, "").slice(0, 40)) ? `<br>«${esc(c.quote)}»` : "";
-    return `<div class="ety ${c.status === "proposed" ? "proposed" : ""}"><div class="q">${esc(c.value)}</div><div class="src">${c.status === "proposed" ? "deducción, sin confirmar · " : ""}${srcLink(c)}, consultado el ${esc(c.retrieved || "")}${q}</div></div>`;
+    return `<div class="ety ${c.status === "proposed" ? "proposed" : ""}"><div class="q">${esc(c.value)}</div><div class="src">${c.status === "proposed" ? T("name.deduction") : ""}${srcLink(c)}, ${T("name.consulted", {date: esc(c.retrieved || "")})}${q}</div></div>`;
   }).join("");
-  if (!etys.length && !facts.length) h += `<div class="note">${sex !== "A" && key.includes(" ") ? "Nombre compuesto: mira cada parte: " + key.split(" ").map(p => nameLink(sex, p)).join(" · ") : "Sin etimología documentada todavía."}</div>`;
-  const LANG = {ca: "catalán", gl: "gallego", eu: "euskera", ast: "asturiano", an: "aragonés", oc: "aranés"};
-  if (eqs.length) h += `<div style="margin-top:10px" class="note">En otras lenguas de España:</div><div class="eq">${eqs.map(c => `<span title="${esc(SHORT[c.source_id] || c.source_id)}">${esc(c.value)} <i>${esc(LANG[c.lang] || c.lang || "")}</i></span>`).join("")}</div>`;
+  if (!etys.length && !facts.length) h += `<div class="note">${sex !== "A" && key.includes(" ") ? T("name.compound") + key.split(" ").map(p => nameLink(sex, p)).join(" · ") : T("name.noety")}</div>`;
+  const LANGNAME = l => T("lang." + l);  // not LANG: that is the language of the page
+  if (eqs.length) h += `<div style="margin-top:10px" class="note">${T("name.h.langs")}</div><div class="eq">${eqs.map(c => `<span title="${esc(SHORT[c.source_id] || c.source_id)}">${esc(c.value)} <i>${esc(c.lang ? LANGNAME(c.lang) : "")}</i></span>`).join("")}</div>`;
   // generations
   if (sex !== "A") {
-    h += `<h3>Por generaciones <span class="h3n">(año de nacimiento, ‰ de cada generación)</span></h3>`;
-    h += d.dec ? decChart(d.dec) : `<div class="note">No está entre los más frecuentes de ninguna década (lista nacional del INE).</div>`;
-    h += `<h3>Recién nacidos 2002-2024 <span class="h3n">(puesto en España)</span></h3>`;
-    h += d.nb ? nbChart(d.nb) : `<div class="note">Nunca entre los 100 más puestos a los recién nacidos de un año.</div>`;
+    h += `<h3>${T("name.h.gen")} <span class="h3n">${T("name.h.gen.sub")}</span></h3>`;
+    h += d.dec ? decChart(d.dec) : `<div class="note">${T("name.gen.none")}</div>`;
+    h += `<h3>${T("name.h.nb")} <span class="h3n">${T("name.h.nb.sub")}</span></h3>`;
+    h += d.nb ? nbChart(d.nb) : `<div class="note">${T("name.nb.none")}</div>`;
   }
   // where
   const pl = d.pl || [];
   const provs = pl.filter(x => x[0][0] === "p" && x[2] != null).sort((a, b) => b[2] - a[2]);
   const munis = pl.filter(x => x[0][0] === "m" && x[2] != null && x[1] >= 20).sort((a, b) => b[2] - a[2]);
-  h += `<h3>Dónde es más frecuente</h3>`;
-  if (provs.length) h += `<div class="note">Provincias, ${sex === "A" ? "por cada 1.000 habitantes (primer apellido)" : "por cada 1.000 " + (sex === "H" ? "hombres" : "mujeres")}:</div>` +
+  h += `<h3>${T("name.h.where")}</h3>`;
+  if (provs.length) h += `<div class="note">${T("name.where.prov", {who: sex === "A" ? T("name.where.prov.sur") : T("name.where.prov.nm", {who: T("who." + sex)})})}</div>` +
     listTable(provs.slice(0, 10).map(x => ({place: x[0], count: x[1], permil: x[2]})));
-  if (munis.length) h += `<div class="note" style="margin-top:10px">Municipios (con al menos 20 personas que lo llevan):</div>` +
+  if (munis.length) h += `<div class="note" style="margin-top:10px">${T("name.where.muni")}</div>` +
     listTable(munis.slice(0, 10).map(x => ({place: x[0], count: x[1], permil: x[2]})));
-  if (!provs.length && !munis.length) h += `<div class="note">Sin datos territoriales todavía.</div>`;
+  if (!provs.length && !munis.length) h += `<div class="note">${T("name.where.none")}</div>`;
   // where its bearers were born (surnames) and which nationalities carry it most
   if (d.born?.length) {
     const bp = d.born.filter(x => x[0][0] === "q" && x[2] != null).sort((a, b) => b[2] - a[2]);
@@ -556,9 +587,9 @@ async function openName(sex, key) {
   if (d.nat?.length) {
     const nat = d.nat.filter(x => x[1]).sort((a, b) => b[1] - a[1]).slice(0, 8);
     h += `<h3>Nacionalidades <span class="h3n">(residentes en España con otra nacionalidad que lo llevan)</span></h3>` +
-      `<table class="rl">${nat.map((x, i) => `<tr><td class="r">${i + 1}</td><td class="n"><span class="lnk" data-rankarea="x${esc(x[0])}">${esc(PLACES.country?.[x[0]] || x[0])}</span></td><td class="v">${fmt(x[1])}<br><small>${fmt2(x[2])} ‰ de esa nacionalidad</small></td></tr>`).join("")}</table>`;
+      `<table class="rl">${nat.map((x, i) => `<tr><td class="r">${i + 1}</td><td class="n"><span class="lnk" data-rankarea="x${esc(x[0])}">${esc(PLACES.country?.[x[0]] || x[0])}</span></td><td class="v">${fmt(x[1])}<br><small>${T("name.nat.permil", {permil: fmt2(x[2])})}</small></td></tr>`).join("")}</table>`;
   }
-  h += `<p class="note" style="margin-top:14px">Fuente: INE, censo anual de población a 1-1-2025 (consultas de nombres y apellidos) y estadística de nacimientos 2002-2024. Etimologías: cada una con su fuente.</p>`;
+  h += `<p class="note" style="margin-top:14px">${T("name.source")}</p>`;
   showPanel(h + "</div>");
 }
 let SOURCES = {};
@@ -573,12 +604,12 @@ function decChart(dec) {
   ds.forEach((d, i) => {
     const v = vals[i];
     if (v != null) { pts.push(`${x(i)},${y(v)}`); dots += `<circle class="dot" cx="${x(i)}" cy="${y(v)}" r="4"/>`; }
-    hits += `<rect class="hit" x="${x(i) - 14}" y="0" width="28" height="${H}" data-tip="<b>Nacidos ${DEC_LABEL[d]}</b>${v != null ? fmt2(v) + " ‰" : "fuera de la lista"}"/>`;
+    hits += `<rect class="hit" x="${x(i) - 14}" y="0" width="28" height="${H}" data-tip="<b>${T("chart.bornin", {when: DEC_LABEL(d)})}</b>${v != null ? fmt2(v) + " ‰" : T("chart.outoflist")}"/>`;
   });
   const grid = [0, .5, 1].map(f => `<line class="grid" x1="${L}" x2="${W - 8}" y1="${y(max * f)}" y2="${y(max * f)}"/><text x="${L - 4}" y="${y(max * f) + 4}" text-anchor="end">${fmt2(max * f)}</text>`).join("");
-  const xl = ds.map((d, i) => i % 2 === 0 || i === ds.length - 1 ? `<text x="${x(i)}" y="${H - 6}" text-anchor="middle">${DEC_SHORT[d]}</text>` : "").join("");
+  const xl = ds.map((d, i) => i % 2 === 0 || i === ds.length - 1 ? `<text x="${x(i)}" y="${H - 6}" text-anchor="middle">${DEC_SHORT(d)}</text>` : "").join("");
   return `<svg class="ch" viewBox="0 0 ${W} ${H}">${grid}${xl}<polyline class="ln" points="${pts.join(" ")}"/>${dots}${hits}</svg>
-    <div class="note">Gente que vive hoy en España, por década de nacimiento: cuántos de cada 1.000 nacidos entonces se llaman así. Los huecos: fuera de la lista del INE esa década.</div>`;
+    <div class="note">${T("name.gen.note")}</div>`;
 }
 function nbChart(nb) {
   const years = []; for (let y = 2002; y <= 2024; y++) years.push(String(y));
@@ -589,13 +620,13 @@ function nbChart(nb) {
     const v = nb[yr];
     if (v) { cur.push(`${x(i)},${y(v[0])}`); dots += `<circle class="dot" cx="${x(i)}" cy="${y(v[0])}" r="3.2"/>`; }
     else if (cur.length) { segs.push(cur); cur = []; }
-    hits += `<rect class="hit" x="${x(i) - 7}" y="0" width="14" height="${H}" data-tip="<b>${yr}</b>${v ? `nº ${v[0]} · ${fmt(v[1])} bebés` : "fuera de los 100 primeros"}"/>`;
+    hits += `<rect class="hit" x="${x(i) - 7}" y="0" width="14" height="${H}" data-tip="<b>${yr}</b>${v ? T("chart.rankbabies", {rank: v[0], n: fmt(v[1])}) : T("chart.outof100")}"/>`;
   });
   if (cur.length) segs.push(cur);
   const grid = [1, 3, 10, 30, 100].map(r => `<line class="grid" x1="${L}" x2="${W - 8}" y1="${y(r)}" y2="${y(r)}"/><text x="${L - 4}" y="${y(r) + 4}" text-anchor="end">${r}</text>`).join("");
   const xl = years.map((yr, i) => i % 4 === 0 || i === years.length - 1 ? `<text x="${x(i)}" y="${H - 6}" text-anchor="middle">${yr}</text>` : "").join("");
   return `<svg class="ch" viewBox="0 0 ${W} ${H}">${grid}${xl}${segs.map(s => `<polyline class="ln" points="${s.join(" ")}"/>`).join("")}${dots}${hits}</svg>
-    <div class="note">Puesto entre los nombres puestos a los bebés de cada año (1 = el más puesto; escala logarítmica, del 1 al 100).</div>`;
+    <div class="note">${T("name.nb.note")}</div>`;
 }
 document.addEventListener("mouseover", e => {
   const t = e.target.closest("[data-tip]");
@@ -608,54 +639,51 @@ document.addEventListener("mouseout", e => { if (e.target.closest("[data-tip]"))
 // ---------- welcome / about
 function showWelcome() {
   const c = BUILD.counts;
-  showPanel(`<div class="ficha"><h2>Nombres de España</h2><div class="sub">cómo se llama la gente de cada pueblo</div>
-    <p>Busca un nombre o un apellido y el mapa te dirá dónde se concentra; pulsa un pueblo para ver sus nombres y apellidos más comunes y los que son típicos de allí.</p>
-    <p class="note">Todo va en <b>tanto por mil</b>: cuántos de cada 1.000 habitantes (del mismo sexo, en los nombres de pila) lo llevan, para que un pueblo pequeño y una ciudad se puedan comparar.</p>
-    <div class="kpis"><div class="kpi"><b>${fmt(c.names_M)}</b><span>nombres de mujer</span></div><div class="kpi"><b>${fmt(c.names_H)}</b><span>nombres de hombre</span></div><div class="kpi"><b>${fmt(c.surnames)}</b><span>apellidos</span></div></div>
-    <h3>Para empezar</h3>
+  showPanel(`<div class="ficha"><h2>${T("brand")}</h2><div class="sub">${T("tagline")}</div>
+    <p>${T("welcome.lead")}</p>
+    <p class="note">${T("welcome.permil")}</p>
+    <div class="kpis"><div class="kpi"><b>${fmt(c.names_M)}</b><span>${T("welcome.women")}</span></div><div class="kpi"><b>${fmt(c.names_H)}</b><span>${T("welcome.men")}</span></div><div class="kpi"><b>${fmt(c.surnames)}</b><span>${T("welcome.surnames")}</span></div></div>
+    <h3>${T("welcome.start")}</h3>
     <p>${[["M", "MARIA"], ["H", "JOSE"], ["M", "LUCIA"], ["H", "HUGO"], ["M", "ANE"], ["H", "XABIER"], ["M", "MONTSERRAT"], ["H", "MOHAMED"], ["A", "GARCIA"], ["A", "FERNANDEZ"], ["A", "RODRIGUEZ"], ["A", "SANCHEZ"]].map(([s, k]) => nameLink(s, k)).join(" · ")}</p>
-    <p class="note">Nombres de pila en los 6.090 municipios que publica el INE y apellidos en los 8.125. En los pueblos muy pequeños ningún nombre llega a las 5 personas que exige el INE.</p>
-    <p class="note"><span class="lnk" id="about-link" style="color:var(--accent);cursor:pointer">Qué es esto, fuentes y método →</span></p></div>`);
+    <p class="note">${T("welcome.coverage")}</p>
+    <p class="note"><span class="lnk" id="about-link" style="color:var(--accent);cursor:pointer">${T("welcome.aboutlink")}</span></p></div>`);
   $("#about-link").onclick = showAbout;
 }
 function showAbout() {
-  showPanel(`<div class="ficha about"><h2>Acerca de</h2><div class="sub">fuentes, método y límites</div>
-  <h3>Fuentes</h3>
-  <ul>
-    <li><b>INE, nombres y apellidos de la población</b> (censo anual a 1 de enero de 2025): consultas por municipio, provincia, década de nacimiento y nacionalidad de <a href="https://www.ine.es/tnombres/formGeneral.do?vista=1" target="_blank" rel="noopener">ine.es/tnombres</a> y <a href="https://www.ine.es/apellidos/formGeneral.do?vista=1" target="_blank" rel="noopener">ine.es/apellidos</a>.</li>
-    <li><b>INE, nombres de los recién nacidos</b> 2002-2024 (estadística de nacimientos): los 100 primeros de España y los 10 primeros de cada comunidad, cada año.</li>
-    <li><b>INE, apellidos por municipio y provincia de nacimiento</b>, y nombres y apellidos por <b>nacionalidad</b> (141 países), del mismo censo.</li>
-    <li><b>Bebés por debajo de la comunidad</b>: IBESTAT (Baleares, cada municipio e isla, 2005-2024), Idescat (Cataluña, comarcas, 1997-2025) e IECA (Andalucía, provincias 1996-2025 y el nº 1 de cada pueblo 2010-2025).</li>
-    <li><b>Residentes año a año</b> en la Comunitat Valenciana: IVE, los 30 primeros de cada municipio, 2011-2022.</li>
-    <li><b>Etimologías</b>: Wikcionario, Wikipedia y Wikidata, cada una con su enlace y fecha.</li>
-    <li>Límites municipales: GISCO (© EuroGeographics).</li>
-  </ul>
-  <h3>Cómo leer las cifras</h3>
-  <ul>
-    <li><b>Tanto por mil (‰)</b>, como lo da el INE: personas con ese nombre por cada 1.000 habitantes del mismo sexo del sitio; en los apellidos, por cada 1.000 habitantes, como primer apellido.</li>
-    <li><b>Secreto estadístico</b>: el INE solo publica un nombre si lo llevan al menos 20 personas en España, y en cada sitio, al menos 5. En un pueblo pequeño salen pocos nombres; los que faltan no son ceros, son "menos de 5".</li>
-    <li>El INE escribe los nombres <b>en mayúsculas y sin tildes</b>, y quita "de", "del": MARIA CARMEN es María del Carmen. La forma con tildes que se ve aquí sale de Wikcionario o Wikipedia cuando la hay.</li>
-    <li>"María" es solo María a secas: María Carmen, María José… se cuentan aparte.</li>
-  </ul>
-  <h3>Residentes extranjeros</h3>
-  <p>Las cifras cuentan a <b>todos los que viven</b> en cada sitio, tengan la nacionalidad que tengan, igual que el INE. El INE no separa por nacionalidad dentro de un municipio, así que no se puede "quitar" a nadie de un pueblo. Lo que sí da es, para toda España, cuántos de los que llevan cada nombre son extranjeros: eso sale en la ficha de cada nombre, y en los rankings se pueden <b>ocultar los nombres que llevan sobre todo extranjeros</b> (la gente sigue contada; solo se ocultan esas filas).</p>
-  <h3>Lo calculado</h3>
-  <ul>
-    <li><b>Característico</b>: el nombre cuyo tanto por mil en el sitio es más veces el de España (con al menos 10 personas y al menos el doble).</li>
-    <li><b>Generación</b>: media de la edad media nacional de los nombres que lleva la gente del sitio (no es la edad de la gente del pueblo, aunque se le parece).</li>
-    <li><b>Repetición</b>: parte de la población que lleva uno de los 10 nombres más comunes del sitio. Cuanto más alta, menos variedad.</li>
-  </ul>
-  <p class="note">Hecho sin ánimo de lucro. Cada dato lleva su fuente.</p></div>`);
+  const sister = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)
+    ? "../prenoms_francia/prenoms.html" : "https://victorelvira.github.io/projects/prenoms.html";
+  showPanel(`<div class="ficha about"><h2>${T("about.h")}</h2><div class="sub">${T("about.sub")}</div>
+  <h3>${T("about.h.sources")}</h3>
+  <ul>${["about.src1", "about.src2", "about.src3", "about.src4", "about.src5", "about.src6", "about.src7"].map(k => `<li>${T(k)}</li>`).join("")}</ul>
+  <h3>${T("about.h.read")}</h3>
+  <ul>${["about.r1", "about.r2", "about.r3", "about.r4"].map(k => `<li>${T(k)}</li>`).join("")}</ul>
+  <h3>${T("about.h.ex")}</h3>
+  <p>${T("about.ex")}</p>
+  <h3>${T("about.h.calc")}</h3>
+  <ul>${["about.c1", "about.c2", "about.c3", "about.c4"].map(k => `<li>${T(k)}</li>`).join("")}</ul>
+  <h3>${T("about.h.sister")}</h3>
+  <p class="note">${T("about.sister", {url: sister})}</p>
+  <p class="note">${T("about.quotes")}</p>
+  <p class="note">${T("about.nonprofit")}</p></div>`);
 }
+
+
+// link to the sibling project: the same folder on the published site, a sibling folder when served locally
+(() => {
+  const a = document.querySelector(".sister");
+  if (!a) return;
+  const local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+  a.href = local ? a.dataset.local : a.dataset.web;
+})();
 
 // ---------- rankings view
 async function renderRank() {
   const w = $("#rankwrap");
   const sex = state.sex;
-  const opts = [`<option value="ES">España</option>`].concat(Object.entries(PLACES.prov).sort((a, b) => a[1].n.localeCompare(b[1].n, "es")).map(([pc, p]) => `<option value="p${pc}">${esc(p.n)}</option>`));
-  if (state.rankArea[0] === "m") opts.splice(1, 0, `<option value="${state.rankArea}">${esc(placeName(state.rankArea))} (municipio)</option>`);
-  if (sex === "A") opts.push(`<optgroup label="Por provincia de NACIMIENTO">${Object.entries(PLACES.prov).sort((a, b) => a[1].n.localeCompare(b[1].n, "es")).map(([pc, p]) => `<option value="q${pc}">Nacidos en ${esc(p.n)}</option>`).join("")}<option value="q66">Nacidos en el extranjero</option></optgroup>`);
-  opts.push(`<optgroup label="Por nacionalidad (residentes en toda España)">${(PLACES.xs || []).map(c => [c, PLACES.country?.[c] || c]).sort((a, b) => a[1].localeCompare(b[1], "es")).map(([c, n]) => `<option value="x${c}">${esc(n)}</option>`).join("")}</optgroup>`);
+  const opts = [`<option value="ES">${T("spain")}</option>`].concat(Object.entries(PLACES.prov).sort((a, b) => a[1].n.localeCompare(b[1].n, T("locale"))).map(([pc, p]) => `<option value="p${pc}">${esc(p.n)}</option>`));
+  if (state.rankArea[0] === "m") opts.splice(1, 0, `<option value="${state.rankArea}">${esc(placeName(state.rankArea))} (${T("kind.m")})</option>`);
+  if (sex === "A") opts.push(`<optgroup label="${T("rank.group.born")}">${Object.entries(PLACES.prov).sort((a, b) => a[1].n.localeCompare(b[1].n, T("locale"))).map(([pc, p]) => `<option value="q${pc}">${T("rank.born.in", {prov: esc(p.n)})}</option>`).join("")}<option value="q66">${T("rank.born.abroad")}</option></optgroup>`);
+  opts.push(`<optgroup label="${T("rank.group.nat")}">${(PLACES.xs || []).map(c => [c, PLACES.country?.[c] || c]).sort((a, b) => a[1].localeCompare(b[1], T("locale"))).map(([c, n]) => `<option value="x${c}">${esc(n)}</option>`).join("")}</optgroup>`);
   let rows = [];
   if (state.rankArea === "ES") {
     // Spain: only names with a national figure (surnames outside the INE's national top 5 000 have none)
@@ -671,27 +699,27 @@ async function renderRank() {
   const shown = state.rankN ? rows.slice(0, state.rankN) : rows;
   const max = Math.max(...shown.map(r => r.permil || 0), 0.001);
   const ra = state.rankArea;
-  const title = `${SEXNAME[sex]} · ${ra === "ES" ? "España" : ra[0] === "x" ? "nacionalidad: " + placeName(ra) : ra[0] === "q" ? "nacidos en " + placeName(ra) : placeName(ra)}`;
+  const title = T("rank.title", {sex: T("sex." + sex), where: ra === "ES" ? T("spain") : ra[0] === "x" ? T("rank.where.nat", {name: placeName(ra)}) : ra[0] === "q" ? T("rank.where.born", {name: placeName(ra)}) : placeName(ra)});
   const tmW = Math.min(980, (w.clientWidth || 900) - 40);
-  const tmHTML = rows.length > 3 ? `<div class="tm-card"><h3>Mosaico de los 60 primeros</h3><p class="note">Cada rectángulo, un ${sex === "A" ? "apellido" : "nombre"}; su superficie, cuánta gente lo lleva.</p>${treemapHTML(rows.slice(0, 60), sex, tmW - 28, Math.round(Math.min(520, tmW * .55)), sex === "A" ? "de primer apellido" : "personas")}</div>` : "";
+  const tmHTML = rows.length > 3 ? `<div class="tm-card"><h3>${T("rank.mosaic")}</h3><p class="note">${T("rank.mosaic.note", {what: T(sex === "A" ? "kind.A" : "rank.col.name").toLowerCase()})}</p>${treemapHTML(rows.slice(0, 60), sex, tmW - 28, Math.round(Math.min(520, tmW * .55)), T(sex === "A" ? "unit.firstsur" : "unit.people"))}</div>` : "";
   w.innerHTML = `<div class="tools">
       <select id="r-area">${opts.join("")}</select>
-      <label class="chip toggle"><input type="checkbox" id="r-ex" ${state.hideEx ? "checked" : ""}> ocultar los que llevan sobre todo extranjeros</label>
-      <select id="r-n"><option value="100">100 primeros</option><option value="500">500 primeros</option><option value="0">todos</option></select>
+      <label class="chip toggle"><input type="checkbox" id="r-ex" ${state.hideEx ? "checked" : ""}> ${T("rank.hideex")}</label>
+      <select id="r-n"><option value="100">${T("rank.n100")}</option><option value="500">${T("rank.n500")}</option><option value="0">${T("rank.nall")}</option></select>
     </div>
     <div class="rank-title">${esc(title)}</div>
     ${tmHTML}
-    <p class="note">${fmt(all)} ${sex === "A" ? "apellidos" : "nombres"} con dato${hidden ? ` · ${fmt(hidden)} ocultos por llevarlos sobre todo extranjeros (siguen contados en el total)` : ""}. ${sex === "A" ? "Primer apellido por cada 1.000 habitantes." : `Por cada 1.000 ${sex === "H" ? "hombres" : "mujeres"}.`} Pulsa uno para ver su ficha y su mapa.</p>
-    <table class="rank-table ${sex === "A" ? "sur" : ""}"><thead><tr><th class="v">#</th><th>${sex === "A" ? "Apellido" : "Nombre"}</th><th class="v">${sex === "A" ? "1.er apellido" : "Personas"}</th><th class="v">‰</th><th></th>${sex === "A" ? `<th class="v">2.º apellido</th><th class="v">los dos</th>` : `<th class="v">Edad media</th>`}<th class="v">Extranjeros</th></tr></thead>
+    <p class="note">${T("rank.count", {n: fmt(all), what: T(sex === "A" ? "sex.A" : "rank.col.name").toLowerCase()})}${hidden ? T("rank.hidden", {n: fmt(hidden)}) : ""}. ${sex === "A" ? T("rank.note.sur") : T("rank.note.nm", {who: T("who." + sex)})}${T("rank.note.click")}</p>
+    <table class="rank-table ${sex === "A" ? "sur" : ""}"><thead><tr><th class="v">#</th><th>${T(sex === "A" ? "rank.col.surname" : "rank.col.name")}</th><th class="v">${T(sex === "A" ? "rank.col.first" : "rank.col.people")}</th><th class="v">‰</th><th></th>${sex === "A" ? `<th class="v">${T("rank.col.second")}</th><th class="v">${T("rank.col.both")}</th>` : `<th class="v">${T("rank.col.age")}</th>`}<th class="v">${T("rank.col.ex")}</th></tr></thead>
     <tbody>${shown.map(r => {
       const ir = idxRow(sex, r.key); const share = ir ? (sex === "A" ? ir[4] : ir[3]) : null, bound = ir ? (sex === "A" ? ir[5] : ir[4]) : 0;
       return `<tr><td class="v muted">${r.rank}</td><td class="n" data-name="${sex}:${esc(r.key)}">${esc(disp(sex, r.key))}</td><td class="v">${fmt(r.count)}</td><td class="v">${fmt2(r.permil)}</td>
       <td style="width:18%"><div class="b" style="width:${Math.max(2, 100 * (r.permil || 0) / max)}%"></div></td>
       ${sex === "A" ? `<td class="v">${fmt(r.n2)}</td><td class="v">${fmt(r.nb)}</td>` : `<td class="v">${r.age ? fmt1(r.age) : ""}</td>`}
-      <td class="v muted">${share == null ? "" : bound === 1 ? "<" + share + " %" : bound === 2 ? "casi todos" : share + " %"}</td></tr>`;
+      <td class="v muted">${share == null ? "" : bound === 1 ? "<" + share + " %" : bound === 2 ? T("name.ex.most").toLowerCase() : share + " %"}</td></tr>`;
     }).join("")}</tbody></table>
-    ${shown.length < rows.length ? `<p style="text-align:center;margin:12px 0"><button type="button" class="chip btn" id="r-all">Mostrar todos (${fmt(rows.length)})</button></p>` : ""}
-    <p class="note">Edad media y extranjeros: cifras de toda España para ese nombre (INE). Fuente: INE, censo anual de población a 1-1-2025.</p>`;
+    ${shown.length < rows.length ? `<p style="text-align:center;margin:12px 0"><button type="button" class="chip btn" id="r-all">${T("rank.showall", {n: fmt(rows.length)})}</button></p>` : ""}
+    <p class="note">${T("rank.source")}</p>`;
   $("#r-area").value = state.rankArea;
   if ($("#r-area").value !== state.rankArea) { state.rankArea = "ES"; return renderRank(); }
   $("#r-n").value = String(state.rankN);
@@ -728,13 +756,39 @@ function bump(series, xs, xlabel, maxRank, id, width) {
   // at its own pixel width inside a horizontal scroller, so a phone scrolls it instead of shrinking the text
   return `<div class="scrollx"><svg class="ch bump" id="${id}" viewBox="0 0 ${W} ${H}" style="width:${W}px;max-width:none">${grid}${ranksL}${g}</svg></div>`;
 }
+// Hover lights a line in the colour it would keep if clicked; leaving it puts it back. A click pins that colour
+// (click again to unpin) and the next hover previews the next colour. The hovered line is NOT re-appended to the
+// SVG: moving the node under the pointer made the browser skip "mouseleave" and the colour stayed on.
+let pinNext = 0;
 function wireBump(id, sex) {
   const svg = document.getElementById(id);
   if (!svg) return;
   svg.querySelectorAll("g.s").forEach(g => {
-    g.addEventListener("mouseenter", () => { g.classList.add("on"); g.parentNode.appendChild(g); });
-    g.addEventListener("mouseleave", () => g.classList.remove("on"));
-    g.addEventListener("click", () => openName(sex, g.dataset.k));
+    g.addEventListener("mouseenter", () => {
+      if (g.classList.contains("pin")) return;
+      g.style.setProperty("--hl", SERIES[pinNext % SERIES.length]);
+      g.classList.add("on");
+    });
+    g.addEventListener("mouseleave", () => {
+      if (g.classList.contains("pin")) return;
+      g.classList.remove("on");
+      g.style.removeProperty("--hl");
+    });
+    g.querySelectorAll("text.lbl").forEach(lb => {  // the name opens the ficha, the line pins the colour
+      lb.style.cursor = "pointer";
+      lb.addEventListener("click", e => { e.stopPropagation(); openName(sex, g.dataset.k); });
+    });
+    g.addEventListener("click", e => {
+      if (g.classList.contains("pin")) {
+        g.classList.remove("pin", "on");
+        g.style.removeProperty("--hl");
+      } else {
+        g.style.setProperty("--hl", SERIES[pinNext % SERIES.length]);
+        pinNext++;
+        g.classList.add("pin");
+        g.parentNode.appendChild(g);  // safe here: the click is over, not a hover
+      }
+    });
   });
 }
 async function renderEvo() {
@@ -742,18 +796,18 @@ async function renderEvo() {
   const regional = state.nbArea.includes(":");
   const nbData = regional ? (await J(`nbx/${state.nbArea.replace(":", "_")}.json`)) : NB[state.nbArea];
   const years = Object.keys((nbData || NB.ES)[state.nbSex] || NB.ES.M).sort();
-  const LV = {p: "provincia", i: "isla", k: "comarca", m: "municipio", c: "comunidad"};
+  const LV = {p: T("kind.p"), i: T("series.isla", {name: ""}).trim(), k: T("series.comarca", {name: ""}).trim(), m: T("kind.m"), c: "CCAA"};
   const groups = {};
   for (const [key, m] of Object.entries(SERIES_IDX.nb)) {
     if (m.src === "IECA" && m.level === "m") continue;  // only the nº 1 per town: shown in the town's ficha
     (groups[m.src] = groups[m.src] || []).push([key, `${m.label} (${LV[m.level] || m.level}, ${m.years.join("-")})`]);
   }
   const GL = {IECA: "Andalucía · IECA", IBESTAT: "Illes Balears · IBESTAT", Idescat: "Catalunya · Idescat"};
-  const ccaaOpts = [`<optgroup label="INE · 2002-2024"><option value="ES">España</option>`].concat(Object.keys(NB).filter(k => k !== "ES").sort().map(k => `<option value="${k}">${esc(PLACES.ccaa[k] || k)}</option>`)).concat(["</optgroup>"])
+  const ccaaOpts = [`<optgroup label="INE · 2002-2024"><option value="ES">${T("spain")}</option>`].concat(Object.keys(NB).filter(k => k !== "ES").sort().map(k => `<option value="${k}">${esc(PLACES.ccaa[k] || k)}</option>`)).concat(["</optgroup>"])
     .concat(Object.entries(groups).map(([g, lst]) => `<optgroup label="${esc(GL[g] || g)}">${lst.sort((a, b) => a[1].localeCompare(b[1], "es")).map(([k, l]) => `<option value="${esc(k)}">${esc(l)}</option>`).join("")}</optgroup>`));
-  const genName = k => k === "66" ? "Nacidos en el extranjero" : (PLACES.prov[k]?.n ? "Nacidos en " + PLACES.prov[k].n : k);
-  const genOpts = [`<option value="00">España</option>`].concat(Object.keys(GEN.g).filter(k => k !== "00").sort((a, b) => genName(a).localeCompare(genName(b), "es")).map(k => `<option value="${k}">${esc(genName(k))}</option>`));
-  const seg = (id, v) => `<span class="seg" id="${id}">${["M", "H"].map(s => `<button type="button" class="seg-btn ${v === s ? "active" : ""}" data-s="${s}">${SEXNAME[s]}</button>`).join("")}</span>`;
+  const genName = k => k === "66" ? T("evo.gen.abroad") : (PLACES.prov[k]?.n ? T("evo.gen.born", {prov: PLACES.prov[k].n}) : k);
+  const genOpts = [`<option value="00">${T("spain")}</option>`].concat(Object.keys(GEN.g).filter(k => k !== "00").sort((a, b) => genName(a).localeCompare(genName(b), "es")).map(k => `<option value="${k}">${esc(genName(k))}</option>`));
+  const seg = (id, v) => `<span class="seg" id="${id}">${["M", "H"].map(s => `<button type="button" class="seg-btn ${v === s ? "active" : ""}" data-s="${s}">${SEXNAME(s)}</button>`).join("")}</span>`;
   // newborns
   const nb = nbData?.[state.nbSex] || {};
   const maxR = 10;
@@ -776,19 +830,19 @@ async function renderEvo() {
   });
   for (const [k, s] of gser) if (!Object.values(s.ranks).some(r => r <= maxR)) gser.delete(k);
   w.innerHTML = `<div class="evo-grid">
-    <div class="card"><h2>Los nombres de los bebés, año a año</h2>
-      <p class="note">Los 10 nombres más puestos cada año. Toca una línea o pasa el ratón por encima para seguirla; púlsala para ver su ficha.</p>
+    <div class="card"><h2>${T("evo.h.nb")}</h2>
+      <p class="note">${T("evo.nb.note")}</p>
       <div class="tools"><select id="nb-area">${ccaaOpts.join("")}</select>${seg("nb-sex", state.nbSex)}</div>
       ${bump(ser, years, y => "’" + y.slice(2), maxR, "bump-nb")}
-      ${regional ? `<p class="note">${esc(SRCNOTE[SERIES_IDX.nb[state.nbArea]?.src] || "")}. Aquí se guardan los 15 primeros de cada año.</p>` : ""}
-      <table class="ones"><thead><tr><th>Año</th><th>Nº 1</th><th class="v">bebés</th><th class="v">de cada 1.000</th></tr></thead><tbody>
+      ${regional ? `<p class="note">${T("evo.nb.regional", {src: esc(SRCNOTE(SERIES_IDX.nb[state.nbArea]?.src || ""))})}</p>` : ""}
+      <table class="ones"><thead><tr><th>${T("evo.col.year")}</th><th>${T("evo.col.one")}</th><th class="v">${T("evo.col.babies")}</th><th class="v">${T("evo.col.per1000")}</th></tr></thead><tbody>
       ${ones.slice().reverse().map(([y, r, t]) => r ? `<tr><td>${y}</td><td>${nameLink(state.nbSex, r[0])}</td><td class="v">${fmt(r[1])}</td><td class="v">${t ? fmt1(1000 * r[1] / t[1]) : ""}</td></tr>` : "").join("")}</tbody></table>
-      <p class="note">Fuentes: INE, estadística de nacimientos (100 primeros de España y 10 de cada comunidad, 2002-2024); y por provincia, isla, comarca o municipio, IECA (Andalucía, 1996-2025), IBESTAT (Baleares, 2005-2024) e Idescat (Cataluña, 1997-2025).</p></div>
-    <div class="card"><h2>Por generaciones: de los nacidos antes de 1930 a los de 2020</h2>
-      <p class="note">Los 10 nombres más frecuentes entre la gente que vive hoy en España, según su década de nacimiento${state.genArea !== "00" ? " y su <b>provincia de nacimiento</b> (no la de residencia)" : ""}. Es la foto de 2025: de las generaciones mayores solo cuenta quien sigue vivo y residiendo en España.</p>
+      <p class="note">${T("evo.nb.source")}</p></div>
+    <div class="card"><h2>${T("evo.h.gen")}</h2>
+      <p class="note">${T("evo.gen.note", {prov: state.genArea !== "00" ? T("evo.gen.prov") : ""})}</p>
       <div class="tools"><select id="gen-area">${genOpts.join("")}</select>${seg("gen-sex", state.genSex)}</div>
       ${bump(gser, GEN.decades, d => DEC_SHORT[d], maxR, "bump-gen")}
-      <p class="note">Fuente: INE, censo anual de población a 1-1-2025, nombres por provincia y década de nacimiento.</p></div>
+      <p class="note">${T("evo.gen.source")}</p></div>
   </div>`;
   $("#nb-area").value = state.nbArea; $("#gen-area").value = state.genArea;
   $("#nb-area").onchange = e => { state.nbArea = e.target.value; renderEvo(); };
@@ -802,29 +856,29 @@ async function renderEvo() {
 // ---------- pairs between the sexes (R007, R008)
 function renderStats() {
   const w = $("#statswrap");
-  if (!STATS) { w.innerHTML = "<p class='note'>Sin datos.</p>"; return; }
+  if (!STATS) { w.innerHTML = `<p class='note'>${T("place.nodata")}</p>`; return; }
   const H = STATS.topH.slice(0, 10), M = STATS.topM.slice(0, 10);
   const cell = new Map(STATS.cross.map(([h, m, c, p]) => [h + "|" + m, [c, p]]));
   const max = Math.max(...STATS.cross.map(x => x[2]));
   const shade = c => c ? SEQ[Math.min(SEQ.length - 1, Math.floor(SEQ.length * Math.sqrt(c / max) * .999))] : "#f6f3ee";
   let x = `<table class="xt"><thead><tr><th></th>${M.map(m => `<th>${nameLink("M", m)}</th>`).join("")}</tr></thead><tbody>` +
     H.map(h => `<tr><th>${nameLink("H", h)}</th>${M.map(m => { const [c, p] = cell.get(h + "|" + m) || [0, 0]; const i = c ? SEQ.indexOf(shade(c)) : -1;
-      return `<td class="${i >= 3 ? "dk" : ""} ${c ? "" : "zero"}" style="background:${shade(c)}" data-tip="<b>${esc(disp("H", h))} y ${esc(disp("M", m))}</b>${c ? `nº 1 a la vez en ${fmt(c)} municipios (${fmt(p)} habitantes)` : "nunca a la vez"}">${c || "·"}</td>`; }).join("")}</tr>`).join("") + "</tbody></table>";
+      return `<td class="${i >= 3 ? "dk" : ""} ${c ? "" : "zero"}" style="background:${shade(c)}" data-tip="${c ? T("stats.cell", {man: esc(disp("H", h)), woman: esc(disp("M", m)), n: fmt(c), pop: fmt(p)}) : T("stats.cell.never", {man: esc(disp("H", h)), woman: esc(disp("M", m))})}">${c || "·"}</td>`; }).join("")}</tr>`).join("") + "</tbody></table>";
   const {H: cH, M: cM, r} = STATS.corr;
   const best = (i, byRow) => (byRow ? cM.map((m, j) => [m, r[i][j]]) : cH.map((h, j) => [h, r[j][i]])).sort((a, b) => b[1] - a[1]).slice(0, 3);
   const bar = v => `<small>${fmt2(v)}</small>`;
   const pairsH = cH.slice(0, 24).map((h, i) => `<div class="pair"><span class="a">${nameLink("H", h)}</span><span class="bs">${best(i, true).map(([m, v]) => `<span>${nameLink("M", m)} ${bar(v)}</span>`).join("")}</span></div>`).join("");
   const pairsM = cM.slice(0, 24).map((m, j) => `<div class="pair"><span class="a">${nameLink("M", m)}</span><span class="bs">${best(j, false).map(([h, v]) => `<span>${nameLink("H", h)} ${bar(v)}</span>`).join("")}</span></div>`).join("");
   w.innerHTML = `<div class="evo-grid">
-    <div class="card"><h2>El nº 1 de hombre y el nº 1 de mujer de cada pueblo</h2>
-      <p class="note">En cuántos municipios el nombre de hombre más común (filas) y el de mujer más común (columnas) son esa pareja. Por eso en el mapa "El más común" cada nombre de mujer lleva el color del de hombre con el que más coincide: Antonio y María, Manuel y María Carmen, Jordi y Montserrat.</p>
+    <div class="card"><h2>${T("stats.h.cross")}</h2>
+      <p class="note">${T("stats.cross.note")}</p>
       <div style="overflow-x:auto">${x}</div>
-      <p class="note">Calculado a partir del INE (censo 1-1-2025), con los ${fmt(STATS.cross.reduce((a, b) => a + b[2], 0))} municipios que tienen los dos nº 1. <span class="badge calc">calculado</span></p></div>
-    <div class="card"><h2>Nombres que suben y bajan juntos</h2>
-      <p class="note">Para cada uno de los nombres más comunes, los tres del otro sexo cuyo tanto por mil sube y baja con el suyo de un pueblo a otro (correlación de 0 a 1; 1 = van siempre a la par). Aparecen dos efectos: la forma femenina del mismo nombre (Antonio y Antonia, Francisco y Francisca), que suele ser de la misma familia o la misma devoción local, y la generación (David y Laura, Alejandro y Lucía), porque los pueblos con más jóvenes tienen más de los dos.</p>
-      <h3 style="font-size:12px;text-transform:uppercase;color:var(--muted);margin:14px 0 4px">Hombres → mujeres</h3><div class="pairs">${pairsH}</div>
-      <h3 style="font-size:12px;text-transform:uppercase;color:var(--muted);margin:16px 0 4px">Mujeres → hombres</h3><div class="pairs">${pairsM}</div>
-      <p class="note">Correlación de Pearson del tanto por mil en los ${fmt(STATS.corr.towns)} municipios de 2.000 habitantes o más, entre los 40 nombres más comunes de cada sexo en España; un nombre que no aparece en un pueblo cuenta como 0 (lo llevan menos de 5 personas). Que dos nombres vayan juntos no quiere decir que sean de las mismas personas ni de las mismas parejas. <span class="badge calc">calculado</span></p></div>
+      <p class="note">${T("stats.cross.source", {n: fmt(STATS.cross.reduce((a, b) => a + b[2], 0))})} <span class="badge calc">${T("calc")}</span></p></div>
+    <div class="card"><h2>${T("stats.h.corr")}</h2>
+      <p class="note">${T("stats.corr.note")}</p>
+      <h3 style="font-size:12px;text-transform:uppercase;color:var(--muted);margin:14px 0 4px">${T("stats.corr.h1")}</h3><div class="pairs">${pairsH}</div>
+      <h3 style="font-size:12px;text-transform:uppercase;color:var(--muted);margin:16px 0 4px">${T("stats.corr.h2")}</h3><div class="pairs">${pairsM}</div>
+      <p class="note">${T("stats.corr.source", {n: fmt(STATS.corr.towns)})} <span class="badge calc">${T("calc")}</span></p></div>
   </div>`;
 }
 
@@ -835,7 +889,7 @@ function buildSearch() {
   for (const [ine, m] of Object.entries(PLACES.muni)) { const v = PLACES.v["m" + ine] || {}; SEARCH.push({t: "m", key: "m" + ine, n: norm(m.n), n2: norm(m.n.replace(/^(.*), (El|La|Los|Las|Lo|L'|A|O|As|Os|Es|Sa|Ses|Els|Les|Et)$/i, "$2 $1").replace(/^L' /, "L")), label: m.n, sub: PLACES.prov[m.p]?.n, w: (v.popH || 0) + (v.popM || 0)}); }
   for (const [pc, p] of Object.entries(PLACES.prov)) SEARCH.push({t: "p", key: "p" + pc, n: norm(p.n), label: p.n, sub: "provincia", w: 1});
 }
-const KIND = {M: "mujer", H: "hombre", A: "apellido", m: "municipio", p: "provincia"};
+const KIND = k => T("kind." + k);
 let sugIdx = -1, sugItems = [];
 function suggest(q) {
   const box = $("#suggest");
@@ -854,7 +908,7 @@ function suggest(q) {
   const exact = sugItems.filter(s => s.n === nq);
   sugItems = [...exact, ...sugItems.filter(s => s.n !== nq)];
   sugIdx = -1;
-  box.innerHTML = sugItems.map((s, i) => `<div class="sug" data-i="${i}"><span class="kind">${KIND[s.t]}</span><span class="sn">${esc(s.label)}</span><span class="ss">${s.t === "m" || s.t === "p" ? esc(s.sub || "") : (s.floor ? (s.w ? "≥" + fmt(s.w) : "local") : fmt(s.w)) + (s.t === "A" ? " 1.er ap." : " pers.")}</span></div>`).join("") || `<div class="sug muted">Nada con "${esc(q)}"</div>`;
+  box.innerHTML = sugItems.map((s, i) => `<div class="sug" data-i="${i}"><span class="kind">${KIND(s.t)}</span><span class="sn">${esc(s.label)}</span><span class="ss">${s.t === "m" || s.t === "p" ? esc(s.sub || "") : (s.floor ? (s.w ? "≥" + fmt(s.w) : "local") : fmt(s.w)) + " " + T(s.t === "A" ? "unit.firstsur" : "unit.people")}</span></div>`).join("") || `<div class="sug muted">${T("search.none", {q: esc(q)})}</div>`;
   box.hidden = false;
 }
 function pick(s) {
@@ -875,21 +929,37 @@ $("#filter").addEventListener("keydown", e => {
 $("#suggest").addEventListener("mousedown", e => { const el = e.target.closest(".sug[data-i]"); if (el) pick(sugItems[+el.dataset.i]); });
 $("#filter").addEventListener("blur", () => setTimeout(() => $("#suggest").hidden = true, 150));
 
+
 // ---------- views and buttons
-const MODE_NAME = {top: "El más común", char: "Característico", age: "Generación", conc: "Repetición"};
-const SEX_LONG = {M: "Nombres de mujer", H: "Nombres de hombre", A: "Apellidos"};
+const MODE_NAME = m => T("mode." + m);
+const SEX_LONG = s => T("sex." + s);
 function syncSummary() {
-  const s = state.view === "map" ? `${MODE_NAME[state.mode]} · ${SEX_LONG[state.sex]}` : SEX_LONG[state.sex];
-  $("#mob-sum").textContent = state.sel && state.view === "map" ? `${disp(state.sel.sex, state.sel.key)} en el mapa` : s;
+  const s = state.view === "map"
+    ? `${MODE_NAME(state.mode)}${state.mode === "gen" ? " " + decLabel() : ""} · ${SEX_LONG(state.sex)}`
+    : SEX_LONG(state.sex);
+  $("#mob-sum").textContent = state.sel && state.view === "map" ? disp(state.sel.sex, state.sel.key) : s;
 }
+// the decade slider of the Generación mode (0.6.0)
+function syncDec() {
+  $("#decwrap").hidden = !(state.view === "map" && state.mode === "gen");
+  $$("#span-tabs .seg-btn").forEach(b => b.classList.toggle("active", b.dataset.span === state.decSpan));
+  $("#dec-one").hidden = state.decSpan !== "one";
+  $("#dec-two").hidden = state.decSpan === "one";
+  $("#dec").value = state.dec; $("#declab").textContent = DEC_NAME(DECADES[state.dec]);
+  $("#d1").value = state.d1; $("#d2").value = state.d2; $("#dlab2").textContent = decLabel();
+}
+$$("#span-tabs .seg-btn").forEach(b => b.onclick = () => { state.decSpan = b.dataset.span; syncDec(); writeHash(); restyle(); syncSummary(); });
+$("#dec").addEventListener("input", e => { state.dec = +e.target.value; syncDec(); writeHash(); restyle(); syncSummary(); });
+$("#d1").addEventListener("input", e => { state.d1 = +e.target.value; syncDec(); writeHash(); restyle(); syncSummary(); });
+$("#d2").addEventListener("input", e => { state.d2 = +e.target.value; syncDec(); writeHash(); restyle(); syncSummary(); });
 $("#mob-toggle").onclick = () => {
   const open = !document.body.classList.contains("filters-open");
   document.body.classList.toggle("filters-open", open);
   $("#mob-toggle").setAttribute("aria-expanded", open);
   $("#mob-toggle .ti").textContent = open ? "−" : "＋";
-  $("#mob-toggle .tl").textContent = open ? "cerrar" : "más filtros";
+  $("#mob-toggle .tl").textContent = T(open ? "filters.close" : "filters.more");
 };
-function closeFilters() { document.body.classList.remove("filters-open"); $("#mob-toggle .ti").textContent = "＋"; $("#mob-toggle .tl").textContent = "más filtros"; $("#mob-toggle").setAttribute("aria-expanded", "false"); }
+function closeFilters() { document.body.classList.remove("filters-open"); $("#mob-toggle .ti").textContent = "＋"; $("#mob-toggle .tl").textContent = T("filters.more"); $("#mob-toggle").setAttribute("aria-expanded", "false"); }
 function syncButtons() {
   $$(".view-btn").forEach(b => b.classList.toggle("active", b.dataset.view === state.view));
   $$(".mode-btn").forEach(b => b.classList.toggle("active", b.dataset.mode === state.mode));
@@ -897,6 +967,7 @@ function syncButtons() {
   document.body.classList.remove("view-map", "view-rank", "view-evo", "view-stats");
   document.body.classList.add("view-" + state.view);
   if ($("#mob-sum")) syncSummary();
+  if ($("#decwrap")) syncDec();
 }
 function setView(v) {
   state.view = v; syncButtons(); writeHash();
@@ -911,9 +982,29 @@ $$(".mode-btn").forEach(b => b.onclick = () => { state.mode = b.dataset.mode; st
 $$("#sex-tabs .seg-btn").forEach(b => b.onclick = () => {
   state.sex = b.dataset.sex; state.sel = null; syncButtons(); writeHash(); closeFilters();
   if (state.view === "map") restyle(); else if (state.view === "rank") renderRank();
+  else if (state.view === "stats") renderStats();
 });
 $$(".about-open").forEach(b => b.onclick = () => { closeFilters(); showAbout(); });
 document.querySelector(".brand").addEventListener("click", e => { e.preventDefault(); history.replaceState(null, "", location.pathname); location.reload(); });
+
+// ---------- language
+function statsBar() {
+  const c = BUILD.counts;
+  $("#stats").innerHTML = T("stats.bar", {names: fmt(c.names_H + c.names_M), surnames: fmt(c.surnames), munis: fmt(c.munis_with_data)});
+}
+function rerender() {
+  applyStatic(); statsBar();
+  if (state.view === "map") restyle(); else if (state.view === "rank") renderRank();
+  else if (state.view === "evo") renderEvo(); else if (state.view === "stats") renderStats();
+  if (document.body.classList.contains("has-ficha")) {
+    if (state.place) openPlace(state.place);
+    else if (state.sel) openName(state.sel.sex, state.sel.key);
+    else showWelcome();
+  }
+  SEARCH = []; buildSearch();
+  syncButtons();
+}
+$$("#lang-pick button").forEach(b => b.onclick = () => { setLang(b.dataset.lang); rerender(); writeHash(); });
 
 // ---------- start
 (async () => {
@@ -927,9 +1018,10 @@ document.querySelector(".brand").addEventListener("click", e => { e.preventDefau
   for (const [n, fl] of IDX.Ax || []) IDX.A.push([n, null, null, null, null, 0, null, fl]);
   for (const s of ["H", "M", "A"]) for (const r of IDX[s]) IDXMAP[s].set(r[0], r);
   const c = BUILD.counts;
-  $("#stats").innerHTML = `<b>${fmt(c.names_H + c.names_M)}</b> nombres · <b>${fmt(c.surnames)}</b> apellidos · <b>${fmt(c.munis_with_data)}</b> municipios · censo 1-1-2025`;
-  buildSearch();
+  statsBar();
   readHash();
+  applyStatic();
+  buildSearch();
   syncButtons();
   const mapReady = initMap().then(() => { if (state.view === "map") restyle(); });
   setView(state.view);

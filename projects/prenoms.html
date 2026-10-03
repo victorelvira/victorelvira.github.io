@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nombres de Francia · un siglo de nombres, departamento a departamento</title>
+  <link rel="icon" href="prenoms/favicon.svg">
+  <meta name="description" content="Los nombres que se pusieron en Francia cada año desde 1900, departamento a departamento, y los apellidos por década de nacimiento. Datos del INSEE.">
+  <meta name="author" content="Víctor Elvira">
+  <meta name="theme-color" content="#1d2b36">
+  <link rel="stylesheet" href="prenoms/vendor/leaflet.css">
+  <link rel="stylesheet" href="prenoms/style.css?v=0.4.1">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="lang-pick" title="Idioma · Langue · Language">
+      <button type="button" data-lang="es">ES</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button>
+    </span>
+    <span id="build" class="build" title="Versión y última actualización"></span>
+  </nav>
+
+  <header id="bar">
+    <a class="brand" href="prenoms.html" title="Recargar (quita filtros)">
+      <img class="mark" src="prenoms/favicon.svg" width="28" height="28" alt="">
+      <div>
+        <strong data-t="brand">Nombres de Francia</strong>
+        <small data-t="tagline">un siglo de nombres, departamento a departamento</small>
+      </div>
+    </a>
+    <a class="sister" data-local="../nombres_espa%C3%B1a/nombres.html" data-web="nombres.html" href="nombres.html"
+       data-t-title="sister.title"><span class="flag">🇪🇸</span><span class="sl" data-t="sister">Nombres de España</span> →</a>
+    <div id="stats" class="stats">cargando…</div>
+  </header>
+
+  <div id="modes">
+    <span id="view-tabs">
+      <button type="button" class="view-btn active" data-view="map">🗺 <span class="vl" data-t="tab.map">Mapa</span></button>
+      <button type="button" class="view-btn" data-view="rank">🏆 <span class="vl" data-t="tab.rank">Rankings</span></button>
+      <button type="button" class="view-btn" data-view="evo">📈 <span class="vl" data-t="tab.evo">Evolución</span></button>
+      <button type="button" class="view-btn" data-view="stats">🔗 <span class="vl" data-t="tab.stats">Parejas</span></button>
+    </span>
+    <span id="yearwrap" title="Año de nacimiento">
+      <span class="seg small" id="span-tabs" data-t-title="span.title">
+        <button type="button" class="seg-btn active" data-span="year" data-t="span.one">Año</button>
+        <button type="button" class="seg-btn" data-span="range" data-t="span.range">Rango</button>
+      </span>
+      <span id="one"><input id="year" type="range" min="1900" max="2025" value="1970" step="1"><b id="ylab">1970</b></span>
+      <span id="two" hidden>
+        <input id="y1" type="range" min="1900" max="2025" value="1960" step="5">
+        <input id="y2" type="range" min="1900" max="2025" value="1980" step="5">
+        <b id="rlab">1960-1984</b>
+      </span>
+    </span>
+    <button type="button" class="chip btn about-open desk" data-t="about">ℹ︎ Acerca</button>
+    <span id="filter-wrap">
+      <input id="filter" type="search" data-t-ph="search.ph" autocomplete="off">
+      <div id="suggest" hidden></div>
+    </span>
+  </div>
+  <div id="modes2">
+    <button type="button" id="mob-toggle" aria-expanded="false"><span id="mob-sum">Niñas · 1970</span><span class="tl" data-t="filters.more">más filtros</span><span class="ti">＋</span></button>
+    <div id="f-content">
+      <span id="colour-modes" class="cmodes" title="Qué colorea el mapa">
+        <button type="button" class="mode-btn active" data-mode="top"><b data-t="mode.top">El más puesto</b><small data-t="mode.top.sub">el nº 1 de cada departamento</small></button>
+        <button type="button" class="mode-btn" data-mode="char"><b data-t="mode.char">Característico</b><small data-t="mode.char.sub">el que más destaca frente a Francia</small></button>
+        <button type="button" class="mode-btn" data-mode="conc"><b data-t="mode.conc">Repetición</b><small data-t="mode.conc.sub">cuánto se repiten los 10 primeros</small></button>
+      </span>
+      <span id="sex-tabs" class="seg big" title="Nombres de niña, de niño o apellidos">
+        <button type="button" class="seg-btn active" data-sex="2"><span data-t="sex.2">Nombres de niña</span></button>
+        <button type="button" class="seg-btn" data-sex="1"><span data-t="sex.1">Nombres de niño</span></button>
+        <button type="button" class="seg-btn" data-sex="A"><span data-t="sex.A">Apellidos</span></button>
+      </span>
+      <button type="button" class="chip btn about-open mob" data-t="about.mob">ℹ︎ Acerca de este mapa</button>
+    </div>
+  </div>
+
+  <div id="main">
+    <div id="mapwrap">
+      <div id="map"></div>
+      <div id="legend"></div>
+      <div id="sel-chip" hidden></div>
+    </div>
+    <section id="rankwrap" hidden></section>
+    <section id="evowrap" hidden></section>
+    <section id="statswrap" hidden></section>
+    <aside id="panel" aria-label="Ficha">
+      <button id="detail-close" class="detail-close" type="button" aria-label="Cerrar la ficha">✕</button>
+      <div id="panel-body"></div>
+    </aside>
+  </div>
+
+  <div id="tip" hidden></div>
+  <script src="prenoms/vendor/leaflet.js"></script>
+  <script src="prenoms/i18n.js?v=0.4.1"></script>
+  <script src="prenoms/app.js?v=0.4.1"></script>
+</body>
+</html>

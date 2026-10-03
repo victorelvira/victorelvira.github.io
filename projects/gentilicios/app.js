@@ -1,46 +1,38 @@
 "use strict";
-const DATA_V = "0.6.0";
-const BUILD_AT = "2026-09-18 15:03";
+const DATA_V = "0.7.0";
+const BUILD_AT = "2026-10-04 00:16";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
+applyStatic();   // the static texts of the page, in the language the reader is in (i18n.js decides it)
 
 // ---------- vocabulary ----------
+// Source names as the sources themselves write them: never translated. The few whose name carries a description of
+// ours (a Wikipedia in another language, an annex, a Wikidata property, an INE table) live in i18n.js under "src.<id>".
 const SRC_SHORT = {
-  wikidata: "Wikidata", eswiki: "Wikipedia", eswiki_anexos: "Wikipedia · anexo de gentilicios",
+  wikidata: "Wikidata", eswiki: "Wikipedia",
   cawiki_balears: "Viquipèdia", glwiki_xentilicios: "Galipedia", eswiktionary: "Wikcionario",
   avl_municipis: "Acadèmia Valenciana de la Llengua", parlament_cat_guia: "Parlament de Catalunya",
   euskaltzaindia_arauak: "Euskaltzaindia", acl_catalogo: "Academia Canaria de la Lengua",
   rag_lexico_admin: "Real Academia Galega", fundeurae: "FundéuRAE", rae_dle: "DLE · RAE",
   madoz: "Madoz (1845-1850)", felipe2_ciudadreal: "Relaciones de Felipe II", felipe2_cuenca: "Relaciones de Felipe II",
   felipe2_toledo: "Relaciones de Felipe II", felipe2_guadalajara: "Relaciones de Felipe II",
-  cawiki: "Viquipèdia", glwiki: "Galipedia", euwiki: "Wikipedia en euskera",
-  anwiki: "Wikipedia en aragonés", astwiki: "Wikipedia en asturiano", enwiki: "Wikipedia en inglés",
-  wikidata_p138: "Wikidata · nombrado en honor de", ine_alteraciones: "INE · variaciones de los municipios desde 1842",
+  cawiki: "Viquipèdia", glwiki: "Galipedia",
   minano: "Miñano (1826-1829)", rah1802: "Real Academia de la Historia (1802)", rah1846: "Govantes, RAH (1846)",
   felipe2_madrid: "Relaciones de Felipe II", eswiki_historia: "Wikipedia",
 };
-const FIELD_LABEL = {
-  demonym: "Gentilicio", demonym_nickname: "Apodo", demonym_dictionary: "Diccionario",
-  name_etymology: "Etimología del nombre", name_origin_legend: "Por qué se llama así, según la tradición",
-  name_historical_form: "Forma antigua del nombre", historical_description: "Descripción histórica",
-  demonym_etymology: "Etimología del gentilicio", demonym_first_attestation: "Primera aparición del gentilicio",
-  municipal_alteration: "Fusiones, segregaciones y cambios del municipio",
-};
-const KIND_LABEL = { academic: "académica", traditional: "tradicional", folk: "leyenda", deduced: "deducida" };
+// the language badge is a code (es, ca, gl...), the same in every language
 const LANG_LABEL = { es: "es", ca: "ca", gl: "gl", eu: "eu", ast: "ast", an: "an", oc: "oc" };
-const MATCH_LABEL = {
-  wikidata_item: "dato del propio elemento de Wikidata del municipio",
-  eswiki_article: "ficha del artículo del municipio",
-  list_link_item: "línea de una lista enlazada al artículo del municipio",
-  list_name_unique_in_ccaa: "nombre único dentro de la comunidad de la lista",
-  wiktionary_name_country: "nombre único en España citado en la acepción",
-};
-const srcName = s => SRC_SHORT[s] || (SOURCES[s] && SOURCES[s].name) || s;
+const srcName = s => TX("src." + s) || SRC_SHORT[s] || (SOURCES[s] && SOURCES[s].name) || s;
+const fieldLabel = fd => TX("field." + fd) || fd;
+const kindLabel = k => TX("kind." + k) || k;
+const matchLabel = r => TX("match." + r) || r;
+const langName = l => TX("lang." + l) || l;
+const levelLabel = lv => TX("level." + lv) || lv;
+const imgKind = k => TX("img." + k) || k;
+const nsrc = n => T(n === 1 ? "nsrc.one" : "nsrc.many", { n });
 
 // Language groups, always in this order (Víctor, 2026-09-17): Spanish, the other languages of Spain, foreign.
 const CO_OFFICIAL = new Set(["ca", "gl", "eu", "ast", "an", "oc", "val", "ext"]);
-const LANG_NAME = { es: "español", ca: "catalán / valenciano", gl: "gallego", eu: "euskera", ast: "asturiano", an: "aragonés", oc: "aranés",
-  en: "inglés", fr: "francés", it: "italiano", de: "alemán", pt: "portugués", ar: "árabe", la: "latín" };
-const GROUP_TITLE = { es: "En español", co: "En otras lenguas de España", fx: "En lenguas extranjeras" };
+const groupTitle = k => T("grp." + k);
 const langGroup = langs => {
   const ls = [].concat(langs || []).filter(Boolean);
   if (!ls.length || ls.includes("es")) return "es";
@@ -53,7 +45,9 @@ function byGroup(items, langsOf) {
 }
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const fold = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
-const fmt = n => n.toLocaleString("es-ES");
+const fmt = n => Number(n).toLocaleString(T("locale"));
+// the reader's language decides the collation of the lists, as it decides the number format
+const coll = (a, b) => String(a).localeCompare(String(b), T("locale"));
 
 let MUNIS = [], BY_ID = new Map(), SOURCES = {}, V = DATA_V;
 const CLAIMS_BY = new Map(), PROV_LOADED = new Map();
@@ -69,11 +63,9 @@ const SX_COL = { "-ense": "#7a4a2b", "-eño": "#c9905a", "-ano": "#2e6b6b", "-er
 const SX_ORDER = ["-ense", "-eño", "-ano", "-ero", "-ino", "-és", "-(i)ego", "-ejo", "otro", ""];
 const OL_COL = { latin: "#8a4f2a", arabic: "#2e6b6b", basque: "#b6465f", prerroman: "#7b3fb0", celtic: "#5b7f3a",
   germanic: "#d9a441", romance: "#c9905a", disputed: "#6f665c", unknown: "#b8ada0", "": "#ebe5da" };
-const OL_LABEL = { latin: "latín", arabic: "árabe", basque: "euskera", prerroman: "prerromano", celtic: "celta",
-  germanic: "germánico", romance: "romance", disputed: "las fuentes no coinciden", unknown: "desconocido", "": "sin etimología" };
+const olLabel = k => T("ol." + (k || "none"));
 const GA_COL = { nombre_antiguo: "#7b3fb0", otra_lengua: "#2e6b6b", sin_relacion: "#b6465f", nombre_actual: "#e6c89c", "": "#ebe5da" };
-const GA_LABEL = { nombre_antiguo: "de un nombre antiguo o latino", otra_lengua: "del nombre en otra lengua de España",
-  sin_relacion: "no se parece a ningún nombre recogido", nombre_actual: "del nombre actual", "": "sin gentilicio" };
+const gaLabel = k => T("ga." + (k || "none"));
 // per town: sources behind the principal Spanish form (each form has its own count; the principal is the one shown
 // first), and distinct Spanish forms without apodos (other languages would inflate bilingual areas)
 // "kinds" selector (Víctor, 2026-09-17): gentilicios, apodos or both, inside the same map
@@ -87,11 +79,10 @@ const principalSources = m => {
   return Math.max(dem ? dem.n : 0, nick);
 };
 const spanishCount = m => m.g.filter(f => kindOk(f) && langGroup(f.l) === "es").length;
-const KIND_WORD = { dem: "gentilicios", nick: "apodos", both: "gentilicios y apodos" };
+const kindWord = k => T("kindword." + k);
 // 0 (none) in paper grey, then 1, 2, 3, 4, 5+ clearly darker step by step (Víctor, 2026-09-17)
 const SCALE_NG = ["#ebe5da", "#9cc3bb", "#5f9c91", "#2e6b6b", "#1b4747", "#0b2626"];
 const SCALE_SRC = ["#ebe5da", "#d9ae78", "#b97c43", "#8a4f2a", "#5e3219", "#321a0c"];
-const SCALE_LABELS = ["5 o más", "4", "3", "2", "1"];
 function colourOf(m) {
   if (VIEW === "pop") return popColour(m);
   if (mode === "ga") return GA_COL[m.ga || ""];
@@ -103,51 +94,38 @@ function colourOf(m) {
   if (mode === "ety") return m.ety && m.hist ? "#1f4f4f" : m.ety ? "#2e6b6b" : m.hist ? "#8fb8b0" : "#ebe5da";
 }
 // 4 map groups, each with its variants chosen in the legend (Víctor, 2026-09-17: 7 buttons were too many)
-const GROUPS = {
-  formas: [["ng", "Nº de formas"]],
-  forma: [["sx", "Sufijo"], ["curious", "Curioso"]],
-  origen: [["ol", "Pueblo"], ["ga", "Gentilicio"]],
-  doc: [["sources", "Nº de fuentes"], ["ety", "Etimología e historia"]],
-};
-const VARIANT_NOTE = {
-  ng: "formas distintas en español; las de otras lenguas, en la ficha",
-  sx: "terminación del gentilicio principal en español",
-  curious: "calculado: el gentilicio no se parece al nombre del pueblo",
-  ol: "lengua de la que viene el nombre del pueblo, según las hipótesis",
-  ga: "deducido: de qué nombre sale el gentilicio (actual, antiguo, en otra lengua)",
-  sources: "fuentes distintas de la forma principal; cada forma tiene las suyas",
-  ety: "qué hay recogido sobre el nombre y la historia del pueblo",
-};
+// each variant's name is i18n key "variant.<k>" and its one-line note "vnote.<k>"
+const GROUPS = { formas: ["ng"], forma: ["sx", "curious"], origen: ["ol", "ga"], doc: ["sources", "ety"] };
 let group = "formas";
 function legend() {
   if (VIEW === "pop") return popLegend();
   const count = f => fmt(MUNIS.filter(f).length);
   const rows = {
-    sources: [[KINDS === "dem" ? "Fuentes del gentilicio principal" : KINDS === "nick" ? "Fuentes del apodo más citado" : "Fuentes (gentilicio principal o apodo)", null],
-      ...[5, 4, 3, 2, 1].map(n => [SCALE_SRC[n], n === 5 ? "5 o más" : String(n), m => Math.min(principalSources(m), 5) === n]),
-      ["#ebe5da", { dem: "sin gentilicio en español", nick: "sin apodo", both: "ni gentilicio ni apodo" }[KINDS], m => principalSources(m) === 0]],
-    ng: [[`${KIND_WORD[KINDS][0].toUpperCase()}${KIND_WORD[KINDS].slice(1)} en español`, null],
-      ...[5, 4, 3, 2, 1].map(n => [SCALE_NG[n], n === 5 ? "5 o más" : String(n), m => Math.min(spanishCount(m), 5) === n]),
-      ["#ebe5da", "ninguno", m => spanishCount(m) === 0]],
-    curious: [["Gentilicio curioso", null],
-      ["#7b3fb0", "no se parece al nombre", m => m.cu], ["#e7e0d4", "se parece", m => !m.cu && m.g.length],
-      ["#f3efe8", "sin gentilicio", m => !m.g.length]],
-    sx: [["Sufijo del gentilicio principal", null]].concat(SX_ORDER.map(k => [SX_COL[k], k === "" ? "sin gentilicio en español" : k === "otro" ? "otros" : k,
+    sources: [[T("legend.src." + KINDS), null],
+      ...[5, 4, 3, 2, 1].map(n => [SCALE_SRC[n], n === 5 ? T("legend.5plus") : String(n), m => Math.min(principalSources(m), 5) === n]),
+      ["#ebe5da", T("legend.none." + KINDS), m => principalSources(m) === 0]],
+    ng: [[T("legend.ng.title", { what: kindWord(KINDS) }), null],
+      ...[5, 4, 3, 2, 1].map(n => [SCALE_NG[n], n === 5 ? T("legend.5plus") : String(n), m => Math.min(spanishCount(m), 5) === n]),
+      ["#ebe5da", T("legend.none0"), m => spanishCount(m) === 0]],
+    curious: [[T("legend.cur.title"), null],
+      ["#7b3fb0", T("legend.cur.yes"), m => m.cu], ["#e7e0d4", T("legend.cur.no"), m => !m.cu && m.g.length],
+      ["#f3efe8", T("legend.cur.nodem"), m => !m.g.length]],
+    sx: [[T("legend.sx.title"), null]].concat(SX_ORDER.map(k => [SX_COL[k], k === "" ? T("legend.sx.none") : k === "otro" ? T("legend.sx.other") : k,
       mm => (SX_COL[mm.sx] ? mm.sx : "otro") === k && (k !== "otro" || mm.sx)])),
-    ga: [["Raíz del gentilicio", null]].concat(Object.keys(GA_COL).map(k => [GA_COL[k], GA_LABEL[k], mm => (mm.ga || "") === k])),
-    ol: [["Lengua de origen del nombre", null]].concat(Object.keys(OL_COL).map(k => [OL_COL[k], OL_LABEL[k], mm => (mm.ol || "") === k])),
-    ety: [["Etimología e historia", null],
-      ["#1f4f4f", "las dos", m => m.ety && m.hist], ["#2e6b6b", "etimología", m => m.ety && !m.hist],
-      ["#8fb8b0", "historia", m => m.hist && !m.ety], ["#ebe5da", "nada todavía", m => !m.ety && !m.hist]],
+    ga: [[T("legend.ga.title"), null]].concat(Object.keys(GA_COL).map(k => [GA_COL[k], gaLabel(k), mm => (mm.ga || "") === k])),
+    ol: [[T("legend.ol.title"), null]].concat(Object.keys(OL_COL).map(k => [OL_COL[k], olLabel(k), mm => (mm.ol || "") === k])),
+    ety: [[T("legend.ety.title"), null],
+      ["#1f4f4f", T("legend.ety.both"), m => m.ety && m.hist], ["#2e6b6b", T("legend.ety.ety"), m => m.ety && !m.hist],
+      ["#8fb8b0", T("legend.ety.hist"), m => m.hist && !m.ety], ["#ebe5da", T("legend.ety.none"), m => !m.ety && !m.hist]],
   }[mode];
   document.getElementById("legend").innerHTML = rows.map(([c, l, f]) => f
     ? `<div class="lr"><span class="sw" style="background:${c}"></span>${l}<span class="ln">${count(f)}</span></div>`
     : `<div class="lt">${c}</div>`).join("") +
-    `<div class="note">${esc(VARIANT_NOTE[mode] || "")}</div>` +
-    (GROUPS[group].length > 1 ? `<div class="kinds" role="group" aria-label="Variante">${GROUPS[group].map(([k, label]) =>
-      `<button type="button" data-variant="${k}" class="${mode === k ? "active" : ""}">${esc(label)}</button>`).join("")}</div>` : "") +
-    (mode === "ng" || mode === "sources" ? `<div class="kinds" role="group" aria-label="Qué formas">${["dem", "nick", "both"].map(k =>
-      `<button type="button" data-kinds="${k}" class="${KINDS === k ? "active" : ""}">${{ dem: "Gentilicios", nick: "Apodos", both: "Ambos" }[k]}</button>`).join("")}</div>` : "");
+    `<div class="note">${esc(T("vnote." + mode))}</div>` +
+    (GROUPS[group].length > 1 ? `<div class="kinds" role="group" aria-label="${esc(T("legend.aria.variant"))}">${GROUPS[group].map(k =>
+      `<button type="button" data-variant="${k}" class="${mode === k ? "active" : ""}">${esc(T("variant." + k))}</button>`).join("")}</div>` : "") +
+    (mode === "ng" || mode === "sources" ? `<div class="kinds" role="group" aria-label="${esc(T("legend.aria.kinds"))}">${["dem", "nick", "both"].map(k =>
+      `<button type="button" data-kinds="${k}" class="${KINDS === k ? "active" : ""}">${esc(T("kinds." + k))}</button>`).join("")}</div>` : "");
   document.querySelectorAll("#legend [data-variant]").forEach(b => b.addEventListener("click", () => { mode = b.dataset.variant; restyle(); }));
   document.querySelectorAll("#legend [data-kinds]").forEach(b => b.addEventListener("click", () => { KINDS = b.dataset.kinds; restyle(); }));
 }
@@ -190,15 +168,21 @@ function stats() {
   const withG = MUNIS.filter(m => m.g.some(f => f.k === "dem")).length;
   const forms = MUNIS.reduce((a, m) => a + m.g.length, 0);
   document.getElementById("stats").innerHTML =
-    `<b>${fmt(MUNIS.length)}</b> municipios · <b>${fmt(withG)}</b> con gentilicio · <b>${fmt(forms)}</b> formas`;
+    T("stats.bar", { munis: fmt(MUNIS.length), withg: fmt(withG), forms: fmt(forms) });
 }
 
+// the credit line carries two words of ours ("límites", "municipios"), so it is rewritten on a language change
+let ATTRIB = null;
+function setAttrib() {
+  if (!map) return;
+  if (ATTRIB) map.attributionControl.removeAttribution(ATTRIB);
+  ATTRIB = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · ' + esc(T("map.attrib"));
+  map.attributionControl.addAttribution(ATTRIB);
+}
 function initMap(geo) {
   map = L.map("map", { preferCanvas: true, zoomControl: true, minZoom: 4 }).setView([40.2, -3.6], 6);
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · límites: Eurostat GISCO · municipios: INE',
-    maxZoom: 18, opacity: .5,
-  }).addTo(map);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, opacity: .5 }).addTo(map);
+  setAttrib();
   layer = L.geoJSON(geo, {
     style: f => ({ fillColor: colourOf(BY_ID.get(f.id)), fillOpacity: .88, color: "#fff", weight: .35 }),
     onEachFeature: (f, l) => {
@@ -208,7 +192,7 @@ function initMap(geo) {
           const m = BY_ID.get(f.id);
           const g = mainForms(m);
           const nk = m.g.filter(f => f.k === "nick" && langGroup(f.l) !== "fx").slice(0, 2).map(f => f.m).join(", ");
-          l.bindTooltip(`<b>${esc(m.n)}</b>${g ? esc(g) : "<i>sin gentilicio documentado</i>"}${nk ? `<br><span class="tk">apodo: <i>${esc(nk)}</i></span>` : ""}`, { className: "mt", sticky: true, direction: "top" }).openTooltip();
+          l.bindTooltip(`<b>${esc(m.n)}</b>${g ? esc(g) : `<i>${esc(T("tip.nodem"))}</i>`}${nk ? `<br><span class="tk">${esc(T("tip.nick"))}: <i>${esc(nk)}</i></span>` : ""}`, { className: "mt", sticky: true, direction: "top" }).openTooltip();
           if (m.id !== selected) l.setStyle({ weight: 1.4, color: "#241a12" });
         });
         l.on("mouseout", () => { if (f.id !== selected) l.setStyle({ weight: .35, color: "#fff" }); });
@@ -222,7 +206,7 @@ function initMap(geo) {
   document.querySelectorAll(".mode-btn").forEach(b => b.addEventListener("click", () => {
     document.querySelectorAll(".mode-btn").forEach(x => x.classList.toggle("active", x === b));
     group = b.dataset.group;
-    if (!GROUPS[group].some(([k]) => k === mode)) mode = GROUPS[group][0][0];
+    if (!GROUPS[group].includes(mode)) mode = GROUPS[group][0];
     restyle();
   }));
   document.getElementById("go-canarias").addEventListener("click", () => map.flyTo([28.3, -15.8], 8));
@@ -238,13 +222,13 @@ function showPopup(id, latlng) {
   const formTxt = f => `<i>${esc(f.m)}</i>${f.f && f.f !== f.m ? ` <span class="pf">/ ${esc(f.f)}</span>` : ""}${f.l.length && !f.l.includes("es") ? ` <span class="badge lang">${esc(f.l.join(" "))}</span>` : ""}`;
   const html = `<div class="pop">
     <div class="pn">${esc(m.n)}</div>
-    <div class="pp">${esc(m.p === m.c ? m.p : m.p + " · " + m.c)}${m.pop != null ? ` · ${Number(m.pop).toLocaleString("es-ES")} hab.` : ""}</div>
-    ${dem.length ? `<div class="pg">${dem.slice(0, 4).map(formTxt).join("<br>")}${dem.length > 4 ? `<br><span class="pm">y ${dem.length - 4} más</span>` : ""}</div>`
-      : `<div class="pg pm">sin gentilicio documentado</div>`}
-    ${nick.length ? `<div class="pk">apodo: ${nick.slice(0, 2).map(f => `<i>${esc(f.m)}</i>`).join(", ")}</div>` : ""}
-    <div class="pc">${[m.ns ? `${m.ns} ${m.ns === 1 ? "fuente" : "fuentes"}` : "", m.cu ? `<span class="badge cur">curioso</span>` : "",
-      m.ety ? `etimología (${m.ety})` : "", m.hist ? `historia (${m.hist})` : ""].filter(Boolean).join(" · ")}</div>
-    <button type="button" class="more" data-id="${m.id}">Más detalles</button>
+    <div class="pp">${esc(m.p === m.c ? m.p : m.p + " · " + m.c)}${m.pop != null ? ` · ${esc(T("bub.inhab", { n: fmt(m.pop) }))}` : ""}</div>
+    ${dem.length ? `<div class="pg">${dem.slice(0, 4).map(formTxt).join("<br>")}${dem.length > 4 ? `<br><span class="pm">${esc(T("bub.more", { n: dem.length - 4 }))}</span>` : ""}</div>`
+      : `<div class="pg pm">${esc(T("tip.nodem"))}</div>`}
+    ${nick.length ? `<div class="pk">${esc(T("tip.nick"))}: ${nick.slice(0, 2).map(f => `<i>${esc(f.m)}</i>`).join(", ")}</div>` : ""}
+    <div class="pc">${[m.ns ? esc(nsrc(m.ns)) : "", m.cu ? `<span class="badge cur">${esc(T("badge.curious"))}</span>` : "",
+      m.ety ? esc(T("bub.ety", { n: m.ety })) : "", m.hist ? esc(T("bub.hist", { n: m.hist })) : ""].filter(Boolean).join(" · ")}</div>
+    <button type="button" class="more" data-id="${m.id}">${esc(T("bub.detail"))}</button>
   </div>`;
   const ll = latlng || (layersById.get(id) && layersById.get(id).getBounds().getCenter());
   const pop = L.popup({ maxWidth: 260, autoPanPadding: [20, 70], className: "gpop" }).setLatLng(ll).setContent(html).openOn(map);
@@ -253,10 +237,20 @@ function showPopup(id, latlng) {
 }
 
 // ---------- panel ----------
+// the hash carries the id of what is open and, when it is not Spanish, the language: "#ine:39035&l=fr", "#l=en"
+const hashId = () => {
+  const first = location.hash.slice(1).split("&")[0];
+  return /^l=/.test(first) ? "" : decodeURIComponent(first);
+};
+function setHash(id) {
+  const lang = LANG === "es" ? "" : "l=" + LANG;
+  const h = [id || "", lang].filter(Boolean).join("&");
+  history.replaceState(null, "", h ? "#" + h : location.pathname);
+}
 function closeFicha() {
   if (terrLayer) { map.removeLayer(terrLayer); terrLayer = null; }
   document.body.classList.remove("detail-open");
-  history.replaceState(null, "", location.pathname);
+  setHash(null);
   intro();
 }
 function openPanel() {
@@ -269,18 +263,19 @@ function intro() {
   const withG = MUNIS.filter(m => m.g.some(f => f.k === "dem"));
   const cur = MUNIS.filter(m => m.cu);
   const multi = MUNIS.filter(m => m.g.filter(f => f.k === "dem" && (!f.l.length || f.l.includes("es"))).length >= 3);
-  const pick = cur.slice().sort((a, b) => b.ns - a.ns || a.n.localeCompare(b.n, "es")).slice(0, 40);
+  const pick = cur.slice().sort((a, b) => b.ns - a.ns || coll(a.n, b.n)).slice(0, 40);
   document.getElementById("panel-body").innerHTML = `
     <div class="intro">
-      <h2>¿Cómo se llama la gente de cada pueblo?</h2>
-      <p>Todos los gentilicios de los municipios de España que dicen las fuentes, con sus versiones, sus apodos y, poco a poco, la etimología y la historia del nombre. <b>Cada dato lleva su fuente</b>: pulsa un pueblo en el mapa o búscalo.</p>
+      <h2>${esc(T("intro.h"))}</h2>
+      <p>${T("intro.p")}</p>
       <div class="kpis">
-        <div class="kpi"><b>${fmt(withG.length)}</b><span>municipios con gentilicio (${Math.round(100 * withG.length / MUNIS.length)} %)</span></div>
-        <div class="kpi"><b>${fmt(cur.length)}</b><span>gentilicios que no se parecen al nombre</span></div>
-        <div class="kpi"><b>${fmt(multi.length)}</b><span>pueblos con 3 o más gentilicios</span></div>
-        <div class="kpi"><b>${fmt(MUNIS.length - withG.length)}</b><span>sin documentar todavía</span></div>
+        <div class="kpi"><b>${fmt(withG.length)}</b><span>${esc(T("intro.kpi1", { pct: Math.round(100 * withG.length / MUNIS.length) }))}</span></div>
+        <div class="kpi"><b>${fmt(cur.length)}</b><span>${esc(T("intro.kpi2"))}</span></div>
+        <div class="kpi"><b>${fmt(multi.length)}</b><span>${esc(T("intro.kpi3"))}</span></div>
+        <div class="kpi"><b>${fmt(MUNIS.length - withG.length)}</b><span>${esc(T("intro.kpi4"))}</span></div>
       </div>
-      <div class="h3">Curiosos con más fuentes</div>
+      <p class="note">${esc(T("quotes.note"))}</p>
+      <div class="h3">${esc(T("intro.curious"))}</div>
       <ul class="curlist">${pick.map(m => `<li data-id="${m.id}"><span class="cn">${esc(m.n)}</span>
         <span class="cg">${esc(m.g.filter(f => f.cu).map(f => f.m).slice(0, 2).join(", "))}</span><span class="cp">${esc(m.p)}</span></li>`).join("")}</ul>
     </div>`;
@@ -311,24 +306,21 @@ const simLink = x => `<a href="#${esc(x.i)}">${esc(x.n)}</a> <span class="sp">($
 function similarHTML(s) {
   if (!s || (!s.hom && !s.sn && !s.sg && !s.sd)) return "";
   const rows = [];
-  if (s.sd) for (const x of s.sd) rows.push(`<li><span class="sk">Mismo gentilicio</span><span class="sv"><i>${esc(x.f)}</i>
-    ${x.n > x.o.length + 1 ? `en <b>${x.n}</b> pueblos` : ""}: ${x.o.map(simLink).join(" · ")}${x.n > x.o.length + 1 ? " y más" : ""}</span></li>`);
-  if (s.hom) rows.push(`<li><span class="sk">Mismo nombre</span><span class="sv">${s.hom.map(x =>
+  if (s.sd) for (const x of s.sd) rows.push(`<li><span class="sk">${esc(T("sim.samedem"))}</span><span class="sv"><i>${esc(x.f)}</i>
+    ${x.n > x.o.length + 1 ? T("sim.inN", { n: x.n }) : ""}: ${x.o.map(simLink).join(" · ")}${x.n > x.o.length + 1 ? esc(T("sim.andmore")) : ""}</span></li>`);
+  if (s.hom) rows.push(`<li><span class="sk">${esc(T("sim.samename"))}</span><span class="sv">${s.hom.map(x =>
     `${simLink(x)}${x.g ? `: <i>${esc(x.g)}</i>` : ""}`).join(" · ")}</span></li>`);
-  if (s.sn) rows.push(`<li><span class="sk">Nombre parecido</span><span class="sv">${s.sn.map(x =>
-    `${simLink(x)} <span class="sj">${x.km} km</span>`).join(" · ")}</span></li>`);
-  if (s.sg) rows.push(`<li><span class="sk">Gentilicio parecido</span><span class="sv">${s.sg.map(x =>
-    `<i>${esc(x.b)}</i>, ${simLink(x)} <span class="sj">${x.km} km</span>`).join(" · ")}</span></li>`);
-  return `<div class="h3">Parecidos</div>
-    <p class="note">Cruce nuestro, no lo dice ninguna fuente: pueblos a los que alguna fuente da este mismo gentilicio,
-      pueblos con el mismo nombre (quitados acentos y artículos) y los que más se le parecen en letras (3-gramas, 0,6 o
-      más). La distancia es en línea recta entre centros.</p>
+  if (s.sn) rows.push(`<li><span class="sk">${esc(T("sim.simname"))}</span><span class="sv">${s.sn.map(x =>
+    `${simLink(x)} <span class="sj">${esc(T("sim.km", { n: x.km }))}</span>`).join(" · ")}</span></li>`);
+  if (s.sg) rows.push(`<li><span class="sk">${esc(T("sim.simdem"))}</span><span class="sv">${s.sg.map(x =>
+    `<i>${esc(x.b)}</i>, ${simLink(x)} <span class="sj">${esc(T("sim.km", { n: x.km }))}</span>`).join(" · ")}</span></li>`);
+  return `<div class="h3">${esc(T("sim.h"))}</div>
+    <p class="note">${esc(T("sim.note"))}</p>
     <ul class="simlist">${rows.join("")}</ul>`;
 }
 
 // ---------- territories: provinces, comunidades, comarcas, islands ----------
 let TERR = new Map(), MUNI_TERR = {};
-const LEVEL_LABEL = { prov: "Provincia", ccaa: "Comunidad autónoma", comarca: "Comarca", isla: "Isla" };
 fetch("gentilicios/data/build.json", { cache: "no-store" }).then(r => r.json()).then(b =>
   fetch(`gentilicios/data/territories.json?v=${b.v}`)).then(r => r.ok ? r.json() : null).then(d => {
   if (!d) return;
@@ -344,7 +336,7 @@ function terrLink(id, label) {
   const tt = TERR.get(id);
   if (!tt) return esc(label);
   const g = tt.g.find(f => f.pr) || tt.g.find(f => f.k === "dem");
-  return `<a href="#${esc(id)}" class="terr" data-terr="${esc(id)}" title="${esc(LEVEL_LABEL[tt.lv] || "")}${g ? ": " + esc(g.m) : ""}">${esc(label)}</a>`;
+  return `<a href="#${esc(id)}" class="terr" data-terr="${esc(id)}" title="${esc(levelLabel(tt.lv))}${g ? ": " + esc(g.m) : ""}">${esc(label)}</a>`;
 }
 let terrLayer = null;
 async function openTerritory(id) {
@@ -354,7 +346,7 @@ async function openTerritory(id) {
   map.closePopup();
   openPanel();
   document.body.classList.add("has-ficha");
-  history.replaceState(null, "", "#" + id);
+  setHash(id);
   // members on the map: comarca and island lists, or every town of the province / comunidad
   const members = tt.mem.length ? new Set(tt.mem)
     : new Set(MUNIS.filter(m => tt.lv === "prov" ? provId(m) === id : ccaaIdOf(m) === id).map(m => m.id));
@@ -369,7 +361,7 @@ async function openTerritory(id) {
   }
   if (bounds) { try { map.fitBounds(bounds, { padding: [20, 20] }); } catch (e) {} }
   const body = document.getElementById("panel-body");
-  body.innerHTML = `<div class="ficha"><h2>${esc(tt.n)}</h2><div class="where">${esc(LEVEL_LABEL[tt.lv] || tt.lv)}</div><p class="empty">cargando fuentes…</p></div>`;
+  body.innerHTML = `<div class="ficha"><h2>${esc(tt.n)}</h2><div class="where">${esc(levelLabel(tt.lv))}</div><p class="empty">${esc(T("ficha.loading"))}</p></div>`;
   await loadClaims("terr");
   const cl = CLAIMS_BY.get(id) || [];
   const byForm = new Map();
@@ -382,14 +374,14 @@ async function openTerritory(id) {
     let cs = byForm.get((f.k === "nick" ? "nick|" : "dem|") + f.m) || [];
     if (f.f) cs = cs.concat(byForm.get((f.k === "nick" ? "nick|" : "dem|") + f.f) || []);
     return `<details class="form"><summary><span class="fm">${esc(f.m)}</span>${f.f && f.f !== f.m ? `<span class="ff">${esc(f.f)}</span>` : ""}
-      ${f.l.map(l => `<span class="badge lang">${esc(l)}</span>`).join("")}${f.pr ? `<span class="badge prin">principal</span>` : ""}
-      <span class="badge nsrc">${f.n} ${f.n === 1 ? "fuente" : "fuentes"}</span></summary>${cs.map(claimHTML).join("")}</details>`;
+      ${f.l.map(l => `<span class="badge lang">${esc(l)}</span>`).join("")}${f.pr ? `<span class="badge prin">${esc(T("badge.principal"))}</span>` : ""}
+      <span class="badge nsrc">${esc(nsrc(f.n))}</span></summary>${cs.map(claimHTML).join("")}</details>`;
   };
   const sections = (items, langsOf, render) => {
     const g = byGroup(items, langsOf);
     return ["es", "co", "fx"].filter(k => g[k].length).map(k => k === "fx"
-      ? `<details class="lg fx"><summary>${GROUP_TITLE[k]} (${g[k].length})</summary>${render(g[k])}</details>`
-      : k === "es" ? `<div class="lg es">${render(g[k])}</div>` : `<div class="lg ${k}"><div class="lgt">${GROUP_TITLE[k]}</div>${render(g[k])}</div>`).join("");
+      ? `<details class="lg fx"><summary>${esc(groupTitle(k))} (${g[k].length})</summary>${render(g[k])}</details>`
+      : k === "es" ? `<div class="lg es">${render(g[k])}</div>` : `<div class="lg ${k}"><div class="lgt">${esc(groupTitle(k))}</div>${render(g[k])}</div>`).join("");
   };
   const dems = tt.g.filter(f => f.k === "dem"), nicks = tt.g.filter(f => f.k === "nick");
   const ety = cl.filter(c => ["name_etymology", "name_origin_legend"].includes(c.fd));
@@ -398,15 +390,16 @@ async function openTerritory(id) {
   const sameName = !dems.length && parent && parent.n === tt.n;
   body.innerHTML = `<div class="ficha">
     <h2>${esc(tt.n)}</h2>
-    <div class="where">${esc(LEVEL_LABEL[tt.lv] || tt.lv)}${parent ? ` · ${terrLink(parent.id, parent.n)}` : ""} · ${members.size} municipios</div>
+    <div class="where">${esc(levelLabel(tt.lv))}${parent ? ` · ${terrLink(parent.id, parent.n)}` : ""} · ${esc(T("ficha.nmunis", { n: fmt(members.size) }))}</div>
     <div class="ids">${tt.q ? `<a href="https://www.wikidata.org/wiki/${esc(tt.q)}" target="_blank" rel="noopener">Wikidata</a>` : ""}
       ${tt.w ? `<a href="https://es.wikipedia.org/wiki/${encodeURIComponent(tt.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia</a>` : ""}</div>
-    <div class="h3">Gentilicios</div>
+    <div class="h3">${esc(T("ficha.h.dem"))}</div>
     ${dems.length ? sections(dems, f => f.l, fs => fs.map(block).join(""))
-      : sameName ? `<p class="empty">Ver ${terrLink(parent.id, parent.n)}: la provincia y la comunidad son la misma.</p>` : `<p class="empty">Ninguna fuente consultada da todavía un gentilicio.</p>`}
-    ${nicks.length ? `<div class="h3">Apodos</div>${sections(nicks, f => f.l, fs => fs.map(block).join(""))}` : ""}
-    <div class="h3">Etimología del nombre</div>
-    ${ety.length ? sections(ety, c => c.l, cs => cs.map(c => `<div class="form" style="padding:0">${claimHTML(c)}</div>`).join("")) : `<p class="empty">Sin etimología recogida todavía.</p>`}
+      : sameName ? `<p class="empty">${T("ficha.sameprov", { link: terrLink(parent.id, parent.n) })}</p>` : `<p class="empty">${esc(T("ficha.nodem"))}</p>`}
+    ${nicks.length ? `<div class="h3">${esc(T("ficha.h.nick"))}</div>${sections(nicks, f => f.l, fs => fs.map(block).join(""))}` : ""}
+    <div class="h3">${esc(T("ficha.h.ety"))}</div>
+    ${ety.length ? sections(ety, c => c.l, cs => cs.map(c => `<div class="form" style="padding:0">${claimHTML(c)}</div>`).join("")) : `<p class="empty">${esc(T("ficha.noety"))}</p>`}
+    <p class="note">${esc(T("quotes.note"))}</p>
   </div>`;
   bindTerrLinks(body);
   document.getElementById("panel").scrollTop = 0;
@@ -415,31 +408,30 @@ function bindTerrLinks(root) {
   root.querySelectorAll("a.terr[data-terr]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); openTerritory(a.dataset.terr); }));
 }
 
-const IMG_KIND = { coat_of_arms: "Escudo", flag: "Bandera", image: "Imagen" };
-const SRC_NAME_CTX = { ine_padron: "INE, padrón", ine_hecho_1900: "INE, censos", wikidata: "Wikidata", gisco_lau: "Eurostat GISCO" };
+const SRC_NAME_CTX = { wikidata: "Wikidata", gisco_lau: "Eurostat GISCO" };
+const ctxSrcName = s => TX("ctxsrc." + s) || SRC_NAME_CTX[s] || s;
 function srcLink(ctx, field, label) {
   const s = ctx && ctx.src && ctx.src[field];
-  return s ? ` <a class="srcl" href="${esc(s.u)}" target="_blank" rel="noopener" title="Fuente: ${esc(SRC_NAME_CTX[s.s] || s.s)}">${esc(label || SRC_NAME_CTX[s.s] || s.s)}</a>` : "";
+  return s ? ` <a class="srcl" href="${esc(s.u)}" target="_blank" rel="noopener" title="${esc(T("src.of", { name: ctxSrcName(s.s) }))}">${esc(label || ctxSrcName(s.s))}</a>` : "";
 }
 function contextHTML(m, ctx) {
   if (!ctx) return "";
-  const nf = n => Number(n).toLocaleString("es-ES");
+  const nf = fmt;
   const facts = [];
-  if (ctx.pop != null) facts.push(`<b>${nf(ctx.pop)}</b> hab. (${esc(ctx.py)})${srcLink(ctx, "population", "INE")}`);
-  if (ctx.ph != null) facts.push(`${nf(ctx.ph)} en ${esc(ctx.phy)}${srcLink(ctx, "population_hist", "INE")}`);
-  if (ctx.alt) facts.push(`${nf(ctx.alt)} m${srcLink(ctx, "altitude_m", "Wikidata")}`);
+  if (ctx.pop != null) facts.push(`${T("ctx.inhab", { n: nf(ctx.pop), y: esc(ctx.py) })}${srcLink(ctx, "population", "INE")}`);
+  if (ctx.ph != null) facts.push(`${esc(T("ctx.inhabhist", { n: nf(ctx.ph), y: ctx.phy }))}${srcLink(ctx, "population_hist", "INE")}`);
+  if (ctx.alt) facts.push(`${esc(T("ctx.alt", { n: nf(ctx.alt) }))}${srcLink(ctx, "altitude_m", "Wikidata")}`);
   if (ctx.area) facts.push(`${nf(Math.round(Number(ctx.area) * 10) / 10)} km²`);
   const coat = ctx.img.find(i => i.k === "coat_of_arms"), photo = ctx.img.find(i => i.k === "image");
-  const credit = i => `${IMG_KIND[i.k]}: <a href="${esc(i.u)}" target="_blank" rel="noopener">${esc(i.a || "Wikimedia Commons")}</a>${i.lc ? `, <a href="${esc(i.lu)}" target="_blank" rel="noopener">${esc(i.lc)}</a>` : ""}`;
+  const credit = i => `${esc(imgKind(i.k))}: <a href="${esc(i.u)}" target="_blank" rel="noopener">${esc(i.a || "Wikimedia Commons")}</a>${i.lc ? `, <a href="${esc(i.lu)}" target="_blank" rel="noopener">${esc(i.lc)}</a>` : ""}`;
   const names = ctx.names.filter(n => n[0] && (n[0] !== m.n || n[2] || n[3]));
-  const langName = l => LANG_NAME[l] || l;
   return `
     ${photo ? `<figure class="ctx-photo"><img src="${esc(photo.t)}" alt="${esc(m.n)}" loading="lazy"></figure>` : ""}
-    <div class="ctx-head">${coat ? `<img class="ctx-coat" src="${esc(coat.t)}" alt="Escudo de ${esc(m.n)}" loading="lazy">` : ""}
+    <div class="ctx-head">${coat ? `<img class="ctx-coat" src="${esc(coat.t)}" alt="${esc(T("ctx.coatalt", { name: m.n }))}" loading="lazy">` : ""}
       <div class="ctx-facts">${facts.join(" · ")}
-        ${ctx.com.length ? `<div>Comarca: ${ctx.com.map(esc).join(", ")}</div>` : ""}
-        ${ctx.pat.length ? `<div>Patrón: ${ctx.pat.map(esc).join(", ")}</div>` : ""}
-        ${names.length ? `<div>Nombres oficiales: ${names.map(n => `${esc(n[0])}${n[1] ? ` <span class="badge lang" title="${esc(langName(n[1]))}">${esc(n[1])}</span>` : ""}${n[2] || n[3] ? ` <span class="ss">(${esc(n[2] || "…")}–${esc(n[3] || "hoy")})</span>` : ""}`).join(" · ")}</div>` : ""}
+        ${ctx.com.length ? `<div>${esc(T("ctx.comarca", { v: ctx.com.join(", ") }))}</div>` : ""}
+        ${ctx.pat.length ? `<div>${esc(T("ctx.patron", { v: ctx.pat.join(", ") }))}</div>` : ""}
+        ${names.length ? `<div>${T("ctx.names", { v: names.map(n => `${esc(n[0])}${n[1] ? ` <span class="badge lang" title="${esc(langName(n[1]))}">${esc(n[1])}</span>` : ""}${n[2] || n[3] ? ` <span class="ss">(${esc(n[2] || "…")}–${esc(n[3] || T("ctx.today"))})</span>` : ""}`).join(" · ") })}</div>` : ""}
       </div></div>
     ${[photo, coat].filter(Boolean).length ? `<div class="ctx-credit">${[photo, coat].filter(Boolean).map(credit).join(" · ")}</div>` : ""}`;
 }
@@ -463,18 +455,19 @@ function claimHTML(c) {
   let cites = "";
   try {
     const ci = js(c.ci, []);
-    if (ci.length) cites = "cita: " + ci.map(x => typeof x === "string" ? x : Object.entries(x).map(([k, v]) => `${k}=${v}`).join(" ")).join("; ");
+    if (ci.length) cites = T("claim.cite", { v: ci.map(x => typeof x === "string" ? x : Object.entries(x).map(([k, v]) => `${k}=${v}`).join(" ")).join("; ") });
   } catch (e) {}
   let notes = "";
   try { const pn = js(c.pn, []); if (pn.length) notes = pn.map(x => typeof x === "string" ? x : JSON.stringify(x)).join("; "); } catch (e) {}
-  const kind = c.hk ? `<span class="badge kind">${esc(KIND_LABEL[c.hk] || c.hk)}</span> ` : "";
-  const level = c.lv === "transcribed" ? "transcrito de un escaneo" : c.lv === "deduced" ? "deducido por nosotros" : "";
-  const human = [loc.replace(/^(page|volume|vol|pdf_page|printed_page) /, m => ({ "page ": "pág. ", "volume ": "tomo ", "vol ": "tomo ", "pdf_page ": "pág. PDF ", "printed_page ": "pág. " })[m] || m), "consultado " + c.r, level].filter(Boolean);
-  const tech = [MATCH_LABEL[c.mr] || c.mr, cites, notes].filter(Boolean);
+  const kind = c.hk ? `<span class="badge kind">${esc(kindLabel(c.hk))}</span> ` : "";
+  const level = c.lv === "transcribed" ? T("claim.transcribed") : c.lv === "deduced" ? T("claim.deduced") : "";
+  const PG = () => ({ "page ": T("claim.page"), "volume ": T("claim.volume"), "vol ": T("claim.volume"), "pdf_page ": T("claim.pdfpage"), "printed_page ": T("claim.page") });
+  const human = [loc.replace(/^(page|volume|vol|pdf_page|printed_page) /, m => PG()[m] || m), T("claim.retrieved", { d: c.r }), level].filter(Boolean);
+  const tech = [matchLabel(c.mr), cites, notes].filter(Boolean);
   return `<div class="claim">
-    <div class="src">${kind}<a href="${esc(c.u)}" target="_blank" rel="noopener">${esc(srcName(c.s))}</a>${c.l ? ` <span class="badge lang" title="${esc(LANG_NAME[c.l] || c.l)}">${esc(c.l)}</span>` : ""}</div>
+    <div class="src">${kind}<a href="${esc(c.u)}" target="_blank" rel="noopener">${esc(srcName(c.s))}</a>${c.l ? ` <span class="badge lang" title="${esc(langName(c.l))}">${esc(c.l)}</span>` : ""}</div>
     <blockquote>${esc(c.q)}</blockquote>
-    <div class="meta">${human.map(esc).join(" · ")}${tech.length ? ` <details class="tech"><summary>cómo se leyó</summary>${tech.map(esc).join("<br>")}</details>` : ""}</div>
+    <div class="meta">${human.map(esc).join(" · ")}${tech.length ? ` <details class="tech"><summary>${esc(T("claim.how"))}</summary>${tech.map(esc).join("<br>")}</details>` : ""}</div>
   </div>`;
 }
 
@@ -482,7 +475,7 @@ async function select(id, fly) {
   const m = BY_ID.get(id);
   if (!m) return;
   selected = id; restyle();
-  history.replaceState(null, "", "#" + id);
+  setHash(id);
   if (fly && layersById.get(id)) {
     // a hidden page (background tab) cannot animate; flying there leaves the map at NaN
     const b = layersById.get(id).getBounds();
@@ -493,7 +486,7 @@ async function select(id, fly) {
   openPanel();
   document.body.classList.add("has-ficha");
   const body = document.getElementById("panel-body");
-  body.innerHTML = `<div class="ficha"><h2>${esc(m.n)}</h2><div class="where">${esc(m.p)} · ${esc(m.c)}</div><p class="empty">cargando fuentes…</p></div>`;
+  body.innerHTML = `<div class="ficha"><h2>${esc(m.n)}</h2><div class="where">${esc(m.p)} · ${esc(m.c)}</div><p class="empty">${esc(T("ficha.loading"))}</p></div>`;
   document.getElementById("panel").scrollTop = 0;
   await Promise.all([loadClaims(m.pc), loadContext(m.pc), loadSimilar(m.pc)]);
   if (selected !== id) return;
@@ -511,16 +504,15 @@ async function select(id, fly) {
     const extra = new Set(vars.map(v => v[0]));
     if (f.f && !extra.has(f.f)) extra.add(f.f);
     for (const x of extra) cs = cs.concat(byForm.get((f.k === "nick" ? "nick|" : "dem|") + x) || []);
-    const VT = { fem: "femenino", pl: "plural", fem_pl: "femenino plural" };
-    const varLine = vars.length ? `<div class="vars" title="Regla R001: femenino y plural se muestran dentro del masculino singular y no cuentan como formas distintas">${
-      ["fem", "pl", "fem_pl"].filter(k => vars.some(v => v[1] === k)).map(k => `${VT[k]}: <i>${vars.filter(v => v[1] === k).map(v => esc(v[0])).join(", ")}</i>`).join(" · ")}</div>` : "";
+    const varLine = vars.length ? `<div class="vars" title="${esc(T("var.title"))}">${
+      ["fem", "pl", "fem_pl"].filter(k => vars.some(v => v[1] === k)).map(k => `${esc(T("var." + k))}: <i>${vars.filter(v => v[1] === k).map(v => esc(v[0])).join(", ")}</i>`).join(" · ")}</div>` : "";
     return `<details class="form"><summary>
       <span class="fm">${esc(f.m)}</span>${f.f && f.f !== f.m ? `<span class="ff">${esc(f.f)}</span>` : ""}
       ${f.l.map(l => `<span class="badge lang">${esc(LANG_LABEL[l] || l)}</span>`).join("")}
-      ${f.pr ? `<span class="badge prin" title="Forma principal: la de la fuente con más autoridad (DLE, FundéuRAE, listas oficiales de las academias, luego Wikipedia y Wikidata); en empate, la que dan más fuentes">principal</span>` : ""}
-      ${f.cu ? `<span class="badge cur" title="Calculado: no comparte comienzo ni sílabas con ningún nombre del municipio">curioso</span>` : ""}
-      ${f.go === "nombre_antiguo" || f.go === "otra_lengua" ? `<span class="badge orig" title="Deducido por nosotros: el gentilicio comparte raíz con ese nombre, que da la fuente indicada">← ${esc((f.ge || "").replace(/ \(([^)]*)\)$/, ""))}</span>` : ""}
-      <span class="badge nsrc" title="Fuentes distintas">${f.n} ${f.n === 1 ? "fuente" : "fuentes"}</span>
+      ${f.pr ? `<span class="badge prin" title="${esc(T("badge.principal.title"))}">${esc(T("badge.principal"))}</span>` : ""}
+      ${f.cu ? `<span class="badge cur" title="${esc(T("badge.curious.title"))}">${esc(T("badge.curious"))}</span>` : ""}
+      ${f.go === "nombre_antiguo" || f.go === "otra_lengua" ? `<span class="badge orig" title="${esc(T("badge.orig.title"))}">← ${esc((f.ge || "").replace(/ \(([^)]*)\)$/, ""))}</span>` : ""}
+      <span class="badge nsrc" title="${esc(T("nsrc.title"))}">${esc(nsrc(f.n))}</span>
       ${varLine}
     </summary>${cs.map(claimHTML).join("")}</details>`;
   };
@@ -537,43 +529,44 @@ async function select(id, fly) {
     const g = byGroup(items, langsOf);
     return ["es", "co", "fx"].filter(k => g[k].length).map(k => {
       const inner = render(g[k]);
-      if (k === "fx") return `<details class="lg fx"><summary>${GROUP_TITLE[k]} (${g[k].length})</summary>${inner}</details>`;
+      if (k === "fx") return `<details class="lg fx"><summary>${esc(groupTitle(k))} (${g[k].length})</summary>${inner}</details>`;
       // Spanish goes first without a title (it is understood); the other groups keep theirs
-      return k === "es" ? `<div class="lg es">${inner}</div>` : `<div class="lg ${k}"><div class="lgt">${GROUP_TITLE[k]}</div>${inner}</div>`;
+      return k === "es" ? `<div class="lg es">${inner}</div>` : `<div class="lg ${k}"><div class="lgt">${esc(groupTitle(k))}</div>${inner}</div>`;
     }).join("");
   };
   const grouped = list => {
     const g = new Map();
     for (const c of list) { if (!g.has(c.fd)) g.set(c.fd, []); g.get(c.fd).push(c); }
     const multi = g.size > 1;
-    return [...g].map(([fd, cs]) => `${multi ? `<div class="h4">${esc(FIELD_LABEL[fd] || fd)}</div>` : ""}${cs.map(c => `<div class="form" style="padding:0">${claimHTML(c)}</div>`).join("")}`).join("");
+    return [...g].map(([fd, cs]) => `${multi ? `<div class="h4">${esc(fieldLabel(fd))}</div>` : ""}${cs.map(c => `<div class="form" style="padding:0">${claimHTML(c)}</div>`).join("")}`).join("");
   };
   body.innerHTML = `<div class="ficha">
     <h2>${esc(m.n)}</h2>
     <div class="where">${m.p === m.c && ccaaIdOf(m) ? terrLink(ccaaIdOf(m), m.c) : terrLink(provId(m), m.p) + (m.p === m.c ? "" : " · " + (ccaaIdOf(m) ? terrLink(ccaaIdOf(m), m.c) : esc(m.c)))}${(MUNI_TERR[id] || []).map(t => TERR.get(t) ? " · " + terrLink(t, TERR.get(t).n) : "").join("")}</div>
     ${contextHTML(m, CTX.get(id))}
-    <div class="ids"><span>INE ${esc(m.id.slice(4))}</span>
+    <div class="ids"><span>${esc(T("ficha.ine", { code: m.id.slice(4) }))}</span>
       ${m.q ? `<a href="https://www.wikidata.org/wiki/${esc(m.q)}" target="_blank" rel="noopener">Wikidata</a>` : ""}
       ${m.w ? `<a href="https://es.wikipedia.org/wiki/${encodeURIComponent(m.w.replace(/ /g, "_"))}" target="_blank" rel="noopener">Wikipedia</a>` : ""}
-      ${CTX.get(id) && CTX.get(id).web ? `<a href="${esc(CTX.get(id).web)}" target="_blank" rel="noopener">Ayuntamiento</a>` : ""}
+      ${CTX.get(id) && CTX.get(id).web ? `<a href="${esc(CTX.get(id).web)}" target="_blank" rel="noopener">${esc(T("ficha.townhall"))}</a>` : ""}
     </div>
-    <div class="h3">Gentilicios</div>
-    ${dems.length ? langSections(dems, f => f.l, fs => fs.slice().sort((a, b) => (b.pr ? 1 : 0) - (a.pr ? 1 : 0)).map(formBlock).join("")) : `<p class="empty">Ninguna fuente consultada da todavía un gentilicio.</p>`}
-    ${nicks.length ? `<div class="h3">Apodos</div><p class="note">Lo dice la fuente: coloquial, malnom, apodo.</p>${langSections(nicks, f => f.l, fs => fs.map(formBlock).join(""))}` : ""}
-    ${(m.pd || []).length ? `<div class="h3">Pedanías y núcleos con gentilicio (${m.pd.length})</div>
+    <div class="h3">${esc(T("ficha.h.dem"))}</div>
+    ${dems.length ? langSections(dems, f => f.l, fs => fs.slice().sort((a, b) => (b.pr ? 1 : 0) - (a.pr ? 1 : 0)).map(formBlock).join("")) : `<p class="empty">${esc(T("ficha.nodem"))}</p>`}
+    ${nicks.length ? `<div class="h3">${esc(T("ficha.h.nick"))}</div><p class="note">${esc(T("ficha.nick.note"))}</p>${langSections(nicks, f => f.l, fs => fs.map(formBlock).join(""))}` : ""}
+    ${(m.pd || []).length ? `<div class="h3">${esc(T("ficha.pedanias", { n: m.pd.length }))}</div>
       ${m.pd.map(s => {
         const sc = cl.filter(c => c.e === s.id);
         return `<details class="form"><summary><span class="sub-n">${esc(s.n)}</span>
           ${s.g.filter(g => g.k === "dem").map(g => `<span class="ff">${esc(g.m)}</span>${g.l.length && !g.l.includes("es") ? `<span class="badge lang">${esc(g.l.join(" "))}</span>` : ""}`).join(" ")}
-          ${s.g.filter(g => g.k === "nick").length ? `<span class="badge">apodo: ${esc(s.g.filter(g => g.k === "nick").map(g => g.m).join(", "))}</span>` : ""}
+          ${s.g.filter(g => g.k === "nick").length ? `<span class="badge">${esc(T("ficha.nickbadge", { v: s.g.filter(g => g.k === "nick").map(g => g.m).join(", ") }))}</span>` : ""}
         </summary>${sc.map(claimHTML).join("")}</details>`;
       }).join("")}` : ""}
-    <div class="h3">Etimología del nombre</div>
-    ${ety.length ? `<p class="note warn">Citas literales de cada fuente. La separación en hipótesis la hace un programa y a veces junta dos o parte una: en revisión.</p>${langSections(ety, c => c.l, grouped)}` : `<p class="empty">Sin etimología recogida todavía.</p>`}
-    <div class="h3">Historia</div>
-    ${hist.length ? langSections(hist, c => c.l, grouped) : `<p class="empty">Sin datos históricos todavía.</p>`}
+    <div class="h3">${esc(T("ficha.h.ety"))}</div>
+    ${ety.length ? `<p class="note warn">${esc(T("ficha.etywarn"))}</p>${langSections(ety, c => c.l, grouped)}` : `<p class="empty">${esc(T("ficha.noety"))}</p>`}
+    <div class="h3">${esc(T("ficha.h.hist"))}</div>
+    ${hist.length ? langSections(hist, c => c.l, grouped) : `<p class="empty">${esc(T("ficha.nohist"))}</p>`}
     ${similarHTML(SIM.get(id))}
-    <p class="note">Pulsa una forma para ver qué dice cada fuente, con la cita literal y el enlace.</p>
+    <p class="note">${esc(T("ficha.tip"))}</p>
+    <p class="note">${esc(T("quotes.note"))}</p>
   </div>`;
   bindTerrLinks(body);
   if (terrLayer) { map.removeLayer(terrLayer); terrLayer = null; }
@@ -583,11 +576,11 @@ async function select(id, fly) {
 
 let REDIRECTS = null;
 async function fromHash() {
-  let id = decodeURIComponent(location.hash.slice(1));
+  let id = hashId();
   if (/^ine:\d+$/.test(id) && !BY_ID.has(id)) {
     // an old INE code (merged or renamed municipality) leads to the current one
     if (!REDIRECTS) REDIRECTS = await fetch(`gentilicios/data/redirects.json?v=${V}`).then(r => r.ok ? r.json() : {}).catch(() => ({}));
-    if (REDIRECTS[id]) { id = REDIRECTS[id]; history.replaceState(null, "", "#" + id); }
+    if (REDIRECTS[id]) { id = REDIRECTS[id]; setHash(id); }
   }
   if (BY_ID.has(id)) select(id, true);
   else if (/^(prov|ccaa|comarca|isla):/.test(id)) {
@@ -619,13 +612,13 @@ function initSearch() {
     const q = fold(input.value.trim());
     if (q.length < 2) { box.hidden = true; if (!document.getElementById("table-view").hidden) renderTable(); return; }
     const score = x => x.name === q ? 0 : x.name.startsWith(q) ? 1 : x.forms.split(" ").some(w => w.startsWith(q)) ? 2 : x.name.includes(q) ? 3 : x.forms.includes(q) ? 4 : x.prov.startsWith(q) ? 5 : 9;
-    hits = index.map(x => [score(x), x]).filter(([s]) => s < 9).sort((a, b) => a[0] - b[0] || a[1].m.n.localeCompare(b[1].m.n, "es")).slice(0, 30).map(([, x]) => x.m);
+    hits = index.map(x => [score(x), x]).filter(([s]) => s < 9).sort((a, b) => a[0] - b[0] || coll(a[1].m.n, b[1].m.n)).slice(0, 30).map(([, x]) => x.m);
     on = 0;
     box.innerHTML = hits.length ? hits.map((m, i) => {
       const f = m.g.find(f => fold(f.m).includes(q) || fold(f.f).includes(q));
       return `<div class="sug${i === 0 ? " on" : ""}" data-id="${m.id}"><div class="sn">${hl(m.n, q)}</div>
         <div class="ss">${f ? `<i>${hl(f.m, q)}</i> · ` : (mainForms(m) ? `<i>${esc(mainForms(m))}</i> · ` : "")}${esc(m.p)}</div></div>`;
-    }).join("") : `<div class="sug ss">Nada con «${esc(input.value)}»</div>`;
+    }).join("") : `<div class="sug ss">${esc(T("search.none", { q: input.value }))}</div>`;
     box.hidden = false;
     box.querySelectorAll(".sug[data-id]").forEach(el => el.addEventListener("mousedown", e => { e.preventDefault(); choose(el.dataset.id); }));
     if (!document.getElementById("table-view").hidden) renderTable();
@@ -668,7 +661,7 @@ function initTable() {
   document.getElementById("v-map").addEventListener("click", () => showView("map"));
   document.getElementById("v-table").addEventListener("click", () => showView("table"));
   const sel = document.getElementById("t-ccaa");
-  [...new Set(MUNIS.map(m => m.c))].sort((a, b) => a.localeCompare(b, "es")).forEach(c => sel.insertAdjacentHTML("beforeend", `<option>${esc(c)}</option>`));
+  [...new Set(MUNIS.map(m => m.c))].sort(coll).forEach(c => sel.insertAdjacentHTML("beforeend", `<option>${esc(c)}</option>`));
   ["t-curious", "t-empty", "t-ccaa"].forEach(id => document.getElementById(id).addEventListener("change", () => { shown = 300; renderTable(); }));
   document.querySelectorAll("#table th").forEach(th => th.addEventListener("click", () => {
     sortDir = sortKey === th.dataset.k ? -sortDir : (["ns", "ety", "cu", "pop"].includes(th.dataset.k) ? -1 : 1);
@@ -683,8 +676,8 @@ function renderTable() {
   let rows = MUNIS.filter(m => (!onlyCur || m.cu) && (!onlyEmpty || !m.g.some(f => f.k === "dem")) && (!ccaa || m.c === ccaa) &&
     (q.length < 2 || fold(m.n).includes(q) || fold(m.p).includes(q) || m.g.some(f => fold(f.m).includes(q))));
   const val = m => ({ n: m.n, p: m.p, c: m.c, g: mainForms(m, 9), nick: m.g.filter(f => f.k === "nick").length, pop: m.pop || 0, ns: m.ns, cu: m.cu ? 1 : 0, ety: m.ety }[sortKey]);
-  rows.sort((a, b) => { const x = val(a), y = val(b); return (typeof x === "number" ? x - y : String(x).localeCompare(String(y), "es")) * sortDir || a.n.localeCompare(b.n, "es"); });
-  document.getElementById("t-count").textContent = `${fmt(rows.length)} municipios`;
+  rows.sort((a, b) => { const x = val(a), y = val(b); return (typeof x === "number" ? x - y : coll(x, y)) * sortDir || coll(a.n, b.n); });
+  document.getElementById("t-count").textContent = T("table.count", { n: fmt(rows.length) });
   document.querySelectorAll("#table th").forEach(th => th.classList.toggle("sorted", th.dataset.k === sortKey));
   document.querySelector("#table tbody").innerHTML = rows.slice(0, shown).map(m => {
     // Spanish forms first, then the other languages of Spain; foreign forms stay in the ficha only
@@ -692,7 +685,7 @@ function renderTable() {
     return `<tr data-id="${m.id}"><td>${esc(m.n)}</td><td>${esc(m.p)}</td><td>${esc(m.c)}</td>
       <td class="g">${dem.map(f => `<span class="${f.cu ? "cu" : ""}">${esc(f.m)}</span>${langGroup(f.l) === "co" ? ` <span class="badge lang">${esc(f.l.filter(l => CO_OFFICIAL.has(l)).join(" "))}</span>` : ""}`).join(", ") || '<span class="muted">·</span>'}</td>
       <td class="g">${esc(m.g.filter(f => f.k === "nick").map(f => f.m).join(", "))}</td>
-      <td class="num">${m.pop != null ? Number(m.pop).toLocaleString("es-ES") : ""}</td><td class="num">${m.ns || ""}</td><td class="cu">${m.cu ? "✦" : ""}</td><td class="num">${m.ety || ""}</td></tr>`;
+      <td class="num">${m.pop != null ? fmt(m.pop) : ""}</td><td class="num">${m.ns || ""}</td><td class="cu">${m.cu ? "✦" : ""}</td><td class="num">${m.ety || ""}</td></tr>`;
   }).join("");
   document.querySelectorAll("#table tbody tr").forEach(tr => tr.addEventListener("click", () => { showView("map"); select(tr.dataset.id, true); }));
   document.getElementById("t-more").hidden = rows.length <= shown;
@@ -767,8 +760,8 @@ function initRoute() {
       const q = fold(input.value.trim());
       routeState[key] = null;
       if (q.length < 2) { sug.hidden = true; return; }
-      const hits = index.filter(x => x.name.includes(q)).sort((a, b) => (b.name.startsWith(q)) - (a.name.startsWith(q)) || a.m.n.localeCompare(b.m.n, "es")).slice(0, 12);
-      sug.innerHTML = hits.map(x => `<div class="sug" data-id="${x.m.id}"><span class="sn">${esc(x.m.n)}</span> <span class="ss">${esc(x.m.p)}</span></div>`).join("") || `<div class="sug ss">nada</div>`;
+      const hits = index.filter(x => x.name.includes(q)).sort((a, b) => (b.name.startsWith(q)) - (a.name.startsWith(q)) || coll(a.m.n, b.m.n)).slice(0, 12);
+      sug.innerHTML = hits.map(x => `<div class="sug" data-id="${x.m.id}"><span class="sn">${esc(x.m.n)}</span> <span class="ss">${esc(x.m.p)}</span></div>`).join("") || `<div class="sug ss">${esc(T("route.nothing"))}</div>`;
       sug.hidden = false;
       sug.querySelectorAll(".sug[data-id]").forEach(el => el.addEventListener("mousedown", e => {
         e.preventDefault(); routeState[key] = el.dataset.id; input.value = BY_ID.get(el.dataset.id).n; sug.hidden = true; runRoute();
@@ -793,7 +786,7 @@ function runRoute() {
   const ms = performance.now() - t0;
   clearRoute();
   const res = document.getElementById("r-result");
-  if (!path) { res.innerHTML = `<p class="empty">No hay camino por tierra (¿una isla?).</p>`; return; }
+  if (!path) { res.innerHTML = `<p class="empty">${esc(T("route.none"))}</p>`; return; }
   let km = 0;
   for (let i = 1; i < path.length; i++) km += haversine(GRAPH.c[path[i - 1]], GRAPH.c[path[i]]);
   routeLayer = L.layerGroup().addTo(map);
@@ -804,8 +797,8 @@ function runRoute() {
   L.polyline(path.map(i => GRAPH.c[i]), { color: "#241a12", weight: 3, dashArray: "6 5" }).addTo(routeLayer);
   map.fitBounds(L.polyline(path.map(i => GRAPH.c[i])).getBounds(), { padding: [30, 30] });
   const towns = path.map(i => BY_ID.get(GRAPH.ids[i]));
-  res.innerHTML = `<div class="rb-sum"><b>${towns.length - 2 < 0 ? 0 : towns.length - 2}</b> pueblos por medio · ${towns.length - 1} fronteras · ${Math.round(km)} km en línea entre centros
-    <span class="ss">(${visited} pueblos explorados en ${ms < 1 ? "<1" : Math.round(ms)} ms)</span></div>
+  res.innerHTML = `<div class="rb-sum">${T("route.sum", { between: towns.length - 2 < 0 ? 0 : towns.length - 2, borders: towns.length - 1, km: fmt(Math.round(km)) })}
+    <span class="ss">${esc(T("route.explored", { n: fmt(visited), ms: ms < 1 ? "<1" : Math.round(ms) }))}</span></div>
     <ol class="rb-list">${towns.map(m => `<li data-id="${m.id}"><span class="sn">${esc(m.n)}</span> <i>${esc(m.pe || "")}</i> <span class="ss">${esc(m.p)}</span></li>`).join("")}</ol>`;
   res.querySelectorAll("li[data-id]").forEach(li => li.addEventListener("click", () => isMobile() ? showPopup(li.dataset.id) : select(li.dataset.id, false)));
 }
@@ -820,18 +813,14 @@ fetch("gentilicios/data/build.json", { cache: "no-store" }).then(r => r.json()).
 
 // ---------- population and territory tab (not gentilicios) ----------
 let POP = null, pmode = "dens";
-const TR_LABEL = { growth: "crece", stable: "estable", peak_mid_century_then_decline: "máximo a mediados de siglo y caída",
-  decline_since_early_1900s: "cae desde principios del XX", decline_then_partial_recovery: "cae y se recupera en parte",
-  decline_since_1980s_or_later: "cae desde los 80 o después" };
+const trLabel = k => TX("tr." + k) || k;
 const TR_COL = { growth: "#2e6b6b", stable: "#8fb8b0", decline_then_partial_recovery: "#d9a441",
   decline_since_1980s_or_later: "#e39a6b", peak_mid_century_then_decline: "#b6465f", decline_since_early_1900s: "#6e1f33" };
 const BIN = (v, cuts, cols) => { if (v == null) return "#ebe5da"; for (let i = 0; i < cuts.length; i++) if (v < cuts[i]) return cols[i]; return cols[cols.length - 1]; };
-const DENS = { cuts: [1, 10, 50, 200, 1000], cols: ["#e8f0f5", "#b9d3e3", "#7fb0cf", "#3f82b0", "#1d5687", "#0b2d4f"],
-  labels: ["menos de 1", "1-10", "10-50", "50-200", "200-1.000", "más de 1.000"] };
-const CHP = { cuts: [-90, -75, -50, -25, -2], cols: ["#4a0f1f", "#8a2238", "#c0485b", "#e3908a", "#f1cdb9", "#8fb8b0"],
-  labels: ["pierde más del 90 %", "75-90 %", "50-75 %", "25-50 %", "hasta 25 %", "en su máximo (o casi)"] };
-const ALT = { cuts: [200, 500, 800, 1100], cols: ["#e9efe1", "#c3d3a8", "#99ad72", "#6f7f45", "#4a3b26"],
-  labels: ["menos de 200 m", "200-500", "500-800", "800-1.100", "más de 1.100"] };
+// each bin's label is an i18n key ("pop.dens.0"...); the year bins are pure numbers and need none
+const DENS = { cuts: [1, 10, 50, 200, 1000], cols: ["#e8f0f5", "#b9d3e3", "#7fb0cf", "#3f82b0", "#1d5687", "#0b2d4f"], k: "pop.dens" };
+const CHP = { cuts: [-90, -75, -50, -25, -2], cols: ["#4a0f1f", "#8a2238", "#c0485b", "#e3908a", "#f1cdb9", "#8fb8b0"], k: "pop.chp" };
+const ALT = { cuts: [200, 500, 800, 1100], cols: ["#e9efe1", "#c3d3a8", "#99ad72", "#6f7f45", "#4a3b26"], k: "pop.alt" };
 const PKY = { cuts: [1920, 1950, 1970, 1991, 2010], cols: ["#3b1e54", "#6a3d8f", "#9b6fbd", "#c9a6dc", "#9cc3bb", "#2e6b6b"],
   labels: ["1900-1910", "1920-1940", "1950-1960", "1970-1981", "1991-2009", "2010-2025"] };
 
@@ -846,31 +835,28 @@ function popColour(m) {
 }
 function popLegend() {
   const el = document.getElementById("legend");
-  if (!POP) { el.innerHTML = `<div class="lt">cargando…</div>`; return; }
+  if (!POP) { el.innerHTML = `<div class="lt">${esc(T("loading"))}</div>`; return; }
   const vals = Object.values(POP.m);
   const binRows = (spec, key) => spec.cols.map((c, i) => {
     const lo = i ? spec.cuts[i - 1] : -Infinity, hi = i < spec.cuts.length ? spec.cuts[i] : Infinity;
     const n = vals.filter(p => p[key] != null && p[key] >= lo && p[key] < hi).length;
-    return `<div class="lr"><span class="sw" style="background:${c}"></span>${spec.labels[i]}<span class="ln">${fmt(n)}</span></div>`;
-  }).join("") + `<div class="lr"><span class="sw" style="background:#ebe5da"></span>sin dato<span class="ln">${fmt(MUNIS.length - vals.filter(p => p[key] != null).length)}</span></div>`;
-  const title = { dens: "Densidad 2025 (hab./km²)", chp: "Cambio desde el máximo", pky: "Año de máxima población", tr: "Trayectoria 1900-2025", alt: "Altitud" }[pmode];
-  const note = { dens: "INE padrón 2025 entre superficie (Wikidata o Eurostat)",
-    chp: "población 2025 frente al máximo 1900-2025; solo años comparables",
-    pky: "censos 1900-1991 (de hecho) y padrón 1996-2025 (de derecho)",
-    tr: "clasificación nuestra de la curva, descrita en el informe",
-    alt: "Wikidata: dato flojo, a veces es la cumbre y no el pueblo; se cambiará por el del IGN" }[pmode];
+    const label = spec.labels ? spec.labels[i] : T(spec.k + "." + i);
+    return `<div class="lr"><span class="sw" style="background:${c}"></span>${esc(label)}<span class="ln">${fmt(n)}</span></div>`;
+  }).join("") + `<div class="lr"><span class="sw" style="background:#ebe5da"></span>${esc(T("pop.legend.nodata"))}<span class="ln">${fmt(MUNIS.length - vals.filter(p => p[key] != null).length)}</span></div>`;
+  const title = T("pop.title." + pmode);
+  const note = T("pop.note." + pmode);
   const body = pmode === "dens" ? binRows(DENS, "d") : pmode === "chp" ? binRows(CHP, "chp") : pmode === "alt" ? binRows(ALT, "alt")
     : pmode === "pky" ? binRows(PKY, "pky")
-    : Object.keys(TR_COL).map(k => `<div class="lr"><span class="sw" style="background:${TR_COL[k]}"></span>${TR_LABEL[k]}<span class="ln">${fmt(vals.filter(p => p.tr === k).length)}</span></div>`).join("");
-  el.innerHTML = `<div class="lt">${title}</div>${body}<div class="note">${note}</div>`;
+    : Object.keys(TR_COL).map(k => `<div class="lr"><span class="sw" style="background:${TR_COL[k]}"></span>${esc(trLabel(k))}<span class="ln">${fmt(vals.filter(p => p.tr === k).length)}</span></div>`).join("");
+  el.innerHTML = `<div class="lt">${esc(title)}</div>${body}<div class="note">${esc(note)}</div>`;
 }
 
 function popChart(p) {
-  const W = 360, H = 170, L = 48, R = 8, T = 10, B = 22;
+  const W = 360, H = 170, L = 48, R = 8, TOP = 10, B = 22;
   const ys = POP.years, vals = p.v, nc = new Set(p.nc);
   const maxV = Math.max(1, ...vals.filter(v => v != null));
-  const x = yr => L + (yr - 1900) / (2025 - 1900) * (W - L - R), y = v => T + (1 - v / maxV) * (H - T - B);
-  let s = `<svg viewBox="0 0 ${W} ${H}" class="popchart" role="img" aria-label="Población 1900-2025">`;
+  const x = yr => L + (yr - 1900) / (2025 - 1900) * (W - L - R), y = v => TOP + (1 - v / maxV) * (H - TOP - B);
+  let s = `<svg viewBox="0 0 ${W} ${H}" class="popchart" role="img" aria-label="${esc(T("pop.chart.aria"))}">`;
   for (const tv of [0, maxV / 2, maxV]) s += `<line x1="${L}" x2="${W - R}" y1="${y(tv)}" y2="${y(tv)}" class="grid"/><text x="${L - 4}" y="${y(tv) + 3}" class="ax" text-anchor="end">${fmt(Math.round(tv))}</text>`;
   for (const yr of [1900, 1950, 2000, 2025]) s += `<text x="${x(yr)}" y="${H - 6}" class="ax" text-anchor="middle">${yr}</text>`;
   const pad = ys.map((yr, i) => [yr, vals[i]]).filter(([yr, v]) => v != null && yr >= 1996);
@@ -878,31 +864,31 @@ function popChart(p) {
   ys.forEach((yr, i) => {
     const v = vals[i];
     if (v == null || yr > 1991) return;
-    s += `<circle cx="${x(yr)}" cy="${y(v)}" r="3.2" class="${nc.has(i) ? "cen nc" : "cen"}"><title>${yr}: ${fmt(v)}${nc.has(i) ? " (no comparable)" : ""}</title></circle>`;
+    s += `<circle cx="${x(yr)}" cy="${y(v)}" r="3.2" class="${nc.has(i) ? "cen nc" : "cen"}"><title>${yr}: ${fmt(v)}${nc.has(i) ? esc(T("pop.chart.nc")) : ""}</title></circle>`;
   });
   if (p.pky) {
     const i = ys.indexOf(p.pky);
-    if (i >= 0 && vals[i] != null) s += `<circle cx="${x(p.pky)}" cy="${y(vals[i])}" r="5.5" class="peak"><title>máximo: ${fmt(p.pk)} en ${p.pky}</title></circle>`;
+    if (i >= 0 && vals[i] != null) s += `<circle cx="${x(p.pky)}" cy="${y(vals[i])}" r="5.5" class="peak"><title>${esc(T("pop.chart.peak", { n: fmt(p.pk), y: p.pky }))}</title></circle>`;
   }
   return s + `</svg>`;
 }
 
 function popIntro() {
   const body = document.getElementById("panel-body");
-  if (!POP) { body.innerHTML = `<p class="empty">cargando población…</p>`; return; }
+  if (!POP) { body.innerHTML = `<p class="empty">${esc(T("pop.intro.loading"))}</p>`; return; }
   const vals = Object.values(POP.m);
   const lost = th => vals.filter(p => p.chp != null && p.chp <= -th).length;
   body.innerHTML = `<div class="intro pop">
-    <div class="pop-flag">Población y territorio · no son gentilicios</div>
-    <h2>¿Cuánta gente vive en cada pueblo, y cuánta vivió?</h2>
-    <p>Series del INE para cada municipio, en su territorio actual: censos de 1900 a 1991 y padrón de 1996 a 2025. Pulsa un pueblo para ver su curva.</p>
+    <div class="pop-flag">${esc(T("pop.flag"))}</div>
+    <h2>${esc(T("pop.intro.h"))}</h2>
+    <p>${esc(T("pop.intro.p"))}</p>
     <div class="kpis">
-      <div class="kpi"><b>${fmt(lost(50))}</b><span>municipios han perdido más de la mitad desde su máximo</span></div>
-      <div class="kpi"><b>${fmt(lost(75))}</b><span>más del 75 %</span></div>
-      <div class="kpi"><b>${fmt(lost(90))}</b><span>más del 90 %</span></div>
-      <div class="kpi"><b>${fmt(vals.filter(p => p.c96 != null && p.c96 < 0).length)}</b><span>pierden población de 1996 a 2025</span></div>
+      <div class="kpi"><b>${fmt(lost(50))}</b><span>${esc(T("pop.intro.kpi1"))}</span></div>
+      <div class="kpi"><b>${fmt(lost(75))}</b><span>${esc(T("pop.intro.kpi2"))}</span></div>
+      <div class="kpi"><b>${fmt(lost(90))}</b><span>${esc(T("pop.intro.kpi3"))}</span></div>
+      <div class="kpi"><b>${fmt(vals.filter(p => p.c96 != null && p.c96 < 0).length)}</b><span>${esc(T("pop.intro.kpi4"))}</span></div>
     </div>
-    <p class="note">Censos: población de hecho (quien estaba esa noche). Padrón: población de derecho (empadronados). Los municipios fusionados suman sus antiguos municipios; los años con territorio que hoy es de otro se marcan y no cuentan para el máximo.</p>
+    <p class="note">${esc(T("pop.intro.note"))}</p>
   </div>`;
 }
 
@@ -910,25 +896,25 @@ function popFicha(id) {
   const m = BY_ID.get(id), p = POP && POP.m[id];
   if (!m || !p) return;
   selected = id; restyle(); openPanel(); document.body.classList.add("has-ficha");
-  history.replaceState(null, "", "#" + id);
-  const pct = v => v == null ? "·" : `${v > 0 ? "+" : ""}${String(v).replace(".", ",")} %`;
+  setHash(id);
+  const pct = v => v == null ? "·" : `${v > 0 ? "+" : ""}${Number(v).toLocaleString(T("locale"), { maximumFractionDigits: 1 })} %`;
   document.getElementById("panel-body").innerHTML = `<div class="ficha pop">
-    <div class="pop-flag">Población y territorio · no son gentilicios</div>
+    <div class="pop-flag">${esc(T("pop.flag"))}</div>
     <h2>${esc(m.n)}</h2>
     <div class="where">${esc(m.p === m.c ? m.p : m.p + " · " + m.c)}</div>
     ${popChart(p)}
     <div class="kpis">
-      <div class="kpi"><b>${p.v[p.v.length - 1] != null ? fmt(p.v[p.v.length - 1]) : "·"}</b><span>habitantes en 2025</span></div>
-      <div class="kpi"><b>${p.pk != null ? fmt(p.pk) : "·"}</b><span>máximo${p.pky ? `, en ${p.pky}` : ""}</span></div>
-      <div class="kpi"><b>${pct(p.chp)}</b><span>desde el máximo</span></div>
-      <div class="kpi"><b>${pct(p.c96)}</b><span>de 1996 a 2025</span></div>
-      <div class="kpi"><b>${p.d != null ? fmt(Math.round(p.d * 10) / 10) : "·"}</b><span>hab./km²</span></div>
-      <div class="kpi"><b>${p.alt != null ? fmt(p.alt) + " m" : "·"}</b><span>altitud${p.alts && p.alts !== "referenced" ? " (Wikidata, sin referencia)" : ""}</span></div>
+      <div class="kpi"><b>${p.v[p.v.length - 1] != null ? fmt(p.v[p.v.length - 1]) : "·"}</b><span>${esc(T("pop.kpi.2025"))}</span></div>
+      <div class="kpi"><b>${p.pk != null ? fmt(p.pk) : "·"}</b><span>${esc(p.pky ? T("pop.kpi.peak", { y: p.pky }) : T("pop.kpi.peak.plain"))}</span></div>
+      <div class="kpi"><b>${pct(p.chp)}</b><span>${esc(T("pop.kpi.frompeak"))}</span></div>
+      <div class="kpi"><b>${pct(p.c96)}</b><span>${esc(T("pop.kpi.9625"))}</span></div>
+      <div class="kpi"><b>${p.d != null ? fmt(Math.round(p.d * 10) / 10) : "·"}</b><span>${esc(T("pop.kpi.dens"))}</span></div>
+      <div class="kpi"><b>${p.alt != null ? fmt(p.alt) + " m" : "·"}</b><span>${esc(p.alts && p.alts !== "referenced" ? T("pop.kpi.alt.unref") : T("pop.kpi.alt"))}</span></div>
     </div>
-    <p>Trayectoria: <b>${esc(TR_LABEL[p.tr] || p.tr || "·")}</b></p>
-    ${p.nc.length ? `<p class="note warn">Años con territorio que hoy pertenece a otro municipio (círculos vacíos): no cuentan para el máximo.</p>` : ""}
-    <p class="note">Fuente: INE, censos 1900-1991 y padrón continuo 1996-2025. No hay padrón de 1997.</p>
-    <button type="button" class="chip btn" id="to-gent">Ver sus gentilicios →</button>
+    <p>${T("pop.traj", { v: esc(trLabel(p.tr) || "·") })}</p>
+    ${p.nc.length ? `<p class="note warn">${esc(T("pop.warn"))}</p>` : ""}
+    <p class="note">${esc(T("pop.source"))}</p>
+    <button type="button" class="chip btn" id="to-gent">${esc(T("pop.togent"))}</button>
   </div>`;
   document.getElementById("to-gent").addEventListener("click", () => { showView("map"); select(id, false); });
   document.getElementById("panel").scrollTop = 0;
@@ -946,3 +932,22 @@ fetch("gentilicios/data/build.json", { cache: "no-store" }).then(r => r.json()).
   }));
   if (VIEW === "pop") { restyle(); popIntro(); }
 }).catch(() => {});
+
+// ---------- language ----------
+// a change of language redraws what is on screen; nothing is fetched again, the data has no language
+function rerender() {
+  applyStatic();
+  if (MUNIS.length) stats();
+  setAttrib();
+  if (VIEW === "table") renderTable(); else restyle();
+  // the side panel is always on screen on a desktop, open or not, so it is always redrawn
+  const id = hashId();
+  if (VIEW === "pop") selected ? popFicha(selected) : popIntro();
+  else if (selected) select(selected, false);
+  else if (/^(prov|ccaa|comarca|isla):/.test(id)) openTerritory(id);
+  else intro();
+  if (GRAPH && routeState.from && routeState.to) runRoute();
+}
+document.querySelectorAll("#lang-pick button").forEach(b => b.addEventListener("click", () => {
+  setLang(b.dataset.lang); rerender(); setHash(hashId() || null);
+}));

@@ -9,53 +9,56 @@
   <meta name="author" content="Víctor Elvira">
   <meta name="theme-color" content="#3a2317">
   <link rel="stylesheet" href="gentilicios/vendor/leaflet.css">
-  <link rel="stylesheet" href="gentilicios/style.css?v=0.6.0">
+  <link rel="stylesheet" href="gentilicios/style.css?v=0.7.0">
 </head>
 <body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
     <span class="nav-sep">·</span>
     <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
-    <span id="build" class="build" title="Versión y última actualización"></span>
+    <span id="lang-pick" title="Idioma · Langue · Language">
+      <button type="button" data-lang="es">ES</button><button type="button" data-lang="fr">FR</button><button type="button" data-lang="en">EN</button>
+    </span>
+    <span id="build" class="build" data-t-title="build.title" title="Versión y última actualización"></span>
   </nav>
 
   <header id="bar">
-    <a class="brand" href="gentilicios.html" title="Recargar (quita filtros)">
+    <a class="brand" href="gentilicios.html" data-t-title="brand.title" title="Recargar (quita filtros)">
       <img class="mark" src="gentilicios/favicon.svg" width="28" height="28" alt="">
       <div>
-        <strong>Gentilicios de España</strong>
-        <small>cómo se llama la gente de cada pueblo, y por qué</small>
+        <strong data-t="brand">Gentilicios de España</strong>
+        <small data-t="tagline">cómo se llama la gente de cada pueblo, y por qué</small>
       </div>
     </a>
-    <div id="stats" class="stats">cargando…</div>
+    <div id="stats" class="stats" data-t="loading">cargando…</div>
   </header>
 
   <div id="modes">
     <span id="view-tabs">
-      <button type="button" id="v-map" class="view-btn active">🗺 Mapa</button>
-      <button type="button" id="v-table" class="view-btn">▦ Tabla</button>
-      <button type="button" id="v-pop" class="view-btn pop" hidden title="Otra pestaña: población y territorio, no gentilicios">📈 Población</button>
+      <button type="button" id="v-map" class="view-btn active">🗺 <span class="vl" data-t="tab.map">Mapa</span></button>
+      <button type="button" id="v-table" class="view-btn">▦ <span class="vl" data-t="tab.table">Tabla</span></button>
+      <button type="button" id="v-pop" class="view-btn pop" hidden data-t-title="tab.pop.title" title="Otra pestaña: población y territorio, no gentilicios">📈 <span class="vl" data-t="tab.pop">Población</span></button>
     </span>
     <span id="pop-modes" hidden>
-      <span class="pop-banner"><b>Población y territorio</b><small>datos del INE y Wikidata · no son gentilicios</small></span>
-      <button type="button" class="pmode-btn active" data-pmode="dens"><b>Densidad</b><small>hab./km², 2025</small></button>
-      <button type="button" class="pmode-btn" data-pmode="chp"><b>Desde el máximo</b><small>cuánto ha perdido o ganado</small></button>
-      <button type="button" class="pmode-btn" data-pmode="pky"><b>Año del máximo</b><small>cuándo tuvo más gente</small></button>
-      <button type="button" class="pmode-btn" data-pmode="tr"><b>Trayectoria</b><small>forma de la curva 1900-2025</small></button>
-      <button type="button" class="pmode-btn" data-pmode="alt"><b>Altitud</b><small>metros, Wikidata</small></button>
+      <span class="pop-banner"><b data-t="pop.banner">Población y territorio</b><small data-t="pop.banner.sub">datos del INE y Wikidata · no son gentilicios</small></span>
+      <button type="button" class="pmode-btn active" data-pmode="dens"><b data-t="pmode.dens">Densidad</b><small data-t="pmode.dens.sub">hab./km², 2025</small></button>
+      <button type="button" class="pmode-btn" data-pmode="chp"><b data-t="pmode.chp">Desde el máximo</b><small data-t="pmode.chp.sub">cuánto ha perdido o ganado</small></button>
+      <button type="button" class="pmode-btn" data-pmode="pky"><b data-t="pmode.pky">Año del máximo</b><small data-t="pmode.pky.sub">cuándo tuvo más gente</small></button>
+      <button type="button" class="pmode-btn" data-pmode="tr"><b data-t="pmode.tr">Trayectoria</b><small data-t="pmode.tr.sub">forma de la curva 1900-2025</small></button>
+      <button type="button" class="pmode-btn" data-pmode="alt"><b data-t="pmode.alt">Altitud</b><small data-t="pmode.alt.sub">metros, Wikidata</small></button>
     </span>
-    <span id="colour-modes" title="Qué colorea el mapa">
-      <button type="button" class="mode-btn active" data-group="formas"><b>Nº de formas</b><small>cuántos gentilicios y apodos</small></button>
-      <button type="button" class="mode-btn" data-group="forma"><b>Forma</b><small>cómo es el gentilicio</small></button>
-      <button type="button" class="mode-btn" data-group="origen"><b>Origen</b><small>de qué lengua o nombre viene</small></button>
-      <button type="button" class="mode-btn" data-group="doc"><b>Fuentes</b><small>qué hay documentado</small></button>
+    <span id="colour-modes" data-t-title="cmodes.title" title="Qué colorea el mapa">
+      <button type="button" class="mode-btn active" data-group="formas"><b data-t="group.formas">Nº de formas</b><small data-t="group.formas.sub">cuántos gentilicios y apodos</small></button>
+      <button type="button" class="mode-btn" data-group="forma"><b data-t="group.forma">Forma</b><small data-t="group.forma.sub">cómo es el gentilicio</small></button>
+      <button type="button" class="mode-btn" data-group="origen"><b data-t="group.origen">Origen</b><small data-t="group.origen.sub">de qué lengua o nombre viene</small></button>
+      <button type="button" class="mode-btn" data-group="doc"><b data-t="group.doc">Fuentes</b><small data-t="group.doc.sub">qué hay documentado</small></button>
     </span>
-    <button type="button" id="about-btn" class="chip btn" title="Qué es esto y los curiosos">ℹ︎ Acerca</button>
+    <button type="button" id="about-btn" class="chip btn" data-t-title="about.title" data-t="about" title="Qué es esto y los curiosos">ℹ︎ Acerca</button>
     <span id="filter-wrap">
-      <input id="filter" type="search" placeholder="Buscar pueblo, gentilicio o provincia…" autocomplete="off">
+      <input id="filter" type="search" data-t-ph="search.ph" placeholder="Buscar pueblo, gentilicio o provincia…" autocomplete="off">
       <div id="suggest" hidden></div>
     </span>
-    <button type="button" id="route-btn" class="chip btn" title="Ruta entre dos pueblos, cruzando términos municipales" hidden>🧭 Ruta</button>
+    <button type="button" id="route-btn" class="chip btn" data-t-title="route.btn.title" data-t="route.btn" title="Ruta entre dos pueblos, cruzando términos municipales" hidden>🧭 Ruta</button>
   </div>
 
   <div id="main">
@@ -63,44 +66,45 @@
       <div id="map"></div>
       <div id="legend"></div>
       <div id="route-box" hidden>
-        <div class="rb-title">Ruta entre pueblos <span class="rb-exp">(experimental)</span></div>
-        <div class="rb-row"><input id="r-from" type="search" placeholder="Desde…" autocomplete="off"><div class="rb-sug" hidden></div></div>
-        <div class="rb-row"><input id="r-to" type="search" placeholder="Hasta…" autocomplete="off"><div class="rb-sug" hidden></div></div>
+        <div class="rb-title"><span data-t="route.h">Ruta entre pueblos</span> <span class="rb-exp" data-t="route.exp">(experimental)</span></div>
+        <div class="rb-row"><input id="r-from" type="search" data-t-ph="route.from.ph" placeholder="Desde…" autocomplete="off"><div class="rb-sug" hidden></div></div>
+        <div class="rb-row"><input id="r-to" type="search" data-t-ph="route.to.ph" placeholder="Hasta…" autocomplete="off"><div class="rb-sug" hidden></div></div>
         <div class="rb-opts">
-          <label><input type="radio" name="r-mode" value="hops" checked> menos pueblos</label>
-          <label><input type="radio" name="r-mode" value="km"> menos km</label>
-          <button type="button" id="r-close" class="rb-x" aria-label="Cerrar la ruta">✕</button>
+          <label><input type="radio" name="r-mode" value="hops" checked> <span data-t="route.hops">menos pueblos</span></label>
+          <label><input type="radio" name="r-mode" value="km"> <span data-t="route.km">menos km</span></label>
+          <button type="button" id="r-close" class="rb-x" data-t-aria="route.close" aria-label="Cerrar la ruta">✕</button>
         </div>
         <div id="r-result" class="rb-res"></div>
       </div>
-      <button type="button" id="go-canarias" class="chip btn" title="Ir a Canarias">Canarias ↘</button>
+      <button type="button" id="go-canarias" class="chip btn" data-t-title="canarias.title" data-t="canarias" title="Ir a Canarias">Canarias ↘</button>
     </div>
-    <aside id="panel" aria-label="Ficha">
-      <button id="detail-close" class="detail-close" type="button" aria-label="Cerrar la ficha">✕</button>
+    <aside id="panel" data-t-aria="panel.aria" aria-label="Ficha">
+      <button id="detail-close" class="detail-close" type="button" data-t-aria="panel.close" aria-label="Cerrar la ficha">✕</button>
       <div id="panel-body"></div>
     </aside>
     <section id="table-view" hidden>
       <div id="table-tools">
-        <label class="chip toggle"><input type="checkbox" id="t-curious"><span>Solo curiosos</span></label>
-        <label class="chip toggle"><input type="checkbox" id="t-empty"><span>Solo sin gentilicio</span></label>
-        <select id="t-ccaa" class="chip"><option value="">Todas las comunidades</option></select>
+        <label class="chip toggle"><input type="checkbox" id="t-curious"><span data-t="t.curious">Solo curiosos</span></label>
+        <label class="chip toggle"><input type="checkbox" id="t-empty"><span data-t="t.empty">Solo sin gentilicio</span></label>
+        <select id="t-ccaa" class="chip"><option value="" data-t="t.allccaa">Todas las comunidades</option></select>
         <span id="t-count" class="muted"></span>
       </div>
       <div id="table-scroll">
         <table id="table">
           <thead><tr>
-            <th data-k="n">Municipio</th><th data-k="p">Provincia</th><th data-k="c">Comunidad</th>
-            <th data-k="g">Gentilicios</th><th data-k="nick">Apodos</th><th data-k="pop" class="num">Hab.</th><th data-k="ns" class="num">Fuentes</th>
-            <th data-k="cu">Curioso</th><th data-k="ety" class="num">Etim.</th>
+            <th data-k="n" data-t="th.n">Municipio</th><th data-k="p" data-t="th.p">Provincia</th><th data-k="c" data-t="th.c">Comunidad</th>
+            <th data-k="g" data-t="th.g">Gentilicios</th><th data-k="nick" data-t="th.nick">Apodos</th><th data-k="pop" class="num" data-t="th.pop">Hab.</th><th data-k="ns" class="num" data-t="th.ns">Fuentes</th>
+            <th data-k="cu" data-t="th.cu">Curioso</th><th data-k="ety" class="num" data-t="th.ety">Etim.</th>
           </tr></thead>
           <tbody></tbody>
         </table>
-        <button type="button" id="t-more" class="chip btn" hidden>Mostrar más</button>
+        <button type="button" id="t-more" class="chip btn" data-t="t.more" hidden>Mostrar más</button>
       </div>
     </section>
   </div>
 
   <script src="gentilicios/vendor/leaflet.js"></script>
-  <script src="gentilicios/app.js?v=0.6.0"></script>
+  <script src="gentilicios/i18n.js?v=0.7.0"></script>
+  <script src="gentilicios/app.js?v=0.7.0"></script>
 </body>
 </html>
