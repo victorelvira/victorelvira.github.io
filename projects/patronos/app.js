@@ -1,6 +1,6 @@
 "use strict";
-const DATA_V = "0.16.1";
-const BUILD_AT = "2026-09-28 10:32";
+const DATA_V = "0.16.2";
+const BUILD_AT = "2026-10-05 13:38";
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
 
 const $ = s => document.querySelector(s);
