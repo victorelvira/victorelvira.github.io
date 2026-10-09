@@ -1,5 +1,5 @@
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.9";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.9";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.10";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.10";
 
 export async function renderHistoria(app) {
   const [S, G] = await Promise.all([load("series.json"), load("generales_encuestas.json")]);

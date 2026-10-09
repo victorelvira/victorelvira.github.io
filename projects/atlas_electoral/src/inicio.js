@@ -1,8 +1,8 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.9";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.9";
-import { projectFromPolls } from "./simulador.js?v=0.2.9";
+import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.10";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.10";
+import { projectFromPolls } from "./simulador.js?v=0.2.10";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.9";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.10";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });

@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 const topojson = window.topojson;
 const geoConicConformalSpain = d3.geoConicConformalSpain;
-import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.9";
-import { addZoom } from "./zoom.js?v=0.2.9";
+import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.10";
+import { addZoom } from "./zoom.js?v=0.2.10";
 
 const state = { tipo: "generales", eleccion: null, modo: "ganador", familia: "psoe", playing: null };
 let geo; // cached {features, provMesh, path}

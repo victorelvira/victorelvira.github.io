@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.9";
-import { lines } from "./charts.js?v=0.2.9";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.10";
+import { lines } from "./charts.js?v=0.2.10";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -18,7 +18,7 @@ const MAIN = ["pp", "psoe", "vox", "sumar", "podemos", "salf"];
 const num = (x, d = 1) => (x == null ? "·" : x.toFixed(d).replace(".", ","));
 
 export async function renderEncuestas(app) {
-  const [E, R, K] = await Promise.all([load("encuestas.json"), load("ratings.json"), load("cocina.json")]);
+  const [E, R, K, D] = await Promise.all([load("encuestas.json"), load("ratings.json"), load("cocina.json"), load("dentro.json")]);
   const days = E.dias.map((d) => new Date(d));
   const show = new Set(MAIN.filter((p) => E.parties.includes(p)));
 
@@ -39,6 +39,14 @@ export async function renderEncuestas(app) {
     <div class="card chart" id="cocina"></div>
     <div id="ck-tab"></div>
     <p class="note">Intención directa: respuesta a «¿a qué partido votarías?», recalculada sobre quienes nombran un partido (sin blanco, nulo, abstención, indecisos ni quien no contesta). Izquierda: Sumar, Podemos, Más País e IU (Unidas Podemos en 2016-2019). Para 40dB y el CIS, la intención directa sale de sus propios informes; para el resto, de las tablas de intención directa recopiladas en Wikipedia, comparando solo los partidos que aparecen en las dos (la intención directa de esos partidos se reescala a la suma que les da la estimación). Fuentes: informes de 40dB para El País y la SER; marginales y estimaciones del CIS (origen de los datos: Centro de Investigaciones Sociológicas); Wikipedia.</p>
+    <h2>Dentro de las encuestas: quién irá a votar y adónde va cada voto</h2>
+    <p class="sub">Con los microdatos (las respuestas de cada encuestado) de 40dB y del CIS: cuántos están seguros de ir a votar según lo que votaron en julio de 2023, y qué piensan votar ahora los votantes de cada partido. Son respuestas tal cual, sin cocina.</p>
+    <div class="controls"><div class="seg" id="dt-casa"></div></div>
+    <div class="card chart" id="dt-mov"></div>
+    <p class="note">Porcentaje que se da un 10 sobre 10 en probabilidad de ir a votar, entre quienes recuerdan haber votado a cada partido (o no haber votado) en julio de 2023; la línea discontinua, entre los menores de 35 años. Las dos casas preguntan de forma distinta y el CIS da niveles más altos: compara la evolución dentro de cada casa, no una casa con otra. Grupos con menos de 50 encuestados se dejan en blanco.</p>
+    <div class="controls"><select id="dt-enc"></select></div>
+    <div class="scrollx" id="dt-mat"></div>
+    <p class="note">Filas: voto recordado en julio de 2023. Columnas: intención directa ahora, en porcentaje de cada fila (suman 100). «Otros» incluye otros partidos, blanco y nulo; «No votará», a quien dice que no irá; «Indecisos», no sabe o no contesta. Entre paréntesis, el cambio frente a la encuesta anterior de la misma casa cuando es de 3 puntos o más. Fuentes: microdatos de 40dB para El País y la SER y del CIS (origen de los datos: Centro de Investigaciones Sociológicas); elaboración propia.</p>
     <h2>¿Quién acierta? Ranking histórico, 1977–2026</h2>
     <p class="sub">Última encuesta de cada casa publicada entre 1 y 35 días antes de ${R.elecciones.length} elecciones (generales, autonómicas y europeas). «Frente al resto» compara su error con el de las demás casas en las mismas elecciones, para no castigar a quien encuestó elecciones difíciles, y descuenta la antelación (cada día antes de la votación añade unas ${num(R.metodo.pendiente_pp_dia * 100, 1)} centésimas de punto de error); negativo = acierta más. Casas con 10 o más elecciones. El CIS aparece dividido en dos etapas porque cambió su método de estimación en 2018.</p>
     <div class="scrollx" id="acc"></div>
@@ -159,6 +167,7 @@ export async function renderEncuestas(app) {
       ${leanCell(r.sesgo_pp)}${leanCell(r.sesgo_psoe)}${leanCell(r.sesgo_vox)}${leanCell(r.sesgo_izq)}</tr>`).join("")}</table>`;
   errHist($("#errhist"), R.elecciones);
   cocina(app, K);
+  dentro(app, D);
   const bp = ["pp", "psoe", "vox", "sumar", "cs"];
   const names = { ...Object.fromEntries(bp.map((p) => [p, POLL_PARTY[p]?.n])), sumar: "Sumar/UP", cs: "Cs" };
   $("#bias").innerHTML = `<table><tr><th>Elección</th>${bp.map((p) => `<th class="num">${names[p]}</th>`).join("")}<th class="num">Error medio</th></tr>
@@ -214,6 +223,39 @@ function cocina(app, K) {
     $("#ck-tab").innerHTML = `<table><tr><th>Ajuste medio (estimación menos intención directa, puntos)</th>${Object.values(CK_PARTY).map((n) => `<th class="num">${n}</th>`).join("")}<th class="num">Encuestas</th></tr>
       ${periods.filter(([a, b]) => K.casas[casa].some((r) => r.f >= a && r.f <= b)).map(([a, b, l]) => { const v = Object.keys(CK_PARTY).map((p) => avg(p, a, b));
         return `<tr><td>${casa} · ${l}</td>${v.map(([x]) => `<td class="num" style="font-weight:${Math.abs(x ?? 0) >= 2 ? 600 : 400}">${sg(x)}</td>`).join("")}<td class="num">${Math.max(...v.map(([, n]) => n))}</td></tr>`; }).join("")}</table>`;
+  }
+  draw();
+}
+
+const DT_ROW = { pp: "PP", psoe: "PSOE", vox: "Vox", sumar: "Sumar", abstencion: "No votó" };
+const DT_COL = { pp: "PP", psoe: "PSOE", vox: "Vox", sumar: "Sumar", podemos: "Podemos", salf: "SALF", otros: "Otros", abst: "No votará", indecisos: "Indecisos" };
+function dentro(app, D) {
+  const $ = (s) => app.querySelector(s);
+  let casa = D.transferencias["40dB"] ? "40dB" : Object.keys(D.transferencias)[0], enc = null;
+  const color = (k) => (k === "abstencion" ? "var(--ink-3)" : POLL_PARTY[k].c());
+  const fecha = (f) => new Date(f).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
+  function draw() {
+    $("#dt-casa").innerHTML = Object.keys(D.movilizacion).map((c) => `<button data-k="${c}" class="${c === casa ? "on" : ""}">${c}</button>`).join("");
+    $("#dt-casa").querySelectorAll("button").forEach((b) => b.onclick = () => { casa = b.dataset.k; enc = null; draw(); });
+    const M = D.movilizacion[casa] ?? [];
+    lines($("#dt-mov"), [
+      ...Object.keys(DT_ROW).map((k) => ({ id: k, name: DT_ROW[k], color: color(k), values: M.map((r) => ({ date: new Date(r.f), v: r[k] == null ? null : r[k] / 100, label: r.f })) })),
+      { id: "jovenes", name: "Menores de 35", color: "var(--ink-2)", values: M.map((r) => ({ date: new Date(r.f), v: r.jovenes == null ? null : r.jovenes / 100, label: r.f })) },
+    ], { height: 300, dash: { jovenes: "4 3" } });
+    const T = D.transferencias[casa] ?? [];
+    if (enc == null || !T[enc]) enc = T.length - 1;
+    $("#dt-enc").innerHTML = T.map((t, i) => `<option value="${i}" ${i === enc ? "selected" : ""}>${casa} · ${fecha(t.f)}</option>`).reverse().join("");
+    $("#dt-enc").onchange = (ev) => { enc = +ev.target.value; draw(); };
+    const t = T[enc], prev = T[enc - 1];
+    if (!t) { $("#dt-mat").innerHTML = ""; return; }
+    const cols = D.columnas;
+    const cell = (r, j) => {
+      const v = t.filas[r][j], p = prev?.filas[r]?.[j], d = p == null ? null : v - p;
+      const bg = `color-mix(in srgb, ${cols[j] === r ? color(r) : "var(--ink-3)"} ${Math.min(60, Math.round(v * 0.7))}%, transparent)`;
+      return `<td class="num" style="background:${bg}">${num(v, 0)}${d != null && Math.abs(d) >= 3 ? ` <span class="muted">(${d > 0 ? "+" : ""}${num(d, 0)})</span>` : ""}</td>`;
+    };
+    $("#dt-mat").innerHTML = `<table class="heat"><tr><th>Votó en 2023 ↓ · votaría ahora →</th>${cols.map((c) => `<th class="num">${DT_COL[c]}</th>`).join("")}</tr>
+      ${D.filas.filter((r) => t.filas[r]).map((r) => `<tr><td><i class="dot" style="background:${color(r)}"></i>${DT_ROW[r]}</td>${cols.map((_, j) => cell(r, j)).join("")}</tr>`).join("")}</table>`;
   }
   draw();
 }

@@ -1,4 +1,4 @@
-import { load, FAM, FAM_IDS, elecLabel } from "./data.js?v=0.2.9";
+import { load, FAM, FAM_IDS, elecLabel } from "./data.js?v=0.2.10";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
 export function dhondt(lists, seats, validos, threshold = 0.03) {
