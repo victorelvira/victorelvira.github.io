@@ -10,9 +10,9 @@
 (function () {
     var t;
     try { t = localStorage.getItem('theme'); } catch (e) {}
-    if (t !== 'light' && t !== 'dark') {
-        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
-    }
+    // Por defecto SIEMPRE claro (ignora prefers-color-scheme del navegador);
+    // solo se usa oscuro si el usuario lo eligió antes con el toggle.
+    if (t !== 'light' && t !== 'dark') t = 'light';
     document.documentElement.setAttribute('data-bs-theme', t);
 })();
 
