@@ -213,8 +213,9 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
 /* Titulo principal de cada seccion: pequeno acento inferior.
    Cubre h2 y h3 (la home usa h3 para "Awards"). */
 .container > h2:first-of-type,
+.container > h2[data-lang],
 .container .d-flex > h2:first-of-type,
-.container h3#awards {
+.container #awards .awards-h {
   border-bottom: 3px solid var(--accent);
   width: fit-content;
   padding-bottom: 2px;
@@ -304,3 +305,138 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
   width: fit-content;
   padding-bottom: 2px;
 }
+
+
+/* ============================================================
+   Hero de la home: claro y aireado (sustituye al bloque azul
+   plano .bg-primary). Solo afecta a la cabecera de index.html.
+   ============================================================ */
+.hero {
+  background: linear-gradient(180deg, #f1f6f7 0%, #ffffff 100%);
+  border-bottom: 1px solid #e8edf0;
+  color: #2f353b;            /* anula el `header { color: white }` heredado */
+  text-align: left;          /* anula el text-align:center antiguo */
+  padding: 0;                /* el espaciado lo pone .py-5 */
+}
+.hero-photo {
+  width: 188px; height: 188px; border-radius: 50%; object-fit: cover;
+  border: 4px solid #fff; box-shadow: 0 10px 26px rgba(14, 124, 134, .18);
+}
+.hero-name {
+  font-weight: 800; letter-spacing: -.02em; margin-bottom: .15rem;
+}
+.hero-role { font-weight: 600; color: var(--accent, #0e7c86); margin-bottom: .1rem; }
+.hero-affil { color: #6b747c; margin-bottom: 1rem; }
+/* "About me" dentro del hero: mismo acento inferior que las secciones */
+.hero .hero-h {
+  border-bottom: 3px solid var(--accent, #0e7c86);
+  width: fit-content; padding-bottom: 2px; margin-top: 0; margin-bottom: 1rem;
+}
+/* iconos sociales sobre fondo claro (en el footer siguen en blanco) */
+.hero .social-icons a { color: #5a6671; font-size: 1.4rem; }
+.hero .social-icons a:hover i { color: var(--accent, #0e7c86) !important; }
+/* keywords como chips */
+.hero-keywords { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .25rem; }
+.hero-keywords .kw {
+  background: #eef4f5; color: #2f6e74; border-radius: 999px;
+  padding: .25rem .75rem; font-size: .82rem; font-weight: 500;
+}
+@media (min-width: 992px) {
+  .hero-name { font-size: 2.1rem; }
+}
+
+
+/* ============================================================
+   MODO OSCURO. Se activa con html[data-bs-theme="dark"] (lo pone
+   scripts.js). Reutiliza el atributo de Bootstrap para que sus
+   componentes tambien cambien, y re-colorea las superficies propias.
+   ============================================================ */
+html[data-bs-theme="dark"] {
+  --accent: #35b4bf;          /* teal mas brillante para contraste en oscuro */
+  --accent-strong: #5ccad3;
+  --d-bg: #10171a;
+  --d-surface: #172227;
+  --d-elev: #1c2a30;
+  --d-text: #e6ebed;
+  --d-muted: #9aa7ad;
+  --d-border: #2a363b;
+  --d-chip-bg: #223037;
+  --d-chip-text: #a7dde3;
+  color-scheme: dark;
+}
+
+html[data-bs-theme="dark"] body { background-color: var(--d-bg); color: var(--d-text); }
+
+/* Hero */
+html[data-bs-theme="dark"] .hero {
+  background: linear-gradient(180deg, #142127 0%, #10171a 100%);
+  color: var(--d-text); border-bottom-color: var(--d-border);
+}
+html[data-bs-theme="dark"] .hero-photo { border-color: #223037; }
+html[data-bs-theme="dark"] .hero-affil { color: var(--d-muted); }
+html[data-bs-theme="dark"] .hero .social-icons a { color: #9aa7ad; }
+html[data-bs-theme="dark"] .hero-keywords .kw { background: var(--d-chip-bg); color: var(--d-chip-text); }
+
+/* Navbar */
+html[data-bs-theme="dark"] .navbar.bg-light { background-color: #141d21 !important; border-bottom: 1px solid var(--d-border); }
+html[data-bs-theme="dark"] .navbar .nav-link,
+html[data-bs-theme="dark"] .navbar-brand { color: #cdd6da; }
+html[data-bs-theme="dark"] .navbar .nav-link:hover { color: var(--accent); }
+html[data-bs-theme="dark"] .navbar .dropdown-menu { background-color: #19242a; }
+html[data-bs-theme="dark"] .navbar .dropdown-item { color: #cdd6da; }
+html[data-bs-theme="dark"] .navbar .dropdown-item:hover { background-color: #24333b; color: #fff; }
+html[data-bs-theme="dark"] .navbar-toggler { border-color: var(--d-border); }
+
+/* Tarjetas y superficies claras */
+html[data-bs-theme="dark"] .card,
+html[data-bs-theme="dark"] .project-card { background-color: var(--d-surface); border-color: var(--d-border); color: var(--d-text); }
+html[data-bs-theme="dark"] .project-card:hover { box-shadow: 0 .6rem 1.4rem rgba(0,0,0,.55); }
+html[data-bs-theme="dark"] .bg-light { background-color: #141d21 !important; }
+html[data-bs-theme="dark"] .hover-effect:hover { background-color: #1c2a30; }
+html[data-bs-theme="dark"] .text-muted { color: var(--d-muted) !important; }
+
+/* Publicaciones: filtros chip + hover de entrada */
+html[data-bs-theme="dark"] #filter-buttons .filter-btn { background-color: #223037 !important; color: #aeb9bf !important; }
+html[data-bs-theme="dark"] #filter-buttons .filter-btn:hover { background-color: #2b3b42 !important; color: #fff !important; }
+html[data-bs-theme="dark"] #bibtex_display li.pub-item:hover { background-color: #1a252b; }
+html[data-bs-theme="dark"] .modal-content { background-color: var(--d-surface); color: var(--d-text); }
+html[data-bs-theme="dark"] input.form-control,
+html[data-bs-theme="dark"] .form-control { background-color: #131c20; border-color: var(--d-border); color: var(--d-text); }
+
+/* Personal projects: recuadros de filtro + chips + toggle movil */
+html[data-bs-theme="dark"] .pp-fgroup { background-color: #141d21; border-color: var(--d-border); }
+html[data-bs-theme="dark"] .pp-chip { background-color: #223037; color: #aeb9bf; }
+html[data-bs-theme="dark"] .pp-chip:hover { background-color: #2b3b42; color: #fff; }
+html[data-bs-theme="dark"] #pp-filter-toggle { background-color: var(--d-surface); border-color: var(--d-border); color: var(--d-text); }
+
+/* Grafo de coautores: las etiquetas de los nodos son texto oscuro, asi que
+   mantenemos el lienzo claro tambien en oscuro para que sigan legibles. */
+html[data-bs-theme="dark"] #net { background: #eef2f3; border-color: var(--d-border); }
+
+/* Logos de premios: sobre oscuro los PNG/JPG de tinta oscura se pierden.
+   En vez de un recuadro por logo (queda a parches), UN solo panel claro
+   detras de todos, para que se lean como en modo claro. */
+html[data-bs-theme="dark"] #main-content .col-md-5 .container {
+  background: #f4f6f7;
+  border-radius: 16px;
+  padding: 1.1rem .6rem;
+}
+
+
+/* i18n: el idioma oculto se oculta siempre (también si el elemento es flex). */
+[hidden] { display: none !important; }
+
+/* ============================================================
+   Controles de navbar: toggle de idioma EN·ES y botón de tema.
+   ============================================================ */
+.navbar .lang-switch { font-size: .85rem; display: inline-flex; align-items: center; gap: .3rem; padding: .35rem .4rem; }
+.navbar .lang-opt { color: #6b747c; text-decoration: none; font-weight: 600; }
+.navbar .lang-opt:hover { color: var(--accent, #0e7c86); }
+.navbar .lang-opt.active { color: var(--accent, #0e7c86); text-decoration: underline; text-underline-offset: 3px; }
+.navbar .lang-sep { color: #c3cace; }
+#theme-toggle { color: #5a6671; }
+#theme-toggle:hover { color: var(--accent, #0e7c86); }
+html[data-bs-theme="dark"] .navbar .lang-opt { color: #9aa7ad; }
+html[data-bs-theme="dark"] .navbar .lang-opt.active { color: var(--accent); }
+html[data-bs-theme="dark"] .navbar .lang-sep { color: #4a575d; }
+html[data-bs-theme="dark"] #theme-toggle { color: #cdd6da; }

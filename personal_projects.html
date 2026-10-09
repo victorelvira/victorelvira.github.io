@@ -10,10 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
-    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/styles.css?v=i18n2" rel="stylesheet">
 
     <!-- JS -->
-    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/scripts.js?v=i18n2"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
@@ -125,6 +125,23 @@
     <span id="pp-count" class="text-muted small"></span>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mt-1" id="pp-grid-main">
+        <!-- Atlas Electoral -->
+        <div class="col" data-lang="es" data-theme="politics" data-type="ongoing">
+            <div class="card project-card">
+                <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/atlas_electoral/og/og.jpg');"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Atlas Electoral
+                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
+                    </h5>
+                    <p class="card-text text-muted" data-i18n="electoral">
+                        Every Spanish election since 1977, municipality by municipality, and all the polls
+                        on the road to the 29 November 2026 general election.
+                    </p>
+                    <a href="/projects/atlas_electoral.html" class="stretched-link" aria-label="Open the Atlas Electoral"></a>
+                </div>
+            </div>
+        </div>
+
         <!-- Interactive Atlas of Painting -->
         <div class="col" data-lang="es en fr it" data-theme="culture" data-type="ongoing">
             <div class="card project-card">
@@ -366,6 +383,9 @@
     sports: {
       en: "Interactive database of major historical competitions: football World Cups, Euros, and leagues, and tennis from the Grand Slams to the Olympics.",
       es: "Base de datos interactiva de grandes competiciones históricas: Mundiales, Eurocopas y ligas de fútbol, y el tenis de los Grand Slam a los Juegos Olímpicos." },
+    electoral: {
+      en: "Every Spanish election since 1977, municipality by municipality, and all the polls on the road to the 29 November 2026 general election.",
+      es: "Todas las elecciones en España desde 1977, municipio a municipio, y todas las encuestas camino de las generales del 29 de noviembre de 2026." },
     musicatlas: {
       en: "Interactive database of classical music: compositions and composers with timelines, keys, maps, and playable recordings, and the sources behind each fact.",
       es: "Base de datos interactiva de música clásica: composiciones y compositores con líneas de tiempo, tonalidades, mapas y grabaciones que se pueden escuchar, y las fuentes detrás de cada dato." },
@@ -414,6 +434,7 @@
     lang:   { es: "ES", en: "EN", fr: "FR", it: "IT", de: "DE", pt: "PT" },
     theme:  { culture: { en: "History & art", es: "Historia y arte" }, music: { en: "Music", es: "Música" },
               sports: { en: "Sports", es: "Deporte" },
+              politics: { en: "Politics & elections", es: "Política y elecciones" },
               cantabria: { en: "Cantabria", es: "Cantabria" }, climate: { en: "Climate", es: "Clima" },
               language: { en: "Language", es: "Lengua" } },
     type:   { ongoing: { en: "Permanent", es: "Permanente" }, event: { en: "Event", es: "Evento" } },

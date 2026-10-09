@@ -1,4 +1,14 @@
 {
+ "albeniz": {
+  "born": 1860,
+  "catalogues": [
+   "Op."
+  ],
+  "died": 1909,
+  "n_works": 71,
+  "name": "Isaac Albéniz",
+  "qid": "Q185812"
+ },
  "bach": {
   "born": 1685,
   "catalogues": [
@@ -112,6 +122,17 @@
   "n_works": 203,
   "name": "Antonín Dvořák",
   "qid": "Q7298"
+ },
+ "granados": {
+  "born": 1867,
+  "catalogues": [
+   "Op.",
+   "DLR"
+  ],
+  "died": 1916,
+  "n_works": 54,
+  "name": "Enrique Granados",
+  "qid": "Q294225"
  },
  "handel": {
   "_verified": "scripts/resolve_composer.py 2026-09-11, QID checked to be a human composer with these dates; IMSLP category checked to hold pages",

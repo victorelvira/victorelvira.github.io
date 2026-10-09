@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Víctor Elvira's webpage</title>
+    <meta name="description" content="Interactive co-author network of Víctor Elvira: collaborators across all publications, sized by number of joint papers.">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
+    <link href="assets/css/styles.css?v=i18n2" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="assets/js/scripts.js?v=i18n2"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.9/dist/vis-network.min.js"></script>
+
+    <style>
+      #net {
+        height: 72vh;
+        min-height: 460px;
+        border: 1px solid #e4e8eb;
+        border-radius: .7rem;
+        background:
+          radial-gradient(ellipse at center, #ffffff 0%, #f7f9fa 100%);
+      }
+      .net-controls {
+        display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;
+        margin: .5rem 0 1rem;
+      }
+      .net-controls .form-range { width: 160px; }
+      .net-stat { font-weight: 700; color: var(--accent, #0e7c86); }
+      .net-legend { font-size: .82rem; color: #7c858d; display: flex; gap: 1.2rem; flex-wrap: wrap; align-items:center; }
+      .net-legend .dot { display:inline-block; width:.7rem; height:.7rem; border-radius:50%; margin-right:.35rem; vertical-align:middle; }
+    </style>
+  <!-- OG:auto (social preview) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Víctor Elvira">
+  <meta property="og:title" content="Víctor Elvira — Co-author network">
+  <meta property="og:description" content="An interactive map of my collaborators across all publications.">
+  <meta property="og:image" content="https://victorelvira.github.io/assets/images/profile.jpg">
+  <meta property="og:url" content="https://victorelvira.github.io/collaborators.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://victorelvira.github.io/assets/images/profile.jpg">
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<div class="container py-4">
+    <h2>Co-author network</h2>
+    <p class="text-muted" style="max-width:70ch;">
+        Every person I have co-authored a paper with, drawn as a network. Each dot is a
+        collaborator; bigger dots are more joint papers, and a line joins two people who
+        appear together on a paper. Drag the nodes, hover for details, scroll to zoom.
+    </p>
+
+    <div class="net-controls">
+        <label class="d-flex align-items-center gap-2 mb-0">
+            <span class="text-muted small">Min. joint papers</span>
+            <input type="range" class="form-range" id="minPapers" min="1" max="5" step="1" value="2">
+            <span id="minVal" class="badge bg-secondary">2</span>
+        </label>
+        <span class="text-muted small">Showing <span id="shownCount" class="net-stat">—</span> of
+            <span id="totalCount" class="net-stat">—</span> collaborators</span>
+        <span class="net-legend ms-auto">
+            <span><span class="dot" style="background:#0e7c86"></span>more joint papers</span>
+            <span><span class="dot" style="background:#9fc7cb"></span>fewer</span>
+        </span>
+    </div>
+
+    <div id="net"></div>
+    <p class="text-muted small mt-2" id="netNote"></p>
+</div>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(function () {
+  var ACCENT = "#0e7c86";
+
+  // color por nº de papers con Víctor (claro -> oscuro)
+  function colorFor(v) {
+    if (v >= 20) return "#0a5f67";
+    if (v >= 8)  return "#0e7c86";
+    if (v >= 4)  return "#3f9aa2";
+    if (v >= 2)  return "#73b4ba";
+    return "#a9ccd0";
+  }
+
+  var RAW = null, network = null, allNodes = [], allEdges = [];
+
+  fetch("data/coauthors.json?v=" + Date.now(), { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      RAW = data;
+      document.getElementById("totalCount").textContent = data.nodes.length;
+      document.getElementById("netNote").textContent =
+        data.nodes.length + " collaborators across " + data.victor_papers +
+        " papers. Built from the publication list; names are de-duplicated automatically, so a few may merge or split.";
+
+      allNodes = data.nodes.map(function (n) {
+        var withV = n.value;
+        return {
+          id: n.id,
+          label: withV >= 3 ? n.label : undefined,  // solo etiqueta a los principales
+          value: withV,
+          color: { background: colorFor(withV), border: "#ffffff" },
+          borderWidth: 1.5,
+          title: n.label + " — " + withV + " joint paper" + (withV > 1 ? "s" : "") +
+                 " (" + n.papers + " in the list)",
+          _withV: withV
+        };
+      });
+      allEdges = data.edges.map(function (e) {
+        return { from: e.from, to: e.to, value: e.weight,
+                 color: { color: "rgba(120,140,150,0.18)", highlight: ACCENT } };
+      });
+
+      render(2);
+    })
+    .catch(function (e) {
+      document.getElementById("netNote").textContent = "Could not load the network data.";
+      console.error(e);
+    });
+
+  function render(minPapers) {
+    var keep = {};
+    var nodes = allNodes.filter(function (n) {
+      var ok = n._withV >= minPapers; if (ok) keep[n.id] = 1; return ok;
+    });
+    var edges = allEdges.filter(function (e) { return keep[e.from] && keep[e.to]; });
+    document.getElementById("shownCount").textContent = nodes.length;
+
+    var data = { nodes: new vis.DataSet(nodes), edges: new vis.DataSet(edges) };
+    var options = {
+      nodes: {
+        shape: "dot",
+        scaling: { min: 9, max: 56, label: { enabled: true, min: 12, max: 28 } },
+        font: { face: "Inter, system-ui, sans-serif", color: "#2f353b", strokeWidth: 4, strokeColor: "#ffffff" }
+      },
+      edges: { smooth: { type: "continuous" }, scaling: { min: 0.7, max: 6 } },
+      physics: {
+        barnesHut: { gravitationalConstant: -7000, centralGravity: 0.9, springLength: 80, springConstant: 0.05, avoidOverlap: 0.6 },
+        stabilization: { iterations: 320 }
+      },
+      interaction: { hover: true, tooltipDelay: 120, hideEdgesOnDrag: true }
+    };
+    if (network) network.destroy();
+    network = new vis.Network(document.getElementById("net"), data, options);
+    // al terminar de estabilizar, congela la física y encuadra todo
+    network.once("stabilizationIterationsDone", function () {
+      network.setOptions({ physics: false });
+      network.fit({ animation: false });
+    });
+  }
+
+  var slider = document.getElementById("minPapers");
+  slider.addEventListener("input", function () {
+    document.getElementById("minVal").textContent = slider.value;
+    if (RAW) render(parseInt(slider.value, 10));
+  });
+})();
+</script>
+
+<!-- Statcounter -->
+<script type="text/javascript">
+var sc_project=11157426; var sc_invisible=1; var sc_security="c4968ba5";
+</script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+</body>
+</html>

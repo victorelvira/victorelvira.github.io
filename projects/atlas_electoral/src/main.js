@@ -1,0 +1,61 @@
+import { init } from "./data.js?v=0.2.9";
+import { renderMapa } from "./mapa.js?v=0.2.9";
+import { renderPueblo } from "./pueblo.js?v=0.2.9";
+import { renderMiniatura } from "./miniatura.js?v=0.2.9";
+import { renderSimulador } from "./simulador.js?v=0.2.9";
+import { renderEncuestas } from "./encuestas.js?v=0.2.9";
+import { renderInicio } from "./inicio.js?v=0.2.9";
+import { renderHistoria } from "./historia.js?v=0.2.9";
+import { renderComunidad } from "./comunidad.js?v=0.2.9";
+import { renderExplora } from "./explora.js?v=0.2.9";
+import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.9";
+
+const routes = {
+  inicio: renderInicio,
+  encuestas: renderEncuestas,
+  generales: renderHistoria,
+  historia: renderHistoria, // old links
+  simulador: renderSimulador,
+  mapa: renderMapa,
+  explora: renderExplora,
+  comunidad: renderComunidad,
+  pueblo: renderPueblo,
+  miniatura: renderMiniatura,
+};
+// views reached from Explora (or old names) light up their tab
+const TAB = { historia: "generales", pueblo: "explora", comunidad: "explora", miniatura: "explora" };
+
+async function route() {
+  hideTip();
+  scrollTo(0, 0);
+  const [name, ...args] = location.hash.replace(/^#/, "").split("/");
+  const view = routes[name] ? name : "inicio";
+  document.querySelectorAll("nav.sections a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === `#${TAB[view] ?? view}`));
+  const app = document.getElementById("app");
+  app.innerHTML = '<p class="loading">Cargando…</p>';
+  try {
+    await routes[view](app, args.map(decodeURIComponent));
+  } catch (e) {
+    console.error(e);
+    app.innerHTML = `<p>Error cargando la vista: ${e.message}</p>`;
+  }
+}
+
+// Light by default; dark only when the viewer asks for it.
+document.getElementById("theme").onclick = () => {
+  const root = document.documentElement;
+  root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+  route(); // map colours are computed from CSS tokens
+};
+
+document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
+// the brand reloads the project to its clean default view
+document.querySelector(".brand").addEventListener("click", (e) => {
+  e.preventDefault();
+  history.replaceState(null, "", location.pathname);
+  location.reload();
+});
+
+await init();
+addEventListener("hashchange", route);
+route();

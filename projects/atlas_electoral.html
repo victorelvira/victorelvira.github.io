@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Atlas Electoral</title>
+  <meta name="description" content="Resultados electorales de España municipio a municipio desde 1977, encuestas y escaños para el 29N." />
+  <meta property="og:title" content="Atlas Electoral" />
+  <meta property="og:description" content="Resultados electorales de España municipio a municipio desde 1977, encuestas y escaños para el 29N." />
+  <meta property="og:image" content="https://victorelvira.github.io/projects/atlas_electoral/og/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://victorelvira.github.io/projects/atlas_electoral.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="atlas_electoral/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="atlas_electoral/src/style.css?v=0.2.9" />
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build"></span>
+  </nav>
+  <header class="top">
+    <a class="brand" href="atlas_electoral.html"><img src="atlas_electoral/favicon.svg" alt="" width="22" height="22" />Atlas Electoral</a>
+    <nav class="sections">
+      <a href="#inicio">29N</a>
+      <a href="#encuestas">Encuestas</a>
+      <a href="#generales">Generales</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#explora">Explora</a>
+      <button id="theme" class="play" aria-label="Cambiar tema">◐</button>
+    </nav>
+  </header>
+  <main id="app"><p class="loading">Cargando datos…</p></main>
+  <div id="tip" class="tip" hidden></div>
+  <footer>Resultados: Ministerio del Interior (Infoelectoral), portales oficiales de cada comunidad, INE, IGN. Encuestas: Wikipedia, 40dB y CIS (origen de los datos: Centro de Investigaciones Sociológicas). El voto exterior (CERA) no se asigna a municipios.</footer>
+  <script src="atlas_electoral/vendor/d3.min.js?v=0.2.9"></script>
+  <script src="atlas_electoral/vendor/topojson-client.min.js?v=0.2.9"></script>
+  <script src="atlas_electoral/vendor/d3-composite-projections.min.js?v=0.2.9"></script>
+  <script type="module" src="atlas_electoral/src/main.js?v=0.2.9"></script>
+</body>
+</html>

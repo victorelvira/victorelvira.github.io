@@ -10,8 +10,8 @@
    that sit above that same table and filter it, not rival views. Colour is spent
    on composers, because that is the dimension that will have twenty values; keys
    get an 8px swatch in their own column, where it means something. */
-const DATA_V = "0.59.0";
-const BUILD_AT = "2026-09-27 23:50";
+const DATA_V = "0.60.0";
+const BUILD_AT = "2026-10-07 23:10";
 
 let WORKS = [], EDGES = [], COMPOSERS = [], BYID = new Map();
 /* LAS PERSONAS. `PEOPLE` son 365 nombres (los 31 compositores del atlas y todo el que

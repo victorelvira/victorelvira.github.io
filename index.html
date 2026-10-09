@@ -9,7 +9,7 @@
             
 
             <!-- Custom JS -->
-            <script src="assets/js/scripts.js"></script> 
+            <script src="assets/js/scripts.js?v=i18n2"></script> 
             <!-- Bootstrap 5 CSS -->
             <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
             <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
@@ -18,10 +18,11 @@
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
 
             <!-- Custom CSS (at the end to overwrite if needed)-->
-            <link href="assets/css/styles.css" rel="stylesheet">
+            <link href="assets/css/styles.css?v=i18n2" rel="stylesheet">
 
             <!-- FAVICON -->
             <!-- Primary Favicon -->
+            <link rel="icon" type="image/svg+xml" href="/assets/favicons/main/favicon.svg">
             <link rel="icon" href="/assets/favicons/main/favicon.ico" type="image/x-icon">
             <!-- PNG Favicons -->
             <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/main/favicon-16x16.png">
@@ -81,17 +82,16 @@
         </nav> -->
 
         <!-- Header Section with Two Columns -->
-        <header class="bg-primary text-white text-center py-4">
-            <div class="container-fluid" mt-3>
+        <header class="hero py-5">
+            <div class="container">
                 <div class="row">
                     <!-- Left column for profile picture, name, position, university, and social media icons -->
-                    <div class="col-md-4 text-center">
-                        <img src="assets/images/profile.jpg" alt="Profile Picture" 
-                 style="width: 150px; height: 150px; border-radius: 100%; object-fit: cover;" class="mb-3">
-                        <h4>Víctor Elvira</h4>
-                        <p style="margin-bottom:0;">Professor in Statistics and Data Science</p>
-                        <p>University of Edinburgh</p>
-                        <p>email: victor.elvira@ed.ac.uk</p>
+                    <div class="col-lg-4 text-center text-lg-start">
+                        <img src="assets/images/profile.jpg" alt="Víctor Elvira" class="hero-photo mb-3">
+                        <h1 class="hero-name">Víctor Elvira</h1>
+                        <p class="hero-role" data-lang="en">Professor in Statistics and Data Science</p><p class="hero-role" data-lang="es" hidden>Catedrático de Estadística y Ciencia de Datos</p>
+                        <p class="hero-affil" style="margin-bottom:.2rem;">University of Edinburgh</p>
+                        <p class="hero-affil">email: victor.elvira@ed.ac.uk</p>
                         <!-- Social Media Icons in Header -->
                         <div class="social-icons mt-3">
                             <!-- Google Scholar Icon -->
@@ -132,7 +132,7 @@
 
 
                     <!-- Right column for About Me with two sub-columns for Interests and Education -->
-                    <div class="col-md-6">
+                    <div class="col-lg-8">
                         <!-- Temporary Box: featured projects -->
 <!--                         <div style="background-color: #e6f7ff; color: black; padding: 15px 15px 15px 5px; border: 2px solid red; margin-bottom: 20px; border-radius: 5px; text-align: justify;">
                             <ul style="margin: 0; padding-left: 1.6rem;">
@@ -181,26 +181,26 @@
                             <!-- Left sub-column for Interests -->
                             <div class="col-md-8">
                                 <!-- <h4 align="justify">Interests</h4>  -->
-                                <h4 align="justify">About me</h4> 
-                                <p align="justify">
-                                    I am a Professor with a Personal Chair in Statistics and Data Science at the School of Mathematics, University of Edinburgh. 
+                                <h4 class="hero-h" align="justify" data-lang="en">About me</h4><h4 class="hero-h" align="justify" data-lang="es" hidden>Sobre mí</h4>
+                                <p align="justify" data-lang="en">
+                                    I am a Professor with a Personal Chair in Statistics and Data Science at the School of Mathematics, University of Edinburgh.
                                     My research interests are in computational statistics, statistical signal processing, and probabilistic machine learning. My theoretical and methodological work covers Monte Carlo methods, Bayesian inference for static and dynamical models, and statistical modelling. A large part of my recent research focuses on importance sampling and sequential Monte Carlo.
-                                </p>
-                                <p align="justify">    
+                                </p><p align="justify" data-lang="es" hidden>Soy catedrático (Personal Chair) de Estadística y Ciencia de Datos en la Escuela de Matemáticas de la Universidad de Edimburgo. Mis intereses de investigación están en estadística computacional, procesamiento estadístico de señales y aprendizaje automático probabilístico. Mi trabajo teórico y metodológico abarca métodos de Monte Carlo, inferencia bayesiana para modelos estáticos y dinámicos, y modelado estadístico. Gran parte de mi investigación reciente se centra en importance sampling y Monte Carlo secuencial.</p>
+                                <p align="justify" data-lang="en">    
                                     I am currently heavily focused on probabilistic forecasting of climate tipping points, funded through the <a href="https://www.aria.org.uk/opportunity-spaces/scoping-our-planet/forecasting-tipping-points/" target="_blank"> ARIA Forecasting Tipping Points programme</a>. Additional interests include statistical ecology, biomedical signal processing, wireless communications, and energy forecasting, among many others.
-                                </p>
+                                </p><p align="justify" data-lang="es" hidden>Actualmente estoy muy centrado en la predicción probabilística de puntos de inflexión climáticos (climate tipping points), financiada por el <a href='https://www.aria.org.uk/opportunity-spaces/scoping-our-planet/forecasting-tipping-points/' target='_blank'> programa ARIA Forecasting Tipping Points</a>. Otros intereses incluyen la ecología estadística, el procesamiento de señales biomédicas, las comunicaciones inalámbricas y la predicción energética, entre muchos otros.</p>
                             </div>
 
                             <!-- Right sub-column for Education -->
                             <div class="col-md-4">
-                                <h4 align="justify">Keywords</h4>
-                                <ul align="justify">
-                                    <li>Computational statistics</li>
-                                    <li>Climate</li>
-                                    <li>Probabilistic machine learning</li>
-                                    <li>Statistical signal processing</li>
-                                    <li>Artificial intelligence</li>
-                                </ul>
+                                <h4 data-lang="en">Keywords</h4><h4 data-lang="es" hidden>Palabras clave</h4>
+                                <div class="hero-keywords">
+                                    <span class="kw" data-lang="en">Computational statistics</span><span class="kw" data-lang="es" hidden>Estadística computacional</span>
+                                    <span class="kw" data-lang="en">Climate</span><span class="kw" data-lang="es" hidden>Clima</span>
+                                    <span class="kw" data-lang="en">Probabilistic machine learning</span><span class="kw" data-lang="es" hidden>Aprendizaje automático probabilístico</span>
+                                    <span class="kw" data-lang="en">Statistical signal processing</span><span class="kw" data-lang="es" hidden>Procesamiento estadístico de señales</span>
+                                    <span class="kw" data-lang="en">Artificial intelligence</span><span class="kw" data-lang="es" hidden>Inteligencia artificial</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -213,7 +213,10 @@
         <section id="main-content" class="container">
         <div class="row">
             <div class="col-md-7">
-                          <h3 id="awards">Awards and recognitions</h3>     
+                          <div id="awards">
+                            <h3 class="awards-h" data-lang="en">Awards and recognitions</h3>
+                            <h3 class="awards-h" data-lang="es" hidden>Premios y reconocimientos</h3>
+                          </div>
 
                           <ul style="list-style-type: none; padding: 0;">
                               <li><b>2025</b> – Forecasting Climate Tipping Points - £1 million project, <a href="https://www.aria.org.uk/"><em>Advanced Research + Invention Agency (ARIA)</em></a></li>
@@ -282,8 +285,8 @@
 
                         <div class="container py-1">
 
-            <h3>Other responsibilities</h3>
-                        <h4>Organization</h4>
+            <h3 data-lang="en">Other responsibilities</h3><h3 data-lang="es" hidden>Otras responsabilidades</h3>
+                        <h4 data-lang="en">Organization</h4><h4 data-lang="es" hidden>Organización</h4>
                         <ul>
                             <li style="counter-increment: list-counter -1;">
                                 <strong>Local Chair</strong> of the 23rd IEEE Statistical Signal Processing Workshop (SSP 2025), Edinburgh, UK, June 2025.
