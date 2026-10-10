@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.22";
-import { lines } from "./charts.js?v=0.2.22";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.23";
+import { lines } from "./charts.js?v=0.2.23";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -29,8 +29,8 @@ const mainOf = (E) => E.resultado ? [...E.parties].sort((a, b) => (E.resultado[b
 const cycleLabel = (c) => new Date(c).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
 
 export async function renderEncuestas(app, args = []) {
-  const [E, R, K, D, CI] = await Promise.all([load("encuestas.json"), load("ratings.json"), load("cocina.json"), load("dentro.json"),
-    load("ciclos/index.json").catch(() => ({ ciclos: [] }))]);
+  const [E, R, K, D, CI, CP] = await Promise.all([load("encuestas.json"), load("ratings.json"), load("cocina.json"), load("dentro.json"),
+    load("ciclos/index.json").catch(() => ({ ciclos: [] })), load("cocina_pasos.json").catch(() => null)]);
 
   app.innerHTML = `
     <h1>Encuestas hacia el 29N</h1>
@@ -40,6 +40,11 @@ export async function renderEncuestas(app, args = []) {
     <h2>Sesgo de cada encuestadora en este ciclo</h2>
     <p class="note">Diferencia media, en puntos, entre sus encuestas y el promedio. Positivo = da más a ese partido que el resto. Solo encuestadoras con 8 o más sondeos.</p>
     <div id="house"></div>
+    <h2>Así se cocina una encuesta</h2>
+    <p class="sub">Ninguna casa publica lo que contesta la gente. Con los microdatos (las respuestas de cada encuestado) de 40dB y del CIS rehacemos aquí, paso a paso, los cuatro ajustes de manual sobre una encuesta real, y comparamos el resultado con lo que la casa publicó. La diferencia final es lo que cada casa añade por su cuenta.</p>
+    <div class="controls"><label>Encuesta <select id="cp-sel"></select></label></div>
+    <div class="card chart" id="cp-chart"></div>
+    <div id="cp-text"></div>
     <h2>La cocina: intención directa frente a estimación</h2>
     <p class="sub">Las encuestadoras no publican lo que contesta la gente, sino una estimación: ponderan por el recuerdo de voto, reparten a los indecisos y tienen en cuenta quién irá a votar. Algunas publican también la intención directa, la respuesta tal cual. Aquí se comparan las dos, ambas sobre el voto a partidos.</p>
     <div class="controls"><select id="ck-casa"></select><div class="seg" id="ck-party"></div></div>
@@ -88,6 +93,7 @@ export async function renderEncuestas(app, args = []) {
   errHist($("#errhist"), R.elecciones);
   load("ciclos/salto.json").then((SJ) => saltos($("#salto"), SJ)).catch(() => {});
   cocina(app, K);
+  if (CP) cocinaPasos(app, CP);
   dentro(app, D);
   const bp = ["pp", "psoe", "vox", "sumar", "cs"];
   const names = { ...Object.fromEntries(bp.map((p) => [p, POLL_PARTY[p]?.n])), sumar: "Sumar/UP", cs: "Cs" };
@@ -495,4 +501,48 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
   }
   if (selector) $("#ciclo").onchange = (ev) => showCycle(ev.target.value);
   await showCycle(cycles.some((c) => c.ciclo === args[0]) ? args[0] : E.ciclo);
+}
+
+// step-by-step cooking of one real survey (cocina_pasos.json): direct intention -> recall weighting -> undecided -> turnout -> published
+const CP_STEPS = [["D", "Respuesta tal cual", "Intención directa: quienes nombran un partido, sin indecisos ni abstención."],
+  ["R", "+ recuerdo de voto", "Se repondera a cada encuestado para que el recuerdo de voto de la muestra coincida con el resultado de las generales anteriores. Las muestras traen de más votantes del ganador y de menos abstencionistas; esto lo corrige, pero arrastra la memoria de la elección pasada."],
+  ["RI", "+ indecisos", "Quien no sabe o no contesta se asigna al partido por el que siente simpatía o, si no, al que recuerda haber votado."],
+  ["RIT", "+ probabilidad de votar", "Cada encuestado pesa según la probabilidad que se da de ir a votar (0 a 10)."],
+  ["pub", "Lo que publicó la casa", "La estimación oficial de la encuesta. La diferencia con el paso anterior es la parte de la cocina que no es de manual: modelos propios, series históricas, criterio."]];
+function cocinaPasos(app, CP) {
+  const $ = (s) => app.querySelector(s);
+  const fd = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
+  $("#cp-sel").innerHTML = CP.encuestas.map((e, i) => `<option value="${i}">${e.casa} · ${fd(e.f)}${e.eleccion ? " · preelectoral" : ""}</option>`).join("");
+  const col = (p) => (p === "izq" ? "#d6246e" : partyColor(p));
+  const name = (p, f) => (p === "izq" ? (f < "2023-01" ? "Unidas Podemos" : f < "2023-08" ? "Sumar" : "Sumar y Podemos") : partyName(p, f.slice(0, 4)));
+  function draw() {
+    const e = CP.encuestas[+$("#cp-sel").value];
+    const keys = CP_STEPS.map(([k]) => k);
+    const parties = Object.keys(e.p).sort((a, b) => e.p[b].pub - e.p[a].pub);
+    const el = $("#cp-chart"); el.innerHTML = "";
+    const W = Math.max(340, el.clientWidth || 900), H = 320, m = { t: 28, r: 120, b: 44, l: 36 };
+    const x = d3.scalePoint().domain(keys).range([m.l, W - m.r]);
+    const vals = parties.flatMap((p) => keys.map((k) => e.p[p][k]));
+    const y = d3.scaleLinear().domain([0, Math.min(60, d3.max(vals) + 4)]).nice().range([H - m.b, m.t]);
+    const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+    svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(5)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
+    svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat((v) => `${v}%`).tickSize(0)).call((g) => g.select(".domain").remove());
+    const short = { D: "tal cual", R: "+ recuerdo", RI: "+ indecisos", RIT: "+ prob. de votar", pub: "publicado" };
+    svg.append("g").selectAll("text").data(keys).join("text").attr("x", (k) => x(k)).attr("y", H - m.b + 18).attr("text-anchor", "middle").attr("font-size", 12).attr("fill", "var(--ink-2)").text((k) => short[k]);
+    svg.append("g").selectAll("line").data(keys).join("line").attr("x1", (k) => x(k)).attr("x2", (k) => x(k)).attr("y1", m.t).attr("y2", H - m.b).attr("stroke", "var(--line)");
+    for (const p of parties) {
+      const pts = keys.map((k) => ({ k, v: e.p[p][k] }));
+      svg.append("path").attr("fill", "none").attr("stroke", col(p)).attr("stroke-width", 2).attr("d", d3.line().x((d) => x(d.k)).y((d) => y(d.v))(pts));
+      svg.append("g").selectAll("circle").data(pts).join("circle").attr("cx", (d) => x(d.k)).attr("cy", (d) => y(d.v)).attr("r", 3.5).attr("fill", col(p)).attr("stroke", "var(--surface)").attr("stroke-width", 1.5);
+      svg.append("g").selectAll("text").data(pts).join("text").attr("x", (d) => x(d.k)).attr("y", (d) => y(d.v) - 8).attr("text-anchor", "middle").attr("font-size", 11).attr("fill", col(p)).text((d) => num(d.v));
+      svg.append("text").attr("x", x("pub") + 10).attr("y", y(e.p[p].pub) + 4).attr("font-size", 12).attr("fill", "var(--ink-2)").text(`${name(p, e.f)}${e.p[p].res != null ? ` · resultado ${num(e.p[p].res)}` : ""}`);
+      if (e.p[p].res != null) svg.append("rect").attr("x", x("pub") - 7).attr("y", y(e.p[p].res) - 1.5).attr("width", 14).attr("height", 3).attr("fill", col(p));
+    }
+    const sg = (v) => `${v >= 0 ? "+" : "−"}${num(Math.abs(v))}`;
+    $("#cp-text").innerHTML = `<p class="note">${e.casa}, trabajo de campo hasta el ${fd(e.f)}, ${e.n.toLocaleString("es-ES")} entrevistas. Porcentajes dentro de ${parties.map((p) => name(p, e.f)).join(", ")}, recalculados para sumar 100 en cada paso.</p>
+      <ol class="steps">${CP_STEPS.map(([k, t, d], i) => `<li><b>${t}.</b> ${d}${i > 0 ? ` <span class="muted">Cambio: ${parties.map((p) => `${name(p, e.f)} ${sg(e.p[p][k] - e.p[p][keys[i - 1]])}`).join(", ")}.</span>` : ""}</li>`).join("")}</ol>
+      <p class="note">Fuentes: microdatos de 40dB para El País y la SER y del CIS (origen de los datos: Centro de Investigaciones Sociológicas); elaboración propia. Los cuatro pasos son los de manual; cada casa aplica los suyos, con otros detalles, y el último tramo recoge todo lo demás.</p>`;
+  }
+  $("#cp-sel").onchange = draw;
+  draw();
 }

@@ -231,3 +231,5 @@ footer .flinks a { color: var(--ink-2); }
   .toc a.on { color: var(--ink); border-left-color: var(--ink); font-weight: 600; }
 }
 .content section { scroll-margin-top: 72px; }
+ol.steps { padding-left: 20px; font-size: 14px; color: var(--ink-2); }
+ol.steps li { margin: 6px 0; }
