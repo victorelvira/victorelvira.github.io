@@ -216,3 +216,6 @@ footer .flinks { margin: 0 0 6px; }
 footer .flinks a { color: var(--ink-2); }
 .seg[hidden], .controls [hidden] { display: none; }
 .sr.muted-row .sl { font-style: italic; color: var(--ink-2); }
+
+.multiples { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px 12px; }
+.mult svg { width: 100%; height: auto; display: block; }

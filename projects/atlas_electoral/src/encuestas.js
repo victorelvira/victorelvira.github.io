@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.20";
-import { lines } from "./charts.js?v=0.2.20";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.21";
+import { lines } from "./charts.js?v=0.2.21";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -74,6 +74,9 @@ export async function renderEncuestas(app, args = []) {
     <h2>¿Han mejorado las encuestas?</h2>
     <p class="note">Error de la media de las encuestas finales en cada elección (puntos por partido).</p>
     <div class="card chart" id="errhist"></div>
+    <h2>¿Hay salto al final? Los últimos cuatro meses de cada ciclo</h2>
+    <p class="sub">Para cada elección general desde 1982, el promedio corregido de encuestas en los 120 días anteriores y, el día de la votación, el resultado (rayas). Si las líneas llegan planas y las rayas caen lejos, el error no estaba en la tendencia sino en el nivel: todas las casas se equivocaban en la misma dirección.</p>
+    <div id="salto"></div>
     <h2>El error de las encuestas en cada elección</h2>
     <p class="note">Media de las encuestas de las dos últimas semanas menos el resultado real. Positivo = sobreestimado.</p>
     <div id="bias"></div>`;
@@ -355,6 +358,7 @@ export async function renderEncuestas(app, args = []) {
       <td style="width:22%">${pmBar(r.plus_minus)}</td><td class="num">${sign(r.plus_minus)}</td>
       ${leanCell(r.sesgo_pp)}${leanCell(r.sesgo_psoe)}${leanCell(r.sesgo_vox)}${leanCell(r.sesgo_izq)}</tr>`).join("")}</table>`;
   errHist($("#errhist"), R.elecciones);
+  load("ciclos/salto.json").then((SJ) => saltos($("#salto"), SJ)).catch(() => {});
   cocina(app, K);
   dentro(app, D);
   const bp = ["pp", "psoe", "vox", "sumar", "cs"];
@@ -447,4 +451,33 @@ function dentro(app, D) {
       ${D.filas.filter((r) => t.filas[r]).map((r) => `<tr><td><i class="dot" style="background:${color(r)}"></i>${DT_ROW[r]}</td>${cols.map((_, j) => cell(r, j)).join("")}</tr>`).join("")}</table>`;
   }
   draw();
+}
+
+// small multiples: the last 120 days of each past cycle's average, with the result as ticks on election day
+function saltos(el, SJ) {
+  const W = 230, H = 150, m = { t: 20, r: 34, b: 18, l: 30 };
+  el.innerHTML = `<div class="multiples">${SJ.ciclos.map((c, i) => `<div class="mult"><svg viewBox="0 0 ${W} ${H}" data-i="${i}"></svg></div>`).join("")}</div>
+    <p class="note">Partidos con un 3% o más en el resultado; los nombres siguen la época. Escala vertical común a todos los paneles (0-50%).</p>`;
+  SJ.ciclos.forEach((c, i) => {
+    const svg = d3.select(el).select(`svg[data-i="${i}"]`);
+    const days = c.dias.map((d) => new Date(d)), end = days.at(-1);
+    const x = d3.scaleTime().domain([days[0], end]).range([m.l, W - m.r]);
+    const y = d3.scaleLinear().domain([0, 50]).range([H - m.b, m.t]);
+    svg.append("text").attr("x", m.l).attr("y", 12).attr("font-size", 12).attr("font-weight", 600).attr("fill", "var(--ink)").text(cycleLabel(c.ciclo));
+    svg.append("g").attr("class", "grid").selectAll("line").data([10, 20, 30, 40]).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
+    svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickValues([0, 25, 50]).tickFormat((v) => `${v}%`).tickSize(0)).call((g) => g.select(".domain").remove());
+    svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(3).tickFormat(d3.timeFormat("%b")).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
+    const parties = Object.keys(c.resultado).sort((a, b) => c.resultado[b] - c.resultado[a]);
+    for (const p of parties) {
+      const col = partyColor(p);
+      svg.append("path").attr("fill", "none").attr("stroke", col).attr("stroke-width", 1.6)
+        .attr("d", d3.line().defined((v) => v != null).x((v, j) => x(days[j])).y((v) => y(v))(c.media[p]));
+      svg.append("rect").attr("x", x(end) - 5).attr("y", y(c.resultado[p]) - 1.5).attr("width", 10).attr("height", 3).attr("fill", col).attr("stroke", "var(--surface)").attr("stroke-width", 0.8);
+      const last = [...c.media[p]].reverse().find((v) => v != null);
+      svg.append("text").attr("x", x(end) + 6).attr("y", y(c.resultado[p]) + 4).attr("font-size", 9).attr("fill", col).text(`${c.resultado[p] - last >= 0 ? "+" : "−"}${num(Math.abs(c.resultado[p] - last))}`);
+    }
+    svg.on("mousemove", (ev) => showTip(`<b>Generales ${cycleLabel(c.ciclo)}</b>${parties.map((p) => { const last = [...c.media[p]].reverse().find((v) => v != null);
+      return `<div class="row"><span><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, c.ciclo)}</span><span>encuestas ${num(last)} · resultado ${num(c.resultado[p])} (${c.resultado[p] - last >= 0 ? "+" : "−"}${num(Math.abs(c.resultado[p] - last))})</span></div>`; }).join("")}`, ev))
+      .on("mouseleave", hideTip).style("cursor", "pointer").on("click", () => { location.hash = `#encuestas/${c.ciclo}`; scrollTo(0, 0); });
+  });
 }

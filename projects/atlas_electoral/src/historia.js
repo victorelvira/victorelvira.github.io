@@ -1,6 +1,6 @@
-import { renderMapa } from "./mapa.js?v=0.2.20";
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.20";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.20";
+import { renderMapa } from "./mapa.js?v=0.2.21";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.21";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.21";
 
 export async function renderHistoria(app) {
   const [S, G] = await Promise.all([load("series.json"), load("generales_encuestas.json")]);
