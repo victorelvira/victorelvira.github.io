@@ -1,11 +1,10 @@
-import { renderMapa } from "./mapa.js?v=0.2.26";
-import { renderSimulador } from "./simulador.js?v=0.2.26";
-import { pollChart } from "./encuestas.js?v=0.2.26";
-import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.26";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.26";
-import { projectFromPolls } from "./simulador.js?v=0.2.26";
+import { renderMapa } from "./mapa.js?v=0.2.27";
+import { renderSimulador } from "./simulador.js?v=0.2.27";
+import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.27";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.27";
+import { projectFromPolls } from "./simulador.js?v=0.2.27";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.26";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.27";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -66,8 +65,9 @@ export async function renderInicio(app, args = []) {
 
     <section id="s-encuestas">
     <h2>Qué dicen las encuestas <span class="muted" style="font-weight:400">· a ${fechaLarga(BUILD_AT.slice(0, 10))}</span></h2>
-    <p class="sub">La lectura rápida: el promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas (último trabajo de campo ${fechaLarga(E.actualizado)}) y los escaños que daría. El análisis completo, con cada encuestadora, la cocina y los aciertos históricos, está en <a href="#encuestas">Encuestas</a>.</p>
-    <div id="chart-area"></div>
+    <div class="stats">${top.map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${String(E.ultimo[p]).replace(".", ",")}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("")}</div>
+    <p class="note">Promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. Abajo, su evolución en los últimos tres meses. <a href="#encuestas">Cada encuesta, cada encuestadora, la cocina y los aciertos históricos, en Encuestas →</a></p>
+    <div class="chart" id="mini"></div>
     <div class="card">
       <div id="proj"></div>
       <div class="stats">
@@ -113,7 +113,11 @@ export async function renderInicio(app, args = []) {
     </div></div>`;
 
   // the poll chart, the lazy blocks and the index
-  pollChart(app.querySelector("#chart-area"), E, { selector: false, lastTable: false, tools: false });
+  {   // three-month sketch of the corrected average, no dots and no controls: the analysis is in Encuestas
+    const days = E.dias.map((d) => new Date(d)), from = new Date(+days.at(-1) - 92 * 864e5);
+    lines(app.querySelector("#mini"), top.map((p) => ({ id: p, name: POLL_PARTY[p].n, color: POLL_PARTY[p].c(),
+      values: days.map((d, i) => ({ date: d, v: E.media[p][i] == null ? null : E.media[p][i] / 100, label: E.dias[i] })).filter((o) => o.date >= from) })), { height: 220 });
+  }
   const lazy = { mapa: () => renderMapa(app.querySelector("#mapa"), [], { tipos: ["generales"] }), sim: () => renderSimulador(app.querySelector("#sim"), ["encuestas"], true) };
   const toc = app.querySelector("#toc");
   toc.querySelectorAll("a").forEach((a) => a.onclick = (ev) => { ev.preventDefault(); app.querySelector(`#${a.dataset.s}`).scrollIntoView({ behavior: "smooth", block: "start" }); });
