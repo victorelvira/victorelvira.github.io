@@ -1,14 +1,14 @@
-import { init } from "./data.js?v=0.2.10";
-import { renderMapa } from "./mapa.js?v=0.2.10";
-import { renderPueblo } from "./pueblo.js?v=0.2.10";
-import { renderMiniatura } from "./miniatura.js?v=0.2.10";
-import { renderSimulador } from "./simulador.js?v=0.2.10";
-import { renderEncuestas } from "./encuestas.js?v=0.2.10";
-import { renderInicio } from "./inicio.js?v=0.2.10";
-import { renderHistoria } from "./historia.js?v=0.2.10";
-import { renderComunidad } from "./comunidad.js?v=0.2.10";
-import { renderExplora } from "./explora.js?v=0.2.10";
-import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.10";
+import { init } from "./data.js?v=0.2.11";
+import { renderMapa } from "./mapa.js?v=0.2.11";
+import { renderPueblo } from "./pueblo.js?v=0.2.11";
+import { renderMiniatura } from "./miniatura.js?v=0.2.11";
+import { renderSimulador } from "./simulador.js?v=0.2.11";
+import { renderEncuestas } from "./encuestas.js?v=0.2.11";
+import { renderInicio } from "./inicio.js?v=0.2.11";
+import { renderHistoria } from "./historia.js?v=0.2.11";
+import { renderComunidad } from "./comunidad.js?v=0.2.11";
+import { renderExplora } from "./explora.js?v=0.2.11";
+import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.11";
 
 const routes = {
   inicio: renderInicio,

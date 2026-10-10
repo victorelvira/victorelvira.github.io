@@ -1,8 +1,8 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.10";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.10";
-import { projectFromPolls } from "./simulador.js?v=0.2.10";
+import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.11";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.11";
+import { projectFromPolls } from "./simulador.js?v=0.2.11";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.10";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.11";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -36,6 +36,7 @@ function nocheHtml(d) {
 
 export async function renderInicio(app, args = []) {
   const [S, E, dh] = await Promise.all([load("series.json"), load("encuestas.json"), load("dhondt.json")]);
+  const D = await load("dentro.json").catch(() => null);
   const days = Math.ceil((ELECTION_DAY - new Date()) / 86400000);
   const base = Object.keys(dh).sort().at(-1);
   const conv = S.convocatoria_2026;
@@ -57,6 +58,8 @@ export async function renderInicio(app, args = []) {
     <h2>Qué dicen las encuestas</h2>
     <div class="stats">${top.map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${String(E.ultimo[p]).replace(".", ",")}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("")}</div>
     <p class="note">Promedio corregido de ${E.polls.length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. <a href="#encuestas">Ver evolución y sesgos →</a></p>
+
+    ${D ? movilizacion(D) : ""}
 
     <h2>Si se votara hoy</h2>
     <div class="card">
@@ -106,6 +109,17 @@ export async function renderInicio(app, args = []) {
     { id: "a1", name: "14:00", color: "#a9bfe0", values: eids.map((e) => ({ date: dateOf(e), v: N[e].av1, label: elecLabel(e) })) },
   ], { height: 280, yMin: 0.2, yMax: 0.85 });
   lines(app.querySelector("#votos"), familySeries(N, elecLabel, 0.05).sort((a, b) => IDEO.indexOf(a.id) - IDEO.indexOf(b.id)), { height: 280 });
+}
+
+// latest survey with microdata: who is sure to vote, and the change from the same house's previous survey
+function movilizacion(D) {
+  const [casa, rows] = Object.entries(D.movilizacion).sort((a, b) => (a[1].at(-1).f < b[1].at(-1).f ? 1 : -1))[0];
+  const r = rows.at(-1), p = rows.at(-2);
+  const n0 = (x) => String(Math.round(x));
+  const item = (k, label) => r[k] == null ? "" : `<div class="stat"><div class="v">${n0(r[k])}%${p?.[k] != null ? ` <span class="muted" style="font-size:13px;font-weight:400">${r[k] - p[k] >= 0 ? "+" : "−"}${n0(Math.abs(r[k] - p[k]))}</span>` : ""}</div><div class="k">${label}</div></div>`;
+  return `<h2>¿Quién está movilizado?</h2>
+    <div class="stats">${item("derecha", "votantes de PP y Vox en 2023")}${item("izquierda", "votantes de PSOE y Sumar en 2023")}${item("jovenes", "menores de 35 años")}${item("abstencion", "no votaron en 2023")}</div>
+    <p class="note">Seguros de ir a votar (10 sobre 10) en la última encuesta con microdatos, ${casa} del ${fechaLarga(r.f)}; junto a cada cifra, el cambio en puntos frente a su encuesta anterior (${fechaLarga(p?.f)}). <a href="#encuestas">Ver la evolución y adónde va cada voto →</a></p>`;
 }
 
 const HITOS = {
