@@ -215,3 +215,4 @@ label.casas-x { display: block; margin-top: 8px; font-size: 12px; color: var(--i
 footer .flinks { margin: 0 0 6px; }
 footer .flinks a { color: var(--ink-2); }
 .seg[hidden], .controls [hidden] { display: none; }
+.sr.muted-row .sl { font-style: italic; color: var(--ink-2); }

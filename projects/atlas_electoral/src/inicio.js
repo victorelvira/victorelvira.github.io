@@ -1,8 +1,8 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.18";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.18";
-import { projectFromPolls } from "./simulador.js?v=0.2.18";
+import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.19";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.19";
+import { projectFromPolls } from "./simulador.js?v=0.2.19";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.18";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.19";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -56,13 +56,9 @@ export async function renderInicio(app, args = []) {
       <p class="sub">${days > 0 ? `Faltan <b>${days} días</b>.` : days === 0 ? "<b>Hoy se vota.</b>" : ""} Elecciones anticipadas convocadas el 5 de octubre tras la derrota del Gobierno en los decretos de vivienda. Se eligen 350 diputados y 208 senadores.</p>
     </section>
 
-    <h2>Qué dicen las encuestas</h2>
+    <h2>Qué dicen las encuestas <span class="muted" style="font-weight:400">· a ${fechaLarga(BUILD_AT.slice(0, 10))}</span></h2>
     <div class="stats">${top.map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${String(E.ultimo[p]).replace(".", ",")}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("")}</div>
     <p class="note">Promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. <a href="#encuestas">Ver evolución y sesgos →</a></p>
-
-    ${D ? movilizacion(D) : ""}
-
-    <h2>Si se votara hoy</h2>
     <div class="card">
       <div id="proj"></div>
       <div class="stats">
@@ -70,14 +66,16 @@ export async function renderInicio(app, args = []) {
         <div class="stat"><div class="v">${izqBloc}</div><div class="k">PSOE + Sumar/Podemos + nacionalistas de izquierda y PNV</div></div>
         <div class="stat"><div class="v">${proj.seats.junts ?? 0}</div><div class="k">Junts (bisagra)</div></div>
       </div>
-      <p class="note">Proyección mecánica: el promedio de encuestas se aplica proporcionalmente sobre el reparto provincial de ${elecLabel(base)}${esc26 ? " con los escaños por provincia de 2026" : ""} y se reparte con D'Hondt; Sumar, Podemos y SALF, sin lista propia en 2023, siguen el reparto provincial de las europeas de 2024. Sin márgenes de error: la estimación con incertidumbre llegará con el modelo. <a href="#simulador/encuestas">Juega con el simulador →</a></p>
+      <p class="note">Escaños si se votara así: el promedio se aplica proporcionalmente sobre el reparto provincial de ${elecLabel(base)}${esc26 ? " con los escaños por provincia de 2026" : ""} y se reparte con D'Hondt; Sumar, Podemos y SALF, sin lista propia en 2023, siguen el reparto provincial de las europeas de 2024. Sin márgenes de error: la estimación con incertidumbre llegará con el modelo. <a href="#simulador/encuestas">Juega con el simulador →</a></p>
     </div>
+
+    ${D ? movilizacion(D) : ""}
 
     ${conv?.calendario ? `<h2>Calendario</h2>${calendario(conv)}` : ""}
     ${conv?.cambios_vs_2023?.length ? `<p class="note">Escaños por provincia en 2026 ${conv.escanos.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE"}: ${conv.cambios_vs_2023.map((c) => `${c.nombre} ${c.escanos_2023}→${c.escanos_2026}`).join(", ")}. <a href="#generales">Ver la serie histórica →</a></p>` : ""}
 
-    <h2>Cómo hemos llegado aquí</h2>
-    <p class="sub">Composición del Congreso tras cada elección general desde 1977, por familias políticas.</p>
+    <h2>El Congreso, de hoy a 1977</h2>
+    <p class="sub">Arriba, la estimación actual (en colores apagados); debajo, la composición real tras cada elección general, de la más reciente a la primera.</p>
     <div id="hist"></div>
 
     <div class="grid2">
@@ -102,7 +100,8 @@ export async function renderInicio(app, args = []) {
   }
   seatRows(app.querySelector("#proj"), [{ label: "Proyección", e: proj.seats }], { labelWidth: 90, eid: "generales_2026-11" });
   const eids = S.elecciones;
-  seatRows(app.querySelector("#hist"), eids.map((e) => ({ label: elecLabel(e).replace("Generales ", ""), e: S.nacional[e].e })), { labelWidth: 90 });
+  seatRows(app.querySelector("#hist"), [{ label: "2026 · estimación", e: proj.seats, muted: true },
+    ...[...eids].reverse().map((e) => ({ label: elecLabel(e).replace("Generales ", ""), e: S.nacional[e].e }))], { labelWidth: 110 });
   const N = S.nacional;
   lines(app.querySelector("#part"), [
     { id: "t", name: "Final", color: "#1f4e8c", values: eids.map((e) => ({ date: dateOf(e), v: N[e].votantes / N[e].censo, label: elecLabel(e) })) },
@@ -114,13 +113,17 @@ export async function renderInicio(app, args = []) {
 
 // latest survey with microdata: who is sure to vote, and the change from the same house's previous survey
 function movilizacion(D) {
-  const [casa, rows] = Object.entries(D.movilizacion).sort((a, b) => (a[1].at(-1).f < b[1].at(-1).f ? 1 : -1))[0];
-  const r = rows.at(-1), p = rows.at(-2);
   const n0 = (x) => String(Math.round(x));
-  const item = (k, label) => r[k] == null ? "" : `<div class="stat"><div class="v">${n0(r[k])}%${p?.[k] != null ? ` <span class="muted" style="font-size:13px;font-weight:400">${r[k] - p[k] >= 0 ? "+" : "−"}${n0(Math.abs(r[k] - p[k]))}</span>` : ""}</div><div class="k">${label}</div></div>`;
+  const houses = Object.entries(D.movilizacion).sort((a, b) => (a[1].at(-1).f < b[1].at(-1).f ? 1 : -1));
+  const block = ([casa, rows]) => {
+    const r = rows.at(-1), p = rows.at(-2);
+    const item = (k, label) => r[k] == null ? "" : `<div class="stat"><div class="v">${n0(r[k])}%${p?.[k] != null ? ` <span class="muted" style="font-size:13px;font-weight:400">${r[k] - p[k] >= 0 ? "+" : "−"}${n0(Math.abs(r[k] - p[k]))}</span>` : ""}</div><div class="k">${label}</div></div>`;
+    return `<p class="note" style="margin-bottom:0"><b>${casa}</b>, ${fechaLarga(r.f)}${p ? ` (cambio frente al ${fechaLarga(p.f)})` : ""}</p>
+      <div class="stats">${item("derecha", "votantes de PP y Vox en 2023")}${item("izquierda", "votantes de PSOE y Sumar en 2023")}${item("jovenes", "menores de 35 años")}${item("abstencion", "no votaron en 2023")}</div>`;
+  };
   return `<h2>¿Quién está movilizado?</h2>
-    <div class="stats">${item("derecha", "votantes de PP y Vox en 2023")}${item("izquierda", "votantes de PSOE y Sumar en 2023")}${item("jovenes", "menores de 35 años")}${item("abstencion", "no votaron en 2023")}</div>
-    <p class="note">Seguros de ir a votar (10 sobre 10) en la última encuesta con microdatos, ${casa} del ${fechaLarga(r.f)}; junto a cada cifra, el cambio en puntos frente a su encuesta anterior (${fechaLarga(p?.f)}). <a href="#encuestas">Ver la evolución y adónde va cada voto →</a></p>`;
+    ${houses.map(block).join("")}
+    <p class="note">Seguros de ir a votar (10 sobre 10) en la última encuesta con microdatos de cada casa; junto a cada cifra, el cambio en puntos frente a su encuesta anterior. Las dos casas preguntan de forma distinta y el CIS da niveles más altos: compara cada casa consigo misma. <a href="#encuestas">Ver la evolución y adónde va cada voto →</a></p>`;
 }
 
 const HITOS = {

@@ -1,5 +1,5 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.18";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.19";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
@@ -16,13 +16,13 @@ export function famName(f, eid) {
   return NOW[f] ?? fam(f).nombre;
 }
 
-/** One horizontal 350-seat bar per row. rows: [{label, e: {fam: seats}, href?}] */
+/** One horizontal 350-seat bar per row. rows: [{label, e: {fam: seats}, href?, muted?}]; muted = an estimate, drawn in faded colours. */
 export function seatRows(el, rows, { total = 350, labelWidth = 120, eid = null } = {}) {
   const maj = Math.floor(total / 2) + 1;   // eid: election whose party names the legend uses (famName)
   el.innerHTML = `<div class="seatrows">${rows.map((r) => {
     const fams = IDEO.filter((f) => r.e[f]);
-    return `<div class="sr"><span class="sl" style="width:${labelWidth}px">${r.href ? `<a href="${r.href}">${r.label}</a>` : r.label}</span>
-      <div class="seats" style="height:20px;flex:1">${fams.map((f) =>
+    return `<div class="sr${r.muted ? " muted-row" : ""}"><span class="sl" style="width:${labelWidth}px">${r.href ? `<a href="${r.href}">${r.label}</a>` : r.label}</span>
+      <div class="seats" style="height:20px;flex:1${r.muted ? ";opacity:.45" : ""}">${fams.map((f) =>
         `<div data-f="${f}" data-n="${r.e[f]}" data-l="${r.label}" style="flex:${r.e[f]};background:${fam(f).color}"></div>`).join("")}
         <span class="majority" style="left:${(maj / total) * 100}%"></span></div></div>`;
   }).join("")}</div>
