@@ -1,8 +1,11 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.14";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.16";
 
 // left-to-right ordering used for every seat bar
-export const IDEO = ["bildu", "cup", "izq", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox"];
+export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
+// parties projected on their own for 2026 that are not families of the vocabulary (same colours as encuestas.js)
+export const EXTRA = { sumar: { nombre: "Sumar", color: "#d6246e" }, podemos: { nombre: "Podemos", color: "#6b2e68" }, salf: { nombre: "SALF", color: "#8a6d3b" } };
+export const fam = (f) => FAM[f] ?? EXTRA[f] ?? { nombre: f, color: "#999" };
 
 /** One horizontal 350-seat bar per row. rows: [{label, e: {fam: seats}, href?}] */
 export function seatRows(el, rows, { total = 350, labelWidth = 120 } = {}) {
@@ -11,10 +14,10 @@ export function seatRows(el, rows, { total = 350, labelWidth = 120 } = {}) {
     const fams = IDEO.filter((f) => r.e[f]);
     return `<div class="sr"><span class="sl" style="width:${labelWidth}px">${r.href ? `<a href="${r.href}">${r.label}</a>` : r.label}</span>
       <div class="seats" style="height:20px;flex:1">${fams.map((f) =>
-        `<div data-f="${f}" data-n="${r.e[f]}" data-l="${r.label}" style="flex:${r.e[f]};background:${FAM[f].color}"></div>`).join("")}
+        `<div data-f="${f}" data-n="${r.e[f]}" data-l="${r.label}" style="flex:${r.e[f]};background:${fam(f).color}"></div>`).join("")}
         <span class="majority" style="left:${(maj / total) * 100}%"></span></div></div>`;
   }).join("")}</div>
-  <div class="legend">${IDEO.filter((f) => rows.some((r) => r.e[f])).map((f) => `<span><i class="sw" style="background:${FAM[f].color}"></i>${FAM[f].nombre}</span>`).join("")}
+  <div class="legend">${IDEO.filter((f) => rows.some((r) => r.e[f])).map((f) => `<span><i class="sw" style="background:${fam(f).color}"></i>${fam(f).nombre}</span>`).join("")}
   <span class="note">· línea: mayoría absoluta (${maj})</span></div>`;
   el.querySelectorAll(".seats div").forEach((d) => {
     d.onmousemove = (ev) => showTip(`<b>${d.dataset.l}</b><div class="row"><span><i class="dot" style="background:${FAM[d.dataset.f].color}"></i>${FAM[d.dataset.f].nombre}</span><span>${d.dataset.n} escaños</span></div>`, ev);

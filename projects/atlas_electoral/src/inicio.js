@@ -1,8 +1,8 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.14";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.14";
-import { projectFromPolls } from "./simulador.js?v=0.2.14";
+import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.16";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.16";
+import { projectFromPolls } from "./simulador.js?v=0.2.16";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.14";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.16";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -37,13 +37,14 @@ function nocheHtml(d) {
 export async function renderInicio(app, args = []) {
   const [S, E, dh] = await Promise.all([load("series.json"), load("encuestas.json"), load("dhondt.json")]);
   const D = await load("dentro.json").catch(() => null);
+  const G = await load("geo_nuevos.json").catch(() => null);
   const days = Math.ceil((ELECTION_DAY - new Date()) / 86400000);
   const base = Object.keys(dh).sort().at(-1);
   const conv = S.convocatoria_2026;
   const esc26 = conv?.escanos?.provincias ? Object.fromEntries(conv.escanos.provincias.map((r) => [r.prov, r.escanos])) : null;
-  const proj = projectFromPolls(dh[base], E.ultimo, esc26);
+  const proj = projectFromPolls(dh[base], E.ultimo, esc26, G);
   const ppvox = (proj.seats.pp ?? 0) + (proj.seats.vox ?? 0);
-  const izqBloc = ["psoe", "izq", "erc", "bildu", "pnv", "bng", "compromis", "cup"].reduce((s, f) => s + (proj.seats[f] ?? 0), 0);
+  const izqBloc = ["psoe", "izq", "sumar", "podemos", "erc", "bildu", "pnv", "bng", "compromis", "cup"].reduce((s, f) => s + (proj.seats[f] ?? 0), 0);
   const top = ["pp", "psoe", "vox", "sumar", "podemos", "salf"].filter((p) => E.ultimo[p] != null);
 
   const live = await noche(args[0] === "demo");
@@ -69,7 +70,7 @@ export async function renderInicio(app, args = []) {
         <div class="stat"><div class="v">${izqBloc}</div><div class="k">PSOE + Sumar/Podemos + nacionalistas de izquierda y PNV</div></div>
         <div class="stat"><div class="v">${proj.seats.junts ?? 0}</div><div class="k">Junts (bisagra)</div></div>
       </div>
-      <p class="note">Proyección mecánica: el promedio de encuestas se aplica proporcionalmente sobre el reparto provincial de ${elecLabel(base)}${esc26 ? " con los escaños por provincia de 2026" : ""} y se reparte con D'Hondt, sin márgenes de error; la estimación con incertidumbre llegará con el modelo. <a href="#simulador/encuestas">Juega con el simulador →</a></p>
+      <p class="note">Proyección mecánica: el promedio de encuestas se aplica proporcionalmente sobre el reparto provincial de ${elecLabel(base)}${esc26 ? " con los escaños por provincia de 2026" : ""} y se reparte con D'Hondt; Sumar, Podemos y SALF, sin lista propia en 2023, siguen el reparto provincial de las europeas de 2024. Sin márgenes de error: la estimación con incertidumbre llegará con el modelo. <a href="#simulador/encuestas">Juega con el simulador →</a></p>
     </div>
 
     ${conv?.calendario ? `<h2>Calendario</h2>${calendario(conv)}` : ""}
