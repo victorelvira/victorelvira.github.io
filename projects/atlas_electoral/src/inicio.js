@@ -1,8 +1,8 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.16";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.16";
-import { projectFromPolls } from "./simulador.js?v=0.2.16";
+import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.17";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.17";
+import { projectFromPolls } from "./simulador.js?v=0.2.17";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.16";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.17";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -95,12 +95,12 @@ export async function renderInicio(app, args = []) {
   if (live) {
     const fam = {};
     live.partidos.forEach((p) => { if (p.escanos) fam[p.familia] = (fam[p.familia] ?? 0) + p.escanos; });
-    seatRows(app.querySelector("#live-seats"), [{ label: "Escaños", e: fam }], { labelWidth: 90 });
+    seatRows(app.querySelector("#live-seats"), [{ label: "Escaños", e: fam }], { labelWidth: 90, eid: "generales_2026-11" });
     // refresh while the page is open on election night
     clearTimeout(window.__nocheTimer);
     window.__nocheTimer = setTimeout(() => { if (location.hash.replace("#", "").split("/")[0] in { "": 1, inicio: 1 }) renderInicio(app, args); }, 60000);
   }
-  seatRows(app.querySelector("#proj"), [{ label: "Proyección", e: proj.seats }], { labelWidth: 90 });
+  seatRows(app.querySelector("#proj"), [{ label: "Proyección", e: proj.seats }], { labelWidth: 90, eid: "generales_2026-11" });
   const eids = S.elecciones;
   seatRows(app.querySelector("#hist"), eids.map((e) => ({ label: elecLabel(e).replace("Generales ", ""), e: S.nacional[e].e })), { labelWidth: 90 });
   const N = S.nacional;

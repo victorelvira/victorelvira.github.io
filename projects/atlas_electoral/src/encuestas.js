@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.16";
-import { lines } from "./charts.js?v=0.2.16";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.17";
+import { lines } from "./charts.js?v=0.2.17";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -24,17 +24,20 @@ export async function renderEncuestas(app) {
 
   app.innerHTML = `
     <h1>Encuestas hacia el 29N</h1>
-    <p class="sub">Promedio de ${E.polls.filter((q) => !q.x).length} encuestas publicadas desde julio de 2023 (último trabajo de campo: ${E.actualizado}). Cada encuestadora pesa lo mismo aunque publique más a menudo, y se corrige su sesgo sistemático respecto al resto.</p>
+    <p class="sub">Promedio de ${E.polls.filter((q) => !q.x).length} encuestas publicadas desde julio de 2023 (último trabajo de campo: ${new Date(E.actualizado).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}). Cada encuestadora pesa lo mismo aunque publique más a menudo, y se corrige su sesgo sistemático respecto al resto.</p>
     <div class="stats" id="kpi"></div>
     <div class="controls" id="toggles"></div>
     <div class="controls"><div class="seg" id="zoom"></div>
       <details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
         <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
-          <label><input type="checkbox" id="corr" checked/> Corregir el sesgo de cada casa</label></div>
+          <label><input type="checkbox" id="corr" checked/> Descontar el sesgo de cada casa respecto a las demás</label></div>
         <div class="chips" id="casas"></div>
         <label class="casas-x"><input type="checkbox" id="showx"/> Mostrar también, como círculos huecos, <span id="x-desc"></span>. No entran en el promedio: las reestimaciones reutilizan la muestra de una encuesta del CIS ya contada, y las de partido no son independientes.</label></details></div>
     <div class="card chart" id="ch"><div id="ch-main"></div><div id="ch-ov" class="overview"></div></div>
     <p class="note" id="ch-note"></p>
+    <h2>Últimas encuestas</h2>
+    <p class="note">Las 12 más recientes, tal como se publicaron, y entre paréntesis la diferencia con el promedio corregido en su fecha. Pasa el ratón por un punto del gráfico para ver cualquier otra.</p>
+    <div class="scrollx" id="last"></div>
     <p><a href="#simulador/encuestas">→ Ver estos porcentajes convertidos en escaños</a></p>
     <h2>Sesgo de cada encuestadora en este ciclo</h2>
     <p class="note">Diferencia media, en puntos, entre sus encuestas y el promedio. Positivo = da más a ese partido que el resto. Solo encuestadoras con 8 o más sondeos.</p>
@@ -133,6 +136,17 @@ export async function renderEncuestas(app) {
       + " Banda: dispersión habitual entre encuestas (±1,28 desviaciones, un 80%). Abajo, todo el ciclo: arrastra la ventana para moverte en el tiempo o estírala por los bordes.";
   }
 
+  // last 12 polls (with their own fieldwork), published figure and gap to the corrected average on that date
+  {
+    const cols = MAIN.filter((p) => E.parties.includes(p));
+    const at = (p, d) => { const i = d3.leastIndex(days, (x) => Math.abs(x - new Date(d))); return E.media[p][i]; };
+    const fd = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
+    const rows = E.polls.filter((q) => !q.x).sort((a, b) => (a.f1 < b.f1 ? 1 : -1)).slice(0, 12);
+    $("#last").innerHTML = `<table><tr><th>Encuestadora</th><th>Medio</th><th>Campo</th><th class="num">Muestra</th>${cols.map((p) => `<th class="num"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n}</th>`).join("")}</tr>
+      ${rows.map((q) => `<tr><td>${q.e}</td><td class="muted">${q.m ?? ""}</td><td>${q.f0 === q.f1 ? fd(q.f1) : `${fd(q.f0)} a ${fd(q.f1)}`}</td><td class="num">${q.n ? q.n.toLocaleString("es-ES") : "·"}</td>
+        ${cols.map((p) => { const v = q.v[p], a = at(p, q.f1), d = v == null || a == null ? null : v - a;
+          return `<td class="num">${v == null ? "·" : num(v)}${d == null ? "" : ` <span class="muted" style="font-size:11px">(${d >= 0 ? "+" : "−"}${num(Math.abs(d))})</span>`}</td>`; }).join("")}</tr>`).join("")}</table>`;
+  }
   $("#toggles").innerHTML = E.parties.map((p) => `<label><input type="checkbox" data-p="${p}" ${show.has(p) ? "checked" : ""}/> ${POLL_PARTY[p].n}</label>`).join("");
   $("#toggles").querySelectorAll("input").forEach((i) => i.onchange = () => { i.checked ? show.add(i.dataset.p) : show.delete(i.dataset.p); draw(); overview(); });
   $("#zoom").innerHTML = `<button data-z="in" title="Acercar">+</button><button data-z="out" title="Alejar">−</button>`

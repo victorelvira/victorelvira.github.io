@@ -1,5 +1,5 @@
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.16";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.16";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.17";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.17";
 
 export async function renderHistoria(app) {
   const [S, G] = await Promise.all([load("series.json"), load("generales_encuestas.json")]);
@@ -55,7 +55,7 @@ export async function renderHistoria(app) {
   lines($("#bn"), [
     { id: "b", name: "En blanco", color: "#8a8984", values: eids.map((e) => ({ date: dateOf(e), v: N[e].blancos / N[e].votantes, label: lab(e) })) },
     { id: "n", name: "Nulo", color: "#c2410c", values: eids.map((e) => ({ date: dateOf(e), v: N[e].nulos / N[e].votantes, label: lab(e) })) },
-  ], { height: 260, fmt: (v) => pct(v, 2), yTicks: (v) => `${(v * 100).toFixed(1)}%` });
+  ], { height: 260, fmt: (v) => pct(v, 2), yTicks: (v) => `${n1(v * 100)}%` });
 
   // voto por correo (official counts only; how they voted is not published)
   const vcAll = S.voto_correo ?? [];
@@ -68,7 +68,7 @@ export async function renderHistoria(app) {
     lines($("#vc"), [
       { id: "s", name: "Solicitudes aceptadas", color: "#1f4e8c", values: vc.map((r) => ({ date: dateOf(r.eleccion), v: r.solicitudes_aceptadas, label: lab(r.eleccion) })) },
       { id: "v", name: "Votos admitidos", color: "#6b8fc7", values: vc.map((r) => ({ date: dateOf(r.eleccion), v: r.votos_correo_admitidos_correos ?? r.votos_correo_entregados_mesas ?? null, label: lab(r.eleccion) })) },
-    ], { height: 260, fmt: (v) => fmt.format(Math.round(v)), yTicks: (v) => `${(v / 1e6).toFixed(1)} M` });
+    ], { height: 260, fmt: (v) => fmt.format(Math.round(v)), yTicks: (v) => `${n1(v / 1e6)} M` });
     const pr = vcAll.filter((r) => r.eleccion === lastVc && r.ambito !== "ES" && r.pct_aceptadas_sobre_censo_cer != null)
       .sort((a, b) => b.pct_aceptadas_sobre_censo_cer - a.pct_aceptadas_sobre_censo_cer);
     const mx = pr[0]?.pct_aceptadas_sobre_censo_cer ?? 1;

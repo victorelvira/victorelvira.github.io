@@ -1,15 +1,17 @@
-import { init } from "./data.js?v=0.2.16";
-import { renderMapa } from "./mapa.js?v=0.2.16";
-import { renderPueblo } from "./pueblo.js?v=0.2.16";
-import { renderMiniatura } from "./miniatura.js?v=0.2.16";
-import { renderSimulador } from "./simulador.js?v=0.2.16";
-import { renderEncuestas } from "./encuestas.js?v=0.2.16";
-import { renderInicio } from "./inicio.js?v=0.2.16";
-import { renderHistoria } from "./historia.js?v=0.2.16";
-import { renderComunidad } from "./comunidad.js?v=0.2.16";
-import { renderExplora } from "./explora.js?v=0.2.16";
-import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.16";
+import { init } from "./data.js?v=0.2.17";
+import { renderMapa } from "./mapa.js?v=0.2.17";
+import { renderPueblo } from "./pueblo.js?v=0.2.17";
+import { renderMiniatura } from "./miniatura.js?v=0.2.17";
+import { renderSimulador } from "./simulador.js?v=0.2.17";
+import { renderEncuestas } from "./encuestas.js?v=0.2.17";
+import { renderInicio } from "./inicio.js?v=0.2.17";
+import { renderHistoria } from "./historia.js?v=0.2.17";
+import { renderComunidad } from "./comunidad.js?v=0.2.17";
+import { renderExplora } from "./explora.js?v=0.2.17";
+import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.17";
 
+// Spanish decimal comma and thousands point for every d3.format (axes, tooltips)
+window.d3.formatDefaultLocale({ decimal: ",", thousands: ".", grouping: [3], currency: ["", " €"] });
 // Spanish month and day names on every time axis (d3 defaults to English)
 window.d3.timeFormatDefaultLocale({
   dateTime: "%A, %e de %B de %Y, %X", date: "%d/%m/%Y", time: "%H:%M:%S", periods: ["AM", "PM"],

@@ -1,5 +1,5 @@
-import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.16";
-import { fam, IDEO, EXTRA } from "./charts.js?v=0.2.16";
+import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.17";
+import { fam, famName, IDEO, EXTRA } from "./charts.js?v=0.2.17";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
 export function dhondt(lists, seats, validos, threshold = 0.03) {
@@ -101,7 +101,7 @@ export async function renderSimulador(app, args = []) {
       $("#pollnote").textContent = `Escenario: promedio de encuestas a ${fdate(E.actualizado)} (PP ${num(u.pp)}, PSOE ${num(u.psoe)}, Vox ${num(u.vox)}, Sumar ${num(u.sumar)}, Podemos ${num(u.podemos)}, SALF ${num(u.salf)}), aplicado sobre el reparto provincial de ${elecLabel(state.base)}. Sumar, Podemos y SALF no tuvieron lista propia en 2023: su reparto por provincias sigue el de las europeas de junio de 2024, escalado al promedio nacional.`;
     } else $("#pollnote").textContent = "";
     $("#sl").innerHTML = state.sliders.map((f) => `
-      <label><span><i class="dot" style="background:${fam(f).color}"></i>${fam(f).nombre}</span>
+      <label><span><i class="dot" style="background:${fam(f).color}"></i>${famName(f, state.base)}</span>
       <input type="range" min="0" max="50" step="0.1" value="${(state.target[f] * 100).toFixed(1)}" data-f="${f}" />
       <output>${num(state.target[f] * 100)}</output></label>`).join("");
     $("#sl").querySelectorAll("input").forEach((inp) => inp.oninput = () => {
@@ -126,11 +126,11 @@ export async function renderSimulador(app, args = []) {
     const bar = $("#bar");
     bar.querySelectorAll("div").forEach((d) => d.remove());
     // blocs: left-ish to right-ish ordering for the hemicycle bar
-    for (const f of IDEO.filter((f) => sim.seats[f])) bar.insertAdjacentHTML("beforeend", `<div title="${fam(f).nombre}: ${sim.seats[f]}" style="flex:${sim.seats[f]};background:${fam(f).color}"></div>`);
-    $("#leg").innerHTML = IDEO.filter((f) => sim.seats[f]).map((f) => `<span><i class="sw" style="background:${fam(f).color}"></i>${fam(f).nombre} <b>${sim.seats[f]}</b></span>`).join("") + `<span class="note">· la línea marca la mayoría absoluta (176)</span>`;
+    for (const f of IDEO.filter((f) => sim.seats[f])) bar.insertAdjacentHTML("beforeend", `<div title="${famName(f, state.base)}: ${sim.seats[f]}" style="flex:${sim.seats[f]};background:${fam(f).color}"></div>`);
+    $("#leg").innerHTML = IDEO.filter((f) => sim.seats[f]).map((f) => `<span><i class="sw" style="background:${fam(f).color}"></i>${famName(f, state.base)} <b>${sim.seats[f]}</b></span>`).join("") + `<span class="note">· la línea marca la mayoría absoluta (176)</span>`;
     $("#tbl").innerHTML = `<table><tr><th>Partido</th><th class="num">${elecLabel(state.base)}</th><th class="num">Simulado</th><th class="num">Dif.</th></tr>
       ${order.map((f) => { const a = base.seats[f] ?? 0, b = sim.seats[f] ?? 0;
-        return `<tr><td><i class="dot" style="background:${fam(f).color}"></i>${fam(f).nombre}</td><td class="num">${a}</td><td class="num"><b>${b}</b></td><td class="num">${b - a > 0 ? "+" : ""}${b - a || ""}</td></tr>`; }).join("")}
+        return `<tr><td><i class="dot" style="background:${fam(f).color}"></i>${famName(f, state.base)}</td><td class="num">${a}</td><td class="num"><b>${b}</b></td><td class="num">${b - a > 0 ? "+" : ""}${b - a || ""}</td></tr>`; }).join("")}
       <tr><td>PP + Vox</td><td class="num">${(base.seats.pp ?? 0) + (base.seats.vox ?? 0)}</td><td class="num"><b>${(sim.seats.pp ?? 0) + (sim.seats.vox ?? 0)}</b></td><td></td></tr>
       </table>`;
     const changes = sim.perProv.map((p, i) => {
