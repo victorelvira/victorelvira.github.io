@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.13";
-import { lines } from "./charts.js?v=0.2.13";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.14";
+import { lines } from "./charts.js?v=0.2.14";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -76,9 +76,20 @@ export async function renderEncuestas(app) {
   const dayT = days.map((d) => Math.round(d / 864e5));
   let corr = true, avg = { media: E.media, sd: E.sd };
   const end = days.at(-1), start = days[0];
-  const ZOOM = { "3m": 92, "6m": 183, "1a": 365, todo: null };
+  const ZOOM = { "1s": 7, "1m": 31, "3m": 92, "1a": 365, todo: null };
+  const DAY = 864e5, MIN_WIN = 7 * DAY;
   let zoom = "3m", win = null;
-  const setZoom = (k) => { zoom = k; win = ZOOM[k] ? [new Date(Math.max(+start, +end - ZOOM[k] * 864e5)), end] : [start, end]; };
+  const setZoom = (k) => { zoom = k; win = ZOOM[k] ? [new Date(Math.max(+start, +end - ZOOM[k] * DAY)), end] : [start, end]; };
+  // + and -: halve or double the window, anchored at the end when it is there, else at its centre; clamped
+  const zoomBy = (f) => {
+    const len = Math.min(+end - +start, Math.max(MIN_WIN, (+win[1] - +win[0]) * f));
+    let a, b;
+    if (+win[1] >= +end - DAY) { b = +end; a = b - len; } else { const c = (+win[0] + +win[1]) / 2; a = c - len / 2; b = c + len / 2; }
+    if (a < +start) { a = +start; b = a + len; }
+    if (b > +end) { b = +end; a = b - len; }
+    win = [new Date(a), new Date(b)];
+    zoom = Object.keys(ZOOM).find((k) => ZOOM[k] ? Math.abs(len - ZOOM[k] * DAY) < DAY && b === +end : len >= +end - +start) ?? null;
+  };
   setZoom("3m");
 
   // the same kernel as pipeline/poll_model.py (one-sided exponential, tau 10 days, 120-day memory,
@@ -124,9 +135,11 @@ export async function renderEncuestas(app) {
 
   $("#toggles").innerHTML = E.parties.map((p) => `<label><input type="checkbox" data-p="${p}" ${show.has(p) ? "checked" : ""}/> ${POLL_PARTY[p].n}</label>`).join("");
   $("#toggles").querySelectorAll("input").forEach((i) => i.onchange = () => { i.checked ? show.add(i.dataset.p) : show.delete(i.dataset.p); draw(); overview(); });
-  $("#zoom").innerHTML = Object.entries({ "3m": "3 meses", "6m": "6 meses", "1a": "1 año", todo: "Todo" }).map(([k, v]) => `<button data-k="${k}">${v}</button>`).join("");
-  $("#zoom").querySelectorAll("button").forEach((b) => b.onclick = () => { setZoom(b.dataset.k); draw(); moveBrush(); });
-  const markZoom = () => $("#zoom").querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.k === zoom));
+  $("#zoom").innerHTML = `<button data-z="in" title="Acercar">+</button><button data-z="out" title="Alejar">−</button>`
+    + Object.entries({ "1s": "1 semana", "1m": "1 mes", "3m": "3 meses", "1a": "1 año", todo: "Todo" }).map(([k, v]) => `<button data-k="${k}">${v}</button>`).join("");
+  $("#zoom").querySelectorAll("button[data-k]").forEach((b) => b.onclick = () => { setZoom(b.dataset.k); draw(); moveBrush(); });
+  $("#zoom").querySelectorAll("button[data-z]").forEach((b) => b.onclick = () => { zoomBy(b.dataset.z === "in" ? 0.5 : 2); draw(); moveBrush(); });
+  const markZoom = () => $("#zoom").querySelectorAll("button[data-k]").forEach((b) => b.classList.toggle("on", b.dataset.k === zoom));
   function chips() {
     const smallOn = small.some(([h]) => sel.has(h));
     $("#casas").innerHTML = big.map(([h, n]) => `<label class="${sel.has(h) ? "" : "off"}"><input type="checkbox" data-h="${h}" ${sel.has(h) ? "checked" : ""}/>${h} <span class="muted">${n}</span></label>`).join("")
@@ -161,7 +174,7 @@ export async function renderEncuestas(app) {
     const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
     svg.append("defs").append("clipPath").attr("id", "ch-clip").append("rect").attr("x", m.l).attr("y", 0).attr("width", W - m.l - m.r).attr("height", H);
     svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(6)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
-    svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.max(3, Math.floor(W / 110))).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
+    svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.max(3, Math.floor(W / 110))).tickFormat((+win[1] - +win[0]) / DAY <= 45 ? d3.timeFormat("%-d %b") : null).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
     svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickFormat((v) => `${v}%`).tickSize(0)).call((g) => g.select(".domain").remove());
     const plot = svg.append("g").attr("clip-path", "url(#ch-clip)");
     const gBands = plot.append("g"), gTrail = plot.append("g"), gDots = plot.append("g"), gLines = plot.append("g");
