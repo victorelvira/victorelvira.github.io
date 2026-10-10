@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.23";
-import { lines } from "./charts.js?v=0.2.23";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.24";
+import { lines } from "./charts.js?v=0.2.24";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },

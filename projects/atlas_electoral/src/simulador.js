@@ -1,14 +1,19 @@
-import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.23";
-import { fam, famName, IDEO, EXTRA } from "./charts.js?v=0.2.23";
+import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.24";
+import { fam, famName, IDEO, EXTRA } from "./charts.js?v=0.2.24";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
-export function dhondt(lists, seats, validos, threshold = 0.03) {
+export function dhondt(lists, seats, validos, threshold = 0.03, detail = null) {
   const ok = lists.map((l, i) => ({ i, v: l.v })).filter((l) => l.v >= threshold * validos && l.v > 0);
   const out = new Array(lists.length).fill(0);
   const quots = [];
-  for (const l of ok) for (let s = 1; s <= seats; s++) quots.push({ i: l.i, q: l.v / s, v: l.v });
+  for (const l of ok) for (let s = 1; s <= seats + 1; s++) quots.push({ i: l.i, q: l.v / s, v: l.v, s });
   quots.sort((a, b) => b.q - a.q || b.v - a.v);
   for (let k = 0; k < seats && k < quots.length; k++) out[quots[k].i]++;
+  if (detail && quots.length > seats) {
+    // the last seat awarded and the best quotient left out: how many votes (share of valid) the runner-up lacked
+    const last = quots[seats - 1], next = quots.find((q, k) => k >= seats && q.i !== last.i) ?? quots[seats];
+    detail.last = last.i; detail.next = next.i; detail.falta = (last.q * next.s - next.v) / validos;
+  }
   return out;
 }
 
@@ -43,10 +48,11 @@ export function seatsFor(provs, factor = {}, esc = null) {
   for (const p of provs) {
     const lists = p.l.map(([s, f, v]) => ({ s, f, v: v * (factor[f] ?? 1) }));
     const validos = lists.reduce((a, l) => a + l.v, 0) + p.bl;
-    const r = dhondt(lists, esc?.[p.prov] ?? p.esc, validos);
+    const d = {};
+    const r = dhondt(lists, esc?.[p.prov] ?? p.esc, validos, 0.03, d);
     const byF = {};
     lists.forEach((l, i) => { if (r[i]) { seats[l.f] = (seats[l.f] ?? 0) + r[i]; byF[l.f] = (byF[l.f] ?? 0) + r[i]; } });
-    perProv.push({ n: p.n, prov: p.prov, byF });
+    perProv.push({ n: p.n, prov: p.prov, byF, ultimo: d.last != null ? { gana: lists[d.last].f, pierde: lists[d.next].f, falta: d.falta } : null });
   }
   return { seats, perProv };
 }
@@ -78,12 +84,17 @@ export async function renderSimulador(app, args = [], embed = false) {
       <button class="play" id="polls">Cargar promedio de encuestas (${fdate(E.actualizado)})</button></div>
     <p class="note" id="pollnote"></p>
     <div class="sliders" id="sl"></div>
+    <p class="note"><label><input type="checkbox" id="bal" checked/> Repartir: lo que sube un partido lo pierden los demás en proporción, y el total no cambia</label>${embed ? "" : ` · <button class="play" id="share">Copiar enlace a este escenario</button><span id="shared" class="muted"></span>`}</p>
     <h2>Congreso resultante <span id="sum" class="note"></span></h2>
     <div class="seats" id="bar"><span class="majority" title="Mayoría absoluta: 176"></span></div>
     <div class="legend" id="leg"></div>
     <div class="grid2">
       <div><h2>Escaños por partido</h2><div id="tbl"></div></div>
+      <div><h2>Mayorías posibles</h2><div id="pactos"></div></div>
+    </div>
+    <div class="grid2">
       <div><h2>Lo que más cambia por provincia</h2><div id="prov"></div></div>
+      <div><h2>Dónde baila el último escaño</h2><p class="note">Provincias donde el último escaño se decide por menos votos: quién se lo lleva, quién se queda a las puertas y cuánto le falta, en porcentaje de los votos válidos de la provincia.</p><div id="ultimo"></div></div>
     </div>`;
   const $ = (s) => app.querySelector(s);
   $("#base").value = state.base;
@@ -105,7 +116,15 @@ export async function renderSimulador(app, args = [], embed = false) {
       <input type="range" min="0" max="50" step="0.1" value="${(state.target[f] * 100).toFixed(1)}" data-f="${f}" />
       <output>${num(state.target[f] * 100)}</output></label>`).join("");
     $("#sl").querySelectorAll("input").forEach((inp) => inp.oninput = () => {
-      state.target[inp.dataset.f] = inp.value / 100;
+      const f = inp.dataset.f, nv = inp.value / 100, delta = nv - state.target[f];
+      state.target[f] = nv;
+      if ($("#bal").checked) {   // the others give or take in proportion to their size
+        const others = state.sliders.filter((g) => g !== f), tot = others.reduce((a, g) => a + state.target[g], 0);
+        for (const g of others) {
+          state.target[g] = Math.max(0, state.target[g] - (tot > 0 ? delta * state.target[g] / tot : delta / others.length));
+          const o = $(`#sl input[data-f="${g}"]`); o.value = (state.target[g] * 100).toFixed(1); o.nextElementSibling.textContent = num(o.value);
+        }
+      }
       inp.nextElementSibling.textContent = num(inp.value);
       compute();
     });
@@ -140,14 +159,33 @@ export async function renderSimulador(app, args = [], embed = false) {
     $("#prov").innerHTML = changes.length ? `<table>${changes.map((p) => `<tr><td>${p.n}</td><td>${p.diffs.map(([f, d]) =>
       `<span style="white-space:nowrap;margin-right:10px"><i class="dot" style="background:${fam(f).color}"></i>${d > 0 ? "+" : ""}${d}</span>`).join("")}</td></tr>`).join("")}</table>`
       : `<p class="note">Mueve algún control para ver qué escaños cambian de manos.</p>`;
+    // majorities: the usual blocs, with what they lack for 176
+    const S = (fs) => fs.reduce((a, f) => a + (sim.seats[f] ?? 0), 0);
+    const left = ["psoe", "izq", "sumar", "podemos"], nat = ["erc", "bildu", "pnv", "bng", "cc", "compromis", "cup"];
+    const pactos = [["PP + Vox", ["pp", "vox"]], ["PP solo", ["pp"]], ["PP + PNV + CC + Junts", ["pp", "pnv", "cc", "junts"]],
+      ["PSOE + Sumar y Podemos", left], ["Izquierda + nacionalistas sin Junts", [...left, ...nat]], ["Bloque de la investidura de 2023 (con Junts)", [...left, ...nat, "junts"]]];
+    $("#pactos").innerHTML = `<table><tr><th>Suma</th><th class="num">Escaños</th><th></th></tr>${pactos.map(([n, fs]) => { const v = S(fs);
+      return `<tr><td>${n}</td><td class="num"><b>${v}</b></td><td class="${v >= 176 ? "ok" : "muted"}">${v >= 176 ? "mayoría absoluta" : `faltan ${176 - v}`}</td></tr>`; }).join("")}</table>`;
+    // the last seat of each province: who takes it, who misses it and by how much
+    const u = sim.perProv.filter((p) => p.ultimo).sort((a, b) => a.ultimo.falta - b.ultimo.falta).slice(0, 12);
+    $("#ultimo").innerHTML = `<table><tr><th>Provincia</th><th>Se lo lleva</th><th>A las puertas</th><th class="num">Le falta</th></tr>${u.map((p) =>
+      `<tr><td>${p.n}</td><td><i class="dot" style="background:${fam(p.ultimo.gana).color}"></i>${famName(p.ultimo.gana, state.base)}</td><td><i class="dot" style="background:${fam(p.ultimo.pierde).color}"></i>${famName(p.ultimo.pierde, state.base)}</td><td class="num">${num(p.ultimo.falta * 100, 2)}%</td></tr>`).join("")}</table>`;
+    if (!embed) history.replaceState(null, "", `#simulador/${state.provs !== dh[state.base] ? "encuestas" : "base"}/${state.base}/${state.sliders.map((f) => `${f}=${(state.target[f] * 100).toFixed(1)}`).join(",")}`);
   }
 
   $("#base").onchange = (e) => { state.base = e.target.value; setup(); };
   $("#reset").onclick = () => setup(false);
   $("#polls").onclick = () => { state.base = gens.at(-1); $("#base").value = state.base; setup(true); };
   if (fromPolls) state.base = gens.at(-1);
+  if (args[1] && gens.includes(args[1])) state.base = args[1];
   $("#base").value = state.base;
-  setup(fromPolls);
+  setup(fromPolls || args[0] === "encuestas");
+  if (args[2]) {   // shared scenario: slider values in the hash
+    for (const kv of args[2].split(",")) { const [f, v] = kv.split("="); if (state.sliders.includes(f) && isFinite(+v)) { state.target[f] = +v / 100;
+      const o = $(`#sl input[data-f="${f}"]`); if (o) { o.value = (+v).toFixed(1); o.nextElementSibling.textContent = num(v); } } }
+    compute();
+  }
+  if (!embed) $("#share").onclick = async () => { try { await navigator.clipboard.writeText(location.href); $("#shared").textContent = " copiado"; } catch { $("#shared").textContent = ` ${location.href}`; } };
 }
 
 /** Seeded PRNG + normal draws so the landing shows stable numbers between reloads. */
