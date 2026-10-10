@@ -1,14 +1,14 @@
-import { init } from "./data.js?v=0.2.12";
-import { renderMapa } from "./mapa.js?v=0.2.12";
-import { renderPueblo } from "./pueblo.js?v=0.2.12";
-import { renderMiniatura } from "./miniatura.js?v=0.2.12";
-import { renderSimulador } from "./simulador.js?v=0.2.12";
-import { renderEncuestas } from "./encuestas.js?v=0.2.12";
-import { renderInicio } from "./inicio.js?v=0.2.12";
-import { renderHistoria } from "./historia.js?v=0.2.12";
-import { renderComunidad } from "./comunidad.js?v=0.2.12";
-import { renderExplora } from "./explora.js?v=0.2.12";
-import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.12";
+import { init } from "./data.js?v=0.2.13";
+import { renderMapa } from "./mapa.js?v=0.2.13";
+import { renderPueblo } from "./pueblo.js?v=0.2.13";
+import { renderMiniatura } from "./miniatura.js?v=0.2.13";
+import { renderSimulador } from "./simulador.js?v=0.2.13";
+import { renderEncuestas } from "./encuestas.js?v=0.2.13";
+import { renderInicio } from "./inicio.js?v=0.2.13";
+import { renderHistoria } from "./historia.js?v=0.2.13";
+import { renderComunidad } from "./comunidad.js?v=0.2.13";
+import { renderExplora } from "./explora.js?v=0.2.13";
+import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.13";
 
 // Spanish month and day names on every time axis (d3 defaults to English)
 window.d3.timeFormatDefaultLocale({

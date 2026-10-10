@@ -1,8 +1,8 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.12";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.12";
-import { projectFromPolls } from "./simulador.js?v=0.2.12";
+import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.13";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.13";
+import { projectFromPolls } from "./simulador.js?v=0.2.13";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.12";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.13";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -57,7 +57,7 @@ export async function renderInicio(app, args = []) {
 
     <h2>Qué dicen las encuestas</h2>
     <div class="stats">${top.map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${String(E.ultimo[p]).replace(".", ",")}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("")}</div>
-    <p class="note">Promedio corregido de ${E.polls.length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. <a href="#encuestas">Ver evolución y sesgos →</a></p>
+    <p class="note">Promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. <a href="#encuestas">Ver evolución y sesgos →</a></p>
 
     ${D ? movilizacion(D) : ""}
 

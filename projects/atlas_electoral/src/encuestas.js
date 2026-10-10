@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.12";
-import { lines } from "./charts.js?v=0.2.12";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.13";
+import { lines } from "./charts.js?v=0.2.13";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -24,14 +24,15 @@ export async function renderEncuestas(app) {
 
   app.innerHTML = `
     <h1>Encuestas hacia el 29N</h1>
-    <p class="sub">Promedio de ${E.polls.length} encuestas publicadas desde julio de 2023 (último trabajo de campo: ${E.actualizado}). Cada encuestadora pesa lo mismo aunque publique más a menudo, y se corrige su sesgo sistemático respecto al resto.</p>
+    <p class="sub">Promedio de ${E.polls.filter((q) => !q.x).length} encuestas publicadas desde julio de 2023 (último trabajo de campo: ${E.actualizado}). Cada encuestadora pesa lo mismo aunque publique más a menudo, y se corrige su sesgo sistemático respecto al resto.</p>
     <div class="stats" id="kpi"></div>
     <div class="controls" id="toggles"></div>
     <div class="controls"><div class="seg" id="zoom"></div>
       <details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
         <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
           <label><input type="checkbox" id="corr" checked/> Corregir el sesgo de cada casa</label></div>
-        <div class="chips" id="casas"></div></details></div>
+        <div class="chips" id="casas"></div>
+        <label class="casas-x"><input type="checkbox" id="showx"/> Mostrar también, como círculos huecos, <span id="x-desc"></span>. No entran en el promedio: las reestimaciones reutilizan la muestra de una encuesta del CIS ya contada, y las de partido no son independientes.</label></details></div>
     <div class="card chart" id="ch"><div id="ch-main"></div><div id="ch-ov" class="overview"></div></div>
     <p class="note" id="ch-note"></p>
     <p><a href="#simulador/encuestas">→ Ver estos porcentajes convertidos en escaños</a></p>
@@ -64,8 +65,13 @@ export async function renderEncuestas(app) {
     <div id="bias"></div>`;
   const $ = (s) => app.querySelector(s);
 
-  const houses = Array.from(d3.rollup(E.polls, (v) => v.length, (q) => q.e)).sort((a, b) => b[1] - a[1]);
+  // pollsters with their own fieldwork; re-estimations of CIS data and party polls (q.x) never enter the average
+  const houses = Array.from(d3.rollup(E.polls.filter((q) => !q.x), (v) => v.length, (q) => q.e)).sort((a, b) => b[1] - a[1]);
+  const MIN_CHIP = 5;
+  const big = houses.filter(([, n]) => n >= MIN_CHIP), small = houses.filter(([, n]) => n < MIN_CHIP);
   const sel = new Set(houses.map(([h]) => h));
+  let showX = false;
+  const nx = d3.rollup(E.polls.filter((q) => q.x), (v) => v.length, (q) => q.x);
   const tDay = (s) => Math.round(new Date(s) / 864e5);
   const dayT = days.map((d) => Math.round(d / 864e5));
   let corr = true, avg = { media: E.media, sd: E.sd };
@@ -79,7 +85,7 @@ export async function renderEncuestas(app) {
   // weight min(sqrt(n/1000), 2) divided by the pollster's polls in the last 30 days), on the chosen polls
   function kernelAverage(force = false) {
     if (!force && corr && sel.size === houses.length) return { media: E.media, sd: E.sd };
-    const P = E.polls.filter((q) => sel.has(q.e)).map((q) => ({ t: tDay(q.d), e: q.e, w: Math.min(Math.sqrt((q.n ?? 1000) / 1000), 2), v: q.v }));
+    const P = E.polls.filter((q) => !q.x && sel.has(q.e)).map((q) => ({ t: tDay(q.d), e: q.e, w: Math.min(Math.sqrt((q.n ?? 1000) / 1000), 2), v: q.v }));
     const media = {}, sd = {};
     for (const p of E.parties) {
       const Q = P.filter((q) => q.v[p] != null).map((q) => ({ ...q, x: q.v[p] - (corr ? E.efecto_casa?.[q.e]?.[p] ?? 0 : 0) }))
@@ -108,7 +114,9 @@ export async function renderEncuestas(app) {
   function kpi() {
     $("#kpi").innerHTML = MAIN.filter((p) => last(avg.media[p] ?? []) != null).map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${num(last(avg.media[p]))}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("");
     const all = sel.size === houses.length;
-    $("#casas-sum").textContent = all ? `todas (${houses.length})` : sel.size === 0 ? "ninguna" : sel.size <= 3 ? [...sel].join(", ") : `${sel.size} de ${houses.length}`;
+    const nsmall = small.filter(([h]) => sel.has(h)).length;
+    $("#casas-sum").textContent = all ? `todas (${big.length} habituales y ${small.length} ocasionales)` : sel.size === 0 ? "ninguna"
+      : sel.size <= 3 ? [...sel].join(", ") : `${sel.size - nsmall} de ${big.length} habituales${nsmall ? ` y ${nsmall} ocasionales` : ""}`;
     $("#ch-note").innerHTML = `Puntos: cada encuesta publicada, tal cual, sin corregir. Pasa el ratón (o toca) un punto para ver quién la hizo, cuándo y qué daba a cada partido; se resaltan sus puntos en los demás partidos y las demás encuestas de la misma casa. Un clic la deja fija. `
       + (all && corr ? "Línea: promedio corregido de todas las encuestadoras." : `Línea: promedio ${corr ? "corregido" : "sin corregir (lo que dicen tal cual)"} de ${all ? "todas las encuestadoras" : sel.size === 1 ? [...sel][0] : `las ${sel.size} encuestadoras elegidas`}, calculado aquí con el mismo método.`)
       + " Banda: dispersión habitual entre encuestas (±1,28 desviaciones, un 80%). Abajo, todo el ciclo: arrastra la ventana para moverte en el tiempo o estírala por los bordes.";
@@ -120,9 +128,15 @@ export async function renderEncuestas(app) {
   $("#zoom").querySelectorAll("button").forEach((b) => b.onclick = () => { setZoom(b.dataset.k); draw(); moveBrush(); });
   const markZoom = () => $("#zoom").querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.k === zoom));
   function chips() {
-    $("#casas").innerHTML = houses.map(([h, n]) => `<label class="${sel.has(h) ? "" : "off"}"><input type="checkbox" data-h="${h}" ${sel.has(h) ? "checked" : ""}/>${h} <span class="muted">${n}</span></label>`).join("");
-    $("#casas").querySelectorAll("input").forEach((i) => i.onchange = () => { i.checked ? sel.add(i.dataset.h) : sel.delete(i.dataset.h); refresh(); });
+    const smallOn = small.some(([h]) => sel.has(h));
+    $("#casas").innerHTML = big.map(([h, n]) => `<label class="${sel.has(h) ? "" : "off"}"><input type="checkbox" data-h="${h}" ${sel.has(h) ? "checked" : ""}/>${h} <span class="muted">${n}</span></label>`).join("")
+      + (small.length ? `<label class="${smallOn ? "" : "off"}" title="${small.map(([h, n]) => `${h} (${n})`).join(", ")}"><input type="checkbox" data-h="__otras" ${smallOn ? "checked" : ""}/>Otras ${small.length} casas <span class="muted">${d3.sum(small, ([, n]) => n)}</span></label>` : "");
+    $("#casas").querySelectorAll("input").forEach((i) => i.onchange = () => {
+      const hs = i.dataset.h === "__otras" ? small.map(([h]) => h) : [i.dataset.h];
+      hs.forEach((h) => (i.checked ? sel.add(h) : sel.delete(h))); refresh(); });
   }
+  $("#x-desc").textContent = [nx.get("reest") && `las ${nx.get("reest")} reestimaciones de encuestas del CIS hechas por otras empresas`, nx.get("interna") && `${nx.get("interna") === 1 ? "la encuesta encargada" : `las ${nx.get("interna")} encuestas encargadas`} por un partido`].filter(Boolean).join(" y ");
+  $("#showx").onchange = (ev) => { showX = ev.target.checked; draw(); };
   $("#casas-box").querySelectorAll(".casas-act button").forEach((b) => b.onclick = () => {
     if (b.dataset.a === "all") houses.forEach(([h]) => sel.add(h)); else sel.clear(); refresh(); });
   $("#corr").onchange = (ev) => { corr = ev.target.checked; refresh(); };
@@ -139,7 +153,8 @@ export async function renderEncuestas(app) {
     const parties = E.parties.filter((p) => show.has(p));
     const x = d3.scaleTime().domain(win).range([m.l, W - m.r]);
     const inWin = (d) => d >= win[0] && d <= win[1];
-    const vis = E.polls.filter((q) => sel.has(q.e) && inWin(new Date(q.d)));
+    const shown = (q) => (q.x ? showX : sel.has(q.e));
+    const vis = E.polls.filter((q) => shown(q) && inWin(new Date(q.d)));
     const visAvg = parties.flatMap((p) => days.map((d, i) => (inWin(d) ? avg.media[p][i] : null)).filter((v) => v != null));
     const ymax = Math.max(d3.max(parties, (p) => d3.max(vis, (q) => q.v[p])) ?? 0, d3.max(visAvg) ?? 0) || 40;
     const y = d3.scaleLinear().domain([0, Math.min(50, ymax + 2)]).nice().range([H - m.b, m.t]);
@@ -160,13 +175,14 @@ export async function renderEncuestas(app) {
     }
     // one dot per poll and party: the polls as published, before any correction
     const dots = [];
-    E.polls.forEach((q, i) => { if (sel.has(q.e) && inWin(new Date(q.d))) for (const p of parties) if (q.v[p] != null)
+    E.polls.forEach((q, i) => { if (shown(q) && inWin(new Date(q.d))) for (const p of parties) if (q.v[p] != null)
       dots.push({ i, p, cx: x(new Date(q.d)), cy: y(q.v[p]) }); });
     // fewer dots on screen (short window or few pollsters) -> bigger, more opaque dots
     const npolls = new Set(dots.map((o) => o.i)).size;
     const r0 = npolls < 60 ? 3.5 : npolls < 150 ? 3 : 2, o0 = npolls < 60 ? 0.7 : npolls < 150 ? 0.45 : 0.25;
     const circles = gDots.selectAll("circle").data(dots).join("circle")
-      .attr("cx", (o) => o.cx).attr("cy", (o) => o.cy).attr("r", r0).attr("fill", (o) => POLL_PARTY[o.p].c()).attr("opacity", o0);
+      .attr("cx", (o) => o.cx).attr("cy", (o) => o.cy).attr("r", r0).attr("opacity", o0)
+      .attr("fill", (o) => (E.polls[o.i].x ? "none" : POLL_PARTY[o.p].c())).attr("stroke", (o) => (E.polls[o.i].x ? POLL_PARTY[o.p].c() : null));
     const delaunay = d3.Delaunay.from(dots, (o) => o.cx, (o) => o.cy);
     // labels: value of the average at the right edge of the window
     const iEnd = d3.leastIndex(days, (d) => Math.abs(d - win[1]));
@@ -184,7 +200,7 @@ export async function renderEncuestas(app) {
       const house = i == null ? null : E.polls[i].e;
       circles.attr("r", (o) => (o.i === i ? 5 : house && E.polls[o.i].e === house ? 3 : r0))
         .attr("opacity", (o) => (i == null ? o0 : o.i === i ? 1 : E.polls[o.i].e === house ? 0.85 : 0.06))
-        .attr("stroke", (o) => (o.i === i ? "var(--surface)" : null)).attr("stroke-width", 1.5);
+        .attr("stroke", (o) => (E.polls[o.i].x ? POLL_PARTY[o.p].c() : o.i === i ? "var(--surface)" : null)).attr("stroke-width", 1.5);
       circles.filter((o) => o.i === i).raise();
       gTrail.selectAll("*").remove();
       if (i == null) return;
@@ -202,7 +218,8 @@ export async function renderEncuestas(app) {
         <div class="row muted"><span>Trabajo de campo</span><span>${q.f0 === q.f1 ? fdate(q.f1) : `${fdate(q.f0)} a ${fdate(q.f1)}`}</span></div>
         ${q.n ? `<div class="row muted"><span>Muestra</span><span>${q.n.toLocaleString("es-ES")}</span></div>` : ""}
         ${rows.map(([p, v]) => `<div class="row"><span><i class="dot" style="background:${POLL_PARTY[p]?.c() ?? "var(--ink-3)"}"></i>${POLL_PARTY[p]?.n ?? p}</span><span>${num(v)}%</span></div>`).join("")}
-        <div class="row muted"><span>Encuestas de ${q.e} en el ciclo</span><span>${nHouse}</span></div>`, ev);
+        <div class="row muted"><span>Encuestas de ${q.e} en el ciclo</span><span>${nHouse}</span></div>
+        ${q.x ? `<div class="muted" style="max-width:240px;white-space:normal">${q.x === "reest" ? "Reestimación de una encuesta del CIS con otra cocina: misma muestra, no entra en el promedio." : "Encuesta encargada por un partido: no entra en el promedio."}</div>` : ""}`, ev);
     }
     function avgTip(mx, ev) {
       const xd = x.invert(mx);
