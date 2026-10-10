@@ -1,11 +1,11 @@
-import { renderMapa } from "./mapa.js?v=0.2.25";
-import { renderSimulador } from "./simulador.js?v=0.2.25";
-import { pollChart } from "./encuestas.js?v=0.2.25";
-import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.25";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.25";
-import { projectFromPolls } from "./simulador.js?v=0.2.25";
+import { renderMapa } from "./mapa.js?v=0.2.26";
+import { renderSimulador } from "./simulador.js?v=0.2.26";
+import { pollChart } from "./encuestas.js?v=0.2.26";
+import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.26";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.26";
+import { projectFromPolls } from "./simulador.js?v=0.2.26";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.25";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.26";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -66,7 +66,7 @@ export async function renderInicio(app, args = []) {
 
     <section id="s-encuestas">
     <h2>Qué dicen las encuestas <span class="muted" style="font-weight:400">· a ${fechaLarga(BUILD_AT.slice(0, 10))}</span></h2>
-    <p class="note">Promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. <a href="#encuestas">Todas las encuestas, la cocina y quién acierta →</a></p>
+    <p class="sub">La lectura rápida: el promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas (último trabajo de campo ${fechaLarga(E.actualizado)}) y los escaños que daría. El análisis completo, con cada encuestadora, la cocina y los aciertos históricos, está en <a href="#encuestas">Encuestas</a>.</p>
     <div id="chart-area"></div>
     <div class="card">
       <div id="proj"></div>
@@ -113,7 +113,7 @@ export async function renderInicio(app, args = []) {
     </div></div>`;
 
   // the poll chart, the lazy blocks and the index
-  pollChart(app.querySelector("#chart-area"), E, { selector: false, lastTable: false });
+  pollChart(app.querySelector("#chart-area"), E, { selector: false, lastTable: false, tools: false });
   const lazy = { mapa: () => renderMapa(app.querySelector("#mapa"), [], { tipos: ["generales"] }), sim: () => renderSimulador(app.querySelector("#sim"), ["encuestas"], true) };
   const toc = app.querySelector("#toc");
   toc.querySelectorAll("a").forEach((a) => a.onclick = (ev) => { ev.preventDefault(); app.querySelector(`#${a.dataset.s}`).scrollIntoView({ behavior: "smooth", block: "start" }); });

@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.25";
-import { lines } from "./charts.js?v=0.2.25";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.26";
+import { lines } from "./charts.js?v=0.2.26";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -227,16 +227,16 @@ function saltos(el, SJ) {
 
 /** The poll chart block (figures, party toggles, zoom, pollster selector, chart, note; optionally the cycle
  *  selector and the last-polls table), drawn inside `el`. Used by the Encuestas page and the 29N page. */
-export function chartHtml({ selector = true, lastTable = true } = {}) {
+export function chartHtml({ selector = true, lastTable = true, tools = true } = {}) {
   return (selector ? `    <div class="controls"><label>Elección <select id="ciclo"></select></label><span class="note" id="cycle-note"></span></div>` : "") + `
     <div class="stats" id="kpi"></div>
     <div class="controls" id="toggles"></div>
     <div class="controls"><div class="seg" id="zoom"></div>
-      <details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
+      ${tools ? `<details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
         <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
           <label><input type="checkbox" id="corr" checked/> Descontar el sesgo de cada casa respecto a las demás</label></div>
         <div class="chips" id="casas"></div>
-        <label class="casas-x"><input type="checkbox" id="showx"/> Mostrar también, como círculos huecos, <span id="x-desc"></span>. No entran en el promedio: las reestimaciones reutilizan la muestra de una encuesta del CIS ya contada, y las de partido no son independientes.</label></details></div>
+        <label class="casas-x"><input type="checkbox" id="showx"/> Mostrar también, como círculos huecos, <span id="x-desc"></span>. No entran en el promedio: las reestimaciones reutilizan la muestra de una encuesta del CIS ya contada, y las de partido no son independientes.</label></details>` : ""}</div>
     <div class="card chart" id="ch"><div id="ch-main"></div><div id="ch-ov" class="overview"></div></div>
     <p class="note" id="ch-note"></p>
 ` + (lastTable ? `
@@ -246,9 +246,9 @@ export function chartHtml({ selector = true, lastTable = true } = {}) {
 ` : "");
 }
 
-export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selector = true, lastTable = true } = {}) {
+export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selector = true, lastTable = true, tools = true } = {}) {
   const $ = (s) => el.querySelector(s);
-  el.innerHTML = chartHtml({ selector, lastTable });
+  el.innerHTML = chartHtml({ selector, lastTable, tools });
   // the chart block, for the current cycle or any past one (ciclos/<ciclo>.json has the same shape plus "resultado")
   function pollBlock(E) {
     const PN = (k) => partyName(k, E.ciclo), PC = partyColor;
@@ -320,11 +320,12 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
         : `<div class="stat"><div class="v"><i class="dot" style="background:${PC(p)}"></i>${num(last(avg.media[p]))}%</div><div class="k">${PN(p)}</div></div>`).join("");
       const all = sel.size === houses.length;
       const nsmall = small.filter(([h]) => sel.has(h)).length;
-      $("#casas-sum").textContent = all ? `todas (${big.length} habituales y ${small.length} ocasionales)` : sel.size === 0 ? "ninguna"
+      if ($("#casas-sum")) $("#casas-sum").textContent = all ? `todas (${big.length} habituales y ${small.length} ocasionales)` : sel.size === 0 ? "ninguna"
         : sel.size <= 3 ? [...sel].join(", ") : `${sel.size - nsmall} de ${big.length} habituales${nsmall ? ` y ${nsmall} ocasionales` : ""}`;
       $("#ch-note").innerHTML = `Puntos: cada encuesta publicada, tal cual, sin corregir. Pasa el ratón (o toca) un punto para ver quién la hizo, cuándo y qué daba a cada partido; se resaltan sus puntos en los demás partidos y las demás encuestas de la misma casa. Un clic la deja fija. `
         + (all && corr ? "Línea: promedio corregido de todas las encuestadoras." : `Línea: promedio ${corr ? "corregido" : "sin corregir (lo que dicen tal cual)"} de ${all ? "todas las encuestadoras" : sel.size === 1 ? [...sel][0] : `las ${sel.size} encuestadoras elegidas`}, calculado aquí con el mismo método.`)
-        + " Banda: dispersión habitual entre encuestas (±1,28 desviaciones, un 80%). Abajo, todo el ciclo: arrastra la ventana para moverte en el tiempo o estírala por los bordes.";
+        + " Banda: dispersión habitual entre encuestas (±1,28 desviaciones, un 80%). Abajo, todo el ciclo: arrastra la ventana para moverte en el tiempo o estírala por los bordes."
+      + ($("#casas-box") ? "" : ' <a href="#encuestas">En la pestaña Encuestas puedes elegir encuestadoras, quitar la corrección de casa y ver cualquier elección desde 1982 →</a>');
     }
 
     // last 12 polls (with their own fieldwork), published figure and gap to the corrected average on that date
@@ -346,6 +347,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     $("#zoom").querySelectorAll("button[data-z]").forEach((b) => b.onclick = () => { zoomBy(b.dataset.z === "in" ? 0.5 : 2); draw(); moveBrush(); });
     const markZoom = () => $("#zoom").querySelectorAll("button[data-k]").forEach((b) => b.classList.toggle("on", b.dataset.k === zoom));
     function chips() {
+      if (!$("#casas")) return;
       const smallOn = small.some(([h]) => sel.has(h));
       $("#casas").innerHTML = big.map(([h, n]) => `<label class="${sel.has(h) ? "" : "off"}"><input type="checkbox" data-h="${h}" ${sel.has(h) ? "checked" : ""}/>${h} <span class="muted">${n}</span></label>`).join("")
         + (small.length ? `<label class="${smallOn ? "" : "off"}" title="${small.map(([h, n]) => `${h} (${n})`).join(", ")}"><input type="checkbox" data-h="__otras" ${smallOn ? "checked" : ""}/>Otras ${small.length} casas <span class="muted">${d3.sum(small, ([, n]) => n)}</span></label>` : "");
@@ -353,11 +355,11 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
         const hs = i.dataset.h === "__otras" ? small.map(([h]) => h) : [i.dataset.h];
         hs.forEach((h) => (i.checked ? sel.add(h) : sel.delete(h))); refresh(); });
     }
-    $("#x-desc").textContent = [nx.get("reest") && `las ${nx.get("reest")} reestimaciones de encuestas del CIS hechas por otras empresas`, nx.get("interna") && `${nx.get("interna") === 1 ? "la encuesta encargada" : `las ${nx.get("interna")} encuestas encargadas`} por un partido`].filter(Boolean).join(" y ");
-    $("#showx").onchange = (ev) => { showX = ev.target.checked; draw(); };
-    $("#casas-box").querySelectorAll(".casas-act button").forEach((b) => b.onclick = () => {
+    if ($("#x-desc")) $("#x-desc").textContent = [nx.get("reest") && `las ${nx.get("reest")} reestimaciones de encuestas del CIS hechas por otras empresas`, nx.get("interna") && `${nx.get("interna") === 1 ? "la encuesta encargada" : `las ${nx.get("interna")} encuestas encargadas`} por un partido`].filter(Boolean).join(" y ");
+    if ($("#showx")) $("#showx").onchange = (ev) => { showX = ev.target.checked; draw(); };
+    $("#casas-box")?.querySelectorAll(".casas-act button").forEach((b) => b.onclick = () => {
       if (b.dataset.a === "all") houses.forEach(([h]) => sel.add(h)); else sel.clear(); refresh(); });
-    $("#corr").onchange = (ev) => { corr = ev.target.checked; refresh(); };
+    if ($("#corr")) $("#corr").onchange = (ev) => { corr = ev.target.checked; refresh(); };
     function refresh() { avg = kernelAverage(); chips(); kpi(); draw(); overview(); }
 
     // drawn at the container's real width so text keeps its size on a phone; the overview reuses W

@@ -236,3 +236,7 @@ ol.steps li { margin: 6px 0; }
 td.ok { color: #1d7a74; font-weight: 600; }
 .metodo p { max-width: 80ch; font-size: 14px; color: var(--ink-2); }
 .metodo p b { color: var(--ink); }
+th { cursor: pointer; user-select: none; }
+th.sorted::after { content: " ↕"; color: var(--ink-3); }
+th.sorted[data-dir="asc"]::after { content: " ↑"; }
+th.sorted[data-dir="desc"]::after { content: " ↓"; }
