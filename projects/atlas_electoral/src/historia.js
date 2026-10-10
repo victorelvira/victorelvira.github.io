@@ -1,6 +1,6 @@
-import { renderMapa } from "./mapa.js?v=0.2.24";
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.24";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.24";
+import { renderMapa } from "./mapa.js?v=0.2.25";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.25";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.25";
 
 export async function renderHistoria(app) {
   const [S, G] = await Promise.all([load("series.json"), load("generales_encuestas.json")]);
@@ -38,6 +38,14 @@ export async function renderHistoria(app) {
     <h2>Diputados por provincia</h2>
     <p class="sub">El reparto se recalcula en cada convocatoria según la población (mínimo 2 por provincia, 1 para Ceuta y Melilla). Las flechas marcan cambios respecto a la elección anterior.</p>
     <div class="scrollx" id="dip"></div>
+    <h2 id="metodo">Cómo se hace</h2>
+    <div class="metodo">
+    <p><b>Resultados.</b> Ministerio del Interior (Infoelectoral), mesa a mesa agregado a municipio y provincia, para generales, Senado, municipales y europeas desde 1977, y autonómicas hasta 2012; desde 2012 las autonómicas vienen del portal oficial de resultados de cada comunidad. Interior es la fuente de verdad; Wikipedia solo se usa para las encuestas.</p>
+    <p><b>Familias.</b> Las candidaturas se agrupan en familias políticas (PP incluye AP y CD; PCE/IU/Podemos/Sumar; CiU/Junts; HB/Bildu...) con un vocabulario escrito a mano, con reglas por elección para los casos dudosos. Desde 2019 se muestran con su nombre actual. Un cambio de familia nunca altera un voto: solo cómo se suma.</p>
+    <p><b>Participación y voto por correo.</b> Participación sobre el censo total (con residentes en el extranjero); avances a las 14:00 y 18:00 sobre residentes en España, de los partes oficiales. Voto por correo: solicitudes aceptadas por la Oficina del Censo Electoral y votos admitidos por Correos cuando se publicaron. El voto CERA no se asigna a municipios. En municipales, los pueblos de hasta 250 habitantes votan con listas abiertas: el voto de cada lista se aproxima por su candidato más votado.</p>
+    <p><b>Lo que decían las encuestas.</b> Para cada elección, la última encuesta de cada casa en los 35 días anteriores, frente al resultado; el rombo es la intención directa del preelectoral del CIS, sin cocina.</p>
+    <p class="note">Fuentes: Ministerio del Interior; portales de resultados de las comunidades; INE (censo y voto por correo); IGN (límites municipales); Wikipedia (encuestas); CIS (origen de los datos: Centro de Investigaciones Sociológicas).</p>
+    </div>
     ${conv?.escanos?.fuente && conv.escanos.fuente !== "boe" ? `<p class="note">* 2026: calculado con la regla de la LOREG (art. 162) y la población oficial a 1 de enero de 2025, a falta de que el BOE publique el decreto. El método reproduce exactamente el reparto de 2019 y 2023.</p>` : ""}`;
   const $ = (s) => app.querySelector(s);
 

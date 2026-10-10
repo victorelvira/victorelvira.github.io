@@ -234,3 +234,5 @@ footer .flinks a { color: var(--ink-2); }
 ol.steps { padding-left: 20px; font-size: 14px; color: var(--ink-2); }
 ol.steps li { margin: 6px 0; }
 td.ok { color: #1d7a74; font-weight: 600; }
+.metodo p { max-width: 80ch; font-size: 14px; color: var(--ink-2); }
+.metodo p b { color: var(--ink); }

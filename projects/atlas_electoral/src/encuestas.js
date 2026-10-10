@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.24";
-import { lines } from "./charts.js?v=0.2.24";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.25";
+import { lines } from "./charts.js?v=0.2.25";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -71,7 +71,16 @@ export async function renderEncuestas(app, args = []) {
     <div id="salto"></div>
     <h2>El error de las encuestas en cada elección</h2>
     <p class="note">Media de las encuestas de las dos últimas semanas menos el resultado real. Positivo = sobreestimado.</p>
-    <div id="bias"></div>`;
+    <div id="bias"></div>
+    <h2 id="metodo">Cómo se hace</h2>
+    <div class="metodo">
+    <p><b>Qué encuestas entran.</b> Encuestas de ámbito nacional para el Congreso recopiladas en las tablas de Wikipedia, cotejadas con los informes originales cuando existen (PDF de cada casa, marginales del CIS, informes de 40dB). De cada encuesta, su escenario principal. No entran en el promedio las reestimaciones de datos del CIS hechas por otras empresas (misma muestra, otra cocina) ni las encuestas encargadas por un partido; se muestran como círculos huecos.</p>
+    <p><b>El promedio.</b> Para cada día, media ponderada de las encuestas de los 120 días anteriores. El peso de cada encuesta decae con su antigüedad (exponencial, vida media de unos 7 días), crece con la raíz de su muestra (tope en el equivalente a 4.000 entrevistas) y se divide por el número de encuestas de la misma casa en los 30 días previos, para que un tracking diario no ahogue a las casas mensuales. La banda es ±1,28 desviaciones ponderadas de las encuestas alrededor del promedio (un 80%): mide cuánto discrepan las casas, no la incertidumbre del resultado.</p>
+    <p><b>La corrección de casa.</b> Para cada casa y partido, su desviación media respecto al promedio de todas, encogida hacia cero (como si tuviera cinco encuestas más que dieran cero), recalculada tres veces y centrada para que la media de la industria sea cero. Esa cantidad, la de la tabla "Sesgo de cada encuestadora", se resta a cada encuesta antes de promediar. Supone que la industria en conjunto no se equivoca; lo que vimos en "¿Hay salto al final?" dice que sí se equivoca, pero en una dirección que no se puede saber de antemano.</p>
+    <p><b>La cocina.</b> Intención directa: quienes nombran un partido, recalculada sobre ese total. Estimación: la cifra publicada. Para 40dB y el CIS ambas salen de sus propios informes; para las demás casas, de las tablas de intención directa de Wikipedia. "Así se cocina una encuesta" y "Dentro de las encuestas" usan los microdatos de 40dB (publicados por El País) y del CIS, armonizados encuestado a encuestado; en la web solo hay agregados.</p>
+    <p><b>Aciertos.</b> Para cada elección, la última encuesta de cada casa publicada entre 1 y 35 días antes; error = media de las diferencias absolutas con el resultado en los partidos con un 3% o más. "Frente al resto" compara a cada casa con las demás en las mismas elecciones y descuenta la antelación. El salto final se mide con la media de las encuestas de las dos últimas semanas.</p>
+    <p class="note">Todo se calcula con código abierto en Python y se reconstruye cada mañana; los datos de partida son públicos. Fuentes: Wikipedia; informes de las casas; CIS (origen de los datos: Centro de Investigaciones Sociológicas, reutilizados según sus condiciones generales); 40dB. para EL PAÍS y la Cadena SER (bases de datos de acceso libre publicadas por El País).</p>
+    </div>`;
   const $ = (s) => app.querySelector(s);
 
   await pollChart($("#chart-area"), E, { CI, args });

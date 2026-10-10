@@ -1,5 +1,5 @@
-import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.24";
-import { fam, famName, IDEO, EXTRA } from "./charts.js?v=0.2.24";
+import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.25";
+import { fam, famName, IDEO, EXTRA } from "./charts.js?v=0.2.25";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
 export function dhondt(lists, seats, validos, threshold = 0.03, detail = null) {
@@ -95,7 +95,15 @@ export async function renderSimulador(app, args = [], embed = false) {
     <div class="grid2">
       <div><h2>Lo que más cambia por provincia</h2><div id="prov"></div></div>
       <div><h2>Dónde baila el último escaño</h2><p class="note">Provincias donde el último escaño se decide por menos votos: quién se lo lleva, quién se queda a las puertas y cuánto le falta, en porcentaje de los votos válidos de la provincia.</p><div id="ultimo"></div></div>
-    </div>`;
+    </div>
+    ${embed ? "" : `<h2 id="metodo">Cómo se hace</h2>
+    <div class="metodo">
+    <p><b>El reparto.</b> En cada provincia, regla D'Hondt con la barrera del 3% de los votos válidos (candidaturas más voto en blanco), como en la LOREG. Los escaños por provincia son los de cada convocatoria; para 2026, los del Real Decreto 806/2026 (BOE de 6 de octubre): Madrid 38, Cádiz 8.</p>
+    <p><b>Mover un partido.</b> El porcentaje nacional de cada partido se aplica de forma proporcional en todas las provincias: si pasa del 20% al 25%, sus votos se multiplican por 1,25 en cada una. Es la aproximación habitual (<i>swing</i> proporcional); con las 15 generales desde 1977 acierta tanto como el <i>swing</i> uniforme, y aun con un porcentaje nacional exacto falla una mediana de 11 escaños, porque cada provincia se desvía del movimiento nacional (más por comunidades que por provincias). Con "Repartir", lo que sube un partido sale de los demás en proporción a su tamaño; sin ella, el resto (regionales, otros, blanco) absorbe la diferencia.</p>
+    <p><b>Sumar, Podemos y SALF.</b> No tuvieron lista propia en 2023 (Sumar y Podemos fueron juntos; SALF no existía). Su reparto por provincias sigue el de las europeas de junio de 2024, la única elección en que concurrieron por separado, escalado al porcentaje nacional elegido.</p>
+    <p><b>El último escaño.</b> Para cada provincia se guarda el último cociente que obtiene escaño y el mejor que se queda fuera; "le falta" es lo que necesitaría ese segundo para adelantar al primero, en porcentaje de los votos válidos.</p>
+    <p class="note">El simulador no tiene incertidumbre: muestra el reparto exacto de un escenario. La estimación con probabilidades llegará con el modelo.</p>
+    </div>`}`;
   const $ = (s) => app.querySelector(s);
   $("#base").value = state.base;
 
