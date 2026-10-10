@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.21";
-import { lines } from "./charts.js?v=0.2.21";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.22";
+import { lines } from "./charts.js?v=0.2.22";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -35,20 +35,7 @@ export async function renderEncuestas(app, args = []) {
   app.innerHTML = `
     <h1>Encuestas hacia el 29N</h1>
     <p class="sub">Promedio de ${E.polls.filter((q) => !q.x).length} encuestas publicadas desde julio de 2023 (último trabajo de campo: ${new Date(E.actualizado).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}). Cada encuestadora pesa lo mismo aunque publique más a menudo, y se corrige su sesgo sistemático respecto al resto.</p>
-    <div class="controls"><label>Elección <select id="ciclo"></select></label><span class="note" id="cycle-note"></span></div>
-    <div class="stats" id="kpi"></div>
-    <div class="controls" id="toggles"></div>
-    <div class="controls"><div class="seg" id="zoom"></div>
-      <details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
-        <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
-          <label><input type="checkbox" id="corr" checked/> Descontar el sesgo de cada casa respecto a las demás</label></div>
-        <div class="chips" id="casas"></div>
-        <label class="casas-x"><input type="checkbox" id="showx"/> Mostrar también, como círculos huecos, <span id="x-desc"></span>. No entran en el promedio: las reestimaciones reutilizan la muestra de una encuesta del CIS ya contada, y las de partido no son independientes.</label></details></div>
-    <div class="card chart" id="ch"><div id="ch-main"></div><div id="ch-ov" class="overview"></div></div>
-    <p class="note" id="ch-note"></p>
-    <h2>Últimas encuestas</h2>
-    <p class="note">Las 12 más recientes, tal como se publicaron, y entre paréntesis la diferencia con el promedio corregido en su fecha. Pasa el ratón por un punto del gráfico para ver cualquier otra.</p>
-    <div class="scrollx" id="last"></div>
+    <div id="chart-area"></div>
     <p><a href="#simulador/encuestas">→ Ver estos porcentajes convertidos en escaños</a></p>
     <h2>Sesgo de cada encuestadora en este ciclo</h2>
     <p class="note">Diferencia media, en puntos, entre sus encuestas y el promedio. Positivo = da más a ese partido que el resto. Solo encuestadoras con 8 o más sondeos.</p>
@@ -82,12 +69,177 @@ export async function renderEncuestas(app, args = []) {
     <div id="bias"></div>`;
   const $ = (s) => app.querySelector(s);
 
+  await pollChart($("#chart-area"), E, { CI, args });
+
+  const hp = ["pp", "psoe", "vox", "sumar"];
+  const sign = (v) => (v == null ? "·" : Math.abs(v) < 0.05 ? "0,0" : `${v > 0 ? "+" : ""}${num(v)}`);
+  const cell = (v) => `<td class="num" style="color:${v > 1 ? "var(--ink)" : v < -1 ? "var(--ink)" : "var(--ink-3)"};font-weight:${Math.abs(v ?? 0) > 1 ? 600 : 400}">${sign(v)}</td>`;
+  $("#house").innerHTML = `<table><tr><th>Encuestadora</th><th class="num">n</th>${hp.map((p) => `<th class="num">${POLL_PARTY[p].n}</th>`).join("")}</tr>
+    ${Object.entries(E.house).sort((a, b) => E.house_n[b[0]] - E.house_n[a[0]]).map(([e, h]) => `<tr><td>${e}</td><td class="num">${E.house_n[e]}</td>${hp.map((p) => cell(h[p])).join("")}</tr>`).join("")}</table>`;
+  const rated = R.ratings.filter((r) => r.elecciones >= 10).sort((a, b) => a.plus_minus - b.plus_minus);
+  const pmMax = Math.max(...rated.map((r) => Math.abs(r.plus_minus)));
+  const pmBar = (v) => `<div class="pm"><span style="${v < 0 ? `right:50%;width:${(-v / pmMax) * 50}%` : `left:50%;width:${(v / pmMax) * 50}%`};background:${v < 0 ? "#1d4ed8" : "#c2410c"}"></span><i></i></div>`;
+  const leanCell = (v) => (v == null ? '<td class="num" style="color:var(--ink-3)">·</td>' : cell(v));
+  $("#acc").innerHTML = `<table><tr><th>Encuestadora</th><th class="num">Elecciones</th><th>Años</th><th class="num">Error</th><th>Frente al resto</th><th class="num"></th>
+    <th class="num">PP</th><th class="num">PSOE</th><th class="num">Vox</th><th class="num">Izq.</th></tr>
+    ${rated.map((r) => `<tr><td>${r.encuestadora}</td><td class="num">${r.elecciones}</td><td>${r.min}–${r.max}</td><td class="num">${num(r.mae, 2)}</td>
+      <td style="width:22%">${pmBar(r.plus_minus)}</td><td class="num">${sign(r.plus_minus)}</td>
+      ${leanCell(r.sesgo_pp)}${leanCell(r.sesgo_psoe)}${leanCell(r.sesgo_vox)}${leanCell(r.sesgo_izq)}</tr>`).join("")}</table>`;
+  errHist($("#errhist"), R.elecciones);
+  load("ciclos/salto.json").then((SJ) => saltos($("#salto"), SJ)).catch(() => {});
+  cocina(app, K);
+  dentro(app, D);
+  const bp = ["pp", "psoe", "vox", "sumar", "cs"];
+  const names = { ...Object.fromEntries(bp.map((p) => [p, POLL_PARTY[p]?.n])), sumar: "Sumar/UP", cs: "Cs" };
+  $("#bias").innerHTML = `<table><tr><th>Elección</th>${bp.map((p) => `<th class="num">${names[p]}</th>`).join("")}<th class="num">Error medio</th></tr>
+    ${Object.entries(E.precision.sesgo).map(([c, s]) => `<tr><td>${c}</td>${bp.map((p) => cell(s[p])).join("")}<td class="num">${num(E.precision.error_medio[c], 2)} pp</td></tr>`).join("")}</table>`;
+}
+
+const TIPO_COLOR = { generales: "#1f4e8c", autonomicas: "#da5c22", europeas: "#2e8b57" };
+function errHist(el, rows) {
+  const W = Math.max(320, el.clientWidth || 900), H = 280, m = { t: 12, r: 16, b: 26, l: 40 };
+  const x = d3.scaleLinear().domain(d3.extent(rows, (r) => r.anio)).nice().range([m.l, W - m.r]);
+  const y = d3.scaleLinear().domain([0, Math.min(8, d3.max(rows, (r) => r.error_consenso))]).nice().range([H - m.b, m.t]);
+  const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+  svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(5)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(8).tickFormat(d3.format("d")).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
+  svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat((v) => `${v} pp`).tickSize(0)).call((g) => g.select(".domain").remove());
+  svg.append("g").selectAll("circle").data(rows.filter((r) => r.error_consenso <= 8)).join("circle")
+    .attr("cx", (r) => x(r.anio)).attr("cy", (r) => y(r.error_consenso)).attr("r", 4.5)
+    .attr("fill", (r) => TIPO_COLOR[r.tipo]).attr("fill-opacity", 0.75).attr("stroke", "var(--surface)").attr("stroke-width", 1.5)
+    .on("mousemove", (ev, r) => { const [t, a, c] = r.eleccion.split("|");
+      showTip(`<b>${t === "autonomicas" ? `Autonómicas ${a}` : t[0].toUpperCase() + t.slice(1)} ${c.slice(0, 7)}</b><div class="row"><span>Error de la media</span><span>${num(r.error_consenso, 2)} pp</span></div><div class="row muted"><span>Encuestas finales</span><span>${r.encuestas}</span></div>`, ev); })
+    .on("mouseleave", hideTip);
+  el.insertAdjacentHTML("beforeend", `<div class="legend">${Object.entries({ generales: "Generales", autonomicas: "Autonómicas", europeas: "Europeas" }).map(([k, v]) => `<span><i class="sw" style="background:${TIPO_COLOR[k]}"></i>${v}</span>`).join("")}</div>`);
+}
+
+const CK_PARTY = { pp: "PP", psoe: "PSOE", vox: "Vox", izq: "Izquierda" };
+const ckColor = (p) => (p === "izq" ? "#d6246e" : FAM[p].color);
+function cocina(app, K) {
+  const $ = (s) => app.querySelector(s);
+  let casa = "40dB", party = "pp";
+  const seg = (el, opts, cur, set) => {
+    el.innerHTML = Object.entries(opts).map(([k, v]) => `<button data-k="${k}" class="${k === cur ? "on" : ""}">${v}</button>`).join("");
+    el.querySelectorAll("button").forEach((b) => b.onclick = () => { set(b.dataset.k); draw(); });
+  };
+  function draw() {
+    const yr = (c) => `${K.casas[c][0].f.slice(0, 4)}-${K.casas[c].at(-1).f.slice(0, 4)}`;
+    $("#ck-casa").innerHTML = Object.keys(K.casas).map((c) => `<option value="${c}" ${c === casa ? "selected" : ""}>${c} · ${K.casas[c].length} encuestas, ${yr(c)}</option>`).join("");
+    $("#ck-casa").onchange = (ev) => { casa = ev.target.value; draw(); };
+    seg($("#ck-party"), CK_PARTY, party, (k) => party = k);
+    const rows = K.casas[casa].filter((r) => r.est[party] != null && r.dir[party] != null);
+    const date = (r) => new Date(r.f);
+    const col = ckColor(party);
+    lines($("#cocina"), [
+      { id: "est", name: "Estimación", color: col, values: rows.map((r) => ({ date: date(r), v: r.est[party] / 100, label: r.f })) },
+      { id: "dir", name: "Intención directa", color: "var(--ink-3)", values: rows.map((r) => ({ date: date(r), v: r.dir[party] / 100, label: r.f })) },
+    ], { height: 300, dash: { dir: "4 3" } });
+    // average adjustment (estimate minus direct) per party, in periods
+    const periods = casa === "CIS"
+      ? [["1994-01-01", "2018-06-30", "1994 a junio de 2018"], ["2018-07-01", "2023-07-23", "julio de 2018 al 23J"], ["2023-07-24", "2099-01-01", "Desde el 23J"]]
+      : [["1977-01-01", "2023-07-23", "Hasta el 23J"], ["2023-07-24", "2099-01-01", "Desde el 23J"]];
+    const avg = (p, a, b) => { const xs = K.casas[casa].filter((r) => r.f >= a && r.f <= b && r.est[p] != null && r.dir[p] != null).map((r) => r.est[p] - r.dir[p]);
+      return xs.length ? [xs.reduce((s, x) => s + x, 0) / xs.length, xs.length] : [null, 0]; };
+    const sg = (v) => (v == null ? "·" : `${v > 0 ? "+" : ""}${num(v)}`);
+    $("#ck-tab").innerHTML = `<table><tr><th>Ajuste medio (estimación menos intención directa, puntos)</th>${Object.values(CK_PARTY).map((n) => `<th class="num">${n}</th>`).join("")}<th class="num">Encuestas</th></tr>
+      ${periods.filter(([a, b]) => K.casas[casa].some((r) => r.f >= a && r.f <= b)).map(([a, b, l]) => { const v = Object.keys(CK_PARTY).map((p) => avg(p, a, b));
+        return `<tr><td>${casa} · ${l}</td>${v.map(([x]) => `<td class="num" style="font-weight:${Math.abs(x ?? 0) >= 2 ? 600 : 400}">${sg(x)}</td>`).join("")}<td class="num">${Math.max(...v.map(([, n]) => n))}</td></tr>`; }).join("")}</table>`;
+  }
+  draw();
+}
+
+const DT_ROW = { pp: "PP", psoe: "PSOE", vox: "Vox", sumar: "Sumar", abstencion: "No votó" };
+const DT_COL = { pp: "PP", psoe: "PSOE", vox: "Vox", sumar: "Sumar", podemos: "Podemos", salf: "SALF", otros: "Otros", abst: "No votará", indecisos: "Indecisos" };
+function dentro(app, D) {
+  const $ = (s) => app.querySelector(s);
+  let casa = D.transferencias["40dB"] ? "40dB" : Object.keys(D.transferencias)[0], enc = null;
+  const color = (k) => (k === "abstencion" ? "var(--ink-3)" : POLL_PARTY[k].c());
+  const fecha = (f) => new Date(f).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
+  function draw() {
+    $("#dt-casa").innerHTML = Object.keys(D.movilizacion).map((c) => `<button data-k="${c}" class="${c === casa ? "on" : ""}">${c}</button>`).join("");
+    $("#dt-casa").querySelectorAll("button").forEach((b) => b.onclick = () => { casa = b.dataset.k; enc = null; draw(); });
+    const M = D.movilizacion[casa] ?? [];
+    lines($("#dt-mov"), [
+      ...Object.keys(DT_ROW).map((k) => ({ id: k, name: DT_ROW[k], color: color(k), values: M.map((r) => ({ date: new Date(r.f), v: r[k] == null ? null : r[k] / 100, label: r.f })) })),
+      { id: "jovenes", name: "Menores de 35", color: "var(--ink-2)", values: M.map((r) => ({ date: new Date(r.f), v: r.jovenes == null ? null : r.jovenes / 100, label: r.f })) },
+    ], { height: 300, dash: { jovenes: "4 3" } });
+    const T = D.transferencias[casa] ?? [];
+    if (enc == null || !T[enc]) enc = T.length - 1;
+    $("#dt-enc").innerHTML = T.map((t, i) => `<option value="${i}" ${i === enc ? "selected" : ""}>${casa} · ${fecha(t.f)}</option>`).reverse().join("");
+    $("#dt-enc").onchange = (ev) => { enc = +ev.target.value; draw(); };
+    const t = T[enc], prev = T[enc - 1];
+    if (!t) { $("#dt-mat").innerHTML = ""; return; }
+    const cols = D.columnas;
+    const cell = (r, j) => {
+      const v = t.filas[r][j], p = prev?.filas[r]?.[j], d = p == null ? null : v - p;
+      const bg = `color-mix(in srgb, ${cols[j] === r ? color(r) : "var(--ink-3)"} ${Math.min(60, Math.round(v * 0.7))}%, transparent)`;
+      return `<td class="num" style="background:${bg}">${num(v, 0)}${d != null && Math.abs(d) >= 3 ? ` <span class="muted">(${d > 0 ? "+" : ""}${num(d, 0)})</span>` : ""}</td>`;
+    };
+    $("#dt-mat").innerHTML = `<table class="heat"><tr><th>Votó en 2023 ↓ · votaría ahora →</th>${cols.map((c) => `<th class="num">${DT_COL[c]}</th>`).join("")}</tr>
+      ${D.filas.filter((r) => t.filas[r]).map((r) => `<tr><td><i class="dot" style="background:${color(r)}"></i>${DT_ROW[r]}</td>${cols.map((_, j) => cell(r, j)).join("")}</tr>`).join("")}</table>`;
+  }
+  draw();
+}
+
+// small multiples: the last 120 days of each past cycle's average, with the result as ticks on election day
+function saltos(el, SJ) {
+  const W = 230, H = 150, m = { t: 20, r: 34, b: 18, l: 30 };
+  el.innerHTML = `<div class="multiples">${SJ.ciclos.map((c, i) => `<div class="mult"><svg viewBox="0 0 ${W} ${H}" data-i="${i}"></svg></div>`).join("")}</div>
+    <p class="note">Partidos con un 3% o más en el resultado; los nombres siguen la época. Escala vertical común a todos los paneles (0-50%).</p>`;
+  SJ.ciclos.forEach((c, i) => {
+    const svg = d3.select(el).select(`svg[data-i="${i}"]`);
+    const days = c.dias.map((d) => new Date(d)), end = days.at(-1);
+    const x = d3.scaleTime().domain([days[0], end]).range([m.l, W - m.r]);
+    const y = d3.scaleLinear().domain([0, 50]).range([H - m.b, m.t]);
+    svg.append("text").attr("x", m.l).attr("y", 12).attr("font-size", 12).attr("font-weight", 600).attr("fill", "var(--ink)").text(cycleLabel(c.ciclo));
+    svg.append("g").attr("class", "grid").selectAll("line").data([10, 20, 30, 40]).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
+    svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickValues([0, 25, 50]).tickFormat((v) => `${v}%`).tickSize(0)).call((g) => g.select(".domain").remove());
+    svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(3).tickFormat(d3.timeFormat("%b")).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
+    const parties = Object.keys(c.resultado).sort((a, b) => c.resultado[b] - c.resultado[a]);
+    for (const p of parties) {
+      const col = partyColor(p);
+      svg.append("path").attr("fill", "none").attr("stroke", col).attr("stroke-width", 1.6)
+        .attr("d", d3.line().defined((v) => v != null).x((v, j) => x(days[j])).y((v) => y(v))(c.media[p]));
+      svg.append("rect").attr("x", x(end) - 5).attr("y", y(c.resultado[p]) - 1.5).attr("width", 10).attr("height", 3).attr("fill", col).attr("stroke", "var(--surface)").attr("stroke-width", 0.8);
+      const last = [...c.media[p]].reverse().find((v) => v != null);
+      svg.append("text").attr("x", x(end) + 6).attr("y", y(c.resultado[p]) + 4).attr("font-size", 9).attr("fill", col).text(`${c.resultado[p] - last >= 0 ? "+" : "−"}${num(Math.abs(c.resultado[p] - last))}`);
+    }
+    svg.on("mousemove", (ev) => showTip(`<b>Generales ${cycleLabel(c.ciclo)}</b>${parties.map((p) => { const last = [...c.media[p]].reverse().find((v) => v != null);
+      return `<div class="row"><span><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, c.ciclo)}</span><span>encuestas ${num(last)} · resultado ${num(c.resultado[p])} (${c.resultado[p] - last >= 0 ? "+" : "−"}${num(Math.abs(c.resultado[p] - last))})</span></div>`; }).join("")}`, ev))
+      .on("mouseleave", hideTip).style("cursor", "pointer").on("click", () => { location.hash = `#encuestas/${c.ciclo}`; scrollTo(0, 0); });
+  });
+}
+
+/** The poll chart block (figures, party toggles, zoom, pollster selector, chart, note; optionally the cycle
+ *  selector and the last-polls table), drawn inside `el`. Used by the Encuestas page and the 29N page. */
+export function chartHtml({ selector = true, lastTable = true } = {}) {
+  return (selector ? `    <div class="controls"><label>Elección <select id="ciclo"></select></label><span class="note" id="cycle-note"></span></div>` : "") + `
+    <div class="stats" id="kpi"></div>
+    <div class="controls" id="toggles"></div>
+    <div class="controls"><div class="seg" id="zoom"></div>
+      <details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
+        <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
+          <label><input type="checkbox" id="corr" checked/> Descontar el sesgo de cada casa respecto a las demás</label></div>
+        <div class="chips" id="casas"></div>
+        <label class="casas-x"><input type="checkbox" id="showx"/> Mostrar también, como círculos huecos, <span id="x-desc"></span>. No entran en el promedio: las reestimaciones reutilizan la muestra de una encuesta del CIS ya contada, y las de partido no son independientes.</label></details></div>
+    <div class="card chart" id="ch"><div id="ch-main"></div><div id="ch-ov" class="overview"></div></div>
+    <p class="note" id="ch-note"></p>
+` + (lastTable ? `
+    <h2>Últimas encuestas</h2>
+    <p class="note">Las 12 más recientes, tal como se publicaron, y entre paréntesis la diferencia con el promedio corregido en su fecha. Pasa el ratón por un punto del gráfico para ver cualquier otra.</p>
+    <div class="scrollx" id="last"></div>
+` : "");
+}
+
+export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selector = true, lastTable = true } = {}) {
+  const $ = (s) => el.querySelector(s);
+  el.innerHTML = chartHtml({ selector, lastTable });
   // the chart block, for the current cycle or any past one (ciclos/<ciclo>.json has the same shape plus "resultado")
   function pollBlock(E) {
     const PN = (k) => partyName(k, E.ciclo), PC = partyColor;
     const days = E.dias.map((d) => new Date(d));
     const show = new Set(mainOf(E));
-    $("#cycle-note").textContent = E.resultado
+    if ($("#cycle-note")) $("#cycle-note").textContent = E.resultado
       ? `Generales del ${cycleLabel(E.ciclo)}: ${E.polls.filter((q) => !q.x).length} encuestas desde ${cycleLabel(E.polls.map((q) => q.f1).sort()[0])}; el resultado, marcado al final.`
       : "";
     // pollsters with their own fieldwork; re-estimations of CIS data and party polls (q.x) never enter the average
@@ -166,7 +318,7 @@ export async function renderEncuestas(app, args = []) {
       const at = (p, d) => { const i = d3.leastIndex(days, (x) => Math.abs(x - new Date(d))); return E.media[p][i]; };
       const fd = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
       const rows = E.polls.filter((q) => !q.x).sort((a, b) => (a.f1 < b.f1 ? 1 : -1)).slice(0, 12);
-      $("#last").innerHTML = `<table><tr><th>Encuestadora</th><th>Medio</th><th>Campo</th><th class="num">Muestra</th>${cols.map((p) => `<th class="num"><i class="dot" style="background:${PC(p)}"></i>${PN(p)}</th>`).join("")}</tr>
+      if ($("#last")) $("#last").innerHTML = `<table><tr><th>Encuestadora</th><th>Medio</th><th>Campo</th><th class="num">Muestra</th>${cols.map((p) => `<th class="num"><i class="dot" style="background:${PC(p)}"></i>${PN(p)}</th>`).join("")}</tr>
         ${rows.map((q) => `<tr><td>${q.e}</td><td class="muted">${q.m ?? ""}</td><td>${q.f0 === q.f1 ? fd(q.f1) : `${fd(q.f0)} a ${fd(q.f1)}`}</td><td class="num">${q.n ? q.n.toLocaleString("es-ES") : "·"}</td>
           ${cols.map((p) => { const v = q.v[p], a = at(p, q.f1), d = v == null || a == null ? null : v - a;
             return `<td class="num">${v == null ? "·" : num(v)}${d == null ? "" : ` <span class="muted" style="font-size:11px">(${d >= 0 ? "+" : "−"}${num(Math.abs(d))})</span>`}</td>`; }).join("")}</tr>`).join("")}</table>`;
@@ -332,152 +484,15 @@ export async function renderEncuestas(app, args = []) {
     refresh();
   }
   const cycles = [{ ciclo: E.ciclo, label: "Hacia el 29N (en curso)" }, ...CI.ciclos.slice().reverse().map((c) => ({ ciclo: c.ciclo, label: `${cycleLabel(c.ciclo)} · ${c.polls} encuestas` }))];
-  $("#ciclo").innerHTML = cycles.map((c) => `<option value="${c.ciclo}">${c.label}</option>`).join("");
+  if (selector) $("#ciclo").innerHTML = cycles.map((c) => `<option value="${c.ciclo}">${c.label}</option>`).join("");
   const cache = { [E.ciclo]: E };
   async function showCycle(c) {
     cache[c] ??= await load(`ciclos/${c}.json`);
+    if (!selector) { pollBlock(cache[c]); return; }
     $("#ciclo").value = c;
     history.replaceState(null, "", c === E.ciclo ? "#encuestas" : `#encuestas/${c}`);
     pollBlock(cache[c]);
   }
-  $("#ciclo").onchange = (ev) => showCycle(ev.target.value);
+  if (selector) $("#ciclo").onchange = (ev) => showCycle(ev.target.value);
   await showCycle(cycles.some((c) => c.ciclo === args[0]) ? args[0] : E.ciclo);
-
-  const hp = ["pp", "psoe", "vox", "sumar"];
-  const sign = (v) => (v == null ? "·" : Math.abs(v) < 0.05 ? "0,0" : `${v > 0 ? "+" : ""}${num(v)}`);
-  const cell = (v) => `<td class="num" style="color:${v > 1 ? "var(--ink)" : v < -1 ? "var(--ink)" : "var(--ink-3)"};font-weight:${Math.abs(v ?? 0) > 1 ? 600 : 400}">${sign(v)}</td>`;
-  $("#house").innerHTML = `<table><tr><th>Encuestadora</th><th class="num">n</th>${hp.map((p) => `<th class="num">${POLL_PARTY[p].n}</th>`).join("")}</tr>
-    ${Object.entries(E.house).sort((a, b) => E.house_n[b[0]] - E.house_n[a[0]]).map(([e, h]) => `<tr><td>${e}</td><td class="num">${E.house_n[e]}</td>${hp.map((p) => cell(h[p])).join("")}</tr>`).join("")}</table>`;
-  const rated = R.ratings.filter((r) => r.elecciones >= 10).sort((a, b) => a.plus_minus - b.plus_minus);
-  const pmMax = Math.max(...rated.map((r) => Math.abs(r.plus_minus)));
-  const pmBar = (v) => `<div class="pm"><span style="${v < 0 ? `right:50%;width:${(-v / pmMax) * 50}%` : `left:50%;width:${(v / pmMax) * 50}%`};background:${v < 0 ? "#1d4ed8" : "#c2410c"}"></span><i></i></div>`;
-  const leanCell = (v) => (v == null ? '<td class="num" style="color:var(--ink-3)">·</td>' : cell(v));
-  $("#acc").innerHTML = `<table><tr><th>Encuestadora</th><th class="num">Elecciones</th><th>Años</th><th class="num">Error</th><th>Frente al resto</th><th class="num"></th>
-    <th class="num">PP</th><th class="num">PSOE</th><th class="num">Vox</th><th class="num">Izq.</th></tr>
-    ${rated.map((r) => `<tr><td>${r.encuestadora}</td><td class="num">${r.elecciones}</td><td>${r.min}–${r.max}</td><td class="num">${num(r.mae, 2)}</td>
-      <td style="width:22%">${pmBar(r.plus_minus)}</td><td class="num">${sign(r.plus_minus)}</td>
-      ${leanCell(r.sesgo_pp)}${leanCell(r.sesgo_psoe)}${leanCell(r.sesgo_vox)}${leanCell(r.sesgo_izq)}</tr>`).join("")}</table>`;
-  errHist($("#errhist"), R.elecciones);
-  load("ciclos/salto.json").then((SJ) => saltos($("#salto"), SJ)).catch(() => {});
-  cocina(app, K);
-  dentro(app, D);
-  const bp = ["pp", "psoe", "vox", "sumar", "cs"];
-  const names = { ...Object.fromEntries(bp.map((p) => [p, POLL_PARTY[p]?.n])), sumar: "Sumar/UP", cs: "Cs" };
-  $("#bias").innerHTML = `<table><tr><th>Elección</th>${bp.map((p) => `<th class="num">${names[p]}</th>`).join("")}<th class="num">Error medio</th></tr>
-    ${Object.entries(E.precision.sesgo).map(([c, s]) => `<tr><td>${c}</td>${bp.map((p) => cell(s[p])).join("")}<td class="num">${num(E.precision.error_medio[c], 2)} pp</td></tr>`).join("")}</table>`;
-}
-
-const TIPO_COLOR = { generales: "#1f4e8c", autonomicas: "#da5c22", europeas: "#2e8b57" };
-function errHist(el, rows) {
-  const W = Math.max(320, el.clientWidth || 900), H = 280, m = { t: 12, r: 16, b: 26, l: 40 };
-  const x = d3.scaleLinear().domain(d3.extent(rows, (r) => r.anio)).nice().range([m.l, W - m.r]);
-  const y = d3.scaleLinear().domain([0, Math.min(8, d3.max(rows, (r) => r.error_consenso))]).nice().range([H - m.b, m.t]);
-  const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
-  svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(5)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
-  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(8).tickFormat(d3.format("d")).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
-  svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat((v) => `${v} pp`).tickSize(0)).call((g) => g.select(".domain").remove());
-  svg.append("g").selectAll("circle").data(rows.filter((r) => r.error_consenso <= 8)).join("circle")
-    .attr("cx", (r) => x(r.anio)).attr("cy", (r) => y(r.error_consenso)).attr("r", 4.5)
-    .attr("fill", (r) => TIPO_COLOR[r.tipo]).attr("fill-opacity", 0.75).attr("stroke", "var(--surface)").attr("stroke-width", 1.5)
-    .on("mousemove", (ev, r) => { const [t, a, c] = r.eleccion.split("|");
-      showTip(`<b>${t === "autonomicas" ? `Autonómicas ${a}` : t[0].toUpperCase() + t.slice(1)} ${c.slice(0, 7)}</b><div class="row"><span>Error de la media</span><span>${num(r.error_consenso, 2)} pp</span></div><div class="row muted"><span>Encuestas finales</span><span>${r.encuestas}</span></div>`, ev); })
-    .on("mouseleave", hideTip);
-  el.insertAdjacentHTML("beforeend", `<div class="legend">${Object.entries({ generales: "Generales", autonomicas: "Autonómicas", europeas: "Europeas" }).map(([k, v]) => `<span><i class="sw" style="background:${TIPO_COLOR[k]}"></i>${v}</span>`).join("")}</div>`);
-}
-
-const CK_PARTY = { pp: "PP", psoe: "PSOE", vox: "Vox", izq: "Izquierda" };
-const ckColor = (p) => (p === "izq" ? "#d6246e" : FAM[p].color);
-function cocina(app, K) {
-  const $ = (s) => app.querySelector(s);
-  let casa = "40dB", party = "pp";
-  const seg = (el, opts, cur, set) => {
-    el.innerHTML = Object.entries(opts).map(([k, v]) => `<button data-k="${k}" class="${k === cur ? "on" : ""}">${v}</button>`).join("");
-    el.querySelectorAll("button").forEach((b) => b.onclick = () => { set(b.dataset.k); draw(); });
-  };
-  function draw() {
-    const yr = (c) => `${K.casas[c][0].f.slice(0, 4)}-${K.casas[c].at(-1).f.slice(0, 4)}`;
-    $("#ck-casa").innerHTML = Object.keys(K.casas).map((c) => `<option value="${c}" ${c === casa ? "selected" : ""}>${c} · ${K.casas[c].length} encuestas, ${yr(c)}</option>`).join("");
-    $("#ck-casa").onchange = (ev) => { casa = ev.target.value; draw(); };
-    seg($("#ck-party"), CK_PARTY, party, (k) => party = k);
-    const rows = K.casas[casa].filter((r) => r.est[party] != null && r.dir[party] != null);
-    const date = (r) => new Date(r.f);
-    const col = ckColor(party);
-    lines($("#cocina"), [
-      { id: "est", name: "Estimación", color: col, values: rows.map((r) => ({ date: date(r), v: r.est[party] / 100, label: r.f })) },
-      { id: "dir", name: "Intención directa", color: "var(--ink-3)", values: rows.map((r) => ({ date: date(r), v: r.dir[party] / 100, label: r.f })) },
-    ], { height: 300, dash: { dir: "4 3" } });
-    // average adjustment (estimate minus direct) per party, in periods
-    const periods = casa === "CIS"
-      ? [["1994-01-01", "2018-06-30", "1994 a junio de 2018"], ["2018-07-01", "2023-07-23", "julio de 2018 al 23J"], ["2023-07-24", "2099-01-01", "Desde el 23J"]]
-      : [["1977-01-01", "2023-07-23", "Hasta el 23J"], ["2023-07-24", "2099-01-01", "Desde el 23J"]];
-    const avg = (p, a, b) => { const xs = K.casas[casa].filter((r) => r.f >= a && r.f <= b && r.est[p] != null && r.dir[p] != null).map((r) => r.est[p] - r.dir[p]);
-      return xs.length ? [xs.reduce((s, x) => s + x, 0) / xs.length, xs.length] : [null, 0]; };
-    const sg = (v) => (v == null ? "·" : `${v > 0 ? "+" : ""}${num(v)}`);
-    $("#ck-tab").innerHTML = `<table><tr><th>Ajuste medio (estimación menos intención directa, puntos)</th>${Object.values(CK_PARTY).map((n) => `<th class="num">${n}</th>`).join("")}<th class="num">Encuestas</th></tr>
-      ${periods.filter(([a, b]) => K.casas[casa].some((r) => r.f >= a && r.f <= b)).map(([a, b, l]) => { const v = Object.keys(CK_PARTY).map((p) => avg(p, a, b));
-        return `<tr><td>${casa} · ${l}</td>${v.map(([x]) => `<td class="num" style="font-weight:${Math.abs(x ?? 0) >= 2 ? 600 : 400}">${sg(x)}</td>`).join("")}<td class="num">${Math.max(...v.map(([, n]) => n))}</td></tr>`; }).join("")}</table>`;
-  }
-  draw();
-}
-
-const DT_ROW = { pp: "PP", psoe: "PSOE", vox: "Vox", sumar: "Sumar", abstencion: "No votó" };
-const DT_COL = { pp: "PP", psoe: "PSOE", vox: "Vox", sumar: "Sumar", podemos: "Podemos", salf: "SALF", otros: "Otros", abst: "No votará", indecisos: "Indecisos" };
-function dentro(app, D) {
-  const $ = (s) => app.querySelector(s);
-  let casa = D.transferencias["40dB"] ? "40dB" : Object.keys(D.transferencias)[0], enc = null;
-  const color = (k) => (k === "abstencion" ? "var(--ink-3)" : POLL_PARTY[k].c());
-  const fecha = (f) => new Date(f).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
-  function draw() {
-    $("#dt-casa").innerHTML = Object.keys(D.movilizacion).map((c) => `<button data-k="${c}" class="${c === casa ? "on" : ""}">${c}</button>`).join("");
-    $("#dt-casa").querySelectorAll("button").forEach((b) => b.onclick = () => { casa = b.dataset.k; enc = null; draw(); });
-    const M = D.movilizacion[casa] ?? [];
-    lines($("#dt-mov"), [
-      ...Object.keys(DT_ROW).map((k) => ({ id: k, name: DT_ROW[k], color: color(k), values: M.map((r) => ({ date: new Date(r.f), v: r[k] == null ? null : r[k] / 100, label: r.f })) })),
-      { id: "jovenes", name: "Menores de 35", color: "var(--ink-2)", values: M.map((r) => ({ date: new Date(r.f), v: r.jovenes == null ? null : r.jovenes / 100, label: r.f })) },
-    ], { height: 300, dash: { jovenes: "4 3" } });
-    const T = D.transferencias[casa] ?? [];
-    if (enc == null || !T[enc]) enc = T.length - 1;
-    $("#dt-enc").innerHTML = T.map((t, i) => `<option value="${i}" ${i === enc ? "selected" : ""}>${casa} · ${fecha(t.f)}</option>`).reverse().join("");
-    $("#dt-enc").onchange = (ev) => { enc = +ev.target.value; draw(); };
-    const t = T[enc], prev = T[enc - 1];
-    if (!t) { $("#dt-mat").innerHTML = ""; return; }
-    const cols = D.columnas;
-    const cell = (r, j) => {
-      const v = t.filas[r][j], p = prev?.filas[r]?.[j], d = p == null ? null : v - p;
-      const bg = `color-mix(in srgb, ${cols[j] === r ? color(r) : "var(--ink-3)"} ${Math.min(60, Math.round(v * 0.7))}%, transparent)`;
-      return `<td class="num" style="background:${bg}">${num(v, 0)}${d != null && Math.abs(d) >= 3 ? ` <span class="muted">(${d > 0 ? "+" : ""}${num(d, 0)})</span>` : ""}</td>`;
-    };
-    $("#dt-mat").innerHTML = `<table class="heat"><tr><th>Votó en 2023 ↓ · votaría ahora →</th>${cols.map((c) => `<th class="num">${DT_COL[c]}</th>`).join("")}</tr>
-      ${D.filas.filter((r) => t.filas[r]).map((r) => `<tr><td><i class="dot" style="background:${color(r)}"></i>${DT_ROW[r]}</td>${cols.map((_, j) => cell(r, j)).join("")}</tr>`).join("")}</table>`;
-  }
-  draw();
-}
-
-// small multiples: the last 120 days of each past cycle's average, with the result as ticks on election day
-function saltos(el, SJ) {
-  const W = 230, H = 150, m = { t: 20, r: 34, b: 18, l: 30 };
-  el.innerHTML = `<div class="multiples">${SJ.ciclos.map((c, i) => `<div class="mult"><svg viewBox="0 0 ${W} ${H}" data-i="${i}"></svg></div>`).join("")}</div>
-    <p class="note">Partidos con un 3% o más en el resultado; los nombres siguen la época. Escala vertical común a todos los paneles (0-50%).</p>`;
-  SJ.ciclos.forEach((c, i) => {
-    const svg = d3.select(el).select(`svg[data-i="${i}"]`);
-    const days = c.dias.map((d) => new Date(d)), end = days.at(-1);
-    const x = d3.scaleTime().domain([days[0], end]).range([m.l, W - m.r]);
-    const y = d3.scaleLinear().domain([0, 50]).range([H - m.b, m.t]);
-    svg.append("text").attr("x", m.l).attr("y", 12).attr("font-size", 12).attr("font-weight", 600).attr("fill", "var(--ink)").text(cycleLabel(c.ciclo));
-    svg.append("g").attr("class", "grid").selectAll("line").data([10, 20, 30, 40]).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
-    svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).tickValues([0, 25, 50]).tickFormat((v) => `${v}%`).tickSize(0)).call((g) => g.select(".domain").remove());
-    svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(3).tickFormat(d3.timeFormat("%b")).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
-    const parties = Object.keys(c.resultado).sort((a, b) => c.resultado[b] - c.resultado[a]);
-    for (const p of parties) {
-      const col = partyColor(p);
-      svg.append("path").attr("fill", "none").attr("stroke", col).attr("stroke-width", 1.6)
-        .attr("d", d3.line().defined((v) => v != null).x((v, j) => x(days[j])).y((v) => y(v))(c.media[p]));
-      svg.append("rect").attr("x", x(end) - 5).attr("y", y(c.resultado[p]) - 1.5).attr("width", 10).attr("height", 3).attr("fill", col).attr("stroke", "var(--surface)").attr("stroke-width", 0.8);
-      const last = [...c.media[p]].reverse().find((v) => v != null);
-      svg.append("text").attr("x", x(end) + 6).attr("y", y(c.resultado[p]) + 4).attr("font-size", 9).attr("fill", col).text(`${c.resultado[p] - last >= 0 ? "+" : "−"}${num(Math.abs(c.resultado[p] - last))}`);
-    }
-    svg.on("mousemove", (ev) => showTip(`<b>Generales ${cycleLabel(c.ciclo)}</b>${parties.map((p) => { const last = [...c.media[p]].reverse().find((v) => v != null);
-      return `<div class="row"><span><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, c.ciclo)}</span><span>encuestas ${num(last)} · resultado ${num(c.resultado[p])} (${c.resultado[p] - last >= 0 ? "+" : "−"}${num(Math.abs(c.resultado[p] - last))})</span></div>`; }).join("")}`, ev))
-      .on("mouseleave", hideTip).style("cursor", "pointer").on("click", () => { location.hash = `#encuestas/${c.ciclo}`; scrollTo(0, 0); });
-  });
 }

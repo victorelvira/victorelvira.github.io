@@ -1,5 +1,5 @@
-import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.21";
-import { fam, famName, IDEO, EXTRA } from "./charts.js?v=0.2.21";
+import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.22";
+import { fam, famName, IDEO, EXTRA } from "./charts.js?v=0.2.22";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
 export function dhondt(lists, seats, validos, threshold = 0.03) {
@@ -64,14 +64,14 @@ export function projectFromPolls(provs, ultimo, esc = null, geo = null) {
 }
 const state = { base: null, target: {} };
 
-export async function renderSimulador(app, args = []) {
+export async function renderSimulador(app, args = [], embed = false) {
   const [dh, E, G] = await Promise.all([load("dhondt.json"), load("encuestas.json"), load("geo_nuevos.json")]);
   const gens = Object.keys(dh).sort();
   if (!state.base) state.base = gens.at(-1);
   const fromPolls = args[0] === "encuestas";
 
   app.innerHTML = `
-    <h1>Simulador de escaños</h1>
+    ${embed ? "" : "<h1>Simulador de escaños</h1>"}
     <p class="sub">Elige una elección de partida y mueve el porcentaje nacional de cada partido. El cambio se aplica de forma proporcional en cada provincia (si un partido pasa del 20% al 25%, sus votos se multiplican por 1,25 en todas partes) y se reparten los escaños con la regla D'Hondt y el umbral del 3% por provincia.</p>
     <div class="controls"><label>Elección base <select id="base">${gens.map((g) => `<option value="${g}">${elecLabel(g)}</option>`).join("")}</select></label>
       <button class="play" id="reset">Restablecer</button>

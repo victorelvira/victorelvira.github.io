@@ -1,8 +1,11 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.21";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.21";
-import { projectFromPolls } from "./simulador.js?v=0.2.21";
+import { renderMapa } from "./mapa.js?v=0.2.22";
+import { renderSimulador } from "./simulador.js?v=0.2.22";
+import { pollChart } from "./encuestas.js?v=0.2.22";
+import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.22";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.22";
+import { projectFromPolls } from "./simulador.js?v=0.2.22";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.21";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.22";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -48,17 +51,23 @@ export async function renderInicio(app, args = []) {
   const top = ["pp", "psoe", "vox", "sumar", "podemos", "salf"].filter((p) => E.ultimo[p] != null);
 
   const live = await noche(args[0] === "demo");
+  const SEC = [["encuestas", "Encuestas"], ["movilizacion", "Movilización"], ["calendario", "Calendario"], ["congreso", "Congreso"],
+    ["mapa", "Mapa"], ["simulador", "Simulador"], ["participacion", "Participación"]];
   app.innerHTML = `
     ${live ? nocheHtml(live) : ""}
-    <section class="hero">
+    <div class="layout">
+    <aside class="toc" id="toc"><nav>${SEC.map(([id, n]) => `<a href="#inicio" data-s="s-${id}">${n}</a>`).join("")}</nav></aside>
+    <div class="content">
+    <section class="hero" id="s-portada">
       <div class="eyebrow">Elecciones generales</div>
       <h1 class="big">29 de noviembre de 2026</h1>
       <p class="sub">${days > 0 ? `Faltan <b>${days} días</b>.` : days === 0 ? "<b>Hoy se vota.</b>" : ""} Elecciones anticipadas convocadas el 5 de octubre tras la derrota del Gobierno en los decretos de vivienda. Se eligen 350 diputados y 208 senadores.</p>
     </section>
 
+    <section id="s-encuestas">
     <h2>Qué dicen las encuestas <span class="muted" style="font-weight:400">· a ${fechaLarga(BUILD_AT.slice(0, 10))}</span></h2>
-    <div class="stats">${top.map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${String(E.ultimo[p]).replace(".", ",")}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("")}</div>
-    <p class="note">Promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. <a href="#encuestas">Ver evolución y sesgos →</a></p>
+    <p class="note">Promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. <a href="#encuestas">Todas las encuestas, la cocina y quién acierta →</a></p>
+    <div id="chart-area"></div>
     <div class="card">
       <div id="proj"></div>
       <div class="stats">
@@ -66,29 +75,63 @@ export async function renderInicio(app, args = []) {
         <div class="stat"><div class="v">${izqBloc}</div><div class="k">PSOE + Sumar/Podemos + nacionalistas de izquierda y PNV</div></div>
         <div class="stat"><div class="v">${proj.seats.junts ?? 0}</div><div class="k">Junts (bisagra)</div></div>
       </div>
-      <p class="note">Escaños si se votara así: el promedio se aplica proporcionalmente sobre el reparto provincial de ${elecLabel(base)}${esc26 ? " con los escaños por provincia de 2026" : ""} y se reparte con D'Hondt; Sumar, Podemos y SALF, sin lista propia en 2023, siguen el reparto provincial de las europeas de 2024. Sin márgenes de error: la estimación con incertidumbre llegará con el modelo. <a href="#simulador/encuestas">Juega con el simulador →</a></p>
+      <p class="note">Escaños si se votara así: el promedio se aplica proporcionalmente sobre el reparto provincial de ${elecLabel(base)}${esc26 ? " con los escaños por provincia de 2026" : ""} y se reparte con D'Hondt; Sumar, Podemos y SALF, sin lista propia en 2023, siguen el reparto provincial de las europeas de 2024. Sin márgenes de error: la estimación con incertidumbre llegará con el modelo.</p>
     </div>
+    </section>
 
-    ${D ? movilizacion(D) : ""}
+    <section id="s-movilizacion">${D ? movilizacion(D) : ""}</section>
 
+    <section id="s-calendario">
     ${conv?.calendario ? `<h2>Calendario</h2>${calendario(conv)}` : ""}
     ${conv?.cambios_vs_2023?.length ? `<p class="note">Escaños por provincia en 2026 ${conv.escanos.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE"}: ${conv.cambios_vs_2023.map((c) => `${c.nombre} ${c.escanos_2023}→${c.escanos_2026}`).join(", ")}. <a href="#generales">Ver la serie histórica →</a></p>` : ""}
+    </section>
 
+    <section id="s-congreso">
     <h2>El Congreso, de hoy a 1977</h2>
-    <p class="sub">Arriba, la estimación actual (en colores apagados); debajo, la composición real tras cada elección general, de la más reciente a la primera.</p>
+    <p class="sub">Arriba, la estimación actual (en colores apagados); debajo, la composición real tras cada elección general, de la más reciente a la primera. <a href="#generales">La serie completa: voto, participación, Senado, diputados por provincia →</a></p>
     <div id="hist"></div>
+    </section>
 
+    <section id="s-mapa">
+    <h2>Municipio a municipio</h2>
+    <p class="sub">Quién ganó en cada municipio en cada elección general. Mueve el deslizador de años o pulsa ▶; pulsa un municipio, o búscalo, para abrir su ficha.</p>
+    <div id="mapa" class="lazy"><p class="loading">El mapa se carga al llegar aquí…</p></div>
+    </section>
+
+    <section id="s-simulador">
+    <h2>Simulador de escaños</h2>
+    <div id="sim" class="lazy"><p class="loading">Cargando el simulador…</p></div>
+    </section>
+
+    <section id="s-participacion">
     <div class="grid2">
       <div><h2>Participación</h2><div class="chart" id="part"></div>
         <p class="note">Total sobre censo (incluye residentes en el extranjero). Avances a las 14:00 y 18:00: datos oficiales sobre residentes en España.</p></div>
       <div><h2>Voto por familias</h2><div class="chart" id="votos"></div></div>
     </div>
-    <h2>Más</h2>
-    <div class="tiles">
-      <a class="tile" href="#encuestas"><b>Encuestas</b><span>Todas las encuestas, quién acierta y cuánto cocina cada casa</span></a>
-      <a class="tile" href="#generales"><b>Generales 1977-2023</b><span>Congreso, voto, participación y diputados por provincia</span></a>
-      <a class="tile" href="#pueblo"><b>Tu pueblo</b><span>El historial electoral de cualquier municipio, y el de tu comunidad</span></a>
-    </div>`;
+    </section>
+    </div></div>`;
+
+  // the poll chart, the lazy blocks and the index
+  pollChart(app.querySelector("#chart-area"), E, { selector: false, lastTable: false });
+  const lazy = { mapa: () => renderMapa(app.querySelector("#mapa"), [], { tipos: ["generales"] }), sim: () => renderSimulador(app.querySelector("#sim"), ["encuestas"], true) };
+  const toc = app.querySelector("#toc");
+  toc.querySelectorAll("a").forEach((a) => a.onclick = (ev) => { ev.preventDefault(); app.querySelector(`#${a.dataset.s}`).scrollIntoView({ behavior: "smooth", block: "start" }); });
+  // one scroll handler: load the heavy blocks when they come within 600 px, and mark the section in view
+  let tick = false;
+  function onScroll() {
+    tick = false;
+    if (!document.body.contains(toc)) { removeEventListener("scroll", onScroll); return; }
+    for (const id of Object.keys(lazy)) {
+      const el = app.querySelector(`#${id}`);
+      if (el && el.getBoundingClientRect().top < innerHeight + 600) { const f = lazy[id]; delete lazy[id]; f(); }
+    }
+    let cur = null;
+    for (const [id] of SEC) { const el = app.querySelector(`#s-${id}`); if (el && el.getBoundingClientRect().top <= 120) cur = `s-${id}`; }
+    toc.querySelectorAll("a").forEach((a) => a.classList.toggle("on", a.dataset.s === cur));
+  }
+  addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
 
   if (live) {
     const fam = {};

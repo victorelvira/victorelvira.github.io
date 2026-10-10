@@ -219,3 +219,15 @@ footer .flinks a { color: var(--ink-2); }
 
 .multiples { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px 12px; }
 .mult svg { width: 100%; height: auto; display: block; }
+
+/* 29N: long page with a sticky index on wide screens */
+.layout { display: block; }
+.toc { display: none; }
+@media (min-width: 1100px) {
+  .layout { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 28px; align-items: start; }
+  .toc { display: block; position: sticky; top: 76px; }
+  .toc nav { display: flex; flex-direction: column; gap: 2px; border-left: 2px solid var(--line); }
+  .toc a { color: var(--ink-2); text-decoration: none; font-size: 13px; padding: 4px 10px; margin-left: -2px; border-left: 2px solid transparent; }
+  .toc a.on { color: var(--ink); border-left-color: var(--ink); font-weight: 600; }
+}
+.content section { scroll-margin-top: 72px; }
