@@ -1,6 +1,6 @@
-import { renderMapa } from "./mapa.js?v=0.2.19";
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.19";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.19";
+import { renderMapa } from "./mapa.js?v=0.2.20";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.20";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.20";
 
 export async function renderHistoria(app) {
   const [S, G] = await Promise.all([load("series.json"), load("generales_encuestas.json")]);
@@ -131,6 +131,7 @@ function pollsVsResult(app, G, eids) {
           <i class="pvr-real" style="left:${x(r.real)}" title="Resultado ${n1(r.real)}%"></i></div></td>
         <td class="num">${n1(r.media)}%</td><td class="num"><b>${n1(r.real)}%</b></td>
         <td class="num">${r.media == null ? "·" : `${r.media - r.real > 0 ? "+" : ""}${n1(r.media - r.real)}`}</td></tr>`; }).join("")}</table>
+      <p class="note"><a href="#encuestas/${cur}">Ver la evolución de todas las encuestas de este ciclo →</a></p>
       <p class="note">${g.n} encuestadoras · error medio de la media de encuestas: <b>${n1(g.mae_media)} puntos</b>${g.mae_cis_dir != null ? ` · intención directa del CIS: ${n1(g.mae_cis_dir)} puntos` : ""}</p>`;
   }
   draw();
