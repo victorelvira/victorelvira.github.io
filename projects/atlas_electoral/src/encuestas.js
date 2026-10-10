@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.11";
-import { lines } from "./charts.js?v=0.2.11";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.12";
+import { lines } from "./charts.js?v=0.2.12";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -27,8 +27,13 @@ export async function renderEncuestas(app) {
     <p class="sub">Promedio de ${E.polls.length} encuestas publicadas desde julio de 2023 (último trabajo de campo: ${E.actualizado}). Cada encuestadora pesa lo mismo aunque publique más a menudo, y se corrige su sesgo sistemático respecto al resto.</p>
     <div class="stats" id="kpi"></div>
     <div class="controls" id="toggles"></div>
-    <div class="card chart" id="ch"></div>
-    <p class="note">Puntos: cada encuesta publicada, tal cual, sin corregir. Pasa el ratón (o toca) un punto para ver quién la hizo, cuándo y qué daba a cada partido; se resaltan sus puntos en los demás partidos y las demás encuestas de la misma casa. Un clic la deja fija. Línea: promedio corregido. Banda: dispersión habitual entre encuestas (±1,28 desviaciones, un 80%).</p>
+    <div class="controls"><div class="seg" id="zoom"></div>
+      <details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
+        <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
+          <label><input type="checkbox" id="corr" checked/> Corregir el sesgo de cada casa</label></div>
+        <div class="chips" id="casas"></div></details></div>
+    <div class="card chart" id="ch"><div id="ch-main"></div><div id="ch-ov" class="overview"></div></div>
+    <p class="note" id="ch-note"></p>
     <p><a href="#simulador/encuestas">→ Ver estos porcentajes convertidos en escaños</a></p>
     <h2>Sesgo de cada encuestadora en este ciclo</h2>
     <p class="note">Diferencia media, en puntos, entre sus encuestas y el promedio. Positivo = da más a ese partido que el resto. Solo encuestadoras con 8 o más sondeos.</p>
@@ -59,26 +64,95 @@ export async function renderEncuestas(app) {
     <div id="bias"></div>`;
   const $ = (s) => app.querySelector(s);
 
-  $("#kpi").innerHTML = MAIN.filter((p) => E.ultimo[p] != null).map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${num(E.ultimo[p])}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("");
-  $("#toggles").innerHTML = E.parties.map((p) => `<label><input type="checkbox" data-p="${p}" ${show.has(p) ? "checked" : ""}/> ${POLL_PARTY[p].n}</label>`).join("");
-  $("#toggles").querySelectorAll("input").forEach((i) => i.onchange = () => { i.checked ? show.add(i.dataset.p) : show.delete(i.dataset.p); draw(); });
+  const houses = Array.from(d3.rollup(E.polls, (v) => v.length, (q) => q.e)).sort((a, b) => b[1] - a[1]);
+  const sel = new Set(houses.map(([h]) => h));
+  const tDay = (s) => Math.round(new Date(s) / 864e5);
+  const dayT = days.map((d) => Math.round(d / 864e5));
+  let corr = true, avg = { media: E.media, sd: E.sd };
+  const end = days.at(-1), start = days[0];
+  const ZOOM = { "3m": 92, "6m": 183, "1a": 365, todo: null };
+  let zoom = "3m", win = null;
+  const setZoom = (k) => { zoom = k; win = ZOOM[k] ? [new Date(Math.max(+start, +end - ZOOM[k] * 864e5)), end] : [start, end]; };
+  setZoom("3m");
 
+  // the same kernel as pipeline/poll_model.py (one-sided exponential, tau 10 days, 120-day memory,
+  // weight min(sqrt(n/1000), 2) divided by the pollster's polls in the last 30 days), on the chosen polls
+  function kernelAverage(force = false) {
+    if (!force && corr && sel.size === houses.length) return { media: E.media, sd: E.sd };
+    const P = E.polls.filter((q) => sel.has(q.e)).map((q) => ({ t: tDay(q.d), e: q.e, w: Math.min(Math.sqrt((q.n ?? 1000) / 1000), 2), v: q.v }));
+    const media = {}, sd = {};
+    for (const p of E.parties) {
+      const Q = P.filter((q) => q.v[p] != null).map((q) => ({ ...q, x: q.v[p] - (corr ? E.efecto_casa?.[q.e]?.[p] ?? 0 : 0) }))
+        .sort((a, b) => a.t - b.t);
+      if (Q.length < 10) { media[p] = dayT.map(() => null); sd[p] = media[p]; continue; }
+      media[p] = []; sd[p] = [];
+      const lo = (t) => d3.bisector((q) => q.t).left(Q, t), hi = (t) => d3.bisector((q) => q.t).right(Q, t);
+      for (const T of dayT) {
+        const a = lo(T - 120), b = hi(T), c = lo(T - 30);
+        if (b <= a) { media[p].push(null); sd[p].push(null); continue; }
+        const crowd = new Map();
+        for (let j = c; j < b; j++) crowd.set(Q[j].e, (crowd.get(Q[j].e) ?? 0) + 1);
+        let W = 0, S = 0;
+        const w = [];
+        for (let j = a; j < b; j++) { const wj = Q[j].w * Math.exp(-(T - Q[j].t) / 10) / Math.max(crowd.get(Q[j].e) ?? 0, 1); w.push(wj); W += wj; S += wj * Q[j].x; }
+        const mm = S / W;
+        let V = 0;
+        for (let j = a; j < b; j++) V += w[j - a] * (Q[j].x - mm) ** 2;
+        media[p].push(mm); sd[p].push(Math.sqrt(V / W));
+      }
+    }
+    return { media, sd };
+  }
+  const last = (arr) => { for (let i = arr.length - 1; i >= 0; i--) if (arr[i] != null) return arr[i]; return null; };
+
+  function kpi() {
+    $("#kpi").innerHTML = MAIN.filter((p) => last(avg.media[p] ?? []) != null).map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${num(last(avg.media[p]))}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("");
+    const all = sel.size === houses.length;
+    $("#casas-sum").textContent = all ? `todas (${houses.length})` : sel.size === 0 ? "ninguna" : sel.size <= 3 ? [...sel].join(", ") : `${sel.size} de ${houses.length}`;
+    $("#ch-note").innerHTML = `Puntos: cada encuesta publicada, tal cual, sin corregir. Pasa el ratón (o toca) un punto para ver quién la hizo, cuándo y qué daba a cada partido; se resaltan sus puntos en los demás partidos y las demás encuestas de la misma casa. Un clic la deja fija. `
+      + (all && corr ? "Línea: promedio corregido de todas las encuestadoras." : `Línea: promedio ${corr ? "corregido" : "sin corregir (lo que dicen tal cual)"} de ${all ? "todas las encuestadoras" : sel.size === 1 ? [...sel][0] : `las ${sel.size} encuestadoras elegidas`}, calculado aquí con el mismo método.`)
+      + " Banda: dispersión habitual entre encuestas (±1,28 desviaciones, un 80%). Abajo, todo el ciclo: arrastra la ventana para moverte en el tiempo o estírala por los bordes.";
+  }
+
+  $("#toggles").innerHTML = E.parties.map((p) => `<label><input type="checkbox" data-p="${p}" ${show.has(p) ? "checked" : ""}/> ${POLL_PARTY[p].n}</label>`).join("");
+  $("#toggles").querySelectorAll("input").forEach((i) => i.onchange = () => { i.checked ? show.add(i.dataset.p) : show.delete(i.dataset.p); draw(); overview(); });
+  $("#zoom").innerHTML = Object.entries({ "3m": "3 meses", "6m": "6 meses", "1a": "1 año", todo: "Todo" }).map(([k, v]) => `<button data-k="${k}">${v}</button>`).join("");
+  $("#zoom").querySelectorAll("button").forEach((b) => b.onclick = () => { setZoom(b.dataset.k); draw(); moveBrush(); });
+  const markZoom = () => $("#zoom").querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.k === zoom));
+  function chips() {
+    $("#casas").innerHTML = houses.map(([h, n]) => `<label class="${sel.has(h) ? "" : "off"}"><input type="checkbox" data-h="${h}" ${sel.has(h) ? "checked" : ""}/>${h} <span class="muted">${n}</span></label>`).join("");
+    $("#casas").querySelectorAll("input").forEach((i) => i.onchange = () => { i.checked ? sel.add(i.dataset.h) : sel.delete(i.dataset.h); refresh(); });
+  }
+  $("#casas-box").querySelectorAll(".casas-act button").forEach((b) => b.onclick = () => {
+    if (b.dataset.a === "all") houses.forEach(([h]) => sel.add(h)); else sel.clear(); refresh(); });
+  $("#corr").onchange = (ev) => { corr = ev.target.checked; refresh(); };
+  function refresh() { avg = kernelAverage(); chips(); kpi(); draw(); overview(); }
+
+  // drawn at the container's real width so text keeps its size on a phone; the overview reuses W
+  let W = 1000;
+  const m = { t: 12, r: 70, b: 26, l: 36 };
   function draw() {
-    const el = $("#ch"); el.innerHTML = "";
-    const W = 1000, H = 420, m = { t: 12, r: 70, b: 26, l: 36 };
+    markZoom();
+    const el = $("#ch-main"); el.innerHTML = "";
+    W = Math.max(340, Math.round(el.clientWidth || 1000));
+    const H = W < 600 ? 360 : 420;
     const parties = E.parties.filter((p) => show.has(p));
-    const x = d3.scaleTime().domain(d3.extent(days)).range([m.l, W - m.r]);
-    const ymax = d3.max(parties, (p) => d3.max(E.polls, (q) => q.v[p])) ?? 40;
+    const x = d3.scaleTime().domain(win).range([m.l, W - m.r]);
+    const inWin = (d) => d >= win[0] && d <= win[1];
+    const vis = E.polls.filter((q) => sel.has(q.e) && inWin(new Date(q.d)));
+    const visAvg = parties.flatMap((p) => days.map((d, i) => (inWin(d) ? avg.media[p][i] : null)).filter((v) => v != null));
+    const ymax = Math.max(d3.max(parties, (p) => d3.max(vis, (q) => q.v[p])) ?? 0, d3.max(visAvg) ?? 0) || 40;
     const y = d3.scaleLinear().domain([0, Math.min(50, ymax + 2)]).nice().range([H - m.b, m.t]);
     const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+    svg.append("defs").append("clipPath").attr("id", "ch-clip").append("rect").attr("x", m.l).attr("y", 0).attr("width", W - m.l - m.r).attr("height", H);
     svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(6)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
-    svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(8).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
+    svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.max(3, Math.floor(W / 110))).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
     svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickFormat((v) => `${v}%`).tickSize(0)).call((g) => g.select(".domain").remove());
-    const x0 = x.domain()[0];
-    const gBands = svg.append("g"), gTrail = svg.append("g"), gDots = svg.append("g"), gLines = svg.append("g");
+    const plot = svg.append("g").attr("clip-path", "url(#ch-clip)");
+    const gBands = plot.append("g"), gTrail = plot.append("g"), gDots = plot.append("g"), gLines = plot.append("g");
     for (const p of parties) {
       const col = POLL_PARTY[p].c();
-      const pts = days.map((d, i) => ({ d, m: E.media[p][i], s: E.sd[p][i] })).filter((o) => o.m != null);
+      const pts = days.map((d, i) => ({ d, m: avg.media[p][i], s: avg.sd[p][i] })).filter((o) => o.m != null);
       gBands.append("path").attr("fill", col).attr("opacity", 0.12)
         .attr("d", d3.area().x((o) => x(o.d)).y0((o) => y(o.m - 1.28 * o.s)).y1((o) => y(o.m + 1.28 * o.s)).curve(d3.curveMonotoneX)(pts));
       gLines.append("path").attr("fill", "none").attr("stroke", col).attr("stroke-width", 2).attr("pointer-events", "none")
@@ -86,15 +160,21 @@ export async function renderEncuestas(app) {
     }
     // one dot per poll and party: the polls as published, before any correction
     const dots = [];
-    E.polls.forEach((q, i) => { if (new Date(q.d) >= x0) for (const p of parties) if (q.v[p] != null)
+    E.polls.forEach((q, i) => { if (sel.has(q.e) && inWin(new Date(q.d))) for (const p of parties) if (q.v[p] != null)
       dots.push({ i, p, cx: x(new Date(q.d)), cy: y(q.v[p]) }); });
+    // fewer dots on screen (short window or few pollsters) -> bigger, more opaque dots
+    const npolls = new Set(dots.map((o) => o.i)).size;
+    const r0 = npolls < 60 ? 3.5 : npolls < 150 ? 3 : 2, o0 = npolls < 60 ? 0.7 : npolls < 150 ? 0.45 : 0.25;
     const circles = gDots.selectAll("circle").data(dots).join("circle")
-      .attr("cx", (o) => o.cx).attr("cy", (o) => o.cy).attr("r", 2).attr("fill", (o) => POLL_PARTY[o.p].c()).attr("opacity", 0.25);
+      .attr("cx", (o) => o.cx).attr("cy", (o) => o.cy).attr("r", r0).attr("fill", (o) => POLL_PARTY[o.p].c()).attr("opacity", o0);
     const delaunay = d3.Delaunay.from(dots, (o) => o.cx, (o) => o.cy);
-    const labels = parties.map((p) => ({ p, y: y(E.media[p].at(-1)) })).sort((a, b) => a.y - b.y);
+    // labels: value of the average at the right edge of the window
+    const iEnd = d3.leastIndex(days, (d) => Math.abs(d - win[1]));
+    const valAt = (p) => { for (let i = iEnd; i >= 0; i--) if (avg.media[p][i] != null) return avg.media[p][i]; return null; };
+    const labels = parties.filter((p) => valAt(p) != null).map((p) => ({ p, v: valAt(p), y: y(valAt(p)) })).sort((a, b) => a.y - b.y);
     for (let i = 1; i < labels.length; i++) labels[i].y = Math.max(labels[i].y, labels[i - 1].y + 13);
     svg.append("g").selectAll("text").data(labels).join("text").attr("x", W - m.r + 6).attr("y", (l) => l.y + 4)
-      .attr("font-size", 12).attr("fill", "var(--ink-2)").text((l) => `${POLL_PARTY[l.p].n} ${num(E.media[l.p].at(-1))}`);
+      .attr("font-size", 12).attr("fill", "var(--ink-2)").text((l) => `${POLL_PARTY[l.p].n} ${num(l.v)}`);
     const cross = svg.append("line").attr("stroke", "var(--ink-3)").attr("y1", m.t).attr("y2", H - m.b).style("display", "none");
 
     // hover a dot: that poll (every party) and the same pollster's other polls stand out
@@ -102,8 +182,8 @@ export async function renderEncuestas(app) {
     const fdate = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
     function focus(i) {
       const house = i == null ? null : E.polls[i].e;
-      circles.attr("r", (o) => (o.i === i ? 5 : house && E.polls[o.i].e === house ? 3 : 2))
-        .attr("opacity", (o) => (i == null ? 0.25 : o.i === i ? 1 : E.polls[o.i].e === house ? 0.85 : 0.06))
+      circles.attr("r", (o) => (o.i === i ? 5 : house && E.polls[o.i].e === house ? 3 : r0))
+        .attr("opacity", (o) => (i == null ? o0 : o.i === i ? 1 : E.polls[o.i].e === house ? 0.85 : 0.06))
         .attr("stroke", (o) => (o.i === i ? "var(--surface)" : null)).attr("stroke-width", 1.5);
       circles.filter((o) => o.i === i).raise();
       gTrail.selectAll("*").remove();
@@ -122,14 +202,15 @@ export async function renderEncuestas(app) {
         <div class="row muted"><span>Trabajo de campo</span><span>${q.f0 === q.f1 ? fdate(q.f1) : `${fdate(q.f0)} a ${fdate(q.f1)}`}</span></div>
         ${q.n ? `<div class="row muted"><span>Muestra</span><span>${q.n.toLocaleString("es-ES")}</span></div>` : ""}
         ${rows.map(([p, v]) => `<div class="row"><span><i class="dot" style="background:${POLL_PARTY[p]?.c() ?? "var(--ink-3)"}"></i>${POLL_PARTY[p]?.n ?? p}</span><span>${num(v)}%</span></div>`).join("")}
-        <div class="row muted"><span>Encuestas de ${q.e} en el gráfico</span><span>${nHouse}</span></div>`, ev);
+        <div class="row muted"><span>Encuestas de ${q.e} en el ciclo</span><span>${nHouse}</span></div>`, ev);
     }
     function avgTip(mx, ev) {
-      const i = d3.leastIndex(days, (d) => Math.abs(x(d) - mx));
+      const xd = x.invert(mx);
+      const i = d3.leastIndex(days, (d) => Math.abs(d - xd));
       cross.attr("x1", x(days[i])).attr("x2", x(days[i])).style("display", null);
-      const rows = parties.filter((p) => E.media[p][i] != null).sort((a, b) => E.media[b][i] - E.media[a][i]);
+      const rows = parties.filter((p) => avg.media[p][i] != null).sort((a, b) => avg.media[b][i] - avg.media[a][i]);
       showTip(`<b>Promedio, ${fdate(days[i])}</b>${rows.map((p) =>
-        `<div class="row"><span><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n}</span><span>${num(E.media[p][i])}%</span></div>`).join("")}`, ev);
+        `<div class="row"><span><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n}</span><span>${num(avg.media[p][i])}%</span></div>`).join("")}`, ev);
     }
     const near = (mx, my) => { if (!dots.length) return null; const j = delaunay.find(mx, my);
       return Math.hypot(dots[j].cx - mx, dots[j].cy - my) <= 9 ? dots[j].i : null; };
@@ -149,7 +230,31 @@ export async function renderEncuestas(app) {
       })
       .on("mouseleave", () => { if (pinned == null) { cross.style("display", "none"); focus(null); hideTip(); } });
   }
-  draw();
+
+  // overview of the whole cycle with a draggable window (d3 brush)
+  let brush, gBrush, xo;
+  function overview() {
+    const el = $("#ch-ov"); el.innerHTML = "";
+    const H = 64, mt = 4, mb = 18;
+    xo = d3.scaleTime().domain([start, end]).range([m.l, W - m.r]);
+    const parties = E.parties.filter((p) => show.has(p));
+    const yo = d3.scaleLinear().domain([0, d3.max(parties, (p) => d3.max(avg.media[p])) ?? 40]).nice().range([H - mb, mt]);
+    const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
+    svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - mb})`).call(d3.axisBottom(xo).ticks(Math.max(3, Math.floor(W / 110))).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
+    for (const p of parties) svg.append("path").attr("fill", "none").attr("stroke", POLL_PARTY[p].c()).attr("stroke-width", 1).attr("opacity", 0.8)
+      .attr("d", d3.line().defined((v) => v != null).x((v, i) => xo(days[i])).y((v) => yo(v))(avg.media[p]));
+    brush = d3.brushX().extent([[m.l, 0], [W - m.r, H - mb]])
+      .on("brush end", (ev) => {
+        if (!ev.sourceEvent) return;                 // moved by code
+        if (!ev.selection) { setZoom("todo"); draw(); moveBrush(); return; }
+        win = ev.selection.map(xo.invert); zoom = null; draw();
+      });
+    gBrush = svg.append("g").attr("class", "brush").call(brush);
+    moveBrush();
+  }
+  function moveBrush() { if (gBrush) gBrush.call(brush.move, win.map(xo)); }
+
+  refresh();
 
   const hp = ["pp", "psoe", "vox", "sumar"];
   const sign = (v) => (v == null ? "·" : Math.abs(v) < 0.05 ? "0,0" : `${v > 0 ? "+" : ""}${num(v)}`);
