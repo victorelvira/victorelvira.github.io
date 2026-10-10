@@ -1,14 +1,14 @@
-import { init } from "./data.js?v=0.2.17";
-import { renderMapa } from "./mapa.js?v=0.2.17";
-import { renderPueblo } from "./pueblo.js?v=0.2.17";
-import { renderMiniatura } from "./miniatura.js?v=0.2.17";
-import { renderSimulador } from "./simulador.js?v=0.2.17";
-import { renderEncuestas } from "./encuestas.js?v=0.2.17";
-import { renderInicio } from "./inicio.js?v=0.2.17";
-import { renderHistoria } from "./historia.js?v=0.2.17";
-import { renderComunidad } from "./comunidad.js?v=0.2.17";
-import { renderExplora } from "./explora.js?v=0.2.17";
-import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.17";
+import { init } from "./data.js?v=0.2.18";
+import { renderMapa } from "./mapa.js?v=0.2.18";
+import { renderPueblo } from "./pueblo.js?v=0.2.18";
+import { renderMiniatura } from "./miniatura.js?v=0.2.18";
+import { renderSimulador } from "./simulador.js?v=0.2.18";
+import { renderEncuestas } from "./encuestas.js?v=0.2.18";
+import { renderInicio } from "./inicio.js?v=0.2.18";
+import { renderHistoria } from "./historia.js?v=0.2.18";
+import { renderComunidad } from "./comunidad.js?v=0.2.18";
+import { renderExplora } from "./explora.js?v=0.2.18";
+import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.18";
 
 // Spanish decimal comma and thousands point for every d3.format (axes, tooltips)
 window.d3.formatDefaultLocale({ decimal: ",", thousands: ".", grouping: [3], currency: ["", " €"] });
@@ -33,8 +33,8 @@ const routes = {
   pueblo: renderPueblo,
   miniatura: renderMiniatura,
 };
-// views reached from Explora (or old names) light up their tab
-const TAB = { historia: "generales", pueblo: "explora", comunidad: "explora", miniatura: "explora" };
+// views without a tab of their own (reached from the maps and the footer) light up Generales
+const TAB = { historia: "generales", mapa: "generales", explora: "generales", pueblo: "generales", comunidad: "generales", miniatura: "generales" };
 
 async function route() {
   hideTip();

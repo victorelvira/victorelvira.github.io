@@ -1,5 +1,6 @@
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.17";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.17";
+import { renderMapa } from "./mapa.js?v=0.2.18";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.18";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.18";
 
 export async function renderHistoria(app) {
   const [S, G] = await Promise.all([load("series.json"), load("generales_encuestas.json")]);
@@ -12,6 +13,9 @@ export async function renderHistoria(app) {
     <h1>Elecciones generales, 1977-2023</h1>
     <p class="sub">Todas las elecciones generales desde 1977: composición del Congreso, voto, participación y abstención, y cómo ha cambiado el número de diputados de cada provincia.</p>
     <h2>El Congreso, elección a elección</h2><div id="seats"></div>
+    <h2>Municipio a municipio</h2>
+    <p class="sub">Quién ganó en cada municipio en cada elección general. Elige qué ver, mueve el deslizador de años o pulsa ▶, y pulsa un municipio (o búscalo) para abrir su ficha: historial completo, concejales y gemelos electorales.</p>
+    <div id="mapa"></div>
     <h2>Lo que decían las encuestas</h2>
     <p class="sub">Para cada elección, la última encuesta de cada casa publicada en el mes anterior, frente al resultado. Barra: de la encuesta más baja a la más alta. Punto: su media. Rombo: intención directa del CIS, sin cocinar. Raya negra: resultado.</p>
     <div class="chips" id="g-sel"></div>
@@ -38,6 +42,7 @@ export async function renderHistoria(app) {
   const $ = (s) => app.querySelector(s);
 
   seatRows($("#seats"), eids.map((e) => ({ label: short(e), e: N[e].e })), { labelWidth: 90 });
+  renderMapa($("#mapa"), [], { tipos: ["generales"] });   // not awaited: the rest of the page draws meanwhile
   pollsVsResult(app, G, eids);
   if (S.senado) seatRows($("#senado"), Object.keys(S.senado).sort().map((e) => ({ label: lab(e).replace("Senado ", ""), e: S.senado[e] })), { total: 208, labelWidth: 90 });
   lines($("#votos"), familySeries(N, lab, 0.03).sort((a, b) => IDEO.indexOf(a.id) - IDEO.indexOf(b.id)), { height: 360 });

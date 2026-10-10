@@ -211,3 +211,7 @@ details.casas summary { cursor: pointer; padding: 4px 0; }
 .chips label input { display: none; }
 .chips label.off { opacity: 0.45; text-decoration: line-through; }
 label.casas-x { display: block; margin-top: 8px; font-size: 12px; color: var(--ink-2); }
+
+footer .flinks { margin: 0 0 6px; }
+footer .flinks a { color: var(--ink-2); }
+.seg[hidden], .controls [hidden] { display: none; }

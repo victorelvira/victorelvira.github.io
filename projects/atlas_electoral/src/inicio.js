@@ -1,8 +1,8 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.17";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.17";
-import { projectFromPolls } from "./simulador.js?v=0.2.17";
+import { load, loadFresh, FAM, pct, fmt, elecLabel } from "./data.js?v=0.2.18";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.18";
+import { projectFromPolls } from "./simulador.js?v=0.2.18";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.17";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.18";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -89,7 +89,7 @@ export async function renderInicio(app, args = []) {
     <div class="tiles">
       <a class="tile" href="#encuestas"><b>Encuestas</b><span>Todas las encuestas, quién acierta y cuánto cocina cada casa</span></a>
       <a class="tile" href="#generales"><b>Generales 1977-2023</b><span>Congreso, voto, participación y diputados por provincia</span></a>
-      <a class="tile" href="#explora"><b>Explora</b><span>Tu pueblo, tu comunidad y el mapa de todas las elecciones</span></a>
+      <a class="tile" href="#pueblo"><b>Tu pueblo</b><span>El historial electoral de cualquier municipio, y el de tu comunidad</span></a>
     </div>`;
 
   if (live) {

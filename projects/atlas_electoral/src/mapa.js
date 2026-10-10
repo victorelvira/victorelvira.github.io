@@ -1,8 +1,9 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 const topojson = window.topojson;
 const geoConicConformalSpain = d3.geoConicConformalSpain;
-import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.17";
-import { addZoom } from "./zoom.js?v=0.2.17";
+import { searchBox } from "./pueblo.js?v=0.2.18";
+import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.18";
+import { addZoom } from "./zoom.js?v=0.2.18";
 
 const state = { tipo: "generales", eleccion: null, modo: "ganador", familia: "psoe", playing: null };
 let geo; // cached {features, provMesh, path}
@@ -71,7 +72,10 @@ function previousOf(eid) {
   return i > 0 ? list[i - 1] : null;
 }
 
-export async function renderMapa(app, args) {
+/** Standalone page (#mapa/...) or, with embed = {tipos: [...]}, a map block inside another page: one
+ *  election type, no title, the hash untouched, and a municipality search above the map. */
+export async function renderMapa(app, args, embed = null) {
+  if (embed) { state.tipo = embed.tipos[0]; state.eleccion = null; if (state.playing) { clearInterval(state.playing); state.playing = null; } }
   if (args[0] && (META.elecciones.some((e) => e.eleccion === args[0]) || isAut(args[0]))) {
     state.eleccion = args[0];
     state.tipo = tipoOf(args[0]);
@@ -80,14 +84,13 @@ export async function renderMapa(app, args) {
   if (args[2] && FAM[args[2]]) state.familia = args[2];
   if (!state.eleccion) state.eleccion = steps(state.tipo).at(-1);
 
+  const TIPOS = { generales: "Generales", autonomicas: "Autonómicas", municipales: "Municipales", europeas: "Europeas", senado: "Senado" };
+  const tipos = embed ? embed.tipos : Object.keys(TIPOS);
   app.innerHTML = `
-    <h1>¿Qué votó cada municipio?</h1>
-    <p class="sub">Generales y municipales desde 1977, Senado desde 1986, europeas desde 1987 y autonómicas desde 1982, municipio a municipio. Pasa el ratón (o toca) para ver el detalle y pulsa para abrir la ficha del pueblo.</p>
+    ${embed ? '<div id="msearch"></div>' : `<h1>¿Qué votó cada municipio?</h1>
+    <p class="sub">Generales y municipales desde 1977, Senado desde 1986, europeas desde 1987 y autonómicas desde 1982, municipio a municipio. Pasa el ratón (o toca) para ver el detalle y pulsa para abrir la ficha del pueblo.</p>`}
     <div class="controls">
-      <div class="seg" id="tipo">
-        <button data-v="generales">Generales</button><button data-v="autonomicas">Autonómicas</button>
-        <button data-v="municipales">Municipales</button><button data-v="europeas">Europeas</button><button data-v="senado">Senado</button>
-      </div>
+      <div class="seg" id="tipo" ${tipos.length > 1 ? "" : "hidden"}>${tipos.map((t) => `<button data-v="${t}">${TIPOS[t]}</button>`).join("")}</div>
       <div class="seg" id="modo">
         <button data-v="ganador">Ganador</button><button data-v="partido">% de un partido</button>
         <button data-v="cambio">Cambio vs anterior</button><button data-v="participacion">Participación</button>
@@ -130,7 +133,7 @@ export async function renderMapa(app, args) {
     app.querySelectorAll("#modo button").forEach((b) => b.classList.toggle("on", b.dataset.v === state.modo));
     $("#famwrap").style.display = ["partido", "cambio"].includes(state.modo) ? "" : "none";
     $("#fam").value = state.familia;
-    history.replaceState(null, "", `#mapa/${state.eleccion}/${state.modo}/${state.familia}`);
+    if (!embed) history.replaceState(null, "", `#mapa/${state.eleccion}/${state.modo}/${state.familia}`);
 
     const res = await loadRes(state.eleccion);
     state.av = res.av;
@@ -223,6 +226,7 @@ export async function renderMapa(app, args) {
   }
 
   app.querySelectorAll("#tipo button").forEach((b) => b.onclick = () => { state.tipo = b.dataset.v; state.eleccion = steps(state.tipo).at(-1); draw(); });
+  if (embed) searchBox($("#msearch"), (ine) => { location.hash = `#pueblo/${ine}`; }, "Busca tu municipio para ver su ficha (p. ej. Gozón, Lorca, Sant Cugat)");
   app.querySelectorAll("#modo button").forEach((b) => b.onclick = () => { state.modo = b.dataset.v; draw(); });
   $("#fam").onchange = (e) => { state.familia = e.target.value; draw(); };
   slider.oninput = () => { state.eleccion = steps(state.tipo)[+slider.value]; draw(); };
