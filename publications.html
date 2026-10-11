@@ -45,6 +45,14 @@
            data-i18n-es-attr="placeholder|Buscar por título, autor, revista o año…"
            autocomplete="off" aria-label="Search publications">
 
+    <!-- Tick: incluir el texto de los abstracts en la búsqueda (ON por defecto) -->
+    <div class="form-check mb-3" style="font-size:.85rem; margin-top:-.6rem;">
+      <input class="form-check-input" type="checkbox" id="search-abs" checked>
+      <label class="form-check-label text-muted" for="search-abs">
+        <span data-lang="en">Also search in abstracts</span><span data-lang="es" hidden>Buscar también en resúmenes</span>
+      </label>
+    </div>
+
     <!-- Botonera de filtros. Ojo: cada botón tiene data-type que usamos para filtrar -->
     <div id="filter-buttons" class="mb-2">
       <button class="btn btn-primary filter-btn" data-type="all"><span data-lang="en">All Papers</span><span data-lang="es" hidden>Todos</span></button>
@@ -265,12 +273,14 @@
        buttons += ` <button type="button" class="btn btn-mini btn-outline-secondary abs-btn" data-bibkey="${entry.__bibKey}"><span data-lang="en">Abstract</span><span data-lang="es" hidden>Resumen</span></button>`;
      }
 
-     // Texto buscable (Fase 1: metadatos + Fase 2: abstract).
+     // Texto buscable: metadatos (data-search) y abstract aparte (data-abstract),
+     // para poder activar/desactivar la búsqueda en resúmenes con el tick.
      const venueText  = venue.join(' ').replace(/<[^>]*>/g, ' ');
-     const searchText = normSearch(`${authors} ${decodeAccents(title)} ${venueText} ${year} ${entry.__bibKey || ''} ${abstract}`.replace(/<[^>]*>/g, ' '));
+     const searchText = normSearch(`${authors} ${decodeAccents(title)} ${venueText} ${year} ${entry.__bibKey || ''}`.replace(/<[^>]*>/g, ' '));
+     const absSearch  = abstract ? normSearch(abstract.replace(/<[^>]*>/g, ' ')) : '';
 
      return `
-       <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}" data-bibkey="${entry.__bibKey || ''}" data-search="${searchText}">
+       <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}" data-bibkey="${entry.__bibKey || ''}" data-search="${searchText}" data-abstract="${absSearch}">
          <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong>
          ${venue.join(' ')}${year ? '. ' + year : ''}.
          <div class="mt-1 btns">${buttons}</div>
@@ -291,10 +301,13 @@
     let __QUERY__ = '';
     function applySearch() {
       const tokens = __QUERY__ ? __QUERY__.split(/\s+/).filter(Boolean) : [];
+      const absChk = document.getElementById('search-abs');
+      const useAbs = absChk ? absChk.checked : true;
       let shown = 0, total = 0;
       document.querySelectorAll('#bibtex_display li.pub-item').forEach(li => {
         total++;
-        const hay = li.getAttribute('data-search') || '';
+        let hay = li.getAttribute('data-search') || '';
+        if (useAbs) hay += ' ' + (li.getAttribute('data-abstract') || '');
         const ok = tokens.every(t => hay.includes(t));
         li.hidden = !ok;
         if (ok) shown++;
@@ -432,6 +445,9 @@
           applySearch();
         });
       }
+      // Tick "también en abstracts": re-filtra al cambiar
+      const absChk = document.getElementById('search-abs');
+      if (absChk) absChk.addEventListener('change', applySearch);
 
       // --- Modal "Cite": carga el .bib y ofrece Copiar / Descargar ---
       const modalEl = document.getElementById('citeModal');
