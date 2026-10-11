@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Víctor Elvira's webpage</title>
+  <title>Publications — Víctor Elvira</title>
 
   <!-- Bootstrap (tema Flatly) -->
   <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
@@ -11,19 +11,19 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
   <!-- Tu CSS -->
-  <link href="assets/css/styles.css?v=i18n2" rel="stylesheet">
+  <link href="assets/css/styles.css?v=i18n7" rel="stylesheet">
 
   <!-- jQuery (necesario para el selector/eventos que usas) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Script propio: para navbar/footer (no se usa en este snippet el contenido) -->
-  <script src="assets/js/scripts.js?v=i18n2"></script>
+  <script src="assets/js/scripts.js?v=i18n7"></script>
   <!-- Parser BibTeX (bibtex_js.js define BibtexParser) -->
   <script type="text/javascript" src="assets/js/bibtex_js.js"></script>
   <!-- OG:auto (social preview) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Víctor Elvira">
-  <meta property="og:title" content="Víctor Elvira">
-  <meta property="og:description" content="Professor in Statistics and Data Science, University of Edinburgh. Computational statistics, Monte Carlo methods and probabilistic machine learning.">
+  <meta property="og:title" content="Publications — Víctor Elvira">
+  <meta property="og:description" content="Full list of publications by Víctor Elvira in computational statistics, Monte Carlo methods and probabilistic machine learning.">
   <meta property="og:image" content="https://victorelvira.github.io/assets/images/profile.jpg">
   <meta property="og:url" content="https://victorelvira.github.io/publications.html">
   <meta name="twitter:card" content="summary">
@@ -42,14 +42,15 @@
     <!-- Buscador (Fase 1: titulo, autores, venue, anio). Roadmap por fases en memoria. -->
     <input id="pub-search" type="search" class="form-control mb-3"
            placeholder="Search by title, author, venue or year…"
+           data-i18n-es-attr="placeholder|Buscar por título, autor, revista o año…"
            autocomplete="off" aria-label="Search publications">
 
     <!-- Botonera de filtros. Ojo: cada botón tiene data-type que usamos para filtrar -->
     <div id="filter-buttons" class="mb-2">
-      <button class="btn btn-primary filter-btn" data-type="all">All Papers</button>
-      <button class="btn btn-outline-primary filter-btn" data-type="article">Journals</button>
-      <button class="btn btn-outline-primary filter-btn" data-type="inproceedings">Conferences</button>
-      <button class="btn btn-outline-primary filter-btn" data-type="other">Other</button>
+      <button class="btn btn-primary filter-btn" data-type="all"><span data-lang="en">All Papers</span><span data-lang="es" hidden>Todos</span></button>
+      <button class="btn btn-outline-primary filter-btn" data-type="article"><span data-lang="en">Journals</span><span data-lang="es" hidden>Revistas</span></button>
+      <button class="btn btn-outline-primary filter-btn" data-type="inproceedings"><span data-lang="en">Conferences</span><span data-lang="es" hidden>Congresos</span></button>
+      <button class="btn btn-outline-primary filter-btn" data-type="other"><span data-lang="en">Other</span><span data-lang="es" hidden>Otros</span></button>
     </div>
 
     <div id="pub-count" class="text-muted small mb-2"></div>
@@ -79,15 +80,15 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="citeModalLabel">Cite</h5>
+          <h5 class="modal-title" id="citeModalLabel"><span data-lang="en">Cite</span><span data-lang="es" hidden>Citar</span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <pre id="citeText" class="cite-box">Loading…</pre>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="citeCopyBtn"><i class="fa-regular fa-copy"></i> Copy</button>
-          <a class="btn btn-primary" id="citeDownloadBtn" download><i class="fa-solid fa-download"></i> Download .bib</a>
+          <button type="button" class="btn btn-secondary" id="citeCopyBtn"><i class="fa-regular fa-copy"></i> <span data-lang="en">Copy</span><span data-lang="es" hidden>Copiar</span></button>
+          <a class="btn btn-primary" id="citeDownloadBtn" download><i class="fa-solid fa-download"></i> <span data-lang="en">Download .bib</span><span data-lang="es" hidden>Descargar .bib</span></a>
         </div>
       </div>
     </div>
@@ -119,6 +120,19 @@
         const keys = await res.json();
         if (Array.isArray(keys)) __PDF_KEYS__ = new Set(keys.map(k => String(k).toLowerCase()));
       } catch { /* sin manifest: se muestran todos */ }
+    }
+
+    // --- Abstracts (Fase 2): bibkey -> resumen, para buscar también por contenido.
+    // Generado offline por _tools/gen_abstracts.py (fuentes públicas). Si falta, el
+    // buscador sigue funcionando solo con metadatos. ---
+    window.__ABSTRACTS__ = null;
+    async function loadAbstracts() {
+      try {
+        const res = await fetch('data/publications/abstracts.json?v=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) return;
+        const obj = await res.json();
+        if (obj && typeof obj === 'object') window.__ABSTRACTS__ = obj;
+      } catch { /* sin abstracts: solo metadatos */ }
     }
 
 
@@ -242,18 +256,25 @@
        if (!__PDF_KEYS__ || __PDF_KEYS__.has(k)) {
          buttons += ` <a class="btn btn-mini btn-danger"    target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`;
        }
-       buttons += ` <button type="button" class="btn btn-mini btn-secondary cite-btn" data-bibkey="${k}" data-biburl="${bibURL}">Cite</button>`;
+       buttons += ` <button type="button" class="btn btn-mini btn-secondary cite-btn" data-bibkey="${k}" data-biburl="${bibURL}"><span data-lang="en">Cite</span><span data-lang="es" hidden>Citar</span></button>`;
      }
 
-     // Texto buscable (Fase 1: metadatos). Extensible: aquí se añadirán abstract y full-text.
+     // Botón "Abstract" (Fase 2): solo si tenemos resumen para este paper.
+     const abstract = (window.__ABSTRACTS__ && window.__ABSTRACTS__[entry.__bibKey]) || '';
+     if (abstract) {
+       buttons += ` <button type="button" class="btn btn-mini btn-outline-secondary abs-btn" data-bibkey="${entry.__bibKey}"><span data-lang="en">Abstract</span><span data-lang="es" hidden>Resumen</span></button>`;
+     }
+
+     // Texto buscable (Fase 1: metadatos + Fase 2: abstract).
      const venueText  = venue.join(' ').replace(/<[^>]*>/g, ' ');
-     const searchText = normSearch(`${authors} ${decodeAccents(title)} ${venueText} ${year} ${entry.__bibKey || ''}`.replace(/<[^>]*>/g, ' '));
+     const searchText = normSearch(`${authors} ${decodeAccents(title)} ${venueText} ${year} ${entry.__bibKey || ''} ${abstract}`.replace(/<[^>]*>/g, ' '));
 
      return `
        <li id="pub_${safeId}" class="pub-item" data-entrytype="${etype}" data-bibkey="${entry.__bibKey || ''}" data-search="${searchText}">
          <em>${authors}</em>, <strong>"${decodeAccents(title)},"</strong>
          ${venue.join(' ')}${year ? '. ' + year : ''}.
          <div class="mt-1 btns">${buttons}</div>
+         ${abstract ? '<div class="abs-box" hidden></div>' : ''}
        </li>`;
    }
 
@@ -279,7 +300,10 @@
         if (ok) shown++;
       });
       const c = document.getElementById('pub-count');
-      if (c) c.textContent = !__QUERY__ ? '' : (shown ? `${shown} of ${total} shown` : 'No matches');
+      const es = window.__lang === 'es';
+      if (c) c.textContent = !__QUERY__ ? '' :
+        (shown ? (es ? `${shown} de ${total} mostrados` : `${shown} of ${total} shown`)
+               : (es ? 'Sin resultados' : 'No matches'));
     }
 
     // --- Renderiza TODAS las publicaciones, aplicando un filtro por tipo ---
@@ -289,7 +313,7 @@
       try {
         // 1) Parsear una sola vez y cachear (bib y manifest de PDFs en paralelo)
         if (!__BIB_ENTRIES__) {
-          const [raw] = await Promise.all([loadBib(), loadPdfManifest()]);
+          const [raw] = await Promise.all([loadBib(), loadPdfManifest(), loadAbstracts()]);
           const parser = new BibtexParser();
           parser.setInput(raw);
           parser.bibtex();
@@ -367,6 +391,9 @@
           $("#bibtex_display").append( renderEntryLI(e) );
         });
 
+        // Traduce lo recién pintado (botones "Cite"/"Citar") al idioma activo
+        if (window.translateTree) translateTree(document, window.__lang || 'en');
+
         // Reaplica la búsqueda activa sobre lo recién pintado
         applySearch();
 
@@ -440,6 +467,30 @@
         // Delegación: los botones Cite se generan dinámicamente
         $("#bibtex_display").on("click", ".cite-btn", function () {
           openCite(this.getAttribute('data-bibkey'), this.getAttribute('data-biburl'));
+        });
+
+        // --- Abstract desplegable (Fase 2) con resaltado del término buscado ---
+        function escHtml(s){ return (s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+        function highlightAbs(text, query){
+          let html = escHtml(text);
+          const toks = (query||'').trim().split(/\s+/).filter(t => t.length >= 2);
+          toks.forEach(t => {
+            const re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi');
+            html = html.replace(re, '<mark>$1</mark>');
+          });
+          return html;
+        }
+        $("#bibtex_display").on("click", ".abs-btn", function () {
+          const li = this.closest('li.pub-item');
+          const box = li && li.querySelector('.abs-box');
+          if (!box) return;
+          const open = box.hidden;           // va a abrirse
+          if (open) {
+            const ab = (window.__ABSTRACTS__ && window.__ABSTRACTS__[this.getAttribute('data-bibkey')]) || '';
+            box.innerHTML = highlightAbs(ab, document.getElementById('pub-search').value);
+          }
+          box.hidden = !open;
+          this.classList.toggle('active', open);
         });
 
         copyBtn.addEventListener('click', async function () {

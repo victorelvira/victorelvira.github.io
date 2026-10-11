@@ -44,7 +44,9 @@ function applyTheme(t) {
 (function () {
     var l;
     try { l = localStorage.getItem('lang'); } catch (e) {}
-    if (l !== 'es' && l !== 'en') l = /^es/i.test(navigator.language || '') ? 'es' : 'en';
+    // Por defecto SIEMPRE inglés (ignora el idioma del navegador); el español
+    // sale solo si el usuario lo eligió antes con el toggle EN·ES.
+    if (l !== 'es' && l !== 'en') l = 'en';
     window.__lang = l;
 })();
 
@@ -77,7 +79,7 @@ function applyLang(lang) {
 }
 
 // Version compartida para cache-busting de la navbar/footer (súbela al cambiar nav/footer).
-const __ASSET_VER = 'i18n2';
+const __ASSET_VER = 'i18n7';
 const __navbarPromise = fetch('/nav.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('nav.html ' + r.status)));
 const __footerPromise = fetch('/footer.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('footer.html ' + r.status)));
 
@@ -140,9 +142,27 @@ function injectFooter() {
 
 // Inyecta en cuanto el DOM esté listo (los placeholders ya existen). Si el script
 // se cargara tarde (DOM ya parseado), inyecta de inmediato.
+function injectBackToTop() {
+    if (document.getElementById('to-top')) return;
+    var b = document.createElement('button');
+    b.id = 'to-top'; b.type = 'button';
+    b.setAttribute('aria-label', 'Back to top');
+    b.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    b.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.body.appendChild(b);
+    var onScroll = function () {
+        var show = (window.scrollY || document.documentElement.scrollTop || 0) > 400;
+        b.style.opacity = show ? '0.92' : '0';
+        b.style.pointerEvents = show ? 'auto' : 'none';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+}
+
 function __onReady() {
     injectNavbar();
     injectFooter();
+    injectBackToTop();
     // Traducir el contenido propio de la página (la navbar/footer se traducen al inyectarse)
     document.documentElement.setAttribute('lang', window.__lang);
     translateTree(document, window.__lang);

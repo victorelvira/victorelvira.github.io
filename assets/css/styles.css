@@ -414,18 +414,45 @@ html[data-bs-theme="dark"] #pp-filter-toggle { background-color: var(--d-surface
    mantenemos el lienzo claro tambien en oscuro para que sigan legibles. */
 html[data-bs-theme="dark"] #net { background: #eef2f3; border-color: var(--d-border); }
 
-/* Logos de premios: sobre oscuro los PNG/JPG de tinta oscura se pierden.
-   En vez de un recuadro por logo (queda a parches), UN solo panel claro
-   detras de todos, para que se lean como en modo claro. */
-html[data-bs-theme="dark"] #main-content .col-md-5 .container {
-  background: #f4f6f7;
-  border-radius: 16px;
-  padding: 1.1rem .6rem;
+/* Logos de premios en oscuro: en vez de un panel blanco (quedaba como una
+   "sábana"), INVERTIMOS los logos para que se vean como siluetas claras sobre
+   el fondo oscuro. Mantiene el detalle (es inversión de color, no aplanado). */
+html[data-bs-theme="dark"] #main-content .col-md-5 img {
+  filter: grayscale(100%) invert(100%);
+  /* screen funde el fondo negro que deja la inversión en los JPG con el fondo
+     oscuro de la página: adiós a los recuadros, sin tocar las siluetas. */
+  mix-blend-mode: screen;
+  opacity: .9;
+}
+html[data-bs-theme="dark"] #main-content .col-md-5 img:hover {
+  filter: grayscale(100%) invert(100%);
+  mix-blend-mode: screen;
+  opacity: 1;
 }
 
 
 /* i18n: el idioma oculto se oculta siempre (también si el elemento es flex). */
 [hidden] { display: none !important; }
+
+/* Botón "volver arriba" (lo inyecta scripts.js en todas las páginas) */
+#to-top {
+  position: fixed; right: 18px; bottom: 18px; width: 42px; height: 42px;
+  border: none; border-radius: 50%; background: var(--accent, #0e7c86); color: #fff;
+  font-size: 1rem; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.25);
+  opacity: 0; pointer-events: none; transition: opacity .2s ease; z-index: 1050;
+}
+#to-top.show { opacity: .92; pointer-events: auto; }
+#to-top:hover { opacity: 1; }
+
+/* Abstract desplegable en publicaciones (Opción B) */
+.abs-box {
+  margin-top: .5rem; padding: .6rem .85rem; background: #f4f7f8;
+  border-left: 3px solid var(--accent, #0e7c86); border-radius: 6px;
+  font-size: .9rem; line-height: 1.55; color: #2f353b; max-width: 72ch;
+}
+.abs-box mark { background: #ffe9a8; padding: 0 .1em; border-radius: 2px; }
+html[data-bs-theme="dark"] .abs-box { background: #172227; color: var(--d-text); }
+html[data-bs-theme="dark"] .abs-box mark { background: #5a4a1e; color: #ffe9a8; }
 
 /* ============================================================
    Controles de navbar: toggle de idioma EN·ES y botón de tema.
