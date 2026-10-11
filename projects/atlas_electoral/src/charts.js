@@ -1,5 +1,5 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.27";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.57";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
@@ -27,7 +27,7 @@ export function seatRows(el, rows, { total = 350, labelWidth = 120, eid = null }
         <span class="majority" style="left:${(maj / total) * 100}%"></span></div></div>`;
   }).join("")}</div>
   <div class="legend">${IDEO.filter((f) => rows.some((r) => r.e[f])).map((f) => `<span><i class="sw" style="background:${fam(f).color}"></i>${famName(f, eid)}</span>`).join("")}
-  <span class="note">· línea: mayoría absoluta (${maj})</span></div>`;
+</div>`;
   el.querySelectorAll(".seats div").forEach((d) => {
     d.onmousemove = (ev) => showTip(`<b>${d.dataset.l}</b><div class="row"><span><i class="dot" style="background:${fam(d.dataset.f).color}"></i>${famName(d.dataset.f, eid)}</span><span>${d.dataset.n} escaños</span></div>`, ev);
     d.onmouseleave = hideTip;
@@ -84,4 +84,76 @@ export function familySeries(points, labelOf, minShare = 0.04) {
   const fams = Object.keys(FAM).filter((f) => f !== "otros" && eids.some((e) => share(e, f) >= minShare));
   return fams.map((f) => ({ id: f, name: FAM[f].nombre, color: FAM[f].color,
     values: eids.map((e) => ({ date: dateOf(e), v: share(e, f) || null, label: labelOf(e) })) }));
+}
+
+/** Section index for a long page. SEC: [[id, name, [[subId, subName], ...]], ...] (ids without the "s-" prefix).
+ *  indexHtml() gives the two pieces to put in the template; sectionIndex() wires clicks and the scroll spy. */
+export function indexHtml(SEC) {
+  const a = (id, n, cls = "") => `<a class="${cls}" href="${location.hash.split("/")[0] || "#inicio"}" data-s="s-${id}">${n}</a>`;
+  const items = SEC.map(([id, n, sub = []]) => a(id, n) + sub.map(([sid, sn]) => a(sid, sn, "sub")).join("")).join("");
+  return { row: `<div class="toc-row" id="toc-row">${items}</div>`, aside: `<aside class="toc" id="toc"><nav>${items}</nav></aside>` };
+}
+export function sectionIndex(app) {
+  const tocs = [app.querySelector("#toc"), app.querySelector("#toc-row")];
+  if (!tocs[0] || !tocs[1]) return;
+  const header = document.querySelector("header.top");   // the phone row sticks right under the (two-line) header
+  const placeRow = () => { tocs[1].style.top = `${header.offsetHeight}px`; };
+  placeRow(); addEventListener("resize", placeRow);
+  const links = tocs.flatMap((t) => [...t.querySelectorAll("a")]);
+  links.forEach((a) => a.onclick = (ev) => { ev.preventDefault(); app.querySelector(`#${a.dataset.s}`)?.scrollIntoView({ behavior: "smooth", block: "start" }); });
+  const ids = links.map((a) => a.dataset.s).filter((v, i, arr) => arr.indexOf(v) === i);
+  let tick = false;
+  function onScroll() {
+    tick = false;
+    if (!document.body.contains(tocs[0])) { removeEventListener("scroll", onScroll); return; }
+    let cur = null;
+    for (const id of ids) { const el = app.querySelector(`#${id}`); if (el && el.getBoundingClientRect().top <= 130) cur = id; }
+    links.forEach((a) => a.classList.toggle("on", a.dataset.s === cur));
+    const row = tocs[1].querySelector("a.on");   // keep the current chip in view on the phone row
+    if (row && row.dataset.s !== tocs[1].dataset.last) { tocs[1].dataset.last = row.dataset.s; row.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); }
+  }
+  addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+}
+
+/** Seat sums in three groups (Izquierda, Otros, Derecha); parties are chips dragged between the boxes
+ *  (pointer events: mouse and touch). `at` keeps the reader's grouping when the seats are redrawn.
+ *  With `draws` (prediccion_draws.json) each box also gives its 90% range and the probability of 176;
+ *  `onChange(at, sumOf)` runs after every regrouping, sumOf(group) -> seats of that group in every draw. */
+export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws = null, onChange = null } = {}) {
+  const G = ["izquierda", "otros", "derecha"], NAME = { izquierda: "Izquierda", otros: "Otros", derecha: "Derecha" };
+  const start = { pp: "derecha", vox: "derecha", salf: "derecha", cs: "derecha", ucd: "derecha", psoe: "izquierda", sumar: "izquierda", podemos: "izquierda", izq: "izquierda" };
+  const fams = Object.entries(seats).filter(([, n]) => n).sort((a, b) => b[1] - a[1]).map(([f]) => f);
+  for (const f of fams) at[f] ??= start[f] ?? "otros";
+  const sumOf = (g) => {   // seats of group g in every draw
+    if (!draws) return null;
+    const n = draws.s[0].length, t = new Int16Array(n);
+    draws.partidos.forEach((f, i) => { if (at[f] === g) for (let k = 0; k < n; k++) t[k] += draws.s[i][k]; });
+    return t;
+  };
+  const stats = (g) => {
+    const t = sumOf(g); if (!t) return "";
+    const v = [...t].sort((a, b) => a - b), q = (p) => v[Math.min(v.length - 1, Math.floor(p * v.length))];
+    const pr = v.filter((x) => x >= 176).length / v.length;
+    return `<div class="bq-p">de ${q(0.05)} a ${q(0.95)}${pr >= 0.005 ? ` · ${pr > 0.995 ? "más del 99" : Math.round(pr * 100)}% de llegar a 176` : ""}</div>`;
+  };
+  const draw = () => {
+    el.innerHTML = `<div class="bloques">${G.map((g) => { const fs = fams.filter((f) => at[f] === g), tot = fs.reduce((a, f) => a + seats[f], 0);
+      return `<div class="bloque" data-g="${g}"><div class="bq-h">${NAME[g]} = <b>${tot}</b>${!draws && tot >= 176 ? ' <span class="muted">· llega a 176</span>' : ""}</div>${stats(g)}<div class="bq-chips">${fs.map((f) =>
+        `<span class="chip drag" data-f="${f}"><i class="dot" style="background:${fam(f).color}"></i>${famName(f, eid)} ${seats[f]}</span>`).join("")}</div></div>`; }).join("")}</div>`;
+    el.querySelectorAll(".chip").forEach((c) => c.onpointerdown = (ev) => {
+      ev.preventDefault();
+      const ghost = c.cloneNode(true); ghost.classList.add("ghost"); document.body.appendChild(ghost);
+      const dx = ev.clientX - c.getBoundingClientRect().left, dy = ev.clientY - c.getBoundingClientRect().top;
+      const place = (e) => { ghost.style.left = `${e.clientX - dx}px`; ghost.style.top = `${e.clientY - dy}px`;
+        const over = document.elementsFromPoint(e.clientX, e.clientY).find((x) => x.classList?.contains("bloque"));
+        el.querySelectorAll(".bloque").forEach((bx) => bx.classList.toggle("over", bx === over)); return over; };
+      c.classList.add("dragging"); c.setPointerCapture(ev.pointerId); place(ev);
+      c.onpointermove = place;
+      c.onpointerup = c.onpointercancel = (e) => { const over = place(e); ghost.remove(); c.classList.remove("dragging");
+        if (over && over.dataset.g !== at[c.dataset.f]) { at[c.dataset.f] = over.dataset.g; draw(); } else el.querySelectorAll(".bloque").forEach((bx) => bx.classList.remove("over")); };
+    });
+    onChange?.(at, sumOf);
+  };
+  draw();
 }

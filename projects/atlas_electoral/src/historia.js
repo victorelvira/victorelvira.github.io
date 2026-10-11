@@ -1,57 +1,92 @@
-import { renderMapa } from "./mapa.js?v=0.2.27";
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.27";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.27";
+import { renderMapa } from "./mapa.js?v=0.2.57";
+import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.57";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.57";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.57";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.57";
 
 export async function renderHistoria(app) {
-  const [S, G] = await Promise.all([load("series.json"), load("generales_encuestas.json")]);
+  const [S, G, E, dh, geo, PR, CI] = await Promise.all([load("series.json"), load("generales_encuestas.json"), load("encuestas.json"), load("dhondt.json"),
+    load("geo_nuevos.json").catch(() => null), load("prediccion.json").catch(() => null), load("ciclos/index.json").catch(() => ({ ciclos: [] }))]);
   const eids = S.elecciones, N = S.nacional;
   const conv = S.convocatoria_2026;
   const short = (e) => elecLabel(e).replace("Generales ", "");
   const lab = (e) => elecLabel(e);
 
+  const SEC = [["congreso", "El Congreso"], ["mapa", "Municipio a municipio"], ["senado", "El Senado"],
+    ["voto", "Voto por familias"], ["participacion", "Participación y voto por correo"], ["provincias", "Diputados por provincia"]];
+  const IX = indexHtml(SEC);
   app.innerHTML = `
+    <div class="layout">
+    ${IX.aside}
+    <div class="content">
     <h1>Elecciones generales, 1977-2023</h1>
     <p class="sub">Todas las elecciones generales desde 1977: composición del Congreso, voto, participación y abstención, y cómo ha cambiado el número de diputados de cada provincia.</p>
-    <h2>El Congreso, elección a elección</h2><div id="seats"></div>
-    <h2>Municipio a municipio</h2>
-    <p class="sub">Quién ganó en cada municipio en cada elección general. Elige qué ver, mueve el deslizador de años o pulsa ▶, y pulsa un municipio (o búscalo) para abrir su ficha: historial completo, concejales y gemelos electorales.</p>
+    ${IX.row}
+    <section id="s-congreso">
+<h2>El Congreso, elección a elección</h2>
+    <p class="note">Encima de cada elección, en apagado, los escaños que daba la media final de las encuestas.</p><div id="seats"></div>
+    </section>
+    <section id="s-mapa">
+<h2>Municipio a municipio</h2>
+    <p class="note">Quién ganó en cada municipio. Pulsa ▶ para recorrer las elecciones, o pulsa un municipio (o búscalo) para ver su historial.</p>
     <div id="mapa"></div>
-    <h2>Lo que decían las encuestas</h2>
-    <p class="sub">Para cada elección, la última encuesta de cada casa publicada en el mes anterior, frente al resultado. Barra: de la encuesta más baja a la más alta. Punto: su media. Rombo: intención directa del CIS, sin cocinar. Raya negra: resultado.</p>
-    <div class="chips" id="g-sel"></div>
-    <div class="card" id="g-chart"></div>
-    <div class="chart" id="g-err"></div>
-    <p class="note">Error medio: diferencia absoluta media, en puntos, en los partidos con un 3% o más. Fuentes: encuestas recopiladas en Wikipedia; intención directa de los preelectorales del CIS (origen de los datos: Centro de Investigaciones Sociológicas).</p>
-    <h2>El Senado</h2><p class="sub">Senadores elegidos directamente (207 en 1977, 208 desde 1979); no incluye los designados por los parlamentos autonómicos.</p><div id="senado"></div>
-    <h2>Voto por familias políticas</h2><div class="chart" id="votos"></div>
-    <div class="grid2">
-      <div><h2>Participación y abstención</h2><div class="chart" id="part"></div>
+    </section>
+    <section id="s-senado">
+<h2>El Senado</h2><p class="sub">Senadores elegidos directamente (207 en 1977, 208 desde 1979); no incluye los designados por los parlamentos autonómicos.</p><div id="senado"></div>
+    </section>
+    <section id="s-voto">
+<h2>Voto por familias políticas</h2><div class="chart" id="votos"></div>
+    </section>
+    <section id="s-participacion">
+<div class="grid2">
+      <div><h3>Participación y abstención</h3><div class="chart" id="part"></div>
         <p class="note">Generales: votantes sobre censo total (con residentes en el extranjero). Municipales: sobre residentes, sin los pueblos de listas abiertas.</p></div>
-      <div><h2>Participación a lo largo del día</h2><div class="chart" id="avances"></div>
+      <div><h3>Participación a lo largo del día</h3><div class="chart" id="avances"></div>
         <p class="note">Porcentaje de residentes que habían votado en cada avance oficial de Interior y al cierre (total con exterior). En 1979 y 1982 el primer avance fue a las 15:00; desde 1986, a las 14:00. En 1977 no hubo avances.</p></div>
     </div>
     <div class="grid2">
-      <div><h2>Voto en blanco y nulo</h2><div class="chart" id="bn"></div></div>
+      <div><h3>Voto en blanco y nulo</h3><div class="chart" id="bn"></div></div>
       <div id="correo"></div>
     </div>
     <div id="cera"></div>
-    <h2>Diputados por provincia</h2>
+    </section>
+    <section id="s-provincias">
+<h2>Diputados por provincia</h2>
     <p class="sub">El reparto se recalcula en cada convocatoria según la población (mínimo 2 por provincia, 1 para Ceuta y Melilla). Las flechas marcan cambios respecto a la elección anterior.</p>
     <div class="scrollx" id="dip"></div>
-    <h2 id="metodo">Cómo se hace</h2>
-    <div class="metodo">
+    <details class="metodo-box" id="metodo"><summary>Metodología</summary><div class="metodo">
     <p><b>Resultados.</b> Ministerio del Interior (Infoelectoral), mesa a mesa agregado a municipio y provincia, para generales, Senado, municipales y europeas desde 1977, y autonómicas hasta 2012; desde 2012 las autonómicas vienen del portal oficial de resultados de cada comunidad. Interior es la fuente de verdad; Wikipedia solo se usa para las encuestas.</p>
     <p><b>Familias.</b> Las candidaturas se agrupan en familias políticas (PP incluye AP y CD; PCE/IU/Podemos/Sumar; CiU/Junts; HB/Bildu...) con un vocabulario escrito a mano, con reglas por elección para los casos dudosos. Desde 2019 se muestran con su nombre actual. Un cambio de familia nunca altera un voto: solo cómo se suma.</p>
     <p><b>Participación y voto por correo.</b> Participación sobre el censo total (con residentes en el extranjero); avances a las 14:00 y 18:00 sobre residentes en España, de los partes oficiales. Voto por correo: solicitudes aceptadas por la Oficina del Censo Electoral y votos admitidos por Correos cuando se publicaron. El voto CERA no se asigna a municipios. En municipales, los pueblos de hasta 250 habitantes votan con listas abiertas: el voto de cada lista se aproxima por su candidato más votado.</p>
     <p><b>Lo que decían las encuestas.</b> Para cada elección, la última encuesta de cada casa en los 35 días anteriores, frente al resultado; el rombo es la intención directa del preelectoral del CIS, sin cocina.</p>
     <p class="note">Fuentes: Ministerio del Interior; portales de resultados de las comunidades; INE (censo y voto por correo); IGN (límites municipales); Wikipedia (encuestas); CIS (origen de los datos: Centro de Investigaciones Sociológicas).</p>
-    </div>
-    ${conv?.escanos?.fuente && conv.escanos.fuente !== "boe" ? `<p class="note">* 2026: calculado con la regla de la LOREG (art. 162) y la población oficial a 1 de enero de 2025, a falta de que el BOE publique el decreto. El método reproduce exactamente el reparto de 2019 y 2023.</p>` : ""}`;
+    </div></details>
+    ${conv?.escanos?.fuente && conv.escanos.fuente !== "boe" ? `<p class="note">* 2026: calculado con la regla de la LOREG (art. 162) y la población oficial a 1 de enero de 2025, a falta de que el BOE publique el decreto. El método reproduce exactamente el reparto de 2019 y 2023.</p>` : ""}
+    </section>
+    </div></div>`;
   const $ = (s) => app.querySelector(s);
+  sectionIndex(app);
 
-  seatRows($("#seats"), eids.map((e) => ({ label: short(e), e: N[e].e })), { labelWidth: 90 });
+  // newest first, with today's estimate from the polls on top in faded colours (the same projection as the 29N page)
+  const base = Object.keys(dh).sort().at(-1), conv26 = S.convocatoria_2026;
+  const esc26 = conv26?.escanos?.provincias ? Object.fromEntries(conv26.escanos.provincias.map((r) => [r.prov, r.escanos])) : null;
+  const proj = projectFromPolls(dh[base], E.ultimo, esc26, geo);
+  const toFam = (seats) => { const o = {};   // Sumar and Podemos back into their family, SALF into "otros": one legend
+    for (const [f, n] of Object.entries(seats)) { const k = f === "sumar" || f === "podemos" ? "izq" : f === "salf" ? "otros" : f; o[k] = (o[k] ?? 0) + n; } return o; };
+  const est26 = toFam(PR?.central ?? proj.seats);
+  const gens = Object.keys(dh).sort();
+  const pollRow = (e) => {   // what the final polls gave, in seats: their average swung from the previous general election
+    const c = CI.ciclos.find((x) => x.ciclo.slice(0, 7) === e.slice(e.indexOf("_") + 1)), prev = gens[gens.indexOf(e) - 1];
+    if (!c?.ultimo || !prev) return null;
+    const nat = natShares(dh[prev]), target = {};
+    for (const [p, v] of Object.entries(c.ultimo)) { const f = PFAM[p] ?? p; target[f] = (target[f] ?? 0) + v / 100; }
+    const factor = Object.fromEntries(Object.entries(target).filter(([f]) => nat[f] > 0).map(([f, v]) => [f, v / nat[f]]));
+    const esc = Object.fromEntries(dh[e].map((p) => [p.prov, p.esc]));
+    return { label: "encuestas", e: seatsFor(dh[prev], factor, esc).seats, muted: true };
+  };
+  seatRows($("#seats"), [{ label: "2026 · estimación", e: est26, muted: true },
+    ...[...eids].reverse().flatMap((e) => [pollRow(e), { label: short(e), e: N[e].e }].filter(Boolean))], { labelWidth: 110 });
   renderMapa($("#mapa"), [], { tipos: ["generales"] });   // not awaited: the rest of the page draws meanwhile
-  pollsVsResult(app, G, eids);
   if (S.senado) seatRows($("#senado"), Object.keys(S.senado).sort().map((e) => ({ label: lab(e).replace("Senado ", ""), e: S.senado[e] })), { total: 208, labelWidth: 90 });
   lines($("#votos"), familySeries(N, lab, 0.03).sort((a, b) => IDEO.indexOf(a.id) - IDEO.indexOf(b.id)), { height: 360 });
 
@@ -75,7 +110,7 @@ export async function renderHistoria(app) {
   const vc = vcAll.filter((r) => r.ambito === "ES" && r.solicitudes_aceptadas != null);
   if (vc.length) {
     const lastVc = vc.at(-1).eleccion;
-    $("#correo").innerHTML = `<h2>Voto por correo</h2><div class="chart" id="vc"></div>
+    $("#correo").innerHTML = `<h3>Voto por correo</h3><div class="chart" id="vc"></div>
       <p class="note">Solicitudes aceptadas (INE, Oficina del Censo Electoral) y votos admitidos por Correos cuando se publicaron. El récord de ${lab(lastVc)} coincide con unas elecciones en pleno julio. <b>Qué</b> se vota por correo no se publica: los sobres se mezclan en la urna de cada mesa.</p>
       <h3 class="h3">Dónde más se pidió (${lab(lastVc)}, % del censo de residentes)</h3><div id="vcprov"></div>`;
     lines($("#vc"), [
@@ -91,7 +126,7 @@ export async function renderHistoria(app) {
   }
   const cera = (S.cera ?? []).filter((r) => r.ambito === "ES" && r.participacion_cera != null);
   if (cera.length) {
-    $("#cera").innerHTML = `<h2>Españoles en el extranjero (CERA)</h2><div class="chart" id="cc"></div>
+    $("#cera").innerHTML = `<h3>Españoles en el extranjero (CERA)</h3><div class="chart" id="cc"></div>
       <p class="note">Participación del censo de residentes ausentes. Entre 2011 y 2019 rigió el «voto rogado» (había que solicitar el voto antes de recibirlo) y la participación se hundió por debajo del 7%; se derogó en 2022.</p>`;
     lines($("#cc"), [{ id: "c", name: "Participación CERA", color: "#1f4e8c",
       values: cera.map((r) => ({ date: dateOf(r.eleccion), v: r.participacion_cera > 1 ? r.participacion_cera / 100 : r.participacion_cera, label: `${lab(r.eleccion)}${r.voto_rogado ? " · voto rogado" : ""}` })) }],
@@ -117,34 +152,3 @@ const PFAM = { sumar: "izq", iu: "izq", podemos: "izq", mas_pais: "izq", upyd: "
 const pColor = (p) => (FAM[PFAM[p] ?? p] ?? FAM.otros).color;
 const n1 = (x) => (x == null ? "·" : x.toFixed(1).replace(".", ","));
 
-function pollsVsResult(app, G, eids) {
-  const $ = (s) => app.querySelector(s);
-  const ciclos = Object.keys(G).sort();
-  const byDate = Object.fromEntries(eids.map((e) => [e.slice(e.indexOf("_") + 1, e.indexOf("_") + 8), e]));
-  const label = (c) => elecLabel(byDate[c.slice(0, 7)] ?? `generales_${c.slice(0, 7)}`).replace("Generales ", "");
-  let cur = ciclos.at(-1);
-  function draw() {
-    $("#g-sel").innerHTML = ciclos.map((c) => `<a class="chip ${c === cur ? "on" : ""}" href="#" data-c="${c}">${label(c)}</a>`).join("");
-    $("#g-sel").querySelectorAll("a").forEach((a) => a.onclick = (ev) => { ev.preventDefault(); cur = a.dataset.c; draw(); });
-    const g = G[cur], rows = g.partidos;
-    const max = Math.max(...rows.flatMap((r) => [r.real, r.max ?? 0, r.cis_dir ?? 0])) * 1.08;
-    const x = (v) => `${(v / max) * 100}%`;
-    $("#g-chart").innerHTML = `<table class="pvr"><tr><th>Partido</th><th></th><th class="num">Encuestas</th><th class="num">Resultado</th><th class="num">Error</th></tr>
-      ${rows.map((r) => { const c = pColor(r.p);
-        return `<tr><td><i class="dot" style="background:${c}"></i>${r.n}</td>
-        <td style="width:50%"><div class="pvr-track">
-          ${r.min != null ? `<span class="pvr-range" style="left:${x(r.min)};width:${x(Math.max(0.3, r.max - r.min))};background:${c}"></span>` : ""}
-          ${r.cis_dir != null ? `<b class="pvr-cis" style="left:${x(r.cis_dir)};border-color:${c}" title="CIS intención directa ${n1(r.cis_dir)}%"></b>` : ""}
-          ${r.media != null ? `<span class="pvr-dot" style="left:${x(r.media)};background:${c}" title="Media ${n1(r.media)}%"></span>` : ""}
-          <i class="pvr-real" style="left:${x(r.real)}" title="Resultado ${n1(r.real)}%"></i></div></td>
-        <td class="num">${n1(r.media)}%</td><td class="num"><b>${n1(r.real)}%</b></td>
-        <td class="num">${r.media == null ? "·" : `${r.media - r.real > 0 ? "+" : ""}${n1(r.media - r.real)}`}</td></tr>`; }).join("")}</table>
-      <p class="note"><a href="#encuestas/${cur}">Ver la evolución de todas las encuestas de este ciclo →</a></p>
-      <p class="note">${g.n} encuestadoras · error medio de la media de encuestas: <b>${n1(g.mae_media)} puntos</b>${g.mae_cis_dir != null ? ` · intención directa del CIS: ${n1(g.mae_cis_dir)} puntos` : ""}</p>`;
-  }
-  draw();
-  lines($("#g-err"), [
-    { id: "m", name: "Media de encuestas", color: "#1f4e8c", values: ciclos.map((c) => ({ date: new Date(c), v: G[c].mae_media, label: label(c) })) },
-    { id: "d", name: "CIS sin cocinar", color: "#8a8984", values: ciclos.map((c) => ({ date: new Date(c), v: G[c].mae_cis_dir, label: label(c) })) },
-  ], { height: 220, fmt: (v) => `${n1(v)} puntos`, yTicks: (v) => `${v} pp`, dash: { d: "4 3" } });
-}

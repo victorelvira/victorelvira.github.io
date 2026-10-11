@@ -1,9 +1,9 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 const topojson = window.topojson;
 const geoConicConformalSpain = d3.geoConicConformalSpain;
-import { searchBox } from "./pueblo.js?v=0.2.27";
-import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.27";
-import { addZoom } from "./zoom.js?v=0.2.27";
+import { searchBox } from "./pueblo.js?v=0.2.57";
+import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.57";
+import { addZoom } from "./zoom.js?v=0.2.57";
 
 const state = { tipo: "generales", eleccion: null, modo: "ganador", familia: "psoe", playing: null };
 let geo; // cached {features, provMesh, path}
@@ -108,7 +108,7 @@ export async function renderMapa(app, args, embed = null) {
     <div id="leg"></div>
     <h2 id="nat-h"></h2>
     <div id="nat"></div>
-    <p class="note">Gris: sin datos (municipio inexistente en esa fecha o no incluido en la fuente). En municipales, los pueblos de hasta 250 habitantes votan con listas abiertas: el voto de cada lista se aproxima por el de su candidato más votado y no hay dato de participación.</p>`;
+    <p class="note">Gris: sin datos (municipio inexistente en esa fecha o no incluido en la fuente).${embed ? "" : ` En municipales, los pueblos de hasta 250 habitantes votan con listas abiertas: el voto de cada lista se aproxima por el de su candidato más votado y no hay dato de participación.`}</p>`;
 
   const { features, provMesh, path, borders } = await getGeo();
   const svg = d3.select(app).select("svg");

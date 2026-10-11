@@ -1,10 +1,8 @@
-import { renderMapa } from "./mapa.js?v=0.2.27";
-import { renderSimulador } from "./simulador.js?v=0.2.27";
-import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.27";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.27";
-import { projectFromPolls } from "./simulador.js?v=0.2.27";
+import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.57";
+import { seatRows, lines, dateOf, familySeries, IDEO, famName, fam, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.57";
+import { projectFromPolls } from "./simulador.js?v=0.2.57";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY } from "./encuestas.js?v=0.2.27";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.57";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -39,6 +37,8 @@ function nocheHtml(d) {
 export async function renderInicio(app, args = []) {
   const [S, E, dh] = await Promise.all([load("series.json"), load("encuestas.json"), load("dhondt.json")]);
   const D = await load("dentro.json").catch(() => null);
+  // the model's estimate (pipeline/prediccion.py); without it, the mechanical projection of the poll average
+  const [PR, DR] = await Promise.all([load("prediccion.json").catch(() => null), load("prediccion_draws.json").catch(() => null)]);
   const G = await load("geo_nuevos.json").catch(() => null);
   const days = Math.ceil((ELECTION_DAY - new Date()) / 86400000);
   const base = Object.keys(dh).sort().at(-1);
@@ -46,96 +46,57 @@ export async function renderInicio(app, args = []) {
   const esc26 = conv?.escanos?.provincias ? Object.fromEntries(conv.escanos.provincias.map((r) => [r.prov, r.escanos])) : null;
   const proj = projectFromPolls(dh[base], E.ultimo, esc26, G);
   const ppvox = (proj.seats.pp ?? 0) + (proj.seats.vox ?? 0);
-  const izqBloc = ["psoe", "izq", "sumar", "podemos", "erc", "bildu", "pnv", "bng", "compromis", "cup"].reduce((s, f) => s + (proj.seats[f] ?? 0), 0);
+  const izqNac = ["psoe", "izq", "sumar", "podemos"].reduce((s, f) => s + (proj.seats[f] ?? 0), 0);
+  const otros = Object.entries(proj.seats).filter(([f, n]) => n && !["pp", "vox", "psoe", "izq", "sumar", "podemos"].includes(f)).sort((a, b) => b[1] - a[1]);
   const top = ["pp", "psoe", "vox", "sumar", "podemos", "salf"].filter((p) => E.ultimo[p] != null);
 
   const live = await noche(args[0] === "demo");
-  const SEC = [["encuestas", "Encuestas"], ["movilizacion", "Movilización"], ["calendario", "Calendario"], ["congreso", "Congreso"],
-    ["mapa", "Mapa"], ["simulador", "Simulador"], ["participacion", "Participación"]];
+  // index: a sticky column on wide screens, a sticky scrollable row under the menu on phones
+  const SEC = [["resumen", "Resumen de encuestas", [["diputados", "Diputados"], ["voto", "Porcentaje de voto"], ...(D ? [["movilizacion", "Movilización"]] : [])]], ["calendario", "Calendario", []]];
+  const IX = indexHtml(SEC);
   app.innerHTML = `
-    ${live ? nocheHtml(live) : ""}
     <div class="layout">
-    <aside class="toc" id="toc"><nav>${SEC.map(([id, n]) => `<a href="#inicio" data-s="s-${id}">${n}</a>`).join("")}</nav></aside>
+    ${IX.aside}
     <div class="content">
-    <section class="hero" id="s-portada">
-      <div class="eyebrow">Elecciones generales</div>
-      <h1 class="big">29 de noviembre de 2026</h1>
-      <p class="sub">${days > 0 ? `Faltan <b>${days} días</b>.` : days === 0 ? "<b>Hoy se vota.</b>" : ""} Elecciones anticipadas convocadas el 5 de octubre tras la derrota del Gobierno en los decretos de vivienda. Se eligen 350 diputados y 208 senadores.</p>
-    </section>
+    ${live ? nocheHtml(live) : ""}
+    <div class="eyebrow">Elecciones generales en España</div>
+    <h1>29 de noviembre de 2026</h1>
+    <p class="sub">${days > 0 ? `Faltan <b>${days} días</b> para las elecciones generales.` : days === 0 ? "<b>Hoy se vota.</b>" : ""} Se eligen 350 diputados y 208 senadores.</p>
+    ${IX.row}
 
-    <section id="s-encuestas">
-    <h2>Qué dicen las encuestas <span class="muted" style="font-weight:400">· a ${fechaLarga(BUILD_AT.slice(0, 10))}</span></h2>
-    <div class="stats">${top.map((p) => `<div class="stat"><div class="v"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${String(E.ultimo[p]).replace(".", ",")}%</div><div class="k">${POLL_PARTY[p].n}</div></div>`).join("")}</div>
-    <p class="note">Promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas, último trabajo de campo ${fechaLarga(E.actualizado)}. Abajo, su evolución en los últimos tres meses. <a href="#encuestas">Cada encuesta, cada encuestadora, la cocina y los aciertos históricos, en Encuestas →</a></p>
-    <div class="chart" id="mini"></div>
+    <section id="s-resumen">
+    <h2>Resumen de encuestas</h2>
+    <p class="sub">Resumen de encuestas a día ${fechaLarga(BUILD_AT.slice(0, 10))}. Todos los detalles históricos, por encuestadora, la metodología y más, en <a href="#encuestas">Encuestas</a>.</p>
+    <h3 id="s-diputados">Diputados (estimación)</h3>
     <div class="card">
       <div id="proj"></div>
-      <div class="stats">
-        <div class="stat"><div class="v">${ppvox}</div><div class="k">PP + Vox ${ppvox >= 176 ? "· mayoría absoluta" : `· a ${176 - ppvox} de la mayoría`}</div></div>
-        <div class="stat"><div class="v">${izqBloc}</div><div class="k">PSOE + Sumar/Podemos + nacionalistas de izquierda y PNV</div></div>
-        <div class="stat"><div class="v">${proj.seats.junts ?? 0}</div><div class="k">Junts (bisagra)</div></div>
-      </div>
-      <p class="note">Escaños si se votara así: el promedio se aplica proporcionalmente sobre el reparto provincial de ${elecLabel(base)}${esc26 ? " con los escaños por provincia de 2026" : ""} y se reparte con D'Hondt; Sumar, Podemos y SALF, sin lista propia en 2023, siguen el reparto provincial de las europeas de 2024. Sin márgenes de error: la estimación con incertidumbre llegará con el modelo.</p>
+      <div id="bloques"></div>
+      <p class="note">Arrastra un partido a otro grupo. La mayoría son 176 diputados.</p>
+      <details class="metodo-box"><summary>Metodología</summary><p class="note">${PR ? `Estimación del modelo propio: las encuestas, más el error que han tenido en cada general desde 1982, llevadas provincia a provincia y repartidas con D'Hondt en ${PR.draws.toLocaleString("es-ES")} simulaciones. La barra y las cifras son la estimación central; bajo cada grupo, el rango que recoge 9 de cada 10 simulaciones y la probabilidad de que el grupo llegue a 176.` : "Reparto del promedio de encuestas provincia a provincia con D'Hondt, sin márgenes de error."} <a href="#encuestas/metodo">Más detalle</a> · <a href="#simulador">Prueba otros porcentajes →</a></p></details>
     </div>
-    </section>
 
-    <section id="s-movilizacion">${D ? movilizacion(D) : ""}</section>
+    <h3 id="s-voto">Porcentaje de voto (estimación)</h3>
+    <p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${String(E.ultimo[p]).replace(".", ",")}%</b></span>`).join("")}</p>
+    <div id="chart-area"></div>
+
+
+    ${D ? `<h3 id="s-movilizacion">Movilización (estimación)</h3>
+    <p class="note">Porcentaje seguro de ir a votar (10 sobre 10) según lo que votó en julio de 2023, en las encuestas con microdatos de cada casa. Las dos preguntan de forma distinta y el CIS da niveles más altos: compara cada casa consigo misma. <a href="#encuestas">Adónde va cada voto, en Encuestas →</a></p>
+    <div class="grid2" id="mov"></div>` : ""}
+    </section>
 
     <section id="s-calendario">
     ${conv?.calendario ? `<h2>Calendario</h2>${calendario(conv)}` : ""}
-    ${conv?.cambios_vs_2023?.length ? `<p class="note">Escaños por provincia en 2026 ${conv.escanos.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE"}: ${conv.cambios_vs_2023.map((c) => `${c.nombre} ${c.escanos_2023}→${c.escanos_2026}`).join(", ")}. <a href="#generales">Ver la serie histórica →</a></p>` : ""}
-    </section>
+    ${conv?.cambios_vs_2023?.length ? `<p class="note">Escaños por provincia en 2026 ${conv.escanos.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE"}: ${conv.cambios_vs_2023.map((c) => `${c.nombre} ${c.escanos_2023}→${c.escanos_2026}`).join(", ")}.</p>` : ""}
 
-    <section id="s-congreso">
-    <h2>El Congreso, de hoy a 1977</h2>
-    <p class="sub">Arriba, la estimación actual (en colores apagados); debajo, la composición real tras cada elección general, de la más reciente a la primera. <a href="#generales">La serie completa: voto, participación, Senado, diputados por provincia →</a></p>
-    <div id="hist"></div>
-    </section>
-
-    <section id="s-mapa">
-    <h2>Municipio a municipio</h2>
-    <p class="sub">Quién ganó en cada municipio en cada elección general. Mueve el deslizador de años o pulsa ▶; pulsa un municipio, o búscalo, para abrir su ficha.</p>
-    <div id="mapa" class="lazy"><p class="loading">El mapa se carga al llegar aquí…</p></div>
-    </section>
-
-    <section id="s-simulador">
-    <h2>Simulador de escaños</h2>
-    <div id="sim" class="lazy"><p class="loading">Cargando el simulador…</p></div>
-    </section>
-
-    <section id="s-participacion">
-    <div class="grid2">
-      <div><h2>Participación</h2><div class="chart" id="part"></div>
-        <p class="note">Total sobre censo (incluye residentes en el extranjero). Avances a las 14:00 y 18:00: datos oficiales sobre residentes en España.</p></div>
-      <div><h2>Voto por familias</h2><div class="chart" id="votos"></div></div>
+    <div class="tiles">
+      <a class="tile" href="#generales"><b>Generales 1977-2023</b><span>El Congreso elección a elección, voto, participación, el mapa municipal</span></a>
+      <a class="tile" href="#simulador/encuestas"><b>Simulador</b><span>Mueve los porcentajes y mira los escaños, mayorías y último escaño por provincia</span></a>
+      <a class="tile" href="#encuestas"><b>Encuestas</b><span>Todas las encuestas desde 1982, la cocina y quién acierta</span></a>
     </div>
     </section>
     </div></div>`;
-
-  // the poll chart, the lazy blocks and the index
-  {   // three-month sketch of the corrected average, no dots and no controls: the analysis is in Encuestas
-    const days = E.dias.map((d) => new Date(d)), from = new Date(+days.at(-1) - 92 * 864e5);
-    lines(app.querySelector("#mini"), top.map((p) => ({ id: p, name: POLL_PARTY[p].n, color: POLL_PARTY[p].c(),
-      values: days.map((d, i) => ({ date: d, v: E.media[p][i] == null ? null : E.media[p][i] / 100, label: E.dias[i] })).filter((o) => o.date >= from) })), { height: 220 });
-  }
-  const lazy = { mapa: () => renderMapa(app.querySelector("#mapa"), [], { tipos: ["generales"] }), sim: () => renderSimulador(app.querySelector("#sim"), ["encuestas"], true) };
-  const toc = app.querySelector("#toc");
-  toc.querySelectorAll("a").forEach((a) => a.onclick = (ev) => { ev.preventDefault(); app.querySelector(`#${a.dataset.s}`).scrollIntoView({ behavior: "smooth", block: "start" }); });
-  // one scroll handler: load the heavy blocks when they come within 600 px, and mark the section in view
-  let tick = false;
-  function onScroll() {
-    tick = false;
-    if (!document.body.contains(toc)) { removeEventListener("scroll", onScroll); return; }
-    for (const id of Object.keys(lazy)) {
-      const el = app.querySelector(`#${id}`);
-      if (el && el.getBoundingClientRect().top < innerHeight + 600) { const f = lazy[id]; delete lazy[id]; f(); }
-    }
-    let cur = null;
-    for (const [id] of SEC) { const el = app.querySelector(`#s-${id}`); if (el && el.getBoundingClientRect().top <= 120) cur = `s-${id}`; }
-    toc.querySelectorAll("a").forEach((a) => a.classList.toggle("on", a.dataset.s === cur));
-  }
-  addEventListener("scroll", () => { if (!tick) { tick = true; requestAnimationFrame(onScroll); } }, { passive: true });
-  onScroll();
+  sectionIndex(app);
 
   if (live) {
     const fam = {};
@@ -145,32 +106,23 @@ export async function renderInicio(app, args = []) {
     clearTimeout(window.__nocheTimer);
     window.__nocheTimer = setTimeout(() => { if (location.hash.replace("#", "").split("/")[0] in { "": 1, inicio: 1 }) renderInicio(app, args); }, 60000);
   }
-  seatRows(app.querySelector("#proj"), [{ label: "Proyección", e: proj.seats }], { labelWidth: 90, eid: "generales_2026-11" });
-  const eids = S.elecciones;
-  seatRows(app.querySelector("#hist"), [{ label: "2026 · estimación", e: proj.seats, muted: true },
-    ...[...eids].reverse().map((e) => ({ label: elecLabel(e).replace("Generales ", ""), e: S.nacional[e].e }))], { labelWidth: 110 });
-  const N = S.nacional;
-  lines(app.querySelector("#part"), [
-    { id: "t", name: "Final", color: "#1f4e8c", values: eids.map((e) => ({ date: dateOf(e), v: N[e].votantes / N[e].censo, label: elecLabel(e) })) },
-    { id: "a2", name: "18:00", color: "#6b8fc7", values: eids.map((e) => ({ date: dateOf(e), v: N[e].av2, label: elecLabel(e) })) },
-    { id: "a1", name: "14:00", color: "#a9bfe0", values: eids.map((e) => ({ date: dateOf(e), v: N[e].av1, label: elecLabel(e) })) },
-  ], { height: 280, yMin: 0.2, yMax: 0.85 });
-  lines(app.querySelector("#votos"), familySeries(N, elecLabel, 0.05).sort((a, b) => IDEO.indexOf(a.id) - IDEO.indexOf(b.id)), { height: 280 });
+  const est = PR?.central ?? proj.seats;
+  seatRows(app.querySelector("#proj"), [{ label: "Estimación", e: est }], { labelWidth: 90, eid: "generales_2026-11" });
+  bloques(app.querySelector("#bloques"), est, { draws: PR ? DR : null });
+  pollChart(app.querySelector("#chart-area"), E, { selector: false, lastTable: false, tools: false, kpi: false });
+  if (D) movilizacion(app.querySelector("#mov"), D);
 }
 
 // latest survey with microdata: who is sure to vote, and the change from the same house's previous survey
-function movilizacion(D) {
-  const n0 = (x) => String(Math.round(x));
-  const houses = Object.entries(D.movilizacion).sort((a, b) => (a[1].at(-1).f < b[1].at(-1).f ? 1 : -1));
-  const block = ([casa, rows]) => {
-    const r = rows.at(-1), p = rows.at(-2);
-    const item = (k, label) => r[k] == null ? "" : `<div class="stat"><div class="v">${n0(r[k])}%${p?.[k] != null ? ` <span class="muted" style="font-size:13px;font-weight:400">${r[k] - p[k] >= 0 ? "+" : "−"}${n0(Math.abs(r[k] - p[k]))}</span>` : ""}</div><div class="k">${label}</div></div>`;
-    return `<p class="note" style="margin-bottom:0"><b>${casa}</b>, ${fechaLarga(r.f)}${p ? ` (cambio frente al ${fechaLarga(p.f)})` : ""}</p>
-      <div class="stats">${item("derecha", "votantes de PP y Vox en 2023")}${item("izquierda", "votantes de PSOE y Sumar en 2023")}${item("jovenes", "menores de 35 años")}${item("abstencion", "no votaron en 2023")}</div>`;
-  };
-  return `<h2>¿Quién está movilizado?</h2>
-    ${houses.map(block).join("")}
-    <p class="note">Seguros de ir a votar (10 sobre 10) en la última encuesta con microdatos de cada casa; junto a cada cifra, el cambio en puntos frente a su encuesta anterior. Las dos casas preguntan de forma distinta y el CIS da niveles más altos: compara cada casa consigo misma. <a href="#encuestas">Ver la evolución y adónde va cada voto →</a></p>`;
+// mobilisation as two small time series (one per house with microdata): sure to vote by 2023 vote
+function movilizacion(el, D) {
+  const G = [["derecha", "Votó PP o Vox", "#1d84ce"], ["izquierda", "Votó PSOE o Sumar", "#e30613"], ["jovenes", "Menores de 35", "#6b2e68"], ["abstencion", "No votó", "#8a8984"]];
+  el.innerHTML = Object.keys(D.movilizacion).map((casa) => `<div><div class="h4">${casa}</div><div class="chart" id="mov-${casa.replace(/\W/g, "")}"></div></div>`).join("");
+  for (const [casa, rows] of Object.entries(D.movilizacion)) {
+    const last = rows.at(-1);
+    lines(el.querySelector(`#mov-${casa.replace(/\W/g, "")}`), G.map(([k, n, c]) => ({ id: k, name: `${n} ${last[k] != null ? Math.round(last[k]) + "%" : ""}`, color: c,
+      values: rows.map((r) => ({ date: new Date(r.f), v: r[k] == null ? null : r[k] / 100, label: r.f })) })), { height: 200, yMin: 0, yMax: 1 });
+  }
 }
 
 const HITOS = {
@@ -201,3 +153,4 @@ function calendario(conv) {
   });
   return `<table class="cal">${rows.join("")}</table>`;
 }
+

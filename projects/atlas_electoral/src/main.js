@@ -1,14 +1,14 @@
-import { init } from "./data.js?v=0.2.27";
-import { renderMapa } from "./mapa.js?v=0.2.27";
-import { renderPueblo } from "./pueblo.js?v=0.2.27";
-import { renderMiniatura } from "./miniatura.js?v=0.2.27";
-import { renderSimulador } from "./simulador.js?v=0.2.27";
-import { renderEncuestas } from "./encuestas.js?v=0.2.27";
-import { renderInicio } from "./inicio.js?v=0.2.27";
-import { renderHistoria } from "./historia.js?v=0.2.27";
-import { renderComunidad } from "./comunidad.js?v=0.2.27";
-import { renderExplora } from "./explora.js?v=0.2.27";
-import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.27";
+import { init } from "./data.js?v=0.2.57";
+import { renderMapa } from "./mapa.js?v=0.2.57";
+import { renderPueblo } from "./pueblo.js?v=0.2.57";
+import { renderMiniatura } from "./miniatura.js?v=0.2.57";
+import { renderSimulador } from "./simulador.js?v=0.2.57";
+import { renderEncuestas } from "./encuestas.js?v=0.2.57";
+import { renderInicio } from "./inicio.js?v=0.2.57";
+import { renderHistoria } from "./historia.js?v=0.2.57";
+import { renderComunidad } from "./comunidad.js?v=0.2.57";
+import { renderExplora } from "./explora.js?v=0.2.57";
+import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.57";
 
 // Spanish decimal comma and thousands point for every d3.format (axes, tooltips)
 window.d3.formatDefaultLocale({ decimal: ",", thousands: ".", grouping: [3], currency: ["", " €"] });
@@ -46,7 +46,7 @@ async function route() {
   app.innerHTML = '<p class="loading">Cargando…</p>';
   try {
     await routes[view](app, args.map(decodeURIComponent));
-    if (args[0] === "metodo") app.querySelector("#metodo")?.scrollIntoView({ block: "start" });
+    if (args[0] === "metodo") { const m = app.querySelector("#metodo"); if (m) { m.open = true; m.scrollIntoView({ block: "start" }); } }
   } catch (e) {
     console.error(e);
     app.innerHTML = `<p>Error cargando la vista: ${e.message}</p>`;
