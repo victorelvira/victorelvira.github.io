@@ -1,8 +1,8 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.58";
-import { seatRows, lines, dateOf, familySeries, IDEO, famName, fam, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.58";
-import { projectFromPolls } from "./simulador.js?v=0.2.58";
+import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.59";
+import { seatRows, lines, dateOf, familySeries, IDEO, famName, fam, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.59";
+import { projectFromPolls } from "./simulador.js?v=0.2.59";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.58";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.59";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -67,7 +67,7 @@ export async function renderInicio(app, args = []) {
     <section id="s-resumen">
     <h2>Resumen de encuestas</h2>
     <p class="sub">Resumen de encuestas a día ${fechaLarga(BUILD_AT.slice(0, 10))}. Todos los detalles históricos, por encuestadora, la metodología y más, en <a href="#encuestas">Encuestas</a>.</p>
-    <h3 id="s-diputados">Diputados (estimación)</h3>
+    <h3 id="s-diputados">Diputados (estimación)${PR ? ' <span class="tag-exp">modelo experimental</span>' : ""}</h3>
     <div class="card">
       <div id="proj"></div>
       <div id="bloques"></div>

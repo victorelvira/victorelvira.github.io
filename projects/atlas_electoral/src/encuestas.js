@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.58";
-import { lines, indexHtml, sectionIndex, seatRows, bloques } from "./charts.js?v=0.2.58";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.59";
+import { lines, indexHtml, sectionIndex, seatRows, bloques } from "./charts.js?v=0.2.59";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -63,7 +63,7 @@ export async function renderEncuestas(app, args = []) {
     </section>
 
     <section id="s-prediccion">
-    <h2>Predicción</h2>
+    <h2>Predicción <span class="tag-exp">modelo experimental, en revisión</span></h2>
     <div id="pred"></div>
     </section>
 
@@ -618,10 +618,10 @@ function prediccion(el, P) {
     <h3>¿Acierta?</h3>
     <div id="pred-bt"></div>
     <details class="metodo-box"><summary>Metodología</summary><div class="metodo">
-    <p><b>Qué hace.</b> Para cada partido sigue día a día su apoyo con un filtro que combina todas las encuestas del ciclo, descontando a cada casa su desviación habitual (con lo que hizo en 2023 como punto de partida). Eso da el nivel de hoy y su incertidumbre.</p>
-    <p><b>Lo que las encuestas no saben.</b> El día de la votación se añade el error común de la industria: en cada general desde 1982 la media final de las encuestas falló unos 2,5 puntos en PP y PSOE, en una dirección que no se puede saber de antemano. Ese error se simula con la escala y las correlaciones entre partidos medidas en esas 14 elecciones (la derecha se mueve junta; derecha e izquierda, en sentidos opuestos).</p>
+    <p><b>Qué hace.</b> Para cada partido (PP, PSOE, Vox, Sumar, Podemos, SALF, ERC, Junts, Bildu y PNV) sigue día a día su apoyo con un filtro que combina todas las encuestas del ciclo, descontando a cada casa su desviación habitual (con lo que hizo en 2023 como punto de partida). Eso da el nivel de hoy y su incertidumbre.</p>
+    <p><b>Lo que las encuestas no saben.</b> El día de la votación se añade el error común de la industria: lo que se equivocó este mismo filtro, con todas las encuestas, en cada general desde 1982, en una dirección que no se puede saber de antemano. Se simula con la escala y las correlaciones entre partidos medidas en esas elecciones (la derecha se mueve junta; derecha e izquierda, en sentidos opuestos).</p>
     <p><b>Escaños.</b> Cada simulación de voto nacional se lleva a las provincias como en el simulador, con un ruido extra por comunidad y por provincia calibrado con 1977-2023, y se reparten los escaños con D'Hondt. Las horquillas recogen el 90% de las simulaciones.</p>
-    <p class="note">Modelo A del borrador de modelos (docs/modelos): filtro de Kalman por partido, error común t de Student casi normal, ${P.draws.toLocaleString("es-ES")} simulaciones. Parámetros: escala del error común ${P.parametros.b_escala}·√(p(1−p)); ruido autonómico ${P.parametros.s_ccaa}, provincial ${P.parametros.s_prov}.</p>
+    <p class="note">Modelo A+ del borrador de modelos (docs/modelos): filtro de Kalman por partido, error común casi normal, ${P.draws.toLocaleString("es-ES")} simulaciones. Se probó además una capa provincial a partir de los microdatos del CIS y 40dB y de las encuestas autonómicas: mejora el mapa de porcentajes pero no los escaños, así que no se usa. Parámetros: escala del error común ${String(P.parametros.b_escala).replace(".", ",")}·√(p(1−p)); ruido autonómico ${P.parametros.s_ccaa}, provincial ${P.parametros.s_prov}.</p>
     </div></details>`;
   // the seat bar and the draggable groups (the same component as the 29N page); the histogram follows the groups
   seatRows(el.querySelector("#pred-bar"), [{ label: "Estimación", e: P.central }], { labelWidth: 90, eid: "generales_2026-11" });
@@ -652,7 +652,7 @@ function prediccion(el, P) {
   }).catch(() => {});
   load("backtest.json").then((B) => {
     const h7 = B.horizontes[7], h30 = B.horizontes[30], pc = (x) => `${Math.round(x * 100)}%`;
-    el.querySelector("#pred-bt").innerHTML = `<p class="note">Probado en las ${B.elecciones} elecciones generales desde ${B.desde}, rehaciendo el modelo con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro del rango del 90% en el ${pc(h7.voto.en90)} de los casos para el voto y en el ${pc(h7.escanos.en90)} para los escaños (un mes antes: ${pc(h30.voto.en90)} y ${pc(h30.escanos.en90)}). Los rangos son, si acaso, algo prudentes. Fallaron, sobre todo, 2004 (tres días después del 11-M) y Ciudadanos en 2015.</p>`;
+    el.querySelector("#pred-bt").innerHTML = `<p class="note">Probado en las ${B.elecciones} elecciones generales desde ${B.desde}, rehaciendo el modelo con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro del rango del 90% en el ${pc(h7.voto.en90)} de los casos para el voto y en el ${pc(h7.escanos.en90)} para los escaños (un mes antes: ${pc(h30.voto.en90)} y ${pc(h30.escanos.en90)}). Fallaron, sobre todo, 2004 (tres días después del 11-M) y Ciudadanos en 2015.</p>`;
   }).catch(() => {});
 }
 

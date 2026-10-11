@@ -303,3 +303,5 @@ details.metodo-box[open] > .metodo, details.metodo-box[open] > p { border: 1px s
 .sub { margin-bottom: 12px; }
 @media (max-width: 1099px) { .toc-row { margin-top: 4px; } }
 .bq-p { font-size: 12px; color: var(--ink-2); margin: -2px 0 6px; }
+.tag-exp { display: inline-block; vertical-align: middle; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #9a5b00; background: #fff4e0; border: 1px solid #f0d6a8; border-radius: 4px; padding: 1px 6px; margin-left: 6px; }
+:root[data-theme="dark"] .tag-exp { color: #f0c27a; background: #3a2a10; border-color: #6b4e1e; }
