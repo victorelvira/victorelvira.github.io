@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.57";
-import { lines, indexHtml, sectionIndex, seatRows, bloques } from "./charts.js?v=0.2.57";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.58";
+import { lines, indexHtml, sectionIndex, seatRows, bloques } from "./charts.js?v=0.2.58";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -611,6 +611,12 @@ function prediccion(el, P) {
       ${parties.map((p) => { const d = P.partidos[p]; return `<tr><td><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</td><td class="num">${num(d.voto.p50)}%</td><td class="num">${num(d.voto.p05)} a ${num(d.voto.p95)}</td><td class="num">${d.escanos ? d.escanos.p50 : "·"}</td><td class="num">${d.escanos ? `${d.escanos.p05} a ${d.escanos.p95}` : "·"}</td></tr>`; }).join("")}</table></div>
     <h3>Escaños de cada grupo en las ${P.draws.toLocaleString("es-ES")} simulaciones</h3>
     <div class="card chart" id="pred-hist"></div>
+    <h3>Cómo ha cambiado</h3>
+    <p class="note">Cada semana, con solo las encuestas publicadas hasta entonces.</p>
+    <div class="grid2"><div><div class="h4">Probabilidad de que PP, Vox y SALF lleguen a 176</div><div class="chart" id="pred-prob"></div></div>
+      <div><div class="h4">Escaños por partido (mediana)</div><div class="chart" id="pred-esc"></div></div></div>
+    <h3>¿Acierta?</h3>
+    <div id="pred-bt"></div>
     <details class="metodo-box"><summary>Metodología</summary><div class="metodo">
     <p><b>Qué hace.</b> Para cada partido sigue día a día su apoyo con un filtro que combina todas las encuestas del ciclo, descontando a cada casa su desviación habitual (con lo que hizo en 2023 como punto de partida). Eso da el nivel de hoy y su incertidumbre.</p>
     <p><b>Lo que las encuestas no saben.</b> El día de la votación se añade el error común de la industria: en cada general desde 1982 la media final de las encuestas falló unos 2,5 puntos en PP y PSOE, en una dirección que no se puede saber de antemano. Ese error se simula con la escala y las correlaciones entre partidos medidas en esas 14 elecciones (la derecha se mueve junta; derecha e izquierda, en sentidos opuestos).</p>
@@ -637,6 +643,17 @@ function prediccion(el, P) {
     elh.insertAdjacentHTML("beforeend", `<div class="legend">${bins.map((b) => `<span><i class="sw" style="background:${b.c}"></i>${b.n}</span>`).join("")}</div>`);
   };
   load("prediccion_draws.json").then((DR) => bloques(el.querySelector("#pred-bloques"), P.central, { draws: DR, onChange: (at, sumOf) => hist(sumOf) }));
+  load("prediccion_serie.json").then((SE) => {
+    const w = SE.semanas, dt = (s) => new Date(s);
+    lines(el.querySelector("#pred-prob"), [{ id: "d", name: "PP, Vox y SALF", color: "#1d84ce", values: w.map((x) => ({ date: dt(x.f), v: x.p_derecha, label: x.f })) }],
+      { height: 220, yMin: 0, yMax: 1 });
+    lines(el.querySelector("#pred-esc"), Object.keys(P.partidos).filter((p) => w.at(-1).esc[p]?.[1] >= 1).map((p) => ({ id: p, name: partyName(p, "2026"), color: partyColor(p),
+      values: w.map((x) => ({ date: dt(x.f), v: x.esc[p]?.[1] ?? null, label: x.f })) })), { height: 220, fmt: (v) => `${Math.round(v)} escaños`, yTicks: (v) => v, yMin: 0 });
+  }).catch(() => {});
+  load("backtest.json").then((B) => {
+    const h7 = B.horizontes[7], h30 = B.horizontes[30], pc = (x) => `${Math.round(x * 100)}%`;
+    el.querySelector("#pred-bt").innerHTML = `<p class="note">Probado en las ${B.elecciones} elecciones generales desde ${B.desde}, rehaciendo el modelo con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro del rango del 90% en el ${pc(h7.voto.en90)} de los casos para el voto y en el ${pc(h7.escanos.en90)} para los escaños (un mes antes: ${pc(h30.voto.en90)} y ${pc(h30.escanos.en90)}). Los rangos son, si acaso, algo prudentes. Fallaron, sobre todo, 2004 (tres días después del 11-M) y Ciudadanos en 2015.</p>`;
+  }).catch(() => {});
 }
 
 // per election: range of the final polls, their mean, the CIS raw intention and the result (generales_encuestas.json)

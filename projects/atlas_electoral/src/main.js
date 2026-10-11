@@ -1,14 +1,14 @@
-import { init } from "./data.js?v=0.2.57";
-import { renderMapa } from "./mapa.js?v=0.2.57";
-import { renderPueblo } from "./pueblo.js?v=0.2.57";
-import { renderMiniatura } from "./miniatura.js?v=0.2.57";
-import { renderSimulador } from "./simulador.js?v=0.2.57";
-import { renderEncuestas } from "./encuestas.js?v=0.2.57";
-import { renderInicio } from "./inicio.js?v=0.2.57";
-import { renderHistoria } from "./historia.js?v=0.2.57";
-import { renderComunidad } from "./comunidad.js?v=0.2.57";
-import { renderExplora } from "./explora.js?v=0.2.57";
-import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.57";
+import { init } from "./data.js?v=0.2.58";
+import { renderMapa } from "./mapa.js?v=0.2.58";
+import { renderPueblo } from "./pueblo.js?v=0.2.58";
+import { renderMiniatura } from "./miniatura.js?v=0.2.58";
+import { renderSimulador } from "./simulador.js?v=0.2.58";
+import { renderEncuestas } from "./encuestas.js?v=0.2.58";
+import { renderInicio } from "./inicio.js?v=0.2.58";
+import { renderHistoria } from "./historia.js?v=0.2.58";
+import { renderComunidad } from "./comunidad.js?v=0.2.58";
+import { renderExplora } from "./explora.js?v=0.2.58";
+import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.58";
 
 // Spanish decimal comma and thousands point for every d3.format (axes, tooltips)
 window.d3.formatDefaultLocale({ decimal: ",", thousands: ".", grouping: [3], currency: ["", " €"] });
