@@ -4,7 +4,7 @@
  * The fix is §1's: the predicate is a DECLARATIVE list, so there is never a second hand-maintained
  * copy of it for the table, and "does this dimension apply here?" is a field rather than a ternary.
  */
-const DATA_V = "0.36.5";
+const DATA_V = "0.41.0";
 let BUILD_AT = "";
 
 const $ = (id) => document.getElementById(id);
@@ -43,7 +43,9 @@ const LABEL = {
   mount: { wall: "🧱 On a wall", ground: "🟫 In the pavement", "n/a": "Not a plaque" },
   dom: { letters: "Letters", music: "Music", image: "Art and architecture", stage: "Stage and screen", science: "Science",
          power: "Politics and power", faith: "Religion", sport: "Sport", trade: "Business",
-         other: "Other", nobody: "No person named" },
+         // Two different answers, and they were one until 0.40. A museum has no person by nature; a plaque has
+         // one and we could not say who, which is a gap of ours and is now countable.
+         other: "Other", nobody: "Not a person", unnamed: "Somebody, not named" },
   verb: { born: "was born", lived: "lived", worked: "worked", died: "died", buried: "is buried",
           commemorated: "is remembered", built: "built it", exhibited: "is exhibited", happened: "happened",
           dedicated: "a church is dedicated to them" },
@@ -108,6 +110,10 @@ const HELP = {
     commemorated: "They are remembered here, without the source telling us what happened here.",
     built: "They built or designed it.", exhibited: "Their work hangs here.",
     happened: "Not a person's trace: the place where a battle or an event took place.",
+  },
+  dom: {
+    nobody: "There is no person to name: the trace is a museum, a church, a battlefield. The place itself is the subject.",
+    unnamed: "Somebody IS remembered here and the atlas could not say who. A plaque with words and no name we could resolve. This is a gap of ours, not a kind of person, and it is counted so it can be seen: 101 433 traces.",
   },
 };
 
@@ -180,46 +186,26 @@ const F_PORTRAIT = 1, F_GRAVEPIC = 2, F_PLACELESS = 4;
 // códigos"): F_APPROX, the point stands for an AREA (a battlefield, a town, a square), drawn larger and
 // dashed; F_SAINT, the person is canonised or beatified (Wikidata P411), drawn with a halo.
 const F_APPROX = 8, F_SAINT = 16;
+// Nobody ever wrote a page about this person, on any wiki, in any language (build.py F_UNWRITTEN). 24 316 of the
+// atlas's people, two thirds of them Stolperstein people, which is the whole point of a Stolperstein. The renown
+// number cannot say it: it is floored at 1, so none and one look the same.
+const F_UNWRITTEN = 32;
 
 /* ── state: one object, every dimension ── */
-// 0.27 DEFAULT: the 500 best known PEOPLE HERE, i.e. in the map as it stands. The whole world at once
-// was 315 000 traces drawn as a carpet of pins, and "here" means a zoom into Madrid shows Madrid's best
-// known, not whoever is best known on Earth and happens to be in Madrid. "all" is one tap away and the
-// list says how many are held back (Víctor, 2026-09-15: "más inteligente en los que salen por defecto").
-const TOP_DEFAULT = 500;
+// 0.37: there is no renown dial. The map draws EVERYTHING and the cells aggregate it (see drawMap): a pin that
+// says 3 412 means 3 412, and that honesty was being undone by a cut computed from the viewport. Measured 2026-10-10:
+// zooming out from Madrid to Spain dropped 369 of the 502 people on screen while they were still on screen, and the
+// count stayed near 500, so the churn was invisible. The ranking now lives where a ranking belongs: the list is
+// ordered by renown and rendered as you scroll, and the whole atlas as a table is the Top people panel (D59).
 const state = {
   what: {}, mount: {}, access: {}, marking: {}, dom: {}, verb: {},
-  q: "", yearMin: -Infinity, yearMax: Infinity, near: null, site: null, topN: TOP_DEFAULT, topWhere: "here",
-  colorBy: "dom", person: null, personName: "", personSec: null, group: null, living: false,
+  q: "", yearMin: -Infinity, yearMax: Infinity, near: null, site: null,
+  colorBy: "dom", person: null, personName: "", personSec: null, group: null, living: false, unwritten: false,
+  // the one renown control left: a FIXED threshold shipped by the build (atlas.json `famousCut`, the world's best
+  // known 2 000), so it never moves under the reader. 0 until the bundle lands, which shows everybody.
+  famous: false,
 };
-// The renown dial (DECISIONS D6). Fame never decided who is IN the corpus; it is the reader's
-// control over how much of it to look at. `rankCut` is recomputed from the current selection, so
-// "the top 100" means the hundred best known of *what you are already filtering to*: the top 100
-// writers, not the hundred best known people who happen to be writers.
-let rankCut = 0;
-// 0.27: it counts PEOPLE, not traces (a person with thirty statues took thirty of the hundred), and it
-// can count them HERE (in the map's current bounds) or in the WORLD. Víctor: "quizás necesitamos los dos".
-let heldBack = 0;
-// At street scale the dial stops choosing (0.33). "The 500 best known here" is how to read a continent; in a street,
-// what you can walk to is what you want, and a plaque to a local poet is as much there as Cervantes' (Víctor,
-// 2026-09-25: "me siguen faltando placas y estatuas en algunos sitios").
-const STREET_ZOOM = 15;
-const dialSleeps = () => state.topWhere === "here" && map.getZoom() >= STREET_ZOOM;
-function recomputeRankCut() {
-  heldBack = 0;
-  if (!state.topN || dialSleeps()) { rankCut = 0; return; }
-  const here = state.topWhere === "here" ? map.getBounds() : null;
-  const best = new Map();
-  for (const r of TRACES) {
-    if (!passesExcept(r, "table", "renown")) continue;
-    if (here && (r.flags & F_PLACELESS || !here.contains([SITES[r.site][S_LAT], SITES[r.site][S_LON]]))) continue;
-    if ((best.get(r.qid) || 0) < r.rank) best.set(r.qid, r.rank);
-  }
-  if (best.size <= state.topN) { rankCut = 0; return; }
-  const ranks = [...best.values()].sort((a, z) => z - a);
-  rankCut = ranks[state.topN - 1];
-  heldBack = ranks.filter((x) => x < rankCut).length;
-}
+let FAMOUS_CUT = Infinity;
 
 /* ── THE DIMENSIONS (CHASSIS §1) ────────────────────────────────────────────────────────────
  * Every filter is a row here. `appliesTo` replaces the sibling's hardcoded ternaries, and is what
@@ -247,8 +233,11 @@ const DIMENSIONS = [
       return (b ?? a) >= state.yearMin && (a ?? b) <= state.yearMax; } },
   { id: "text", appliesTo: ALL, test: (r) => !state.q || hasWords(r._s, qWords(state.q)) },
   { id: "site", appliesTo: ALL, test: (r) => state.site == null || r.site === state.site },
-  // a person the reader chose is shown whole, whatever the dial says
-  { id: "renown", appliesTo: ALL, test: (r) => !state.topN || !!state.person || r.rank >= rankCut },
+  // "Only the world's best known" (0.37). A fixed threshold, never a share of what is on screen. A person the
+  // reader chose is shown whole, whatever it says.
+  { id: "famous", appliesTo: ALL, test: (r) => !state.famous || !!state.person || r.rank >= FAMOUS_CUT },
+  // The other end of the same question (0.38): the people a place remembers and no encyclopedia does.
+  { id: "unwritten", appliesTo: ALL, test: (r) => !state.unwritten || !!state.person || !!(r.flags & F_UNWRITTEN) },
   // Picking somebody out of the search does not merely fly there: it narrows the atlas to them,
   // the way the sibling's picker sets `museumFilter` when you click a museum (CHASSIS §3c).
   // Flying without narrowing left the panel behind still listing everyone matching the raw text.
@@ -474,16 +463,19 @@ function sitePopup(siteIdx, rows) {
                .filter(Boolean).join(" · ");
   // Published hours, never an assertion: the string, who published it, and the day they last
   // touched it. The atlas says what the administration said; it does not say "open" (D7).
-  const hoursBlock = kind === "museum" ? `<div class="hrs-slot" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "";
+  // the key is the coordinate AND the place's name: two things on one point are two cards (D60). hrs/ and ins/
+  // are keyed by the point alone and fall back to it inside tileFor.
+  const ckey = `${s[S_LAT]},${s[S_LON]}|${s[S_NAME]}`;
+  const hoursBlock = kind === "museum" ? `<div class="hrs-slot" data-key="${esc(ckey)}"></div>` : "";
   const items = persons.slice(0, CARD_MAX).map((r) => personRow(r, acc)).join("");
   const more = persons.length > CARD_MAX
     ? `<li class="pop-more">…and ${persons.length - CARD_MAX} more. They are all in the list beside the map.</li>` : "";
   // What the plaque says, fetched when the card opens (build_inscriptions.py, 0.5° tiles).
   // A plaque from Open Plaques has its words in ins/; one from OpenStreetMap (0.26) has them in its
   // card, like a statue. Both are asked for; the one that has nothing removes itself.
-  const ins = (kind === "plaque" && !s[S_OSM] ? `<div class="ins" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "") +
+  const ins = (kind === "plaque" && !s[S_OSM] ? `<div class="ins" data-key="${esc(ckey)}"></div>` : "") +
     // a museum's photo, kind and website, fetched the same way (build.py, culture/data/cards/)
-    (["museum", "statue", "battle", "event", "plaque", "grave", "church"].includes(kind) ? `<div class="mx" data-key="${s[S_LAT]},${s[S_LON]}"></div>` : "");
+    (["museum", "statue", "battle", "event", "plaque", "grave", "church"].includes(kind) ? `<div class="mx" data-key="${esc(ckey)}"></div>` : "");
   const where = whereOf(s);
   const area = rows.every((r) => r.flags & F_APPROX);
   return `<div class="card"><div class="hd"><div class="nm">${esc(s[S_NAME])}</div>` +
@@ -514,13 +506,17 @@ function drawMap() {
   const draw = map.getBounds().pad(0.3);
   const seen = map.getBounds();
   const cells = new Map();
-  let inView = 0, rowsInView = 0;
+  let inView = 0, rowsInView = 0, anonInView = 0;
   for (const pl of places) {
     if (!draw.contains([pl.lat, pl.lon])) continue;
     const vis = pl.rows.filter((r) => passes(r, "map"));
     if (!vis.length) continue;
     pl.vis = vis;
-    if (seen.contains([pl.lat, pl.lon])) { inView++; rowsInView += vis.length; }
+    if (seen.contains([pl.lat, pl.lon])) {
+      inView++;
+      // a plaque nobody could put a name to is a trace, not a person (0.38): counted, and counted apart
+      for (const r of vis) { if (/^(ev:)?Q\d+$/.test(r.qid)) rowsInView++; else anonInView++; }
+    }
     let w = 0;
     for (const r of vis) if (r.rank > w) w = r.rank;
     pl.w = w;
@@ -581,7 +577,7 @@ function drawMap() {
     }
     pinLayer.addLayer(m);
   }
-  return { pins: cells.size, inView, rowsInView };
+  return { pins: cells.size, inView, rowsInView, anonInView };
 }
 
 function cellPopup(c) {
@@ -671,7 +667,7 @@ const PLACE_SECTIONS = [
   { title: "What happened here", verbs: ["happened"] }, { title: "Remembered here", verbs: ["commemorated"] }];
 const PC_MAX = 60;
 function placeCardHTML(i, rows) {
-  const s = SITES[i], kind = VOCAB.siteKind[s[S_KIND]] || "", key = `${s[S_LAT]},${s[S_LON]}`;
+  const s = SITES[i], kind = VOCAB.siteKind[s[S_KIND]] || "", key = `${s[S_LAT]},${s[S_LON]}|${s[S_NAME]}`;
   const isPerson = (r) => /^(ev:)?Q\d+$/.test(r.qid);
   const persons = rows.filter(isPerson), self = rows.find((r) => !isPerson(r)) || rows[0];
   const acc = self ? VOCAB.access[self.access] : "unknown";
@@ -695,8 +691,18 @@ function placeCardHTML(i, rows) {
       (list.length > PC_MAX ? `<li class="sh-more">…and ${(list.length - PC_MAX).toLocaleString()} more. The list beside the map has them all.</li>` : "") +
       `</ul></div>`;
   }).join("");
+  // What the atlas knows and never said (0.38, Víctor: "hemos hecho esto un poquito personalista, mitomano?").
+  // A place where nobody remembered has an encyclopedia article is the ordinary case for a Stolperstein and for
+  // most memorials, and saying it is the plainest answer to the great-man reading. One sentence, no figures
+  // beyond the count, and only when it is ALL of them: "some of them" is not a fact worth a line.
+  const unwritten = persons.filter((r) => r.flags & F_UNWRITTEN).length;
+  const note = nPeople > 1 && unwritten === persons.length
+    ? `<div class="pc-note">No page was ever written about any of them, on any Wikipedia.</div>`
+    : nPeople === 1 && unwritten === 1
+      ? `<div class="pc-note">No page was ever written about them, on any Wikipedia.</div>` : "";
   return `<div class="pc"><div class="pc-photo"></div><div class="sh-name">${esc(s[S_NAME])}</div>` +
     `<div class="pc-kind">${esc([capital(kind === "settlement" ? "" : kind), whereOf(s)].filter(Boolean).join(" · "))}</div>` +
+    note +
     `<div class="sh-sum pc-sum" data-key="${esc(key)}"></div>` +
     `<div class="sh-links pc-facts">${facts}</div>` +
     (["museum", "church"].includes(kind) ? `<div class="hrs-slot" data-key="${esc(key)}"></div>` : "") +
@@ -713,7 +719,7 @@ function openPlaceFull(i) {
     openSheetHTML(placeCardHTML(i, rows), "place", keepScroll);
     const body = $("sheet-body"), box = body.querySelector(".pc-sum");
     tileFor("cards", box.dataset.key).then((t) => {
-      const x = t && t[box.dataset.key];
+      const x = entry(t, box.dataset.key);
       if (!box.isConnected) return;
       if (x && x.img) {
         body.querySelector(".pc-photo").innerHTML = pic(x.img, "pc-img", 720, SITES[i][S_NAME]);
@@ -813,8 +819,9 @@ function frameRows(rows) {
 }
 
 // Half a sentence on screen; the counts behind it in the tooltip (Víctor, 2026-09-15: the line was jargon).
-function statsLine(pins, inView, rowsInView) {
+function statsLine(pins, inView, rowsInView, anonInView) {
   const short = `${rowsInView.toLocaleString()} ${rowsInView === 1 ? "person" : "people"} in ${inView.toLocaleString()} ${inView === 1 ? "place" : "places"}` +
+    (anonInView ? ` · ${anonInView.toLocaleString()} more remembered, nobody named` : "") +
     (deepState === "loading" ? " · loading more…" : "");
   const grouped = pins < inView
     ? `${inView.toLocaleString()} places here, grouped into ${pins.toLocaleString()} pins. Zoom in to split them`
@@ -831,9 +838,8 @@ function statsLine(pins, inView, rowsInView) {
 }
 
 function refresh() {
-  recomputeRankCut();
-  const { pins, inView, rowsInView } = drawMap();
-  $("stats").textContent = statsLine(pins, inView, rowsInView);
+  const { pins, inView, rowsInView, anonInView } = drawMap();
+  $("stats").textContent = statsLine(pins, inView, rowsInView, anonInView);
   renderFamilies();
   renderWho();
   renderLegend();
@@ -903,7 +909,9 @@ function renderGlossary() {
     }).join("");
     return rows ? `<h4>${esc(FAMILY_LABEL[f] || f)}</h4><ul>${rows}</ul>` : "";
   };
-  box.innerHTML = ["what", "access", "marking", "verb"].map(fam).join("");
+  // `dom` joined them in 0.40: "Not a person" and "Somebody, not named" are the two halves of what used to be
+  // one word, and the difference between them is a gap we have, so it is worth a sentence in the drawer.
+  box.innerHTML = ["what", "access", "marking", "verb", "dom"].map(fam).join("");
   box.dataset.done = "1";
 }
 
@@ -931,7 +939,7 @@ const HIDDEN_VALUES = { mount: ["n/a"] };
 const FAMILY_BOX = { what: "fam-what", mount: "fam-mount", access: "fam-access",
                      verb: "fam-verb", marking: "fam-marking" };
 const FAMILY_LABEL = { what: "What", mount: "Where the plaque is", access: "Can I see it?",
-                       verb: "What happened here", marking: "Marking" };
+                       verb: "What happened here", marking: "Marking", dom: "Whose trace is it" };
 function renderFamilies() {
   for (const [fam, boxId] of Object.entries(FAMILY_BOX)) {
     const box = $(boxId); if (!box) continue;
@@ -1090,34 +1098,30 @@ $("preset-living").addEventListener("click", () => {
 
 $("reset").addEventListener("click", () => {
   resetFamilies();
-  state.topN = TOP_DEFAULT; state.topWhere = "here"; state.q = ""; state.site = null;
+  state.famous = false; $("preset-famous").classList.remove("active");
+  state.unwritten = false; $("preset-unwritten").classList.remove("active");
+  state.q = ""; state.site = null;
   state.person = null; state.personName = ""; state.personSec = null; modeBack = null;
   $("filter").value = ""; $("filter-clear").hidden = true;
   $("preset-now").classList.remove("active");
   $("preset-was").classList.remove("active");
   state.living = false; $("preset-living").classList.remove("active");
   tlChosen = false;
-  paintRenown();
   buildTimeline(TL_MIN, TL_MAX);
   refresh();
 });
 
-/* ── the renown dial ── */
-document.addEventListener("click", (e) => {
-  if (!e.target.closest("#ph-all")) return;
-  state.topN = 0; paintRenown(); refresh();
-});
-document.addEventListener("click", (e) => {
-  const b = e.target.closest("#renown button[data-top]"); if (!b) return;
-  state.topN = +b.dataset.top;
-  if (b.dataset.where) state.topWhere = b.dataset.where;
-  paintRenown();
+/* ── the one renown control: a fixed threshold, not a share of the screen (D59) ── */
+$("preset-famous").addEventListener("click", () => {
+  state.famous = !state.famous;
+  $("preset-famous").classList.toggle("active", state.famous);
   refresh();
 });
-function paintRenown() {
-  $("renown").querySelectorAll("button[data-top]").forEach((x) => x.classList.toggle("on",
-    +x.dataset.top === state.topN && (!state.topN || x.dataset.where === state.topWhere)));
-}
+$("preset-unwritten").addEventListener("click", () => {
+  state.unwritten = !state.unwritten;
+  $("preset-unwritten").classList.toggle("active", state.unwritten);
+  refresh();
+});
 
 /* ── one person, everything they left ────────────────────────────────────────────────────────
  * The atlas is person-anchored (DECISIONS D1) and until now you could not actually see a person:
@@ -1320,7 +1324,10 @@ function closeSheet() {
  * is never covered, and the list underneath keeps its scroll for "← Back to the list". Crossing the
  * breakpoint (a window resized) moves it back out. */
 let openCard = null, pendingCard = null, cardBack = null, openPlace = null, pendingPlace = null;
-const placeKey = (siteIdx) => `${SITES[siteIdx][S_LAT]},${SITES[siteIdx][S_LON]}`;
+// what a shared ?place= link carries. The name rides along, or the link would open whichever of the 17 busts on
+// that corner happened to be first (D60). Links made before 0.37 carry the coordinate alone and still resolve,
+// to the first place at that point: see the fallback in openPending.
+const placeKey = (siteIdx) => `${SITES[siteIdx][S_LAT]},${SITES[siteIdx][S_LON]}|${SITES[siteIdx][S_NAME]}`;
 function placeSheet() {
   const inPanel = !narrow();
   const host = inPanel ? $("panel") : document.body;
@@ -1332,7 +1339,8 @@ window.matchMedia("(max-width: 720px)").addEventListener("change", placeSheet);
 $("sheet-back").addEventListener("click", closeSheet);
 function tryPendingCard() {
   if (pendingPlace) {
-    const pl = places.find((x) => placeKey(x.siteIdx) === pendingPlace);
+    const pl = places.find((x) => placeKey(x.siteIdx) === pendingPlace)
+            || places.find((x) => atPoint(placeKey(x.siteIdx)) === pendingPlace);   // a link from before 0.37
     if (pl) {
       pendingPlace = null;
       if (pendingCard || openCard) {
@@ -1724,8 +1732,12 @@ document.addEventListener("keydown", (e) => {
  * 47 064 inscriptions, 17 MB, cut into 0.5° tiles (build_inscriptions.py); a card fetches the one
  * tile it needs, once. Long texts fold to five lines and open with a tap. */
 const insTiles = new Map();
+// A key is "lat,lon" or "lat,lon|the place's name" (D60). The tile a key lives in is decided by the coordinate.
+const atPoint = (key) => { const i = key.indexOf("|"); return i < 0 ? key : key.slice(0, i); };
+// the entry for this exact place, or, for a tile keyed by the point alone (hrs/, ins/), the point's
+const entry = (t, key) => (t && (t[key] !== undefined ? t[key] : t[atPoint(key)]));
 function tileFor(dir, key) {
-  const [lat, lon] = key.split(",").map(Number);
+  const [lat, lon] = atPoint(key).split(",").map(Number);
   const step = dir === "ins" ? 0.5 : 2;          // ins/ 0.5° (build_inscriptions.py); cards/ and hrs/ 2° (build.py, build_hours.py)
   const tile = `${dir}/${Math.floor(lat / step)}_${Math.floor(lon / step)}`;
   if (!insTiles.has(tile))
@@ -1736,13 +1748,13 @@ function tileFor(dir, key) {
 function fillInscriptions(root) {
   root.querySelectorAll(".hrs-slot[data-key]").forEach((box) => {
     tileFor("hrs", box.dataset.key).then((t) => {
-      const h = t[box.dataset.key];
+      const h = entry(t, box.dataset.key);
       if (h) box.outerHTML = hoursHTML(h); else box.remove();
     });
   });
   root.querySelectorAll(".mx[data-key]").forEach((box) => {
     tileFor("cards", box.dataset.key).then((t) => {
-      const x = t[box.dataset.key];
+      const x = entry(t, box.dataset.key);
       if (!x) { box.remove(); return; }
       // A statue from OpenStreetMap says when it was put up, what it is made of, who made it, and
       // what it says; and it says where it came from, because ODbL asks for that and so do we.
@@ -1771,7 +1783,7 @@ function fillInscriptions(root) {
   root.querySelectorAll(".ins[data-key]").forEach((box) => {
     const key = box.dataset.key;
     tileFor("ins", key).then((t) => {
-      const list = t[key] || [];
+      const list = entry(t, key) || [];
       if (!list.length) { box.remove(); return; }
       box.innerHTML = list.slice(0, 4).map(([id, text, year]) =>
         `<blockquote class="ins-q">${esc(text)}</blockquote>` +
@@ -1839,12 +1851,18 @@ function renderPanel() {
     if (!b.contains([s[S_LAT], s[S_LON]])) continue;
     for (const r of pl.rows) if (passes(r, "panel")) vis.push(r);
   }
-  const nPeople = new Set(vis.map((r) => r.qid)).size;
-  // say what the dial is holding back, and give the way to see it (a default must not hide a gap)
-  const held = state.topN && !state.person && heldBack
-    ? `<button type="button" id="ph-all" class="ph-more" title="Show everyone, not only the best known">+${heldBack.toLocaleString()} less known ${state.topWhere === "here" ? "here" : "in the world"}</button>` : "";
+  // A plaque whose subject nobody could name is not a person, and counting it as one was quietly wrong even
+  // before there were 55 965 of them (0.38). People are counted as people; the rest are said separately, in the
+  // only words that are true of them: somebody is remembered there and we cannot say who.
+  const ids = new Set(vis.map((r) => r.qid));
+  const nPeople = [...ids].filter((q) => /^(ev:)?Q\d+$/.test(q)).length;
+  const nAnon = ids.size - nPeople;
+  // Everybody in view is here, best known first, and the rest arrive as you scroll. Nothing is held back, so there
+  // is nothing to confess (0.37): the only thing worth saying is when the chip is narrowing the atlas.
   $("panel-head").innerHTML = `<b>${nPeople.toLocaleString()}</b>` +
-    `<span class="ph-tail"> ${nPeople === 1 ? "person" : "people"} in view${state.topN && !state.person && !dialSleeps() ? ` · the best known ${state.topWhere === "here" ? "here" : "in the world"}` : dialSleeps() && state.topN ? " · everyone, at street scale" : ""}</span>` + held;
+    `<span class="ph-tail"> ${nPeople === 1 ? "person" : "people"} in view` +
+    `${nAnon ? ` · ${nAnon.toLocaleString()} remembered, nobody named` : ""}` +
+    `${state.famous && !state.person ? " · only the world's best known" : ""}</span>`;
   const ul = $("worklist");
   if (!vis.length) {
     ul.innerHTML = `<li class="empty">${t("Pan or zoom the map. Whoever is in view is listed here.")}</li>`;
@@ -1852,14 +1870,22 @@ function renderPanel() {
   }
   panelPlan = [];
   $("pv-fold").hidden = panelSort !== "place";
-  if (panelSort === "person") {
+  if (panelSort === "person" || panelSort === "remembered") {
     const who = new Map();
     for (const r of vis) {
       const w = who.get(r.qid);
       if (!w) who.set(r.qid, { r, n: 1, sites: new Set([r.site]) });
       else { w.n++; w.sites.add(r.site); if (r.rank > w.r.rank) w.r = r; }
     }
-    for (const w of [...who.values()].sort((a, z) => z.r.rank - a.r.rank || z.n - a.n)) panelPlan.push({ person: w });
+    // Two different questions, and the atlas has the data for both (0.38, Víctor: "hemos hecho esto un poquito
+    // personalista, mitomano"). "Best known" ranks by how much an encyclopedia wrote. "Most remembered" ranks by
+    // how many places remember them, which is what this atlas actually collects. In Europe the two top twenties
+    // share ONE person: Aristotle, Picasso, Leonardo, Trump against Mary, John the Baptist, John of Nepomuk,
+    // Saint Roch. Neither is the true one; they are answers to different questions.
+    const cmp = panelSort === "remembered"
+      ? (a, z) => z.sites.size - a.sites.size || z.r.rank - a.r.rank
+      : (a, z) => z.r.rank - a.r.rank || z.n - a.n;
+    for (const w of [...who.values()].sort(cmp)) panelPlan.push({ person: w });
   } else if (panelSort === "place") {
     const groups = new Map();
     for (const r of vis) { if (!groups.has(r.site)) groups.set(r.site, []); groups.get(r.site).push(r); }
@@ -2003,12 +2029,11 @@ $("pv-fold").addEventListener("click", () => {
   renderPanel();
 });
 $("pv-sort").addEventListener("change", (e) => { panelSort = e.target.value; sortBeforePin = null; renderPanel(); });
-// Panning and zooming change which cells exist, so the quota has to be re-run: that IS the
-// mechanism by which zooming in reveals the ones that were held back.
+// Panning and zooming change which cells exist, so the pins are redrawn. Nothing about WHO is shown depends on
+// where the viewport happens to be (0.37): moving the map moves the map.
 map.on("moveend", () => {
-  if (state.topN && state.topWhere === "here") recomputeRankCut();
-  const { pins, inView, rowsInView } = drawMap();
-  $("stats").textContent = statsLine(pins, inView, rowsInView);     // one sentence, one place (was written twice)
+  const { pins, inView, rowsInView, anonInView } = drawMap();
+  $("stats").textContent = statsLine(pins, inView, rowsInView, anonInView);     // one sentence, one place (was written twice)
   renderPanel();
   syncURL();
 });
@@ -2072,7 +2097,9 @@ $("v-top").addEventListener("click", () => setTop(true));
  * Víctor, 2026-09-15: "quiero un panel de top personas… explica cómo se han conseguido… di que se han ajustado
  * ciertas nacionalidades para compensar falta de datos, que es la verdad". culture/data/top.json
  * (build_top.py): the 10 000 highest ranks, with country of birth, traces, and the numbers per country. */
-let TOP = null, topOn = false, topN = 500, topJob = null;
+let TOP = null, topOn = false, topN = 500, topJob = null, topTab = "people";
+// what a shared Top-people link asked for, kept until the panel's own file has arrived and can honour it
+let topWanted = null;
 $("tp-map").addEventListener("click", () => setTop(false));
 function setTop(on) {
   topOn = on;
@@ -2110,11 +2137,12 @@ function initTop() {
   sel.innerHTML = `<option value="">every country of birth</option>` +
     Object.entries(counts).sort((a, z) => z[1] - a[1]).map(([i, n]) => `<option value="${i}">${esc(cName(cs[i]))} (${n})</option>`).join("");
   $("tp-bar").querySelectorAll("button[data-n]").forEach((b) => b.addEventListener("click", () => {
-    topN = +b.dataset.n; $("tp-bar").querySelectorAll("button[data-n]").forEach((x) => x.classList.toggle("on", x === b)); renderTop();
+    topN = +b.dataset.n; $("tp-bar").querySelectorAll("button[data-n]").forEach((x) => x.classList.toggle("on", x === b));
+    renderTop(); syncURL();
   }));
-  sel.addEventListener("change", renderTop);
+  sel.addEventListener("change", () => { renderTop(); syncURL(); });
   $("tp-bar").querySelectorAll(".tp-tabs button").forEach((b) => b.addEventListener("click", () => showTopTab(b.dataset.tab)));
-  $("tp-q").addEventListener("input", renderTop);
+  $("tp-q").addEventListener("input", () => { renderTop(); syncURL(); });
   $("tp-list").addEventListener("click", (e) => {
     const row = e.target.closest("[data-qid]"); if (!row) return;
     setTop(false); setTable(false);
@@ -2123,11 +2151,20 @@ function initTop() {
     enterPersonMode(q, null); frameRows(byPerson.get(q) || []);
     if (byPerson.has(q)) openPerson(q); else pendingCard = q;
   });
+  if (topWanted) {
+    const w = topWanted; topWanted = null;
+    if (w.n) { topN = w.n; $("tp-bar").querySelectorAll("button[data-n]").forEach((x) => x.classList.toggle("on", +x.dataset.n === topN)); }
+    if (w.c) sel.value = w.c;
+    if (w.q) $("tp-q").value = w.q;
+    if (w.tab && w.tab !== "people") { showTopTab(w.tab); return; }
+  }
   renderTop();
 }
 /* the plan B, as numbers: every street and square named after a person of the atlas (build_streets.py) */
 let STATS = null;
 function showTopTab(tab) {
+  topTab = tab;
+  syncURL();
   $("tp-bar").querySelectorAll(".tp-tabs button").forEach((b) => b.classList.toggle("on", b.dataset.tab === tab));
   const streets = tab === "streets";
   $("tp-body").hidden = streets; $("tp-streets").hidden = !streets;
@@ -2529,7 +2566,8 @@ function foldSummary() {
   let n = 0;
   for (const fam of ["what", "access", "marking", "verb", "dom"])
     if (VOCAB[fam] && VOCAB[fam].some((x, i) => (state[fam][i] !== false) !== defaultOn(fam, x))) n++;
-  if (state.topN !== TOP_DEFAULT || state.topWhere !== "here") n++;     // the default is not a filter the reader set
+  if (state.famous) n++;
+  if (state.unwritten) n++;
   if (state.person) n++;
   if (state.living) n++;
   const folded = document.body.classList.contains("folded");
@@ -2575,7 +2613,13 @@ document.querySelector(".brand").addEventListener("click", (e) => {
  * with fewer than twenty Wikipedia editions. The tail arrives afterwards, while the map already
  * works, and its site indices are relative to its own file, so they are shifted on the way in.
  */
-const siteAt = new Map();   // "lat,lon" → index in SITES
+// "lat,lon|name" → index in SITES. The COORDINATE alone was the key until 0.37, and it merged places that merely
+// stand on the same spot: 17 busts on one corner of Buenos Aires, 39 Stolpersteine in one Berlin doorway, all
+// collapsed into whichever arrived first, with that one's name, card, photo and Wikipedia for every one of them
+// (D60). The name tells a genuine duplicate (the same site arriving in the base file and in the long tail, where
+// it is the same row) from two different memorials sharing a pavement. They still draw as one pin, because the
+// cells aggregate by pixel, and tapping it lists them.
+const siteAt = new Map();
 
 function absorb(d) {
   const ix = Object.fromEntries(d.cols.map((c, i) => [c, i]));
@@ -2597,7 +2641,7 @@ function absorb(d) {
   // its words in its card, not in the Open Plaques tiles, and must not ask for a tile that is not there.
   const fromOSM = /ODbL/.test(d.licence || "") ? 1 : 0;
   for (const s of d.sites) {
-    const key = s[S_LAT] + "," + s[S_LON];
+    const key = s[S_LAT] + "," + s[S_LON] + "|" + s[S_NAME];
     let i = siteAt.get(key);
     if (i === undefined) {
       s[S_WHERE] = wmap[s[S_WHERE]] ?? 0;
@@ -2651,7 +2695,8 @@ function viewToURL() {
     if (v.some((x, i) => (state[fam][i] !== false) !== defaultOn(fam, x)))
       p.set(fam, v.filter((_, i) => state[fam][i] !== false).join(",") || "none");
   }
-  if (state.topN !== TOP_DEFAULT || state.topWhere !== "here") p.set("top", `${state.topN}${state.topN ? "-" + state.topWhere : ""}`);
+  if (state.famous) p.set("famous", "1");
+  if (state.unwritten) p.set("unwritten", "1");
   if (state.personSec && state.person) p.set("whosec", state.personSec);
   if (state.group && state.person) p.set("knew", "1");
   if (state.q) p.set("q", state.q);
@@ -2663,7 +2708,17 @@ function viewToURL() {
   if (openCard || pendingCard) p.set("card", openCard || pendingCard);
   if (state.colorBy !== "dom") p.set("by", state.colorBy);
   if (tableOn) p.set("view", "table");
-  if (topOn) p.set("view", "top");
+  if (topOn) {
+    // the panel's OWN controls, or its Share button would hand somebody a different ranking than the one on
+    // screen (Víctor, 2026-10-10: "todo lo que tenga url se puede link for share no?"). A button that shares
+    // the wrong thing is worse than no button.
+    p.set("view", "top");
+    if (topTab !== "people") p.set("tab", topTab);
+    if (topN !== 500) p.set("tpn", String(topN));
+    const c = $("tp-country") && $("tp-country").value, tq = $("tp-q") && $("tp-q").value.trim();
+    if (c) p.set("tpc", c);
+    if (tq) p.set("tpq", tq);
+  }
   if (tlChosen && (state.yearMin > TL_MIN || state.yearMax < TL_MAX))
     p.set("yr", `${state.yearMin},${state.yearMax}`);
   // NOT `near`. Everything else about the view belongs in the URL; where the reader is standing
@@ -2730,11 +2785,13 @@ function applyURL() {
     const on = new Set(p.get(fam) === "none" ? [] : p.get(fam).split(","));
     v.forEach((name, i) => { state[fam][i] = on.has(name); });
   }
-  // "500-here", "100-world", "0"; an old link's bare "100" was the world's hundred
-  if (p.has("top")) {
-    const [n, w] = p.get("top").split("-");
-    state.topN = +n || 0; state.topWhere = w === "here" ? "here" : "world";
-  } else { state.topN = TOP_DEFAULT; state.topWhere = "here"; }
+  // Links shared before 0.37 carry the old dial ("500-here", "100-world", "0"). The map now draws everyone, so a
+  // "here" link already shows what it showed and more; only the world modes meant "just the famous ones", and that
+  // is the chip. Nothing breaks, and no old link loses its place.
+  state.famous = p.get("famous") === "1" || (p.has("top") && p.get("top").endsWith("-world"));
+  $("preset-famous").classList.toggle("active", state.famous);
+  state.unwritten = p.get("unwritten") === "1";
+  $("preset-unwritten").classList.toggle("active", state.unwritten);
   state.personSec = p.get("whosec") || null;
   state.group = null; pendingKnew = p.get("knew") === "1" && !!p.get("who");
   state.q = deacc(p.get("q") || "");
@@ -2770,7 +2827,6 @@ function applyURL() {
   // and now the controls that show all that
   $("filter").value = p.get("q") || "";
   $("filter-clear").hidden = !$("filter").value;
-  paintRenown();
   const openAir = VOCAB.access.indexOf("open-air");
   $("preset-now").classList.toggle("active",
     openAir >= 0 && VOCAB.access.every((_, i) => (state.access[i] !== false) === (i === openAir)));
@@ -2779,6 +2835,13 @@ function applyURL() {
   if (p.has("fold")) document.body.classList.toggle("folded", p.get("fold") === "1");
   setTable(p.get("view") === "table");
   // Top people is a step too: back from it returns to the map, forward reopens it
+  if (p.get("view") === "top") {
+    // the panel reads its own file; hold what the link asked for until initTop can honour it (0.37.1)
+    const want = { n: +p.get("tpn") || 0, c: p.get("tpc") || "", q: p.get("tpq") || "", tab: p.get("tab") || "people" };
+    if (TOP) {
+      topWanted = want; initTop();
+    } else topWanted = want;
+  }
   if ((p.get("view") === "top") !== topOn) setTop(p.get("view") === "top");
 
   const m = (p.get("m") || "").split(",").map(Number);
@@ -2805,6 +2868,8 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
     // it appends the array to itself, doubling forever. It reached 134 217 728 entries before the
     // page gave up. Aliasing an array you are about to append to is a very quiet way to hang.
     VOCAB = d.vocab; BUILD_AT = d.built;
+    // the fixed renown threshold the chip uses (build.py FAMOUS_N). Until it is here nothing is hidden.
+    if (d.famousCut) FAMOUS_CUT = d.famousCut;
     absorb(d);
     $("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
     resetFamilies();
@@ -2861,7 +2926,8 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
       // squares of two folders: the long tail, and the museums only OpenStreetMap knows (0.28, ODbL)
       const step = d.deepTiles.step, got = new Map();
       const avail = new Set([...Object.keys(d.deepTiles.tiles).map((t) => "deep/" + t),
-                             ...Object.keys((d.osmMuseumTiles || {}).tiles || {}).map((t) => "osm-museums/" + t)]);
+                             ...Object.keys((d.osmMuseumTiles || {}).tiles || {}).map((t) => "osm-museums/" + t),
+                             ...Object.keys((d.osmPlaqueTiles || {}).tiles || {}).map((t) => "osm-plaques/" + t)]);
       longTailWaiting = true;
       const cards = (name) => fetch(`culture/data/${name}?v=${DATA_V}`)
         .then((r) => (r.ok ? r.json() : null))
@@ -2918,7 +2984,7 @@ fetch("culture/data/atlas.json?v=" + DATA_V)
         const norm = (i) => ((i + 18) % 36 + 36) % 36 - 18;   // a view across the date line wraps
         for (let la = Math.floor(b.getSouth() / step); la <= Math.floor(b.getNorth() / step); la++)
           for (let lo = Math.floor(b.getWest() / step); lo <= Math.floor(b.getEast() / step); lo++)
-            out.push(`deep/${la}_${norm(lo)}`, `osm-museums/${la}_${norm(lo)}`);
+            out.push(`deep/${la}_${norm(lo)}`, `osm-museums/${la}_${norm(lo)}`, `osm-plaques/${la}_${norm(lo)}`);
         return out;
       };
       loadHere = () => { if (map.getZoom() < 6) return; startMore(); tilesOnScreen().forEach(loadTile); };

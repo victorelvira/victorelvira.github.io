@@ -5,6 +5,9 @@
   --dom-letters:#5a6b57; --dom-music:#7a5a8a; --dom-image:#a3552f; --dom-stage:#b08d3f;
   --dom-science:#3d6a86; --dom-power:#7c4a4a; --dom-faith:#6b6250; --dom-sport:#4a7c6b;
   --dom-trade:#8a7250; --dom-other:#9a958a; --dom-nobody:#c3bdb0;
+  /* "Somebody, not named": a gap, not a kind of person (0.40). Darker and warmer than `nobody`, so a wall of
+     plaques to people nobody could identify does not read as a wall of museums. */
+  --dom-unnamed:#9c8f7c;
 }
 *{box-sizing:border-box}
 html,body{margin:0;height:100%}
@@ -110,7 +113,7 @@ body{font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica
 #table{flex:1 1 auto;overflow:auto;padding:0 10px 20px}
 #table[hidden]{display:none!important}
 #table-bar{position:sticky;top:0;background:var(--paper);padding:6px 0;border-bottom:1px solid var(--line);
-  font-size:12px;color:var(--ink-soft);z-index:3}
+  font-size:12px;color:var(--ink-soft);z-index:3;display:flex;gap:8px;align-items:center}
 #traces-table{border-collapse:collapse;width:100%;font-size:12.5px}
 #traces-table th{position:sticky;top:31px;background:var(--paper-2);text-align:left;padding:4px 6px;
   border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap;z-index:2}
@@ -202,11 +205,6 @@ body.chrome-off #bar,body.chrome-off #timeline{display:none}
 #who-pop .only,#who-pop .also{border:1px solid var(--line);background:#fff;border-radius:4px;
   font-size:10px;padding:0 5px;cursor:pointer;color:var(--ink-soft)}
 #who-pop .also{border-color:var(--moss);color:var(--moss)}
-
-/* ── the renown dial ── */
-#renown button{border:1px solid var(--line);background:#fff;border-radius:5px;padding:1px 7px;
-  font-size:11.5px;cursor:pointer;color:var(--ink)}
-#renown button.on{background:var(--brass);color:#fff;border-color:var(--brass)}
 
 /* ── the person sheet: one person, everything they left ── */
 #sheet{position:fixed;top:0;right:0;bottom:0;width:380px;max-width:92vw;background:var(--paper);
@@ -442,7 +440,6 @@ body.folded #modes,body.folded #axes,body.folded #more,body.folded #timeline{dis
   #modes-rail{overflow-x:auto;flex-wrap:nowrap;width:100%;align-items:center}
   #view-tabs{display:inline-flex;gap:3px;flex:0 0 auto}
   #view-tabs .view-btn{padding:4px 7px;font-size:11.5px;white-space:nowrap}
-  #renown{flex:0 0 auto}
   #panel{flex:0 0 38%}
   #axes .chip .n{opacity:.6}
   .leaflet-control-attribution{max-height:1.4em}
@@ -552,10 +549,6 @@ body.dragging-panel{user-select:none;-webkit-user-select:none}
 @media (max-width:720px){ .modebar{top:auto;bottom:10px;font-size:12px;width:max-content;max-width:calc(100% - 20px);flex-wrap:wrap;border-radius:14px;padding:5px 6px 5px 12px} .modebar .mb-t{flex:1 1 100%;text-align:center} }
 #sh-contemp{border:1px solid var(--line);background:#fff;color:var(--ink-soft);border-radius:6px;padding:4px 10px;
   font-size:12px;cursor:pointer;margin-left:6px}
-/* renown: here and in the world */
-#renown .rn-l{font-size:11px;color:var(--stone);margin:0 2px 0 6px}
-.ph-more{margin-left:6px;border:1px solid var(--line);background:#fff;border-radius:10px;padding:1px 8px;font:inherit;
-  font-size:11px;color:var(--sky);cursor:pointer;white-space:nowrap}
 .sh-sum{font-size:12.5px;line-height:1.45;color:var(--ink);margin-top:6px}
 .sh-sum:empty{display:none}
 .sh-sum-src{font-size:11px;color:var(--stone);white-space:nowrap}
@@ -641,7 +634,6 @@ body.dragging-panel{user-select:none;-webkit-user-select:none}
   .tp-bar-row,.st-grid .tp-bar-row{grid-template-columns:110px 1fr 48px}
   .st-who{display:none}
 }
-@media (max-width:720px){ #renown{flex-wrap:wrap;row-gap:4px;max-width:100%} }
 #tp-map{display:none}
 @media (max-width:720px){
   #tp-map{display:inline-block;border:1px solid var(--line);background:#fff;border-radius:6px;padding:3px 9px;font:inherit;font-size:12.5px}
@@ -784,3 +776,12 @@ a.sh-share:hover{color:var(--sky);text-decoration:underline}
 .pc .pc-facts a{color:var(--sky);text-decoration:none}
 .pc .ins-q{margin:10px 0 0}
 @media (max-width:720px){ .pc-photo .pc-img{max-height:190px} }
+
+/* Share, in the two views that had no way to hand somebody what was on screen (0.37.1). The same button in both,
+   and the same one line of behaviour as everywhere else: it copies the address, which already says it all. */
+.tp-share{margin-left:auto;border:1px solid var(--line);background:#fff;border-radius:6px;padding:3px 10px;
+  font:inherit;font-size:12px;color:var(--ink);cursor:pointer;white-space:nowrap}
+.tp-share:hover{background:var(--paper-2)}
+
+/* The atlas saying what it knows about the people it holds (0.38, D62). Quiet: a fact, not a banner. */
+.pc-note{font-size:12px;color:var(--stone);margin:4px 0 2px;line-height:1.4}
