@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.22.2";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-09-29 11:16";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.23.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-11 17:38";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────

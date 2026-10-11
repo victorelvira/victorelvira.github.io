@@ -222,37 +222,36 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Hannibal the conqueror",
+    "title": "The Victorious Hannibal Seeing Italy from the Alps for the First Time",
     "year": "1770",
+    "location": "Museo del Prado",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo del Prado",
     "attribution": "generally accepted",
-    "dimensions": "87 x 131.5",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/An%C3%ADbal_vencedor_que_por_primera_vez_mira_Italia_desde_los_Alpes_-_Francisco_Goya.jpg/500px-An%C3%ADbal_vencedor_que_por_primera_vez_mira_Italia_desde_los_Alpes_-_Francisco_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Victorious_Hannibal_Seeing_Italy_from_the_Alps_for_the_First_Time",
-    "creation_place": "Zaragoza",
-    "creation_lat": 41.6488,
-    "creation_lon": -0.8891,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/An%C3%ADbal%20vencedor%20que%20por%20primera%20vez%20mira%20Italia%20desde%20los%20Alpes%20-%20Francisco%20Goya.jpg?width=500",
+    "qid": "Q3825595",
+    "wikidata": "https://www.wikidata.org/wiki/Q3825595",
     "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3825595",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Zaragoza",
+    "creation_lat": 41.65,
+    "creation_lon": -0.883333,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "museo-del-prado",
-    "wikidata": "https://www.wikidata.org/wiki/Q3825595",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Victorious Hannibal Seeing Italy from the Alps for the First Time",
-      "qid": "Q3825595",
-      "url": "https://www.wikidata.org/wiki/Q3825595"
-     }
-    ],
     "location_src": "Museo del Prado",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q3825595"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Victorious_Hannibal_Seeing_Italy_from_the_Alps_for_the_First_Time",
+    "dimensions": "87 x 131.5"
    }
   },
   {
@@ -1190,34 +1189,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Francesco Sabatini (in Polish)",
-    "year": "1775 to 1779",
-    "city": "Dallas",
+    "title": "Francesco Sabatini",
+    "year": "1775",
     "location": "Meadows Museum",
+    "city": "Dallas",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "82.9 x 62.2",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Francesco_Sabatini_by_Goya.jpg/500px-Francesco_Sabatini_by_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Sabatini%20by%20Goya.jpg?width=500",
+    "qid": "Q30005145",
+    "wikidata": "https://www.wikidata.org/wiki/Q30005145",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q30005145",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "meadows-museum",
-    "country": "United States",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Francesco Sabatini",
-      "qid": "Q30005145",
-      "url": "https://www.wikidata.org/wiki/Q30005145"
+      "source": "Wikipedia list",
+      "title": "Francesco Sabatini (in Polish)"
      }
     ],
+    "museum_id": "meadows-museum",
     "location_src": "Meadows Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "82.9 x 62.2"
    }
   },
   {
@@ -1676,30 +1675,30 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Aesop and Menippus [ Wikidata ]",
+    "title": "Aesop and Menippus",
     "year": "1778",
-    "city": "Zaragoza",
     "location": "Museo Camón Aznar",
+    "city": "Zaragoza",
+    "country": "Spain",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Esopo_y_Menipo_%28Museo_Ibercaja_Cam%C3%B3n_Aznar%29.jpg/500px-Esopo_y_Menipo_%28Museo_Ibercaja_Cam%C3%B3n_Aznar%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Esopo%20y%20Menipo%20%28Museo%20Ibercaja%20Cam%C3%B3n%20Aznar%29.jpg?width=500",
+    "qid": "Q107223794",
+    "wikidata": "https://www.wikidata.org/wiki/Q107223794",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107223794",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-camon-aznar",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Aesop and Menippus",
-      "qid": "Q107223794",
-      "url": "https://www.wikidata.org/wiki/Q107223794"
+      "source": "Wikipedia list",
+      "title": "Aesop and Menippus [ Wikidata ]"
      }
     ],
-    "country": "Spain",
+    "museum_id": "museo-camon-aznar",
     "location_src": "Museo Camón Aznar",
     "kind": "museum",
     "form": "painting"
@@ -3275,34 +3274,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Admiral José de Mazarredo",
+    "title": "Admirał José de Mazarredo",
     "year": "1785",
-    "city": "Miami",
     "location": "Lowe Art Museum",
+    "city": "Miami",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "105 x 84",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Portrait_of_Admiral_Jose_de_Mazarredo_%28Attributed_to_Francisco_Jos%C3%A9_de_Goya_y_Lucientes%29.jpg/500px-Portrait_of_Admiral_Jose_de_Mazarredo_%28Attributed_to_Francisco_Jos%C3%A9_de_Goya_y_Lucientes%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Admiral%20Jose%20de%20Mazarredo%20%28Attributed%20to%20Francisco%20Jos%C3%A9%20de%20Goya%20y%20Lucientes%29.jpg?width=500",
+    "qid": "Q72796718",
+    "wikidata": "https://www.wikidata.org/wiki/Q72796718",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q72796718",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "lowe-art-museum",
-    "country": "United States",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Admirał José de Mazarredo",
-      "qid": "Q72796718",
-      "url": "https://www.wikidata.org/wiki/Q72796718"
+      "source": "Wikipedia list",
+      "title": "Admiral José de Mazarredo"
      }
     ],
+    "museum_id": "lowe-art-museum",
     "location_src": "Lowe Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "105 x 84"
    }
   },
   {
@@ -3316,34 +3315,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "The Annunciation (sketch)",
+    "title": "Annunciation",
     "year": "1785",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "dimensions": "40.3 x 23.2",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Francisco_Goya_y_Lucientes_-_Annunciation_-_1988.218_-_Museum_of_Fine_Arts.jpg/500px-Francisco_Goya_y_Lucientes_-_Annunciation_-_1988.218_-_Museum_of_Fine_Arts.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20Goya%20y%20Lucientes%20-%20Annunciation%20-%201988.218%20-%20Museum%20of%20Fine%20Arts.jpg?width=500",
+    "qid": "Q20539653",
+    "wikidata": "https://www.wikidata.org/wiki/Q20539653",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20539653",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Annunciation",
-      "qid": "Q20539653",
-      "url": "https://www.wikidata.org/wiki/Q20539653"
+      "source": "Wikipedia list",
+      "title": "The Annunciation (sketch)"
      }
     ],
-    "location_src": "Museum of Fine Arts",
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "40.3 x 23.2"
    }
   },
   {
@@ -4933,34 +4932,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "José de Cistué y Coll (in Polish)",
+    "title": "José de Cistué y Coll",
     "year": "1788",
-    "city": "Zaragoza",
     "location": "Museo Camón Aznar",
+    "city": "Zaragoza",
+    "country": "Spain",
     "attribution": "generally accepted",
-    "dimensions": "114 x 82.5",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Jos%C3%A9_de_Cistu%C3%A9_y_Coll%2C_de_Francisco_de_Goya_%28Museo_Ibercaja_Cam%C3%B3n_Aznar%29.jpg/500px-Jos%C3%A9_de_Cistu%C3%A9_y_Coll%2C_de_Francisco_de_Goya_%28Museo_Ibercaja_Cam%C3%B3n_Aznar%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9%20de%20Cistu%C3%A9%20y%20Coll%2C%20de%20Francisco%20de%20Goya%20%28Museo%20Ibercaja%20Cam%C3%B3n%20Aznar%29.jpg?width=500",
+    "qid": "Q71999342",
+    "wikidata": "https://www.wikidata.org/wiki/Q71999342",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q71999342",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-camon-aznar",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "José de Cistué y Coll",
-      "qid": "Q71999342",
-      "url": "https://www.wikidata.org/wiki/Q71999342"
+      "source": "Wikipedia list",
+      "title": "José de Cistué y Coll (in Polish)"
      }
     ],
-    "country": "Spain",
+    "museum_id": "museo-camon-aznar",
     "location_src": "Museo Camón Aznar",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "114 x 82.5"
    }
   },
   {
@@ -5457,34 +5456,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "María Luisa of Parma, queen of Spain",
+    "title": "María Luisa de Parma, reina de España",
     "year": "1789",
+    "location": "General Archive of the Indies",
     "city": "Seville",
     "country": "Spain",
-    "location": "General Archive of the Indies",
     "attribution": "generally accepted",
-    "dimensions": "128 x 95.5",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Maria_Luisa_de_Parma_por_Goya_%28Real_F%C3%A1brica_de_Tabacos%29.jpg/500px-Maria_Luisa_de_Parma_por_Goya_%28Real_F%C3%A1brica_de_Tabacos%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Maria%20Luisa%20de%20Parma%20por%20Goya%20%28Real%20F%C3%A1brica%20de%20Tabacos%29.jpg?width=500",
+    "qid": "Q123172285",
+    "wikidata": "https://www.wikidata.org/wiki/Q123172285",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q123172285",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "general-archive-of-the-indies",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "María Luisa de Parma, reina de España",
-      "qid": "Q123172285",
-      "url": "https://www.wikidata.org/wiki/Q123172285"
+      "source": "Wikipedia list",
+      "title": "María Luisa of Parma, queen of Spain"
      }
     ],
+    "museum_id": "general-archive-of-the-indies",
     "location_src": "General Archive of the Indies",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "128 x 95.5"
    }
   },
   {
@@ -5777,34 +5776,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Women chatting (in Spanish)",
-    "year": "1791 to 1792",
-    "city": "Hartford",
+    "title": "Women chatting",
+    "year": "1791",
     "location": "Wadsworth Atheneum",
+    "city": "Hartford",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "59.1 x 142.9",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Mujeres_conversando_por_Francisco_de_Goya.jpg/500px-Mujeres_conversando_por_Francisco_de_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mujeres%20conversando%20por%20Francisco%20de%20Goya.jpg?width=500",
+    "qid": "Q6026023",
+    "wikidata": "https://www.wikidata.org/wiki/Q6026023",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q6026023",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "wadsworth-atheneum",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Women chatting",
-      "qid": "Q6026023",
-      "url": "https://www.wikidata.org/wiki/Q6026023"
+      "source": "Wikipedia list",
+      "title": "Women chatting (in Spanish)"
      }
     ],
-    "country": "United States",
+    "museum_id": "wadsworth-atheneum",
     "location_src": "Wadsworth Atheneum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "59.1 x 142.9"
    }
   },
   {
@@ -6352,34 +6351,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Portrait of General Antonio Ricardos (in Polish)",
-    "year": "1793 to 1794",
-    "city": "Baltimore",
+    "title": "Portrait of El General Ricardos",
+    "year": "1800",
     "location": "Walters Art Museum",
+    "city": "Baltimore",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "94.8 x 74.8",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Francisco_Jos%C3%A9_de_Goya_y_Lucientes_-_Portrait_of_El_General_Ricardos_-_Walters_37283.jpg/500px-Francisco_Jos%C3%A9_de_Goya_y_Lucientes_-_Portrait_of_El_General_Ricardos_-_Walters_37283.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20Jos%C3%A9%20de%20Goya%20y%20Lucientes%20-%20Portrait%20of%20El%20General%20Ricardos%20-%20Walters%2037283.jpg?width=500",
+    "qid": "Q18748498",
+    "wikidata": "https://www.wikidata.org/wiki/Q18748498",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18748498",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "walters-art-museum",
-    "country": "United States",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Portrait of El General Ricardos",
-      "qid": "Q18748498",
-      "url": "https://www.wikidata.org/wiki/Q18748498"
+      "source": "Wikipedia list",
+      "title": "Portrait of General Antonio Ricardos (in Polish)"
      }
     ],
+    "museum_id": "walters-art-museum",
     "location_src": "Walters Art Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "94.8 x 74.8"
    }
   },
   {
@@ -6438,34 +6437,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Gallant colloquium",
-    "year": "1793 to 1797",
-    "city": "Agen",
+    "title": "Coloquio galante",
+    "year": "1793",
     "location": "Musée des Beaux-Arts d'Agen",
+    "city": "Agen",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "55 x 39.6",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/%28Agen%29_Coloquio_galante_-_Francisco_de_Goya_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg/500px-%28Agen%29_Coloquio_galante_-_Francisco_de_Goya_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Agen%29%20Coloquio%20galante%20-%20Francisco%20de%20Goya%20-%20Mus%C3%A9e%20des%20Beaux-Arts%20d%27Agen.jpg?width=500",
+    "qid": "Q138753885",
+    "wikidata": "https://www.wikidata.org/wiki/Q138753885",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q138753885",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "musee-des-beaux-arts-d-agen",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Coloquio galante",
-      "qid": "Q138753885",
-      "url": "https://www.wikidata.org/wiki/Q138753885"
+      "source": "Wikipedia list",
+      "title": "Gallant colloquium"
      }
     ],
-    "country": "France",
+    "museum_id": "musee-des-beaux-arts-d-agen",
     "location_src": "Musée des Beaux-Arts d'Agen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "55 x 39.6"
    }
   },
   {
@@ -7173,34 +7172,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Saint Gregory",
-    "year": "1796 to 1799",
+    "title": "Saint Gregory the Great, Pope",
+    "year": "1797",
+    "location": "Museum of Romanticism",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Museo Romántico",
     "attribution": "generally accepted",
-    "dimensions": "191.5 x 116",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Francisco_de_Goya_-_Saint_Gregory_the_Great%2C_Pope_-_Google_Art_Project.jpg/500px-Francisco_de_Goya_-_Saint_Gregory_the_Great%2C_Pope_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20-%20Saint%20Gregory%20the%20Great%2C%20Pope%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q135457299",
+    "wikidata": "https://www.wikidata.org/wiki/Q135457299",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q135457299",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-romantico",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Saint Gregory the Great, Pope",
-      "qid": "Q135457299",
-      "url": "https://www.wikidata.org/wiki/Q135457299"
+      "source": "Wikipedia list",
+      "title": "Saint Gregory"
      }
     ],
-    "location_src": "Museo Romántico",
+    "museum_id": "museum-of-romanticism",
+    "location_src": "Museum of Romanticism",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "191.5 x 116"
    }
   },
   {
@@ -7291,34 +7290,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Portrait of Juan Meléndez Valdés (in Polish)",
+    "title": "Juan Antonio Meléndez Valdés",
     "year": "1797",
-    "city": "Barnard Castle",
     "location": "Bowes Museum",
+    "city": "Barnard Castle",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "dimensions": "73.3 x 57.1",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Juan_Mel%C3%A9ndez_Vald%C3%A9s_por_Francisco_de_Goya.jpg/500px-Juan_Mel%C3%A9ndez_Vald%C3%A9s_por_Francisco_de_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan%20Mel%C3%A9ndez%20Vald%C3%A9s%20por%20Francisco%20de%20Goya.jpg?width=500",
+    "qid": "Q88112889",
+    "wikidata": "https://www.wikidata.org/wiki/Q88112889",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q88112889",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "bowes-museum",
-    "country": "United Kingdom",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Juan Antonio Meléndez Valdés",
-      "qid": "Q88112889",
-      "url": "https://www.wikidata.org/wiki/Q88112889"
+      "source": "Wikipedia list",
+      "title": "Portrait of Juan Meléndez Valdés (in Polish)"
      }
     ],
+    "museum_id": "bowes-museum",
     "location_src": "Bowes Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "73.3 x 57.1"
    }
   },
   {
@@ -7779,34 +7778,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Portrait of Don Francisco de Saavedra (in Polish)",
+    "title": "Don Francisco de Saavedra",
     "year": "1798",
+    "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "location": "Courtauld Gallery",
     "attribution": "generally accepted",
-    "dimensions": "100.2 x 119.6",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Francisco_de_Saavedra_%28Goya%29.jpg/500px-Francisco_de_Saavedra_%28Goya%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Saavedra%20%28Goya%29.jpg?width=500",
+    "qid": "Q79394767",
+    "wikidata": "https://www.wikidata.org/wiki/Q79394767",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q79394767",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "courtauld-gallery",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Don Francisco de Saavedra",
-      "qid": "Q79394767",
-      "url": "https://www.wikidata.org/wiki/Q79394767"
+      "source": "Wikipedia list",
+      "title": "Portrait of Don Francisco de Saavedra (in Polish)"
      }
     ],
+    "museum_id": "courtauld-gallery",
     "location_src": "Courtauld Gallery",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "100.2 x 119.6"
    }
   },
   {
@@ -8452,34 +8451,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Manuel Lapeña, Marquis of Bondad Real (in Polish)",
+    "title": "Don Manuel Lapeña, later Marquis of Bondad Real",
     "year": "1799",
-    "city": "Manhattan",
     "location": "Hispanic Society of America",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "225 x 140",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Francisco_de_Goya_y_Lucientes_-_Don_Manuel_Lape%C3%B1a%2C_later_Marquis_of_Bondad_Real_-_A99_-_Hispanic_Society_of_America.jpg/500px-Francisco_de_Goya_y_Lucientes_-_Don_Manuel_Lape%C3%B1a%2C_later_Marquis_of_Bondad_Real_-_A99_-_Hispanic_Society_of_America.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20y%20Lucientes%20-%20Don%20Manuel%20Lape%C3%B1a%2C%20later%20Marquis%20of%20Bondad%20Real%20-%20A99%20-%20Hispanic%20Society%20of%20America.jpg?width=500",
+    "qid": "Q60232751",
+    "wikidata": "https://www.wikidata.org/wiki/Q60232751",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q60232751",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "hispanic-society-of-america",
-    "country": "United States",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Don Manuel Lapeña, later Marquis of Bondad Real",
-      "qid": "Q60232751",
-      "url": "https://www.wikidata.org/wiki/Q60232751"
+      "source": "Wikipedia list",
+      "title": "Manuel Lapeña, Marquis of Bondad Real (in Polish)"
      }
     ],
+    "museum_id": "hispanic-society-of-america",
     "location_src": "Hispanic Society of America",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "225 x 140"
    }
   },
   {
@@ -9076,34 +9075,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Truth, Time and History",
-    "year": "1800",
+    "title": "Time, Truth and History",
+    "year": "1798",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "dimensions": "41 x 32.5",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Boceto_de_la_Verdad%2C_el_Tiempo_y_la_Historia.jpg/500px-Boceto_de_la_Verdad%2C_el_Tiempo_y_la_Historia.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boceto%20de%20la%20Verdad%2C%20el%20Tiempo%20y%20la%20Historia.jpg?width=500",
+    "qid": "Q20539657",
+    "wikidata": "https://www.wikidata.org/wiki/Q20539657",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20539657",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Time, Truth and History",
-      "qid": "Q20539657",
-      "url": "https://www.wikidata.org/wiki/Q20539657"
+      "source": "Wikipedia list",
+      "title": "Truth, Time and History"
      }
     ],
-    "location_src": "Museum of Fine Arts",
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "41 x 32.5"
    }
   },
   {
@@ -9528,30 +9527,30 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Ghostly vision (Goya) [ Wikidata ]",
+    "title": "Ghostly Vision",
     "year": "1801",
-    "city": "Zaragoza",
     "location": "Museo Camón Aznar",
+    "city": "Zaragoza",
+    "country": "Spain",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Visi%C3%B3n_fantasmal_por_Francisco_de_Goya.jpg/500px-Visi%C3%B3n_fantasmal_por_Francisco_de_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Visi%C3%B3n%20fantasmal%20por%20Francisco%20de%20Goya.jpg?width=500",
+    "qid": "Q106757112",
+    "wikidata": "https://www.wikidata.org/wiki/Q106757112",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q106757112",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-camon-aznar",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Ghostly Vision",
-      "qid": "Q106757112",
-      "url": "https://www.wikidata.org/wiki/Q106757112"
+      "source": "Wikipedia list",
+      "title": "Ghostly vision (Goya) [ Wikidata ]"
      }
     ],
-    "country": "Spain",
+    "museum_id": "museo-camon-aznar",
     "location_src": "Museo Camón Aznar",
     "kind": "museum",
     "form": "painting"
@@ -9986,34 +9985,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Brigadier General Alberto Foraster [ Wikidata ]",
+    "title": "Brigadier General Alberto Foraster",
     "year": "1804",
-    "city": "Manhattan",
     "location": "Hispanic Society of America",
+    "city": "Manhattan",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "138 x 109",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Brigadier_General_Alberto_Foraster_by_Francisco_de_Goya.jpg/500px-Brigadier_General_Alberto_Foraster_by_Francisco_de_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Brigadier%20General%20Alberto%20Foraster%20by%20Francisco%20de%20Goya.jpg?width=500",
+    "qid": "Q105609230",
+    "wikidata": "https://www.wikidata.org/wiki/Q105609230",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q105609230",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "hispanic-society-of-america",
-    "country": "United States",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Brigadier General Alberto Foraster",
-      "qid": "Q105609230",
-      "url": "https://www.wikidata.org/wiki/Q105609230"
+      "source": "Wikipedia list",
+      "title": "Brigadier General Alberto Foraster [ Wikidata ]"
      }
     ],
+    "museum_id": "hispanic-society-of-america",
     "location_src": "Hispanic Society of America",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "138 x 109"
    }
   },
   {
@@ -10519,34 +10518,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Portrait of Félix de Azara (in Polish)",
+    "title": "Portrait of Felix de Azara",
     "year": "1805",
-    "city": "Zaragoza",
     "location": "Museo Camón Aznar",
+    "city": "Zaragoza",
+    "country": "Spain",
     "attribution": "generally accepted",
-    "dimensions": "212 x 124",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Portrait_of_F%C3%A9lix_de_Azara_by_Goya.jpg/500px-Portrait_of_F%C3%A9lix_de_Azara_by_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20F%C3%A9lix%20de%20Azara%20by%20Goya.jpg?width=500",
+    "qid": "Q47002645",
+    "wikidata": "https://www.wikidata.org/wiki/Q47002645",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q47002645",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-camon-aznar",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Portrait of Felix de Azara",
-      "qid": "Q47002645",
-      "url": "https://www.wikidata.org/wiki/Q47002645"
+      "source": "Wikipedia list",
+      "title": "Portrait of Félix de Azara (in Polish)"
      }
     ],
-    "country": "Spain",
+    "museum_id": "museo-camon-aznar",
     "location_src": "Museo Camón Aznar",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "212 x 124"
    }
   },
   {
@@ -10818,34 +10817,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Portrait of Antonio Raimundo Ibáñez",
-    "year": "1805 to 1808",
+    "title": "Don Antonio Raimundo Ibáñez",
+    "year": "1805",
     "location": "Baltimore Museum of Art",
+    "city": "Baltimore",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "96.5 x 72.4",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Antonio_Raimundo_Ib%C3%A1%C3%B1ez.jpg/500px-Antonio_Raimundo_Ib%C3%A1%C3%B1ez.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Raimundo%20Ib%C3%A1%C3%B1ez.jpg?width=500",
+    "qid": "Q122981989",
+    "wikidata": "https://www.wikidata.org/wiki/Q122981989",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q122981989",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "baltimore-museum-of-art",
-    "city": "Baltimore",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Don Antonio Raimundo Ibáñez",
-      "qid": "Q122981989",
-      "url": "https://www.wikidata.org/wiki/Q122981989"
+      "source": "Wikipedia list",
+      "title": "Portrait of Antonio Raimundo Ibáñez"
      }
     ],
-    "country": "United States",
+    "museum_id": "baltimore-museum-of-art",
     "location_src": "Baltimore Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "96.5 x 72.4"
    }
   },
   {
@@ -11834,34 +11833,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Dead woodcocks (in Polish)",
-    "year": "1808 to 1812",
-    "city": "Dallas",
+    "title": "Still Life with Woodcocks",
+    "year": "1806",
     "location": "Meadows Museum",
+    "city": "Dallas",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "42.5 x 62.6",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Goya_Becadas_o_chochas_muertas.jpg/500px-Goya_Becadas_o_chochas_muertas.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Goya%20Becadas%20o%20chochas%20muertas.jpg?width=500",
+    "qid": "Q11770778",
+    "wikidata": "https://www.wikidata.org/wiki/Q11770778",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11770778",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "meadows-museum",
-    "country": "United States",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Still Life with Woodcocks",
-      "qid": "Q11770778",
-      "url": "https://www.wikidata.org/wiki/Q11770778"
+      "source": "Wikipedia list",
+      "title": "Dead woodcocks (in Polish)"
      }
     ],
+    "museum_id": "meadows-museum",
     "location_src": "Meadows Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "42.5 x 62.6"
    }
   },
   {
@@ -12255,34 +12254,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Churching of women",
-    "year": "1808 to 1812",
-    "city": "Agen",
+    "title": "La Messe des relevailles",
+    "year": "1810",
     "location": "Musée des Beaux-Arts d'Agen",
+    "city": "Agen",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "53 x 77",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/%28Agen%29_La_misa_de_parida_-_Francisco_de_Goya_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg/500px-%28Agen%29_La_misa_de_parida_-_Francisco_de_Goya_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Agen%29%20La%20misa%20de%20parida%20-%20Francisco%20de%20Goya%20-%20Mus%C3%A9e%20des%20Beaux-Arts%20d%27Agen.jpg?width=500",
+    "qid": "Q121726907",
+    "wikidata": "https://www.wikidata.org/wiki/Q121726907",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q121726907",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "musee-des-beaux-arts-d-agen",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "La Messe des relevailles",
-      "qid": "Q121726907",
-      "url": "https://www.wikidata.org/wiki/Q121726907"
+      "source": "Wikipedia list",
+      "title": "Churching of women"
      }
     ],
-    "country": "France",
+    "museum_id": "musee-des-beaux-arts-d-agen",
     "location_src": "Musée des Beaux-Arts d'Agen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "53 x 77"
    }
   },
   {
@@ -12296,34 +12295,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Masked ball [ Wikidata ]",
-    "year": "1808 to 1820",
-    "city": "Zaragoza",
+    "title": "Masked ball",
+    "year": "1814",
     "location": "Museo Camón Aznar",
+    "city": "Zaragoza",
+    "country": "Spain",
     "attribution": "generally accepted",
-    "dimensions": "30 x 38",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Baile_de_m%C3%A1scaras_o_Danzantes_enmascarados_bajo_un_arco_por_Francisco_Goya.jpg/500px-Baile_de_m%C3%A1scaras_o_Danzantes_enmascarados_bajo_un_arco_por_Francisco_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Baile%20de%20m%C3%A1scaras%20o%20Danzantes%20enmascarados%20bajo%20un%20arco%20por%20Francisco%20Goya.jpg?width=500",
+    "qid": "Q107223587",
+    "wikidata": "https://www.wikidata.org/wiki/Q107223587",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107223587",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-camon-aznar",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Masked ball",
-      "qid": "Q107223587",
-      "url": "https://www.wikidata.org/wiki/Q107223587"
+      "source": "Wikipedia list",
+      "title": "Masked ball [ Wikidata ]"
      }
     ],
-    "country": "Spain",
+    "museum_id": "museo-camon-aznar",
     "location_src": "Museo Camón Aznar",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "30 x 38"
    }
   },
   {
@@ -12868,34 +12867,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Portrait of a young man in brown [ Wikidata ]",
+    "title": "Portrait of a Young Man in Brown, possibly Javier Goya",
     "year": "1810 to 1815",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "dimensions": "81.3 x 58.1",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Francisco_Goya_y_Lucientes_-_Portrait_of_a_Young_Man_in_Brown%2C_possibly_Javier_Goya_-_48.558_-_Museum_of_Fine_Arts.jpg/500px-Francisco_Goya_y_Lucientes_-_Portrait_of_a_Young_Man_in_Brown%2C_possibly_Javier_Goya_-_48.558_-_Museum_of_Fine_Arts.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20Goya%20y%20Lucientes%20-%20Portrait%20of%20a%20Young%20Man%20in%20Brown%2C%20possibly%20Javier%20Goya%20-%2048.558%20-%20Museum%20of%20Fine%20Arts.jpg?width=500",
+    "qid": "Q20539650",
+    "wikidata": "https://www.wikidata.org/wiki/Q20539650",
     "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20539650",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-fine-arts-boston",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Portrait of a Young Man in Brown, possibly Javier Goya",
-      "qid": "Q20539650",
-      "url": "https://www.wikidata.org/wiki/Q20539650"
+      "source": "Wikipedia list",
+      "title": "Portrait of a young man in brown [ Wikidata ]"
      }
     ],
-    "location_src": "Museum of Fine Arts",
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "81.3 x 58.1",
+    "creation_place": "Madrid",
+    "creation_lat": 40.4168,
+    "creation_lon": -3.7038
    }
   },
   {
@@ -13013,34 +13012,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Hot-air balloon (in French)",
-    "year": "1812 to 1816",
-    "city": "Agen",
+    "title": "The Balloon",
+    "year": "1812",
     "location": "Musée des Beaux-Arts d'Agen",
+    "city": "Agen",
+    "country": "France",
     "attribution": "generally accepted",
-    "dimensions": "105 x 84",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/%28Agen%29_Le_Ballon_-_Francisco_de_Goya_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg/500px-%28Agen%29_Le_Ballon_-_Francisco_de_Goya_-_Mus%C3%A9e_des_Beaux-Arts_d%27Agen.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Agen%29%20Le%20Ballon%20-%20Francisco%20de%20Goya%20-%20Mus%C3%A9e%20des%20Beaux-Arts%20d%27Agen.jpg?width=500",
+    "qid": "Q66604875",
+    "wikidata": "https://www.wikidata.org/wiki/Q66604875",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q66604875",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "musee-des-beaux-arts-d-agen",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Balloon",
-      "qid": "Q66604875",
-      "url": "https://www.wikidata.org/wiki/Q66604875"
+      "source": "Wikipedia list",
+      "title": "Hot-air balloon (in French)"
      }
     ],
-    "country": "France",
+    "museum_id": "musee-des-beaux-arts-d-agen",
     "location_src": "Musée des Beaux-Arts d'Agen",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "105 x 84"
    }
   },
   {
@@ -13316,38 +13315,36 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "The Second of May 1808 (sketch)",
+    "title": "El dos de mayo de 1808 en Madrid",
     "year": "1814",
-    "city": "Zaragoza",
     "location": "Museo Camón Aznar",
+    "city": "Zaragoza",
+    "country": "Spain",
     "attribution": "generally accepted",
-    "dimensions": "24 x 32",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Boceto_de_La_carga_de_los_mamelucos.jpg/500px-Boceto_de_La_carga_de_los_mamelucos.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Second_of_May_1808",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boceto%20de%20La%20carga%20de%20los%20mamelucos.jpg?width=500",
+    "qid": "Q107223671",
+    "wikidata": "https://www.wikidata.org/wiki/Q107223671",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q107223671",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museo-camon-aznar",
-    "wikidata": "https://www.wikidata.org/wiki/Q2983399",
-    "wga_url": "https://www.wga.hu/html/g/goya/7/713goya.html",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "El dos de mayo de 1808 en Madrid",
-      "qid": "Q107223671",
-      "url": "https://www.wikidata.org/wiki/Q107223671"
+      "source": "Wikipedia list",
+      "title": "The Second of May 1808 (sketch)",
+      "ref": "https://en.wikipedia.org/wiki/The_Second_of_May_1808"
      }
     ],
-    "country": "Spain",
+    "museum_id": "museo-camon-aznar",
     "location_src": "Museo Camón Aznar",
     "kind": "museum",
     "form": "painting",
-    "qid_shared": "Q2983399"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Second_of_May_1808",
+    "dimensions": "24 x 32"
    }
   },
   {
@@ -14561,34 +14558,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Portrait of Queen María Isabel de Braganza y Borbón",
-    "year": "1816 to 1818",
-    "city": "Dallas",
+    "title": "María Isabel de Braganza",
+    "year": "1816",
     "location": "Meadows Museum",
+    "city": "Dallas",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "75.2 x 53",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Portrait_of_Queen_Mar%C3%ADa_Isabel_de_Braganza_y_Borb%C3%B3n_by_Francisco_de_Goya.jpg/500px-Portrait_of_Queen_Mar%C3%ADa_Isabel_de_Braganza_y_Borb%C3%B3n_by_Francisco_de_Goya.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Queen%20Mar%C3%ADa%20Isabel%20de%20Braganza%20y%20Borb%C3%B3n%20by%20Francisco%20de%20Goya.jpg?width=500",
+    "qid": "Q123027450",
+    "wikidata": "https://www.wikidata.org/wiki/Q123027450",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q123027450",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Madrid",
     "creation_lat": 40.4168,
     "creation_lon": -3.7038,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "meadows-museum",
-    "country": "United States",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "María Isabel de Braganza",
-      "qid": "Q123027450",
-      "url": "https://www.wikidata.org/wiki/Q123027450"
+      "source": "Wikipedia list",
+      "title": "Portrait of Queen María Isabel de Braganza y Borbón"
      }
     ],
+    "museum_id": "meadows-museum",
     "location_src": "Meadows Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "75.2 x 53"
    }
   },
   {
@@ -16333,34 +16330,34 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Mariano Goya, the Artist's Grandson (in Spanish)",
+    "title": "Portrait of Mariano Goya, the Artist’s Grandson",
     "year": "1827",
-    "city": "Dallas",
     "location": "Meadows Museum",
+    "city": "Dallas",
+    "country": "United States",
     "attribution": "generally accepted",
-    "dimensions": "52 x 41.2",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/FRANCISCO_GOYA_PORTRAIT_OF_MARIANO_GOYA%2C_THE_ARTIST%27S_GRANDSON.jpg/500px-FRANCISCO_GOYA_PORTRAIT_OF_MARIANO_GOYA%2C_THE_ARTIST%27S_GRANDSON.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/FRANCISCO%20GOYA%20PORTRAIT%20OF%20MARIANO%20GOYA%2C%20THE%20ARTIST%27S%20GRANDSON.jpg?width=500",
+    "qid": "Q84045740",
+    "wikidata": "https://www.wikidata.org/wiki/Q84045740",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q84045740",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Bordeaux",
     "creation_lat": 44.8378,
     "creation_lon": -0.5792,
-    "_source": {
-     "source": "Wikipedia: List of works by Francisco Goya",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "meadows-museum",
-    "country": "United States",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Portrait of Mariano Goya, the Artist’s Grandson",
-      "qid": "Q84045740",
-      "url": "https://www.wikidata.org/wiki/Q84045740"
+      "source": "Wikipedia list",
+      "title": "Mariano Goya, the Artist's Grandson (in Spanish)"
      }
     ],
+    "museum_id": "meadows-museum",
     "location_src": "Meadows Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "52 x 41.2"
    }
   },
   {
@@ -16898,46 +16895,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.80889,
-     32.77917
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Still Life with Woodcocks",
-    "year": "1806",
-    "location": "Meadows Museum",
-    "city": "Dallas",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Goya%20Becadas%20o%20chochas%20muertas.jpg?width=500",
-    "qid": "Q11770778",
-    "wikidata": "https://www.wikidata.org/wiki/Q11770778",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q11770778",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Dead woodcocks (in Polish)"
-     }
-    ],
-    "museum_id": "meadows-museum",
-    "location_src": "Meadows Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -3.6925,
      40.41389
     ]
@@ -17078,123 +17035,6 @@
      "url": "https://www.wikidata.org/wiki/Q20539646",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Portrait of a Young Man in Brown, possibly Javier Goya",
-    "year": "",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20Goya%20y%20Lucientes%20-%20Portrait%20of%20a%20Young%20Man%20in%20Brown%2C%20possibly%20Javier%20Goya%20-%2048.558%20-%20Museum%20of%20Fine%20Arts.jpg?width=500",
-    "qid": "Q20539650",
-    "wikidata": "https://www.wikidata.org/wiki/Q20539650",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20539650",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of a young man in brown [ Wikidata ]"
-     }
-    ],
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Annunciation",
-    "year": "1785",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20Goya%20y%20Lucientes%20-%20Annunciation%20-%201988.218%20-%20Museum%20of%20Fine%20Arts.jpg?width=500",
-    "qid": "Q20539653",
-    "wikidata": "https://www.wikidata.org/wiki/Q20539653",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20539653",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Annunciation (sketch)"
-     }
-    ],
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Time, Truth and History",
-    "year": "1798",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boceto%20de%20la%20Verdad%2C%20el%20Tiempo%20y%20la%20Historia.jpg?width=500",
-    "qid": "Q20539657",
-    "wikidata": "https://www.wikidata.org/wiki/Q20539657",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20539657",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Truth, Time and History"
-     }
-    ],
     "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
@@ -17917,46 +17757,6 @@
     "creation_lon": -3.7038,
     "museum_id": "louvre",
     "location_src": "Louvre",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -96.80889,
-     32.77917
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Francesco Sabatini",
-    "year": "1775",
-    "location": "Meadows Museum",
-    "city": "Dallas",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francesco%20Sabatini%20by%20Goya.jpg?width=500",
-    "qid": "Q30005145",
-    "wikidata": "https://www.wikidata.org/wiki/Q30005145",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q30005145",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Francesco Sabatini (in Polish)"
-     }
-    ],
-    "museum_id": "meadows-museum",
-    "location_src": "Meadows Museum",
     "kind": "museum",
     "form": "painting"
    }
@@ -18902,46 +18702,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.94643,
-     40.83327
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Don Manuel Lapeña, later Marquis of Bondad Real",
-    "year": "1799",
-    "location": "Hispanic Society of America",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20y%20Lucientes%20-%20Don%20Manuel%20Lape%C3%B1a%2C%20later%20Marquis%20of%20Bondad%20Real%20-%20A99%20-%20Hispanic%20Society%20of%20America.jpg?width=500",
-    "qid": "Q60232751",
-    "wikidata": "https://www.wikidata.org/wiki/Q60232751",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q60232751",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Manuel Lapeña, Marquis of Bondad Real (in Polish)"
-     }
-    ],
-    "museum_id": "hispanic-society-of-america",
-    "location_src": "Hispanic Society of America",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.40881,
      42.14217
     ]
@@ -19116,46 +18876,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.88333,
-     41.65
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Portrait of Felix de Azara",
-    "year": "1805",
-    "location": "Museo Camón Aznar",
-    "city": "Zaragoza",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20F%C3%A9lix%20de%20Azara%20by%20Goya.jpg?width=500",
-    "qid": "Q47002645",
-    "wikidata": "https://www.wikidata.org/wiki/Q47002645",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q47002645",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Félix de Azara (in Polish)"
-     }
-    ],
-    "museum_id": "museo-camon-aznar",
-    "location_src": "Museo Camón Aznar",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -3.6922,
      40.4139
     ]
@@ -19289,46 +19009,6 @@
     "creation_lon": -3.7038,
     "museum_id": "art-institute-of-chicago",
     "location_src": "Art Institute of Chicago",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -72.67309,
-     41.76371
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Women chatting",
-    "year": "1791",
-    "location": "Wadsworth Atheneum",
-    "city": "Hartford",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Mujeres%20conversando%20por%20Francisco%20de%20Goya.jpg?width=500",
-    "qid": "Q6026023",
-    "wikidata": "https://www.wikidata.org/wiki/Q6026023",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q6026023",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Women chatting (in Spanish)"
-     }
-    ],
-    "museum_id": "wadsworth-atheneum",
-    "location_src": "Wadsworth Atheneum",
     "kind": "museum",
     "form": "painting"
    }
@@ -19586,86 +19266,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.6195,
-     39.326
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Don Antonio Raimundo Ibáñez",
-    "year": "1805",
-    "location": "Baltimore Museum of Art",
-    "city": "Baltimore",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Raimundo%20Ib%C3%A1%C3%B1ez.jpg?width=500",
-    "qid": "Q122981989",
-    "wikidata": "https://www.wikidata.org/wiki/Q122981989",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q122981989",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Antonio Raimundo Ibáñez"
-     }
-    ],
-    "museum_id": "baltimore-museum-of-art",
-    "location_src": "Baltimore Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -5.992,
-     37.384
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "María Luisa de Parma, reina de España",
-    "year": "1789",
-    "location": "General Archive of the Indies",
-    "city": "Seville",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Maria%20Luisa%20de%20Parma%20por%20Goya%20%28Real%20F%C3%A1brica%20de%20Tabacos%29.jpg?width=500",
-    "qid": "Q123172285",
-    "wikidata": "https://www.wikidata.org/wiki/Q123172285",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q123172285",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "María Luisa of Parma, queen of Spain"
-     }
-    ],
-    "museum_id": "general-archive-of-the-indies",
-    "location_src": "General Archive of the Indies",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.15167,
      51.50347
     ]
@@ -19822,46 +19422,6 @@
     "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
     "venue_of": "Harvard Art Museums",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -1.91566,
-     54.54174
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Juan Antonio Meléndez Valdés",
-    "year": "1797",
-    "location": "Bowes Museum",
-    "city": "Barnard Castle",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Juan%20Mel%C3%A9ndez%20Vald%C3%A9s%20por%20Francisco%20de%20Goya.jpg?width=500",
-    "qid": "Q88112889",
-    "wikidata": "https://www.wikidata.org/wiki/Q88112889",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q88112889",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Juan Meléndez Valdés (in Polish)"
-     }
-    ],
-    "museum_id": "bowes-museum",
-    "location_src": "Bowes Museum",
     "kind": "museum",
     "form": "painting"
    }
@@ -20311,46 +19871,6 @@
    },
    "properties": {
     "painter": "Goya",
-    "title": "Brigadier General Alberto Foraster",
-    "year": "1804",
-    "location": "Hispanic Society of America",
-    "city": "Manhattan",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Brigadier%20General%20Alberto%20Foraster%20by%20Francisco%20de%20Goya.jpg?width=500",
-    "qid": "Q105609230",
-    "wikidata": "https://www.wikidata.org/wiki/Q105609230",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q105609230",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Brigadier General Alberto Foraster [ Wikidata ]"
-     }
-    ],
-    "museum_id": "hispanic-society-of-america",
-    "location_src": "Hispanic Society of America",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.94643,
-     40.83327
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
     "title": "The Duchess of Alba, Sketch",
     "year": "1796",
     "location": "Hispanic Society of America",
@@ -20447,246 +19967,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -96.80889,
-     32.77917
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Portrait of Mariano Goya, the Artist’s Grandson",
-    "year": "1827",
-    "location": "Meadows Museum",
-    "city": "Dallas",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/FRANCISCO%20GOYA%20PORTRAIT%20OF%20MARIANO%20GOYA%2C%20THE%20ARTIST%27S%20GRANDSON.jpg?width=500",
-    "qid": "Q84045740",
-    "wikidata": "https://www.wikidata.org/wiki/Q84045740",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q84045740",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Bordeaux",
-    "creation_lat": 44.8378,
-    "creation_lon": -0.5792,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Mariano Goya, the Artist's Grandson (in Spanish)"
-     }
-    ],
-    "museum_id": "meadows-museum",
-    "location_src": "Meadows Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -96.80889,
-     32.77917
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "María Isabel de Braganza",
-    "year": "1816",
-    "location": "Meadows Museum",
-    "city": "Dallas",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Queen%20Mar%C3%ADa%20Isabel%20de%20Braganza%20y%20Borb%C3%B3n%20by%20Francisco%20de%20Goya.jpg?width=500",
-    "qid": "Q123027450",
-    "wikidata": "https://www.wikidata.org/wiki/Q123027450",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q123027450",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Queen María Isabel de Braganza y Borbón"
-     }
-    ],
-    "museum_id": "meadows-museum",
-    "location_src": "Meadows Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     0.6212,
-     44.2049
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "The Balloon",
-    "year": "1812",
-    "location": "Musée des Beaux-Arts d'Agen",
-    "city": "Agen",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Agen%29%20Le%20Ballon%20-%20Francisco%20de%20Goya%20-%20Mus%C3%A9e%20des%20Beaux-Arts%20d%27Agen.jpg?width=500",
-    "qid": "Q66604875",
-    "wikidata": "https://www.wikidata.org/wiki/Q66604875",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q66604875",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Hot-air balloon (in French)"
-     }
-    ],
-    "museum_id": "musee-des-beaux-arts-d-agen",
-    "location_src": "Musée des Beaux-Arts d'Agen",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     0.6212,
-     44.2049
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "La Messe des relevailles",
-    "year": "1810",
-    "location": "Musée des Beaux-Arts d'Agen",
-    "city": "Agen",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Agen%29%20La%20misa%20de%20parida%20-%20Francisco%20de%20Goya%20-%20Mus%C3%A9e%20des%20Beaux-Arts%20d%27Agen.jpg?width=500",
-    "qid": "Q121726907",
-    "wikidata": "https://www.wikidata.org/wiki/Q121726907",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q121726907",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Churching of women"
-     }
-    ],
-    "museum_id": "musee-des-beaux-arts-d-agen",
-    "location_src": "Musée des Beaux-Arts d'Agen",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     0.6212,
-     44.2049
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Coloquio galante",
-    "year": "1793",
-    "location": "Musée des Beaux-Arts d'Agen",
-    "city": "Agen",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%28Agen%29%20Coloquio%20galante%20-%20Francisco%20de%20Goya%20-%20Mus%C3%A9e%20des%20Beaux-Arts%20d%27Agen.jpg?width=500",
-    "qid": "Q138753885",
-    "wikidata": "https://www.wikidata.org/wiki/Q138753885",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q138753885",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Gallant colloquium"
-     }
-    ],
-    "museum_id": "musee-des-beaux-arts-d-agen",
-    "location_src": "Musée des Beaux-Arts d'Agen",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -80.19361,
-     25.77417
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Admirał José de Mazarredo",
-    "year": "1785",
-    "location": "Lowe Art Museum",
-    "city": "Miami",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Admiral%20Jose%20de%20Mazarredo%20%28Attributed%20to%20Francisco%20Jos%C3%A9%20de%20Goya%20y%20Lucientes%29.jpg?width=500",
-    "qid": "Q72796718",
-    "wikidata": "https://www.wikidata.org/wiki/Q72796718",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q72796718",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Admiral José de Mazarredo"
-     }
-    ],
-    "museum_id": "lowe-art-museum",
-    "location_src": "Lowe Art Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.40881,
      42.14217
     ]
@@ -20767,46 +20047,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.7033,
-     40.4169
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Saint Gregory the Great, Pope",
-    "year": "1797",
-    "location": "Museum of Romanticism",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Goya%20-%20Saint%20Gregory%20the%20Great%2C%20Pope%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q135457299",
-    "wikidata": "https://www.wikidata.org/wiki/Q135457299",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q135457299",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Saint Gregory"
-     }
-    ],
-    "museum_id": "museum-of-romanticism",
-    "location_src": "Museum of Romanticism",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -84.50333,
      39.1025
     ]
@@ -20832,247 +20072,6 @@
     "creation_lon": -3.7038,
     "museum_id": "taft-museum-of-art",
     "location_src": "Taft Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.88333,
-     41.65
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "José de Cistué y Coll",
-    "year": "1788",
-    "location": "Museo Camón Aznar",
-    "city": "Zaragoza",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9%20de%20Cistu%C3%A9%20y%20Coll%2C%20de%20Francisco%20de%20Goya%20%28Museo%20Ibercaja%20Cam%C3%B3n%20Aznar%29.jpg?width=500",
-    "qid": "Q71999342",
-    "wikidata": "https://www.wikidata.org/wiki/Q71999342",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q71999342",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "José de Cistué y Coll (in Polish)"
-     }
-    ],
-    "museum_id": "museo-camon-aznar",
-    "location_src": "Museo Camón Aznar",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.88333,
-     41.65
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Ghostly Vision",
-    "year": "1801",
-    "location": "Museo Camón Aznar",
-    "city": "Zaragoza",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Visi%C3%B3n%20fantasmal%20por%20Francisco%20de%20Goya.jpg?width=500",
-    "qid": "Q106757112",
-    "wikidata": "https://www.wikidata.org/wiki/Q106757112",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q106757112",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Ghostly vision (Goya) [ Wikidata ]"
-     }
-    ],
-    "museum_id": "museo-camon-aznar",
-    "location_src": "Museo Camón Aznar",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.88333,
-     41.65
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Masked ball",
-    "year": "1814",
-    "location": "Museo Camón Aznar",
-    "city": "Zaragoza",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Baile%20de%20m%C3%A1scaras%20o%20Danzantes%20enmascarados%20bajo%20un%20arco%20por%20Francisco%20Goya.jpg?width=500",
-    "qid": "Q107223587",
-    "wikidata": "https://www.wikidata.org/wiki/Q107223587",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q107223587",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Masked ball [ Wikidata ]"
-     }
-    ],
-    "museum_id": "museo-camon-aznar",
-    "location_src": "Museo Camón Aznar",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.88333,
-     41.65
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "El dos de mayo de 1808 en Madrid",
-    "year": "1814",
-    "location": "Museo Camón Aznar",
-    "city": "Zaragoza",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boceto%20de%20La%20carga%20de%20los%20mamelucos.jpg?width=500",
-    "qid": "Q107223671",
-    "wikidata": "https://www.wikidata.org/wiki/Q107223671",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q107223671",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Second of May 1808 (sketch)",
-      "ref": "https://en.wikipedia.org/wiki/The_Second_of_May_1808"
-     }
-    ],
-    "museum_id": "museo-camon-aznar",
-    "location_src": "Museo Camón Aznar",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.88333,
-     41.65
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Aesop and Menippus",
-    "year": "1778",
-    "location": "Museo Camón Aznar",
-    "city": "Zaragoza",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Esopo%20y%20Menipo%20%28Museo%20Ibercaja%20Cam%C3%B3n%20Aznar%29.jpg?width=500",
-    "qid": "Q107223794",
-    "wikidata": "https://www.wikidata.org/wiki/Q107223794",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q107223794",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Aesop and Menippus [ Wikidata ]"
-     }
-    ],
-    "museum_id": "museo-camon-aznar",
-    "location_src": "Museo Camón Aznar",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Don Francisco de Saavedra",
-    "year": "1798",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20de%20Saavedra%20%28Goya%29.jpg?width=500",
-    "qid": "Q79394767",
-    "wikidata": "https://www.wikidata.org/wiki/Q79394767",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q79394767",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Don Francisco de Saavedra (in Polish)"
-     }
-    ],
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
    }
@@ -21703,46 +20702,6 @@
     ],
     "museum_id": "metropolitan-museum-of-art",
     "location_src": "Metropolitan Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -76.6165,
-     39.29642
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "Portrait of El General Ricardos",
-    "year": "1800",
-    "location": "Walters Art Museum",
-    "city": "Baltimore",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Francisco%20Jos%C3%A9%20de%20Goya%20y%20Lucientes%20-%20Portrait%20of%20El%20General%20Ricardos%20-%20Walters%2037283.jpg?width=500",
-    "qid": "Q18748498",
-    "wikidata": "https://www.wikidata.org/wiki/Q18748498",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18748498",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Madrid",
-    "creation_lat": 40.4168,
-    "creation_lon": -3.7038,
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of General Antonio Ricardos (in Polish)"
-     }
-    ],
-    "museum_id": "walters-art-museum",
-    "location_src": "Walters Art Museum",
     "kind": "museum",
     "form": "painting"
    }
@@ -22974,47 +21933,6 @@
     ],
     "museum_id": "marquess-of-la-romana",
     "location_src": "Marquess of la Romana",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.6922,
-     40.4139
-    ]
-   },
-   "properties": {
-    "painter": "Goya",
-    "title": "The Victorious Hannibal Seeing Italy from the Alps for the First Time",
-    "year": "1770",
-    "location": "Museo del Prado",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/An%C3%ADbal%20vencedor%20que%20por%20primera%20vez%20mira%20Italia%20desde%20los%20Alpes%20-%20Francisco%20Goya.jpg?width=500",
-    "qid": "Q3825595",
-    "wikidata": "https://www.wikidata.org/wiki/Q3825595",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3825595",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Zaragoza",
-    "creation_lat": 41.65,
-    "creation_lon": -0.883333,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "museo-del-prado",
-    "location_src": "Museo del Prado",
     "kind": "museum",
     "form": "painting"
    }

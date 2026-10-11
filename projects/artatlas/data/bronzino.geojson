@@ -1953,53 +1953,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     16.9289,
-     52.40865
-    ]
-   },
-   "properties": {
-    "painter": "Bronzino",
-    "title": "Portrait of Cosimo I de' Medici in armour",
-    "year": "1545",
-    "location": "National Museum in Poznań",
-    "city": "Poznań",
-    "country": "Poland",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bronzino%20Cosimo%20de%27%20Medici.jpg?width=500",
-    "qid": "Q105296824",
-    "wikidata": "https://www.wikidata.org/wiki/Q105296824",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q105296824",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Cosimo I de' Medici"
-     }
-    ],
-    "museum_id": "national-museum-in-poznan",
-    "location_src": "National Museum in Poznań",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -76.6165,
      39.29642
     ]

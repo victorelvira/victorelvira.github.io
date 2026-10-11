@@ -828,34 +828,41 @@
    },
    "properties": {
     "painter": "Rogier van der Weyden",
-    "title": "The crucified Christ between the mourning Mary and Saint John , so called Crucifixion of Scheut",
-    "year": "c. 1450–1455",
-    "city": "Spain",
+    "title": "Crucifixion of Scheut",
+    "year": "1454",
     "location": "Royal Monastery of San Lorenzo de El Escorial",
+    "city": "Spain",
+    "country": "Spain",
     "attribution": "generally accepted",
-    "dimensions": "325 × 192 cm.",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Weyden_Christ_on_the_Cross_with_Mary_and_St_John.jpg/500px-Weyden_Christ_on_the_Cross_with_Mary_and_St_John.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Brussels",
-    "creation_lat": 50.8503,
-    "creation_lon": 4.3517,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Weyden%20Christ%20on%20the%20Cross%20with%20Mary%20and%20St%20John.jpg?width=500",
+    "qid": "Q18430656",
+    "wikidata": "https://www.wikidata.org/wiki/Q18430656",
     "_source": {
-     "source": "Wikipedia: List of works by Rogier van der Weyden",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18430656",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
+    "creation_place": "Brussels",
+    "creation_lat": 50.846667,
+    "creation_lon": 4.3525,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Crucifixion of Scheut",
-      "qid": "Q18430656",
-      "url": "https://www.wikidata.org/wiki/Q18430656"
+      "source": "Wikipedia list",
+      "title": "The crucified Christ between the mourning Mary and Saint John , so called Crucifixion of Scheut"
      }
     ],
-    "location_src": "El Escorial",
+    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
+    "location_src": "Royal Monastery of San Lorenzo de El Escorial",
     "kind": "museum",
     "form": "painting",
-    "country": "Spain"
+    "dimensions": "325 × 192 cm."
    }
   },
   {
@@ -1227,53 +1234,6 @@
      }
     ],
     "location_src": "Philadelphia Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -4.15,
-     40.59
-    ]
-   },
-   "properties": {
-    "painter": "Rogier van der Weyden",
-    "title": "Crucifixion of Scheut",
-    "year": "1454",
-    "location": "Royal Monastery of San Lorenzo de El Escorial",
-    "city": "Spain",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Weyden%20Christ%20on%20the%20Cross%20with%20Mary%20and%20St%20John.jpg?width=500",
-    "qid": "Q18430656",
-    "wikidata": "https://www.wikidata.org/wiki/Q18430656",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18430656",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Brussels",
-    "creation_lat": 50.846667,
-    "creation_lon": 4.3525,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The crucified Christ between the mourning Mary and Saint John , so called Crucifixion of Scheut"
-     }
-    ],
-    "museum_id": "royal-monastery-of-san-lorenzo-de-el-escorial",
-    "location_src": "Royal Monastery of San Lorenzo de El Escorial",
     "kind": "museum",
     "form": "painting"
    }
@@ -3122,88 +3082,6 @@
     },
     "museum_id": "courtauld-gallery",
     "location_src": "Courtauld Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.69493,
-     40.41604
-    ]
-   },
-   "properties": {
-    "painter": "Rogier van der Weyden",
-    "title": "Portrait of an Unknown Man",
-    "year": "1455",
-    "location": "Thyssen-Bornemisza Museum",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rogier%20van%20der%20Weyden%20026.jpg?width=500",
-    "qid": "Q27038656",
-    "wikidata": "https://www.wikidata.org/wiki/Q27038656",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27038656",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Brussels",
-    "creation_lat": 50.846667,
-    "creation_lon": 4.3525,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "thyssen-bornemisza-museum",
-    "location_src": "Thyssen-Bornemisza Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     4.39435,
-     51.20882
-    ]
-   },
-   "properties": {
-    "painter": "Rogier van der Weyden",
-    "title": "Croy family shield",
-    "year": "1460",
-    "location": "Royal Museum of Fine Arts Antwerp",
-    "city": "Antwerp",
-    "country": "Belgium",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Croyblazon.jpg?width=500",
-    "qid": "Q21614521",
-    "wikidata": "https://www.wikidata.org/wiki/Q21614521",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21614521",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Brussels",
-    "creation_lat": 50.846667,
-    "creation_lon": 4.3525,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "royal-museum-of-fine-arts-antwerp",
-    "location_src": "Royal Museum of Fine Arts Antwerp",
     "kind": "museum",
     "form": "painting"
    }

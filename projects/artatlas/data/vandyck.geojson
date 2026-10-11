@@ -40170,47 +40170,6 @@
     "form": "painting",
     "city_src": "Håbo Municipality"
    }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     30.31361,
-     59.94056
-    ]
-   },
-   "properties": {
-    "painter": "Anthony van Dyck",
-    "title": "Rest on the Flight into Egypt (Madonna with Partridges)",
-    "year": "1632",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Anthony%20van%20Dyck%20and%20Pauwel%20de%20Vos%20-%20Rest%20on%20the%20Flight%20into%20Egypt%20%28Madonna%20with%20Partridges%29.jpg?width=500",
-    "qid": "Q27974869",
-    "wikidata": "https://www.wikidata.org/wiki/Q27974869",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27974869",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "hermitage-museum",
-    "location_src": "Hermitage Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
   }
  ]
 }

@@ -176,30 +176,41 @@
    },
    "properties": {
     "painter": "Caspar David Friedrich",
-    "title": "Morning mist in the Mountains [ Wikidata ]",
+    "title": "Morning mist in the mountains",
     "year": "1808",
     "location": "Heidecksburg",
+    "city": "",
+    "country": "Germany",
     "attribution": "generally accepted",
-    "dimensions": "71 x 104 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Friedrich%2C_Caspar_David_%E2%80%93_Morgennebel_im_Gebirge.jpg/500px-Friedrich%2C_Caspar_David_%E2%80%93_Morgennebel_im_Gebirge.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20%E2%80%93%20Morgennebel%20im%20Gebirge.jpg?width=500",
+    "qid": "Q18602468",
+    "wikidata": "https://www.wikidata.org/wiki/Q18602468",
     "_source": {
-     "source": "Wikipedia: List of works by Caspar David Friedrich",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18602468",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "heidecksburg",
+    "creation_place": "Dresden",
+    "creation_lat": 51.05,
+    "creation_lon": 13.74,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Morning mist in the mountains",
-      "qid": "Q18602468",
-      "url": "https://www.wikidata.org/wiki/Q18602468"
+      "source": "Wikipedia list",
+      "title": "Morning mist in the Mountains [ Wikidata ]"
      }
     ],
-    "country": "Germany",
+    "museum_id": "heidecksburg",
     "location_src": "Heidecksburg",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "71 x 104 cm"
    }
   },
   {
@@ -7759,53 +7770,6 @@
     ],
     "museum_id": "musee-des-beaux-arts-d-angers",
     "location_src": "Musée des Beaux-Arts d'Angers",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.339,
-     50.723
-    ]
-   },
-   "properties": {
-    "painter": "Caspar David Friedrich",
-    "title": "Morning mist in the mountains",
-    "year": "1808",
-    "location": "Heidecksburg",
-    "city": "",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Friedrich%2C%20Caspar%20David%20%E2%80%93%20Morgennebel%20im%20Gebirge.jpg?width=500",
-    "qid": "Q18602468",
-    "wikidata": "https://www.wikidata.org/wiki/Q18602468",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18602468",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Dresden",
-    "creation_lat": 51.05,
-    "creation_lon": 13.74,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Morning mist in the Mountains [ Wikidata ]"
-     }
-    ],
-    "museum_id": "heidecksburg",
-    "location_src": "Heidecksburg",
     "kind": "museum",
     "form": "painting"
    }

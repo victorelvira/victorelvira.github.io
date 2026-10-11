@@ -3241,36 +3241,36 @@
    },
    "properties": {
     "painter": "Hans Holbein the Younger",
-    "year": "c. 1543",
+    "title": "Portrait of William Butts",
+    "year": "1543",
+    "location": "Isabella Stewart Gardner Museum",
     "city": "Boston",
     "country": "United States",
-    "location": "Isabella Stewart Gardner Museum",
     "attribution": "generally accepted",
-    "medium": "Oil and tempera, formerly on oak panel, transferred to canvas in 1941",
-    "dimensions": "47 × 36.8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Portrait_of_Sir_William_Butts_%28ca.1543%29_-_Hans_Holbein_II_%28Isabella_Stewart_Gardner_Museum%29.jpg/500px-Portrait_of_Sir_William_Butts_%28ca.1543%29_-_Hans_Holbein_II_%28Isabella_Stewart_Gardner_Museum%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Sir%20William%20Butts%20%28ca.1543%29%20-%20Hans%20Holbein%20II%20%28Isabella%20Stewart%20Gardner%20Museum%29.jpg?width=500",
+    "qid": "Q23642909",
+    "wikidata": "https://www.wikidata.org/wiki/Q23642909",
     "_source": {
-     "source": "Wikipedia: List of paintings by Hans Holbein the Younger",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q23642909",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "isabella-stewart-gardner-museum",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Portrait of William Butts",
-      "qid": "Q23642909",
-      "url": "https://www.wikidata.org/wiki/Q23642909"
-     }
-    ],
     "location_src": "Isabella Stewart Gardner Museum",
-    "title": "Portrait of Sir William Butts",
-    "_title_src": "holbein list (Wikipedia), matched by image",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "47 × 36.8 cm",
+    "medium": "Oil and tempera, formerly on oak panel, transferred to canvas in 1941"
    }
   },
   {
@@ -5303,47 +5303,6 @@
     "kind": "museum",
     "form": "painting",
     "_year_was": "1501"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09912,
-     42.33818
-    ]
-   },
-   "properties": {
-    "painter": "Hans Holbein the Younger",
-    "title": "Portrait of William Butts",
-    "year": "1543",
-    "location": "Isabella Stewart Gardner Museum",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Sir%20William%20Butts%20%28ca.1543%29%20-%20Hans%20Holbein%20II%20%28Isabella%20Stewart%20Gardner%20Museum%29.jpg?width=500",
-    "qid": "Q23642909",
-    "wikidata": "https://www.wikidata.org/wiki/Q23642909",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q23642909",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "isabella-stewart-gardner-museum",
-    "location_src": "Isabella Stewart Gardner Museum",
-    "kind": "museum",
-    "form": "painting"
    }
   },
   {

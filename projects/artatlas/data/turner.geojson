@@ -4676,35 +4676,42 @@
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "Union of the Thames and Isis ('Dorchester Mead, Oxfordshire')",
+    "title": "Union of the Thames and Isis",
     "year": "1808",
+    "location": "Tate Britain",
     "city": "London",
     "country": "United Kingdom",
-    "location": "Tate Britain",
     "attribution": "generally accepted",
-    "dimensions": "90.8 × 121.3 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Joseph_Mallord_William_Turner_-_Union_of_the_Thames_and_Isis_%28%27Dorchester_Mead%2C_Oxfordshire%29_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_-_Union_of_the_Thames_and_Isis_%28%27Dorchester_Mead%2C_Oxfordshire%29_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Union%20of%20the%20Thames%20and%20Isis%20%28%27Dorchester%20Mead%2C%20Oxfordshire%29%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18687299",
+    "wikidata": "https://www.wikidata.org/wiki/Q18687299",
     "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18687299",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "tate-britain",
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Union of the Thames and Isis",
-      "qid": "Q18687299",
-      "url": "https://www.wikidata.org/wiki/Q18687299"
+      "source": "Wikipedia list",
+      "title": "Union of the Thames and Isis ('Dorchester Mead, Oxfordshire')"
      }
     ],
+    "museum_id": "tate-britain",
     "location_src": "Tate Britain",
     "venue_of": "Tate",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "90.8 × 121.3 cm"
    }
   },
   {
@@ -12466,38 +12473,36 @@
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "The Burning of the Houses of Lords and Commons, 16th October, 1834",
-    "year": "1834-1835",
+    "title": "The Burning of the Houses of Lords and Commons",
+    "year": "1834",
+    "location": "Philadelphia Museum of Art",
     "city": "Philadelphia",
     "country": "United States",
-    "location": "Philadelphia Museum of Art",
     "attribution": "generally accepted",
-    "dimensions": "92 × 123.1 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Joseph_Mallord_William_Turner%2C_English_-_The_Burning_of_the_Houses_of_Lords_and_Commons%2C_October_16%2C_1834_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner%2C_English_-_The_Burning_of_the_Houses_of_Lords_and_Commons%2C_October_16%2C_1834_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Burning_of_the_Houses_of_Lords_and_Commons",
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%2C%20English%20-%20The%20Burning%20of%20the%20Houses%20of%20Lords%20and%20Commons%2C%20October%2016%2C%201834%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3204090",
+    "wikidata": "https://www.wikidata.org/wiki/Q3204090",
     "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3204090",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "philadelphia-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q80974590",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Burning of the Houses of Lords and Commons",
-      "qid": "Q3204090",
-      "url": "https://www.wikidata.org/wiki/Q3204090"
-     }
-    ],
     "location_src": "Philadelphia Museum of Art",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q80974590",
-    "qid_rejected_as": "painting series"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Burning_of_the_Houses_of_Lords_and_Commons",
+    "dimensions": "92 × 123.1 cm"
    }
   },
   {
@@ -12511,38 +12516,36 @@
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "The Burning of the Houses of Lords and Commons, 16th October, 1834",
-    "year": "1834-1835",
+    "title": "The Burning of the Houses of Lords and Commons, 16 October 1834",
+    "year": "1835",
+    "location": "Cleveland Museum of Art",
     "city": "Cleveland",
     "country": "United States",
-    "location": "Cleveland Museum of Art",
     "attribution": "generally accepted",
-    "dimensions": "92 × 123 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Joseph_Mallord_William_Turner_-_The_Burning_of_the_Houses_of_Lords_and_Commons%2C_16_October_1834_-_1942.647_-_Cleveland_Museum_of_Art.jpg/500px-Joseph_Mallord_William_Turner_-_The_Burning_of_the_Houses_of_Lords_and_Commons%2C_16_October_1834_-_1942.647_-_Cleveland_Museum_of_Art.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Burning_of_the_Houses_of_Lords_and_Commons",
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20The%20Burning%20of%20the%20Houses%20of%20Lords%20and%20Commons%2C%2016%20October%201834%20-%201942.647%20-%20Cleveland%20Museum%20of%20Art.jpg?width=500",
+    "qid": "Q60514853",
+    "wikidata": "https://www.wikidata.org/wiki/Q60514853",
     "_source": {
-     "source": "Wikipedia: List of paintings by J. M. W. Turner",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q60514853",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "cleveland-museum-of-art",
-    "wikidata": "https://www.wikidata.org/wiki/Q80974590",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Burning of the Houses of Lords and Commons, 16 October 1834",
-      "qid": "Q60514853",
-      "url": "https://www.wikidata.org/wiki/Q60514853"
-     }
-    ],
     "location_src": "Cleveland Museum of Art",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q80974590",
-    "qid_rejected_as": "painting series"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Burning_of_the_Houses_of_Lords_and_Commons",
+    "dimensions": "92 × 123 cm"
    }
   },
   {
@@ -17453,54 +17456,6 @@
    },
    "properties": {
     "painter": "J.M.W. Turner",
-    "title": "Union of the Thames and Isis",
-    "year": "1808",
-    "location": "Tate Britain",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20Union%20of%20the%20Thames%20and%20Isis%20%28%27Dorchester%20Mead%2C%20Oxfordshire%29%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q18687299",
-    "wikidata": "https://www.wikidata.org/wiki/Q18687299",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18687299",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Union of the Thames and Isis ('Dorchester Mead, Oxfordshire')"
-     }
-    ],
-    "museum_id": "tate-britain",
-    "location_src": "Tate Britain",
-    "venue_of": "Tate",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.12722,
-     51.49083
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
     "title": "Seaport in the Grand Style",
     "year": "1835",
     "location": "Tate Britain",
@@ -21361,47 +21316,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -75.18139,
-     39.96583
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "The Burning of the Houses of Lords and Commons",
-    "year": "1834",
-    "location": "Philadelphia Museum of Art",
-    "city": "Philadelphia",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%2C%20English%20-%20The%20Burning%20of%20the%20Houses%20of%20Lords%20and%20Commons%2C%20October%2016%2C%201834%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q3204090",
-    "wikidata": "https://www.wikidata.org/wiki/Q3204090",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3204090",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "philadelphia-museum-of-art",
-    "location_src": "Philadelphia Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -1.54914,
      47.21614
     ]
@@ -21620,38 +21534,6 @@
       "source": "derived",
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    },
-    "museum_id": "tate-britain",
-    "location_src": "Tate Britain",
-    "kind": "museum",
-    "form": "painting",
-    "venue_of": "Tate"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.12722,
-     51.49083
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "River Landscape with Distant Mountain",
-    "year": "",
-    "location": "Tate Britain",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20%281775-1851%29%20-%20Extensive%20Landscape%20with%20River%20or%20Estuary%20and%20a%20Distant%20Mountain%20-%20N05542%20-%20National%20Gallery.jpg?width=500",
-    "qid": "Q18544683",
-    "wikidata": "https://www.wikidata.org/wiki/Q18544683",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18544683",
-     "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "tate-britain",
     "location_src": "Tate Britain",
@@ -23384,47 +23266,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -2.9214,
-     53.3735
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Schloss Rosenau, Bavaria, Seat of HRH Prince Albert of Coburg",
-    "year": "1841",
-    "location": "Sudley House",
-    "city": "Liverpool",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Turner%20-%20Schloss%20Rosenau%2C%20Bavaria%2C%20Seat%20of%20HRH%20Prince%20Albert%20of%20Coburg%2C%20c.1841%2C%20WAG%20309.jpg?width=500",
-    "qid": "Q119052308",
-    "wikidata": "https://www.wikidata.org/wiki/Q119052308",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q119052308",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "sudley-house",
-    "location_src": "Sudley House",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.12722,
      51.49083
     ]
@@ -25037,88 +24878,6 @@
     },
     "museum_id": "metropolitan-museum-of-art",
     "location_src": "Metropolitan Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.22472,
-     46.79889
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "Scène dans le Derbyshire",
-    "year": "1827",
-    "location": "Musée national des beaux-arts du Québec",
-    "city": "La Cité-Limoilou",
-    "country": "Canada",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Turner%20-%20Sc%C3%A8ne%20dans%20le%20Derbyshire.%20Les%20Hauteurs%20d%E2%80%99Abraham%2C%20Matlock%20Bath%2C%201827%20ou%20avant%2C%201959.579.jpg?width=500",
-    "qid": "Q59562914",
-    "wikidata": "https://www.wikidata.org/wiki/Q59562914",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q59562914",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "musee-national-des-beaux-arts-du-quebec",
-    "location_src": "Musée national des beaux-arts du Québec",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -81.61167,
-     41.50889
-    ]
-   },
-   "properties": {
-    "painter": "J.M.W. Turner",
-    "title": "The Burning of the Houses of Lords and Commons, 16 October 1834",
-    "year": "1835",
-    "location": "Cleveland Museum of Art",
-    "city": "Cleveland",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Mallord%20William%20Turner%20-%20The%20Burning%20of%20the%20Houses%20of%20Lords%20and%20Commons%2C%2016%20October%201834%20-%201942.647%20-%20Cleveland%20Museum%20of%20Art.jpg?width=500",
-    "qid": "Q60514853",
-    "wikidata": "https://www.wikidata.org/wiki/Q60514853",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q60514853",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "cleveland-museum-of-art",
-    "location_src": "Cleveland Museum of Art",
     "kind": "museum",
     "form": "painting"
    }

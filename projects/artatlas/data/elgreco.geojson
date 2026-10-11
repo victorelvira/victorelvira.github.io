@@ -147,35 +147,35 @@
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Saint Luke Painting the Virgin and Child",
-    "year": "c. 1567",
-    "city": "Athens",
+    "title": "St Luke painting the Virgin",
+    "year": "1560",
     "location": "Benaki Museum",
+    "city": "Athens",
+    "country": "Greece",
     "attribution": "generally accepted",
-    "medium": "Wood, tempera and gold leaf",
-    "dimensions": "41.6 × 33 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/El_Greco_-_St_Luke_Painting_the_Virgin_-_Google_Art_Project.jpg/500px-El_Greco_-_St_Luke_Painting_the_Virgin_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Heraklion",
-    "creation_lat": 35.3387,
-    "creation_lon": 25.1442,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20St%20Luke%20Painting%20the%20Virgin%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q9396918",
+    "wikidata": "https://www.wikidata.org/wiki/Q9396918",
     "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q9396918",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "benaki-museum",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "St Luke painting the Virgin",
-      "qid": "Q9396918",
-      "url": "https://www.wikidata.org/wiki/Q9396918"
+      "source": "Wikipedia list",
+      "title": "Saint Luke Painting the Virgin and Child"
      }
     ],
-    "country": "Greece",
+    "museum_id": "benaki-museum",
     "location_src": "Benaki Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "41.6 × 33 cm",
+    "medium": "Wood, tempera and gold leaf",
+    "creation_place": "Heraklion",
+    "creation_lat": 35.3387,
+    "creation_lon": 25.1442
    }
   },
   {
@@ -3305,39 +3305,30 @@
    },
    "properties": {
     "painter": "El Greco",
-    "title": "Allegory of the Camaldolese Order",
-    "year": "c.1600",
+    "title": "Allegory of the Order of the Camaldolese",
+    "year": "1600",
+    "location": "Instituto Valencia of Don Juan",
     "city": "Madrid",
     "country": "Spain",
-    "location": "Instituto Valencia of Don Juan",
     "attribution": "generally accepted",
-    "medium": "oil on wood",
-    "dimensions": "124 × 90 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/RomualdGreco.jpg/500px-RomualdGreco.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Allegory_of_the_Camaldolese_Order",
-    "creation_place": "Toledo",
-    "creation_lat": 39.8628,
-    "creation_lon": -4.0273,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/RomualdGreco.jpg?width=500",
+    "qid": "Q16527161",
+    "wikidata": "https://www.wikidata.org/wiki/Q16527161",
     "_source": {
-     "source": "Wikipedia: List of works by El Greco",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16527161",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "museum_id": "instituto-valencia-of-don-juan",
-    "wikidata": "https://www.wikidata.org/wiki/Q65058922",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Allegory of the Order of the Camaldolese",
-      "qid": "Q16527161",
-      "url": "https://www.wikidata.org/wiki/Q16527161"
-     }
-    ],
     "location_src": "Instituto Valencia of Don Juan",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q65058922",
-    "qid_rejected_as": "painting series"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Allegory_of_the_Camaldolese_Order",
+    "dimensions": "124 × 90 cm",
+    "medium": "oil on wood",
+    "creation_place": "Toledo",
+    "creation_lat": 39.8628,
+    "creation_lon": -4.0273
    }
   },
   {
@@ -11407,43 +11398,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     23.72806,
-     37.98417
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "St Luke painting the Virgin",
-    "year": "1560",
-    "location": "Benaki Museum",
-    "city": "Athens",
-    "country": "Greece",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Greco%20-%20St%20Luke%20Painting%20the%20Virgin%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q9396918",
-    "wikidata": "https://www.wikidata.org/wiki/Q9396918",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q9396918",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Saint Luke Painting the Virgin and Child"
-     }
-    ],
-    "museum_id": "benaki-museum",
-    "location_src": "Benaki Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      19.07678,
      47.51587
     ]
@@ -12366,37 +12320,6 @@
     },
     "museum_id": "monastery-of-saint-dominic-of-silos",
     "location_src": "Monastery of Saint Dominic of Silos",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.69028,
-     40.43333
-    ]
-   },
-   "properties": {
-    "painter": "El Greco",
-    "title": "Allegory of the Order of the Camaldolese",
-    "year": "1600",
-    "location": "Instituto Valencia of Don Juan",
-    "city": "Madrid",
-    "country": "Spain",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/RomualdGreco.jpg?width=500",
-    "qid": "Q16527161",
-    "wikidata": "https://www.wikidata.org/wiki/Q16527161",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16527161",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "museum_id": "instituto-valencia-of-don-juan",
-    "location_src": "Instituto Valencia of Don Juan",
     "kind": "museum",
     "form": "painting"
    }

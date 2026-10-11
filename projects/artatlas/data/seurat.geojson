@@ -13,30 +13,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1878 Angélique",
-    "year": "1878 Angélique",
-    "city": "Pasadena",
+    "title": "Angelica",
+    "year": "1878",
     "location": "Norton Simon Museum",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Seurat_Angelica_%28apr%C3%A8s_Ingres%29.jpg/500px-Seurat_Angelica_%28apr%C3%A8s_Ingres%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "norton-simon-museum",
+    "city": "Pasadena",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Angelica%20%28apr%C3%A8s%20Ingres%29.jpg?width=500",
+    "qid": "Q19607558",
+    "wikidata": "https://www.wikidata.org/wiki/Q19607558",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19607558",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Angelica",
-      "qid": "Q19607558",
-      "url": "https://www.wikidata.org/wiki/Q19607558"
+      "source": "Wikipedia list",
+      "title": "1878 Angélique"
      }
     ],
+    "museum_id": "norton-simon-museum",
     "location_src": "Norton Simon Museum",
     "kind": "museum",
     "form": "painting"
@@ -811,30 +818,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1882 The Stone Breakers, Le Raincy",
-    "year": "1882 The Stone Breakers, Le Raincy",
-    "city": "Pasadena",
+    "title": "The Stone Breakers, Le Raincy",
+    "year": "1882",
     "location": "Norton Simon Museum",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/%27The_Stone_Breakers%2C_Le_Raincy%27_by_Georges_Seurat%2C_Norton_Simon_Museum.JPG/500px-%27The_Stone_Breakers%2C_Le_Raincy%27_by_Georges_Seurat%2C_Norton_Simon_Museum.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "norton-simon-museum",
+    "city": "Pasadena",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27The%20Stone%20Breakers%2C%20Le%20Raincy%27%20by%20Georges%20Seurat%2C%20Norton%20Simon%20Museum.JPG?width=500",
+    "qid": "Q118054308",
+    "wikidata": "https://www.wikidata.org/wiki/Q118054308",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118054308",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Stone Breakers, Le Raincy",
-      "qid": "Q118054308",
-      "url": "https://www.wikidata.org/wiki/Q118054308"
+      "source": "Wikipedia list",
+      "title": "1882 The Stone Breakers, Le Raincy"
      }
     ],
+    "museum_id": "norton-simon-museum",
     "location_src": "Norton Simon Museum",
     "kind": "museum",
     "form": "painting"
@@ -1786,30 +1800,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1883 Boat by the Bank, Asnieres",
-    "year": "1883 Boat by the Bank, Asnieres",
+    "title": "Boat by the Bank, Asnières",
+    "year": "1883",
+    "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "location": "Courtauld Gallery",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Georges_Seurat_-_Boat_by_the_Riverbank_PC_80.jpg/500px-Georges_Seurat_-_Boat_by_the_Riverbank_PC_80.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Boat%20by%20the%20Riverbank%20PC%2080.jpg?width=500",
+    "qid": "Q88311886",
+    "wikidata": "https://www.wikidata.org/wiki/Q88311886",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q88311886",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "courtauld-gallery",
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Boat by the Bank, Asnières",
-      "qid": "Q88311886",
-      "url": "https://www.wikidata.org/wiki/Q88311886"
+      "source": "Wikipedia list",
+      "title": "1883 Boat by the Bank, Asnieres"
      }
     ],
+    "museum_id": "courtauld-gallery",
     "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
@@ -3137,31 +3158,38 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1884 to 1885 La Luzerne, Saint-Denis",
-    "year": "1884 to 1885 La Luzerne, Saint-Denis",
+    "title": "La Luzerne, Saint-Denis",
+    "year": "1885",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Georges_Seurat_-_La_Luzerne%2C_Saint-Denis_-_Google_Art_Project.jpg/500px-Georges_Seurat_-_La_Luzerne%2C_Saint-Denis_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20La%20Luzerne%2C%20Saint-Denis%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18684436",
+    "wikidata": "https://www.wikidata.org/wiki/Q18684436",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18684436",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "scottish-national-gallery",
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "La Luzerne, Saint-Denis",
-      "qid": "Q18684436",
-      "url": "https://www.wikidata.org/wiki/Q18684436"
+      "source": "Wikipedia list",
+      "title": "1884 to 1885 La Luzerne, Saint-Denis"
      }
     ],
-    "location_src": "Scottish National Gallery",
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
    }
@@ -3509,30 +3537,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1885 Grandchamp, Evening",
-    "year": "1885 Grandchamp, Evening",
-    "city": "New York",
+    "title": "Grandcamp, Evening",
+    "year": "1885",
     "location": "Museum of Modern Art",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Georges-Pierre_Seurat_-_Grandcamp%2C_un_soir_-_Google_Art_Project.jpg/500px-Georges-Pierre_Seurat_-_Grandcamp%2C_un_soir_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museum-of-modern-art",
+    "city": "New York",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20Grandcamp%2C%20un%20soir%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3775512",
+    "wikidata": "https://www.wikidata.org/wiki/Q3775512",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3775512",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Grandcamp, Evening",
-      "qid": "Q3775512",
-      "url": "https://www.wikidata.org/wiki/Q3775512"
+      "source": "Wikipedia list",
+      "title": "1885 Grandchamp, Evening"
      }
     ],
+    "museum_id": "museum-of-modern-art",
     "location_src": "Museum of Modern Art",
     "kind": "museum",
     "form": "painting"
@@ -3643,30 +3678,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1886 Honfleur, evening",
-    "year": "1886 Honfleur, evening",
-    "city": "New York",
+    "title": "Evening, Honfleur",
+    "year": "1886",
     "location": "Museum of Modern Art",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Georges-Pierre_Seurat_-_Honfleur%2C_un_soir%2C_embouchure_de_la_Seine_-_Google_Art_Project.jpg/500px-Georges-Pierre_Seurat_-_Honfleur%2C_un_soir%2C_embouchure_de_la_Seine_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museum-of-modern-art",
+    "city": "New York",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20Honfleur%2C%20un%20soir%2C%20embouchure%20de%20la%20Seine%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3786544",
+    "wikidata": "https://www.wikidata.org/wiki/Q3786544",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3786544",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Evening, Honfleur",
-      "qid": "Q3786544",
-      "url": "https://www.wikidata.org/wiki/Q3786544"
+      "source": "Wikipedia list",
+      "title": "1886 Honfleur, evening"
      }
     ],
+    "museum_id": "museum-of-modern-art",
     "location_src": "Museum of Modern Art",
     "kind": "museum",
     "form": "painting"
@@ -3683,30 +3725,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1886 Study for \"The Beach of Bas-Butin, Honfleur\"",
-    "year": "1886 Study for \"The Beach of Bas-Butin, Honfleur\"",
+    "title": "Preparatory Sketch for the Painting La Grève du Bas-Butin, Honfleur",
+    "year": "1886",
     "location": "Baltimore Museum of Art",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Georges_Seurat_-_Preparatory_Sketch_for_the_Painting_La_Gr%C3%A8ve_du_Bas-Butin%2C_Honfleur_PC_169.jpg/500px-Georges_Seurat_-_Preparatory_Sketch_for_the_Painting_La_Gr%C3%A8ve_du_Bas-Butin%2C_Honfleur_PC_169.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "baltimore-museum-of-art",
     "city": "Baltimore",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Preparatory%20Sketch%20for%20the%20Painting%20La%20Gr%C3%A8ve%20du%20Bas-Butin%2C%20Honfleur%20PC%20169.jpg?width=500",
+    "qid": "Q71328898",
+    "wikidata": "https://www.wikidata.org/wiki/Q71328898",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q71328898",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Preparatory Sketch for the Painting La Grève du Bas-Butin, Honfleur",
-      "qid": "Q71328898",
-      "url": "https://www.wikidata.org/wiki/Q71328898"
+      "source": "Wikipedia list",
+      "title": "1886 Study for \"The Beach of Bas-Butin, Honfleur\""
      }
     ],
-    "country": "United States",
+    "museum_id": "baltimore-museum-of-art",
     "location_src": "Baltimore Museum of Art",
     "kind": "museum",
     "form": "painting"
@@ -3909,30 +3958,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1886 to 1887 The Bridge at Courbevoie",
-    "year": "1886 to 1887 The Bridge at Courbevoie",
+    "title": "Bridge of Courbevoie",
+    "year": "1880",
+    "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "location": "Courtauld Gallery",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Georges_Seurat_012.jpg/500px-Georges_Seurat_012.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20012.jpg?width=500",
+    "qid": "Q3908058",
+    "wikidata": "https://www.wikidata.org/wiki/Q3908058",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3908058",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "courtauld-gallery",
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Bridge of Courbevoie",
-      "qid": "Q3908058",
-      "url": "https://www.wikidata.org/wiki/Q3908058"
+      "source": "Wikipedia list",
+      "title": "1886 to 1887 The Bridge at Courbevoie"
      }
     ],
+    "museum_id": "courtauld-gallery",
     "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
@@ -4689,30 +4745,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 Study for \"Le Chahut\"",
-    "year": "1890 Study for \"Le Chahut\"",
+    "title": "Study for 'Le Chahut'",
+    "year": "1889",
+    "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "location": "Courtauld Gallery",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Georges_Seurat_-_Study_for_Le_Chahut_PC_200.jpg/500px-Georges_Seurat_-_Study_for_Le_Chahut_PC_200.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20Le%20Chahut%20PC%20200.jpg?width=500",
+    "qid": "Q88311895",
+    "wikidata": "https://www.wikidata.org/wiki/Q88311895",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q88311895",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "courtauld-gallery",
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Study for 'Le Chahut'",
-      "qid": "Q88311895",
-      "url": "https://www.wikidata.org/wiki/Q88311895"
+      "source": "Wikipedia list",
+      "title": "1890 Study for \"Le Chahut\""
      }
     ],
+    "museum_id": "courtauld-gallery",
     "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
@@ -4890,30 +4953,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 Beach at Gravelines",
-    "year": "1890 Beach at Gravelines",
+    "title": "Beach at Gravelines",
+    "year": "1890",
+    "location": "Courtauld Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "location": "Courtauld Gallery",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Georges_Seurat_-_Beach_at_Gravelines_PC_207.jpg/500px-Georges_Seurat_-_Beach_at_Gravelines_PC_207.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Beach%20at%20Gravelines%20PC%20207.jpg?width=500",
+    "qid": "Q3848104",
+    "wikidata": "https://www.wikidata.org/wiki/Q3848104",
     "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3848104",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "courtauld-gallery",
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Beach at Gravelines",
-      "qid": "Q3848104",
-      "url": "https://www.wikidata.org/wiki/Q3848104"
+      "source": "Wikipedia list",
+      "title": "1890 Beach at Gravelines"
      }
     ],
+    "museum_id": "courtauld-gallery",
     "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
@@ -5157,30 +5227,37 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "1890 The Channel at Gravelines, Evening",
-    "year": "1890 The Channel at Gravelines, Evening",
-    "city": "New York",
+    "title": "The Channel at Gravelines, Evening",
+    "year": "1890",
     "location": "Museum of Modern Art",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Georges-Pierre_Seurat_-_The_Channel_at_Gravelines%2C_Evening_-_Google_Art_Project.jpg/500px-Georges-Pierre_Seurat_-_The_Channel_at_Gravelines%2C_Evening_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Georges Seurat",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "museum-of-modern-art",
+    "city": "New York",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20The%20Channel%20at%20Gravelines%2C%20Evening%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q3793240",
+    "wikidata": "https://www.wikidata.org/wiki/Q3793240",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3793240",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Channel at Gravelines, Evening",
-      "qid": "Q3793240",
-      "url": "https://www.wikidata.org/wiki/Q3793240"
+      "source": "Wikipedia list",
+      "title": "1890 The Channel at Gravelines, Evening"
      }
     ],
+    "museum_id": "museum-of-modern-art",
     "location_src": "Museum of Modern Art",
     "kind": "museum",
     "form": "painting"
@@ -5652,147 +5729,6 @@
     },
     "museum_id": "national-gallery",
     "location_src": "National Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.9775,
-     40.7617
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Grandcamp, Evening",
-    "year": "1885",
-    "location": "Museum of Modern Art",
-    "city": "New York",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20Grandcamp%2C%20un%20soir%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q3775512",
-    "wikidata": "https://www.wikidata.org/wiki/Q3775512",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3775512",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1885 Grandchamp, Evening"
-     }
-    ],
-    "museum_id": "museum-of-modern-art",
-    "location_src": "Museum of Modern Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.9775,
-     40.7617
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Evening, Honfleur",
-    "year": "1886",
-    "location": "Museum of Modern Art",
-    "city": "New York",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20Honfleur%2C%20un%20soir%2C%20embouchure%20de%20la%20Seine%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q3786544",
-    "wikidata": "https://www.wikidata.org/wiki/Q3786544",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3786544",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1886 Honfleur, evening"
-     }
-    ],
-    "museum_id": "museum-of-modern-art",
-    "location_src": "Museum of Modern Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.9775,
-     40.7617
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Channel at Gravelines, Evening",
-    "year": "1890",
-    "location": "Museum of Modern Art",
-    "city": "New York",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges-Pierre%20Seurat%20-%20The%20Channel%20at%20Gravelines%2C%20Evening%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q3793240",
-    "wikidata": "https://www.wikidata.org/wiki/Q3793240",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3793240",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1890 The Channel at Gravelines, Evening"
-     }
-    ],
-    "museum_id": "museum-of-modern-art",
-    "location_src": "Museum of Modern Art",
     "kind": "museum",
     "form": "painting"
    }
@@ -6465,53 +6401,6 @@
     },
     "museum_id": "art-institute-of-chicago",
     "location_src": "Art Institute of Chicago",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -76.6195,
-     39.326
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Preparatory Sketch for the Painting La Grève du Bas-Butin, Honfleur",
-    "year": "1886",
-    "location": "Baltimore Museum of Art",
-    "city": "Baltimore",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Preparatory%20Sketch%20for%20the%20Painting%20La%20Gr%C3%A8ve%20du%20Bas-Butin%2C%20Honfleur%20PC%20169.jpg?width=500",
-    "qid": "Q71328898",
-    "wikidata": "https://www.wikidata.org/wiki/Q71328898",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q71328898",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1886 Study for \"The Beach of Bas-Butin, Honfleur\""
-     }
-    ],
-    "museum_id": "baltimore-museum-of-art",
-    "location_src": "Baltimore Museum of Art",
     "kind": "museum",
     "form": "painting"
    }
@@ -7366,53 +7255,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.15916,
-     34.14623
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "The Stone Breakers, Le Raincy",
-    "year": "1882",
-    "location": "Norton Simon Museum",
-    "city": "Pasadena",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27The%20Stone%20Breakers%2C%20Le%20Raincy%27%20by%20Georges%20Seurat%2C%20Norton%20Simon%20Museum.JPG?width=500",
-    "qid": "Q118054308",
-    "wikidata": "https://www.wikidata.org/wiki/Q118054308",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q118054308",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1882 The Stone Breakers, Le Raincy"
-     }
-    ],
-    "museum_id": "norton-simon-museum",
-    "location_src": "Norton Simon Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -90.29449,
      38.63931
     ]
@@ -7671,53 +7513,6 @@
    },
    "properties": {
     "painter": "Georges Seurat",
-    "title": "Boat by the Bank, Asnières",
-    "year": "1883",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Boat%20by%20the%20Riverbank%20PC%2080.jpg?width=500",
-    "qid": "Q88311886",
-    "wikidata": "https://www.wikidata.org/wiki/Q88311886",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q88311886",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1883 Boat by the Bank, Asnieres"
-     }
-    ],
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
     "title": "Man in a Boat",
     "year": "1884",
     "location": "Courtauld Gallery",
@@ -7787,53 +7582,6 @@
      {
       "source": "Wikipedia list",
       "title": "1883 Man painting a boat"
-     }
-    ],
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Study for 'Le Chahut'",
-    "year": "1889",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Study%20for%20Le%20Chahut%20PC%20200.jpg?width=500",
-    "qid": "Q88311895",
-    "wikidata": "https://www.wikidata.org/wiki/Q88311895",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q88311895",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1890 Study for \"Le Chahut\""
      }
     ],
     "museum_id": "courtauld-gallery",
@@ -7929,53 +7677,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.15916,
-     34.14623
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Angelica",
-    "year": "1878",
-    "location": "Norton Simon Museum",
-    "city": "Pasadena",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seurat%20Angelica%20%28apr%C3%A8s%20Ingres%29.jpg?width=500",
-    "qid": "Q19607558",
-    "wikidata": "https://www.wikidata.org/wiki/Q19607558",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19607558",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1878 Angélique"
-     }
-    ],
-    "museum_id": "norton-simon-museum",
-    "location_src": "Norton Simon Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      3.38556,
      50.60278
     ]
@@ -8008,53 +7709,6 @@
     },
     "museum_id": "musee-des-beaux-arts-de-tournai",
     "location_src": "Musée des Beaux-Arts de Tournai",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Bridge of Courbevoie",
-    "year": "1880",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20012.jpg?width=500",
-    "qid": "Q3908058",
-    "wikidata": "https://www.wikidata.org/wiki/Q3908058",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3908058",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1886 to 1887 The Bridge at Courbevoie"
-     }
-    ],
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
    }
@@ -8240,53 +7894,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -3.19569,
-     55.9509
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "La Luzerne, Saint-Denis",
-    "year": "1885",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20La%20Luzerne%2C%20Saint-Denis%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q18684436",
-    "wikidata": "https://www.wikidata.org/wiki/Q18684436",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18684436",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1884 to 1885 La Luzerne, Saint-Denis"
-     }
-    ],
-    "museum_id": "scottish-national-gallery",
-    "location_src": "National Galleries of Scotland",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.11771,
      51.51157
     ]
@@ -8317,53 +7924,6 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Georges Seurat",
-    "title": "Beach at Gravelines",
-    "year": "1890",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges%20Seurat%20-%20Beach%20at%20Gravelines%20PC%20207.jpg?width=500",
-    "qid": "Q3848104",
-    "wikidata": "https://www.wikidata.org/wiki/Q3848104",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3848104",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "1890 Beach at Gravelines"
-     }
-    ],
     "museum_id": "courtauld-gallery",
     "location_src": "Courtauld Gallery",
     "kind": "museum",

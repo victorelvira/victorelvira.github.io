@@ -2152,39 +2152,37 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Portrait of Madame Charpentier ( French : Portrait de Madame Charpentier )",
-    "year": "1876–1877",
+    "title": "Portrait of Madame Charpentier",
+    "year": "1876",
+    "location": "Musée d'Orsay",
     "city": "Paris",
     "country": "France",
-    "location": "Musée d'Orsay",
     "attribution": "generally accepted",
-    "dimensions": "46.5 cm × 38 cm (18.3 in × 15.0 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Pierre-Auguste_Renoir_-_Madame_Charpentier_-_01.jpg/500px-Pierre-Auguste_Renoir_-_Madame_Charpentier_-_01.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Madame%20Charpentier%20-%2001.jpg?width=500",
+    "qid": "Q11702934",
+    "wikidata": "https://www.wikidata.org/wiki/Q11702934",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11702934",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "musee-d-orsay",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Portrait of Madame Charpentier",
-      "qid": "Q11702934",
-      "url": "https://www.wikidata.org/wiki/Q11702934"
-     }
-    ],
     "location_src": "Musée d'Orsay",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language",
-    "city_src": "7th arrondissement of Paris"
+    "city_src": "7th arrondissement of Paris",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
+    "dimensions": "46.5 cm × 38 cm (18.3 in × 15.0 in)"
    }
   },
   {
@@ -3284,38 +3282,43 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Children on the Seashore, Guernsey ( French : Enfants au Bord de la Mer, Guernesey )",
+    "title": "Children on the Seashore, Guernsey",
     "year": "1883",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "dimensions": "91.4 cm × 66.4 cm (36.0 in × 26.1 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Pierre-Auguste_Renoir_-_Children_on_the_Seashore%2C_Guernsey_-_Google_Art_Project.jpg/500px-Pierre-Auguste_Renoir_-_Children_on_the_Seashore%2C_Guernsey_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Children%20on%20the%20Seashore%2C%20Guernsey%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q20556352",
+    "wikidata": "https://www.wikidata.org/wiki/Q20556352",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20556352",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-fine-arts-boston",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Children on the Seashore, Guernsey",
-      "qid": "Q20556352",
-      "url": "https://www.wikidata.org/wiki/Q20556352"
+      "source": "Wikipedia list",
+      "title": "Children on the Seashore, Guernsey ( French : Enfants au Bord de la Mer, Guernesey )",
+      "ref": "https://en.wikipedia.org/wiki/French_language"
      }
     ],
-    "location_src": "Museum of Fine Arts",
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
+    "dimensions": "91.4 cm × 66.4 cm (36.0 in × 26.1 in)"
    }
   },
   {
@@ -3329,38 +3332,36 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Landscape of Ile de France ( French : Paysage d'Ile de France )",
+    "title": "Paysage de l'Île-de-France",
     "year": "1883",
-    "city": "Bogotá",
     "location": "Botero Museum",
+    "city": "Bogotá",
+    "country": "Colombia",
     "attribution": "generally accepted",
-    "dimensions": "54 cm × 65 cm (21 in × 26 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Pierre-Auguste_Renoir_-_Paisaje_de_L%27Ile_de_France.jpg/500px-Pierre-Auguste_Renoir_-_Paisaje_de_L%27Ile_de_France.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Paisaje%20de%20L%27Ile%20de%20France.jpg?width=500",
+    "qid": "Q108333695",
+    "wikidata": "https://www.wikidata.org/wiki/Q108333695",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q108333695",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "botero-museum",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Paysage de l'Île-de-France",
-      "qid": "Q108333695",
-      "url": "https://www.wikidata.org/wiki/Q108333695"
-     }
-    ],
-    "country": "Colombia",
     "location_src": "Botero Museum",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
+    "dimensions": "54 cm × 65 cm (21 in × 26 in)"
    }
   },
   {
@@ -4236,38 +4237,36 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "Gabrielle Renard and Her Infant Son, Jean ( French : Gabrielle Renard et Jean enfant )",
-    "year": "1895–1896",
+    "title": "Gabrielle and Jean",
+    "year": "1895",
+    "location": "Musée de l'Orangerie",
     "city": "Paris",
     "country": "France",
-    "location": "Musée de l'Orangerie",
     "attribution": "generally accepted",
-    "dimensions": "65 cm × 54 cm (26 in × 21 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Gabrielle_et_Jean%2C_by_Pierre-Auguste_Renoir%2C_from_C2RMF_cropped.jpg/500px-Gabrielle_et_Jean%2C_by_Pierre-Auguste_Renoir%2C_from_C2RMF_cropped.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gabrielle%20et%20Jean%2C%20by%20Pierre-Auguste%20Renoir%2C%20from%20C2RMF%20cropped.jpg?width=500",
+    "qid": "Q3756784",
+    "wikidata": "https://www.wikidata.org/wiki/Q3756784",
     "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q3756784",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "musee-de-l-orangerie",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Gabrielle and Jean",
-      "qid": "Q3756784",
-      "url": "https://www.wikidata.org/wiki/Q3756784"
-     }
-    ],
     "location_src": "Musée de l'Orangerie",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
+    "dimensions": "65 cm × 54 cm (26 in × 21 in)"
    }
   },
   {
@@ -5081,38 +5080,36 @@
    },
    "properties": {
     "painter": "Pierre-Auguste Renoir",
-    "title": "The Concert ( French : Le concert )",
+    "title": "Le concert",
     "year": "1918",
-    "city": "Toronto",
     "location": "Art Gallery of Ontario",
+    "city": "Toronto",
+    "country": "Canada",
     "attribution": "generally accepted",
-    "dimensions": "75.6 cm × 92.7 cm (29.8 in × 36.5 in)",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Pierre-Auguste_Renoir_-_Le_Concert.jpg/500px-Pierre-Auguste_Renoir_-_Le_Concert.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Le%20Concert.jpg?width=500",
+    "qid": "Q116241584",
+    "wikidata": "https://www.wikidata.org/wiki/Q116241584",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q116241584",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "creation_place": "Cagnes-sur-Mer",
     "creation_lat": 43.6644,
     "creation_lon": 7.1489,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Pierre-Auguste Renoir",
-     "coord": "MediaWiki coordinates API"
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "art-gallery-of-ontario",
-    "country": "Canada",
-    "wikidata": "https://www.wikidata.org/wiki/Q150",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Le concert",
-      "qid": "Q116241584",
-      "url": "https://www.wikidata.org/wiki/Q116241584"
-     }
-    ],
     "location_src": "Art Gallery of Ontario",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q150",
-    "qid_rejected_as": "natural language, language, modern language"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/French_language",
+    "dimensions": "75.6 cm × 92.7 cm (29.8 in × 36.5 in)"
    }
   },
   {
@@ -5579,54 +5576,6 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Children on the Seashore, Guernsey",
-    "year": "1883",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Children%20on%20the%20Seashore%2C%20Guernsey%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q20556352",
-    "wikidata": "https://www.wikidata.org/wiki/Q20556352",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20556352",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Children on the Seashore, Guernsey ( French : Enfants au Bord de la Mer, Guernesey )",
-      "ref": "https://en.wikipedia.org/wiki/French_language"
-     }
-    ],
     "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
@@ -38885,47 +38834,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -77.02,
-     38.89139
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Camille Monet und ihr Sohn Jean in Argenteuil",
-    "year": "1874",
-    "location": "National Gallery of Art",
-    "city": "Washington, D.C.",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Madame%20Monet%20and%20her%20Son.jpg?width=500",
-    "qid": "Q139895039",
-    "wikidata": "https://www.wikidata.org/wiki/Q139895039",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q139895039",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "national-gallery-of-art",
-    "location_src": "National Gallery of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -122.26634,
      37.8708
     ]
@@ -38999,47 +38907,6 @@
     },
     "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -74.07337,
-     4.5967
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Paysage de l'Île-de-France",
-    "year": "1883",
-    "location": "Botero Museum",
-    "city": "Bogotá",
-    "country": "Colombia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Paisaje%20de%20L%27Ile%20de%20France.jpg?width=500",
-    "qid": "Q108333695",
-    "wikidata": "https://www.wikidata.org/wiki/Q108333695",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q108333695",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "botero-museum",
-    "location_src": "Botero Museum",
     "kind": "museum",
     "form": "painting"
    }
@@ -39173,89 +39040,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.32254,
-     48.86384
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Gabrielle and Jean",
-    "year": "1895",
-    "location": "Musée de l'Orangerie",
-    "city": "Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gabrielle%20et%20Jean%2C%20by%20Pierre-Auguste%20Renoir%2C%20from%20C2RMF%20cropped.jpg?width=500",
-    "qid": "Q3756784",
-    "wikidata": "https://www.wikidata.org/wiki/Q3756784",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q3756784",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "musee-de-l-orangerie",
-    "location_src": "Musée de l'Orangerie",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.32653,
-     48.85997
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Portrait of Madame Charpentier",
-    "year": "1876",
-    "location": "Musée d'Orsay",
-    "city": "Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Madame%20Charpentier%20-%2001.jpg?width=500",
-    "qid": "Q11702934",
-    "wikidata": "https://www.wikidata.org/wiki/Q11702934",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q11702934",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "musee-d-orsay",
-    "location_src": "Musée d'Orsay",
-    "kind": "museum",
-    "form": "painting",
-    "city_src": "7th arrondissement of Paris"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.56176,
      47.35305
     ]
@@ -39288,47 +39072,6 @@
     },
     "museum_id": "foundation-e-g-buhrle-collection",
     "location_src": "Foundation E.G. Bührle Collection",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -79.39278,
-     43.65361
-    ]
-   },
-   "properties": {
-    "painter": "Pierre-Auguste Renoir",
-    "title": "Le concert",
-    "year": "1918",
-    "location": "Art Gallery of Ontario",
-    "city": "Toronto",
-    "country": "Canada",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Le%20Concert.jpg?width=500",
-    "qid": "Q116241584",
-    "wikidata": "https://www.wikidata.org/wiki/Q116241584",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q116241584",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Cagnes-sur-Mer",
-    "creation_lat": 43.6644,
-    "creation_lon": 7.1489,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "art-gallery-of-ontario",
-    "location_src": "Art Gallery of Ontario",
     "kind": "museum",
     "form": "painting"
    }

@@ -766,24 +766,38 @@
    },
    "properties": {
     "painter": "Giovanni Bellini",
-    "title": "Madonna with Saints",
+    "title": "Madonna and Child with Four Saints and Donor",
+    "year": "1507",
     "city": "Venice",
     "country": "Italy",
     "location": "San Francesco della Vigna",
     "kind": "church",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
-    "wikidata": "https://www.wikidata.org/wiki/Q125809444",
+    "medium": "Oil on canvas",
+    "dimensions": "90 × 145 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bellini%20Giovanni%2C%20Madonna%20e%20santi%20%281507%29.jpg?width=420",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_and_Child_with_Four_Saints_and_Donor",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Madonna_col_Bambino,_quattro_santi_e_un_donatore",
+    "wikidata": "https://www.wikidata.org/wiki/Q48387435",
+    "creation_place": "Venice",
+    "creation_lat": 45.4408,
+    "creation_lon": 12.3155,
     "_source": {
      "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q125809444",
+     "url": "https://www.wikidata.org/wiki/Q48387435",
      "retrieved_at": "2026-08-23"
     },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
     "museum_id": "san-francesco-della-vigna",
-    "qid": "Q125809444",
+    "qid": "Q48387435",
     "location_src": "San Francesco della Vigna",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bellini_Giovanni%2C_Madonna_e_santi_%281507%29.jpg",
-    "_image_src": "commons category Category:Madonna with Saints in the San Francesco della Vigna (Venice)",
     "form": "painting"
    }
   },
@@ -4762,52 +4776,6 @@
     "location_src": "Gemäldegalerie Berlin",
     "form": "painting",
     "city_src": "Bezirk Mitte"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.3486,
-     45.4381
-    ]
-   },
-   "properties": {
-    "painter": "Giovanni Bellini",
-    "title": "Madonna and Child with Four Saints and Donor",
-    "year": "1507",
-    "city": "Venice",
-    "country": "Italy",
-    "location": "San Francesco della Vigna",
-    "kind": "church",
-    "attribution": "generally accepted",
-    "status": "present",
-    "medium": "Oil on canvas",
-    "dimensions": "90 × 145 cm",
-    "genre": "religious art",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bellini%20Giovanni%2C%20Madonna%20e%20santi%20%281507%29.jpg?width=420",
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_and_Child_with_Four_Saints_and_Donor",
-    "wikipedia_it": "https://it.wikipedia.org/wiki/Madonna_col_Bambino,_quattro_santi_e_un_donatore",
-    "wikidata": "https://www.wikidata.org/wiki/Q48387435",
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q48387435",
-     "retrieved_at": "2026-08-23"
-    },
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-23",
-      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
-     }
-    },
-    "museum_id": "san-francesco-della-vigna",
-    "qid": "Q48387435",
-    "location_src": "San Francesco della Vigna",
-    "form": "painting"
    }
   },
   {

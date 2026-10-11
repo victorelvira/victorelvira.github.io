@@ -266,32 +266,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "1720s",
-    "city": "Houston",
-    "location": "Museum of Fine Arts, Houston",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Canaletto_-_The_Grand_Canal_near_the_Rialto_Bridge%2C_Venice_-_55.103_-_Museum_of_Fine_Arts.jpg/500px-Canaletto_-_The_Grand_Canal_near_the_Rialto_Bridge%2C_Venice_-_55.103_-_Museum_of_Fine_Arts.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Grand Canal near the Rialto Bridge, Venice",
-      "qid": "Q19660428",
-      "url": "https://www.wikidata.org/wiki/Q19660428"
-     }
-    ],
-    "museum_id": "museum-of-fine-arts-houston",
-    "country": "United States",
-    "location_src": "Museum of Fine Arts, Houston",
     "title": "The Grand Canal near the Rialto Bridge, Venice",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
+    "year": "1728",
+    "location": "Museum of Fine Arts, Houston",
+    "city": "Houston",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20-%20The%20Grand%20Canal%20near%20the%20Rialto%20Bridge%2C%20Venice%20-%2055.103%20-%20Museum%20of%20Fine%20Arts.jpg?width=500",
+    "qid": "Q19660428",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660428",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660428",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museum-of-fine-arts-houston",
+    "location_src": "Museum of Fine Arts, Houston",
     "kind": "museum",
     "form": "painting"
    }
@@ -988,32 +988,32 @@
    },
    "properties": {
     "painter": "Canaletto",
+    "title": "The Grand Canal near the Rialto, Looking North",
     "year": "1725",
+    "location": "Pinacoteca Giovanni e Marella Agnelli",
     "city": "Turin",
     "country": "Italy",
-    "location": "Pinacoteca Giovanni e Marella Agnelli",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Antonio_Canal_-_Il_Canal_Grande_dalle_prossimit%C3%A0_del_ponte_di_Rialto.jpg/500px-Antonio_Canal_-_Il_Canal_Grande_dalle_prossimit%C3%A0_del_ponte_di_Rialto.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Canal%20-%20Il%20Canal%20Grande%20dalle%20prossimit%C3%A0%20del%20ponte%20di%20Rialto.jpg?width=500",
+    "qid": "Q12164242",
+    "wikidata": "https://www.wikidata.org/wiki/Q12164242",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q12164242",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Grand Canal near the Rialto, Looking North",
-      "qid": "Q12164242",
-      "url": "https://www.wikidata.org/wiki/Q12164242"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "pinacoteca-giovanni-e-marella-agnelli",
     "location_src": "Pinacoteca Giovanni e Marella Agnelli",
-    "title": "Il Canal Grande dalle prossimità del ponte di Rialto",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -1029,32 +1029,32 @@
    },
    "properties": {
     "painter": "Canaletto",
+    "title": "The Rialto, from the North",
     "year": "1725",
+    "location": "Pinacoteca Giovanni e Marella Agnelli",
     "city": "Turin",
     "country": "Italy",
-    "location": "Pinacoteca Giovanni e Marella Agnelli",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Antonio_Canal_-_Il_ponte_di_Rialto_da_nord.jpg/500px-Antonio_Canal_-_Il_ponte_di_Rialto_da_nord.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Canal%20-%20Il%20ponte%20di%20Rialto%20da%20nord.jpg?width=500",
+    "qid": "Q19660500",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660500",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660500",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Rialto, from the North",
-      "qid": "Q19660500",
-      "url": "https://www.wikidata.org/wiki/Q19660500"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "pinacoteca-giovanni-e-marella-agnelli",
     "location_src": "Pinacoteca Giovanni e Marella Agnelli",
-    "title": "Il ponte di Rialto da nord",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -1184,32 +1184,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "1725–1729",
+    "title": "A View of Dolo on the Brenta Canal",
+    "year": "1727",
+    "location": "Ashmolean Museum",
     "city": "Oxford",
     "country": "United Kingdom",
-    "location": "Ashmolean Museum",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Canaletto_%281697-1768%29_-_A_View_of_Dolo_on_the_Brenta_Canal_-_WA1855.187_-_Ashmolean_Museum.jpg/500px-Canaletto_%281697-1768%29_-_A_View_of_Dolo_on_the_Brenta_Canal_-_WA1855.187_-_Ashmolean_Museum.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20%281697-1768%29%20-%20A%20View%20of%20Dolo%20on%20the%20Brenta%20Canal%20-%20WA1855.187%20-%20Ashmolean%20Museum.jpg?width=500",
+    "qid": "Q118993996",
+    "wikidata": "https://www.wikidata.org/wiki/Q118993996",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q118993996",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "A View of Dolo on the Brenta Canal",
-      "qid": "Q118993996",
-      "url": "https://www.wikidata.org/wiki/Q118993996"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "ashmolean-museum",
     "location_src": "Ashmolean Museum",
-    "title": "A View of Dolo on the Brenta Canal",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -1326,32 +1326,32 @@
    },
    "properties": {
     "painter": "Canaletto",
+    "title": "The Grand Canal from Santa Maria della Carità to the Bacino di San Marco",
     "year": "1726",
+    "location": "Pinacoteca Giovanni e Marella Agnelli",
     "city": "Turin",
     "country": "Italy",
-    "location": "Pinacoteca Giovanni e Marella Agnelli",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Giovanni_Antonio_Canal%2C_il_Canaletto_-_The_Grand_Canal_near_Santa_Maria_della_Carit%C3%A0_-_WGA03863.jpg/500px-Giovanni_Antonio_Canal%2C_il_Canaletto_-_The_Grand_Canal_near_Santa_Maria_della_Carit%C3%A0_-_WGA03863.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20The%20Grand%20Canal%20near%20Santa%20Maria%20della%20Carit%C3%A0%20-%20WGA03863.jpg?width=500",
+    "qid": "Q19660497",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660497",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660497",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Grand Canal from Santa Maria della Carità to the Bacino di San Marco",
-      "qid": "Q19660497",
-      "url": "https://www.wikidata.org/wiki/Q19660497"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "pinacoteca-giovanni-e-marella-agnelli",
     "location_src": "Pinacoteca Giovanni e Marella Agnelli",
-    "title": "The Grand Canal near San Maria della Carità",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -2358,32 +2358,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "c. 1730",
-    "city": "Houston",
-    "location": "Museum of Fine Arts, Houston",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Canaletto_-_The_Entrance_to_the_Grand_Canal%2C_Venice_-_Google_Art_Project.jpg/500px-Canaletto_-_The_Entrance_to_the_Grand_Canal%2C_Venice_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Entrance to the Grand Canal, Venice",
-      "qid": "Q19660427",
-      "url": "https://www.wikidata.org/wiki/Q19660427"
-     }
-    ],
-    "museum_id": "museum-of-fine-arts-houston",
-    "country": "United States",
-    "location_src": "Museum of Fine Arts, Houston",
     "title": "The Entrance to the Grand Canal, Venice",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
+    "year": "1730",
+    "location": "Museum of Fine Arts, Houston",
+    "city": "Houston",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20-%20The%20Entrance%20to%20the%20Grand%20Canal%2C%20Venice%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q19660427",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660427",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660427",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "museum-of-fine-arts-houston",
+    "location_src": "Museum of Fine Arts, Houston",
     "kind": "museum",
     "form": "painting"
    }
@@ -2514,32 +2514,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "1730s",
-    "city": "Pasadena",
-    "location": "Norton Simon Museum",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/%27The_Piazzetta%2C_Venice%2C_Looking_North%27_by_Canaletto%2C_Norton_Simon_Museum.JPG/500px-%27The_Piazzetta%2C_Venice%2C_Looking_North%27_by_Canaletto%2C_Norton_Simon_Museum.JPG?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Piazzetta, Venice, Looking North",
-      "qid": "Q19660491",
-      "url": "https://www.wikidata.org/wiki/Q19660491"
-     }
-    ],
-    "museum_id": "norton-simon-museum",
-    "country": "United States",
-    "location_src": "Norton Simon Museum",
     "title": "The Piazzetta, Venice, Looking North",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
+    "year": "1730",
+    "location": "Norton Simon Museum",
+    "city": "Pasadena",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27The%20Piazzetta%2C%20Venice%2C%20Looking%20North%27%20by%20Canaletto%2C%20Norton%20Simon%20Museum.JPG?width=500",
+    "qid": "Q19660491",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660491",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660491",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "norton-simon-museum",
+    "location_src": "Norton Simon Museum",
     "kind": "museum",
     "form": "painting"
    }
@@ -2728,32 +2728,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "1730s",
-    "city": "Barnard Castle",
+    "title": "The Bucintoro returning to the Molo on Ascension Day after the Ceremony of Wedding the Adriatic",
+    "year": "1733",
     "location": "Bowes Museum",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Canaletto_-_The_Bucintoro_Returning_to_the_Molo_on_Ascension_Day_after_the_Ceremony_of_Wedding_the_Adriatic_DUR_DBM_1982_32_1.jpg/500px-Canaletto_-_The_Bucintoro_Returning_to_the_Molo_on_Ascension_Day_after_the_Ceremony_of_Wedding_the_Adriatic_DUR_DBM_1982_32_1.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Bucintoro returning to the Molo on Ascension Day after the Ceremony of Wedding the Adriatic",
-      "qid": "Q19660319",
-      "url": "https://www.wikidata.org/wiki/Q19660319"
-     }
-    ],
-    "museum_id": "bowes-museum",
+    "city": "Barnard Castle",
     "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20-%20The%20Bucintoro%20Returning%20to%20the%20Molo%20on%20Ascension%20Day%20after%20the%20Ceremony%20of%20Wedding%20the%20Adriatic%20DUR%20DBM%201982%2032%201.jpg?width=500",
+    "qid": "Q19660319",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660319",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660319",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "bowes-museum",
     "location_src": "Bowes Museum",
-    "title": "The Bucintoro Returning to the Molo on Ascension Day after the Ceremony of Wedding the Adriatic",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -3353,32 +3353,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "1731–32",
-    "city": "Barnard Castle",
+    "title": "A Regatta on the Grand Canal",
+    "year": "1732",
     "location": "Bowes Museum",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/La_R%C3%A9gate_sur_le_Grand_Canal.jpg/500px-La_R%C3%A9gate_sur_le_Grand_Canal.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "A Regatta on the Grand Canal",
-      "qid": "Q19660318",
-      "url": "https://www.wikidata.org/wiki/Q19660318"
-     }
-    ],
-    "museum_id": "bowes-museum",
+    "city": "Barnard Castle",
     "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20R%C3%A9gate%20sur%20le%20Grand%20Canal.jpg?width=500",
+    "qid": "Q19660318",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660318",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660318",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "bowes-museum",
     "location_src": "Bowes Museum",
-    "title": "La Régate sur le Grand Canal",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -3658,33 +3658,33 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "circa 1735",
+    "title": "Piazza San Marco, Looking toward San Geminiano",
+    "year": "1735",
+    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "city": "Rome",
     "country": "Italy",
-    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Giovanni_Antonio_Canal%2C_il_Canaletto_-_Piazza_San_Marco%2C_Looking_toward_San_Geminiano_-_WGA03909.jpg/500px-Giovanni_Antonio_Canal%2C_il_Canaletto_-_Piazza_San_Marco%2C_Looking_toward_San_Geminiano_-_WGA03909.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20Piazza%20San%20Marco%2C%20Looking%20toward%20San%20Geminiano%20-%20WGA03909.jpg?width=500",
+    "qid": "Q19660338",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660338",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660338",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Piazza San Marco, Looking toward San Geminiano",
-      "qid": "Q19660338",
-      "url": "https://www.wikidata.org/wiki/Q19660338"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
     "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "venue_of": "Galleria Nazionale d'Arte Antica",
-    "title": "Piazza San Marco, Looking toward San Geminiano",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -3823,33 +3823,33 @@
    },
    "properties": {
     "painter": "Canaletto",
+    "title": "The Rialto Bridge from the South",
     "year": "1735",
-    "city": "Rome",
     "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
+    "city": "Rome",
+    "country": "Italy",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Giovanni_Antonio_Canal%2C_il_Canaletto_-_The_Rialto_Bridge_from_the_South_-_WGA03910.jpg/500px-Giovanni_Antonio_Canal%2C_il_Canaletto_-_The_Rialto_Bridge_from_the_South_-_WGA03910.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20The%20Rialto%20Bridge%20from%20the%20South%20-%20WGA03910.jpg?width=500",
+    "qid": "Q19660339",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660339",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660339",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Rialto Bridge from the South",
-      "qid": "Q19660339",
-      "url": "https://www.wikidata.org/wiki/Q19660339"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
     "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
-    "country": "Italy",
     "venue_of": "Galleria Nazionale d'Arte Antica",
-    "title": "The Rialto Bridge from the South",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -4185,34 +4185,35 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "c. 1738",
-    "city": "Holkham",
+    "title": "The Bucentaur Returning to the Molo on Ascension Day",
+    "year": "1730",
     "location": "Holkham Hall",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Il_Ritorno_del_Bucintoro_al_molo_nel_giorno_dell%27Ascensione_%28c.1738%29_Canaletto_-_Wells-Next-The-Sea%2C_The_Earl_of_Leicester_and_Trustees_of_the_Holkham_Estate.jpg/500px-thumbnail.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Bucentaur Returning to the Molo on Ascension Day",
-      "qid": "Q41452677",
-      "url": "https://www.wikidata.org/wiki/Q41452677"
-     }
-    ],
-    "museum_id": "holkham-hall",
+    "city": "Holkham",
     "country": "United Kingdom",
-    "location_src": "Holkham Hall",
-    "title": "Il Ritorno del Bucintoro al molo nel giorno dell'Ascensione (c.1738) Canaletto - Wells-Next-The-Sea, The Earl of Leicester and Trustees of the Holkham Estate.jpg",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
-    "kind": "museum",
-    "form": "painting"
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Il%20Ritorno%20del%20Bucintoro%20al%20molo%20nel%20giorno%20dell%27Ascensione%20%28c.1738%29%20Canaletto%20-%20Wells-Next-The-Sea%2C%20The%20Earl%20of%20Leicester%20and%20Trustees%20of%20the%20Holkham%20Estate.jpg?width=500",
+    "qid": "Q41452677",
+    "wikidata": "https://www.wikidata.org/wiki/Q41452677",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q41452677",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "holkham-hall",
+    "location_src": "Italy",
+    "form": "painting",
+    "venue_src": "P195+P276",
+    "kind": "museum"
    }
   },
   {
@@ -4259,32 +4260,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "1738–1740",
+    "title": "Bacino di San Marco, Venice",
+    "year": "1738",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Boston%2C_Museum_of_Fine_Art_-_Il_bacino_di_San_Marco_c.1738_-_Canaletto.jpg/500px-Boston%2C_Museum_of_Fine_Art_-_Il_bacino_di_San_Marco_c.1738_-_Canaletto.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boston%2C%20Museum%20of%20Fine%20Art%20-%20Il%20bacino%20di%20San%20Marco%20c.1738%20-%20Canaletto.jpg?width=500",
+    "qid": "Q19660422",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660422",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660422",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Bacino di San Marco, Venice",
-      "qid": "Q19660422",
-      "url": "https://www.wikidata.org/wiki/Q19660422"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts",
-    "title": "Bacino di San Marco",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
     "form": "painting"
    }
@@ -4300,32 +4301,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "c. 1740",
+    "title": "The Bucintoro at the Molo on Ascension Day",
+    "year": "1740",
+    "location": "Pinacoteca Giovanni e Marella Agnelli",
     "city": "Turin",
     "country": "Italy",
-    "location": "Pinacoteca Giovanni e Marella Agnelli",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Antonio_Canal_-_Il_Bucintoro_al_molo_nel_giorno_dell%27Ascensione.jpg/500px-Antonio_Canal_-_Il_Bucintoro_al_molo_nel_giorno_dell%27Ascensione.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Canal%20-%20Il%20Bucintoro%20al%20molo%20nel%20giorno%20dell%27Ascensione.jpg?width=500",
+    "qid": "Q16564742",
+    "wikidata": "https://www.wikidata.org/wiki/Q16564742",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q16564742",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Bucintoro at the Molo on Ascension Day",
-      "qid": "Q16564742",
-      "url": "https://www.wikidata.org/wiki/Q16564742"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "pinacoteca-giovanni-e-marella-agnelli",
     "location_src": "Pinacoteca Giovanni e Marella Agnelli",
-    "title": "Il Bucintoro al molo nel giorno dell'Ascensione",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -4527,32 +4528,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "1740s",
+    "title": "Venice: The Piazzeta and San Marco Library",
+    "year": "1734",
+    "location": "Galleria Nazionale d'Arte Antica",
     "city": "Rome",
     "country": "Italy",
-    "location": "Galleria Nazionale d'Arte Antica",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Giovanni_Antonio_Canal%2C_il_Canaletto_-_The_Piazzetta_-_WGA03897.jpg/500px-Giovanni_Antonio_Canal%2C_il_Canaletto_-_The_Piazzetta_-_WGA03897.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Venice",
-    "creation_lat": 45.4408,
-    "creation_lon": 12.3155,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20The%20Piazzetta%20-%20WGA03897.jpg?width=500",
+    "qid": "Q19660342",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660342",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660342",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Venice: The Piazzeta and San Marco Library",
-      "qid": "Q19660342",
-      "url": "https://www.wikidata.org/wiki/Q19660342"
+    "creation_place": "Venice",
+    "creation_lat": 45.4375,
+    "creation_lon": 12.335833,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "galleria-nazionale-d-arte-antica",
     "location_src": "Galleria Nazionale d'Arte Antica",
-    "title": "The Piazzetta",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -6253,32 +6254,32 @@
    },
    "properties": {
     "painter": "Canaletto",
+    "title": "The River Thames Looking Towards Westminster from Lambeth",
     "year": "1747",
+    "location": "Lobkowicz Palace",
     "city": "Prague",
     "country": "Czech Republic",
-    "location": "Lobkowicz Palace",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Canaletto%2C_London_and_the_River_Thames_looking_towards_Westminster%2C_ca._1746-7%2C_Lobkowicz_Palace_%282%29_%2826187604035%29.jpg/500px-Canaletto%2C_London_and_the_River_Thames_looking_towards_Westminster%2C_ca._1746-7%2C_Lobkowicz_Palace_%282%29_%2826187604035%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%2C%20London%20and%20the%20River%20Thames%20looking%20towards%20Westminster%2C%20ca.%201746-7%2C%20Lobkowicz%20Palace%20%282%29%20%2826187604035%29.jpg?width=500",
+    "qid": "Q19660384",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660384",
     "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660384",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The River Thames Looking Towards Westminster from Lambeth",
-      "qid": "Q19660384",
-      "url": "https://www.wikidata.org/wiki/Q19660384"
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
-    ],
+    },
     "museum_id": "lobkowicz-palace",
     "location_src": "Lobkowicz Palace",
-    "title": "London: River Thames looking towards Westminster from Lambeth",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -7101,32 +7102,32 @@
    },
    "properties": {
     "painter": "Canaletto",
+    "title": "The Grand Walk, Vauxhall Gardens, London",
     "year": "1751",
-    "city": "England",
     "location": "Compton Verney Art Gallery",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Caneletto_-_The_Grand_Walk%2C_Vauxhall_Gardens%2C_London_WAR_COMP_131.jpg/500px-Caneletto_-_The_Grand_Walk%2C_Vauxhall_Gardens%2C_London_WAR_COMP_131.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Grand Walk, Vauxhall Gardens, London",
-      "qid": "Q40431033",
-      "url": "https://www.wikidata.org/wiki/Q40431033"
-     }
-    ],
-    "museum_id": "compton-verney-art-gallery",
+    "city": "England",
     "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caneletto%20-%20The%20Grand%20Walk%2C%20Vauxhall%20Gardens%2C%20London%20WAR%20COMP%20131.jpg?width=500",
+    "qid": "Q40431033",
+    "wikidata": "https://www.wikidata.org/wiki/Q40431033",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q40431033",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "compton-verney-art-gallery",
     "location_src": "Compton Verney Art Gallery",
-    "title": "The Grand Walk, Vauxhall Gardens",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -7612,32 +7613,32 @@
    },
    "properties": {
     "painter": "Canaletto",
+    "title": "London: The Interior of the Rotunda, Ranelagh, London",
     "year": "1754",
-    "city": "England",
     "location": "Compton Verney Art Gallery",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Canaletto_-_The_Interior_of_the_Rotunda%2C_Ranelagh%2C_London_WAR_COMP_132.jpg/500px-Canaletto_-_The_Interior_of_the_Rotunda%2C_Ranelagh%2C_London_WAR_COMP_132.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "London: The Interior of the Rotunda, Ranelagh, London",
-      "qid": "Q40431278",
-      "url": "https://www.wikidata.org/wiki/Q40431278"
-     }
-    ],
-    "museum_id": "compton-verney-art-gallery",
+    "city": "England",
     "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20-%20The%20Interior%20of%20the%20Rotunda%2C%20Ranelagh%2C%20London%20WAR%20COMP%20132.jpg?width=500",
+    "qid": "Q40431278",
+    "wikidata": "https://www.wikidata.org/wiki/Q40431278",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q40431278",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "compton-verney-art-gallery",
     "location_src": "Compton Verney Art Gallery",
-    "title": "The Interior of the Rotunda, Ranelagh, London (1)",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -7917,32 +7918,32 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "year": "1755–59",
-    "city": "Hartford",
+    "title": "Piazza San Marco: Looking South-West",
+    "year": "1755",
     "location": "Wadsworth Atheneum",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Giovanni_Antonio_Canal%2C_il_Canaletto_-_Piazza_San_Marco_-_Looking_South-West_-_WGA03960.jpg/500px-Giovanni_Antonio_Canal%2C_il_Canaletto_-_Piazza_San_Marco_-_Looking_South-West_-_WGA03960.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of works by Canaletto",
-     "coord": "MediaWiki coordinates API"
-    },
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Piazza San Marco: Looking South-West",
-      "qid": "Q19660721",
-      "url": "https://www.wikidata.org/wiki/Q19660721"
-     }
-    ],
-    "museum_id": "wadsworth-atheneum",
+    "city": "Hartford",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20Piazza%20San%20Marco%20-%20Looking%20South-West%20-%20WGA03960.jpg?width=500",
+    "qid": "Q19660721",
+    "wikidata": "https://www.wikidata.org/wiki/Q19660721",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19660721",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "London",
+    "creation_lat": 51.507222,
+    "creation_lon": -0.1275,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
+    "museum_id": "wadsworth-atheneum",
     "location_src": "Wadsworth Atheneum",
-    "title": "Piazza San Marco – Looking South-West",
-    "_title_src": "canaletto list (Wikipedia), matched by image",
     "kind": "museum",
     "form": "painting"
    }
@@ -8993,47 +8994,6 @@
     },
     "museum_id": "fuhrermuseum",
     "location_src": "Führermuseum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -1.26056,
-     51.75556
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "A View of Dolo on the Brenta Canal",
-    "year": "1727",
-    "location": "Ashmolean Museum",
-    "city": "Oxford",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20%281697-1768%29%20-%20A%20View%20of%20Dolo%20on%20the%20Brenta%20Canal%20-%20WA1855.187%20-%20Ashmolean%20Museum.jpg?width=500",
-    "qid": "Q118993996",
-    "wikidata": "https://www.wikidata.org/wiki/Q118993996",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q118993996",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "ashmolean-museum",
-    "location_src": "Ashmolean Museum",
     "kind": "museum",
     "form": "painting"
    }
@@ -11752,47 +11712,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.67309,
-     41.76371
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "Piazza San Marco: Looking South-West",
-    "year": "1755",
-    "location": "Wadsworth Atheneum",
-    "city": "Hartford",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20Piazza%20San%20Marco%20-%20Looking%20South-West%20-%20WGA03960.jpg?width=500",
-    "qid": "Q19660721",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660721",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660721",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "wadsworth-atheneum",
-    "location_src": "Wadsworth Atheneum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      4.47334,
      51.91421
     ]
@@ -13588,48 +13507,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     0.80306,
-     52.95
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Bucentaur Returning to the Molo on Ascension Day",
-    "year": "1730",
-    "location": "Holkham Hall",
-    "city": "Holkham",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Il%20Ritorno%20del%20Bucintoro%20al%20molo%20nel%20giorno%20dell%27Ascensione%20%28c.1738%29%20Canaletto%20-%20Wells-Next-The-Sea%2C%20The%20Earl%20of%20Leicester%20and%20Trustees%20of%20the%20Holkham%20Estate.jpg?width=500",
-    "qid": "Q41452677",
-    "wikidata": "https://www.wikidata.org/wiki/Q41452677",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q41452677",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "holkham-hall",
-    "location_src": "Italy",
-    "form": "painting",
-    "venue_src": "P195+P276",
-    "kind": "museum"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -73.9631,
      40.7794
     ]
@@ -14656,88 +14533,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.547,
-     52.1732
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Grand Walk, Vauxhall Gardens, London",
-    "year": "1751",
-    "location": "Compton Verney Art Gallery",
-    "city": "England",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Caneletto%20-%20The%20Grand%20Walk%2C%20Vauxhall%20Gardens%2C%20London%20WAR%20COMP%20131.jpg?width=500",
-    "qid": "Q40431033",
-    "wikidata": "https://www.wikidata.org/wiki/Q40431033",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q40431033",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "compton-verney-art-gallery",
-    "location_src": "Compton Verney Art Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -1.547,
-     52.1732
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "London: The Interior of the Rotunda, Ranelagh, London",
-    "year": "1754",
-    "location": "Compton Verney Art Gallery",
-    "city": "England",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20-%20The%20Interior%20of%20the%20Rotunda%2C%20Ranelagh%2C%20London%20WAR%20COMP%20132.jpg?width=500",
-    "qid": "Q40431278",
-    "wikidata": "https://www.wikidata.org/wiki/Q40431278",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q40431278",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "compton-verney-art-gallery",
-    "location_src": "Compton Verney Art Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      1.44206,
      43.6003
     ]
@@ -15009,47 +14804,6 @@
     "museum_id": "buckingham-palace",
     "location_src": "Buckingham Palace",
     "venue_of": "Royal Collection",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "Bacino di San Marco, Venice",
-    "year": "1738",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Boston%2C%20Museum%20of%20Fine%20Art%20-%20Il%20bacino%20di%20San%20Marco%20c.1738%20-%20Canaletto.jpg?width=500",
-    "qid": "Q19660422",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660422",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660422",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
     "form": "painting"
    }
@@ -15720,170 +15474,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -1.91566,
-     54.54174
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "A Regatta on the Grand Canal",
-    "year": "1732",
-    "location": "Bowes Museum",
-    "city": "Barnard Castle",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20R%C3%A9gate%20sur%20le%20Grand%20Canal.jpg?width=500",
-    "qid": "Q19660318",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660318",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660318",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "bowes-museum",
-    "location_src": "Bowes Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -1.91566,
-     54.54174
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Bucintoro returning to the Molo on Ascension Day after the Ceremony of Wedding the Adriatic",
-    "year": "1733",
-    "location": "Bowes Museum",
-    "city": "Barnard Castle",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20-%20The%20Bucintoro%20Returning%20to%20the%20Molo%20on%20Ascension%20Day%20after%20the%20Ceremony%20of%20Wedding%20the%20Adriatic%20DUR%20DBM%201982%2032%201.jpg?width=500",
-    "qid": "Q19660319",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660319",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660319",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "bowes-museum",
-    "location_src": "Bowes Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.66573,
-     45.03243
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Grand Canal near the Rialto, Looking North",
-    "year": "1725",
-    "location": "Pinacoteca Giovanni e Marella Agnelli",
-    "city": "Turin",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Canal%20-%20Il%20Canal%20Grande%20dalle%20prossimit%C3%A0%20del%20ponte%20di%20Rialto.jpg?width=500",
-    "qid": "Q12164242",
-    "wikidata": "https://www.wikidata.org/wiki/Q12164242",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q12164242",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "pinacoteca-giovanni-e-marella-agnelli",
-    "location_src": "Pinacoteca Giovanni e Marella Agnelli",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.66573,
-     45.03243
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Bucintoro at the Molo on Ascension Day",
-    "year": "1740",
-    "location": "Pinacoteca Giovanni e Marella Agnelli",
-    "city": "Turin",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Canal%20-%20Il%20Bucintoro%20al%20molo%20nel%20giorno%20dell%27Ascensione.jpg?width=500",
-    "qid": "Q16564742",
-    "wikidata": "https://www.wikidata.org/wiki/Q16564742",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q16564742",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "pinacoteca-giovanni-e-marella-agnelli",
-    "location_src": "Pinacoteca Giovanni e Marella Agnelli",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      9.19158,
      45.46866
     ]
@@ -15998,47 +15588,6 @@
     },
     "museum_id": "musee-des-beaux-arts-de-strasbourg",
     "location_src": "Musée des Beaux-Arts de Strasbourg",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -95.39054,
-     29.72561
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Entrance to the Grand Canal, Venice",
-    "year": "1730",
-    "location": "Museum of Fine Arts, Houston",
-    "city": "Houston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20-%20The%20Entrance%20to%20the%20Grand%20Canal%2C%20Venice%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q19660427",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660427",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660427",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "museum-of-fine-arts-houston",
-    "location_src": "Museum of Fine Arts, Houston",
     "kind": "museum",
     "form": "painting"
    }
@@ -16302,47 +15851,6 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "title": "The River Thames Looking Towards Westminster from Lambeth",
-    "year": "1747",
-    "location": "Lobkowicz Palace",
-    "city": "Prague",
-    "country": "Czech Republic",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%2C%20London%20and%20the%20River%20Thames%20looking%20towards%20Westminster%2C%20ca.%201746-7%2C%20Lobkowicz%20Palace%20%282%29%20%2826187604035%29.jpg?width=500",
-    "qid": "Q19660384",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660384",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660384",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "London",
-    "creation_lat": 51.507222,
-    "creation_lon": -0.1275,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "lobkowicz-palace",
-    "location_src": "Lobkowicz Palace",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     14.42139,
-     50.0875
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
     "title": "The River Thames with St. Paul's Cathedral on Lord Mayor's Day",
     "year": "1746",
     "location": "Lobkowicz Palace",
@@ -16419,47 +15927,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.48953,
-     41.90278
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "Venice: The Piazzeta and San Marco Library",
-    "year": "1734",
-    "location": "Galleria Nazionale d'Arte Antica",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20The%20Piazzetta%20-%20WGA03897.jpg?width=500",
-    "qid": "Q19660342",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660342",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660342",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "galleria-nazionale-d-arte-antica",
-    "location_src": "Galleria Nazionale d'Arte Antica",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -4.49002,
      48.3852
     ]
@@ -16492,90 +15959,6 @@
     },
     "museum_id": "brest-s-museum-of-fine-arts",
     "location_src": "Brest’s Museum of Fine Arts",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.46659,
-     41.89333
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "Piazza San Marco, Looking toward San Geminiano",
-    "year": "1735",
-    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20Piazza%20San%20Marco%2C%20Looking%20toward%20San%20Geminiano%20-%20WGA03909.jpg?width=500",
-    "qid": "Q19660338",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660338",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660338",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
-    "venue_of": "Galleria Nazionale d'Arte Antica",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.46659,
-     41.89333
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Rialto Bridge from the South",
-    "year": "1735",
-    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20The%20Rialto%20Bridge%20from%20the%20South%20-%20WGA03910.jpg?width=500",
-    "qid": "Q19660339",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660339",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660339",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
-    "venue_of": "Galleria Nazionale d'Arte Antica",
     "kind": "museum",
     "form": "painting"
    }
@@ -17600,47 +16983,6 @@
    },
    "properties": {
     "painter": "Canaletto",
-    "title": "The Grand Canal from Santa Maria della Carità to the Bacino di San Marco",
-    "year": "1726",
-    "location": "Pinacoteca Giovanni e Marella Agnelli",
-    "city": "Turin",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Giovanni%20Antonio%20Canal%2C%20il%20Canaletto%20-%20The%20Grand%20Canal%20near%20Santa%20Maria%20della%20Carit%C3%A0%20-%20WGA03863.jpg?width=500",
-    "qid": "Q19660497",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660497",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660497",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "pinacoteca-giovanni-e-marella-agnelli",
-    "location_src": "Pinacoteca Giovanni e Marella Agnelli",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.66573,
-     45.03243
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
     "title": "The Grand Canal from Santa Maria di Nazareth toward Santa Croce",
     "year": "1730",
     "location": "Pinacoteca Giovanni e Marella Agnelli",
@@ -17653,47 +16995,6 @@
     "_source": {
      "source": "Wikidata",
      "url": "https://www.wikidata.org/wiki/Q19660498",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "pinacoteca-giovanni-e-marella-agnelli",
-    "location_src": "Pinacoteca Giovanni e Marella Agnelli",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     7.66573,
-     45.03243
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Rialto, from the North",
-    "year": "1725",
-    "location": "Pinacoteca Giovanni e Marella Agnelli",
-    "city": "Turin",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Canal%20-%20Il%20ponte%20di%20Rialto%20da%20nord.jpg?width=500",
-    "qid": "Q19660500",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660500",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660500",
      "note": "harvested: painting by this creator with an image and a documented collection"
     },
     "creation_place": "Venice",
@@ -18430,47 +17731,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -95.39054,
-     29.72561
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Grand Canal near the Rialto Bridge, Venice",
-    "year": "1728",
-    "location": "Museum of Fine Arts, Houston",
-    "city": "Houston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto%20-%20The%20Grand%20Canal%20near%20the%20Rialto%20Bridge%2C%20Venice%20-%2055.103%20-%20Museum%20of%20Fine%20Arts.jpg?width=500",
-    "qid": "Q19660428",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660428",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660428",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "museum-of-fine-arts-houston",
-    "location_src": "Museum of Fine Arts, Houston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.59672,
      51.98295
     ]
@@ -18504,47 +17764,6 @@
     "museum_id": "woburn-abbey",
     "location_src": "Woburn Abbey",
     "kind": "church",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -118.15916,
-     34.14623
-    ]
-   },
-   "properties": {
-    "painter": "Canaletto",
-    "title": "The Piazzetta, Venice, Looking North",
-    "year": "1730",
-    "location": "Norton Simon Museum",
-    "city": "Pasadena",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%27The%20Piazzetta%2C%20Venice%2C%20Looking%20North%27%20by%20Canaletto%2C%20Norton%20Simon%20Museum.JPG?width=500",
-    "qid": "Q19660491",
-    "wikidata": "https://www.wikidata.org/wiki/Q19660491",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19660491",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Venice",
-    "creation_lat": 45.4375,
-    "creation_lon": 12.335833,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "norton-simon-museum",
-    "location_src": "Norton Simon Museum",
-    "kind": "museum",
     "form": "painting"
    }
   },

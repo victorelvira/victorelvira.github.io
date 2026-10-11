@@ -1,55 +1,55 @@
 {
  "_doc": "numbers for the statistics page (build_stats.py). No ranking of who painted most: that would measure who is best documented.",
- "built": "2026-09-29",
+ "built": "2026-10-11",
  "totals": {
-  "works": 23139,
+  "works": 22791,
   "painters": 82,
-  "venues": 1984,
+  "venues": 1983,
   "cities": 1060,
   "countries": 63,
-  "with_qid": 21403,
-  "with_image": 22415,
-  "dated": 21458,
-  "accepted": 20645,
+  "with_qid": 21319,
+  "with_image": 22067,
+  "dated": 21124,
+  "accepted": 20305,
   "forms": {
-   "painting": 22776,
+   "painting": 22429,
    "sculpture": 298,
-   "architecture": 65
+   "architecture": 64
   },
   "kinds": {
-   "museum": 22232,
-   "church": 804,
-   "public": 43,
+   "museum": 21888,
+   "church": 801,
+   "public": 42,
    "private": 60
   }
  },
  "travel": {
-  "travelled": 11482,
-  "stayed": 4841,
+  "travelled": 11335,
+  "stayed": 4809,
   "from": [
    [
     "Italy",
-    3774
+    3735
    ],
    [
     "France",
-    3515
+    3460
    ],
    [
     "Belgium",
-    1478
+    1476
    ],
    [
     "Spain",
-    919
+    898
    ],
    [
     "Netherlands",
-    714
+    691
    ],
    [
     "United Kingdom",
-    521
+    514
    ],
    [
     "Germany",
@@ -79,39 +79,39 @@
   "to": [
    [
     "United States",
-    3649
+    3583
    ],
    [
     "United Kingdom",
-    1559
+    1531
    ],
    [
     "Germany",
-    1306
+    1304
    ],
    [
     "France",
-    822
+    813
    ],
    [
     "Spain",
-    534
+    525
    ],
    [
     "Netherlands",
-    444
+    433
    ],
    [
     "Russia",
-    401
+    399
    ],
    [
     "Austria",
-    379
+    376
    ],
    [
     "Switzerland",
-    357
+    356
    ],
    [
     "Norway",
@@ -119,7 +119,7 @@
    ],
    [
     "Japan",
-    236
+    233
    ],
    [
     "Denmark",
@@ -127,7 +127,7 @@
    ],
    [
     "Italy",
-    135
+    134
    ],
    [
     "Vatican City",
@@ -135,24 +135,24 @@
    ],
    [
     "Canada",
-    107
+    104
    ]
   ],
   "pairs": [
    {
     "from": "France",
     "to": "United States",
-    "works": 1711
+    "works": 1684
    },
    {
     "from": "Italy",
     "to": "United Kingdom",
-    "works": 814
+    "works": 800
    },
    {
     "from": "Italy",
     "to": "United States",
-    "works": 764
+    "works": 755
    },
    {
     "from": "Italy",
@@ -162,17 +162,17 @@
    {
     "from": "Italy",
     "to": "France",
-    "works": 476
+    "works": 472
    },
    {
     "from": "Spain",
     "to": "United States",
-    "works": 392
+    "works": 379
    },
    {
     "from": "Italy",
     "to": "Spain",
-    "works": 332
+    "works": 325
    },
    {
     "from": "Germany",
@@ -187,27 +187,22 @@
    {
     "from": "France",
     "to": "United Kingdom",
-    "works": 283
+    "works": 276
    },
    {
     "from": "United Kingdom",
     "to": "United States",
-    "works": 275
+    "works": 271
    },
    {
     "from": "France",
     "to": "Switzerland",
-    "works": 266
+    "works": 265
    },
    {
     "from": "France",
     "to": "Netherlands",
-    "works": 245
-   },
-   {
-    "from": "Netherlands",
-    "to": "United States",
-    "works": 227
+    "works": 234
    },
    {
     "from": "Belgium",
@@ -220,34 +215,39 @@
     "works": 218
    },
    {
+    "from": "Netherlands",
+    "to": "United States",
+    "works": 214
+   },
+   {
     "from": "France",
     "to": "Germany",
-    "works": 212
+    "works": 211
    },
    {
     "from": "France",
     "to": "Japan",
-    "works": 201
+    "works": 199
    },
    {
     "from": "Italy",
     "to": "Austria",
-    "works": 151
+    "works": 150
    },
    {
     "from": "Netherlands",
     "to": "Germany",
-    "works": 144
+    "works": 143
    }
   ],
   "made_in": [
    [
     "Paris",
-    2943
+    2890
    ],
    [
     "Venice",
-    1866
+    1842
    ],
    [
     "Antwerp",
@@ -255,19 +255,19 @@
    ],
    [
     "Rome",
-    1250
+    1230
    ],
    [
     "London",
-    1174
+    1162
    ],
    [
     "Madrid",
-    1147
+    1118
    ],
    [
     "Florence",
-    975
+    970
    ],
    [
     "Oslo",
@@ -275,11 +275,11 @@
    ],
    [
     "Amsterdam",
-    553
+    531
    ],
    [
     "Seville",
-    489
+    487
    ],
    [
     "Aix-en-Provence",
@@ -295,7 +295,7 @@
    ],
    [
     "Kragerø",
-    327
+    326
    ],
    [
     "Giverny",
@@ -303,7 +303,7 @@
    ],
    [
     "Pontoise",
-    268
+    264
    ],
    [
     "Wittenberg",
@@ -311,7 +311,7 @@
    ],
    [
     "Arles",
-    209
+    197
    ],
    [
     "Haarlem",
@@ -327,29 +327,29 @@
   "most": [
    {
     "painter": "Edvard Munch",
-    "works": 1418,
-    "share": 0.767,
+    "works": 1417,
+    "share": 0.766,
     "museum": "Munch Museum",
     "city": "Oslo",
-    "there": 1087,
+    "there": 1086,
     "venues": 90
    },
    {
     "painter": "Julio Romero de Torres",
-    "works": 133,
-    "share": 0.549,
+    "works": 130,
+    "share": 0.546,
     "museum": "Museo Julio Romero de Torres",
     "city": "Córdoba",
-    "there": 73,
+    "there": 71,
     "venues": 18
    },
    {
     "painter": "J.M.W. Turner",
-    "works": 643,
-    "share": 0.495,
+    "works": 637,
+    "share": 0.496,
     "museum": "Tate Britain",
     "city": "London",
-    "there": 318,
+    "there": 316,
     "venues": 95
    },
    {
@@ -390,11 +390,11 @@
    },
    {
     "painter": "Vincent van Gogh",
-    "works": 899,
-    "share": 0.321,
+    "works": 840,
+    "share": 0.32,
     "museum": "Van Gogh Museum",
     "city": "Amsterdam",
-    "there": 289,
+    "there": 269,
     "venues": 148
    },
    {
@@ -405,6 +405,15 @@
     "city": "Florence",
     "there": 63,
     "venues": 66
+   },
+   {
+    "painter": "Velázquez",
+    "works": 188,
+    "share": 0.309,
+    "museum": "Museo del Prado",
+    "city": "Madrid",
+    "there": 58,
+    "venues": 71
    },
    {
     "painter": "Joan Miró",
@@ -423,21 +432,12 @@
     "city": "Figueres",
     "there": 39,
     "venues": 42
-   },
-   {
-    "painter": "Velázquez",
-    "works": 196,
-    "share": 0.296,
-    "museum": "Museo del Prado",
-    "city": "Madrid",
-    "there": 58,
-    "venues": 71
    }
   ],
   "least": [
    {
     "painter": "Anthony van Dyck",
-    "works": 1041,
+    "works": 1040,
     "share": 0.053,
     "museum": "Bavarian State Painting Collections",
     "city": "Munich",
@@ -446,11 +446,11 @@
    },
    {
     "painter": "Rembrandt",
-    "works": 613,
+    "works": 598,
     "share": 0.057,
     "museum": "Metropolitan Museum of Art",
     "city": "New York",
-    "there": 35,
+    "there": 34,
     "venues": 171
    },
    {
@@ -472,15 +472,6 @@
     "venues": 197
    },
    {
-    "painter": "Annibale Carracci",
-    "works": 202,
-    "share": 0.059,
-    "museum": "Louvre",
-    "city": "Paris",
-    "there": 12,
-    "venues": 82
-   },
-   {
     "painter": "Claude Lorrain",
     "works": 199,
     "share": 0.06,
@@ -488,6 +479,15 @@
     "city": "London",
     "there": 12,
     "venues": 111
+   },
+   {
+    "painter": "Annibale Carracci",
+    "works": 199,
+    "share": 0.06,
+    "museum": "Louvre",
+    "city": "Paris",
+    "there": 12,
+    "venues": 82
    },
    {
     "painter": "Veronese",
@@ -509,7 +509,7 @@
    },
    {
     "painter": "Francesco Guardi",
-    "works": 348,
+    "works": 347,
     "share": 0.063,
     "museum": "National Gallery",
     "city": "London",
@@ -518,16 +518,16 @@
    },
    {
     "painter": "Paul Gauguin",
-    "works": 457,
-    "share": 0.066,
+    "works": 448,
+    "share": 0.065,
     "museum": "Ny Carlsberg Glyptotek",
     "city": "Copenhagen",
-    "there": 30,
+    "there": 29,
     "venues": 154
    },
    {
     "painter": "Guido Reni",
-    "works": 268,
+    "works": 267,
     "share": 0.067,
     "museum": "Louvre",
     "city": "Paris",
@@ -535,13 +535,13 @@
     "venues": 126
    },
    {
-    "painter": "Frans Hals",
-    "works": 266,
+    "painter": "Correggio",
+    "works": 112,
     "share": 0.071,
-    "museum": "Frans Hals Museum",
-    "city": "Haarlem",
-    "there": 19,
-    "venues": 105
+    "museum": "National Gallery",
+    "city": "London",
+    "there": 8,
+    "venues": 60
    }
   ]
  },
@@ -550,63 +550,63 @@
    "museum": "Munch Museum",
    "city": "Oslo",
    "country": "Norway",
-   "works": 1087,
+   "works": 1086,
    "painters": 1
   },
   {
    "museum": "Museo del Prado",
    "city": "Madrid",
    "country": "Spain",
-   "works": 764,
+   "works": 757,
    "painters": 42
   },
   {
    "museum": "Metropolitan Museum of Art",
    "city": "New York",
    "country": "United States",
-   "works": 594,
+   "works": 590,
    "painters": 74
   },
   {
    "museum": "National Gallery",
    "city": "London",
    "country": "United Kingdom",
-   "works": 541,
+   "works": 536,
    "painters": 71
   },
   {
    "museum": "Louvre",
    "city": "Paris",
    "country": "France",
-   "works": 540,
+   "works": 535,
    "painters": 66
   },
   {
    "museum": "National Gallery of Art",
    "city": "Washington, D.C.",
    "country": "United States",
-   "works": 457,
+   "works": 454,
    "painters": 71
   },
   {
    "museum": "Musée d'Orsay",
    "city": "Paris",
    "country": "France",
-   "works": 444,
+   "works": 435,
    "painters": 14
   },
   {
    "museum": "Hermitage Museum",
    "city": "Saint Petersburg",
    "country": "Russia",
-   "works": 384,
+   "works": 382,
    "painters": 56
   },
   {
    "museum": "Tate Britain",
    "city": "London",
    "country": "United Kingdom",
-   "works": 350,
+   "works": 347,
    "painters": 15
   },
   {
@@ -620,49 +620,49 @@
    "museum": "Kunsthistorisches Museum",
    "city": "Vienna",
    "country": "Austria",
-   "works": 318,
+   "works": 315,
    "painters": 43
   },
   {
    "museum": "Gemäldegalerie Berlin",
    "city": "Berlin",
    "country": "Germany",
-   "works": 311,
-   "painters": 50
-  },
-  {
-   "museum": "Van Gogh Museum",
-   "city": "Amsterdam",
-   "country": "Netherlands",
    "works": 310,
-   "painters": 8
+   "painters": 50
   },
   {
    "museum": "Barnes Foundation",
    "city": "Philadelphia",
    "country": "United States",
-   "works": 295,
+   "works": 291,
    "painters": 19
+  },
+  {
+   "museum": "Van Gogh Museum",
+   "city": "Amsterdam",
+   "country": "Netherlands",
+   "works": 290,
+   "painters": 8
   },
   {
    "museum": "Museum of Fine Arts Boston",
    "city": "Boston",
    "country": "United States",
-   "works": 291,
+   "works": 262,
    "painters": 55
   },
   {
    "museum": "Uffizi Gallery",
    "city": "Florence",
    "country": "Italy",
-   "works": 228,
+   "works": 227,
    "painters": 49
   },
   {
    "museum": "Art Institute of Chicago",
    "city": "Chicago",
    "country": "United States",
-   "works": 226,
+   "works": 221,
    "painters": 49
   },
   {
@@ -676,22 +676,15 @@
    "museum": "Philadelphia Museum of Art",
    "city": "Philadelphia",
    "country": "United States",
-   "works": 194,
+   "works": 192,
    "painters": 43
   },
   {
    "museum": "Kröller-Müller Museum",
    "city": "Otterlo",
    "country": "Netherlands",
-   "works": 167,
+   "works": 157,
    "painters": 10
-  },
-  {
-   "museum": "Courtauld Gallery",
-   "city": "London",
-   "country": "United Kingdom",
-   "works": 162,
-   "painters": 27
   },
   {
    "museum": "Buckingham Palace",
@@ -701,17 +694,24 @@
    "painters": 24
   },
   {
+   "museum": "Courtauld Gallery",
+   "city": "London",
+   "country": "United Kingdom",
+   "works": 149,
+   "painters": 27
+  },
+  {
    "museum": "Pushkin Museum",
    "city": "Moscow",
    "country": "Russia",
-   "works": 147,
+   "works": 146,
    "painters": 35
   },
   {
    "museum": "Hispanic Society of America",
    "city": "Manhattan",
    "country": "United States",
-   "works": 147,
+   "works": 144,
    "painters": 8
   },
   {
@@ -726,102 +726,102 @@
   {
    "city": "Paris",
    "country": "France",
-   "works": 1376
+   "works": 1354
   },
   {
    "city": "London",
    "country": "United Kingdom",
-   "works": 1314
+   "works": 1293
   },
   {
    "city": "Oslo",
    "country": "Norway",
-   "works": 1223
+   "works": 1222
   },
   {
    "city": "Madrid",
    "country": "Spain",
-   "works": 1153
+   "works": 1141
   },
   {
    "city": "New York",
    "country": "United States",
-   "works": 781
+   "works": 765
   },
   {
    "city": "Munich",
    "country": "Germany",
-   "works": 601
+   "works": 600
   },
   {
    "city": "Florence",
    "country": "Italy",
-   "works": 581
+   "works": 580
   },
   {
    "city": "Washington, D.C.",
    "country": "United States",
-   "works": 503
+   "works": 500
   },
   {
    "city": "Philadelphia",
    "country": "United States",
-   "works": 491
+   "works": 485
   },
   {
    "city": "Vienna",
    "country": "Austria",
-   "works": 454
+   "works": 451
   },
   {
    "city": "Amsterdam",
    "country": "Netherlands",
-   "works": 443
+   "works": 422
   },
   {
    "city": "Berlin",
    "country": "Germany",
-   "works": 418
+   "works": 417
   },
   {
    "city": "Saint Petersburg",
    "country": "Russia",
-   "works": 384
+   "works": 382
   },
   {
    "city": "Boston",
    "country": "United States",
-   "works": 340
+   "works": 307
   },
   {
    "city": "Rome",
    "country": "Italy",
-   "works": 306
+   "works": 298
   },
   {
    "city": "Venice",
    "country": "Italy",
-   "works": 299
+   "works": 297
   },
   {
    "city": "Chicago",
    "country": "United States",
-   "works": 227
+   "works": 222
   },
   {
    "city": "Manhattan",
    "country": "United States",
-   "works": 196
+   "works": 193
   },
   {
    "city": "Oxford",
    "country": "United Kingdom",
-   "works": 185
+   "works": 184
   },
   {
    "city": "Copenhagen",
    "country": "Denmark",
-   "works": 184
+   "works": 182
   },
   {
    "city": "Los Angeles",
@@ -831,12 +831,7 @@
   {
    "city": "Antwerp",
    "country": "Belgium",
-   "works": 176
-  },
-  {
-   "city": "England",
-   "country": "United Kingdom",
-   "works": 169
+   "works": 175
   },
   {
    "city": "Dresden",
@@ -847,6 +842,11 @@
    "city": "New Haven",
    "country": "United States",
    "works": 168
+  },
+  {
+   "city": "England",
+   "country": "United Kingdom",
+   "works": 167
   }
  ],
  "by_century": [
@@ -880,27 +880,27 @@
   },
   {
    "century": 15,
-   "works": 1254
+   "works": 1245
   },
   {
    "century": 16,
-   "works": 2773
+   "works": 2758
   },
   {
    "century": 17,
-   "works": 5196
+   "works": 5151
   },
   {
    "century": 18,
-   "works": 1666
+   "works": 1636
   },
   {
    "century": 19,
-   "works": 6263
+   "works": 6122
   },
   {
    "century": 20,
-   "works": 2883
+   "works": 2857
   }
  ],
  "themes": [
@@ -908,7 +908,7 @@
    "id": "the-virgin",
    "label": "The Virgin",
    "family": "christ",
-   "works": 1003,
+   "works": 1001,
    "top_venue": "Louvre",
    "top_venue_works": 62
   },
@@ -916,7 +916,7 @@
    "id": "the-christ-child",
    "label": "The Christ Child",
    "family": "christ",
-   "works": 790,
+   "works": 789,
    "top_venue": "Louvre",
    "top_venue_works": 42
   },
@@ -924,7 +924,7 @@
    "id": "christ",
    "label": "Christ",
    "family": "christ",
-   "works": 766,
+   "works": 765,
    "top_venue": "Louvre",
    "top_venue_works": 38
   },
@@ -940,7 +940,7 @@
    "id": "angel",
    "label": "Angel",
    "family": "myth",
-   "works": 307,
+   "works": 306,
    "top_venue": "Louvre",
    "top_venue_works": 43
   },
@@ -948,15 +948,15 @@
    "id": "john-the-baptist",
    "label": "John the Baptist",
    "family": "bible",
-   "works": 273,
+   "works": 269,
    "top_venue": "Louvre",
-   "top_venue_works": 18
+   "top_venue_works": 17
   },
   {
    "id": "mary-magdalene",
    "label": "Mary Magdalene",
    "family": "bible",
-   "works": 205,
+   "works": 204,
    "top_venue": "Louvre",
    "top_venue_works": 15
   },
@@ -969,18 +969,10 @@
    "top_venue_works": 26
   },
   {
-   "id": "seine",
-   "label": "Seine",
-   "family": "place",
-   "works": 179,
-   "top_venue": "Musée d'Orsay",
-   "top_venue_works": 27
-  },
-  {
    "id": "jerome",
    "label": "Jerome",
    "family": "saint",
-   "works": 178,
+   "works": 177,
    "top_venue": "Gemäldegalerie Berlin",
    "top_venue_works": 9
   },
@@ -991,6 +983,14 @@
    "works": 173,
    "top_venue": "Bavarian State Painting Collections",
    "top_venue_works": 10
+  },
+  {
+   "id": "seine",
+   "label": "Seine",
+   "family": "place",
+   "works": 172,
+   "top_venue": "Musée d'Orsay",
+   "top_venue_works": 27
   },
   {
    "id": "saint-peter",
@@ -1012,7 +1012,7 @@
    "id": "holy-family",
    "label": "Holy Family",
    "family": "theme",
-   "works": 159,
+   "works": 157,
    "top_venue": "Museo del Prado",
    "top_venue_works": 14
   },
@@ -1020,7 +1020,7 @@
    "id": "saint-joseph",
    "label": "Saint Joseph",
    "family": "bible",
-   "works": 136,
+   "works": 135,
    "top_venue": "Museo del Prado",
    "top_venue_works": 10
   },
@@ -1044,7 +1044,7 @@
    "id": "annunciation",
    "label": "Annunciation",
    "family": "theme",
-   "works": 113,
+   "works": 112,
    "top_venue": "Uffizi Gallery",
    "top_venue_works": 5
   },
@@ -1055,14 +1055,6 @@
    "works": 103,
    "top_venue": "Galleria Palatina",
    "top_venue_works": 6
-  },
-  {
-   "id": "grand-canal",
-   "label": "Grand Canal",
-   "family": "series",
-   "works": 98,
-   "top_venue": "Wallace Collection",
-   "top_venue_works": 7
   },
   {
    "id": "cupid",
@@ -1086,6 +1078,14 @@
    "family": "theme",
    "works": 93,
    "top_venue": "Uffizi Gallery",
+   "top_venue_works": 7
+  },
+  {
+   "id": "grand-canal",
+   "label": "Grand Canal",
+   "family": "series",
+   "works": 93,
+   "top_venue": "Wallace Collection",
    "top_venue_works": 7
   },
   {
@@ -1116,9 +1116,9 @@
    "id": "john-the-apostle",
    "label": "John the Apostle",
    "family": "bible",
-   "works": 79,
-   "top_venue": "Louvre",
-   "top_venue_works": 8
+   "works": 78,
+   "top_venue": "Gemäldegalerie Berlin",
+   "top_venue_works": 7
   },
   {
    "id": "lamentation",
@@ -1132,17 +1132,17 @@
    "id": "giverny",
    "label": "Giverny",
    "family": "series",
-   "works": 77,
+   "works": 75,
    "top_venue": "Musée Marmottan Monet",
-   "top_venue_works": 7
+   "top_venue_works": 6
   },
   {
-   "id": "piazza-san-marco",
-   "label": "Piazza San Marco",
-   "family": "series",
-   "works": 72,
-   "top_venue": "Galleria Nazionale d'Arte Antica",
-   "top_venue_works": 4
+   "id": "saint-george",
+   "label": "Saint George",
+   "family": "saint",
+   "works": 70,
+   "top_venue": "Louvre",
+   "top_venue_works": 8
   }
  ],
  "coverage": [

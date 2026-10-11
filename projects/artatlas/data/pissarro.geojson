@@ -154,33 +154,33 @@
    },
    "properties": {
     "painter": "Camille Pissarro",
-    "title": "Péniches sur la Seine",
-    "year": "c.1863",
-    "city": "Pontoise",
+    "title": "Barges à La Roche-Guyon Argenteuil, Fête foraine",
+    "year": "1863",
     "location": "Musée Camille Pissarro",
+    "city": "Pontoise",
+    "country": "France",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Camille_Pissarro_-_Barges_%C3%A0_La_Roche-Guyon.jpg/500px-Camille_Pissarro_-_Barges_%C3%A0_La_Roche-Guyon.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20Barges%20%C3%A0%20La%20Roche-Guyon.jpg?width=500",
+    "qid": "Q21290031",
+    "wikidata": "https://www.wikidata.org/wiki/Q21290031",
     "_source": {
-     "source": "Wikipedia: List of paintings by Camille Pissarro",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21290031",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "musee-camille-pissarro",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Barges à La Roche-Guyon Argenteuil, Fête foraine",
-      "qid": "Q21290031",
-      "url": "https://www.wikidata.org/wiki/Q21290031"
+      "source": "Wikipedia list",
+      "title": "Péniches sur la Seine"
      }
     ],
-    "country": "France",
+    "museum_id": "musee-camille-pissarro",
     "location_src": "Musée Camille Pissarro",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "creation_place": "Paris",
+    "creation_lat": 48.8566,
+    "creation_lon": 2.3522
    }
   },
   {
@@ -194,33 +194,33 @@
    },
    "properties": {
     "painter": "Camille Pissarro",
-    "title": "Bords de la Marne à Chennevieres",
-    "year": "c.1865",
-    "city": "City of Edinburgh",
+    "title": "The Marne at Chennevières",
+    "year": "1860",
     "location": "Scottish National Gallery",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Camille_Pissarro_-_The_Marne_at_Chennevi%C3%A8res_-_Google_Art_Project.jpg/500px-Camille_Pissarro_-_The_Marne_at_Chennevi%C3%A8res_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Camille Pissarro",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "scottish-national-gallery",
+    "city": "City of Edinburgh",
     "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20The%20Marne%20at%20Chennevi%C3%A8res%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q18683347",
+    "wikidata": "https://www.wikidata.org/wiki/Q18683347",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18683347",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Marne at Chennevières",
-      "qid": "Q18683347",
-      "url": "https://www.wikidata.org/wiki/Q18683347"
+      "source": "Wikipedia list",
+      "title": "Bords de la Marne à Chennevieres"
      }
     ],
-    "location_src": "Scottish National Gallery",
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "creation_place": "Paris",
+    "creation_lat": 48.8566,
+    "creation_lon": 2.3522
    }
   },
   {
@@ -450,30 +450,37 @@
    },
    "properties": {
     "painter": "Camille Pissarro",
-    "title": "Croisement de la route de Versailles et du Chemin de l'Aqueduc, Louveciennes",
-    "year": "c.1869",
-    "city": "Baltimore",
+    "title": "Route to Versailles, Louveciennes",
+    "year": "1869",
     "location": "Walters Art Museum",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Road_to_Versailles_at_Louveciennes_1869_Camille_Pissarro.jpg/500px-Road_to_Versailles_at_Louveciennes_1869_Camille_Pissarro.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0511,
-    "creation_lon": 2.101,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Camille Pissarro",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "walters-art-museum",
+    "city": "Baltimore",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Road%20to%20Versailles%20at%20Louveciennes%201869%20Camille%20Pissarro.jpg?width=500",
+    "qid": "Q21328571",
+    "wikidata": "https://www.wikidata.org/wiki/Q21328571",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21328571",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Pontoise",
+    "creation_lat": 49.0516,
+    "creation_lon": 2.1017,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Route to Versailles, Louveciennes",
-      "qid": "Q21328571",
-      "url": "https://www.wikidata.org/wiki/Q21328571"
+      "source": "Wikipedia list",
+      "title": "Croisement de la route de Versailles et du Chemin de l'Aqueduc, Louveciennes"
      }
     ],
+    "museum_id": "walters-art-museum",
     "location_src": "Walters Art Museum",
     "kind": "museum",
     "form": "painting"
@@ -826,30 +833,37 @@
    },
    "properties": {
     "painter": "Camille Pissarro",
-    "title": "Lordship Lane Station, East Dulwich",
+    "title": "Lordship Lane Station, Dulwich",
     "year": "1871",
-    "city": "London",
     "location": "Courtauld Gallery",
-    "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Pissarro_-_Lordship_Lane_Station%2C_Dulwich_%281871%29.jpg/500px-Pissarro_-_Lordship_Lane_Station%2C_Dulwich_%281871%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "London",
-    "creation_lat": 51.5074,
-    "creation_lon": -0.1278,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Camille Pissarro",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "courtauld-gallery",
+    "city": "London",
     "country": "United Kingdom",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pissarro%20-%20Lordship%20Lane%20Station%2C%20Dulwich%20%281871%29.jpg?width=500",
+    "qid": "Q21448784",
+    "wikidata": "https://www.wikidata.org/wiki/Q21448784",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21448784",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Pontoise",
+    "creation_lat": 49.0516,
+    "creation_lon": 2.1017,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Lordship Lane Station, Dulwich",
-      "qid": "Q21448784",
-      "url": "https://www.wikidata.org/wiki/Q21448784"
+      "source": "Wikipedia list",
+      "title": "Lordship Lane Station, East Dulwich"
      }
     ],
+    "museum_id": "courtauld-gallery",
     "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
@@ -1420,30 +1434,37 @@
    },
    "properties": {
     "painter": "Camille Pissarro",
-    "title": "Portrait de Jeanne Pissarro, dite Minette",
-    "year": "c.1872",
-    "city": "Hartford",
+    "title": "Portrait of Jeanne Pissarro, Called Minette",
+    "year": "1872",
     "location": "Wadsworth Atheneum",
+    "city": "Hartford",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Camille_Pissarro%2C_Minette%2C_ca._1872._Oil_on_canvas%2C_Wadsworth_Atheneum_Museum_of_Art%2C.jpg/500px-Camille_Pissarro%2C_Minette%2C_ca._1872._Oil_on_canvas%2C_Wadsworth_Atheneum_Museum_of_Art%2C.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0511,
-    "creation_lon": 2.101,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%2C%20Minette%2C%20ca.%201872.%20Oil%20on%20canvas%2C%20Wadsworth%20Atheneum%20Museum%20of%20Art%2C.jpg?width=500",
+    "qid": "Q21469901",
+    "wikidata": "https://www.wikidata.org/wiki/Q21469901",
     "_source": {
-     "source": "Wikipedia: List of paintings by Camille Pissarro",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21469901",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "wadsworth-atheneum",
+    "creation_place": "Pontoise",
+    "creation_lat": 49.0516,
+    "creation_lon": 2.1017,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Portrait of Jeanne Pissarro, Called Minette",
-      "qid": "Q21469901",
-      "url": "https://www.wikidata.org/wiki/Q21469901"
+      "source": "Wikipedia list",
+      "title": "Portrait de Jeanne Pissarro, dite Minette"
      }
     ],
-    "country": "United States",
+    "museum_id": "wadsworth-atheneum",
     "location_src": "Wadsworth Atheneum",
     "kind": "museum",
     "form": "painting"
@@ -1507,30 +1528,37 @@
    },
    "properties": {
     "painter": "Camille Pissarro",
-    "title": "Inondation à Saint-Ouen-l'Aumône",
+    "title": "Flood at Saint-Ouen-L'Aumône",
     "year": "1873",
-    "city": "Hartford",
     "location": "Wadsworth Atheneum",
+    "city": "Hartford",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Camille_Pissarro_025.jpg/500px-Camille_Pissarro_025.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0511,
-    "creation_lon": 2.101,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20025.jpg?width=500",
+    "qid": "Q21496303",
+    "wikidata": "https://www.wikidata.org/wiki/Q21496303",
     "_source": {
-     "source": "Wikipedia: List of paintings by Camille Pissarro",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21496303",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "wadsworth-atheneum",
+    "creation_place": "Pontoise",
+    "creation_lat": 49.0516,
+    "creation_lon": 2.1017,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Flood at Saint-Ouen-L'Aumône",
-      "qid": "Q21496303",
-      "url": "https://www.wikidata.org/wiki/Q21496303"
+      "source": "Wikipedia list",
+      "title": "Inondation à Saint-Ouen-l'Aumône"
      }
     ],
-    "country": "United States",
+    "museum_id": "wadsworth-atheneum",
     "location_src": "Wadsworth Atheneum",
     "kind": "museum",
     "form": "painting"
@@ -2386,29 +2414,31 @@
    },
    "properties": {
     "painter": "Camille Pissarro",
+    "title": "Place Lafayette, Rouen",
     "year": "1883",
-    "city": "London",
     "location": "Courtauld Gallery",
+    "city": "London",
+    "country": "United Kingdom",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Camille_Pissarro_-_Quais_de_Rouen_%281883%29.jpg/500px-Camille_Pissarro_-_Quais_de_Rouen_%281883%29.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0511,
-    "creation_lon": 2.101,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20Quais%20de%20Rouen%20%281883%29.jpg?width=500",
+    "qid": "Q19973922",
+    "wikidata": "https://www.wikidata.org/wiki/Q19973922",
     "_source": {
-     "source": "Wikipedia: List of paintings by Camille Pissarro",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19973922",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Pontoise",
+    "creation_lat": 49.0516,
+    "creation_lon": 2.1017,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "courtauld-gallery",
-    "country": "United Kingdom",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Place Lafayette, Rouen",
-      "qid": "Q19973922",
-      "url": "https://www.wikidata.org/wiki/Q19973922"
-     }
-    ],
     "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
@@ -2502,29 +2532,31 @@
    },
    "properties": {
     "painter": "Camille Pissarro",
+    "title": "The Church at Eragny",
     "year": "1884",
-    "city": "Baltimore",
     "location": "Walters Art Museum",
+    "city": "Baltimore",
+    "country": "United States",
     "attribution": "generally accepted",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Camille_Pissarro_-_The_Church_at_Eragny_-_Walters_372653.jpg/500px-Camille_Pissarro_-_The_Church_at_Eragny_-_Walters_372653.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20The%20Church%20at%20Eragny%20-%20Walters%20372653.jpg?width=500",
+    "qid": "Q18748414",
+    "wikidata": "https://www.wikidata.org/wiki/Q18748414",
     "_source": {
-     "source": "Wikipedia: List of paintings by Camille Pissarro",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q18748414",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "walters-art-museum",
-    "country": "United States",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "The Church at Eragny",
-      "qid": "Q18748414",
-      "url": "https://www.wikidata.org/wiki/Q18748414"
-     }
-    ],
     "location_src": "Walters Art Museum",
     "kind": "museum",
     "form": "painting"
@@ -8109,47 +8141,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -76.6165,
-     39.29642
-    ]
-   },
-   "properties": {
-    "painter": "Camille Pissarro",
-    "title": "The Church at Eragny",
-    "year": "1884",
-    "location": "Walters Art Museum",
-    "city": "Baltimore",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20The%20Church%20at%20Eragny%20-%20Walters%20372653.jpg?width=500",
-    "qid": "Q18748414",
-    "wikidata": "https://www.wikidata.org/wiki/Q18748414",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18748414",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "walters-art-museum",
-    "location_src": "Walters Art Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -75.18139,
      39.96583
     ]
@@ -8692,43 +8683,6 @@
     },
     "museum_id": "the-nelson-atkins-museum-of-art",
     "location_src": "The Nelson-Atkins Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.19569,
-     55.9509
-    ]
-   },
-   "properties": {
-    "painter": "Camille Pissarro",
-    "title": "The Marne at Chennevières",
-    "year": "1860",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20The%20Marne%20at%20Chennevi%C3%A8res%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q18683347",
-    "wikidata": "https://www.wikidata.org/wiki/Q18683347",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18683347",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Bords de la Marne à Chennevieres"
-     }
-    ],
-    "museum_id": "scottish-national-gallery",
-    "location_src": "National Galleries of Scotland",
     "kind": "museum",
     "form": "painting"
    }
@@ -16242,43 +16196,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     2.1017,
-     49.0516
-    ]
-   },
-   "properties": {
-    "painter": "Camille Pissarro",
-    "title": "Barges à La Roche-Guyon Argenteuil, Fête foraine",
-    "year": "1863",
-    "location": "Musée Camille Pissarro",
-    "city": "Pontoise",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20Barges%20%C3%A0%20La%20Roche-Guyon.jpg?width=500",
-    "qid": "Q21290031",
-    "wikidata": "https://www.wikidata.org/wiki/Q21290031",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21290031",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Péniches sur la Seine"
-     }
-    ],
-    "museum_id": "musee-camille-pissarro",
-    "location_src": "Musée Camille Pissarro",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -77.47471,
      37.55642
     ]
@@ -16783,147 +16700,6 @@
     },
     "museum_id": "kunstmuseum-basel",
     "location_src": "Kunstmuseum Basel",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -76.6165,
-     39.29642
-    ]
-   },
-   "properties": {
-    "painter": "Camille Pissarro",
-    "title": "Route to Versailles, Louveciennes",
-    "year": "1869",
-    "location": "Walters Art Museum",
-    "city": "Baltimore",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Road%20to%20Versailles%20at%20Louveciennes%201869%20Camille%20Pissarro.jpg?width=500",
-    "qid": "Q21328571",
-    "wikidata": "https://www.wikidata.org/wiki/Q21328571",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21328571",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0516,
-    "creation_lon": 2.1017,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Croisement de la route de Versailles et du Chemin de l'Aqueduc, Louveciennes"
-     }
-    ],
-    "museum_id": "walters-art-museum",
-    "location_src": "Walters Art Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -72.67309,
-     41.76371
-    ]
-   },
-   "properties": {
-    "painter": "Camille Pissarro",
-    "title": "Portrait of Jeanne Pissarro, Called Minette",
-    "year": "1872",
-    "location": "Wadsworth Atheneum",
-    "city": "Hartford",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%2C%20Minette%2C%20ca.%201872.%20Oil%20on%20canvas%2C%20Wadsworth%20Atheneum%20Museum%20of%20Art%2C.jpg?width=500",
-    "qid": "Q21469901",
-    "wikidata": "https://www.wikidata.org/wiki/Q21469901",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21469901",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0516,
-    "creation_lon": 2.1017,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait de Jeanne Pissarro, dite Minette"
-     }
-    ],
-    "museum_id": "wadsworth-atheneum",
-    "location_src": "Wadsworth Atheneum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -72.67309,
-     41.76371
-    ]
-   },
-   "properties": {
-    "painter": "Camille Pissarro",
-    "title": "Flood at Saint-Ouen-L'Aumône",
-    "year": "1873",
-    "location": "Wadsworth Atheneum",
-    "city": "Hartford",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20025.jpg?width=500",
-    "qid": "Q21496303",
-    "wikidata": "https://www.wikidata.org/wiki/Q21496303",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21496303",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0516,
-    "creation_lon": 2.1017,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Inondation à Saint-Ouen-l'Aumône"
-     }
-    ],
-    "museum_id": "wadsworth-atheneum",
-    "location_src": "Wadsworth Atheneum",
     "kind": "museum",
     "form": "painting"
    }
@@ -18254,53 +18030,6 @@
     },
     "museum_id": "yamadera-goto-museum-of-art",
     "location_src": "Yamadera Gotō Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Camille Pissarro",
-    "title": "Lordship Lane Station, Dulwich",
-    "year": "1871",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Pissarro%20-%20Lordship%20Lane%20Station%2C%20Dulwich%20%281871%29.jpg?width=500",
-    "qid": "Q21448784",
-    "wikidata": "https://www.wikidata.org/wiki/Q21448784",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21448784",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0516,
-    "creation_lon": 2.1017,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Lordship Lane Station, East Dulwich"
-     }
-    ],
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
    }
@@ -22848,47 +22577,6 @@
     },
     "museum_id": "eva-klabin-house-museum",
     "location_src": "Eva Klabin House Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Camille Pissarro",
-    "title": "Place Lafayette, Rouen",
-    "year": "1883",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20Quais%20de%20Rouen%20%281883%29.jpg?width=500",
-    "qid": "Q19973922",
-    "wikidata": "https://www.wikidata.org/wiki/Q19973922",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19973922",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Pontoise",
-    "creation_lat": 49.0516,
-    "creation_lon": 2.1017,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
     "kind": "museum",
     "form": "painting"
    }

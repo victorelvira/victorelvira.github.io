@@ -1816,34 +1816,41 @@
    },
    "properties": {
     "painter": "Paul Gauguin",
-    "title": "Forest Interior",
+    "title": "Forest Interior (Sous-Bois)",
     "year": "1884",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "medium": "W. 110/135 S. 16",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Paul_Gauguin_-_Sous-Bois.jpg/500px-Paul_Gauguin_-_Sous-Bois.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Paris",
-    "creation_lat": 48.8566,
-    "creation_lon": 2.3522,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20-%20Sous-Bois.jpg?width=500",
+    "qid": "Q46731825",
+    "wikidata": "https://www.wikidata.org/wiki/Q46731825",
     "_source": {
-     "source": "Wikipedia: List of paintings by Paul Gauguin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q46731825",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-fine-arts-boston",
+    "creation_place": "Paris",
+    "creation_lat": 48.8567,
+    "creation_lon": 2.3522,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Forest Interior (Sous-Bois)",
-      "qid": "Q46731825",
-      "url": "https://www.wikidata.org/wiki/Q46731825"
+      "source": "Wikipedia list",
+      "title": "Forest Interior"
      }
     ],
-    "location_src": "Museum of Fine Arts",
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "medium": "W. 110/135 S. 16"
    }
   },
   {
@@ -5587,34 +5594,34 @@
    },
    "properties": {
     "painter": "Paul Gauguin",
-    "title": "Nirvana, Portrait of Jacob Meyer de Haan",
-    "year": "1889 or 1890",
-    "city": "Hartford",
+    "title": "Nirvana: Portrait of Meyer de Haan",
+    "year": "1889",
     "location": "Wadsworth Atheneum",
+    "city": "Hartford",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "W. 320 S. 198",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Paul_Gauguin_092.jpg/500px-Paul_Gauguin_092.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Pont-Aven",
-    "creation_lat": 47.8547,
-    "creation_lon": -3.7469,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20092.jpg?width=500",
+    "qid": "Q67183670",
+    "wikidata": "https://www.wikidata.org/wiki/Q67183670",
     "_source": {
-     "source": "Wikipedia: List of paintings by Paul Gauguin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q67183670",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "wadsworth-atheneum",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Nirvana: Portrait of Meyer de Haan",
-      "qid": "Q67183670",
-      "url": "https://www.wikidata.org/wiki/Q67183670"
+      "source": "Wikipedia list",
+      "title": "Nirvana, Portrait of Jacob Meyer de Haan"
      }
     ],
-    "country": "United States",
+    "museum_id": "wadsworth-atheneum",
     "location_src": "Wadsworth Atheneum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "medium": "W. 320 S. 198",
+    "creation_place": "Pont-Aven",
+    "creation_lat": 47.8547,
+    "creation_lon": -3.7469
    }
   },
   {
@@ -6156,26 +6163,28 @@
    },
    "properties": {
     "painter": "Paul Gauguin",
-    "title": "Breton Childhood",
+    "title": "Enfance de Bretagne",
     "year": "1889",
     "location": "Fukushima Prefectural Museum of Art",
-    "attribution": "generally accepted",
-    "medium": "W. 346",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Gauguin_1889_Enfance_de_Bretagne.jpg/500px-Gauguin_1889_Enfance_de_Bretagne.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Pont-Aven",
-    "creation_lat": 47.8547,
-    "creation_lon": -3.7469,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Paul Gauguin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "fukushima-prefectural-museum-of-art",
     "city": "Fukushima",
     "country": "Japan",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%201889%20Enfance%20de%20Bretagne.jpg?width=500",
+    "qid": "Q95627405",
+    "wikidata": "https://www.wikidata.org/wiki/Q95627405",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q95627405",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "museum_id": "fukushima-prefectural-museum-of-art",
     "location_src": "Fukushima Prefectural Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "medium": "W. 346",
+    "creation_place": "Pont-Aven",
+    "creation_lat": 47.8547,
+    "creation_lon": -3.7469
    }
   },
   {
@@ -8656,34 +8665,34 @@
    },
    "properties": {
     "painter": "Paul Gauguin",
-    "title": "Te aa no areois",
+    "title": "The Seed of the Areoi",
     "year": "1892",
+    "location": "Museum of Modern Art",
     "city": "New York",
     "country": "United States",
-    "location": "Museum of Modern Art",
     "attribution": "generally accepted",
-    "medium": "W. 451 S. 283",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Paul_Gauguin_-_Te_aa_no_areois_-_Google_Art_Project.jpg/500px-Paul_Gauguin_-_Te_aa_no_areois_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Papeete",
-    "creation_lat": -17.5516,
-    "creation_lon": -149.5585,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20-%20Te%20aa%20no%20areois%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q19883440",
+    "wikidata": "https://www.wikidata.org/wiki/Q19883440",
     "_source": {
-     "source": "Wikipedia: List of paintings by Paul Gauguin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q19883440",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-modern-art",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Seed of the Areoi",
-      "qid": "Q19883440",
-      "url": "https://www.wikidata.org/wiki/Q19883440"
+      "source": "Wikipedia list",
+      "title": "Te aa no areois"
      }
     ],
+    "museum_id": "museum-of-modern-art",
     "location_src": "Museum of Modern Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "medium": "W. 451 S. 283",
+    "creation_place": "Papeete",
+    "creation_lat": -17.5516,
+    "creation_lon": -149.5585
    }
   },
   {
@@ -9913,34 +9922,34 @@
    },
    "properties": {
     "painter": "Paul Gauguin",
-    "title": "Hina tefatou",
+    "title": "The Moon and the Earth",
     "year": "1893",
+    "location": "Museum of Modern Art",
     "city": "New York",
     "country": "United States",
-    "location": "Museum of Modern Art",
     "attribution": "generally accepted",
-    "medium": "W. 499 S. 329",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Paul_Gauguin_-_Hina_Tefatou_-_Google_Art_Project.jpg/500px-Paul_Gauguin_-_Hina_Tefatou_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Papeete",
-    "creation_lat": -17.5516,
-    "creation_lon": -149.5585,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20-%20Hina%20Tefatou%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q11687700",
+    "wikidata": "https://www.wikidata.org/wiki/Q11687700",
     "_source": {
-     "source": "Wikipedia: List of paintings by Paul Gauguin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q11687700",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-modern-art",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Moon and the Earth",
-      "qid": "Q11687700",
-      "url": "https://www.wikidata.org/wiki/Q11687700"
+      "source": "Wikipedia list",
+      "title": "Hina tefatou"
      }
     ],
+    "museum_id": "museum-of-modern-art",
     "location_src": "Museum of Modern Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "medium": "W. 499 S. 329",
+    "creation_place": "Papeete",
+    "creation_lat": -17.5516,
+    "creation_lon": -149.5585
    }
   },
   {
@@ -10352,34 +10361,34 @@
    },
    "properties": {
     "painter": "Paul Gauguin",
-    "title": "Portrait of Upaupa Schneklud",
+    "title": "The Player Schneklud",
     "year": "1894",
     "location": "Baltimore Museum of Art",
-    "attribution": "generally accepted",
-    "medium": "W. 517 S. 341",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Gauguin_-_Der_Violoncellist_Upaupa_Schneklud_1894.jpg/500px-Gauguin_-_Der_Violoncellist_Upaupa_Schneklud_1894.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Papeete",
-    "creation_lat": -17.5516,
-    "creation_lon": -149.5585,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Paul Gauguin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "baltimore-museum-of-art",
     "city": "Baltimore",
+    "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%20-%20Der%20Violoncellist%20Upaupa%20Schneklud%201894.jpg?width=500",
+    "qid": "Q28016569",
+    "wikidata": "https://www.wikidata.org/wiki/Q28016569",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q28016569",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Player Schneklud",
-      "qid": "Q28016569",
-      "url": "https://www.wikidata.org/wiki/Q28016569"
+      "source": "Wikipedia list",
+      "title": "Portrait of Upaupa Schneklud"
      }
     ],
-    "country": "United States",
+    "museum_id": "baltimore-museum-of-art",
     "location_src": "Baltimore Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "medium": "W. 517 S. 341",
+    "creation_place": "Papeete",
+    "creation_lat": -17.5516,
+    "creation_lon": -149.5585
    }
   },
   {
@@ -11163,35 +11172,35 @@
    },
    "properties": {
     "painter": "Paul Gauguin",
-    "title": "Barbaric Poems",
+    "title": "Barbarian Poems",
     "year": "1896",
-    "city": "Cambridge",
     "location": "Fogg Museum",
+    "city": "Cambridge",
+    "country": "United States",
     "attribution": "generally accepted",
-    "medium": "W. 547 S. 373",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Paul_Gauguin_096.jpg/500px-Paul_Gauguin_096.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Papeete",
-    "creation_lat": -17.5516,
-    "creation_lon": -149.5585,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20096.jpg?width=500",
+    "qid": "Q67091087",
+    "wikidata": "https://www.wikidata.org/wiki/Q67091087",
     "_source": {
-     "source": "Wikipedia: List of paintings by Paul Gauguin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q67091087",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "fogg-museum",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Barbarian Poems",
-      "qid": "Q67091087",
-      "url": "https://www.wikidata.org/wiki/Q67091087"
+      "source": "Wikipedia list",
+      "title": "Barbaric Poems"
      }
     ],
-    "country": "United States",
+    "museum_id": "fogg-museum",
     "location_src": "Fogg Museum",
     "venue_of": "Harvard Art Museums",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "medium": "W. 547 S. 373",
+    "creation_place": "Papeete",
+    "creation_lat": -17.5516,
+    "creation_lon": -149.5585
    }
   },
   {
@@ -12004,34 +12013,34 @@
    },
    "properties": {
     "painter": "Paul Gauguin",
-    "title": "Femme Tahitienne II",
+    "title": "Tahitian girl",
     "year": "1898",
-    "city": "Belgrade",
     "location": "National Museum of Serbia",
-    "attribution": "generally accepted",
-    "medium": "W. 577 S. 397",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Gauguin_Femme_Tahitienne_II.jpg/500px-Gauguin_Femme_Tahitienne_II.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Papeete",
-    "creation_lat": -17.5516,
-    "creation_lon": -149.5585,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Paul Gauguin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "national-museum-of-serbia",
+    "city": "Belgrade",
     "country": "Serbia",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%20Femme%20Tahitienne%20II.jpg?width=500",
+    "qid": "Q71176874",
+    "wikidata": "https://www.wikidata.org/wiki/Q71176874",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q71176874",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Tahitian girl",
-      "qid": "Q71176874",
-      "url": "https://www.wikidata.org/wiki/Q71176874"
+      "source": "Wikipedia list",
+      "title": "Femme Tahitienne II"
      }
     ],
+    "museum_id": "national-museum-of-serbia",
     "location_src": "National Museum of Serbia",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "medium": "W. 577 S. 397",
+    "creation_place": "Papeete",
+    "creation_lat": -17.5516,
+    "creation_lon": -149.5585
    }
   },
   {
@@ -13746,43 +13755,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9775,
-     40.7617
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "The Moon and the Earth",
-    "year": "1893",
-    "location": "Museum of Modern Art",
-    "city": "New York",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20-%20Hina%20Tefatou%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q11687700",
-    "wikidata": "https://www.wikidata.org/wiki/Q11687700",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q11687700",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Hina tefatou"
-     }
-    ],
-    "museum_id": "museum-of-modern-art",
-    "location_src": "Museum of Modern Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      4.8811,
      52.3583
     ]
@@ -14268,43 +14240,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -73.9775,
-     40.7617
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "The Seed of the Areoi",
-    "year": "1892",
-    "location": "Museum of Modern Art",
-    "city": "New York",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20-%20Te%20aa%20no%20areois%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q19883440",
-    "wikidata": "https://www.wikidata.org/wiki/Q19883440",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19883440",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Te aa no areois"
-     }
-    ],
-    "museum_id": "museum-of-modern-art",
-    "location_src": "Museum of Modern Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -73.95889,
      40.78306
     ]
@@ -14663,81 +14598,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -72.67309,
-     41.76371
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "Nirvana: Portrait of Meyer de Haan",
-    "year": "1889",
-    "location": "Wadsworth Atheneum",
-    "city": "Hartford",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20092.jpg?width=500",
-    "qid": "Q67183670",
-    "wikidata": "https://www.wikidata.org/wiki/Q67183670",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q67183670",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Nirvana, Portrait of Jacob Meyer de Haan"
-     }
-    ],
-    "museum_id": "wadsworth-atheneum",
-    "location_src": "Wadsworth Atheneum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.11436,
-     42.37409
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "Barbarian Poems",
-    "year": "1896",
-    "location": "Fogg Museum",
-    "city": "Cambridge",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20096.jpg?width=500",
-    "qid": "Q67091087",
-    "wikidata": "https://www.wikidata.org/wiki/Q67091087",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q67091087",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Barbaric Poems"
-     }
-    ],
-    "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      12.57194,
      55.6725
     ]
@@ -14842,43 +14702,6 @@
     },
     "museum_id": "tokyo-fuji-art-museum",
     "location_src": "Tokyo Fuji Art Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     20.45965,
-     44.81677
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "Tahitian girl",
-    "year": "1898",
-    "location": "National Museum of Serbia",
-    "city": "Belgrade",
-    "country": "Serbia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%20Femme%20Tahitienne%20II.jpg?width=500",
-    "qid": "Q71176874",
-    "wikidata": "https://www.wikidata.org/wiki/Q71176874",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q71176874",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Femme Tahitienne II"
-     }
-    ],
-    "museum_id": "national-museum-of-serbia",
-    "location_src": "National Museum of Serbia",
     "kind": "museum",
     "form": "painting"
    }
@@ -16647,53 +16470,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "Forest Interior (Sous-Bois)",
-    "year": "1884",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul%20Gauguin%20-%20Sous-Bois.jpg?width=500",
-    "qid": "Q46731825",
-    "wikidata": "https://www.wikidata.org/wiki/Q46731825",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q46731825",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Forest Interior"
-     }
-    ],
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      14.4325,
      50.10111
     ]
@@ -17154,43 +16930,6 @@
     "kind": "museum",
     "form": "painting",
     "city_src": "16th arrondissement of Paris"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -76.6195,
-     39.326
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "The Player Schneklud",
-    "year": "1894",
-    "location": "Baltimore Museum of Art",
-    "city": "Baltimore",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%20-%20Der%20Violoncellist%20Upaupa%20Schneklud%201894.jpg?width=500",
-    "qid": "Q28016569",
-    "wikidata": "https://www.wikidata.org/wiki/Q28016569",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q28016569",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Upaupa Schneklud"
-     }
-    ],
-    "museum_id": "baltimore-museum-of-art",
-    "location_src": "Baltimore Museum of Art",
-    "kind": "museum",
-    "form": "painting"
    }
   },
   {
@@ -17758,38 +17497,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     12.57194,
-     55.6725
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "Still Life with Onion and Japanese Woodcut",
-    "year": "1889",
-    "location": "Ny Carlsberg Glyptotek",
-    "city": "Copenhagen",
-    "country": "Denmark",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Still%20Life%20with%20Onion%20and%20Japanese%20Woodcut%20by%20Paul%20Gauguin%2C%201889%20-%20Ny%20Carlsberg%20Glyptotek%20-%20Copenhagen%20-%20DSC09468.JPG?width=500",
-    "qid": "Q76424034",
-    "wikidata": "https://www.wikidata.org/wiki/Q76424034",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q76424034",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "museum_id": "ny-carlsberg-glyptotek",
-    "location_src": "Ny Carlsberg Glyptotek",
-    "kind": "museum",
-    "form": "painting",
-    "city_src": "Copenhagen Municipality"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -3.74654,
      47.85515
     ]
@@ -17884,37 +17591,6 @@
     },
     "museum_id": "worcester-art-museum",
     "location_src": "Worcester Art Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     140.45653,
-     37.76792
-    ]
-   },
-   "properties": {
-    "painter": "Paul Gauguin",
-    "title": "Enfance de Bretagne",
-    "year": "1889",
-    "location": "Fukushima Prefectural Museum of Art",
-    "city": "Fukushima",
-    "country": "Japan",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gauguin%201889%20Enfance%20de%20Bretagne.jpg?width=500",
-    "qid": "Q95627405",
-    "wikidata": "https://www.wikidata.org/wiki/Q95627405",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q95627405",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "museum_id": "fukushima-prefectural-museum-of-art",
-    "location_src": "Fukushima Prefectural Museum of Art",
     "kind": "museum",
     "form": "painting"
    }

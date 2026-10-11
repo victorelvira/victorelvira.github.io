@@ -4718,54 +4718,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Édouard Manet",
-    "title": "Study for Le Déjeuner sur l'herbe",
-    "year": "1865",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%89douard%20Manet%20-%20Study%20for%20Le%20D%C3%A9jeuner%20sur%20l%27herbe.jpg?width=500",
-    "qid": "Q88311936",
-    "wikidata": "https://www.wikidata.org/wiki/Q88311936",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q88311936",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Paris",
-    "creation_lat": 48.8567,
-    "creation_lon": 2.3522,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Le déjeuner sur l'herbe",
-      "ref": "https://en.wikipedia.org/wiki/Le_d%C3%A9jeuner_sur_l%27herbe"
-     }
-    ],
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      2.31453,
      48.86604
     ]

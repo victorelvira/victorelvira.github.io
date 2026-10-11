@@ -6947,54 +6947,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -0.11771,
-     51.51157
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "The Trinity with Saint Mary Magdalene and Saint John the Baptist, the Archangel Raphael and Tobias",
-    "year": "1487",
-    "location": "Courtauld Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%20Trinity.jpg?width=500",
-    "qid": "Q118632366",
-    "wikidata": "https://www.wikidata.org/wiki/Q118632366",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q118632366",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Holy Trinity",
-      "ref": "https://en.wikipedia.org/wiki/Holy_Trinity_(Botticelli)"
-     }
-    ],
-    "museum_id": "courtauld-gallery",
-    "location_src": "Courtauld Gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      9.17833,
      47.64583
     ]
@@ -7481,47 +7433,6 @@
     },
     "museum_id": "palazzo-pretorio-museum",
     "location_src": "Palazzo Pretorio Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.3358,
-     48.8611
-    ]
-   },
-   "properties": {
-    "painter": "Botticelli",
-    "title": "Madonna and Child with the Young St. John the Baptist",
-    "year": "1500",
-    "location": "Louvre",
-    "city": "Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli%2004%20Louvre.jpg?width=500",
-    "qid": "Q9500247",
-    "wikidata": "https://www.wikidata.org/wiki/Q9500247",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q9500247",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Florence",
-    "creation_lat": 43.771389,
-    "creation_lon": 11.254167,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "louvre",
-    "location_src": "Louvre",
     "kind": "museum",
     "form": "painting"
    }

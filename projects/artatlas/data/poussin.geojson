@@ -164,35 +164,42 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Triumph of a poet or Triumph of Ovid",
-    "year": "1624–1625 c.",
+    "title": "Le triomphe d'Ovide",
+    "year": "1624",
+    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "city": "Rome",
     "country": "Italy",
-    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "attribution": "generally accepted",
-    "dimensions": "148 x 176 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Triomphe_d%27Ovide_-_Poussin_-_Palazzo_Corsini.jpg/500px-Triomphe_d%27Ovide_-_Poussin_-_Palazzo_Corsini.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Triomphe%20d%27Ovide%20-%20Poussin%20-%20Palazzo%20Corsini.jpg?width=500",
+    "qid": "Q114029163",
+    "wikidata": "https://www.wikidata.org/wiki/Q114029163",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q114029163",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Le triomphe d'Ovide",
-      "qid": "Q114029163",
-      "url": "https://www.wikidata.org/wiki/Q114029163"
+      "source": "Wikipedia list",
+      "title": "Triumph of a poet or Triumph of Ovid"
      }
     ],
+    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
     "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
     "venue_of": "Galleria Nazionale d'Arte Antica",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "148 x 176 cm"
    }
   },
   {
@@ -3724,34 +3731,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Hymen disguised as a woman at a sacrifice to Priapus or Dance in honour of Priapus",
-    "year": "1634–1638 c.",
-    "city": "São Paulo",
+    "title": "Hymenaios disguised",
+    "year": "1634",
     "location": "São Paulo Museum of Art",
-    "attribution": "generally accepted",
-    "dimensions": "167 x 376 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Poussin_-_hymenaeus01.jpg/500px-Poussin_-_hymenaeus01.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "sao-paulo-museum-of-art",
+    "city": "São Paulo",
     "country": "Brazil",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20-%20hymenaeus01.jpg?width=500",
+    "qid": "Q49876338",
+    "wikidata": "https://www.wikidata.org/wiki/Q49876338",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q49876338",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Hymenaios disguised",
-      "qid": "Q49876338",
-      "url": "https://www.wikidata.org/wiki/Q49876338"
+      "source": "Wikipedia list",
+      "title": "Hymen disguised as a woman at a sacrifice to Priapus or Dance in honour of Priapus"
      }
     ],
-    "location_src": "Museum of Art",
+    "museum_id": "sao-paulo-museum-of-art",
+    "location_src": "São Paulo Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "167 x 376 cm"
    }
   },
   {
@@ -4193,38 +4207,36 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Seven Sacraments I : The Eucharist (6)",
-    "year": "1636-1640 c.",
+    "title": "Eucharist",
+    "year": "1638",
+    "location": "National Gallery",
     "city": "London",
     "country": "United Kingdom",
-    "location": "National Gallery",
     "attribution": "generally accepted",
-    "dimensions": "95,5 x 121 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Seven_Sacraments_-_Eucharist_I_%281637-1640%29_Nicholas_Poussin.jpg/500px-Seven_Sacraments_-_Eucharist_I_%281637-1640%29_Nicholas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Seven_Sacraments_(Poussin)",
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Eucharist%20I%20%281637-1640%29%20Nicholas%20Poussin.jpg?width=500",
+    "qid": "Q26713336",
+    "wikidata": "https://www.wikidata.org/wiki/Q26713336",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26713336",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "national-gallery",
-    "wikidata": "https://www.wikidata.org/wiki/Q7457394",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Eucharist",
-      "qid": "Q26713336",
-      "url": "https://www.wikidata.org/wiki/Q26713336"
-     }
-    ],
     "location_src": "National Gallery",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q7457394",
-    "qid_rejected_as": "painting series"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Seven_Sacraments_(Poussin)",
+    "dimensions": "95,5 x 121 cm"
    }
   },
   {
@@ -5207,34 +5219,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Seven Sacraments II : Confirmation (2)",
+    "title": "The Sacrament of Confirmation",
     "year": "1645",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
-    "dimensions": "117 x 178 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Seven_Sacraments_-_Confirmation_II_%281645%29_Nicolas_Poussin.jpg/500px-Seven_Sacraments_-_Confirmation_II_%281645%29_Nicolas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Confirmation%20II%20%281645%29%20Nicolas%20Poussin.jpg?width=500",
+    "qid": "Q27971314",
+    "wikidata": "https://www.wikidata.org/wiki/Q27971314",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27971314",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "scottish-national-gallery",
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Sacrament of Confirmation",
-      "qid": "Q27971314",
-      "url": "https://www.wikidata.org/wiki/Q27971314"
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Confirmation (2)"
      }
     ],
-    "location_src": "National Gallery of Scotland",
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "117 x 178 cm"
    }
   },
   {
@@ -5248,34 +5267,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Seven Sacraments II : Baptism (3)",
+    "title": "The Sacrament of Baptism",
     "year": "1646",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
-    "dimensions": "117 x 178 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Seven_Sacraments_-_Baptism_%28II%29_1646_Nicolas_Poussin.jpg/500px-Seven_Sacraments_-_Baptism_%28II%29_1646_Nicolas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Baptism%20%28II%29%201646%20Nicolas%20Poussin.jpg?width=500",
+    "qid": "Q27971313",
+    "wikidata": "https://www.wikidata.org/wiki/Q27971313",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27971313",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "scottish-national-gallery",
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Sacrament of Baptism",
-      "qid": "Q27971313",
-      "url": "https://www.wikidata.org/wiki/Q27971313"
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Baptism (3)"
      }
     ],
-    "location_src": "National Gallery of Scotland",
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "117 x 178 cm"
    }
   },
   {
@@ -5289,34 +5315,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Seven Sacraments II : Confession (4)",
+    "title": "The Sacrament of Penance",
     "year": "1647",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
-    "dimensions": "117 x 178 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nicolas_Poussin_077.jpg/500px-Nicolas_Poussin_077.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20077.jpg?width=500",
+    "qid": "Q27971318",
+    "wikidata": "https://www.wikidata.org/wiki/Q27971318",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27971318",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "scottish-national-gallery",
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Sacrament of Penance",
-      "qid": "Q27971318",
-      "url": "https://www.wikidata.org/wiki/Q27971318"
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Confession (4)"
      }
     ],
-    "location_src": "National Gallery of Scotland",
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "117 x 178 cm"
    }
   },
   {
@@ -5330,34 +5363,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Seven Sacraments II : Ordination or Commissioning (5)",
+    "title": "The Sacrament of Ordination",
     "year": "1647",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
-    "dimensions": "117 x 178 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Seven_Sacraments_-_Ordination_II_%281647%29_Nicolas_Poussin.jpg/500px-Seven_Sacraments_-_Ordination_II_%281647%29_Nicolas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Ordination%20II%20%281647%29%20Nicolas%20Poussin.jpg?width=500",
+    "qid": "Q27971321",
+    "wikidata": "https://www.wikidata.org/wiki/Q27971321",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27971321",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "scottish-national-gallery",
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Sacrament of Ordination",
-      "qid": "Q27971321",
-      "url": "https://www.wikidata.org/wiki/Q27971321"
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Ordination or Commissioning (5)"
      }
     ],
-    "location_src": "National Gallery of Scotland",
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "117 x 178 cm"
    }
   },
   {
@@ -5371,34 +5411,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Seven Sacraments II : Eucharist (6)",
+    "title": "The Sacrament of the Holy Eucharist",
     "year": "1647",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
-    "dimensions": "117 x 178 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Seven_Sacraments_-_Holy_Eucharist_II_%281647%29_-_Poussin_-_NGofScotland.jpg/500px-Seven_Sacraments_-_Holy_Eucharist_II_%281647%29_-_Poussin_-_NGofScotland.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Holy%20Eucharist%20II%20%281647%29%20-%20Poussin%20-%20NGofScotland.jpg?width=500",
+    "qid": "Q27968275",
+    "wikidata": "https://www.wikidata.org/wiki/Q27968275",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27968275",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "scottish-national-gallery",
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Sacrament of the Holy Eucharist",
-      "qid": "Q27968275",
-      "url": "https://www.wikidata.org/wiki/Q27968275"
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Eucharist (6)"
      }
     ],
-    "location_src": "National Gallery of Scotland",
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "117 x 178 cm"
    }
   },
   {
@@ -5412,34 +5459,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Seven Sacraments II : Marriage (7)",
-    "year": "1647–1648",
+    "title": "The Sacrament of Marriage",
+    "year": "1647",
+    "location": "Scottish National Gallery",
     "city": "City of Edinburgh",
     "country": "United Kingdom",
-    "location": "Scottish National Gallery",
     "attribution": "generally accepted",
-    "dimensions": "117 x 178 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Seven_Sacraments_-_Marriage_II_%281647-1648%29_Nicolas_Poussin.jpg/500px-Seven_Sacraments_-_Marriage_II_%281647-1648%29_Nicolas_Poussin.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Marriage%20II%20%281647-1648%29%20Nicolas%20Poussin.jpg?width=500",
+    "qid": "Q27971316",
+    "wikidata": "https://www.wikidata.org/wiki/Q27971316",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q27971316",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "scottish-national-gallery",
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "The Sacrament of Marriage",
-      "qid": "Q27971316",
-      "url": "https://www.wikidata.org/wiki/Q27971316"
+      "source": "Wikipedia list",
+      "title": "The Seven Sacraments II : Marriage (7)"
      }
     ],
-    "location_src": "National Gallery of Scotland",
+    "museum_id": "scottish-national-gallery",
+    "location_src": "National Galleries of Scotland",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "117 x 178 cm"
    }
   },
   {
@@ -6949,34 +7003,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "Sainte Famille",
+    "title": "Holy Family with the Infant Saint John the Baptist",
     "year": "1655",
-    "city": "Sarasota",
     "location": "John and Mable Ringling Museum of Art",
-    "attribution": "generally accepted",
-    "dimensions": "198 x 128 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Sainte_Famille_-_Poussin_-_J%26MRinglingMuseumofArt.jpg/500px-Sainte_Famille_-_Poussin_-_J%26MRinglingMuseumofArt.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "john-and-mable-ringling-museum-of-art",
+    "city": "Sarasota",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sainte%20Famille%20-%20Poussin%20-%20J%26MRinglingMuseumofArt.jpg?width=500",
+    "qid": "Q79403765",
+    "wikidata": "https://www.wikidata.org/wiki/Q79403765",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q79403765",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Holy Family with the Infant Saint John the Baptist",
-      "qid": "Q79403765",
-      "url": "https://www.wikidata.org/wiki/Q79403765"
+      "source": "Wikipedia list",
+      "title": "Sainte Famille"
      }
     ],
+    "museum_id": "john-and-mable-ringling-museum-of-art",
     "location_src": "John and Mable Ringling Museum of Art",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "198 x 128 cm"
    }
   },
   {
@@ -7129,34 +7190,41 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Rest on the Flight into Egypt",
-    "year": "1655–1657",
+    "title": "Holy Family in Egypt",
+    "year": "1656",
+    "location": "Hermitage Museum",
     "city": "Saint Petersburg",
     "country": "Russia",
-    "location": "Hermitage Museum",
     "attribution": "generally accepted",
-    "dimensions": "105 × 145 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Nicolas_Poussin_076.jpg/500px-Nicolas_Poussin_076.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20076.jpg?width=500",
+    "qid": "Q61743781",
+    "wikidata": "https://www.wikidata.org/wiki/Q61743781",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q61743781",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "hermitage-museum",
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Holy Family in Egypt",
-      "qid": "Q61743781",
-      "url": "https://www.wikidata.org/wiki/Q61743781"
+      "source": "Wikipedia list",
+      "title": "The Rest on the Flight into Egypt"
      }
     ],
-    "location_src": "Hermitage",
+    "museum_id": "hermitage-museum",
+    "location_src": "Hermitage Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "105 × 145 cm"
    }
   },
   {
@@ -7588,38 +7656,36 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Four Seasons : Spring or Adam and Eve or The earthly paradise",
-    "year": "1660–1664",
+    "title": "Spring",
+    "year": "1662",
+    "location": "Louvre",
     "city": "Paris",
     "country": "France",
-    "location": "Louvre",
     "attribution": "generally accepted",
-    "dimensions": "116 x 160 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Nicolas_Poussin_-_Le_Printemps.jpg/500px-Nicolas_Poussin_-_Le_Printemps.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Four_Seasons_(Poussin)",
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Le%20Printemps.jpg?width=500",
+    "qid": "Q26251915",
+    "wikidata": "https://www.wikidata.org/wiki/Q26251915",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26251915",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "louvre",
-    "wikidata": "https://www.wikidata.org/wiki/Q7735033",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Spring",
-      "qid": "Q26251915",
-      "url": "https://www.wikidata.org/wiki/Q26251915"
-     }
-    ],
     "location_src": "Louvre",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q7735033",
-    "qid_rejected_as": "tetralogy, painting series"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Four_Seasons_(Poussin)",
+    "dimensions": "116 x 160 cm"
    }
   },
   {
@@ -7670,38 +7736,36 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Four Seasons : Autumn or The grapes of the promised land or The Grapes of Canaan",
-    "year": "1660–1664",
+    "title": "Autumn",
+    "year": "1662",
+    "location": "Louvre",
     "city": "Paris",
     "country": "France",
-    "location": "Louvre",
     "attribution": "generally accepted",
-    "dimensions": "116 x 160 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Four-seasons-autumn.jpg/500px-Four-seasons-autumn.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Four_Seasons_(Poussin)",
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Four-seasons-autumn.jpg?width=500",
+    "qid": "Q26251901",
+    "wikidata": "https://www.wikidata.org/wiki/Q26251901",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q26251901",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "louvre",
-    "wikidata": "https://www.wikidata.org/wiki/Q7735033",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Autumn",
-      "qid": "Q26251901",
-      "url": "https://www.wikidata.org/wiki/Q26251901"
-     }
-    ],
     "location_src": "Louvre",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q7735033",
-    "qid_rejected_as": "tetralogy, painting series"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Four_Seasons_(Poussin)",
+    "dimensions": "116 x 160 cm"
    }
   },
   {
@@ -7715,38 +7779,36 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Four Seasons : Winter or The Flood",
-    "year": "1660–1664",
+    "title": "Winter",
+    "year": "1662",
+    "location": "Louvre",
     "city": "Paris",
     "country": "France",
-    "location": "Louvre",
     "attribution": "generally accepted",
-    "dimensions": "116 x 160 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Poussin%2C_Nicolas_-_L%27Hiver_ou_Le_D%C3%A9luge_-_1660-1664.jpg/500px-Poussin%2C_Nicolas_-_L%27Hiver_ou_Le_D%C3%A9luge_-_1660-1664.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Four_Seasons_(Poussin)",
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%2C%20Nicolas%20-%20L%27Hiver%20ou%20Le%20D%C3%A9luge%20-%201660-1664.jpg?width=500",
+    "qid": "Q25445132",
+    "wikidata": "https://www.wikidata.org/wiki/Q25445132",
     "_source": {
-     "source": "Wikipedia: List of paintings by Nicolas Poussin",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q25445132",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Rome",
+    "creation_lat": 41.893333,
+    "creation_lon": 12.482778,
+    "_overrides": {
+     "creation": {
+      "at": "2026-09-25",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
     },
     "museum_id": "louvre",
-    "wikidata": "https://www.wikidata.org/wiki/Q7735033",
-    "_merged": [
-     {
-      "source": "Wikidata",
-      "title": "Winter",
-      "qid": "Q25445132",
-      "url": "https://www.wikidata.org/wiki/Q25445132"
-     }
-    ],
     "location_src": "Louvre",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q7735033",
-    "qid_rejected_as": "tetralogy, painting series"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/The_Four_Seasons_(Poussin)",
+    "dimensions": "116 x 160 cm"
    }
   },
   {
@@ -8088,53 +8150,6 @@
      {
       "source": "Wikipedia list",
       "title": "Saint Paul's ascension to heaven"
-     }
-    ],
-    "museum_id": "john-and-mable-ringling-museum-of-art",
-    "location_src": "John and Mable Ringling Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -82.5598,
-     27.38147
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Holy Family with the Infant Saint John the Baptist",
-    "year": "1655",
-    "location": "John and Mable Ringling Museum of Art",
-    "city": "Sarasota",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Sainte%20Famille%20-%20Poussin%20-%20J%26MRinglingMuseumofArt.jpg?width=500",
-    "qid": "Q79403765",
-    "wikidata": "https://www.wikidata.org/wiki/Q79403765",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q79403765",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Sainte Famille"
      }
     ],
     "museum_id": "john-and-mable-ringling-museum-of-art",
@@ -8645,54 +8660,6 @@
     },
     "museum_id": "musee-fesch",
     "location_src": "Musée Fesch",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.46659,
-     41.89333
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Le triomphe d'Ovide",
-    "year": "1624",
-    "location": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
-    "city": "Rome",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Triomphe%20d%27Ovide%20-%20Poussin%20-%20Palazzo%20Corsini.jpg?width=500",
-    "qid": "Q114029163",
-    "wikidata": "https://www.wikidata.org/wiki/Q114029163",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q114029163",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Triumph of a poet or Triumph of Ovid"
-     }
-    ],
-    "museum_id": "galleria-nazionale-d-arte-antica-di-palazzo-corsini",
-    "location_src": "Galleria Nazionale d'Arte Antica di Palazzo Corsini",
-    "venue_of": "Galleria Nazionale d'Arte Antica",
     "kind": "museum",
     "form": "painting"
    }
@@ -10248,53 +10215,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -46.65583,
-     -23.56111
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Hymenaios disguised",
-    "year": "1634",
-    "location": "São Paulo Museum of Art",
-    "city": "São Paulo",
-    "country": "Brazil",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%20-%20hymenaeus01.jpg?width=500",
-    "qid": "Q49876338",
-    "wikidata": "https://www.wikidata.org/wiki/Q49876338",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q49876338",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Hymen disguised as a woman at a sacrifice to Priapus or Dance in honour of Priapus"
-     }
-    ],
-    "museum_id": "sao-paulo-museum-of-art",
-    "location_src": "São Paulo Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      30.31361,
      59.94056
     ]
@@ -11190,53 +11110,6 @@
    },
    "properties": {
     "painter": "Nicolas Poussin",
-    "title": "The Sacrament of the Holy Eucharist",
-    "year": "1647",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Holy%20Eucharist%20II%20%281647%29%20-%20Poussin%20-%20NGofScotland.jpg?width=500",
-    "qid": "Q27968275",
-    "wikidata": "https://www.wikidata.org/wiki/Q27968275",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27968275",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Seven Sacraments II : Eucharist (6)"
-     }
-    ],
-    "museum_id": "scottish-national-gallery",
-    "location_src": "National Galleries of Scotland",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.19569,
-     55.9509
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
     "title": "Moses Striking the Rock",
     "year": "1633",
     "location": "Scottish National Gallery",
@@ -11265,241 +11138,6 @@
      {
       "source": "Wikipedia list",
       "title": "Moses making water pour from the rock or The striking of the rock"
-     }
-    ],
-    "museum_id": "scottish-national-gallery",
-    "location_src": "National Galleries of Scotland",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.19569,
-     55.9509
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Sacrament of Baptism",
-    "year": "1646",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Baptism%20%28II%29%201646%20Nicolas%20Poussin.jpg?width=500",
-    "qid": "Q27971313",
-    "wikidata": "https://www.wikidata.org/wiki/Q27971313",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27971313",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Seven Sacraments II : Baptism (3)"
-     }
-    ],
-    "museum_id": "scottish-national-gallery",
-    "location_src": "National Galleries of Scotland",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.19569,
-     55.9509
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Sacrament of Confirmation",
-    "year": "1645",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Confirmation%20II%20%281645%29%20Nicolas%20Poussin.jpg?width=500",
-    "qid": "Q27971314",
-    "wikidata": "https://www.wikidata.org/wiki/Q27971314",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27971314",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Seven Sacraments II : Confirmation (2)"
-     }
-    ],
-    "museum_id": "scottish-national-gallery",
-    "location_src": "National Galleries of Scotland",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.19569,
-     55.9509
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Sacrament of Marriage",
-    "year": "1647",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Marriage%20II%20%281647-1648%29%20Nicolas%20Poussin.jpg?width=500",
-    "qid": "Q27971316",
-    "wikidata": "https://www.wikidata.org/wiki/Q27971316",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27971316",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Seven Sacraments II : Marriage (7)"
-     }
-    ],
-    "museum_id": "scottish-national-gallery",
-    "location_src": "National Galleries of Scotland",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.19569,
-     55.9509
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Sacrament of Penance",
-    "year": "1647",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20077.jpg?width=500",
-    "qid": "Q27971318",
-    "wikidata": "https://www.wikidata.org/wiki/Q27971318",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27971318",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Seven Sacraments II : Confession (4)"
-     }
-    ],
-    "museum_id": "scottish-national-gallery",
-    "location_src": "National Galleries of Scotland",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -3.19569,
-     55.9509
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Sacrament of Ordination",
-    "year": "1647",
-    "location": "Scottish National Gallery",
-    "city": "City of Edinburgh",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Ordination%20II%20%281647%29%20Nicolas%20Poussin.jpg?width=500",
-    "qid": "Q27971321",
-    "wikidata": "https://www.wikidata.org/wiki/Q27971321",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q27971321",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Seven Sacraments II : Ordination or Commissioning (5)"
      }
     ],
     "museum_id": "scottish-national-gallery",
@@ -11937,53 +11575,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     30.31361,
-     59.94056
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Holy Family in Egypt",
-    "year": "1656",
-    "location": "Hermitage Museum",
-    "city": "Saint Petersburg",
-    "country": "Russia",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20076.jpg?width=500",
-    "qid": "Q61743781",
-    "wikidata": "https://www.wikidata.org/wiki/Q61743781",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q61743781",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "The Rest on the Flight into Egypt"
-     }
-    ],
-    "museum_id": "hermitage-museum",
-    "location_src": "Hermitage Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      8.54806,
      47.37028
     ]
@@ -12016,54 +11607,6 @@
     },
     "museum_id": "kunsthaus-zurich",
     "location_src": "Kunsthaus Zürich",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.11436,
-     42.37409
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "The Holy Family with the Infant Saint John the Baptist and Saint Elizabeth",
-    "year": "1650",
-    "location": "Fogg Museum",
-    "city": "Cambridge",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Sainte%20Famille%20%28aux%20neuf%20figures%29.jpg?width=500",
-    "qid": "Q70781004",
-    "wikidata": "https://www.wikidata.org/wiki/Q70781004",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q70781004",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Holy Family"
-     }
-    ],
-    "museum_id": "fogg-museum",
-    "location_src": "Fogg Museum",
-    "venue_of": "Harvard Art Museums",
     "kind": "museum",
     "form": "painting"
    }
@@ -12228,170 +11771,6 @@
     },
     "museum_id": "louvre",
     "location_src": "Louvre",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.3358,
-     48.8611
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Winter",
-    "year": "1662",
-    "location": "Louvre",
-    "city": "Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Poussin%2C%20Nicolas%20-%20L%27Hiver%20ou%20Le%20D%C3%A9luge%20-%201660-1664.jpg?width=500",
-    "qid": "Q25445132",
-    "wikidata": "https://www.wikidata.org/wiki/Q25445132",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q25445132",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "louvre",
-    "location_src": "Louvre",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.3358,
-     48.8611
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Autumn",
-    "year": "1662",
-    "location": "Louvre",
-    "city": "Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Four-seasons-autumn.jpg?width=500",
-    "qid": "Q26251901",
-    "wikidata": "https://www.wikidata.org/wiki/Q26251901",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26251901",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "louvre",
-    "location_src": "Louvre",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.3358,
-     48.8611
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Spring",
-    "year": "1662",
-    "location": "Louvre",
-    "city": "Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Nicolas%20Poussin%20-%20Le%20Printemps.jpg?width=500",
-    "qid": "Q26251915",
-    "wikidata": "https://www.wikidata.org/wiki/Q26251915",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26251915",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "louvre",
-    "location_src": "Louvre",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.1283,
-     51.5089
-    ]
-   },
-   "properties": {
-    "painter": "Nicolas Poussin",
-    "title": "Eucharist",
-    "year": "1638",
-    "location": "National Gallery",
-    "city": "London",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Seven%20Sacraments%20-%20Eucharist%20I%20%281637-1640%29%20Nicholas%20Poussin.jpg?width=500",
-    "qid": "Q26713336",
-    "wikidata": "https://www.wikidata.org/wiki/Q26713336",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q26713336",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Rome",
-    "creation_lat": 41.893333,
-    "creation_lon": 12.482778,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "national-gallery",
-    "location_src": "National Gallery",
     "kind": "museum",
     "form": "painting"
    }

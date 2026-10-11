@@ -4431,36 +4431,42 @@
    },
    "properties": {
     "painter": "Rembrandt",
-    "title": "Portrait of a Woman",
+    "title": "Portrait of a Woman Wearing a Gold Chain",
     "year": "1634",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "medium": "Oil on panel",
-    "dimensions": "69.5 × 53 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Rembrandt_Portrait_of_a_Woman.jpg/500px-Rembrandt_Portrait_of_a_Woman.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.3676,
-    "creation_lon": 4.9041,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Portrait%20of%20a%20Woman.jpg?width=500",
+    "qid": "Q20557788",
+    "wikidata": "https://www.wikidata.org/wiki/Q20557788",
     "_source": {
-     "source": "Wikipedia: List of paintings by Rembrandt",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20557788",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-fine-arts-boston",
-    "wga_url": "https://www.wga.hu/html/r/rembrand/21portra/16portra.html",
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Portrait of a Woman Wearing a Gold Chain",
-      "qid": "Q20557788",
-      "url": "https://www.wikidata.org/wiki/Q20557788"
+      "source": "Wikipedia list",
+      "title": "Portrait of a Woman"
      }
     ],
-    "location_src": "Museum of Fine Arts",
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "69.5 × 53 cm",
+    "medium": "Oil on panel"
    }
   },
   {
@@ -4474,35 +4480,42 @@
    },
    "properties": {
     "painter": "Rembrandt",
-    "title": "Portrait of a 41-year-old Man, possibly Pieter Sijen",
+    "title": "Portrait of a Bearded Man in a Wide-Brimmed Hat, probably Pieter Seijen (1592-1652)",
     "year": "1633",
-    "city": "Pasadena",
     "location": "Norton Simon Museum",
-    "attribution": "generally accepted",
-    "medium": "Oil on panel",
-    "dimensions": "69.3 × 54.8 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Rembrandt%2C_Portrait_of_a_Bearded_Man_in_a_Wide-Brimmed_Hat_%28probably_Pieter_Seijen%29%2C_1633%2C_Norton_Simon_Museum%2C_Pasadena.jpg/500px-Rembrandt%2C_Portrait_of_a_Bearded_Man_in_a_Wide-Brimmed_Hat_%28probably_Pieter_Seijen%29%2C_1633%2C_Norton_Simon_Museum%2C_Pasadena.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.3676,
-    "creation_lon": 4.9041,
-    "_source": {
-     "source": "Wikipedia: List of paintings by Rembrandt",
-     "coord": "MediaWiki coordinates API"
-    },
-    "museum_id": "norton-simon-museum",
+    "city": "Pasadena",
     "country": "United States",
+    "attribution": "generally accepted",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%2C%20Portrait%20of%20a%20Bearded%20Man%20in%20a%20Wide-Brimmed%20Hat%20%28probably%20Pieter%20Seijen%29%2C%201633%2C%20Norton%20Simon%20Museum%2C%20Pasadena.jpg?width=500",
+    "qid": "Q21467975",
+    "wikidata": "https://www.wikidata.org/wiki/Q21467975",
+    "_source": {
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q21467975",
+     "note": "harvested: painting by this creator with an image and a documented collection"
+    },
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Portrait of a Bearded Man in a Wide-Brimmed Hat, probably Pieter Seijen (1592-1652)",
-      "qid": "Q21467975",
-      "url": "https://www.wikidata.org/wiki/Q21467975"
+      "source": "Wikipedia list",
+      "title": "Portrait of a 41-year-old Man, possibly Pieter Sijen"
      }
     ],
+    "museum_id": "norton-simon-museum",
     "location_src": "Norton Simon Museum",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "69.3 × 54.8 cm",
+    "medium": "Oil on panel"
    }
   },
   {
@@ -4559,35 +4572,42 @@
    },
    "properties": {
     "painter": "Rembrandt",
-    "title": "Portrait of Reverend Johannes Elison",
+    "title": "Reverend Johannes Elison",
     "year": "1634",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "173 × 123 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Rembrandt_21044.jpg/500px-Rembrandt_21044.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.3676,
-    "creation_lon": 4.9041,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%2021044.jpg?width=500",
+    "qid": "Q20557629",
+    "wikidata": "https://www.wikidata.org/wiki/Q20557629",
     "_source": {
-     "source": "Wikipedia: List of paintings by Rembrandt",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20557629",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-fine-arts-boston",
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Reverend Johannes Elison",
-      "qid": "Q20557629",
-      "url": "https://www.wikidata.org/wiki/Q20557629"
+      "source": "Wikipedia list",
+      "title": "Portrait of Reverend Johannes Elison"
      }
     ],
-    "location_src": "Museum of Fine Arts",
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "173 × 123 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -4601,35 +4621,42 @@
    },
    "properties": {
     "painter": "Rembrandt",
-    "title": "Portrait of Maria Bockenolle",
+    "title": "Portrait of Maria Bockenolle (Wife of Johannes Elison)",
     "year": "1634",
+    "location": "Museum of Fine Arts Boston",
     "city": "Boston",
     "country": "United States",
-    "location": "Museum of Fine Arts Boston",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "174.5 × 123 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Rembrandt%2C_Portrait_of_Maria_Bockenolle%2C_1634%2C_Museum_of_Fine_Arts%2C_Boston.jpg/500px-Rembrandt%2C_Portrait_of_Maria_Bockenolle%2C_1634%2C_Museum_of_Fine_Arts%2C_Boston.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.3676,
-    "creation_lon": 4.9041,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%2C%20Portrait%20of%20Maria%20Bockenolle%2C%201634%2C%20Museum%20of%20Fine%20Arts%2C%20Boston.jpg?width=500",
+    "qid": "Q20557706",
+    "wikidata": "https://www.wikidata.org/wiki/Q20557706",
     "_source": {
-     "source": "Wikipedia: List of paintings by Rembrandt",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q20557706",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museum-of-fine-arts-boston",
+    "creation_place": "Amsterdam",
+    "creation_lat": 52.372778,
+    "creation_lon": 4.893611,
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-24",
+      "source": "derived",
+      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
+     }
+    },
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Portrait of Maria Bockenolle (Wife of Johannes Elison)",
-      "qid": "Q20557706",
-      "url": "https://www.wikidata.org/wiki/Q20557706"
+      "source": "Wikipedia list",
+      "title": "Portrait of Maria Bockenolle"
      }
     ],
-    "location_src": "Museum of Fine Arts",
+    "museum_id": "museum-of-fine-arts-boston",
+    "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
-    "form": "painting"
+    "form": "painting",
+    "dimensions": "174.5 × 123 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -14621,53 +14648,6 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     -118.15916,
-     34.14623
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Portrait of a Bearded Man in a Wide-Brimmed Hat, probably Pieter Seijen (1592-1652)",
-    "year": "1633",
-    "location": "Norton Simon Museum",
-    "city": "Pasadena",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%2C%20Portrait%20of%20a%20Bearded%20Man%20in%20a%20Wide-Brimmed%20Hat%20%28probably%20Pieter%20Seijen%29%2C%201633%2C%20Norton%20Simon%20Museum%2C%20Pasadena.jpg?width=500",
-    "qid": "Q21467975",
-    "wikidata": "https://www.wikidata.org/wiki/Q21467975",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21467975",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of a 41-year-old Man, possibly Pieter Sijen"
-     }
-    ],
-    "museum_id": "norton-simon-museum",
-    "location_src": "Norton Simon Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
      -0.29808,
      51.45209
     ]
@@ -15168,53 +15148,6 @@
     },
     "museum_id": "national-gallery-of-canada",
     "location_src": "National Gallery of Canada",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -118.15916,
-     34.14623
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Self-portrait wearing a beret",
-    "year": "1640",
-    "location": "Norton Simon Museum",
-    "city": "Pasadena",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20self%20portrait%201636-38.jpg?width=500",
-    "qid": "Q21481383",
-    "wikidata": "https://www.wikidata.org/wiki/Q21481383",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21481383",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Self-portrait"
-     }
-    ],
-    "museum_id": "norton-simon-museum",
-    "location_src": "Norton Simon Museum",
     "kind": "museum",
     "form": "painting"
    }
@@ -16139,53 +16072,6 @@
       "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
      }
     },
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Reverend Johannes Elison",
-    "year": "1634",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%2021044.jpg?width=500",
-    "qid": "Q20557629",
-    "wikidata": "https://www.wikidata.org/wiki/Q20557629",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20557629",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Reverend Johannes Elison"
-     }
-    ],
     "museum_id": "museum-of-fine-arts-boston",
     "location_src": "Museum of Fine Arts Boston",
     "kind": "museum",
@@ -17541,147 +17427,6 @@
     "museum_id": "church-of-st-vincent-2",
     "location_src": "Church of St Vincent",
     "kind": "church",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Portrait of Maria Bockenolle (Wife of Johannes Elison)",
-    "year": "1634",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%2C%20Portrait%20of%20Maria%20Bockenolle%2C%201634%2C%20Museum%20of%20Fine%20Arts%2C%20Boston.jpg?width=500",
-    "qid": "Q20557706",
-    "wikidata": "https://www.wikidata.org/wiki/Q20557706",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20557706",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of Maria Bockenolle"
-     }
-    ],
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Portrait of a Woman Wearing a Gold Chain",
-    "year": "1634",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Portrait%20of%20a%20Woman.jpg?width=500",
-    "qid": "Q20557788",
-    "wikidata": "https://www.wikidata.org/wiki/Q20557788",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20557788",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of a Woman"
-     }
-    ],
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -71.09417,
-     42.33944
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Portrait of a Man Wearing a Black Hat",
-    "year": "1634",
-    "location": "Museum of Fine Arts Boston",
-    "city": "Boston",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Portrait%20of%20a%20Man%20in%20a%20Broad-brimmed%20Hat.jpg?width=500",
-    "qid": "Q20557864",
-    "wikidata": "https://www.wikidata.org/wiki/Q20557864",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q20557864",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-24",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Portrait of a Man in a Broad-brimmed Hat"
-     }
-    ],
-    "museum_id": "museum-of-fine-arts-boston",
-    "location_src": "Museum of Fine Arts Boston",
-    "kind": "museum",
     "form": "painting"
    }
   },
@@ -24837,366 +24582,6 @@
     },
     "museum_id": "amsterdam-museum",
     "location_src": "Amsterdam Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     16.3616,
-     48.20388
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Portrait of a Man Seated",
-    "year": "1632",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Harmensz.%20van%20Rijn%20161.jpg?width=500",
-    "qid": "Q21468826",
-    "wikidata": "https://www.wikidata.org/wiki/Q21468826",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21468826",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "kunsthistorisches-museum",
-    "location_src": "Kunsthistorisches Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     16.3616,
-     48.20388
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Portrait of a Woman holding Gloves",
-    "year": "1632",
-    "location": "Kunsthistorisches Museum",
-    "city": "Vienna",
-    "country": "Austria",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Harmensz.%20van%20Rijn%20162.jpg?width=500",
-    "qid": "Q21468829",
-    "wikidata": "https://www.wikidata.org/wiki/Q21468829",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21468829",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "kunsthistorisches-museum",
-    "location_src": "Kunsthistorisches Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     6.0956,
-     50.7735
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Portrait of a man, possibly Harder Rijcksen (after1600-1637)",
-    "year": "1632",
-    "location": "Suermondt-Ludwig-Museum",
-    "city": "Aachen",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Portrait%20of%20a%20Young%20Man.jpg?width=500",
-    "qid": "Q21509305",
-    "wikidata": "https://www.wikidata.org/wiki/Q21509305",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21509305",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "suermondt-ludwig-museum",
-    "location_src": "Suermondt-Ludwig-Museum",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -94.58096,
-     39.04497
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Youth with a Black Cap",
-    "year": "1666",
-    "location": "The Nelson-Atkins Museum of Art",
-    "city": "Kansas City",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Harmensz.%20van%20Rijn%20-%20Young%20Man%20in%20a%20Black%20Beret%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q21520403",
-    "wikidata": "https://www.wikidata.org/wiki/Q21520403",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q21520403",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "the-nelson-atkins-museum-of-art",
-    "location_src": "The Nelson-Atkins Museum of Art",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     2.3358,
-     48.8611
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Self-portrait with architectural elements in the background",
-    "year": "1639",
-    "location": "Louvre",
-    "city": "Paris",
-    "country": "France",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%2C%20autoritratto%20col%20tocco%20su%20sfondo%20architettonico%2C%201639%2002.jpg?width=500",
-    "qid": "Q18226124",
-    "wikidata": "https://www.wikidata.org/wiki/Q18226124",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18226124",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "louvre",
-    "location_src": "Louvre",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -4.28861,
-     55.87194
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "The Entombment of Christ",
-    "year": "1635",
-    "location": "Hunterian Museum and Art Gallery",
-    "city": "Glasgow City",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Harmensz.%20van%20Rijn%20054.jpg?width=500",
-    "qid": "Q18433275",
-    "wikidata": "https://www.wikidata.org/wiki/Q18433275",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18433275",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "location_src": "Glasgow",
-    "museum_id": "hunterian-museum-and-art-gallery",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     13.36472,
-     52.50861
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Minerva",
-    "year": "1631",
-    "location": "Gemäldegalerie Berlin",
-    "city": "Berlin",
-    "country": "Germany",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20-%20Minerva%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q18688698",
-    "wikidata": "https://www.wikidata.org/wiki/Q18688698",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q18688698",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "museum_id": "gemaldegalerie-berlin",
-    "location_src": "Gemäldegalerie Berlin",
-    "kind": "museum",
-    "form": "painting",
-    "city_src": "Bezirk Mitte"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -0.15302,
-     51.51745
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Self-Portrait in a Black Cap",
-    "year": "1637",
-    "location": "Wallace Collection",
-    "city": "City of Westminster",
-    "country": "United Kingdom",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20Self-portrait%20%28Wallace%29.jpg?width=500",
-    "qid": "Q19844638",
-    "wikidata": "https://www.wikidata.org/wiki/Q19844638",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19844638",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "wallace-collection",
-    "location_src": "Wallace Collection",
-    "kind": "museum",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     -73.9631,
-     40.7794
-    ]
-   },
-   "properties": {
-    "painter": "Rembrandt",
-    "title": "Hendrickje Stoffels (1626–1663)",
-    "year": "1650",
-    "location": "Metropolitan Museum of Art",
-    "city": "New York",
-    "country": "United States",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20van%20Rijn%2C%20Portrait%20of%20Hendrickje%20Stoffels%20%281650s%29.jpg?width=500",
-    "qid": "Q19911539",
-    "wikidata": "https://www.wikidata.org/wiki/Q19911539",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19911539",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "creation_place": "Amsterdam",
-    "creation_lat": 52.372778,
-    "creation_lon": 4.893611,
-    "_overrides": {
-     "creation": {
-      "at": "2026-09-25",
-      "source": "derived",
-      "note": "creation place inferred from the painter's itinerary at this work's date (approximate)"
-     }
-    },
-    "museum_id": "metropolitan-museum-of-art",
-    "location_src": "Metropolitan Museum of Art",
     "kind": "museum",
     "form": "painting"
    }

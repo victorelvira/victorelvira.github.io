@@ -604,25 +604,38 @@
    },
    "properties": {
     "painter": "Annibale Carracci",
-    "title": "Madonna and Child Enthroned with Saints",
+    "title": "Madonna and Child with Saints John the Baptist, John the Evangelist, and St. Catherine",
+    "year": "1593",
     "city": "Bologna",
     "country": "Italy",
     "location": "Pinacoteca Nazionale di Bologna",
     "kind": "museum",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
+    "medium": "Oil on canvas",
+    "dimensions": "289.5 × 192.5 cm",
     "genre": "religious art",
-    "wikidata": "https://www.wikidata.org/wiki/Q131690503",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Pala%20di%20san%20Giorgio.jpg?width=420",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_and_Child_with_Saints_(Annibale_Carracci,_1593)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Madonna_col_Bambino_in_trono_e_i_santi_Giovannino,_Giovanni_Evangelista_e_Caterina_d%27Alessandria",
+    "wikidata": "https://www.wikidata.org/wiki/Q19966583",
+    "creation_place": "Bologna",
+    "creation_lat": 44.4949,
+    "creation_lon": 11.3426,
     "_source": {
      "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q131690503",
+     "url": "https://www.wikidata.org/wiki/Q19966583",
      "retrieved_at": "2026-08-23"
     },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
     "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q131690503",
+    "qid": "Q19966583",
     "location_src": "Pinacoteca Nazionale di Bologna",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale_Carracci_Pala_di_san_Giorgio.jpg",
-    "_image_src": "commons category Category:Madonna and Child Enthroned with Saints by Annibale Carracci (Pinacoteca Nazionale, Bologna)",
     "form": "painting"
    }
   },
@@ -757,24 +770,39 @@
    },
    "properties": {
     "painter": "Annibale Carracci",
-    "title": "Saint Margaret of Antioch",
+    "title": "Saint Margaret",
+    "year": "1599",
     "city": "Rome",
     "country": "Italy",
     "location": "Santa Caterina dei Funari",
     "kind": "church",
-    "attribution": "attributed",
+    "attribution": "generally accepted",
     "status": "present",
-    "wikidata": "https://www.wikidata.org/wiki/Q133281016",
+    "medium": "Oil on canvas",
+    "dimensions": "239 × 134 cm",
+    "genre": "religious art",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20-%20St%20Margaret%20-%20WGA04422.jpg?width=420",
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Margaret_of_Antioch_(Carracci)",
+    "wikipedia_it": "https://it.wikipedia.org/wiki/Santa_Margherita_(Annibale_Carracci)",
+    "wikidata": "https://www.wikidata.org/wiki/Q17652120",
+    "creation_place": "Rome",
+    "creation_lat": 41.9028,
+    "creation_lon": 12.4964,
     "_source": {
      "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q133281016",
+     "url": "https://www.wikidata.org/wiki/Q17652120",
      "retrieved_at": "2026-08-23"
     },
+    "_overrides": {
+     "creation": {
+      "at": "2026-08-23",
+      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
+     }
+    },
     "museum_id": "santa-caterina-dei-funari",
-    "qid": "Q133281016",
+    "qid": "Q17652120",
+    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/margaret.html",
     "location_src": "Santa Caterina dei Funari",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale_Carracci_-_St_Margaret_-_WGA04422.jpg",
-    "_image_src": "commons category Category:Saint Margaret of Antioch by Annibale Carracci (Santa Caterina dei Funari, Rome)",
     "form": "painting"
    }
   },
@@ -1260,53 +1288,6 @@
     "qid": "Q17651293",
     "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/dead_chr.html",
     "location_src": "National Gallery",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     12.47856,
-     41.89393
-    ]
-   },
-   "properties": {
-    "painter": "Annibale Carracci",
-    "title": "Saint Margaret",
-    "year": "1599",
-    "city": "Rome",
-    "country": "Italy",
-    "location": "Santa Caterina dei Funari",
-    "kind": "church",
-    "attribution": "generally accepted",
-    "status": "present",
-    "medium": "Oil on canvas",
-    "dimensions": "239 × 134 cm",
-    "genre": "religious art",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20-%20St%20Margaret%20-%20WGA04422.jpg?width=420",
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Saint_Margaret_of_Antioch_(Carracci)",
-    "wikipedia_it": "https://it.wikipedia.org/wiki/Santa_Margherita_(Annibale_Carracci)",
-    "wikidata": "https://www.wikidata.org/wiki/Q17652120",
-    "creation_place": "Rome",
-    "creation_lat": 41.9028,
-    "creation_lon": 12.4964,
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q17652120",
-     "retrieved_at": "2026-08-23"
-    },
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-23",
-      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
-     }
-    },
-    "museum_id": "santa-caterina-dei-funari",
-    "qid": "Q17652120",
-    "wga_url": "https://www.wga.hu/html/c/carracci/annibale/1/margaret.html",
-    "location_src": "Santa Caterina dei Funari",
     "form": "painting"
    }
   },
@@ -2111,52 +2092,6 @@
     "museum_id": "pinacoteca-nazionale-di-bologna",
     "qid": "Q19966565",
     "wga_url": "https://www.wga.hu/html/c/carracci/annibale/2/mocking.html",
-    "location_src": "Pinacoteca Nazionale di Bologna",
-    "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     11.35354,
-     44.49771
-    ]
-   },
-   "properties": {
-    "painter": "Annibale Carracci",
-    "title": "Madonna and Child with Saints John the Baptist, John the Evangelist, and St. Catherine",
-    "year": "1593",
-    "city": "Bologna",
-    "country": "Italy",
-    "location": "Pinacoteca Nazionale di Bologna",
-    "kind": "museum",
-    "attribution": "generally accepted",
-    "status": "present",
-    "medium": "Oil on canvas",
-    "dimensions": "289.5 × 192.5 cm",
-    "genre": "religious art",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20Pala%20di%20san%20Giorgio.jpg?width=420",
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Madonna_and_Child_with_Saints_(Annibale_Carracci,_1593)",
-    "wikipedia_it": "https://it.wikipedia.org/wiki/Madonna_col_Bambino_in_trono_e_i_santi_Giovannino,_Giovanni_Evangelista_e_Caterina_d%27Alessandria",
-    "wikidata": "https://www.wikidata.org/wiki/Q19966583",
-    "creation_place": "Bologna",
-    "creation_lat": 44.4949,
-    "creation_lon": 11.3426,
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q19966583",
-     "retrieved_at": "2026-08-23"
-    },
-    "_overrides": {
-     "creation": {
-      "at": "2026-08-23",
-      "source": "derived from start date + Caravaggio's documented itinerary (approximate)"
-     }
-    },
-    "museum_id": "pinacoteca-nazionale-di-bologna",
-    "qid": "Q19966583",
     "location_src": "Pinacoteca Nazionale di Bologna",
     "form": "painting"
    }
@@ -8109,45 +8044,6 @@
     "location_src": "Louvre",
     "kind": "museum",
     "form": "painting"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     0.11944,
-     52.20028
-    ]
-   },
-   "properties": {
-    "painter": "Annibale Carracci",
-    "title": "St Roch and the Angel",
-    "year": "1550",
-    "location": "Fitzwilliam Museum",
-    "city": "Cambridge",
-    "country": "United Kingdom",
-    "attribution": "copy or later version",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Annibale%20Carracci%20%281560-1609%29%20-%20St%20Roch%20and%20the%20Angel%20-%20134%20-%20Fitzwilliam%20Museum.jpg?width=500",
-    "qid": "Q50811592",
-    "wikidata": "https://www.wikidata.org/wiki/Q50811592",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q50811592",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "museum_id": "fitzwilliam-museum",
-    "location_src": "Fitzwilliam Museum",
-    "kind": "museum",
-    "form": "painting",
-    "_overrides": {
-     "attribution": {
-      "at": "2026-09-25",
-      "source": "tier-2 cleaning",
-      "was": "generally accepted",
-      "note": "dated 1550, before birth (1560–1609) → later copy / not autograph at this date (Timeline anomaly)"
-     }
-    }
    }
   },
   {

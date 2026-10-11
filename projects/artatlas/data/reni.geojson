@@ -334,36 +334,34 @@
    },
    "properties": {
     "painter": "Guido Reni",
-    "title": "Atalanta and Hippomenes",
-    "year": "1620–1625",
+    "title": "Hippomenes and Atalanta",
+    "year": "1620",
+    "location": "Museo di Capodimonte",
     "city": "Naples",
     "country": "Italy",
-    "location": "Museo di Capodimonte",
     "attribution": "generally accepted",
-    "medium": "Oil on canvas",
-    "dimensions": "191 x 264 cm",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Guido_Reni_-_Atalanta_and_Hippomenes_-_Google_Art_Project.jpg/500px-Guido_Reni_-_Atalanta_and_Hippomenes_-_Google_Art_Project.jpg?utm_source=en.wikipedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail",
-    "notable": true,
-    "wikipedia_en": "https://en.wikipedia.org/wiki/Atalanta_and_Hippomenes",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20Atalanta%20and%20Hippomenes%20-%20Google%20Art%20Project.jpg?width=500",
+    "qid": "Q117832067",
+    "wikidata": "https://www.wikidata.org/wiki/Q117832067",
     "_source": {
-     "source": "Wikipedia: List of works by Guido Reni",
-     "coord": "MediaWiki coordinates API"
+     "source": "Wikidata",
+     "url": "https://www.wikidata.org/wiki/Q117832067",
+     "note": "harvested: painting by this creator with an image and a documented collection"
     },
-    "museum_id": "museo-di-capodimonte",
-    "wikidata": "https://www.wikidata.org/wiki/Q3627852",
     "_merged": [
      {
-      "source": "Wikidata",
-      "title": "Hippomenes and Atalanta",
-      "qid": "Q117832067",
-      "url": "https://www.wikidata.org/wiki/Q117832067"
+      "source": "Wikipedia list",
+      "title": "Atalanta and Hippomenes",
+      "ref": "https://en.wikipedia.org/wiki/Atalanta_and_Hippomenes"
      }
     ],
+    "museum_id": "museo-di-capodimonte",
     "location_src": "Museo di Capodimonte",
     "kind": "museum",
     "form": "painting",
-    "qid_rejected": "Q3627852",
-    "qid_rejected_as": "painting series"
+    "wikipedia_en": "https://en.wikipedia.org/wiki/Atalanta_and_Hippomenes",
+    "dimensions": "191 x 264 cm",
+    "medium": "Oil on canvas"
    }
   },
   {
@@ -3858,44 +3856,6 @@
     "kind": "museum",
     "form": "painting",
     "city_src": "Royal Borough of Kensington and Chelsea"
-   }
-  },
-  {
-   "type": "Feature",
-   "geometry": {
-    "type": "Point",
-    "coordinates": [
-     14.25053,
-     40.86701
-    ]
-   },
-   "properties": {
-    "painter": "Guido Reni",
-    "title": "Hippomenes and Atalanta",
-    "year": "1620",
-    "location": "Museo di Capodimonte",
-    "city": "Naples",
-    "country": "Italy",
-    "attribution": "generally accepted",
-    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Guido%20Reni%20-%20Atalanta%20and%20Hippomenes%20-%20Google%20Art%20Project.jpg?width=500",
-    "qid": "Q117832067",
-    "wikidata": "https://www.wikidata.org/wiki/Q117832067",
-    "_source": {
-     "source": "Wikidata",
-     "url": "https://www.wikidata.org/wiki/Q117832067",
-     "note": "harvested: painting by this creator with an image and a documented collection"
-    },
-    "_merged": [
-     {
-      "source": "Wikipedia list",
-      "title": "Atalanta and Hippomenes",
-      "ref": "https://en.wikipedia.org/wiki/Atalanta_and_Hippomenes"
-     }
-    ],
-    "museum_id": "museo-di-capodimonte",
-    "location_src": "Museo di Capodimonte",
-    "kind": "museum",
-    "form": "painting"
    }
   },
   {
