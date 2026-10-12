@@ -127,7 +127,7 @@
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mt-1" id="pp-grid-main">
         <!-- Atlas Electoral (DESACTIVADO de momento; descomenta para reactivar) -->
         <!--
-        <div class="col" data-lang="es" data-theme="politics" data-type="ongoing">
+        <div class="col" data-flang="es" data-theme="politics" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/atlas_electoral/og/og.jpg');"></div>
                 <div class="card-body">
@@ -146,7 +146,7 @@
 
 
         <!-- Interactive Atlas of Painting -->
-        <div class="col" data-lang="es en fr it" data-theme="culture" data-type="ongoing">
+        <div class="col" data-flang="es en fr it" data-theme="culture" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#181410; background-image:url('/projects/artatlas/og.jpg');"></div>
                 <div class="card-body">
@@ -163,7 +163,7 @@
         </div>
 
         <!-- Culture Atlas -->
-        <div class="col" data-lang="en" data-theme="culture" data-type="ongoing">
+        <div class="col" data-flang="en" data-theme="culture" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/culture/og.jpg');"></div>
                 <div class="card-body">
@@ -180,7 +180,7 @@
         </div>
 
         <!-- Classical Music Atlas -->
-        <div class="col" data-lang="en" data-theme="music" data-type="ongoing">
+        <div class="col" data-flang="en" data-theme="music" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/musicatlas/og.jpg');"></div>
                 <div class="card-body">
@@ -197,7 +197,7 @@
         </div>
 
         <!-- Sports Atlas -->
-        <div class="col" data-lang="en" data-theme="sports" data-type="ongoing">
+        <div class="col" data-flang="en" data-theme="sports" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/sportsatlas/og.jpg');"></div>
                 <div class="card-body">
@@ -214,7 +214,7 @@
         </div>
 
         <!-- Batalla de Flores -->
-        <div class="col" data-lang="es" data-theme="culture cantabria" data-type="event">
+        <div class="col" data-flang="es" data-theme="culture cantabria" data-type="event">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#221716; background-image:url('https://batalladedatos.es/batalla_de_flores/og.jpg');"></div>
                 <div class="card-body">
@@ -231,7 +231,7 @@
         </div>
 
         <!-- New Year's Concert -->
-        <div class="col" data-lang="en" data-theme="music" data-type="event">
+        <div class="col" data-flang="en" data-theme="music" data-type="event">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#101626; background-image:url('/projects/nyc/og.jpg');"></div>
                 <div class="card-body">
@@ -248,7 +248,7 @@
         </div>
 
         <!-- Journées du Patrimoine (Paris) -->
-        <div class="col" data-lang="es fr" data-theme="culture" data-type="event">
+        <div class="col" data-flang="es fr" data-theme="culture" data-type="event">
             <div class="card project-card">
                 <div class="project-thumb og" style="background-color:#1a1f2b; background-image:url('/projects/paris_jep/og.png');"></div>
                 <div class="card-body">
@@ -271,7 +271,7 @@
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="pp-grid-exp">
 
         <!-- Planes de Cantabria -->
-        <div class="col" data-lang="es" data-theme="cantabria" data-type="ongoing">
+        <div class="col" data-flang="es" data-theme="cantabria" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb" style="background:#18BC9C;">
                     <i class="fa-solid fa-calendar-days"></i>
@@ -290,7 +290,7 @@
         </div>
 
         <!-- Frontones -->
-        <div class="col" data-lang="es" data-theme="sports cantabria" data-type="ongoing">
+        <div class="col" data-flang="es" data-theme="sports cantabria" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb" style="background:#3498DB;">
                     <i class="fa-solid fa-table-tennis-paddle-ball"></i>
@@ -308,7 +308,7 @@
         </div>
 
         <!-- Laredo frente al clima -->
-        <div class="col" data-lang="es" data-theme="climate cantabria" data-type="ongoing">
+        <div class="col" data-flang="es" data-theme="climate cantabria" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb" style="background:#E67E22;">
                     <i class="fa-solid fa-temperature-half"></i>
@@ -327,7 +327,7 @@
         </div>
 
         <!-- Gentilicios de España -->
-        <div class="col" data-lang="es" data-theme="language" data-type="ongoing">
+        <div class="col" data-flang="es" data-theme="language" data-type="ongoing">
             <div class="card project-card">
                 <div class="project-thumb" style="background:#B5562B;">
                     <i class="fa-solid fa-map-location-dot"></i>
@@ -453,7 +453,7 @@
   var cards = Array.prototype.slice.call(document.querySelectorAll("#pp-grid-main > .col, #pp-grid-exp > .col"));
   var selected = { lang: "all", theme: "all", type: "all" };
 
-  function tokens(card, group) { return (card.getAttribute("data-" + group) || "").split(/\s+/).filter(Boolean); }
+  function tokens(card, group) { var a = (group === "lang") ? "flang" : group; return (card.getAttribute("data-" + a) || "").split(/\s+/).filter(Boolean); }
 
   function presentValues(group) {
     var set = {};
