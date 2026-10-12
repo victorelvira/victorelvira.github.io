@@ -1,3 +1,23 @@
+// Version and build stamp (CONVENTIONS.md section 3). Bump DATA_V and the ?v= tags in nyc.html together.
+const DATA_V = "0.3.4";
+
+// "is the 86th edition", or, for 1939, why it has no number.
+function editionText(year, verb) {
+  if (year === 1939) return "The concert of 31 December 1939 came before the numbered series: the Vienna Philharmonic counts 1 January 1941 as its 1st New Year's Concert. ";
+  return "The New Year's Concert " + year + " " + verb + " the " + getOrdinal(year - 1940) + " edition of the event. ";
+}
+const BUILD_AT = "2026-10-12 22:20";
+document.addEventListener("DOMContentLoaded", () => {
+  const b = document.getElementById("build");
+  if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`;
+  const brand = document.querySelector(".brand");
+  if (brand) brand.addEventListener("click", e => {
+    e.preventDefault();
+    history.replaceState(null, "", location.pathname);
+    location.reload();
+  });
+});
+
         // TBD Some global data (to be moved?)
 
 const TYPE_INFO = { // TBD check descriptions and links
@@ -13,7 +33,7 @@ const TYPE_INFO = { // TBD check descriptions and links
   },
   "March": {
     label: "musical form",
-    desc: "A match Processional piece with strong rhythmic drive.",
+    desc: "A processional piece with a strong rhythmic drive.",
     wiki: "https://en.wikipedia.org/wiki/March_(music)"
   },
   "Galop": {
@@ -44,6 +64,85 @@ const TYPE_INFO = { // TBD check descriptions and links
 };  
         
 
+
+
+// "Played in N concerts" counts editions; a piece played twice in one concert (Radetzky 2001,
+// Blue Danube 1967) is one concert and two performances. Both numbers are said when they differ.
+function piecePlayedText(name, pid) {
+  const hits = concerts.filter(c => c.program.piece_id.includes(pid));
+  const per = c => c.program.piece_id.filter(x => x === pid).length;
+  const performances = hits.reduce((n, c) => n + per(c), 0);
+  const y = c => '<a style="color:blue">' + c.year + '</a>';
+  let t = 'The piece <em style="color:blue">' + name + '</em> was played ';
+  if (hits.length === 1) t += 'in <strong>only one concert</strong>: ' + y(hits[0]);
+  else if (hits.length === 2) t += 'in <strong>two concerts</strong>: ' + y(hits[0]) + ' and ' + y(hits[1]);
+  else t += 'in <strong>' + hits.length + ' concerts</strong>: ' + hits.slice(0, -1).map(y).join(', ') + ' and ' + y(hits[hits.length - 1]);
+  t += '.';
+  if (performances > hits.length) {
+    const twice = hits.filter(c => per(c) > 1).map(c => c.year);
+    t += ' Counting repeats within a concert, it was performed <strong>' + performances +
+         ' times</strong> (more than once in ' + twice.join(', ') + ').';
+  }
+  return t;
+}
+
+
+// A joint work ("Johann Strauß II., Josef Strauß") belongs to each of its authors.
+function composerNames(text) {
+  return String(text).split(/,\s*(?=[A-ZÉ])/).map(x => x.trim()).filter(Boolean);
+}
+// One span per author: the first keeps the class the click loops index by, the others are "composer_extra".
+function composerSpans(text, cls) {
+  return composerNames(text).map((n, i) => '<span class="' + (i === 0 ? cls : "composer_extra") + '">' + n + "</span>").join(", ");
+}
+// Concerts where at least one piece is by this person (alone or with others).
+function concertsByComposerName(name) {
+  return concerts.filter(c => c.program.piece_id.some(pid => {
+    const item = getPieceByIdFromCatalogue(pid)[0];
+    return item && composerNames(item.composer).includes(name);
+  }));
+}
+function concertsByType(type) {
+  return concerts.filter(c => c.program.piece_id.some(pid => {
+    const item = getPieceByIdFromCatalogue(pid)[0];
+    return item && item.type === type;
+  }));
+}
+function lightYears(list, colour) {
+  list.forEach(c => { if (c.year != selected_year) $("label[for='" + c.year + "']").css("background-color", colour); });
+}
+function yearsSentence(list, colour) {
+  const y = c => '<a style="color:' + colour + '">' + c.year + '</a>';
+  if (list.length === 1) return 'in only <strong>one concert</strong>: ' + y(list[0]) + '.';
+  if (list.length === 2) return 'in <strong>two concerts</strong>: ' + y(list[0]) + ' and ' + y(list[1]) + '.';
+  return 'in <strong>' + list.length + ' concerts</strong>: ' + list.slice(0, -1).map(y).join(', ') + ' and ' + y(list[list.length - 1]) + '.';
+}
+// Clicking a composer, in the programme or in the encores: their name in red wherever it appears in
+// this concert, the years with any piece of theirs in red, and their biography link.
+function composerClicked(el) {
+  resetColors();
+  const name = el.textContent.trim();
+  document.querySelectorAll("#list_pieces_program .composer_printed, #list_pieces_program .composer_extra, " +
+    "#list_pieces_encores .composer_encore_printed, #list_pieces_encores .composer_extra").forEach(sp => {
+    if (sp.textContent.trim() === name) sp.style.color = "red";
+  });
+  years_of_this_composer = concertsByComposerName(name);
+  lightYears(years_of_this_composer, "red");
+  let text_other = (years_of_this_composer.length === 1 ? 'A piece composed by ' : 'Pieces composed by ') +
+    '<em style="color:red">' + name + '</em> ' + (years_of_this_composer.length === 1 ? 'was' : 'were') +
+    ' played ' + yearsSentence(years_of_this_composer, "red");
+  const person = getIdByComposer(name)[0];
+  if (person && person.links.wiki.en) {
+    text_other += '<br><br> Find the biography of <em style="color:red">' + name + '</em> in this Wikipedia <a href=' + person.links.wiki.en + ' target="_blank">link.</a>';
+  }
+  document.getElementById("info_text").innerHTML = text_other;
+}
+
+// YouTube refuses watch?v= and youtu.be addresses inside an iframe; only /embed/ works.
+function youtubeEmbed(url) {
+  const m = String(url).match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{6,})/);
+  return m ? 'https://www.youtube.com/embed/' + m[1] : url;
+}
 
         // functions to filter in the database
 
@@ -191,6 +290,7 @@ const TYPE_INFO = { // TBD check descriptions and links
                 type.style.color = "black"; // Reset to default black
             }
 
+            for (let extra of document.getElementsByClassName("composer_extra")) extra.style.color = "black";
             let allComposers = document.getElementsByClassName("composer_printed");
             for (let composer of allComposers) {
                 composer.style.color = "black"; // Reset to default black
@@ -291,13 +391,13 @@ const TYPE_INFO = { // TBD check descriptions and links
                                 var piece_i = pieces_year_x[i];
                                 var composer_i = composers_year_x[i];
                                 var type_i = types_year_x[i];
-                                // li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + '<span class="composer_printed">' + composer_i + "</span>" + ")" ; 
+                                // li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + composerSpans(composer_i, "composer_printed") + ")" ; 
             
                                 if(type_i == "Unknown"){
-                                    li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + '<span class="composer_printed">' + composer_i + "</span>" + ")" ; 
+                                    li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + " (" + composerSpans(composer_i, "composer_printed") + ")" ; 
                                 }
                                 else{
-                                    li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + ', <span class="type_printed">' + type_i + "</span>, (" + '<span class="composer_printed">' + composer_i + "</span>" + ")" ; 
+                                    li.innerHTML +=  '<em class="piece_printed">' + piece_i + "</em>" + ', <span class="type_printed">' + type_i + "</span>, (" + composerSpans(composer_i, "composer_printed") + ")" ; 
                                 }
 
                                 list.appendChild(li);
@@ -319,12 +419,12 @@ const TYPE_INFO = { // TBD check descriptions and links
                                 var encore_i = pieces_year_x[i];
                                 var composer_encore_i = composers_year_x[i];
                                 var type_encore_i = types_year_x[i];
-                                // li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + " (" + '<span class="composer_encore_printed">' + composer_encore_i + "</span>" + ")" ; 
+                                // li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + " (" + composerSpans(composer_encore_i, "composer_encore_printed") + ")" ; 
                                 if(type_i == "Unknown"){
-                                    li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + " (" + '<span class="composer_encore_printed">' + composer_encore_i + "</span>" + ")" ; 
+                                    li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + " (" + composerSpans(composer_encore_i, "composer_encore_printed") + ")" ; 
                                 }
                                 else{
-                                    li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + ', <span class="type_encore_printed">' + type_encore_i + "</span>, (" + '<span class="composer_encore_printed">' + composer_encore_i + "</span>" + ")" ; 
+                                    li.innerHTML +=  '<em class="encore_printed">' + encore_i + "</em>" + ', <span class="type_encore_printed">' + type_encore_i + "</span>, (" + composerSpans(composer_encore_i, "composer_encore_printed") + ")" ; 
                                 }
                                 list_encores.appendChild(li);
                             };
@@ -337,16 +437,14 @@ const TYPE_INFO = { // TBD check descriptions and links
                             }
                             // print information
 
-                            if (selected_year === 1939) {
-                                edition = 1;
-                            } else {
-                                edition = selected_year - 1939;
-                            }
+                            // Numbered as the Vienna Philharmonic numbers them: its concert archive calls
+                            // 1 January 1941 the "1st New Year's Concert". 31 December 1939 comes before the series.
+                            edition = selected_year - 1940;
 
                             totalPieces = pieces_year_x.length;
                             total_encores = totalPieces - n_program;
 
-                            const uniqueComposers = [...new Set(composers_year_x)];
+                            const uniqueComposers = [...new Set(composers_year_x.flatMap(composerNames))];
 
                             number_unique_composers = uniqueComposers.length;
                             conductorName = this_year_conductor_name;
@@ -361,13 +459,13 @@ const TYPE_INFO = { // TBD check descriptions and links
 
                             if(selected_year == last_year){
                             text_other = 
-                                "The New Year's Concert " + selected_year + " is the " + getOrdinal(edition) + " edition of the event. " +
+                                editionText(selected_year, "is") +
                                 "It features a total of " + totalPieces + " pieces (including " + n_program + " pieces in the program and " + total_encores + " encores), composed by " + number_unique_composers + " different composers. " +
                                 "The concert is conducted by " + conductorName + ", marking his " + getOrdinal(conductor_total_number_appearances) + " appearance. " ;
                                 }
                             else{
                                 text_other = 
-                                   "The New Year's Concert " + selected_year + " was the " + getOrdinal(edition) + " edition of the event. " +
+                                   editionText(selected_year, "was") +
                                    "It featured a total of " + totalPieces + " pieces (including " + n_program + " pieces in the program and " + total_encores + " encores), composed by " + number_unique_composers + " different composers. " +
                                    "The concert was conducted by " + conductorName + ", marking his " + getOrdinal(position_conductor) + " appearance (out of " + conductor_total_number_appearances + " appearances). " ;           
                                 }
@@ -375,12 +473,25 @@ const TYPE_INFO = { // TBD check descriptions and links
 
                             // Update the right panel
                             document.getElementById("info_text").innerHTML = text_other;
+
+                            // Where this programme comes from
+                            const src = document.getElementById("concert_source");
+                            if (src) {
+                                const url = found_by_year[0].source;
+                                src.innerHTML = url
+                                    ? 'Source: <a href="' + url + '" target="_blank" rel="noopener">official programme, wienerphilharmoniker.at</a>'
+                                    : '';
+                            }
                             
 
 
                             ////////////////////////////////////////
                             //////// LISTENERS BELOW
 
+
+                            // Second and further authors of a joint work: same behaviour as the first
+                            document.querySelectorAll("#list_pieces_program .composer_extra, #list_pieces_encores .composer_extra")
+                                .forEach(sp => sp.addEventListener("click", function () { composerClicked(this); }));
 
                             // Mouse CLICK on conductor
                             document.getElementById("conductor").addEventListener('click', function handleClick() {
@@ -491,20 +602,7 @@ const TYPE_INFO = { // TBD check descriptions and links
                                         }
                                     }
                                     
-                                    if (years_of_this_piece.length == 1){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>only once</strong>: ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                    } else if (years_of_this_piece.length == 2){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>twice</strong>: ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                    }  
-                                    else {
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>' + years_of_this_piece.length + ' times</strong>: '; 
-                                        
-                                        for (let i = 0; i < years_of_this_piece.length-1; i++) {
-                                            let year_ii = years_of_this_piece[i].year;
-                                            text_other += '<a style="color:blue">' + year_ii + '</a>, '
-                                        }
-                                        text_other += ' and ' + '<a style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</a>.';
-                                    } 
+                                    var text_other = piecePlayedText(this.innerHTML, piece_highlighted_id);
 
                                     wiki_link_piece = item_filtered[0].links.wiki.en
                         
@@ -528,7 +626,7 @@ const TYPE_INFO = { // TBD check descriptions and links
                             text_other += `
                                 <br><br> YouTube link below: <br>  
                                 <div class="iframe-container">
-                                    <iframe src="${you_link_piece}" frameborder="0" allowfullscreen></iframe>
+                                    <iframe src="${youtubeEmbed(you_link_piece)}" frameborder="0" allowfullscreen></iframe>
                                 </div>`;
                         }
 
@@ -590,6 +688,9 @@ const TYPE_INFO = { // TBD check descriptions and links
                                     } else {
                                       text_other = "No description available for this type.";
                                     }
+                                    const years_of_this_type = concertsByType(type_highlighted);
+                                    lightYears(years_of_this_type, "orange");
+                                    text_other = '<em style="color:orange">' + type_highlighted + '</em> was played ' + yearsSentence(years_of_this_type, "orange") + '<br><br>' + text_other;
 
                                     document.getElementById("info_text").innerHTML = text_other;
                                 });
@@ -597,83 +698,7 @@ const TYPE_INFO = { // TBD check descriptions and links
                                 
                                  // 3. Mouse CLICK on COMPOSER on PROGRAM
                                 
-                                elementos_composer_printed[j].addEventListener('click', function handleClick() {
-                                    console.log("CLICK COMPOSER!! OF YEAR " + selected_year + " and last year is " + last_year)
-                                    resetColors()
-
-
-                                    gold_box = styleCSS.getPropertyValue('--gold_box');   
-                                    // console.log("Saved variable length" + years_of_this_conductor.length) 
-                                    
-                                    this.style.color = 'red'; // turn red the composer where you are
-                                    
-                                    // turn red the same composer appearing in the program
-                                    let list = document.getElementById("list_pieces_program");    
-                                    var list_elements = list.getElementsByTagName("li");
-                                    
-                                    for (let i = 0; i < n_program; i++) {
-                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_printed"); 
-                                        console.log(compositor_ii)
-                                        if(compositor_ii[0].innerHTML == this.innerHTML){
-                                            compositor_ii[0].style.color = "red";
-                                        }
-                                    };
-
-                                    // turn red the same composer appearing in the encores
-                                    let list_enc = document.getElementById("list_pieces_encores");    
-                                    var list_elements = list_enc.getElementsByTagName("li");
-                                    
-                                    for (let i = 0; i < n_encores; i++) {
-                                        console.log(list_elements[i])
-                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_encore_printed"); 
-                                        console.log(compositor_ii)
-                                        if(compositor_ii[0].innerHTML == this.innerHTML){
-                                            console.log(compositor_ii)
-                                            compositor_ii[0].style.color = "red";
-                                        }
-                                    };
-                                    
-                                    // turn red year boxes in red for years where the composer appeared
-                                    composer_highlighted = this.innerHTML;
-                                    console.log(this.innerHTML)
-                                    composer_highlighted_item = getIdByComposer(composer_highlighted);
-                                    composer_highlighted_id = composer_highlighted_item[0].id;  
-
-                                    years_of_this_composer = getConcertByComposerId(composer_highlighted_id);
-                                    
-                                    for (let i = 0; i < years_of_this_composer.length; i++) { 
-                                        year_ii = years_of_this_composer[i].year;
-                                         if (year_ii != selected_year){
-                                            $("label[for='" + year_ii  + "']").css("background-color", "red");
-                                        }
-                                    }
-                                    
-                                     if (years_of_this_composer.length == 1){
-                                        var text_other = 'A piece composed by <em style="color:red">' + this.innerHTML + '</em> was played in only <strong>one concert</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                    } else if (years_of_this_composer.length == 2){
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in <strong>two concerts</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                    }  
-                                    else {
-                                        var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in <strong>' + years_of_this_composer.length + ' concerts</strong>: ';
-                                        
-                                        for (let i = 0; i < years_of_this_composer.length-1; i++) {
-                                            let year_ii = years_of_this_composer[i].year;
-                                            text_other += '<a style="color:red">' + year_ii + '</a>, '
-                                        }
-                                        text_other += ' and ' + '<a style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</a>.';
-                                    }
-                                    
-                                // found_by_item = getWikiLinkByItem(this.innerHTML);                           
-                                wiki_link_composer = composer_highlighted_item[0].links.wiki.en;
-
-                                if (wiki_link_composer.length>0) // non-empty link
-                                {
-
-                                    text_other += '<br><br> Find the biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikipedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
-                                }
-                                    document.getElementById("info_text").innerHTML = text_other;
-                                });
-
+                                elementos_composer_printed[j].addEventListener('click', function handleClick() { composerClicked(this); });
                                  // 4. Mouse OUT on COMPOSER on PROGRAM
                                 
                                 // elementos_composer_printed[j].addEventListener('mouseout', function handleMouseOut() {
@@ -746,20 +771,7 @@ const TYPE_INFO = { // TBD check descriptions and links
                                     }
                                     
                                     
-                                    if (years_of_this_piece.length == 1){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>only once</strong> ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                    } else if (years_of_this_piece.length == 2){
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>twice</strong>: ' + '<a style="color:blue">' + years_of_this_piece[0].year + '</a>' + ' and ' + '<a style="color:blue">' + years_of_this_piece[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                    }  
-                                    else {
-                                        var text_other = 'The piece <em style="color:blue">' + this.innerHTML + '</em> was played <strong>' + years_of_this_piece.length + ' times</strong>: '; 
-                                        
-                                        for (let i = 0; i < years_of_this_piece.length-1; i++) {
-                                            let year_ii = years_of_this_piece[i].year;
-                                            text_other += '<a style="color:blue">' + year_ii + '</a>, '
-                                        }
-                                        text_other += ' and ' + '<a style="color:blue">' + years_of_this_piece[years_of_this_piece.length-1].year + '</a>.';
-                                    }
+                                    var text_other = piecePlayedText(this.innerHTML, piece_highlighted_id);
 
 
                                     wiki_link_piece = item_filtered[0].links.wiki.en
@@ -783,7 +795,7 @@ const TYPE_INFO = { // TBD check descriptions and links
                             text_other += `
                                                             <br><br> YouTube link below: <br>  
                                                             <div class="iframe-container">
-                                                                <iframe src="${you_link_piece}" frameborder="0" allowfullscreen></iframe>
+                                                                <iframe src="${youtubeEmbed(you_link_piece)}" frameborder="0" allowfullscreen></iframe>
                                                             </div>`;
                         }
 
@@ -852,6 +864,9 @@ const TYPE_INFO = { // TBD check descriptions and links
                                         } else {
                                           text_other = "No description available for this type.";
                                         }
+                                        const years_of_this_type = concertsByType(type_highlighted);
+                                        lightYears(years_of_this_type, "orange");
+                                        text_other = '<em style="color:orange">' + type_highlighted + '</em> was played ' + yearsSentence(years_of_this_type, "orange") + '<br><br>' + text_other;
 
                                         document.getElementById("info_text").innerHTML = text_other;
 
@@ -872,90 +887,7 @@ const TYPE_INFO = { // TBD check descriptions and links
                                 
                                  // 7. Mouse CLICK on COMPOSER on ENCORES
                                 
-                                    elementos_composer_encore_printed[j].addEventListener('click', function handleClick() {
-                                    
-                                    resetColors()
-                                    this.style.color = 'red'; // turn red the composer where you are
-                                    
-                                    // turn red the same composer appearing in the program
-                                    let list = document.getElementById("list_pieces_program");    
-                                    var list_elements = list.getElementsByTagName("li");
-                                    
-                                    for (let i = 0; i < n_program; i++) {
-                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_printed"); 
-                                        console.log(list_elements[i])
-                                        if(compositor_ii[0].innerHTML == this.innerHTML){
-                                            compositor_ii[0].style.color = "red";
-                                        }
-                                    };
-
-                                    // turn red the same composer appearing in the encores
-                                    let list_enc = document.getElementById("list_pieces_encores");    
-                                    var list_elements = list_enc.getElementsByTagName("li");
-                                    
-                                    for (let i = 0; i < n_encores; i++) {
-                                        var compositor_ii = list_elements[i].getElementsByClassName("composer_encore_printed"); 
-                                        if(compositor_ii[0].innerHTML == this.innerHTML){
-                                            compositor_ii[0].style.color = "red";
-                                        }
-                                    };
-                                    
-                                    // turn red year boxes in red for years where the composer appeared
-                                    composer_highlighted = this.innerHTML;
-                                    console.log(this.innerHTML)
-                                    composer_highlighted_item = getIdByComposer(composer_highlighted);
-                                    composer_highlighted_id = composer_highlighted_item[0].id;
-
-                                    years_of_this_composer = getConcertByComposerId(composer_highlighted_id);
-                                    
-                                    for (let i = 0; i < years_of_this_composer.length; i++) { 
-                                        year_ii = years_of_this_composer[i].year;
-                                         if (year_ii != selected_year){
-                                            $("label[for='" + year_ii  + "']").css("background-color", "red");
-                                        }
-                                    }
-
-
-                                    
-                                    
-                                      if (years_of_this_composer.length == 1){
-                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>only once</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                     } else if (years_of_this_composer.length == 2){
-                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played <strong>twice</strong>: ' + '<a style="color:red">' + years_of_this_composer[0].year + '</a>' + ' and ' + '<a style="color:red">' + years_of_this_composer[1].year + '</a>.'; //"The piece X was played in Y, Z, and T."
-                                     }  
-                                     else {
-                                         var text_other = 'Pieces composed by <em style="color:red">' + this.innerHTML + '</em> were played in <strong>' + years_of_this_composer.length + ' concerts</strong>: ';
-                                        
-                                        for (let i = 0; i < years_of_this_composer.length-1; i++) {
-                                            let year_ii = years_of_this_composer[i].year;
-                                            text_other += '<a style="color:red">' + year_ii + '</a>, '
-                                        }
-                                        text_other += ' and ' + '<a style="color:red">' + years_of_this_composer[years_of_this_composer.length-1].year + '</a>.';
-                                    }
-                                    
-
-
-                                wiki_link_composer = composer_highlighted_item[0].links.wiki.en;
-
-
-                       
-    if (wiki_link_composer.length>0) // non-empty link
-    {
-
-        text_other += '<br><br> Find the biography of <em style="color:red">' + this.innerHTML + '</em> in this Wikipedia <a href='+ wiki_link_composer +'  target="_blank" >link.</a>'
-    }
-        
-        
-
-     
-                                    
-                                    
-                                    document.getElementById("info_text").innerHTML = text_other;
-
-                                        
-
-
-                                });
+                                    elementos_composer_encore_printed[j].addEventListener('click', function handleClick() { composerClicked(this); });
                                  // 8. Mouse OUT on COMPOSER on ENCORES
                                 
                                 //  elementos_composer_encore_printed[j].addEventListener('mouseout', function handleMouseOut() {
@@ -1287,3 +1219,110 @@ function renderLineChart(canvasId, labels, datasets) {
   });
 }
 
+
+
+// --- Every screen is a link (CONVENTIONS.md section 2c) ---------------------------------------------
+// #1987                  a concert
+// #1987/piece-298        a piece selected inside that concert
+// #1987/composer-20      a composer, by id
+// #1987/conductor        the conductor of that concert
+// #1987/type-Waltz       a musical form
+// Clicks write the hash (back walks through it); opening or reloading a link replays the clicks.
+
+let applyingHash = false;
+
+function pieceIdOfElement(el) {
+  const hit = getIdByPiece(el.innerHTML);
+  return hit.length ? hit[0].piece_id : null;
+}
+
+function tokenForClick(target) {
+  const year = String(selected_year);
+  if (target.closest('input[name="radio_years"]')) return target.closest('input').id;
+  const piece = target.closest('.piece_printed, .encore_printed');
+  if (piece) { const id = pieceIdOfElement(piece); return id ? year + '/piece-' + id : null; }
+  const comp = target.closest('.composer_printed, .composer_encore_printed, .composer_extra');
+  if (comp) {
+    const person = getIdByComposer(comp.textContent.trim())[0];
+    return person ? year + '/composer-' + person.id : null;
+  }
+  if (target.closest('#conductor')) return year + '/conductor';
+  const type = target.closest('.type_printed, .type_encore_printed');
+  if (type) return year + '/type-' + encodeURIComponent(type.textContent.trim());
+  return null;
+}
+
+document.addEventListener('click', e => {
+  if (applyingHash) return;
+  const token = tokenForClick(e.target);
+  if (token && ('#' + token) !== location.hash) history.pushState(null, '', '#' + token);
+});
+
+// The catalogue table: a piece, a form or a composer opens the concert where it was last played
+// (the one on screen if it is there) and selects it, exactly as a click in the programme would.
+function concertFor(test) {
+  const here = concerts.find(c => c.year === selected_year);
+  if (here && test(here)) return here;
+  const list = concerts.filter(test);
+  return list.length ? list.reduce((a, b) => (b.year > a.year ? b : a)) : null;
+}
+function openFromCatalogue(token) {
+  history.pushState(null, '', '#' + token);
+  applyHash();
+  document.getElementById('concert').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function handlePieceClick(pieceTxt) {
+  const item = getIdByPiece(pieceTxt)[0];
+  if (!item) return;
+  const c = concertFor(x => x.program.piece_id.includes(item.piece_id));
+  if (c) openFromCatalogue(c.year + '/piece-' + item.piece_id);
+}
+function handleTypeClick(type) {
+  const c = concertFor(x => concertsByType(type).includes(x));
+  if (c) openFromCatalogue(c.year + '/type-' + encodeURIComponent(type));
+}
+function handleComposerClick(name) {
+  const person = getIdByComposer(name)[0];
+  if (!person) return;
+  const c = concertFor(x => concertsByComposerName(name).includes(x));
+  if (c) openFromCatalogue(c.year + '/composer-' + person.id);
+}
+
+function applyHash() {
+  const raw = decodeURIComponent(location.hash.replace(/^#/, ''));
+  const [y, sel] = raw.split('/');
+  const year = Number(y);
+  if (!raw || !concerts.some(c => c.year === year)) {
+    if (!raw && selected_year !== last_year) clickOnYear(last_year);
+    return;
+  }
+  applyingHash = true;
+  try {
+    const input = document.getElementById(String(year));
+    if (input) input.checked = true;
+    clickOnYear(year);
+    if (!sel) return;
+    const lists = '#list_pieces_program, #list_pieces_encores';
+    if (sel === 'conductor') {
+      document.getElementById('conductor').click();
+    } else if (sel.startsWith('piece-')) {
+      const id = Number(sel.slice(6));
+      const el = [...document.querySelectorAll('.piece_printed, .encore_printed')].find(e => pieceIdOfElement(e) === id);
+      if (el) el.click();
+    } else if (sel.startsWith('composer-')) {
+      const person = composers.find(c => c.id === Number(sel.slice(9)));
+      const span = person && [...document.querySelectorAll('.composer_printed, .composer_encore_printed, .composer_extra')]
+        .find(sp => sp.textContent.trim() === person.name);
+      if (span) span.click();
+    } else if (sel.startsWith('type-')) {
+      const name = sel.slice(5);
+      const el = [...document.querySelectorAll('.type_printed, .type_encore_printed')].find(e => e.textContent.trim() === name);
+      if (el) el.click();
+    }
+  } finally {
+    applyingHash = false;
+  }
+}
+
+window.addEventListener('popstate', applyHash);
+window.addEventListener('load', applyHash);

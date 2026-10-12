@@ -18,7 +18,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <link rel="stylesheet" href="nyc/styles.css">
+        <link rel="stylesheet" href="nyc/styles.css?v=0.3.4">
         <script>
             var last_year = 2026;
             var selected_year = last_year;
@@ -28,11 +28,11 @@
             var years_of_this_piece = [];
             var years_of_this_composer = []; 
         </script>   
-        <script type="text/javascript" src="./nyc/catalogue.js"></script>
-        <script type="text/javascript" src="./nyc/conductors.js"></script>
-        <script type="text/javascript" src="./nyc/composers.js"></script>
-        <script type="text/javascript" src="./nyc/concerts.js"></script>
-        <script type="text/javascript" src="nyc/functions.js"></script>
+        <script type="text/javascript" src="./nyc/catalogue.js?v=0.3.4"></script>
+        <script type="text/javascript" src="./nyc/conductors.js?v=0.3.4"></script>
+        <script type="text/javascript" src="./nyc/composers.js?v=0.3.4"></script>
+        <script type="text/javascript" src="./nyc/concerts.js?v=0.3.4"></script>
+        <script type="text/javascript" src="nyc/functions.js?v=0.3.4"></script>
         <script>
            var total_pieces_all_concerts =
              concerts.reduce((s, c) => s + c.program.piece_id.length, 0); 
@@ -132,12 +132,12 @@
         </style> -->
 
         <!-- <script type="text/javascript" src="operadatabase/catalogue.js"></script> -->
-        <script type="text/javascript" src=" nyc/catalogue.js"></script>
+        <!-- catalogue.js is already loaded above; a second copy was loaded here until 0.1.0 -->
 
         <script>
           // var myListColumnHeaders = ["opera", "composer", "place", "artists", "year", "label", "type"];
           // var properties_vector = ["name.full", "composer.last", "place.opera_house", "date.year", "label", "type"];
-          var myListColumnHeaders = ["Piece", "Musical Form", "Composer","Times"];
+          var myListColumnHeaders = ["Piece", "Musical Form", "Composer","Concerts"];
           var properties_vector = ["piece", "type", "composer","appearances"];
 
           var n_cols = myListColumnHeaders.length;
@@ -255,6 +255,7 @@
 
             var colType = myListColumnHeaders.indexOf("Type");
             if (colType === -1) colType = myListColumnHeaders.indexOf("type");
+            if (colType === -1) colType = myListColumnHeaders.indexOf("Musical Form");   // the header the table actually uses
 
             var colComposer = myListColumnHeaders.indexOf("Composer");
             if (colComposer === -1) colComposer = myListColumnHeaders.indexOf("composer");
@@ -285,28 +286,21 @@
 
                 // Type and Composer are clickable independently
                 if (colIndex === colType || colIndex === colComposer) {
-                  var span = document.createElement("span");
-                  span.textContent = cellValue;
-                  span.style.cursor = "pointer";
-                  span.style.textDecoration = "underline";
-
-                  // Stop the row click when clicking Type or Composer
-                  span.addEventListener("click", function(e) { e.stopPropagation(); });
-
-                  // Attach the right click handler
-                  (function(colIndexCopy, valueCopy) {
-                    span.addEventListener("click", function() {
-                      if (colIndexCopy === colType) {
-                        // Call your existing "type click" logic
-                        handleTypeClick(valueCopy); // <-- rename to your real function
-                      } else {
-                        // Call your existing "composer click" logic
-                        handleComposerClick(valueCopy); // <-- rename to your real function
-                      }
+                  // Type and each author of the piece are clickable on their own (a joint work has two)
+                  var values = colIndex === colComposer ? composerNames(cellValue) : [cellValue];
+                  values.forEach(function(valueCopy, k) {
+                    if (k > 0) td.appendChild(document.createTextNode(", "));
+                    var span = document.createElement("span");
+                    span.textContent = valueCopy;
+                    span.style.cursor = "pointer";
+                    span.style.textDecoration = "underline";
+                    var isType = colIndex === colType;
+                    span.addEventListener("click", function(e) {
+                      e.stopPropagation();          // not the row's own click
+                      if (isType) handleTypeClick(valueCopy); else handleComposerClick(valueCopy);
                     });
-                  })(colIndex, cellValue);
-
-                  td.appendChild(span);
+                    td.appendChild(span);
+                  });
                 } else {
                   td.textContent = cellValue;
                 }
@@ -472,10 +466,16 @@
 
     </head>  
     <body onload="init_page()">
+        <nav id="navbar">
+          <a class="wordmark" href="https://victorelvira.github.io">Víctor Elvira</a>
+          <span class="nav-sep">·</span>
+          <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+          <span id="build" class="build"></span>
+        </nav>
         <div class="container-fluid">
             <div class="row my-0 my-sm-3">
               <div class="light_gray_panel">
-                <h4 id="title">Interactive database of the New Year's Concert by the Vienna Philharmonic</h4>
+                <h4 id="title"><a class="brand" href="nyc.html">Interactive database of the New Year's Concert by the Vienna Philharmonic</a></h4>
                 <p class="page-subtitle">
                   The site includes a complete interactive database of all concerts from 1939 to today, a full catalogue of all pieces ever performed, and statistical analyses of repertoire, composers, conductors, repetitions, and long-term trends.
                 </p>
@@ -502,15 +502,17 @@
                                     </div>`;
                             }
 
-                            // Add the 1939 year as well
+                            // Add the 1939 year as well: the concert of 31 December 1939, before the series the
+                            // Vienna Philharmonic numbers from 1 January 1941. Shown apart, not removed.
                             i = 1939;
                             allRadioButtons += `
                                 <div class="col">
                                     <input type="radio" id="${i}" name="radio_years" onclick="clickOnYear(${i})">
-                                    <label for="${i}" class="year-box">${i}</label>
+                                    <label for="${i}" class="year-box forerunner" title="31 December 1939, before the numbered series">${i}</label>
                                 </div>`;
 
                             allRadioButtons += '</div>'; // Close the Bootstrap grid
+                            allRadioButtons += '<p class="forerunner-note">1939: the concert of 31 December 1939, before the numbered series that starts in 1941.</p>';
                             document.getElementById("demo").innerHTML = allRadioButtons;
                         </script>
                     </div>
@@ -524,6 +526,7 @@
                     <ol id="list_pieces_program" class="ps-3"></ol>
                     <p id="encore_title"><strong><u>Encores:</u></strong></p>
                     <ol id="list_pieces_encores" class="ps-3"></ol>
+                    <p id="concert_source" class="concert-source"></p>
                 </div>
 
                 <!-- Right Panel -->
@@ -583,6 +586,7 @@
 
         <div class="col-md-12 catalogue-panel">
           <h5>Analysis and context of the New Year’s Concert</h5>
+          <p class="forerunner-note">87 concerts in the data: the 86 numbered New Year’s Concerts (1941 to 2026) and their forerunner of 31 December 1939. All charts include the 1939 concert.</p>
 
           <!-- minimal UI now: selectors later -->
           <div class="row g-2 align-items-center mb-2">
@@ -1278,15 +1282,7 @@
                     </div>
 
 
-                    <script>
-                      // expects `pairs` = [[composer, count], ...] sorted descending
-                      const t = pairs.slice(0, 4);
-
-                      if (t[0]) { document.getElementById('top1_comp').textContent = t[0][0]; document.getElementById('top1c_comp').textContent = t[0][1]; }
-                      if (t[1]) { document.getElementById('top2_comp').textContent = t[1][0]; document.getElementById('top2c_comp').textContent = t[1][1]; }
-                      if (t[2]) { document.getElementById('top3_comp').textContent = t[2][0]; document.getElementById('top3c_comp').textContent = t[2][1]; }
-                      if (t[3]) { document.getElementById('top4_comp').textContent = t[3][0]; document.getElementById('top4c_comp').textContent = t[3][1]; }
-                    </script>
+                    <!-- top1_comp..top4c_comp are filled by setTop() further down; a dead copy that threw "pairs is not defined" was here until 0.1.0 -->
                   </div>
 
                   <!-- 2) Catalogue breadth (each piece counted once) -->
@@ -1617,9 +1613,10 @@
 
                 <div class="plot-desc">
                   Some pieces have become inseparable from the identity of the New Year’s Concert.
-                  The most frequently performed piece is <span id="mostRepeatedPieceName"></span>, which has appeared <span id="mostRepeatedPieceCount"></span> times across <span id="totalConcertsCount"></span> editions.
-                  The second most frequently performed piece is <span id="secondRepeatedPieceName"></span> (<span id="secondRepeatedPieceCount"></span> appearances).
-                  The third piece is <span id="thirdRepeatedPieceName"></span>  (<span id="thirdRepeatedPieceCount"></span> appearances).
+                  The most frequently performed piece is <span id="mostRepeatedPieceName"></span>: <span id="mostRepeatedPieceCount"></span> performances, in <span id="mostRepeatedPieceConcerts"></span> of the <span id="totalConcertsCount"></span> editions.
+                  The second is <span id="secondRepeatedPieceName"></span> (<span id="secondRepeatedPieceCount"></span> performances in <span id="secondRepeatedPieceConcerts"></span> concerts).
+                  The third is <span id="thirdRepeatedPieceName"></span> (<span id="thirdRepeatedPieceCount"></span> performances in <span id="thirdRepeatedPieceConcerts"></span> concerts).
+                  A performance counts every time a piece is played, so a piece repeated within one concert counts twice there.
                   This contrasts with the fact that, out of the entire catalogue (<span id="catalogueCount"></span> pieces), <span id="piecesOnce"></span> have been performed only once (<span id="piecesOncePct"></span>%).<br><br>
                 </div>
 
@@ -1678,9 +1675,15 @@
                     document.getElementById('piecesOncePct').textContent = piecesOncePct.toFixed(1);
                     document.getElementById('piecesOncePct_2').textContent = piecesOncePct.toFixed(1);
 
+                    // piece_id -> number of concerts it was played in (a repeat inside one concert counts once)
+                    const concertsById = {};
+                    concerts.forEach(c => new Set(c.program.piece_id.map(Number)).forEach(id => {
+                      concertsById[id] = (concertsById[id] || 0) + 1;
+                    }));
+
                     // Sort pieces by repetition (desc)
                     const pairsDesc = Object.entries(countsById)
-                      .map(([id, cnt]) => [id2title.get(Number(id)) || ('ID ' + id), cnt])
+                      .map(([id, cnt]) => [id2title.get(Number(id)) || ('ID ' + id), cnt, concertsById[Number(id)]])
                       .sort((a, b) => b[1] - a[1]);
 
                     // Fill top-3 text
@@ -1690,6 +1693,9 @@
                     document.getElementById('secondRepeatedPieceCount').textContent = pairsDesc[1]?.[1] ?? '';
                     document.getElementById('thirdRepeatedPieceName').textContent = pairsDesc[2]?.[0] || '';
                     document.getElementById('thirdRepeatedPieceCount').textContent = pairsDesc[2]?.[1] ?? '';
+                    document.getElementById('mostRepeatedPieceConcerts').textContent = pairsDesc[0]?.[2] ?? '';
+                    document.getElementById('secondRepeatedPieceConcerts').textContent = pairsDesc[1]?.[2] ?? '';
+                    document.getElementById('thirdRepeatedPieceConcerts').textContent = pairsDesc[2]?.[2] ?? '';
 
                     document.getElementById('totalConcertsCount').textContent = concerts.length;
 
@@ -2200,7 +2206,6 @@
 
         <script>
             clickOnYear(last_year); 
-            populateYearDropdown(concerts)
             // clickOnYear(2024);
         </script>
 
@@ -2251,16 +2256,14 @@
     <footer class="bg-dark text-white py-3">
         <div class="text-center">
             <p>&copy; <span id="currentYear"></span> Víctor Elvira. All rights reserved.</p>
-            <p>Last updated: <span id="lastUpdated"></span></p>
+            <p>Data and code: v<span id="lastUpdated"></span></p>
         </div>
         <script>
             // Set the current year dynamically
             document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-            // Get the last modified date of the current file
-            const lastModified = new Date(document.lastModified);
-            document.getElementById("lastUpdated").textContent = 
-                lastModified.toLocaleString('en-GB', { dateStyle: 'full', timeStyle: 'short' });
+            // The build stamp, not document.lastModified: GitHub Pages changes that on every deploy of any project
+            document.getElementById("lastUpdated").textContent = `${DATA_V} · ${BUILD_AT}`;
         </script>
     </footer>
 

@@ -71,6 +71,12 @@ footer {
     margin: 0 auto;
     padding: 0;
 }
+/* The container has no side padding, so its rows must not keep Bootstrap's -12px margins:
+   they pushed the page 5px wider than a phone screen. */
+.container-fluid > .row {
+    margin-left: 0;
+    margin-right: 0;
+}
 
 /* Panels (general style for grouped elements) */
 .light_gray_panel {
@@ -381,3 +387,29 @@ th, td { text-align: left; padding: 8px; }
     font-size: 0.85rem;
   }
 }
+
+/* Identity bar, common to every project (CONVENTIONS.md section 2) */
+#navbar {
+    display: flex; align-items: baseline; gap: 8px;
+    background: #1c1a17; color: #d9d2c5;
+    font-size: 13px; line-height: 1; padding: 7px 12px;
+    margin: 0 -0.4rem; /* body has 0.4rem side padding: let the bar run edge to edge */
+}
+#navbar a { color: #e8e1d3; text-decoration: none; }
+#navbar a:hover, #navbar a:focus-visible { text-decoration: underline; }
+#navbar .wordmark { font-weight: 600; }
+#navbar .nav-sep { color: #8a7f72; }
+#navbar .build {
+    margin-left: auto; color: #8a7f72; font-size: 6.5px;
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+#title .brand { color: inherit; text-decoration: none; }
+#title .brand:hover, #title .brand:focus-visible { text-decoration: underline; }
+
+/* Source of the programme, under the encores */
+.concert-source { margin-top: 10px; font-size: 0.85em; color: #555; }
+.concert-source a { color: inherit; }
+
+/* 1939: the forerunner of the numbered series, shown apart */
+.year-box.forerunner { outline: 1px dashed #8f6d2d; outline-offset: -3px; opacity: .75; }
+.forerunner-note { font-size: .85em; color: gray; margin: 6px 0 0; }
