@@ -339,3 +339,11 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 @media (max-width: 760px) {
   .yr { font-size: min(var(--fs-s), 3.95cqi); letter-spacing: -.05em; }
 }
+
+/* share: a small button, top right of every card and every chart (it can be clicked, so it is a pill) */
+.share { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line); background: var(--paper);
+  color: var(--muted); border-radius: 999px; padding: 3px 10px; font: 500 var(--fs-s)/1.2 var(--f-body); cursor: pointer; }
+.share:hover, .share:focus-visible { border-color: var(--gold); color: var(--gold); outline: none; }
+.share-icon { width: 12px; height: 12px; fill: currentColor; stroke: currentColor; }
+#card-body > .share { float: right; margin: 0 0 6px 10px; }
+@media (max-width: 760px) { #card-body > .share { margin-right: 40px; } }   /* clear of the close button */

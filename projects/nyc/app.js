@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.0.3";
-const BUILD_AT = "2026-10-13 18:53";
+const DATA_V = "1.1.0";
+const BUILD_AT = "2026-10-13 20:08";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -141,6 +141,15 @@ function readHash() {
   const raw = decodeURIComponent(location.hash.slice(1));
   if (raw === "analysis" || raw === "catalogue") return { year: state.year, card: null, view: raw, section: null };
   if (raw.startsWith("analysis/")) return { year: state.year, card: null, view: "analysis", section: raw.slice(9) };
+  // a card with no year (#piece-10, #composer-20, #type-Waltz, #conductor-7): the piece, person or form
+  // across all concerts, opened beside the latest concert (a conductor's: beside their latest one)
+  const bare = raw.match(/^(piece|composer|conductor)-(\d+)$/) || raw.match(/^(type)-(.+)$/);
+  if (bare) {
+    const kind = bare[1], id = kind === "type" ? bare[2] : Number(bare[2]);
+    const mine = kind === "conductor" ? CONCERTS.filter(c => c.conductor_id === id) : [];
+    const year = mine.length ? mine[mine.length - 1].year : CONCERTS[N - 1].year;
+    return { year, card: { kind, id }, view: "concerts" };
+  }
   const [y, sel] = raw.split("/");
   const year = BY_YEAR.has(Number(y)) || ANNOUNCED.has(Number(y)) ? Number(y) : CONCERTS[N - 1].year;
   let card = null;
@@ -704,11 +713,14 @@ function drawCard() {
   else if (k.kind === "composer") body.innerHTML = composerCard(k.id);
   else if (k.kind === "type") body.innerHTML = typeCard(k.id);
   else if (k.kind === "conductor") body.innerHTML = conductorCard(k.id);
+  body.insertAdjacentHTML("afterbegin", shareButton("Share this card"));
   paintStrip(yearsOf(k));
   $("card").scrollTop = 0;
 }
 $("card").addEventListener("click", e => {
   if (e.target.closest("#card-close")) return closeCard();
+  const sh = e.target.closest(".share");
+  if (sh) return shareUrl(location.origin + location.pathname + shareHash(state), sh);
   const ty = e.target.closest("[data-type]");
   if (ty) return go(state.year, { kind: "type", id: ty.dataset.type });
   const b = e.target.closest("[data-go], [data-pos], [data-year]");
@@ -814,6 +826,33 @@ function paintView() {
   }
   paintView.last = state.view;
 }
+// Share what is being looked at. The address is computed from the state, not read from the bar. On a
+// phone navigator.share opens the system sheet (only the URL: with a title, some apps glue text to the
+// link and break it); elsewhere the link is copied and the button says so. Same as Batalla de Flores.
+const ICON_SHARE = `<svg class="share-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12.5" cy="3.5" r="2.2"/>
+  <circle cx="3.5" cy="8" r="2.2"/><circle cx="12.5" cy="12.5" r="2.2"/>
+  <path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.4" fill="none"/></svg>`;
+function shareButton(title, chart) {
+  return `<button type="button" class="share"${chart ? ` data-chart="${esc(chart)}"` : ""} title="${esc(title)}">${ICON_SHARE}<span>Share</span></button>`;
+}
+// the link of a card: a performance keeps its concert; a piece, a person or a form is the same everywhere
+function shareHash(s) {
+  const c = s.card;
+  if (!c) return hashOf(s);
+  if (c.kind === "perf") return "#" + s.year + "/" + c.pos;
+  if (c.kind === "type") return "#type-" + encodeURIComponent(c.id);
+  return "#" + c.kind + "-" + c.id;
+}
+async function shareUrl(url, button) {
+  try {
+    if (navigator.share && matchMedia("(pointer: coarse)").matches) { await navigator.share({ url }); return; }
+    await navigator.clipboard.writeText(url);
+    const label = button.querySelector("span");
+    const before = label.textContent;
+    label.textContent = "Link copied";
+    setTimeout(() => { label.textContent = before; }, 2000);
+  } catch { /* the reader closed the share sheet: nothing to do */ }
+}
 function setupViews() {
   $("views").addEventListener("click", e => {
     const t = e.target.closest(".view-tab");
@@ -823,7 +862,16 @@ function setupViews() {
     window.scrollTo({ top: 0 });
   });
   // the index of the analysis: one link per section, built from the section titles
-  // short, fixed names for the sections, so a shared link reads well: #analysis/strauss
+  // short names for each chart inside its section: #analysis/strauss/pct
+var CHART_IDS = {
+  chartPiecesPerConcert_bar: "pieces", chartConductors: "count", chartPlayedByType: "played",
+  chartCatalogueByType: "catalogue", chartFormsByYearCount: "by-year", chartFormsByYearPctLine: "by-year-pct",
+  chartStraussVsNonStraussPct: "pct", chartStraussVsNonStrauss: "count", chartComposerPerformancesAll: "performances",
+  chartComposerCatalogueAll: "catalogue", chartComposersByYearCount: "by-year", chartComposersByYearPct: "by-year-pct",
+  chartMostRepeatedPieces: "most-repeated", chartRankAppearances: "rank", chartNewVsRepeatedByYearCount: "count",
+  chartNewVsRepeatedByYearPct: "pct", chartNewVsRepeated: "cumulative",
+};
+// short, fixed names for the sections, so a shared link reads well: #analysis/strauss
   const SECTION_IDS = [[/consist of/i, "programme"], [/conductor/i, "conductors"], [/polkas and waltzes/i, "forms"],
     [/strauss family/i, "strauss"], [/composers have appeared/i, "composers"], [/pieces are often/i, "pieces"],
     [/new pieces and repetitions/i, "new-pieces"]];
@@ -858,6 +906,19 @@ function setupViews() {
       b.setAttribute("aria-expanded", String(open));
     });
     d.before(b);
+  });
+  // one link per chart, #analysis/<section>/<chart>, with its own share button in the corner
+  document.querySelectorAll("#statsPane canvas").forEach(cv => {
+    const box = cv.closest(".catalogue-panel > .row > * > .plot-box");
+    // a line of its own just above the chart, right aligned, so it never covers the legend; the link lands here
+    const pc = cv.closest(".plot-chart");
+    if (!box || !pc) return;
+    const id = box.id + "/" + (CHART_IDS[cv.id] || cv.id.replace(/^chart/, "").toLowerCase());
+    pc.insertAdjacentHTML("beforebegin", `<div class="chart-share" id="${esc(id)}">${shareButton("Share this chart", id)}</div>`);
+  });
+  $("statsPane").addEventListener("click", e => {
+    const sh = e.target.closest(".share[data-chart]");
+    if (sh) shareUrl(location.origin + location.pathname + "#analysis/" + sh.dataset.chart, sh);
   });
   $("analysis-toc").addEventListener("click", e => {
     const a = e.target.closest("a[data-target]");

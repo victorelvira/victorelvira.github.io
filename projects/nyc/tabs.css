@@ -160,3 +160,6 @@ table.cat .t { color: var(--c-piece); }
 #statsPane .intro-toggle { all: unset; cursor: pointer; display: inline-block; margin: 0 0 10px; font-size: var(--fs-s);
   color: var(--gold); border-bottom: 1px dotted var(--gold); }
 #statsPane .intro-toggle:hover, #statsPane .intro-toggle:focus-visible { border-bottom-style: solid; }
+
+/* each chart carries its own link */
+#statsPane .chart-share { display: flex; justify-content: flex-end; margin: 6px 0 2px; scroll-margin-top: 70px; }
