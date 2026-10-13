@@ -383,3 +383,13 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 .order-toggle { all: unset; cursor: pointer; font: 500 var(--fs-s)/1 var(--f-body); letter-spacing: 0; text-transform: none;
   color: var(--gold); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
 .order-toggle:hover, .order-toggle:focus-visible { border-color: var(--gold); }
+
+/* quiet tags for facts (not clickable, so not pills): small caps, gold when something is new */
+.tag { font-size: var(--fs-s); font-style: normal; font-weight: 500; letter-spacing: .03em; text-transform: lowercase;
+  font-variant: small-caps; color: var(--muted); white-space: nowrap; }
+.tag-new { color: var(--gold); }
+/* the arrangement chip: the piece's blue; on, the darker blue it lights the years with */
+.chip.k-ver { border: 0; color: var(--c-piece); background: color-mix(in srgb, var(--c-piece) 10%, var(--paper)); }
+.chip.k-ver:hover, .chip.k-ver:focus-visible { background: color-mix(in srgb, var(--c-piece) 20%, var(--paper)); outline: none; }
+.chip.k-ver.on { background: color-mix(in srgb, var(--c-piece) 70%, #000); color: #fff; }
+body[data-kind] .years.lit .yr.on2, body[data-kind] .bars.lit .tile.on2 { background: color-mix(in srgb, var(--c-piece) 62%, #000); color: #fff; }

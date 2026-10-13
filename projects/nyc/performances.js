@@ -62,7 +62,9 @@ var performances = {
       "lapiz": [
         "solista"
       ],
-      "version": "sung version"
+      "version": "sung version",
+      "version_label": "Sung",
+      "version_group": "sung"
     }
   },
   "1954": {
@@ -97,7 +99,9 @@ var performances = {
         "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/4288/"
       ],
       "estado": "boli",
-      "version": "f. Männerchor u. Orch."
+      "version": "f. Männerchor u. Orch.",
+      "version_label": "Male choir",
+      "version_group": "male-choir"
     }
   },
   "1958": {
@@ -498,6 +502,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "f. Männerchor u. Orch.",
+      "version_label": "Male choir",
+      "version_group": "male-choir",
       "nota": [
         "Wikipedia (de): Walzer für Männerchor und Orchester"
       ]
@@ -537,6 +543,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "f. Männerchor u. Orch.",
+      "version_label": "Male choir",
+      "version_group": "male-choir",
       "nota": [
         "Wikipedia (de): Walzer für Männerchor und Orchester"
       ]
@@ -546,14 +554,18 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=239331185"
       ],
       "estado": "boli",
-      "version": "instrumental mit verkürzter Introduktion, nach Auftakt ab „maestoso“"
+      "version": "instrumental mit verkürzter Introduktion, nach Auftakt ab „maestoso“",
+      "version_label": "Shortened introduction",
+      "version_group": "short-intro"
     },
     "17": {
       "fuente": [
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=239331185"
       ],
       "estado": "boli",
-      "version": "Chorfassung bis Walzer 5, anschließend Coda in der Instrumentalfassung mit Ballett zur originalen Musik"
+      "version": "Chorfassung bis Walzer 5, anschließend Coda in der Instrumentalfassung mit Ballett zur originalen Musik",
+      "version_label": "Choir then orchestra",
+      "version_group": "choir-then-orchestra"
     }
   },
   "1976": {
@@ -674,6 +686,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "f. Männerchor u. Orch.",
+      "version_label": "Male choir",
+      "version_group": "male-choir",
       "nota": [
         "Wikipedia (de): im Programmarchiv: Walzer für Männerchor und Orchester, wurde nur instrumental aufgeführt"
       ]
@@ -739,14 +753,18 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=237476806"
       ],
       "estado": "boli",
-      "version": "Bearbeitung: Max Schönherr"
+      "version": "Bearbeitung: Max Schönherr",
+      "version_label": "Arr. Schönherr",
+      "version_group": "arr-schonherr"
     },
     "14": {
       "fuente": [
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=237476806"
       ],
       "estado": "boli",
-      "version": "Bearbeitung: Max Schönherr"
+      "version": "Bearbeitung: Max Schönherr",
+      "version_label": "Arr. Schönherr",
+      "version_group": "arr-schonherr"
     }
   },
   "1982": {
@@ -783,6 +801,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "Bearbeitung H. Froschauer",
+      "version_label": "Arr. Froschauer",
+      "version_group": "arr-froschauer",
       "nota": [
         "Wikipedia (de): Chorfassung, Bearbeitung: Hellmuth Froschauer, Ausführende: Wiener Sängerknaben"
       ]
@@ -794,6 +814,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "Bearbeitung H. Froschauer",
+      "version_label": "Arr. Froschauer",
+      "version_group": "arr-froschauer",
       "nota": [
         "Wikipedia (de): Chorfassung, Bearbeitung: Hellmuth Froschauer, Ausführende: Wiener Sängerknaben"
       ]
@@ -803,7 +825,9 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589939"
       ],
       "estado": "boli",
-      "version": "Bearbeitung: Max Schönherr"
+      "version": "Bearbeitung: Max Schönherr",
+      "version_label": "Arr. Schönherr",
+      "version_group": "arr-schonherr"
     }
   },
   "1983": {
@@ -894,14 +918,18 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233397865"
       ],
       "estado": "boli",
-      "version": "Instrumentation: Max Schönherr"
+      "version": "Instrumentation: Max Schönherr",
+      "version_label": "Arr. Schönherr",
+      "version_group": "arr-schonherr"
     },
     "14": {
       "fuente": [
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233397865"
       ],
       "estado": "boli",
-      "version": "Instrumentation: Max Schönherr"
+      "version": "Instrumentation: Max Schönherr",
+      "version_label": "Arr. Schönherr",
+      "version_group": "arr-schonherr"
     }
   },
   "1986": {
@@ -964,14 +992,18 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233060052"
       ],
       "estado": "boli",
-      "version": "mit den Wiener Sängerknaben"
+      "version": "mit den Wiener Sängerknaben",
+      "version_label": "Vienna Boys' Choir",
+      "version_group": "boys-choir"
     },
     "11": {
       "fuente": [
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233060052"
       ],
       "estado": "boli",
-      "version": "mit den Wiener Sängerknaben"
+      "version": "mit den Wiener Sängerknaben",
+      "version_label": "Vienna Boys' Choir",
+      "version_group": "boys-choir"
     }
   },
   "1989": {
@@ -1006,7 +1038,9 @@ var performances = {
         "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/4859/"
       ],
       "estado": "boli",
-      "version": "f. Männerchor u. Orch."
+      "version": "f. Männerchor u. Orch.",
+      "version_label": "Male choir",
+      "version_group": "male-choir"
     }
   },
   "1990": {
@@ -1125,7 +1159,9 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=232982598"
       ],
       "estado": "boli",
-      "version": "Fassung für Orchester und zwei Violinen, Violinen: Lorin Maazel und Werner Hink"
+      "version": "Fassung für Orchester und zwei Violinen, Violinen: Lorin Maazel und Werner Hink",
+      "version_label": "Two solo violins",
+      "version_group": "violin-solo"
     }
   },
   "1996": {
@@ -1216,14 +1252,18 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234910078"
       ],
       "estado": "boli",
-      "version": "Chorfassung, Ausführende: Wiener Sängerknaben"
+      "version": "Chorfassung, Ausführende: Wiener Sängerknaben",
+      "version_label": "Vienna Boys' Choir",
+      "version_group": "boys-choir"
     },
     "12": {
       "fuente": [
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234910078"
       ],
       "estado": "boli",
-      "version": "Chorfassung, Ausführende: Wiener Sängerknaben"
+      "version": "Chorfassung, Ausführende: Wiener Sängerknaben",
+      "version_label": "Vienna Boys' Choir",
+      "version_group": "boys-choir"
     }
   },
   "1999": {
@@ -1258,7 +1298,9 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233212686"
       ],
       "estado": "boli",
-      "version": "Introduktion und Coda in der Fassung für Solovioline und Orchester, Solo-Violine: Lorin Maazel"
+      "version": "Introduktion und Coda in der Fassung für Solovioline und Orchester, Solo-Violine: Lorin Maazel",
+      "version_label": "Solo violin",
+      "version_group": "violin-solo"
     }
   },
   "2000": {
@@ -1304,7 +1346,9 @@ var performances = {
       "lapiz": [
         "parte_desde"
       ],
-      "version": "1st Version"
+      "version": "1st Version",
+      "version_label": "First version",
+      "version_group": "first-version"
     },
     "7": {
       "fuente": [
@@ -1318,7 +1362,9 @@ var performances = {
       "lapiz": [
         "parte_desde"
       ],
-      "version": "Berliner Fassung"
+      "version": "Berliner Fassung",
+      "version_label": "Berlin version",
+      "version_group": "berlin-version"
     }
   },
   "2002": {
@@ -1503,7 +1549,9 @@ var performances = {
       "lapiz": [
         "parte_desde"
       ],
-      "version": "Berliner Fassung"
+      "version": "Berliner Fassung",
+      "version_label": "Berlin version",
+      "version_group": "berlin-version"
     },
     "7": {
       "fuente": [
@@ -1609,6 +1657,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "Bearb. G. Wirth",
+      "version_label": "Arr. Wirth",
+      "version_group": "arr-wirth",
       "nota": [
         "Wikipedia (de): Bearbeitung: G. Wirth"
       ]
@@ -1620,6 +1670,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "Bearb. G. Wirth",
+      "version_label": "Arr. Wirth",
+      "version_group": "arr-wirth",
       "nota": [
         "Wikipedia (de): Bearbeitung: G. Wirth"
       ]
@@ -1708,14 +1760,18 @@ var performances = {
       "lapiz": [
         "parte_desde"
       ],
-      "version": "Wiener Fassung"
+      "version": "Wiener Fassung",
+      "version_label": "Vienna version",
+      "version_group": "vienna-version"
     },
     "10": {
       "fuente": [
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235247453"
       ],
       "estado": "boli",
-      "version": "mit den Wiener Sängerknaben"
+      "version": "mit den Wiener Sängerknaben",
+      "version_label": "Vienna Boys' Choir",
+      "version_group": "boys-choir"
     }
   },
   "2017": {
@@ -1806,7 +1862,9 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=240503103"
       ],
       "estado": "boli",
-      "version": "im Original: Galopp"
+      "version": "im Original: Galopp",
+      "version_label": "Originally a galop",
+      "version_group": "originally-galop"
     }
   },
   "2020": {
@@ -1841,14 +1899,18 @@ var performances = {
         "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/9649/"
       ],
       "estado": "boli",
-      "version": "Arr. W. Dörner"
+      "version": "Arr. W. Dörner",
+      "version_label": "Arr. Dörner",
+      "version_group": "arr-dorner"
     },
     "12": {
       "fuente": [
         "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/9649/"
       ],
       "estado": "boli",
-      "version": "Arr. W. Dörner"
+      "version": "Arr. W. Dörner",
+      "version_label": "Arr. Dörner",
+      "version_group": "arr-dorner"
     }
   },
   "2021": {
@@ -1941,6 +2003,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "Text: Anna Mabo",
+      "version_label": "Lyrics by Anna Mabo",
+      "version_group": "lyrics-mabo",
       "nota": [
         "Wikipedia (de): mit den Wiener Sängerknaben"
       ]
@@ -1950,7 +2014,9 @@ var performances = {
         "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=239499674"
       ],
       "estado": "boli",
-      "version": "mit den Wiener Sängerknaben"
+      "version": "mit den Wiener Sängerknaben",
+      "version_label": "Vienna Boys' Choir",
+      "version_group": "boys-choir"
     }
   },
   "2024": {
@@ -1987,7 +2053,9 @@ var performances = {
         "wph https://www.wienerphilharmoniker.at/en/konzerte/philharmonic-academynew-years-concert/4194/"
       ],
       "estado": "boli",
-      "version": "f. Männerchor u. Orch."
+      "version": "f. Männerchor u. Orch.",
+      "version_label": "Male choir",
+      "version_group": "male-choir"
     }
   },
   "1956": {
@@ -1996,7 +2064,9 @@ var performances = {
         "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/7121/"
       ],
       "estado": "boli",
-      "version": "arr. v. J. Lehnert"
+      "version": "arr. v. J. Lehnert",
+      "version_label": "Arr. Lehnert",
+      "version_group": "arr-lehnert"
     }
   },
   "1968": {
@@ -2007,6 +2077,8 @@ var performances = {
       ],
       "estado": "boli",
       "version": "f. Männerchor u. Orch.",
+      "version_label": "Male choir",
+      "version_group": "male-choir",
       "nota": [
         "Wikipedia (de): Walzer für Männerchor und Orchester"
       ]
@@ -2018,7 +2090,9 @@ var performances = {
         "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10645/"
       ],
       "estado": "boli",
-      "version": "Arr. W. Dörner"
+      "version": "Arr. W. Dörner",
+      "version_label": "Arr. Dörner",
+      "version_group": "arr-dorner"
     },
     "1": {
       "fuente": [
@@ -2053,14 +2127,18 @@ var performances = {
         "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10738/"
       ],
       "estado": "boli",
-      "version": "Arr. W. Dörner"
+      "version": "Arr. W. Dörner",
+      "version_label": "Arr. Dörner",
+      "version_group": "arr-dorner"
     },
     "11": {
       "fuente": [
         "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10738/"
       ],
       "estado": "boli",
-      "version": "Arr. W. Dörner"
+      "version": "Arr. W. Dörner",
+      "version_label": "Arr. Dörner",
+      "version_group": "arr-dorner"
     },
     "1": {
       "fuente": [
