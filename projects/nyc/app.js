@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.0.0";
-const BUILD_AT = "2026-10-13 16:14";
+const DATA_V = "1.0.1";
+const BUILD_AT = "2026-10-13 16:22";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -401,7 +401,7 @@ function drawConcert() {
       const { t, op } = splitOp(p.piece);
       const typeOn = k && k.kind === "type" && k.id === p.type;
       html += `<li class="row${rowMatches(k, pos, p) ? " hl" : ""}" tabindex="0" data-pos="${pos}">
-          <span class="n">${pos}</span><span class="t">${esc(t)}${pieceAside(c, pos)}</span><span class="op">${esc(op)}</span>
+          <span class="n">${pos}</span><span class="t">${esc(t)}${op ? ` <span class="op">${esc(op)}</span>` : ""}${pieceAside(c, pos)}</span>
           <span class="sub">${namesOf(p).map(n => { const id = NAME2ID.get(n) ?? p.composer_id; return `<button type="button" class="chip k k-comp${k && k.kind === "composer" && k.id === id ? " on" : ""}" data-cid="${id}">${esc(n)}</button>${composerAside(c, n)}`; }).join(" ")}${p.type && p.type !== "Unknown" ? `<button type="button" class="chip k k-type${typeOn ? " on" : ""}" data-type="${esc(p.type)}">${esc(p.type)}</button>` : ""}${noteAside(c, pos)}</span>
         </li>`;
     }

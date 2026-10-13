@@ -326,3 +326,9 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
     box-shadow: 0 6px 12px -10px rgba(16, 22, 42, .35); }
   .card { top: calc(var(--pin-h, 200px) + 10px); max-height: calc(100vh - var(--pin-h, 200px) - 20px); }
 }
+
+/* the opus follows the title on the same line, on every screen (Víctor, 2026-10-13): two columns only */
+.row, .row { grid-template-columns: 2.1em minmax(0, 1fr); }
+.row .sub { grid-column: 2 / 3; }
+.row .t .op { padding-top: 0; white-space: nowrap; }
+@media (max-width: 760px) { .row { grid-template-columns: 1.8em minmax(0, 1fr); } }
