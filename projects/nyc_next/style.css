@@ -313,3 +313,8 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 /* One size for everything that is data (15): conductor, counts, titles, composers, forms, opus. Bigger only
    for the concert's title; smaller (13) only for instructions and notes about the page. */
 .row .chip { font-size: inherit; }
+
+/* the composer is a chip like the form: its own red, a stronger tint on hover, solid when it is on */
+.chip.k-comp { border: 0; color: var(--c-composer); background: color-mix(in srgb, var(--c-composer) 10%, var(--paper)); }
+.chip.k-comp:hover, .chip.k-comp:focus-visible { color: var(--c-composer); background: color-mix(in srgb, var(--c-composer) 20%, var(--paper)); outline: none; }
+.chip.k-comp.on { background: var(--c-composer); color: #fff; font-weight: 400; border: 0; }
