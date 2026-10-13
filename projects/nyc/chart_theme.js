@@ -27,6 +27,13 @@
     beforeUpdate(chart) {
       const type = chart.config.type;
       const labels = chart.data.labels || [];
+      // lines have no dots here, so "touch the dot" would almost never hit: hovering a year shows all
+      // the curves at that year, on a mouse and on a finger
+      if (type === "line" && !chart._nycHover) {
+        chart._nycHover = true;
+        chart.options.interaction = { mode: "index", intersect: false };
+        chart.options.hover = { mode: "index", intersect: false };
+      }
       chart.data.datasets.forEach((ds, i) => {
         if (ds._nycTheme) return;
         ds._nycTheme = true;

@@ -332,3 +332,10 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 .row .sub { grid-column: 2 / 3; }
 .row .t .op { padding-top: 0; white-space: nowrap; }
 @media (max-width: 760px) { .row { grid-template-columns: 1.8em minmax(0, 1fr); } }
+
+/* On a very narrow phone the year must still fit its square, nearly edge to edge: the size follows the
+   width of the grid (a tenth of it per square), never above the small step of the scale. */
+.years { container-type: inline-size; }
+@media (max-width: 760px) {
+  .yr { font-size: min(var(--fs-s), 3.95cqi); letter-spacing: -.05em; }
+}

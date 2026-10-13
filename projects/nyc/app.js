@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.0.1";
-const BUILD_AT = "2026-10-13 16:22";
+const DATA_V = "1.0.2";
+const BUILD_AT = "2026-10-13 18:36";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -139,7 +139,8 @@ function hashOf(s) {
 }
 function readHash() {
   const raw = decodeURIComponent(location.hash.slice(1));
-  if (raw === "analysis" || raw === "catalogue") return { year: state.year, card: null, view: raw };
+  if (raw === "analysis" || raw === "catalogue") return { year: state.year, card: null, view: raw, section: null };
+  if (raw.startsWith("analysis/")) return { year: state.year, card: null, view: "analysis", section: raw.slice(9) };
   const [y, sel] = raw.split("/");
   const year = BY_YEAR.has(Number(y)) || ANNOUNCED.has(Number(y)) ? Number(y) : CONCERTS[N - 1].year;
   let card = null;
@@ -822,16 +823,32 @@ function setupViews() {
     window.scrollTo({ top: 0 });
   });
   // the index of the analysis: one link per section, built from the section titles
-  const boxes = [...document.querySelectorAll("#statsPane .plot-box")];
+  // short, fixed names for the sections, so a shared link reads well: #analysis/strauss
+  const SECTION_IDS = [[/consist of/i, "programme"], [/conductor/i, "conductors"], [/polkas and waltzes/i, "forms"],
+    [/strauss family/i, "strauss"], [/composers have appeared/i, "composers"], [/pieces are often/i, "pieces"],
+    [/new pieces and repetitions/i, "new-pieces"]];
+  // each section gets a readable id from its title ("strauss", "conductor"...), so #analysis/strauss is a link
+  const slug = t => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ").split(" ").filter(w => w.length > 3 && !/^(what|does|consist|about|which|only|have|that|this|from|over|time|year|years|concert|concerts|neujahrskonzert)$/.test(w)).slice(0, 2).join("-");
+  const boxes = [...document.querySelectorAll("#statsPane .catalogue-panel > .row > * > .plot-box")];
+  const used = new Set();
   $("analysis-toc").innerHTML = boxes.map((b, i) => {
-    b.id = b.id || "section-" + (i + 1);
+    if (!b.id) {
+      const t = b.querySelector(".plot-title");
+      const named = t && SECTION_IDS.find(([re]) => re.test(t.textContent));
+      let id = named ? named[1] : (t && slug(t.textContent)) || "section-" + (i + 1);
+      while (used.has(id)) id += "-" + (i + 1);
+      used.add(id);
+      b.id = id;
+    }
     const title = b.querySelector(".plot-title");
     return title ? `<a href="#${b.id}" data-target="${b.id}">${esc(title.textContent.trim())}</a>` : "";
   }).join("");
   $("analysis-toc").addEventListener("click", e => {
     const a = e.target.closest("a[data-target]");
     if (!a) return;
-    e.preventDefault();                       // the address keeps #analysis; just scroll
+    e.preventDefault();                       // a refinement: the address names the section, history does not grow
+    history.replaceState(null, "", "#analysis/" + a.dataset.target);
     document.getElementById(a.dataset.target).scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
@@ -915,3 +932,5 @@ setupCatalogue();
 Object.assign(state, readHash());
 if (!location.hash) history.replaceState(null, "", hashOf(state));
 render();
+// arriving at #analysis/<section>: open that section once the charts have been laid out
+if (state.section) setTimeout(() => { const el = document.getElementById(state.section); if (el) el.scrollIntoView({ block: "start" }); }, 400);
