@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.4.0";
-const BUILD_AT = "2026-10-13 22:29";
+const DATA_V = "1.4.1";
+const BUILD_AT = "2026-10-13 23:19";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -360,16 +360,16 @@ function pieceAside(c, pos) {
   const plays = PLAYS.get(c.program.piece_id[pos - 1]);
   const idx = plays.findIndex(p => p.year === c.year && p.pos === pos);
   // "only time" needs a later concert to have left it out: in the latest concert everything new is just new
-  if (idx === 0 && plays.length === 1 && c.year < CONCERTS[N - 1].year) return ' <span class="tag tag-new" title="Played at the New Year\'s Concert this once only">only time played</span>';
-  if (idx === 0) return ' <span class="tag tag-new" title="First time this piece was played at the New Year\'s Concert">new to the concert</span>';
+  if (idx === 0 && plays.length === 1 && c.year < CONCERTS[N - 1].year) return ' <span class="tag tag-new" title="Played at the New Year\'s Concert this once only">only time</span>';
+  if (idx === 0) return ' <span class="tag tag-new" title="First time this piece was played at the New Year\'s Concert">new</span>';
   const gap = c.year - plays[idx - 1].year;
-  return gap >= 20 ? ` <span class="tag" title="Not played at the concert for ${gap} years">back after ${gap} years</span>` : "";
+  return gap >= 20 ? ` <span class="tag tag-back" title="Not played at the concert for ${gap} years">back after ${gap} years</span>` : "";
 }
 function composerAside(c, name) {
   if (FIRST_YEAR_OF_NAME.get(name) !== c.year) return "";
   const once = CONCERTS.filter(x => x.program.piece_id.some(pid => namesOf(PIECE.get(pid)).includes(name))).length === 1;
-  return once && c.year < CONCERTS[N - 1].year ? ' <span class="tag tag-new" title="The only concert with music by this composer">composer\'s only time</span>'
-    : ' <span class="tag tag-new" title="First concert with music by this composer">composer\'s debut</span>';
+  return once && c.year < CONCERTS[N - 1].year ? ' <span class="tag tag-new" title="The only concert with music by this composer">only time</span>'
+    : ' <span class="tag tag-new" title="First concert with music by this composer">debut</span>';
 }
 // The arrangement is a chip (it can be clicked: it lights the years of the same arrangement); a soloist or
 // a ballet stays a quiet tag.
@@ -666,15 +666,17 @@ function pieceCard(pid, c, pos) {
       return `<p class="repeat-note">Typical length ${mmss(med)} (median of ${ds.length} recorded performance${ds.length > 1 ? "s" : ""}, from ${mmss(ds[0])} to ${mmss(ds[ds.length - 1])}). Track length on the official disc, applause included.</p>`;
     })()}
     <h3>Every performance ${orderButton()}</h3>
-    <ul class="list">${ordered(plays).map(x => {
+    <table class="ctable"><thead><tr><th>Year</th><th>Conductor</th><th title="Its place in that year's programme">Position</th><th class="n">Length</th></tr></thead><tbody>${ordered(plays).map(x => {
       const cc = BY_YEAR.get(x.year);
-      const enc = x.pos > Number(cc.n_program);
-      const note = (PERF[x.year] || {})[x.pos];
+      const n = Number(cc.n_program), enc = x.pos > n;
+      const note = (PERF[x.year] || {})[x.pos] || {};
+      const extra = [note.version_label, note.solista].filter(Boolean).map(esc).join(" · ");
       const isHere = c && x.year === c.year && x.pos === pos;
-      return `<li${isHere ? ' class="here"' : ""}><span class="y"><button type="button" class="link" data-year="${x.year}" data-pos="${x.pos}">${x.year}</button></span>
-        <span>${esc(conductorOf(cc).name)}${note && note.solista ? ` · <i>${esc(note.solista)}</i>` : ""}${note && note.version && note.version.length <= 32 ? ` · <i>${esc(note.version)}</i>` : ""}</span>
-        <span class="r">${enc ? "encore" : "no. " + x.pos}${durationOf(x.year, x.pos) ? ` · ${mmss(durationOf(x.year, x.pos))}` : ""}</span></li>`;
-    }).join("")}</ul>
+      return `<tr${isHere ? ' class="here"' : ""}><td><button type="button" class="link" data-year="${x.year}" data-pos="${x.pos}">${x.year}</button></td>
+        <td>${esc(conductorOf(cc).name)}${extra ? `<span class="sub">${extra}</span>` : ""}</td>
+        <td>${enc ? `encore ${x.pos - n} of ${cc.program.piece_id.length - n}` : `${x.pos} of ${n}`}</td>
+        <td class="n">${durationOf(x.year, x.pos) ? mmss(durationOf(x.year, x.pos)) : "–"}</td></tr>`;
+    }).join("")}</tbody></table>
     ${video}
     ${ext.length ? `<div class="ext">${ext.join("")}</div>` : ""}
     ${ext.some(x => x.includes("unconf")) ? '<p class="small">* found automatically in Wikidata or IMSLP, not yet confirmed.</p>' : ""}`;
@@ -728,9 +730,10 @@ function composerCard(cid) {
     ${mini(years, null)}
     <div class="stats"><div><b>${years.size}</b><span>concerts</span></div><div><b>${perf}</b><span>pieces played</span></div><div><b>${pieces.length}</b><span>different pieces</span></div></div>
     <h3>Pieces, most played first</h3>
-    <ul class="list">${shown.map(x => `<li><span class="y">${x.plays.length}×</span>
-      <span><button type="button" class="link" data-go="piece-${x.p.piece_id}">${esc(splitOp(x.p.piece).t)}</button></span>
-      <span class="r">${x.plays[0].year}</span></li>`).join("")}</ul>
+    <table class="ctable"><thead><tr><th class="n">Concerts</th><th>Piece</th><th class="n">First played</th></tr></thead><tbody>${shown.map(x => `<tr>
+      <td class="n">${x.plays.length}</td>
+      <td><button type="button" class="link" data-go="piece-${x.p.piece_id}">${esc(splitOp(x.p.piece).t)}</button></td>
+      <td class="n">${x.plays[0].year}</td></tr>`).join("")}</tbody></table>
     ${pieces.length > shown.length ? `<p class="hint">and ${pieces.length - shown.length} more</p>` : ""}
     ${photoCredit("composer", cid)}`;
 }
@@ -750,11 +753,11 @@ function conductorCard(id) {
     ${upcoming}
     <div class="stats"><div><b>${list.length}</b><span>concerts</span></div><div><b>${list[0].year}</b><span>first</span></div><div><b>${list[list.length - 1].year}</b><span>last</span></div></div>
     <h3>Concerts ${orderButton()}</h3>
-    <ul class="list">${ordered(list).map(c => {
+    <table class="ctable"><thead><tr><th>Year</th><th class="n">Pieces</th><th class="n">New to the concert</th></tr></thead><tbody>${ordered(list).map(c => {
       const fresh = c.program.piece_id.filter(p => PLAYS.get(p)[0].year === c.year).length;
-      return `<li><span class="y"><button type="button" class="link" data-year="${c.year}">${c.year}</button></span>
-        <span>${c.program.piece_id.length} pieces${fresh ? ` · ${fresh} new to the concert` : ""}</span></li>`;
-    }).join("")}</ul>
+      return `<tr><td><button type="button" class="link" data-year="${c.year}">${c.year}</button></td>
+        <td class="n">${c.program.piece_id.length}</td><td class="n">${fresh || "–"}</td></tr>`;
+    }).join("")}</tbody></table>
     ${photoCredit("conductor", id)}`;
 }
 function typeCard(name) {
@@ -773,9 +776,11 @@ function typeCard(name) {
     ${mini(years, state.year)}
     <div class="stats"><div><b>${years.size}</b><span>concerts</span></div><div><b>${perf}</b><span>pieces played</span></div><div><b>${pieces.length}</b><span>different pieces</span></div></div>
     <h3>Pieces of this form, most played first</h3>
-    <ul class="list">${shown.map(x => `<li><span class="y">${x.plays.length}×</span>
-      <span><button type="button" class="link" data-go="piece-${x.p.piece_id}">${esc(splitOp(x.p.piece).t)}</button> <span class="r">${esc(x.p.composer)}</span></span>
-      <span class="r">${x.plays[0].year}</span></li>`).join("")}</ul>
+    <table class="ctable"><thead><tr><th class="n">Concerts</th><th>Piece</th><th>Composer</th><th class="n">First played</th></tr></thead><tbody>${shown.map(x => `<tr>
+      <td class="n">${x.plays.length}</td>
+      <td><button type="button" class="link" data-go="piece-${x.p.piece_id}">${esc(splitOp(x.p.piece).t)}</button></td>
+      <td>${esc(x.p.composer)}</td>
+      <td class="n">${x.plays[0].year}</td></tr>`).join("")}</tbody></table>
     ${pieces.length > shown.length ? `<p class="hint">and ${pieces.length - shown.length} more</p>` : ""}`;
 }
 // Lists of concerts in a card (a conductor's, a piece's): newest first by default, and the reader can turn

@@ -393,3 +393,18 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 .chip.k-ver:hover, .chip.k-ver:focus-visible { background: color-mix(in srgb, var(--c-piece) 20%, var(--paper)); outline: none; }
 .chip.k-ver.on { background: color-mix(in srgb, var(--c-piece) 70%, #000); color: #fff; }
 body[data-kind] .years.lit .yr.on2, body[data-kind] .bars.lit .tile.on2 { background: color-mix(in srgb, var(--c-piece) 62%, #000); color: #fff; }
+
+/* tags, option B (Víctor, 2026-10-13): plain small words after a dot; filled gold for something new,
+   hollow grey for a return. No capitals, no small caps. */
+.tag { font-variant: normal; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.tag::before { content: "●"; font-size: .8em; margin-right: 3px; vertical-align: .05em; }
+.tag-back::before { content: "○"; }
+.tag-back { color: var(--muted); }
+/* the lists inside a card are tables, with a heading for every column */
+.ctable { width: 100%; border-collapse: collapse; font-size: var(--fs-m); }
+.ctable th { text-align: left; font-size: var(--fs-s); font-weight: 600; color: var(--muted); padding: 4px 6px 4px 0;
+  border-bottom: 2px solid var(--line); white-space: nowrap; }
+.ctable td { padding: 6px 6px 6px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.ctable .n { text-align: right; font-variant-numeric: tabular-nums; }
+.ctable td .sub { display: block; font-size: var(--fs-s); color: var(--muted); }
+.ctable tr.here td { background: color-mix(in srgb, var(--c-piece) 10%, var(--paper)); }
