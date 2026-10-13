@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.1.0";
-const BUILD_AT = "2026-10-13 20:08";
+const DATA_V = "1.1.1";
+const BUILD_AT = "2026-10-13 20:31";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -395,7 +395,7 @@ function drawConcert() {
   const d = (META[c.year] || {}).date || "";
   const day = dateOf(c.year).replace(d.startsWith(String(c.year)) ? " " + c.year : /$^/, "");
   const special = META[c.year] && META[c.year].title !== "New Year's Concert" ? META[c.year].title : "";
-  let html = `<div class="c-head">
+  let html = `<div class="c-head">${shareButton("Share this concert")}
       <h1>${c.year} <span class="date">${esc(day)}</span></h1>
       <p class="who"><button type="button" data-card="conductor">${esc(cond.name)}</button>, his ${ordinal(nth)} of ${condCount.length}</p>
       <p class="meta"><span class="e-piece">${c.program.piece_id.length} pieces</span> by <span class="e-composer">${comps.size} composers</span></p>
@@ -421,6 +421,8 @@ function drawConcert() {
   $("concert").innerHTML = html;
 }
 $("concert").addEventListener("click", e => {
+  const sh = e.target.closest(".c-head > .share");
+  if (sh) return shareUrl(location.origin + location.pathname + "#" + state.year, sh);
   const comp = e.target.closest(".k-comp");
   if (comp) return go(state.year, { kind: "composer", id: Number(comp.dataset.cid) });
   const type = e.target.closest(".k-type");
