@@ -37,7 +37,6 @@
 #statsPane .mt-2 { margin-top: 8px; }
 @media (min-width: 992px) { #statsPane .col-lg-6 { width: 50%; } }
 #statsPane .catalogue-panel { padding: 5px 2px 24px; }
-#statsPane h5 { font-size: var(--fs-l); margin: 4px 0 12px; text-align: center; }
 #statsPane h6 { margin: 0; }
 #statsPane p { margin: 2px 0; }
 
@@ -87,7 +86,6 @@
 
 
 /* the catalogue */
-.cat-title { font-size: var(--fs-l); margin: 4px 0 12px; }
 .cat-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
 #cat-search { flex: 1 1 240px; max-width: 420px; font: inherit; padding: 7px 10px; border: 1px solid var(--line);
   border-radius: 6px; background: var(--paper); color: var(--ink); }
@@ -114,13 +112,11 @@ table.cat .t { color: var(--c-piece); }
 #statsPane .catalogue-panel > .row > * { width: 100%; }              /* sections: one column, none half empty */
 #statsPane .plot-box { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
 #statsPane .plot-box .plot-box { background: none; border: 0; border-radius: 0; padding: 0; }   /* no box in a box */
-#statsPane h5 { font-size: var(--fs-xl); font-weight: 700; text-align: left; margin: 8px 0 6px; line-height: 1.2; }
 #statsPane .plot-box > .plot-title { font-size: var(--fs-l); font-weight: 700; margin: 0 0 10px; }
 #statsPane .plot-title { font-size: var(--fs-m); font-weight: 600; }
 #statsPane .plot-desc, #statsPane .plot-desc p { font-size: var(--fs-m); color: var(--ink); line-height: 1.55; }
 #statsPane .plot-desc p + p { margin-top: 8px; }
 #statsPane .plot-reading { font-size: var(--fs-s); color: var(--muted); }
-#statsPane .forerunner-note { margin-bottom: 16px; }
 @media (max-width: 760px) { #statsPane .plot-box { padding: 14px; } }
 #view-analysis .toc { max-width: 1040px; margin-left: auto; margin-right: auto; }
 #statsPane hr { display: none; }
@@ -168,3 +164,9 @@ table.cat .t { color: var(--c-piece); }
 .views { padding-top: 2px; }
 .view-tab { padding-top: 6px; padding-bottom: 7px; }
 @media (max-width: 760px) { .views { padding-top: 2px; } .view-tab { padding-top: 6px; padding-bottom: 7px; } }
+
+/* One rule for the title of every view (Analysis, Catalogue): same element, same class, same size.
+   They had drifted apart because the analysis block came from the old page with its own heading style. */
+.view-title, #statsPane h5.view-title { font: 700 var(--fs-l)/1.25 var(--f-body); text-align: left; margin: 0 0 4px; }
+#statsPane .forerunner-note { margin: 0 0 12px; }
+#view-analysis .toc { margin-bottom: 8px; }
