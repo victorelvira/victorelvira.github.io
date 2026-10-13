@@ -1,5 +1,5 @@
 // Version and build stamp (CONVENTIONS.md section 3). Bump DATA_V and the ?v= tags in nyc.html together.
-const DATA_V = "0.3.4";
+const DATA_V = "0.3.5";
 
 // "is the 86th edition", or, for 1939, why it has no number.
 function editionText(year, verb) {
