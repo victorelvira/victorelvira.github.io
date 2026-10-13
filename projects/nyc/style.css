@@ -364,3 +364,10 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 @media (max-width: 760px) { .row { padding-left: 0; padding-right: 0; } }
 /* "Colour by" starts at the left */
 .key .colour-by { justify-content: flex-start; }
+
+/* number close to the title and on the same line as its letters (Víctor, 2026-10-13): a column just wide
+   enough for two digits, a small gap, and number and title sharing one baseline */
+.row { grid-template-columns: 1.35em minmax(0, 1fr); column-gap: 6px; }
+@media (max-width: 760px) { .row { grid-template-columns: 1.35em minmax(0, 1fr); column-gap: 6px; } }
+.row .n { padding-top: 0; font-size: var(--fs-m); align-self: baseline; }
+.row .t { align-self: baseline; }
