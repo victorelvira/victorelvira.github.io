@@ -4,7 +4,7 @@
 "use strict";
 
 const DATA_V = "1.0.0";
-const BUILD_AT = "2026-10-12 22:20";
+const BUILD_AT = "2026-10-13 16:14";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
