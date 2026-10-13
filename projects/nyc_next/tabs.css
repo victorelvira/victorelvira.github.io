@@ -129,3 +129,28 @@ table.cat .t { color: var(--c-piece); }
    other and tinted whole sections on hover. Undo it here. */
 #statsPane .row { column-gap: 0; padding: 0; border: 0; border-radius: 0; cursor: auto; grid-template-columns: none; }
 #statsPane .row:hover, #statsPane .row:focus-visible { background: none; }
+
+/* the catalogue on a phone: same type, much less air */
+@media (max-width: 760px) {
+  .cat-title { margin: 0 0 6px; }
+  .cat-tools { gap: 6px 10px; margin-bottom: 6px; }
+  #cat-search { padding: 6px 8px; }
+  table.cat th { padding: 5px 6px; }
+  table.cat td { padding: 4px 6px; line-height: 1.3; }
+  #view-catalogue .tab-pane { padding: 8px; }
+}
+/* On a phone four columns do not fit: each piece becomes two lines, the title with its number of
+   concerts, then composer and form. The header stays as a row of sort buttons. */
+@media (max-width: 760px) {
+  table.cat, table.cat tbody { display: block; }
+  table.cat thead tr { display: flex; flex-wrap: wrap; gap: 0 4px; border-bottom: 2px solid var(--line); }
+  table.cat thead th { border: 0; padding: 4px 6px; }
+  table.cat tbody tr { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: 8px;
+    grid-template-areas: "t t n" "c f f"; padding: 5px 6px; border-bottom: 1px solid var(--line); }
+  table.cat td { border: 0; padding: 0; }
+  table.cat td:nth-child(1) { grid-area: t; }
+  table.cat td:nth-child(2) { grid-area: f; }
+  table.cat td:nth-child(3) { grid-area: c; }
+  table.cat td:nth-child(4) { grid-area: n; }
+  table.cat .chip.k { padding: 0 7px; }
+}

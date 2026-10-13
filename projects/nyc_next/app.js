@@ -3,7 +3,7 @@
 // nyc_next/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "0.9.3";
+const DATA_V = "0.9.4";
 const BUILD_AT = "2026-10-12 22:20";
 
 // --- indexes ---------------------------------------------------------------------------------

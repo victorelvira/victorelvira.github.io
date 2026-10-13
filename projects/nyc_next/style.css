@@ -103,7 +103,7 @@ body.resizing { user-select: none; cursor: col-resize; }
 
 .c-head h1 { font: 700 var(--fs-xl)/1.15 var(--f-body); margin: 0; }
 .c-head h1 .date { font-size: var(--fs-l); font-weight: 400; color: var(--muted); margin-left: 2px; }
-.c-head .who { font-size: var(--fs-l); margin: 4px 0 0; }
+.c-head .who { font-size: var(--fs-m); margin: 4px 0 0; }
 .c-head .who button { all: unset; cursor: pointer; border-bottom: 1px dotted var(--muted); }
 .c-head .meta { color: var(--muted); font-size: var(--fs-m); margin: 6px 0 0; }
 .part { margin-top: 18px; }
@@ -117,8 +117,8 @@ ol.prog { list-style: none; margin: 0; padding: 0; }
 .row.hl { background: var(--gold-soft); }
 .row .n { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; padding-top: 1px; }
 .row .t { font-size: var(--fs-m); line-height: 1.35; }
-.row .op { color: var(--muted); font-size: var(--fs-s); font-variant-numeric: tabular-nums; white-space: nowrap; padding-top: 3px; }
-.row .sub { grid-column: 2 / 4; font-size: var(--fs-s); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.row .op { color: var(--muted); font-size: var(--fs-m); font-variant-numeric: tabular-nums; white-space: nowrap; padding-top: 3px; }
+.row .sub { grid-column: 2 / 4; font-size: var(--fs-m); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
 .chip { display: inline-block; font-size: var(--fs-s); padding: 1px 8px; border-radius: 999px; background: var(--chip); color: var(--ink); }
 /* Facts that cannot be clicked are plain text, never pills: the pill shape means "tap me". */
 .badge { font-size: var(--fs-s); font-style: italic; color: var(--muted); }
@@ -309,3 +309,7 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
   .row .t { line-height: 1.25; }
   .row .sub { gap: 2px 8px; }
 }
+
+/* One size for everything that is data (15): conductor, counts, titles, composers, forms, opus. Bigger only
+   for the concert's title; smaller (13) only for instructions and notes about the page. */
+.row .chip { font-size: inherit; }
