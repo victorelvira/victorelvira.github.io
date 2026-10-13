@@ -15,26 +15,26 @@
   <link rel="icon" href="/assets/favicons/main/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/main/favicon-32x32.png">
   <meta name="theme-color" content="#f5f3ee">
-  <link rel="stylesheet" href="nyc/style.css?v=1.4.2">
-  <script src="nyc/catalogue.js?v=1.4.2"></script>
-  <script src="nyc/composers.js?v=1.4.2"></script>
-  <script src="nyc/conductors.js?v=1.4.2"></script>
-  <script src="nyc/concerts.js?v=1.4.2"></script>
-  <script src="nyc/performances.js?v=1.4.2"></script>
-  <script src="nyc/announced.js?v=1.4.2"></script>
-  <script src="nyc/concert_meta.js?v=1.4.2"></script>
-  <script src="nyc/portraits.js?v=1.4.2"></script>
-  <script src="nyc/recordings.js?v=1.4.2"></script>
-  <script src="nyc/links.js?v=1.4.2"></script>
+  <link rel="stylesheet" href="nyc/style.css?v=1.4.3">
+  <script src="nyc/catalogue.js?v=1.4.3"></script>
+  <script src="nyc/composers.js?v=1.4.3"></script>
+  <script src="nyc/conductors.js?v=1.4.3"></script>
+  <script src="nyc/concerts.js?v=1.4.3"></script>
+  <script src="nyc/performances.js?v=1.4.3"></script>
+  <script src="nyc/announced.js?v=1.4.3"></script>
+  <script src="nyc/concert_meta.js?v=1.4.3"></script>
+  <script src="nyc/portraits.js?v=1.4.3"></script>
+  <script src="nyc/recordings.js?v=1.4.3"></script>
+  <script src="nyc/links.js?v=1.4.3"></script>
   <!-- the "Analysis and context" tab, as on the published page: Chart.js (pinned) + its own helpers -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="nyc/chart_theme.js?v=1.4.2"></script>
-  <script src="nyc/legacy_charts.js?v=1.4.2"></script>
+  <script src="nyc/chart_theme.js?v=1.4.3"></script>
+  <script src="nyc/legacy_charts.js?v=1.4.3"></script>
   <script>
     var total_pieces_all_concerts = concerts.reduce((s, c) => s + c.program.piece_id.length, 0);
   </script>
-  <link rel="stylesheet" href="nyc/tabs.css?v=1.4.2">
-  <script src="nyc/app.js?v=1.4.2" defer></script>
+  <link rel="stylesheet" href="nyc/tabs.css?v=1.4.3">
+  <script src="nyc/app.js?v=1.4.3" defer></script>
 </head>
 <body>
   <nav id="navbar">
@@ -1652,17 +1652,9 @@
     </div>
   </div>
   <footer class="site-foot">
-    <p>&copy; <span id="foot-year"></span> Víctor Elvira · data and code <span id="foot-build"></span></p>
-    <p><a href="nyc_old.html">The previous version of this page</a> is still online.</p>
-    <p>Sources: the Vienna Philharmonic's concert archive, German Wikipedia, MusicBrainz, Wikidata, IMSLP and Wikimedia Commons, each cited where it is used.</p>
+    <p>&copy; <span id="foot-year"></span> Víctor Elvira · Sources: the Vienna Philharmonic's concert archive, German Wikipedia, MusicBrainz, Wikidata, IMSLP and Wikimedia Commons, each cited where it is used.</p>
   </footer>
-  <script>
-    // app.js is deferred: its version stamp exists once the document has been parsed
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("foot-year").textContent = new Date().getFullYear();
-      document.getElementById("foot-build").textContent = "v" + DATA_V + " · " + BUILD_AT;
-    });
-  </script>
+  <script>document.getElementById("foot-year").textContent = new Date().getFullYear();</script>
   <!-- The same three counters as the published page (Google Analytics, Statcounter, GoatCounter), loaded
        only on victorelvira.github.io so that local tests are not counted, and each one once. -->
   <script>
