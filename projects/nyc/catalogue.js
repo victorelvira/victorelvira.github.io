@@ -13,7 +13,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Abschieds-Rufe_Walzer,_Op.179_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -43,13 +43,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Albion-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Albion-Polka,_Op.102_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -67,7 +67,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Alexandrinen-Polka,_Op.198_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -85,7 +85,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Alice-Polka,_Op.238_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Polka"
@@ -133,13 +133,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Amazonen-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Amazonen-Polka,_Op.9_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -157,7 +157,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/An_der_Elbe,_Op.477_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -229,7 +229,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Aquarellen,_Op.258_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -247,7 +247,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Arm_in_Arm,_Op.215_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka mazurka"
@@ -265,7 +265,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Auf_Ferienreisen,_Op.133_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -276,14 +276,14 @@ var catalogue = [
     "piece_id": 16,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Auf_der_Jagd",
+        "de": "https://de.wikipedia.org/wiki/Auf_der_Jagd_(Polka)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Auf_der_Jagd,_Op.373_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -301,7 +301,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Auf_und_davon%21,_Op.73_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka schnell"
@@ -313,13 +313,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Auf_zum_Tanze"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Auf_zum_Tanze%21,_Op.436_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -337,7 +337,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Aufs_Korn%21,_Op.478_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -348,14 +348,14 @@ var catalogue = [
     "piece_id": 20,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Invitation_to_the_Dance_(Weber)",
+        "de": "https://de.wikipedia.org/wiki/Aufforderung_zum_Tanz_(Weber)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Aufforderung_zum_Tanze,_Op.65_(Weber,_Carl_Maria_von)"
     },
     "composer_id": 3,
     "type": "Rondo"
@@ -373,7 +373,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Augensprache,_Op.119_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka française"
@@ -385,13 +385,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Aurora-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Aurora-Polka,_Op.165_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -427,7 +427,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Aus_den_Bergen_Walzer,_Op.292_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -445,7 +445,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Aus_der_Ferne,_Op.270_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka mazurka"
@@ -463,7 +463,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Ausser_Rand_und_Band,_Op.168_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka schnell"
@@ -481,7 +481,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Bad'ner_Mad'ln_Walzer,_Op.257_(Komz%C3%A1k_II,_Karel)"
     },
     "composer_id": 29,
     "type": "Waltz"
@@ -499,7 +499,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Bahn_frei%21,_Op.45_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka schnell"
@@ -528,14 +528,14 @@ var catalogue = [
     "piece_id": 30,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Banditen-Galopp",
+        "de": "https://de.wikipedia.org/wiki/Banditen-Galopp"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Banditen-Galopp,_Op.378_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Galop"
@@ -547,13 +547,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Bauern-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Bauern-Polka,_Op.276_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -571,7 +571,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Bei_uns_z'Haus,_Op.361_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -589,7 +589,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Annen-Polka,_Op.137_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Polka"
@@ -600,14 +600,14 @@ var catalogue = [
     "piece_id": 34,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Bitte_schön!",
+        "de": "https://de.wikipedia.org/wiki/Bitte_schön"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Bitte_sch%C3%B6n,_Op.372_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -619,13 +619,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Bluette_(Polka)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Bluette-Polka,_Op.271_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -637,13 +637,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Blumenfest-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Blumenfest-Polka,_Op.111_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -673,13 +673,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Brautschau-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Brautschau,_Op.417_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -697,7 +697,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Brennende_Liebe,_Op.129_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka mazurka"
@@ -733,7 +733,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Cachucha-Galopp,_Op.97_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -751,7 +751,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Carmen-Quadrille,_Op.134_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Quadrille"
@@ -769,7 +769,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Carnevals-Botschafter_Walzer,_Op.270_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -799,13 +799,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Caroussel-Marsch"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Caroussel-Marsch,_Op.133_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -841,7 +841,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Champagne_Galop,_Op.14_(Lumbye,_Hans_Christian)"
     },
     "composer_id": 16,
     "type": "Galop"
@@ -852,14 +852,14 @@ var catalogue = [
     "piece_id": 48,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Champagner-Polka",
+        "de": "https://de.wikipedia.org/wiki/Champagner-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Champagner-Polka,_Op.211_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -877,7 +877,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Chineser-Galoppe,_Op.20_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -895,7 +895,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Ritter_P%C3%A1sm%C3%A1n,_Op.441_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Csárdás"
@@ -931,7 +931,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Danse_Diabolique_(Hellmesberger_Jr.,_Joseph)"
     },
     "composer_id": 26,
     "type": "Other dances"
@@ -942,14 +942,14 @@ var catalogue = [
     "piece_id": 53,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Debut-Quadrille",
+        "de": "https://de.wikipedia.org/wiki/Debut-Quadrille"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Debut-Quadrille,_Op.2_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -979,7 +979,7 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "https://en.wikipedia.org/wiki/Demolirer-Polka",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Demolirer-Polka"
       },
       "you": {
         "this": "",
@@ -1003,7 +1003,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Der_Carneval_in_Paris,_Op.100_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -1015,13 +1015,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Der_Kobold_(Polka)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Der_Kobold,_Op.226_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka mazurka"
@@ -1068,14 +1068,14 @@ var catalogue = [
     "piece_id": 60,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Die_Bajadere_(polka)",
+        "de": "https://de.wikipedia.org/wiki/Die_Bajadere_(Polka)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Bajadere,_Op.351_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -1111,7 +1111,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Extravaganten_Walzer,_Op.205_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -1165,7 +1165,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Libelle,_Op.204_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka mazurka"
@@ -1183,7 +1183,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Mozartisten,_Op.196_(Lanner,_Joseph)"
     },
     "composer_id": 28,
     "type": "Waltz"
@@ -1213,13 +1213,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Die_Pariserin_(Polka)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Pariserin,_Op.238_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -1255,7 +1255,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Publicisten,_Op.321_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -1309,7 +1309,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Sch%C3%B6nbrunner,_Op.200_(Lanner,_Joseph)"
     },
     "composer_id": 28,
     "type": "Waltz"
@@ -1345,7 +1345,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Soubrette,_Op.109_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -1399,7 +1399,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Werber,_Op.103_(Lanner,_Joseph)"
     },
     "composer_id": 28,
     "type": "Waltz"
@@ -1435,7 +1435,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_tanzende_Muse,_Op.266_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka mazurka"
@@ -1447,7 +1447,7 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Diplomaten-Polka"
       },
       "you": {
         "this": "",
@@ -1471,7 +1471,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Donauweibchen,_Op.427_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -1483,7 +1483,7 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "https://en.wikipedia.org/wiki/Dorfschwalben_aus_%C3%96sterreich",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Dorfschwalben_aus_Österreich"
       },
       "you": {
         "this": "",
@@ -1507,7 +1507,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Du_und_Du,_Op.367_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -1518,14 +1518,14 @@ var catalogue = [
     "piece_id": 85,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Dynamiden",
+        "de": "https://de.wikipedia.org/wiki/Dynamiden"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Geheime_Anziehungskr%C3%A4fte,_Op.173_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -1536,14 +1536,14 @@ var catalogue = [
     "piece_id": 86,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Egyptischer_Marsch",
+        "de": "https://de.wikipedia.org/wiki/Egyptischer_Marsch"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/%C3%84gyptischer_Marsch,_Op.335_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -1554,14 +1554,14 @@ var catalogue = [
     "piece_id": 87,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Ein_Herz,_ein_Sinn!",
+        "de": "https://de.wikipedia.org/wiki/Ein_Herz,_ein_Sinn"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Ein_Herz_und_ein_Sinn,_Op.323_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka mazurka"
@@ -1615,7 +1615,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Einzugs-Galopp,_Op.35_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -1699,13 +1699,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Electrofor-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Electrophor-Polka,_Op.297_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -1717,13 +1717,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Electro-magnetische-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Elektro-magnetische_Polka,_Op.110_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -1753,13 +1753,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Elisen-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Elisen-Polka,_Op.151_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -1777,7 +1777,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Kaiser-Walzer,_Op.437_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -1795,7 +1795,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Entr'acte_valse_(Hellmesberger_Jr.,_Joseph)"
     },
     "composer_id": 26,
     "type": "Waltz"
@@ -1825,7 +1825,7 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Entweder_–_oder"
       },
       "you": {
         "this": "",
@@ -1849,7 +1849,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Erinnerung_an_Ernst,_Op.126_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Fantasie"
@@ -1879,13 +1879,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Es_war_so_wunderschön"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Es_war_so_wundersch%C3%B6n,_Op.467_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -1903,7 +1903,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Espa%C3%B1a,_Op.236_(Waldteufel,_Emile)"
     },
     "composer_id": 38,
     "type": "Waltz"
@@ -1933,13 +1933,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Etwas_Kleines"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Etwas_Kleines,_Op.190_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -1968,14 +1968,14 @@ var catalogue = [
     "piece_id": 110,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Explosions-Polka",
+        "de": "https://de.wikipedia.org/wiki/Explosions-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Explosions-Polka,_Op.43_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -1993,7 +1993,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Express-Polka,_Op.311_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -2041,13 +2041,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Fata_Morgana_(Polka_Mazur)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Fata_Morgana,_Op.330_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka mazurka"
@@ -2058,14 +2058,14 @@ var catalogue = [
     "piece_id": 115,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Fatinitza",
+        "de": "https://de.wikipedia.org/wiki/Fatinitza"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Fatinitza_(Supp%C3%A9,_Franz_von)"
     },
     "composer_id": 13,
     "type": "March"
@@ -2101,7 +2101,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Fesche_Geister,_Op.75_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Waltz"
@@ -2119,7 +2119,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Fest-Marsch,_Op.452_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -2130,14 +2130,14 @@ var catalogue = [
     "piece_id": 119,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Feuerfest!",
+        "de": "https://de.wikipedia.org/wiki/Feuerfest!"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Feuerfest%21,_Op.269_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka française"
@@ -2149,7 +2149,7 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "https://en.wikipedia.org/wiki/Figaro-Polka",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Figaro-Polka"
       },
       "you": {
         "this": "",
@@ -2185,13 +2185,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Fledermaus-Quadrille"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Fledermaus-Quadrille,_Op.363_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -2209,7 +2209,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/For_Ever,_Op.193_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -2227,7 +2227,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Frauenherz,_Op.166_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka mazurka"
@@ -2245,7 +2245,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Frauenw%C3%BCrde,_Op.277_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -2263,7 +2263,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Frederica-Polka,_Op.239_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Polka"
@@ -2292,14 +2292,14 @@ var catalogue = [
     "piece_id": 128,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Freikugeln",
+        "de": "https://de.wikipedia.org/wiki/Freikugeln"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Freikugeln,_Op.326_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -2317,7 +2317,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Freudengr%C3%BCsse_Walzer,_Op.128_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -2335,7 +2335,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Freut_euch_des_Lebens,_Op.340_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -2347,13 +2347,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Frisch_heran"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Frisch_Heran%21,_Op.386_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -2383,13 +2383,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Furioso-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Furioso-Polka,_Op.260_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -2407,7 +2407,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Furioso-Galopp,_Op.114_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -2515,7 +2515,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Gedankenflug_Walzer,_Op.215_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -2533,7 +2533,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Gitana-Galopp,_Op.108_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -2605,7 +2605,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Gruss_an_Prag,_Op.144_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka française"
@@ -2641,7 +2641,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Harlekin-Polka,_Op.48_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka"
@@ -2653,13 +2653,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Haute_volée-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Haute_vol%C3%A9e-Polka,_Op.155_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -2713,7 +2713,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Heldengedichte,_Op.87_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -2731,7 +2731,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Helenen-Quadrille,_Op.14_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Quadrille"
@@ -2743,13 +2743,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Hellenen-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Hellenen-Polka,_Op.203_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -2767,7 +2767,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Herrreinspaziert%21,_Op.518_(Ziehrer,_Karl_Michael)"
     },
     "composer_id": 4,
     "type": "Waltz"
@@ -2779,13 +2779,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Herzenskönigin"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Herzensk%C3%B6nigin,_Op.445_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -2803,7 +2803,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Hesperusbahnen,_Op.279_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -2821,7 +2821,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Hofballt%C3%A4nze_Walzer,_Op.298_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -2839,7 +2839,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Hofballt%C3%A4nze,_Op.161_(Lanner,_Joseph)"
     },
     "composer_id": 28,
     "type": "Waltz"
@@ -2869,13 +2869,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/I-Tipferl-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/I_Tipferl-Polka,_Op.377_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -2893,7 +2893,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Im_Fluge,_Op.230_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -2905,13 +2905,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Im_Sturmschritt"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Im_Sturmschritt,_Op.348_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -2947,7 +2947,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/In_der_Heimat,_Op.231_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka mazurka"
@@ -2976,14 +2976,14 @@ var catalogue = [
     "piece_id": 166,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Im_Krapfenwald'l",
+        "de": "https://de.wikipedia.org/wiki/Im_Krapfenwald’l"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Im_Krapfenwald'l,_Op.336_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -3001,7 +3001,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Indigo-Marsch,_Op.349_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -3019,7 +3019,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Indianer-Galopp,_Op.111_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -3049,7 +3049,7 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Ischler_Walzer"
       },
       "you": {
         "this": "",
@@ -3073,7 +3073,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Jocus-Polka,_Op.216_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -3091,7 +3091,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Jokey-Polka,_Op.278_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -3121,13 +3121,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Kaiser-Franz-Joseph-I.-Rettungs-Jubel-Marsch"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Rettungs-Jubel-Marsch,_Op.126_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -3139,13 +3139,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Kaiser-Franz-Joseph-Marsch"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Kaiser_Franz_Josef_Marsch,_Op.67_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -3163,7 +3163,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Klangfiguren_Walzer,_Op.251_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -3181,7 +3181,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Kleine_Chronik,_Op.128_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka schnell"
@@ -3211,13 +3211,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Klipp-Klapp-Galopp"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Klipp-Klapp-Galopp,_Op.466_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Galop"
@@ -3235,7 +3235,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Knall_und_Fall,_Op.132_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka schnell"
@@ -3271,7 +3271,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Kr%C3%B6nungslieder_Walzer,_Op.184_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -3289,7 +3289,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Kuss-Walzer,_Op.400_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -3325,7 +3325,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/K%C3%BCnstler-Gru%C3%9F,_Op.274_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka française"
@@ -3343,7 +3343,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/K%C3%BCnstler-Quadrille,_Op.201_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -3361,7 +3361,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/K%C3%BCnstlerleben,_Op.316_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -3373,13 +3373,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/L’Enfantillage-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/L'enfantillage,_Op.202_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -3444,14 +3444,14 @@ var catalogue = [
     "piece_id": 192,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Leichtes_Blut",
+        "de": "https://de.wikipedia.org/wiki/Leichtes_Blut"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Leichtes_Blut,_Op.319_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -3487,7 +3487,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Les_patineurs,_Op.183_(Waldteufel,_Emile)"
     },
     "composer_id": 38,
     "type": "Waltz"
@@ -3541,7 +3541,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Liebes-Lieder_Walzer,_Op.114_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -3571,13 +3571,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Lieder-Quadrille"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Lieder-Quadrille,_Op.275_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -3606,14 +3606,14 @@ var catalogue = [
     "piece_id": 201,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Lob_der_Frauen",
+        "de": "https://de.wikipedia.org/wiki/Lob_der_Frauen"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Lob_der_Frauen,_Op.315_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka mazurka"
@@ -3631,7 +3631,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Loreley-Rheinkl%C3%A4nge_Walzer,_Op.154_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Waltz"
@@ -3661,13 +3661,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Louischen"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Louischen,_Op.339_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -3679,13 +3679,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Lucifer-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Luzifer-Polka,_Op.266_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -3775,7 +3775,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Margherita-Polka,_Op.244_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka"
@@ -3793,7 +3793,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Marianka-Polka,_Op.173_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Polka"
@@ -3829,7 +3829,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Marien-Walzer,_Op.212_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Waltz"
@@ -3865,7 +3865,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Mein_Lebenslauf_ist_Lieb'_und_Lust%21,_Op.263_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -3877,13 +3877,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Melodien-Quadrille"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Melodien-Quadrille,_Op.112_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -3919,7 +3919,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Mephistos_H%C3%B6llenrufe_Walzer,_Op.101_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -3955,7 +3955,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Mit_Dampf,_Op.70_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka schnell"
@@ -3973,7 +3973,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Mit_Extrapost,_Op.259_(Strauss,_Eduard)"
     },
     "composer_id": 7,
     "type": "Polka schnell"
@@ -4027,7 +4027,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Morgenbl%C3%A4tter,_Op.279_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -4045,7 +4045,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Motoren_Walzer,_Op.265_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -4075,13 +4075,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Muthig_Voran"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Mutig_voran%21,_Op.432_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -4099,7 +4099,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Myrtenbl%C3%BCten,_Op.395_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -4117,7 +4117,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/M%C3%A4rchen_aus_dem_Orient,_Op.444_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -4135,7 +4135,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Nachtfalter_Walzer,_Op.157_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -4171,7 +4171,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Nachtschw%C3%A4rmer,_Op.466_(Ziehrer,_Karl_Michael)"
     },
     "composer_id": 4,
     "type": "Waltz"
@@ -4183,13 +4183,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Napoleon-Marsch"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Napoleon-Marsch,_Op.156_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -4225,7 +4225,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Neu-Wien,_Op.342_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -4237,7 +4237,7 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "https://en.wikipedia.org/wiki/Neue_Pizzicato_Polka",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Neue_Pizzicato-Polka"
       },
       "you": {
         "this": "",
@@ -4261,7 +4261,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Neue_Melodien-Quadrille,_Op.254_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -4273,13 +4273,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Niko-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Niko-Polka,_Op.228_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -4297,7 +4297,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Nordseebilder,_Op.390_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -4309,13 +4309,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Nur_fort"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Nur_fort%21,_Op.383_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -4333,7 +4333,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Nymphen,_Op.50_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka"
@@ -4351,7 +4351,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/O_sch%C3%B6ner_Mai%21,_Op.375_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -4405,7 +4405,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Ohne_Sorgen%21,_Op.271_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -4453,13 +4453,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Orpheus-Quadrille"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Orpheus-Quadrille,_Op.236_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -4470,14 +4470,14 @@ var catalogue = [
     "piece_id": 249,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Das_Spitzentuch_der_Königin",
+        "de": "https://de.wikipedia.org/wiki/Das_Spitzentuch_der_Königin"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Das_Spitzentuch_der_K%C3%B6nigin_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Overture"
@@ -4506,14 +4506,14 @@ var catalogue = [
     "piece_id": 251,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Donna_Diana",
+        "de": "https://de.wikipedia.org/wiki/Donna_Diana"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Donna_Diana_(Reznicek,_Emil_von)"
     },
     "composer_id": 9,
     "type": "Overture"
@@ -4543,13 +4543,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Banditenstreiche"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Banditenstreiche_(Supp%C3%A9,_Franz_von)"
     },
     "composer_id": 13,
     "type": "Overture"
@@ -4560,14 +4560,14 @@ var catalogue = [
     "piece_id": 254,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Boccaccio_(operetta)",
+        "de": "https://de.wikipedia.org/wiki/Boccaccio_(Suppè)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Boccaccio_(Supp%C3%A9,_Franz_von)"
     },
     "composer_id": 13,
     "type": "Overture"
@@ -4578,14 +4578,14 @@ var catalogue = [
     "piece_id": 255,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Cagliostro_in_Wien",
+        "de": "https://de.wikipedia.org/wiki/Cagliostro_in_Wien"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Cagliostro_in_Wien_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Overture"
@@ -4603,7 +4603,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Der_Carneval_in_Rom_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Overture"
@@ -4614,14 +4614,14 @@ var catalogue = [
     "piece_id": 257,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Blindekuh_(operetta)",
+        "de": "https://de.wikipedia.org/wiki/Blindekuh_(Operette)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Blindekuh_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Overture"
@@ -4632,14 +4632,14 @@ var catalogue = [
     "piece_id": 258,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Die_Landstreicher",
+        "de": "https://de.wikipedia.org/wiki/Die_Landstreicher_(Operette)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Landstreicher_(Ziehrer,_Karl_Michael)"
     },
     "composer_id": 4,
     "type": "Overture"
@@ -4650,8 +4650,8 @@ var catalogue = [
     "piece_id": 259,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Die_Rheinnixen",
+        "de": "https://de.wikipedia.org/wiki/Die_Rheinnixen"
       },
       "you": {
         "this": "",
@@ -4668,14 +4668,14 @@ var catalogue = [
     "piece_id": 260,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Die_schöne_Galathée",
+        "de": "https://de.wikipedia.org/wiki/Die_schöne_Galathée"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_sch%C3%B6ne_Galath%C3%A9e_(Supp%C3%A9,_Franz_von)"
     },
     "composer_id": 13,
     "type": "Overture"
@@ -4687,13 +4687,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Ein_Morgen,_ein_Mittag,_ein_Abend_in_Wien"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Ein_Morgen,_ein_Mittag_und_ein_Abend_in_Wien_(Supp%C3%A9,_Franz_von)"
     },
     "composer_id": 13,
     "type": "Overture"
@@ -4704,14 +4704,14 @@ var catalogue = [
     "piece_id": 262,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Prinz_Methusalem",
+        "de": "https://de.wikipedia.org/wiki/Prinz_Methusalem"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Prinz_Methusalem_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Overture"
@@ -4747,7 +4747,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Eine_Nacht_in_Venedig_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Overture"
@@ -4765,7 +4765,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/La_gazza_ladra_(Rossini,_Gioachino)"
     },
     "composer_id": 14,
     "type": "Overture"
@@ -4801,7 +4801,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_lustigen_Weiber_von_Windsor_(Nicolai,_Otto)"
     },
     "composer_id": 32,
     "type": "Overture"
@@ -4819,7 +4819,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Eine_Nacht_in_Venedig_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Overture"
@@ -4837,7 +4837,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Eine_Nacht_in_Venedig_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Overture"
@@ -4855,7 +4855,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Le_nozze_di_Figaro,_K.492_(Mozart,_Wolfgang_Amadeus)"
     },
     "composer_id": 37,
     "type": "Overture"
@@ -4866,8 +4866,8 @@ var catalogue = [
     "piece_id": 271,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Orpheus_in_the_Underworld",
+        "de": "https://de.wikipedia.org/wiki/Orpheus_in_der_Unterwelt"
       },
       "you": {
         "this": "",
@@ -4884,8 +4884,8 @@ var catalogue = [
     "piece_id": 272,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Pique_Dame_(Suppé)",
+        "de": "https://de.wikipedia.org/wiki/Pique_Dame_(Suppè)"
       },
       "you": {
         "this": "",
@@ -4920,14 +4920,14 @@ var catalogue = [
     "piece_id": 274,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Dichter_und_Bauer",
+        "de": "https://de.wikipedia.org/wiki/Dichter_und_Bauer"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Dichter_und_Bauer_(Supp%C3%A9,_Franz_von)"
     },
     "composer_id": 13,
     "type": "Overture"
@@ -4999,7 +4999,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Isabella_(Supp%C3%A9,_Franz_von)"
     },
     "composer_id": 13,
     "type": "Overture"
@@ -5029,13 +5029,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Par_force!"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Par_force-Polka,_Op.308_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -5053,7 +5053,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Paris,_Op.101_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Waltz"
@@ -5065,13 +5065,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Patronessen-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Patronessen-Polka,_Op.286_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -5083,13 +5083,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Pepita-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Pepita-Polka,_Op.138_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -5107,7 +5107,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Perlen_der_Liebe_Walzer,_Op.39_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -5136,14 +5136,14 @@ var catalogue = [
     "piece_id": 286,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Persischer_Marsch",
+        "de": "https://de.wikipedia.org/wiki/Persischer_Marsch"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Persischer-Marsch,_Op.289_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -5161,7 +5161,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Philomelen-Walzer,_Op.82_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Waltz"
@@ -5179,7 +5179,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Ph%C3%B6nix-Marsch,_Op.105_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "March"
@@ -5197,7 +5197,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Ph%C3%B6nix-Schwingen_Walzer,_Op.125_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -5215,7 +5215,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Piefke_und_Pufke-Polka,_Op.235_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Polka"
@@ -5227,13 +5227,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Pizzicato-Polka_(1869)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Pizzicato_Polka_(Strauss,_Josef)"
     },
     "composer_id": 21,
     "type": "Polka"
@@ -5251,7 +5251,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Plapperm%C3%A4ulchen,_Op.245_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -5305,7 +5305,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Process-Polka,_Op.294_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -5323,7 +5323,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/P%C3%AAle-m%C3%AAle,_Op.161_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -5371,13 +5371,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Rasch_in_der_That"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Rasch_in_der_Tat%21,_Op.409_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -5395,7 +5395,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Rathhaus-Ball-T%C3%A4nze,_Op.438_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -5407,13 +5407,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Reitermarsch_(1887)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Reitermarsch,_Op.428_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -5431,7 +5431,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Rosen_aus_dem_S%C3%BCden,_Op.388_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -5443,13 +5443,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Rotunde-Quadrille"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Rotunde-Quadrille,_Op.360_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -5479,13 +5479,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Russische_Marsch-Fantasie"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Russische_Marsch-Fantasie,_Op.353_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -5497,13 +5497,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Russischer_Marsch_(Strauss)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Russischer_Marsch,_Op.426_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -5514,14 +5514,14 @@ var catalogue = [
     "piece_id": 307,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/'S_gibt_nur_a_Kaiserstadt,_'s_gibt_nur_a_Wien!",
+        "de": "https://de.wikipedia.org/wiki/’s_gibt_nur_a_Kaiserstadt,_’s_gibt_nur_a_Wien"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/S_gibt_nur_a_Kaiserstadt,_'s_gibt_nur_a_Wien%21,_Op.291_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -5539,7 +5539,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Satanella-Polka,_Op.124_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -5557,7 +5557,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Schallwellen_Walzer,_Op.148_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -5575,7 +5575,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Schatz-Walzer,_Op.418_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -5587,13 +5587,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Scherz-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Scherz-Polka,_Op.72_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -5605,13 +5605,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Schnellpost-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Schnellpost-Polka,_Op.159_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -5659,13 +5659,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Schützen-Quadrille"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Sch%C3%BCtzen-Quadrille_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 8,
     "type": "Quadrille"
@@ -5677,13 +5677,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Secunden-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Secunden-Polka,_Op.258_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -5701,7 +5701,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Seid_umschlungen,_Millionen,_Op.443_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -5719,7 +5719,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Seufzer-Galoppe,_Op.9_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -5755,7 +5755,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Sinngedichte_Walzer,_Op.1_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -5767,13 +5767,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/So_ängstlich_sind_wir_nicht"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/So_%C3%A4ngstlich_sind_wir_nicht,_Op.413_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -5785,13 +5785,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Spanischer_Marsch"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Spanischer_Marsch,_Op.433_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -5809,7 +5809,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Sperl-Galopp,_Op.42_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -5827,7 +5827,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Sperl-Polka,_Op.133_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Polka"
@@ -5839,13 +5839,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Sphärenklänge"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Sph%C3%A4renkl%C3%A4nge_Walzer,_Op.235_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -5857,13 +5857,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Spleen-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Spleen,_Op.197_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka mazurka"
@@ -5881,7 +5881,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Sport-polka,_Op.170_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -5893,13 +5893,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Stadt_und_Land_(Polka)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Stadt_und_Land,_Op.322_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka mazurka"
@@ -5917,7 +5917,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Stephanie-Gavotte,_Op.312_(Czibulka,_Alphons)"
     },
     "composer_id": 1,
     "type": "Gavotte"
@@ -5935,7 +5935,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Steyrische_T%C3%A4nze,_Op.165_(Lanner,_Joseph)"
     },
     "composer_id": 28,
     "type": "Other dances"
@@ -5971,7 +5971,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Studenten-Polka,_Op.263_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -6019,13 +6019,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Sängerslust-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/S%C3%A4ngerslust,_Op.328_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -6061,7 +6061,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/G'schichten_aus_dem_Wienerwald,_Op.325_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -6097,7 +6097,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Tausend_und_eine_Nacht,_Op.346_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -6133,7 +6133,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Telegramme_Walzer,_Op.318_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -6169,7 +6169,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/St%C3%BCrmisch_in_Lieb'_und_Tanz,_Op.393_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -6205,7 +6205,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Die_Romantiker,_Op.167_(Lanner,_Joseph)"
     },
     "composer_id": 28,
     "type": "Waltz"
@@ -6235,13 +6235,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Tik-Tak-Polka"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Tik-Tak,_Op.365_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -6271,7 +6271,7 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "https://en.wikipedia.org/wiki/Tritsch-Tratsch-Polka",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Tritsch-Tratsch-Polka"
       },
       "you": {
         "this": "",
@@ -6307,13 +6307,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Un_ballo_in_maschera_(Quadrille)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Un_ballo_in_Maschera_Quadrille,_Op.272_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -6361,13 +6361,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Unter_Donner_und_Blitz"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Unter_Donner_und_Blitz,_Op.324_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -6385,7 +6385,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Unter_vier_Augen,_Op.15_(Hellmesberger_Jr.,_Joseph)"
     },
     "composer_id": 26,
     "type": "Polka mazurka"
@@ -6433,13 +6433,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Vaterländischer_Marsch"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Vaterl%C3%A4ndischer_Marsch_(Strauss,_Josef)"
     },
     "composer_id": 24,
     "type": "March"
@@ -6457,7 +6457,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Veilchen-Polka,_Op.132_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka"
@@ -6475,7 +6475,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Venetianer-Galopp,_Op.74_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -6486,14 +6486,14 @@ var catalogue = [
     "piece_id": 361,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Vergnügungszug",
+        "de": "https://de.wikipedia.org/wiki/Vergnügungszug"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Vergn%C3%BCgungszug_Polka,_Op.281_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -6529,7 +6529,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Versailler_Galopp,_Op.107_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -6559,13 +6559,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Violetta_(Polka)"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Violetta,_Op.404_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka française"
@@ -6576,14 +6576,14 @@ var catalogue = [
     "piece_id": 366,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Vom_Donaustrande",
+        "de": "https://de.wikipedia.org/wiki/Vom_Donaustrande"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Vom_Donaustrande,_Op.356_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"
@@ -6619,7 +6619,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/V%C3%A9locip%C3%A8de,_Op.259_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -6655,7 +6655,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Walzer_%C3%A0_la_Paganini,_Op.11_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Waltz"
@@ -6673,7 +6673,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Weaner_Mad'ln,_Op.388_(Ziehrer,_Karl_Michael)"
     },
     "composer_id": 4,
     "type": "Waltz"
@@ -6727,7 +6727,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Wettrennen-Gallop,_Op.29a_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -6738,14 +6738,14 @@ var catalogue = [
     "piece_id": 375,
     "links": {
       "wiki": {
-        "en": "",
-        "de": ""
+        "en": "https://en.wikipedia.org/wiki/Wiener_Blut_(operetta)",
+        "de": "https://de.wikipedia.org/wiki/Wiener_Blut"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Wiener_Blut,_Op.354_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -6799,7 +6799,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Wiener_Fresken_Walzer,_Op.249_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -6817,7 +6817,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Wiener_Kinder_Walzer,_Op.61_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -6835,7 +6835,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Wiener_Leben,_Op.218_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka française"
@@ -6871,7 +6871,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Winterlust,_Op.121_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Polka schnell"
@@ -6889,7 +6889,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Wo_die_Citronen_bl%C3%BCh'n%21,_Op.364_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Waltz"
@@ -6919,13 +6919,13 @@ var catalogue = [
     "links": {
       "wiki": {
         "en": "",
-        "de": ""
+        "de": "https://de.wikipedia.org/wiki/Wo_uns’re_Fahne_weht"
       },
       "you": {
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Wo_uns're_Fahne_weht,_Op.473_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -6943,7 +6943,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Zampa-Galopp,_Op.62_(Strauss_Sr.,_Johann)"
     },
     "composer_id": 19,
     "type": "Galop"
@@ -6961,7 +6961,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Zeisserln_Walzer,_Op.114_(Strauss,_Josef)"
     },
     "composer_id": 23,
     "type": "Waltz"
@@ -6979,7 +6979,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Zigeunerin-Quadrille,_Op.24_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -6997,7 +6997,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Zigeunerbaron-Quadrille,_Op.422_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Quadrille"
@@ -7015,7 +7015,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/Zivio%21,_Op.456_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "March"
@@ -7033,7 +7033,7 @@ var catalogue = [
         "this": "",
         "other": ""
       },
-      "imslp": ""
+      "imslp": "https://imslp.org/wiki/%C3%89ljen_a_Magyar%21,_Op.332_(Strauss_Jr.,_Johann)"
     },
     "composer_id": 20,
     "type": "Polka schnell"

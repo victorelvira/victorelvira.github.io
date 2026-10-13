@@ -1,5 +1,5 @@
 // Version and build stamp (CONVENTIONS.md section 3). Bump DATA_V and the ?v= tags in nyc.html together.
-const DATA_V = "0.3.5";
+const DATA_V = "0.3.6";
 
 // "is the 86th edition", or, for 1939, why it has no number.
 function editionText(year, verb) {
@@ -133,7 +133,7 @@ function composerClicked(el) {
     ' played ' + yearsSentence(years_of_this_composer, "red");
   const person = getIdByComposer(name)[0];
   if (person && person.links.wiki.en) {
-    text_other += '<br><br> Find the biography of <em style="color:red">' + name + '</em> in this Wikipedia <a href=' + person.links.wiki.en + ' target="_blank">link.</a>';
+    text_other += '<br><br> Find the biography of <em style="color:red">' + name + '</em> in this Wikipedia <a href="' + person.links.wiki.en + '" target="_blank">link.</a>';
   }
   document.getElementById("info_text").innerHTML = text_other;
 }
@@ -604,18 +604,18 @@ function youtubeEmbed(url) {
                                     
                                     var text_other = piecePlayedText(this.innerHTML, piece_highlighted_id);
 
-                                    wiki_link_piece = item_filtered[0].links.wiki.en
+                                    wiki_link_piece = item_filtered[0].links.wiki.en || item_filtered[0].links.wiki.de || ""  // German article when there is no English one
                         
                         if (wiki_link_piece.length>0) // there is link
                         { 
                             //text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikipedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
-                            text_other += '<br><br> Find more information about the piece in this Wikipedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Find more information about the piece in this ' + (item_filtered[0].links.wiki.en ? '' : 'German ') + 'Wikipedia <a href="'+ wiki_link_piece +'" target="_blank">link.</a>'
                         }
                         imslp_link_piece = item_filtered[0].links.imslp
                         console.log(imslp_link_piece)
                         if (imslp_link_piece.length>0) // there is link
                         {
-                            text_other += '<br><br> Music score in this IMSLP <a href='+ imslp_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Music score in this IMSLP <a href="'+ imslp_link_piece +'" target="_blank">link.</a>'
                         }
 
                         you_link_piece = item_filtered[0].links.you.other
@@ -774,18 +774,18 @@ function youtubeEmbed(url) {
                                     var text_other = piecePlayedText(this.innerHTML, piece_highlighted_id);
 
 
-                                    wiki_link_piece = item_filtered[0].links.wiki.en
+                                    wiki_link_piece = item_filtered[0].links.wiki.en || item_filtered[0].links.wiki.de || ""  // German article when there is no English one
                         
                         if (wiki_link_piece.length>0) // there is link
                         { 
                             // text_other += '<br><br> More information about the piece <a style="color:blue">' + this.innerHTML + '</a> in this Wikipedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
-                            text_other += '<br><br> Find more information about the piece in this Wikipedia <a href='+ wiki_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Find more information about the piece in this ' + (item_filtered[0].links.wiki.en ? '' : 'German ') + 'Wikipedia <a href="'+ wiki_link_piece +'" target="_blank">link.</a>'
                         }
                         imslp_link_piece = item_filtered[0].links.imslp
                         console.log(imslp_link_piece)
                         if (imslp_link_piece.length>0) // there is link
                         {
-                            text_other += '<br><br> Music score in this IMSLP <a href='+ imslp_link_piece +'  target="_blank" >link.</a>'
+                            text_other += '<br><br> Music score in this IMSLP <a href="'+ imslp_link_piece +'" target="_blank">link.</a>'
                         }
 
                         you_link_piece = item_filtered[0].links.you.other

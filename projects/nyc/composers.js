@@ -230,7 +230,7 @@ var composers = [
     "id": 26,
     "links": {
       "wiki": {
-        "en": ""
+        "en": "https://en.wikipedia.org/wiki/Joseph_Hellmesberger_Jr."
       }
     }
   },
@@ -239,7 +239,7 @@ var composers = [
     "id": 27,
     "links": {
       "wiki": {
-        "en": ""
+        "en": "https://en.wikipedia.org/wiki/Joseph_Hellmesberger_Sr."
       }
     }
   },
