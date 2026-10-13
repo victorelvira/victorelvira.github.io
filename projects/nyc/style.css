@@ -349,3 +349,18 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 @media (max-width: 760px) { #card-body > .share { margin-right: 40px; } }   /* clear of the close button */
 
 .c-head > .share { float: right; margin: 4px 0 6px 10px; }
+
+/* the concert's heading as a short table (Víctor, 2026-10-13) */
+.c-facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 12px; margin: 10px 0 0; font-size: var(--fs-m); }
+.c-facts dt { color: var(--muted); }
+.c-facts dd { margin: 0; }
+.c-head .c-facts .who { font-size: var(--fs-m); margin: 0; }
+.c-note { font-size: var(--fs-s); color: var(--muted); margin: 8px 0 0; }
+.tap-key { font-style: italic; }
+.tap-key span { font-style: normal; }
+/* the programme lines up with its "Part 1" heading: number flush left, no inner indent */
+.row { padding-left: 0; padding-right: 0; }
+.row .n { text-align: left; }
+@media (max-width: 760px) { .row { padding-left: 0; padding-right: 0; } }
+/* "Colour by" starts at the left */
+.key .colour-by { justify-content: flex-start; }

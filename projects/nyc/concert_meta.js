@@ -6,346 +6,604 @@ var concert_meta = {
   },
   "1941": {
     "title": "Philharmonic Academy/1st New Year's Concert",
-    "date": "1941-01-01"
+    "date": "1941-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1941"
+    }
   },
   "1942": {
     "title": "Johan Strauss Concert/New Year's Concert",
-    "date": "1942-01-01"
+    "date": "1942-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1942"
+    }
   },
   "1943": {
     "title": "Philharmonic Academy/New Year's Concert",
-    "date": "1943-01-01"
+    "date": "1943-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1943"
+    }
   },
   "1944": {
     "title": "Philharmonic Academy/New Year's Concert",
-    "date": "1944-01-01"
+    "date": "1944-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1944"
+    }
   },
   "1945": {
     "title": "Philharmonic Academy",
-    "date": "1945-01-01"
+    "date": "1945-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1945"
+    }
   },
   "1946": {
     "title": "New Year's Concert",
-    "date": "1946-01-01"
+    "date": "1946-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1946"
+    }
   },
   "1947": {
     "title": "New Year's Concert",
-    "date": "1947-01-01"
+    "date": "1947-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1947"
+    }
   },
   "1948": {
     "title": "New Year's Concert",
-    "date": "1948-01-01"
+    "date": "1948-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1948"
+    }
   },
   "1949": {
     "title": "New Year's Concert",
-    "date": "1949-01-01"
+    "date": "1949-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1949"
+    }
   },
   "1950": {
     "title": "New Year's Concert",
-    "date": "1950-01-01"
+    "date": "1950-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1950"
+    }
   },
   "1951": {
     "title": "New Year's Concert",
-    "date": "1951-01-14"
+    "date": "1951-01-14",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1951"
+    }
   },
   "1952": {
     "title": "New Year's Concert",
-    "date": "1952-01-01"
+    "date": "1952-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1952"
+    }
   },
   "1953": {
     "title": "New Year's Concert",
-    "date": "1953-01-01"
+    "date": "1953-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1953"
+    }
   },
   "1954": {
     "title": "New Year's Concert",
-    "date": "1954-01-01"
+    "date": "1954-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1954"
+    }
   },
   "1955": {
     "title": "New Year's Concert",
-    "date": "1955-01-01"
+    "date": "1955-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1955"
+    }
   },
   "1956": {
     "title": "New Year's Concert",
-    "date": "1956-01-01"
+    "date": "1956-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1956"
+    }
   },
   "1957": {
     "title": "New Year's Concert",
-    "date": "1957-01-01"
+    "date": "1957-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1957"
+    }
   },
   "1958": {
     "title": "New Year's Concert",
-    "date": "1958-01-01"
+    "date": "1958-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1958"
+    }
   },
   "1959": {
     "title": "New Year's Concert",
-    "date": "1959-01-01"
+    "date": "1959-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1959"
+    }
   },
   "1960": {
     "title": "New Year's Concert",
-    "date": "1960-01-01"
+    "date": "1960-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1960"
+    }
   },
   "1961": {
     "title": "New Year's Concert",
-    "date": "1961-01-01"
+    "date": "1961-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1961"
+    }
   },
   "1962": {
     "title": "New Year's Concert",
-    "date": "1962-01-01"
+    "date": "1962-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1962"
+    }
   },
   "1963": {
     "title": "New Year's Concert",
-    "date": "1963-01-01"
+    "date": "1963-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1963"
+    }
   },
   "1964": {
     "title": "New Year's Concert",
-    "date": "1964-01-01"
+    "date": "1964-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1964"
+    }
   },
   "1965": {
     "title": "New Year's Concert",
-    "date": "1965-01-01"
+    "date": "1965-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1965"
+    }
   },
   "1966": {
     "title": "New Year's Concert",
-    "date": "1966-01-01"
+    "date": "1966-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1966"
+    }
   },
   "1967": {
     "title": "New Year's Concert",
-    "date": "1967-01-01"
+    "date": "1967-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1967"
+    }
   },
   "1968": {
     "title": "New Year's Concert",
-    "date": "1968-01-01"
+    "date": "1968-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1968"
+    }
   },
   "1969": {
     "title": "New Year's Concert",
-    "date": "1969-01-01"
+    "date": "1969-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1969"
+    }
   },
   "1970": {
     "title": "New Year's Concert",
-    "date": "1970-01-01"
+    "date": "1970-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1970"
+    }
   },
   "1971": {
     "title": "New Year's Concert",
-    "date": "1971-01-01"
+    "date": "1971-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1971"
+    }
   },
   "1972": {
     "title": "New Year's Concert",
-    "date": "1972-01-01"
+    "date": "1972-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1972"
+    }
   },
   "1973": {
     "title": "New Year's Concert",
-    "date": "1973-01-01"
+    "date": "1973-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1973"
+    }
   },
   "1974": {
     "title": "New Year's Concert",
-    "date": "1974-01-01"
+    "date": "1974-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1974"
+    }
   },
   "1975": {
     "title": "New Year's Concert",
-    "date": "1975-01-01"
+    "date": "1975-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1975"
+    }
   },
   "1976": {
     "title": "New Year's Concert",
-    "date": "1976-01-01"
+    "date": "1976-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1976"
+    }
   },
   "1977": {
     "title": "New Year's Concert",
-    "date": "1977-01-01"
+    "date": "1977-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1977"
+    }
   },
   "1978": {
     "title": "New Year's Concert",
-    "date": "1978-01-01"
+    "date": "1978-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1978"
+    }
   },
   "1979": {
     "title": "New Year's Concert",
-    "date": "1979-01-01"
+    "date": "1979-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1979"
+    }
   },
   "1980": {
     "title": "New Year's Concert",
-    "date": "1980-01-01"
+    "date": "1980-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1980"
+    }
   },
   "1981": {
     "title": "New Year's Concert",
-    "date": "1981-01-01"
+    "date": "1981-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1981"
+    }
   },
   "1982": {
     "title": "New Year's Concert",
-    "date": "1982-01-01"
+    "date": "1982-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1982"
+    }
   },
   "1983": {
     "title": "New Year's Concert",
-    "date": "1983-01-01"
+    "date": "1983-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1983"
+    }
   },
   "1984": {
     "title": "New Year's Concert",
-    "date": "1984-01-01"
+    "date": "1984-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1984"
+    }
   },
   "1985": {
     "title": "New Year's Concert",
-    "date": "1985-01-01"
+    "date": "1985-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1985"
+    }
   },
   "1986": {
     "title": "New Year's Concert",
-    "date": "1986-01-01"
+    "date": "1986-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1986"
+    }
   },
   "1987": {
     "title": "New Year's Concert",
-    "date": "1987-01-01"
+    "date": "1987-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1987"
+    }
   },
   "1988": {
     "title": "New Year's Concert",
-    "date": "1988-01-01"
+    "date": "1988-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1988"
+    }
   },
   "1989": {
     "title": "New Year's Concert",
-    "date": "1989-01-01"
+    "date": "1989-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1989"
+    }
   },
   "1990": {
     "title": "New Year's Concert",
-    "date": "1990-01-01"
+    "date": "1990-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1990"
+    }
   },
   "1991": {
     "title": "New Year's Concert",
-    "date": "1991-01-01"
+    "date": "1991-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1991"
+    }
   },
   "1992": {
     "title": "New Year's Concert",
-    "date": "1992-01-01"
+    "date": "1992-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1992"
+    }
   },
   "1993": {
     "title": "New Year's Concert",
-    "date": "1993-01-01"
+    "date": "1993-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1993"
+    }
   },
   "1994": {
     "title": "New Year's Concert",
-    "date": "1994-01-01"
+    "date": "1994-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1994"
+    }
   },
   "1995": {
     "title": "New Year's Concert",
-    "date": "1995-01-01"
+    "date": "1995-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1995"
+    }
   },
   "1996": {
     "title": "New Year's Concert",
-    "date": "1996-01-01"
+    "date": "1996-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1996"
+    }
   },
   "1997": {
     "title": "New Year's Concert",
-    "date": "1997-01-01"
+    "date": "1997-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1997"
+    }
   },
   "1998": {
     "title": "New Year's Concert",
-    "date": "1998-01-01"
+    "date": "1998-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1998"
+    }
   },
   "1999": {
     "title": "New Year's Concert",
-    "date": "1999-01-01"
+    "date": "1999-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1999"
+    }
   },
   "2000": {
     "title": "New Year's Concert",
-    "date": "2000-01-01"
+    "date": "2000-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2000"
+    }
   },
   "2001": {
     "title": "New Year's Concert",
-    "date": "2001-01-01"
+    "date": "2001-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2001"
+    }
   },
   "2002": {
     "title": "New Year's Concert",
-    "date": "2002-01-01"
+    "date": "2002-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2002"
+    }
   },
   "2003": {
     "title": "New Year's Concert",
-    "date": "2003-01-01"
+    "date": "2003-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2003"
+    }
   },
   "2004": {
     "title": "New Year's Concert",
-    "date": "2004-01-01"
+    "date": "2004-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2004"
+    }
   },
   "2005": {
     "title": "New Year's Concert",
-    "date": "2005-01-01"
+    "date": "2005-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2005"
+    }
   },
   "2006": {
     "title": "New Year's Concert",
-    "date": "2006-01-01"
+    "date": "2006-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2006"
+    }
   },
   "2007": {
     "title": "New Year's Concert",
-    "date": "2007-01-01"
+    "date": "2007-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2007"
+    }
   },
   "2008": {
     "title": "New Year's Concert",
-    "date": "2008-01-01"
+    "date": "2008-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2008"
+    }
   },
   "2009": {
     "title": "New Year's Concert",
-    "date": "2009-01-01"
+    "date": "2009-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2009"
+    }
   },
   "2010": {
     "title": "New Year's Concert",
-    "date": "2010-01-01"
+    "date": "2010-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2010"
+    }
   },
   "2011": {
     "title": "New Year's Concert",
-    "date": "2011-01-01"
+    "date": "2011-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2011"
+    }
   },
   "2012": {
     "title": "New Year's Concert",
-    "date": "2012-01-01"
+    "date": "2012-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2012"
+    }
   },
   "2013": {
     "title": "New Year's Concert",
-    "date": "2013-01-01"
+    "date": "2013-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2013"
+    }
   },
   "2014": {
     "title": "New Year's Concert",
-    "date": "2014-01-01"
+    "date": "2014-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2014"
+    }
   },
   "2015": {
     "title": "New Year's Concert",
-    "date": "2015-01-01"
+    "date": "2015-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2015"
+    }
   },
   "2016": {
     "title": "New Year's Concert",
-    "date": "2016-01-01"
+    "date": "2016-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2016"
+    }
   },
   "2017": {
     "title": "New Year's Concert",
-    "date": "2017-01-01"
+    "date": "2017-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2017"
+    }
   },
   "2018": {
     "title": "New Year's Concert",
-    "date": "2018-01-01"
+    "date": "2018-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2018"
+    }
   },
   "2019": {
     "title": "New Year's Concert",
-    "date": "2019-01-01"
+    "date": "2019-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2019"
+    }
   },
   "2020": {
     "title": "New Year's Concert",
-    "date": "2020-01-01"
+    "date": "2020-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2020"
+    }
   },
   "2021": {
     "title": "New Year's Concert (without audience)",
-    "date": "2021-01-01"
+    "date": "2021-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2021"
+    }
   },
   "2022": {
     "title": "New Year's Concert",
-    "date": "2022-01-01"
+    "date": "2022-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2022"
+    }
   },
   "2023": {
     "title": "New Year's Concert",
-    "date": "2023-01-01"
+    "date": "2023-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2023"
+    }
   },
   "2024": {
     "title": "New Year's Concert",
-    "date": "2024-01-01"
+    "date": "2024-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2024"
+    }
   },
   "2025": {
     "title": "New Year's Concert",
-    "date": "2025-01-01"
+    "date": "2025-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2025"
+    }
   },
   "2026": {
     "title": "New Year's Concert",
-    "date": "2026-01-01"
+    "date": "2026-01-01",
+    "wiki": {
+      "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2026"
+    }
   }
 };

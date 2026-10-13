@@ -6,7 +6,7 @@ function editionText(year, verb) {
   if (year === 1939) return "The concert of 31 December 1939 came before the numbered series: the Vienna Philharmonic counts 1 January 1941 as its 1st New Year's Concert. ";
   return "The New Year's Concert " + year + " " + verb + " the " + getOrdinal(year - 1940) + " edition of the event. ";
 }
-const BUILD_AT = "2026-10-13 20:59";
+const BUILD_AT = "2026-10-13 21:05";
 document.addEventListener("DOMContentLoaded", () => {
   const b = document.getElementById("build");
   if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`;

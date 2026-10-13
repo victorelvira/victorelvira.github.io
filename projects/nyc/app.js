@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.1.2";
-const BUILD_AT = "2026-10-13 20:59";
+const DATA_V = "1.2.0";
+const BUILD_AT = "2026-10-13 21:05";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -394,13 +394,27 @@ function drawConcert() {
   const d = (META[c.year] || {}).date || "";
   const day = dateOf(c.year).replace(d.startsWith(String(c.year)) ? " " + c.year : /$^/, "");
   const special = META[c.year] && META[c.year].title !== "New Year's Concert" ? META[c.year].title : "";
+  // the heading as a short table: who conducted, what was played, which edition, where it comes from
+  const edition = c.year === FORERUNNER
+    ? "Before the numbered series (see the note below)"
+    : `${ordinal(c.year - 1940)} New Year's Concert`;
+  const note = c.year === FORERUNNER
+    ? "The concert of 31 December 1939 is kept here, but the Vienna Philharmonic counts 1 January 1941 as its 1st New Year's Concert, so it carries no number."
+    : c.year === 1941 ? "Counted as the 1st by the Vienna Philharmonic. Its forerunner, the concert of 31 December 1939, carries no number." : "";
+  const w = (META[c.year] || {}).wiki || {};
+  const links = [c.source ? `<a href="${esc(c.source)}" target="_blank" rel="noopener">Vienna Philharmonic</a>` : "",
+    w.en ? `<a href="${esc(w.en)}" target="_blank" rel="noopener">Wikipedia</a>` : "",
+    w.de ? `<a href="${esc(w.de)}" target="_blank" rel="noopener">Wikipedia (de)</a>` : ""].filter(Boolean);
   let html = `<div class="c-head">${shareButton("Share this concert")}
       <h1>${c.year} <span class="date">${esc(day)}</span></h1>
-      <p class="who"><button type="button" data-card="conductor">${esc(cond.name)}</button>, his ${ordinal(nth)} of ${condCount.length}</p>
-      <p class="meta"><span class="e-piece">${c.program.piece_id.length} pieces</span> by <span class="e-composer">${comps.size} composers</span></p>
-      ${special ? `<p class="meta"><i>${esc(special)}</i></p>` : ""}
-      <p class="meta">${c.year === FORERUNNER ? "Before the numbered series: the Vienna Philharmonic counts 1 January 1941 as its 1st New Year's Concert."
-        : `The ${ordinal(c.year - 1940)} New Year's Concert, as the Vienna Philharmonic numbers them from 1941.`}</p>
+      <dl class="c-facts">
+        <dt>Conductor</dt><dd class="who"><button type="button" data-card="conductor">${esc(cond.name)}</button> (${ordinal(nth)} of ${condCount.length})</dd>
+        <dt>Programme</dt><dd><span class="e-piece">${c.program.piece_id.length} pieces</span> by <span class="e-composer">${comps.size} composers</span></dd>
+        <dt>Edition</dt><dd>${edition}</dd>
+        ${special ? `<dt>Billed as</dt><dd><i>${esc(special.replace(/\//g, " / "))}</i></dd>` : ""}
+        ${links.length ? `<dt>Sources</dt><dd class="c-links">${links.join(" · ")}</dd>` : ""}
+      </dl>
+      ${note ? `<p class="c-note">${esc(note)}</p>` : ""}
       <p class="tap-key">Tap a <span class="e-conductor">conductor</span>, <span class="e-composer">composer</span>,
         <span class="e-form">form</span> or <span class="e-piece">piece</span> to light up its years.</p></div>`;
   partsOf(c).forEach(part => {
@@ -416,7 +430,6 @@ function drawConcert() {
     }
     html += `</ol></section>`;
   });
-  if (c.source) html += `<p class="src">Source: <a href="${esc(c.source)}" target="_blank" rel="noopener">official programme, wienerphilharmoniker.at</a></p>`;
   $("concert").innerHTML = html;
 }
 $("concert").addEventListener("click", e => {
