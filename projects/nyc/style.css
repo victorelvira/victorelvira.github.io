@@ -408,3 +408,7 @@ body[data-kind] .years.lit .yr.on2, body[data-kind] .bars.lit .tile.on2 { backgr
 .ctable .n { text-align: right; font-variant-numeric: tabular-nums; }
 .ctable td .sub { display: block; font-size: var(--fs-s); color: var(--muted); }
 .ctable tr.here td { background: color-mix(in srgb, var(--c-piece) 10%, var(--paper)); }
+
+/* a tag takes the colour of what it is about: the piece's blue, the composer's red (Víctor, 2026-10-13) */
+.tag-piece, .tag-back.tag-piece { color: var(--c-piece); }
+.tag-comp { color: var(--c-composer); }

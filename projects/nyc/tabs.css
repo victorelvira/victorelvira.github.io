@@ -163,3 +163,8 @@ table.cat .t { color: var(--c-piece); }
 
 /* each chart carries its own link */
 #statsPane .chart-share { display: flex; justify-content: flex-end; margin: 6px 0 2px; scroll-margin-top: 70px; }
+
+/* the three view tabs, less air above and below (Víctor, 2026-10-13) */
+.views { padding-top: 2px; }
+.view-tab { padding-top: 6px; padding-bottom: 7px; }
+@media (max-width: 760px) { .views { padding-top: 2px; } .view-tab { padding-top: 6px; padding-bottom: 7px; } }

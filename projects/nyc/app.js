@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.4.1";
-const BUILD_AT = "2026-10-13 23:19";
+const DATA_V = "1.4.2";
+const BUILD_AT = "2026-10-13 23:25";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -360,16 +360,16 @@ function pieceAside(c, pos) {
   const plays = PLAYS.get(c.program.piece_id[pos - 1]);
   const idx = plays.findIndex(p => p.year === c.year && p.pos === pos);
   // "only time" needs a later concert to have left it out: in the latest concert everything new is just new
-  if (idx === 0 && plays.length === 1 && c.year < CONCERTS[N - 1].year) return ' <span class="tag tag-new" title="Played at the New Year\'s Concert this once only">only time</span>';
-  if (idx === 0) return ' <span class="tag tag-new" title="First time this piece was played at the New Year\'s Concert">new</span>';
+  if (idx === 0 && plays.length === 1 && c.year < CONCERTS[N - 1].year) return ' <span class="tag tag-new tag-piece" title="Played at the New Year\'s Concert this once only">only time</span>';
+  if (idx === 0) return ' <span class="tag tag-new tag-piece" title="First time this piece was played at the New Year\'s Concert">new</span>';
   const gap = c.year - plays[idx - 1].year;
-  return gap >= 20 ? ` <span class="tag tag-back" title="Not played at the concert for ${gap} years">back after ${gap} years</span>` : "";
+  return gap >= 20 ? ` <span class="tag tag-back tag-piece" title="Not played at the concert for ${gap} years">back after ${gap} years</span>` : "";
 }
 function composerAside(c, name) {
   if (FIRST_YEAR_OF_NAME.get(name) !== c.year) return "";
   const once = CONCERTS.filter(x => x.program.piece_id.some(pid => namesOf(PIECE.get(pid)).includes(name))).length === 1;
-  return once && c.year < CONCERTS[N - 1].year ? ' <span class="tag tag-new" title="The only concert with music by this composer">only time</span>'
-    : ' <span class="tag tag-new" title="First concert with music by this composer">debut</span>';
+  return once && c.year < CONCERTS[N - 1].year ? ' <span class="tag tag-new tag-comp" title="The only concert with music by this composer">only time</span>'
+    : ' <span class="tag tag-new tag-comp" title="First concert with music by this composer">debut</span>';
 }
 // The arrangement is a chip (it can be clicked: it lights the years of the same arrangement); a soloist or
 // a ballet stays a quiet tag.
