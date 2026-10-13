@@ -1,5 +1,5 @@
 // Chart helpers copied verbatim from nyc/functions.js (0.3.2) so the "Analysis and context" tab
-// is the same as on the published page. Uses Chart.js (loaded in nyc_next.html, pinned version).
+// is the same as on the published page. Uses Chart.js (loaded in nyc.html, pinned version).
 
  window._charts = window._charts || {};
 

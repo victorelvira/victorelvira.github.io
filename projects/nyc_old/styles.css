@@ -413,3 +413,6 @@ th, td { text-align: left; padding: 8px; }
 /* 1939: the forerunner of the numbered series, shown apart */
 .year-box.forerunner { outline: 1px dashed #8f6d2d; outline-offset: -3px; opacity: .75; }
 .forerunner-note { font-size: .85em; color: gray; margin: 6px 0 0; }
+
+/* the previous version, kept online: say so under the title */
+.old-note { font-size: .9em; color: #6b6f7a; margin: 2px 0 6px; }

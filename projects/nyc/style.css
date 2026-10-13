@@ -318,3 +318,11 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 .chip.k-comp { border: 0; color: var(--c-composer); background: color-mix(in srgb, var(--c-composer) 10%, var(--paper)); }
 .chip.k-comp:hover, .chip.k-comp:focus-visible { color: var(--c-composer); background: color-mix(in srgb, var(--c-composer) 20%, var(--paper)); outline: none; }
 .chip.k-comp.on { background: var(--c-composer); color: #fff; font-weight: 400; border: 0; }
+
+/* Wide screen: the bars (and their key) stay pinned under the tabs while the programme scrolls, as the
+   years do on a phone; the card sits just below them. */
+@media (min-width: 1180px) {
+  .bars-wrap { position: sticky; top: var(--views-h, 50px); z-index: 30; background: var(--bg);
+    box-shadow: 0 6px 12px -10px rgba(16, 22, 42, .35); }
+  .card { top: calc(var(--pin-h, 200px) + 10px); max-height: calc(100vh - var(--pin-h, 200px) - 20px); }
+}

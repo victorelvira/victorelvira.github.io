@@ -1,9 +1,9 @@
 // New Year's Concert, prototype of the lighter view. No libraries.
 // Data: nyc/{catalogue,composers,conductors,concerts}.js (the published files) and
-// nyc_next/performances.js (notes about a piece in a given concert; prototype only).
+// nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "0.9.5";
+const DATA_V = "1.0.0";
 const BUILD_AT = "2026-10-12 22:20";
 
 // --- indexes ---------------------------------------------------------------------------------
@@ -243,11 +243,25 @@ function placeKey() {
   else if (NARROW.matches) { if (key.previousElementSibling !== pane) pane.after(key); }
   else if (key.parentElement !== pane) pane.appendChild(key);
   key.classList.toggle("pane", NARROW.matches && !WIDE.matches);
-  document.documentElement.style.setProperty("--views-h", ($("views") ? $("views").offsetHeight : 0) + "px");
+  setPinned();
+}
+// What stays pinned at the top: the tabs, plus the bars on a wide screen or the years on a phone.
+// The card on a wide screen sits just under them (--pin-h).
+function setPinned() {
+  const root = document.documentElement.style;
+  const views = $("views") ? $("views").offsetHeight : 0;
+  const bars = document.querySelector(".bars-wrap");
+  root.setProperty("--views-h", views + "px");
+  root.setProperty("--pin-h", (views + (WIDE.matches && bars ? bars.offsetHeight : 0)) + "px");
 }
 WIDE.addEventListener("change", placeKey);
 NARROW.addEventListener("change", placeKey);
-addEventListener("resize", () => document.documentElement.style.setProperty("--views-h", ($("views") ? $("views").offsetHeight : 0) + "px"));
+addEventListener("resize", setPinned);
+// the bars and their key change height as they are drawn and as the legend changes: measure again then
+if (typeof ResizeObserver === "function") {
+  const watch = new ResizeObserver(setPinned);
+  ["views", "bars-wrap"].forEach(c => { const el = document.querySelector("." + c); if (el) watch.observe(el); });
+}
 function drawColourBy() {
   $("colour-by").innerHTML = `<span class="cb-l">Colour by</span>` + Object.entries(METRICS).map(([k, m]) =>
     `<button type="button" class="cb${k === colourBy ? " on" : ""}" data-by="${k}"${m.kind === "none" ? ` disabled title="${esc(m.why)}"` : ""}
@@ -575,7 +589,7 @@ function pieceCard(pid, c, pos) {
     ${ext.some(x => x.includes("unconf")) ? '<p class="small">* found automatically in Wikidata or IMSLP, not yet confirmed.</p>' : ""}`;
 }
 // Links of a piece or person: what the published files have, plus what scripts/fetch_links.py found in
-// Wikidata and IMSLP (nyc_next/links.js). A link not yet confirmed (lápiz) carries a small mark.
+// Wikidata and IMSLP (nyc/links.js). A link not yet confirmed (lápiz) carries a small mark.
 const LINKS = typeof links === "object" ? links : { piece: {}, composer: {}, conductor: {} };
 const LINK_LABEL = { wiki_en: "Wikipedia", wiki_de: "Wikipedia (de)", imslp: "Score (IMSLP)", wikidata: "Wikidata" };
 function extLinks(kind, id, have) {
