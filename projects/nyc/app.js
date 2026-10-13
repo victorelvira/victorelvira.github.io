@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.0.2";
-const BUILD_AT = "2026-10-13 18:36";
+const DATA_V = "1.0.3";
+const BUILD_AT = "2026-10-13 18:53";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -844,6 +844,21 @@ function setupViews() {
     const title = b.querySelector(".plot-title");
     return title ? `<a href="#${b.id}" data-target="${b.id}">${esc(title.textContent.trim())}</a>` : "";
   }).join("");
+  // The introductions fold away by default, so the charts come first; one button opens each again.
+  document.querySelectorAll("#statsPane .plot-desc").forEach(d => {
+    d.classList.add("folded");
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "intro-toggle";
+    b.textContent = "Read the introduction";
+    b.setAttribute("aria-expanded", "false");
+    b.addEventListener("click", () => {
+      const open = d.classList.toggle("folded") === false;
+      b.textContent = open ? "Hide the introduction" : "Read the introduction";
+      b.setAttribute("aria-expanded", String(open));
+    });
+    d.before(b);
+  });
   $("analysis-toc").addEventListener("click", e => {
     const a = e.target.closest("a[data-target]");
     if (!a) return;

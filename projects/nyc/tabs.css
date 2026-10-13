@@ -154,3 +154,9 @@ table.cat .t { color: var(--c-piece); }
   table.cat td:nth-child(4) { grid-area: n; }
   table.cat .chip.k { padding: 0 7px; }
 }
+
+/* the introductions start folded: the charts come first */
+#statsPane .plot-desc.folded { display: none; }
+#statsPane .intro-toggle { all: unset; cursor: pointer; display: inline-block; margin: 0 0 10px; font-size: var(--fs-s);
+  color: var(--gold); border-bottom: 1px dotted var(--gold); }
+#statsPane .intro-toggle:hover, #statsPane .intro-toggle:focus-visible { border-bottom-style: solid; }
