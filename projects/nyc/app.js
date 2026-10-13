@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.1.1";
-const BUILD_AT = "2026-10-13 20:31";
+const DATA_V = "1.1.2";
+const BUILD_AT = "2026-10-13 20:59";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -221,9 +221,8 @@ function drawYears() {
 }
 function drawLegend() {
   const m = METRICS[colourBy];
-  if (m.kind === "plain") {
-    $("strip-legend").innerHTML = `<span>One tile per concert. Colour them by what each one was like.</span>
-      <span>${FORERUNNER}, striped, in the place of 1940: the concert of 31 December 1939, before the numbered series that starts in 1941.</span>`;
+  if (m.kind === "plain") {             // plain gold: nothing to explain (Víctor, 2026-10-13)
+    $("strip-legend").innerHTML = "";
     return;
   }
   if (m.kind !== "seq") {
