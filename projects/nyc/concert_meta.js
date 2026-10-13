@@ -98,6 +98,7 @@ var concert_meta = {
   "1954": {
     "title": "New Year's Concert",
     "date": "1954-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234006767",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1954"
     }
@@ -126,6 +127,7 @@ var concert_meta = {
   "1958": {
     "title": "New Year's Concert",
     "date": "1958-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235334195",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1958"
     }
@@ -133,6 +135,7 @@ var concert_meta = {
   "1959": {
     "title": "New Year's Concert",
     "date": "1959-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589644",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1959"
     }
@@ -140,6 +143,19 @@ var concert_meta = {
   "1960": {
     "title": "New Year's Concert",
     "date": "1960-01-01",
+    "origin": {
+      "14": {
+        "from": "hand",
+        "url": "",
+        "disc": false
+      },
+      "15": {
+        "from": "hand",
+        "url": "",
+        "disc": false
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589650",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1960"
     }
@@ -147,6 +163,19 @@ var concert_meta = {
   "1961": {
     "title": "New Year's Concert",
     "date": "1961-01-01",
+    "origin": {
+      "16": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589655",
+        "disc": false
+      },
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589655",
+        "disc": false
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589655",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1961"
     }
@@ -154,6 +183,7 @@ var concert_meta = {
   "1962": {
     "title": "New Year's Concert",
     "date": "1962-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589665",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1962"
     }
@@ -168,6 +198,7 @@ var concert_meta = {
   "1964": {
     "title": "New Year's Concert",
     "date": "1964-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235336433",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1964"
     }
@@ -175,6 +206,7 @@ var concert_meta = {
   "1965": {
     "title": "New Year's Concert",
     "date": "1965-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234869436",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1965"
     }
@@ -182,6 +214,7 @@ var concert_meta = {
   "1966": {
     "title": "New Year's Concert",
     "date": "1966-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589696",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1966"
     }
@@ -203,6 +236,24 @@ var concert_meta = {
   "1969": {
     "title": "New Year's Concert",
     "date": "1969-01-01",
+    "origin": {
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589720",
+        "disc": false
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589720",
+        "disc": false
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589720",
+        "disc": false
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589720",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1969"
     }
@@ -210,6 +261,7 @@ var concert_meta = {
   "1970": {
     "title": "New Year's Concert",
     "date": "1970-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589729",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1970"
     }
@@ -217,6 +269,14 @@ var concert_meta = {
   "1971": {
     "title": "New Year's Concert",
     "date": "1971-01-01",
+    "origin": {
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589735",
+        "disc": false
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589735",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1971"
     }
@@ -224,6 +284,24 @@ var concert_meta = {
   "1972": {
     "title": "New Year's Concert",
     "date": "1972-01-01",
+    "origin": {
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589744",
+        "disc": false
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589744",
+        "disc": false
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234589744",
+        "disc": false
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589744",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1972"
     }
@@ -231,6 +309,24 @@ var concert_meta = {
   "1973": {
     "title": "New Year's Concert",
     "date": "1973-01-01",
+    "origin": {
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235750428",
+        "disc": false
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235750428",
+        "disc": false
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235750428",
+        "disc": false
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235750428",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1973"
     }
@@ -238,6 +334,7 @@ var concert_meta = {
   "1974": {
     "title": "New Year's Concert",
     "date": "1974-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589769",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1974"
     }
@@ -245,6 +342,7 @@ var concert_meta = {
   "1975": {
     "title": "New Year's Concert",
     "date": "1975-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=239331185",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1975"
     }
@@ -252,6 +350,7 @@ var concert_meta = {
   "1976": {
     "title": "New Year's Concert",
     "date": "1976-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=237476601",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1976"
     }
@@ -259,6 +358,24 @@ var concert_meta = {
   "1977": {
     "title": "New Year's Concert",
     "date": "1977-01-01",
+    "origin": {
+      "16": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235750419",
+        "disc": false
+      },
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235750419",
+        "disc": false
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235750419",
+        "disc": false
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235750419",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1977"
     }
@@ -266,6 +383,24 @@ var concert_meta = {
   "1978": {
     "title": "New Year's Concert",
     "date": "1978-01-01",
+    "origin": {
+      "15": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234728397",
+        "disc": false
+      },
+      "16": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234728397",
+        "disc": false
+      },
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234728397",
+        "disc": false
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234728397",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1978"
     }
@@ -273,6 +408,7 @@ var concert_meta = {
   "1979": {
     "title": "New Year's Concert",
     "date": "1979-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589816",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1979"
     }
@@ -280,6 +416,7 @@ var concert_meta = {
   "1980": {
     "title": "New Year's Concert",
     "date": "1980-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=240728236",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1980"
     }
@@ -287,6 +424,7 @@ var concert_meta = {
   "1981": {
     "title": "New Year's Concert",
     "date": "1981-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=237476806",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1981"
     }
@@ -294,6 +432,7 @@ var concert_meta = {
   "1982": {
     "title": "New Year's Concert",
     "date": "1982-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589939",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1982"
     }
@@ -301,6 +440,7 @@ var concert_meta = {
   "1983": {
     "title": "New Year's Concert",
     "date": "1983-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234589950",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1983"
     }
@@ -308,6 +448,7 @@ var concert_meta = {
   "1984": {
     "title": "New Year's Concert",
     "date": "1984-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233649873",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1984"
     }
@@ -315,6 +456,7 @@ var concert_meta = {
   "1985": {
     "title": "New Year's Concert",
     "date": "1985-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233397865",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1985"
     }
@@ -322,6 +464,7 @@ var concert_meta = {
   "1986": {
     "title": "New Year's Concert",
     "date": "1986-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233359036",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1986"
     }
@@ -329,6 +472,7 @@ var concert_meta = {
   "1987": {
     "title": "New Year's Concert",
     "date": "1987-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233359077",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1987"
     }
@@ -336,6 +480,7 @@ var concert_meta = {
   "1988": {
     "title": "New Year's Concert",
     "date": "1988-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233060052",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1988"
     }
@@ -343,6 +488,7 @@ var concert_meta = {
   "1989": {
     "title": "New Year's Concert",
     "date": "1989-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233238268",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1989"
     }
@@ -350,6 +496,7 @@ var concert_meta = {
   "1990": {
     "title": "New Year's Concert",
     "date": "1990-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233236564",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1990"
     }
@@ -357,6 +504,7 @@ var concert_meta = {
   "1991": {
     "title": "New Year's Concert",
     "date": "1991-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=253499492",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1991"
     }
@@ -364,6 +512,7 @@ var concert_meta = {
   "1992": {
     "title": "New Year's Concert",
     "date": "1992-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233222783",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1992"
     }
@@ -371,6 +520,7 @@ var concert_meta = {
   "1993": {
     "title": "New Year's Concert",
     "date": "1993-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234869457",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1993"
     }
@@ -378,6 +528,7 @@ var concert_meta = {
   "1994": {
     "title": "New Year's Concert",
     "date": "1994-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=232982598",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1994"
     }
@@ -392,6 +543,7 @@ var concert_meta = {
   "1996": {
     "title": "New Year's Concert",
     "date": "1996-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=232936896",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1996"
     }
@@ -399,6 +551,7 @@ var concert_meta = {
   "1997": {
     "title": "New Year's Concert",
     "date": "1997-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=232714795",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1997"
     }
@@ -406,6 +559,7 @@ var concert_meta = {
   "1998": {
     "title": "New Year's Concert",
     "date": "1998-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234910078",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1998"
     }
@@ -413,6 +567,7 @@ var concert_meta = {
   "1999": {
     "title": "New Year's Concert",
     "date": "1999-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233212686",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_1999"
     }
@@ -420,6 +575,7 @@ var concert_meta = {
   "2000": {
     "title": "New Year's Concert",
     "date": "2000-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=232679850",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2000"
     }
@@ -427,6 +583,7 @@ var concert_meta = {
   "2001": {
     "title": "New Year's Concert",
     "date": "2001-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=222380014",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2001"
     }
@@ -434,6 +591,7 @@ var concert_meta = {
   "2002": {
     "title": "New Year's Concert",
     "date": "2002-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235198950",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2002"
     }
@@ -441,6 +599,7 @@ var concert_meta = {
   "2003": {
     "title": "New Year's Concert",
     "date": "2003-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233189833",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2003"
     }
@@ -448,6 +607,7 @@ var concert_meta = {
   "2004": {
     "title": "New Year's Concert",
     "date": "2004-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=221099980",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2004"
     }
@@ -455,6 +615,7 @@ var concert_meta = {
   "2005": {
     "title": "New Year's Concert",
     "date": "2005-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=220287044",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2005"
     }
@@ -462,6 +623,7 @@ var concert_meta = {
   "2006": {
     "title": "New Year's Concert",
     "date": "2006-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233189854",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2006"
     }
@@ -469,6 +631,7 @@ var concert_meta = {
   "2007": {
     "title": "New Year's Concert",
     "date": "2007-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=221285158",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2007"
     }
@@ -483,6 +646,7 @@ var concert_meta = {
   "2009": {
     "title": "New Year's Concert",
     "date": "2009-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=220046578",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2009"
     }
@@ -490,6 +654,7 @@ var concert_meta = {
   "2010": {
     "title": "New Year's Concert",
     "date": "2010-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=223194594",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2010"
     }
@@ -497,6 +662,7 @@ var concert_meta = {
   "2011": {
     "title": "New Year's Concert",
     "date": "2011-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233069087",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2011"
     }
@@ -504,6 +670,7 @@ var concert_meta = {
   "2012": {
     "title": "New Year's Concert",
     "date": "2012-01-01",
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=233069099",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2012"
     }
@@ -511,6 +678,24 @@ var concert_meta = {
   "2013": {
     "title": "New Year's Concert",
     "date": "2013-01-01",
+    "origin": {
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235148275",
+        "disc": true
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235148275",
+        "disc": true
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235148275",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235148275",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2013"
     }
@@ -518,6 +703,24 @@ var concert_meta = {
   "2014": {
     "title": "New Year's Concert",
     "date": "2014-01-01",
+    "origin": {
+      "19": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      },
+      "20": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      },
+      "21": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=269159018",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2014"
     }
@@ -525,6 +728,24 @@ var concert_meta = {
   "2015": {
     "title": "New Year's Concert",
     "date": "2015-01-01",
+    "origin": {
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234440418",
+        "disc": true
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234440418",
+        "disc": true
+      },
+      "20": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=234440418",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=234440418",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2015"
     }
@@ -532,6 +753,24 @@ var concert_meta = {
   "2016": {
     "title": "New Year's Concert",
     "date": "2016-01-01",
+    "origin": {
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235247453",
+        "disc": true
+      },
+      "20": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235247453",
+        "disc": true
+      },
+      "21": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235247453",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235247453",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2016"
     }
@@ -539,6 +778,24 @@ var concert_meta = {
   "2017": {
     "title": "New Year's Concert",
     "date": "2017-01-01",
+    "origin": {
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235203025",
+        "disc": true
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235203025",
+        "disc": true
+      },
+      "20": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235203025",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235203025",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2017"
     }
@@ -546,6 +803,24 @@ var concert_meta = {
   "2018": {
     "title": "New Year's Concert",
     "date": "2018-01-01",
+    "origin": {
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=238309691",
+        "disc": true
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=238309691",
+        "disc": true
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=238309691",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=238309691",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2018"
     }
@@ -553,6 +828,24 @@ var concert_meta = {
   "2019": {
     "title": "New Year's Concert",
     "date": "2019-01-01",
+    "origin": {
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=240503103",
+        "disc": true
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=240503103",
+        "disc": true
+      },
+      "20": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=240503103",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=240503103",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2019"
     }
@@ -560,6 +853,24 @@ var concert_meta = {
   "2020": {
     "title": "New Year's Concert",
     "date": "2020-01-01",
+    "origin": {
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235199020",
+        "disc": true
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235199020",
+        "disc": true
+      },
+      "19": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=235199020",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=235199020",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2020"
     }
@@ -567,6 +878,24 @@ var concert_meta = {
   "2021": {
     "title": "New Year's Concert (without audience)",
     "date": "2021-01-01",
+    "origin": {
+      "16": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=238309689",
+        "disc": true
+      },
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=238309689",
+        "disc": true
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=238309689",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=238309689",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2021"
     }
@@ -574,6 +903,24 @@ var concert_meta = {
   "2022": {
     "title": "New Year's Concert",
     "date": "2022-01-01",
+    "origin": {
+      "16": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=239333958",
+        "disc": true
+      },
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=239333958",
+        "disc": true
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=239333958",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=239333958",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2022"
     }
@@ -581,6 +928,24 @@ var concert_meta = {
   "2023": {
     "title": "New Year's Concert",
     "date": "2023-01-01",
+    "origin": {
+      "16": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=239499674",
+        "disc": true
+      },
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=239499674",
+        "disc": true
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=239499674",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=239499674",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2023"
     }
@@ -588,6 +953,24 @@ var concert_meta = {
   "2024": {
     "title": "New Year's Concert",
     "date": "2024-01-01",
+    "origin": {
+      "16": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=240759390",
+        "disc": true
+      },
+      "17": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=240759390",
+        "disc": true
+      },
+      "18": {
+        "from": "wikipedia_de",
+        "url": "https://de.wikipedia.org/w/index.php?oldid=240759390",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=240759390",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2024"
     }
@@ -595,6 +978,24 @@ var concert_meta = {
   "2025": {
     "title": "New Year's Concert",
     "date": "2025-01-01",
+    "origin": {
+      "15": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      },
+      "16": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      },
+      "17": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=263394710",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2025"
     }
@@ -602,6 +1003,24 @@ var concert_meta = {
   "2026": {
     "title": "New Year's Concert",
     "date": "2026-01-01",
+    "origin": {
+      "16": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      },
+      "17": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      },
+      "18": {
+        "from": "hand",
+        "url": "",
+        "disc": true
+      }
+    },
+    "parts_source": "wikipedia_de https://de.wikipedia.org/w/index.php?oldid=265429826",
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2026"
     }

@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.2.1";
-const BUILD_AT = "2026-10-13 21:50";
+const DATA_V = "1.3.0";
+const BUILD_AT = "2026-10-13 22:10";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -379,6 +379,30 @@ function drawAnnounced(a) {
     <p class="hint">The programme has not been published yet. The conductor is all that is known.</p>
     <p class="src">Source: <a href="${esc(a.source)}" target="_blank" rel="noopener">announcement, wienerphilharmoniker.at</a></p>`;
 }
+// Where the encores come from, beside their heading, when the orchestra's page does not list them
+// (the split into parts is credited once, in the Sources line above).
+function lineSource(c, pos) {
+  const o = ((META[c.year] || {}).origin || {})[pos];
+  const page = c.source ? `<a href="${esc(c.source)}" target="_blank" rel="noopener">the Vienna Philharmonic's page</a>` : "the Vienna Philharmonic's page";
+  if (!o) return `listed on ${page}`;
+  const how = o.from === "wikipedia_de"
+    ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">German Wikipedia</a>` : "added by hand, no second source yet";
+  return `not on ${page}; ${how}${o.disc ? ", confirmed by the official recording" : ""}`;
+}
+function partSource(c, part) {
+  const meta = META[c.year] || {};
+  const bits = [];
+  if (part.enc) {
+    const o = [];
+    for (let p = part.from; p <= part.to; p++) if ((meta.origin || {})[p]) o.push(meta.origin[p]);
+    if (o.length) {
+      const all = o.length === part.to - part.from + 1 ? "not listed by the orchestra" : `${o.length} not listed by the orchestra`;
+      const wiki = o.some(x => x.from === "wikipedia_de"), hand = o.some(x => x.from === "hand"), disc = o.every(x => x.disc);
+      bits.push(`${all}: ${[wiki ? "Wikipedia (de)" : "", hand ? "added by hand" : ""].filter(Boolean).join(" and ")}${disc ? ", confirmed by the recording" : ""}`);
+    }
+  }
+  return bits.length ? ` <span class="part-src">· ${esc(bits.join(" · "))}</span>` : "";
+}
 function drawConcert() {
   if (ANNOUNCED.has(state.year)) return drawAnnounced(ANNOUNCED.get(state.year));
   const c = BY_YEAR.get(state.year);
@@ -402,9 +426,17 @@ function drawConcert() {
     ? "The concert of 31 December 1939 is kept here, but the Vienna Philharmonic counts 1 January 1941 as its 1st New Year's Concert, so it carries no number."
     : c.year === 1941 ? "Counted as the 1st by the Vienna Philharmonic. Its forerunner, the concert of 31 December 1939, carries no number." : "";
   const w = (META[c.year] || {}).wiki || {};
-  const links = [c.source ? `<a href="${esc(c.source)}" target="_blank" rel="noopener">Vienna Philharmonic</a>` : "",
+  // every source this concert's page uses, each with what it gives (discreet: one line, roles in grey)
+  const meta = META[c.year] || {};
+  const origin = Object.values(meta.origin || {});
+  const fromWiki = origin.filter(o => o.from === "wikipedia_de").length;
+  const disc = (typeof recordings === "object" && recordings.discs || {})[c.year];
+  const role = t => ` <span class="role">(${t})</span>`;
+  const wikiRoles = [meta.parts_source ? "parts" : "", fromWiki ? `${fromWiki} ${fromWiki > 1 ? "encores" : "encore"}` : ""].filter(Boolean);
+  const links = [c.source ? `<a href="${esc(c.source)}" target="_blank" rel="noopener">Vienna Philharmonic</a>${role("programme")}` : "",
     w.en ? `<a href="${esc(w.en)}" target="_blank" rel="noopener">Wikipedia</a>` : "",
-    w.de ? `<a href="${esc(w.de)}" target="_blank" rel="noopener">Wikipedia (de)</a>` : ""].filter(Boolean);
+    w.de ? `<a href="${esc(w.de)}" target="_blank" rel="noopener">Wikipedia (de)</a>${wikiRoles.length ? role(wikiRoles.join(", ")) : ""}` : "",
+    disc ? `<a href="${esc(disc.url)}" target="_blank" rel="noopener">official recording</a>${role("durations")}` : ""].filter(Boolean);
   let html = `<div class="c-head">${shareButton("Share this concert")}
       <h1>${c.year} <span class="date">${esc(day)}</span></h1>
       <dl class="c-facts">
@@ -418,7 +450,7 @@ function drawConcert() {
       <p class="tap-key">Tap a <span class="e-conductor">conductor</span>, <span class="e-composer">composer</span>,
         <span class="e-form">form</span> or <span class="e-piece">piece</span> to light up its years.</p></div>`;
   partsOf(c).forEach(part => {
-    html += `<section class="part${part.enc ? " zugaben" : ""}"><h2>${part.name}</h2><ol class="prog">`;
+    html += `<section class="part${part.enc ? " zugaben" : ""}"><h2>${part.name}${partSource(c, part)}</h2><ol class="prog">`;
     for (let pos = part.from; pos <= part.to; pos++) {
       const p = PIECE.get(c.program.piece_id[pos - 1]);
       const { t, op } = splitOp(p.piece);
@@ -576,6 +608,7 @@ function pieceCard(pid, c, pos) {
       <dl class="facts">
         <dt>Conductor</dt><dd><button type="button" class="link" data-go="conductor">${esc(conductorOf(c).name)}</button></dd>
         <dt>Place</dt><dd>${where}</dd>
+        <dt>Source</dt><dd>${lineSource(c, pos)}</dd>
         <dt>History</dt><dd>${idx === 0 ? "first time at the New Year's Concert" : `${ordinal(idx + 1)} time; previously ${prev}${c.year - prev >= 20 ? `, ${c.year - prev} years before` : ""}`}</dd>
         ${durationOf(c.year, pos) ? `<dt>Recording</dt><dd>${mmss(durationOf(c.year, pos))} · <a href="${esc(REC.discs[c.year].url)}" target="_blank" rel="noopener">${esc(REC.discs[c.year].title)}</a></dd>` : ""}
       </dl>
@@ -599,7 +632,8 @@ function pieceCard(pid, c, pos) {
       const med = ds[Math.floor(ds.length / 2)];
       return `<p class="repeat-note">Typical length ${mmss(med)} (median of ${ds.length} recorded performance${ds.length > 1 ? "s" : ""}, from ${mmss(ds[0])} to ${mmss(ds[ds.length - 1])}). Track length on the official disc, applause included.</p>`;
     })()}
-    <ul class="list">${plays.map(x => {
+    <h3>Every performance ${orderButton()}</h3>
+    <ul class="list">${ordered(plays).map(x => {
       const cc = BY_YEAR.get(x.year);
       const enc = x.pos > Number(cc.n_program);
       const note = (PERF[x.year] || {})[x.pos];
@@ -671,7 +705,7 @@ function conductorCard(id) {
   const cond = CONDUCTOR.get(id);
   const list = CONCERTS.filter(c => c.conductor_id === id);
   const next = [...ANNOUNCED.values()].filter(a => a.conductor_id === id);
-  const upcoming = next.map(a => `<p class="notes">Announced for <b>${a.year}</b>${list.length ? "" : ", his first New Year's Concert"}.
+  const upcoming = next.map(a => `<p class="notes">Announced for <b>${a.year}</b>${list.length ? "" : ", a first New Year's Concert"}.
       <span class="small">Source: <a href="${esc(a.source)}" target="_blank" rel="noopener">wienerphilharmoniker.at</a></span></p>`).join("");
   if (!list.length) {
     return `${personHead("conductor", id, cond.name, "Conductor", cond.links.wiki.en)}
@@ -682,11 +716,11 @@ function conductorCard(id) {
     ${mini(new Set(list.map(c => c.year)), state.year)}
     ${upcoming}
     <div class="stats"><div><b>${list.length}</b><span>concerts</span></div><div><b>${list[0].year}</b><span>first</span></div><div><b>${list[list.length - 1].year}</b><span>last</span></div></div>
-    <h3>His concerts</h3>
-    <ul class="list">${list.map(c => {
+    <h3>Concerts ${orderButton()}</h3>
+    <ul class="list">${ordered(list).map(c => {
       const fresh = c.program.piece_id.filter(p => PLAYS.get(p)[0].year === c.year).length;
       return `<li><span class="y"><button type="button" class="link" data-year="${c.year}">${c.year}</button></span>
-        <span>${c.program.piece_id.length} pieces</span><span class="r">${fresh ? fresh + " new to the concert" : ""}</span></li>`;
+        <span>${c.program.piece_id.length} pieces${fresh ? ` · ${fresh} new to the concert` : ""}</span></li>`;
     }).join("")}</ul>
     ${photoCredit("conductor", id)}`;
 }
@@ -711,6 +745,13 @@ function typeCard(name) {
       <span class="r">${x.plays[0].year}</span></li>`).join("")}</ul>
     ${pieces.length > shown.length ? `<p class="hint">and ${pieces.length - shown.length} more</p>` : ""}`;
 }
+// Lists of concerts in a card (a conductor's, a piece's): newest first by default, and the reader can turn
+// them round. The choice belongs to the device (localStorage), not to the link.
+let listOrder = "newest";
+try { listOrder = localStorage.getItem("nyc.listOrder") || "newest"; } catch { /* private window */ }
+function setOrder(v) { listOrder = v; try { localStorage.setItem("nyc.listOrder", v); } catch { /* ignore */ } }
+const ordered = arr => listOrder === "newest" ? [...arr].reverse() : arr;
+const orderButton = () => `<button type="button" class="order-toggle" title="Change the order">${listOrder === "newest" ? "Newest first" : "Oldest first"} ⇅</button>`;
 function drawCard() {
   const body = $("card-body");
   const c = BY_YEAR.get(state.year);
@@ -735,6 +776,7 @@ $("card").addEventListener("click", e => {
   if (e.target.closest("#card-close")) return closeCard();
   const sh = e.target.closest(".share");
   if (sh) return shareUrl(location.origin + location.pathname + shareHash(state), sh);
+  if (e.target.closest(".order-toggle")) { setOrder(listOrder === "newest" ? "oldest" : "newest"); return drawCard(); }
   const ty = e.target.closest("[data-type]");
   if (ty) return go(state.year, { kind: "type", id: ty.dataset.type });
   const b = e.target.closest("[data-go], [data-pos], [data-year]");

@@ -371,3 +371,15 @@ a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
 @media (max-width: 760px) { .row { grid-template-columns: 1.35em minmax(0, 1fr); column-gap: 6px; } }
 .row .n { padding-top: 0; font-size: var(--fs-m); align-self: baseline; }
 .row .t { align-self: baseline; }
+
+/* sources, said discreetly: roles in grey after each link, and a quiet note beside a part heading */
+.c-links .role { color: var(--muted); }
+.part h2 .part-src { font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
+
+/* lists in a card: one size for the whole line, everything on one baseline (Víctor, 2026-10-13) */
+.list li { align-items: baseline; }
+.list li .r, .list .r { font-size: var(--fs-m); }
+.card h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.order-toggle { all: unset; cursor: pointer; font: 500 var(--fs-s)/1 var(--f-body); letter-spacing: 0; text-transform: none;
+  color: var(--gold); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
+.order-toggle:hover, .order-toggle:focus-visible { border-color: var(--gold); }
