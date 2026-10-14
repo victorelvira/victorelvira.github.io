@@ -5,12 +5,15 @@
      1 tokens · 2 base · 3 top bar and masthead · 4 the three views · 5 years (grid, bars, key)
      6 layout · 7 concert heading · 8 programme · 9 chips and tags · 10 colour code · 11 card
      12 analysis · 13 catalogue · 14 footer · 15 phone · 16 wide screen · 17 motion
-   Light only (Víctor's rule for the family): ivory ground, midnight ink, gilt as the accent. */
+   Light only (Víctor's rule for the family): warm ivory ground, midnight ink, gilt as the accent. The look is
+   "Viena cálida" (chosen 2026-10-14 from three side by side): the concert's heading on a cream band like a
+   printed programme, the year and the numbers in gold. */
 
 /* 1 · tokens ---------------------------------------------------------------------------------------- */
 :root {
-  --bg: #f5f3ee; --paper: #ffffff; --ink: #1a1f33; --muted: #646a7c; --line: #dfdbd0;
+  --bg: #f4eee2; --paper: #ffffff;   /* warm ivory ground (Víctor chose "Viena cálida", 2026-10-14) */ --ink: #1a1f33; --muted: #646a7c; --line: #dfdbd0;
   --gold: #8f6a1f; --gold-soft: #f1e7cc; --chip: #ece8de; --lapiz: #9a6a12;
+  --programme: #f8f1e1; --programme-line: #e3d3a8;   /* the concert's heading, like a printed programme */
   /* one colour per kind of thing, as on the published page (green, red, orange, blue), toned down */
   --c-conductor: #2e7d4f; --c-composer: #b3373a; --c-form: #c0650f; --c-piece: #2b5fa8;
   --c-piece-deep: color-mix(in srgb, var(--c-piece) 62%, #000);   /* the same arrangement, lit */
@@ -60,7 +63,7 @@ button { font: inherit; color: inherit; }
 .view-tab { border: 0; background: none; font: inherit; font-weight: 600; color: var(--muted); padding: 6px 14px 7px;
   cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px; }
 .view-tab:hover, .view-tab:focus-visible { color: var(--ink); outline: none; }
-.view-tab.on { color: var(--ink); border-bottom-color: var(--gold); }
+.view-tab.on { color: var(--gold); border-bottom-color: var(--gold); }
 .view { display: none; }
 .view.on { display: block; }
 #view-analysis, #view-catalogue { padding: 12px 16px 40px; }
@@ -75,7 +78,7 @@ button { font: inherit; color: inherit; }
   font: 600 var(--fs-s)/32px var(--f-body); font-variant-numeric: tabular-nums; letter-spacing: -.01em;
   transition: opacity .15s; overflow: hidden; }
 .yr:hover, .yr:focus-visible { outline: 2px solid var(--ink); outline-offset: 0; }
-.yr[aria-selected="true"] { outline: 2.5px solid var(--ink); outline-offset: 1px; position: relative; z-index: 1; }
+.yr[aria-selected="true"] { outline: 2.5px solid var(--gold); outline-offset: 1px; position: relative; z-index: 1; }
 .yr.none { background: transparent; border: 1px dashed var(--line); color: var(--muted); cursor: default; font-weight: 400; }
 .yr.gap { visibility: hidden; }
 .years.lit .yr:not(.none) { opacity: .18; }
@@ -114,7 +117,7 @@ button { font: inherit; color: inherit; }
 /* 6 · layout: the concert and, beside it, the card --------------------------------------------------- */
 .layout { display: grid; grid-template-columns: minmax(0, 1fr) 8px var(--ficha-w); gap: 0 var(--sp-2); padding: var(--sp-3) var(--sp-4) 40px; align-items: start; }
 .pane { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); min-width: 0; }
-.concert { padding: var(--sp-5) var(--sp-5) var(--sp-4); }
+.concert { --pad: var(--sp-5); padding: var(--pad) var(--pad) var(--sp-4); }
 .card { position: sticky; top: 10px; max-height: calc(100vh - 20px); overflow: auto; padding: var(--sp-5); }
 .card-close, .sheet-grip { display: none; }
 .divider { align-self: stretch; cursor: col-resize; position: relative; }
@@ -122,8 +125,11 @@ button { font: inherit; color: inherit; }
 .divider:hover::after, .divider:focus-visible::after { background: var(--gold); }
 body.resizing { user-select: none; cursor: col-resize; }
 
-/* 7 · the concert's heading: title, then a short table, then the hint -------------------------------- */
-.c-head h1 { font: 700 var(--fs-xl)/1.15 var(--f-body); margin: 0; }
+/* 7 · the concert's heading: title, then a short table, then the hint, on a cream band like a printed
+   programme that runs to the edges of the pane ---------------------------------------------------------- */
+.c-head { background: var(--programme); margin: calc(-1 * var(--pad)) calc(-1 * var(--pad)) 0; padding: var(--pad) var(--pad) var(--sp-4);
+  border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--programme-line); }
+.c-head h1 { font: 700 var(--fs-xl)/1.15 var(--f-body); margin: 0; color: var(--gold); }
 .c-head h1 .date { font-size: var(--fs-l); font-weight: 400; color: var(--muted); margin-left: 2px; }
 .c-head > .share { float: right; margin: 4px 0 6px 10px; }
 .c-head .meta { color: var(--muted); font-size: var(--fs-m); margin: 6px 0 0; }   /* the announced concert */
@@ -143,7 +149,7 @@ body.resizing { user-select: none; cursor: col-resize; }
 /* 8 · the programme: parts, and one row per piece ---------------------------------------------------- */
 .part { margin-top: var(--sp-5); }
 .part h2 { font: 600 var(--fs-s)/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--gold);
-  margin: 0 0 var(--sp-1); padding-bottom: var(--sp-2); border-bottom: 1px solid var(--line); }
+  margin: 0 0 var(--sp-1); padding-bottom: var(--sp-2); border-bottom: 1px solid color-mix(in srgb, var(--gold) 55%, transparent); }
 .part.zugaben h2 { color: var(--muted); }
 .part h2 .part-src { font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
 ol.prog { list-style: none; margin: 0; padding: 0; }
@@ -152,7 +158,7 @@ ol.prog { list-style: none; margin: 0; padding: 0; }
   border-bottom: 1px solid var(--line); cursor: pointer; border-radius: var(--radius-s); }
 .prog .row:hover, .prog .row:focus-visible { background: var(--chip); outline: none; }
 .prog .row.hl { background: var(--gold-soft); }
-.prog .row .n { color: var(--muted); font-size: var(--fs-m); font-variant-numeric: tabular-nums; text-align: left; align-self: baseline; }
+.prog .row .n { color: var(--gold); font-weight: 600; font-size: var(--fs-m); font-variant-numeric: tabular-nums; text-align: left; align-self: baseline; }
 .prog .row .t { font-size: var(--fs-m); line-height: 1.35; color: var(--c-piece); align-self: baseline; }
 .prog .row .op { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .prog .row .sub { grid-column: 2 / 3; font-size: var(--fs-m); color: var(--muted); display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-2); align-items: center; }
@@ -350,7 +356,7 @@ table.cat tbody tr:hover { background: color-mix(in srgb, var(--c-piece) 8%, var
   .layout { display: block; padding: 10px 10px 40px; }
   .layout > .pane { margin-bottom: 10px; }
   .divider { display: none; }
-  .concert { padding: var(--sp-3); }
+  .concert { --pad: var(--sp-3); padding: var(--pad); }
   .c-head .meta, .c-head .who { margin: 2px 0; }
   .tap-key { margin-top: 4px; }
   .part { margin-top: 10px; }
