@@ -10,7 +10,7 @@
     [/^others?\b/i, C.grey], [/non strauss/i, C.navy], [/^strauss/i, C.gold],
     [/in the program|^program/i, C.piece], [/encore/i, C.gold], [/^total/i, C.gold],
     [/conducted/i, C.conductor],
-    [/^polka/i, C.form], [/^waltz/i, C.gold], [/^march/i, C.navy], [/^galop/i, C.composer], [/^overture/i, C.teal],
+    [/^polka/i, C.form], [/^waltz/i, C.navy], [/^march/i, C.gold], [/^galop/i, C.composer], [/^overture/i, C.teal],
     [/^new/i, C.gold], [/repeat/i, C.grey],
   ];
   const ROTATION = [C.gold, C.navy, C.teal, C.composer, C.form, C.violet, C.conductor];

@@ -1,63 +1,85 @@
-/* New Year's Concert, prototype of the lighter view.
-   Layout: navbar, a strip of 87 tiles (one per concert, coloured by conductor), then the programme
-   sheet and, beside it on desktop or rising from the bottom on a phone, the card of what you tapped.
-   Light only (Victor's rule for the family): ivory ground, midnight ink, gilt as the accent. */
+/* New Year's Concert · the page's only stylesheet.
+   Rewritten 2026-10-14 after an audit: two files had grown by appending patches (one selector defined up to
+   ten times), and two titles with the same role had drifted to different sizes. Now one rule per role,
+   in this order:
+     1 tokens · 2 base · 3 top bar and masthead · 4 the three views · 5 years (grid, bars, key)
+     6 layout · 7 concert heading · 8 programme · 9 chips and tags · 10 colour code · 11 card
+     12 analysis · 13 catalogue · 14 footer · 15 phone · 16 wide screen · 17 motion
+   Light only (Víctor's rule for the family): ivory ground, midnight ink, gilt as the accent. */
 
+/* 1 · tokens ---------------------------------------------------------------------------------------- */
 :root {
   --bg: #f5f3ee; --paper: #ffffff; --ink: #1a1f33; --muted: #646a7c; --line: #dfdbd0;
-  --gold: #8f6a1f; --gold-soft: #f1e7cc; --night: #10162a; --chip: #ece8de;
-  --lapiz: #9a6a12;
+  --gold: #8f6a1f; --gold-soft: #f1e7cc; --chip: #ece8de; --lapiz: #9a6a12;
   /* one colour per kind of thing, as on the published page (green, red, orange, blue), toned down */
   --c-conductor: #2e7d4f; --c-composer: #b3373a; --c-form: #c0650f; --c-piece: #2b5fa8;
-  --f-display: var(--f-body);   /* one typeface for everything, like the rest of the family */
+  --c-piece-deep: color-mix(in srgb, var(--c-piece) 62%, #000);   /* the same arrangement, lit */
+  /* the identity bar (CONVENTIONS.md section 2) */
+  --nav-bg: #0b0f1d; --nav-ink: #d9d2c5; --nav-link: #e8e1d3; --nav-dim: #8a7f72;
+  /* an announced concert: no programme yet */
+  --soon-bg: #fbfaf7; --soon-ink: #b9bdc7; --soon-line: #dcd8ce;
+  --shadow-pin: 0 6px 12px -10px rgba(16, 22, 42, .35);
+  /* one typeface; four sizes and nothing in between (plus the tiny year inside a bar) */
   --f-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --ficha-w: 420px;
-  /* the type scale: four steps, nothing in between (plus the tiny year inside a bar) */
   --fs-xl: 28px; --fs-l: 19px; --fs-m: 15px; --fs-s: 13px; --fs-xs: 11px;
+  --radius: 10px; --pill: 999px;
+  --ficha-w: 420px;
   color-scheme: light;
 }
 
+/* 2 · base ------------------------------------------------------------------------------------------ */
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body { background: var(--bg); color: var(--ink); font: var(--fs-m)/1.5 var(--f-body); }
 a { color: var(--gold); }
 button { font: inherit; color: inherit; }
+.link { all: unset; cursor: pointer; color: var(--gold); border-bottom: 1px solid transparent; }
+.link:hover, .link:focus-visible { border-bottom-color: currentColor; }
+.hint { color: var(--muted); font-size: var(--fs-m); }
 
-/* identity bar (CONVENTIONS.md section 2) */
-#navbar { display: flex; align-items: baseline; gap: 8px; background: #0b0f1d; color: #d9d2c5;
+/* 3 · top bar and masthead ------------------------------------------------------------------------- */
+#navbar { display: flex; align-items: baseline; gap: 8px; background: var(--nav-bg); color: var(--nav-ink);
   font-size: var(--fs-s); line-height: 1; padding: 7px 14px; }
-#navbar a { color: #e8e1d3; text-decoration: none; white-space: nowrap; }
+#navbar a { color: var(--nav-link); text-decoration: none; white-space: nowrap; }
 #navbar a:hover, #navbar a:focus-visible { text-decoration: underline; }
 #navbar .wordmark { font-weight: 600; }
 #navbar .nav-home { min-width: 0; overflow: hidden; text-overflow: ellipsis; }   /* gives way on a narrow phone */
-#navbar .nav-sep { color: #8a7f72; }
-#navbar .build { margin-left: auto; color: #8a7f72; font-size: 6.5px;
-  font-variant-numeric: tabular-nums; white-space: nowrap; }
+#navbar .nav-sep { color: var(--nav-dim); }
+#navbar .build { margin-left: auto; color: var(--nav-dim); font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
-.mast { display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
-  padding: 14px 16px 6px; flex-wrap: wrap; }
+.mast { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 16px 6px; flex-wrap: wrap; }
 .brand { text-decoration: none; color: var(--ink); display: flex; flex-direction: column; }
-.brand-k { font: 700 var(--fs-xl)/1.1 var(--f-display); letter-spacing: .01em; }
+.brand-k { font: 700 var(--fs-xl)/1.1 var(--f-body); letter-spacing: .01em; }
 .brand-s { font-size: var(--fs-s); color: var(--muted); }
-.proto-flag { font-size: var(--fs-s); letter-spacing: .08em; text-transform: uppercase; color: var(--lapiz);
-  border: 1px solid currentColor; border-radius: 999px; padding: 2px 9px; }
 
-/* the years: one row per decade, one cell per year, coloured by conductor. Readable like the old
-   buttons, and the eras still show as blocks of colour. */
+/* 4 · the three views: Concerts, Analysis, Catalogue. The bar stays at the top ---------------------- */
+.views { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; display: flex; gap: 2px;
+  padding: 2px 16px 0; background: var(--bg); border-bottom: 1px solid var(--line); }
+.view-tab { border: 0; background: none; font: inherit; font-weight: 600; color: var(--muted); padding: 6px 14px 7px;
+  cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.view-tab:hover, .view-tab:focus-visible { color: var(--ink); outline: none; }
+.view-tab.on { color: var(--ink); border-bottom-color: var(--gold); }
+.view { display: none; }
+.view.on { display: block; }
+#view-analysis, #view-catalogue { padding: 12px 16px 40px; }
+/* the title of a view (Analysis, Catalogue): one rule for both */
+.view-title { font: 700 var(--fs-l)/1.25 var(--f-body); text-align: left; margin: 0 0 4px; }
+
+/* 5 · the years ------------------------------------------------------------------------------------- */
+/* the grid: one row per decade, one square per year (narrow screens) */
 .years-pane { grid-column: 1 / -1; padding: 12px 14px; margin-bottom: 12px; }
-.bars, .bars-axis { display: none; }
-.years { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px; }
-.dec { font-size: var(--fs-s); color: var(--muted); align-self: center; font-variant-numeric: tabular-nums; }
+.years { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px; container-type: inline-size; }
 .yr { height: 30px; border: 0; border-radius: 4px; padding: 0; cursor: pointer; background: var(--c); color: var(--tc);
   font: 600 var(--fs-s)/30px var(--f-body); font-variant-numeric: tabular-nums; letter-spacing: -.01em;
   transition: opacity .15s; overflow: hidden; }
-.yr .s { display: none; }
 .yr:hover, .yr:focus-visible { outline: 2px solid var(--ink); outline-offset: 0; }
 .yr[aria-selected="true"] { outline: 2.5px solid var(--ink); outline-offset: 1px; position: relative; z-index: 1; }
 .yr.none { background: transparent; border: 1px dashed var(--line); color: var(--muted); cursor: default; font-weight: 400; }
+.yr.gap { visibility: hidden; }
 .years.lit .yr:not(.none) { opacity: .18; }
 .years.lit .yr.on { opacity: 1; }
-/* the bars: the whole history in one line, wide screens only */
+/* the bars: the whole history in one line (wide screens only, see 16) */
+.bars, .bars-axis { display: none; }
 .bars-wrap { padding: 4px 16px 0; }
 .bars { grid-template-columns: repeat(var(--n, 87), minmax(0, 1fr)); gap: 2px; padding: 6px 0 2px; }
 .tile { height: 52px; border: 0; padding: 0; border-radius: 2px; cursor: pointer; background: var(--c); color: var(--tc);
@@ -70,75 +92,151 @@ button { font: inherit; color: inherit; }
 .bars.lit .tile.on { opacity: 1; }
 .bars-axis { position: relative; height: 16px; font-size: var(--fs-s); color: var(--muted); font-variant-numeric: tabular-nums; }
 .bars-axis span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
-.colour-by { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: var(--fs-s); }
+/* special years: 1939 before the numbered series (striped), an announced concert (no colour yet) */
+.yr.forerunner, .tile.forerunner {
+  background: repeating-linear-gradient(135deg, var(--c) 0 5px, color-mix(in srgb, var(--c) 72%, #fff) 5px 10px); }
+.yr.soon, .tile.soon { background: var(--soon-bg); color: var(--soon-ink); box-shadow: inset 0 0 0 1px var(--soon-line); font-weight: 600; }
+/* the key under the years: what the colours mean, and what to colour by, both from the left */
+.key { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px 16px; flex-wrap: wrap; margin-top: 8px; }
+.strip-legend { margin: 0; flex: 1 1 320px; font-size: var(--fs-s); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.strip-legend b { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.colour-by { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: flex-start; flex: 0 1 auto; font-size: var(--fs-s); }
 .cb-l { color: var(--muted); margin-right: 2px; white-space: nowrap; }
-.cb { border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 3px 11px; cursor: pointer; }
+.cb { border: 1px solid var(--line); background: var(--paper); border-radius: var(--pill); padding: 3px 11px; cursor: pointer; }
 .cb.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .cb:disabled { cursor: not-allowed; color: var(--muted); border-style: dashed; }
 .cb small { font-size: var(--fs-s); }
 .ramp { display: inline-block; width: 120px; height: 10px; border-radius: 2px; vertical-align: -1px; }
 .ramp-l { font-variant-numeric: tabular-nums; }
-.strip-legend { margin: 8px 0 0; font-size: var(--fs-s); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px; }
-.strip-legend b { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
 
-/* concert + card */
-.layout { display: grid; grid-template-columns: minmax(0, 1fr) 6px var(--ficha-w);
-  gap: 0 10px; padding: 12px 16px 40px; align-items: start; }
-@media (min-width: 1180px) {
-  /* wide screens: the bars carry the year, so the grid would only repeat them */
-  .bars { display: grid; }
-  .bars-axis { display: block; }
-  .years-pane { display: none; }
-}
-.pane { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; min-width: 0; }
+/* 6 · layout: the concert and, beside it, the card --------------------------------------------------- */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 6px var(--ficha-w); gap: 0 10px; padding: 12px 16px 40px; align-items: start; }
+.pane { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); min-width: 0; }
 .concert { padding: 18px 20px 14px; }
 .card { position: sticky; top: 10px; max-height: calc(100vh - 20px); overflow: auto; padding: 18px 20px; }
-.card-close { display: none; }
-.sheet-grip { display: none; }
+.card-close, .sheet-grip { display: none; }
 .divider { align-self: stretch; cursor: col-resize; position: relative; }
-.divider::after { content: ""; position: absolute; left: 2px; top: 40%; width: 2px; height: 28px;
-  background: var(--line); border-radius: 2px; }
+.divider::after { content: ""; position: absolute; left: 2px; top: 40%; width: 2px; height: 28px; background: var(--line); border-radius: 2px; }
 .divider:hover::after, .divider:focus-visible::after { background: var(--gold); }
 body.resizing { user-select: none; cursor: col-resize; }
 
+/* 7 · the concert's heading: title, then a short table, then the hint -------------------------------- */
 .c-head h1 { font: 700 var(--fs-xl)/1.15 var(--f-body); margin: 0; }
 .c-head h1 .date { font-size: var(--fs-l); font-weight: 400; color: var(--muted); margin-left: 2px; }
+.c-head > .share { float: right; margin: 4px 0 6px 10px; }
+.c-head .meta { color: var(--muted); font-size: var(--fs-m); margin: 6px 0 0; }   /* the announced concert */
 .c-head .who { font-size: var(--fs-m); margin: 4px 0 0; }
-.c-head .who button { all: unset; cursor: pointer; border-bottom: 1px dotted var(--muted); }
-.c-head .meta { color: var(--muted); font-size: var(--fs-m); margin: 6px 0 0; }
+.c-head .who button { all: unset; cursor: pointer; color: var(--c-conductor); border-bottom: 1px dotted var(--c-conductor); }
+.c-facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 12px; margin: 10px 0 0; font-size: var(--fs-m); }
+.c-facts dt { color: var(--muted); }
+.c-facts dd { margin: 0; }
+.c-head .c-facts .who { margin: 0; }
+.c-links .role { color: var(--muted); }
+.c-note { font-size: var(--fs-s); color: var(--muted); margin: 8px 0 0; }
+.tap-key { font-size: var(--fs-s); font-style: italic; color: var(--muted); margin: 8px 0 0; }
+.tap-key span { font-weight: 600; font-style: normal; }
+.badge { font-size: var(--fs-s); font-style: italic; color: var(--muted); }
+.src { margin: 14px 0 0; font-size: var(--fs-s); color: var(--muted); }   /* source line of an announced concert */
+
+/* 8 · the programme: parts, and one row per piece ---------------------------------------------------- */
 .part { margin-top: 18px; }
 .part h2 { font: 600 var(--fs-s)/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--gold);
   margin: 0 0 4px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
 .part.zugaben h2 { color: var(--muted); }
+.part h2 .part-src { font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
 ol.prog { list-style: none; margin: 0; padding: 0; }
-.row { display: grid; grid-template-columns: 2.1em minmax(0, 1fr) auto; gap: 2px 10px; padding: 9px 4px;
+/* the number sits flush with "Part 1", close to the title and on its baseline; the opus follows the title */
+.prog .row { display: grid; grid-template-columns: 1.35em minmax(0, 1fr); gap: 2px 6px; padding: 9px 0;
   border-bottom: 1px solid var(--line); cursor: pointer; border-radius: 6px; }
-.row:hover, .row:focus-visible { background: var(--chip); outline: none; }
-.row.hl { background: var(--gold-soft); }
-.row .n { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; padding-top: 1px; }
-.row .t { font-size: var(--fs-m); line-height: 1.35; }
-.row .op { color: var(--muted); font-size: var(--fs-m); font-variant-numeric: tabular-nums; white-space: nowrap; padding-top: 3px; }
-.row .sub { grid-column: 2 / 4; font-size: var(--fs-m); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
-.chip { display: inline-block; font-size: var(--fs-s); padding: 1px 8px; border-radius: 999px; background: var(--chip); color: var(--ink); }
-/* Facts that cannot be clicked are plain text, never pills: the pill shape means "tap me". */
-.badge { font-size: var(--fs-s); font-style: italic; color: var(--muted); }
-.badge.note { color: var(--ink); }
-.src { margin: 14px 0 0; font-size: var(--fs-s); color: var(--muted); }
+.prog .row:hover, .prog .row:focus-visible { background: var(--chip); outline: none; }
+.prog .row.hl { background: var(--gold-soft); }
+.prog .row .n { color: var(--muted); font-size: var(--fs-m); font-variant-numeric: tabular-nums; text-align: left; align-self: baseline; }
+.prog .row .t { font-size: var(--fs-m); line-height: 1.35; color: var(--c-piece); align-self: baseline; }
+.prog .row .op { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.prog .row .sub { grid-column: 2 / 3; font-size: var(--fs-m); color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.prog .row .chip { font-size: inherit; }
 
-/* card content */
+/* 9 · chips (they can be clicked) and tags (they cannot) --------------------------------------------- */
+.chip { display: inline-block; font-size: var(--fs-s); padding: 1px 8px; border-radius: var(--pill); background: var(--chip); color: var(--ink); }
+.k { border: 0; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; }
+.chip.k { padding: 1px 8px; }
+.chip.k:hover, .chip.k:focus-visible { background: var(--line); outline: none; }
+.chip.k.on { background: var(--ink); color: var(--paper); }
+/* each chip in the colour of what it is: composer red, form orange, arrangement piece blue */
+.chip.k-comp { color: var(--c-composer); background: color-mix(in srgb, var(--c-composer) 10%, var(--paper)); }
+.chip.k-comp:hover, .chip.k-comp:focus-visible { background: color-mix(in srgb, var(--c-composer) 20%, var(--paper)); }
+.chip.k-comp.on { background: var(--c-composer); color: #fff; }
+.chip.k-type { color: var(--c-form); background: color-mix(in srgb, var(--c-form) 12%, var(--paper)); }
+.chip.k-type:hover, .chip.k-type:focus-visible { background: color-mix(in srgb, var(--c-form) 22%, var(--paper)); }
+.chip.k-type.on { background: var(--c-form); color: #fff; }
+.chip.k-ver { color: var(--c-piece); background: color-mix(in srgb, var(--c-piece) 10%, var(--paper)); }
+.chip.k-ver:hover, .chip.k-ver:focus-visible { background: color-mix(in srgb, var(--c-piece) 20%, var(--paper)); }
+.chip.k-ver.on { background: color-mix(in srgb, var(--c-piece) 70%, #000); color: #fff; }
+/* tags: a short word after a dot, in the colour of what they are about; filled for new, hollow for a return */
+.tag { font-size: var(--fs-s); font-weight: 400; color: var(--muted); white-space: nowrap; }
+.tag::before { content: "●"; font-size: .8em; margin-right: 3px; vertical-align: .05em; }
+.tag-back::before { content: "○"; }
+.tag-new { color: var(--gold); }
+.tag-piece { color: var(--c-piece); }
+.tag-comp { color: var(--c-composer); }
+/* share: a small pill, top right of every card, concert and chart */
+.share { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line); background: var(--paper);
+  color: var(--muted); border-radius: var(--pill); padding: 3px 10px; font: 500 var(--fs-s)/1.2 var(--f-body); cursor: pointer; }
+.share:hover, .share:focus-visible { border-color: var(--gold); color: var(--gold); outline: none; }
+.share-icon { width: 12px; height: 12px; fill: currentColor; stroke: currentColor; }
+
+/* 10 · the colour code: every kind of thing has its colour, and the years it lights take that colour -- */
+.e-conductor { color: var(--c-conductor); }
+.e-composer { color: var(--c-composer); }
+.e-form { color: var(--c-form); }
+.e-piece { color: var(--c-piece); }
+body[data-kind="conductor"] { --e: var(--c-conductor); }
+body[data-kind="composer"] { --e: var(--c-composer); }
+body[data-kind="form"] { --e: var(--c-form); }
+body[data-kind="piece"] { --e: var(--c-piece); }
+body[data-kind] .years.lit .yr.on, body[data-kind] .bars.lit .tile.on { background: var(--e); color: #fff; opacity: 1; }
+body[data-kind] .years.lit .yr.on2, body[data-kind] .bars.lit .tile.on2 { background: var(--c-piece-deep); color: #fff; }
+body[data-kind] .prog .row.hl { background: color-mix(in srgb, var(--e) 13%, var(--paper)); }
+body[data-kind] .card { border-top: 4px solid var(--e); }
+body[data-kind] .card .k-eyebrow { color: var(--e); }
+body[data-kind] .mini i.on { background: var(--e); }
+
+/* 11 · the card -------------------------------------------------------------------------------------- */
+#card-body > .share { float: right; margin: 0 0 6px 10px; }
 .k-eyebrow { font-size: var(--fs-s); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 0; }
-.card h2 { font: 700 var(--fs-l)/1.2 var(--f-display); margin: 4px 0 2px; }
+.card h2 { font: 700 var(--fs-l)/1.2 var(--f-body); margin: 4px 0 2px; }
+.card h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+  font: 600 var(--fs-s)/1 var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
 .card .by { margin: 0; color: var(--muted); }
-.card .by button, .card .ctx button, .link { all: unset; cursor: pointer; color: var(--gold); border-bottom: 1px solid transparent; }
-.card .by button:hover, .link:hover, .link:focus-visible { border-bottom-color: currentColor; }
-.card h3 { font: 600 var(--fs-s)/1 var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
+.card .by button { all: unset; cursor: pointer; color: var(--c-composer); border-bottom: 1px solid transparent; }
+.card .by button:hover { border-bottom-color: currentColor; }
+.by.links { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.card [data-go="conductor"] { color: var(--c-conductor); }
+.card [data-go^="piece-"], .card .ctable [data-pos] { color: var(--c-piece); }
+.order-toggle { all: unset; cursor: pointer; font: 500 var(--fs-s)/1 var(--f-body); letter-spacing: 0; text-transform: none;
+  color: var(--gold); border: 1px solid var(--line); border-radius: var(--pill); padding: 3px 9px; white-space: nowrap; }
+.order-toggle:hover, .order-toggle:focus-visible { border-color: var(--gold); }
+/* a person: portrait beside kind, name and links; the credit at the foot */
+.person-head { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 14px; align-items: center; }
+.person-head img { width: 76px; height: 96px; object-fit: cover; object-position: center top; border-radius: 6px; background: var(--chip); display: block; }
+.person-head h2 { margin-top: 2px; }
+.photo-credit { font-size: var(--fs-s); color: var(--muted); margin: 18px 0 0; }
+.photo-credit a { color: inherit; }
+/* facts as a short table */
 .facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; margin: 10px 0 0; font-size: var(--fs-m); }
 .facts dt { color: var(--muted); }
 .facts dd { margin: 0; }
+/* a performance's notes (arrangement, soloist), and where sources disagree */
 .notes { margin: 12px 0 0; padding: 12px 14px; border-radius: 8px; background: var(--gold-soft); }
 .notes p { margin: 0 0 4px; }
 .notes .small { font-size: var(--fs-s); color: var(--muted); }
 .lapiz { color: var(--lapiz); font-size: var(--fs-s); }
+sup.unconf { color: var(--lapiz); font-size: var(--fs-s); margin-left: 1px; }
+.sources-differ { margin: 10px 0 0; padding: 10px 12px; border-radius: 8px; border-left: 3px solid var(--lapiz);
+  background: color-mix(in srgb, var(--lapiz) 8%, var(--paper)); font-size: var(--fs-s); }
+.sources-differ p, .sources-differ ul { margin: 0 0 4px; }
+.sources-differ ul { padding-left: 18px; }
+/* the little strip of years and the three numbers */
 .mini { display: grid; grid-template-columns: repeat(var(--n, 87), 1fr); gap: 1px; margin: 8px 0 4px; }
 .mini i { height: 16px; border-radius: 1px; background: var(--line); }
 .mini i.on { background: var(--c); }
@@ -146,260 +244,9 @@ ol.prog { list-style: none; margin: 0; padding: 0; }
 .mini-axis { display: flex; justify-content: space-between; font-size: var(--fs-s); color: var(--muted); }
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0 0; }
 .stats div { background: var(--chip); border-radius: 8px; padding: 8px 10px; }
-.stats b { display: block; font: 700 var(--fs-l)/1.1 var(--f-display); }
+.stats b { display: block; font: 700 var(--fs-l)/1.1 var(--f-body); }
 .stats span { font-size: var(--fs-s); color: var(--muted); }
-.list { list-style: none; padding: 0; margin: 0; font-size: var(--fs-m); }
-.list li { display: grid; grid-template-columns: 3.2em minmax(0, 1fr) auto; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); }
-.list li .y { font-variant-numeric: tabular-nums; }
-.list li .r { color: var(--muted); font-size: var(--fs-s); }
-.around { font-size: var(--fs-m); color: var(--muted); margin: 6px 0 0; }
-.ext { display: flex; gap: 14px; flex-wrap: wrap; font-size: var(--fs-m); margin-top: 14px; }
-.hint { color: var(--muted); font-size: var(--fs-m); }
-
-/* phone: the card rises from the bottom (artatlas' sheet), the strip scrolls sideways */
-@media (max-width: 760px) {
-  .layout { display: block; padding: 10px 10px 40px; }
-  .layout > .pane { margin-bottom: 10px; }
-  .divider { display: none; }
-  .concert { padding: 14px 12px; }
-  .c-head h1 { font-size: var(--fs-xl); }
-  .row { grid-template-columns: 1.8em minmax(0, 1fr) auto; }
-  .row .t { font-size: var(--fs-m); }
-  .card { position: fixed; left: 0; right: 0; bottom: 0; top: auto; z-index: 50; max-height: 82vh;
-    border-radius: 16px 16px 0 0; border-bottom: 0; box-shadow: 0 -8px 30px rgba(0,0,0,.28);
-    padding: 22px 16px calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateY(105%);
-    transition: transform .22s ease; }
-  body.card-open .card { transform: none; }
-  body.card-open { overflow: hidden; }
-  .card-close { display: block; position: absolute; top: 8px; right: 10px; width: 34px; height: 34px;
-    border-radius: 50%; border: 0; background: var(--chip); font-size: var(--fs-l); line-height: 1; cursor: pointer; }
-  /* the sheet's height is the reader's: drag the grip, it snaps to a third, a half or nearly full */
-  .card { height: var(--sheet-h, 60vh); max-height: 94vh; }
-  body.sheet-dragging .card { transition: none; }
-  .sheet-grip { display: block; position: absolute; top: 0; left: 0; right: 52px; height: 26px;
-    touch-action: none; cursor: ns-resize; }
-  .sheet-grip::after { content: ""; position: absolute; top: 8px; left: calc(50% + 26px); width: 44px; height: 5px;
-    margin-left: -22px; border-radius: 3px; background: var(--line); }
-  .years-pane { padding: 8px 6px; }
-  .bars-wrap { padding: 2px 10px 0; }
-  .colour-by { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
-  .cb { white-space: nowrap; }
-  .years { gap: 1px; }
-  /* the scale's small step, a little lighter and tighter so four digits fit a tenth of a phone */
-  .yr { font-size: var(--fs-s); font-weight: 500; letter-spacing: -.04em; height: 22px; line-height: 22px; border-radius: 3px; }
-  #navbar { font-size: var(--fs-s); padding: 7px 10px; }
-}
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-
-/* Below 1180px the bars would be too thin to carry the year: the grid is the only chooser there.
-   Kept last on purpose, so no rule further up can bring the bars back on a phone. */
-@media (max-width: 1179px) {
-  .bars, .bars-axis { display: none; }
-}
-
-/* an announced concert: no programme yet, so no colour; gilt outline and a soft hatch */
-.yr.soon, .tile.soon { background: #fbfaf7; color: #b9bdc7; box-shadow: inset 0 0 0 1px #dcd8ce; font-weight: 600; }
-
-.yr.gap { visibility: hidden; }
-
-/* the key under the years: what the colours mean on the left, what to colour by on the right */
-.key { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px 16px; flex-wrap: wrap; margin-top: 8px; }
-.key .strip-legend { margin: 0; flex: 1 1 320px; }
-.key .colour-by { justify-content: flex-end; flex: 0 1 auto; }
-@media (max-width: 760px) {
-  .key { flex-direction: column; }
-  .key .strip-legend, .key .colour-by { flex: none; }   /* in a column a flex-basis becomes a height */
-  .key .colour-by { justify-content: flex-start; max-width: 100%; }
-}
-
-/* inside a row, the composer and the form are their own doors: they light their years and their rows */
-.k { border: 0; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; }
-.k-comp { border-bottom: 1px dotted var(--muted); }
-.k-comp:hover, .k-comp:focus-visible { color: var(--ink); border-bottom-style: solid; outline: none; }
-.chip.k { padding: 1px 8px; }
-.chip.k:hover, .chip.k:focus-visible { background: var(--line); outline: none; }
-.k-comp.on { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--gold); }
-.chip.k.on { background: var(--ink); color: var(--paper); }
-
-/* --- the colour code: every kind of thing has its colour, and the years it lights take that colour --- */
-.e-conductor { color: var(--c-conductor); }
-.e-composer { color: var(--c-composer); }
-.e-form { color: var(--c-form); }
-.e-piece { color: var(--c-piece); }
-.tap-key { font-size: var(--fs-s); color: var(--muted); margin: 8px 0 0; }
-.tap-key span { font-weight: 600; }
-
-.c-head .who button { color: var(--c-conductor); border-bottom-color: var(--c-conductor); }
-.row .t { color: var(--c-piece); }
-.k-comp { color: var(--c-composer); border-bottom-color: color-mix(in srgb, var(--c-composer) 45%, transparent); }
-.k-comp:hover, .k-comp:focus-visible { color: var(--c-composer); }
-.k-comp.on { color: var(--c-composer); border-bottom-color: var(--c-composer); }
-.chip.k-type { color: var(--c-form); background: color-mix(in srgb, var(--c-form) 12%, var(--paper)); }
-.chip.k-type:hover, .chip.k-type:focus-visible { background: color-mix(in srgb, var(--c-form) 22%, var(--paper)); }
-.chip.k-type.on { background: var(--c-form); color: #fff; }
-.card .by button { color: var(--c-composer); }
-.card [data-go="conductor"] { color: var(--c-conductor); }
-.card [data-go^="piece-"], .card .list [data-pos] { color: var(--c-piece); }
-
-body[data-kind="conductor"] { --e: var(--c-conductor); }
-body[data-kind="composer"] { --e: var(--c-composer); }
-body[data-kind="form"] { --e: var(--c-form); }
-body[data-kind="piece"] { --e: var(--c-piece); }
-body[data-kind] .years.lit .yr.on, body[data-kind] .bars.lit .tile.on { background: var(--e); color: #fff; opacity: 1; }
-body[data-kind] .row.hl { background: color-mix(in srgb, var(--e) 13%, var(--paper)); }
-body[data-kind] .card { border-top: 4px solid var(--e); }
-body[data-kind] .card .k-eyebrow { color: var(--e); }
-body[data-kind] .mini i.on { background: var(--e); }
-
 .repeat-note { font-size: var(--fs-s); color: var(--muted); margin: 8px 0 0; }
-
-.aside { font-family: var(--f-body); font-size: var(--fs-s); font-style: italic; color: var(--muted); font-weight: 400; }
-
-.list li.here { background: color-mix(in srgb, var(--c-piece) 10%, var(--paper)); }
-
-/* a person's card: portrait beside kind, name and link; the credit at the foot of the card */
-.person-head { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 14px; align-items: center; }
-.person-head img { width: 76px; height: 96px; object-fit: cover; object-position: center top; border-radius: 6px;
-  background: var(--chip); display: block; }
-.person-head h2 { margin-top: 2px; }
-.photo-credit { font-size: var(--fs-s); color: var(--muted); margin: 18px 0 0; }
-.photo-credit a { color: inherit; }
-
-/* sources that do not agree on a performance: say what each one says and what was kept */
-.sources-differ { margin: 10px 0 0; padding: 10px 12px; border-radius: 8px; border-left: 3px solid var(--lapiz);
-  background: color-mix(in srgb, var(--lapiz) 8%, var(--paper)); font-size: var(--fs-s); }
-.sources-differ p, .sources-differ ul { margin: 0 0 4px; }
-.sources-differ ul { padding-left: 18px; }
-.list .r { font-variant-numeric: tabular-nums; white-space: nowrap; }
-
-/* the piece's video, as on the old page */
-.video { position: relative; aspect-ratio: 16 / 9; margin: 12px 0; }
-.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-
-/* 1939: the forerunner of the numbered series, in its own colour but striped in two tones of it */
-.yr.forerunner, .tile.forerunner {
-  background: repeating-linear-gradient(135deg, var(--c) 0 5px, color-mix(in srgb, var(--c) 72%, #fff) 5px 10px);
-}
-.forerunner-note { font-size: var(--fs-s); color: var(--muted); margin: 4px 0 8px; }
-
-/* links found automatically and not yet confirmed: a small star, explained on hover */
-sup.unconf { color: var(--lapiz); font-size: var(--fs-s); margin-left: 1px; }
-.by.links { display: flex; flex-wrap: wrap; gap: 4px 12px; }
-
-/* the foot of the page, as on the published one: copyright, version, sources */
-.site-foot { margin-top: 32px; padding: 18px 16px 28px; border-top: 1px solid var(--line); color: var(--muted);
-  font-size: var(--fs-s); text-align: center; }
-.site-foot p { margin: 2px 0; }
-a.proto-flag { text-decoration: none; }
-a.proto-flag:hover, a.proto-flag:focus-visible { border-color: var(--gold); }
-
-/* Phone: the years stay pinned under the tabs while the programme scrolls, so every tap shows its years
-   lighting up; the programme is tighter so more of it fits under them. The key goes below, unpinned. */
-@media (max-width: 760px) {
-  .years-pane { position: sticky; top: var(--views-h, 42px); z-index: 30; padding: 6px 6px; margin-bottom: 8px;
-    /* the first shadow is the page colour, to cover the gap above and beside the pinned years */
-    box-shadow: 0 -10px 0 10px var(--bg), 0 6px 12px -10px rgba(16, 22, 42, .35); }
-  .yr { height: 19px; line-height: 19px; }
-  #key.pane { padding: 8px 10px; margin-bottom: 8px; }
-  .concert { padding: 10px 10px; }
-  .c-head .meta, .c-head .who { margin: 2px 0; }
-  .tap-key { margin-top: 4px; }
-  .part { margin-top: 10px; }
-  .row { padding: 5px 2px; gap: 0 8px; }
-  .row .t { line-height: 1.25; }
-  .row .sub { gap: 2px 8px; }
-}
-
-/* One size for everything that is data (15): conductor, counts, titles, composers, forms, opus. Bigger only
-   for the concert's title; smaller (13) only for instructions and notes about the page. */
-.row .chip { font-size: inherit; }
-
-/* the composer is a chip like the form: its own red, a stronger tint on hover, solid when it is on */
-.chip.k-comp { border: 0; color: var(--c-composer); background: color-mix(in srgb, var(--c-composer) 10%, var(--paper)); }
-.chip.k-comp:hover, .chip.k-comp:focus-visible { color: var(--c-composer); background: color-mix(in srgb, var(--c-composer) 20%, var(--paper)); outline: none; }
-.chip.k-comp.on { background: var(--c-composer); color: #fff; font-weight: 400; border: 0; }
-
-/* Wide screen: the bars (and their key) stay pinned under the tabs while the programme scrolls, as the
-   years do on a phone; the card sits just below them. */
-@media (min-width: 1180px) {
-  .bars-wrap { position: sticky; top: var(--views-h, 50px); z-index: 30; background: var(--bg);
-    box-shadow: 0 6px 12px -10px rgba(16, 22, 42, .35); }
-  .card { top: calc(var(--pin-h, 200px) + 10px); max-height: calc(100vh - var(--pin-h, 200px) - 20px); }
-}
-
-/* the opus follows the title on the same line, on every screen (Víctor, 2026-10-13): two columns only */
-.row, .row { grid-template-columns: 2.1em minmax(0, 1fr); }
-.row .sub { grid-column: 2 / 3; }
-.row .t .op { padding-top: 0; white-space: nowrap; }
-@media (max-width: 760px) { .row { grid-template-columns: 1.8em minmax(0, 1fr); } }
-
-/* On a very narrow phone the year must still fit its square, nearly edge to edge: the size follows the
-   width of the grid (a tenth of it per square), never above the small step of the scale. */
-.years { container-type: inline-size; }
-@media (max-width: 760px) {
-  .yr { font-size: min(var(--fs-s), 3.95cqi); letter-spacing: -.05em; }
-}
-
-/* share: a small button, top right of every card and every chart (it can be clicked, so it is a pill) */
-.share { display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line); background: var(--paper);
-  color: var(--muted); border-radius: 999px; padding: 3px 10px; font: 500 var(--fs-s)/1.2 var(--f-body); cursor: pointer; }
-.share:hover, .share:focus-visible { border-color: var(--gold); color: var(--gold); outline: none; }
-.share-icon { width: 12px; height: 12px; fill: currentColor; stroke: currentColor; }
-#card-body > .share { float: right; margin: 0 0 6px 10px; }
-@media (max-width: 760px) { #card-body > .share { margin-right: 40px; } }   /* clear of the close button */
-
-.c-head > .share { float: right; margin: 4px 0 6px 10px; }
-
-/* the concert's heading as a short table (Víctor, 2026-10-13) */
-.c-facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 3px 12px; margin: 10px 0 0; font-size: var(--fs-m); }
-.c-facts dt { color: var(--muted); }
-.c-facts dd { margin: 0; }
-.c-head .c-facts .who { font-size: var(--fs-m); margin: 0; }
-.c-note { font-size: var(--fs-s); color: var(--muted); margin: 8px 0 0; }
-.tap-key { font-style: italic; }
-.tap-key span { font-style: normal; }
-/* the programme lines up with its "Part 1" heading: number flush left, no inner indent */
-.row { padding-left: 0; padding-right: 0; }
-.row .n { text-align: left; }
-@media (max-width: 760px) { .row { padding-left: 0; padding-right: 0; } }
-/* "Colour by" starts at the left */
-.key .colour-by { justify-content: flex-start; }
-
-/* number close to the title and on the same line as its letters (Víctor, 2026-10-13): a column just wide
-   enough for two digits, a small gap, and number and title sharing one baseline */
-.row { grid-template-columns: 1.35em minmax(0, 1fr); column-gap: 6px; }
-@media (max-width: 760px) { .row { grid-template-columns: 1.35em minmax(0, 1fr); column-gap: 6px; } }
-.row .n { padding-top: 0; font-size: var(--fs-m); align-self: baseline; }
-.row .t { align-self: baseline; }
-
-/* sources, said discreetly: roles in grey after each link, and a quiet note beside a part heading */
-.c-links .role { color: var(--muted); }
-.part h2 .part-src { font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); }
-
-/* lists in a card: one size for the whole line, everything on one baseline (Víctor, 2026-10-13) */
-.list li { align-items: baseline; }
-.list li .r, .list .r { font-size: var(--fs-m); }
-.card h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-.order-toggle { all: unset; cursor: pointer; font: 500 var(--fs-s)/1 var(--f-body); letter-spacing: 0; text-transform: none;
-  color: var(--gold); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; white-space: nowrap; }
-.order-toggle:hover, .order-toggle:focus-visible { border-color: var(--gold); }
-
-/* quiet tags for facts (not clickable, so not pills): small caps, gold when something is new */
-.tag { font-size: var(--fs-s); font-style: normal; font-weight: 500; letter-spacing: .03em; text-transform: lowercase;
-  font-variant: small-caps; color: var(--muted); white-space: nowrap; }
-.tag-new { color: var(--gold); }
-/* the arrangement chip: the piece's blue; on, the darker blue it lights the years with */
-.chip.k-ver { border: 0; color: var(--c-piece); background: color-mix(in srgb, var(--c-piece) 10%, var(--paper)); }
-.chip.k-ver:hover, .chip.k-ver:focus-visible { background: color-mix(in srgb, var(--c-piece) 20%, var(--paper)); outline: none; }
-.chip.k-ver.on { background: color-mix(in srgb, var(--c-piece) 70%, #000); color: #fff; }
-body[data-kind] .years.lit .yr.on2, body[data-kind] .bars.lit .tile.on2 { background: color-mix(in srgb, var(--c-piece) 62%, #000); color: #fff; }
-
-/* tags, option B (Víctor, 2026-10-13): plain small words after a dot; filled gold for something new,
-   hollow grey for a return. No capitals, no small caps. */
-.tag { font-variant: normal; text-transform: none; letter-spacing: 0; font-weight: 400; }
-.tag::before { content: "●"; font-size: .8em; margin-right: 3px; vertical-align: .05em; }
-.tag-back::before { content: "○"; }
-.tag-back { color: var(--muted); }
 /* the lists inside a card are tables, with a heading for every column */
 .ctable { width: 100%; border-collapse: collapse; font-size: var(--fs-m); }
 .ctable th { text-align: left; font-size: var(--fs-s); font-weight: 600; color: var(--muted); padding: 4px 6px 4px 0;
@@ -408,7 +255,148 @@ body[data-kind] .years.lit .yr.on2, body[data-kind] .bars.lit .tile.on2 { backgr
 .ctable .n { text-align: right; font-variant-numeric: tabular-nums; }
 .ctable td .sub { display: block; font-size: var(--fs-s); color: var(--muted); }
 .ctable tr.here td { background: color-mix(in srgb, var(--c-piece) 10%, var(--paper)); }
+/* links out, and the piece's video */
+.ext { display: flex; gap: 14px; flex-wrap: wrap; font-size: var(--fs-m); margin-top: 14px; }
+.video { position: relative; aspect-ratio: 16 / 9; margin: 12px 0; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
-/* a tag takes the colour of what it is about: the piece's blue, the composer's red (Víctor, 2026-10-13) */
-.tag-piece, .tag-back.tag-piece { color: var(--c-piece); }
-.tag-comp { color: var(--c-composer); }
+/* 12 · analysis -------------------------------------------------------------------------------------- */
+.forerunner-note { font-size: var(--fs-s); color: var(--muted); margin: 4px 0 8px; }
+#statsPane .forerunner-note { margin: 0 0 12px; }
+.toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+#view-analysis .toc { max-width: 1040px; margin-left: auto; margin-right: auto; }
+.toc a { font-size: var(--fs-s); text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--paper);
+  border-radius: var(--pill); padding: 4px 11px; }
+.toc a:hover, .toc a:focus-visible { border-color: var(--gold); outline: none; }
+/* no outer card: every section is one full-width card, one reading column */
+#statsPane { padding: 0; }
+#statsPane hr { display: none; }
+#statsPane .catalogue-panel { max-width: 1040px; margin: 0 auto; padding: 0 0 24px; }
+#statsPane h6 { margin: 0; }
+#statsPane p { margin: 2px 0; }
+/* the part of Bootstrap's grid the analysis block uses: row, col-12, col-lg-6, g-2, g-3, mb-*, mt-* */
+#statsPane .row { display: flex; flex-wrap: wrap; margin: 0 -8px; row-gap: 2px; }
+#statsPane .row > * { width: 100%; padding: 0 8px; }
+#statsPane .catalogue-panel > .row > * { width: 100%; }
+#statsPane .g-3 { row-gap: 16px; }
+#statsPane .g-2 { row-gap: 8px; }
+#statsPane .align-items-center { align-items: center; }
+#statsPane .mb-3 { margin-bottom: 16px; }
+#statsPane .mb-2 { margin-bottom: 8px; }
+#statsPane .mt-2 { margin-top: 8px; }
+@media (min-width: 992px) { #statsPane .col-lg-6 { width: 50%; } }
+#statsPane .plot-box { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; scroll-margin-top: 60px; }
+#statsPane .plot-box .plot-box { background: none; border: 0; border-radius: 0; padding: 0; }   /* no box in a box */
+.plot-title { font-size: var(--fs-m); font-weight: 600; margin: 0 0 6px; }
+#statsPane .plot-box > .plot-title { font-size: var(--fs-l); font-weight: 700; margin: 0 0 10px; }
+.plot-chart { position: relative; height: 240px; }   /* a fixed chart area, not a fixed canvas */
+.plot-chart canvas { width: 100% !important; height: 100% !important; display: block; }
+.plot-desc, .plot-desc p { font-size: var(--fs-m); color: var(--ink); line-height: 1.55; margin-bottom: 6px; }
+.plot-desc p + p { margin-top: 8px; }
+.plot-desc.folded { display: none; }   /* the introductions start folded: the charts come first */
+.plot-reading { font-size: var(--fs-s); color: var(--muted); font-style: italic; margin: 16px 0 6px; }
+.plot-reading::before { content: "Plot reading: "; font-weight: bold; }
+.intro-toggle { all: unset; cursor: pointer; display: inline-block; margin: 0 0 10px; font-size: var(--fs-s);
+  color: var(--gold); border-bottom: 1px dotted var(--gold); }
+.intro-toggle:hover, .intro-toggle:focus-visible { border-bottom-style: solid; }
+.chart-share { display: flex; justify-content: flex-end; margin: 6px 0 2px; scroll-margin-top: 70px; }
+
+/* 13 · catalogue ------------------------------------------------------------------------------------- */
+.tab-pane { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; }
+#statsPane.tab-pane { background: none; border: 0; }
+.cat-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+#cat-search { flex: 1 1 240px; max-width: 420px; font: inherit; padding: 7px 10px; border: 1px solid var(--line);
+  border-radius: 6px; background: var(--paper); color: var(--ink); }
+.cat-count { color: var(--muted); font-size: var(--fs-m); }
+.table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.cat { width: 100%; border-collapse: collapse; font-size: var(--fs-m); }
+table.cat th { text-align: left; font-size: var(--fs-s); color: var(--muted); font-weight: 600; padding: 8px 10px;
+  border-bottom: 2px solid var(--line); cursor: pointer; white-space: nowrap; user-select: none; }
+table.cat th:hover { color: var(--ink); }
+table.cat th .dir { font-size: var(--fs-s); margin-left: 4px; }
+table.cat td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.cat td.n { text-align: right; font-variant-numeric: tabular-nums; }
+table.cat .t { color: var(--c-piece); }
+table.cat tbody tr { cursor: pointer; }
+table.cat tbody tr:nth-child(even) { background: color-mix(in srgb, var(--line) 35%, var(--paper)); }
+table.cat tbody tr:hover { background: color-mix(in srgb, var(--c-piece) 8%, var(--paper)); }
+
+/* 14 · footer ---------------------------------------------------------------------------------------- */
+.site-foot { margin-top: 32px; padding: 18px 16px 28px; border-top: 1px solid var(--line); color: var(--muted);
+  font-size: var(--fs-s); text-align: center; }
+.site-foot p { margin: 2px 0; }
+
+/* 15 · phone ----------------------------------------------------------------------------------------- */
+@media (max-width: 760px) {
+  #navbar { padding: 7px 10px; }
+  .views { padding: 2px 8px 0; }
+  .view-tab { flex: 1; padding: 6px 4px 7px; font-size: var(--fs-m); }
+  #view-analysis, #view-catalogue { padding: 10px 10px 40px; }
+  /* the years stay pinned under the tabs while the programme scrolls, so every tap shows its years */
+  .years-pane { position: sticky; top: var(--views-h, 42px); z-index: 30; padding: 6px; margin-bottom: 8px;
+    box-shadow: 0 -10px 0 10px var(--bg), var(--shadow-pin); }   /* the first shadow covers the gap above */
+  .years { gap: 1px; }
+  /* a tenth of the grid per year, four digits nearly edge to edge, never above the small step */
+  .yr { font-size: min(var(--fs-s), 3.95cqi); font-weight: 500; letter-spacing: -.05em; height: 19px; line-height: 19px; border-radius: 3px; }
+  .bars-wrap { padding: 2px 10px 0; }
+  .key { flex-direction: column; }
+  .strip-legend, .colour-by { flex: none; }   /* in a column a flex-basis becomes a height */
+  .colour-by { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; max-width: 100%; }
+  .cb { white-space: nowrap; }
+  #key.pane { padding: 8px 10px; margin-bottom: 8px; }
+  /* the concert: tighter, so more of the programme fits under the pinned years */
+  .layout { display: block; padding: 10px 10px 40px; }
+  .layout > .pane { margin-bottom: 10px; }
+  .divider { display: none; }
+  .concert { padding: 10px; }
+  .c-head .meta, .c-head .who { margin: 2px 0; }
+  .tap-key { margin-top: 4px; }
+  .part { margin-top: 10px; }
+  .prog .row { padding: 5px 0; row-gap: 0; }
+  .prog .row .t { line-height: 1.25; }
+  .prog .row .sub { gap: 2px 8px; }
+  /* the card rises from the bottom as a sheet; its height is the reader's (drag the grip) */
+  .card { position: fixed; left: 0; right: 0; bottom: 0; top: auto; z-index: 50; height: var(--sheet-h, 60vh); max-height: 94vh;
+    border-radius: 16px 16px 0 0; border-bottom: 0; box-shadow: 0 -8px 30px rgba(0, 0, 0, .28);
+    padding: 22px 16px calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateY(105%); transition: transform .22s ease; }
+  body.card-open .card { transform: none; }
+  body.card-open { overflow: hidden; }
+  body.sheet-dragging .card { transition: none; }
+  .card-close { display: block; position: absolute; top: 8px; right: 10px; width: 34px; height: 34px;
+    border-radius: 50%; border: 0; background: var(--chip); font-size: var(--fs-l); line-height: 1; cursor: pointer; }
+  .sheet-grip { display: block; position: absolute; top: 0; left: 0; right: 52px; height: 26px; touch-action: none; cursor: ns-resize; }
+  .sheet-grip::after { content: ""; position: absolute; top: 8px; left: calc(50% + 26px); width: 44px; height: 5px;
+    margin-left: -22px; border-radius: 3px; background: var(--line); }
+  #card-body > .share { margin-right: 40px; }   /* clear of the close button */
+  /* analysis */
+  .toc { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+  .toc a { white-space: nowrap; }
+  #statsPane .plot-box { padding: 14px; }
+  /* catalogue: each piece in two lines, the title with its count, then composer and form */
+  .cat-tools { gap: 6px 10px; margin-bottom: 6px; }
+  #cat-search { padding: 6px 8px; }
+  #view-catalogue .tab-pane { padding: 8px; }
+  table.cat, table.cat tbody { display: block; }
+  table.cat thead tr { display: flex; flex-wrap: wrap; gap: 0 4px; border-bottom: 2px solid var(--line); }
+  table.cat thead th { border: 0; padding: 4px 6px; }
+  table.cat tbody tr { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: 8px;
+    grid-template-areas: "t t n" "c f f"; padding: 5px 6px; border-bottom: 1px solid var(--line); }
+  table.cat td { border: 0; padding: 0; line-height: 1.3; }
+  table.cat td:nth-child(1) { grid-area: t; }
+  table.cat td:nth-child(2) { grid-area: f; }
+  table.cat td:nth-child(3) { grid-area: c; }
+  table.cat td:nth-child(4) { grid-area: n; }
+  table.cat .chip.k { padding: 0 7px; }
+}
+
+/* 16 · wide screen: the bars carry the years, pinned under the tabs; the card sits just below them --- */
+@media (min-width: 1180px) {
+  .bars { display: grid; }
+  .bars-axis { display: block; }
+  .years-pane { display: none; }
+  .bars-wrap { position: sticky; top: var(--views-h, 50px); z-index: 30; background: var(--bg); box-shadow: var(--shadow-pin); }
+  .card { top: calc(var(--pin-h, 200px) + 10px); max-height: calc(100vh - var(--pin-h, 200px) - 20px); }
+}
+
+/* 17 · motion ---------------------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
