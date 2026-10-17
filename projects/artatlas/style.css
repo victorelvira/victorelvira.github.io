@@ -1398,3 +1398,39 @@ body.galaxy-tree #galaxy-hint, body.galaxy-tree #galaxy-legend, body.galaxy-tree
 /* one painter painted the other: dashed, and not the colour of teaching */
 .pt-portrait { fill: none; stroke: #9a7b9c; stroke-width: 1.1; stroke-dasharray: 3 3; opacity: .8; }
 .pt-portrait.dim { opacity: .1; }
+
+/* ── Where I am and Share, beside the title ──
+   Neither is a filter: one moves the map, the other hands the reader the address they are on. They
+   sit in the identity bar so they stay reachable with the filter row folded, which on a phone is
+   always. */
+/* in the filter row it was deliberately faint; beside the title it has to look like a button, and
+   like its neighbour */
+#bar #locate, #bar #share-view { white-space: nowrap; align-self: center;
+  background: #fff; border-color: var(--line); color: var(--ink); }
+#bar #locate:hover, #bar #share-view:hover { background: #f2ede4; border-color: #cdc3b4; }
+#bar #locate.active { background: #2f6fd0; border-color: #2f6fd0; color: #fff; }
+#bar #share-view { display: inline-flex; align-items: center; gap: 5px; }
+.ic-share { width: 12px; height: 12px; fill: currentColor; stroke: currentColor; }
+@media (max-width: 720px) {
+  /* On a phone they ride on the title's own line, the way culture_atlas does it: the title gives up
+     the room (it is truncated, the subtitle is already hidden) and Share keeps only its icon. An
+     earlier `order: 1` pushed both below the rail, onto a third row, which is what Víctor saw. */
+  #bar .brand { order: 0; min-width: 0; flex: 0 1 auto; }
+  #bar .brand strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #bar #share-view { order: 1; }
+  #bar #locate { order: 2; }
+  #bar #bar-rail { order: 3; }
+  #bar #langsel { order: 4; }
+  #bar #locate, #bar #share-view { padding: 3px 8px; font-size: 12.5px; }
+  #bar #share-view .lbl { display: none; }   /* on a phone the icon says it; the words cost a row */
+}
+@media (max-width: 560px) {
+  /* the title yields exactly as much as the two buttons need, and not more */
+  #bar { gap: 5px 7px; }
+  #bar .brand strong { max-width: 38vw; }
+  #bar .brand .mark { width: 20px; height: 20px; }
+}
+/* the language chooser is the least used control in the bar: it goes to the far right, so the three
+   buttons that are used (where I am, share, the painters) sit together beside the title */
+#bar #langsel { margin-left: auto; align-self: center; }
+@media (max-width: 640px), (max-height: 520px) and (max-width: 1000px) { #bar #langsel { order: 2; } }

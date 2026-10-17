@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.23.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-10-11 17:38";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.24.4";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-17 10:56";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -3133,6 +3133,20 @@ function toast(msg) {
   el.textContent = msg; el.classList.add("on");
   clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove("on"), 1700);
 }
+// Sharing what you are looking at, not a painting: the address already carries the view, the
+// painter, the place, the theme, the years, the search and the map position, so one link reopens
+// exactly this. Only the url goes: WhatsApp glues a title behind it and the link stops being
+// tappable (culture_atlas learned that one the hard way).
+async function shareView() {
+  const url = location.href;
+  try {
+    if (navigator.share) { await navigator.share({ url }); return; }
+    await navigator.clipboard.writeText(url);
+    toast(t("Link copied ✓"));
+  } catch (e) { if (e && e.name !== "AbortError") toast(url); }
+}
+document.getElementById("share-view")?.addEventListener("click", e => { e.preventDefault(); shareView(); });
+
 function shareWork(p) {
   // share the per-work stub page (carries this painting's og:image so previews unfurl): it
   // redirects into the app at ?w=<qid>. Falls back to the app URL if there's no qid.
@@ -3249,7 +3263,7 @@ function showBanner(html) {
 // choose (1–250 km). Useful in a city (lots nearby) and in a village (bump the radius to reach
 // the nearest cities). The map shows your position + a radius circle; the side panel lists the
 // places by distance. Click "Near me" again to clear and restore the previous view.
-let nearMePrevView = null, nearCircle = null;
+let nearMePrevView = null, nearCircle = null, nearFitPending = false;
 const NEAR_RADII = [1, 5, 25, 50, 100, 250];   // km presets
 
 function nearVenues(lat, lon) {                 // filtered venues, with distance, sorted nearest-first
@@ -3270,24 +3284,23 @@ function clearNearMe() {
   const btn = document.getElementById("locate");
   if (userMarker) { map.removeLayer(userMarker); userMarker = null; }
   if (nearCircle) { map.removeLayer(nearCircle); nearCircle = null; }
-  btn.textContent = t("📍 Near me"); btn.classList.remove("active"); btn.disabled = false;
+  btn.classList.toggle("active", meWatch != null); btn.disabled = false;
   state.near = null;
   if (nearMePrevView) { map.setView(nearMePrevView.center, nearMePrevView.zoom); nearMePrevView = null; }
   refresh();                                    // restore the normal viewport list
 }
 
-function setNearRadius(r) { if (state.near) { state.near.radiusKm = r; renderNearMe(); } }
+function setNearRadius(r) { if (state.near) { state.near.radiusKm = r; nearFitPending = true; renderNearMe(); } }
 
 function drawNearMe() {                          // user marker + radius circle, fit to the circle
   const { lat, lon, radiusKm } = state.near;
   if (nearCircle) map.removeLayer(nearCircle);
-  if (userMarker) map.removeLayer(userMarker);
-  userMarker = L.marker([lat, lon], { icon: L.divIcon({ className: "",
-    html: `<div class="me"></div>`, iconSize: [16, 16], iconAnchor: [8, 8] }), zIndexOffset: 1000 })
-    .addTo(map).bindPopup("You are here");
+  if (userMarker) { map.removeLayer(userMarker); userMarker = null; }   // the live dot draws itself
   nearCircle = L.circle([lat, lon], { radius: radiusKm * 1000,
     color: "#1a73e8", weight: 1, fillColor: "#1a73e8", fillOpacity: .06 }).addTo(map);
-  map.fitBounds(nearCircle.getBounds(), { padding: [30, 30] });
+  // Fit only when the reader asked for it (first fix, or a new radius), never while walking: a map
+  // that re-fits every twenty metres is a map you cannot read.
+  if (nearFitPending) { nearFitPending = false; map.fitBounds(nearCircle.getBounds(), { padding: [30, 30] }); }
 }
 
 function renderNearMe() {                        // owns the side panel while near-me is active
@@ -3316,27 +3329,112 @@ function renderNearMe() {                        // owns the side panel while ne
   drawNearMe();
 }
 
+// ── Where I am: the three-state button from culture_atlas ──────────────────────────────────────
+// Ported on 2026-10-17 at Víctor's request ("the GPS button I have in culture atlas works great,
+// copy it"). What it brings over the one-shot version that was here:
+//
+//  · a LIVE position, not a single reading: the dot follows you down the street;
+//  · THREE states, because two were a lie. Off, following, and watching-but-not-chasing, which is
+//    what you are in the moment you drag the map to look at something else. The button says which
+//    one it is in and what the next tap will do;
+//  · only a REFUSAL ends it. In the street a GPS times out all the time: inside a church, between
+//    tall buildings, underground. A timeout keeps the watch alive and greys the halo to say the dot
+//    is no longer current, instead of silently giving up.
+//
+// What stays from the atlas' own version: the radius panel. The list of venues within N km is this
+// project's answer to "near me", and the live position simply keeps it up to date as you walk.
+let meWatch = null, meDot = null, meHalo = null, meFollow = false, meLayer = null;
+
+function drawMe(lat, lon, acc) {
+  if (!meLayer) meLayer = L.layerGroup().addTo(map);
+  if (!meDot) {
+    meHalo = L.circle([lat, lon], { radius: acc || 0, color: "#2f6fd0", weight: 1,
+                                    fillColor: "#2f6fd0", fillOpacity: .12, interactive: false });
+    meDot = L.circleMarker([lat, lon], { radius: 7, color: "#fff", weight: 3,
+                                         fillColor: "#2f6fd0", fillOpacity: 1 });
+    meDot.bindTooltip(t("You are here"), { direction: "top", offset: [0, -10] });
+    meLayer.addLayer(meHalo); meLayer.addLayer(meDot);
+  } else {
+    meDot.setLatLng([lat, lon]);
+    meHalo.setLatLng([lat, lon]).setRadius(acc || 0);
+  }
+  meDot.bringToFront();
+}
+
+function meButton() {
+  const btn = document.getElementById("locate");
+  btn.textContent = meWatch == null ? t("📍 Where I am")
+    : meFollow ? t("📍 Following") : t("📍 Re-centre");
+  btn.title = meWatch == null ? t("Show a live dot where you are")
+    : meFollow ? t("Following you. Tap to switch it off") : t("Bring the map back to you");
+  btn.classList.toggle("active", meWatch != null);
+  btn.disabled = false;
+}
+
+function stopMe() {
+  if (meWatch != null) navigator.geolocation.clearWatch(meWatch);
+  meWatch = null; meFollow = false;
+  if (meLayer) meLayer.clearLayers();
+  meDot = meHalo = null;
+  clearNearMe();                                  // the radius panel and the previous map view
+  meButton();
+}
+
 document.getElementById("locate").addEventListener("click", () => {
   const btn = document.getElementById("locate");
-  if (state.near) { clearNearMe(); return; }                // toggle off → restore
-  if (!navigator.geolocation) { showBanner("Geolocation is not available in this browser."); return; }
+  // Panned away with the dot still live: the obvious next tap is "take me back", not "stop".
+  if (meWatch != null && !meFollow && meDot) {
+    meFollow = true;
+    map.setView(meDot.getLatLng(), Math.max(map.getZoom(), 15));
+    meButton(); return;
+  }
+  if (meWatch != null) return stopMe();
+  if (!navigator.geolocation) { showBanner(t("Geolocation is not available in this browser.")); return; }
   btn.textContent = t("📍 Locating…"); btn.disabled = true;
-  navigator.geolocation.getCurrentPosition(pos => {
-    btn.disabled = false;
-    const { latitude: lat, longitude: lon } = pos.coords;
-    if (view.table) setTableView(false);   // near-me lives on the map → leave the table view
-    nearMePrevView = { center: map.getCenter(), zoom: map.getZoom() };   // remember, to restore on clear
-    // adaptive default radius: smallest preset that reaches the nearest place
-    const vs = nearVenues(lat, lon);
-    const d0 = vs.length ? vs[0].d : Infinity;
-    state.near = { lat, lon, radiusKm: NEAR_RADII.find(r => r >= d0) || NEAR_RADII[NEAR_RADII.length - 1] };
-    btn.textContent = t("📍 Near me"); btn.classList.add("active");
-    renderNearMe();
+  let first = true, lastPan = null;
+  meFollow = true;
+  meWatch = navigator.geolocation.watchPosition(pos => {
+    const { latitude: lat, longitude: lon, accuracy: acc } = pos.coords;
+    drawMe(lat, lon, acc);
+    if (meHalo) meHalo.setStyle({ color: "#2f6fd0", fillColor: "#2f6fd0" });   // fresh again
+    meButton();
+    if (first) {
+      first = false;
+      if (view.table) setTableView(false);        // this lives on the map
+      nearMePrevView = { center: map.getCenter(), zoom: map.getZoom() };
+      const vs = nearVenues(lat, lon);
+      const d0 = vs.length ? vs[0].d : Infinity;  // smallest radius that reaches the nearest venue
+      state.near = { lat, lon, radiusKm: NEAR_RADII.find(r => r >= d0) || NEAR_RADII[NEAR_RADII.length - 1] };
+      nearFitPending = true;                      // the first fix may bring the map to you
+      lastPan = { lat, lon };
+      renderNearMe();
+      return;
+    }
+    // Walking. Only past 20 m, because a phone reports a position every second and every move
+    // redraws the pins and the list.
+    if (map.distance([lastPan.lat, lastPan.lon], [lat, lon]) > 20) {
+      lastPan = { lat, lon };
+      if (state.near) { state.near.lat = lat; state.near.lon = lon; renderNearMe(); }
+      if (meFollow) map.panTo([lat, lon], { animate: true });
+    }
   }, err => {
-    btn.textContent = t("📍 Near me"); btn.disabled = false;
-    showBanner("Could not get your location: " + esc(err.message));
-  }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 });
+    if (err.code === 1) {                          // refused: the only error that ends it
+      stopMe();
+      showBanner(t("This browser is not allowed to share your location. Check the site permissions."));
+      return;
+    }
+    meButton();
+    if (meHalo) meHalo.setStyle({ color: "#9a958a", fillColor: "#9a958a" });   // stale, not gone
+    else {
+      btn.textContent = t("📍 Still looking…");
+      showBanner(t("No position yet. Keep the page open, it keeps trying."));
+    }
+  }, { enableHighAccuracy: true, timeout: 20000, maximumAge: 5000 });
 });
+
+// Dragging the map says you want to look somewhere else. The dot keeps moving; the map stops
+// chasing it, and the button offers the way back.
+map.on("dragstart", () => { if (meWatch != null && meFollow) { meFollow = false; meButton(); } });
 
 // ══ Game: guess the painting: author / date / where / which picture ═══════════════════════════
 // Multiple choice. Difficulty = how CLOSE the wrong options are (Easy: very different; Hard: same
