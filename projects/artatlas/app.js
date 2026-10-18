@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.24.4";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-10-17 10:56";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.28.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-18 12:11";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -1035,7 +1035,7 @@ function refresh() {
   cluster.refreshClusters();
   document.getElementById("stats").textContent =
     `${workCount} ${tu(workCount === 1 ? "work" : "works")} · ${shownPlaces} ${tu(shownPlaces === 1 ? "location" : "locations")} · ${countries.size} ${tu(countries.size === 1 ? "country" : "countries")}`;
-  if (state.near) renderNearMe(); else renderPanel();
+  renderPanel();
   if (typeof view !== "undefined" && view.table) renderTable();
 }
 
@@ -1770,7 +1770,7 @@ function setView() {
   document.body.classList.toggle("hide-map", !view.map);
   document.body.classList.toggle("hide-panel", !view.panel);
   if (view.map) setTimeout(() => map.invalidateSize(), 60);
-  if (state.near) renderNearMe(); else renderPanel();
+  renderPanel();
 }
 
 // ── database view: WORKS or MUSEUMS as a sortable, filterable, exportable table ──
@@ -2219,8 +2219,27 @@ function periodRuns(flat) {
   return runs;
 }
 
+// ── relevance: evidence about the work, times the weight this atlas declares for its painter ──
+// Built offline by build_relevance.py out of data/relevance_weights.json, which is Víctor's own
+// table and is meant to be edited: a Botticelli is above any Impressionist here because the atlas
+// says so, not because Wikipedia does. The file is fetched only when the order is asked for.
+let REL = null, relP = null;
+function loadRelevance() {
+  if (relP) return relP;
+  relP = fetch("artatlas/data/relevance.json?v=" + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { REL = (d && d.s) || {}; return REL; })
+    .catch(() => { REL = {}; return REL; });      // no file → the order simply does nothing
+  return relP;
+}
+function relOf(p) { return (REL && REL[workId(p)]) || 0; }
+
 function panelSorter(sort) {
   const yr = w => { const y = yearNum(w.p); return y == null ? Infinity : y; };
+  // Inside one painter the order is fame, then the year, then the title: never "the later the
+  // better", which is true of Titian and false of Rubens (Víctor, 2026-10-17).
+  if (sort === "relevance") return (a, z) => relOf(z.p) - relOf(a.p) || yr(a) - yr(z)
+    || cmpText(a.p.title, z.p.title);
   // standing in a museum, what you want first is the ones you marked (Víctor, at Brera)
   if (sort === "fav") return (a, z) => (me.fav.has(workId(z.p)) ? 1 : 0) - (me.fav.has(workId(a.p)) ? 1 : 0)
     || yr(a) - yr(z) || cmpText(a.p.title, z.p.title);
@@ -2228,6 +2247,20 @@ function panelSorter(sort) {
   if (sort === "painter") return (a, z) => cmpText(pName(a.p.painter), pName(z.p.painter)) || yr(a) - yr(z);
   return (a, z) => cmpText(a.p.title, z.p.title) || yr(a) - yr(z);   // title
 }
+// Grouped by museum, the order inside each room is a second question: the year it was painted (the
+// old behaviour), how known the work is, or the painter, by birth or by name. Víctor asked for it on
+// 2026-10-18; it is a second small select that only exists while the grouping is by museum.
+let museumInner = "year";
+try { museumInner = localStorage.getItem("atlasMuseumInner") || "year"; } catch (e) { /* private mode */ }
+function museumInnerSorter() {
+  const yr = w => { const y = yearNum(w.p); return y == null ? 9999 : y; };
+  const born = w => BORN[(PAINTERS.find(p => p.name === w.p.painter) || {}).slug] || 9999;
+  if (museumInner === "relevance") return (a, z) => relOf(z.p) - relOf(a.p) || yr(a) - yr(z);
+  if (museumInner === "born") return (a, z) => born(a) - born(z) || yr(a) - yr(z);
+  if (museumInner === "az") return (a, z) => cmpText(pName(a.p.painter), pName(z.p.painter)) || yr(a) - yr(z);
+  return (a, z) => yr(a) - yr(z);
+}
+
 let panelIO = null;
 let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
 
@@ -2471,7 +2504,6 @@ function appendPanelChunk() {
 }
 
 function renderPanel() {
-  if (state.near) return;                       // near-me mode owns the side panel (renderNearMe)
   if (panelIO) panelIO.disconnect();
   const bounded = view.map;                    // when the map is hidden, list ALL works (no bounds)
   const b = bounded ? map.getBounds() : null;
@@ -2505,7 +2537,8 @@ function renderPanel() {
   const byMuseum = panelSort === "museum";
   let runs = null;                               // painter / time bands, when the order has any
   if (byMuseum) {
-    for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
+    const inner = museumInnerSorter();
+    for (const g of ordered) g.items.sort(inner);
     panelFlat = groupedTileStream(ordered);     // gallery: one continuous tile stream, tinted per museum
     panelQueue = [];                            // list: flat rows with a header bar per venue
     for (const g of ordered) {
@@ -2656,7 +2689,7 @@ document.getElementById("worklist").addEventListener("keydown", e => {
     document.getElementById("pv-list").classList.toggle("active", m === "list");
     document.getElementById("pv-grid").classList.toggle("active", m === "gallery");
     slider.hidden = m !== "gallery";              // the size slider is a miniatures-only control
-    if (!state.near) renderPanel();               // re-render the same in-view works in the new mode
+    renderPanel();                                // re-render the same in-view works in the new mode
   };
   document.getElementById("pv-list").addEventListener("click", () => setMode("list"));
   document.getElementById("pv-grid").addEventListener("click", () => setMode("gallery"));
@@ -2691,11 +2724,31 @@ document.getElementById("worklist").addEventListener("keydown", e => {
     else toast(t("Nothing to walk through here"));
   });
 
+  // the inner order only exists while the grouping is by museum, and it remembers itself too
+  const innerSel = document.getElementById("pv-inmus"), innerWrap = document.getElementById("pv-inwrap");
+  const showInner = () => { if (innerWrap) innerWrap.hidden = panelSort !== "museum"; };
+  if (innerSel) {
+    innerSel.value = museumInner;
+    innerSel.addEventListener("change", e => {
+      museumInner = e.target.value;
+      try { localStorage.setItem("atlasMuseumInner", museumInner); } catch (err) { /* private mode */ }
+      if (museumInner === "relevance" && !REL) loadRelevance().then(() => renderPanel());
+      else renderPanel();
+    });
+    if (museumInner === "relevance") loadRelevance();
+  }
+  showInner();
+
   sortSel.value = panelSort;                      // the order survives a reload
+  if (panelSort === "relevance") loadRelevance().then(() => renderPanel());
   sortSel.addEventListener("change", e => {
     panelSort = e.target.value;
+    showInner();
+    if ((panelSort === "relevance" || (panelSort === "museum" && museumInner === "relevance")) && !REL) {
+      loadRelevance().then(() => renderPanel());
+    }
     try { localStorage.setItem("atlasPanelSort", panelSort); } catch (err) { /* private mode */ }
-    if (!state.near) renderPanel();
+    renderPanel();
   });
   const applySize = () => { ul.style.setProperty("--thumb", slider.value + "px"); scheduleMuseumLayout(true); };
   slider.addEventListener("input", applySize);
@@ -2706,14 +2759,14 @@ document.getElementById("worklist").addEventListener("keydown", e => {
   ["panel", "main"].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.addEventListener("scroll", () => {
-      if (!state.near && panelHasMore() &&
+      if (panelHasMore() &&
           el.scrollTop + el.clientHeight >= el.scrollHeight - 700) appendPanelChunk();
     });
   });
   // On a phone the panel has no scrollbar of its own: the page IS the scroller (see the mobile
   // block in style.css), so the window has to be able to ask for the next chunk too.
   window.addEventListener("scroll", () => {
-    if (state.near || !panelHasMore()) return;
+    if (!panelHasMore()) return;
     const doc = document.documentElement;
     if (doc.scrollTop + window.innerHeight >= doc.scrollHeight - 700) appendPanelChunk();
   }, { passive: true });
@@ -3263,71 +3316,14 @@ function showBanner(html) {
 // choose (1–250 km). Useful in a city (lots nearby) and in a village (bump the radius to reach
 // the nearest cities). The map shows your position + a radius circle; the side panel lists the
 // places by distance. Click "Near me" again to clear and restore the previous view.
-let nearMePrevView = null, nearCircle = null, nearFitPending = false;
-const NEAR_RADII = [1, 5, 25, 50, 100, 250];   // km presets
-
-function nearVenues(lat, lon) {                 // filtered venues, with distance, sorted nearest-first
-  const g = new Map();
-  for (const w of works) {
-    if (!passesAll(w.p)) continue;
-    const k = `${w.lat.toFixed(5)},${w.lon.toFixed(5)}`;
-    let v = g.get(k);
-    if (!v) { v = { lat: w.lat, lon: w.lon, location: w.p.location || "…",
-      city: w.p.city || "", country: w.p.country || "", count: 0 }; g.set(k, v); }
-    v.count++;
-  }
-  return [...g.values()].map(v => ({ ...v, d: haversine(lat, lon, v.lat, v.lon) }))
-    .sort((a, z) => a.d - z.d);
-}
-
-function clearNearMe() {
-  const btn = document.getElementById("locate");
-  if (userMarker) { map.removeLayer(userMarker); userMarker = null; }
-  if (nearCircle) { map.removeLayer(nearCircle); nearCircle = null; }
-  btn.classList.toggle("active", meWatch != null); btn.disabled = false;
-  state.near = null;
-  if (nearMePrevView) { map.setView(nearMePrevView.center, nearMePrevView.zoom); nearMePrevView = null; }
-  refresh();                                    // restore the normal viewport list
-}
-
-function setNearRadius(r) { if (state.near) { state.near.radiusKm = r; nearFitPending = true; renderNearMe(); } }
-
-function drawNearMe() {                          // user marker + radius circle, fit to the circle
-  const { lat, lon, radiusKm } = state.near;
-  if (nearCircle) map.removeLayer(nearCircle);
-  if (userMarker) { map.removeLayer(userMarker); userMarker = null; }   // the live dot draws itself
-  nearCircle = L.circle([lat, lon], { radius: radiusKm * 1000,
-    color: "#1a73e8", weight: 1, fillColor: "#1a73e8", fillOpacity: .06 }).addTo(map);
-  // Fit only when the reader asked for it (first fix, or a new radius), never while walking: a map
-  // that re-fits every twenty metres is a map you cannot read.
-  if (nearFitPending) { nearFitPending = false; map.fitBounds(nearCircle.getBounds(), { padding: [30, 30] }); }
-}
-
-function renderNearMe() {                        // owns the side panel while near-me is active
-  if (!state.near) return;
-  const { lat, lon, radiusKm } = state.near;
-  const within = nearVenues(lat, lon).filter(v => v.d <= radiusKm);
-  document.getElementById("panel-head").innerHTML =
-    `<b>${within.length}</b><span class="ph-tail"> ${esc(tu(within.length === 1 ? "place" : "places"))}` +
-    ` ${esc(t("within"))} ${radiusKm} km</span>`;
-  const chips = NEAR_RADII.map(r =>
-    `<button type="button" class="rchip${r === radiusKm ? " on" : ""}" data-r="${r}">${r}</button>`).join("");
-  let html = `<li class="near-ctrl"><span class="near-lbl">Radius km</span>${chips}</li>`;
-  if (!within.length) html += `<li class="empty">Nothing within ${radiusKm} km. Try a larger radius.</li>`;
-  for (const v of within) {
-    const km = v.d < 1 ? `${Math.round(v.d * 1000)} m` : `${v.d < 10 ? v.d.toFixed(1) : Math.round(v.d)} km`;
-    html += `<li class="near-row" data-lat="${v.lat}" data-lon="${v.lon}"><span class="micon">🏛</span><div>` +
-      `<div class="mname">${esc(v.location)}</div>` +
-      `<div class="msub">${esc([v.city, cName(v.country)].filter(Boolean).join(", "))} · ${v.count} ${tu(v.count === 1 ? "work" : "works")} · <b>${km}</b></div></div></li>`;
-  }
-  const ul = document.getElementById("worklist"); ul.innerHTML = html;
-  ul.querySelectorAll(".rchip").forEach(b => b.addEventListener("click", () => setNearRadius(+b.dataset.r)));
-  ul.querySelectorAll(".near-row").forEach(row => row.addEventListener("click", () => {
-    if (!view.map) { view.map = true; setView(); }
-    map.setView([+row.dataset.lat, +row.dataset.lon], 15);
-  }));
-  drawNearMe();
-}
+// The map comes to you and the side list is simply what is on the map. An earlier version turned the
+// panel into its own list of venues within N km, with radius chips: a second list with its own rules
+// beside the one the reader already knows. Víctor, 2026-10-17: "I want the same thing that was there
+// before I pressed it, filtered to where the map is". So there is no second list, and no radius: the
+// first fix brings the map to a four kilometre square around you, and the panel does what it always
+// does with whatever is in view.
+const ME_FIRST_FIX_M = 4000;
+let nearMePrevView = null;
 
 // ── Where I am: the three-state button from culture_atlas ──────────────────────────────────────
 // Ported on 2026-10-17 at Víctor's request ("the GPS button I have in culture atlas works great,
@@ -3363,8 +3359,10 @@ function drawMe(lat, lon, acc) {
 
 function meButton() {
   const btn = document.getElementById("locate");
-  btn.textContent = meWatch == null ? t("📍 Where I am")
-    : meFollow ? t("📍 Following") : t("📍 Re-centre");
+  // the pin always shows; the words are a span the phone layout hides
+  const label = meWatch == null ? t("📍 Where I am") : meFollow ? t("📍 Following") : t("📍 Re-centre");
+  const [pin, ...rest] = label.split(" ");
+  btn.innerHTML = `${esc(pin)}<span class="lbl"> ${esc(rest.join(" "))}</span>`;
   btn.title = meWatch == null ? t("Show a live dot where you are")
     : meFollow ? t("Following you. Tap to switch it off") : t("Bring the map back to you");
   btn.classList.toggle("active", meWatch != null);
@@ -3376,7 +3374,7 @@ function stopMe() {
   meWatch = null; meFollow = false;
   if (meLayer) meLayer.clearLayers();
   meDot = meHalo = null;
-  clearNearMe();                                  // the radius panel and the previous map view
+  if (nearMePrevView) { map.setView(nearMePrevView.center, nearMePrevView.zoom); nearMePrevView = null; }
   meButton();
 }
 
@@ -3390,7 +3388,7 @@ document.getElementById("locate").addEventListener("click", () => {
   }
   if (meWatch != null) return stopMe();
   if (!navigator.geolocation) { showBanner(t("Geolocation is not available in this browser.")); return; }
-  btn.textContent = t("📍 Locating…"); btn.disabled = true;
+  btn.innerHTML = `📍<span class="lbl"> ${esc(t("Locating…"))}</span>`; btn.disabled = true;
   let first = true, lastPan = null;
   meFollow = true;
   meWatch = navigator.geolocation.watchPosition(pos => {
@@ -3402,20 +3400,15 @@ document.getElementById("locate").addEventListener("click", () => {
       first = false;
       if (view.table) setTableView(false);        // this lives on the map
       nearMePrevView = { center: map.getCenter(), zoom: map.getZoom() };
-      const vs = nearVenues(lat, lon);
-      const d0 = vs.length ? vs[0].d : Infinity;  // smallest radius that reaches the nearest venue
-      state.near = { lat, lon, radiusKm: NEAR_RADII.find(r => r >= d0) || NEAR_RADII[NEAR_RADII.length - 1] };
-      nearFitPending = true;                      // the first fix may bring the map to you
+      map.fitBounds(L.latLng(lat, lon).toBounds(ME_FIRST_FIX_M), { animate: false });
       lastPan = { lat, lon };
-      renderNearMe();
-      return;
+      return;                                     // the panel follows the map, as it always does
     }
     // Walking. Only past 20 m, because a phone reports a position every second and every move
     // redraws the pins and the list.
-    if (map.distance([lastPan.lat, lastPan.lon], [lat, lon]) > 20) {
+    if (meFollow && map.distance([lastPan.lat, lastPan.lon], [lat, lon]) > 20) {
       lastPan = { lat, lon };
-      if (state.near) { state.near.lat = lat; state.near.lon = lon; renderNearMe(); }
-      if (meFollow) map.panTo([lat, lon], { animate: true });
+      map.panTo([lat, lon], { animate: true });   // the pins and the list follow the map by themselves
     }
   }, err => {
     if (err.code === 1) {                          // refused: the only error that ends it
@@ -3426,7 +3419,7 @@ document.getElementById("locate").addEventListener("click", () => {
     meButton();
     if (meHalo) meHalo.setStyle({ color: "#9a958a", fillColor: "#9a958a" });   // stale, not gone
     else {
-      btn.textContent = t("📍 Still looking…");
+      btn.innerHTML = `📍<span class="lbl"> ${esc(t("Still looking…"))}</span>`;
       showBanner(t("No position yet. Keep the page open, it keeps trying."));
     }
   }, { enableHighAccuracy: true, timeout: 20000, maximumAge: 5000 });

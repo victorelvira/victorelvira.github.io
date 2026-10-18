@@ -1419,18 +1419,24 @@ body.galaxy-tree #galaxy-hint, body.galaxy-tree #galaxy-legend, body.galaxy-tree
   #bar .brand strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   #bar #share-view { order: 1; }
   #bar #locate { order: 2; }
-  #bar #bar-rail { order: 3; }
-  #bar #langsel { order: 4; }
+  #bar #langsel { order: 3; margin-left: 0; }
+  #bar #bar-rail { order: 4; }
+  /* Four things on one line at 375px only fit if the words go: the button keeps the pin, which is
+     what it is called everywhere else on a phone, and its name stays in the tooltip (Víctor). */
+  #bar #locate .lbl { display: none; }
   #bar #locate, #bar #share-view { padding: 3px 8px; font-size: 12.5px; }
   #bar #share-view .lbl { display: none; }   /* on a phone the icon says it; the words cost a row */
 }
 @media (max-width: 560px) {
-  /* the title yields exactly as much as the two buttons need, and not more */
-  #bar { gap: 5px 7px; }
-  #bar .brand strong { max-width: 38vw; }
+  /* Four things have to share one line at 375px: emblem and title, share, the pin, and the four
+     languages. The title gives up what the rest need (it is truncated, and the subtitle is already
+     hidden), the pin drops its words, and the language buttons tighten. */
+  #bar { gap: 5px 6px; }
+  #bar .brand strong { max-width: 32vw; }
   #bar .brand .mark { width: 20px; height: 20px; }
+  #bar .langsel { gap: 1px; }
+  #bar .langbtn { padding: 2px 5px; font-size: 10.5px; }
 }
 /* the language chooser is the least used control in the bar: it goes to the far right, so the three
    buttons that are used (where I am, share, the painters) sit together beside the title */
-#bar #langsel { margin-left: auto; align-self: center; }
-@media (max-width: 640px), (max-height: 520px) and (max-width: 1000px) { #bar #langsel { order: 2; } }
+#bar #langsel { margin-left: 2px; align-self: center; }
