@@ -630,6 +630,9 @@ body.resizing #map { pointer-events: none; }
 /* the rank line under a ficha's title, and the star on the best work of a venue: both are meant to
    be read only when looked for, so they sit at the weight of a caption, never of a heading */
 .wc-rank { margin: 2px 0 6px; color: var(--muted); font-size: 12.5px; letter-spacing: .01em; }
+/* the opening lines of the article, above the facts: it is prose, so it gets prose spacing */
+.wc-summary { margin: 6px 0 10px; font-size: 14px; line-height: 1.45; color: var(--ink); }
+.wc-summary .wc-src { white-space: nowrap; font-size: 12px; color: var(--muted); }
 .wc-rank b { color: var(--ink); font-weight: 700; }
 .best { color: #c8a02a; font-size: 12px; vertical-align: 1px; }
 /* the venue card orders its own works: same four orders as the panel, on its own line under the

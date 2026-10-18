@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.31.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-10-18 14:50";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.31.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-18 16:18";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -3238,6 +3238,37 @@ async function renderSimilar(qid) {
   const out = thumbRow(t("Visually closest · same painter"), same) + thumbRow(t("Visually closest · other painters"), other) + painterLine;
   if (out) host.innerHTML = out;
 }
+// ── What the work IS, in two or three lines ─────────────────────────────────────────────────────
+// The opening of its Wikipedia article. 7,821 works in the atlas have one and only 80 carried the
+// text, so the rest are harvested apart (harvest_summaries.py) and kept in their own file: 2 MB of
+// prose has no business in the bundle every visitor downloads before the map draws. It is fetched
+// once, when the first ficha opens, and the ficha fills in when it lands.
+let SUM = null, sumP = null;
+function loadSummaries() {
+  if (sumP) return sumP;
+  sumP = fetch("artatlas/data/summaries.json?v=" + DATA_V)
+    .then(r => r.ok ? r.json() : null)
+    .then(d => { SUM = (d && d.s) || {}; return SUM; })
+    .catch(() => { SUM = {}; return SUM; });      // no file → the ficha simply has no text
+  return sumP;
+}
+function summaryOf(p) {
+  if (p.summary) return { text: p.summary, url: p.summary_url || "" };   // the 80 that live in the geojson
+  const r = SUM && p.qid && SUM[p.qid];
+  return r && r.t ? { text: r.t, url: r.u || "" } : null;
+}
+function fillSummary(p) {
+  const host = document.getElementById("wc-summary");
+  if (!host) return;
+  const r = summaryOf(p);
+  if (!r) {                                       // not loaded yet: ask once, then come back
+    if (!SUM) loadSummaries().then(() => { if (wcWork && wcWork.p === p) fillSummary(p); });
+    return;
+  }
+  host.innerHTML = esc(r.text) + (r.url
+    ? ` <a class="wc-src" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(t("Wikipedia"))}</a>` : "");
+  host.hidden = false;
+}
 function openWorkCard(w) {
   if (!w) return;
   wcWork = w;
@@ -3258,6 +3289,10 @@ function openWorkCard(w) {
     `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${modelTag(p)}</h3>` +
     rankLineHTML(p) +                                         // where it stands, if it stands high
     `<div class="wc-themes" id="wc-themes"></div>` +          // what it shows, right under its name
+    // The few lines Wikipedia opens with. The popup had them and the ficha did not, which is the
+    // wrong way round (Víctor, 2026-10-18: "that text should be quite high up in the ficha"): the
+    // ficha is where somebody has stopped to read. So it sits above the facts, not under them.
+    `<p class="wc-summary" id="wc-summary" hidden></p>` +
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
     row(t("Where"), venue
       + (p.venue_of ? ` <span class="wc-venueof">· ${esc(p.venue_of)}</span>` : "")
@@ -3273,6 +3308,7 @@ function openWorkCard(w) {
     `<div class="wc-similar" id="wc-similar"></div>` +
     `<div class="wc-similar" id="wc-foryou"></div></div>`;
   workCard.hidden = false;
+  fillSummary(p);            // the opening lines of its article, above the facts
   renderThemeTags(w);        // "Crucifixion", "Saint Jerome"…: press one to see every other
   renderAffinity(p.painter); // "painters like this one" (style affinity): fills in async
   renderSubject(p.qid);   // "more on this subject" (shared title words): instant, no embeddings
