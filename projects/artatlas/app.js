@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.28.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-10-18 12:11";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.29.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-18 12:43";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -1937,9 +1937,12 @@ function tGalBuildStream(rows) {
     if (!groups.has(k)) groups.set(k, { location: locName(p) || t("Unknown"), city: p.city || "", items: [], key: k });
     groups.get(k).items.push({ p });
   }
-  const ordered = [...groups.values()].sort((a, z) =>
-    (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
-  for (const g of ordered) g.items.sort((a, z) => (yearNum(a.p) || 9999) - (yearNum(z.p) || 9999));
+  const relFirst = museumInner === "relevance";
+  const score = g => Math.max(0, ...g.items.map(w => relOf(w.p)));
+  const ordered = [...groups.values()].sort((a, z) => relFirst
+    ? score(z) - score(a)
+    : (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
+  for (const g of ordered) g.items.sort(museumInnerSorter());
   return groupedTileStream(ordered);
 }
 function tGalHasMore() { return tGalCursor < tGalFlat.length; }
@@ -2250,8 +2253,10 @@ function panelSorter(sort) {
 // Grouped by museum, the order inside each room is a second question: the year it was painted (the
 // old behaviour), how known the work is, or the painter, by birth or by name. Víctor asked for it on
 // 2026-10-18; it is a second small select that only exists while the grouping is by museum.
-let museumInner = "year";
-try { museumInner = localStorage.getItem("atlasMuseumInner") || "year"; } catch (e) { /* private mode */ }
+// The default is relevance inside and relevance outside (Víctor, 2026-10-18): the panel opens with
+// the museum holding the best work in view, and that museum opens with that work.
+let museumInner = "relevance";
+try { museumInner = localStorage.getItem("atlasMuseumInner") || "relevance"; } catch (e) { /* private mode */ }
 function museumInnerSorter() {
   const yr = w => { const y = yearNum(w.p); return y == null ? 9999 : y; };
   const born = w => BORN[(PAINTERS.find(p => p.name === w.p.painter) || {}).slug] || 9999;
@@ -2520,8 +2525,18 @@ function renderPanel() {
     });
     groups.get(k).items.push(w);
   }
-  const ordered = [...groups.values()].sort((a, z) =>
-    (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
+  // Which museum comes first. By relevance a museum is worth its best work, because that is the
+  // question a reader standing in a city is asking; ties go to the one with more works that matter
+  // at all. In any other inner order the alphabet stands, which is what makes a venue findable.
+  const byRelevance = panelSort === "museum" && museumInner === "relevance";
+  const groupScore = g => {
+    let best = 0, good = 0;
+    for (const w of g.items) { const r = relOf(w.p); if (r > best) best = r; if (r >= 50) good++; }
+    return best * 1000 + Math.min(999, good);
+  };
+  const ordered = [...groups.values()].sort((a, z) => byRelevance
+    ? groupScore(z) - groupScore(a)
+    : (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
 
   document.getElementById("panel-head").innerHTML =
     `<b>${vis.length}</b><span class="ph-tail"> ${esc(tu(vis.length === 1 ? "work" : "works"))}` +
