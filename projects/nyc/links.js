@@ -1791,6 +1791,18 @@ var links = {
       "wikidata": {
         "url": "https://www.wikidata.org/wiki/Q110931368",
         "estado": "boli"
+      },
+      "imslp": {
+        "url": "https://imslp.org/wiki/The_Sleeping_Beauty_(ballet),_Op.66_(Tchaikovsky,_Pyotr)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Dornr%C3%B6schen_(Ballett)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/The_Sleeping_Beauty_(ballet)",
+        "estado": "lápiz"
       }
     },
     "280": {
@@ -2413,6 +2425,18 @@ var links = {
       "wikidata": {
         "url": "https://www.wikidata.org/wiki/Q110931368",
         "estado": "boli"
+      },
+      "imslp": {
+        "url": "https://imslp.org/wiki/The_Sleeping_Beauty_(suite),_Op.66a_(Tchaikovsky,_Pyotr)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Dornr%C3%B6schen_(Ballett)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/The_Sleeping_Beauty_(ballet)",
+        "estado": "lápiz"
       }
     },
     "370": {
@@ -2529,6 +2553,342 @@ var links = {
       "imslp": {
         "url": "https://imslp.org/wiki/%C3%89ljen_a_Magyar%21,_Op.332_(Strauss_Jr.,_Johann)",
         "estado": "boli"
+      }
+    },
+    "44": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Carolinen-Galoppe,_Op.21_(Strauss_Sr.,_Johann)",
+        "estado": "lápiz"
+      }
+    },
+    "59": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/3_German_Dances,_K.605_(Mozart,_Wolfgang_Amadeus)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Three_German_Dances",
+        "estado": "lápiz"
+      }
+    },
+    "63": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Die_Fledermaus_(Strauss_Jr.,_Johann)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Cs%C3%A1rd%C3%A1s_aus_%E2%80%9EDie_Fledermaus%E2%80%9C",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Kl%C3%A4nge_der_Heimat",
+        "estado": "lápiz"
+      }
+    },
+    "69": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Die_Perle_von_Iberien_(Hellmesberger_Jr.,_Joseph)",
+        "estado": "lápiz"
+      }
+    },
+    "79": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Die_lustigen_Weiber_von_Windsor_(Nicolai,_Otto)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Die_lustigen_Weiber_von_Windsor_(Oper)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/The_Merry_Wives_of_Windsor_(opera)",
+        "estado": "lápiz"
+      }
+    },
+    "89": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Lohengrin,_WWV_75_(Wagner,_Richard)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Lohengrin",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Lohengrin_(opera)",
+        "estado": "lápiz"
+      }
+    },
+    "101": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Der_Zigeunerbaron_(Strauss_Jr.,_Johann)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Der_Zigeunerbaron",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/The_Gypsy_Baron",
+        "estado": "lápiz"
+      }
+    },
+    "109": {
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Eva-Walzer",
+        "estado": "lápiz"
+      }
+    },
+    "136": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/F%C3%BCrstin_Ninetta_(Strauss_Jr.,_Johann)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/F%C3%BCrstin_Ninetta",
+        "estado": "lápiz"
+      }
+    },
+    "137": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Galop_and_Ecossaises,_D.735_(Schubert,_Franz)",
+        "estado": "lápiz"
+      }
+    },
+    "159": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Hopser-Polka,_Op.28_(Strauss_Jr.,_Johann)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Hopser-Polka",
+        "estado": "lápiz"
+      }
+    },
+    "181": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/5_Country_Dances,_K.609_(Mozart,_Wolfgang_Amadeus)",
+        "estado": "lápiz"
+      }
+    },
+    "184": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Kj%C3%B6benhavns_Jernbane-Damp-Galop_(Lumbye,_Hans_Christian)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Copenhagen_Steam_Railway_Galop",
+        "estado": "lápiz"
+      }
+    },
+    "191": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Le_carnaval_romain,_H_95_(Berlioz,_Hector)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Le_carnaval_romain",
+        "estado": "lápiz"
+      }
+    },
+    "200": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Leichte_Kavallerie_(Supp%C3%A9,_Franz_von)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Leichte_Kavallerie_(Operette)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Light_Cavalry_Overture",
+        "estado": "lápiz"
+      }
+    },
+    "217": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Mephisto_Waltz_No.1,_S.514_(Liszt,_Franz)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Mephisto-Walzer",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Mephisto_Waltzes",
+        "estado": "lápiz"
+      }
+    },
+    "223": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Capriccio,_Op.85_(Strauss,_Richard)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Capriccio_(Oper)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Capriccio_(opera)",
+        "estado": "lápiz"
+      }
+    },
+    "234": {
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Wiener_Frauen_(Leh%C3%A1r)",
+        "estado": "lápiz"
+      }
+    },
+    "250": {
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Die_G%C3%B6ttin_der_Vernunft",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Die_G%C3%B6ttin_der_Vernunft",
+        "estado": "lápiz"
+      }
+    },
+    "252": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Overture_in_the_Italian_Style,_D.591_(Schubert,_Franz)",
+        "estado": "lápiz"
+      }
+    },
+    "263": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Der_lustige_Krieg_(Strauss_Jr.,_Johann)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Der_lustige_Krieg",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Der_lustige_Krieg",
+        "estado": "lápiz"
+      }
+    },
+    "266": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Dichter_und_Bauer_(Supp%C3%A9,_Franz_von)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Dichter_und_Bauer",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Dichter_und_Bauer",
+        "estado": "lápiz"
+      }
+    },
+    "275": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Die_Fledermaus_(Strauss_Jr.,_Johann)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Die_Fledermaus",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Die_Fledermaus",
+        "estado": "lápiz"
+      }
+    },
+    "276": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Indigo_und_die_vierzig_R%C3%A4uber_(Strauss_Jr.,_Johann)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Indigo_und_die_40_R%C3%A4uber",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Indigo_und_die_vierzig_R%C3%A4uber",
+        "estado": "lápiz"
+      }
+    },
+    "293": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Samling_af_yndede_Dandse_(Lumbye,_Hans_Christian)",
+        "estado": "lápiz"
+      }
+    },
+    "294": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Don_Carlos_(Verdi,_Giuseppe)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Don_Carlos_(Verdi)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Don_Carlos",
+        "estado": "lápiz"
+      }
+    },
+    "334": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Symphony_No.45_in_F-sharp_minor,_Hob.I:45_(Haydn,_Joseph)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/45._Sinfonie_(Haydn)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Symphony_No._45_(Haydn)",
+        "estado": "lápiz"
+      }
+    },
+    "350": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/12_Contredanses,_WoO_14_(Beethoven,_Ludwig_van)",
+        "estado": "lápiz"
+      }
+    },
+    "352": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/21_Hungarian_Dances_(Orchestra),_WoO_1_(Brahms,_Johannes)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Ungarische_T%C3%A4nze",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Hungarian_Dances_(Brahms)",
+        "estado": "lápiz"
+      }
+    },
+    "357": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Sylvia_(Delibes,_L%C3%A9o)",
+        "estado": "lápiz"
+      },
+      "wiki_de": {
+        "url": "https://de.wikipedia.org/wiki/Sylvia_(Ballett)",
+        "estado": "lápiz"
+      },
+      "wiki_en": {
+        "url": "https://en.wikipedia.org/wiki/Sylvia_(ballet)",
+        "estado": "lápiz"
+      }
+    },
+    "381": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Wilhelm_Tell-Galopp,_Op.29b_(Strauss_Sr.,_Johann)",
+        "estado": "lápiz"
+      }
+    },
+    "392": {
+      "imslp": {
+        "url": "https://imslp.org/wiki/Das_Veilchenm%C3%A4del_(Hellmesberger_Jr.,_Joseph)",
+        "estado": "lápiz"
       }
     }
   },
