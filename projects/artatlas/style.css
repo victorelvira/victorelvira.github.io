@@ -627,6 +627,11 @@ body.resizing #map { pointer-events: none; }
 .card .hd { padding: 10px 12px 8px; border-bottom: 1px solid var(--line); }
 .card .nm { font-weight: 700; font-size: 15px; }
 .card .meta { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
+/* the rank line under a ficha's title, and the star on the best work of a venue: both are meant to
+   be read only when looked for, so they sit at the weight of a caption, never of a heading */
+.wc-rank { margin: 2px 0 6px; color: var(--muted); font-size: 12.5px; letter-spacing: .01em; }
+.wc-rank b { color: var(--ink); font-weight: 700; }
+.best { color: #c8a02a; font-size: 12px; vertical-align: 1px; }
 /* the venue card orders its own works: same four orders as the panel, on its own line under the
    name so it never crowds the city and the count */
 .card .pop-order { display: block; margin-top: 6px; }

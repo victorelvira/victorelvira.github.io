@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.30.1";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-10-18 13:31";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.31.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-18 14:50";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -1100,6 +1100,7 @@ function buildMarkers() {
     places.push({ marker, kind, feats, lat, lon, shown: false });
     for (const f of feats) works.push({ p: f.properties, lat, lon, marker });
   }
+  rankIdx = null;                           // the atlas changed under the ranks: build them again
   refresh();
 }
 
@@ -2261,11 +2262,70 @@ function loadRelevance() {
   if (relP) return relP;
   relP = fetch("artatlas/data/relevance.json?v=" + DATA_V)
     .then(r => r.ok ? r.json() : null)
-    .then(d => { REL = (d && d.s) || {}; return REL; })
+    .then(d => { REL = (d && d.s) || {}; rankIdx = null; return REL; })   // the ranks wait for it
     .catch(() => { REL = {}; return REL; });      // no file → the order simply does nothing
   return relP;
 }
 function relOf(p) { return (REL && REL[workId(p)]) || 0; }
+
+// ── Where this work stands: among its painter's, and among its city's ───────────────────────────
+// Víctor, 2026-10-18: "a ranking of the pictures per painter, and per city, without too much visual
+// noise, but done with care it could be great". The care is all in what is NOT printed:
+//   · only the head of each list carries a number. Below the tenth, a position is noise and often a
+//     lie: 1,467 works score zero and all of them tie.
+//   · a city is ranked only when it holds enough works for a position to mean anything. Of 1,060
+//     cities in the atlas, 673 hold fewer than five, and "no. 1 of Cuenca" out of two is a joke.
+//   · one row per work, so St Peter's Basilica is one building with three architects, not three
+//     entries fighting each other for a place.
+// The ranks are computed here from relevance.json and never stored in the data: change a weight in
+// data/relevance_weights.json and every number follows, instead of a stale ranking lying around.
+const RANK_HEAD = 10, RANK_CITY_MIN = 20;
+let rankIdx = null;
+function buildRankIndex() {
+  const painter = new Map(), city = new Map(), seen = new Set();
+  for (const w of works) {
+    const id = workId(w.p), r = relOf(w.p);
+    if (seen.has(id) || !r) continue;            // a work with no score has no position
+    seen.add(id);
+    const add = (m, k) => { if (!k) return; if (!m.has(k)) m.set(k, []); m.get(k).push([id, r]); };
+    add(painter, w.p.painter);
+    add(city, w.p.city ? `${w.p.city}|${w.p.country || ""}` : "");
+  }
+  const fold = m => {
+    const out = new Map();
+    for (const [k, rows] of m) {
+      rows.sort((a, z) => z[1] - a[1]);
+      const pos = new Map();
+      rows.forEach(([id], i) => pos.set(id, i + 1));
+      out.set(k, { pos, n: rows.length });
+    }
+    return out;
+  };
+  rankIdx = { painter: fold(painter), city: fold(city) };
+}
+function rankOf(p) {
+  if (!REL) return null;
+  if (!rankIdx) buildRankIndex();
+  const id = workId(p), out = {};
+  const ask = (m, k, min) => {
+    const g = k && m.get(k);
+    if (!g || g.n < min) return null;
+    const n = g.pos.get(id);
+    return n && n <= RANK_HEAD ? { n, of: g.n } : null;
+  };
+  out.painter = ask(rankIdx.painter, p.painter, 1);
+  out.city = ask(rankIdx.city, p.city ? `${p.city}|${p.country || ""}` : "", RANK_CITY_MIN);
+  return (out.painter || out.city) ? out : null;
+}
+// the line under a ficha's title: "#3 Caravaggio · #12 Rome", and nothing at all for the other 99%
+function rankLineHTML(p) {
+  const r = rankOf(p);
+  if (!r) return "";
+  const bits = [];
+  if (r.painter) bits.push(`<b>#${r.painter.n}</b> ${esc(pName(p.painter))}`);
+  if (r.city) bits.push(`<b>#${r.city.n}</b> ${esc(ctyName(p.city))}`);
+  return `<div class="wc-rank" title="${esc(t("By relevance in the atlas"))}">${bits.join(" · ")}</div>`;
+}
 
 function panelSorter(sort) {
   const yr = w => { const y = yearNum(w.p); return y == null ? Infinity : y; };
@@ -2360,7 +2420,7 @@ function tileHTML(w, vis, grp) {
     // …and under a MUSEUM's colour field the museum is the thing already written above, so the second
     // line gives the painting's title instead of repeating the museum on every tile (Víctor)
     (grp && grp.kind === "museum"
-      ? `<div class="gm2">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}</div>`
+      ? `<div class="gm2">${esc(wTitle(p) || t("Untitled"))}${bestMark(w)}${mtMark(p)}</div>`
       : p.location ? `<div class="gm2">${museumLink(p)}${p.city ? `, ${cityLink(p.city, p.country)}` : ""}</div>` : "") +
     `</div></div></li>`;
 }
@@ -2499,6 +2559,10 @@ function wireMuseumFocus(root) {
   new ResizeObserver(() => scheduleMuseumLayout(true)).observe(root);   // panel drag / window resize
 }
 
+let panelBest = new Set();   // the best work of each venue, starred in the panel
+function bestMark(w) {
+  return panelBest.has(w) ? ` <span class="best" title="${esc(t("The best of this museum"))}">★</span>` : "";
+}
 function panelRowHTML(w, grpKey) {
   const i = panelVis.length; panelVis.push(w);
   const fold = grpKey ? ` data-in="${esc(grpKey)}"${panelFolded.has(grpKey) ? " hidden" : ""}` : "";
@@ -2510,7 +2574,7 @@ function panelRowHTML(w, grpKey) {
   // with no venue headers above it, a row has to say where the work is itself
   const venue = panelSort === "museum" ? "" : locName(p);
   return `<li data-i="${i}"${fold}>${thumb}<div>` +
-    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${favMark(p)}${mtMark(p)}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${modelTag(p)}${disputedMark(p)}</div>` +
+    `<div class="wt">${esc(wTitle(p) || t("Untitled"))}${bestMark(w)}${favMark(p)}${mtMark(p)}${p.year ? ` <span class="sub">${esc(p.year)}</span>` : ""}${modelTag(p)}${disputedMark(p)}</div>` +
     `<div class="sub">${painterTag(p)}${p.medium ? " · " + esc(p.medium) : ""}</div>` +
     (venue ? `<div class="sub wvenue">${museumLink(p, esc(venue))}${p.city ? ", " + cityLink(p.city, p.country) : ""}</div>` : "") +
     `</div></li>`;
@@ -2590,6 +2654,19 @@ function renderPanel() {
   const ordered = [...groups.values()].sort((a, z) => byRelevance
     ? groupScore(z) - groupScore(a)
     : (a.city || "zzz").localeCompare(z.city || "zzz") || a.location.localeCompare(z.location));
+
+  // One star per venue, on its best work: the panel then answers the question somebody standing in
+  // a gallery actually asks (Víctor, in Brera: "if I only see one picture here, which one?"). Only
+  // where there is something to choose from, and only when the index has something to say.
+  panelBest = new Set();
+  if (panelSort === "museum") {
+    for (const g of ordered) {
+      if (g.items.length < 3) continue;
+      let best = null, top = 0;
+      for (const w of g.items) { const r = relOf(w.p); if (r > top) { top = r; best = w; } }
+      if (best) panelBest.add(best);
+    }
+  }
 
   document.getElementById("panel-head").innerHTML =
     `<b>${vis.length}</b><span class="ph-tail"> ${esc(tu(vis.length === 1 ? "work" : "works"))}` +
@@ -3179,6 +3256,7 @@ function openWorkCard(w) {
   document.getElementById("wc-body").innerHTML =
     `<div class="wc-imgwrap">${img}</div>` +
     `<div class="wc-info"><h3 class="wc-title">${esc(wTitle(p) || t("Untitled"))}${mtMark(p)}${modelTag(p)}</h3>` +
+    rankLineHTML(p) +                                         // where it stands, if it stands high
     `<div class="wc-themes" id="wc-themes"></div>` +          // what it shows, right under its name
     row(t("Painter"), painterTag(p)) + row(t("Date"), esc(p.year || "")) +
     row(t("Where"), venue
