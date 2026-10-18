@@ -244,14 +244,22 @@
     "country": "Vatican City",
     "medium": "palace",
     "wikidata": "https://www.wikidata.org/wiki/Q145093",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q145093"
     },
     "museum_id": "apostolic-palace",
-    "location_src": "Apostolic Palace"
+    "location_src": "Apostolic Palace",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1589, after death (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -276,14 +284,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q244952",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q244952"
     },
     "museum_id": "santa-maria-delle-grazie",
-    "location_src": "Santa Maria delle Grazie"
+    "location_src": "Santa Maria delle Grazie",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1401, before birth (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -308,14 +324,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q589462",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q589462"
     },
     "museum_id": "santa-maria-presso-san-satiro",
-    "location_src": "Santa Maria presso San Satiro"
+    "location_src": "Santa Maria presso San Satiro",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1600, after death (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -436,14 +460,22 @@
     "country": "Italy",
     "medium": "abbey",
     "wikidata": "https://www.wikidata.org/wiki/Q860569",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q860569"
     },
     "museum_id": "chiaravalle-abbey",
-    "location_src": "Chiaravalle Abbey"
+    "location_src": "Chiaravalle Abbey",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1101, before birth (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -468,7 +500,7 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q1258576",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
@@ -476,7 +508,15 @@
     },
     "museum_id": "san-pietro-in-montorio",
     "location_src": "San Pietro in Montorio",
-    "city_src": "Roma Capitale"
+    "city_src": "Roma Capitale",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1401, before birth (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -501,14 +541,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q1514683",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q1514683"
     },
     "museum_id": "santa-maria-della-pace",
-    "location_src": "Santa Maria della Pace"
+    "location_src": "Santa Maria della Pace",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1401, before birth (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -533,14 +581,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q1814304",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q1814304"
     },
     "museum_id": "san-giovanni-in-oleo",
-    "location_src": "San Giovanni in Oleo"
+    "location_src": "San Giovanni in Oleo",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 401, before birth (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -565,14 +621,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q1849406",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q1849406"
     },
     "museum_id": "santi-celso-e-giuliano",
-    "location_src": "Santi Celso e Giuliano"
+    "location_src": "Santi Celso e Giuliano",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1735, after death (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -661,14 +725,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q2140145",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q2140145"
     },
     "museum_id": "santa-maria-dell-anima",
-    "location_src": "Santa Maria dell'Anima"
+    "location_src": "Santa Maria dell'Anima",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1522, after death (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -725,14 +797,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q2887132",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q2887132"
     },
     "museum_id": "santa-maria-nuova",
-    "location_src": "Santa Maria Nuova"
+    "location_src": "Santa Maria Nuova",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1935, after death (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1013,14 +1093,22 @@
     "country": "Czech Republic",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q8408381",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q8408381"
     },
     "museum_id": "loretokapelle",
-    "location_src": "Loretokapelle"
+    "location_src": "Loretokapelle",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1701, after death (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1205,14 +1293,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q107111139",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q107111139"
     },
     "museum_id": "monastero-di-s-celso-corso-italia-milano",
-    "location_src": "Monastero di S. Celso (Corso Italia, Milano)"
+    "location_src": "Monastero di S. Celso (Corso Italia, Milano)",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1000, before birth (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -1237,14 +1333,22 @@
     "country": "Italy",
     "medium": "monastery",
     "wikidata": "https://www.wikidata.org/wiki/Q112143043",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q112143043"
     },
     "museum_id": "monastero-del-lentasio",
-    "location_src": "Monastero del Lentasio"
+    "location_src": "Monastero del Lentasio",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1400, before birth (1444–1514) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

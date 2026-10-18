@@ -5506,7 +5506,7 @@
     "title": "School of Athens",
     "year": "",
     "location": "Royal Academy of Arts",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20%281483-1520%29%20%28after%29%20-%20School%20of%20Athens%20-%2003-189%20-%20Royal%20Academy%20of%20Arts.jpg?width=500",
@@ -8350,7 +8350,7 @@
     "title": "Sistine Madonna",
     "year": "",
     "location": "Royal Academy of Arts",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20%281483-1520%29%20%28copy%20after%29%20-%20Sistine%20Madonna%20-%2004-2052%20-%20Royal%20Academy%20of%20Arts.jpg?width=500",
@@ -8381,7 +8381,7 @@
     "title": "The Triumph of Galatea",
     "year": "",
     "location": "Royal Academy of Arts",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "attribution": "generally accepted",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael%20%281483-1520%29%20%28copy%20after%29%20-%20The%20Triumph%20of%20Galatea%20-%2003-1302%20-%20Royal%20Academy%20of%20Arts.jpg?width=500",
@@ -9940,14 +9940,22 @@
     "country": "Italy",
     "medium": "chapel",
     "wikidata": "https://www.wikidata.org/wiki/Q676788",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q676788"
     },
     "museum_id": "chigi-chapel",
-    "location_src": "Chigi Chapel"
+    "location_src": "Chigi Chapel",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1401, before birth (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -9972,14 +9980,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q976522",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q976522"
     },
     "museum_id": "sant-eligio-degli-orefici",
-    "location_src": "Sant'Eligio degli Orefici"
+    "location_src": "Sant'Eligio degli Orefici",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1575, after death (1483–1520) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

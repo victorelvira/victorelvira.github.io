@@ -135,7 +135,7 @@
     "country": "France",
     "location": "Nantes Museum of Arts",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "medium": "Oil on canvas",
     "dimensions": "215 × 135 cm",
@@ -154,6 +154,12 @@
       "at": "2026-09-25",
       "source": "Wikidata reconciliation",
       "note": "matched to Q17627591 by normalised title + year (±8), same creator (merge_wd_extras)"
+     },
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1700, after death (1563–1639) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
     "museum_id": "nantes-museum-of-arts",
@@ -1411,7 +1417,7 @@
     "country": "Italy",
     "location": "Palazzo Rosso",
     "kind": "museum",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "status": "present",
     "dimensions": "308 × 234 cm",
     "genre": "religious art",
@@ -1429,6 +1435,12 @@
       "at": "2026-09-25",
       "source": "Wikidata reconciliation",
       "note": "matched to Q28810709 by normalised title + year (±8), same creator (merge_wd_extras)"
+     },
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1650, after death (1563–1639) → later copy / not autograph at this date (Timeline anomaly)"
      }
     },
     "museum_id": "palazzo-rosso",

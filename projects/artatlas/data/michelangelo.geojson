@@ -2617,7 +2617,7 @@
     "kind": "museum",
     "year": "1504",
     "location": "Royal Academy of Arts",
-    "city": "City of Westminster",
+    "city": "London",
     "country": "United Kingdom",
     "material": "marble",
     "medium": "marble",
@@ -4463,14 +4463,22 @@
     "country": "Italy",
     "medium": "museum",
     "wikidata": "https://www.wikidata.org/wiki/Q333906",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q333906"
     },
     "museum_id": "capitoline-museums",
-    "location_src": "Capitoline Museums"
+    "location_src": "Capitoline Museums",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1471, before birth (1475–1564) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -4559,14 +4567,22 @@
     "country": "Italy",
     "medium": "church building",
     "wikidata": "https://www.wikidata.org/wiki/Q719794",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q719794"
     },
     "museum_id": "church-of-the-gesu",
-    "location_src": "Church of the Gesù"
+    "location_src": "Church of the Gesù",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1568, after death (1475–1564) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -4623,14 +4639,22 @@
     "country": "Italy",
     "medium": "library",
     "wikidata": "https://www.wikidata.org/wiki/Q856419",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q856419"
     },
     "museum_id": "biblioteca-medicea-laurenziana",
-    "location_src": "Biblioteca Medicea Laurenziana"
+    "location_src": "Biblioteca Medicea Laurenziana",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1571, after death (1475–1564) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -4655,14 +4679,22 @@
     "country": "Italy",
     "medium": "Palazzo",
     "wikidata": "https://www.wikidata.org/wiki/Q927092",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q927092"
     },
     "museum_id": "palazzo-senatorio",
-    "location_src": "Palazzo Senatorio"
+    "location_src": "Palazzo Senatorio",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1605, after death (1475–1564) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -4751,14 +4783,22 @@
     "country": "Italy",
     "medium": "museum",
     "wikidata": "https://www.wikidata.org/wiki/Q1357573",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q1357573"
     },
     "museum_id": "medici-chapels",
-    "location_src": "Medici Chapels"
+    "location_src": "Medici Chapels",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1869, after death (1475–1564) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {
@@ -4823,6 +4863,38 @@
     },
     "museum_id": "tor-san-michele",
     "location_src": "Tor San Michele"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     12.48281111,
+     41.89299722
+    ]
+   },
+   "properties": {
+    "painter": "Michelangelo",
+    "title": "Palazzo dei Conservatori",
+    "year": "",
+    "qid": "Q64103",
+    "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Palazzo%20dei%20Conservatori%20in%20Rome%20%282%29.jpg",
+    "form": "architecture",
+    "kind": "public",
+    "location": "Palazzo dei Conservatori",
+    "city": "Rome",
+    "country": "Italy",
+    "medium": "Palazzo",
+    "wikidata": "https://www.wikidata.org/wiki/Q64103",
+    "attribution": "generally accepted",
+    "_source": {
+     "source": "Wikidata (P84 architect)",
+     "at": "2026-09-27",
+     "url": "https://www.wikidata.org/wiki/Q64103"
+    },
+    "museum_id": "palazzo-dei-conservatori",
+    "location_src": "Palazzo dei Conservatori"
    }
   }
  ]

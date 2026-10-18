@@ -98,9 +98,40 @@ const PAINTERS = [
   { slug: "bramante", name: "Bramante", file: "artatlas/data/bramante.geojson" },
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
+  // 2026-10-18: tandas 1, 3 and 4 of data/audit/painters_to_add.md, after Víctor declared an
+  // Italian and Baroque-or-earlier bias and asked which painters were missing. Twenty-six, all
+  // born in Italy before 1700: the Renaissance names the atlas lacked (Lotto, Crivelli, Pontormo,
+  // Carpaccio, Antonello), the sculptors (Donatello at the head of the whole list), and the
+  // Cinquecento and Seicento behind them.
+  { slug: "lotto", name: "Lorenzo Lotto", file: "artatlas/data/lotto.geojson" },
+  { slug: "pontormo", name: "Pontormo", file: "artatlas/data/pontormo.geojson" },
+  { slug: "cima", name: "Cima da Conegliano", file: "artatlas/data/cima.geojson" },
+  { slug: "crivelli", name: "Carlo Crivelli", file: "artatlas/data/crivelli.geojson" },
+  { slug: "signorelli", name: "Luca Signorelli", file: "artatlas/data/signorelli.geojson" },
+  { slug: "filippinolippi", name: "Filippino Lippi", file: "artatlas/data/filippinolippi.geojson" },
+  { slug: "carpaccio", name: "Vittore Carpaccio", file: "artatlas/data/carpaccio.geojson" },
+  { slug: "antonello", name: "Antonello da Messina", file: "artatlas/data/antonello.geojson" },
+  { slug: "donatello", name: "Donatello", file: "artatlas/data/donatello.geojson" },
+  { slug: "verrocchio", name: "Andrea del Verrocchio", file: "artatlas/data/verrocchio.geojson" },
+  { slug: "ghiberti", name: "Lorenzo Ghiberti", file: "artatlas/data/ghiberti.geojson" },
+  { slug: "giovannipisano", name: "Giovanni Pisano", file: "artatlas/data/giovannipisano.geojson" },
+  { slug: "moroni", name: "Giovanni Battista Moroni", file: "artatlas/data/moroni.geojson" },
+  { slug: "barocci", name: "Federico Barocci", file: "artatlas/data/barocci.geojson" },
+  { slug: "giulioromano", name: "Giulio Romano", file: "artatlas/data/giulioromano.geojson" },
+  { slug: "dossodossi", name: "Dosso Dossi", file: "artatlas/data/dossodossi.geojson" },
+  { slug: "sebastianodelpiombo", name: "Sebastiano del Piombo", file: "artatlas/data/sebastianodelpiombo.geojson" },
+  { slug: "domenichino", name: "Domenichino", file: "artatlas/data/domenichino.geojson" },
+  { slug: "pietrodacortona", name: "Pietro da Cortona", file: "artatlas/data/pietrodacortona.geojson" },
+  { slug: "strozzi", name: "Bernardo Strozzi", file: "artatlas/data/strozzi.geojson" },
+  { slug: "preti", name: "Mattia Preti", file: "artatlas/data/preti.geojson" },
+  { slug: "agostinocarracci", name: "Agostino Carracci", file: "artatlas/data/agostinocarracci.geojson" },
+  { slug: "salvatorrosa", name: "Salvator Rosa", file: "artatlas/data/salvatorrosa.geojson" },
+  { slug: "panini", name: "Giovanni Paolo Panini", file: "artatlas/data/panini.geojson" },
+  { slug: "sebastianoricci", name: "Sebastiano Ricci", file: "artatlas/data/sebastianoricci.geojson" },
+  { slug: "maratta", name: "Carlo Maratta", file: "artatlas/data/maratta.geojson" },
 ];
-const DATA_V = "1.31.3";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-10-18 20:29";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.32.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-18 21:36";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -550,6 +581,8 @@ const ERA_OF = {
   // added 2026-09-15
   munch: ["5", "6"], romerodetorres: "5", giordano: "3", guercino: "3", batoni: "4",
   bramante: "2", canova: "4", oraziogentileschi: "3",
+  // 2026-10-18
+  lotto: "2", pontormo: "2", cima: "1", crivelli: "1", signorelli: "1", filippinolippi: "1", carpaccio: "1", antonello: "1", donatello: "1", verrocchio: "1", ghiberti: "1", giovannipisano: "1", moroni: "2", barocci: "2", giulioromano: "2", dossodossi: "2", sebastianodelpiombo: "2", domenichino: "3", pietrodacortona: "3", strozzi: "3", preti: "3", agostinocarracci: "3", salvatorrosa: "3", panini: "4", sebastianoricci: "3", maratta: "3",
 };
 const erasOf = slug => [].concat(ERA_OF[slug] || []);
 
@@ -578,6 +611,8 @@ const SCHOOL_OF = {
   turner: "en", friedrich: "de", delacroix: "fr", zuloaga: "es", dali: "es", miro: "es", klimt: "at",
   munch: "no", romerodetorres: "es", giordano: "it", guercino: "it", batoni: "it",
   bramante: "it", canova: "it", oraziogentileschi: "it",
+  // 2026-10-18
+  lotto: "it", pontormo: "it", cima: "it", crivelli: "it", signorelli: "it", filippinolippi: "it", carpaccio: "it", antonello: "it", donatello: "it", verrocchio: "it", ghiberti: "it", giovannipisano: "it", moroni: "it", barocci: "it", giulioromano: "it", dossodossi: "it", sebastianodelpiombo: "it", domenichino: "it", pietrodacortona: "it", strozzi: "it", preti: "it", agostinocarracci: "it", salvatorrosa: "it", panini: "it", sebastianoricci: "it", maratta: "it",
 };
 const schoolsOf = slug => [].concat(SCHOOL_OF[slug] || []);
 
@@ -599,6 +634,8 @@ const BORN = {
   delacroix: 1798, zuloaga: 1870, miro: 1893, dali: 1904, klimt: 1862,
   munch: 1863, romerodetorres: 1874, giordano: 1634, guercino: 1591, batoni: 1708,
   bramante: 1444, canova: 1757, oraziogentileschi: 1563,
+  // 2026-10-18
+  lotto: 1480, pontormo: 1494, cima: 1459, crivelli: 1430, signorelli: 1450, filippinolippi: 1457, carpaccio: 1465, antonello: 1430, donatello: 1386, verrocchio: 1435, ghiberti: 1378, giovannipisano: 1248, moroni: 1525, barocci: 1535, giulioromano: 1499, dossodossi: 1480, sebastianodelpiombo: 1485, domenichino: 1581, pietrodacortona: 1596, strozzi: 1581, preti: 1613, agostinocarracci: 1557, salvatorrosa: 1615, panini: 1691, sebastianoricci: 1659, maratta: 1625,
 };
 const bornOf = slug => BORN[slug] || 9999;
 
@@ -628,6 +665,10 @@ const NICK = {
   guardi: "Guardi", zuloaga: "Zuloaga", dali: "Dalí", miro: "Miró", klimt: "Klimt",
   munch: "Munch", romerodetorres: "Romero de Torres", giordano: "Giordano", guercino: "Guercino", batoni: "Batoni",
   bramante: "Bramante", canova: "Canova", oraziogentileschi: "Orazio",
+  // 2026-10-18
+  lotto: 1556, pontormo: 1557, cima: 1517, crivelli: 1495, signorelli: 1523, filippinolippi: 1504, carpaccio: 1526, antonello: 1479, donatello: 1466, verrocchio: 1488, ghiberti: 1455, giovannipisano: 1315, moroni: 1578, barocci: 1612, giulioromano: 1546, dossodossi: 1542, sebastianodelpiombo: 1547, domenichino: 1641, pietrodacortona: 1669, strozzi: 1644, preti: 1699, agostinocarracci: 1602, salvatorrosa: 1673, panini: 1765, sebastianoricci: 1734, maratta: 1713,
+  // 2026-10-18
+  lotto: "Lotto", pontormo: "Pontormo", cima: "Cima", crivelli: "Crivelli", signorelli: "Signorelli", filippinolippi: "Filippino", carpaccio: "Carpaccio", antonello: "Antonello", donatello: "Donatello", verrocchio: "Verrocchio", ghiberti: "Ghiberti", giovannipisano: "Pisano", moroni: "Moroni", barocci: "Barocci", giulioromano: "Giulio Romano", dossodossi: "Dosso", sebastianodelpiombo: "Sebastiano", domenichino: "Domenichino", pietrodacortona: "Cortona", strozzi: "Strozzi", preti: "Preti", agostinocarracci: "Agostino", salvatorrosa: "Rosa", panini: "Panini", sebastianoricci: "Ricci", maratta: "Maratta",
 };
 const nickOf = p => NICK[p.slug] || (p.name || "").split(" ")[0];
 let painterGroupBy = "period";   // "period" | "school"

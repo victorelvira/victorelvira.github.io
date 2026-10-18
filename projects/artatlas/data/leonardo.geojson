@@ -1516,14 +1516,22 @@
     "country": "Italy",
     "medium": "castle",
     "wikidata": "https://www.wikidata.org/wiki/Q24939861",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata (P84 architect)",
      "at": "2026-09-27",
      "url": "https://www.wikidata.org/wiki/Q24939861"
     },
     "museum_id": "city-walls-of-lecco",
-    "location_src": "City walls of Lecco"
+    "location_src": "City walls of Lecco",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1336, before birth (1452–1519) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    }
   },
   {

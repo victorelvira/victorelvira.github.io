@@ -256,13 +256,21 @@
     "material": "marble",
     "medium": "marble",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Canova%20Bode%20Museum%2004.JPG",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "bode-museum",
     "location_src": "Bode Museum",
-    "city_src": "Bezirk Mitte"
+    "city_src": "Bezirk Mitte",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 2000, after death (1757–1822) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -528,12 +536,20 @@
     "material": "marble",
     "medium": "marble",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Theseus%20and%20Centaur%20by%20Antonio%20Canova%201.jpg",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "kunsthistorisches-museum",
-    "location_src": "Kunsthistorisches Museum"
+    "location_src": "Kunsthistorisches Museum",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1900, after death (1757–1822) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -1585,7 +1601,15 @@
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "gallerie-dell-accademia",
-    "location_src": "Gallerie dell'Accademia"
+    "location_src": "Gallerie dell'Accademia",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-10-18",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Model of the monument to Titian)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -1964,7 +1988,15 @@
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "museo-correr",
-    "location_src": "Museo Correr"
+    "location_src": "Museo Correr",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-10-18",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Terracotta sketch of Cupid and Psyche)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2321,7 +2353,15 @@
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "pinacoteca-querini-stampalia",
-    "location_src": "Pinacoteca Querini Stampalia"
+    "location_src": "Pinacoteca Querini Stampalia",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-10-18",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its title says so (Original model for the statue for Letizia Bonaparte)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2373,12 +2413,26 @@
     "material": "marble, terracotta",
     "medium": "marble, terracotta",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Antonio%20Canova%2C%20Testa%20di%20vecchio%2C%20Collezioni%20Comunali%20d%27Arte%20di%20Bologna%20abc1.jpg",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "bologna-city-art-collections",
-    "location_src": "Bologna City Art Collections"
+    "location_src": "Bologna City Art Collections",
+    "model": true,
+    "_overrides": {
+     "model": {
+      "at": "2026-10-18",
+      "source": "rule (mark_models.py)",
+      "note": "a model or sketch for a larger work: its material says so (marble, terracotta)"
+     },
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1850, after death (1757–1822) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2433,12 +2487,20 @@
     "material": "cement, lime, sand",
     "medium": "cement, lime, sand",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Damouceno%20UdeC.jpg",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "barrio-universitario-de-concepcion",
-    "location_src": "Barrio Universitario de Concepción"
+    "location_src": "Barrio Universitario de Concepción",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1940, after death (1757–1822) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2463,12 +2525,20 @@
     "material": "cement, lime, sand",
     "medium": "cement, lime, sand",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Greugante%20UdeC.jpg",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "barrio-universitario-de-concepcion",
-    "location_src": "Barrio Universitario de Concepción"
+    "location_src": "Barrio Universitario de Concepción",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1940, after death (1757–1822) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2525,13 +2595,21 @@
     "medium": "Parian marble",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Statue%20of%20Aphrodite%2C%202nd%20c.%20BC.jpg",
     "wikipedia_en": "https://en.wikipedia.org/wiki/Aphrodite_of_Syracuse",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "national-archaeological-museum-of-athens",
     "location_src": "National Archaeological Museum of Athens",
-    "city_src": "Athens Municipality"
+    "city_src": "Athens Municipality",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 200, before birth (1757–1822) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2713,12 +2791,20 @@
     "medium": "Sculpture",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/USA-Corcoran%20Gallery%20of%20Art2.jpg",
     "wikipedia_en": "https://en.wikipedia.org/wiki/Canova_Lions",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "corcoran-gallery-of-art",
-    "location_src": "Corcoran Gallery of Art"
+    "location_src": "Corcoran Gallery of Art",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1860, after death (1757–1822) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",
@@ -2836,12 +2922,20 @@
     "material": "Carrara marble",
     "medium": "Carrara marble",
     "image": "https://commons.wikimedia.org/wiki/Special:FilePath/J150W-statue-VenereDiCanova.jpg",
-    "attribution": "generally accepted",
+    "attribution": "copy or later version",
     "_source": {
      "source": "Wikidata: sculptures by Antonio Canova (Q5547)"
     },
     "museum_id": "adelaide",
-    "location_src": "Adelaide"
+    "location_src": "Adelaide",
+    "_overrides": {
+     "attribution": {
+      "at": "2026-10-18",
+      "source": "tier-2 cleaning",
+      "was": "generally accepted",
+      "note": "dated 1892, after death (1757–1822) → later copy / not autograph at this date (Timeline anomaly)"
+     }
+    }
    },
    "geometry": {
     "type": "Point",

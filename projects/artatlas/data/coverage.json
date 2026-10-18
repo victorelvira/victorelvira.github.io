@@ -1,6 +1,6 @@
 {
  "_doc": "what the atlas holds per painter against what Wikidata knows with an image; the ratio is a warning label, not a score (coverage_report.py)",
- "asked": "2026-09-28",
+ "asked": "2026-10-18",
  "painters": [
   {
    "slug": "artemisia",
@@ -17,25 +17,25 @@
   {
    "slug": "renoir",
    "name": "Pierre-Auguste Renoir",
-   "ours": 1042,
-   "wikidata": 2050,
-   "wikidata_with_image": 1979,
-   "ratio": 0.53,
-   "from_list": 118,
+   "ours": 1036,
+   "wikidata": 2147,
+   "wikidata_with_image": 2078,
+   "ratio": 0.5,
+   "from_list": 113,
    "forms": {
-    "painting": 1042
+    "painting": 1036
    }
   },
   {
    "slug": "elgreco",
    "name": "El Greco",
-   "ours": 348,
+   "ours": 346,
    "wikidata": 604,
    "wikidata_with_image": 540,
    "ratio": 0.64,
-   "from_list": 120,
+   "from_list": 118,
    "forms": {
-    "painting": 348
+    "painting": 346
    }
   },
   {
@@ -51,11 +51,23 @@
    }
   },
   {
+   "slug": "pissarro",
+   "name": "Camille Pissarro",
+   "ours": 562,
+   "wikidata": 807,
+   "wikidata_with_image": 803,
+   "ratio": 0.7,
+   "from_list": 24,
+   "forms": {
+    "painting": 562
+   }
+  },
+  {
    "slug": "cranach",
    "name": "Lucas Cranach the Elder",
    "ours": 680,
-   "wikidata": 1036,
-   "wikidata_with_image": 956,
+   "wikidata": 1037,
+   "wikidata_with_image": 957,
    "ratio": 0.71,
    "from_list": 0,
    "forms": {
@@ -63,15 +75,15 @@
    }
   },
   {
-   "slug": "pissarro",
-   "name": "Camille Pissarro",
-   "ours": 570,
-   "wikidata": 804,
-   "wikidata_with_image": 800,
-   "ratio": 0.71,
-   "from_list": 32,
+   "slug": "romerodetorres",
+   "name": "Julio Romero de Torres",
+   "ours": 130,
+   "wikidata": 204,
+   "wikidata_with_image": 174,
+   "ratio": 0.75,
+   "from_list": 0,
    "forms": {
-    "painting": 570
+    "painting": 130
    }
   },
   {
@@ -79,7 +91,7 @@
    "name": "Rubens",
    "ours": 1262,
    "wikidata": 2023,
-   "wikidata_with_image": 1676,
+   "wikidata_with_image": 1678,
    "ratio": 0.75,
    "from_list": 0,
    "forms": {
@@ -102,56 +114,92 @@
   {
    "slug": "munch",
    "name": "Edvard Munch",
-   "ours": 1418,
+   "ours": 1417,
    "wikidata": 1834,
    "wikidata_with_image": 1870,
    "ratio": 0.76,
    "from_list": 0,
    "forms": {
-    "painting": 1418
+    "painting": 1417
    }
   },
   {
    "slug": "vandyck",
    "name": "Anthony van Dyck",
-   "ours": 1041,
+   "ours": 1040,
    "wikidata": 1622,
-   "wikidata_with_image": 1374,
+   "wikidata_with_image": 1372,
    "ratio": 0.76,
    "from_list": 111,
    "forms": {
-    "painting": 1041
-   }
-  },
-  {
-   "slug": "romerodetorres",
-   "name": "Julio Romero de Torres",
-   "ours": 133,
-   "wikidata": 205,
-   "wikidata_with_image": 173,
-   "ratio": 0.77,
-   "from_list": 0,
-   "forms": {
-    "painting": 133
+    "painting": 1040
    }
   },
   {
    "slug": "manet",
    "name": "Édouard Manet",
-   "ours": 316,
-   "wikidata": 393,
-   "wikidata_with_image": 402,
-   "ratio": 0.79,
+   "ours": 315,
+   "wikidata": 391,
+   "wikidata_with_image": 403,
+   "ratio": 0.78,
    "from_list": 77,
    "forms": {
-    "painting": 316
+    "painting": 315
+   }
+  },
+  {
+   "slug": "rembrandt",
+   "name": "Rembrandt",
+   "ours": 600,
+   "wikidata": 751,
+   "wikidata_with_image": 753,
+   "ratio": 0.8,
+   "from_list": 235,
+   "forms": {
+    "painting": 600
+   }
+  },
+  {
+   "slug": "oraziogentileschi",
+   "name": "Orazio Gentileschi",
+   "ours": 67,
+   "wikidata": 83,
+   "wikidata_with_image": 83,
+   "ratio": 0.81,
+   "from_list": 0,
+   "forms": {
+    "painting": 67
+   }
+  },
+  {
+   "slug": "franshals",
+   "name": "Frans Hals",
+   "ours": 257,
+   "wikidata": 307,
+   "wikidata_with_image": 315,
+   "ratio": 0.82,
+   "from_list": 150,
+   "forms": {
+    "painting": 257
+   }
+  },
+  {
+   "slug": "memling",
+   "name": "Hans Memling",
+   "ours": 147,
+   "wikidata": 209,
+   "wikidata_with_image": 179,
+   "ratio": 0.82,
+   "from_list": 0,
+   "forms": {
+    "painting": 147
    }
   },
   {
    "slug": "murillo",
    "name": "Murillo",
    "ours": 271,
-   "wikidata": 360,
+   "wikidata": 359,
    "wikidata_with_image": 332,
    "ratio": 0.82,
    "from_list": 0,
@@ -160,39 +208,39 @@
    }
   },
   {
-   "slug": "oraziogentileschi",
-   "name": "Orazio Gentileschi",
-   "ours": 68,
-   "wikidata": 83,
-   "wikidata_with_image": 83,
+   "slug": "weyden",
+   "name": "Rogier van der Weyden",
+   "ours": 78,
+   "wikidata": 91,
+   "wikidata_with_image": 95,
    "ratio": 0.82,
-   "from_list": 0,
+   "from_list": 29,
    "forms": {
-    "painting": 68
+    "painting": 78
    }
   },
   {
-   "slug": "rembrandt",
-   "name": "Rembrandt",
-   "ours": 615,
-   "wikidata": 751,
-   "wikidata_with_image": 753,
-   "ratio": 0.82,
-   "from_list": 239,
-   "forms": {
-    "painting": 615
-   }
-  },
-  {
-   "slug": "memling",
-   "name": "Hans Memling",
-   "ours": 148,
-   "wikidata": 209,
-   "wikidata_with_image": 179,
+   "slug": "degas",
+   "name": "Edgar Degas",
+   "ours": 379,
+   "wikidata": 496,
+   "wikidata_with_image": 455,
    "ratio": 0.83,
    "from_list": 0,
    "forms": {
-    "painting": 148
+    "painting": 379
+   }
+  },
+  {
+   "slug": "guercino",
+   "name": "Guercino",
+   "ours": 223,
+   "wikidata": 285,
+   "wikidata_with_image": 268,
+   "ratio": 0.83,
+   "from_list": 0,
+   "forms": {
+    "painting": 223
    }
   },
   {
@@ -208,42 +256,6 @@
    }
   },
   {
-   "slug": "degas",
-   "name": "Edgar Degas",
-   "ours": 382,
-   "wikidata": 496,
-   "wikidata_with_image": 455,
-   "ratio": 0.84,
-   "from_list": 0,
-   "forms": {
-    "painting": 382
-   }
-  },
-  {
-   "slug": "franshals",
-   "name": "Frans Hals",
-   "ours": 266,
-   "wikidata": 307,
-   "wikidata_with_image": 315,
-   "ratio": 0.84,
-   "from_list": 158,
-   "forms": {
-    "painting": 266
-   }
-  },
-  {
-   "slug": "guercino",
-   "name": "Guercino",
-   "ours": 223,
-   "wikidata": 284,
-   "wikidata_with_image": 264,
-   "ratio": 0.84,
-   "from_list": 0,
-   "forms": {
-    "painting": 223
-   }
-  },
-  {
    "slug": "sorolla",
    "name": "Joaquín Sorolla",
    "ours": 287,
@@ -256,23 +268,23 @@
    }
   },
   {
-   "slug": "delacroix",
-   "name": "Eugène Delacroix",
-   "ours": 395,
-   "wikidata": 522,
-   "wikidata_with_image": 462,
+   "slug": "bellini",
+   "name": "Giovanni Bellini",
+   "ours": 159,
+   "wikidata": 195,
+   "wikidata_with_image": 186,
    "ratio": 0.85,
    "from_list": 0,
    "forms": {
-    "painting": 395
+    "painting": 159
    }
   },
   {
    "slug": "tiepolo",
    "name": "Giovanni Battista Tiepolo",
    "ours": 257,
-   "wikidata": 357,
-   "wikidata_with_image": 302,
+   "wikidata": 359,
+   "wikidata_with_image": 303,
    "ratio": 0.85,
    "from_list": 0,
    "forms": {
@@ -280,27 +292,51 @@
    }
   },
   {
-   "slug": "weyden",
-   "name": "Rogier van der Weyden",
-   "ours": 81,
-   "wikidata": 91,
-   "wikidata_with_image": 95,
+   "slug": "titian",
+   "name": "Titian",
+   "ours": 345,
+   "wikidata": 411,
+   "wikidata_with_image": 404,
    "ratio": 0.85,
-   "from_list": 30,
+   "from_list": 150,
    "forms": {
-    "painting": 81
+    "painting": 345
    }
   },
   {
-   "slug": "bellini",
-   "name": "Giovanni Bellini",
-   "ours": 160,
-   "wikidata": 194,
-   "wikidata_with_image": 185,
+   "slug": "vangogh",
+   "name": "Vincent van Gogh",
+   "ours": 841,
+   "wikidata": 968,
+   "wikidata_with_image": 988,
+   "ratio": 0.85,
+   "from_list": 600,
+   "forms": {
+    "painting": 841
+   }
+  },
+  {
+   "slug": "delacroix",
+   "name": "Eugène Delacroix",
+   "ours": 395,
+   "wikidata": 523,
+   "wikidata_with_image": 461,
    "ratio": 0.86,
    "from_list": 0,
    "forms": {
-    "painting": 160
+    "painting": 395
+   }
+  },
+  {
+   "slug": "gauguin",
+   "name": "Paul Gauguin",
+   "ours": 452,
+   "wikidata": 515,
+   "wikidata_with_image": 525,
+   "ratio": 0.86,
+   "from_list": 245,
+   "forms": {
+    "painting": 452
    }
   },
   {
@@ -328,6 +364,18 @@
    }
   },
   {
+   "slug": "bronzino",
+   "name": "Bronzino",
+   "ours": 111,
+   "wikidata": 140,
+   "wikidata_with_image": 127,
+   "ratio": 0.87,
+   "from_list": 33,
+   "forms": {
+    "painting": 111
+   }
+  },
+  {
    "slug": "david",
    "name": "Jacques-Louis David",
    "ours": 125,
@@ -337,18 +385,6 @@
    "from_list": 69,
    "forms": {
     "painting": 125
-   }
-  },
-  {
-   "slug": "uccello",
-   "name": "Paolo Uccello",
-   "ours": 33,
-   "wikidata": 41,
-   "wikidata_with_image": 38,
-   "ratio": 0.87,
-   "from_list": 0,
-   "forms": {
-    "painting": 33
    }
   },
   {
@@ -364,15 +400,15 @@
    }
   },
   {
-   "slug": "gauguin",
-   "name": "Paul Gauguin",
-   "ours": 461,
-   "wikidata": 515,
-   "wikidata_with_image": 525,
+   "slug": "carracci",
+   "name": "Annibale Carracci",
+   "ours": 199,
+   "wikidata": 259,
+   "wikidata_with_image": 226,
    "ratio": 0.88,
-   "from_list": 253,
+   "from_list": 0,
    "forms": {
-    "painting": 461
+    "painting": 199
    }
   },
   {
@@ -389,6 +425,18 @@
    }
   },
   {
+   "slug": "monet",
+   "name": "Claude Monet",
+   "ours": 1165,
+   "wikidata": 1285,
+   "wikidata_with_image": 1326,
+   "ratio": 0.88,
+   "from_list": 572,
+   "forms": {
+    "painting": 1165
+   }
+  },
+  {
    "slug": "piero",
    "name": "Piero della Francesca",
    "ours": 46,
@@ -401,51 +449,39 @@
    }
   },
   {
-   "slug": "titian",
-   "name": "Titian",
-   "ours": 354,
-   "wikidata": 411,
-   "wikidata_with_image": 404,
-   "ratio": 0.88,
-   "from_list": 159,
-   "forms": {
-    "painting": 354
-   }
-  },
-  {
-   "slug": "bronzino",
-   "name": "Bronzino",
-   "ours": 112,
-   "wikidata": 140,
-   "wikidata_with_image": 126,
-   "ratio": 0.89,
-   "from_list": 33,
-   "forms": {
-    "painting": 112
-   }
-  },
-  {
-   "slug": "carracci",
-   "name": "Annibale Carracci",
-   "ours": 202,
-   "wikidata": 259,
-   "wikidata_with_image": 226,
-   "ratio": 0.89,
-   "from_list": 0,
-   "forms": {
-    "painting": 202
-   }
-  },
-  {
    "slug": "guardi",
    "name": "Francesco Guardi",
-   "ours": 348,
+   "ours": 347,
    "wikidata": 416,
    "wikidata_with_image": 388,
-   "ratio": 0.9,
+   "ratio": 0.89,
    "from_list": 0,
    "forms": {
-    "painting": 348
+    "painting": 347
+   }
+  },
+  {
+   "slug": "pontormo",
+   "name": "Pontormo",
+   "ours": 71,
+   "wikidata": 94,
+   "wikidata_with_image": 80,
+   "ratio": 0.89,
+   "from_list": 0,
+   "forms": {
+    "painting": 71
+   }
+  },
+  {
+   "slug": "cezanne",
+   "name": "Paul Cézanne",
+   "ours": 704,
+   "wikidata": 761,
+   "wikidata_with_image": 781,
+   "ratio": 0.9,
+   "from_list": 302,
+   "forms": {
+    "painting": 704
    }
   },
   {
@@ -463,13 +499,25 @@
   {
    "slug": "reni",
    "name": "Guido Reni",
-   "ours": 268,
+   "ours": 267,
    "wikidata": 361,
    "wikidata_with_image": 297,
    "ratio": 0.9,
-   "from_list": 30,
+   "from_list": 29,
    "forms": {
-    "painting": 268
+    "painting": 267
+   }
+  },
+  {
+   "slug": "tintoretto",
+   "name": "Tintoretto",
+   "ours": 345,
+   "wikidata": 433,
+   "wikidata_with_image": 384,
+   "ratio": 0.9,
+   "from_list": 0,
+   "forms": {
+    "painting": 345
    }
   },
   {
@@ -497,27 +545,15 @@
    }
   },
   {
-   "slug": "tintoretto",
-   "name": "Tintoretto",
-   "ours": 347,
-   "wikidata": 432,
-   "wikidata_with_image": 383,
+   "slug": "vaneyck",
+   "name": "Jan van Eyck",
+   "ours": 58,
+   "wikidata": 71,
+   "wikidata_with_image": 64,
    "ratio": 0.91,
-   "from_list": 0,
+   "from_list": 30,
    "forms": {
-    "painting": 347
-   }
-  },
-  {
-   "slug": "vangogh",
-   "name": "Vincent van Gogh",
-   "ours": 900,
-   "wikidata": 967,
-   "wikidata_with_image": 986,
-   "ratio": 0.91,
-   "from_list": 654,
-   "forms": {
-    "painting": 900
+    "painting": 58
    }
   },
   {
@@ -545,15 +581,15 @@
    }
   },
   {
-   "slug": "monet",
-   "name": "Claude Monet",
-   "ours": 1221,
-   "wikidata": 1283,
-   "wikidata_with_image": 1324,
+   "slug": "uccello",
+   "name": "Paolo Uccello",
+   "ours": 33,
+   "wikidata": 39,
+   "wikidata_with_image": 36,
    "ratio": 0.92,
-   "from_list": 613,
+   "from_list": 0,
    "forms": {
-    "painting": 1221
+    "painting": 33
    }
   },
   {
@@ -593,27 +629,15 @@
    }
   },
   {
-   "slug": "vaneyck",
-   "name": "Jan van Eyck",
-   "ours": 60,
-   "wikidata": 72,
-   "wikidata_with_image": 64,
-   "ratio": 0.94,
-   "from_list": 30,
-   "forms": {
-    "painting": 60
-   }
-  },
-  {
    "slug": "turner",
    "name": "J.M.W. Turner",
-   "ours": 643,
-   "wikidata": 3726,
-   "wikidata_with_image": 674,
-   "ratio": 0.95,
-   "from_list": 410,
+   "ours": 637,
+   "wikidata": 3727,
+   "wikidata_with_image": 675,
+   "ratio": 0.94,
+   "from_list": 407,
    "forms": {
-    "painting": 643
+    "painting": 637
    }
   },
   {
@@ -629,39 +653,63 @@
    }
   },
   {
-   "slug": "cezanne",
-   "name": "Paul Cézanne",
-   "ours": 752,
-   "wikidata": 759,
-   "wikidata_with_image": 781,
+   "slug": "bruegel",
+   "name": "Pieter Bruegel the Elder",
+   "ours": 52,
+   "wikidata": 51,
+   "wikidata_with_image": 54,
    "ratio": 0.96,
-   "from_list": 334,
+   "from_list": 42,
    "forms": {
-    "painting": 752
+    "painting": 52
    }
   },
   {
-   "slug": "bosch",
-   "name": "Hieronymus Bosch",
-   "ours": 95,
-   "wikidata": 99,
-   "wikidata_with_image": 98,
-   "ratio": 0.97,
-   "from_list": 49,
+   "slug": "dossodossi",
+   "name": "Dosso Dossi",
+   "ours": 98,
+   "wikidata": 111,
+   "wikidata_with_image": 102,
+   "ratio": 0.96,
+   "from_list": 0,
    "forms": {
-    "painting": 95
+    "painting": 98
    }
   },
   {
-   "slug": "duccio",
-   "name": "Duccio",
-   "ours": 61,
-   "wikidata": 68,
-   "wikidata_with_image": 63,
+   "slug": "lotto",
+   "name": "Lorenzo Lotto",
+   "ours": 175,
+   "wikidata": 182,
+   "wikidata_with_image": 183,
+   "ratio": 0.96,
+   "from_list": 0,
+   "forms": {
+    "painting": 175
+   }
+  },
+  {
+   "slug": "strozzi",
+   "name": "Bernardo Strozzi",
+   "ours": 165,
+   "wikidata": 180,
+   "wikidata_with_image": 172,
+   "ratio": 0.96,
+   "from_list": 0,
+   "forms": {
+    "painting": 165
+   }
+  },
+  {
+   "slug": "domenichino",
+   "name": "Domenichino",
+   "ours": 120,
+   "wikidata": 131,
+   "wikidata_with_image": 124,
    "ratio": 0.97,
    "from_list": 0,
    "forms": {
-    "painting": 61
+    "painting": 120
    }
   },
   {
@@ -677,6 +725,30 @@
    }
   },
   {
+   "slug": "bosch",
+   "name": "Hieronymus Bosch",
+   "ours": 95,
+   "wikidata": 98,
+   "wikidata_with_image": 97,
+   "ratio": 0.98,
+   "from_list": 49,
+   "forms": {
+    "painting": 95
+   }
+  },
+  {
+   "slug": "botticelli",
+   "name": "Botticelli",
+   "ours": 182,
+   "wikidata": 188,
+   "wikidata_with_image": 185,
+   "ratio": 0.98,
+   "from_list": 104,
+   "forms": {
+    "painting": 182
+   }
+  },
+  {
    "slug": "delatour",
    "name": "Georges de La Tour",
    "ours": 51,
@@ -689,6 +761,18 @@
    }
   },
   {
+   "slug": "duccio",
+   "name": "Duccio",
+   "ours": 61,
+   "wikidata": 67,
+   "wikidata_with_image": 62,
+   "ratio": 0.98,
+   "from_list": 0,
+   "forms": {
+    "painting": 61
+   }
+  },
+  {
    "slug": "giorgione",
    "name": "Giorgione",
    "ours": 45,
@@ -698,30 +782,6 @@
    "from_list": 0,
    "forms": {
     "painting": 45
-   }
-  },
-  {
-   "slug": "botticelli",
-   "name": "Botticelli",
-   "ours": 184,
-   "wikidata": 189,
-   "wikidata_with_image": 185,
-   "ratio": 0.99,
-   "from_list": 104,
-   "forms": {
-    "painting": 184
-   }
-  },
-  {
-   "slug": "bruegel",
-   "name": "Pieter Bruegel the Elder",
-   "ours": 52,
-   "wikidata": 49,
-   "wikidata_with_image": 52,
-   "ratio": 1.0,
-   "from_list": 42,
-   "forms": {
-    "painting": 52
    }
   },
   {
@@ -749,52 +809,148 @@
    }
   },
   {
-   "slug": "durer",
-   "name": "Albrecht Dürer",
-   "ours": 171,
-   "wikidata": 168,
-   "wikidata_with_image": 163,
-   "ratio": 1.05,
-   "from_list": 68,
+   "slug": "cima",
+   "name": "Cima da Conegliano",
+   "ours": 130,
+   "wikidata": 133,
+   "wikidata_with_image": 129,
+   "ratio": 1.01,
+   "from_list": 0,
    "forms": {
-    "painting": 171
+    "painting": 130
+   }
+  },
+  {
+   "slug": "crivelli",
+   "name": "Carlo Crivelli",
+   "ours": 126,
+   "wikidata": 131,
+   "wikidata_with_image": 125,
+   "ratio": 1.01,
+   "from_list": 0,
+   "forms": {
+    "painting": 126
+   }
+  },
+  {
+   "slug": "filippinolippi",
+   "name": "Filippino Lippi",
+   "ours": 81,
+   "wikidata": 85,
+   "wikidata_with_image": 80,
+   "ratio": 1.01,
+   "from_list": 0,
+   "forms": {
+    "painting": 81
+   }
+  },
+  {
+   "slug": "antonello",
+   "name": "Antonello da Messina",
+   "ours": 51,
+   "wikidata": 54,
+   "wikidata_with_image": 50,
+   "ratio": 1.02,
+   "from_list": 0,
+   "forms": {
+    "painting": 51
+   }
+  },
+  {
+   "slug": "giulioromano",
+   "name": "Giulio Romano",
+   "ours": 64,
+   "wikidata": 72,
+   "wikidata_with_image": 63,
+   "ratio": 1.02,
+   "from_list": 0,
+   "forms": {
+    "painting": 64
    }
   },
   {
    "slug": "raphael",
    "name": "Raphael",
-   "ours": 269,
+   "ours": 262,
    "wikidata": 298,
    "wikidata_with_image": 256,
-   "ratio": 1.05,
-   "from_list": 122,
+   "ratio": 1.02,
+   "from_list": 116,
    "forms": {
-    "painting": 260,
+    "painting": 253,
     "architecture": 9
+   }
+  },
+  {
+   "slug": "durer",
+   "name": "Albrecht Dürer",
+   "ours": 167,
+   "wikidata": 167,
+   "wikidata_with_image": 162,
+   "ratio": 1.03,
+   "from_list": 65,
+   "forms": {
+    "painting": 167
+   }
+  },
+  {
+   "slug": "barocci",
+   "name": "Federico Barocci",
+   "ours": 88,
+   "wikidata": 93,
+   "wikidata_with_image": 85,
+   "ratio": 1.04,
+   "from_list": 0,
+   "forms": {
+    "painting": 88
+   }
+  },
+  {
+   "slug": "carpaccio",
+   "name": "Vittore Carpaccio",
+   "ours": 86,
+   "wikidata": 87,
+   "wikidata_with_image": 82,
+   "ratio": 1.05,
+   "from_list": 0,
+   "forms": {
+    "painting": 86
    }
   },
   {
    "slug": "velazquez",
    "name": "Velázquez",
-   "ours": 201,
-   "wikidata": 196,
-   "wikidata_with_image": 190,
-   "ratio": 1.06,
-   "from_list": 117,
+   "ours": 193,
+   "wikidata": 188,
+   "wikidata_with_image": 183,
+   "ratio": 1.05,
+   "from_list": 112,
    "forms": {
-    "painting": 201
+    "painting": 193
+   }
+  },
+  {
+   "slug": "pietrodacortona",
+   "name": "Pietro da Cortona",
+   "ours": 94,
+   "wikidata": 92,
+   "wikidata_with_image": 89,
+   "ratio": 1.06,
+   "from_list": 0,
+   "forms": {
+    "painting": 94
    }
   },
   {
    "slug": "friedrich",
    "name": "Caspar David Friedrich",
-   "ours": 214,
-   "wikidata": 201,
+   "ours": 213,
+   "wikidata": 200,
    "wikidata_with_image": 198,
    "ratio": 1.08,
-   "from_list": 76,
+   "from_list": 75,
    "forms": {
-    "painting": 214
+    "painting": 213
    }
   },
   {
@@ -824,61 +980,169 @@
   {
    "slug": "canaletto",
    "name": "Canaletto",
-   "ours": 489,
-   "wikidata": 478,
-   "wikidata_with_image": 430,
-   "ratio": 1.14,
-   "from_list": 142,
+   "ours": 470,
+   "wikidata": 481,
+   "wikidata_with_image": 432,
+   "ratio": 1.09,
+   "from_list": 123,
    "forms": {
-    "painting": 489
+    "painting": 470
    }
   },
   {
    "slug": "goya",
    "name": "Goya",
-   "ours": 609,
+   "ours": 582,
    "wikidata": 540,
    "wikidata_with_image": 535,
-   "ratio": 1.14,
-   "from_list": 271,
+   "ratio": 1.09,
+   "from_list": 244,
    "forms": {
-    "painting": 609
+    "painting": 582
+   }
+  },
+  {
+   "slug": "sebastianodelpiombo",
+   "name": "Sebastiano del Piombo",
+   "ours": 81,
+   "wikidata": 86,
+   "wikidata_with_image": 74,
+   "ratio": 1.09,
+   "from_list": 0,
+   "forms": {
+    "painting": 81
+   }
+  },
+  {
+   "slug": "signorelli",
+   "name": "Luca Signorelli",
+   "ours": 95,
+   "wikidata": 96,
+   "wikidata_with_image": 86,
+   "ratio": 1.1,
+   "from_list": 0,
+   "forms": {
+    "painting": 95
+   }
+  },
+  {
+   "slug": "maratta",
+   "name": "Carlo Maratta",
+   "ours": 139,
+   "wikidata": 148,
+   "wikidata_with_image": 124,
+   "ratio": 1.12,
+   "from_list": 0,
+   "forms": {
+    "painting": 139
+   }
+  },
+  {
+   "slug": "moroni",
+   "name": "Giovanni Battista Moroni",
+   "ours": 128,
+   "wikidata": 131,
+   "wikidata_with_image": 114,
+   "ratio": 1.12,
+   "from_list": 0,
+   "forms": {
+    "painting": 128
+   }
+  },
+  {
+   "slug": "sebastianoricci",
+   "name": "Sebastiano Ricci",
+   "ours": 220,
+   "wikidata": 219,
+   "wikidata_with_image": 196,
+   "ratio": 1.12,
+   "from_list": 0,
+   "forms": {
+    "painting": 220
+   }
+  },
+  {
+   "slug": "agostinocarracci",
+   "name": "Agostino Carracci",
+   "ours": 44,
+   "wikidata": 48,
+   "wikidata_with_image": 39,
+   "ratio": 1.13,
+   "from_list": 0,
+   "forms": {
+    "painting": 44
    }
   },
   {
    "slug": "poussin",
    "name": "Nicolas Poussin",
-   "ours": 298,
+   "ours": 283,
    "wikidata": 243,
    "wikidata_with_image": 250,
-   "ratio": 1.19,
-   "from_list": 150,
+   "ratio": 1.13,
+   "from_list": 136,
    "forms": {
-    "painting": 298
+    "painting": 283
+   }
+  },
+  {
+   "slug": "preti",
+   "name": "Mattia Preti",
+   "ours": 107,
+   "wikidata": 101,
+   "wikidata_with_image": 95,
+   "ratio": 1.13,
+   "from_list": 0,
+   "forms": {
+    "painting": 107
+   }
+  },
+  {
+   "slug": "salvatorrosa",
+   "name": "Salvator Rosa",
+   "ours": 233,
+   "wikidata": 238,
+   "wikidata_with_image": 207,
+   "ratio": 1.13,
+   "from_list": 0,
+   "forms": {
+    "painting": 233
+   }
+  },
+  {
+   "slug": "panini",
+   "name": "Giovanni Paolo Panini",
+   "ours": 227,
+   "wikidata": 235,
+   "wikidata_with_image": 185,
+   "ratio": 1.23,
+   "from_list": 0,
+   "forms": {
+    "painting": 227
    }
   },
   {
    "slug": "seurat",
    "name": "Georges Seurat",
-   "ours": 201,
+   "ours": 190,
    "wikidata": 155,
    "wikidata_with_image": 155,
-   "ratio": 1.3,
-   "from_list": 65,
+   "ratio": 1.23,
+   "from_list": 54,
    "forms": {
-    "painting": 201
+    "painting": 190
    }
   },
   {
    "slug": "holbein",
    "name": "Hans Holbein the Younger",
-   "ours": 223,
+   "ours": 222,
    "wikidata": 167,
    "wikidata_with_image": 165,
    "ratio": 1.35,
-   "from_list": 78,
+   "from_list": 77,
    "forms": {
-    "painting": 223
+    "painting": 222
    }
   },
   {
@@ -896,15 +1160,41 @@
   {
    "slug": "michelangelo",
    "name": "Michelangelo",
-   "ours": 132,
+   "ours": 131,
    "wikidata": 64,
    "wikidata_with_image": 65,
-   "ratio": 2.03,
+   "ratio": 2.02,
    "from_list": 0,
    "forms": {
     "painting": 54,
     "sculpture": 63,
-    "architecture": 15
+    "architecture": 14
+   }
+  },
+  {
+   "slug": "verrocchio",
+   "name": "Andrea del Verrocchio",
+   "ours": 45,
+   "wikidata": 13,
+   "wikidata_with_image": 12,
+   "ratio": 3.75,
+   "from_list": 0,
+   "forms": {
+    "painting": 14,
+    "sculpture": 31
+   }
+  },
+  {
+   "slug": "ghiberti",
+   "name": "Lorenzo Ghiberti",
+   "ours": 16,
+   "wikidata": 2,
+   "wikidata_with_image": 3,
+   "ratio": 5.33,
+   "from_list": 0,
+   "forms": {
+    "painting": 2,
+    "sculpture": 14
    }
   },
   {
@@ -918,6 +1208,18 @@
    "forms": {
     "painting": 4,
     "architecture": 34
+   }
+  },
+  {
+   "slug": "bernini",
+   "name": "Bernini",
+   "ours": 137,
+   "wikidata": 28,
+   "wikidata_with_image": 14,
+   "ratio": 9.79,
+   "from_list": 0,
+   "forms": {
+    "sculpture": 137
    }
   },
   {
@@ -974,7 +1276,7 @@
    "slug": "frida",
    "name": "Frida Kahlo",
    "ours": 108,
-   "wikidata": 36,
+   "wikidata": 35,
    "wikidata_with_image": 1,
    "ratio": 108.0,
    "from_list": 108,
@@ -983,15 +1285,28 @@
    }
   },
   {
-   "slug": "bernini",
-   "name": "Bernini",
-   "ours": 137,
+   "slug": "donatello",
+   "name": "Donatello",
+   "ours": 122,
+   "wikidata": 1,
+   "wikidata_with_image": 1,
+   "ratio": 122.0,
+   "from_list": 0,
+   "forms": {
+    "painting": 1,
+    "sculpture": 121
+   }
+  },
+  {
+   "slug": "giovannipisano",
+   "name": "Giovanni Pisano",
+   "ours": 14,
    "wikidata": 0,
    "wikidata_with_image": 0,
    "ratio": null,
    "from_list": 0,
    "forms": {
-    "sculpture": 137
+    "sculpture": 14
    }
   }
  ]
