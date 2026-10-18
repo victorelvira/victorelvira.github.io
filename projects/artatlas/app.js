@@ -99,8 +99,8 @@ const PAINTERS = [
   { slug: "canova", name: "Antonio Canova", file: "artatlas/data/canova.geojson" },
   { slug: "oraziogentileschi", name: "Orazio Gentileschi", file: "artatlas/data/oraziogentileschi.geojson" },
 ];
-const DATA_V = "1.29.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-10-18 12:43";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.30.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-18 13:12";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -469,7 +469,9 @@ function wireWorkItems(container, feats, onOpen) {
     if (f) { if (onOpen) onOpen(); openWorkCard({ p: f.properties }); }
   }));
 }
-function closeSheet() { const s = document.getElementById("sheet"); if (s) s.hidden = true; }
+function closeSheet() { const s = document.getElementById("sheet"); if (s) s.hidden = true; sheetMarker = null; }
+// which marker is showing its card right now: the venue order control redraws that card in place
+let popMarker = null, sheetMarker = null;
 document.getElementById("sheet-close")?.addEventListener("click", closeSheet);
 
 // Each painter has a FIXED colour, by its position in the manifest (stable, always the
@@ -896,6 +898,28 @@ const HEAD_SKIP_CURRENT = ["attribution", "title", "year", "genre", "medium", "d
 const HEAD_SKIP_PAINTED = ["attribution", "title", "year", "genre", "medium", "dimensions", "image", "city", "country", "location", "kind", "status"];
 const WORK_SKIP = ["city", "country", "location", "kind", "creation"];
 
+// The venue card (a marker popup on the desktop, the bottom sheet on a phone) is where Víctor
+// actually reads a museum: bigger pictures, the facts, the summary. It used to list the works in
+// whatever order the file had. It now offers the same four orders as the panel and shares the same
+// stored preference, so changing it in one place changes it in the other (Víctor, 2026-10-18:
+// "quiero que me de las mismas opciones que en la otra vista. Relevancia por defecto").
+const VENUE_ORDERS = [["relevance", "✨ inside: by relevance"], ["year", "🕰 inside: by year"],
+                      ["born", "🎨 inside: painter, oldest first"], ["az", "🔤 inside: painter A-Z"]];
+function venueOrderHTML(n) {
+  if (n < 2) return "";                       // one work needs no order
+  const opts = VENUE_ORDERS.map(([v, lbl]) =>
+    `<option value="${v}"${v === venueOrder() ? " selected" : ""}>${esc(t(lbl))}</option>`).join("");
+  return `<label class="pop-order" title="${esc(t("Inside each museum"))}"><select>${opts}</select></label>`;
+}
+// the order the card and the panel's rooms share. Read through a function because `museumInner` is
+// declared further down: a refresh before that line must not throw.
+function venueOrder() { try { return museumInner; } catch (e) { return "relevance"; } }
+function orderFeats(feats) {
+  let cmp;
+  try { cmp = museumInnerSorter(); } catch (e) { return feats; }
+  return feats.slice().sort((a, z) => cmp({ p: a.properties }, { p: z.properties }));
+}
+
 function placePopup(feats) {
   const p0 = feats[0].properties;
   const painted = state.mode === "painted";
@@ -903,7 +927,7 @@ function placePopup(feats) {
   let head;
   if (painted) {
     head = `<div class="hd"><div class="nm">${esc(p0.creation_place || "Unknown")}</div>` +
-      `<div class="meta">${t("painted here")} · ${n} ${tu(n === 1 ? "work" : "works")}</div>` +
+      `<div class="meta">${t("painted here")} · ${n} ${tu(n === 1 ? "work" : "works")}${venueOrderHTML(n)}</div>` +
       `${provLine(p0, HEAD_SKIP_PAINTED)}</div>`;
   } else {
     const kindTxt = KIND_LABEL[p0.kind] || "";
@@ -911,7 +935,7 @@ function placePopup(feats) {
     // the venue name is a button → opens this museum in the side list (filters to it)
     head = `<div class="hd"><button type="button" class="nm pop-museum" data-museum="${esc(museumKey(p0))}"` +
       ` title="${esc(t("Show this museum"))}">${esc(locName(p0) || t("Location"))}<span class="pm-arrow"> ↗</span></button>` +
-      `<div class="meta">${where}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} ${tu(n === 1 ? "work" : "works")}</div>` +
+      `<div class="meta">${where}${kindTxt ? ` · ${kindTxt}` : ""} · ${n} ${tu(n === 1 ? "work" : "works")}${venueOrderHTML(n)}</div>` +
       `${provLine(p0, HEAD_SKIP_CURRENT)}</div>`;
   }
 
@@ -1009,7 +1033,8 @@ function refresh() {
   let workCount = 0, shownPlaces = 0;
   const countries = new Set();
   for (const pl of places) {
-    const vis = pl.feats.filter(f => passesAll(f.properties));   // works here passing every filter
+    // ordered, not file order: the card and the panel's room read the same way
+    const vis = orderFeats(pl.feats.filter(f => passesAll(f.properties)));   // works here passing every filter
     if (vis.length) {
       const painted = state.mode === "painted";
       const disputed = vis.some(f => !ATTR_ACCEPTED.has(f.properties.attribution));
@@ -1111,12 +1136,17 @@ fetch("artatlas/data/all.geojson?v=" + DATA_V)
       const feats = e.popup._source && e.popup._source.options.feats;
       // On phones a marker popup is taller than the small map and its header/close get cut
       // off the top. Route it into a fixed bottom sheet instead: always fully visible.
-      if (isMobile()) { openSheet(e.popup.getContent(), feats); map.closePopup(e.popup); return; }
+      if (isMobile()) {
+        sheetMarker = e.popup._source;
+        openSheet(e.popup.getContent(), feats); map.closePopup(e.popup); return;
+      }
+      popMarker = e.popup._source;
       const el = e.popup.getElement();
       const b = el && el.querySelector(".pop-museum");
       if (b) b.addEventListener("click", () => goMuseum(b.dataset.museum));
       wireWorkItems(el, feats, () => map.closePopup());   // each work row → its ficha
     });
+    map.on("popupclose", e => { if (popMarker === e.popup._source) popMarker = null; });
     map.on("click", closeSheet);   // tapping the map background dismisses the sheet
     window.addEventListener("hashchange", () => { applyHash(); buildMarkers(); });
   })
@@ -2265,6 +2295,29 @@ function museumInnerSorter() {
   if (museumInner === "az") return (a, z) => cmpText(pName(a.p.painter), pName(z.p.painter)) || yr(a) - yr(z);
   return (a, z) => yr(a) - yr(z);
 }
+// One order, two places that show it: the panel's rooms and the venue card. Set it here and both
+// redraw, and the choice is remembered for the next visit.
+function setVenueOrder(v) {
+  museumInner = v;
+  try { localStorage.setItem("atlasMuseumInner", museumInner); } catch (e) { /* private mode */ }
+  const sel = document.getElementById("pv-inmus");
+  if (sel && sel.value !== v) sel.value = v;
+  const apply = () => { refresh(); redrawVenueCard(); };     // refresh(): every card + the panel
+  if (v === "relevance" && !REL) loadRelevance().then(apply); else apply();
+}
+// the open card again, with the new order: the sheet is rebuilt, a popup is reopened (which rewires
+// its rows through the popupopen handler)
+function redrawVenueCard() {
+  if (sheetMarker && !document.getElementById("sheet").hidden) {
+    openSheet(sheetMarker.getPopup().getContent(), sheetMarker.options.feats);
+    return;
+  }
+  if (popMarker) { const m = popMarker; map.closePopup(); m.openPopup(); }
+}
+document.addEventListener("change", e => {
+  const sel = e.target.closest && e.target.closest(".pop-order select");
+  if (sel) setVenueOrder(sel.value);
+});
 
 let panelIO = null;
 let panelMode = "list";   // "list" | "gallery" (thumbnail grid)
@@ -2744,12 +2797,7 @@ document.getElementById("worklist").addEventListener("keydown", e => {
   const showInner = () => { if (innerWrap) innerWrap.hidden = panelSort !== "museum"; };
   if (innerSel) {
     innerSel.value = museumInner;
-    innerSel.addEventListener("change", e => {
-      museumInner = e.target.value;
-      try { localStorage.setItem("atlasMuseumInner", museumInner); } catch (err) { /* private mode */ }
-      if (museumInner === "relevance" && !REL) loadRelevance().then(() => renderPanel());
-      else renderPanel();
-    });
+    innerSel.addEventListener("change", e => setVenueOrder(e.target.value));
     if (museumInner === "relevance") loadRelevance();
   }
   showInner();
