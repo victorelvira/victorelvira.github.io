@@ -130,8 +130,8 @@ const PAINTERS = [
   { slug: "sebastianoricci", name: "Sebastiano Ricci", file: "artatlas/data/sebastianoricci.geojson" },
   { slug: "maratta", name: "Carlo Maratta", file: "artatlas/data/maratta.geojson" },
 ];
-const DATA_V = "1.32.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
-const BUILD_AT = "2026-10-18 21:36";   // stamped by scripts/stamp_build.py at deploy: do not edit
+const DATA_V = "1.33.0";   // MAJOR.MINOR.PATCH + cache-bust. Patch per change, minor for features. Keep artatlas.html ?v= in sync. See README Changelog.
+const BUILD_AT = "2026-10-18 22:15";   // stamped by scripts/stamp_build.py at deploy: do not edit
 { const b = document.getElementById("build"); if (b) b.textContent = `v${DATA_V} · ${BUILD_AT}`; }
 
 // ── languages ────────────────────────────────────────────────────────────────────────────────
@@ -3673,7 +3673,23 @@ function gTierTake(tiers, n) {   // take n distinct items, exhausting each tier 
   for (const t of tiers) { for (const s of gShuffle(t)) { if (out.length >= n) break; if (!out.includes(s)) out.push(s); } if (out.length >= n) break; }
   return out;
 }
-function gPool() { return works.filter(w => w.p && w.p.image && w.p.painter && gSlugOf(w.p)); }
+// The level chooses the PAINTING too, not only how close the wrong answers are. Víctor, 2026-10-18:
+// "the levels should take the relevance of the works into account: on the easiest level, top works".
+// Three bands of the relevance index, which is the atlas' own answer to "how known is this":
+//   easy   45 and above   2,674 works by 85 painters: the ones anybody who has been to a museum knows
+//   medium 15 to 45       3,481 works: known, not famous
+//   hard   below 15       the long tail, where only somebody who has walked the rooms recognises it
+// If a band runs out (the date question also needs a year, the where question a city), the whole
+// pool is used instead: an unanswerable question is worse than an easy one.
+const G_BAND = { easy: [45, Infinity], medium: [15, 45], hard: [-Infinity, 15] };
+const G_BAND_MIN = 120;
+function gPool() {
+  const all = works.filter(w => w.p && w.p.image && w.p.painter && gSlugOf(w.p));
+  if (!REL) { loadRelevance(); return all; }      // the file is on its way: play meanwhile
+  const [lo, hi] = G_BAND[G.diff] || G_BAND.easy;
+  const band = all.filter(w => { const r = relOf(w.p); return r >= lo && r < hi; });
+  return band.length >= G_BAND_MIN ? band : all;
+}
 
 function gAuthorQ() {
   const pl = gPool(); const p = gPick(pl).p; const cs = gSlugOf(p);
