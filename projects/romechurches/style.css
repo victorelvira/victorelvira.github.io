@@ -228,3 +228,8 @@ img.im { width: 100%; height: auto; aspect-ratio: 1; }
 .part summary b { font-weight: 600; }
 .part .psub { width: 100%; margin: 0; }
 .part .pbody { padding: 6px 0 4px 10px; }
+
+/* relics */
+.relics .w { flex: 1; }
+.relics li.gone { opacity: .55; }
+.rsent .quote { margin: 4px 0; }

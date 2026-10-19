@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "0.6.1";
-const BUILD_AT = "2026-10-20 00:38";
+const DATA_V = "0.7.2";
+const BUILD_AT = "2026-10-20 01:00";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -86,6 +86,29 @@ const I18N = {
     "part:campanile": "campanario",
     "part:cloister": "claustro",
     "part:chapel": "capilla",
+    "Relics of": "Reliquias de",
+    "relic:body": "cuerpo",
+    "relic:head": "cabeza",
+    "relic:arm": "brazo",
+    "relic:blood": "sangre",
+    "relic:bones": "huesos",
+    "relic:relic": "reliquia",
+    "no longer here, the text says": "ya no está aquí, según el texto",
+    "True Cross": "Vera Cruz",
+    "Holy Nails": "Santos Clavos",
+    "Crown of Thorns": "Corona de espinas",
+    "Column of the Flagellation": "Columna de la Flagelación",
+    "Holy Crib": "Santa Cuna",
+    "Holy Stairs": "Escalera Santa",
+    "Veil of Veronica": "Velo de la Verónica",
+    "Titulus Crucis": "Titulus Crucis",
+    "Relics read in the texts (\"the relics of St X\") and saints buried in the church. Not shown: {n} whose saint the texts do not name unambiguously, and those the texts say have left.": "Reliquias leídas en los textos («las reliquias de san X») y santos enterrados en la iglesia. No se muestran: {n} cuyo santo los textos no nombran sin ambigüedad, y las que según los textos ya no están.",
+    "Where": "Dónde",
+    "zone:rione": "Centro histórico (rioni)",
+    "zone:outer": "Resto de Roma",
+    "zone:vatican": "Vaticano",
+    "zone:unknown": "Zona desconocida",
+    "Rome here is Roma Capitale, the comune (1,287 km²), and Vatican City. The historic centre is the 22 rioni.": "Roma aquí es Roma Capitale, el municipio (1.287 km²), y la Ciudad del Vaticano. El centro histórico son los 22 rioni.",
     "only": "solo", "all": "todo", "Relics": "Reliquias", "only in the Churches of Rome Wiki": "solo en la Churches of Rome Wiki", "outside the walls": "fuera de las murallas",
     "Built": "Construida", "Consecrated": "Consagrada", "Artists": "Artistas", "Loading...": "Cargando...",
     "relics": "reliquias", "a long text": "un texto largo", "Read the whole entry": "Leer la entrada completa", "In the words of the Churches of Rome Wiki": "Con las palabras de la Churches of Rome Wiki", "paragraphs": "párrafos", "Text": "Texto",
@@ -170,6 +193,29 @@ const I18N = {
     "part:campanile": "campanile",
     "part:cloister": "chiostro",
     "part:chapel": "cappella",
+    "Relics of": "Reliquie di",
+    "relic:body": "corpo",
+    "relic:head": "capo",
+    "relic:arm": "braccio",
+    "relic:blood": "sangue",
+    "relic:bones": "ossa",
+    "relic:relic": "reliquia",
+    "no longer here, the text says": "non è più qui, secondo il testo",
+    "True Cross": "Vera Croce",
+    "Holy Nails": "Santi Chiodi",
+    "Crown of Thorns": "Corona di spine",
+    "Column of the Flagellation": "Colonna della Flagellazione",
+    "Holy Crib": "Sacra Culla",
+    "Holy Stairs": "Scala Santa",
+    "Veil of Veronica": "Velo della Veronica",
+    "Titulus Crucis": "Titulus Crucis",
+    "Relics read in the texts (\"the relics of St X\") and saints buried in the church. Not shown: {n} whose saint the texts do not name unambiguously, and those the texts say have left.": "Reliquie lette nei testi («le reliquie di san X») e santi sepolti nella chiesa. Non mostrate: {n} il cui santo i testi non nominano senza ambiguità, e quelle che secondo i testi non ci sono più.",
+    "Where": "Dove",
+    "zone:rione": "Centro storico (rioni)",
+    "zone:outer": "Resto di Roma",
+    "zone:vatican": "Vaticano",
+    "zone:unknown": "Zona sconosciuta",
+    "Rome here is Roma Capitale, the comune (1,287 km²), and Vatican City. The historic centre is the 22 rioni.": "Roma qui è Roma Capitale, il comune (1.287 km²), e la Città del Vaticano. Il centro storico sono i 22 rioni.",
     "only": "solo", "all": "tutto", "Relics": "Reliquie", "only in the Churches of Rome Wiki": "solo nella Churches of Rome Wiki", "outside the walls": "fuori le mura",
     "Built": "Costruita", "Consecrated": "Consacrata", "Artists": "Artisti", "Loading...": "Caricamento...",
     "relics": "reliquie", "a long text": "un testo lungo", "Read the whole entry": "Leggi la voce completa", "In the words of the Churches of Rome Wiki": "Con le parole della Churches of Rome Wiki", "paragraphs": "paragrafi", "Text": "Testo",
@@ -181,7 +227,9 @@ const EN_ONLY = { "major_basilica": "Major basilica", "basilica": "Basilica", "c
   "church": "Church", "oratory": "Oratory", "chapel": "Chapel", "standing": "In use", "former": "No longer a church",
   "ruin": "Ruin", "lost": "Lost", "part:sanctuary": "sanctuary", "part:crypt": "crypt", "part:sacristy": "sacristy",
   "part:baptistery": "baptistery", "part:transept": "transept", "part:nave": "nave", "part:dome": "dome",
-  "part:campanile": "bell tower", "part:cloister": "cloister", "part:chapel": "chapel" };
+  "part:campanile": "bell tower", "part:cloister": "cloister", "part:chapel": "chapel",
+  "zone:rione": "Historic centre (rioni)", "zone:outer": "Rest of Rome", "zone:vatican": "Vatican", "zone:unknown": "Zone unknown",
+  "relic:body": "body", "relic:head": "head", "relic:arm": "arm", "relic:blood": "blood", "relic:bones": "bones", "relic:relic": "relic" };
 let LANG = "en";
 function t(s, vars) {
   let out = LANG === "en" ? (EN_ONLY[s] || s) : ((I18N[LANG] || {})[s] || EN_ONLY[s] || s);
@@ -238,9 +286,10 @@ let DB = null, BY_ID = new Map(), CHILDREN = new Map();
 const KINDS = ["major_basilica", "basilica", "cathedral", "church", "oratory", "chapel", ""];
 // The liturgical colours (Víctor, 2026-10-19: "colores con relación católica"). Basilicas wear the
 // cardinal red, and a major basilica is the same red with the papal gold ring around it; the
-// cathedral the bishop's violet; the parish church the green of Ordinary Time, the everyday colour of
-// the year; the oratory Marian blue; the chapel the rose of Gaudete and Laetare.
-const KIND_COLOUR = { major_basilica: "#a3171c", basilica: "#a3171c", cathedral: "#5e2a7e", church: "#3f7d4e", oratory: "#2f5f9e", chapel: "#c56b8a", "": "#8a8178" };
+// cathedral the bishop's violet; the church Marian blue (the green of Ordinary Time was hard to see on
+// the map, Víctor 2026-10-20); the oratory the liturgical gold, darkened to read on the map; the
+// chapel the rose of Gaudete and Laetare.
+const KIND_COLOUR = { major_basilica: "#a3171c", basilica: "#a3171c", cathedral: "#5e2a7e", church: "#2f5f9e", oratory: "#9a7417", chapel: "#c56b8a", "": "#8a8178" };
 const PAPAL_GOLD = "#d4a52a";
 const STATUSES = ["", "former", "ruin", "lost"];
 const FLAGS = ["national", "parish", "shrine", "pilgrimage", "cathedral", "osm_only", "wiki_only"];
@@ -265,7 +314,7 @@ function searchText(c) {
 
 // ------------------------------------------------------------------ state + the one predicate
 const state = {
-  x: "", fam: "", q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(),
+  x: "", fam: "", rel: "", zones: new Set(), q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(),
   dist: "", yr: [null, null], by: "", ded: "", arch: "", who: "", sel: "", order: "fame",
 };
 const DIMENSIONS = [
@@ -279,6 +328,8 @@ const DIMENSIONS = [
   { id: "yr", on: () => state.yr[0] != null || state.yr[1] != null, test: c => c.y == null || ((state.yr[0] == null || c.y >= state.yr[0]) && (state.yr[1] == null || c.y <= state.yr[1])) },
   { id: "by", on: () => state.by, test: c => (c.art || []).some(w => (DB.works[w]?.by || []).includes(state.by)) || (c.ma || []).includes(state.by) },
   { id: "ded", on: () => state.ded, test: c => (c.ded || []).includes(state.ded) },
+  { id: "zone", on: () => state.zones.size, test: c => state.zones.has(c.zt || "") },
+  { id: "rel", on: () => state.rel, test: c => (c.rl || []).some(r => r.q === state.rel && !r.gone) },
   { id: "fam", on: () => state.fam, test: c => (c.parts || []).some(pid => DB.parts[pid]?.fk === state.fam) },
   { id: "arch", on: () => state.arch, test: c => (c.arch || []).includes(state.arch) },
   { id: "who", on: () => state.who, test: c => (c.bur || []).includes(state.who) },
@@ -289,7 +340,7 @@ function holds(c, h) {
   if (h === "tit") return (c.tit || []).length > 0 || !!c.titular;
   if (h === "img") return !!c.img;
   if (h === "oh") return !!(c.oh || c.svc);
-  if (h === "rel") return !!c.w_nrel || (c.art || []).some(w => DB.works[w]?.kind === "relic");
+  if (h === "rel") return !!(c.rl || []).length || !!c.w_nrel || (c.art || []).some(w => DB.works[w]?.kind === "relic");
   if (h === "wiki") return !!c.wiki;
   if (h === "named") return !!(c.ma || []).length;
   return false;
@@ -409,13 +460,17 @@ function renderMore() {
   for (const c of DB.churches) if (passes(c, "dist")) for (const k of new Set([c.dist, c.muni])) if (k != null) nd.set(k, (nd.get(k) || 0) + 1);
   const opts = [...nd.keys()].sort((a, b) => DB.districts[a].localeCompare(DB.districts[b]))
     .map(k => `<option value="${k}" ${String(k) === state.dist ? "selected" : ""}>${esc(DB.districts[k])} (${nd.get(k)})</option>`).join("");
-  box.innerHTML = `<h4>${t("State")}</h4><div class="chips">${status}</div>
+  const nz = counts("zone", c => c.zt || "");
+  const zones = ["rione", "outer", "vatican", ""].filter(z => nz.get(z) || state.zones.has(z)).map(z => `<button type="button" class="chip ${state.zones.has(z) ? "on" : ""}" data-zone="${z}">${esc(t("zone:" + (z || "unknown")))} <span class="n">${nz.get(z) || 0}</span></button>`).join("");
+  box.innerHTML = `<h4>${t("Where")}</h4><div class="chips">${zones}</div><p class="note">${esc(t("Rome here is Roma Capitale, the comune (1,287 km²), and Vatican City. The historic centre is the 22 rioni."))}</p>
+    <h4>${t("State")}</h4><div class="chips">${status}</div>
     <h4>${t("Holds")}</h4><div class="chips">${hl}</div>
     <h4>${t("Also")}</h4><div class="chips">${fl}</div>
     <h4>${t("District")}</h4><select id="dist"><option value="">${t("any district")}</option>${opts}</select>
     <h4>${t("Founded")}</h4><div class="yr-row">${t("from")} <input type="number" id="yr0" value="${state.yr[0] ?? ""}" placeholder="300"> ${t("to")} <input type="number" id="yr1" value="${state.yr[1] ?? ""}" placeholder="2026"></div>
     <p class="note">${esc(t("no year recorded"))}: ${DB.churches.filter(c => c.y == null).length}</p>`;
   const sum = [];
+  for (const z of state.zones) sum.push(t("zone:" + (z || "unknown")));
   if (state.status.size) sum.push(t("State"));
   for (const h of state.holds) sum.push(t({ art: "works of art", bur: "burials", rel: "relics", tit: "a cardinal title", img: "a photo", oh: "opening hours", wiki: "a long text", named: "artists named in the texts" }[h]));
   for (const f of state.flags) sum.push(flagLabel(f));
@@ -427,10 +482,11 @@ function renderActive() {
   const chips = [];
   if (state.by) chips.push(["by", `${t("Art by")} ${personName(state.by)}`]);
   if (state.ded) chips.push(["ded", `${t("Dedicated to:")} ${personName(state.ded)}`]);
+  if (state.rel) chips.push(["rel", `${t("Relics of")} ${relicName(state.rel)}`]);
   if (state.fam) chips.push(["fam", `${t("Family")}: ${DB.families[state.fam]?.n || state.fam}`]);
   if (state.arch) chips.push(["arch", `${t("Architect")}: ${personName(state.arch)}`]);
   if (state.who) chips.push(["who", `${t("Buried:")} ${personName(state.who)}`]);
-  const any = chips.length || state.q || state.kinds.size || state.status.size || state.flags.size || state.holds.size || state.dist || state.arch || state.fam || state.yr[0] != null || state.yr[1] != null;
+  const any = chips.length || state.q || state.kinds.size || state.status.size || state.flags.size || state.holds.size || state.dist || state.arch || state.fam || state.rel || state.zones.size || state.yr[0] != null || state.yr[1] != null;
   $("#active").innerHTML = chips.map(([k, l]) => `<button type="button" class="chip" data-unset="${k}">${esc(l)} ✕</button>`).join("") +
     (any ? `<button type="button" class="chip" data-unset="all">${t("Show everything")}</button>` : "");
 }
@@ -494,6 +550,22 @@ function renderPeople(box) {
     rows.slice(0, 500).map(([q, cs]) => { const p = DB.people[q] || {}; const c = BY_ID.get(cs[0]); return `<div class="row" data-open="${cs[0]}">${p.img ? `${img(p.img, 120, "thumb")}` : `<div class="thumb ph">✝</div>`}<div class="t"><b>${esc(pick(p.n) || q)}${(p.tags || []).map(tg => `<span class="tag ${tg}">${esc(t(tg))}</span>`).join("")}</b><span>${esc([p.b != null || p.d != null ? `${yearStr(p.b)}–${yearStr(p.d)}` : "", pick(c?.n)].filter(Boolean).join(" · "))}</span></div></div>`; }).join("");
 }
 // The families that founded or owned chapels, as the wiki names them: one row per family name.
+function relicName(q) { return q.startsWith("relic:") ? t(DB.passion[q] || q) : personName(q); }
+// Relics by whose they are: a saint (or a relic of the Passion) and the churches that keep one.
+function renderRelics(box) {
+  const agg = new Map();
+  let unlinked = 0;
+  for (const c of CURRENT) for (const r of c.rl || []) {
+    if (r.gone) continue;
+    if (!r.q) { unlinked++; continue; }
+    if (!agg.has(r.q)) agg.set(r.q, { cs: new Set(), kinds: new Set() });
+    agg.get(r.q).cs.add(c.id); agg.get(r.q).kinds.add(r.k);
+  }
+  const rows = [...agg.entries()].sort((a, b) => b[1].cs.size - a[1].cs.size || relicName(a[0]).localeCompare(relicName(b[0])));
+  box.innerHTML = `<p class="note" style="padding:6px 12px">${esc(t("Relics read in the texts (\"the relics of St X\") and saints buried in the church. Not shown: {n} whose saint the texts do not name unambiguously, and those the texts say have left.", { n: unlinked }))}</p>` +
+    (rows.map(([q, e]) => { const p = DB.people[q]; return `<div class="row" data-rel="${q}">${p?.img ? img(p.img, 120, "thumb") : `<div class="thumb ph">${q.startsWith("relic:") ? "✝" : "✶"}</div>`}<div class="t"><b>${esc(relicName(q))}</b><span>${esc([...e.kinds].map(k => t("relic:" + k)).join(" · "))}</span></div><div class="cnt">${e.cs.size} ${t("churches")}</div></div>`; }).join("") ||
+     `<p class="empty">${t("Nothing matches.")}</p>`);
+}
 function renderFamilies(box) {
   const inView = new Set(CURRENT.map(c => c.id));
   const rows = Object.entries(DB.families).map(([fk, f]) => {
@@ -516,7 +588,7 @@ function renderSaints(box) {
 // The map and the list are always churches. Explorar is the other way in: by artist, by saint, by
 // who is buried there. Every row leads back to churches, as a filter chip or as one church's card,
 // and every index counts only the churches the current filters let through.
-const EXPLORE = [["artists", "Artists"], ["saints", "Saints"], ["families", "Families"], ["people", "Buried"]];
+const EXPLORE = [["artists", "Artists"], ["saints", "Saints"], ["relics", "Relics"], ["families", "Families"], ["people", "Buried"]];
 function openExplore(x, push = true) {
   state.x = x || state.x || "artists";
   if (state.sel) closeCard(false);
@@ -544,6 +616,7 @@ function renderExplore() {
   if (state.x === "saints") renderSaints(body);
   else if (state.x === "people") renderPeople(body);
   else if (state.x === "families") renderFamilies(body);
+  else if (state.x === "relics") renderRelics(body);
   else renderArtists(body);
 }
 
@@ -553,19 +626,21 @@ function renderExplore() {
 let SUGGEST_INDEX = null;
 function suggestIndex() {
   if (SUGGEST_INDEX) return SUGGEST_INDEX;
-  const art = new Map(), sai = new Map(), bur = new Map();
+  const art = new Map(), sai = new Map(), bur = new Map(), rel = new Map();
   const add = (m, q, c) => { if (!m.has(q)) m.set(q, new Set()); m.get(q).add(c); };
   for (const c of DB.churches) {
     for (const w of c.art || []) for (const a of DB.works[w]?.by || []) add(art, a, c.id);
     for (const a of [...(c.ma || []), ...(c.arch || [])]) add(art, a, c.id);
     for (const q of c.ded || []) add(sai, q, c.id);
     for (const q of c.bur || []) add(bur, q, c.id);
+    for (const r of c.rl || []) if (r.q && !r.gone) add(rel, r.q, c.id);
   }
   const names = q => fold(Object.values(DB.people[q]?.n || DB.terms[q] || {}).join(" | "));
   SUGGEST_INDEX = {
     artists: [...art].map(([q, cs]) => ({ q, cs, s: names(q) })),
     saints: [...sai].map(([q, cs]) => ({ q, cs, s: names(q) })),
     people: [...bur].map(([q, cs]) => ({ q, cs, s: names(q) })),
+    relics: [...rel].map(([q, cs]) => ({ q, cs, s: q.startsWith("relic:") ? fold(relicName(q)) : names(q) })),
   };
   return SUGGEST_INDEX;
 }
@@ -581,6 +656,7 @@ function renderSuggest(text) {
     ["Churches", ch.map(c => `<button type="button" class="sg" data-sg="c" data-v="${c.id}"><span class="dot" style="background:${KIND_COLOUR[kindKey(c)]}"></span>${esc(pick(c.n))}<span class="note">${esc(kindLabel(kindKey(c)))}</span></button>`)],
     ["Artists", top(ix.artists, 5).map(e => `<button type="button" class="sg" data-sg="by" data-v="${e.q}">🖌 ${esc(personName(e.q))}<span class="note">${e.cs.size} ${t("churches")}</span></button>`)],
     ["Saints", top(ix.saints, 4).map(e => `<button type="button" class="sg" data-sg="ded" data-v="${e.q}">✶ ${esc(personName(e.q))}<span class="note">${e.cs.size} ${t("churches")}</span></button>`)],
+    ["Relics", top(ix.relics, 4).map(e => `<button type="button" class="sg" data-sg="rel" data-v="${e.q}">✝ ${esc(relicName(e.q))}<span class="note">${e.cs.size} ${t("churches")}</span></button>`)],
     ["Families", Object.entries(DB.families).filter(([, f]) => hit(fold(f.n))).slice(0, 3).map(([fk, f]) => `<button type="button" class="sg" data-sg="fam" data-v="${fk}">⚜ ${esc(f.n)}<span class="note">${f.parts.length} ${t("chapels")}</span></button>`)],
     ["Buried", top(ix.people, 4).map(e => `<button type="button" class="sg" data-sg="who" data-v="${e.q}">✝ ${esc(personName(e.q))}<span class="note">${esc(pick(BY_ID.get([...e.cs][0])?.n))}</span></button>`)],
     ["District", DB.districts.map((d, i) => [d, i]).filter(([d]) => hit(fold(d))).slice(0, 3).map(([d, i]) => `<button type="button" class="sg" data-sg="d" data-v="${i}">⌖ ${esc(d)}</button>`)],
@@ -598,6 +674,7 @@ function pickSuggestion(kind, v) {
   else if (kind === "ded") state.ded = v;
   else if (kind === "d") state.dist = String(v);
   else if (kind === "fam") state.fam = v;
+  else if (kind === "rel") state.rel = v;
   else if (kind === "who") {
     const cs = [...(suggestIndex().people.find(e => e.q === v)?.cs || [])];
     if (cs.length === 1) { render(); openCard(cs[0], { push: true, pan: true }); return; }
@@ -636,6 +713,17 @@ function partsSection(c) {
       <div class="pbody">${fam}${(p.ma || []).map(q => pillPerson(q, "x")).join("")}${twin}<div class="ptext" data-ptext="${pid}"></div></div></details>`;
   };
   return `<div class="sec"><h3>${t("Chapels and parts")} · ${nch} ${t("chapels")}</h3><p class="note">${esc(t("As the Churches of Rome Wiki walks through the church. Open one to read its text."))}</p>${ps.map(row).join("")}</div>`;
+}
+function relicList(c) {
+  const rl = c.rl || [];
+  if (!rl.length) return "";
+  const SRC = { wiki: "Churches of Rome Wiki", wpit: "Wikipedia IT", wpen: "Wikipedia EN", burial: "Wikidata" };
+  const li = r => {
+    const who = r.q ? (r.q.startsWith("relic:") ? `<span class="pill noimg" data-rel="${r.q}">✝ ${esc(relicName(r.q))}</span>` : pillPerson(r.q, "rel")) : `<span class="pill noimg">${esc(r.n)}</span>`;
+    const where = r.pt && DB.parts[r.pt] ? ` · ${esc(DB.parts[r.pt].n)}` : "";
+    return `<li class="relic ${r.gone ? "gone" : ""}"><div class="w">${who} <span class="note">${esc(t("relic:" + r.k))}${where}${r.gone ? " · " + esc(t("no longer here, the text says")) : ""} · ${esc(SRC[r.src] || r.src)}</span>${(r.s || []).length ? `<div class="rsent" data-rs="${r.s.join(",")}"></div>` : ""}</div></li>`;
+  };
+  return `<ul class="people relics">${[...rl].sort((a, b) => a.gone - b.gone).map(li).join("")}</ul>`;
 }
 function workCell(q) {
   const w = DB.works[q] || {};
@@ -713,7 +801,7 @@ async function renderCard(c) {
     ${partsSection(c)}
     ${c.ma?.length ? `<div class="sec"><h3>${t("Artists named in the texts")} · ${c.ma.length}</h3><div id="w-art"><p class="note">${t("Loading...")}</p></div></div>` : ""}
     ${art.length ? `<div class="sec"><h3>${t("What is inside")} · ${art.length}</h3><div class="grid">${show(art, 60).map(workCell).join("")}</div></div>` : ""}
-    ${relics.length || c.w_nrel ? `<div class="sec"><h3>${t("Relics")}</h3>${relics.length ? `<div class="grid">${relics.map(workCell).join("")}</div>` : ""}<div id="w-rel"></div></div>` : ""}
+    ${relics.length || c.w_nrel || c.rl?.length ? `<div class="sec"><h3>${t("Relics")}</h3>${relicList(c)}${relics.length ? `<div class="grid">${relics.map(workCell).join("")}</div>` : ""}<div id="w-rel"></div></div>` : ""}
     ${!bur.length && c.w_nbur ? `<div class="sec"><h3>${t("Buried here")}</h3><div id="w-bur"></div></div>` : ""}
     ${bur.length ? `<div class="sec"><h3>${t("Buried here")} · ${bur.length}</h3><div id="w-bur"></div><ul class="people">${show(bur, 80).map(q => personLi(q, c.bvia?.[q] ? esc(t("in")) + " " + esc(term(c.bvia[q])) : "")).join("")}</ul>${bur.length > 80 ? `<p class="note">${t("Show all {n}", { n: bur.length })}: <a href="#" data-view-people="1">${t("Buried")}</a></p>` : ""}</div>` : ""}
     ${(c.mon || []).length ? `<div class="sec"><h3>${t("Funeral monuments")} · ${c.mon.length}</h3><p class="note">${esc(t("commemorated by a monument here; Wikidata does not record them as buried here"))}</p><ul class="people">${c.mon.map(q => personLi(q, c.mon_by?.[q] ? esc(pick(DB.works[c.mon_by[q]]?.n)) : "")).join("")}</ul></div>` : ""}
@@ -723,7 +811,7 @@ async function renderCard(c) {
     <div class="sec"><h3>${t("Links")}</h3><div class="links">${links.join("")}</div></div>
     <div class="sec"><h3>${t("Sources")}</h3><p class="note">Wikidata (CC0) · OpenStreetMap (ODbL) · Wikipedia (CC BY-SA) · Wikimedia Commons · Churches of Rome Wiki (CC BY-SA)</p></div>`;
   box.scrollTop = 0;
-  if (c.wiki || c.ma) loadWiki(c);
+  if (c.wiki || c.ma || c.rl) loadWiki(c);
   const s = await loadSummaries();
   const sm = s[c.id];
   if (sm && state.sel === c.id) {
@@ -756,6 +844,9 @@ async function loadWiki(c) {
   }
   const quotes = (id, list) => { const el = $(id); if (el && list?.length) el.innerHTML = `<details class="wmore"${list.length <= 3 ? " open" : ""}><summary>${t("In the words of the Churches of Rome Wiki")} (${list.length})</summary>${list.map(x => `<p class="wtext quote">${esc(x)}</p>`).join("")}</details>`; };
   quotes("#w-rel", tx.rel);
+  document.querySelectorAll("#card .rsent").forEach(el => {
+    el.innerHTML = el.dataset.rs.split(",").map(i => tx.rls?.[+i]).filter(Boolean).map(x => `<p class="wtext quote">${esc(x)}</p>`).join("");
+  });
   quotes("#w-bur", tx.bur);
   html += `<p class="note">${t("Text")}: Churches of Rome Wiki, CC BY-SA · <a href="https://romanchurches.fandom.com/wiki/${encodeURIComponent(tx.t.replace(/ /g, "_"))}" target="_blank" rel="noopener">${esc(tx.t)}</a></p>`;
   box.innerHTML = `<h3>${t("Churches of Rome Wiki")}</h3>` + html;
@@ -830,9 +921,10 @@ function saveURL(push = false) {
   if (state.status.size) p.set("ns", [...state.status].map(k => k || "standing").join(","));
   if (state.flags.size) p.set("f", [...state.flags].join(","));
   if (state.holds.size) p.set("h", [...state.holds].join(","));
+  if (state.zones.size) p.set("z", [...state.zones].map(z => z || "unknown").join(","));
   if (state.dist) p.set("d", state.dist);
   if (state.yr[0] != null || state.yr[1] != null) p.set("yr", `${state.yr[0] ?? ""},${state.yr[1] ?? ""}`);
-  for (const k of ["by", "ded", "arch", "fam", "who"]) if (state[k]) p.set(k, state[k]);
+  for (const k of ["by", "ded", "arch", "fam", "rel", "who"]) if (state[k]) p.set(k, state[k]);
   if (LANG !== "en") p.set("lang", LANG);
   if (map) { const c = map.getCenter(); p.set("mv", `${c.lat.toFixed(5)},${c.lng.toFixed(5)},${map.getZoom()}`); }
   const url = location.pathname + (p.toString() ? "?" + p.toString().replace(/%2C/g, ",") : "");
@@ -842,16 +934,17 @@ function saveURL(push = false) {
 }
 function readURL() {
   const p = new URLSearchParams(location.search);
-  state.x = ["artists", "saints", "families", "people"].includes(p.get("x")) ? p.get("x") : "";
+  state.x = ["artists", "saints", "relics", "families", "people"].includes(p.get("x")) ? p.get("x") : "";
   state.q = p.get("q") || "";
   state.kinds = new Set((p.get("nk") || "").split(",").filter(Boolean).map(k => k === "none" ? "" : k));
   state.status = new Set((p.get("ns") || "").split(",").filter(Boolean).map(k => k === "standing" ? "" : k));
   state.flags = new Set((p.get("f") || "").split(",").filter(Boolean));
   state.holds = new Set((p.get("h") || "").split(",").filter(Boolean));
+  state.zones = new Set((p.get("z") || "").split(",").filter(Boolean).map(z => z === "unknown" ? "" : z));
   state.dist = p.get("d") || "";
   const yr = (p.get("yr") || ",").split(",");
   state.yr = [yr[0] === "" ? null : +yr[0], yr[1] === "" || yr[1] == null ? null : +yr[1]];
-  for (const k of ["by", "ded", "arch", "fam", "who"]) state[k] = p.get(k) || "";
+  for (const k of ["by", "ded", "arch", "fam", "rel", "who"]) state[k] = p.get(k) || "";
   const mv = (p.get("mv") || "").split(",").map(Number);
   return { sel: p.get("c") || "", mv: mv.length === 3 && mv.every(Number.isFinite) ? mv : null };
 }
@@ -894,23 +987,25 @@ function wire() {
       else setOnly(state.status, only.dataset.onlyStatus, STATUSES);
       LIMIT = 150; render(); return;
     }
-    const el = e.target.closest("[data-kind],[data-status],[data-flag],[data-holds],[data-unset],[data-id],[data-more],[data-order],[data-by],[data-ded],[data-archf],[data-fam],[data-ptag],[data-close],[data-onmap],[data-swap],[data-x],[data-exclose],[data-view-people]");
+    const el = e.target.closest("[data-zone],[data-kind],[data-status],[data-flag],[data-holds],[data-unset],[data-id],[data-more],[data-order],[data-by],[data-ded],[data-archf],[data-fam],[data-rel],[data-ptag],[data-close],[data-onmap],[data-swap],[data-x],[data-exclose],[data-view-people]");
     if (!el) return;
     if (el.tagName === "A") e.preventDefault();
     const d = el.dataset;
-    if (d.kind !== undefined) { state.kinds.has(d.kind) ? state.kinds.delete(d.kind) : state.kinds.add(d.kind); }
+    if (d.zone !== undefined) { state.zones.has(d.zone) ? state.zones.delete(d.zone) : state.zones.add(d.zone); }
+    else if (d.kind !== undefined) { state.kinds.has(d.kind) ? state.kinds.delete(d.kind) : state.kinds.add(d.kind); }
     else if (d.status !== undefined) { state.status.has(d.status) ? state.status.delete(d.status) : state.status.add(d.status); }
     else if (d.flag) { state.flags.has(d.flag) ? state.flags.delete(d.flag) : state.flags.add(d.flag); }
     else if (d.holds) { state.holds.has(d.holds) ? state.holds.delete(d.holds) : state.holds.add(d.holds); }
     else if (d.unset) {
       e.preventDefault();
-      if (d.unset === "all") { Object.assign(state, { q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(), dist: "", yr: [null, null], by: "", ded: "", arch: "", fam: "", who: "" }); $("#q").value = ""; $("#q-clear").hidden = true; }
+      if (d.unset === "all") { Object.assign(state, { q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(), zones: new Set(), dist: "", yr: [null, null], by: "", ded: "", arch: "", fam: "", rel: "", who: "" }); $("#q").value = ""; $("#q-clear").hidden = true; }
       else state[d.unset] = "";
     }
     else if (d.id) { openCard(d.id, { push: true, pan: true }); return; }
     else if (d.more) { LIMIT += 300; renderList(); return; }
     else if (d.order) { state.order = d.order; renderList(); return; }
     else if (d.by) { state.by = d.by; clearSearchOnJump(); if (state.sel) closeCard(false); if (state.x) closeExplore(false); }
+    else if (d.rel) { state.rel = d.rel; clearSearchOnJump(); if (state.sel) closeCard(false); if (state.x) closeExplore(false); }
     else if (d.fam) { state.fam = d.fam; clearSearchOnJump(); if (state.sel) closeCard(false); if (state.x) closeExplore(false); }
     else if (d.archf) { state.arch = d.archf; clearSearchOnJump(); if (state.sel) closeCard(false); if (state.x) closeExplore(false); }
     else if (d.ded) { state.ded = d.ded; clearSearchOnJump(); if (state.sel) closeCard(false); if (state.x) closeExplore(false); }
