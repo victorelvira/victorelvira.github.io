@@ -221,3 +221,10 @@ img.im { width: 100%; height: auto; aspect-ratio: 1; }
   #explore { position: fixed; inset: 0; z-index: 1500; background: var(--paper); overflow-y: auto; padding-bottom: 40px; }
   #explore .card-top { position: sticky; top: 0; z-index: 3; }
 }
+
+/* chapels and parts */
+.part { border-bottom: 1px solid #f0e9dc; padding: 4px 0; }
+.part summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.part summary b { font-weight: 600; }
+.part .psub { width: 100%; margin: 0; }
+.part .pbody { padding: 6px 0 4px 10px; }
