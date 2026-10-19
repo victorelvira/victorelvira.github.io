@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Churches of Rome · every church, chapel and oratory, standing or lost</title>
+  <link rel="icon" href="romechurches/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="An interactive atlas of every church in Rome: basilicas, parish churches, chapels, oratories, and the churches that are gone. What each one holds: paintings and sculptures, tombs, its saint, its cardinal title. Data from Wikidata, OpenStreetMap, Wikipedia, Wikimedia Commons and the Churches of Rome Wiki.">
+  <meta name="author" content="Víctor Elvira">
+  <meta name="theme-color" content="#2a1a14">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Churches of Rome">
+  <meta property="og:description" content="Every church in Rome, standing or lost, and what each one holds: art, tombs, saints, titles.">
+  <meta property="og:image" content="https://victorelvira.github.io/projects/romechurches/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://victorelvira.github.io/projects/romechurches/og.jpg">
+  <meta property="og:url" content="https://victorelvira.github.io/projects/romechurches.html">
+  <link rel="stylesheet" href="romechurches/vendor/leaflet.css">
+  <link rel="stylesheet" href="romechurches/style.css?v=0.3.1">
+</head>
+<body>
+  <nav id="navbar">
+    <a class="wordmark" href="https://victorelvira.github.io">Víctor&nbsp;Elvira</a>
+    <span class="nav-sep">·</span>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <span id="build" class="build" title="Version and last update"></span>
+  </nav>
+  <header id="bar">
+    <a class="brand" href="romechurches.html" title="Reload the atlas (clears filters)">
+      <img class="mark" src="romechurches/favicon.svg" width="26" height="26" alt="">
+      <div>
+        <strong data-i18n="Churches of Rome">Churches of Rome</strong>
+        <small data-i18n="every church, chapel and oratory, standing or lost">every church, chapel and oratory, standing or lost</small>
+      </div>
+    </a>
+    <div class="bar-tools">
+      <button type="button" id="share-view" class="chip btn" data-i18n-title="Copy a link to what you are looking at" title="Copy a link to what you are looking at"><span data-i18n="Share">Share</span></button>
+      <button type="button" id="locate" class="chip btn" data-i18n-title="Show a live dot where you are" title="Show a live dot where you are">📍<span class="lbl" data-i18n="Where I am">Where I am</span></button>
+      <span id="langsel" class="langsel" aria-label="Language">
+        <button type="button" class="langbtn active" data-lang="en">EN</button>
+        <button type="button" class="langbtn" data-lang="es">ES</button>
+        <button type="button" class="langbtn" data-lang="it">IT</button>
+      </span>
+    </div>
+  </header>
+  <main id="main">
+    <aside id="panel">
+      <div id="panel-list">
+        <div class="search-row">
+          <input id="q" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="Search a church, a saint, an artist, a person buried there" placeholder="Search a church, a saint, an artist, a person buried there">
+          <button type="button" id="q-clear" class="q-clear" aria-label="Clear" hidden>✕</button>
+        </div>
+        <div id="views" class="views">
+          <button type="button" class="view-btn active" data-view="churches" data-i18n="Churches">Churches</button>
+          <button type="button" class="view-btn" data-view="art" data-i18n="Art">Art</button>
+          <button type="button" class="view-btn" data-view="people" data-i18n="Buried">Buried</button>
+          <button type="button" class="view-btn" data-view="saints" data-i18n="Saints">Saints</button>
+        </div>
+        <div id="kinds" class="chips"></div>
+        <div class="more-row">
+          <button type="button" id="more-btn" class="chip btn" aria-expanded="false"><span data-i18n="Other filters">Other filters</span> <span id="more-sum" class="more-sum"></span></button>
+        </div>
+        <div id="more" class="more" hidden></div>
+        <div id="active" class="active-chips"></div>
+        <p id="legend" class="legend"></p>
+        <div id="list" class="list"></div>
+      </div>
+      <div id="card" class="card" hidden></div>
+      <div id="resize" class="resize" title="Drag to resize"></div>
+    </aside>
+    <div id="map"></div>
+  </main>
+  <div id="toast" class="toast" hidden></div>
+  <script src="romechurches/vendor/leaflet.js"></script>
+  <script src="romechurches/app.js?v=0.3.1"></script>
+</body>
+</html>
