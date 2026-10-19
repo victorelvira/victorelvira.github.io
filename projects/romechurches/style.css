@@ -163,7 +163,7 @@ button { font: inherit; color: inherit; }
   #main { flex-direction: column; overflow-y: auto; }
   #panel { width: 100% !important; max-width: none; min-width: 0; border-right: 0; flex: none; min-height: 60vh; }
   #map { flex: none; height: 42vh; order: -1; }
-  .list, .card { overflow: visible; }
+  .list { overflow: visible; }
   .resize { display: none; }
   .bar-tools { gap: 4px; }
   .chip { min-height: 36px; }
@@ -186,3 +186,38 @@ img.im { width: 100%; height: auto; aspect-ratio: 1; }
 .chip:hover .only, .chip:focus-within .only { opacity: 1; }
 .chip .only:hover { background: var(--ink); color: #fff; }
 @media (hover: none) { .chip .only { opacity: .7; } }
+.ment summary { list-style: none; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ment summary::-webkit-details-marker { display: none; }
+
+/* close button of the card, everywhere */
+.card-top { align-items: center; }
+.card-x { margin-left: auto; border: 0; background: none; font-size: 20px; width: 40px; height: 40px; cursor: pointer; color: var(--ink); }
+/* on a phone the record card is a sheet over the whole screen, with its own scroll and a fixed head */
+@media (max-width: 640px) {
+  #card { position: fixed; inset: 0; z-index: 1500; background: var(--paper); overflow-y: auto;
+    -webkit-overflow-scrolling: touch; padding-bottom: 40px; box-shadow: 0 -4px 20px rgba(0,0,0,.25); }
+  #card .card-top { position: sticky; top: 0; z-index: 3; }
+  body.sheet-open { overflow: hidden; }
+}
+
+/* search suggestions: one box finds churches, artists, saints, people, districts */
+.search-row { position: relative; z-index: 600; }
+.suggest { position: absolute; left: 0; right: 0; top: calc(100% + 4px); background: #fff; border: 1px solid var(--line);
+  border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.15); max-height: 60vh; overflow: auto; padding: 4px 0; }
+.sg-group { padding: 2px 0; }
+.sg-head { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding: 6px 12px 2px; }
+.sg { display: flex; align-items: center; gap: 6px; width: 100%; border: 0; background: none; text-align: left; padding: 7px 12px; cursor: pointer; font-size: 14px; }
+.sg:hover, .sg:focus { background: #f6eedf; }
+.sg .note { margin: 0 0 0 auto; font-size: 11.5px; white-space: nowrap; }
+.sg-foot { padding: 6px 12px; border-top: 1px solid #f0e9dc; }
+/* Explorar */
+.more-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.explore-btn { font-weight: 600; }
+.explore .ex-title { font-size: 16px; }
+.ex-tabs { display: flex; gap: 4px; padding: 8px 12px 0; }
+.ex-scope { padding: 4px 12px 0; }
+.ex-body { margin: 0; overflow: visible; border-top: 0; }
+@media (max-width: 640px) {
+  #explore { position: fixed; inset: 0; z-index: 1500; background: var(--paper); overflow-y: auto; padding-bottom: 40px; }
+  #explore .card-top { position: sticky; top: 0; z-index: 3; }
+}

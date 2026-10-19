@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "0.3.1";
-const BUILD_AT = "2026-10-19 10:47";
+const DATA_V = "0.5.1";
+const BUILD_AT = "2026-10-20 00:09";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -59,6 +59,15 @@ const I18N = {
     "Only in the Churches of Rome Wiki. Position: the address it gives, found by OpenStreetMap Nominatim.": "Solo en la Churches of Rome Wiki. Posición: la dirección que da, localizada con Nominatim de OpenStreetMap.",
     "Only in the Churches of Rome Wiki. Position: the street it gives, found by OpenStreetMap Nominatim. Approximate.": "Solo en la Churches of Rome Wiki. Posición: la calle que da, localizada con Nominatim de OpenStreetMap. Aproximada.",
     "Approximate.": "Aproximada.", "yes, according to the Churches of Rome Wiki": "sí, según la Churches of Rome Wiki",
+    "Art by": "Arte de", "Every church with this artist": "Todas las iglesias con este artista", "artists named in the texts": "artistas citados en los textos",
+    "Artists named in the texts": "Artistas citados en los textos",
+    "Counting also the churches whose texts name the artist.": "Contando también las iglesias cuyos textos citan al artista.",
+    "Recognised by name in the Churches of Rome Wiki and in Wikipedia; each comes with the sentence that names it.": "Reconocidos por su nombre en la Churches of Rome Wiki y en Wikipedia; cada uno va con la frase que lo cita.",
+    "Close": "Cerrar", "On the map": "En el mapa",
+    "Explore": "Explorar",
+    "Within the {n} churches the filters show. Choosing a row shows its churches.": "Dentro de las {n} iglesias que muestran los filtros. Al elegir una fila se ven sus iglesias.",
+    "Enter: search these words in every church": "Intro: buscar estas palabras en todas las iglesias",
+    "Explore by artist, saint or burial": "Explorar por artista, santo o enterramiento",
     "only": "solo", "all": "todo", "Relics": "Reliquias", "only in the Churches of Rome Wiki": "solo en la Churches of Rome Wiki", "outside the walls": "fuera de las murallas",
     "Built": "Construida", "Consecrated": "Consagrada", "Artists": "Artistas", "Loading...": "Cargando...",
     "relics": "reliquias", "a long text": "un texto largo", "Read the whole entry": "Leer la entrada completa", "In the words of the Churches of Rome Wiki": "Con las palabras de la Churches of Rome Wiki", "paragraphs": "párrafos", "Text": "Texto",
@@ -116,6 +125,15 @@ const I18N = {
     "Only in the Churches of Rome Wiki. Position: the address it gives, found by OpenStreetMap Nominatim.": "Solo nella Churches of Rome Wiki. Posizione: l'indirizzo che riporta, trovato con Nominatim di OpenStreetMap.",
     "Only in the Churches of Rome Wiki. Position: the street it gives, found by OpenStreetMap Nominatim. Approximate.": "Solo nella Churches of Rome Wiki. Posizione: la via che riporta, trovata con Nominatim di OpenStreetMap. Approssimativa.",
     "Approximate.": "Approssimativa.", "yes, according to the Churches of Rome Wiki": "sì, secondo la Churches of Rome Wiki",
+    "Art by": "Arte di", "Every church with this artist": "Tutte le chiese con questo artista", "artists named in the texts": "artisti citati nei testi",
+    "Artists named in the texts": "Artisti citati nei testi",
+    "Counting also the churches whose texts name the artist.": "Contando anche le chiese i cui testi citano l'artista.",
+    "Recognised by name in the Churches of Rome Wiki and in Wikipedia; each comes with the sentence that names it.": "Riconosciuti per nome nella Churches of Rome Wiki e in Wikipedia; ciascuno con la frase che lo cita.",
+    "Close": "Chiudi", "On the map": "Sulla mappa",
+    "Explore": "Esplora",
+    "Within the {n} churches the filters show. Choosing a row shows its churches.": "Tra le {n} chiese che mostrano i filtri. Scegliendo una riga si vedono le sue chiese.",
+    "Enter: search these words in every church": "Invio: cerca queste parole in tutte le chiese",
+    "Explore by artist, saint or burial": "Esplora per artista, santo o sepoltura",
     "only": "solo", "all": "tutto", "Relics": "Reliquie", "only in the Churches of Rome Wiki": "solo nella Churches of Rome Wiki", "outside the walls": "fuori le mura",
     "Built": "Costruita", "Consecrated": "Consacrata", "Artists": "Artisti", "Loading...": "Caricamento...",
     "relics": "reliquie", "a long text": "un testo lungo", "Read the whole entry": "Leggi la voce completa", "In the words of the Churches of Rome Wiki": "Con le parole della Churches of Rome Wiki", "paragraphs": "paragrafi", "Text": "Testo",
@@ -201,6 +219,7 @@ function searchText(c) {
   const parts = [...Object.values(c.n || {}), ...(c.alt || []), c.w_artists || "", c.w_arch || ""];
   for (const q of [...(c.ded || []), ...(c.arch || []), ...(c.bur || [])]) { const p = DB.people[q]; if (p) parts.push(...Object.values(p.n || {})); }
   for (const q of c.art || []) { const w = DB.works[q]; if (w) { parts.push(...Object.values(w.n || {})); for (const a of w.by || []) { const p = DB.people[a]; parts.push(...Object.values((p && p.n) || DB.terms[a] || {})); } } }
+  for (const q of c.ma || []) parts.push(...Object.values(DB.people[q]?.n || {}));
   if (c.dist != null) parts.push(DB.districts[c.dist]);
   if (c.muni != null) parts.push(DB.districts[c.muni]);
   return fold(parts.join(" | "));
@@ -208,7 +227,7 @@ function searchText(c) {
 
 // ------------------------------------------------------------------ state + the one predicate
 const state = {
-  view: "churches", q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(),
+  x: "", q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(),
   dist: "", yr: [null, null], by: "", ded: "", arch: "", who: "", sel: "", order: "fame",
 };
 const DIMENSIONS = [
@@ -220,7 +239,7 @@ const DIMENSIONS = [
   { id: "dist", on: () => state.dist !== "", test: c => String(c.dist ?? c.muni ?? "") === state.dist || String(c.muni ?? "") === state.dist },
   // Unknown passes, or it says it did not (CHASSIS.md section 3): an undated church passes the year filter.
   { id: "yr", on: () => state.yr[0] != null || state.yr[1] != null, test: c => c.y == null || ((state.yr[0] == null || c.y >= state.yr[0]) && (state.yr[1] == null || c.y <= state.yr[1])) },
-  { id: "by", on: () => state.by, test: c => (c.art || []).some(w => (DB.works[w]?.by || []).includes(state.by)) },
+  { id: "by", on: () => state.by, test: c => (c.art || []).some(w => (DB.works[w]?.by || []).includes(state.by)) || (c.ma || []).includes(state.by) },
   { id: "ded", on: () => state.ded, test: c => (c.ded || []).includes(state.ded) },
   { id: "arch", on: () => state.arch, test: c => (c.arch || []).includes(state.arch) },
   { id: "who", on: () => state.who, test: c => (c.bur || []).includes(state.who) },
@@ -233,6 +252,7 @@ function holds(c, h) {
   if (h === "oh") return !!(c.oh || c.svc);
   if (h === "rel") return !!c.w_nrel || (c.art || []).some(w => DB.works[w]?.kind === "relic");
   if (h === "wiki") return !!c.wiki;
+  if (h === "named") return !!(c.ma || []).length;
   return false;
 }
 // "brera cara" means both words; "a or b", "a, b" and "a | b" are alternatives (PRACTICES.md 2.1).
@@ -342,7 +362,7 @@ function renderMore() {
   const ns = counts("status", statusKey);
   const status = STATUSES.filter(s => ns.get(s) || state.status.has(s)).map(s => `<button type="button" class="chip ${state.status.has(s) ? "off" : ""}" data-status="${s}">${esc(statusLabel(s))} <span class="n">${ns.get(s) || 0}</span>${onlyBtn("status", s, state.status, STATUSES)}</button>`).join("");
   const holdsN = h => DB.churches.filter(c => passes(c, "holds") && holds(c, h)).length;
-  const hl = [["art", "works of art"], ["bur", "burials"], ["rel", "relics"], ["tit", "a cardinal title"], ["img", "a photo"], ["oh", "opening hours"], ["wiki", "a long text"]]
+  const hl = [["art", "works of art"], ["bur", "burials"], ["rel", "relics"], ["tit", "a cardinal title"], ["img", "a photo"], ["oh", "opening hours"], ["wiki", "a long text"], ["named", "artists named in the texts"]]
     .map(([h, l]) => { const n = holdsN(h); return `<button type="button" class="chip ${state.holds.has(h) ? "on" : ""}" data-holds="${h}" ${n || state.holds.has(h) ? "" : "disabled"}>${esc(t(l))} <span class="n">${n}</span></button>`; }).join("");
   const flagN = f => DB.churches.filter(c => passes(c, "flags") && (c.flags || []).includes(f)).length;
   const fl = FLAGS.map(f => { const n = flagN(f); return `<button type="button" class="chip ${state.flags.has(f) ? "on" : ""}" data-flag="${f}" ${n || state.flags.has(f) ? "" : "disabled"}>${esc(flagLabel(f))} <span class="n">${n}</span></button>`; }).join("");
@@ -358,7 +378,7 @@ function renderMore() {
     <p class="note">${esc(t("no year recorded"))}: ${DB.churches.filter(c => c.y == null).length}</p>`;
   const sum = [];
   if (state.status.size) sum.push(t("State"));
-  for (const h of state.holds) sum.push(t({ art: "works of art", bur: "burials", rel: "relics", tit: "a cardinal title", img: "a photo", oh: "opening hours", wiki: "a long text" }[h]));
+  for (const h of state.holds) sum.push(t({ art: "works of art", bur: "burials", rel: "relics", tit: "a cardinal title", img: "a photo", oh: "opening hours", wiki: "a long text", named: "artists named in the texts" }[h]));
   for (const f of state.flags) sum.push(flagLabel(f));
   if (state.dist) sum.push(DB.districts[+state.dist]);
   if (state.yr[0] != null || state.yr[1] != null) sum.push(`${state.yr[0] ?? ""}–${state.yr[1] ?? ""}`);
@@ -366,7 +386,7 @@ function renderMore() {
 }
 function renderActive() {
   const chips = [];
-  if (state.by) chips.push(["by", `${t("Works by")} ${personName(state.by)}`]);
+  if (state.by) chips.push(["by", `${t("Art by")} ${personName(state.by)}`]);
   if (state.ded) chips.push(["ded", `${t("Dedicated to:")} ${personName(state.ded)}`]);
   if (state.arch) chips.push(["arch", `${t("Architect")}: ${personName(state.arch)}`]);
   if (state.who) chips.push(["who", `${t("Buried:")} ${personName(state.who)}`]);
@@ -402,9 +422,7 @@ function render() {
 }
 function renderList() {
   const box = $("#list");
-  if (state.view === "art") return renderArtists(box);
-  if (state.view === "people") return renderPeople(box);
-  if (state.view === "saints") return renderSaints(box);
+  if (state.x) renderExplore();
   const list = sortChurches([...CURRENT]);
   if (!list.length) { box.innerHTML = `<p class="empty">${t("Nothing matches.")} <a href="#" data-unset="all">${t("Show everything")}</a></p>`; return; }
   const order = ["fame", "name", "year"].map(o => `<button type="button" class="chip ${state.order === o ? "on" : ""}" data-order="${o}">${t({ fame: "by fame", name: "by name", year: "by year" }[o])}</button>`).join("");
@@ -414,13 +432,13 @@ function renderList() {
 // The three index views read CURRENT, so they agree with the map and the counts (one predicate).
 function renderArtists(box) {
   const agg = new Map();
-  for (const c of CURRENT) for (const w of c.art || []) for (const a of DB.works[w]?.by || []) {
-    const e = agg.get(a) || { works: new Set(), churches: new Set() }; e.works.add(w); e.churches.add(c.id); agg.set(a, e);
-  }
-  const rows = [...agg.entries()].sort((a, b) => b[1].works.size - a[1].works.size || personName(a[0]).localeCompare(personName(b[0])));
+  const get = a => { if (!agg.has(a)) agg.set(a, { works: new Set(), churches: new Set(), named: new Set() }); return agg.get(a); };
+  for (const c of CURRENT) for (const w of c.art || []) for (const a of DB.works[w]?.by || []) { const e = get(a); e.works.add(w); e.churches.add(c.id); }
+  for (const c of CURRENT) for (const a of c.ma || []) { const e = get(a); e.named.add(c.id); e.churches.add(c.id); }
+  const rows = [...agg.entries()].sort((a, b) => b[1].churches.size - a[1].churches.size || b[1].works.size - a[1].works.size || personName(a[0]).localeCompare(personName(b[0])));
   const nw = new Set(CURRENT.flatMap(c => c.art || [])).size;
-  box.innerHTML = `<p class="note" style="padding:6px 12px">${esc(t("{n} works in {c} churches", { n: nw, c: CURRENT.filter(c => (c.art || []).length).length }))}</p>` +
-    rows.slice(0, 400).map(([a, e]) => { const p = DB.people[a]; return `<div class="row" data-by="${a}">${p?.img ? `${img(p.img, 120, "thumb")}` : `<div class="thumb ph">🖌</div>`}<div class="t"><b>${esc(personName(a))}</b><span>${p?.b != null || p?.d != null ? esc(`${yearStr(p.b)}–${yearStr(p.d)}`) : ""}</span></div><div class="cnt">${e.works.size} ${t("works")}<br>${e.churches.size} ${t("churches")}</div></div>`; }).join("") ||
+  box.innerHTML = `<p class="note" style="padding:6px 12px">${esc(t("{n} works in {c} churches", { n: nw, c: CURRENT.filter(c => (c.art || []).length).length }))}. ${esc(t("Counting also the churches whose texts name the artist."))}</p>` +
+    rows.slice(0, 400).map(([a, e]) => { const p = DB.people[a]; return `<div class="row" data-by="${a}">${p?.img ? `${img(p.img, 120, "thumb")}` : `<div class="thumb ph">🖌</div>`}<div class="t"><b>${esc(personName(a))}</b><span>${p?.b != null || p?.d != null ? esc(`${yearStr(p.b)}–${yearStr(p.d)}`) : ""}</span></div><div class="cnt">${e.churches.size} ${t("churches")}<br>${e.works.size ? `${e.works.size} ${t("works")}` : ""}</div></div>`; }).join("") ||
     `<p class="empty">${t("Nothing matches.")}</p>`;
 }
 let PEOPLE_TAG = "";
@@ -441,6 +459,99 @@ function renderSaints(box) {
   const rows = [...agg.entries()].sort((a, b) => b[1].length - a[1].length || personName(a[0]).localeCompare(personName(b[0])));
   box.innerHTML = `<p class="note" style="padding:6px 12px">${esc(t("{n} saints and dedications", { n: agg.size }))}</p>` +
     rows.map(([q, cs]) => { const p = DB.people[q] || {}; return `<div class="row" data-ded="${q}">${p.img ? `${img(p.img, 120, "thumb")}` : `<div class="thumb ph">✶</div>`}<div class="t"><b>${esc(personName(q))}</b><span>${esc(pick(p.desc) || "")}</span></div><div class="cnt">${cs.length} ${t("churches")}</div></div>`; }).join("");
+}
+
+// ------------------------------------------------------------------ Explorar
+// The map and the list are always churches. Explorar is the other way in: by artist, by saint, by
+// who is buried there. Every row leads back to churches, as a filter chip or as one church's card,
+// and every index counts only the churches the current filters let through.
+const EXPLORE = [["artists", "Artists"], ["saints", "Saints"], ["people", "Buried"]];
+function openExplore(x, push = true) {
+  state.x = x || state.x || "artists";
+  if (state.sel) closeCard(false);
+  $("#explore").hidden = false;
+  if (!PHONE()) $("#panel-list").hidden = true;
+  document.body.classList.toggle("sheet-open", PHONE());
+  renderExplore();
+  saveURL(push);
+}
+function closeExplore(push = true) {
+  state.x = "";
+  $("#explore").hidden = true;
+  $("#panel-list").hidden = false;
+  document.body.classList.remove("sheet-open");
+  saveURL(push);
+}
+function renderExplore() {
+  const box = $("#explore");
+  const n = CURRENT.length;
+  box.innerHTML = `<div class="card-top"><b class="ex-title">${t("Explore")}</b><button type="button" class="card-x" data-exclose="1" aria-label="${esc(t("Close"))}">✕</button></div>
+    <div class="ex-tabs">${EXPLORE.map(([k, l]) => `<button type="button" class="view-btn ${state.x === k ? "active" : ""}" data-x="${k}">${esc(t(l))}</button>`).join("")}</div>
+    <p class="note ex-scope">${esc(t("Within the {n} churches the filters show. Choosing a row shows its churches.", { n }))}</p>
+    <div id="ex-body" class="list ex-body"></div>`;
+  const body = $("#ex-body");
+  if (state.x === "saints") renderSaints(body);
+  else if (state.x === "people") renderPeople(body);
+  else renderArtists(body);
+}
+
+// ------------------------------------------------------------------ search suggestions
+// Typing finds churches, artists, saints, people buried and districts at once, grouped. Choosing a
+// suggestion does what the matching index row does; Enter keeps the words as a plain search.
+let SUGGEST_INDEX = null;
+function suggestIndex() {
+  if (SUGGEST_INDEX) return SUGGEST_INDEX;
+  const art = new Map(), sai = new Map(), bur = new Map();
+  const add = (m, q, c) => { if (!m.has(q)) m.set(q, new Set()); m.get(q).add(c); };
+  for (const c of DB.churches) {
+    for (const w of c.art || []) for (const a of DB.works[w]?.by || []) add(art, a, c.id);
+    for (const a of [...(c.ma || []), ...(c.arch || [])]) add(art, a, c.id);
+    for (const q of c.ded || []) add(sai, q, c.id);
+    for (const q of c.bur || []) add(bur, q, c.id);
+  }
+  const names = q => fold(Object.values(DB.people[q]?.n || DB.terms[q] || {}).join(" | "));
+  SUGGEST_INDEX = {
+    artists: [...art].map(([q, cs]) => ({ q, cs, s: names(q) })),
+    saints: [...sai].map(([q, cs]) => ({ q, cs, s: names(q) })),
+    people: [...bur].map(([q, cs]) => ({ q, cs, s: names(q) })),
+  };
+  return SUGGEST_INDEX;
+}
+function renderSuggest(text) {
+  const box = $("#suggest");
+  const words = fold(text).trim().split(/\s+/).filter(Boolean);
+  if (!words.length || !DB) { box.hidden = true; return; }
+  const hit = s => words.every(w => s.includes(w));
+  const ix = suggestIndex();
+  const ch = DB.churches.filter(c => hit(fold(Object.values(c.n || {}).join(" | ") + " " + (c.alt || []).join(" ")))).slice(0, 6);
+  const top = (list, k) => list.filter(e => hit(e.s)).sort((a, b) => b.cs.size - a.cs.size).slice(0, k);
+  const groups = [
+    ["Churches", ch.map(c => `<button type="button" class="sg" data-sg="c" data-v="${c.id}"><span class="dot" style="background:${KIND_COLOUR[kindKey(c)]}"></span>${esc(pick(c.n))}<span class="note">${esc(kindLabel(kindKey(c)))}</span></button>`)],
+    ["Artists", top(ix.artists, 5).map(e => `<button type="button" class="sg" data-sg="by" data-v="${e.q}">🖌 ${esc(personName(e.q))}<span class="note">${e.cs.size} ${t("churches")}</span></button>`)],
+    ["Saints", top(ix.saints, 4).map(e => `<button type="button" class="sg" data-sg="ded" data-v="${e.q}">✶ ${esc(personName(e.q))}<span class="note">${e.cs.size} ${t("churches")}</span></button>`)],
+    ["Buried", top(ix.people, 4).map(e => `<button type="button" class="sg" data-sg="who" data-v="${e.q}">✝ ${esc(personName(e.q))}<span class="note">${esc(pick(BY_ID.get([...e.cs][0])?.n))}</span></button>`)],
+    ["District", DB.districts.map((d, i) => [d, i]).filter(([d]) => hit(fold(d))).slice(0, 3).map(([d, i]) => `<button type="button" class="sg" data-sg="d" data-v="${i}">⌖ ${esc(d)}</button>`)],
+  ].filter(([, items]) => items.length);
+  box.innerHTML = groups.length
+    ? groups.map(([g, items]) => `<div class="sg-group"><div class="sg-head">${esc(t(g))}</div>${items.join("")}</div>`).join("") + `<div class="sg-foot note">${esc(t("Enter: search these words in every church"))}</div>`
+    : `<div class="sg-foot note">${esc(t("Nothing matches."))}</div>`;
+  box.hidden = false;
+}
+function pickSuggestion(kind, v) {
+  $("#suggest").hidden = true;
+  clearSearchOnJump();
+  if (kind === "c") { render(); openCard(v, { push: true, pan: true }); return; }
+  if (kind === "by") state.by = v;
+  else if (kind === "ded") state.ded = v;
+  else if (kind === "d") state.dist = String(v);
+  else if (kind === "who") {
+    const cs = [...(suggestIndex().people.find(e => e.q === v)?.cs || [])];
+    if (cs.length === 1) { render(); openCard(cs[0], { push: true, pan: true }); return; }
+    state.who = v;
+  }
+  if (state.x) closeExplore(false);
+  if (state.sel) closeCard(false);
+  LIMIT = 150; render(); saveURL(true);
 }
 
 // ------------------------------------------------------------------ the record card
@@ -520,7 +631,7 @@ async function renderCard(c) {
     c.web ? `<a href="${esc(c.web)}" target="_blank" rel="noopener">Web</a>` : "",
   ].filter(Boolean);
   const show = (arr, n) => arr.length > n ? arr.slice(0, n) : arr;
-  box.innerHTML = `<div class="card-top"><button type="button" class="chip btn" data-close="1">← ${t("Back to the list")}</button></div>
+  box.innerHTML = `<div class="card-top"><button type="button" class="chip btn" data-close="1">← ${t("Back to the list")}</button>${c.ll ? `<button type="button" class="chip btn" data-onmap="1">📍 ${t("On the map")}</button>` : ""}<button type="button" class="card-x" data-close="1" aria-label="${esc(t("Close"))}">✕</button></div>
     ${hero ? `<div class="card-hero">${img(hero, 960, "", "eager")}${c.img && c.int ? `<button type="button" class="chip btn swap" data-swap="1">${heroInterior ? t("Exterior") : t("Interior")}</button>` : ""}</div><div class="credit">${credit(hero)}</div>` : ""}
     <h2>${esc(pick(c.n) || c.id)}</h2>
     ${otherNames.length ? `<div class="alt">${esc(otherNames.join(" · "))}</div>` : ""}
@@ -529,6 +640,7 @@ async function renderCard(c) {
     <div class="summary" id="summary">${pick(c.desc) ? `<span class="note">${esc(pick(c.desc))}</span>` : ""}</div>
     ${c.wiki ? `<div class="sec" id="wiki"><h3>${t("Churches of Rome Wiki")}</h3><p class="note">${t("Loading...")}</p></div>` : ""}
     ${facts.length ? `<div class="sec"><h3>${t("Facts")}</h3><table class="facts">${facts.map(([k, v]) => `<tr><th>${esc(k)}</th><td>${v}</td></tr>`).join("")}</table></div>` : ""}
+    ${c.ma?.length ? `<div class="sec"><h3>${t("Artists named in the texts")} · ${c.ma.length}</h3><div id="w-art"><p class="note">${t("Loading...")}</p></div></div>` : ""}
     ${art.length ? `<div class="sec"><h3>${t("What is inside")} · ${art.length}</h3><div class="grid">${show(art, 60).map(workCell).join("")}</div></div>` : ""}
     ${relics.length || c.w_nrel ? `<div class="sec"><h3>${t("Relics")}</h3>${relics.length ? `<div class="grid">${relics.map(workCell).join("")}</div>` : ""}<div id="w-rel"></div></div>` : ""}
     ${!bur.length && c.w_nbur ? `<div class="sec"><h3>${t("Buried here")}</h3><div id="w-bur"></div></div>` : ""}
@@ -540,7 +652,7 @@ async function renderCard(c) {
     <div class="sec"><h3>${t("Links")}</h3><div class="links">${links.join("")}</div></div>
     <div class="sec"><h3>${t("Sources")}</h3><p class="note">Wikidata (CC0) · OpenStreetMap (ODbL) · Wikipedia (CC BY-SA) · Wikimedia Commons · Churches of Rome Wiki (CC BY-SA)</p></div>`;
   box.scrollTop = 0;
-  if (c.wiki) loadWiki(c);
+  if (c.wiki || c.ma) loadWiki(c);
   const s = await loadSummaries();
   const sm = s[c.id];
   if (sm && state.sel === c.id) {
@@ -559,7 +671,9 @@ async function loadWiki(c) {
   } catch (e) { WIKI.set(k, {}); }
   const tx = WIKI.get(k)[c.id];
   const box = $("#wiki");
-  if (!box || state.sel !== c.id) return;
+  if (state.sel !== c.id) return;
+  renderMentions(c, tx);
+  if (!box) return;
   if (!tx || !tx.p.length) { box.remove(); return; }
   const lead = tx.p.filter(([h]) => !h).slice(0, 3);
   const rest = tx.p.slice(lead.length ? tx.p.findIndex(([h]) => h) : 0);
@@ -575,21 +689,35 @@ async function loadWiki(c) {
   html += `<p class="note">${t("Text")}: Churches of Rome Wiki, CC BY-SA · <a href="https://romanchurches.fandom.com/wiki/${encodeURIComponent(tx.t.replace(/ /g, "_"))}" target="_blank" rel="noopener">${esc(tx.t)}</a></p>`;
   box.innerHTML = `<h3>${t("Churches of Rome Wiki")}</h3>` + html;
 }
+// Artists the texts name, with the sentence that names them: the texts' words, never a catalogue.
+function renderMentions(c, tx) {
+  const el = $("#w-art");
+  if (!el) return;
+  const m = tx?.ment;
+  if (!m) { el.innerHTML = ""; return; }
+  const SRC = { wiki: "Churches of Rome Wiki", wpit: "Wikipedia IT", wpen: "Wikipedia EN" };
+  const order = Object.entries(m).sort((a, b) => b[1].n - a[1].n);
+  el.innerHTML = `<p class="note">${esc(t("Recognised by name in the Churches of Rome Wiki and in Wikipedia; each comes with the sentence that names it."))}</p>` +
+    order.map(([q, e]) => `<details class="wmore ment"><summary>${pillPerson(q, "x")} <span class="note">${e.k.map(k => esc(t(k))).join(" · ")}</span></summary>${e.s.map(x => `<p class="wtext quote">${esc(x)}</p>`).join("")}<p class="note">${e.src.map(x => esc(SRC[x] || x)).join(" · ")} · <a href="#" data-by="${q}">${esc(t("Every church with this artist"))}</a></p></details>`).join("");
+}
+const PHONE = () => matchMedia("(max-width: 640px)").matches;
 let listScroll = 0;
 function openCard(id, { push = true, pan = true } = {}) {
   const c = BY_ID.get(id);
   if (!c) return;
   if (!state.sel) listScroll = $("#list").scrollTop;
+  if (state.x) { state.x = ""; $("#explore").hidden = true; }
   const prev = state.sel;
   state.sel = id;
   heroInterior = false;
-  $("#panel-list").hidden = true;
+  // on a phone the card is a sheet over everything, like the record cards of the other atlases;
+  // the list stays underneath, where the reader left it
+  if (!PHONE()) $("#panel-list").hidden = true;
   $("#card").hidden = false;
+  document.body.classList.toggle("sheet-open", PHONE());
   renderCard(c);
   restyle(prev); restyle(id);
   if (pan && c.ll && map && !map.getBounds().pad(-0.15).contains(c.ll)) map.panTo(c.ll);
-  // on a phone the card is below the map: bring its top into view
-  if (matchMedia("(max-width: 640px)").matches) $("#panel").scrollIntoView({ block: "start" });
   saveURL(push);
 }
 function closeCard(push = true) {
@@ -597,6 +725,7 @@ function closeCard(push = true) {
   state.sel = "";
   $("#card").hidden = true;
   $("#panel-list").hidden = false;
+  document.body.classList.remove("sheet-open");
   restyle(prev);
   renderList();
   $("#list").scrollTop = listScroll;
@@ -612,7 +741,7 @@ let booted = false;
 function saveURL(push = false) {
   if (!booted) return;
   const p = new URLSearchParams();
-  if (state.view !== "churches") p.set("view", state.view);
+  if (state.x) p.set("x", state.x);
   if (state.sel) p.set("c", state.sel);
   if (state.q) p.set("q", state.q);
   if (state.kinds.size) p.set("nk", [...state.kinds].map(k => k || "none").join(","));
@@ -631,7 +760,7 @@ function saveURL(push = false) {
 }
 function readURL() {
   const p = new URLSearchParams(location.search);
-  state.view = p.get("view") || "churches";
+  state.x = ["artists", "saints", "people"].includes(p.get("x")) ? p.get("x") : "";
   state.q = p.get("q") || "";
   state.kinds = new Set((p.get("nk") || "").split(",").filter(Boolean).map(k => k === "none" ? "" : k));
   state.status = new Set((p.get("ns") || "").split(",").filter(Boolean).map(k => k === "standing" ? "" : k));
@@ -658,19 +787,20 @@ function wire() {
   let qTimer;
   $("#q").addEventListener("input", e => {
     $("#q-clear").hidden = !e.target.value;
+    renderSuggest(e.target.value);
     clearTimeout(qTimer);
     qTimer = setTimeout(() => { state.q = e.target.value; LIMIT = 150; render(); }, 140);
   });
-  const clearQ = () => { $("#q").value = ""; $("#q-clear").hidden = true; state.q = ""; render(); };
+  const clearQ = () => { $("#q").value = ""; $("#q-clear").hidden = true; $("#suggest").hidden = true; state.q = ""; render(); };
   $("#q-clear").addEventListener("click", clearQ);
   $("#q").addEventListener("keydown", e => { if (e.key === "Escape") clearQ(); });
-  $("#views").addEventListener("click", e => {
-    const b = e.target.closest("[data-view]"); if (!b) return;
-    state.view = b.dataset.view;
-    document.querySelectorAll(".view-btn").forEach(x => x.classList.toggle("active", x === b));
-    if (state.sel) closeCard(false);
-    renderList(); saveURL(true);
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && state.sel && document.activeElement !== $("#q")) closeCard(true); });
+  $("#explore-btn").addEventListener("click", () => openExplore("artists"));
+  $("#suggest").addEventListener("click", e => {
+    const b = e.target.closest("[data-sg]"); if (b) pickSuggestion(b.dataset.sg, b.dataset.v);
   });
+  $("#q").addEventListener("keydown", e => { if (e.key === "Enter") $("#suggest").hidden = true; });
+  document.addEventListener("click", e => { if (!e.target.closest(".search-row")) $("#suggest").hidden = true; });
   $("#more-btn").addEventListener("click", () => {
     const box = $("#more"); box.hidden = !box.hidden; $("#more-btn").setAttribute("aria-expanded", String(!box.hidden));
   });
@@ -682,8 +812,9 @@ function wire() {
       else setOnly(state.status, only.dataset.onlyStatus, STATUSES);
       LIMIT = 150; render(); return;
     }
-    const el = e.target.closest("[data-kind],[data-status],[data-flag],[data-holds],[data-unset],[data-id],[data-more],[data-order],[data-by],[data-ded],[data-archf],[data-ptag],[data-close],[data-swap],[data-view-people]");
+    const el = e.target.closest("[data-kind],[data-status],[data-flag],[data-holds],[data-unset],[data-id],[data-more],[data-order],[data-by],[data-ded],[data-archf],[data-ptag],[data-close],[data-onmap],[data-swap],[data-x],[data-exclose],[data-view-people]");
     if (!el) return;
+    if (el.tagName === "A") e.preventDefault();
     const d = el.dataset;
     if (d.kind !== undefined) { state.kinds.has(d.kind) ? state.kinds.delete(d.kind) : state.kinds.add(d.kind); }
     else if (d.status !== undefined) { state.status.has(d.status) ? state.status.delete(d.status) : state.status.add(d.status); }
@@ -697,13 +828,16 @@ function wire() {
     else if (d.id) { openCard(d.id, { push: true, pan: true }); return; }
     else if (d.more) { LIMIT += 300; renderList(); return; }
     else if (d.order) { state.order = d.order; renderList(); return; }
-    else if (d.by) { state.by = d.by; state.view = "churches"; syncViews(); clearSearchOnJump(); if (state.sel) closeCard(false); }
-    else if (d.archf) { state.arch = d.archf; state.view = "churches"; syncViews(); clearSearchOnJump(); if (state.sel) closeCard(false); }
-    else if (d.ded) { state.ded = d.ded; state.view = "churches"; syncViews(); clearSearchOnJump(); if (state.sel) closeCard(false); }
-    else if (d.ptag !== undefined) { PEOPLE_TAG = d.ptag; renderList(); return; }
+    else if (d.by) { state.by = d.by; clearSearchOnJump(); if (state.sel) closeCard(false); if (state.x) closeExplore(false); }
+    else if (d.archf) { state.arch = d.archf; clearSearchOnJump(); if (state.sel) closeCard(false); if (state.x) closeExplore(false); }
+    else if (d.ded) { state.ded = d.ded; clearSearchOnJump(); if (state.sel) closeCard(false); if (state.x) closeExplore(false); }
+    else if (d.ptag !== undefined) { PEOPLE_TAG = d.ptag; renderExplore(); return; }
     else if (d.close) { closeCard(true); return; }
+    else if (d.x) { openExplore(d.x, false); return; }
+    else if (d.exclose) { closeExplore(true); return; }
+    else if (d.onmap) { const c = BY_ID.get(state.sel); closeCard(true); if (c?.ll) { map.setView(c.ll, Math.max(map.getZoom(), 17)); restyle(c.id); markers.get(c.id)?.openTooltip(); } return; }
     else if (d.swap) { heroInterior = !heroInterior; renderCard(BY_ID.get(state.sel)); return; }
-    else if (d.viewPeople) { e.preventDefault(); state.who = ""; state.view = "people"; syncViews(); closeCard(true); }
+    else if (d.viewPeople) { e.preventDefault(); state.who = ""; closeCard(false); openExplore("people"); return; }
     else return;
     LIMIT = 150; render();
   });
@@ -746,7 +880,7 @@ function wire() {
   });
   try { const w = localStorage.getItem("rc.panelw"); if (w) document.documentElement.style.setProperty("--panel-w", w); } catch (e) { /* private mode */ }
 }
-function syncViews() { document.querySelectorAll(".view-btn").forEach(x => x.classList.toggle("active", x.dataset.view === state.view)); }
+function syncViews() { if (state.x) openExplore(state.x, false); else { $("#explore").hidden = true; } }
 function clearSearchOnJump() { state.q = ""; $("#q").value = ""; $("#q-clear").hidden = true; }
 
 // "Where I am": a live dot, first fit to the reader and the churches around them.
