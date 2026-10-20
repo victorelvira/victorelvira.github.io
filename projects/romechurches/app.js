@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "1.0.3";
-const BUILD_AT = "2026-10-20 11:05";
+const DATA_V = "1.0.4";
+const BUILD_AT = "2026-10-20 11:34";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -127,6 +127,8 @@ const I18N = {
     "Search in this list": "Buscar en esta lista",
     "Hidden": "Ocultas",
     "Remove this filter": "Quitar este filtro",
+    "Map": "Mapa",
+    "The churches on the map, and their list": "Las iglesias en el mapa, y su lista",
     "only": "solo", "all": "todo", "Relics": "Reliquias", "only in the Churches of Rome Wiki": "solo en la Churches of Rome Wiki", "outside the walls": "fuera de las murallas",
     "Built": "Construida", "Consecrated": "Consagrada", "Artists": "Artistas", "Loading...": "Cargando...",
     "relics": "reliquias", "a long text": "un texto largo", "Read the whole entry": "Leer la entrada completa", "In the words of the Churches of Rome Wiki": "Con las palabras de la Churches of Rome Wiki", "paragraphs": "párrafos", "Text": "Texto",
@@ -252,6 +254,8 @@ const I18N = {
     "Search in this list": "Cerca in questo elenco",
     "Hidden": "Nascoste",
     "Remove this filter": "Togli questo filtro",
+    "Map": "Mappa",
+    "The churches on the map, and their list": "Le chiese sulla mappa, e il loro elenco",
     "only": "solo", "all": "tutto", "Relics": "Reliquie", "only in the Churches of Rome Wiki": "solo nella Churches of Rome Wiki", "outside the walls": "fuori le mura",
     "Built": "Costruita", "Consecrated": "Consacrata", "Artists": "Artisti", "Loading...": "Caricamento...",
     "relics": "reliquie", "a long text": "un testo lungo", "Read the whole entry": "Leggi la voce completa", "In the words of the Churches of Rome Wiki": "Con le parole della Churches of Rome Wiki", "paragraphs": "paragrafi", "Text": "Testo",
@@ -573,7 +577,8 @@ function render() {
   renderKinds();
   if (!$("#more").hidden) renderMore(); else renderMore();
   renderActive();
-  drawMap(CURRENT);
+  XSET = exploreChurchSet();
+  drawMap(XSET ? CURRENT.filter(c => XSET.has(c.id)) : CURRENT);
   computeView();
   renderLegend();
   renderList();
@@ -675,6 +680,7 @@ function openExplore(x, push = true) {
 function closeExplore(push = true) {
   state.x = "";
   state.xq = "";
+  redrawForExplore();
   $("#explore").hidden = true;
   $("#list").hidden = false;
   searchBoxFor();
@@ -693,7 +699,35 @@ function xmatch(name) {
   const words = fold(state.xq || "").trim().split(/\s+/).filter(Boolean);
   return !words.length || words.every(w => fold(name).includes(w));
 }
+// With a search inside Explore, the map shows the churches of the rows that match: type "cortona" in
+// Artists and the dots are Pietro da Cortona's churches. Computed over every church the filters let
+// through (not only those in view), so panning finds the rest.
+let XSET = null;
+function exploreChurchSet() {
+  if (!state.x || !(state.xq || "").trim()) return null;
+  const out = new Set();
+  const names = q => personName(q);
+  for (const c of CURRENT) {
+    let hit = false;
+    if (state.x === "artists") hit = [...(c.art || []).flatMap(w => DB.works[w]?.by || []), ...(c.ma || []), ...(c.arch || [])].some(q => xmatch(names(q)))
+      || (ICCD && (ICCD.by_church[c.id] || []).some(id => ICCD.works[id][3].some(q => xmatch(names(q)))));
+    else if (state.x === "saints") hit = (c.ded || []).some(q => xmatch(names(q)));
+    else if (state.x === "relics") hit = (c.rl || []).some(r => !r.gone && r.q && xmatch(relicName(r.q)));
+    else if (state.x === "families") hit = (c.parts || []).some(pid => DB.parts[pid]?.fk && xmatch(DB.families[DB.parts[pid].fk]?.n || ""));
+    else if (state.x === "people") hit = (c.bur || []).some(q => xmatch(names(q)));
+    if (hit) out.add(c.id);
+  }
+  return out;
+}
+function redrawForExplore() {
+  const next = exploreChurchSet();
+  const same = (next === null && XSET === null) || (next && XSET && next.size === XSET.size && [...next].every(x => XSET.has(x)));
+  if (same) return;
+  XSET = next;
+  drawMap(XSET ? CURRENT.filter(c => XSET.has(c.id)) : CURRENT);
+}
 function renderExplore() {
+  redrawForExplore();
   const box = $("#explore");
   const n = VIEWSET.length;
   box.innerHTML = `<div class="card-top"><b class="ex-title">${t("Explore")}</b><button type="button" class="card-x" data-exclose="1" aria-label="${esc(t("Close"))}">✕</button></div>
@@ -1214,6 +1248,14 @@ function wire() {
     else if (state.g) closeGallery(true);
   });
   $("#explore-btn").addEventListener("click", () => openExplore("artists"));
+  $("#map-btn").addEventListener("click", () => {
+    if (state.sel) closeCard(false);
+    if (state.x) closeExplore(false);
+    if (state.g) closeGallery(false);
+    litTop();
+    saveURL(true);
+    if (PHONE()) document.getElementById("map").scrollIntoView({ block: "start" });
+  });
   $("#gallery-btn").addEventListener("click", () => openGallery());
   $("#gallery").addEventListener("click", e => {
     const el = e.target.closest("[data-gk],[data-gimg],[data-go],[data-gsrc],[data-gclose],[data-gmore],[data-work]");
@@ -1332,6 +1374,7 @@ function wire() {
 function litTop() {
   $("#explore-btn").classList.toggle("on", !!state.x);
   $("#gallery-btn").classList.toggle("on", !!state.g);
+  $("#map-btn").classList.toggle("on", !state.x && !state.g);
 }
 function syncViews() {
   if (state.x) openExplore(state.x, false); else { $("#explore").hidden = true; }
@@ -1379,6 +1422,7 @@ async function boot() {
   if (mv) map.setView([mv[0], mv[1]], mv[2], { animate: false });
   booted = true;
   render();
+  litTop();
   loadIccd();
   if (sel) openCard(sel, { push: false, pan: !mv });
 }
