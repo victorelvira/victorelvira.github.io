@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "0.9.1";
-const BUILD_AT = "2026-10-20 10:44";
+const DATA_V = "0.9.2";
+const BUILD_AT = "2026-10-20 10:48";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
