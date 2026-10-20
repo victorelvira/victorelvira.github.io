@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="https://victorelvira.github.io/projects/romechurches/og.jpg">
   <meta property="og:url" content="https://victorelvira.github.io/projects/romechurches.html">
   <link rel="stylesheet" href="romechurches/vendor/leaflet.css">
-  <link rel="stylesheet" href="romechurches/style.css?v=0.7.2">
+  <link rel="stylesheet" href="romechurches/style.css?v=0.8.2">
 </head>
 <body>
   <nav id="navbar">
@@ -56,6 +56,7 @@
         <div id="kinds" class="chips"></div>
         <div class="more-row">
           <button type="button" id="explore-btn" class="chip btn explore-btn" data-i18n-title="Explore by artist, saint or burial" title="Explore by artist, saint or burial">☰ <span data-i18n="Explore">Explore</span></button>
+          <button type="button" id="gallery-btn" class="chip btn explore-btn" data-i18n-title="Every work catalogued in the churches you are looking at" title="Every work catalogued in the churches you are looking at">🖼 <span data-i18n="Catalogue">Catalogue</span></button>
           <button type="button" id="more-btn" class="chip btn" aria-expanded="false"><span data-i18n="Other filters">Other filters</span> <span id="more-sum" class="more-sum"></span></button>
         </div>
         <div id="more" class="more" hidden></div>
@@ -68,9 +69,11 @@
       <div id="resize" class="resize" title="Drag to resize"></div>
     </aside>
     <div id="map"></div>
+    <div id="gallery" class="gallery" hidden></div>
   </main>
+  <div id="lightbox" class="lightbox" hidden></div>
   <div id="toast" class="toast" hidden></div>
   <script src="romechurches/vendor/leaflet.js"></script>
-  <script src="romechurches/app.js?v=0.7.2"></script>
+  <script src="romechurches/app.js?v=0.8.2"></script>
 </body>
 </html>

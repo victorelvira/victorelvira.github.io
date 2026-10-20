@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "0.7.2";
-const BUILD_AT = "2026-10-20 01:00";
+const DATA_V = "0.8.2";
+const BUILD_AT = "2026-10-20 09:12";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -109,6 +109,11 @@ const I18N = {
     "zone:vatican": "Vaticano",
     "zone:unknown": "Zona desconocida",
     "Rome here is Roma Capitale, the comune (1,287 km²), and Vatican City. The historic centre is the 22 rioni.": "Roma aquí es Roma Capitale, el municipio (1.287 km²), y la Ciudad del Vaticano. El centro histórico son los 22 rioni.",
+    "Catalogue": "Catálogo",
+    "Catalogue of works": "Catálogo de obras",
+    "with a photograph": "con foto",
+    "{n} works in {c} churches, as catalogued in Wikidata. They follow the church filters; artists the texts only name are not works and are not here.": "{n} obras en {c} iglesias, tal como las cataloga Wikidata. Siguen los filtros de iglesias; los artistas que los textos solo citan no son obras y no están aquí.",
+    "Every work catalogued in the churches you are looking at": "Todas las obras catalogadas en las iglesias que estás viendo",
     "only": "solo", "all": "todo", "Relics": "Reliquias", "only in the Churches of Rome Wiki": "solo en la Churches of Rome Wiki", "outside the walls": "fuera de las murallas",
     "Built": "Construida", "Consecrated": "Consagrada", "Artists": "Artistas", "Loading...": "Cargando...",
     "relics": "reliquias", "a long text": "un texto largo", "Read the whole entry": "Leer la entrada completa", "In the words of the Churches of Rome Wiki": "Con las palabras de la Churches of Rome Wiki", "paragraphs": "párrafos", "Text": "Texto",
@@ -216,6 +221,11 @@ const I18N = {
     "zone:vatican": "Vaticano",
     "zone:unknown": "Zona sconosciuta",
     "Rome here is Roma Capitale, the comune (1,287 km²), and Vatican City. The historic centre is the 22 rioni.": "Roma qui è Roma Capitale, il comune (1.287 km²), e la Città del Vaticano. Il centro storico sono i 22 rioni.",
+    "Catalogue": "Catalogo",
+    "Catalogue of works": "Catalogo delle opere",
+    "with a photograph": "con foto",
+    "{n} works in {c} churches, as catalogued in Wikidata. They follow the church filters; artists the texts only name are not works and are not here.": "{n} opere in {c} chiese, come le cataloga Wikidata. Seguono i filtri delle chiese; gli artisti che i testi citano soltanto non sono opere e non sono qui.",
+    "Every work catalogued in the churches you are looking at": "Tutte le opere catalogate nelle chiese che stai guardando",
     "only": "solo", "all": "tutto", "Relics": "Reliquie", "only in the Churches of Rome Wiki": "solo nella Churches of Rome Wiki", "outside the walls": "fuori le mura",
     "Built": "Costruita", "Consecrated": "Consacrata", "Artists": "Artisti", "Loading...": "Caricamento...",
     "relics": "reliquie", "a long text": "un testo lungo", "Read the whole entry": "Leggi la voce completa", "In the words of the Churches of Rome Wiki": "Con le parole della Churches of Rome Wiki", "paragraphs": "paragrafi", "Text": "Testo",
@@ -314,7 +324,7 @@ function searchText(c) {
 
 // ------------------------------------------------------------------ state + the one predicate
 const state = {
-  x: "", fam: "", rel: "", zones: new Set(), q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(),
+  x: "", g: false, gk: new Set(), gimg: false, go: "fame", fam: "", rel: "", zones: new Set(), q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(),
   dist: "", yr: [null, null], by: "", ded: "", arch: "", who: "", sel: "", order: "fame",
 };
 const DIMENSIONS = [
@@ -514,6 +524,7 @@ function render() {
   const placeless = CURRENT.filter(c => !c.ll).length;
   $("#legend").innerHTML = `${esc(t("{n} of {t} churches", { n: CURRENT.length, t: DB.churches.length }))}. ${esc(t("Dot: one church; size: how many Wikipedias write about it; colour: kind; hollow: no longer a church; dashed: lost; faint: approximate position."))}${placeless ? " " + esc(t("{n} without a position, listed but not on the map", { n: placeless })) + "." : ""}`;
   renderList();
+  renderGallery();
   saveURL();
 }
 function renderList() {
@@ -618,6 +629,85 @@ function renderExplore() {
   else if (state.x === "families") renderFamilies(body);
   else if (state.x === "relics") renderRelics(body);
   else renderArtists(body);
+}
+
+// ------------------------------------------------------------------ the catalogue of works
+// Every catalogued work in the churches the filters show, as a gallery. It is a view of the same
+// churches (one predicate): narrowing the churches narrows the works. Its own controls only choose
+// among the works: kind, photograph, order. Events (a conclave) are not works and are not here.
+const GKINDS = ["painting", "fresco", "sculpture", "tomb", "mosaic", "altar", "relic", "object", "architecture", "other", ""];
+let GLIMIT = 120;
+function galleryWorks() {
+  const seen = new Map();
+  for (const c of CURRENT) for (const w of c.art || []) {
+    const x = DB.works[w];
+    if (!x || seen.has(w)) continue;
+    if (state.by && !(x.by || []).includes(state.by) && !(c.ma || []).includes(state.by)) continue;
+    seen.set(w, c.id);
+  }
+  return [...seen];
+}
+function gpasses(w) {
+  const x = DB.works[w];
+  if (state.gk.size && !state.gk.has(x.kind || "")) return false;
+  if (state.gimg && !x.img) return false;
+  return true;
+}
+function openGallery(push = true) {
+  state.g = true;
+  if (state.sel) closeCard(false);
+  if (state.x) closeExplore(false);
+  $("#gallery").hidden = false;
+  document.body.classList.toggle("sheet-open", PHONE());
+  GLIMIT = 120;
+  renderGallery();
+  saveURL(push);
+}
+function closeGallery(push = true) {
+  state.g = false;
+  $("#gallery").hidden = true;
+  document.body.classList.remove("sheet-open");
+  saveURL(push);
+}
+function renderGallery() {
+  if (!state.g) return;
+  const all = galleryWorks();
+  const kc = new Map();
+  for (const [w] of all) { const k = DB.works[w].kind || ""; kc.set(k, (kc.get(k) || 0) + 1); }
+  let list = all.filter(([w]) => gpasses(w));
+  const yr = w => DB.works[w].y ?? 9999;
+  if (state.go === "year") list.sort((a, b) => yr(a[0]) - yr(b[0]));
+  else list.sort((a, b) => (DB.works[b[0]].sl || 0) - (DB.works[a[0]].sl || 0) || (DB.works[b[0]].img ? 1 : 0) - (DB.works[a[0]].img ? 1 : 0));
+  const nimg = all.filter(([w]) => DB.works[w].img).length;
+  const chips = GKINDS.filter(k => kc.get(k) || state.gk.has(k)).map(k => `<button type="button" class="chip ${state.gk.has(k) ? "on" : ""}" data-gk="${k}">${esc(k ? t(k) : t("unknown kind"))} <span class="n">${kc.get(k) || 0}</span></button>`).join("");
+  const cell = ([w, cid]) => {
+    const x = DB.works[w], c = BY_ID.get(cid);
+    const by = (x.by || []).map(personName).join(", ");
+    return `<div class="gcell"><button type="button" class="gimg" data-work="${w}" data-wc="${cid}">${x.img ? img(x.img, 330, "im") : `<div class="im ph">🖼</div>`}</button>
+      <b>${esc(pick(x.n) || w)}</b><span>${esc([by, dateStr(x.y, x.yp)].filter(Boolean).join(" · "))}</span>
+      <a href="#" class="gchurch" data-open="${cid}">${esc(pick(c?.n))}</a></div>`;
+  };
+  $("#gallery").innerHTML = `<div class="card-top"><b class="ex-title">${t("Catalogue of works")}</b><button type="button" class="card-x" data-gclose="1" aria-label="${esc(t("Close"))}">✕</button></div>
+    <div class="gctl"><div class="chips">${chips}</div>
+      <div class="chips"><button type="button" class="chip ${state.gimg ? "on" : ""}" data-gimg="1">${t("with a photograph")} <span class="n">${nimg}</span></button>
+      ${["fame", "year"].map(o => `<button type="button" class="chip ${state.go === o ? "on" : ""}" data-go="${o}">${t({ fame: "by fame", year: "by year" }[o])}</button>`).join("")}</div>
+      <p class="note">${esc(t("{n} works in {c} churches, as catalogued in Wikidata. They follow the church filters; artists the texts only name are not works and are not here.", { n: list.length, c: new Set(list.map(e => e[1])).size }))}</p></div>
+    <div class="ggrid">${list.slice(0, GLIMIT).map(cell).join("") || `<p class="empty">${t("Nothing matches.")}</p>`}</div>
+    ${list.length > GLIMIT ? `<a class="more-link" data-gmore="1">${t("Show more")} (${list.length - GLIMIT})</a>` : ""}`;
+}
+// one work, large: the picture, its credit, what it is, and the way to its church
+function openWork(w, cid) {
+  const x = DB.works[w], c = BY_ID.get(cid);
+  const by = (x.by || []).map(q => `<span class="pill ${DB.people[q]?.img ? "" : "noimg"}" data-by="${q}">${DB.people[q]?.img ? `<img src="${thumb(DB.people[q].img, 120)}" alt="">` : ""}${esc(personName(q))}</span>`).join("");
+  const box = $("#lightbox");
+  box.innerHTML = `<div class="lb-card"><button type="button" class="card-x lb-x" data-lbclose="1" aria-label="${esc(t("Close"))}">✕</button>
+    ${x.img ? `<div class="lb-img">${img(x.img, 960, "", "eager")}</div><div class="credit">${credit(x.img)}</div>` : ""}
+    <div class="lb-body"><h2>${esc(pick(x.n) || w)}</h2>
+      <p class="meta">${x.kind ? `<span class="badge">${esc(t(x.kind))}</span>` : ""} ${esc(dateStr(x.y, x.yp))}</p>
+      <div>${by}</div>
+      <p><a href="#" data-open="${cid}" data-lbclose="1">⛪ ${esc(pick(c?.n))}</a></p>
+      <p class="links">${x.wp ? `<a href="${esc(x.wp)}" target="_blank" rel="noopener">Wikipedia</a>` : ""}<a href="https://www.wikidata.org/wiki/${w}" target="_blank" rel="noopener">Wikidata</a></p></div></div>`;
+  box.hidden = false;
 }
 
 // ------------------------------------------------------------------ search suggestions
@@ -880,6 +970,7 @@ function openCard(id, { push = true, pan = true } = {}) {
   if (!c) return;
   if (!state.sel) listScroll = $("#list").scrollTop;
   if (state.x) { state.x = ""; $("#explore").hidden = true; }
+  if (state.g) { state.g = false; $("#gallery").hidden = true; }
   const prev = state.sel;
   state.sel = id;
   heroInterior = false;
@@ -915,6 +1006,7 @@ function saveURL(push = false) {
   if (!booted) return;
   const p = new URLSearchParams();
   if (state.x) p.set("x", state.x);
+  if (state.g) p.set("g", [...state.gk].map(k => k || "none").join(",") || "all");
   if (state.sel) p.set("c", state.sel);
   if (state.q) p.set("q", state.q);
   if (state.kinds.size) p.set("nk", [...state.kinds].map(k => k || "none").join(","));
@@ -934,6 +1026,9 @@ function saveURL(push = false) {
 }
 function readURL() {
   const p = new URLSearchParams(location.search);
+  const g = p.get("g");
+  state.g = !!g;
+  state.gk = new Set(g && g !== "all" ? g.split(",").map(k => k === "none" ? "" : k) : []);
   state.x = ["artists", "saints", "relics", "families", "people"].includes(p.get("x")) ? p.get("x") : "";
   state.q = p.get("q") || "";
   state.kinds = new Set((p.get("nk") || "").split(",").filter(Boolean).map(k => k === "none" ? "" : k));
@@ -969,8 +1064,31 @@ function wire() {
   const clearQ = () => { $("#q").value = ""; $("#q-clear").hidden = true; $("#suggest").hidden = true; state.q = ""; render(); };
   $("#q-clear").addEventListener("click", clearQ);
   $("#q").addEventListener("keydown", e => { if (e.key === "Escape") clearQ(); });
-  document.addEventListener("keydown", e => { if (e.key === "Escape" && state.sel && document.activeElement !== $("#q")) closeCard(true); });
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape" || document.activeElement === $("#q")) return;
+    if (!$("#lightbox").hidden) $("#lightbox").hidden = true;
+    else if (state.sel) closeCard(true);
+    else if (state.g) closeGallery(true);
+  });
   $("#explore-btn").addEventListener("click", () => openExplore("artists"));
+  $("#gallery-btn").addEventListener("click", () => openGallery());
+  $("#gallery").addEventListener("click", e => {
+    const el = e.target.closest("[data-gk],[data-gimg],[data-go],[data-gclose],[data-gmore],[data-work]");
+    if (!el) return;
+    const d = el.dataset;
+    if (d.work) { openWork(d.work, d.wc); return; }
+    if (d.gclose) { closeGallery(true); return; }
+    if (d.gmore) { GLIMIT += 240; renderGallery(); return; }
+    if (d.gk !== undefined) state.gk.has(d.gk) ? state.gk.delete(d.gk) : state.gk.add(d.gk);
+    else if (d.gimg) state.gimg = !state.gimg;
+    else if (d.go) state.go = d.go;
+    GLIMIT = 120; renderGallery(); saveURL();
+  });
+  $("#lightbox").addEventListener("click", e => {
+    const by = e.target.closest("[data-by]");
+    if (by) { $("#lightbox").hidden = true; state.by = by.dataset.by; LIMIT = 150; render(); return; }
+    if (e.target.closest("[data-lbclose]") || e.target === $("#lightbox")) $("#lightbox").hidden = true;
+  });
   $("#suggest").addEventListener("click", e => {
     const b = e.target.closest("[data-sg]"); if (b) pickSuggestion(b.dataset.sg, b.dataset.v);
   });
@@ -1058,7 +1176,10 @@ function wire() {
   });
   try { const w = localStorage.getItem("rc.panelw"); if (w) document.documentElement.style.setProperty("--panel-w", w); } catch (e) { /* private mode */ }
 }
-function syncViews() { if (state.x) openExplore(state.x, false); else { $("#explore").hidden = true; } }
+function syncViews() {
+  if (state.x) openExplore(state.x, false); else { $("#explore").hidden = true; }
+  if (state.g) openGallery(false); else { $("#gallery").hidden = true; }
+}
 function clearSearchOnJump() { state.q = ""; $("#q").value = ""; $("#q-clear").hidden = true; }
 
 // "Where I am": a live dot, first fit to the reader and the churches around them.
