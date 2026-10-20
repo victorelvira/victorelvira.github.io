@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "0.9.2";
-const BUILD_AT = "2026-10-20 10:48";
+const DATA_V = "1.0.0";
+const BUILD_AT = "2026-10-20 10:57";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -1065,6 +1065,8 @@ async function shareChurch(c) {
 }
 let listScroll = 0;
 function openCard(id, { push = true, pan = true } = {}) {
+  // an id that was merged into another opens the church it became (data/ids_redirect.csv)
+  if (!BY_ID.get(id) && DB.redirect?.[id]) id = DB.redirect[id];
   const c = BY_ID.get(id);
   if (!c) return;
   if (!state.sel) listScroll = $("#list").scrollTop;
