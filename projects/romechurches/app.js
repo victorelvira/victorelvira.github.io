@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "1.0.0";
-const BUILD_AT = "2026-10-20 10:57";
+const DATA_V = "1.0.3";
+const BUILD_AT = "2026-10-20 11:05";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -124,6 +124,9 @@ const I18N = {
     "Wikidata and the national catalogue": "Wikidata y catálogo nacional",
     "Wikidata only": "Solo Wikidata",
     "Share this church": "Comparte esta iglesia",
+    "Search in this list": "Buscar en esta lista",
+    "Hidden": "Ocultas",
+    "Remove this filter": "Quitar este filtro",
     "only": "solo", "all": "todo", "Relics": "Reliquias", "only in the Churches of Rome Wiki": "solo en la Churches of Rome Wiki", "outside the walls": "fuera de las murallas",
     "Built": "Construida", "Consecrated": "Consagrada", "Artists": "Artistas", "Loading...": "Cargando...",
     "relics": "reliquias", "a long text": "un texto largo", "Read the whole entry": "Leer la entrada completa", "In the words of the Churches of Rome Wiki": "Con las palabras de la Churches of Rome Wiki", "paragraphs": "párrafos", "Text": "Texto",
@@ -246,6 +249,9 @@ const I18N = {
     "Wikidata and the national catalogue": "Wikidata e catalogo nazionale",
     "Wikidata only": "Solo Wikidata",
     "Share this church": "Condividi questa chiesa",
+    "Search in this list": "Cerca in questo elenco",
+    "Hidden": "Nascoste",
+    "Remove this filter": "Togli questo filtro",
     "only": "solo", "all": "tutto", "Relics": "Reliquie", "only in the Churches of Rome Wiki": "solo nella Churches of Rome Wiki", "outside the walls": "fuori le mura",
     "Built": "Costruita", "Consecrated": "Consacrata", "Artists": "Artisti", "Loading...": "Caricamento...",
     "relics": "reliquie", "a long text": "un testo lungo", "Read the whole entry": "Leggi la voce completa", "In the words of the Churches of Rome Wiki": "Con le parole della Churches of Rome Wiki", "paragraphs": "paragrafi", "Text": "Testo",
@@ -344,7 +350,7 @@ function searchText(c) {
 
 // ------------------------------------------------------------------ state + the one predicate
 const state = {
-  follow: true, x: "", g: false, gk: new Set(), gimg: false, go: "fame", fam: "", rel: "", zones: new Set(), q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(),
+  follow: true, x: "", xq: "", g: false, gk: new Set(), gimg: false, go: "fame", fam: "", rel: "", zones: new Set(), q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(),
   dist: "", yr: [null, null], by: "", ded: "", arch: "", who: "", sel: "", order: "fame",
 };
 const DIMENSIONS = [
@@ -515,17 +521,28 @@ function renderMore() {
   if (state.yr[0] != null || state.yr[1] != null) sum.push(`${state.yr[0] ?? ""}–${state.yr[1] ?? ""}`);
   $("#more-sum").textContent = sum.length ? "· " + sum.join(" · ") : "";
 }
+// Every filter that is on is a chip with a cross, in one row above the list: what you searched, the
+// kinds or states hidden, what the church must hold, the zone, the years, and the person, saint,
+// family or relic you chose. The cross undoes that one thing; "Show everything" undoes them all.
 function renderActive() {
   const chips = [];
+  if (state.q) chips.push(["q", `🔍 «${state.q}»`]);
+  if (state.kinds.size) chips.push(["kinds", `${t("Hidden")}: ${[...state.kinds].map(kindLabel).join(", ")}`]);
+  if (state.status.size) chips.push(["status", `${t("Hidden")}: ${[...state.status].map(statusLabel).join(", ")}`]);
+  for (const z of state.zones) chips.push(["zone:" + z, t("zone:" + (z || "unknown"))]);
+  if (state.dist) chips.push(["dist", DB.districts[+state.dist]]);
+  if (state.yr[0] != null || state.yr[1] != null) chips.push(["yr", `${t("Founded")} ${state.yr[0] ?? "…"}–${state.yr[1] ?? "…"}`]);
+  const HOLD = { art: "works of art", bur: "burials", rel: "relics", tit: "a cardinal title", img: "a photo", oh: "opening hours", wiki: "a long text", named: "artists named in the texts" };
+  for (const h of state.holds) chips.push(["hold:" + h, `${t("Holds")}: ${t(HOLD[h] || h)}`]);
+  for (const f of state.flags) chips.push(["flag:" + f, flagLabel(f)]);
   if (state.by) chips.push(["by", `${t("Art by")} ${personName(state.by)}`]);
   if (state.ded) chips.push(["ded", `${t("Dedicated to:")} ${personName(state.ded)}`]);
   if (state.rel) chips.push(["rel", `${t("Relics of")} ${relicName(state.rel)}`]);
   if (state.fam) chips.push(["fam", `${t("Family")}: ${DB.families[state.fam]?.n || state.fam}`]);
   if (state.arch) chips.push(["arch", `${t("Architect")}: ${personName(state.arch)}`]);
   if (state.who) chips.push(["who", `${t("Buried:")} ${personName(state.who)}`]);
-  const any = chips.length || state.q || state.kinds.size || state.status.size || state.flags.size || state.holds.size || state.dist || state.arch || state.fam || state.rel || state.zones.size || state.yr[0] != null || state.yr[1] != null;
-  $("#active").innerHTML = chips.map(([k, l]) => `<button type="button" class="chip" data-unset="${k}">${esc(l)} ✕</button>`).join("") +
-    (any ? `<button type="button" class="chip" data-unset="all">${t("Show everything")}</button>` : "");
+  $("#active").innerHTML = chips.map(([k, l]) => `<button type="button" class="chip" data-unset="${esc(k)}" title="${esc(t("Remove this filter"))}">${esc(l)}<span class="x">✕</span></button>`).join("") +
+    (chips.length > 1 ? `<button type="button" class="chip" data-unset="all">${t("Show everything")}</button>` : "");
 }
 function personName(q) { return pick(DB.people[q]?.n || DB.terms[q]) || q; }
 
@@ -583,7 +600,7 @@ function renderArtists(box) {
   const get = a => { if (!agg.has(a)) agg.set(a, { works: new Set(), churches: new Set(), named: new Set() }); return agg.get(a); };
   for (const c of VIEWSET) for (const w of c.art || []) for (const a of DB.works[w]?.by || []) { const e = get(a); e.works.add(w); e.churches.add(c.id); }
   for (const c of VIEWSET) for (const a of c.ma || []) { const e = get(a); e.named.add(c.id); e.churches.add(c.id); }
-  const rows = [...agg.entries()].sort((a, b) => b[1].churches.size - a[1].churches.size || b[1].works.size - a[1].works.size || personName(a[0]).localeCompare(personName(b[0])));
+  const rows = [...agg.entries()].filter(([a]) => xmatch(personName(a))).sort((a, b) => b[1].churches.size - a[1].churches.size || b[1].works.size - a[1].works.size || personName(a[0]).localeCompare(personName(b[0])));
   const nw = new Set(VIEWSET.flatMap(c => c.art || [])).size;
   box.innerHTML = `<p class="note" style="padding:6px 12px">${esc(t("{n} works in {c} churches", { n: nw, c: VIEWSET.filter(c => (c.art || []).length).length }))}. ${esc(t("Counting also the churches whose texts name the artist."))}</p>` +
     rows.slice(0, 400).map(([a, e]) => { const p = DB.people[a]; return `<div class="row" data-by="${a}">${p?.img ? `${img(p.img, 120, "thumb")}` : `<div class="thumb ph">🖌</div>`}<div class="t"><b>${esc(personName(a))}</b><span>${p?.b != null || p?.d != null ? esc(`${yearStr(p.b)}–${yearStr(p.d)}`) : ""}</span></div><div class="cnt">${e.churches.size} ${t("churches")}<br>${e.works.size ? `${e.works.size} ${t("works")}` : ""}</div></div>`; }).join("") ||
@@ -595,7 +612,7 @@ function renderPeople(box) {
   for (const c of VIEWSET) for (const p of c.bur || []) { const e = agg.get(p) || []; e.push(c.id); agg.set(p, e); }
   const tags = ["", "pope", "cardinal", "saint", "artist", "musician", "writer"];
   const tagN = tg => [...agg.keys()].filter(p => !tg || (DB.people[p]?.tags || []).includes(tg)).length;
-  let rows = [...agg.entries()].filter(([p]) => !PEOPLE_TAG || (DB.people[p]?.tags || []).includes(PEOPLE_TAG));
+  let rows = [...agg.entries()].filter(([p]) => (!PEOPLE_TAG || (DB.people[p]?.tags || []).includes(PEOPLE_TAG)) && xmatch(personName(p)));
   rows.sort((a, b) => (DB.people[b[0]]?.sl || 0) - (DB.people[a[0]]?.sl || 0));
   box.innerHTML = `<div class="chips" style="padding:6px 12px">${tags.map(tg => `<button type="button" class="chip ${PEOPLE_TAG === tg ? "on" : ""}" data-ptag="${tg}">${esc(tg ? t(tg) : t("everyone"))} <span class="n">${tagN(tg)}</span></button>`).join("")}</div>
     <p class="note" style="padding:0 12px">${esc(t("{n} people in {c} churches", { n: agg.size, c: VIEWSET.filter(c => (c.bur || []).length).length }))}</p>` +
@@ -613,7 +630,7 @@ function renderRelics(box) {
     if (!agg.has(r.q)) agg.set(r.q, { cs: new Set(), kinds: new Set() });
     agg.get(r.q).cs.add(c.id); agg.get(r.q).kinds.add(r.k);
   }
-  const rows = [...agg.entries()].sort((a, b) => b[1].cs.size - a[1].cs.size || relicName(a[0]).localeCompare(relicName(b[0])));
+  const rows = [...agg.entries()].filter(([q]) => xmatch(relicName(q))).sort((a, b) => b[1].cs.size - a[1].cs.size || relicName(a[0]).localeCompare(relicName(b[0])));
   box.innerHTML = `<p class="note" style="padding:6px 12px">${esc(t("Relics read in the texts (\"the relics of St X\") and saints buried in the church. Not shown: {n} whose saint the texts do not name unambiguously, and those the texts say have left.", { n: unlinked }))}</p>` +
     (rows.map(([q, e]) => { const p = DB.people[q]; return `<div class="row" data-rel="${q}">${p?.img ? img(p.img, 120, "thumb") : `<div class="thumb ph">${q.startsWith("relic:") ? "✝" : "✶"}</div>`}<div class="t"><b>${esc(relicName(q))}</b><span>${esc([...e.kinds].map(k => t("relic:" + k)).join(" · "))}</span></div><div class="cnt">${e.cs.size} ${t("churches")}</div></div>`; }).join("") ||
      `<p class="empty">${t("Nothing matches.")}</p>`);
@@ -623,7 +640,7 @@ function renderFamilies(box) {
   const rows = Object.entries(DB.families).map(([fk, f]) => {
     const parts = f.parts.filter(pid => inView.has(DB.parts[pid]?.c));
     return [fk, f, parts, new Set(parts.map(pid => DB.parts[pid].c))];
-  }).filter(r => r[2].length).sort((a, b) => b[3].size - a[3].size || b[2].length - a[2].length || a[1].n.localeCompare(b[1].n));
+  }).filter(r => r[2].length && xmatch(r[1].n)).sort((a, b) => b[3].size - a[3].size || b[2].length - a[2].length || a[1].n.localeCompare(b[1].n));
   box.innerHTML = `<p class="note" style="padding:6px 12px">${esc(t("Families who founded or owned a chapel, as the Churches of Rome Wiki names them. The same name is shown as one family."))}</p>` +
     (rows.map(([fk, f, parts, cs]) => `<div class="row" data-fam="${fk}"><div class="thumb ph">⚜</div><div class="t"><b>${esc(f.n)}</b><span>${esc(parts.map(pid => DB.parts[pid].n).slice(0, 3).join(" · "))}</span></div><div class="cnt">${parts.length} ${t("chapels")}<br>${cs.size} ${t("churches")}</div></div>`).join("") ||
      `<p class="empty">${t("Nothing matches.")}</p>`);
@@ -631,7 +648,7 @@ function renderFamilies(box) {
 function renderSaints(box) {
   const agg = new Map();
   for (const c of VIEWSET) for (const s of c.ded || []) { const e = agg.get(s) || []; e.push(c.id); agg.set(s, e); }
-  const rows = [...agg.entries()].sort((a, b) => b[1].length - a[1].length || personName(a[0]).localeCompare(personName(b[0])));
+  const rows = [...agg.entries()].filter(([q]) => xmatch(personName(q))).sort((a, b) => b[1].length - a[1].length || personName(a[0]).localeCompare(personName(b[0])));
   box.innerHTML = `<p class="note" style="padding:6px 12px">${esc(t("{n} saints and dedications", { n: agg.size }))}</p>` +
     rows.map(([q, cs]) => { const p = DB.people[q] || {}; return `<div class="row" data-ded="${q}">${p.img ? `${img(p.img, 120, "thumb")}` : `<div class="thumb ph">✶</div>`}<div class="t"><b>${esc(personName(q))}</b><span>${esc(pick(p.desc) || "")}</span></div><div class="cnt">${cs.length} ${t("churches")}</div></div>`; }).join("");
 }
@@ -642,22 +659,39 @@ function renderSaints(box) {
 // and every index counts only the churches the current filters let through.
 const EXPLORE = [["artists", "Artists"], ["saints", "Saints"], ["relics", "Relics"], ["families", "Families"], ["people", "Buried"]];
 function openExplore(x, push = true) {
+  const was = state.x;
   state.x = x || state.x || "artists";
   if (state.sel) closeCard(false);
+  if (state.g) closeGallery(false);
   $("#explore").hidden = false;
-  if (!PHONE()) $("#panel-list").hidden = true;
-  document.body.classList.toggle("sheet-open", PHONE());
+  $("#list").hidden = true;
+  // the one search box now searches this index; the churches' own search is kept and comes back
+  if (!was) { state.xq = ""; }
+  searchBoxFor();
   renderExplore();
   saveURL(push);
   litTop();
 }
 function closeExplore(push = true) {
   state.x = "";
+  state.xq = "";
   $("#explore").hidden = true;
-  $("#panel-list").hidden = false;
-  document.body.classList.remove("sheet-open");
+  $("#list").hidden = false;
+  searchBoxFor();
+  renderList();
   saveURL(push);
   litTop();
+}
+// What the search box searches: the churches, or, with Explore open, the rows of the index.
+function searchBoxFor() {
+  const q = $("#q");
+  q.value = state.x ? state.xq : state.q;
+  q.placeholder = state.x ? t("Search in this list") : t("Search a church, a saint, an artist, a person buried there");
+  $("#q-clear").hidden = !q.value;
+}
+function xmatch(name) {
+  const words = fold(state.xq || "").trim().split(/\s+/).filter(Boolean);
+  return !words.length || words.every(w => fold(name).includes(w));
 }
 function renderExplore() {
   const box = $("#explore");
@@ -1161,11 +1195,16 @@ function wire() {
   let qTimer;
   $("#q").addEventListener("input", e => {
     $("#q-clear").hidden = !e.target.value;
+    if (state.x) { state.xq = e.target.value; clearTimeout(qTimer); qTimer = setTimeout(renderExplore, 120); return; }
     renderSuggest(e.target.value);
     clearTimeout(qTimer);
     qTimer = setTimeout(() => { state.q = e.target.value; LIMIT = 150; render(); }, 140);
   });
-  const clearQ = () => { $("#q").value = ""; $("#q-clear").hidden = true; $("#suggest").hidden = true; state.q = ""; render(); };
+  const clearQ = () => {
+    $("#q").value = ""; $("#q-clear").hidden = true; $("#suggest").hidden = true;
+    if (state.x) { state.xq = ""; renderExplore(); return; }
+    state.q = ""; render();
+  };
   $("#q-clear").addEventListener("click", clearQ);
   $("#q").addEventListener("keydown", e => { if (e.key === "Escape") clearQ(); });
   document.addEventListener("keydown", e => {
@@ -1223,6 +1262,13 @@ function wire() {
     else if (d.unset) {
       e.preventDefault();
       if (d.unset === "all") { Object.assign(state, { q: "", kinds: new Set(), status: new Set(), flags: new Set(), holds: new Set(), zones: new Set(), dist: "", yr: [null, null], by: "", ded: "", arch: "", fam: "", rel: "", who: "" }); $("#q").value = ""; $("#q-clear").hidden = true; }
+      else if (d.unset === "q") { state.q = ""; if (!state.x) { $("#q").value = ""; $("#q-clear").hidden = true; } }
+      else if (d.unset === "kinds") state.kinds = new Set();
+      else if (d.unset === "status") state.status = new Set();
+      else if (d.unset === "yr") state.yr = [null, null];
+      else if (d.unset.startsWith("zone:")) state.zones.delete(d.unset.slice(5));
+      else if (d.unset.startsWith("hold:")) state.holds.delete(d.unset.slice(5));
+      else if (d.unset.startsWith("flag:")) state.flags.delete(d.unset.slice(5));
       else state[d.unset] = "";
     }
     else if (d.id) { openCard(d.id, { push: true, pan: true }); return; }

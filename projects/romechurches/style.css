@@ -217,10 +217,10 @@ img.im { width: 100%; height: auto; aspect-ratio: 1; }
 .ex-tabs { display: flex; gap: 4px; padding: 8px 12px 0; }
 .ex-scope { padding: 4px 12px 0; }
 .ex-body { margin: 0; overflow: visible; border-top: 0; }
-@media (max-width: 640px) {
-  #explore { position: fixed; inset: 0; z-index: 1500; background: var(--paper); overflow-y: auto; padding-bottom: 40px; }
-  #explore .card-top { position: sticky; top: 0; z-index: 3; }
-}
+/* Explore takes the list's place, under the search box and the chips, on a desktop and on a phone */
+#explore { flex: 1; min-height: 0; overflow: auto; margin: 0 -12px; border-top: 1px solid var(--line); }
+#explore .card-top { position: sticky; top: 0; z-index: 3; background: var(--paper); }
+@media (max-width: 640px) { #explore { overflow: visible; } }
 
 /* chapels and parts */
 .part { border-bottom: 1px solid #f0e9dc; padding: 4px 0; }
@@ -292,3 +292,19 @@ ul.iccd li { padding: 3px 0; }
 
 /* the share icon of artatlas, the same everywhere in the family */
 .ic-share { width: 12px; height: 12px; fill: currentColor; stroke: currentColor; }
+
+.active-chips .chip { max-width: 100%; }
+.active-chips .chip .x { margin-left: 4px; font-weight: 700; }
+@media (max-width: 640px) {
+  .brand { min-width: 0; flex: 1 1 auto; }
+  .brand > div { min-width: 0; overflow: hidden; }
+  .brand strong { overflow: hidden; text-overflow: ellipsis; font-size: 14px; }
+  .topnav { flex: none; }
+  .bar-tools { flex: none; }
+  .topbtn { padding: 2px 5px; }
+  #share-view, #locate { padding: 4px 3px; }
+  .langbtn { padding: 4px 4px; }
+}
+@media (max-width: 640px) {
+  .brand strong { white-space: normal; text-overflow: clip; font-size: 14px; line-height: 1.05; max-width: 92px; }
+}
