@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "0.9.0";
-const BUILD_AT = "2026-10-20 10:02";
+const DATA_V = "0.9.1";
+const BUILD_AT = "2026-10-20 10:44";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -123,6 +123,7 @@ const I18N = {
     "{n} works in {c} churches, from Wikidata and the national catalogue (ICCD). They follow the church filters; artists the texts only name are not works and are not here.": "{n} obras en {c} iglesias, de Wikidata y del catálogo nacional (ICCD). Siguen los filtros de iglesias; los artistas que los textos solo citan no son obras y no están aquí.",
     "Wikidata and the national catalogue": "Wikidata y catálogo nacional",
     "Wikidata only": "Solo Wikidata",
+    "Share this church": "Comparte esta iglesia",
     "only": "solo", "all": "todo", "Relics": "Reliquias", "only in the Churches of Rome Wiki": "solo en la Churches of Rome Wiki", "outside the walls": "fuera de las murallas",
     "Built": "Construida", "Consecrated": "Consagrada", "Artists": "Artistas", "Loading...": "Cargando...",
     "relics": "reliquias", "a long text": "un texto largo", "Read the whole entry": "Leer la entrada completa", "In the words of the Churches of Rome Wiki": "Con las palabras de la Churches of Rome Wiki", "paragraphs": "párrafos", "Text": "Texto",
@@ -244,6 +245,7 @@ const I18N = {
     "{n} works in {c} churches, from Wikidata and the national catalogue (ICCD). They follow the church filters; artists the texts only name are not works and are not here.": "{n} opere in {c} chiese, da Wikidata e dal catalogo nazionale (ICCD). Seguono i filtri delle chiese; gli artisti che i testi citano soltanto non sono opere e non sono qui.",
     "Wikidata and the national catalogue": "Wikidata e catalogo nazionale",
     "Wikidata only": "Solo Wikidata",
+    "Share this church": "Condividi questa chiesa",
     "only": "solo", "all": "tutto", "Relics": "Reliquie", "only in the Churches of Rome Wiki": "solo nella Churches of Rome Wiki", "outside the walls": "fuori le mura",
     "Built": "Costruita", "Consecrated": "Consacrata", "Artists": "Artisti", "Loading...": "Caricamento...",
     "relics": "reliquie", "a long text": "un testo lungo", "Read the whole entry": "Leggi la voce completa", "In the words of the Churches of Rome Wiki": "Con le parole della Churches of Rome Wiki", "paragraphs": "paragrafi", "Text": "Testo",
@@ -964,7 +966,7 @@ async function renderCard(c) {
     c.web ? `<a href="${esc(c.web)}" target="_blank" rel="noopener">Web</a>` : "",
   ].filter(Boolean);
   const show = (arr, n) => arr.length > n ? arr.slice(0, n) : arr;
-  box.innerHTML = `<div class="card-top"><button type="button" class="chip btn" data-close="1">← ${t("Back to the list")}</button>${c.ll ? `<button type="button" class="chip btn" data-onmap="1">📍 ${t("On the map")}</button>` : ""}<button type="button" class="card-x" data-close="1" aria-label="${esc(t("Close"))}">✕</button></div>
+  box.innerHTML = `<div class="card-top"><button type="button" class="chip btn" data-close="1">← ${t("Back to the list")}</button>${c.ll ? `<button type="button" class="chip btn" data-onmap="1">📍 ${t("On the map")}</button>` : ""}<button type="button" class="chip btn" data-sharec="1" title="${esc(t("Share this church"))}"><svg class="ic-share" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12.5" cy="3.5" r="2.1"/><circle cx="3.5" cy="8" r="2.1"/><circle cx="12.5" cy="12.5" r="2.1"/><path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.5" fill="none"/></svg><span class="lbl">${t("Share")}</span></button><button type="button" class="card-x" data-close="1" aria-label="${esc(t("Close"))}">✕</button></div>
     ${hero ? `<div class="card-hero">${img(hero, 960, "", "eager")}${c.img && c.int ? `<button type="button" class="chip btn swap" data-swap="1">${heroInterior ? t("Exterior") : t("Interior")}</button>` : ""}</div><div class="credit">${credit(hero)}</div>` : ""}
     <h2>${esc(pick(c.n) || c.id)}</h2>
     ${otherNames.length ? `<div class="alt">${esc(otherNames.join(" · "))}</div>` : ""}
@@ -1050,6 +1052,17 @@ document.addEventListener("toggle", e => {
   el.innerHTML = tx.p.filter(([h]) => h === p.n).map(([, x]) => `<p class="wtext">${esc(x)}</p>`).join("");
   el.dataset.done = "1";
 }, true);
+// A church's own page carries its name and photograph in a shared link's preview, then opens its card.
+const SHARE_BASE = "https://victorelvira.github.io/projects/romechurches/c/";
+async function shareChurch(c) {
+  if (!c) return;
+  const url = SHARE_BASE + c.id.replace(/[^A-Za-z0-9]/g, "-") + ".html";
+  const title = pick(c.n);
+  try {
+    if (navigator.share && TOUCH) { await navigator.share({ title, url }); return; }
+    await navigator.clipboard.writeText(url); toast(t("Link copied"));
+  } catch (e) { if (e?.name !== "AbortError") prompt("", url); }
+}
 let listScroll = 0;
 function openCard(id, { push = true, pan = true } = {}) {
   const c = BY_ID.get(id);
@@ -1195,7 +1208,7 @@ function wire() {
       else setOnly(state.status, only.dataset.onlyStatus, STATUSES);
       LIMIT = 150; render(); return;
     }
-    const el = e.target.closest("[data-follow],[data-zone],[data-kind],[data-status],[data-flag],[data-holds],[data-unset],[data-id],[data-more],[data-order],[data-by],[data-ded],[data-archf],[data-fam],[data-rel],[data-ptag],[data-close],[data-onmap],[data-swap],[data-x],[data-exclose],[data-view-people]");
+    const el = e.target.closest("[data-follow],[data-zone],[data-kind],[data-status],[data-flag],[data-holds],[data-unset],[data-id],[data-more],[data-order],[data-by],[data-ded],[data-archf],[data-fam],[data-rel],[data-ptag],[data-close],[data-sharec],[data-onmap],[data-swap],[data-x],[data-exclose],[data-view-people]");
     if (!el) return;
     if (el.tagName === "A") e.preventDefault();
     const d = el.dataset;
@@ -1222,6 +1235,7 @@ function wire() {
     else if (d.close) { closeCard(true); return; }
     else if (d.x) { openExplore(d.x, false); return; }
     else if (d.exclose) { closeExplore(true); return; }
+    else if (d.sharec) { shareChurch(BY_ID.get(state.sel)); return; }
     else if (d.onmap) { const c = BY_ID.get(state.sel); closeCard(true); if (c?.ll) { map.setView(c.ll, Math.max(map.getZoom(), 17)); restyle(c.id); markers.get(c.id)?.openTooltip(); } return; }
     else if (d.swap) { heroInterior = !heroInterior; renderCard(BY_ID.get(state.sel)); return; }
     else if (d.viewPeople) { e.preventDefault(); state.who = ""; closeCard(false); openExplore("people"); return; }

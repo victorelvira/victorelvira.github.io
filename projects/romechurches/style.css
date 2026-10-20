@@ -280,8 +280,8 @@ ul.iccd li { padding: 3px 0; }
   .topbtn .ti { font-size: 16px; }
   #share-view .lbl { display: none; }
   #share-view, #locate { border-color: transparent; background: none; padding: 4px 5px; min-height: 36px; }
-  /* one line on a 375 px phone: the phone's own menu shares the page, so the button goes */
-  #share-view { display: none; }
+  /* one line on a 375 px phone: Share keeps only its icon, as in artatlas */
+  #share-view { padding: 4px 6px; }
   .brand .mark { display: none; }
   .brand strong { white-space: nowrap; font-size: 15px; }
   .topbtn { padding: 2px 6px; }
@@ -289,3 +289,6 @@ ul.iccd li { padding: 3px 0; }
   .bar-tools { gap: 2px; }
   .langbtn { padding: 4px 6px; }
 }
+
+/* the share icon of artatlas, the same everywhere in the family */
+.ic-share { width: 12px; height: 12px; fill: currentColor; stroke: currentColor; }
