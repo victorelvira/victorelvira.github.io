@@ -258,3 +258,34 @@ img.im { width: 100%; height: auto; aspect-ratio: 1; }
   .ggrid { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 8px; }
 }
 img.im, img.thumb, img.av { background: #e8dfd0; }
+
+.iccdph { flex-direction: column; font-size: 13px; color: var(--muted); text-align: center; }
+.iccdph small { font-size: 10px; letter-spacing: .08em; }
+ul.iccd li { padding: 3px 0; }
+
+/* the views, in the top bar */
+.topnav { display: flex; gap: 4px; margin-left: 14px; }
+.topbtn { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: #fff; border-radius: 8px;
+  padding: 5px 12px; cursor: pointer; font-weight: 600; font-size: 14px; min-height: 34px; }
+.topbtn:hover { border-color: var(--muted); }
+.topbtn.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+@media (max-width: 640px) {
+  #bar { gap: 6px; padding: 6px 8px; }
+  .brand strong { font-size: 15px; }
+  .brand .mark { width: 22px; height: 22px; }
+  .topnav { margin-left: 2px; gap: 3px; }
+  /* views keep a tiny label under the icon; the tools beside them go quiet, so the views lead */
+  .topbtn { flex-direction: column; padding: 2px 7px; min-height: 40px; gap: 0; line-height: 1.05; }
+  .topbtn .tl { display: block; font-size: 9.5px; font-weight: 600; }
+  .topbtn .ti { font-size: 16px; }
+  #share-view .lbl { display: none; }
+  #share-view, #locate { border-color: transparent; background: none; padding: 4px 5px; min-height: 36px; }
+  /* one line on a 375 px phone: the phone's own menu shares the page, so the button goes */
+  #share-view { display: none; }
+  .brand .mark { display: none; }
+  .brand strong { white-space: nowrap; font-size: 15px; }
+  .topbtn { padding: 2px 6px; }
+  .langbtn { padding: 4px 5px; font-size: 11.5px; min-height: 32px; }
+  .bar-tools { gap: 2px; }
+  .langbtn { padding: 4px 6px; }
+}
