@@ -319,3 +319,11 @@ ul.iccd li { padding: 3px 0; }
 .tip .tim { flex: 0 0 104px; width: 104px; height: 78px; margin: 0; }
 .tip .ttx { min-width: 0; flex: 1; }
 @media (min-width: 641px) { #card .back-btn { display: none; } }
+
+/* the tap bubble on a phone: the same content as the hover bubble, as a popup that stays */
+.tip-pop .leaflet-popup-content { margin: 8px 10px; font: 12.5px/1.35 Georgia, serif; }
+.tip-pop .tip { display: flex; gap: 8px; align-items: flex-start; }
+.tip-pop .tip .tim { flex: 0 0 96px; width: 96px; height: 72px; background: #e8dfd0 center/cover no-repeat; border-radius: 4px; }
+.tip-pop .tip b { display: block; font-size: 14px; }
+.tip-pop .tip span { display: block; color: var(--muted); }
+.tip-pop .tip-open { margin-top: 6px; min-height: 34px; }

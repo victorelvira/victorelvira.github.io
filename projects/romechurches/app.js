@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "1.0.6";
-const BUILD_AT = "2026-10-21 10:09";
+const DATA_V = "1.0.8";
+const BUILD_AT = "2026-10-21 10:28";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -418,10 +418,13 @@ function styleFor(c, sel) {
     radius: radius(c) + (sel ? 3 : 0), color: sel ? "#111" : (s ? col : "#fff"), weight: sel ? 3 : (s ? 2 : 1),
     opacity: faint, fillColor: col, fillOpacity: (s === "" ? 0.9 : s === "former" ? 0.25 : 0.05) * faint,
     dashArray: s === "lost" ? "3 3" : s === "ruin" ? "1 3" : null, renderer,
+    // the tap stays with the dot: passed on to the map, it closed the popup it had just opened
+    bubblingMouseEvents: false,
   };
 }
 function initMap() {
-  renderer = L.canvas({ padding: 0.3, tolerance: 6 });
+  // a finger is wider than a cursor: on touch screens a dot answers a tap up to 16 px away
+  renderer = L.canvas({ padding: 0.3, tolerance: TOUCH ? 16 : 6 });
   map = L.map("map", { zoomControl: true, preferCanvas: true }).setView([41.895, 12.48], 13);
   // OpenStreetMap tiles, quietened in CSS (.leaflet-tile-pane) so the churches are what the eye finds first.
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -444,7 +447,7 @@ let tappedOnce = "";
 function tipHTML(c) {
   const bits = [kindLabel(kindKey(c)), c.y != null ? dateStr(c.y, c.yp) : "", c.dist != null ? DB.districts[c.dist] : ""].filter(Boolean);
   const cnt = [(c.art || []).length ? `${c.art.length} ${t("works")}` : "", (c.bur || []).length ? `${c.bur.length} ${t("burials")}` : ""].filter(Boolean);
-  return `${c.img ? `<div class="tim" style="background-image:url('${thumb(c.img, 250)}')"></div>` : ""}<div class="ttx"><b>${esc(pick(c.n) || c.id)}</b><span>${esc(bits.join(" · "))}${c.status ? " · " + esc(statusLabel(c.status)) : ""}</span>${cnt.length ? `<span>${esc(cnt.join(" · "))}</span>` : ""}${TOUCH ? `<span><a href="#" data-open="${c.id}">${t("Open the church")}</a></span>` : ""}</div>`;
+  return `${c.img ? `<div class="tim" style="background-image:url('${thumb(c.img, 250)}')"></div>` : ""}<div class="ttx"><b>${esc(pick(c.n) || c.id)}</b><span>${esc(bits.join(" · "))}${c.status ? " · " + esc(statusLabel(c.status)) : ""}</span>${cnt.length ? `<span>${esc(cnt.join(" · "))}</span>` : ""}${TOUCH ? `<button type="button" class="chip btn tip-open" data-open="${c.id}">${t("Open the church")} →</button>` : ""}</div>`;
 }
 function drawMap(list) {
   layer.clearLayers();
@@ -453,11 +456,20 @@ function drawMap(list) {
   for (const c of list) {
     if (!c.ll) continue;
     const m = L.circleMarker(c.ll, styleFor(c, c.id === state.sel));
-    m.bindTooltip(() => tipHTML(c), { className: "tip", direction: "top", offset: [0, -4], interactive: TOUCH });
+    // A mouse gets a tooltip on hover. A finger gets a popup on the first tap: a tooltip closes on the
+    // "mouseout" the browser sends when the finger lifts, so on a phone nothing seemed to appear
+    // (Víctor, 2026-10-21). The popup stays until the map is tapped; its button, or a second tap on
+    // the same dot, opens the card (CONVENTIONS.md 2c).
+    if (!TOUCH) m.bindTooltip(() => tipHTML(c), { className: "tip", direction: "top", offset: [0, -4] });
     m.on("click", () => {
-      // On touch, the first tap shows the same bubble a mouse would see; the second opens (CONVENTIONS.md 2c).
-      if (TOUCH && tappedOnce !== c.id) { tappedOnce = c.id; m.openTooltip(); return; }
+      if (TOUCH && tappedOnce !== c.id) {
+        tappedOnce = c.id;
+        L.popup({ className: "tip-pop", maxWidth: 340, minWidth: 260, offset: [0, -4], autoPanPadding: [16, 16] })
+          .setLatLng(c.ll).setContent(`<div class="tip">${tipHTML(c)}</div>`).openOn(map);
+        return;
+      }
       tappedOnce = "";
+      map.closePopup();
       openCard(c.id, { push: true, pan: false });
     });
     if (kindKey(c) === "major_basilica") {
@@ -1138,6 +1150,7 @@ function openCard(id, { push = true, pan = true } = {}) {
   const c = BY_ID.get(id);
   if (!c) return;
   if (!state.sel) listScroll = $("#list").scrollTop;
+  if (map) map.closePopup();
   if (state.x) { state.x = ""; $("#explore").hidden = true; }
   if (state.g) { state.g = false; $("#gallery").hidden = true; }
   litTop();
