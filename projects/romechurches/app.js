@@ -1,8 +1,8 @@
 // Churches of Rome · app.js, one file, no build step.
 // Contract (CHASSIS.md section 3): state -> passes(church) -> [map, list, views]. No view filters on its own.
 
-const DATA_V = "1.0.4";
-const BUILD_AT = "2026-10-20 11:34";
+const DATA_V = "1.0.6";
+const BUILD_AT = "2026-10-21 10:09";
 
 // ------------------------------------------------------------------ i18n
 // Keyed by the English string. Every key exists in every language: tools/check_views.py refuses
@@ -444,7 +444,7 @@ let tappedOnce = "";
 function tipHTML(c) {
   const bits = [kindLabel(kindKey(c)), c.y != null ? dateStr(c.y, c.yp) : "", c.dist != null ? DB.districts[c.dist] : ""].filter(Boolean);
   const cnt = [(c.art || []).length ? `${c.art.length} ${t("works")}` : "", (c.bur || []).length ? `${c.bur.length} ${t("burials")}` : ""].filter(Boolean);
-  return `${c.img ? `<div class="tim" style="background-image:url('${thumb(c.img, 300)}')"></div>` : ""}<b>${esc(pick(c.n) || c.id)}</b><span>${esc(bits.join(" · "))}${c.status ? " · " + esc(statusLabel(c.status)) : ""}</span>${cnt.length ? `<span>${esc(cnt.join(" · "))}</span>` : ""}${TOUCH ? `<span><a href="#" data-open="${c.id}">${t("Open the church")}</a></span>` : ""}`;
+  return `${c.img ? `<div class="tim" style="background-image:url('${thumb(c.img, 250)}')"></div>` : ""}<div class="ttx"><b>${esc(pick(c.n) || c.id)}</b><span>${esc(bits.join(" · "))}${c.status ? " · " + esc(statusLabel(c.status)) : ""}</span>${cnt.length ? `<span>${esc(cnt.join(" · "))}</span>` : ""}${TOUCH ? `<span><a href="#" data-open="${c.id}">${t("Open the church")}</a></span>` : ""}</div>`;
 }
 function drawMap(list) {
   layer.clearLayers();
@@ -1034,7 +1034,7 @@ async function renderCard(c) {
     c.web ? `<a href="${esc(c.web)}" target="_blank" rel="noopener">Web</a>` : "",
   ].filter(Boolean);
   const show = (arr, n) => arr.length > n ? arr.slice(0, n) : arr;
-  box.innerHTML = `<div class="card-top"><button type="button" class="chip btn" data-close="1">← ${t("Back to the list")}</button>${c.ll ? `<button type="button" class="chip btn" data-onmap="1">📍 ${t("On the map")}</button>` : ""}<button type="button" class="chip btn" data-sharec="1" title="${esc(t("Share this church"))}"><svg class="ic-share" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12.5" cy="3.5" r="2.1"/><circle cx="3.5" cy="8" r="2.1"/><circle cx="12.5" cy="12.5" r="2.1"/><path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.5" fill="none"/></svg><span class="lbl">${t("Share")}</span></button><button type="button" class="card-x" data-close="1" aria-label="${esc(t("Close"))}">✕</button></div>
+  box.innerHTML = `<div class="card-top"><button type="button" class="chip btn back-btn" data-close="1">← ${t("Back to the list")}</button>${c.ll ? `<button type="button" class="chip btn" data-onmap="1">📍 ${t("On the map")}</button>` : ""}<button type="button" class="chip btn" data-sharec="1" title="${esc(t("Share this church"))}"><svg class="ic-share" viewBox="0 0 16 16" aria-hidden="true"><circle cx="12.5" cy="3.5" r="2.1"/><circle cx="3.5" cy="8" r="2.1"/><circle cx="12.5" cy="12.5" r="2.1"/><path d="M5.4 6.9 10.6 4.3M5.4 9.1l5.2 2.6" stroke-width="1.5" fill="none"/></svg><span class="lbl">${t("Share")}</span></button><button type="button" class="card-x" data-close="1" aria-label="${esc(t("Close"))}">✕</button></div>
     ${hero ? `<div class="card-hero">${img(hero, 960, "", "eager")}${c.img && c.int ? `<button type="button" class="chip btn swap" data-swap="1">${heroInterior ? t("Exterior") : t("Interior")}</button>` : ""}</div><div class="credit">${credit(hero)}</div>` : ""}
     <h2>${esc(pick(c.n) || c.id)}</h2>
     ${otherNames.length ? `<div class="alt">${esc(otherNames.join(" · "))}</div>` : ""}
@@ -1146,12 +1146,21 @@ function openCard(id, { push = true, pan = true } = {}) {
   heroInterior = false;
   // on a phone the card is a sheet over everything, like the record cards of the other atlases;
   // the list stays underneath, where the reader left it
-  if (!PHONE()) $("#panel-list").hidden = true;
+  // on a computer the card opens on the right and the list stays where it was
   $("#card").hidden = false;
   document.body.classList.toggle("sheet-open", PHONE());
   renderCard(c);
   restyle(prev); restyle(id);
-  if (pan && c.ll && map && !map.getBounds().pad(-0.15).contains(c.ll)) map.panTo(c.ll);
+  document.querySelectorAll("#list .row.sel").forEach(r => r.classList.remove("sel"));
+  document.querySelector(`#list .row[data-id="${CSS.escape(id)}"]`)?.classList.add("sel");
+  if (c.ll && map) {
+    const cardW = PHONE() ? 0 : $("#card").offsetWidth;
+    const size = map.getSize();
+    const right = size.x - cardW - 40;
+    if (pan && !map.getBounds().pad(-0.15).contains(c.ll)) map.panTo(c.ll, { animate: false });
+    const p2 = map.latLngToContainerPoint(c.ll);
+    if (cardW && p2.x > right) map.panBy([p2.x - right + 40, 0], { animate: true });
+  }
   saveURL(push);
 }
 function closeCard(push = true) {
@@ -1283,7 +1292,7 @@ function wire() {
   $("#more-btn").addEventListener("click", () => {
     const box = $("#more"); box.hidden = !box.hidden; $("#more-btn").setAttribute("aria-expanded", String(!box.hidden));
   });
-  $("#panel").addEventListener("click", e => {
+  const panelClick = e => {
     const only = e.target.closest("[data-only-kind],[data-only-status]");
     if (only) {
       e.stopPropagation();
@@ -1331,7 +1340,9 @@ function wire() {
     else if (d.viewPeople) { e.preventDefault(); state.who = ""; closeCard(false); openExplore("people"); return; }
     else return;
     LIMIT = 150; render();
-  });
+  };
+  $("#panel").addEventListener("click", panelClick);
+  $("#card").addEventListener("click", panelClick);
   $("#panel").addEventListener("change", e => {
     if (e.target.id === "dist") { state.dist = e.target.value; render(); }
     if (e.target.id === "yr0" || e.target.id === "yr1") {

@@ -308,3 +308,14 @@ ul.iccd li { padding: 3px 0; }
 @media (max-width: 640px) {
   .brand strong { white-space: normal; text-overflow: clip; font-size: 14px; line-height: 1.05; max-width: 92px; }
 }
+
+/* the record card on a computer: a panel on the right, over the map; the list stays on the left */
+@media (min-width: 641px) {
+  #card { position: absolute; top: 0; right: 0; bottom: 0; width: min(460px, 46vw); z-index: 1050;
+    background: var(--paper); border-left: 1px solid var(--line); box-shadow: -6px 0 18px rgba(0,0,0,.12); }
+}
+/* the bubble on a dot: wider and shorter, the picture beside the words */
+.leaflet-tooltip.tip { max-width: 360px; width: 340px; display: flex; gap: 8px; align-items: flex-start; }
+.tip .tim { flex: 0 0 104px; width: 104px; height: 78px; margin: 0; }
+.tip .ttx { min-width: 0; flex: 1; }
+@media (min-width: 641px) { #card .back-btn { display: none; } }
