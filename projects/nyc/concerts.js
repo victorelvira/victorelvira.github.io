@@ -2356,5 +2356,33 @@ var concerts = [
     },
     "n_program": 15,
     "source": "https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10738/"
+  },
+  {
+    "year": 2027,
+    "conductor_id": 20,
+    "program": {
+      "piece_id": [
+        358,
+        54,
+        400,
+        187,
+        15,
+        52,
+        310,
+        34,
+        192,
+        401,
+        285,
+        402,
+        291,
+        369,
+        403,
+        171,
+        215,
+        391
+      ]
+    },
+    "n_program": 18,
+    "source": "https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10876/"
   }
 ];

@@ -1024,5 +1024,9 @@ var concert_meta = {
     "wiki": {
       "de": "https://de.wikipedia.org/wiki/Neujahrskonzert_der_Wiener_Philharmoniker_2026"
     }
+  },
+  "2027": {
+    "title": "New Year's Concert",
+    "date": "2027-01-01"
   }
 };

@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.6.2";
-const BUILD_AT = "2026-10-18 08:33";
+const DATA_V = "1.7.0";
+const BUILD_AT = "2026-11-01 17:53";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -21,6 +21,11 @@ const FORERUNNER = 1939;
 const ANNOUNCED = new Map((typeof announced === "object" ? announced : [])
   .filter(a => !BY_YEAR.has(a.year)).map(a => [a.year, a]));
 const LAST_YEAR = Math.max(CONCERTS[N - 1].year, ...ANNOUNCED.keys());
+// a concert whose programme is published but not yet played: drawn like the rest, only its year in another
+// colour, until the morning of 1 January (Víctor, 2026-11-01)
+const upcoming = y => Date.now() < new Date(y, 0, 1, 12).getTime();
+// the year's ink: as usual, or gold on a dark square and deep red on a light one while the concert is to come
+const yearInk = (y, col) => !upcoming(y) ? textOn(col) : textOn(col) === "#ffffff" ? "#ffd34d" : "#a3001b";
 const conductorIdOf = y => (BY_YEAR.get(y) || ANNOUNCED.get(y)).conductor_id;
 // title and date as the orchestra's own page gives them (data/sources/wph), e.g. 1939 was on 31 December
 const META = typeof concert_meta === "object" ? concert_meta : {};
@@ -200,7 +205,7 @@ function drawYears() {
           title="${y} · ${esc(CONDUCTOR.get(a.conductor_id).name)} · announced, programme not yet published">${y}</button>`;
       } else if (c) {
         const col = colourOf(c);
-        html += `<button class="yr${y === FORERUNNER ? " forerunner" : ""}" role="option" data-year="${y}" style="--c:${col};--tc:${textOn(col)}"
+        html += `<button class="yr${y === FORERUNNER ? " forerunner" : ""}${upcoming(y) ? " upcoming" : ""}" role="option" data-year="${y}" style="--c:${col};--tc:${yearInk(y, col)}"
           title="${esc(tipOf(c))}${y === FORERUNNER ? " · before the numbered series" : ""}">${y}</button>`;
       } else {
         const why = y === 1940 ? "no concert on 1 January 1940: the turn of 1939/40 was marked on 31 December 1939" : "";
@@ -210,8 +215,8 @@ function drawYears() {
   }
   $("years").innerHTML = html;
   $("bars").style.setProperty("--n", N + ANNOUNCED.size);
-  $("bars").innerHTML = CONCERTS.map(c => `<button class="tile${c.year === FORERUNNER ? " forerunner" : ""}" data-year="${c.year}"
-      style="--c:${colourOf(c)};--tc:${textOn(colourOf(c))}" title="${esc(tipOf(c))}" aria-label="${esc(tipOf(c))}"><span>${c.year}</span></button>`).join("") +
+  $("bars").innerHTML = CONCERTS.map(c => `<button class="tile${c.year === FORERUNNER ? " forerunner" : ""}${upcoming(c.year) ? " upcoming" : ""}" data-year="${c.year}"
+      style="--c:${colourOf(c)};--tc:${yearInk(c.year, colourOf(c))}" title="${esc(tipOf(c))}" aria-label="${esc(tipOf(c))}"><span>${c.year}</span></button>`).join("") +
     [...ANNOUNCED.values()].map(a => `<button class="tile soon" data-year="${a.year}"
       title="${a.year} · ${esc(CONDUCTOR.get(a.conductor_id).name)} · announced" aria-label="${a.year}, announced"><span>${a.year}</span></button>`).join("");
   const all = [...CONCERTS.map(c => c.year), ...ANNOUNCED.keys()];

@@ -2222,5 +2222,67 @@ var performances = {
         "parte_desde"
       ]
     }
+  },
+  "2027": {
+    "8": {
+      "fuente": [
+        "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10876/"
+      ],
+      "estado": "lápiz",
+      "version": "Mit Chor (Chorsatz H. Froschauer)",
+      "version_label": "With choir, arr. Froschauer",
+      "version_group": "choir-froschauer",
+      "nota": [
+        "la página lo escribe dentro del título; la regla de nombres lo saca de ahí"
+      ],
+      "lapiz": [
+        "version"
+      ]
+    },
+    "9": {
+      "fuente": [
+        "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10876/"
+      ],
+      "estado": "lápiz",
+      "version": "Mit Chor (Chorsatz W. Dörner)",
+      "version_label": "With choir, arr. Dörner",
+      "version_group": "choir-dorner",
+      "nota": [
+        "la página lo escribe dentro del título; la regla de nombres lo saca de ahí"
+      ],
+      "lapiz": [
+        "version"
+      ]
+    },
+    "10": {
+      "fuente": [
+        "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10876/"
+      ],
+      "estado": "lápiz",
+      "version": "Instrumentierung W. Dörner",
+      "version_label": "Orch. Dörner",
+      "version_group": "arr-dorner",
+      "nota": [
+        "la página lo escribe dentro del título; la regla de nombres lo saca de ahí"
+      ],
+      "lapiz": [
+        "version"
+      ]
+    },
+    "11": {
+      "fuente": [
+        "wph https://www.wienerphilharmoniker.at/en/konzerte/new-years-concert/10876/"
+      ],
+      "estado": "lápiz",
+      "version": "2. Fassung",
+      "version_label": "Second version",
+      "version_group": "second-version",
+      "nota": [
+        "la página lo escribe dentro del título; la regla de nombres lo saca de ahí"
+      ],
+      "lapiz": [
+        "version"
+      ]
+    }
   }
 };

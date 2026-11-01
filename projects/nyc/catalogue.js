@@ -7181,5 +7181,77 @@ var catalogue = [
     },
     "composer_id": 42,
     "type": "Polka schnell"
+  },
+  {
+    "piece": "Saat und Ernte, op. 159",
+    "composer": "Eduard Strauß",
+    "piece_id": 400,
+    "links": {
+      "wiki": {
+        "en": "",
+        "de": ""
+      },
+      "you": {
+        "this": "",
+        "other": ""
+      },
+      "imslp": ""
+    },
+    "composer_id": 7,
+    "type": "Polka schnell"
+  },
+  {
+    "piece": "Callirhoë, op. 37/Nr. 4",
+    "composer": "Cécile Chaminade",
+    "piece_id": 401,
+    "links": {
+      "wiki": {
+        "en": "",
+        "de": ""
+      },
+      "you": {
+        "this": "",
+        "other": ""
+      },
+      "imslp": ""
+    },
+    "composer_id": 43,
+    "type": "Ballet excerpt"
+  },
+  {
+    "piece": "Sophien-Quadrille, op. 75",
+    "composer": "Johann Strauß II.",
+    "piece_id": 402,
+    "links": {
+      "wiki": {
+        "en": "",
+        "de": ""
+      },
+      "you": {
+        "this": "",
+        "other": ""
+      },
+      "imslp": ""
+    },
+    "composer_id": 20,
+    "type": "Quadrille"
+  },
+  {
+    "piece": "Storchschnäbel, op. 149",
+    "composer": "Philipp Fahrbach Jr.",
+    "piece_id": 403,
+    "links": {
+      "wiki": {
+        "en": "",
+        "de": ""
+      },
+      "you": {
+        "this": "",
+        "other": ""
+      },
+      "imslp": ""
+    },
+    "composer_id": 42,
+    "type": "Galop"
   }
 ];

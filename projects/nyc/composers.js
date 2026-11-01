@@ -377,5 +377,14 @@ var composers = [
         "en": "https://en.wikipedia.org/wiki/Philipp_Fahrbach_Jr."
       }
     }
+  },
+  {
+    "name": "Cécile Chaminade",
+    "id": 43,
+    "links": {
+      "wiki": {
+        "en": "https://en.wikipedia.org/wiki/C%C3%A9cile_Chaminade"
+      }
+    }
   }
 ];
