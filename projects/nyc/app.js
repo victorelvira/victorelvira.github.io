@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.7.2";
-const BUILD_AT = "2026-11-01 18:32";
+const DATA_V = "1.7.3";
+const BUILD_AT = "2026-11-01 18:40";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -59,6 +59,12 @@ const byComposer = (p, cid) => namesOf(p).includes(COMPOSER.get(cid).name);
 const people = c => new Set(c.program.piece_id.flatMap(p => namesOf(PIECE.get(p))));
 const firstYearOf = new Map();
 CONCERTS.forEach(c => c.program.piece_id.forEach(p => { if (!firstYearOf.has(p)) firstYearOf.set(p, c.year); }));
+// the first concert of each composer (by name, so a joint work counts for each brother) and of each conductor
+const firstYearOfName = new Map();
+CONCERTS.forEach(c => people(c).forEach(n => { if (!firstYearOfName.has(n)) firstYearOfName.set(n, c.year); }));
+const debutsOf = c => [...people(c)].filter(n => firstYearOfName.get(n) === c.year);
+const firstYearOfConductor = new Map();
+CONCERTS.forEach(c => { if (!firstYearOfConductor.has(c.conductor_id)) firstYearOfConductor.set(c.conductor_id, c.year); });
 const GOLD = "#8f6d2d";            // the year buttons of the published page
 const METRICS = {
   none: { label: "None", kind: "plain" },
@@ -67,6 +73,8 @@ const METRICS = {
   composers: { label: "Composers", kind: "seq", unit: "composers", value: c => people(c).size },
   fresh: { label: "New pieces", kind: "seq", unit: "pieces new to the concert",
     value: c => c.program.piece_id.filter(p => firstYearOf.get(p) === c.year).length },
+  debuts: { label: "New composers", kind: "seq", unit: "composers at their first New Year's Concert",
+    value: c => debutsOf(c).length },
   beyond: { label: "Beyond Strauss", kind: "seq", unit: "% by composers outside the Strauss family",
     value: c => Math.round(100 * c.program.piece_id.filter(p => !/Strau(ß|ss)/.test(PIECE.get(p).composer)).length / c.program.piece_id.length) },
   // minutes of music on the official disc, only where the disc has every piece of that concert
@@ -140,7 +148,7 @@ function hashOf(s) {
   if (s.view !== "concerts") return "#" + s.view;
   if (!s.card) return "#" + s.year;
   const c = s.card;
-  return "#" + s.year + "/" + (c.kind === "perf" ? c.pos + (c.arr ? "/arr" : "") : c.kind === "conductor" ? "conductor" : c.kind === "fresh" ? "new" : `${c.kind}-${encodeURIComponent(c.id)}`);
+  return "#" + s.year + "/" + (c.kind === "perf" ? c.pos + (c.arr ? "/arr" : "") : c.kind === "conductor" ? "conductor" : c.kind === "fresh" ? "new" : c.kind === "debuts" ? "debuts" : c.kind === "cdebuts" ? "conductor-debuts" : `${c.kind}-${encodeURIComponent(c.id)}`);
 }
 function readHash() {
   const raw = decodeURIComponent(location.hash.slice(1));
@@ -162,6 +170,8 @@ function readHash() {
     if (/^\d+$/.test(sel)) card = { kind: "perf", pos: Number(sel), arr: raw.split("/")[2] === "arr" };
     else if (sel === "conductor") card = { kind: "conductor", id: conductorIdOf(year) };
     else if (sel === "new") card = { kind: "fresh" };
+    else if (sel === "debuts") card = { kind: "debuts" };
+    else if (sel === "conductor-debuts") card = { kind: "cdebuts" };
     else {
       const m = sel.match(/^(piece|composer)-(\d+)$/);
       const t = sel.match(/^type-(.+)$/);
@@ -383,8 +393,10 @@ function pieceAside(c, pos) {
 function composerAside(c, name) {
   if (FIRST_YEAR_OF_NAME.get(name) !== c.year) return "";
   const once = CONCERTS.filter(x => x.program.piece_id.some(pid => namesOf(PIECE.get(pid)).includes(name))).length === 1;
-  return once && c.year < CONCERTS[N - 1].year ? ' <span class="tag tag-new tag-comp" title="The only concert with music by this composer">only time</span>'
-    : ' <span class="tag tag-new tag-comp" title="First concert with music by this composer">debut</span>';
+  // a chip, like "new": it opens the concert's debuts and colours the years by how many each had
+  const on = state.card && state.card.kind === "debuts" && state.year === c.year ? " on" : "";
+  return once && c.year < CONCERTS[N - 1].year ? ` <button type="button" class="chip k k-debut${on}" title="The only concert with music by this composer: see this year's debuts">only time</button>`
+    : ` <button type="button" class="chip k k-debut${on}" title="First concert with music by this composer: see this year's debuts">debut</button>`;
 }
 // The arrangement is a chip (it can be clicked: it lights the years of the same arrangement); a soloist or
 // a ballet stays a quiet tag.
@@ -404,6 +416,7 @@ function yearsOf(k) {
   if (k.kind === "piece") return new Set((PLAYS.get(k.id) || []).map(x => x.year));
   if (k.kind === "composer") return fromPieces(p => byComposer(p, k.id));
   if (k.kind === "type") return fromPieces(p => p.type === k.id);
+  if (k.kind === "cdebuts") return new Set(firstYearOfConductor.values());
   if (k.kind === "conductor") return new Set([...CONCERTS.filter(x => x.conductor_id === k.id).map(x => x.year),
     ...[...ANNOUNCED.values()].filter(a => a.conductor_id === k.id).map(a => a.year)]);
   return null;
@@ -415,6 +428,7 @@ function rowMatches(k, pos, p) {
   if (k.kind === "composer") return byComposer(p, k.id);
   if (k.kind === "type") return p.type === k.id;
   if (k.kind === "fresh") return firstYearOf.get(p.piece_id) === state.year;
+  if (k.kind === "debuts") return namesOf(p).some(n => firstYearOfName.get(n) === state.year);
   return false;
 }
 function drawAnnounced(a) {
@@ -489,7 +503,8 @@ function drawConcert() {
   let html = `<div class="c-head">${shareButton("Share this concert")}
       <h1>${c.year} <span class="date">${esc(day)}</span></h1>
       <dl class="c-facts">
-        <dt>Conductor</dt><dd class="who"><button type="button" data-card="conductor">${esc(cond.name)}</button> (${ordinal(nth)} of ${condCount.length})</dd>
+        <dt>Conductor</dt><dd class="who"><button type="button" data-card="conductor">${esc(cond.name)}</button> (${ordinal(nth)} of ${condCount.length})${firstYearOfConductor.get(c.conductor_id) === c.year
+          ? ` <button type="button" class="chip k k-cdebut${k && k.kind === "cdebuts" ? " on" : ""}" title="This conductor's first New Year's Concert: see every conductor's first">debut</button>` : ""}</dd>
         <dt>Programme</dt><dd><span class="e-piece">${c.program.piece_id.length} pieces</span> by <span class="e-composer">${comps.size} composers</span></dd>
         <dt>Edition</dt><dd>${edition}</dd>
         ${special ? `<dt>Billed as</dt><dd><i>${esc(special.replace(/\//g, " / "))}</i></dd>` : ""}
@@ -523,6 +538,8 @@ $("concert").addEventListener("click", e => {
   const ver = e.target.closest(".k-ver");
   if (ver) return go(state.year, { kind: "perf", pos: Number(ver.dataset.pos), arr: true });
   if (e.target.closest(".k-new")) { setColourBy("fresh"); return go(state.year, { kind: "fresh" }); }
+  if (e.target.closest(".k-debut")) { setColourBy("debuts"); return go(state.year, { kind: "debuts" }); }
+  if (e.target.closest(".k-cdebut")) { setColourBy("conductor"); return go(state.year, { kind: "cdebuts" }); }
   const row = e.target.closest(".row");
   if (row) return go(state.year, { kind: "perf", pos: Number(row.dataset.pos) });
   if (e.target.closest('[data-card="conductor"]')) go(state.year, { kind: "conductor", id: conductorIdOf(state.year) });
@@ -813,6 +830,24 @@ function freshCard(c) {
       The years are coloured by how many new pieces each concert had.</p>
     ${rows.length ? `<ol class="fresh-list">${rows.map(([pid, pos]) => `<li><button type="button" class="k" data-pos="${pos}">${esc(PIECE.get(pid).piece)}</button> <span class="small">${esc(namesOf(PIECE.get(pid)).join(", "))}</span></li>`).join("")}</ol>` : ""}`;
 }
+// The composers heard at the concert for the first time; the years are coloured by the same count.
+function debutsCard(c) {
+  const names = debutsOf(c), n = names.length, value = METRICS.debuts.value;
+  const more = CONCERTS.filter(x => value(x) > n).length, top = Math.max(...CONCERTS.slice(1).map(value));
+  return `<p class="k-eyebrow">New composers</p><h2>${n} ${n === 1 ? "debut" : "debuts"} in ${c.year}</h2>
+    <p class="small">Composers heard at the New Year's Concert for the first time.
+      ${more === 0 ? "No concert brought more" : `${more} concert${more === 1 ? "" : "s"} brought more`} (the most after the first concert: ${top}).
+      The years are coloured by how many composers each concert brought.</p>
+    <ol class="fresh-list">${names.map(nm => { const id = NAME2ID.get(nm); return `<li>${id ? `<button type="button" class="k k-c" data-go="composer-${id}">${esc(nm)}</button>` : esc(nm)}</li>`; }).join("")}</ol>`;
+}
+// Every conductor's first New Year's Concert, lit on the years in the conductors' colours.
+function conductorDebutsCard(c) {
+  const rows = [...firstYearOfConductor.entries()].map(([id, y]) => ({ id, y }));
+  return `<p class="k-eyebrow">Conductors' debuts</p><h2>Every conductor's first concert</h2>
+    <p class="small">${rows.length} conductors: the lit years are the first New Year's Concert of each.</p>
+    <ol class="fresh-list">${ordered(rows).map(r => `<li><button type="button" class="link" data-year="${r.y}">${r.y}</button>
+      <button type="button" class="k k-c" data-go="conductor-${r.id}">${esc(CONDUCTOR.get(r.id).name)}</button></li>`).join("")}</ol>`;
+}
 // Lists of concerts in a card (a conductor's, a piece's): newest first by default, and the reader can turn
 // them round. The choice belongs to the device (localStorage), not to the link.
 let listOrder = "newest";
@@ -825,7 +860,7 @@ function drawCard() {
   const c = BY_YEAR.get(state.year);
   const k = state.card;
   document.body.classList.toggle("card-open", !!k);
-  const family = !k ? "" : { perf: "piece", piece: "piece", composer: "composer", type: "form", conductor: "conductor", fresh: "piece" }[k.kind];
+  const family = !k ? "" : { perf: "piece", piece: "piece", composer: "composer", type: "form", conductor: "conductor", fresh: "piece", debuts: "composer", cdebuts: "conductor" }[k.kind];
   if (family) document.body.dataset.kind = family; else delete document.body.dataset.kind;
   if (!k) {
     body.innerHTML = `<p class="hint">Tap a piece to see it as it was played that year, and across all the concerts.</p>`;
@@ -837,6 +872,8 @@ function drawCard() {
   else if (k.kind === "type") body.innerHTML = typeCard(k.id);
   else if (k.kind === "conductor") body.innerHTML = conductorCard(k.id);
   else if (k.kind === "fresh") body.innerHTML = freshCard(c);
+  else if (k.kind === "debuts") body.innerHTML = debutsCard(c);
+  else if (k.kind === "cdebuts") body.innerHTML = conductorDebutsCard(c);
   body.insertAdjacentHTML("afterbegin", shareButton("Share this card"));
   paintStrip(yearsOf(k), sameArrangement(k));
   $("card").scrollTop = 0;
@@ -968,6 +1005,8 @@ function shareHash(s) {
   if (!c) return hashOf(s);
   if (c.kind === "perf") return "#" + s.year + "/" + c.pos;
   if (c.kind === "fresh") return "#" + s.year + "/new";
+  if (c.kind === "debuts") return "#" + s.year + "/debuts";
+  if (c.kind === "cdebuts") return "#" + s.year + "/conductor-debuts";
   if (c.kind === "type") return "#type-" + encodeURIComponent(c.id);
   return "#" + c.kind + "-" + c.id;
 }

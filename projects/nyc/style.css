@@ -188,6 +188,13 @@ ol.prog { list-style: none; margin: 0; padding: 0; }
 .chip.k-new::before { content: "●"; font-size: .8em; margin-right: 3px; vertical-align: .05em; }
 .chip.k-new:hover, .chip.k-new:focus-visible { background: color-mix(in srgb, var(--c-piece) 26%, var(--paper)); }
 .chip.k-new.on { background: var(--c-piece); color: #fff; }
+/* the same for a composer's first concert (red) and a conductor's (green) */
+.chip.k-debut, .chip.k-cdebut { --d: var(--c-composer); color: var(--d); background: color-mix(in srgb, var(--d) 14%, var(--paper)); }
+.chip.k-cdebut { --d: var(--c-conductor); }
+.chip.k-debut::before, .chip.k-cdebut::before { content: "●"; font-size: .8em; margin-right: 3px; vertical-align: .05em; }
+.chip.k-debut:hover, .chip.k-cdebut:hover { background: color-mix(in srgb, var(--d) 24%, var(--paper)); }
+.chip.k-debut.on, .chip.k-cdebut.on { background: var(--d); color: #fff; }
+.fresh-list .k-c { text-align: left; }
 .fresh-list { margin: 10px 0 0; padding-left: 20px; }
 .fresh-list li { margin: 4px 0; }
 .fresh-list .k { color: var(--c-piece); text-align: left; }
