@@ -376,6 +376,8 @@ table.cat tbody tr:hover { background: color-mix(in srgb, var(--c-piece) 8%, var
   .view-tab { flex: 1; padding: 6px 4px 7px; font-size: var(--fs-m); }
   #view-analysis, #view-catalogue { padding: 10px 10px 40px; }
   /* the years stay pinned under the tabs while the programme scrolls, so every tap shows its years */
+  /* a jump to the concert (a year tapped) lands just below the pinned tabs and years: the year and date show */
+  #concert { scroll-margin-top: calc(var(--pin-phone, 0px) + 8px); }
   .years-pane { position: sticky; top: var(--views-h, 42px); z-index: 30; padding: 6px; margin-bottom: 8px;
     box-shadow: 0 -10px 0 10px var(--bg), var(--shadow-pin); }   /* the first shadow covers the gap above */
   .years { gap: 2px; }

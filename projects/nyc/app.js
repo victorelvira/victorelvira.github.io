@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.8.3";
-const BUILD_AT = "2026-11-01 22:56";
+const DATA_V = "1.8.4";
+const BUILD_AT = "2026-11-01 23:01";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -285,6 +285,9 @@ function setPinned() {
   const bars = document.querySelector(".bars-wrap");
   root.setProperty("--views-h", views + "px");
   root.setProperty("--pin-h", (views + (WIDE.matches && bars ? bars.offsetHeight : 0)) + "px");
+  // on a phone the years stay pinned under the tabs: a jump to the concert must land below them
+  const years = document.querySelector(".years-pane");
+  root.setProperty("--pin-phone", (views + (NARROW.matches && years ? years.offsetHeight : 0)) + "px");
 }
 WIDE.addEventListener("change", placeKey);
 NARROW.addEventListener("change", placeKey);
@@ -292,7 +295,7 @@ addEventListener("resize", setPinned);
 // the bars and their key change height as they are drawn and as the legend changes: measure again then
 if (typeof ResizeObserver === "function") {
   const watch = new ResizeObserver(setPinned);
-  ["views", "bars-wrap"].forEach(c => { const el = document.querySelector("." + c); if (el) watch.observe(el); });
+  ["views", "bars-wrap", "years-pane"].forEach(c => { const el = document.querySelector("." + c); if (el) watch.observe(el); });
 }
 function drawColourBy() {
   $("colour-by").innerHTML = `<span class="cb-l">${t("Colour by")}</span>` + Object.entries(METRICS).map(([k, m]) =>
