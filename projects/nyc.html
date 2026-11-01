@@ -15,80 +15,83 @@
   <link rel="icon" href="/assets/favicons/main/favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/main/favicon-32x32.png">
   <meta name="theme-color" content="#f4eee2">
-  <link rel="stylesheet" href="nyc/style.css?v=1.7.5">
-  <script src="nyc/catalogue.js?v=1.7.5"></script>
-  <script src="nyc/composers.js?v=1.7.5"></script>
-  <script src="nyc/conductors.js?v=1.7.5"></script>
-  <script src="nyc/concerts.js?v=1.7.5"></script>
-  <script src="nyc/performances.js?v=1.7.5"></script>
-  <script src="nyc/announced.js?v=1.7.5"></script>
-  <script src="nyc/concert_meta.js?v=1.7.5"></script>
-  <script src="nyc/portraits.js?v=1.7.5"></script>
-  <script src="nyc/recordings.js?v=1.7.5"></script>
-  <script src="nyc/links.js?v=1.7.5"></script>
+  <link rel="stylesheet" href="nyc/style.css?v=1.8.3">
+  <script src="nyc/catalogue.js?v=1.8.3"></script>
+  <script src="nyc/composers.js?v=1.8.3"></script>
+  <script src="nyc/conductors.js?v=1.8.3"></script>
+  <script src="nyc/concerts.js?v=1.8.3"></script>
+  <script src="nyc/performances.js?v=1.8.3"></script>
+  <script src="nyc/announced.js?v=1.8.3"></script>
+  <script src="nyc/concert_meta.js?v=1.8.3"></script>
+  <script src="nyc/portraits.js?v=1.8.3"></script>
+  <script src="nyc/recordings.js?v=1.8.3"></script>
+  <script src="nyc/links.js?v=1.8.3"></script>
   <!-- the "Analysis and context" tab, as on the published page: Chart.js (pinned) + its own helpers -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-  <script src="nyc/chart_theme.js?v=1.7.5"></script>
-  <script src="nyc/legacy_charts.js?v=1.7.5"></script>
+  <script src="nyc/i18n_es.js?v=1.8.3"></script>
+  <script src="nyc/i18n.js?v=1.8.3"></script>
+  <script src="nyc/chart_theme.js?v=1.8.3"></script>
+  <script src="nyc/legacy_charts.js?v=1.8.3"></script>
   <script>
     var total_pieces_all_concerts = concerts.reduce((s, c) => s + c.program.piece_id.length, 0);
   </script>
-  <script src="nyc/app.js?v=1.7.5" defer></script>
+  <script src="nyc/app.js?v=1.8.3" defer></script>
 </head>
 <body>
   <nav id="navbar">
     <a class="wordmark" href="https://victorelvira.github.io">Víctor Elvira</a>
     <span class="nav-sep">·</span>
-    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html">other interactive projects</a>
+    <a class="nav-home" href="https://victorelvira.github.io/personal_projects.html" data-i18n>other interactive projects</a>
     <span id="build" class="build"></span>
   </nav>
 
   <header class="mast">
     <a class="brand" href="nyc.html">
-      <span class="brand-k">New Year's Concert</span>
-      <span class="brand-s">Vienna Philharmonic · every concert since 1939</span>
+      <span class="brand-k" data-i18n>New Year's Concert</span>
+      <span class="brand-s" data-i18n>Vienna Philharmonic · every concert since 1939</span>
     </a>
+    <span class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label"><button type="button" data-lang="en" lang="en">EN</button><button type="button" data-lang="es" lang="es">ES</button></span>
   </header>
 
-  <nav class="views" id="views" role="tablist" aria-label="Views">
-    <button type="button" class="view-tab on" role="tab" data-view="concerts" aria-selected="true">Concerts</button>
-    <button type="button" class="view-tab" role="tab" id="stats-tab" data-view="analysis" aria-selected="false">Analysis</button>
-    <button type="button" class="view-tab" role="tab" data-view="catalogue" aria-selected="false">Catalogue</button>
+  <nav class="views" id="views" role="tablist" aria-label="Views" data-i18n-attr="aria-label">
+    <button type="button" class="view-tab on" role="tab" data-view="concerts" aria-selected="true" data-i18n>Concerts</button>
+    <button type="button" class="view-tab" role="tab" id="stats-tab" data-view="analysis" aria-selected="false" data-i18n>Analysis</button>
+    <button type="button" class="view-tab" role="tab" data-view="catalogue" aria-selected="false" data-i18n>Catalogue</button>
   </nav>
 
   <div class="view on" id="view-concerts">
 
-  <section class="bars-wrap" aria-label="All concerts as bars">
+  <section class="bars-wrap" aria-label="All concerts as bars" data-i18n-attr="aria-label">
     <div class="bars" id="bars"></div>
     <div class="bars-axis" id="bars-axis" aria-hidden="true"></div>
     <div class="key" id="key">
       <p class="strip-legend" id="strip-legend"></p>
-      <div class="colour-by" id="colour-by" role="group" aria-label="Colour the concerts by"></div>
+      <div class="colour-by" id="colour-by" role="group" aria-label="Colour the concerts by" data-i18n-attr="aria-label"></div>
     </div>
   </section>
 
   <main class="layout" id="layout">
-    <section class="pane years-pane" aria-label="Concerts by decade, coloured by conductor">
-      <div class="years" id="years" role="listbox" aria-label="Choose a concert"></div>
+    <section class="pane years-pane" aria-label="Concerts by decade, coloured by conductor" data-i18n-attr="aria-label">
+      <div class="years" id="years" role="listbox" aria-label="Choose a concert" data-i18n-attr="aria-label"></div>
     </section>
     <section class="pane concert" id="concert" aria-live="polite"></section>
-    <div class="divider" id="divider" role="separator" aria-orientation="vertical" tabindex="0" title="Drag to resize"></div>
-    <aside class="pane card" id="card" aria-label="Details">
-      <div class="sheet-grip" id="sheet-grip" role="separator" aria-orientation="horizontal" aria-label="Drag to resize"></div>
-      <button class="card-close" id="card-close" type="button" aria-label="Close">×</button>
+    <div class="divider" id="divider" role="separator" aria-orientation="vertical" tabindex="0" title="Drag to resize" data-i18n-attr="title"></div>
+    <aside class="pane card" id="card" aria-label="Details" data-i18n-attr="aria-label">
+      <div class="sheet-grip" id="sheet-grip" role="separator" aria-orientation="horizontal" aria-label="Drag to resize" data-i18n-attr="aria-label"></div>
+      <button class="card-close" id="card-close" type="button" aria-label="Close" data-i18n-attr="aria-label">×</button>
       <div class="card-body" id="card-body"></div>
     </aside>
   </main>
   </div>
 
   <div class="view" id="view-analysis">
-    <nav class="toc" id="analysis-toc" aria-label="Sections of the analysis"></nav>
+    <nav class="toc" id="analysis-toc" aria-label="Sections of the analysis" data-i18n-attr="aria-label"></nav>
 
     <!-- copied verbatim from nyc.html (0.3.2): texts, chart containers and their scripts -->
 <div class="tab-pane fade show active" id="statsPane" role="tabpanel" aria-labelledby="stats-tab">
 
         <div class="col-md-12 catalogue-panel">
-          <h5 class="view-title">Analysis and context of the New Year’s Concert</h5>
+          <h5 class="view-title" data-i18n>Analysis and context of the New Year’s Concert</h5>
           <p class="forerunner-note" id="analysis-count">88 concerts in the data: the 87 numbered New Year’s Concerts (1941 to 2027) and their forerunner of 31 December 1939. All charts include the 1939 concert.</p>
 
           <!-- minimal UI now: selectors later -->
@@ -151,21 +154,21 @@
 
             <div class="col-12 col-lg-6 mb-3">
               <div class="plot-box">
-                <h6 class="plot-title">What does a New Year’s Concert consist of?</h6>
+                <h6 class="plot-title" data-i18n>What does a New Year’s Concert consist of?</h6>
                 <div class="plot-desc">
-                  <p>
+                  <p data-i18n>
                     <strong>Overall structure.</strong>  Each New Year’s Concert follows a well-established structure. The core of the event is the main programme, which typically includes around 15 pieces. Today the concert is divided into two parts. The first is shorter, about half an hour (32 minutes is the typical length on the official recordings, applause included). It is followed by an intermission, during which television usually broadcasts a documentary or short film. The second part is longer, about an hour including the encores (56 minutes plus 16), and concludes with a small set of additional pieces known as encores, which are not listed in the official programme. While the main programme varies substantially from year to year in both length and content, the encores are highly ritualised.
                   </p>
 
-                  <p>
+                  <p data-i18n>
                     <strong>The ritual of the encores.</strong> Since 1958, <em>The Blue Danube</em> and the <em>Radetzky March</em> have closed the concert almost every year. The one deliberate exception is 2005, when the <em>Radetzky March</em> was left out after the Indian Ocean earthquake and tsunami. In 1963 and 1967 both appear in the printed programme rather than as encores, and for 1968 our sources do not list them (under review).
                   </p>
 
-                  <p>
+                  <p data-i18n>
                     <strong>The Blue Danube.</strong> A distinctive tradition accompanies <em>The Blue Danube</em>. After the opening bars, the orchestra briefly stops and the conductor turns to the audience to deliver a short address, which may range from a few words to a simple New Year’s greeting in German: the conductor says <em>“Die Wiener Philharmoniker und ich wünschen Ihnen”</em> and the orchestra completes with <em>“Prosit Neujahr”</em> 
                   </p>
 
-                  <p>
+                  <p data-i18n>
                     <strong>Finale.</strong> The concert traditionally closes with the <em>Radetzky March</em>, during which the audience often joins in by clapping in rhythm, guided by the conductor.
                   </p>
                 </div>
@@ -194,13 +197,13 @@
                     const y_encore = y_total_ids.map((tot, i) => Math.max(0, tot - y_program[i]));
 
                     renderStackedBarChart('chartPiecesPerConcert_bar', labels, [
-                      { label: 'Number of pieces in the program', data: y_program },
-                      { label: 'Number of encores',  data: y_encore }
+                      { label: t('Number of pieces in the program'), data: y_program },
+                      { label: t('Number of encores'),  data: y_encore }
                     ]);
                   });
                 </script>
                 <div>
-                <p class="plot-reading">
+                <p class="plot-reading" data-i18n>
                   This plot displays the evolution of the main program size over time.
                 </p>
                 </div>
@@ -210,25 +213,25 @@
 
             <div class="col-12 col-lg-6 mb-3">
               <div class="plot-box">
-                <h6 class="plot-title">Who is the conductor of the New Year’s Concert?</h6>
+                <h6 class="plot-title" data-i18n>Who is the conductor of the New Year’s Concert?</h6>
                 <div class="plot-desc">
-                  <p>
+                  <p data-i18n>
                     <strong>The beginning.</strong> The New Year’s Concert was initially shaped by long, stable periods under a single conductor. Clemens Krauss led the concert from 1939 to 1954, with only a brief interruption in 1946 and 1947.
                   </p>
 
-                  <p>
+                  <p data-i18n>
                     <strong>The Boskovsky era.</strong> Krauss was followed by Willi Boskovsky, who conducted the concert every year from 1955 to 1979, holding the longest uninterrupted tenure and the record for the highest total number of appearances as conductor (25 editions). During this period, many of the musical and ritual traditions that still define the event today were firmly established.
                   </p>
 
-                  <p>
+                  <p data-i18n>
                     <strong>Transition years.</strong> In the 1980s, Lorin Maazel became the central figure, conducting seven editions during that decade and later returning on four additional occasions.
                   </p>
 
-                  <p>
+                  <p data-i18n>
                     <strong>Rotating conductors.</strong> A major structural change occurred in 1987, when the Vienna Philharmonic adopted a policy of regularly rotating conductors instead of appointing a long-term musical director for the concert, beginning with Herbert von Karajan.
                   </p>
 
-                  <p>
+                  <p data-i18n>
                     <strong>Recent pattern.</strong> Since then, the podium has alternated between returning and first-time conductors. Some have reappeared intermittently over the years, most notably Riccardo Muti, who has conducted the New Year’s Concert seven times.
                   </p>
                 </div>
@@ -237,7 +240,7 @@
                 </div>
 
 
-                <div class="plot-reading">
+                <div class="plot-reading" data-i18n>
                   This plot shows how many New Year’s Concerts each conductor has led, highlighting the difference from long, uninterrupted tenures (Boskovsky, Krauss, and Maazel) to the modern era of rotating conductors.
                 </div>
 
@@ -283,11 +286,11 @@
                     const values = top.map(x => x[1]);
 
                     const others = rest.reduce((s, x) => s + x[1], 0);
-                    if (others > 0) { labels.push('Others'); values.push(others); }
+                    if (others > 0) { labels.push(t('Others')); values.push(others); }
 
                     // Important: render only when the canvas is visible (tab shown)
                     renderBarChart('chartConductors', labels, [
-                      { label: 'Number of conducted concerts', data: values }
+                      { label: t('Number of conducted concerts'), data: values }
                     ]);
                   }
 
@@ -305,10 +308,10 @@
 
            <div class="col-12 mb-3">
   <div class="plot-box">
-    <h6 class="plot-title">Just polkas and waltzes? What gets played and how it evolves</h6>
+    <h6 class="plot-title" data-i18n>Just polkas and waltzes? What gets played and how it evolves</h6>
 
     <div class="plot-desc" id="descFormsUnified">
-      <p>
+      <p data-i18n>
         <strong>Musical forms.</strong> The identity of the New Year’s Concert is strongly shaped by the musical forms of the performed pieces. The programme is largely dominated by polkas, waltzes, and marches, reflecting the central role of 19th-century Viennese dance music in the concert’s tradition. Closely linked to social dancing and festive public occasions, these forms define the stylistic boundaries of the event, while other musical forms appear only marginally.
       </p>
 
@@ -324,7 +327,7 @@
           <canvas id="chartPlayedByType"></canvas>
         </div>
 
-        <div class="plot-reading" id="readingPlayedByType">
+        <div class="plot-reading" id="readingPlayedByType" data-i18n>
             Considering all <span id="totalPiecesAllConcerts_2"></span> pieces performed across every edition of the New Year’s Concert (including repetitions), the repertoire is largely dominated by a small number of musical forms. We show the <span id="playedTypeTopShow"></span> most frequent forms: Polkas (<span id="countPolka"></span> performances), waltzes (<span id="countWaltz"></span>), and marches (<span id="countMarch"></span>) account for a large fraction of the total program, while all other forms appear comparatively rarely and are therefore grouped as Others.
          </div>
 
@@ -333,6 +336,18 @@
             if (!t) return null;
             return t.includes('Polka') ? 'Polka' : t;
           }
+
+          // the name of a musical form as shown on a chart (the data keeps the English name)
+          const ANALYSIS_FORM_LABELS = {
+            'Polka': t('Polka'), 'Waltz': t('Waltz'), 'Overture': t('Overture'), 'Galop': t('Galop'),
+            'March': t('March'), 'Quadrille': t('Quadrille'), 'Other dances': t('Other dances'),
+            'Other dance': t('Other dance'), 'Ballet excerpt': t('Ballet excerpt'), 'Fantasie': t('Fantasie'),
+            'Csárdás': t('Csárdás'), 'Opera excerpt': t('Opera excerpt'), 'Gavotte': t('Gavotte'),
+            'Rondo': t('Rondo'), 'German dance': t('German dance'), 'Prelude': t('Prelude'),
+            "Entr'acte": t("Entr'acte"), 'Musikalischer Scherz': t('Musikalischer Scherz'),
+            'Symphonic movement': t('Symphonic movement')
+          };
+          function analysisFormLabel(f) { return ANALYSIS_FORM_LABELS[f] ?? f; }
 
           function runPlayedByType() {
             const CATALOGUE = (typeof catalogue !== 'undefined') ? catalogue : window.catalogue;
@@ -360,11 +375,11 @@
             const top = pairs.slice(0, top_show);
             const rest = pairs.slice(top_show);
 
-            const labels = top.map(x => x[0]);
+            const labels = top.map(x => analysisFormLabel(x[0]));
             const values = top.map(x => x[1]);
 
             const others = rest.reduce((s, x) => s + x[1], 0);
-            if (others > 0) { labels.push('Others'); values.push(others); }
+            if (others > 0) { labels.push(t('Others')); values.push(others); }
 
             // total pieces played (including repeats)
             const totalPieces = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -381,7 +396,7 @@
             document.getElementById('countMarch').textContent  = marchCount;
 
             renderBarChartHorizontal('chartPlayedByType', labels, [
-              { label: 'Appearances', data: values }
+              { label: t('Appearances'), data: values }
             ]);
           }
 
@@ -396,7 +411,7 @@
           <canvas id="chartCatalogueByType"></canvas>
         </div>
 
-        <div class="plot-reading" id="readingCatalogueByType">
+        <div class="plot-reading" id="readingCatalogueByType" data-i18n>
           Looking at the repertoire itself (each piece counted once, no repetitions), there are <span id="totalPiecesCatalogue_types"></span> unique pieces that have ever been  played. This histogram ranks musical forms by how many pieces of each form exist, and shows the <span id="catTypeTopShow"></span> most common forms. Even without repetition, polkas (<span id="catCountPolka"></span>) and waltzes (<span id="catCountWaltz"></span>) still lead, followed by overtures (<span id="catCountOverture"></span>), marches (<span id="catCountMarch"></span>), and galops (<span id="catCountGalop"></span>).
         </div>
 
@@ -425,11 +440,11 @@
             const top = pairs.slice(0, top_show);
             const rest = pairs.slice(top_show);
 
-            const labels = top.map(x => x[0]);
+            const labels = top.map(x => analysisFormLabel(x[0]));
             const values = top.map(x => x[1]);
 
             const others = rest.reduce((s, x) => s + x[1], 0);
-            if (others > 0) { labels.push('Others'); values.push(others); }
+            if (others > 0) { labels.push(t('Others')); values.push(others); }
 
             // totals + headline forms
             const totalPieces = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -447,7 +462,7 @@
             document.getElementById('catCountOverture').textContent  = overtureCount;
 
             renderBarChartHorizontal('chartCatalogueByType', labels, [
-              { label: 'Pieces in catalogue', data: values }
+              { label: t('Pieces in catalogue'), data: values }
             ]);
           }
 
@@ -462,7 +477,7 @@
           <canvas id="chartFormsByYearCount"></canvas>
         </div>
 
-        <div class="plot-reading" id="readingFormsByYearCount">
+        <div class="plot-reading" id="readingFormsByYearCount" data-i18n>
           Each bar is one edition. Pieces are grouped by musical form (Polka, Waltz, March, Galop, Overture, and Others) using the piece type in the dataset, with Polka subtypes merged into 'Polka'.
         </div>
       </div>
@@ -528,12 +543,12 @@
                       data: {
                         labels,
                         datasets: [
-                          { label: 'Polka',    data: yPolka,    stack: 'stack0' },
-                          { label: 'Waltz',    data: yWaltz,    stack: 'stack0' },
-                          { label: 'March',    data: yMarch,    stack: 'stack0' },
-                          { label: 'Galop',    data: yGalop,    stack: 'stack0' },
-                          { label: 'Overture', data: yOverture, stack: 'stack0' },
-                          { label: 'Others',   data: yOthers,   stack: 'stack0' }
+                          { label: t('Polka'),    data: yPolka,    stack: 'stack0' },
+                          { label: t('Waltz'),    data: yWaltz,    stack: 'stack0' },
+                          { label: t('March'),    data: yMarch,    stack: 'stack0' },
+                          { label: t('Galop'),    data: yGalop,    stack: 'stack0' },
+                          { label: t('Overture'), data: yOverture, stack: 'stack0' },
+                          { label: t('Others'),   data: yOthers,   stack: 'stack0' }
                         ]
                       },
                       options: {
@@ -554,7 +569,7 @@
                     <canvas id="chartFormsByYearPctLine"></canvas>
                   </div>
 
-                  <div class="plot-reading" id="readingFormsByYearPctLine">
+                  <div class="plot-reading" id="readingFormsByYearPctLine" data-i18n>
                     Same information as the stacked bars, but shown as time series. Each curve represents the percentage share of a musical form within a given edition.
                   </div>
                 </div>
@@ -621,12 +636,12 @@
                       data: {
                         labels,
                         datasets: [
-                          { label: 'Polka (%)',    data: yPolka,    fill: false, tension: 0.2 },
-                          { label: 'Waltz (%)',    data: yWaltz,    fill: false, tension: 0.2 },
-                          { label: 'March (%)',    data: yMarch,    fill: false, tension: 0.2 },
-                          { label: 'Galop (%)',    data: yGalop,    fill: false, tension: 0.2 },
-                          { label: 'Overture (%)', data: yOverture, fill: false, tension: 0.2 },
-                          { label: 'Others (%)',   data: yOthers,   fill: false, tension: 0.2 }
+                          { label: t('Polka (%)'),    data: yPolka,    fill: false, tension: 0.2 },
+                          { label: t('Waltz (%)'),    data: yWaltz,    fill: false, tension: 0.2 },
+                          { label: t('March (%)'),    data: yMarch,    fill: false, tension: 0.2 },
+                          { label: t('Galop (%)'),    data: yGalop,    fill: false, tension: 0.2 },
+                          { label: t('Overture (%)'), data: yOverture, fill: false, tension: 0.2 },
+                          { label: t('Others (%)'),   data: yOthers,   fill: false, tension: 0.2 }
                         ]
                       },
                       options: {
@@ -664,13 +679,13 @@
   <div class="col-12 mb-3">
     <div class="plot-box">
 
-      <h6 class="plot-title">Is the New Year's Concert only about the Strauss family? Strauss vs non-Strauss</h6>
+      <h6 class="plot-title" data-i18n>Is the New Year's Concert only about the Strauss family? Strauss vs non-Strauss</h6>
       <div class="plot-desc">
-        <p>
+        <p data-i18n>
           <strong>Strauss origins.</strong> The New Year’s Concert was conceived from the outset as a celebration of the music of the Strauss family. The first work by a non-Strauss composer did not appear until 1961, when Joseph Lanner’s <em>Hofballtänze</em>, op. 161, was included in the programme.
         </p>
-        <p>
-          <strong>Gradual broadening.</strong> Over the last few decades, the repertoire has slowly expanded beyond the Strauss family: music by other composers was absent until the 1950s, about 5% of the pieces from the 1960s to the 1980s, about 10% in the 1990s and 2000s, 18% in the 2010s and a quarter in the 2020s. Most are Viennese contemporaries of the Strauss family (Hellmesberger, Lanner, Ziehrer, Suppé), but they now include Lumbye from Copenhagen, Waldteufel from Paris, Offenbach, Tchaikovsky and, in 2026, Florence Price. The programme is still mostly Strauss, but it is no longer only Strauss.
+        <p data-i18n>
+          <strong>Gradual broadening.</strong> Over the last few decades, the repertoire has slowly expanded beyond the Strauss family: music by other composers was absent until 1961, about 5% of the pieces from the 1960s to the 1980s, about 10% in the 1990s and 2000s, 18% in the 2010s and a quarter in the 2020s. Most are Viennese contemporaries of the Strauss family (Hellmesberger, Lanner, Ziehrer, Suppé), but they now include Lumbye from Copenhagen, Waldteufel from Paris, Offenbach, Tchaikovsky and, in 2026, Florence Price. The programme is still mostly Strauss, but it is no longer only Strauss.
         </p>
       </div>
 
@@ -733,22 +748,21 @@
           const yearMaxNon = concerts[y_non.indexOf(maxNon)].year;
 
           document.getElementById('readingStraussPct').textContent =
-            'This graph shows the percentage of pieces at each concert (including encores) written by the Strauss family vs everyone else. The least Strauss-heavy edition was '
-            + yearMin + ' (' + minPct.toFixed(1) + '% Strauss family).';
+            t('This graph shows the percentage of pieces at each concert (including encores) written by the Strauss family vs everyone else. The least Strauss-heavy edition was {year} ({pct}% Strauss family).',
+              { year: yearMin, pct: minPct.toFixed(1) });
 
           document.getElementById('readingStraussCounts').textContent =
-            'This graph shows the number of pieces at each concert (including encores) written by the Strauss family vs everyone else. In absolute terms, '
-            + onlyStrauss + ' concerts featured only Strauss family works. The edition with the most non-Strauss pieces was '
-            + yearMaxNon + ' (' + maxNon + ' non-Strauss pieces).';
+            t('This graph shows the number of pieces at each concert (including encores) written by the Strauss family vs everyone else. In absolute terms, {n} concerts featured only Strauss family works. The edition with the most non-Strauss pieces was {year} ({count} non-Strauss pieces).',
+              { n: onlyStrauss, year: yearMaxNon, count: maxNon });
 
           renderLineChart('chartStraussVsNonStraussPct', labels, [
-            { label: 'Strauss (%)', data: y_strauss_pct },
-            { label: 'Non Strauss (%)', data: y_non_pct }
+            { label: t('Strauss (%)'), data: y_strauss_pct },
+            { label: t('Non Strauss (%)'), data: y_non_pct }
           ]);
 
           renderLineChart('chartStraussVsNonStrauss', labels, [
-            { label: 'Strauss', data: y_strauss },
-            { label: 'Non Strauss', data: y_non }
+            { label: t('Strauss'), data: y_strauss },
+            { label: t('Non Strauss'), data: y_non }
           ]);
         });
       </script>
@@ -763,12 +777,12 @@
             <!-- COMPOSERS: 4-panels (performances, catalogue, by-year counts, by-year %) -->
             <div class="col-12 mb-3">
               <div class="plot-box">
-                <h6 class="plot-title">Which composers have appeared in the program? Which Strauss is the most performed?</h6>
+                <h6 class="plot-title" data-i18n>Which composers have appeared in the program? Which Strauss is the most performed?</h6>
                 <div class="plot-desc" id="descComposersBlock">
-                  <p>
+                  <p data-i18n>
                     <strong>Two notions of prominence.</strong> The role of a composer in the New Year’s Concert can be measured in two distinct ways: by how often their music is performed (counting repetitions), and by how many different works by that composer have appeared at least once in the programme.
                   </p>
-                  <p>
+                  <p data-i18n>
                     <strong>A clear hierarchy.</strong> By a wide margin, Johann Strauss II is the most performed composer in the concert’s history. He is followed at some distance by his brother Josef Strauss, and then by their father Johann Strauss I. The panels below contrast dominance through repetition with breadth of repertoire, and show how this balance evolves over time.
                   </p>
                 </div>
@@ -779,7 +793,7 @@
                     <div class="plot-chart">
                       <canvas id="chartComposerPerformancesAll"></canvas>
                     </div>
-                    <div class="plot-reading" id="readingComposerPerformancesAll">
+                    <div class="plot-reading" id="readingComposerPerformancesAll" data-i18n>
                       This horizontal histogram ranks composers by total appearances across all <span id="totalPiecesAllConcerts_comp"></span> performed pieces (including repeats). The plot shows the top <span id="topShow_compA"></span> and groups the rest as Others. 
                       By far, the most performed composer is <span id="top1_comp"></span> (<span id="top1c_comp"></span> times), followed by <span id="top2_comp"></span> (<span id="top2c_comp"></span>), <span id="top3_comp"></span> (<span id="top3c_comp"></span>), and <span id="top4_comp"></span> (<span id="top4c_comp"></span>).
                     </div>
@@ -793,7 +807,7 @@
                     <div class="plot-chart">
                       <canvas id="chartComposerCatalogueAll"></canvas>
                     </div>
-                    <div class="plot-reading" id="readingComposerCatalogueAll">
+                    <div class="plot-reading" id="readingComposerCatalogueAll" data-i18n>
                       This horizontal histogram ranks composers by how many unique pieces they contributed to the New Year’s Concert repertoire (each piece counted once). It shows the top <span id="topShow_compB"></span> and groups the rest as Others. 
                       The largest contributors are <span id="catTop1_comp"></span> (<span id="catTop1c_comp"></span> pieces), followed by <span id="catTop2_comp"></span> (<span id="catTop2c_comp"></span>), <span id="catTop3_comp"></span> (<span id="catTop3c_comp"></span>), and <span id="catTop4_comp"></span> (<span id="catTop4c_comp"></span>).
                     </div>
@@ -804,7 +818,7 @@
                     <div class="plot-chart">
                       <canvas id="chartComposersByYearCount"></canvas>
                     </div>
-                    <div class="plot-reading" id="readingComposersByYearCount">
+                    <div class="plot-reading" id="readingComposersByYearCount" data-i18n>
                       Each bar is one edition. Pieces are grouped by composer (Johann Strauss II., Josef Strauss, Johann Strauss I., Eduard Strauss, Joseph Lanner, Joseph Hellmesberger Jr.), with all remaining composers grouped as Others.
                     </div>
                   </div>
@@ -814,7 +828,7 @@
                     <div class="plot-chart">
                       <canvas id="chartComposersByYearPct"></canvas>
                     </div>
-                    <div class="plot-reading">
+                    <div class="plot-reading" data-i18n>
                       Same grouping as the stacked chart, but shown as percentages to remove the effect of editions having slightly different program lengths.
                     </div>
                   </div>
@@ -950,7 +964,7 @@
                     const labelsA = topA.map(x=>x[0]);
                     const valuesA = topA.map(x=>x[1]);
                     const othersA = restA.reduce((s,x)=>s+x[1],0);
-                    if (othersA > 0) { labelsA.push('Others'); valuesA.push(othersA); }
+                    if (othersA > 0) { labelsA.push(t('Others')); valuesA.push(othersA); }
 
                     // ---- top 4 narrative for the plot-reading (performances) ----
                     const t4 = pairsA.slice(0, 4);
@@ -969,7 +983,7 @@
                     // -------------------------------------------------------------
 
                     renderBarChartHorizontal('chartComposerPerformancesAll', labelsA, [
-                      { label: 'Appearances', data: valuesA }
+                      { label: t('Appearances'), data: valuesA }
                     ]);
 
                     // -------------------------
@@ -992,7 +1006,7 @@
                     const labelsB = topB.map(x=>x[0]);
                     const valuesB = topB.map(x=>x[1]);
                     const othersB = restB.reduce((s,x)=>s+x[1],0);
-                    if (othersB > 0) { labelsB.push('Others'); valuesB.push(othersB); }
+                    if (othersB > 0) { labelsB.push(t('Others')); valuesB.push(othersB); }
                     // ---- top 4 narrative for the plot-reading (catalogue breadth) ----
                     const t4b = pairsB.slice(0, 4);
                     function setTopB(i, nameId, countId) {
@@ -1010,7 +1024,7 @@
                     // ---------------------------------------------------------------
 
                     renderBarChartHorizontal('chartComposerCatalogueAll', labelsB, [
-                      { label: 'Pieces in repertoire', data: valuesB }
+                      { label: t('Pieces in repertoire'), data: valuesB }
                     ]);
 
                     // -------------------------
@@ -1047,7 +1061,7 @@
                         type: 'bar',
                         data: {
                           labels: labelsYears,
-                          datasets: GROUP_ORDER.map(g => ({ label: g, data: seriesCount[g], stack: 'stack0' }))
+                          datasets: GROUP_ORDER.map(g => ({ label: g === 'Others' ? t('Others') : g, data: seriesCount[g], stack: 'stack0' }))
                         },
                         options: {
                           responsive: true,
@@ -1085,7 +1099,7 @@
                         type: 'line',
                         data: {
                           labels: labelsYears,
-                          datasets: GROUP_ORDER.map(g => ({ label: g, data: seriesPct[g] }))
+                          datasets: GROUP_ORDER.map(g => ({ label: g === 'Others' ? t('Others') : g, data: seriesPct[g] }))
                         },
                         options: {
                           responsive: true,
@@ -1112,9 +1126,9 @@
 
                         <div class="col-12 mb-3">
               <div class="plot-box">
-                <h6 class="plot-title">Which pieces are often performed at the New Year’s Concert?</h6>
+                <h6 class="plot-title" data-i18n>Which pieces are often performed at the New Year’s Concert?</h6>
 
-                <div class="plot-desc">
+                <div class="plot-desc" data-i18n>
                   Some pieces have become inseparable from the identity of the New Year’s Concert.
                   The most frequently performed piece is <span id="mostRepeatedPieceName"></span>: <span id="mostRepeatedPieceCount"></span> performances, in <span id="mostRepeatedPieceConcerts"></span> of the <span id="totalConcertsCount"></span> editions.
                   The second is <span id="secondRepeatedPieceName"></span> (<span id="secondRepeatedPieceCount"></span> performances in <span id="secondRepeatedPieceConcerts"></span> concerts).
@@ -1128,7 +1142,7 @@
                     <div class="plot-chart">
                       <canvas id="chartMostRepeatedPieces"></canvas>
                     </div>
-                    <div class="plot-reading">
+                    <div class="plot-reading" data-i18n>
                       This histogram shows the <span id="topShowValue"></span> most repeated pieces.
                     </div>
                   </div>
@@ -1137,7 +1151,7 @@
                     <div class="plot-chart">
                       <canvas id="chartRankAppearances"></canvas>
                     </div>
-                    <div class="plot-reading">
+                    <div class="plot-reading" data-i18n>
                       This plot shows the full distribution of appearances: each point is one piece, ordered from least played to most played. In total, <span id="piecesEverPlayed"></span> different pieces have appeared at least once in the concert, and <span id="piecesOnce2"></span> out of <span id="piecesEverPlayed2"></span> (<span id="piecesOncePct_2"></span>%) have been played only once.
                     </div>
                   </div>
@@ -1205,7 +1219,7 @@
                     // Top list chart
                     const top = pairsDesc.slice(0, top_show);
                     renderBarChartHorizontal('chartMostRepeatedPieces', top.map(x => x[0]), [
-                      { label: 'Appearances', data: top.map(x => x[1]) }
+                      { label: t('Appearances'), data: top.map(x => x[1]) }
                     ]);
 
                      // Rank plot (descending): most repeated on the left
@@ -1230,7 +1244,7 @@
 
                       renderLineChart('chartRankAppearances', labelsRank, [
                         {
-                          label: 'Appearances',
+                          label: t('Appearances'),
                           data: valuesRank,
                           pointTitles: titlesRank,
                           pointComposers: composersRank
@@ -1368,9 +1382,9 @@
 
                         <div class="col-12 mb-3">
                           <div class="plot-box">
-                            <h6 class="plot-title">Evolution of the repertoire over time: new pieces and repetitions</h6>
+                            <h6 class="plot-title" data-i18n>Evolution of the repertoire over time: new pieces and repetitions</h6>
 
-                            <div class="plot-desc">
+                            <div class="plot-desc" data-i18n>
                               In the early years of the New Year’s Concert, most performed pieces were being played for the first time. From 1955 the repertoire settled: under Boskovsky and then Maazel, a concert brought about two pieces new to the concert, and the rest returned. A clear change coincides with 1987, when the Philharmonic began to rotate its conductors, starting with Herbert von Karajan: about five new pieces per concert from 1987 to 1999, and nearly seven since 2000, as each conductor leaves a personal imprint on the programme.
                             </div>
 
@@ -1381,7 +1395,7 @@
                                     <div class="plot-chart">
                                       <canvas id="chartNewVsRepeatedByYearCount"></canvas>
                                     </div>
-                                    <div class="plot-reading" id="readingNewVsRepeatedByYearCount">
+                                    <div class="plot-reading" id="readingNewVsRepeatedByYearCount" data-i18n>
                                         Each bar is one edition. A piece is counted as new in a given year if it had never appeared in any earlier New Year’s Concert; otherwise it is counted as a repeat.
                                         Across all editions in this dataset, <span id="totalNewPiecesAcrossYears"></span> distinct works enter the concert’s repertoire at least once (i.e., they appear as 'new' in the year of their first appearance), while <span id="totalRepeatPiecesAcrossYears"></span> performances are repeats of works that had already been heard before.
                                     </div>
@@ -1437,8 +1451,8 @@
                                       data: {
                                         labels,
                                         datasets: [
-                                          { label: 'New pieces (first time)', data: yNew, stack: 'stack0' },
-                                          { label: 'Repeated pieces', data: yRep, stack: 'stack0' }
+                                          { label: t('New pieces (first time)'), data: yNew, stack: 'stack0' },
+                                          { label: t('Repeated pieces'), data: yRep, stack: 'stack0' }
                                         ]
                                       },
                                       options: {
@@ -1457,7 +1471,7 @@
                                     <div class="plot-chart">
                                       <canvas id="chartNewVsRepeatedByYearPct"></canvas>
                                     </div>
-                                    <div class="plot-reading" id="readingNewVsRepeatedByYearPct">
+                                    <div class="plot-reading" id="readingNewVsRepeatedByYearPct" data-i18n>
                                       Same idea as the count chart, but expressed as percentages so that editions with different program lengths are comparable.
                                       The most 'novel' edition (highest share of new pieces) is <span id="yearMaxNewPct"></span> with <span id="maxNewPct"></span>% new pieces.
                                     </div>
@@ -1506,8 +1520,8 @@
                                     document.getElementById('maxNewPct').textContent = maxNewPct.toFixed(1);
 
                                     renderLineChart('chartNewVsRepeatedByYearPct', labels, [
-                                      { label: 'New pieces (%)', data: yNewPct },
-                                      { label: 'Repeated pieces (%)', data: yRepPct }
+                                      { label: t('New pieces (%)'), data: yNewPct },
+                                      { label: t('Repeated pieces (%)'), data: yRepPct }
                                     ]);
                                   })();
                                 </script>
@@ -1516,7 +1530,7 @@
                             </div>
 
 
-                            <div class="plot-reading" id="readingNewVsRepeated">
+                            <div class="plot-reading" id="readingNewVsRepeated" data-i18n>
                               This plot follows all <span id="totalPiecesPlayed"></span> performed pieces (repeated or not) accumulated across <span id="totalEditions"></span> editions, in chronological order. The horizontal axis counts the total number of pieces performed (including repeats), while the vertical axis shows how many distinct works have appeared so far. The growing gap between the two curves represents the accumulation of repetitions over time. Earlier in the concert’s history, this gap widens rapidly, reflecting the frequent reuse of a small, established repertoire. In more recent decades, the gap expands more slowly, indicating a  tendency to introduce more new pieces.
                                   </div>
                                 </div>
@@ -1609,8 +1623,8 @@
                                  data: {
                                    labels: xs,
                                    datasets: [
-                                     { label: 'Unique pieces (cumulative)', data: yUnique },
-                                     { label: 'Repeated pieces (cumulative)', data: yRepeats }
+                                     { label: t('Unique pieces (cumulative)'), data: yUnique },
+                                     { label: t('Repeated pieces (cumulative)'), data: yRepeats }
                                    ]
                                  },
                                  options: {
@@ -1642,16 +1656,16 @@
 
   <div class="view" id="view-catalogue">
     <div class="tab-pane active" id="cataloguePane" role="tabpanel">
-      <h5 class="view-title cat-title">Catalogue of pieces</h5>
+      <h5 class="view-title cat-title" data-i18n>Catalogue of pieces</h5>
       <div class="cat-tools">
-        <span class="search-box"><input type="search" id="cat-search" placeholder="Search..." aria-label="Search the catalogue"><button type="button" class="search-clear" id="cat-clear" aria-label="Clear the search" title="Clear the search" hidden>×</button></span>
+        <span class="search-box"><input type="search" id="cat-search" placeholder="Search..." aria-label="Search the catalogue" data-i18n-attr="aria-label,placeholder"><button type="button" class="search-clear" id="cat-clear" aria-label="Clear the search" title="Clear the search" hidden data-i18n-attr="aria-label,title">×</button></span>
         <span class="cat-count" id="cat-count"></span>
       </div>
       <div class="table-scroll"><table class="cat" id="cat-table"></table></div>
     </div>
   </div>
   <footer class="site-foot">
-    <p>&copy; <span id="foot-year"></span> Víctor Elvira · Sources: the Vienna Philharmonic's concert archive, German Wikipedia, MusicBrainz, Wikidata, IMSLP and Wikimedia Commons, each cited where it is used.</p>
+    <p data-i18n>© <span id="foot-year"></span> Víctor Elvira · Sources: the Vienna Philharmonic's concert archive, German Wikipedia, MusicBrainz, Wikidata, IMSLP and Wikimedia Commons, each cited where it is used.</p>
   </footer>
   <script>document.getElementById("foot-year").textContent = new Date().getFullYear();</script>
   <!-- The same three counters as the published page (Google Analytics, Statcounter, GoatCounter), loaded

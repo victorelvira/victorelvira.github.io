@@ -6,12 +6,13 @@
   if (typeof Chart === "undefined") return;
   const C = { gold: "#8f6d2d", piece: "#2b5fa8", conductor: "#2e7d4f", composer: "#b3373a", form: "#c0650f",
               navy: "#3d4f7a", teal: "#3f9a9b", violet: "#7a6aa8", grey: "#b4b8c4" };
+  // English and Spanish labels (the page is translated, so a chart's label may be either)
   const BY_LABEL = [
-    [/^others?\b/i, C.grey], [/non strauss/i, C.navy], [/^strauss/i, C.gold],
-    [/in the program|^program/i, C.piece], [/encore/i, C.gold], [/^total/i, C.gold],
-    [/conducted/i, C.conductor],
-    [/^polka/i, C.form], [/^waltz/i, C.navy], [/^march/i, C.gold], [/^galop/i, C.composer], [/^overture/i, C.teal],
-    [/^new/i, C.gold], [/repeat/i, C.grey],
+    [/^otros compositores/i, C.navy], [/^(others?|otr[oa]s)\b/i, C.grey], [/non strauss/i, C.navy], [/^strauss/i, C.gold],
+    [/in the program|^program|del programa/i, C.piece], [/encore|bises/i, C.gold], [/^total/i, C.gold],
+    [/conducted|dirigidos/i, C.conductor],
+    [/^pol[kc]a/i, C.form], [/^(waltz|vals)/i, C.navy], [/^(march|marcha)/i, C.gold], [/^galop/i, C.composer], [/^(overture|obertura)/i, C.teal],
+    [/^(new|obras nuevas)/i, C.gold], [/repeat|repetid/i, C.grey],
   ];
   const ROTATION = [C.gold, C.navy, C.teal, C.composer, C.form, C.violet, C.conductor];
   const pick = (label, i) => (BY_LABEL.find(([re]) => re.test(label || "")) || [null, ROTATION[i % ROTATION.length]])[1];

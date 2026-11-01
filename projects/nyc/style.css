@@ -51,6 +51,13 @@ button { font: inherit; color: inherit; }
 #navbar .nav-home { min-width: 0; overflow: hidden; text-overflow: ellipsis; }   /* gives way on a narrow phone */
 #navbar .nav-sep { color: var(--nav-dim); }
 #navbar .build { margin-left: auto; color: var(--nav-dim); font-size: 6.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* the page's language, at the right of the title (Víctor, 2026-11-01) */
+.mast .lang-switch { align-self: center; display: inline-flex; border: 1px solid var(--line); border-radius: var(--pill); overflow: hidden; }
+.mast .lang-switch button { border: 0; background: var(--paper); color: var(--muted); font: 600 var(--fs-s)/1 var(--f-body);
+  letter-spacing: .04em; padding: 6px 10px; cursor: pointer; }
+.mast .lang-switch button + button { border-left: 1px solid var(--line); }
+.mast .lang-switch button:hover, .mast .lang-switch button:focus-visible { color: var(--ink); outline: none; }
+.mast .lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--paper); cursor: default; }
 
 .mast { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); padding: var(--sp-4) var(--sp-4) var(--sp-2); flex-wrap: wrap; }
 .brand { text-decoration: none; color: var(--ink); display: flex; flex-direction: column; }
@@ -78,7 +85,10 @@ button { font: inherit; color: inherit; }
   font: 600 var(--fs-s)/32px var(--f-body); font-variant-numeric: tabular-nums; letter-spacing: -.01em;
   transition: opacity .15s; overflow: hidden; }
 .yr:hover, .yr:focus-visible { outline: 2px solid var(--ink); outline-offset: 0; }
-.yr[aria-selected="true"] { outline: 2.5px solid var(--gold); outline-offset: 1px; position: relative; z-index: 1; }
+/* the concert on screen: unmistakable, a dark ring with a white gap, a little larger, and never faded */
+.yr[aria-selected="true"] { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 2px #fff, 0 4px 10px -2px rgba(16, 22, 42, .45);
+  transform: scale(1.08); font-weight: 800; position: relative; z-index: 2; }
+.years.lit .yr[aria-selected="true"], .bars.lit .tile[aria-selected="true"] { opacity: 1; }
 .yr.none { background: transparent; border: 1px dashed var(--line); color: var(--muted); cursor: default; font-weight: 400; }
 .yr.gap { visibility: hidden; }
 .years.lit .yr:not(.none) { opacity: .18; }
@@ -92,7 +102,7 @@ button { font: inherit; color: inherit; }
 .tile span { writing-mode: vertical-rl; transform: rotate(180deg); font: 600 var(--fs-xs)/1 var(--f-body);
   font-variant-numeric: tabular-nums; letter-spacing: .02em; }
 .tile:hover, .tile:focus-visible { transform: translateY(-2px); outline: none; }
-.tile[aria-selected="true"] { outline: 2px solid var(--ink); outline-offset: 1px; }
+.tile[aria-selected="true"] { outline: 3px solid var(--ink); outline-offset: 1px; box-shadow: 0 0 0 1px #fff; position: relative; z-index: 2; }
 .bars.lit .tile { opacity: .16; }
 .bars.lit .tile.on { opacity: 1; }
 .bars-axis { position: relative; height: 16px; font-size: var(--fs-s); color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -322,6 +332,7 @@ sup.unconf { color: var(--lapiz); font-size: var(--fs-s); margin-left: 1px; }
 .plot-desc.folded { display: none; }   /* the introductions start folded: the charts come first */
 .plot-reading { font-size: var(--fs-s); color: var(--muted); font-style: italic; margin: 16px 0 6px; }
 .plot-reading::before { content: "Plot reading: "; font-weight: bold; }
+:root:lang(es) .plot-reading::before { content: "Cómo leerla: "; }   /* the page in Spanish (web/nyc/i18n.js sets lang) */
 .intro-toggle { all: unset; cursor: pointer; display: inline-block; margin: 0 0 10px; font-size: var(--fs-s);
   color: var(--gold); border-bottom: 1px dotted var(--gold); }
 .intro-toggle:hover, .intro-toggle:focus-visible { border-bottom-style: solid; }
