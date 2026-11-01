@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.7.0";
-const BUILD_AT = "2026-11-01 17:53";
+const DATA_V = "1.7.1";
+const BUILD_AT = "2026-11-01 18:12";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -1101,6 +1101,13 @@ if (by0 && METRICS[by0] && METRICS[by0].kind !== "none") colourBy = by0;
 drawColourBy();
 placeKey();
 drawYears();
+// the count above the charts, from the data (it was written by hand and went stale when 2027 arrived)
+(() => {
+  const numbered = CONCERTS.filter(c => c.year !== FORERUNNER), last = CONCERTS[N - 1].year;
+  $("analysis-count").textContent = `${N} concerts in the data: the ${numbered.length} numbered New Year’s Concerts ` +
+    `(${numbered[0].year} to ${last}) and their forerunner of 31 December ${FORERUNNER}. All charts include the ${FORERUNNER} concert` +
+    (upcoming(last) ? `, and the ${last} programme, published but not yet played.` : ".");
+})();
 wireYears();
 setupDivider();
 setupSheet();
