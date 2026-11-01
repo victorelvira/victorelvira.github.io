@@ -85,9 +85,9 @@ button { font: inherit; color: inherit; }
   font: 600 var(--fs-s)/32px var(--f-body); font-variant-numeric: tabular-nums; letter-spacing: -.01em;
   transition: opacity .15s; overflow: hidden; }
 .yr:hover, .yr:focus-visible { outline: 2px solid var(--ink); outline-offset: 0; }
-/* the concert on screen: unmistakable, a dark ring with a white gap, a little larger, and never faded */
-.yr[aria-selected="true"] { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 2px #fff, 0 4px 10px -2px rgba(16, 22, 42, .45);
-  transform: scale(1.08); font-weight: 800; position: relative; z-index: 2; }
+/* the concert on screen: a black band inside the button, with a thin white line inside it so it shows on
+   dark colours too, and the year in bold; same size as the others (Víctor, 2026-11-01). Never faded. */
+.yr[aria-selected="true"] { outline: none; box-shadow: inset 0 0 0 2.5px var(--ink), inset 0 0 0 3.5px #fff; font-weight: 800; }
 .years.lit .yr[aria-selected="true"], .bars.lit .tile[aria-selected="true"] { opacity: 1; }
 .yr.none { background: transparent; border: 1px dashed var(--line); color: var(--muted); cursor: default; font-weight: 400; }
 .yr.gap { visibility: hidden; }
@@ -102,7 +102,8 @@ button { font: inherit; color: inherit; }
 .tile span { writing-mode: vertical-rl; transform: rotate(180deg); font: 600 var(--fs-xs)/1 var(--f-body);
   font-variant-numeric: tabular-nums; letter-spacing: .02em; }
 .tile:hover, .tile:focus-visible { transform: translateY(-2px); outline: none; }
-.tile[aria-selected="true"] { outline: 3px solid var(--ink); outline-offset: 1px; box-shadow: 0 0 0 1px #fff; position: relative; z-index: 2; }
+.tile[aria-selected="true"] { outline: none; box-shadow: inset 0 0 0 2.5px var(--ink), inset 0 0 0 3.5px #fff; }
+.tile[aria-selected="true"] span { font-weight: 800; }
 .bars.lit .tile { opacity: .16; }
 .bars.lit .tile.on { opacity: 1; }
 .bars-axis { position: relative; height: 16px; font-size: var(--fs-s); color: var(--muted); font-variant-numeric: tabular-nums; }

@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.8.4";
-const BUILD_AT = "2026-11-01 23:01";
+const DATA_V = "1.8.5";
+const BUILD_AT = "2026-11-01 23:04";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
