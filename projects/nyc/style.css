@@ -331,8 +331,14 @@ sup.unconf { color: var(--lapiz); font-size: var(--fs-s); margin-left: 1px; }
 .tab-pane { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; }
 #statsPane.tab-pane { background: none; border: 0; }
 .cat-tools { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
-#cat-search { flex: 1 1 240px; max-width: 420px; font: inherit; padding: var(--sp-2) var(--sp-3); border: 1px solid var(--line);
+/* the search box carries its own ×, the same in every browser (the native one is hidden) */
+.search-box { position: relative; flex: 1 1 240px; max-width: 420px; display: flex; }
+#cat-search { flex: 1; min-width: 0; font: inherit; padding: var(--sp-2) 34px var(--sp-2) var(--sp-3); border: 1px solid var(--line);
   border-radius: var(--radius-s); background: var(--paper); color: var(--ink); }
+#cat-search::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.search-clear { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border: 0;
+  border-radius: var(--pill); background: none; color: var(--muted); font: 20px/1 var(--f-body); cursor: pointer; }
+.search-clear:hover, .search-clear:focus-visible { background: var(--chip); color: var(--ink); outline: none; }
 .cat-count { color: var(--muted); font-size: var(--fs-m); }
 .table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 table.cat { width: 100%; border-collapse: collapse; font-size: var(--fs-m); }
@@ -400,7 +406,7 @@ table.cat tbody tr:hover { background: color-mix(in srgb, var(--c-piece) 8%, var
   #statsPane .plot-box { padding: 14px; }
   /* catalogue: each piece in two lines, the title with its count, then composer and form */
   .cat-tools { gap: 6px 10px; margin-bottom: 6px; }
-  #cat-search { padding: 6px 8px; }
+  #cat-search { padding: 6px 34px 6px 8px; }
   #view-catalogue .tab-pane { padding: 8px; }
   table.cat, table.cat tbody { display: block; }
   table.cat thead tr { display: flex; flex-wrap: wrap; gap: 0 4px; border-bottom: 2px solid var(--line); }

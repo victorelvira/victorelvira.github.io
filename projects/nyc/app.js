@@ -3,8 +3,8 @@
 // nyc/performances.js (notes about a piece in a given concert; prototype only).
 "use strict";
 
-const DATA_V = "1.7.3";
-const BUILD_AT = "2026-11-01 18:45";
+const DATA_V = "1.7.4";
+const BUILD_AT = "2026-11-01 22:05";
 
 // --- indexes ---------------------------------------------------------------------------------
 const CONCERTS = [...concerts].sort((a, b) => a.year - b.year);
@@ -1131,7 +1131,9 @@ function drawCatalogue() {
   $("cat-count").textContent = `${rows.length} displayed pieces`;
 }
 function setupCatalogue() {
-  $("cat-search").addEventListener("input", drawCatalogue);
+  const clear = () => { $("cat-clear").hidden = !$("cat-search").value; };
+  $("cat-search").addEventListener("input", () => { clear(); drawCatalogue(); });
+  $("cat-clear").addEventListener("click", () => { $("cat-search").value = ""; clear(); drawCatalogue(); $("cat-search").focus(); });
   $("cat-table").addEventListener("click", e => {
     const th = e.target.closest("th");
     if (th) {
