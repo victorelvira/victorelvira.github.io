@@ -100,6 +100,9 @@ button { font: inherit; color: inherit; }
 /* special years: 1939 before the numbered series (striped), an announced concert (no colour yet) */
 .yr.forerunner, .tile.forerunner {
   background: repeating-linear-gradient(135deg, var(--c) 0 5px, color-mix(in srgb, var(--c) 72%, #fff) 5px 10px); }
+/* the number behind a year's colour, after the year; on a phone the squares are too small and the tooltip says it */
+.yr .yv { font-size: .78em; font-weight: 400; opacity: .85; margin-left: 2px; }
+@media (max-width: 560px) { .yr .yv { display: none; } }
 .yr.soon, .tile.soon { background: var(--soon-bg); color: var(--soon-ink); box-shadow: inset 0 0 0 1px var(--soon-line); font-weight: 600; }
 /* the key under the years: what the colours mean, and what to colour by, both from the left */
 .key { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px 16px; flex-wrap: wrap; margin-top: 8px; }
@@ -180,6 +183,14 @@ ol.prog { list-style: none; margin: 0; padding: 0; }
 .chip.k-ver { color: var(--c-piece); background: color-mix(in srgb, var(--c-piece) 10%, var(--paper)); }
 .chip.k-ver:hover, .chip.k-ver:focus-visible { background: color-mix(in srgb, var(--c-piece) 20%, var(--paper)); }
 .chip.k-ver.on { background: color-mix(in srgb, var(--c-piece) 70%, #000); color: #fff; }
+/* a piece's first time at the concert: a chip (it opens the year's new pieces), blue like a piece, with its dot */
+.chip.k-new { color: var(--c-piece); background: color-mix(in srgb, var(--c-piece) 16%, var(--paper)); }
+.chip.k-new::before { content: "●"; font-size: .8em; margin-right: 3px; vertical-align: .05em; }
+.chip.k-new:hover, .chip.k-new:focus-visible { background: color-mix(in srgb, var(--c-piece) 26%, var(--paper)); }
+.chip.k-new.on { background: var(--c-piece); color: #fff; }
+.fresh-list { margin: 10px 0 0; padding-left: 20px; }
+.fresh-list li { margin: 4px 0; }
+.fresh-list .k { color: var(--c-piece); text-align: left; }
 /* tags: a short word after a dot, in the colour of what they are about; filled for new, hollow for a return */
 .tag { font-size: var(--fs-s); font-weight: 400; color: var(--muted); white-space: nowrap; }
 .tag::before { content: "●"; font-size: .8em; margin-right: 3px; vertical-align: .05em; }
