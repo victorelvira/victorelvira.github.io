@@ -353,3 +353,11 @@ table.quot td:first-child { white-space: nowrap; }
 .ai-t { color: var(--ink-2); }
 .ai-t b { color: var(--ink); font-weight: 600; }
 @media (max-width: 640px) { .ai-row { grid-template-columns: 1fr 90px; } .ai-t { grid-column: 1 / -1; } }
+
+/* table of polls: rows of one study share a colour */
+table.te td { vertical-align: top; }
+table.te tr.te-b0 td { background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+table.te tr.te-b1 td { background: color-mix(in srgb, #d97706 13%, var(--surface)); }
+.te-nw { white-space: nowrap; }
+.te-de, .te-x { color: var(--ink-2); }
+.te-more { font: inherit; font-size: 13px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; }

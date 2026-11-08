@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.62";
-import { lines, indexHtml, sectionIndex, seatRows, bloques } from "./charts.js?v=0.2.62";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.63";
+import { lines, indexHtml, sectionIndex, seatRows, bloques } from "./charts.js?v=0.2.63";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -32,7 +32,7 @@ export async function renderEncuestas(app, args = []) {
   const [E, R, K, D, CI, CP, GE] = await Promise.all([load("encuestas.json"), load("ratings.json"), load("cocina.json"), load("dentro.json"),
     load("ciclos/index.json").catch(() => ({ ciclos: [] })), load("cocina_pasos.json").catch(() => null), load("generales_encuestas.json").catch(() => null)]);
 
-  const SEC = [["29n", "Hacia el 29N", [["promedio", "Promedio"], ["casas", "Encuestadoras"], ["dentro", "Dentro de las encuestas"]]],
+  const SEC = [["29n", "Hacia el 29N", [["promedio", "Promedio"], ["tabla", "Tabla"], ["casas", "Encuestadoras"], ["dentro", "Dentro de las encuestas"]]],
     ["prediccion", "Predicción", []], ["cocina", "La cocina", []], ["pasado", "Las encuestas en el pasado", [["ciclos", "Desde 1982"], ["eleccion", "Elección a elección"], ["salto", "El salto final"], ["aciertos", "Quién acierta"]]]];
   const IX = indexHtml(SEC);
   app.innerHTML = `
@@ -48,6 +48,11 @@ export async function renderEncuestas(app, args = []) {
     <h3 id="s-promedio">Promedio y encuestas</h3>
     <p class="linea">${MAIN.filter((p) => E.ultimo[p] != null).map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${num(E.ultimo[p])}%</b></span>`).join("")}</p>
     <div id="chart-area"></div>
+    <h3 id="s-tabla">Todas las encuestas</h3>
+    <p class="note">Una fila por cada nivel al que se publicó una encuesta. Las filas del mismo color son la misma encuesta. <b>Híbrido</b>: una sola muestra publicada a más de un nivel. <b>Desglose</b>: el dato de esa zona sale de una muestra mayor, así que no es una encuesta independiente de la zona.</p>
+    <div class="controls"><div class="seg" id="te-gran"></div><select id="te-enc" aria-label="Encuestadora"></select></div>
+    <div class="scrollx" id="te-tabla"></div>
+    <p id="te-mas"></p>
     <h3 id="s-casas">Sesgo de cada encuestadora</h3>
     <p class="note">Cuánto da cada casa a cada partido por encima (+) o por debajo (−) del resto, en puntos, en este ciclo. Casas con 8 o más encuestas.</p>
     <div class="scrollx" id="house"></div>
@@ -122,6 +127,7 @@ export async function renderEncuestas(app, args = []) {
   pollChart($("#chart-hist"), E, { CI, args, pastOnly: true, lastTable: false });
   load("prediccion.json").then((P) => prediccion($("#pred"), P)).catch(() => { $("#pred").innerHTML = '<p class="note">La predicción del modelo aparecerá aquí.</p>'; });
 
+  load("tabla_encuestas.json").then((T) => tablaEncuestas(app, T)).catch(() => {});
   const hp = ["pp", "psoe", "vox", "sumar"];
   const sign = (v) => (v == null ? "·" : Math.abs(v) < 0.05 ? "0,0" : `${v > 0 ? "+" : ""}${num(v)}`);
   const cell = (v) => `<td class="num" style="color:${v > 1 ? "var(--ink)" : v < -1 ? "var(--ink)" : "var(--ink-3)"};font-weight:${Math.abs(v ?? 0) > 1 ? 600 : 400}">${sign(v)}</td>`;
@@ -142,6 +148,47 @@ export async function renderEncuestas(app, args = []) {
   if (CP) cocinaPasos(app, CP);
   dentro(app, D);
 
+}
+
+function tablaEncuestas(app, T) {
+  const $ = (q) => app.querySelector(q);
+  const GR = [["todas", "Todas"], ["estado", "Estado"], ["comunidad", "Comunidad"], ["provincia", "Provincia"], ["híbrido", "Híbrido"]];
+  const NIV = { estado: "Estado", ccaa: "Comunidad", provincia: "Provincia" };
+  const TIPO = { nacional: "Nacional", propia: "Propia", desglose: "Desglose", "no consta": "No consta" };
+  const STEP = 40, fmt = d3.format(",.0f");
+  const MES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+  const dm = (s) => (s ? [+s.slice(8), MES[+s.slice(5, 7) - 1], s.slice(0, 4)] : null);
+  const campo = (i, f) => {
+    const a = dm(i), b = dm(f);
+    if (!b) return "·";
+    const fin = `${b[0]} ${b[1]} ${b[2]}`;
+    if (!a || i === f) return fin;
+    return a[1] === b[1] && a[2] === b[2] ? `${a[0]}–${fin}` : `${a[0]} ${a[1]}–${fin}`;
+  };
+  const nCell = (r) => (r.n != null ? (Array.isArray(r.n) ? `${fmt(r.n[0])}–${fmt(r.n[1])}` : fmt(r.n)) : r.de != null ? `<span class="te-de">de ${fmt(r.de)}</span>` : "·");
+  const encs = [...new Set(T.estudios.map((e) => e.e))].sort((a, b) => a.localeCompare(b, "es"));
+  $("#te-enc").innerHTML = `<option value="">Todas las encuestadoras</option>${encs.map((e) => `<option>${e}</option>`).join("")}`;
+  let gran = "todas", shown = STEP;
+  $("#te-gran").innerHTML = GR.map(([k, n]) => `<button data-k="${k}">${n}</button>`).join("");
+  function draw() {
+    const enc = $("#te-enc").value;
+    const L = T.estudios.filter((e) => (gran === "todas" || e.g === gran) && (!enc || e.e === enc));
+    let band = 0;
+    const rows = L.slice(0, shown).map((e) => {
+      const cls = e.r.length > 1 ? `te-b${band++ % 2}` : "";
+      return e.r.map((r, j) => `<tr class="${cls}">
+        ${j === 0 ? `<td>${e.e}</td><td>${e.m ?? "·"}${e.x ? ` <span class="te-x">${e.x}</span>` : ""}</td><td class="te-nw">${campo(e.i, e.f)}</td><td>${e.g[0].toUpperCase()}${e.g.slice(1)}</td>` : "<td></td><td></td><td></td><td></td>"}
+        <td>${NIV[r.niv]}</td><td${r.todas ? ` title="${r.todas}"` : ""}>${r.amb}</td><td class="num te-nw">${nCell(r)}</td><td>${TIPO[r.tipo]}</td><td>${r.da[0].toUpperCase()}${r.da.slice(1)}</td>
+        <td class="te-nw">${r.url ? `<a href="${r.url}" target="_blank" rel="noopener">fuente</a>` : "·"}${r.nota ? ' <span class="te-x" title="' + r.nota + '">sin revisar</span>' : ""}</td></tr>`).join("");
+    }).join("");
+    $("#te-tabla").innerHTML = `<table class="nosort te"><tr><th>Encuestadora</th><th>Medio</th><th>Campo</th><th>Granularidad</th><th>Nivel</th><th>Ámbito</th><th class="num">n</th><th>Muestra</th><th>Publica</th><th>Origen</th></tr>${rows}</table>`;
+    app.querySelectorAll("#te-gran button").forEach((b) => b.classList.toggle("on", b.dataset.k === gran));
+    $("#te-mas").innerHTML = L.length > shown ? `<button class="te-more">Ver ${Math.min(STEP, L.length - shown)} más (${fmt(L.length - shown)} sin mostrar)</button>` : L.length ? "" : '<span class="note">Ninguna encuesta con ese filtro.</span>';
+  }
+  $("#te-gran").addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b) { gran = b.dataset.k; shown = STEP; draw(); } });
+  $("#te-enc").addEventListener("change", () => { shown = STEP; draw(); });
+  $("#te-mas").addEventListener("click", (ev) => { if (ev.target.closest("button")) { shown += STEP; draw(); } });
+  draw();
 }
 
 const TIPO_COLOR = { generales: "#1f4e8c", autonomicas: "#da5c22", europeas: "#2e8b57" };
