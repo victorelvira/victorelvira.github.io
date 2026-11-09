@@ -1,6 +1,6 @@
-import { load, showTip, hideTip } from "./data.js?v=0.2.65";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.65";
-import { EID, THRESHOLD, fmt, short, pct1, reparto, provScenario, turnos, precio, sirvio, partes, aire } from "./dhondt_vis.js?v=0.2.65";
+import { load, showTip, hideTip } from "./data.js?v=0.2.66";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.66";
+import { EID, THRESHOLD, fmt, short, pct1, reparto, provScenario, turnos, precio, sirvio, partes, aire } from "./dhondt_vis.js?v=0.2.66";
 
 // The D'Hondt tab. This module: the sand widget (votes fall as sand into one jar per list; a line (the price of a seat) comes down from the top
 // and every time it touches a mark (all the votes, half, a third...) that list wins a seat. Same result as the
