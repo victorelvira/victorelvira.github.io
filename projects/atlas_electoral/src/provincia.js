@@ -1,16 +1,18 @@
 const d3 = window.d3;
-import { load, FAM } from "./data.js?v=0.2.64";
-import { POLL_PARTY } from "./encuestas.js?v=0.2.64";
+import { load, FAM } from "./data.js?v=0.2.65";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.65";
 
 const pn = (f) => (f === "sumar" ? "Sumar / Frente Amplio" : POLL_PARTY[f]?.n ?? FAM[f]?.nombre ?? (f === "otros" ? "Otras" : f.toUpperCase()));
-const short = (f) => (f === "sumar" ? "Sumar / FA" : pn(f).split(" y otros")[0]);
-const pc = (f) => POLL_PARTY[f]?.c() ?? FAM[f]?.color ?? "#888";
+export const short = (f) => (f === "sumar" ? "Sumar / FA" : pn(f).split(" y otros")[0]);
+export const pc = (f) => POLL_PARTY[f]?.c() ?? FAM[f]?.color ?? "#888";
 const nm = (x, d = 1) => (x == null ? "·" : x.toFixed(d).replace(".", ","));
-const pct = (p) => (p >= 0.995 ? ">99%" : p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
+export const pct = (p) => (p >= 0.995 ? ">99%" : p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
 const f0 = (x) => d3.format(",.0f")(x);   // at call time: the Spanish locale is set after the imports run
 const MES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
 const fecha = (s) => `${+s.slice(8)} ${MES[+s.slice(5, 7) - 1]} ${s.slice(0, 4)}`;
-const reparto = (a) => Object.entries(a).sort((x, y) => y[1] - x[1]).map(([f, n]) => `${short(f)} ${n}`).join(", ");
+export const reparto = (a) => Object.entries(a).sort((x, y) => y[1] - x[1]).map(([f, n]) => `${short(f)} ${n}`).join(", ");
+// the closest calls: a party's k-th seat with a probability near one half
+export const escanosAire = (D) => D.provincias.flatMap((p) => p.listas.filter((l) => l.f !== "otros").flatMap((l) => l.pk.map((x, k) => ({ p, l, k: k + 1, x })))).filter((d) => d.x >= 0.2 && d.x <= 0.8).sort((a, b) => Math.abs(a.x - 0.5) - Math.abs(b.x - 0.5));
 // what changes between the likeliest allocation and another one (an allocation can differ in more than one seat)
 function frase(a, b) {
   const sube = [], baja = [];
@@ -25,8 +27,7 @@ export async function renderProvincia(app, args = []) {
   const D = await load("provincias_29n.json");
   const byCode = Object.fromEntries(D.provincias.map((p) => [p.prov, p]));
   let code = byCode[args[0]] ? args[0] : "28";
-  // the closest calls: a party's k-th seat with a probability near one half
-  const aire = D.provincias.flatMap((p) => p.listas.filter((l) => l.f !== "otros").flatMap((l) => l.pk.map((x, k) => ({ p, l, k: k + 1, x })))).filter((d) => d.x >= 0.2 && d.x <= 0.8).sort((a, b) => Math.abs(a.x - 0.5) - Math.abs(b.x - 0.5));
+  const aire = escanosAire(D);
   app.innerHTML = `
     <h1>Tu provincia</h1>
     <p class="sub">Qué espera el modelo para el 29N en cada provincia, con cuánta seguridad, y todas las encuestas publicadas allí. Con encuestas hasta el ${fecha(D.ultimo_campo)}.</p>

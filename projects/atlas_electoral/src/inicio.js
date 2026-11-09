@@ -1,8 +1,9 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.64";
-import { seatRows, lines, dateOf, familySeries, IDEO, famName, fam, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.64";
-import { projectFromPolls } from "./simulador.js?v=0.2.64";
+import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.65";
+import { seatRows, lines, dateOf, familySeries, IDEO, famName, fam, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.65";
+import { projectFromPolls } from "./simulador.js?v=0.2.65";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.64";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.65";
+import { short, pc, pct as probTxt, reparto, escanosAire } from "./provincia.js?v=0.2.65";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -40,6 +41,9 @@ export async function renderInicio(app, args = []) {
   // the model's estimate (pipeline/prediccion.py); without it, the mechanical projection of the poll average
   const [PR, DR] = await Promise.all([load("prediccion.json").catch(() => null), load("prediccion_draws.json").catch(() => null)]);
   const G = await load("geo_nuevos.json").catch(() => null);
+  const [PV, BT, EC] = await Promise.all([load("provincias_29n.json").catch(() => null), load("backtest.json").catch(() => null), load("error_comun.json").catch(() => null)]);
+  const de100 = (p) => Math.round(p * 100);
+  const mayoria = PR?.mayorias.find((m) => m.nombre === "PP + Vox");
   const days = Math.ceil((ELECTION_DAY - new Date()) / 86400000);
   const base = Object.keys(dh).sort().at(-1);
   const conv = S.convocatoria_2026;
@@ -52,7 +56,8 @@ export async function renderInicio(app, args = []) {
 
   const live = await noche(args[0] === "demo");
   // index: a sticky column on wide screens, a sticky scrollable row under the menu on phones
-  const SEC = [["resumen", "Resumen de encuestas", [["diputados", "Diputados"], ["voto", "Porcentaje de voto"], ...(D ? [["movilizacion", "Movilización"]] : [])]], ["calendario", "Calendario", []]];
+  const SEC = [["diputados", "Qué dice el modelo", []], ["voto", "De dónde sale", []], ...(PV ? [["aire", "Dónde se decide", []]] : []), ...(BT ? [["fiarse", "Cuánto fiarse", []]] : []),
+    ...(D ? [["movilizacion", "Movilización", []]] : []), ["calendario", "Calendario", []]];
   const IX = indexHtml(SEC);
   app.innerHTML = `
     <div class="layout">
@@ -64,26 +69,44 @@ export async function renderInicio(app, args = []) {
     <p class="sub">${days > 0 ? `Faltan <b>${days} días</b> para las elecciones generales.` : days === 0 ? "<b>Hoy se vota.</b>" : ""} Se eligen 350 diputados y 208 senadores.</p>
     ${IX.row}
 
-    <section id="s-resumen">
-    <h2>Resumen de encuestas</h2>
-    <p class="sub">Resumen de encuestas a día ${fechaLarga(BUILD_AT.slice(0, 10))}. Todos los detalles históricos, por encuestadora, la metodología y más, en <a href="#encuestas">Encuestas</a>.</p>
-    <h3 id="s-diputados">Diputados (estimación)${PR ? ' <span class="tag-exp">modelo experimental</span>' : ""}</h3>
+    <section id="s-diputados">
+    <h2>Qué dice el modelo${PR ? ' <span class="tag-exp">modelo experimental</span>' : ""}</h2>
+    ${mayoria ? `<p class="linea">Con las encuestas hasta el ${fechaLarga(PR.ultimo_campo)}, PP y Vox suman los 176 escaños en unas ${de100(mayoria.prob)} de cada 100 simulaciones, y el PP queda primero en unas ${de100(PR.p_pp_primero)} de cada 100.</p>` : `<p class="sub">Reparto de las encuestas a día ${fechaLarga(BUILD_AT.slice(0, 10))}.</p>`}
     <div class="card">
       <div id="proj"></div>
       <div id="bloques"></div>
       <p class="note">Arrastra un partido a otro grupo. La mayoría son 176 diputados.</p>
       <details class="metodo-box"><summary>Metodología</summary><p class="note">${PR ? `Estimación del modelo propio: las encuestas, más el error que han tenido en cada general desde 1982, llevadas provincia a provincia y repartidas con D'Hondt en ${PR.draws.toLocaleString("es-ES")} simulaciones. La barra y las cifras son la estimación central; bajo cada grupo, el rango que recoge 9 de cada 10 simulaciones y la probabilidad de que el grupo llegue a 176.` : "Reparto del promedio de encuestas provincia a provincia con D'Hondt, sin márgenes de error."} <a href="#encuestas/metodo">Más detalle</a> · <a href="#simulador">Prueba otros porcentajes →</a></p></details>
     </div>
+    </section>
 
-    <h3 id="s-voto">Porcentaje de voto (estimación)</h3>
+    <section id="s-voto">
+    <h2>De dónde sale</h2>
+    <p class="sub">El promedio de las encuestas. Todas, una a una y por encuestadora, en <a href="#encuestas">Encuestas</a>.</p>
     <p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${String(E.ultimo[p]).replace(".", ",")}%</b></span>`).join("")}</p>
     <div id="chart-area"></div>
-
-
-    ${D ? `<h3 id="s-movilizacion">Movilización (estimación)</h3>
-    <p class="note">Porcentaje seguro de ir a votar (10 sobre 10) según lo que votó en julio de 2023, en las encuestas con microdatos de cada casa. Las dos preguntan de forma distinta y el CIS da niveles más altos: compara cada casa consigo misma. <a href="#encuestas">Adónde va cada voto, en Encuestas →</a></p>
-    <div class="grid2" id="mov"></div>` : ""}
     </section>
+
+    ${PV ? `<section id="s-aire">
+    <h2>Dónde se decide</h2>
+    <p class="sub">El reparto se juega provincia a provincia. Estos son los escaños más igualados; cada escaño disputado sale una vez por cada partido que lo pelea.</p>
+    <div class="controls"><select id="in-prov" aria-label="Tu provincia"><option value="">Ver tu provincia</option>${[...PV.provincias].sort((a, b) => a.n.localeCompare(b.n, "es")).map((p) => `<option value="${p.prov}">${p.n}</option>`).join("")}</select></div>
+    <div class="scrollx"><table class="nosort"><tr><th>Provincia</th><th>Partido</th><th class="num">Escaño</th><th class="num">Probabilidad</th><th>Reparto más probable</th></tr>
+    ${escanosAire(PV).slice(0, 8).map((d) => `<tr><td><a href="#provincia/${d.p.prov}">${d.p.n}</a></td><td style="white-space:nowrap"><i class="dot" style="background:${pc(d.l.f)}"></i>${short(d.l.f)}</td><td class="num">${d.k}.º</td><td class="num">${probTxt(d.x)}</td><td>${reparto(d.p.repartos[0].a)}</td></tr>`).join("")}</table></div>
+    </section>` : ""}
+
+    ${BT ? `<section id="s-fiarse">
+    <h2>Cuánto fiarse</h2>
+    <p>Hemos rehecho el modelo para las ${BT.elecciones} elecciones generales desde ${BT.desde}, con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro del rango del 90% en el ${de100(BT.horizontes[7].voto.en90)}% de los casos en voto y en el ${de100(BT.horizontes[7].escanos.en90)}% en escaños.</p>
+    ${EC ? `<p>Esa probabilidad no se conoce con tanta precisión como parece. Si el error conjunto de las encuestas fuera un 50% mayor que el histórico, PP y Vox llegarían a 176 en ${de100(EC.escala_x15)} de cada 100 simulaciones; si fuera un 20% menor, en ${de100(EC.escala_x08)}. Y en esas ${BT.elecciones} elecciones el modelo solo dio más del 50% a que la derecha sumara 176 dos veces, así que una cifra tan alta apenas se ha podido poner a prueba.</p>` : ""}
+    <p class="note"><a href="#encuestas">La validación completa, en Encuestas →</a></p>
+    </section>` : ""}
+
+    ${D ? `<section id="s-movilizacion">
+    <h2>Movilización</h2>
+    <p class="note">Porcentaje seguro de ir a votar (10 sobre 10) según lo que votó en julio de 2023, en las encuestas con microdatos de cada casa. Las dos preguntan de forma distinta y el CIS da niveles más altos: compara cada casa consigo misma. <a href="#encuestas">Adónde va cada voto, en Encuestas →</a></p>
+    <div class="grid2" id="mov"></div>
+    </section>` : ""}
 
     <section id="s-calendario">
     ${conv?.calendario ? `<h2>Calendario</h2>${calendario(conv)}` : ""}
@@ -97,6 +120,8 @@ export async function renderInicio(app, args = []) {
     </section>
     </div></div>`;
   sectionIndex(app);
+  const selProv = app.querySelector("#in-prov");
+  if (selProv) selProv.onchange = () => { if (selProv.value) location.hash = `provincia/${selProv.value}`; };
 
   if (live) {
     const fam = {};
