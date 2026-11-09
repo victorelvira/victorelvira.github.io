@@ -361,3 +361,11 @@ table.te tr.te-b1 td { background: color-mix(in srgb, #d97706 13%, var(--surface
 .te-nw { white-space: nowrap; }
 .te-de, .te-x { color: var(--ink-2); }
 .te-more { font: inherit; font-size: 13px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; }
+
+/* Tu provincia: one square per seat, filled by its probability */
+.pv-nw { white-space: nowrap; }
+table.pv-grid td, table.pv-grid th { padding: 3px 2px; border-bottom: 0; text-align: center; }
+table.pv-grid td:first-child, table.pv-grid th:first-child { text-align: left; padding-right: 10px; }
+.pv-c { width: 26px; height: 26px; margin: 0 auto; background: var(--nodata); border-radius: 3px; position: relative; overflow: hidden; }
+.pv-c span { position: absolute; left: 0; right: 0; bottom: 0; }
+.pv-p { font-size: 11px; color: var(--ink-2); height: 15px; line-height: 15px; }
