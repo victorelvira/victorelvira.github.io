@@ -1,6 +1,6 @@
 // Version: also the cache-bust for data files and the ?v= in the entry page (keep in sync).
-export const DATA_V = "0.2.66";
-export const BUILD_AT = "2026-11-09 19:41";
+export const DATA_V = "0.2.67";
+export const BUILD_AT = "2026-11-10 11:03";
 
 // data/ sits beside src/ inside the app folder; resolve it from this module, not from the page
 const DATA_BASE = new URL("../data/", import.meta.url).href;
