@@ -1,5 +1,6 @@
-import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.72";
-import { fam, famName, IDEO, EXTRA, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.72";
+import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.74";
+import { textos, md, INDICE } from "./textos.js?v=0.2.74";
+import { fam, famName, IDEO, EXTRA, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.74";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
 export function dhondt(lists, seats, validos, threshold = 0.03, detail = null) {
@@ -71,51 +72,25 @@ export function projectFromPolls(provs, ultimo, esc = null, geo = null) {
 const state = { base: null, target: {}, grupos: {} };
 
 export async function renderSimulador(app, args = [], embed = false) {
-  const [dh, E, G] = await Promise.all([load("dhondt.json"), load("encuestas.json"), load("geo_nuevos.json")]);
+  const [dh, E, G, T] = await Promise.all([load("dhondt.json"), load("encuestas.json"), load("geo_nuevos.json"), textos("simulador")]);
   const gens = Object.keys(dh).sort();
   if (!state.base) state.base = gens.at(-1);
   const fromPolls = args[0] !== "base";   // the polls are the default starting point; #simulador/base/<election> starts from a result
 
-  const SEC = [["escenario", "Escenario"], ["resultado", "Congreso resultante"], ["provincias", "Provincia a provincia"]];
-  const IX = indexHtml(SEC);
+  // the prose is textos/simulador.md; here only the controls, the tables and the logic
+  const slots = {
+    controles: `<div class="controls"><button class="play" id="polls">Partir de las encuestas</button>
+      <label>o del resultado de <select id="base">${[...gens].reverse().map((g) => `<option value="${g}">${elecLabel(g)}</option>`).join("")}</select></label></div>`,
+    equilibrio: `<p class="note"><label><input type="checkbox" id="bal" checked/> Mantener el total (lo que gana un partido lo pierden los demás)</label>${embed ? "" : ` · <button class="play" id="share">Copiar enlace a este escenario</button><span id="shared" class="muted"></span>`}</p>`,
+  };
+  const { html, sec } = md(T.principal, { slots, flags: { embed: !!embed }, page: "simulador" });
+  const IX = indexHtml(sec);
+  const nota = (part, vars) => md(T[part], { vars, page: "simulador" }).html.replace(/^<p>|<\/p>$/g, "");
   app.innerHTML = `
     <div class="layout">
     ${embed ? "" : IX.aside}
     <div class="content">
-    ${embed ? "" : "<h1>Simulador de escaños</h1>"}
-    <p class="sub">Mueve el porcentaje de cada partido y mira cómo cambia el Congreso, provincia a provincia. Parte de las encuestas de hoy o del resultado de cualquier elección general desde 1977.</p>
-    ${embed ? "" : IX.row}
-    <section id="s-escenario">
-    <h2>Escenario</h2>
-    <div class="controls"><button class="play" id="polls">Partir de las encuestas</button>
-      <label>o del resultado de <select id="base">${[...gens].reverse().map((g) => `<option value="${g}">${elecLabel(g)}</option>`).join("")}</select></label></div>
-    <p class="note" id="pollnote"></p>
-    <div class="sliders" id="sl"></div>
-    <p class="note"><label><input type="checkbox" id="bal" checked/> Mantener el total (lo que gana un partido lo pierden los demás)</label>${embed ? "" : ` · <button class="play" id="share">Copiar enlace a este escenario</button><span id="shared" class="muted"></span>`}</p>
-    </section>
-    <section id="s-resultado">
-    <h2>Congreso resultante <span id="sum" class="note"></span></h2>
-    <div class="seats" id="bar"><span class="majority" title="Mayoría absoluta: 176"></span></div>
-    <div class="legend" id="leg"></div>
-    <div class="grid2">
-      <div><h3>Escaños por partido</h3><div id="tbl"></div></div>
-      <div><h3>Sumas</h3><div id="pactos"></div><p class="note">Arrastra un partido a otro grupo. La mayoría son 176.</p></div>
-    </div>
-    </section>
-    <section id="s-provincias">
-    <h2>Provincia a provincia</h2>
-    <div class="grid2">
-      <div><h3>Lo que más cambia</h3><div id="prov"></div></div>
-      <div><h3>Dónde baila el último escaño</h3><p class="note">Provincias donde el último escaño se decide por menos votos: quién se lo lleva, quién se queda a las puertas y cuánto le falta, en porcentaje de los votos válidos de la provincia.</p><div id="ultimo"></div></div>
-    </div>
-    ${embed ? "" : `<details class="metodo-box" id="metodo"><summary>Metodología</summary><div class="metodo">
-    <p><b>El reparto.</b> En cada provincia, regla D'Hondt con la barrera del 3% de los votos válidos (candidaturas más voto en blanco), como en la LOREG. Los escaños por provincia son los de cada convocatoria; para 2026, los del Real Decreto 806/2026 (BOE de 6 de octubre): Madrid 38, Cádiz 8.</p>
-    <p><b>Mover un partido.</b> El porcentaje nacional de cada partido se aplica de forma proporcional en todas las provincias: si pasa del 20% al 25%, sus votos se multiplican por 1,25 en cada una. Es la aproximación habitual (<i>swing</i> proporcional); con las 15 generales desde 1977 acierta tanto como el <i>swing</i> uniforme, y aun con un porcentaje nacional exacto falla una mediana de 11 escaños, porque cada provincia se desvía del movimiento nacional (más por comunidades que por provincias). Con "Repartir", lo que sube un partido sale de los demás en proporción a su tamaño; sin ella, el resto (regionales, otros, blanco) absorbe la diferencia.</p>
-    <p><b>Sumar, Podemos y SALF.</b> No tuvieron lista propia en 2023 (Sumar y Podemos fueron juntos; SALF no existía). Su reparto por provincias sigue el de las europeas de junio de 2024, la única elección en que concurrieron por separado, escalado al porcentaje nacional elegido.</p>
-    <p><b>El último escaño.</b> Para cada provincia se guarda el último cociente que obtiene escaño y el mejor que se queda fuera; "le falta" es lo que necesitaría ese segundo para adelantar al primero, en porcentaje de los votos válidos.</p>
-    <p class="note">El simulador no tiene incertidumbre: muestra el reparto exacto de un escenario. La estimación con probabilidades llegará con el modelo.</p>
-    </div></details>`}
-    </section>
+    ${html.replace(INDICE, embed ? "" : IX.row)}
     </div></div>`;
   const $ = (s) => app.querySelector(s);
   if (!embed) sectionIndex(app);
@@ -131,8 +106,8 @@ export async function renderSimulador(app, args = [], embed = false) {
     if (usePolls) {
       const u = E.ultimo, t = pollTargets(u);
       for (const f of state.sliders) state.target[f] = t[f] ?? state.target[f];
-      $("#pollnote").textContent = `Partiendo de las encuestas del ${fdate(E.actualizado)}.`;
-    } else $("#pollnote").textContent = `Partiendo del resultado de ${elecLabel(state.base).replace("Generales ", "las generales de ")}.`;
+      $("#pollnote").innerHTML = nota("encuestas", { fecha: fdate(E.actualizado) });
+    } else $("#pollnote").innerHTML = nota("resultado", { eleccion: elecLabel(state.base).replace("Generales ", "las generales de ") });
     $("#sl").innerHTML = state.sliders.map((f) => `
       <label><span><i class="dot" style="background:${fam(f).color}"></i>${famName(f, state.base)}</span>
       <input type="range" min="0" max="50" step="0.1" value="${(state.target[f] * 100).toFixed(1)}" data-f="${f}" />
@@ -180,7 +155,7 @@ export async function renderSimulador(app, args = [], embed = false) {
     }).filter((p) => p.diffs.length);
     $("#prov").innerHTML = changes.length ? `<table>${changes.map((p) => `<tr><td>${p.n}</td><td>${p.diffs.map(([f, d]) =>
       `<span style="white-space:nowrap;margin-right:10px"><i class="dot" style="background:${fam(f).color}"></i>${d > 0 ? "+" : ""}${d}</span>`).join("")}</td></tr>`).join("")}</table>`
-      : `<p class="note">Mueve algún control para ver qué escaños cambian de manos.</p>`;
+      : md(T.sin_cambios, { page: "simulador" }).html;
     // sums by group, the reader decides where each party goes (same component as the 29N page)
     bloques($("#pactos"), sim.seats, { eid: state.provs !== dh[state.base] ? "generales_2026-11" : state.base, at: state.grupos });
     // the last seat of each province: who takes it, who misses it and by how much

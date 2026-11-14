@@ -1,7 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, loadMuni, META, FAM, FAM_IDS, norm, fmt, pct, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.72";
-import { lines, dateOf } from "./charts.js?v=0.2.72";
-import { electosList, ELECTOS_NOTE } from "./electos.js?v=0.2.72";
+import { load, loadMuni, META, FAM, FAM_IDS, norm, fmt, pct, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.74";
+import { lines, dateOf } from "./charts.js?v=0.2.74";
+import { electosList } from "./electos.js?v=0.2.74";
+import { textos, md } from "./textos.js?v=0.2.74";
 
 export function searchBox(container, onPick, placeholder = "Busca tu municipio… (p. ej. Gozón, Lorca, Sant Cugat)") {
   container.innerHTML = `<div class="search"><input type="search" placeholder="${placeholder}" autocomplete="off" aria-label="Buscar municipio" /><div class="sugg" hidden></div></div>`;
@@ -29,10 +30,12 @@ export function searchBox(container, onPick, placeholder = "Busca tu municipio�
 
 export async function renderPueblo(app, args) {
   const ine = args[0];
-  app.innerHTML = `<h1>Tu pueblo</h1><p class="sub">Historial electoral completo de cualquier municipio, sus «gemelos» electorales y cuánto se parece a España.</p><div id="s"></div><div id="ficha"></div>`;
+  const T = await textos("pueblo");
+  // the prose is textos/pueblo.md; here only the figures, the conditions, the search box and the tables
+  app.innerHTML = md(T.principal, { page: "pueblo" }).html;
   const input = searchBox(app.querySelector("#s"), (i) => { location.hash = `#pueblo/${i}`; });
   if (!ine) { input.focus(); return; }
-  if (!META.municipios[ine]) { app.querySelector("#ficha").innerHTML = "<p>Municipio no encontrado.</p>"; return; }
+  if (!META.municipios[ine]) { app.querySelector("#ficha").innerHTML = md(T.no_encontrado, { page: "pueblo" }).html; return; }
 
   const [prov, gem, mini] = await Promise.all([loadMuni(ine.slice(0, 2)), load("gemelos.json"), load("miniatura.json")]);
   const d = prov[ine];
@@ -47,40 +50,31 @@ export async function renderPueblo(app, args) {
   const myMini = mini.por_municipio[ine];
   const percentile = myMini != null ? d3.bisectLeft(rankAll, myMini) / rankAll.length : null;
 
-  ficha.innerHTML = `
-    <h1 style="margin-top:20px">${META.municipios[ine]} <span style="font-weight:400;color:var(--ink-2);font-size:18px">${META.provincias[ine.slice(0, 2)]}</span></h1>
-    <div class="stats">
+  const lastMun = muns.at(-1);
+  const vars = { municipio: META.municipios[ine], provincia: META.provincias[ine.slice(0, 2)], ultima: elecLabel(last), ultima_municipal: lastMun ? elecLabel(lastMun) : null };
+  const flags = { municipales: muns.length > 0, autonomicas: auts.length > 1, europeas: eurs.length > 1, gemelos: !!gem[ine], abiertas: !!(lastMun && d.e[lastMun].ab) };
+  const slots = {
+    cifras: `<div class="stats">
       <div class="stat"><div class="v">${fmt.format(L.censo)}</div><div class="k">censo (${elecLabel(last)})</div></div>
       <div class="stat"><div class="v">${pct(L.vot / L.censo)}</div><div class="k">participación</div></div>
       <div class="stat"><div class="v">${myMini != null ? `${myMini.toFixed(1).replace(".", ",")} pp` : "·"}</div>
         <div class="k">distancia media a España${percentile != null ? ` · más parecido que el ${Math.round((1 - percentile) * 100)}% de municipios` : ""}</div></div>
-    </div>
-    <div class="grid2">
-      <div class="card"><h2 style="margin-top:0">Generales</h2><div class="chart" id="cg"></div></div>
-      <div class="card"><h2 style="margin-top:0">Municipales</h2><div class="chart" id="cm"></div></div>
-    </div>
-    <div class="grid2" style="margin-top:16px">
-      <div class="card"><h2 style="margin-top:0">Autonómicas</h2><div class="chart" id="ca"></div></div>
-      <div class="card"><h2 style="margin-top:0">Europeas</h2><div class="chart" id="ce"></div></div>
-    </div>
-    <h2>Participación</h2><div class="card chart" id="cp"></div>
-    <div class="grid2">
-      <div><h2>Resultado ${elecLabel(last)}</h2>${candTable(L)}</div>
-      <div><h2>Gemelos electorales</h2><p class="note">Municipios cuyo voto en las generales de 2015–2019 más se parece al de ${META.municipios[ine]}.</p>
-        ${gem[ine] ? `<table><tr><th>Municipio</th><th>Provincia</th><th class="num">Distancia</th></tr>${gem[ine].map(([g, dd]) =>
-          `<tr><td><a href="#pueblo/${g}">${META.municipios[g]}</a></td><td>${META.provincias[g.slice(0, 2)]}</td><td class="num">${dd.toFixed(1).replace(".", ",")}</td></tr>`).join("")}</table>` : "<p class='note'>Sin datos suficientes.</p>"}
-      </div>
-    </div>
-    ${muns.length ? `<h2>Último resultado municipal (${elecLabel(muns.at(-1))})</h2>${d.e[muns.at(-1)].ab ? '<p class="note">Municipio de listas abiertas (hasta 250 habitantes): cada elector marca candidatos sueltos. El voto de cada lista es el de su candidato más votado y no hay datos de censo ni participación.</p>' : ""}${candTable(d.e[muns.at(-1)], true)}` : ""}
-    <h2>Concejales electos</h2><div class="controls"><div class="seg" id="cyears"></div></div><div id="concejales"><p class="note">Cargando…</p></div>
-    <p class="note">${ELECTOS_NOTE} Disponible de 2003 a 2023: antes, las listas de concejales de la fuente están incompletas.</p>`;
+    </div>`,
+    cp: '<div class="card chart" id="cp"></div>',
+    resultado: candTable(L, T),
+    gemelos: gem[ine] ? `<table><tr><th>Municipio</th><th>Provincia</th><th class="num">Distancia</th></tr>${gem[ine].map(([g, dd]) =>
+      `<tr><td><a href="#pueblo/${g}">${META.municipios[g]}</a></td><td>${META.provincias[g.slice(0, 2)]}</td><td class="num">${dd.toFixed(1).replace(".", ",")}</td></tr>`).join("")}</table>` : null,
+    resultado_municipal: lastMun ? candTable(d.e[lastMun], T, true) : null,
+    concejales: '<div id="concejales"><p class="note">Cargando…</p></div>',
+  };
+  ficha.innerHTML = md(T.ficha, { vars, flags, slots, page: "pueblo" }).html;
 
   lineChart(ficha.querySelector("#cg"), gens, d);
   load(`electos/municipales/${ine.slice(0, 2)}.json`).catch(() => ({})).then((all) => {
     const E = all[ine] ?? {};
     const years = Object.keys(E).sort();
     const box = ficha.querySelector("#concejales"), seg = ficha.querySelector("#cyears");
-    if (!years.length) { box.innerHTML = '<p class="note">Sin concejales publicables para este municipio.</p>'; return; }
+    if (!years.length) { box.innerHTML = md(T.sin_concejales, { page: "pueblo" }).html; return; }
     const show = (e) => {
       seg.querySelectorAll("button").forEach((b) => b.classList.toggle("on", b.dataset.e === e));
       electosList(box, E[e]);
@@ -99,22 +93,20 @@ export async function renderPueblo(app, args) {
     partSeries(gens, "Generales 14:00", "#a9bfe0", "a1"),
     partSeries(muns, "Municipales", "#8a8984"),
   ], { height: 240, yMin: 0, yMax: 1 });
+  // without enough data the cards keep the notes written in textos/pueblo.md
   if (muns.length) lineChart(ficha.querySelector("#cm"), muns, d);
-  else ficha.querySelector("#cm").innerHTML = "<p class='note'>Sin datos municipales en la fuente.</p>";
   if (auts.length > 1) lineChart(ficha.querySelector("#ca"), auts, d);
-  else ficha.querySelector("#ca").innerHTML = "<p class='note'>Sin suficientes elecciones autonómicas con datos de este municipio.</p>";
   if (eurs.length > 1) lineChart(ficha.querySelector("#ce"), eurs, d);
-  else ficha.querySelector("#ce").innerHTML = "<p class='note'>Sin datos.</p>";
 }
 
-function candTable(r, electos = false) {
+function candTable(r, T, electos = false) {
   const cand = r.c.reduce((s, c) => s + c[2], 0);
   const max = d3.max(r.c, (c) => c[2]);
   return `<table><tr><th>Candidatura</th><th></th><th class="num">Votos</th><th class="num">%</th>${electos ? '<th class="num">Concejales</th>' : ""}</tr>
     ${r.c.map(([s, f, v, e]) => `<tr><td><i class="dot" style="background:${FAM[f].color}"></i>${s}</td>
       <td style="width:30%"><span class="hbar" style="width:${(v / max) * 100}%;background:${FAM[f].color}"></span></td>
       <td class="num">${fmt.format(v)}</td><td class="num">${pct(v / r.vot)}</td>${electos ? `<td class="num">${e}</td>` : ""}</tr>`).join("")}
-  </table><p class="note">% sobre votantes. Se muestran las 10 candidaturas más votadas.</p>`;
+  </table>${md(T.nota_tabla, { page: "pueblo" }).html}`;
 }
 
 /** Share by family over elections; families that ever reach 5% get a line. */

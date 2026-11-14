@@ -1,6 +1,7 @@
-import { load, showTip, hideTip } from "./data.js?v=0.2.72";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.72";
-import { EID, THRESHOLD, fmt, short, pct1, reparto, provScenario, turnos, precio, sirvio, partes, aire } from "./dhondt_vis.js?v=0.2.72";
+import { load, showTip, hideTip } from "./data.js?v=0.2.74";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.74";
+import { textos, md, INDICE } from "./textos.js?v=0.2.74";
+import { EID, THRESHOLD, fmt, short, pct1, reparto, provScenario, turnos, precio, sirvio, partes, aire } from "./dhondt_vis.js?v=0.2.74";
 
 // The D'Hondt tab. This module: the sand widget (votes fall as sand into one jar per list; a line (the price of a seat) comes down from the top
 // and every time it touches a mark (all the votes, half, a third...) that list wins a seat. Same result as the
@@ -307,6 +308,7 @@ export function arena(el, { editable = false, onStep = null, onEdit = null } = {
 
 /** The classic table: one row per list, its votes divided by 1, 2, 3...; the first `n` quotients awarded are lit. */
 function quotTable(el, S, R, n) {
+  if (!el?.isConnected) return;   // the reader left the tab while the animation was running
   const K = Math.min(S.seats, Math.max(...R.n) + 1) || 1;
   const won = new Map(R.won.map((w, j) => [`${w.i}:${w.k}`, j]));
   const order = S.lists.map((_, i) => i).sort((a, b) => S.lists[b].v - S.lists[a].v);
@@ -332,65 +334,20 @@ export async function renderDhondt(app) {
   const dh = await load("dhondt.json");
   const provs = [...dh[EID]].sort((a, b) => a.n.localeCompare(b.n, "es"));
   const opts = (sel) => provs.map((p) => `<option value="${p.prov}"${p.prov === sel ? " selected" : ""}>${p.n} (${p.esc} ${p.esc === 1 ? "escaño" : "escaños"})</option>`).join("");
-  const SEC = [["regla", "La regla"], ["precio", "Encuentra el precio"], ["juega", "Pruébalo"], ["voto", "¿Sirvió tu voto?"],
-    ["partes", "De proporcional a D'Hondt"], ["aire", "Escaños en el aire"]];
-  const IX = indexHtml(SEC);
+  const T = await textos("dhondt");
+  // the prose is textos/dhondt.md; here only the controls, the charts and the tables
+  const slots = {
+    controles_regla: `<div class="controls"><label>Provincia <select id="prov">${opts("39")}</select></label>
+      <span class="chips" id="ejemplos">${[["42", "Soria"], ["39", "Cantabria"], ["28", "Madrid"]].map(([c, n]) => `<button class="chip" data-p="${c}">${n}</button>`).join("")}</span></div>`,
+    controles_precio: `<div class="controls"><label>Provincia <select id="prprov">${opts("29")}</select></label></div>`,
+    controles_juega: `<div class="controls"><span>Escaños en juego</span><span class="seg"><button id="menos" aria-label="Un escaño menos">−</button><button id="nesc" disabled></button><button id="mas" aria-label="Un escaño más">+</button></span></div>`,
+    controles_voto: `<div class="controls"><label>Dónde <select id="svprov"><option value="">Toda España</option>${opts("")}</select></label></div>`,
+  };
+  const { html, sec } = md(T.principal, { slots, page: "dhondt" });
+  const IX = indexHtml(sec);
   app.innerHTML = `
     <div class="layout">${IX.aside}<div class="content">
-    <h1>Cómo se reparten los escaños</h1>
-    <p class="sub">Cada provincia reparte sus escaños con la regla D'Hondt. Aquí se ve funcionar con los votos reales de las generales de julio de 2023, y lo que provoca.</p>
-    ${IX.row}
-    <section id="s-regla">
-    <h2>La regla</h2>
-    <div class="controls"><label>Provincia <select id="prov">${opts("39")}</select></label>
-      <span class="chips" id="ejemplos">${[["42", "Soria"], ["39", "Cantabria"], ["28", "Madrid"]].map(([c, n]) => `<button class="chip" data-p="${c}">${n}</button>`).join("")}</span></div>
-    <div id="tn"></div>
-    <p class="note" id="tnnote"></p>
-    <h3>Todos los turnos de una vez</h3>
-    <p class="sub">Los votos de cada lista divididos entre 1, 2, 3…, puestos en fila de mayor a menor. Los primeros son los escaños; el primero que se queda fuera enseña lo cerca que estuvo.</p>
-    <div id="esc" class="chart"></div>
-    <details class="metodo-box"><summary>La tabla de cocientes</summary><div class="metodo" id="tabla"></div></details>
-    </section>
-    <section id="s-precio">
-    <h2>Encuentra el precio</h2>
-    <p class="sub">Otra forma de ver la misma regla. Arrastra la línea: es el precio de un escaño. Cada lista se lleva tantos escaños como bloques enteros de ese precio caben en sus votos. Busca un precio que reparta justo los escaños de la provincia.</p>
-    <div class="controls"><label>Provincia <select id="prprov">${opts("29")}</select></label></div>
-    <div id="pr"></div>
-    </section>
-    <section id="s-juega">
-    <h2>Pruébalo</h2>
-    <p class="sub">Los votos como arena en botes. Arrastra la arena de cada bote para cambiar sus votos, y cambia los escaños en juego. Prueba a que Naranja saque escaño, o a quitarle uno a Rojo con los votos justos.</p>
-    <div class="controls"><span>Escaños en juego</span><span class="seg"><button id="menos" aria-label="Un escaño menos">−</button><button id="nesc" disabled></button><button id="mas" aria-label="Un escaño más">+</button></span></div>
-    <div id="a2"></div>
-    <div id="tabla2"></div>
-    </section>
-    <section id="s-voto">
-    <h2>¿Sirvió tu voto?</h2>
-    <p class="sub">Un voto a una lista que no saca escaño en su provincia no elige a nadie. En gris, esos votos.</p>
-    <div class="controls"><label>Dónde <select id="svprov"><option value="">Toda España</option>${opts("")}</select></label></div>
-    <div id="sv"></div>
-    </section>
-    <section id="s-partes">
-    <h2>De proporcional a D'Hondt</h2>
-    <p class="sub">¿Lo que se aleja el Congreso de los votos es culpa de D'Hondt o de las provincias? Las dos cosas, y se pueden separar en dos pasos.</p>
-    <div id="pt"></div>
-    <h3>La barrera real depende de la provincia</h3>
-    <p class="sub">Cada punto es una provincia. Relleno: el porcentaje de la lista más pequeña que sacó escaño. Hueco: el de la más grande que se quedó sin él. Con más del porcentaje de la línea discontinua, el escaño está asegurado.</p>
-    <div id="barrera" class="chart"></div>
-    </section>
-    <section id="s-aire">
-    <h2>Escaños en el aire</h2>
-    <p class="sub">En cada provincia, el último escaño se decide entre dos listas. Estas son las que se decidieron por menos votos en 2023: los votos que le faltaron a la que se quedó fuera.</p>
-    <div id="ai"></div>
-    <details class="metodo-box" id="metodo"><summary>Metodología</summary><div class="metodo">
-    <p><b>La regla.</b> En cada provincia se dividen los votos de cada candidatura entre 1, 2, 3… hasta el número de escaños, y los escaños van a los cocientes más altos. Solo cuentan las candidaturas con al menos el 3% de los votos válidos de la provincia (candidaturas más voto en blanco). Es el artículo 163 de la Ley Orgánica del Régimen Electoral General. Ceuta y Melilla eligen un diputado cada una, por mayoría, que da lo mismo.</p>
-    <p><b>Turnos, precio y arena.</b> Son tres formas de la misma regla. En los turnos, la fuerza de una lista son sus votos divididos entre sus escaños más uno, y cada escaño va a la más fuerte. En el precio, cada lista recibe tantos escaños como veces cabe el precio en sus votos, redondeando hacia abajo; el precio que reparte justo los escaños de la provincia está entre el último cociente que obtiene escaño y el primero que se queda fuera. La arena es el precio visto desde arriba: una línea que baja.</p>
-    <p><b>Votos sin escaño.</b> Votos a candidaturas que no obtuvieron ningún escaño en su provincia. No cuenta los votos sobrantes de las que sí obtuvieron alguno, ni el voto en blanco.</p>
-    <p><b>Los tres pasos.</b> Proporcional en toda España: los 350 escaños por restos mayores sobre los votos a candidaturas de toda España, sin barrera. Proporcional en cada provincia: los escaños de cada provincia por restos mayores sobre sus votos, sin barrera, sumados. D'Hondt: el resultado oficial. La diferencia entre los dos primeros es lo que pone el reparto de escaños entre provincias y el tamaño pequeño de muchas; la diferencia entre los dos últimos, lo que pone la fórmula con su barrera.</p>
-    <p><b>Le faltaron.</b> Los votos que necesitaba la lista que se queda fuera para que su siguiente cociente superara al último que obtuvo escaño, sin que nadie más cambie; en porcentaje, sobre los votos válidos de la provincia.</p>
-    <p><b>Las barras y los botes.</b> Se dibujan las listas con al menos el 1% de los votos válidos de la provincia, como mucho nueve. Las demás no llegan al 3% y no cambian el reparto. Datos: Ministerio del Interior.</p>
-    </div></details>
-    </section>
+    ${html.replace(INDICE, IX.row)}
     </div></div>`;
   const $ = (s) => app.querySelector(s);
   sectionIndex(app);
@@ -404,7 +361,7 @@ export async function renderDhondt(app) {
     app.querySelectorAll("#ejemplos .chip").forEach((c) => c.classList.toggle("on", c.dataset.p === code));
     const sc = provScenario(p);
     w1.set(sc, { play });
-    $("#tnnote").textContent = sc.hidden ? `Además, ${sc.hidden} ${sc.hidden === 1 ? "lista" : "listas"} con menos del 1% de los votos, que no se dibujan.` : "";
+    $("#tnnote").innerHTML = sc.hidden ? md(T.ocultas, { vars: { ocultas: `${sc.hidden} ${sc.hidden === 1 ? "lista" : "listas"}` }, page: "dhondt" }).html.replace(/^<p>|<\/p>$/g, "") : "";
   }
   $("#prov").onchange = (e) => show(e.target.value);
   app.querySelectorAll("#ejemplos .chip").forEach((c) => c.onclick = () => show(c.dataset.p));

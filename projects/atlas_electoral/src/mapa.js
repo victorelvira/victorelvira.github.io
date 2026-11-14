@@ -1,9 +1,10 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 const topojson = window.topojson;
 const geoConicConformalSpain = d3.geoConicConformalSpain;
-import { searchBox } from "./pueblo.js?v=0.2.72";
-import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.72";
-import { addZoom } from "./zoom.js?v=0.2.72";
+import { searchBox } from "./pueblo.js?v=0.2.74";
+import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.74";
+import { addZoom } from "./zoom.js?v=0.2.74";
+import { textos, md } from "./textos.js?v=0.2.74";
 
 const state = { tipo: "generales", eleccion: null, modo: "ganador", familia: "psoe", playing: null };
 let geo; // cached {features, provMesh, path}
@@ -86,10 +87,10 @@ export async function renderMapa(app, args, embed = null) {
 
   const TIPOS = { generales: "Generales", autonomicas: "Autonómicas", municipales: "Municipales", europeas: "Europeas", senado: "Senado" };
   const tipos = embed ? embed.tipos : Object.keys(TIPOS);
-  app.innerHTML = `
-    ${embed ? '<div id="msearch"></div>' : `<h1>¿Qué votó cada municipio?</h1>
-    <p class="sub">Generales y municipales desde 1977, Senado desde 1986, europeas desde 1987 y autonómicas desde 1982, municipio a municipio. Pasa el ratón (o toca) para ver el detalle y pulsa para abrir la ficha del pueblo.</p>`}
-    <div class="controls">
+  const T = await textos("mapa");
+  // the prose is textos/mapa.md; here only the controls, the map and the legends
+  const slots = {
+    controles: `<div class="controls">
       <div class="seg" id="tipo" ${tipos.length > 1 ? "" : "hidden"}>${tipos.map((t) => `<button data-v="${t}">${TIPOS[t]}</button>`).join("")}</div>
       <div class="seg" id="modo">
         <button data-v="ganador">Ganador</button><button data-v="partido">% de un partido</button>
@@ -98,17 +99,17 @@ export async function renderMapa(app, args, embed = null) {
       </div>
       <label id="famwrap">Partido <select id="fam">${FAM_IDS.filter((f) => f !== "otros")
         .map((f) => `<option value="${f}">${FAM[f].nombre}</option>`).join("")}</select></label>
-    </div>
-    <div class="controls timeline">
+    </div>`,
+    linea_tiempo: `<div class="controls timeline">
       <button class="play" id="play" aria-label="Reproducir">▶</button>
       <input type="range" id="t" min="0" step="1" />
       <span class="lbl" id="tl"></span>
-    </div>
-    <div class="mapwrap"><svg viewBox="0 0 960 720" role="img" aria-label="Mapa municipal"></svg></div>
-    <div id="leg"></div>
-    <h2 id="nat-h"></h2>
-    <div id="nat"></div>
-    <p class="note">Gris: sin datos (municipio inexistente en esa fecha o no incluido en la fuente).${embed ? "" : ` En municipales, los pueblos de hasta 250 habitantes votan con listas abiertas: el voto de cada lista se aproxima por el de su candidato más votado y no hay dato de participación.`}</p>`;
+    </div>`,
+    mapa: '<div class="mapwrap"><svg viewBox="0 0 960 720" role="img" aria-label="Mapa municipal"></svg></div>',
+  };
+  app.innerHTML = md(T.principal, { slots, flags: { embed: !!embed }, page: "mapa" }).html;
+  // a one-line part as bare text (for a heading that already exists)
+  const texto = (part, opts) => md(T[part], { ...opts, page: "mapa" }).html.replace(/^<p>|<\/p>$/g, "");
 
   const { features, provMesh, path, borders } = await getGeo();
   const svg = d3.select(app).select("svg");
@@ -172,7 +173,7 @@ export async function renderMapa(app, args, embed = null) {
       color = (r, ine) => (av[ine] && r?.censo ? ramp(Math.max(0, Math.min(1, (av[ine][k] / r.censo - lo) / (hi - lo)))) : base);
       legend = Object.keys(av).length
         ? rampLegend(ramp, `≤${pct(lo, 0)}`, `≥${pct(hi, 0)}`, `Habían votado a las ${k ? "18:00" : "14:00"} (avance oficial, % del censo)`)
-        : `<p class="note">Interior no publica avances por municipio para esta elección.</p>`;
+        : md(T.sin_avances, { page: "mapa" }).html;
       state.av = av;
     } else if (state.modo === "participacion") {
       const ramp = d3.interpolateLab(base, "#1f4e8c");
@@ -190,7 +191,8 @@ export async function renderMapa(app, args, embed = null) {
         <span>−15 pp</span><span class="bar" style="background:linear-gradient(90deg,${neg},${base},${pos})"></span><span>+15 pp</span></div>`;
     }
     paths.attr("fill", (d) => { const r = rows.get(d.id); return r ? color(r, d.id) : base; });
-    $("#leg").innerHTML = legend + (res.sources ? `<p class="note">Elección autonómica usada en cada comunidad: ${res.sources.map((x) => `${x.n} ${elecLabel(x.eleccion).replace("Autonómicas ", "")}`).join(" · ")}. Hasta 2012, Ministerio del Interior; desde 2012, portales oficiales de cada comunidad. Sin datos municipales de Cataluña y País Vasco 1980 ni de Galicia 1981 y 1985.</p>` : "");
+    $("#leg").innerHTML = legend + (res.sources ? md(T.fuentes_autonomicas, { page: "mapa",
+      vars: { fuentes: res.sources.map((x) => `${x.n} ${elecLabel(x.eleccion).replace("Autonómicas ", "")}`).join(" · ") } }).html : "");
 
     paths.on("mousemove", (ev, d) => showTip(tipHtml(d.id, rows.get(d.id), prevRows?.get(d.id)), ev))
       .on("mouseleave", hideTip)
@@ -217,12 +219,13 @@ export async function renderMapa(app, args, embed = null) {
     let cand = 0;
     for (const r of rows.values()) for (const f of FAM_IDS) { tot[f] += r.fam[f]; cand += r.fam[f]; }
     const order = FAM_IDS.filter((f) => tot[f] > 0).sort((a, b) => (a === "otros") - (b === "otros") || tot[b] - tot[a]);
-    $("#nat-h").textContent = isAut(state.eleccion) ? `Suma de las últimas autonómicas · ${state.eleccion.slice(7)}` : `Total España · ${label(state.eleccion)}`;
+    $("#nat-h").innerHTML = texto("titulo_total", { flags: { autonomicas: isAut(state.eleccion) },
+      vars: { "año": isAut(state.eleccion) ? state.eleccion.slice(7) : "", eleccion: label(state.eleccion) } });
     $("#nat").innerHTML = `<div class="seats" style="height:22px">${order.map((f) =>
       `<div title="${FAM[f].nombre}: ${pct(tot[f] / cand)}" style="flex:${tot[f]};background:${FAM[f].color}"></div>`).join("")}</div>
       <div class="legend">${order.filter((f) => tot[f] / cand > 0.01).map((f) =>
         `<span><i class="sw" style="background:${FAM[f].color}"></i>${FAM[f].nombre} <b>${pct(tot[f] / cand)}</b></span>`).join("")}</div>
-      <p class="note">Sobre votos a candidaturas en municipios (sin voto exterior).</p>`;
+      ${md(T.nota_total, { page: "mapa" }).html}`;
   }
 
   app.querySelectorAll("#tipo button").forEach((b) => b.onclick = () => { state.tipo = b.dataset.v; state.eleccion = steps(state.tipo).at(-1); draw(); });

@@ -1,16 +1,16 @@
-import { init } from "./data.js?v=0.2.72";
-import { renderMapa } from "./mapa.js?v=0.2.72";
-import { renderPueblo } from "./pueblo.js?v=0.2.72";
-import { renderMiniatura } from "./miniatura.js?v=0.2.72";
-import { renderSimulador } from "./simulador.js?v=0.2.72";
-import { renderEncuestas } from "./encuestas.js?v=0.2.72";
-import { renderInicio } from "./inicio.js?v=0.2.72";
-import { renderHistoria } from "./historia.js?v=0.2.72";
-import { renderComunidad } from "./comunidad.js?v=0.2.72";
-import { renderExplora } from "./explora.js?v=0.2.72";
-import { renderDhondt } from "./dhondt.js?v=0.2.72";
-import { renderProvincia } from "./provincia.js?v=0.2.72";
-import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.72";
+import { init } from "./data.js?v=0.2.74";
+import { renderMapa } from "./mapa.js?v=0.2.74";
+import { renderPueblo } from "./pueblo.js?v=0.2.74";
+import { renderMiniatura } from "./miniatura.js?v=0.2.74";
+import { renderSimulador } from "./simulador.js?v=0.2.74";
+import { renderEncuestas } from "./encuestas.js?v=0.2.74";
+import { renderInicio } from "./inicio.js?v=0.2.74";
+import { renderHistoria } from "./historia.js?v=0.2.74";
+import { renderComunidad } from "./comunidad.js?v=0.2.74";
+import { renderExplora } from "./explora.js?v=0.2.74";
+import { renderDhondt } from "./dhondt.js?v=0.2.74";
+import { renderProvincia } from "./provincia.js?v=0.2.74";
+import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.74";
 
 // Spanish decimal comma and thousands point for every d3.format (axes, tooltips)
 window.d3.formatDefaultLocale({ decimal: ",", thousands: ".", grouping: [3], currency: ["", " €"] });

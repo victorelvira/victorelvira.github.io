@@ -1,9 +1,10 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.72";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.72";
-import { getGeo } from "./mapa.js?v=0.2.72";
-import { addZoom } from "./zoom.js?v=0.2.72";
-import { electosList, ELECTOS_NOTE } from "./electos.js?v=0.2.72";
+import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.74";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.74";
+import { getGeo } from "./mapa.js?v=0.2.74";
+import { addZoom } from "./zoom.js?v=0.2.74";
+import { electosList } from "./electos.js?v=0.2.74";
+import { textos, md } from "./textos.js?v=0.2.74";
 
 const state = { cc: "MD", eleccion: null };
 
@@ -19,32 +20,26 @@ export async function renderComunidad(app, args) {
 
   const last = eids.at(-1);
   const L = C.s[last];
-  app.innerHTML = `
-    <h1>Tu comunidad</h1>
-    <div class="chips">${Object.entries(S.ccaa).map(([c, v]) => `<a class="chip ${c === state.cc ? "on" : ""}" href="#comunidad/${c}">${v.n}</a>`).join("")}</div>
-    <h1 style="margin-top:16px">${C.n}</h1>
-    <div class="stats">
+  const T = await textos("comunidad");
+  // the prose is textos/comunidad.md; here only the figures, the controls and the containers of charts and tables
+  const slots = {
+    chips: `<div class="chips">${Object.entries(S.ccaa).map(([c, v]) => `<a class="chip ${c === state.cc ? "on" : ""}" href="#comunidad/${c}">${v.n}</a>`).join("")}</div>`,
+    cifras: `<div class="stats">
       <div class="stat"><div class="v">${L.escanos}</div><div class="k">diputados en ${lab(last)}</div></div>
       <div class="stat"><div class="v">${fmt.format(L.censo)}</div><div class="k">censo electoral</div></div>
       <div class="stat"><div class="v">${pct(L.votantes / L.censo)}</div><div class="k">participación (España: ${pct(N[last].votantes / N[last].censo)})</div></div>
-    </div>
-    <div class="grid2">
-      <div><h2>Municipios</h2>
-        <div class="controls"><label>Elección <select id="el">${munElections.map((e) => `<option value="${e}">${lab(e)}</option>`).join("")}</select></label></div>
-        <div class="mapwrap"><svg viewBox="0 0 600 500" role="img" aria-label="Mapa de ${C.n}"></svg></div>
-        <div id="leg"></div></div>
-      <div><h2>Voto por familias (generales)</h2><div class="chart" id="votos"></div>
-        <h2>Participación frente a España</h2><div class="chart" id="part"></div></div>
-    </div>
-    <h2>Parlamento autonómico</h2><div id="aut"></div>
-    <h2>Diputados que ha elegido ${C.n} en el Congreso</h2><div id="seats"></div>
-    <h2>Quién representa a ${C.n}</h2>
-    <div class="controls"><div class="seg" id="rcargo">
+    </div>`,
+    selector: `<div class="controls"><label>Elección <select id="el">${munElections.map((e) => `<option value="${e}">${lab(e)}</option>`).join("")}</select></label></div>`,
+    mapa: `<div class="mapwrap"><svg viewBox="0 0 600 500" role="img" aria-label="Mapa de ${C.n}"></svg></div>`,
+    votos: '<div class="chart" id="votos"></div>',
+    part: '<div class="chart" id="part"></div>',
+    cargos: `<div class="controls"><div class="seg" id="rcargo">
       <button data-c="generales">Congreso</button><button data-c="senado">Senado</button><button data-c="autonomicas">Parlamento autonómico</button></div>
-      <label>Elección <select id="relec"></select></label></div>
-    <div id="reps"><p class="note">Cargando…</p></div>
-    <p class="note">${ELECTOS_NOTE}</p>
-    ${C.provs.length > 1 ? `<h2>Por provincia</h2><div class="scrollx" id="provs"></div>` : ""}`;
+      <label>Elección <select id="relec"></select></label></div>`,
+    reps: '<div id="reps"><p class="note">Cargando…</p></div>',
+    provs: '<div class="scrollx" id="provs"></div>',
+  };
+  app.innerHTML = md(T.principal, { vars: { nombre: C.n }, slots, flags: { provincias: C.provs.length > 1 }, page: "comunidad" }).html;
   const $ = (s) => app.querySelector(s);
 
   lines($("#votos"), familySeries(C.s, lab, 0.04).sort((a, b) => IDEO.indexOf(a.id) - IDEO.indexOf(b.id)), { height: 300 });
@@ -54,15 +49,13 @@ export async function renderComunidad(app, args) {
   ], { height: 220, yMin: 0.4, yMax: 0.9 });
   const A = S.autonomicas?.[state.cc] ?? {};
   const aeids = Object.keys(A).sort();
+  $("#aut").innerHTML = md(T.autonomicas, { vars: { nombre: C.n }, flags: { datos: aeids.length > 0 },
+    slots: { autvotos: '<div class="chart" id="autvotos"></div>' }, page: "comunidad" }).html;
   if (aeids.length) {
     const short = (e) => lab(e).replace("Autonómicas ", "");
-    $("#aut").innerHTML = `<p class="sub">Escaños tras cada elección autonómica: hasta 2012, Ministerio del Interior; después, el portal oficial de resultados de cada comunidad.</p>
-      <div id="autseats"></div><h3 class="h3" style="margin-top:16px">Voto por familias</h3><div class="chart" id="autvotos"></div>`;
     seatRows($("#autseats"), aeids.filter((e) => A[e].escanos).map((e) => ({ label: short(e), e: A[e].e })),
       { total: Math.max(...aeids.map((e) => A[e].escanos)), labelWidth: 90 });
     lines($("#autvotos"), familySeries(A, lab, 0.04).sort((a, b) => IDEO.indexOf(a.id) - IDEO.indexOf(b.id)), { height: 280 });
-  } else {
-    $("#aut").innerHTML = `<p class="note">Interior no publica las autonómicas de ${C.n}.</p>`;
   }
   seatRows($("#seats"), eids.map((e) => ({ label: lab(e).replace("Generales ", ""), e: C.s[e].e })), { total: Math.max(...eids.map((e) => C.s[e].escanos)), labelWidth: 90 });
 
@@ -82,7 +75,7 @@ export async function renderComunidad(app, args) {
     const src = cargo === "autonomicas" ? AUT : NAC;
     const eids = Object.keys(src).filter((e) => e.startsWith(cargo === "autonomicas" ? "autonomicas" : `${cargo}_`)).sort();
     const sel = $("#relec");
-    if (!eids.length) { sel.innerHTML = ""; $("#reps").innerHTML = '<p class="note">Sin datos publicables.</p>'; return; }
+    if (!eids.length) { sel.innerHTML = ""; $("#reps").innerHTML = md(T.sin_electos, { page: "comunidad" }).html; return; }
     if (!eids.includes(sel.value)) sel.innerHTML = eids.slice().reverse().map((e) => `<option value="${e}">${lab(e)}</option>`).join("");
     const e = sel.value || eids.at(-1);
     if (cargo === "autonomicas") {

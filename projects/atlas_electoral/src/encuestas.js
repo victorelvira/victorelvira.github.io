@@ -1,6 +1,7 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.72";
-import { lines, indexHtml, sectionIndex, seatRows, bloques } from "./charts.js?v=0.2.72";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.74";
+import { lines, indexHtml, sectionIndex, seatRows, bloques } from "./charts.js?v=0.2.74";
+import { textos, md, INDICE } from "./textos.js?v=0.2.74";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -29,103 +30,48 @@ const mainOf = (E) => E.resultado ? [...E.parties].sort((a, b) => (E.resultado[b
 const cycleLabel = (c) => new Date(c).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
 
 export async function renderEncuestas(app, args = []) {
-  const [E, R, K, D, CI, CP, GE] = await Promise.all([load("encuestas.json"), load("ratings.json"), load("cocina.json"), load("dentro.json"),
+  const [T, E, R, K, D, CI, CP, GE] = await Promise.all([textos("encuestas"), load("encuestas.json"), load("ratings.json"), load("cocina.json"), load("dentro.json"),
     load("ciclos/index.json").catch(() => ({ ciclos: [] })), load("cocina_pasos.json").catch(() => null), load("generales_encuestas.json").catch(() => null)]);
 
-  const SEC = [["29n", "Hacia el 29N", [["promedio", "Promedio"], ["tabla", "Tabla"], ["casas", "Encuestadoras"], ["dentro", "Dentro de las encuestas"]]],
-    ["prediccion", "Predicción", []], ["cocina", "La cocina", []], ["pasado", "Las encuestas en el pasado", [["ciclos", "Desde 1982"], ["eleccion", "Elección a elección"], ["salto", "El salto final"], ["aciertos", "Quién acierta"]]]];
-  const IX = indexHtml(SEC);
+  // the prose is textos/encuestas.md; here only the figures and the computed blocks
+  const vars = {
+    encuestas: E.polls.filter((q) => !q.x).length,
+    ultima: new Date(E.actualizado).toLocaleDateString("es-ES", { day: "numeric", month: "long" }),
+    chips: MAIN.filter((p) => E.ultimo[p] != null).map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${num(E.ultimo[p])}%</b></span>`).join(""),
+    elecciones: R.elecciones.length,
+  };
+  const slots = {
+    controles_tabla: '<div class="controls"><div class="seg" id="te-gran"></div><select id="te-enc" aria-label="Encuestadora"></select></div>',
+    tabla_encuestas: '<div class="scrollx" id="te-tabla"></div>\n<p id="te-mas"></p>',
+    house: '<div class="scrollx" id="house"></div>',
+    controles_movilizacion: '<div class="controls"><div class="seg" id="dt-casa"></div></div>',
+    movilizacion: '<div class="card chart" id="dt-mov"></div>',
+    controles_matriz: '<div class="controls"><select id="dt-enc"></select></div>',
+    matriz: '<div class="scrollx" id="dt-mat"></div>',
+    controles_paso: '<div class="controls"><label>Encuesta <select id="cp-sel"></select></label></div>',
+    paso: '<div class="card chart" id="cp-chart"></div>',
+    controles_cocina: '<div class="controls"><select id="ck-casa"></select><div class="seg" id="ck-party"></div></div>',
+    cocina: '<div class="card chart" id="cocina"></div>',
+    tabla_cocina: '<div class="scrollx" id="ck-tab"></div>',
+    eleccion: '<div class="chips" id="g-sel"></div>\n<div class="card" id="g-chart"></div>',
+    aciertos: '<div class="scrollx" id="acc"></div>',
+    errhist: '<div class="card chart" id="errhist"></div>',
+  };
+  const { html, sec } = md(T.principal, { vars, slots, page: "encuestas" });
+  const IX = indexHtml(sec);
   app.innerHTML = `
     <div class="layout">
     ${IX.aside}
     <div class="content">
-    <h1>Encuestas</h1>
-    <p class="sub">Las encuestas hacia el 29N, la predicción propia, cómo se cocinan las encuestas y lo que pasó en las elecciones anteriores.</p>
-    ${IX.row}
-    <section id="s-29n">
-    <h2>Encuestas hacia el 29N</h2>
-    <p class="sub">Promedio corregido de ${E.polls.filter((q) => !q.x).length} encuestas publicadas desde julio de 2023; la última, del ${new Date(E.actualizado).toLocaleDateString("es-ES", { day: "numeric", month: "long" })}.</p>
-    <h3 id="s-promedio">Promedio y encuestas</h3>
-    <p class="linea">${MAIN.filter((p) => E.ultimo[p] != null).map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${num(E.ultimo[p])}%</b></span>`).join("")}</p>
-    <div id="chart-area"></div>
-    <h3 id="s-tabla">Todas las encuestas</h3>
-    <p class="note">Una fila por cada nivel al que se publicó una encuesta. Las filas del mismo color son la misma encuesta. <b>Híbrido</b>: una sola muestra publicada a más de un nivel. <b>Desglose</b>: el dato de esa zona sale de una muestra mayor, así que no es una encuesta independiente de la zona.</p>
-    <div class="controls"><div class="seg" id="te-gran"></div><select id="te-enc" aria-label="Encuestadora"></select></div>
-    <div class="scrollx" id="te-tabla"></div>
-    <p id="te-mas"></p>
-    <h3 id="s-casas">Sesgo de cada encuestadora</h3>
-    <p class="note">Cuánto da cada casa a cada partido por encima (+) o por debajo (−) del resto, en puntos, en este ciclo. Casas con 8 o más encuestas.</p>
-    <div class="scrollx" id="house"></div>
-    <h3 id="s-dentro">Quién irá a votar</h3>
-    <p class="note">Seguros de ir a votar (10 sobre 10) según lo que votaron en julio de 2023, en las respuestas de cada encuestado de 40dB y del CIS. Compara cada casa consigo misma: preguntan distinto.</p>
-    <div class="controls"><div class="seg" id="dt-casa"></div></div>
-    <div class="card chart" id="dt-mov"></div>
-    <h3>Adónde va cada voto</h3>
-    <p class="note">Lo que votaron en julio de 2023 (filas) y lo que dicen que votarán ahora (columnas), en porcentaje de cada fila.</p>
-    <div class="controls"><select id="dt-enc"></select></div>
-    <div class="scrollx" id="dt-mat"></div>
-
-    </section>
-
-    <section id="s-prediccion">
-    <h2>Predicción <span class="tag-exp">modelo experimental, en revisión</span></h2>
-    <div id="pred"></div>
-    </section>
-
-    <section id="s-cocina">
-    <h2>Cómo se cocinan las encuestas</h2>
-    <p class="sub">Ninguna casa publica lo que contesta la gente, sino una estimación: pondera por el recuerdo de voto, reparte a los indecisos y tiene en cuenta quién irá a votar. Aquí se ve qué hace cada paso y cuánto mueve cada casa.</p>
-    <h3>Paso a paso, en una encuesta real</h3>
-    <p class="note">Con las respuestas de cada encuestado de 40dB y del CIS, rehacemos los cuatro ajustes de manual y los comparamos con lo que publicó la casa.</p>
-    <div class="controls"><label>Encuesta <select id="cp-sel"></select></label></div>
-    <div class="card chart" id="cp-chart"></div>
-    <div id="cp-text"></div>
-    <h3>Respuesta tal cual frente a estimación, por casa</h3>
-
-    <div class="controls"><select id="ck-casa"></select><div class="seg" id="ck-party"></div></div>
-    <div class="card chart" id="cocina"></div>
-    <div class="scrollx" id="ck-tab"></div>
-
-    </section>
-
-    <section id="s-pasado">
-    <h2>Las encuestas en el pasado</h2>
-    <h3 id="s-ciclos">Cualquier elección general desde 1982</h3>
-
-    <div id="chart-hist"></div>
-    <h3 id="s-eleccion">Elección a elección</h3>
-    <p class="note">La última encuesta de cada casa en el mes anterior, frente al resultado. Barra: de la más baja a la más alta; punto: su media; rombo: intención directa del CIS, sin cocinar; raya negra: resultado.</p>
-    <div class="chips" id="g-sel"></div>
-    <div class="card" id="g-chart"></div>
-    <h3 id="s-salto">El salto final</h3>
-    <p class="note">Los últimos cuatro meses del promedio en cada general y, al final, el resultado (rayas); al lado, cuánto se equivocaron las encuestas. Las líneas llegan planas: el error no está en la tendencia sino en el nivel.</p>
-    <div id="salto"></div>
-    <h3 id="s-aciertos">Quién acierta</h3>
-    <p class="note">Error de la última encuesta de cada casa en ${R.elecciones.length} elecciones desde 1977 (generales, autonómicas y europeas), y cuánto mejor (−) o peor (+) que las demás casas en las mismas elecciones. Casas con 10 o más elecciones.</p>
-    <div class="scrollx" id="acc"></div>
-
-    <h3>¿Han mejorado?</h3>
-    <p class="note">Error de la media de las encuestas finales en cada elección, en puntos por partido.</p>
-    <div class="card chart" id="errhist"></div>
-    <details class="metodo-box" id="metodo"><summary>Metodología</summary><div class="metodo">
-    <p><b>Qué encuestas entran.</b> Encuestas de ámbito nacional para el Congreso recopiladas en las tablas de Wikipedia, cotejadas con los informes originales cuando existen (PDF de cada casa, marginales del CIS, informes de 40dB). De cada encuesta, su escenario principal. No entran en el promedio las reestimaciones de datos del CIS hechas por otras empresas (misma muestra, otra cocina) ni las encuestas encargadas por un partido; se muestran como círculos huecos.</p>
-    <p><b>El promedio.</b> Para cada día, media ponderada de las encuestas de los 120 días anteriores. El peso de cada encuesta decae con su antigüedad (exponencial, vida media de unos 7 días), crece con la raíz de su muestra (tope en el equivalente a 4.000 entrevistas) y se divide por el número de encuestas de la misma casa en los 30 días previos, para que un tracking diario no ahogue a las casas mensuales. La banda es ±1,28 desviaciones ponderadas de las encuestas alrededor del promedio (un 80%): mide cuánto discrepan las casas, no la incertidumbre del resultado.</p>
-    <p><b>El gráfico.</b> Cada punto es una encuesta tal como se publicó; al pasar por encima se ve quién la hizo, cuándo y qué daba a cada partido, y se resaltan las demás de la misma casa (un clic la deja fija). La línea es el promedio; la banda, la dispersión habitual entre encuestas (±1,28 desviaciones, un 80%). La tira de abajo muestra todo el ciclo: arrastra la ventana para moverte. Las reestimaciones del CIS y las encuestas de partido, si se muestran, son círculos huecos.</p>
-    <p><b>La corrección de casa.</b> Para cada casa y partido, su desviación media respecto al promedio de todas, encogida hacia cero (como si tuviera cinco encuestas más que dieran cero), recalculada tres veces y centrada para que la media de la industria sea cero. Esa cantidad, la de la tabla "Sesgo de cada encuestadora", se resta a cada encuesta antes de promediar. Supone que la industria en conjunto no se equivoca; lo que vimos en "¿Hay salto al final?" dice que sí se equivoca, pero en una dirección que no se puede saber de antemano.</p>
-    <p><b>La cocina.</b> Intención directa: quienes nombran un partido, recalculada sobre ese total. Estimación: la cifra publicada. Para 40dB y el CIS ambas salen de sus propios informes; para las demás casas, de las tablas de intención directa de Wikipedia. "Así se cocina una encuesta" y "Dentro de las encuestas" usan los microdatos de 40dB (publicados por El País) y del CIS, armonizados encuestado a encuestado; en la web solo hay agregados.</p>
-    <p><b>Quién irá a votar y adónde va cada voto.</b> Con los microdatos de 40dB y del CIS: porcentaje que se da un 10 sobre 10 en probabilidad de votar, según el voto recordado de julio de 2023 (la línea discontinua, menores de 35). La matriz cruza voto recordado e intención directa; «Otros» incluye otros partidos, blanco y nulo; «Indecisos», no sabe o no contesta; entre paréntesis, cambios de 3 puntos o más frente a la encuesta anterior de la misma casa. Grupos con menos de 50 encuestados se dejan en blanco.</p>
-    <p><b>Intención directa.</b> Respuesta a «¿a qué partido votarías?», recalculada sobre quienes nombran un partido. Para 40dB y el CIS sale de sus informes; para las demás casas, de las tablas de Wikipedia, comparando solo los partidos que aparecen en las dos. Izquierda: Sumar, Podemos, Más País e IU (Unidas Podemos en 2016-2019).</p>
-    <p><b>Aciertos.</b> Para cada elección, la última encuesta de cada casa publicada entre 1 y 35 días antes; error = media de las diferencias absolutas con el resultado en los partidos con un 3% o más. "Frente al resto" compara a cada casa con las demás en las mismas elecciones y descuenta la antelación. El salto final se mide con la media de las encuestas de las dos últimas semanas.</p>
-    <p class="note">Todo se calcula con código abierto en Python y se reconstruye cada mañana; los datos de partida son públicos. Fuentes: Wikipedia; informes de las casas; CIS (origen de los datos: Centro de Investigaciones Sociológicas, reutilizados según sus condiciones generales); 40dB. para EL PAÍS y la Cadena SER (bases de datos de acceso libre publicadas por El País).</p>
-    </div></details>
+    ${html.replace(INDICE, IX.row)}
     </div></div>`;
   const $ = (s) => app.querySelector(s);
 
   sectionIndex(app);
-  if (GE) pollsVsResult(app, GE);
+  if (GE) pollsVsResult(app, GE, T);
   await pollChart($("#chart-area"), E, { CI, selector: false, lastTable: true, kpi: false });
   pollChart($("#chart-hist"), E, { CI, args, pastOnly: true, lastTable: false });
-  load("prediccion.json").then((P) => prediccion($("#pred"), P)).catch(() => { $("#pred").innerHTML = '<p class="note">La predicción del modelo aparecerá aquí.</p>'; });
+  load("prediccion.json").then((P) => prediccion($("#pred"), P, T)).catch(() => { $("#pred").innerHTML = md(T.sin_prediccion, { page: "encuestas" }).html; });
 
   load("tabla_encuestas.json").then((T) => tablaEncuestas(app, T)).catch(() => {});
   const hp = ["pp", "psoe", "vox", "sumar"];
@@ -143,9 +89,9 @@ export async function renderEncuestas(app, args = []) {
       <td style="width:22%">${pmBar(r.plus_minus)}</td><td class="num">${sign(r.plus_minus)}</td>
       ${leanCell(r.sesgo_pp)}${leanCell(r.sesgo_psoe)}${leanCell(r.sesgo_vox)}${leanCell(r.sesgo_izq)}</tr>`).join("")}</table>`;
   errHist($("#errhist"), R.elecciones);
-  load("ciclos/salto.json").then((SJ) => saltos($("#salto"), SJ)).catch(() => {});
+  load("ciclos/salto.json").then((SJ) => saltos($("#salto"), SJ, T)).catch(() => {});
   cocina(app, K);
-  if (CP) cocinaPasos(app, CP);
+  if (CP) cocinaPasos(app, CP, T);
   dentro(app, D);
 
 }
@@ -278,10 +224,10 @@ function dentro(app, D) {
 }
 
 // small multiples: the last 120 days of each past cycle's average, with the result as ticks on election day
-function saltos(el, SJ) {
+function saltos(el, SJ, T) {
   const W = 230, H = 150, m = { t: 20, r: 34, b: 18, l: 30 };
   el.innerHTML = `<div class="multiples">${SJ.ciclos.map((c, i) => `<div class="mult"><svg viewBox="0 0 ${W} ${H}" data-i="${i}"></svg></div>`).join("")}</div>
-    <p class="note">Junto a cada raya: resultado menos encuestas, en puntos (+ = las encuestas se quedaron cortas). Partidos con un 3% o más; escala común (0-50%).</p>`;
+    ${md(T.salto, { page: "encuestas" }).html}`;
   SJ.ciclos.forEach((c, i) => {
     const svg = d3.select(el).select(`svg[data-i="${i}"]`);
     const days = c.dias.map((d) => new Date(d)), end = days.at(-1);
@@ -308,7 +254,7 @@ function saltos(el, SJ) {
 
 /** The poll chart block (figures, party toggles, zoom, pollster selector, chart, note; optionally the cycle
  *  selector and the last-polls table), drawn inside `el`. Used by the Encuestas page and the 29N page. */
-export function chartHtml({ selector = true, lastTable = true, tools = true, kpi = true } = {}) {
+export function chartHtml({ selector = true, lastTable = true, tools = true, kpi = true, T = {} } = {}) {
   return (selector ? `    <div class="controls"><label>Elección <select id="ciclo"></select></label><span class="note" id="cycle-note"></span></div>` : "") + `
     ${kpi ? '<div class="stats" id="kpi"></div>' : ""}
     <div class="controls" id="toggles"></div>
@@ -321,23 +267,24 @@ export function chartHtml({ selector = true, lastTable = true, tools = true, kpi
     <div class="card chart" id="ch"><div id="ch-main"></div><div id="ch-ov" class="overview"></div></div>
     <p class="note" id="ch-note"></p>
 ` + (lastTable ? `
-    <h3>Últimas encuestas</h3>
-    <p class="note">Las doce más recientes, tal como se publicaron; entre paréntesis, la diferencia con el promedio.</p>
-    <div class="scrollx" id="last"></div>
+    ${md(T.ultimas ?? "", { slots: { last: '<div class="scrollx" id="last"></div>' }, page: "encuestas" }).html}
 ` : "");
 }
 
 export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selector = true, lastTable = true, tools = true, kpi = true, pastOnly = false } = {}) {
   const $ = (s) => el.querySelector(s);
   const clipId = `clip${Math.random().toString(36).slice(2, 7)}`;   // two charts on one page must not share a clipPath
-  el.innerHTML = chartHtml({ selector, lastTable, tools, kpi });
+  // the cycle note and the last-polls heading are prose from textos/encuestas.md (only shown on the Encuestas page)
+  const T = selector || lastTable ? await textos("encuestas") : {};
+  const frase = (src, vars) => md(src ?? "", { vars, page: "encuestas" }).html.replace(/^<p[^>]*>|<\/p>$/g, "");
+  el.innerHTML = chartHtml({ selector, lastTable, tools, kpi, T });
   // the chart block, for the current cycle or any past one (ciclos/<ciclo>.json has the same shape plus "resultado")
   function pollBlock(E) {
     const PN = (k) => partyName(k, E.ciclo), PC = partyColor;
     const days = E.dias.map((d) => new Date(d));
     const show = new Set(mainOf(E));
-    if ($("#cycle-note")) $("#cycle-note").textContent = E.resultado
-      ? `Generales del ${cycleLabel(E.ciclo)}: ${E.polls.filter((q) => !q.x).length} encuestas desde ${cycleLabel(E.polls.map((q) => q.f1).sort()[0])}; el resultado, marcado al final.`
+    if ($("#cycle-note")) $("#cycle-note").innerHTML = E.resultado
+      ? frase(T.nota_ciclo, { ciclo: cycleLabel(E.ciclo), encuestas: E.polls.filter((q) => !q.x).length, desde: cycleLabel(E.polls.map((q) => q.f1).sort()[0]) })
       : "";
     // pollsters with their own fieldwork; re-estimations of CIS data and party polls (q.x) never enter the average
     const houses = Array.from(d3.rollup(E.polls.filter((q) => !q.x), (v) => v.length, (q) => q.e)).sort((a, b) => b[1] - a[1]);
@@ -596,12 +543,9 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
 }
 
 // step-by-step cooking of one real survey (cocina_pasos.json): direct intention -> recall weighting -> undecided -> turnout -> published
-const CP_STEPS = [["D", "Respuesta tal cual", "Intención directa: quienes nombran un partido, sin indecisos ni abstención."],
-  ["R", "+ recuerdo de voto", "Se repondera a cada encuestado para que el recuerdo de voto de la muestra coincida con el resultado de las generales anteriores. Las muestras traen de más votantes del ganador y de menos abstencionistas; esto lo corrige, pero arrastra la memoria de la elección pasada."],
-  ["RI", "+ indecisos", "Quien no sabe o no contesta se asigna al partido por el que siente simpatía o, si no, al que recuerda haber votado."],
-  ["RIT", "+ probabilidad de votar", "Cada encuestado pesa según la probabilidad que se da de ir a votar (0 a 10)."],
-  ["pub", "Lo que publicó la casa", "La estimación oficial de la encuesta. La diferencia con el paso anterior es la parte de la cocina que no es de manual: modelos propios, series históricas, criterio."]];
-function cocinaPasos(app, CP) {
+// the text of each step is in textos/encuestas.md (part "paso_a_paso")
+const CP_KEYS = ["D", "R", "RI", "RIT", "pub"];
+function cocinaPasos(app, CP, T) {
   const $ = (s) => app.querySelector(s);
   const fd = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
   const houses = [...new Set(CP.encuestas.map((e) => e.casa))];
@@ -611,7 +555,7 @@ function cocinaPasos(app, CP) {
   const name = (p, f) => (p === "izq" ? (f < "2023-01" ? "Unidas Podemos" : f < "2023-08" ? "Sumar" : "Sumar y Podemos") : partyName(p, f.slice(0, 4)));
   function draw() {
     const e = CP.encuestas[+$("#cp-sel").value];
-    const keys = CP_STEPS.map(([k]) => k);
+    const keys = CP_KEYS;
     const parties = Object.keys(e.p).sort((a, b) => e.p[b].pub - e.p[a].pub);
     const el = $("#cp-chart"); el.innerHTML = "";
     const W = Math.max(340, el.clientWidth || 900), H = 320, m = { t: 28, r: 120, b: 44, l: 36 };
@@ -633,43 +577,30 @@ function cocinaPasos(app, CP) {
       if (e.p[p].res != null) svg.append("rect").attr("x", x("pub") - 7).attr("y", y(e.p[p].res) - 1.5).attr("width", 14).attr("height", 3).attr("fill", col(p));
     }
     const sg = (v) => `${v >= 0 ? "+" : "−"}${num(Math.abs(v))}`;
-    $("#cp-text").innerHTML = `<p class="note">${e.casa}, trabajo de campo hasta el ${fd(e.f)}, ${e.n.toLocaleString("es-ES")} entrevistas. Porcentajes dentro de ${parties.map((p) => name(p, e.f)).join(", ")}, recalculados para sumar 100 en cada paso.</p>
-      <ol class="steps">${CP_STEPS.map(([k, t, d], i) => `<li><b>${t}.</b> ${d}${i > 0 ? ` <span class="muted">Cambio: ${parties.map((p) => `${name(p, e.f)} ${sg(e.p[p][k] - e.p[p][keys[i - 1]])}`).join(", ")}.</span>` : ""}</li>`).join("")}</ol>
-      <p class="note">Fuentes: microdatos de 40dB para El País y la SER y del CIS (origen de los datos: Centro de Investigaciones Sociológicas); elaboración propia. Los cuatro pasos son los de manual; cada casa aplica los suyos, con otros detalles, y el último tramo recoge todo lo demás.</p>`;
+    const vars = { casa: e.casa, fecha: fd(e.f), entrevistas: e.n.toLocaleString("es-ES"), partidos: parties.map((p) => name(p, e.f)).join(", ") };
+    keys.forEach((k, i) => { if (i > 0) vars[`cambio_${k}`] = ` <span class="muted">Cambio: ${parties.map((p) => `${name(p, e.f)} ${sg(e.p[p][k] - e.p[p][keys[i - 1]])}`).join(", ")}.</span>`; });
+    $("#cp-text").innerHTML = md(T.paso_a_paso, { vars, page: "encuestas" }).html;
   }
   $("#cp-sel").onchange = draw;
   draw();
 }
 
 // the model's forecast (prediccion.json, pipeline/prediccion.py): probabilities, ranges, the PP+Vox seat histogram
-function prediccion(el, P) {
+function prediccion(el, P, T) {
   const fd = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
   const pc = (x) => `${Math.round(x * 100)}%`;
   const parties = Object.keys(P.partidos);
-  el.innerHTML = `
-    <p class="sub">Predicción propia para el 29N a partir de las encuestas, con un modelo que añade lo que las encuestas no dicen: el error que la industria ha tenido en cada general desde 1982. Actualizada el ${fd(P.fecha)} con ${P.n_encuestas} encuestas.</p>
-    <h3>Diputados (estimación)</h3>
-    <div id="pred-bar"></div>
-    <div id="pred-bloques"></div>
-    <p class="note">Arrastra un partido a otro grupo: el rango y la probabilidad se recalculan sobre las ${P.draws.toLocaleString("es-ES")} simulaciones.</p>
-    <p class="note">Probabilidad de que el PP sea el partido con más escaños: <b>${pc(P.p_pp_primero)}</b>.</p>
-    <h3>Voto y escaños por partido</h3>
-    <div class="scrollx"><table><tr><th>Partido</th><th class="num">Voto, mediana</th><th class="num">Horquilla (90%)</th><th class="num">Escaños, mediana</th><th class="num">Horquilla (90%)</th></tr>
-      ${parties.map((p) => { const d = P.partidos[p]; return `<tr><td><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</td><td class="num">${num(d.voto.p50)}%</td><td class="num">${num(d.voto.p05)} a ${num(d.voto.p95)}</td><td class="num">${d.escanos ? d.escanos.p50 : "·"}</td><td class="num">${d.escanos ? `${d.escanos.p05} a ${d.escanos.p95}` : "·"}</td></tr>`; }).join("")}</table></div>
-    <h3>Escaños de cada grupo en las ${P.draws.toLocaleString("es-ES")} simulaciones</h3>
-    <div class="card chart" id="pred-hist"></div>
-    <h3>Cómo ha cambiado</h3>
-    <p class="note">Cada semana, con solo las encuestas publicadas hasta entonces.</p>
-    <div class="grid2"><div><div class="h4">Probabilidad de que PP, Vox y SALF lleguen a 176</div><div class="chart" id="pred-prob"></div></div>
-      <div><div class="h4">Escaños por partido (mediana)</div><div class="chart" id="pred-esc"></div></div></div>
-    <h3>¿Acierta?</h3>
-    <div id="pred-bt"></div>
-    <details class="metodo-box"><summary>Metodología</summary><div class="metodo">
-    <p><b>Qué hace.</b> Para cada partido (PP, PSOE, Vox, Sumar, Podemos, SALF, ERC, Junts, Bildu y PNV) sigue día a día su apoyo con un filtro que combina todas las encuestas del ciclo, descontando a cada casa su desviación habitual (con lo que hizo en 2023 como punto de partida). Eso da el nivel de hoy y su incertidumbre.</p>
-    <p><b>Lo que las encuestas no saben.</b> El día de la votación se añade el error común de la industria: lo que se equivocó este mismo filtro, con todas las encuestas, en cada general desde 1982, en una dirección que no se puede saber de antemano. Se simula con la escala y las correlaciones entre partidos medidas en esas elecciones (la derecha se mueve junta; derecha e izquierda, en sentidos opuestos).</p>
-    <p><b>Escaños.</b> Cada simulación de voto nacional se lleva a las provincias como en el simulador, con un ruido extra por comunidad y por provincia calibrado con 1977-2023, y se reparten los escaños con D'Hondt. Las horquillas recogen el 90% de las simulaciones.</p>
-    <p class="note">Modelo A+ del borrador de modelos (docs/modelos): filtro de Kalman por partido, error común casi normal, ${P.draws.toLocaleString("es-ES")} simulaciones. Se probó además una capa provincial a partir de los microdatos del CIS y 40dB y de las encuestas autonómicas: mejora el mapa de porcentajes pero no los escaños, así que no se usa. Parámetros: escala del error común ${String(P.parametros.b_escala).replace(".", ",")}·√(p(1−p)); ruido autonómico ${P.parametros.s_ccaa}, provincial ${P.parametros.s_prov}.</p>
-    </div></details>`;
+  const sims = P.draws.toLocaleString("es-ES");
+  const vars = { fecha: fd(P.fecha), n_encuestas: P.n_encuestas, simulaciones: sims, pp_primero: pc(P.p_pp_primero),
+    b_escala: String(P.parametros.b_escala).replace(".", ","), s_ccaa: P.parametros.s_ccaa, s_prov: P.parametros.s_prov };
+  const slots = {
+    tabla_partidos: `<div class="scrollx"><table><tr><th>Partido</th><th class="num">Voto, mediana</th><th class="num">Horquilla (90%)</th><th class="num">Escaños, mediana</th><th class="num">Horquilla (90%)</th></tr>
+      ${parties.map((p) => { const d = P.partidos[p]; return `<tr><td><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</td><td class="num">${num(d.voto.p50)}%</td><td class="num">${num(d.voto.p05)} a ${num(d.voto.p95)}</td><td class="num">${d.escanos ? d.escanos.p50 : "·"}</td><td class="num">${d.escanos ? `${d.escanos.p05} a ${d.escanos.p95}` : "·"}</td></tr>`; }).join("")}</table></div>`,
+    histograma: '<div class="card chart" id="pred-hist"></div>',
+    serie_probabilidad: '<div class="chart" id="pred-prob"></div>',
+    serie_escanos: '<div class="chart" id="pred-esc"></div>',
+  };
+  el.innerHTML = md(T.prediccion, { vars, slots, page: "encuestas" }).html;
   // the seat bar and the draggable groups (the same component as the 29N page); the histogram follows the groups
   seatRows(el.querySelector("#pred-bar"), [{ label: "Estimación", e: P.central }], { labelWidth: 90, eid: "generales_2026-11" });
   const elh = el.querySelector("#pred-hist");
@@ -699,7 +630,8 @@ function prediccion(el, P) {
   }).catch(() => {});
   load("backtest.json").then((B) => {
     const h7 = B.horizontes[7], h30 = B.horizontes[30], pc = (x) => `${Math.round(x * 100)}%`;
-    el.querySelector("#pred-bt").innerHTML = `<p class="note">Probado en las ${B.elecciones} elecciones generales desde ${B.desde}, rehaciendo el modelo con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro del rango del 90% en el ${pc(h7.voto.en90)} de los casos para el voto y en el ${pc(h7.escanos.en90)} para los escaños (un mes antes: ${pc(h30.voto.en90)} y ${pc(h30.escanos.en90)}). Fallaron, sobre todo, 2004 (tres días después del 11-M) y Ciudadanos en 2015.</p>`;
+    el.querySelector("#pred-bt").innerHTML = md(T.backtest, { vars: { generales: B.elecciones, desde: B.desde, voto_7: pc(h7.voto.en90), escanos_7: pc(h7.escanos.en90),
+      voto_30: pc(h30.voto.en90), escanos_30: pc(h30.escanos.en90) }, page: "encuestas" }).html;
   }).catch(() => {});
 }
 
@@ -707,7 +639,7 @@ function prediccion(el, P) {
 const PFAM = { sumar: "izq", iu: "izq", podemos: "izq", mas_pais: "izq", upyd: "cs", cds: "ucd" };
 const pColor = (p) => (FAM[PFAM[p] ?? p] ?? FAM.otros).color;
 const n1 = (x) => (x == null ? "·" : x.toFixed(1).replace(".", ","));
-function pollsVsResult(app, G) {
+function pollsVsResult(app, G, T) {
   const $ = (s) => app.querySelector(s);
   const ciclos = Object.keys(G).sort();
   const label = (c) => new Date(c).toLocaleDateString("es-ES", { month: "short", year: "numeric" });
@@ -728,7 +660,7 @@ function pollsVsResult(app, G) {
           <i class="pvr-real" style="left:${x(r.real)}" title="Resultado ${n1(r.real)}%"></i></div></td>
         <td class="num">${n1(r.media)}%</td><td class="num"><b>${n1(r.real)}%</b></td>
         <td class="num">${r.media == null ? "·" : `${r.media - r.real > 0 ? "+" : ""}${n1(r.media - r.real)}`}</td></tr>`; }).join("")}</table>
-      <p class="note">${g.n} encuestadoras · error medio de la media de encuestas: <b>${n1(g.mae_media)} puntos</b>${g.mae_cis_dir != null ? ` · intención directa del CIS: ${n1(g.mae_cis_dir)} puntos` : ""}</p>`;
+      ${md(T.eleccion, { vars: { encuestadoras: g.n, error_media: n1(g.mae_media), error_cis: g.mae_cis_dir != null ? ` · intención directa del CIS: ${n1(g.mae_cis_dir)} puntos` : "" }, page: "encuestas" }).html}`;
   }
   draw();
 }

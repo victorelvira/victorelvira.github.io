@@ -1,9 +1,10 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.72";
-import { seatRows, lines, dateOf, familySeries, IDEO, famName, fam, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.72";
-import { projectFromPolls } from "./simulador.js?v=0.2.72";
+import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.74";
+import { seatRows, lines, dateOf, familySeries, IDEO, famName, fam, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.74";
+import { projectFromPolls } from "./simulador.js?v=0.2.74";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.72";
-import { short, pc, pct as probTxt, reparto, escanosAire } from "./provincia.js?v=0.2.72";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.74";
+import { short, pc, pct as probTxt, reparto, escanosAire } from "./provincia.js?v=0.2.74";
+import { textos, md, INDICE } from "./textos.js?v=0.2.74";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
@@ -19,20 +20,17 @@ async function noche(demo) {
   } catch { return null; }
 }
 
-function nocheHtml(d) {
+function nocheHtml(d, T) {
   const n1 = (x) => (x == null ? "·" : x.toFixed(2).replace(".", ","));
   const hora = d.actualizado ? new Date(d.actualizado).toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" }) : "";
   const ps = d.partidos.filter((p) => p.escanos > 0 || p.pct >= 1).sort((a, b) => b.escanos - a.escanos || b.votos - a.votos);
-  return `<section class="card live">
-    <div class="eyebrow">${d.eleccion === LIVE_ELECTION ? "Resultados provisionales" : `Prueba con datos de ${d.eleccion}`}</div>
-    <h2 style="margin-top:4px">Escrutado el ${n1(d.mesas_pct ?? d.censo_pct)}% · ${hora}</h2>
-    <div id="live-seats"></div>
-    <table><tr><th>Candidatura</th><th class="num">Votos</th><th class="num">%</th><th class="num">Escaños</th><th class="num">Antes</th></tr>
+  const tabla = `<table><tr><th>Candidatura</th><th class="num">Votos</th><th class="num">%</th><th class="num">Escaños</th><th class="num">Antes</th></tr>
       ${ps.map((p) => `<tr><td><i class="dot" style="background:${(FAM[p.familia] ?? FAM.otros).color}"></i>${p.siglas}</td>
         <td class="num">${fmt.format(p.votos)}</td><td class="num">${n1(p.pct)}</td><td class="num"><b>${p.escanos ?? "·"}</b></td>
-        <td class="num">${p.escanos_ant ?? "·"}</td></tr>`).join("")}</table>
-    <p class="note">Participación ${n1(d.participacion)}% · datos provisionales del Ministerio del Interior; se actualiza cada minuto. Los escaños definitivos los proclaman las juntas electorales.</p>
-  </section>`;
+        <td class="num">${p.escanos_ant ?? "·"}</td></tr>`).join("")}</table>`;
+  const vars = { titulo_noche: d.eleccion === LIVE_ELECTION ? "Resultados provisionales" : `Prueba con datos de ${d.eleccion}`,
+    escrutado: n1(d.mesas_pct ?? d.censo_pct), hora, participacion: n1(d.participacion) };
+  return `<section class="card live">${md(T.noche, { vars, slots: { tabla_noche: tabla }, page: "portada" }).html}</section>`;
 }
 
 export async function renderInicio(app, args = []) {
@@ -55,69 +53,36 @@ export async function renderInicio(app, args = []) {
   const top = ["pp", "psoe", "vox", "sumar", "podemos", "salf"].filter((p) => E.ultimo[p] != null);
 
   const live = await noche(args[0] === "demo");
+  const T = await textos("portada");
+  // the prose is textos/portada.md; here only the figures, the conditions and the computed blocks
+  const vars = {
+    dias: days, ultimo_campo: PR ? fechaLarga(PR.ultimo_campo) : null, ppvox_176: mayoria ? de100(mayoria.prob) : null,
+    pp_primero: PR ? de100(PR.p_pp_primero) : null, simulaciones: PR ? PR.draws.toLocaleString("es-ES") : null, fecha_datos: fechaLarga(BUILD_AT.slice(0, 10)),
+    elecciones: BT?.elecciones, desde: BT?.desde, acierto_voto: BT ? de100(BT.horizontes[7].voto.en90) : null, acierto_escanos: BT ? de100(BT.horizontes[7].escanos.en90) : null,
+    error_x15: EC ? de100(EC.escala_x15) : null, error_x08: EC ? de100(EC.escala_x08) : null,
+    fuente_escanos: conv?.escanos?.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE",
+    cambios_escanos: (conv?.cambios_vs_2023 ?? []).map((c) => `${c.nombre} ${c.escanos_2023}→${c.escanos_2026}`).join(", "),
+  };
+  const flags = { antes: days > 0, hoy: days === 0, despues: days < 0, modelo: !!mayoria, provincias: !!PV, validacion: !!BT, sensibilidad: !!(BT && EC),
+    movilizacion: !!D, cambios: !!conv?.cambios_vs_2023?.length };
+  const slots = {
+    noche: null,
+    promedio: `<p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${String(E.ultimo[p]).replace(".", ",")}%</b></span>`).join("")}</p>`,
+    selector_provincia: PV ? `<div class="controls"><select id="in-prov" aria-label="Tu provincia"><option value="">Ver tu provincia</option>${[...PV.provincias].sort((a, b) => a.n.localeCompare(b.n, "es")).map((p) => `<option value="${p.prov}">${p.n}</option>`).join("")}</select></div>` : null,
+    tabla_aire: PV ? `<div class="scrollx"><table class="nosort"><tr><th>Provincia</th><th>Partido</th><th class="num">Escaño</th><th class="num">Probabilidad</th><th>Reparto más probable</th></tr>
+    ${escanosAire(PV).slice(0, 8).map((d) => `<tr><td><a href="#provincia/${d.p.prov}">${d.p.n}</a></td><td style="white-space:nowrap"><i class="dot" style="background:${pc(d.l.f)}"></i>${short(d.l.f)}</td><td class="num">${d.k}.º</td><td class="num">${probTxt(d.x)}</td><td>${reparto(d.p.repartos[0].a)}</td></tr>`).join("")}</table></div>` : null,
+    mov: '<div class="grid2" id="mov"></div>',
+    calendario: conv?.calendario ? calendario(conv) : null,
+  };
+  const { html, sec } = md(T.principal, { vars, flags, slots, page: "portada" });
   // index: a sticky column on wide screens, a sticky scrollable row under the menu on phones
-  const SEC = [["diputados", "Qué dice el modelo", []], ["voto", "De dónde sale", []], ...(PV ? [["aire", "Dónde se decide", []]] : []), ...(BT ? [["fiarse", "Cuánto fiarse", []]] : []),
-    ...(D ? [["movilizacion", "Movilización", []]] : []), ["calendario", "Calendario", []]];
-  const IX = indexHtml(SEC);
+  const IX = indexHtml(sec);
   app.innerHTML = `
     <div class="layout">
     ${IX.aside}
     <div class="content">
-    ${live ? nocheHtml(live) : ""}
-    <div class="eyebrow">Elecciones generales en España</div>
-    <h1>29 de noviembre de 2026</h1>
-    <p class="sub">${days > 0 ? `Faltan <b>${days} días</b> para las elecciones generales.` : days === 0 ? "<b>Hoy se vota.</b>" : ""} Se eligen 350 diputados y 208 senadores.</p>
-    ${IX.row}
-
-    <section id="s-diputados">
-    <h2>Qué dice el modelo${PR ? ' <span class="tag-exp">modelo experimental</span>' : ""}</h2>
-    ${mayoria ? `<p class="linea">Con las encuestas hasta el ${fechaLarga(PR.ultimo_campo)}, PP y Vox suman los 176 escaños en unas ${de100(mayoria.prob)} de cada 100 simulaciones, y el PP queda primero en unas ${de100(PR.p_pp_primero)} de cada 100.</p>` : `<p class="sub">Reparto de las encuestas a día ${fechaLarga(BUILD_AT.slice(0, 10))}.</p>`}
-    <div class="card">
-      <div id="proj"></div>
-      <div id="bloques"></div>
-      <p class="note">Arrastra un partido a otro grupo. La mayoría son 176 diputados.</p>
-      <details class="metodo-box"><summary>Metodología</summary><p class="note">${PR ? `Estimación del modelo propio: las encuestas, más el error que han tenido en cada general desde 1982, llevadas provincia a provincia y repartidas con D'Hondt en ${PR.draws.toLocaleString("es-ES")} simulaciones. La barra y las cifras son la estimación central; bajo cada grupo, el rango que recoge 9 de cada 10 simulaciones y la probabilidad de que el grupo llegue a 176.` : "Reparto del promedio de encuestas provincia a provincia con D'Hondt, sin márgenes de error."} <a href="#encuestas/metodo">Más detalle</a> · <a href="#simulador">Prueba otros porcentajes →</a></p></details>
-    </div>
-    </section>
-
-    <section id="s-voto">
-    <h2>De dónde sale</h2>
-    <p class="sub">El promedio de las encuestas. Todas, una a una y por encuestadora, en <a href="#encuestas">Encuestas</a>.</p>
-    <p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${String(E.ultimo[p]).replace(".", ",")}%</b></span>`).join("")}</p>
-    <div id="chart-area"></div>
-    </section>
-
-    ${PV ? `<section id="s-aire">
-    <h2>Dónde se decide</h2>
-    <p class="sub">El reparto se juega provincia a provincia. Estos son los escaños más igualados; cada escaño disputado sale una vez por cada partido que lo pelea.</p>
-    <div class="controls"><select id="in-prov" aria-label="Tu provincia"><option value="">Ver tu provincia</option>${[...PV.provincias].sort((a, b) => a.n.localeCompare(b.n, "es")).map((p) => `<option value="${p.prov}">${p.n}</option>`).join("")}</select></div>
-    <div class="scrollx"><table class="nosort"><tr><th>Provincia</th><th>Partido</th><th class="num">Escaño</th><th class="num">Probabilidad</th><th>Reparto más probable</th></tr>
-    ${escanosAire(PV).slice(0, 8).map((d) => `<tr><td><a href="#provincia/${d.p.prov}">${d.p.n}</a></td><td style="white-space:nowrap"><i class="dot" style="background:${pc(d.l.f)}"></i>${short(d.l.f)}</td><td class="num">${d.k}.º</td><td class="num">${probTxt(d.x)}</td><td>${reparto(d.p.repartos[0].a)}</td></tr>`).join("")}</table></div>
-    </section>` : ""}
-
-    ${BT ? `<section id="s-fiarse">
-    <h2>Cuánto fiarse</h2>
-    <p>Hemos rehecho el modelo para las ${BT.elecciones} elecciones generales desde ${BT.desde}, con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro del rango del 90% en el ${de100(BT.horizontes[7].voto.en90)}% de los casos en voto y en el ${de100(BT.horizontes[7].escanos.en90)}% en escaños.</p>
-    ${EC ? `<p>Esa probabilidad no se conoce con tanta precisión como parece. Si el error conjunto de las encuestas fuera un 50% mayor que el histórico, PP y Vox llegarían a 176 en ${de100(EC.escala_x15)} de cada 100 simulaciones; si fuera un 20% menor, en ${de100(EC.escala_x08)}. Y en esas ${BT.elecciones} elecciones el modelo solo dio más del 50% a que la derecha sumara 176 dos veces, así que una cifra tan alta apenas se ha podido poner a prueba.</p>` : ""}
-    <p class="note"><a href="#encuestas">La validación completa, en Encuestas →</a></p>
-    </section>` : ""}
-
-    ${D ? `<section id="s-movilizacion">
-    <h2>Movilización</h2>
-    <p class="note">Porcentaje seguro de ir a votar (10 sobre 10) según lo que votó en julio de 2023, en las encuestas con microdatos de cada casa. Las dos preguntan de forma distinta y el CIS da niveles más altos: compara cada casa consigo misma. <a href="#encuestas">Adónde va cada voto, en Encuestas →</a></p>
-    <div class="grid2" id="mov"></div>
-    </section>` : ""}
-
-    <section id="s-calendario">
-    ${conv?.calendario ? `<h2>Calendario</h2>${calendario(conv)}` : ""}
-    ${conv?.cambios_vs_2023?.length ? `<p class="note">Escaños por provincia en 2026 ${conv.escanos.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE"}: ${conv.cambios_vs_2023.map((c) => `${c.nombre} ${c.escanos_2023}→${c.escanos_2026}`).join(", ")}.</p>` : ""}
-
-    <div class="tiles">
-      <a class="tile" href="#generales"><b>Generales 1977-2023</b><span>El Congreso elección a elección, voto, participación, el mapa municipal</span></a>
-      <a class="tile" href="#simulador/encuestas"><b>Simulador</b><span>Mueve los porcentajes y mira los escaños, mayorías y último escaño por provincia</span></a>
-      <a class="tile" href="#encuestas"><b>Encuestas</b><span>Todas las encuestas desde 1982, la cocina y quién acierta</span></a>
-    </div>
-    </section>
+    ${live ? nocheHtml(live, T) : ""}
+    ${html.replace(INDICE, IX.row)}
     </div></div>`;
   sectionIndex(app);
   const selProv = app.querySelector("#in-prov");

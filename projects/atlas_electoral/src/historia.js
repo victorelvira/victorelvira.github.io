@@ -1,8 +1,9 @@
-import { renderMapa } from "./mapa.js?v=0.2.72";
-import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.72";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.72";
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.72";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.72";
+import { renderMapa } from "./mapa.js?v=0.2.74";
+import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.74";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.74";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.74";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.74";
+import { textos, md, INDICE } from "./textos.js?v=0.2.74";
 
 export async function renderHistoria(app) {
   const [S, G, E, dh, geo, PR, CI] = await Promise.all([load("series.json"), load("generales_encuestas.json"), load("encuestas.json"), load("dhondt.json"),
@@ -12,57 +13,19 @@ export async function renderHistoria(app) {
   const short = (e) => elecLabel(e).replace("Generales ", "");
   const lab = (e) => elecLabel(e);
 
-  const SEC = [["congreso", "El Congreso"], ["mapa", "Municipio a municipio"], ["senado", "El Senado"],
-    ["voto", "Voto por familias"], ["participacion", "Participación y voto por correo"], ["provincias", "Diputados por provincia"]];
-  const IX = indexHtml(SEC);
+  const T = await textos("generales");
+  // the prose is textos/generales.md; here only the conditions and the containers of charts and tables
+  const chart = (id) => `<div class="chart" id="${id}"></div>`;
+  const slots = { votos: chart("votos"), part: chart("part"), avances: chart("avances"), bn: chart("bn"), dip: '<div class="scrollx" id="dip"></div>' };
+  const flags = { provisional: !!(conv?.escanos?.fuente && conv.escanos.fuente !== "boe") };
+  const { html, sec } = md(T.principal, { slots, flags, page: "generales" });
+  // the participation section has no h2 of its own, so its index entry is added here
+  const IX = indexHtml(sec);
   app.innerHTML = `
     <div class="layout">
     ${IX.aside}
     <div class="content">
-    <h1>Elecciones generales, 1977-2023</h1>
-    <p class="sub">Todas las elecciones generales desde 1977: composición del Congreso, voto, participación y abstención, y cómo ha cambiado el número de diputados de cada provincia.</p>
-    ${IX.row}
-    <section id="s-congreso">
-<h2>El Congreso, elección a elección</h2>
-    <p class="note">Encima de cada elección, en apagado, los escaños que daba la media final de las encuestas.</p><div id="seats"></div>
-    </section>
-    <section id="s-mapa">
-<h2>Municipio a municipio</h2>
-    <p class="note">Quién ganó en cada municipio. Pulsa ▶ para recorrer las elecciones, o pulsa un municipio (o búscalo) para ver su historial.</p>
-    <div id="mapa"></div>
-    </section>
-    <section id="s-senado">
-<h2>El Senado</h2><p class="sub">Senadores elegidos directamente (207 en 1977, 208 desde 1979); no incluye los designados por los parlamentos autonómicos.</p><div id="senado"></div>
-    </section>
-    <section id="s-voto">
-<h2>Voto por familias políticas</h2><div class="chart" id="votos"></div>
-    </section>
-    <section id="s-participacion">
-<div class="grid2">
-      <div><h3>Participación y abstención</h3><div class="chart" id="part"></div>
-        <p class="note">Generales: votantes sobre censo total (con residentes en el extranjero). Municipales: sobre residentes, sin los pueblos de listas abiertas.</p></div>
-      <div><h3>Participación a lo largo del día</h3><div class="chart" id="avances"></div>
-        <p class="note">Porcentaje de residentes que habían votado en cada avance oficial de Interior y al cierre (total con exterior). En 1979 y 1982 el primer avance fue a las 15:00; desde 1986, a las 14:00. En 1977 no hubo avances.</p></div>
-    </div>
-    <div class="grid2">
-      <div><h3>Voto en blanco y nulo</h3><div class="chart" id="bn"></div></div>
-      <div id="correo"></div>
-    </div>
-    <div id="cera"></div>
-    </section>
-    <section id="s-provincias">
-<h2>Diputados por provincia</h2>
-    <p class="sub">El reparto se recalcula en cada convocatoria según la población (mínimo 2 por provincia, 1 para Ceuta y Melilla). Las flechas marcan cambios respecto a la elección anterior.</p>
-    <div class="scrollx" id="dip"></div>
-    <details class="metodo-box" id="metodo"><summary>Metodología</summary><div class="metodo">
-    <p><b>Resultados.</b> Ministerio del Interior (Infoelectoral), mesa a mesa agregado a municipio y provincia, para generales, Senado, municipales y europeas desde 1977, y autonómicas hasta 2012; desde 2012 las autonómicas vienen del portal oficial de resultados de cada comunidad. Interior es la fuente de verdad; Wikipedia solo se usa para las encuestas.</p>
-    <p><b>Familias.</b> Las candidaturas se agrupan en familias políticas (PP incluye AP y CD; PCE/IU/Podemos/Sumar; CiU/Junts; HB/Bildu...) con un vocabulario escrito a mano, con reglas por elección para los casos dudosos. Desde 2019 se muestran con su nombre actual. Un cambio de familia nunca altera un voto: solo cómo se suma.</p>
-    <p><b>Participación y voto por correo.</b> Participación sobre el censo total (con residentes en el extranjero); avances a las 14:00 y 18:00 sobre residentes en España, de los partes oficiales. Voto por correo: solicitudes aceptadas por la Oficina del Censo Electoral y votos admitidos por Correos cuando se publicaron. El voto CERA no se asigna a municipios. En municipales, los pueblos de hasta 250 habitantes votan con listas abiertas: el voto de cada lista se aproxima por su candidato más votado.</p>
-    <p><b>Lo que decían las encuestas.</b> Para cada elección, la última encuesta de cada casa en los 35 días anteriores, frente al resultado; el rombo es la intención directa del preelectoral del CIS, sin cocina.</p>
-    <p class="note">Fuentes: Ministerio del Interior; portales de resultados de las comunidades; INE (censo y voto por correo); IGN (límites municipales); Wikipedia (encuestas); CIS (origen de los datos: Centro de Investigaciones Sociológicas).</p>
-    </div></details>
-    ${conv?.escanos?.fuente && conv.escanos.fuente !== "boe" ? `<p class="note">* 2026: calculado con la regla de la LOREG (art. 162) y la población oficial a 1 de enero de 2025, a falta de que el BOE publique el decreto. El método reproduce exactamente el reparto de 2019 y 2023.</p>` : ""}
-    </section>
+    ${html.replace(INDICE, IX.row)}
     </div></div>`;
   const $ = (s) => app.querySelector(s);
   sectionIndex(app);
@@ -110,9 +73,7 @@ export async function renderHistoria(app) {
   const vc = vcAll.filter((r) => r.ambito === "ES" && r.solicitudes_aceptadas != null);
   if (vc.length) {
     const lastVc = vc.at(-1).eleccion;
-    $("#correo").innerHTML = `<h3>Voto por correo</h3><div class="chart" id="vc"></div>
-      <p class="note">Solicitudes aceptadas (INE, Oficina del Censo Electoral) y votos admitidos por Correos cuando se publicaron. El récord de ${lab(lastVc)} coincide con unas elecciones en pleno julio. <b>Qué</b> se vota por correo no se publica: los sobres se mezclan en la urna de cada mesa.</p>
-      <h3 class="h3">Dónde más se pidió (${lab(lastVc)}, % del censo de residentes)</h3><div id="vcprov"></div>`;
+    $("#correo").innerHTML = md(T.correo, { vars: { ultima: lab(lastVc) }, slots: { vc: chart("vc") }, page: "generales" }).html;
     lines($("#vc"), [
       { id: "s", name: "Solicitudes aceptadas", color: "#1f4e8c", values: vc.map((r) => ({ date: dateOf(r.eleccion), v: r.solicitudes_aceptadas, label: lab(r.eleccion) })) },
       { id: "v", name: "Votos admitidos", color: "#6b8fc7", values: vc.map((r) => ({ date: dateOf(r.eleccion), v: r.votos_correo_admitidos_correos ?? r.votos_correo_entregados_mesas ?? null, label: lab(r.eleccion) })) },
@@ -126,8 +87,7 @@ export async function renderHistoria(app) {
   }
   const cera = (S.cera ?? []).filter((r) => r.ambito === "ES" && r.participacion_cera != null);
   if (cera.length) {
-    $("#cera").innerHTML = `<h3>Españoles en el extranjero (CERA)</h3><div class="chart" id="cc"></div>
-      <p class="note">Participación del censo de residentes ausentes. Entre 2011 y 2019 rigió el «voto rogado» (había que solicitar el voto antes de recibirlo) y la participación se hundió por debajo del 7%; se derogó en 2022.</p>`;
+    $("#cera").innerHTML = md(T.cera, { slots: { cc: chart("cc") }, page: "generales" }).html;
     lines($("#cc"), [{ id: "c", name: "Participación CERA", color: "#1f4e8c",
       values: cera.map((r) => ({ date: dateOf(r.eleccion), v: r.participacion_cera > 1 ? r.participacion_cera / 100 : r.participacion_cera, label: `${lab(r.eleccion)}${r.voto_rogado ? " · voto rogado" : ""}` })) }],
       { height: 240 });
