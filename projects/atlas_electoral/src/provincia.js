@@ -1,6 +1,6 @@
 const d3 = window.d3;
-import { load, FAM } from "./data.js?v=0.2.67";
-import { POLL_PARTY } from "./encuestas.js?v=0.2.67";
+import { load, FAM } from "./data.js?v=0.2.72";
+import { POLL_PARTY } from "./encuestas.js?v=0.2.72";
 
 const pn = (f) => (f === "sumar" ? "Sumar / Frente Amplio" : POLL_PARTY[f]?.n ?? FAM[f]?.nombre ?? (f === "otros" ? "Otras" : f.toUpperCase()));
 export const short = (f) => (f === "sumar" ? "Sumar / FA" : pn(f).split(" y otros")[0]);
