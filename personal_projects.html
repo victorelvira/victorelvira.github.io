@@ -10,10 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
-    <link href="assets/css/styles.css?v=i18n8" rel="stylesheet">
+    <link href="assets/css/styles.css?v=i18n9" rel="stylesheet">
 
     <!-- JS -->
-    <script src="assets/js/scripts.js?v=i18n8"></script>
+    <script src="assets/js/scripts.js?v=i18n9"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
@@ -104,15 +104,10 @@
 <div id="navbar-placeholder"></div>
 
 <div class="container py-4">
-    <div class="d-flex justify-content-between align-items-baseline">
-        <h2 data-i18n="titulo">Personal projects</h2>
-        <div class="lang-switch text-muted" role="group" aria-label="Language">
-            <a href="#" id="lang-en" class="text-reset text-decoration-none">EN</a>
-            ·
-            <a href="#" id="lang-es" class="text-reset text-decoration-none">ES</a>
-        </div>
-    </div>
-    <p class="text-muted mt-2 mb-3" data-i18n="intro">These projects attempt to bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.</p>
+    <h2 data-lang="en">Personal projects</h2>
+    <h2 data-lang="es" hidden>Proyectos personales</h2>
+    <p class="text-muted mt-2 mb-3" data-lang="en">These projects attempt to bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.</p>
+    <p class="text-muted mt-2 mb-3" data-lang="es" hidden>Estos proyectos intentan dar vida a los datos de forma visual e interactiva. Están en distintas fases de desarrollo, así que es muy probable que contengan bugs y algunos errores en los datos.</p>
 
     <!-- Filtros (construidos por JS a partir de los data-* de cada tarjeta).
          En movil se pliegan tras este boton; en escritorio el boton se oculta. -->
@@ -134,10 +129,8 @@
                     <h5 class="card-title">Atlas Electoral
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="electoral">
-                        Every Spanish election since 1977, municipality by municipality, and all the polls
-                        on the road to the 29 November 2026 general election.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Every Spanish election since 1977, municipality by municipality, and all the polls on the road to the 29 November 2026 general election.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Todas las elecciones en España desde 1977, municipio a municipio, y todas las encuestas camino de las generales del 29 de noviembre de 2026.</p>
                     <a href="/projects/atlas_electoral.html" class="stretched-link" aria-label="Open the Atlas Electoral"></a>
                 </div>
             </div>
@@ -153,10 +146,8 @@
                     <h5 class="card-title">Interactive Atlas of Painting
                         <span class="badge bg-secondary lang-badge align-middle">ES · EN · FR · IT</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="atlas">
-                        Explore the great painters' masterpieces with interactive maps, timelines
-                        and much more: where they are today and where they were painted.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Masterpieces of the great painters on interactive maps and timelines of works, painters, and museums.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Obras maestras de los grandes pintores en mapas y líneas de tiempo interactivos de obras, pintores y museos.</p>
                     <a href="/projects/artatlas.html" class="stretched-link" aria-label="Open the Interactive Atlas of Painting"></a>
                 </div>
             </div>
@@ -170,10 +161,8 @@
                     <h5 class="card-title">Culture Atlas
                         <span class="badge bg-secondary lang-badge align-middle">EN</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="culture">
-                        A world map of the places famous people left behind: where they were born, lived and lie,
-                        and the plaques and statues that remember them.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Interactive map and database of heritage places tied to notable people: where they were born, lived, and are buried, plus the plaques and statues that mark them.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Mapa y base de datos interactivos de lugares patrimoniales ligados a personas notables: dónde nacieron, vivieron y están enterradas, y las placas y estatuas que las recuerdan.</p>
                     <a href="/projects/cultureatlas.html" class="stretched-link" aria-label="Open the Culture Atlas"></a>
                 </div>
             </div>
@@ -187,10 +176,8 @@
                     <h5 class="card-title">Churches of Rome
                         <span class="badge bg-secondary lang-badge align-middle">EN · ES · IT</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="romechurches">
-                        Every church in Rome, standing or lost, and what each one holds: the art inside,
-                        the people buried there, its saint, its cardinal title.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Every church in Rome, standing or lost, and what each one holds: the art inside, the people buried there, its saint, its cardinal title.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Todas las iglesias de Roma, en pie o desaparecidas, y lo que guarda cada una: el arte que contiene, quién está enterrado, su santo, su título cardenalicio.</p>
                     <a href="/projects/romechurches.html" class="stretched-link" aria-label="Open Churches of Rome"></a>
                 </div>
             </div>
@@ -204,10 +191,8 @@
                     <h5 class="card-title">Classical Music Atlas
                         <span class="badge bg-secondary lang-badge align-middle">EN</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="musicatlas">
-                        What 31 great composers wrote, with timelines, keys and maps, recordings you can
-                        play, and every fact showing which sources back it and where they disagree.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Interactive database of classical music: compositions and composers with timelines, keys, maps, and playable recordings, and the sources behind each fact.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Base de datos interactiva de música clásica: composiciones y compositores con líneas de tiempo, tonalidades, mapas y grabaciones que se pueden escuchar, y las fuentes detrás de cada dato.</p>
                     <a href="/projects/musicatlas.html" class="stretched-link" aria-label="Open the Classical Music Atlas"></a>
                 </div>
             </div>
@@ -221,31 +206,13 @@
                     <h5 class="card-title">Sports Atlas
                         <span class="badge bg-secondary lang-badge align-middle">EN</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="sports">
-                        Where the great competitions were played: World Cups, Euros, European club cups and the big
-                        leagues, and tennis from the Grand Slams to the Olympics, men's and women's.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Interactive database of major historical competitions: football World Cups, Euros, and leagues, and tennis from the Grand Slams to the Olympics.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Base de datos interactiva de grandes competiciones históricas: Mundiales, Eurocopas y ligas de fútbol, y el tenis de los Grand Slam a los Juegos Olímpicos.</p>
                     <a href="/projects/sportsatlas.html" class="stretched-link" aria-label="Open the Sports Atlas"></a>
                 </div>
             </div>
         </div>
 
-        <!-- Batalla de Flores -->
-        <div class="col" data-flang="es" data-theme="culture cantabria" data-type="event">
-            <div class="card project-card">
-                <div class="project-thumb og" style="background-color:#221716; background-image:url('https://batalladedatos.es/batalla_de_flores/og.jpg');"></div>
-                <div class="card-body">
-                    <h5 class="card-title">Batalla de Flores
-                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
-                    </h5>
-                    <p class="card-text text-muted" data-i18n="batalla">
-                        Browse the whole history of Laredo's Battle of Flowers with interactive tables
-                        and timelines: every edition since 1908, floats, groups, results and more.
-                    </p>
-                    <a href="/projects/batalla_de_flores.html" class="stretched-link" aria-label="Abrir Batalla de Flores"></a>
-                </div>
-            </div>
-        </div>
 
         <!-- New Year's Concert -->
         <div class="col" data-flang="en" data-theme="music" data-type="event">
@@ -255,11 +222,24 @@
                     <h5 class="card-title">New Year's Concert Database
                         <span class="badge bg-secondary lang-badge align-middle">EN</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="nyc">
-                        Explore the whole database of compositions, composers, conductors and
-                        other key details and statistics across the Vienna Philharmonic's New Year's Concerts.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">The Vienna Philharmonic's New Year's Concerts: compositions, composers, conductors, and statistics.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Los Conciertos de Año Nuevo de la Filarmónica de Viena: composiciones, compositores, directores y estadísticas.</p>
                     <a href="/projects/nyc.html" class="stretched-link" aria-label="Open New Year's Concert Database"></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Batalla de Flores -->
+        <div class="col" data-flang="es" data-theme="culture cantabria" data-type="event">
+            <div class="card project-card">
+                <div class="project-thumb og" style="background-color:#221716; background-image:url('https://batalladedatos.es/batalla_de_flores/og.jpg');"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Batalla de Flores
+                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
+                    </h5>
+                    <p class="card-text text-muted" data-lang="en">Laredo's Battle of Flowers since 1908: floats, groups, and results, in interactive tables and timelines.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>La Batalla de Flores de Laredo desde 1908: carrozas, grupos y palmarés, en tablas y líneas de tiempo interactivas.</p>
+                    <a href="/projects/batalla_de_flores.html" class="stretched-link" aria-label="Abrir Batalla de Flores"></a>
                 </div>
             </div>
         </div>
@@ -272,10 +252,8 @@
                     <h5 class="card-title">Journées du Patrimoine (Paris)
                         <span class="badge bg-secondary lang-badge align-middle">ES · FR</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="paris">
-                        France's Heritage Days in Paris: which monuments and places open, where they are,
-                        and when you can visit.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">France's Heritage Days in Paris: which monuments and places open, where they are, and when you can visit.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Jornadas del Patrimonio en París: qué monumentos y lugares abren, dónde están y cuándo se pueden visitar.</p>
                     <a href="/projects/paris_jep.html" class="stretched-link" aria-label="Abrir Journées du Patrimoine (Paris)"></a>
                 </div>
             </div>
@@ -283,7 +261,8 @@
 
     </div>
 
-    <h2 class="mt-5 mb-3" id="pp-exp-title" data-i18n="exp_title">Experimental</h2>
+    <!-- "Experimental" es igual en ES/EN: un solo h2 neutro (sin data-lang). -->
+    <h2 class="mt-5 mb-3" id="pp-exp-title">Experimental</h2>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="pp-grid-exp">
 
@@ -297,10 +276,8 @@
                     <h5 class="card-title">Planes de Cantabria
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="planes">
-                        An interactive agenda and map of what's on in Cantabria: festivals, concerts,
-                        theatre, exhibitions, sport and more, with dates and programmes.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Events across Cantabria: festivals, concerts, theatre, and sport.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Eventos en Cantabria: fiestas, conciertos, teatro y deporte.</p>
                     <a href="/projects/fiestas_cantabria.html" class="stretched-link" aria-label="Abrir Planes de Cantabria"></a>
                 </div>
             </div>
@@ -316,9 +293,8 @@
                     <h5 class="card-title">Frontones
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="frontones">
-                        Explore an interactive map of Basque-pelota courts across Cantabria and the Basque Country.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Map of Basque-pelota courts in Cantabria and the Basque Country.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Mapa de frontones en Cantabria y el País Vasco.</p>
                     <a href="/projects/frontones.html" class="stretched-link" aria-label="Abrir Frontones"></a>
                 </div>
             </div>
@@ -334,10 +310,8 @@
                     <h5 class="card-title">Laredo frente al clima
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="clima">
-                        An interactive look at climate change in Laredo and Cantabria with maps, charts
-                        and timelines: temperatures, sea level and anomalies.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Climate change in Laredo and Cantabria: temperature, sea level, and anomalies.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Cambio climático en Laredo y Cantabria: temperatura, nivel del mar y anomalías.</p>
                     <a href="/projects/clima_cantabria.html" class="stretched-link" aria-label="Abrir Laredo frente al clima"></a>
                 </div>
             </div>
@@ -353,10 +327,8 @@
                     <h5 class="card-title">Gentilicios de España
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted" data-i18n="gentilicios">
-                        What the people of every Spanish town are called, and why: a map of every municipality's
-                        demonyms, with all their versions and the exact source of each one.
-                    </p>
+                    <p class="card-text text-muted" data-lang="en">Demonyms of Spain, on an interactive map.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Gentilicios de España, en un mapa interactivo.</p>
                     <a href="/projects/gentilicios.html" class="stretched-link" aria-label="Abrir Gentilicios de España"></a>
                 </div>
             </div>
@@ -371,81 +343,15 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Idioma: una sola pagina, dos lenguas. El HTML de base es el ingles; el
-     diccionario rellena el espanol. Se decide por el idioma del navegador
-     (en Pages no hay servidor que sepa el pais), el conmutador manda sobre
-     la deteccion, y la eleccion se recuerda. Duplicar la pagina por idioma
-     seria mantener dos copias que un dia discrepan. -->
+<!-- Idioma: lo gestiona el motor global (scripts.js) con bloques hermanos
+     data-lang EN/ES en el propio HTML, como el resto de la web: editas el texto
+     directamente en cada tarjeta. El script de abajo SOLO construye los filtros
+     de proyectos a partir de los data-flang/theme/type de las tarjetas. -->
 <script>
 (function () {
-  var T = {
-    titulo: {
-      en: "Personal projects",
-      es: "Proyectos personales" },
-    intro: {
-      en: "These projects attempt to bring data to life in an interactive, visual way. They are at different stages of development, so they very likely contain bugs and some data errors.",
-      es: "Estos proyectos intentan dar vida a los datos de forma visual e interactiva. Están en distintas fases de desarrollo, así que es muy probable que contengan bugs y algunos errores en los datos." },
-    nyc: {
-      en: "The Vienna Philharmonic's New Year's Concerts: compositions, composers, conductors, and statistics.",
-      es: "Los Conciertos de Año Nuevo de la Filarmónica de Viena: composiciones, compositores, directores y estadísticas." },
-    atlas: {
-      en: "Masterpieces of the great painters on interactive maps and timelines of works, painters, and museums.",
-      es: "Obras maestras de los grandes pintores en mapas y líneas de tiempo interactivos de obras, pintores y museos." },
-    planes: {
-      en: "Events across Cantabria: festivals, concerts, theatre, and sport.",
-      es: "Eventos en Cantabria: fiestas, conciertos, teatro y deporte." },
-    frontones: {
-      en: "Map of Basque-pelota courts in Cantabria and the Basque Country.",
-      es: "Mapa de frontones en Cantabria y el País Vasco." },
-    culture: {
-      en: "Interactive map and database of heritage places tied to notable people: where they were born, lived, and are buried, plus the plaques and statues that mark them.",
-      es: "Mapa y base de datos interactivos de lugares patrimoniales ligados a personas notables: dónde nacieron, vivieron y están enterradas, y las placas y estatuas que las recuerdan." },
-    romechurches: {
-      en: "Every church in Rome, standing or lost, and what each one holds: the art inside, the people buried there, its saint, its cardinal title.",
-      es: "Todas las iglesias de Roma, en pie o desaparecidas, y lo que guarda cada una: el arte que contiene, quién está enterrado, su santo, su título cardenalicio." },
-    sports: {
-      en: "Interactive database of major historical competitions: football World Cups, Euros, and leagues, and tennis from the Grand Slams to the Olympics.",
-      es: "Base de datos interactiva de grandes competiciones históricas: Mundiales, Eurocopas y ligas de fútbol, y el tenis de los Grand Slam a los Juegos Olímpicos." },
-    electoral: {
-      en: "Every Spanish election since 1977, municipality by municipality, and all the polls on the road to the 29 November 2026 general election.",
-      es: "Todas las elecciones en España desde 1977, municipio a municipio, y todas las encuestas camino de las generales del 29 de noviembre de 2026." },
-    musicatlas: {
-      en: "Interactive database of classical music: compositions and composers with timelines, keys, maps, and playable recordings, and the sources behind each fact.",
-      es: "Base de datos interactiva de música clásica: composiciones y compositores con líneas de tiempo, tonalidades, mapas y grabaciones que se pueden escuchar, y las fuentes detrás de cada dato." },
-    batalla: {
-      en: "Laredo's Battle of Flowers since 1908: floats, groups, and results, in interactive tables and timelines.",
-      es: "La Batalla de Flores de Laredo desde 1908: carrozas, grupos y palmarés, en tablas y líneas de tiempo interactivas." },
-    clima: {
-      en: "Climate change in Laredo and Cantabria: temperature, sea level, and anomalies.",
-      es: "Cambio climático en Laredo y Cantabria: temperatura, nivel del mar y anomalías." },
-    gentilicios: {
-      en: "Demonyms of Spain, on an interactive map.",
-      es: "Gentilicios de España, en un mapa interactivo." },
-    paris: {
-      en: "France's Heritage Days in Paris: which monuments and places open, where they are, and when you can visit.",
-      es: "Jornadas del Patrimonio en París: qué monumentos y lugares abren, dónde están y cuándo se pueden visitar." },
-    exp_title: {
-      en: "Experimental",
-      es: "Experimental" },
-    exp_sub: {
-      en: "Rougher works in progress.",
-      es: "Proyectos más en bruto, en construcción." },
-  };
-
-  var currentLang = "en";
-
-  function aplicar(lang) {
-    currentLang = lang;
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var t = T[el.getAttribute("data-i18n")];
-      if (t && t[lang]) el.textContent = t[lang];
-    });
-    document.documentElement.lang = lang;
-    document.getElementById("lang-en").classList.toggle("active", lang === "en");
-    document.getElementById("lang-es").classList.toggle("active", lang === "es");
-    try { localStorage.setItem("lang", lang); } catch (e) {}
-    relabelFilters();
-  }
+  // El idioma lo gestiona el motor global (scripts.js) con bloques hermanos
+  // data-lang. Aquí solo leemos el idioma activo para etiquetar los filtros.
+  function curLang() { return (window.__lang === "es") ? "es" : "en"; }
 
   // ===== Filtros de proyectos: idioma / tema / tipo =====
   // Los chips se construyen a partir de los data-* de cada tarjeta, asi que
@@ -547,7 +453,7 @@
     var el = document.getElementById("pp-count");
     if (!el) return;
     if (typeof shown !== "number") shown = cards.filter(function (c) { return !c.hidden; }).length;
-    el.textContent = shown === 0 ? LABELS.none[currentLang] : LABELS.count[currentLang](shown, cards.length);
+    el.textContent = shown === 0 ? LABELS.none[curLang()] : LABELS.count[curLang()](shown, cards.length);
   }
 
   // Resumen de lo marcado (para el boton plegable en movil): valores activos
@@ -555,41 +461,34 @@
   function activeSummary() {
     var parts = ["theme", "type", "lang"]
       .filter(function (g) { return selected[g] !== "all"; })
-      .map(function (g) { return chipLabel(g, selected[g], currentLang); });
-    return parts.length ? parts.join(" · ") : LABELS.all[currentLang];
+      .map(function (g) { return chipLabel(g, selected[g], curLang()); });
+    return parts.length ? parts.join(" · ") : LABELS.all[curLang()];
   }
 
   function updateSummary() {
     var lab = document.getElementById("pp-filter-label");
     var sum = document.getElementById("pp-filter-summary");
-    if (lab) lab.textContent = LABELS.toggle[currentLang];
+    if (lab) lab.textContent = LABELS.toggle[curLang()];
     if (sum) sum.textContent = activeSummary();
   }
 
   function relabelFilters() {
     document.querySelectorAll("#pp-filters .pp-flabel").forEach(function (l) {
-      l.textContent = LABELS.groups[l.getAttribute("data-flabel")][currentLang];
+      l.textContent = LABELS.groups[l.getAttribute("data-flabel")][curLang()];
     });
     document.querySelectorAll("#pp-filters .pp-chip").forEach(function (b) {
-      b.textContent = chipLabel(b.getAttribute("data-group"), b.getAttribute("data-value"), currentLang);
+      b.textContent = chipLabel(b.getAttribute("data-group"), b.getAttribute("data-value"), curLang());
     });
     relabelCount();
     updateSummary();
   }
 
-  var lang;
-  try { lang = localStorage.getItem("lang"); } catch (e) {}
-  if (lang !== "en" && lang !== "es") {
-    // Idioma del navegador: si es español -> ES; si no -> EN (default).
-    // El conmutador manual y localStorage mandan sobre esto.
-    lang = /^es/i.test(navigator.language || "") ? "es" : "en";
-  }
   buildFilters();
-  aplicar(lang);     // fija currentLang y etiqueta los chips
+  relabelFilters();  // etiqueta chips/contador en el idioma activo
   applyFilters();    // estado inicial: todo visible + contador
 
-  document.getElementById("lang-en").addEventListener("click", function (e) { e.preventDefault(); aplicar("en"); });
-  document.getElementById("lang-es").addEventListener("click", function (e) { e.preventDefault(); aplicar("es"); });
+  // Re-etiquetar los filtros cuando el toggle EN/ES de la navbar cambie el idioma.
+  document.addEventListener("langchange", relabelFilters);
 
   // Boton plegable de filtros (solo visible en movil)
   var ftBtn = document.getElementById("pp-filter-toggle");
