@@ -1,14 +1,25 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.108";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.108";
-import { projectFromPolls } from "./simulador.js?v=0.2.108";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.108";
-import { pugnasHtml } from "./provincia.js?v=0.2.108";
-import { textos, md, INDICE } from "./textos.js?v=0.2.108";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.108";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.122";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.122";
+import { projectFromPolls } from "./simulador.js?v=0.2.122";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.122";
+import { pugnasHtml } from "./provincia.js?v=0.2.122";
+import { textos, md, INDICE } from "./textos.js?v=0.2.122";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.122";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.122";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
 const LIVE_ELECTION = "generales_2026-11";
+
+// The model shown in "Qué dice nuestro modelo": by default the average of the models (data/modelos/index.json, written by
+// pipeline/modelos/portada.py); "#inicio?modelo=p0" picks another one. Kept in the URL, never in localStorage.
+// Ids before the rename of 2026-11-16 (docs/glosario.md) still work. Old "c0" (now r0) cannot be kept: c0 is now the old b0.
+const OLD_ID = { "a0-logit": "k0-logit", a0: "k0", a1: "k1", a2: "k2", a3: "k3", a4: "k4", a5: "k5", a6: "k6", b0: "c0", d0: "m0" };
+const modeloDeHash = () => { const id = (location.hash.match(/[?&]modelo=([\w-]+)/) || [])[1]?.toLowerCase(); return OLD_ID[id] ?? id; };
+const GROUPS = {};
+const ANCHO = "(min-width: 1200px)";   // the desktop grid of the front page (keep in step with style.css, "Portada: tablero")
+const PAREJAS = "(min-width: 1360px)";   // and from here (content column over 1100 px) related blocks go side by side (parejas(), below)
+let ultimo = null, mqListo = false;   // the reader's groups in "Forma tu mayoría", kept when another model is chosen
 
 // Election night: the provisional count written by pipeline/noche_electoral.py. Shown only when the
 // file belongs to this election (#inicio/demo shows whatever sample is on disk, for testing).
@@ -35,8 +46,16 @@ function nocheHtml(d, T) {
 export async function renderInicio(app, args = []) {
   const [S, E, dh] = await Promise.all([load("series.json"), load("encuestas.json"), load("dhondt.json")]);
   const D = await load("dentro.json").catch(() => null);
-  // the model's estimate (pipeline/prediccion.py); without it, the mechanical projection of the poll average
-  const [PR, DR] = await Promise.all([load("prediccion.json").catch(() => null), load("prediccion_draws.json").catch(() => null)]);
+  // the model's estimate: the chosen entry of data/modelos/index.json (default: the average), else prediccion.json
+  // (pipeline/prediccion.py); without either, the mechanical projection of the poll average
+  const IDX = await load("modelos/index.json").catch(() => null);
+  const modelos = IDX?.modelos?.length ? IDX.modelos : null;
+  let pick = modelos ? modelos.find((m) => m.id === modeloDeHash()) ?? modelos.find((m) => m.id === IDX.por_defecto) ?? modelos[0] : null;
+  let [PR, DR] = pick ? await Promise.all([load(pick.archivo).catch(() => null), load(pick.draws).catch(() => null)]) : [null, null];
+  if (!PR || !DR) {
+    [PR, DR] = await Promise.all([load("prediccion.json").catch(() => null), load("prediccion_draws.json").catch(() => null)]);
+    pick = modelos?.find((m) => m.id === "k0") ?? null;
+  }
   const G = await load("geo_nuevos.json").catch(() => null);
   const [PV, BT, EC] = await Promise.all([load("provincias_29n.json").catch(() => null), load("backtest.json").catch(() => null), load("error_comun.json").catch(() => null)]);
   const mayoria = PR?.mayorias.find((m) => m.nombre === "PP + Vox");
@@ -49,12 +68,12 @@ export async function renderInicio(app, args = []) {
 
   const live = await noche(args[0] === "demo");
   const T = await textos("portada");
-  const R = PR ? await resultadosHtml(PR) : null;   // the results block shared with the Modelo tab (textos/resultados.md)
+  const R = PR ? await resultadosHtml(PR, { modelos: pick ? modelos : null, modelo: pick?.id ?? "k0", DR }) : null;   // the results block shared with the Modelo tab (textos/resultados.md)
   // the prose is textos/portada.md; here only the figures, the conditions and the computed blocks
   const vars = {
     dias: days, ultimo_campo: PR ? fechaLarga(PR.ultimo_campo) : null, ppvox_176: mayoria ? de100(mayoria.prob) : null,
     pp_primero: PR ? de100(PR.p_pp_primero) : null, pp_mas_votado: PR?.p_pp_mas_votado != null ? de100(PR.p_pp_mas_votado) : null,
-    ultimo_modelo: PR ? fechaLarga(PR.fecha.slice(0, 10)) : null, simulaciones: PR ? PR.draws.toLocaleString("es-ES") : null, fecha_datos: fechaLarga(BUILD_AT.slice(0, 10)),
+    ultimo_modelo: PR ? fechaLarga(PR.fecha.slice(0, 10)) : null, simulaciones: PR ? PR.draws.toLocaleString("es-ES", { useGrouping: "always" }) : null, fecha_datos: fechaLarga(BUILD_AT.slice(0, 10)),
     elecciones: BT?.elecciones, desde: BT?.desde, acierto_voto: BT ? de100(BT.horizontes[7].voto.en90) : null, acierto_escanos: BT ? de100(BT.horizontes[7].escanos.en90) : null,
     error_x15: EC ? de100(EC.escala_x15) : null, error_x08: EC ? de100(EC.escala_x08) : null,
     fuente_escanos: conv?.escanos?.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE",
@@ -70,18 +89,34 @@ export async function renderInicio(app, args = []) {
     resultados: R?.html ?? null,
     calendario: conv?.calendario ? calendario(conv) : null,
   };
+  // the map of the most voted party per province (part "mapa" of portada.md): the province projection is always K0's
+  const mapa = PV && T.mapa ? md(T.mapa, { flags: { otro_modelo: (pick?.id ?? "k0") !== "k0" }, vars: { modelo: pick?.nombre ?? "" },
+    slots: { mapa_masvotado: '<div id="mapa-masvotado"></div>' }, page: "portada" }) : null;
+  slots.mapa_portada = mapa?.html ? `<div class="tb-mapa">${mapa.html}</div>` : null;
   const { html, sec } = md(T.principal, { vars, flags, slots, page: "portada" });
+  // desktop (>= 1200 px) with a model: the top of the page becomes a grid of cards (tablero(), below); the map moves up into it
+  const ancho = !!R && matchMedia(ANCHO).matches;
   if (R) sec.find(([id]) => id === "diputados")?.[2].push(...R.sec);   // Escaños and Voto, after Resumen
+  if (mapa && ancho) sec.find(([id]) => id === "diputados")?.[2].splice(1, 0, ...mapa.sub);   // the map, after Resumen (centre card)
+  else if (mapa) sec.find(([id]) => id === "aire")?.[2].push(...mapa.sub);   // the map, inside "Dónde se decide"
   // index: a sticky column on wide screens, a sticky scrollable row under the menu on phones
   const IX = indexHtml(sec);
   app.innerHTML = `
-    <div class="layout">
+    <div class="layout portada${ancho ? " tablero" : ""}">
     ${IX.aside}
     <div class="content">
     ${live ? nocheHtml(live, T) : ""}
     ${html.replace(INDICE, IX.row)}
     </div></div>`;
+  if (ancho) tablero(app);
+  if (ancho && matchMedia(PAREJAS).matches) parejas(app);
   sectionIndex(app);
+  // crossing the 1200 or the 1360 px line redraws the page in the other layout (one listener each for the module, on the last page drawn)
+  ultimo = { app, args };
+  if (!mqListo) {
+    mqListo = true;
+    for (const q of [ANCHO, PAREJAS]) matchMedia(q).addEventListener("change", () => { if (document.body.contains(ultimo.app.querySelector(".layout.portada"))) renderInicio(ultimo.app, ultimo.args); });
+  }
 
   if (live) {
     const fam = {};
@@ -89,12 +124,90 @@ export async function renderInicio(app, args = []) {
     seatRows(app.querySelector("#live-seats"), [{ label: "Escaños", e: fam }], { labelWidth: 90, eid: "generales_2026-11" });
     // refresh while the page is open on election night
     clearTimeout(window.__nocheTimer);
-    window.__nocheTimer = setTimeout(() => { if (location.hash.replace("#", "").split("/")[0] in { "": 1, inicio: 1 }) renderInicio(app, args); }, 60000);
+    window.__nocheTimer = setTimeout(() => { if (location.hash.replace("#", "").split(/[/?]/)[0] in { "": 1, inicio: 1 }) renderInicio(app, args); }, 60000);
   }
   // without a model, portada.md has its own seat bar and groups (the poll projection): the same wiring
-  wireResultados(app, { PR, DR, est: PR?.central ?? proj.seats, conv });
+  // the map's "Bloques" view follows the groups of "Forma tu mayoría" (mapaMV is set below, once the map is drawn)
+  let mapaMV = null;
+  wireResultados(app, { PR, DR, est: PR?.central ?? proj.seats, conv, at: GROUPS, onGroups: () => mapaMV?.grupos() });
+  // another model: the hash remembers it (replaceState, so the router does not reload the page) and the page is redrawn in place
+  app.querySelector("#modelo-sel")?.addEventListener("change", async (ev) => {
+    const id = ev.target.value;
+    history.replaceState(null, "", `#inicio${id === IDX?.por_defecto ? "" : `?modelo=${id}`}`);
+    const y = scrollY;
+    await renderInicio(app, args);
+    scrollTo(0, y);
+    app.querySelector("#modelo-sel")?.focus({ preventScroll: true });
+  });
   pollChart(app.querySelector("#chart-area"), E, { selector: false, lastTable: false, tools: false, kpi: false });
+  const mm = app.querySelector("#mapa-masvotado");
+  if (mm && PV) mapaMV = await mapaMasVotado(mm, PV, { grupos: GROUPS });
 
+}
+
+/** Desktop front page: lifts the blocks already in the page into three cards at the top of "Qué dice nuestro modelo",
+ *  left: the summary sentence, the model selector and "¿Quién llega a 176?"; centre: the map of the most voted party (from
+ *  "Dónde se decide"); right: "Escaños por partido". Inside "Forma tu mayoría", two columns: the shortcuts, seat bar, groups
+ *  and evolution on the left, the hemicycle with its sentence on the right (sticky, so it stays in view while parties move).
+ *  Only moves nodes: the texts, ids and wiring are unchanged, and phones and tablets keep the single column in the order of the markdown. */
+function tablero(app) {
+  const res = app.querySelector("#s-resumen"), sec = res?.closest("section");
+  if (!sec) return;
+  const grid = document.createElement("div");
+  grid.className = "tb-grid";
+  const col = (cls) => { const c = document.createElement("div"); c.className = `tb-col ${cls}`; grid.append(c); return c; };
+  const izq = col("tb-izq"), centro = col("tb-centro"), der = col("tb-der");
+  sec.insertBefore(grid, res);
+  const linea = res.nextElementSibling?.classList.contains("linea") ? res.nextElementSibling : null;
+  const hemi = sec.querySelector(".hemi");
+  izq.append(res, ...[linea, sec.querySelector(".res-sel"), sec.querySelector(".res-q176")].filter(Boolean));
+  const mapa = app.querySelector(".tb-mapa");
+  if (mapa) centro.append(mapa);
+  const esc = sec.querySelector("#s-escanos");
+  if (esc) {   // the h3, its caption and the first ranges list after it
+    const run = [esc];
+    for (let n = esc.nextElementSibling; n && !n.classList.contains("juego"); n = n.nextElementSibling) { run.push(n); if (n.classList.contains("rangos")) break; }
+    der.append(...run);
+  }
+  const juego = hemi?.closest(".juego");
+  if (juego) {   // everything after the title goes into the left column, the hemicycle into the right one
+    const jg = document.createElement("div"), ji = document.createElement("div"), jd = document.createElement("div");
+    jg.className = "jg-grid"; ji.className = "jg-izq"; jd.className = "jg-der";
+    const h = juego.querySelector(":scope > .h4");
+    ji.append(...[...juego.children].filter((n) => n !== h && n !== hemi && !n.classList.contains("juego-tag")));
+    jd.append(hemi);
+    jg.append(ji, jd);
+    juego.append(jg);
+  }
+  for (const c of [centro, der]) if (!c.childElementCount) c.remove();
+  grid.dataset.cols = grid.childElementCount;
+}
+
+/** Wide front page (content column over 1100 px): related blocks side by side instead of one very wide block. "Voto estimado"
+ *  beside the poll average (its sentence, the line of figures, the chart and its links come up from "El modelo explicado");
+ *  "El modelo explicado" beside "Dónde se decide"; the calendar beside the tiles. Only moves nodes (sections keep their ids,
+ *  so the index still finds them). */
+function parejas(app) {
+  const par = (antes, izq, der, cls = "") => {
+    if (!antes || !izq.length || !der.length) return;
+    const p = document.createElement("div"), a = document.createElement("div"), b = document.createElement("div");
+    p.className = `par ${cls}`; a.className = "par-a"; b.className = "par-b";
+    antes.before(p); a.append(...izq); b.append(...der); p.append(a, b);
+  };
+  const run = (h, stop) => { const r = [h]; for (let n = h.nextElementSibling; n && !stop(n); n = n.nextElementSibling) r.push(n); return r; };
+  const votos = app.querySelector("#s-votos"), chart = app.querySelector("#chart-area");
+  if (votos && chart) {
+    const izq = run(votos, (n) => n.tagName === "DETAILS" || n.tagName === "SECTION" || n.classList.contains("par"));
+    const linea = chart.previousElementSibling?.classList.contains("linea") ? chart.previousElementSibling : null;
+    const frase = linea?.previousElementSibling?.tagName === "P" ? linea.previousElementSibling : null;
+    const nota = chart.nextElementSibling?.classList.contains("note") ? chart.nextElementSibling : null;
+    par(votos, izq, [frase, linea, chart, nota].filter(Boolean), "par-voto");
+  }
+  // two short text sections side by side: "El modelo explicado" (its chart went up beside "Voto estimado") and "Dónde se decide"
+  const voto = app.querySelector("#s-voto"), aire = app.querySelector("#s-aire");
+  if (voto && aire && !aire.querySelector("#mapa-masvotado")) par(voto, [voto], [aire], "par-secciones");
+  const cal = app.querySelector("table.cal"), tiles = app.querySelector("#s-calendario .tiles");
+  if (cal && tiles) par(cal, [cal], [tiles], "par-cal");
 }
 
 // latest survey with microdata: who is sure to vote, and the change from the same house's previous survey

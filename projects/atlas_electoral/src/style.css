@@ -1,3 +1,7 @@
+/* family typefaces (CONVENTIONS.md, chosen by Víctor 2026-11-16): Source Serif 4 for titles, Inter for text and data;
+   variable woff2, latin subset, weights 400 to 600, self-hosted (OFL, vendor/fonts/; source of truth chassis/fonts/) */
+@font-face { font-family: "Inter"; src: url("../vendor/fonts/inter-latin-var.woff2") format("woff2"); font-weight: 400 600; font-display: swap; }
+@font-face { font-family: "Source Serif 4"; src: url("../vendor/fonts/sourceserif4-latin-var.woff2") format("woff2"); font-weight: 400 600; font-display: swap; }
 :root {
   color-scheme: light;
   --bg: #fcfcfb;
@@ -17,6 +21,8 @@
   --t-l: 17px;     /* h3, .h4 and other subsection headings */
   --t-xl: 22px;    /* h2 */
   --t-xxl: 28px;   /* h1 */
+  --font-text: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-title: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -34,7 +40,8 @@
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
-  font: var(--t-m)/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  font: var(--t-m)/1.45 var(--font-text);
+  font-variant-numeric: tabular-nums;
 }
 a { color: var(--accent); }
 .top {
@@ -60,12 +67,13 @@ nav.sections a.on { color: var(--ink); border-bottom-color: var(--ink); }
   margin-left: auto; color: #8a7f72; font-size: 6.5px;
   font-variant-numeric: tabular-nums; white-space: nowrap;
 }
-main { max-width: 1560px; margin: 0 auto; padding: 16px 24px; }   /* wider on large screens (Víctor, 2026-11-14) */
+main { max-width: 2400px; margin: 0 auto; padding: 16px 32px; }   /* the whole screen up to 2400px (Víctor, 2026-11-16: "todo el ancho en mi 24 pulgadas"); was 1560 */
 footer { color: var(--ink-3); font-size: var(--t-xs); padding: 24px 16px; text-align: center; }
-h1 { font-size: var(--t-xxl); margin: 4px 0 6px; letter-spacing: -.01em; }
-h2 { font-size: var(--t-xl); margin: 36px 0 8px; letter-spacing: -.01em; }
+h1, h2, h3 { font-family: var(--font-title); }
+h1 { font-size: var(--t-xxl); font-weight: 600; margin: 4px 0 6px; letter-spacing: -.01em; }
+h2 { font-size: var(--t-xl); font-weight: 600; margin: 36px 0 8px; letter-spacing: -.01em; }
 h2 .muted { font-size: var(--t-m); letter-spacing: 0; }
-h3 { font-size: var(--t-l); color: var(--ink); font-weight: 700; margin: 18px 0 6px; }   /* bold, not capitals (Víctor, 2026-11-14) */
+h3 { font-size: var(--t-l); color: var(--ink); font-weight: 600; margin: 18px 0 6px; }   /* bold, not capitals (Víctor, 2026-11-14) */
 .sub { color: var(--ink-2); margin: 0 0 12px; }
 .loading { color: var(--ink-3); }
 /* one reading width for running text, so it all ends on the same vertical line; charts, tables and chips keep the
@@ -114,6 +122,23 @@ input[type=range] { accent-color: var(--ink); }
 .pvmap path.pv { stroke: var(--surface); stroke-width: .8; vector-effect: non-scaling-stroke; cursor: pointer; }
 .pvmap path.pv-hl { fill: none; stroke: var(--ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
 .pv-legend { margin: 0; padding: 0 12px 10px; }
+.pv-sw-hatch { background: repeating-linear-gradient(45deg, var(--nodata) 0 2px, color-mix(in srgb, var(--ink-3) 45%, var(--nodata)) 2px 3px); border: 1px solid var(--line); }
+.pv-mapa .controls { margin-top: 0; }
+.pv-mapa .seg { -webkit-mask-image: none; mask-image: none; }   /* the toggles wrap on phones (below), so no fade */
+.pv-mapa select { max-width: 100%; }
+.pv-nota { max-width: 760px; }
+.pv-leg-mv { display: grid; grid-template-columns: auto repeat(4, minmax(38px, auto)); gap: 3px 6px; align-items: center; }
+.pv-leg-mv > .muted { grid-column: 1 / -1; }
+.pv-leg-mv .pv-leg-h { text-align: center; }
+.pv-leg-mv .sw { width: 100%; height: 12px; margin: 0; }
+@media (max-width: 640px) {
+  .pv-mapa .seg button { padding: 5px 8px; }
+  /* on screens narrower than the three modes, they wrap instead of hiding one off the edge */
+  .pv-mapa .seg { flex-wrap: wrap; overflow: visible; }
+  .pv-mapa .seg button { flex: 1 1 auto; }
+}
+.pv-leg-mv .pv-leg-h { white-space: nowrap; }
+.pv-nota[hidden] { display: none; }
 #s-decide, #s-tuya { scroll-margin-top: 96px; }   /* below the sticky top bar, which wraps to two rows on phones */
 @media (max-width: 1099px) { #s-decide, #s-tuya { scroll-margin-top: 128px; } }   /* and below the sticky index row */
 .ramp { display: flex; align-items: center; gap: 6px; font-size: var(--t-xs); color: var(--ink-2); }
@@ -325,7 +350,7 @@ details.metodo-box[open] > .metodo, details.metodo-box[open] > p { border: 1px s
 .bloque[data-g="otros"] .bq-h b { color: var(--ink-2); }
 
 /* ranges per party (resultados.js, rangos): band = 90% of the simulations, dot = central estimate */
-.rangos { display: grid; gap: 7px; margin: 10px 0 14px; max-width: 980px; }
+.rangos { display: grid; gap: 7px; margin: 10px 0 14px; }   /* full block width, like the "juego" box and the charts (it was 980px: the box above was wider) */
 .rg-fila { display: grid; grid-template-columns: 130px 1fr 120px; align-items: center; gap: 12px; font-size: var(--t-m); }
 .rg-nom { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .rg-pista { position: relative; height: 16px; }
@@ -415,5 +440,299 @@ table.pv-grid td:first-child, table.pv-grid th:first-child { text-align: left; p
 .pv-c span { position: absolute; left: 0; right: 0; bottom: 0; }
 .pv-p { font-size: var(--t-xs); color: var(--ink-2); height: 15px; line-height: 15px; }
 /* the chosen province's name under the "Tu provincia" heading; its parts as small headings */
-h3.pv-nombre { font-size: var(--t-l); font-weight: 700; margin: 10px 0 6px; }
+h3.pv-nombre { font-size: var(--t-l); font-weight: 600; margin: 10px 0 6px; }
 #pv .h4 { font-size: var(--t-l); font-weight: 700; margin: 18px 0 6px; }
+
+/* ==== Senado (#senado, src/senado.js) · begin ==== */
+.sn-cab { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin: 8px 0 14px; }
+.sn-cab .sn-sec { align-self: stretch; }
+.sn-camara a { font-size: var(--t-s); padding: 5px 14px; text-decoration: none; color: var(--ink-2); background: var(--surface); }
+.sn-camara a.on { background: var(--ink); color: var(--bg); }
+.sn-sec { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.sn-sec h2.sn-h { margin: 0; }
+.sn-grid { display: grid; grid-template-columns: minmax(300px, 1fr) minmax(0, 1.55fr) minmax(220px, .75fr); gap: 16px; align-items: start; }
+.sn-grid > .card { min-width: 0; }
+.sn-grid h3 { margin-top: 2px; }
+.sn-titular { font-family: var(--font-title); font-size: var(--t-xxl); line-height: 1.15; font-weight: 600; margin: 2px 0 6px; }
+.sn-izq .sub { margin-bottom: 6px; }
+.sn-izq .linea { margin: 6px 0 4px; }
+.sn-hemi svg { width: 100%; height: auto; display: block; }
+.sn-hemi-leg { margin: 4px 0 8px; }
+.legend .sn-sw-des { background: color-mix(in srgb, var(--ink-3) 35%, var(--surface)); border: 1px solid var(--ink-3); }
+.legend .sn-sw-empate { background: var(--surface); border: 1px solid var(--ink-3); }
+table.sn-t { width: 100%; }
+table.sn-t td.muted { color: var(--ink-3); }
+.sn-ver { margin: 6px 0 2px; font-size: var(--t-s); }
+.sn-fuente { color: var(--ink-3); }
+.sn-mapa svg { cursor: grab; touch-action: pan-y; }
+.sn-mapa .zoombtns { top: auto; bottom: 10px; }
+.sn-mapa path.sn-c { stroke: var(--surface); stroke-width: .7; vector-effect: non-scaling-stroke; cursor: pointer; transition: opacity .2s; }
+.sn-mapa path.sn-c.sn-off { opacity: .25; }
+.sn-mapa .pv-hl { fill: none; stroke: var(--ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; pointer-events: none; }
+.sn-mapa .sn-pill-t { font-weight: 600; font-variant-numeric: tabular-nums; pointer-events: none; }
+.sn-cl { display: flex; flex-direction: column; }
+.sn-cr { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font: inherit; font-size: var(--t-s); text-align: left; color: var(--ink);
+  background: none; border: 0; border-bottom: 1px solid var(--line); padding: 7px 4px; cursor: pointer; }
+.sn-cr:hover, .sn-cr.on { background: color-mix(in srgb, var(--ink) 5%, transparent); }
+.sn-cr.on .sn-cn { font-weight: 700; }
+.sn-cv { white-space: nowrap; color: var(--ink-2); }
+.sn-cv b { color: var(--ink); }
+.sn-cv small { color: var(--ink-3); }
+.sn-cb { grid-column: 1 / -1; display: flex; height: 4px; border-radius: 2px; overflow: hidden; background: var(--nodata); }
+.sn-cb i { display: block; }
+.sn-coal { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-top: 8px; }
+.sn-co { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--c); border-radius: 8px; padding: 10px 12px; font-size: var(--t-s); }
+.sn-co-h { font-size: var(--t-m); margin-bottom: 2px; }
+.sn-co-s, .sn-co-d { color: var(--ink-2); }
+.sn-co-m { color: var(--ink-2); }
+.sn-co-w { margin-top: 6px; }
+.sn-co-w .muted { color: var(--ink-3); }
+@media (max-width: 1199px) {
+  .sn-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); }
+  .sn-der { grid-column: 1 / -1; }
+  .sn-cl { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); column-gap: 16px; }
+}
+@media (max-width: 760px) {
+  .sn-grid { grid-template-columns: minmax(0, 1fr); }
+  .sn-titular { font-size: var(--t-xl); }
+}
+.sn .seg { -webkit-mask-image: none; mask-image: none; overflow: visible; }
+/* ==== Senado · end ==== */
+/* ==== Portada 2 (2026-11-16): "¿Quién llega a 176?", atajos, hemiciclo, mapa del más votado · start ==== */
+.q176 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 6px 0 4px; }
+@media (max-width: 760px) { .q176 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.q176-c { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; cursor: default; }
+.q176-c:hover { border-color: var(--ink-3); }
+.q176-n { font-family: var(--font-title); font-weight: 600; font-size: 30px; line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--ink); }
+.q176-d { font-size: var(--t-s); color: var(--ink-2); }
+.q176-t { font-size: var(--t-s); color: var(--ink); margin-top: 6px; line-height: 1.3; }
+.atajos { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+.atajos button { font: inherit; font-size: var(--t-s); color: var(--ink-2); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; min-height: 32px; cursor: pointer; }
+.atajos button:hover:not(:disabled) { border-color: var(--ink-3); color: var(--ink); }
+.atajos button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.atajos button:disabled { opacity: .45; cursor: default; }
+.hemi { max-width: 520px; margin: 0 auto 6px; }
+.hemi-svg { display: block; width: 100%; height: auto; }
+.hemi-svg circle { cursor: pointer; transition: opacity .15s; }
+.hemi-svg circle.hemi-on { stroke: var(--ink); stroke-width: .008; }
+.hemi-176 { stroke: var(--ink-2); stroke-width: .006; stroke-dasharray: .02 .015; }
+.hemi-176t { font-size: .075px; fill: var(--ink-2); font-weight: 600; }
+.hemi-foco .note { margin: 2px 0; text-align: center; max-width: none; }
+.mvmap { max-width: 760px; }
+.mvmap .mv-labs text { font-weight: 600; pointer-events: none; font-variant-numeric: tabular-nums;
+  fill: #1a1a18; stroke: rgba(255, 255, 255, .8); stroke-width: .3em; paint-order: stroke; stroke-linejoin: round; }   /* a label can span two fills: dark text with a light halo reads on all of them */
+.mv-legend { max-width: 760px; }
+.mv-anio { -webkit-mask-image: none; mask-image: none; overflow: visible; }   /* two buttons: no fade on phones */
+/* ==== Portada 2 · end ==== */
+/* ==== Cabecera Congreso | Senado y Error por casa (2026-11-16) · start ==== */
+nav.camara { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; flex: none; }
+nav.camara a { font-size: var(--t-s); padding: 3px 12px; color: var(--ink-2); text-decoration: none; background: var(--surface); white-space: nowrap; }
+nav.camara a + a { border-left: 1px solid var(--line); }
+nav.camara a.on { background: var(--ink); color: var(--bg); font-weight: 600; }
+nav.camara a:not(.on):hover { color: var(--ink); }
+@media (max-width: 640px) {
+  .top .brand { flex: 1 1 auto; min-width: 0; }
+  nav.camara { margin-left: auto; }
+  nav.camara a { padding: 7px 12px; }   /* finger-sized */
+  .top nav.sections { flex: 1 1 100%; }
+}
+.ec-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 4px 0 8px; }
+.ec-sel { font-size: var(--t-s); color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; }
+.ec-sel select { max-width: 220px; }
+.ec .card { margin: 10px 0; }
+.ec .card > div > p:first-child { margin-top: 0; }
+.ec .ec-zero { fill: var(--ink-3); font-size: 11px; }
+.ec .ec-lab { stroke: var(--surface); stroke-width: 3px; paint-order: stroke; stroke-linejoin: round; }   /* a halo where a label crosses a line */
+.ec .ec-b-bar { fill: color-mix(in srgb, var(--ink-3) 55%, var(--surface)); }
+.ec .ec-b-lab { fill: var(--ink-2); font-size: 12px; }
+.ec .ec-b-val { fill: var(--ink-3); font-size: 11px; }
+.ec .ec-bar:hover .ec-b-bar { fill: var(--ink-3); }
+.ec .ec-bar.on .ec-b-bar { fill: var(--ink); }
+.ec .ec-bar.on .ec-b-lab { fill: var(--ink); font-weight: 700; }
+.ec .ec-ring { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--ink-2); margin-right: 5px; vertical-align: -1px; }
+.ec .legend .muted { color: var(--ink-3); }
+.ec-mult { margin-top: 6px; }
+.ec-m { border: 1px solid transparent; border-radius: 6px; padding: 4px; }
+.ec-m.on { border-color: var(--ink); background: color-mix(in srgb, var(--ink) 4%, transparent); }
+.ec #ec-tipo { -webkit-mask-image: none; mask-image: none; overflow: visible; }   /* three buttons: no fade on phones */
+/* ==== Cabecera Congreso | Senado y Error por casa · end ==== */
+/* ==== Portada: tablero en escritorio y ancho común (2026-11-16) · start ==== */
+/* The front page (inicio.js adds .layout.portada; .tablero from 1200px with a model, see tablero() there).
+   Widths: blocks (boxes, charts, ranges, tables) take the whole content column; running text stops at --texto;
+   both start at the same left edge. */
+/* the index is the same left column as on the other pages (Víctor, 2026-11-16: the pill row "ni se parece a un índice");
+   at 1200px the content column is about 950px, at 1440px about 1190px */
+.tb-grid { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 1.7fr) minmax(240px, 1fr); gap: 14px; align-items: start; margin: 10px 0 24px; }
+.tb-grid[data-cols="2"] { grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr); }
+.tb-grid[data-cols="1"] { grid-template-columns: minmax(0, 1fr); }
+.tb-col { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.tb-col > h3:first-child, .tb-mapa > h3:first-child { margin-top: 0; }
+.tb-col p, .tb-col .note, .tb-col .sub { max-width: none; }   /* a card is narrower than --texto */
+.tb-izq .linea { font-family: var(--font-title); font-size: var(--t-l); line-height: 1.3; margin: 0 0 8px; }
+.tb-izq .controls { margin: 8px 0 4px; }
+.tb-izq #modelo-sel { width: 100%; }
+.tb-izq .q176 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.tb-izq .q176-c { background: var(--bg); padding: 8px 10px; }
+.tb-izq .q176-n { font-size: clamp(18px, 1.6vw, 24px); white-space: nowrap; }
+@media (max-width: 1359px) { .tb-izq .q176 { grid-template-columns: minmax(0, 1fr); } .tb-izq .q176-n { font-size: 22px; } }   /* a 1200px window: one card per row, so "menos de 1" fits */
+.tb-centro .mvmap, .tb-centro .mv-legend { max-width: none; }
+.tb-der .rangos { gap: 6px; margin-bottom: 4px; }
+.tb-der .rg-fila { grid-template-columns: 74px 1fr 82px; gap: 8px; font-size: var(--t-s); }
+/* "Forma tu mayoría" in two columns (tablero() in inicio.js): groups and bars left, the hemicycle right, kept in view */
+.jg-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(300px, 2fr); gap: 24px; align-items: start; }
+.jg-izq { min-width: 0; }
+.jg-izq > .atajos:first-child { margin-top: 0; }
+.jg-der { position: sticky; top: 72px; min-width: 0; }
+.jg-der .hemi { margin: 0 auto; }
+.jg-der .hemi-foco .note { max-width: none; }
+/* related blocks side by side from a 1360px window (parejas() in inicio.js); each column's text fits its column */
+.par { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; margin: 10px 0 14px; }
+.par > div { min-width: 0; }
+.par > div > :first-child { margin-top: 0; }
+.par p, .par .sub, .par .note { max-width: none; }
+.par-voto { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.par-voto .rg-fila { grid-template-columns: 120px 1fr 112px; gap: 10px; }
+.par-secciones { margin: 0 0 28px; }
+.par-secciones section { margin: 0; }
+.par-secciones section > h2:first-child { margin-top: 0; }
+/* the folded methodology of the model, once open: its paragraphs in two columns instead of one at reading width beside an empty band */
+@media (min-width: 1360px) {
+  .layout.portada.tablero section > details.metodo-box[open] > .metodo { columns: 2; column-gap: 32px; }
+  .layout.portada.tablero section > details.metodo-box[open] > .metodo p { max-width: none; break-inside: avoid; margin-top: 0; }
+}
+.par-cal { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+.par-cal .tiles { grid-template-columns: 1fr; gap: 10px; }
+/* a pressed shortcut keeps its light text under the pointer (the hover rule turned it dark on dark) */
+.atajos button.on:hover:not(:disabled) { color: var(--bg); }
+/* tablets and phones: the frequency cards keep "menos de 1" on one line, the figure shrinking with the card */
+@media (max-width: 1199px) { .q176-n { white-space: nowrap; font-size: clamp(20px, 3.2vw, 30px); } }
+@media (max-width: 760px) { .q176-n { font-size: clamp(19px, 5.6vw, 30px); } }
+/* ==== Portada: tablero · end ==== */
+/* ==== Mapa de la portada: etiquetas, bloques y ficha (2026-11-16, masvotado.js) · start ==== */
+/* the three nested controls: year, then party or bloc, then votes or seats; each level smaller and indented under its
+   parent, joined to it by a thin elbow line */
+.mv-controls { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin: 4px 0 10px; }
+.mv-controls .seg { -webkit-mask-image: none; mask-image: none; overflow: visible; flex-wrap: wrap; }
+.mv-nivel { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding-left: 22px; }
+.mv-nivel::before { content: ""; position: absolute; left: 9px; top: -6px; width: 9px; height: 19px;
+  border-left: 1px solid var(--ink-3); border-bottom: 1px solid var(--ink-3); border-bottom-left-radius: 4px; }
+.mv-n2 .seg button { font-size: var(--t-s); padding: 4px 10px; }
+.mv-n3 .seg button { font-size: var(--t-xs); padding: 3px 9px; }
+.mv-leg-emp { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; }
+.mv-leg-emp .sw { width: 22px; height: 12px; }
+.mv-modo { -webkit-mask-image: none; mask-image: none; overflow: visible; }
+.mv-caja { position: relative; }
+.mvmap svg { width: 100%; height: auto; }
+.mvmap .mv-leads polyline { fill: none; stroke: var(--ink-3); stroke-width: .75; }
+.mvmap .mv-leads circle { fill: var(--ink); }
+.mvmap .mv-pill { cursor: pointer; }
+.mvmap .mv-pill rect { fill: var(--surface); stroke: var(--line); stroke-width: 1; opacity: .94; }
+.mvmap .mv-pill text { fill: var(--ink); stroke: none; font-weight: 600; font-variant-numeric: tabular-nums; }
+.mvmap .mv-pill:hover rect, .mvmap .mv-pill:focus-visible rect { stroke: var(--ink); }
+.mvmap .mv-pill:focus { outline: none; }
+.mvmap path.mv-sel { stroke-width: 2.2; }
+.mv-ficha { position: absolute; z-index: 20; width: min(460px, calc(100% - 8px)); background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 6px 24px rgba(0, 0, 0, .16); padding: 12px 12px 10px; font-size: var(--t-s); }
+.mv-ficha[hidden] { display: none; }
+.mvp-h { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.mvp-n { font-family: var(--font-title); font-weight: 600; font-size: var(--t-l); line-height: 1.2; }
+.mvp-sub { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px; color: var(--ink-2); }
+.mvp-cc { border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; font-size: var(--t-xs); background: var(--bg); }
+.mvp-x { font: inherit; font-size: 20px; line-height: 1; width: 30px; height: 30px; flex: none; cursor: pointer; color: var(--ink-2);
+  background: none; border: 1px solid var(--line); border-radius: 6px; }
+.mvp-x:hover { color: var(--ink); border-color: var(--ink-3); }
+.mvp-t { overflow-x: auto; margin: 10px 0 6px; }
+.mvp-t table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.mvp-t th { font-weight: 400; color: var(--ink-3); font-size: var(--t-xs); text-align: left; padding: 2px 4px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.mvp-t td { padding: 4px 4px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.mvp-t .num { text-align: right; }
+.mvp-p { display: inline-flex; align-items: center; gap: 6px; }
+.mvp-ini, .mvp-foto { width: 22px; height: 22px; border-radius: 50%; flex: none; }
+.mvp-ini { display: inline-grid; place-items: center; color: #fff; font-size: 9px; font-weight: 600; letter-spacing: .02em; }
+.mvp-ini-o { background: var(--nodata); }
+.mvp-foto { object-fit: cover; border: 2px solid; box-sizing: border-box; }
+.mvp-esc { cursor: help; }
+.mvp-pie { color: var(--ink-2); font-size: var(--t-xs); }
+.mvp-pie p { margin: 2px 0; max-width: none; }
+.mvp-pie a { display: inline-block; margin-top: 4px; font-size: var(--t-s); font-weight: 600; }
+.mvp-cred { margin-top: 6px; }
+.mvp-cred summary { cursor: pointer; color: var(--ink-3); }
+.mvp-cred div { margin: 2px 0; }
+.mv-ficha { container-type: inline-size; }
+@container (max-width: 440px) {   /* a narrow card (phone, the tablero's centre column at 1200 px): the six columns still fit */
+  .mvp-t table { font-size: var(--t-xs); }
+  .mvp-t td, .mvp-t th { padding: 3px 2px; }
+  .mvp-p { gap: 4px; }
+  .mvp-ini, .mvp-foto { width: 18px; height: 18px; font-size: 8px; }
+}
+.mv-ficha.mv-hoja { position: fixed; left: 8px; right: 8px; bottom: 8px; top: auto; width: auto; max-height: 72vh; overflow-y: auto; z-index: 60; }
+.mvmap path.mv-cambio { fill: none; stroke: var(--ink); stroke-width: 1.8; vector-effect: non-scaling-stroke; pointer-events: none; }
+.mv-leg-cambio { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.mv-leg-cambio > .muted { flex-basis: 100%; }
+.mv-sw-cambio { outline: 1.5px solid var(--ink); outline-offset: -1px; }
+/* ==== Mapa de la portada: etiquetas, bloques y ficha · end ==== */
+/* ==== Provincias: ficha de provincia (2026-11-16, provincia_ficha.js) · start ==== */
+.pf-migas { font-size: var(--t-s); color: var(--ink-2); margin: 6px 0 0; }
+.pf-migas a { color: var(--ink-2); }
+#pv h3.pv-nombre { font-family: var(--font-title); font-size: var(--t-xxl); font-weight: 600; margin: 2px 0 8px; line-height: 1.15; }
+.pf-cifras { display: flex; flex-wrap: wrap; gap: 6px 28px; margin: 0 0 12px; padding: 8px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.pf-cifras div { min-width: 0; }
+.pf-cifras dt { font-size: var(--t-xs); color: var(--ink-2); }
+.pf-cifras dd { margin: 0; font-size: var(--t-m); font-weight: 600; font-variant-numeric: tabular-nums; }
+.pf-cifras small { font-weight: 400; color: var(--ink-2); font-size: var(--t-xs); }
+.pf-vista { margin: 0 0 10px; -webkit-mask-image: none; mask-image: none; overflow: visible; }
+#pv .h4 { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 22px; }
+/* results per list: name, bar, figures */
+.pf-filas { max-width: 760px; margin: 6px 0 4px; }
+.pf-fila { display: grid; grid-template-columns: minmax(110px, 170px) minmax(0, 1fr) 60px 84px; gap: 4px 12px; align-items: center; padding: 4px 0; border-bottom: 1px solid var(--line); font-size: var(--t-s); font-variant-numeric: tabular-nums; }
+.pf-filas23 .pf-fila { grid-template-columns: minmax(110px, 170px) minmax(0, 1fr) 60px 80px 56px; }
+.pf-fila.pf-cab { font-size: var(--t-xs); color: var(--ink-2); border-bottom: 1px solid var(--line); padding: 0 0 2px; }
+.pf-nom { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.pf-barra { position: relative; height: 14px; background: var(--nodata); border-radius: 2px; }
+.pf-barra span { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 2px; }
+.pf-rango { opacity: .28; }
+.pf-esc { font-weight: 600; }
+.pf-esc small { font-weight: 400; color: var(--ink-2); font-size: var(--t-xs); }
+.pf-fila[data-tip] { cursor: default; }
+@media (max-width: 560px) {
+  .pf-fila { grid-template-columns: minmax(0, 1fr) 54px 62px; gap: 4px 8px; }
+  .pf-filas23 .pf-fila { grid-template-columns: minmax(0, 1fr) 46px 72px 54px; }
+  .pf-barra { grid-column: 1 / -1; grid-row: 2; height: 10px; }
+  .pf-fila.pf-cab .pf-barra, .pf-fila.pf-cab > div:nth-child(2) { display: none; }
+}
+/* the province map moved into the card; the selected province outlined */
+.pf-mapa-hueco { margin: 14px 0 0; }
+.pvmap path.pf-sel { fill: none; stroke: var(--ink); stroke-width: 2.5; vector-effect: non-scaling-stroke; pointer-events: none; }
+/* electors per seat: one dot per province on a line */
+.pf-tira { position: relative; height: 34px; margin: 14px 8px 0; max-width: 744px; }
+.pf-tira::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--line); }
+.pf-tira-p { position: absolute; top: 50%; width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; border-radius: 50%; background: var(--ink-3); opacity: .55; }
+.pf-tira-p:hover, .pf-tira-p:focus { opacity: 1; outline: none; box-shadow: 0 0 0 2px var(--surface), 0 0 0 3px var(--ink); }
+.pf-tira-p.on { background: var(--accent); opacity: 1; width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; z-index: 1; }
+.pf-tira-media { position: absolute; top: 4px; bottom: 4px; width: 2px; margin-left: -1px; background: var(--ink); }
+.pf-tira-ejes { display: flex; justify-content: space-between; max-width: 760px; font-size: var(--t-xs); color: var(--ink-2); }
+/* last seat: the usual fights */
+.pf-lista-aire { margin: 4px 0 8px; padding-left: 18px; font-size: var(--t-m); }
+.pf-lista-aire li { margin: 2px 0; }
+/* heads of list */
+.pf-cands { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px 18px; margin: 6px 0; }
+.pf-cand { display: flex; gap: 10px; align-items: center; font-size: var(--t-s); min-width: 0; }
+.pf-ini { flex: none; width: 34px; height: 34px; border-radius: 50%; color: #fff; display: grid; place-items: center; font-size: var(--t-xs); font-weight: 600; letter-spacing: .02em; }
+.pf-lista { color: var(--ink-2); font-size: var(--t-xs); }
+/* D'Hondt quotients: won seats tinted, the last seat boxed, the next in the queue dashed */
+table.pf-dh td.gana { background: color-mix(in srgb, var(--c) 22%, transparent); }
+table.pf-dh td.ultimo { outline: 2px solid var(--ink); outline-offset: -2px; font-weight: 600; }
+table.pf-dh td.cola { outline: 2px dashed var(--ink-2); outline-offset: -2px; }
+.pf-sube { color: #15803d; }
+.pf-baja { color: #b91c1c; }
+:root[data-theme="dark"] .pf-sube { color: #4ade80; }
+:root[data-theme="dark"] .pf-baja { color: #f87171; }
+/* municipalities */
+.pf-munis-ctl input { width: 100%; max-width: 360px; padding: 7px 10px; font: inherit; font-size: var(--t-s); border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); }
+table.pf-mun { max-width: 760px; }
+.pf-mas[hidden] { display: none; }
+.pf-btn { font: inherit; font-size: var(--t-s); padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); cursor: pointer; }
+table.pf-dh, table.pf-ev { width: auto; min-width: min(100%, 520px); }
+table.pf-ev { max-width: 760px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pf-sube { color: #4ade80; } :root:not([data-theme="light"]) .pf-baja { color: #f87171; } }
+/* ==== Provincias: ficha de provincia · end ==== */

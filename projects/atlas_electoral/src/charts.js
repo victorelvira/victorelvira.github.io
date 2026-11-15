@@ -1,5 +1,5 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.108";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.122";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
@@ -168,6 +168,9 @@ export function sectionIndex(app) {
   onScroll();
 }
 
+// starting blocs of "Forma tu mayoría" (Víctor, 2026-11-14); Junts and CC start in "otros". Also read by the shortcuts (resultados.js)
+export const BLOQUE_INICIAL = { pp: "derecha", vox: "derecha", salf: "derecha", cs: "derecha", ucd: "derecha", psoe: "izquierda", sumar: "izquierda", podemos: "izquierda", izq: "izquierda",
+  erc: "izquierda", bildu: "izquierda", pnv: "izquierda", bng: "izquierda" };
 /** Seat sums in three groups (Izquierda, Otros, Derecha); parties are chips dragged between the boxes
  *  (pointer events: mouse and touch). `at` keeps the reader's grouping when the seats are redrawn.
  *  With `draws` (prediccion_draws.json) each box also gives its 90% range and the probability of 176;
@@ -176,8 +179,7 @@ export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws =
   // barra: {label, labelWidth}: a three-colour bar (left, rest, right) with the same layout as seatRows, so it lines up
   // under a seat bar of the same width and shows which parties make up each bloc; redrawn on every move
   const G = ["izquierda", "otros", "derecha"], NAME = { izquierda: "Izquierda", otros: "Otros", derecha: "Derecha" };
-  const start = { pp: "derecha", vox: "derecha", salf: "derecha", cs: "derecha", ucd: "derecha", psoe: "izquierda", sumar: "izquierda", podemos: "izquierda", izq: "izquierda",
-    erc: "izquierda", bildu: "izquierda", pnv: "izquierda", bng: "izquierda" };   // starting blocs (Víctor, 2026-11-14); Junts and CC start in "otros"
+  const start = BLOQUE_INICIAL;
   const fams = Object.entries(seats).filter(([, n]) => n).sort((a, b) => b[1] - a[1]).map(([f]) => f);
   for (const f of fams) at[f] ??= start[f] ?? "otros";
   const sumOf = (g) => {   // seats of group g in every draw
@@ -190,7 +192,7 @@ export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws =
     const t = sumOf(g); if (!t) return "";
     const v = [...t].sort((a, b) => a - b), q = (p) => v[Math.min(v.length - 1, Math.floor(p * v.length))];
     const pr = v.filter((x) => x >= 176).length / v.length;
-    return `<div class="bq-p">de ${q(0.05)} a ${q(0.95)}${pr >= 0.005 ? ` · ${pr > 0.995 ? "más del 99" : Math.round(pr * 100)}% de llegar a 176` : ""}</div>`;
+    return `<div class="bq-p">de ${q(0.05)} a ${q(0.95)}${pr >= 0.005 ? ` · llega a 176 en ${pr > 0.995 ? "más de 99" : Math.round(pr * 100)} de cada 100` : ""}</div>`;
   };
   const draw = () => {
     const totG = Object.fromEntries(G.map((g) => [g, fams.filter((f) => at[f] === g).reduce((a, f) => a + seats[f], 0)]));

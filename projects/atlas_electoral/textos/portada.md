@@ -6,14 +6,15 @@ Cifras disponibles:
   {ultimo_campo}       fecha de la última encuesta del modelo (p. ej. "13 de noviembre")
   {ppvox_176}          de cada 100 simulaciones, en cuántas PP y Vox llegan a 176
   {pp_primero}         de cada 100, en cuántas el PP queda primero
-  {simulaciones}       número de simulaciones del modelo (4.000)
+  {simulaciones}       número de simulaciones del modelo elegido en el selector (4.200 en la media: 600 de cada
+                       uno de los siete modelos; 4.000 en cada modelo por separado)
   {fecha_datos}        fecha de los datos (si no hay modelo)
-  {elecciones}         elecciones generales del backtest (13)
+  {elecciones}         elecciones generales del backtest (13); el backtest es el del modelo K0, no el de la media
   {desde}              año de la primera (1986)
-  {acierto_voto}       % de resultados de voto dentro del rango del 90%, una semana antes
-  {acierto_escanos}    lo mismo en escaños
-  {error_x15}          probabilidad de 176 si el error de las encuestas fuera un 50% mayor
-  {error_x08}          probabilidad de 176 si fuera un 20% menor
+  {acierto_voto}       % de resultados de voto dentro del rango del 90%, una semana antes (modelo K0)
+  {acierto_escanos}    lo mismo en escaños (modelo K0)
+  {error_x15}          probabilidad de 176 si el error de las encuestas fuera un 50% mayor (modelo K0)
+  {error_x08}          probabilidad de 176 si fuera un 20% menor (modelo K0)
   {fuente_escanos}     de dónde salen los escaños por provincia de 2026
   {cambios_escanos}    provincias que cambian de escaños respecto a 2023
 
@@ -24,13 +25,13 @@ sensibilidad, movilizacion, cambios.
 
 
 ::: si antes
-[sub] Faltan **{dias} días** para las elecciones generales. Se eligen 350 diputados y 208 senadores.
+[sub] Faltan **{dias} días** para las elecciones generales. Se eligen 350 diputados y 209 senadores.
 :::
 ::: si hoy
-[sub] **Hoy se vota.** Se eligen 350 diputados y 208 senadores.
+[sub] **Hoy se vota.** Se eligen 350 diputados y 209 senadores.
 :::
 ::: si despues
-[sub] Se eligen 350 diputados y 208 senadores.
+[sub] Se eligen 350 diputados y 209 senadores.
 :::
 
 [[índice]]
@@ -42,20 +43,22 @@ sensibilidad, movilizacion, cambios.
 
 ### Resumen {#resumen | Resumen}
 
-[línea] PP y Vox suman los 176 escaños con una probabilidad estimada del {ppvox_176}%. El PP es la fuerza más votada con una probabilidad del {pp_mas_votado}%.
+[línea] PP y Vox suman los 176 escaños en {ppvox_176} de cada 100 simulaciones. El PP es la fuerza más votada en {pp_mas_votado} de cada 100.
 
 [[resultados]]
 
 ::: metodología #metodo
-**Las encuestas.** Todas las encuestas nacionales publicadas desde las generales de 2023, con su trabajo de campo y su muestra. Las encuestas que acumulan entrevistas día a día no cuentan varias veces las mismas: en SW Demoscopia, cada día nuevo entra como una encuesta pequeña con solo sus entrevistas nuevas; Sociométrica, que da más peso a lo reciente, entra con su última ola. Las encuestas encargadas por partidos y las reestimaciones del CIS hechas por terceros se muestran pero no entran.
+**Las encuestas.** Todas las encuestas nacionales publicadas desde las generales de 2023, con su trabajo de campo y su muestra. Las encuestas que acumulan entrevistas día a día no cuentan varias veces las mismas: en SW Demoscopia, cada día nuevo entra como una encuesta pequeña con solo sus entrevistas nuevas; Sociométrica, que da más peso a lo reciente, entra con su última ola. Las encuestas encargadas por partidos y las reestimaciones del CIS hechas por terceros se muestran pero no entran. El CIS entra tal como lo publica, y los modelos que corrigen la tendencia de cada encuestadora descuentan su inclinación habitual, aunque este año el recuerdo de voto de sus entrevistados se aleja del resultado de 2023 más que en elecciones anteriores.
 
-**El promedio.** Para cada partido, un filtro de Kalman sigue su apoyo día a día y estima a la vez el sesgo de cada encuestadora, partiendo de la mitad del sesgo que tuvo en 2023.
+**Siete modelos, el mismo peso.** Lo que se ve por defecto es la media de siete modelos de familias distintas, cada uno con el mismo peso. Todos usan esas encuestas y asignan los escaños con las mismas reglas. Se diferencian en tres cosas: si corrigen la tendencia de cada encuestadora a inclinarse hacia unos partidos (tres lo hacen, a partir de lo que se desvió cada una en 2023; cuatro no), cuánto pesan las encuestas recientes frente a las antiguas, y si el paso a las provincias tiene en cuenta las autonómicas, municipales y europeas celebradas desde 2023 (solo uno). Uno de ellos, el estilo Demócrata, deja fuera el CIS. El selector de arriba muestra cada modelo por separado y el que publicábamos hasta ahora (K0).
 
-**El error de las encuestas.** El día de la votación se añade un error común a todas las encuestas, calibrado con el que tuvieron en cada elección general desde 1982 y correlacionado por bloques: cuando las encuestas se equivocan con un partido de la derecha, suelen equivocarse en el mismo sentido con los demás. ERC, Junts, Bildu y PNV tienen su propia escala de error.
+**Por qué el mismo peso.** Probamos a dar a cada modelo un peso según lo que habría acertado en las 13 elecciones generales desde 1986. Con tan pocas elecciones, el peso se concentra en uno o dos modelos y no acierta de forma clara más que el mismo peso para todos: eso es elegir, no combinar.
 
-**De votos a escaños.** En cada simulación, el voto nacional se lleva a cada provincia con el mapa de 2023 (Frente Amplio, Podemos y SALF, con el de las europeas de 2024), más una variación aleatoria por comunidad y por provincia. Las listas que no se presentan en una provincia ceden sus votos a la lista conjunta que las incluye o los reparten entre las demás. Los escaños se asignan con D'Hondt y la barrera del 3%.
+**El error de las encuestas.** El día de la votación cada modelo añade un error común a todas las encuestas, calibrado con lo que se equivocó en cada elección general desde 1982 y correlacionado por bloques: cuando las encuestas se equivocan con un partido de la derecha, suelen equivocarse en el mismo sentido con los demás. ERC, Junts, Bildu y PNV tienen su propia escala de error.
 
-**Cuánto fiarse.** Rehecho para las elecciones generales desde 1986 con solo las encuestas de cada momento, el 90% de los resultados cayó dentro del rango del 90%. Ver [Cuánto fiarse](#modelo/fiarse).
+**De votos a escaños.** En cada simulación, el voto nacional se lleva a cada provincia con el mapa de 2023 (Frente Amplio, Podemos y SALF, con el de las europeas de 2024), más una variación aleatoria por comunidad y por provincia (uno de los siete corrige antes ese mapa con las elecciones celebradas desde 2023). Las listas que no se presentan en una provincia ceden sus votos a la lista conjunta que las incluye o los reparten entre las demás. Los escaños se asignan con D'Hondt y la barrera del 3%.
+
+**Cuánto fiarse.** El modelo que publicábamos hasta ahora (K0) se rehízo para las elecciones generales desde 1986 con solo las encuestas de cada momento: una semana antes, unos 9 de cada 10 resultados cayeron dentro de su rango, el que recoge 9 de cada 10 simulaciones. La media de los siete no se ha probado así como tal. Ver [Cuánto fiarse](#modelo/fiarse).
 
 **Lo que no hace.** No usa las encuestas provinciales ni modela la participación por separado.
 :::
@@ -74,9 +77,9 @@ sensibilidad, movilizacion, cambios.
 
 [Todo el modelo, en la pestaña Modelo →](#modelo)
 
-El modelo parte de todas las encuestas publicadas, corrige la tendencia de cada encuestadora a sobrestimar o subestimar a cada partido, y añade el error que han tenido las encuestas en las elecciones generales desde 1982. Con eso simula {simulaciones} resultados posibles y reparte los escaños provincia a provincia. Las cifras de arriba resumen esas simulaciones. [Metodología](#inicio/metodo) · [El modelo estadístico, en detalle →](#modelo)
+Lo que se ve por defecto es la media de siete modelos, con el mismo peso cada uno. Todos parten de las encuestas publicadas; unos corrigen la tendencia de cada encuestadora a sobrestimar o subestimar a cada partido y otros no. Cada uno añade el error que han tenido las encuestas en las elecciones generales desde 1982, simula miles de resultados posibles ({simulaciones} en lo que estás viendo) y reparte los escaños provincia a provincia. Las cifras de arriba resumen esas simulaciones. [Metodología](#inicio/metodo) · [El modelo estadístico, en detalle →](#modelo)
 
-Usamos todas las encuestas disponibles hasta el {ultimo_campo} y un modelo actualizado el {ultimo_modelo}, donde corregimos el sesgo propio de cada casa de encuestas. 
+Usamos todas las encuestas disponibles hasta el {ultimo_campo}, con los modelos actualizados el {ultimo_modelo}.
 
 El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas](#encuestas).
 
@@ -93,6 +96,8 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 [[pugnas]]
 
 [nota] [Todas las provincias en juego →](#provincia/decide)
+
+[[mapa_portada]]
 :::
 
 ## Calendario {#calendario}
@@ -128,3 +133,20 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 [[tabla_noche]]
 
 [nota] Participación {participacion}% · datos provisionales del Ministerio del Interior; se actualiza cada minuto. Los escaños definitivos los proclaman las juntas electorales.
+
+=== mapa ===
+<!--
+El mapa de la portada, dentro de "Dónde se decide" (donde está [[mapa_portada]]; lo añadió Claude el 16-11-2026). [[mapa_masvotado]]
+es el mapa con su botón Proyección 2026 / Resultados 2023, su leyenda y su nota (la nota y el globo son los del modo "Más votado"
+de la pestaña Provincias: partes nota_mas_votado y tooltip_mas_votado de provincia.md). Cifra: {modelo}, el nombre del modelo
+elegido en el selector. Condición: otro_modelo (el elegido no es K0).
+-->
+### Quién gana en cada provincia {#mapa-provincias | Mapa}
+
+[sub] Cada provincia, en el color del partido más votado; las etiquetas dan la provincia y el porcentaje del primero. Pulsa o toca una provincia para ver su reparto; desde ahí se abre su ficha.
+
+[[mapa_masvotado]]
+
+::: si otro_modelo
+[nota] El mapa por provincias es siempre el del modelo publicado hasta ahora (K0), no el de «{modelo}», elegido arriba.
+:::

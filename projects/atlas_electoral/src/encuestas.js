@@ -1,7 +1,7 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.108";
-import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.108";
-import { textos, md, INDICE } from "./textos.js?v=0.2.108";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.122";
+import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.122";
+import { textos, md, INDICE } from "./textos.js?v=0.2.122";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -313,7 +313,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       const fd = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
       const rows = E.polls.filter((q) => !q.x).sort((a, b) => (a.f1 < b.f1 ? 1 : -1)).slice(0, 12);
       if ($("#last")) $("#last").innerHTML = `<table><tr><th>Encuestadora</th><th>Medio</th><th>Campo</th><th class="num">Muestra</th>${cols.map((p) => `<th class="num"><i class="dot" style="background:${PC(p)}"></i>${PN(p)}</th>`).join("")}</tr>
-        ${rows.map((q) => `<tr><td>${q.e}</td><td class="muted">${q.m ?? ""}</td><td>${q.f0 === q.f1 ? fd(q.f1) : `${fd(q.f0)} a ${fd(q.f1)}`}</td><td class="num">${q.n ? q.n.toLocaleString("es-ES") : "·"}</td>
+        ${rows.map((q) => `<tr><td>${q.e}</td><td class="muted">${q.m ?? ""}</td><td>${q.f0 === q.f1 ? fd(q.f1) : `${fd(q.f0)} a ${fd(q.f1)}`}</td><td class="num">${q.n ? q.n.toLocaleString("es-ES", { useGrouping: "always" }) : "·"}</td>
           ${cols.map((p) => { const v = q.v[p], a = at(p, q.f1), d = v == null || a == null ? null : v - a;
             return `<td class="num">${v == null ? "·" : num(v)}${d == null ? "" : ` <span class="muted" style="font-size:var(--t-xs)">(${d >= 0 ? "+" : "−"}${num(Math.abs(d))})</span>`}</td>`; }).join("")}</tr>`).join("")}</table>`;
     }
@@ -425,7 +425,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
         const rows = Object.entries(q.v).sort((a, b) => b[1] - a[1]);
         showTip(`<b>${q.e}</b>${q.m ? ` · ${q.m}` : ""}
           <div class="row muted"><span>Trabajo de campo</span><span>${q.f0 === q.f1 ? fdate(q.f1) : `${fdate(q.f0)} a ${fdate(q.f1)}`}</span></div>
-          ${q.n ? `<div class="row muted"><span>Muestra</span><span>${q.n.toLocaleString("es-ES")}</span></div>` : ""}
+          ${q.n ? `<div class="row muted"><span>Muestra</span><span>${q.n.toLocaleString("es-ES", { useGrouping: "always" })}</span></div>` : ""}
           ${rows.map(([p, v]) => `<div class="row"><span><i class="dot" style="background:${PC(p) ?? "var(--ink-3)"}"></i>${PN(p) ?? p}</span><span>${num(v)}%</span></div>`).join("")}
           <div class="row muted"><span>Encuestas de ${q.e} en el ciclo</span><span>${nHouse}</span></div>
           ${q.x ? `<div class="muted" style="max-width:240px;white-space:normal">${q.x === "reest" ? "Reestimación de una encuesta del CIS con otra cocina: misma muestra, no entra en el promedio." : "Encuesta encargada por un partido: no entra en el promedio."}</div>` : ""}`, ev);
@@ -542,7 +542,7 @@ function cocinaPasos(app, CP, T) {
     // value labels that collide: the larger value keeps its label
     cull(gVals.selectAll("text").nodes().sort((a, b) => b.__data__.v - a.__data__.v), { keep: [...svg.selectAll(".axis text").nodes(), ...gKeys.selectAll("text").nodes(), ...gNames.selectAll("text").nodes()] });
     const sg = (v) => `${v >= 0 ? "+" : "−"}${num(Math.abs(v))}`;
-    const vars = { casa: e.casa, fecha: fd(e.f), entrevistas: e.n.toLocaleString("es-ES"), partidos: parties.map((p) => name(p, e.f)).join(", ") };
+    const vars = { casa: e.casa, fecha: fd(e.f), entrevistas: e.n.toLocaleString("es-ES", { useGrouping: "always" }), partidos: parties.map((p) => name(p, e.f)).join(", ") };
     keys.forEach((k, i) => { if (i > 0) vars[`cambio_${k}`] = ` <span class="muted">Cambio: ${parties.map((p) => `${name(p, e.f)} ${sg(e.p[p][k] - e.p[p][keys[i - 1]])}`).join(", ")}.</span>`; });
     $("#cp-text").innerHTML = md(T.paso_a_paso, { vars, page: "encuestas" }).html;
   }

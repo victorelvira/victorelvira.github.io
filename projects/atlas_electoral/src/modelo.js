@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, de100, fechaLarga } from "./data.js?v=0.2.108";
-import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.108";
-import { textos, md, INDICE } from "./textos.js?v=0.2.108";
-import { num, partyName, partyColor } from "./encuestas.js?v=0.2.108";
+import { load, de100, fechaLarga } from "./data.js?v=0.2.122";
+import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.122";
+import { textos, md, INDICE } from "./textos.js?v=0.2.122";
+import { num, partyName, partyColor } from "./encuestas.js?v=0.2.122";
 
 const pc = (x) => `${de100(x)}%`;
 
@@ -13,7 +13,9 @@ export async function renderModelo(app) {
   const P = await load("prediccion.json").catch(() => null);
   const DR = P ? await load("prediccion_draws.json").catch(() => null) : null;
   const pred = P ? prediccionHtml(P, T) : md(T.sin_prediccion, { page: "modelo" }).html;
-  const { html, sec } = md(T.principal, { slots: { pred }, page: "modelo" });
+  const glosario = T.glosario ? md(T.glosario, { page: "modelo" }).html : null;   // folded "Glosario" box (part "glosario")
+  const fotos = await creditosFotos(T);   // folded "Fotos de los candidatos" box (part "fotos"), from lideres.json
+  const { html, sec } = md(T.principal, { slots: { pred, glosario, fotos }, page: "modelo" });
   const IX = indexHtml(sec);
   app.innerHTML = `
     <div class="layout">
@@ -36,10 +38,22 @@ export async function renderModelo(app) {
     error_x15: EC ? de100(EC.escala_x15) : null, error_x08: EC ? de100(EC.escala_x08) : null } }).html : "";
 }
 
+// credits of the leader photos (lideres.json, pipeline/lideres.py): author and licence of each, with links (Víctor, 2026-11-16).
+// Without the file or the part, the section stays empty (md drops an empty slot).
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+async function creditosFotos(T) {
+  const L = T.fotos ? await load("lideres.json").catch(() => null) : null;
+  if (!L || !Object.keys(L).length) return null;
+  const items = Object.values(L).map((x) => `<li><img src="${esc(new URL(`../data/${x.img}`, import.meta.url).href)}" alt="" width="36" height="36" loading="lazy" style="object-fit:cover;object-position:top;border-radius:50%;vertical-align:middle;margin-right:.5em">`
+    + `${esc(x.nombre)} (${esc(x.lista)}, ${esc(x.provincia)}): <a href="${esc(x.fuente)}" target="_blank" rel="noopener">foto</a> de ${esc(x.autor)}, `
+    + `${x.licencia_url ? `<a href="${esc(x.licencia_url)}" target="_blank" rel="noopener">${esc(x.licencia)}</a>` : esc(x.licencia === "Public domain" ? "dominio público" : x.licencia)}.</li>`).join("");
+  return md(T.fotos, { slots: { lista_fotos: `<ul class="creditos-fotos">${items}</ul>` }, page: "modelo" }).html;
+}
+
 // the model's forecast (prediccion.json, pipeline/prediccion.py): the part "prediccion" of modelo.md, with the shared block
 function prediccionHtml(P, T) {
   const parties = Object.keys(P.partidos);
-  const sims = P.draws.toLocaleString("es-ES");
+  const sims = P.draws.toLocaleString("es-ES", { useGrouping: "always" });
   const vars = { fecha: fechaLarga(P.fecha), n_encuestas: P.n_encuestas, simulaciones: sims, pp_primero: pc(P.p_pp_primero),
     b_escala: String(P.parametros.b_escala).replace(".", ","), s_ccaa: P.parametros.s_ccaa, s_prov: P.parametros.s_prov };
   const slots = {

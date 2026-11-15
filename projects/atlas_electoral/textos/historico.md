@@ -13,6 +13,14 @@ Partes con nombre (se pintan aparte, a veces al cambiar un selector):
   === salto ===          la nota bajo los gráficos de "El salto final"
   === nota_ciclo ===     la frase junto al selector de elección pasada
       {ciclo} fecha de la elección, {encuestas} encuestas del ciclo, {desde} fecha de la primera
+  === errores_intro ===      la frase bajo "Error por casa", encima de los gráficos
+  === errores_industria ===  el rótulo del gráfico del error de la industria por partido
+  === errores_casas ===      el rótulo del gráfico del error medio de cada casa
+  === errores_patron ===     el rótulo de los gráficos pequeños (cada casa con un partido)
+  === errores_nota ===       la línea de advertencias al final
+      En las cinco: {tipo} tipo de elección elegido (generales, autonómicas, europeas), {n_elecciones} elecciones
+      de ese tipo, {min} elecciones mínimas para entrar en la lista, {casas} casas en la lista,
+      {total_casas} casas con alguna encuesta final
 
 No hay condiciones (::: si ...) en esta página.
 -->
@@ -50,8 +58,14 @@ No hay condiciones (::: si ...) en esta página.
 
 [[errhist]]
 
+### Error por casa {#errores | Error por casa}
+
+[[errores]]
+
 ::: metodología #metodo
 **Aciertos.** Para cada elección, la última encuesta de cada casa publicada entre 1 y 35 días antes; error = media de las diferencias absolutas con el resultado en los partidos con un 3% o más. "Frente al resto" compara a cada casa con las demás en las mismas elecciones y descuenta la antelación. El salto final se mide con la media de las encuestas de las dos últimas semanas.
+
+**Error por casa.** Para cada elección (generales desde 1986; autonómicas y europeas desde 2018), la última encuesta de cada casa terminada entre 1 y 21 días antes, con su estimación publicada (cocinada). Fuera quedan las reestimaciones de datos del CIS hechas por terceros y las encuestas encargadas por partidos: no son muestras independientes. El CIS cuenta como dos casas, antes y después de su cambio de método de 2018, igual que en "Quién acierta". Error = encuesta menos resultado, en puntos, en cada partido con un 3% o más del voto que la encuesta publica. El error de la industria es la media de las casas en cada elección y partido; lo que una casa se aparta de esa media, siempre hacia el mismo lado, es su efecto de casa. El error medio de una casa es la media, sobre sus elecciones, del error absoluto medio de sus partidos.
 :::
 
 === eleccion ===
@@ -65,3 +79,23 @@ No hay condiciones (::: si ...) en esta página.
 === nota_ciclo ===
 
 Generales del {ciclo}: {encuestas} encuestas desde {desde}; el resultado, marcado al final.
+
+=== errores_intro ===
+
+[nota] La última encuesta de cada casa en las tres semanas anteriores a cada elección ({tipo}: {n_elecciones}), frente al resultado: encuesta menos resultado, en puntos. Por encima de 0, la casa sobreestimó al partido; por debajo, lo subestimó.
+
+=== errores_industria ===
+
+**Error de la industria, partido a partido.** Media de todas las casas en cada elección. Cuando el error se aleja del 0, se equivocaron casi todas hacia el mismo lado: es un error que las encuestas de esa elección no podían ver.
+
+=== errores_casas ===
+
+**Error medio de cada casa.** Puntos por partido, de media, en las {casas} casas con {min} o más elecciones de este tipo (entre paréntesis, cuántas). Toca una barra, o elígela arriba, para seguirla en los tres gráficos.
+
+=== errores_patron ===
+
+**Cada casa con un partido.** Puntos de color: su error en cada elección; línea gris: el error de la industria. Lo que comparte con la línea gris es error de la industria; lo que se aparta de ella, siempre hacia el mismo lado, es su efecto de casa.
+
+=== errores_nota ===
+
+[nota] El CIS entra en pocas elecciones con encuesta en esas tres semanas, y las casas que solo aparecen en elecciones recientes se ordenan con pocos casos.

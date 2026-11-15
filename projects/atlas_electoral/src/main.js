@@ -1,18 +1,19 @@
-import { init } from "./data.js?v=0.2.108";
-import { renderMapa } from "./mapa.js?v=0.2.108";
-import { renderPueblo } from "./pueblo.js?v=0.2.108";
-import { renderMiniatura } from "./miniatura.js?v=0.2.108";
-import { renderSimulador } from "./simulador.js?v=0.2.108";
-import { renderEncuestas } from "./encuestas.js?v=0.2.108";
-import { renderHistorico } from "./historico.js?v=0.2.108";
-import { renderModelo } from "./modelo.js?v=0.2.108";
-import { renderInicio } from "./inicio.js?v=0.2.108";
-import { renderHistoria } from "./historia.js?v=0.2.108";
-import { renderComunidad } from "./comunidad.js?v=0.2.108";
-import { renderExplora } from "./explora.js?v=0.2.108";
-import { renderDhondt } from "./dhondt.js?v=0.2.108";
-import { renderProvincia } from "./provincia.js?v=0.2.108";
-import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.108";
+import { init } from "./data.js?v=0.2.122";
+import { renderMapa } from "./mapa.js?v=0.2.122";
+import { renderPueblo } from "./pueblo.js?v=0.2.122";
+import { renderMiniatura } from "./miniatura.js?v=0.2.122";
+import { renderSimulador } from "./simulador.js?v=0.2.122";
+import { renderEncuestas } from "./encuestas.js?v=0.2.122";
+import { renderHistorico } from "./historico.js?v=0.2.122";
+import { renderModelo } from "./modelo.js?v=0.2.122";
+import { renderInicio } from "./inicio.js?v=0.2.122";
+import { renderHistoria } from "./historia.js?v=0.2.122";
+import { renderComunidad } from "./comunidad.js?v=0.2.122";
+import { renderExplora } from "./explora.js?v=0.2.122";
+import { renderDhondt } from "./dhondt.js?v=0.2.122";
+import { renderProvincia } from "./provincia.js?v=0.2.122";
+import { renderSenado } from "./senado.js?v=0.2.122";
+import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.122";
 
 // Spanish decimal comma and thousands point for every d3.format (axes, tooltips)
 window.d3.formatDefaultLocale({ decimal: ",", thousands: ".", grouping: [3], currency: ["", " €"] });
@@ -35,6 +36,7 @@ const routes = {
   simulador: renderSimulador,
   dhondt: renderDhondt,
   provincia: renderProvincia,
+  senado: renderSenado,
   mapa: renderMapa,
   explora: renderExplora,
   comunidad: renderComunidad,
@@ -61,6 +63,12 @@ async function route() {
   if (moved(name, args) !== name) { name = moved(name, args); history.replaceState(null, "", `#${[name, ...args].join("/")}`); }
   const view = routes[name] ? name : "inicio";
   document.querySelectorAll("nav.sections a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === `#${TAB[view] ?? view}`));
+  // the chamber toggle in the header: Senado on its own page, Congreso everywhere else
+  document.querySelectorAll("nav.camara a").forEach((a) => {
+    const on = a.dataset.c === (view === "senado" ? "senado" : "congreso");
+    a.classList.toggle("on", on);
+    if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+  });
   const app = document.getElementById("app");
   app.innerHTML = '<p class="loading">Cargando…</p>';
   try {

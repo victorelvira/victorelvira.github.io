@@ -1,34 +1,190 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.108";
-import { seatRows, bloques, declutter, leaders, cull } from "./charts.js?v=0.2.108";
-import { num } from "./encuestas.js?v=0.2.108";
-import { short, pc } from "./provincia.js?v=0.2.108";
-import { textos, md } from "./textos.js?v=0.2.108";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.122";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.122";
+import { num } from "./encuestas.js?v=0.2.122";
+import { short, pc } from "./provincia.js?v=0.2.122";
+import { textos, md } from "./textos.js?v=0.2.122";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
- *  PR: prediccion.json. Put `html` in the page, then call wireResultados once it is in the document. */
-export async function resultadosHtml(PR) {
+ *  PR: prediccion.json or any model file in its format (data/modelos/*.json). Put `html` in the page, then call
+ *  wireResultados once it is in the document. modelos: the entries of data/modelos/index.json, to put the model selector
+ *  (part "selector" of resultados.md, a <select id="modelo-sel">) at the top of the block; modelo: the id shown. The weekly
+ *  evolution exists only for K0 (prediccion_serie_draws.json): with another model the part "nota_evolucion" goes above it. */
+export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = null } = {}) {
   const T = await textos("resultados");
+  textosCache = T;
   const slots = { escanos_partido: rangos(escanosFilas(PR), { dec: 0 }), voto_partido: rangos(votoFilas(PR), { dec: 1, pct: true }) };
+  // "¿Quién llega a 176?" (cards from the chosen model's draws), the shortcuts and the hemicycle of "Forma tu mayoría":
+  // their captions are parts of resultados.md; without the part (or the draws) the slot stays empty
+  // the selector and the cards are wrapped (.res-sel, .res-q176) so that the front page can lift them into its desktop grid
+  slots.quien_176 = DR && T.quien_176 ? `<div class="res-q176">${md(T.quien_176, { vars: tarjetasVars(DR), page: "resultados" }).html}</div>` : null;
+  slots.atajos = T.atajos ? md(T.atajos, { page: "resultados" }).html : null;
+  slots.hemiciclo = `<div class="hemi"><svg class="hemi-svg" role="img" aria-label="Hemiciclo del escenario central"></svg><div class="hemi-foco"></div></div>`;
+  if (modelo && modelo !== "k0" && T.nota_evolucion) slots.evolucion = md(T.nota_evolucion, { page: "resultados" }).html + '<div id="evolucion"></div>';
   const { html, sub } = md(T.principal, { slots, page: "resultados" });
-  return { html, sec: sub };
+  let top = "";
+  if (modelos?.length && T.selector) {
+    const cur = modelos.find((m) => m.id === modelo) ?? modelos[0];
+    const sel = `<select id="modelo-sel" style="max-width:100%">${modelos.map((m) => `<option value="${m.id}"${m.id === cur.id ? " selected" : ""}>${m.nombre}</option>`).join("")}</select>`;
+    top = `<div class="res-sel">${md(T.selector, { vars: { descripcion_modelo: cur.descripcion }, slots: { selector_modelo: sel }, page: "resultados" }).html}</div>`;
+  }
+  return { html: top + html, sec: sub };
 }
 
 /** Draws the seat bar (#proj), the groups (#bloques) and the evolution (#evolucion) found under root. Also serves the front
  *  page without a model (PR null): then est is the poll projection and there is no evolution nor ranges.
- *  onGroups(at, sumOf) runs after every regrouping (sumOf(group) -> seats of that group in every draw, with DR). */
-export function wireResultados(root, { PR, DR, est, conv, onGroups = null }) {
+ *  onGroups(at, sumOf) runs after every regrouping (sumOf(group) -> seats of that group in every draw, with DR).
+ *  at: {party: group}, the reader's groups; pass the same object again to keep them when the block is redrawn. */
+export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = {} }) {
+  const T = textosCache;   // read by resultadosHtml before this runs (null on the front page without a model)
   seatRows(root.querySelector("#proj"), [{ label: PR ? "Escenario central" : "Estimación", e: est }], { labelWidth: PR ? 130 : 90, eid: "generales_2026-11" });
   // the evolution of the two blocs the reader has formed (inside "Forma tu mayoría"): redrawn on every regrouping
   const evoEl = root.querySelector("#evolucion");
   let evoAt = null, SD = null;
   const evo = () => { if (evoEl && SD && evoAt) evolucion(evoEl, SD, evoAt, conv); };
   if (PR && evoEl) load("prediccion_serie_draws.json").then((d) => { SD = d; evo(); }).catch(() => { evoEl.innerHTML = ""; });
-  bloques(root.querySelector("#bloques"), est, { draws: PR ? DR : null, barra: { label: "Bloques", labelWidth: PR ? 130 : 90 },
-    onChange: (at, sumOf) => { evoAt = { ...at }; evo(); onGroups?.(at, sumOf); } });
+  const bqEl = root.querySelector("#bloques");
+  const hemi = root.querySelector(".hemi") ? hemiciclo(root.querySelector(".hemi"), est, PR, T) : null;
+  const atajos = root.querySelector(".atajos");
+  // the group the hemicycle brings forward: the side of the last shortcut, else the group a party was last moved to
+  // (not "Otros"), else the bigger of left and right
+  let antes = null, foco = null;
+  const draw = () => bloques(bqEl, est, { at, draws: PR ? DR : null, 
+    onChange: (at, sumOf) => {
+      const movido = antes && Object.keys(at).find((f) => antes[f] && antes[f] !== at[f]);
+      if (movido && at[movido] !== "otros") foco = at[movido];
+      const tot = (g) => Object.keys(at).filter((f) => at[f] === g).reduce((a, f) => a + (est[f] ?? 0), 0);
+      if (!foco) foco = tot("derecha") >= tot("izquierda") ? "derecha" : "izquierda";
+      antes = { ...at };
+      hemi?.update(at, foco, sumOf);
+      if (atajos) marcarAtajos(atajos, at);
+      evoAt = { ...at }; evo(); onGroups?.(at, sumOf);
+    } });
+  if (bqEl) {
+    draw();
+    // hovering a group's box brings its seats forward in the hemicycle for as long as the pointer is there
+    bqEl.addEventListener("mouseover", (ev) => { const b = ev.target.closest(".bloque"); if (b && hemi) hemi.focus(b.dataset.g); });
+    bqEl.addEventListener("mouseleave", () => hemi?.focus(null));
+  }
+  atajos?.addEventListener("click", (ev) => {
+    const b = ev.target.closest("button[data-atajo]");
+    if (!b || b.disabled) return;
+    Object.assign(at, agrupar(b.dataset.atajo, at));
+    antes = { ...at };
+    foco = ATAJOS[b.dataset.atajo]?.[0] ?? null;   // Restablecer: back to the bigger side
+    draw();
+  });
+  // the cards' tooltips: the 90% range behind each frequency (hover, or tap on a phone)
+  if (DR) {
+    const V = tarjetasVars(DR);
+    const TIP = { ppvox: ["PP + Vox", `${V.r_ppvox} escaños`], pp: ["PP solo", `${V.r_pp} escaños`], investidura: ["Bloque de investidura de 2023", `${V.r_investidura} escaños`],
+      pp_psoe: ["Escaños del PP menos los del PSOE", V.r_pp_psoe] };
+    root.querySelectorAll("[data-q]").forEach((c) => {
+      const t = TIP[c.dataset.q]; if (!t) return;
+      const show = (ev) => showTip(`<b>${t[0]}</b><div class="row"><span>9 de cada 10 simulaciones</span><span>${t[1]}</span></div><div class="muted">De ${V.simulaciones} simulaciones del modelo elegido</div>`, ev);
+      c.onmousemove = show; c.onclick = show; c.onmouseleave = hideTip;
+    });
+  }
+}
+
+// ------------------------------------------------------------------ shortcuts, cards and hemicycle (front page, 2026-11-16)
+let textosCache = null;   // the parts of resultados.md, kept by resultadosHtml for wireResultados
+// the parties that voted for Sánchez's investiture in November 2023: PSOE, Sumar (with Podemos and Compromís inside it then),
+// ERC, Junts, EH Bildu, PNV, BNG and Coalición Canaria (the same list as the model's "Bloque de la investidura de 2023")
+const INVESTIDURA = ["psoe", "sumar", "podemos", "compromis", "erc", "junts", "bildu", "pnv", "bng", "cc"];
+// each shortcut: the group it fills and its parties; the rest keep their starting group, except that the starting members
+// of that same group who are not in the shortcut go to "Otros"
+const ATAJOS = { ppvox: ["derecha", ["pp", "vox"]], investidura: ["izquierda", INVESTIDURA], izquierda: ["izquierda", ["psoe", "sumar", "podemos"]] };
+function agrupar(id, at) {
+  const out = {};
+  for (const f of Object.keys(at)) {
+    const ini = BLOQUE_INICIAL[f] ?? "otros", a = ATAJOS[id];
+    out[f] = !a ? ini : a[1].includes(f) ? a[0] : ini === a[0] ? "otros" : ini;
+  }
+  return out;
+}
+// the shortcut whose grouping is the current one looks pressed; "Restablecer" is disabled when there is nothing to undo
+function marcarAtajos(el, at) {
+  const igual = (g) => Object.keys(at).every((f) => g[f] === at[f]);
+  el.querySelectorAll("button[data-atajo]").forEach((b) => {
+    const on = igual(agrupar(b.dataset.atajo, at));
+    if (ATAJOS[b.dataset.atajo]) { b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); } else b.disabled = on;
+  });
+}
+
+// seats of a set of parties in every draw (parties missing from the draws have no seats in any)
+function suma(DR, fs) {
+  const n = DR.s[0].length, t = new Int16Array(n);
+  DR.partidos.forEach((f, i) => { if (fs.includes(f)) for (let k = 0; k < n; k++) t[k] += DR.s[i][k]; });
+  return t;
+}
+const deCada100 = (p) => (p < 0.005 ? "menos de 1" : p > 0.995 ? "más de 99" : String(Math.round(p * 100)));
+const cuantil = (a, p) => { const v = [...a].sort((x, y) => x - y); return v[Math.min(v.length - 1, Math.floor(p * v.length))]; };
+// "¿Quién llega a 176?": {c_ppvox}, {c_pp}, {c_investidura}, {c_pp_psoe} (out of every 100 draws) and, for the cards' tooltips,
+// the 90% range of each sum ({r_ppvox}...) and of the PP's lead over the PSOE
+function tarjetasVars(DR) {
+  const freq = (t, ok) => t.reduce((a, x) => a + (ok(x) ? 1 : 0), 0) / t.length;
+  const rango = (t) => `de ${cuantil(t, 0.05)} a ${cuantil(t, 0.95)}`;
+  const ppvox = suma(DR, ["pp", "vox"]), pp = suma(DR, ["pp"]), inv = suma(DR, INVESTIDURA), psoe = suma(DR, ["psoe"]);
+  const dif = pp.map((x, i) => x - psoe[i]);
+  return { c_ppvox: deCada100(freq(ppvox, (x) => x >= 176)), c_pp: deCada100(freq(pp, (x) => x >= 176)), c_investidura: deCada100(freq(inv, (x) => x >= 176)),
+    c_pp_psoe: deCada100(freq(dif, (x) => x > 0)), r_ppvox: rango(ppvox), r_pp: rango(pp), r_investidura: rango(inv), r_pp_psoe: rango(dif),
+    simulaciones: DR.s[0].length.toLocaleString("es-ES", { useGrouping: "always" }) };
+}
+
+// 350 seat positions on a half disc: rows from an inner radius to the outer one, each with seats in proportion to its length,
+// then ordered by angle, left to right, so that consecutive seats make a wedge (the usual parliament chart)
+function asientos(n = 350, filas = 10, r0 = 0.42) {
+  const radios = d3.range(filas).map((i) => r0 + (1 - r0) * i / (filas - 1)), tot = d3.sum(radios);
+  const por = radios.map((r) => Math.round(n * r / tot));
+  for (let i = filas - 1, d = n - d3.sum(por); d; i = (i - 1 + filas) % filas) { por[i] += Math.sign(d); d -= Math.sign(d); }
+  const pts = radios.flatMap((r, i) => d3.range(por[i]).map((j) => { const a = Math.PI * (1 - j / (por[i] - 1)); return { a, r, x: r * Math.cos(a), y: -r * Math.sin(a) }; }));
+  return { pts: pts.sort((p, q) => q.a - p.a || p.r - q.r), punto: 0.4 * (1 - r0) / (filas - 1) };
+}
+
+/** The hemicycle of the central scenario: one dot per seat in the party's colour, the parties ordered by the reader's groups
+ *  (Izquierda, Otros, Derecha) and, inside each, from left to right; the group in focus at full colour, the rest faded.
+ *  Returns {update(at, foco, sumOf), focus(g)}: focus(g) brings another group forward for a moment (null: back). */
+function hemiciclo(el, est, PR, T) {
+  const { pts, punto } = asientos(d3.sum(Object.values(est)) || 350);
+  const svg = d3.select(el).select("svg").attr("viewBox", "-1.04 -1.06 2.08 1.1");
+  const G = ["izquierda", "otros", "derecha"], NAME = { izquierda: "Izquierda", otros: "Otros", derecha: "Derecha" };
+  const rango = (f) => { const e = PR?.partidos?.[f]?.escanos ?? PR?.otros_escanos?.[f]; return e ? [e.p05, e.p95] : null; };
+  const dots = svg.append("g").selectAll("circle").data(pts).join("circle").attr("cx", (p) => p.x).attr("cy", (p) => p.y).attr("r", punto);
+  // the 176th seat: the majority line runs up the middle of the half disc
+  svg.append("line").attr("class", "hemi-176").attr("x1", 0).attr("x2", 0).attr("y1", -0.36).attr("y2", -1.05);
+  svg.append("text").attr("class", "hemi-176t").attr("x", 0).attr("y", -0.24).attr("text-anchor", "middle").text("176");
+  const foco = el.querySelector(".hemi-foco");
+  let at = {}, fijo = null, sumOf = null, f0 = null;
+  const tip = (f) => {
+    const r = rango(f);
+    return `<b>${famName(f, "generales_2026-11")}</b><div class="row"><span>Escenario central</span><span>${est[f]} escaños</span></div>${r ? `<div class="row"><span>9 de cada 10 simulaciones</span><span>de ${r[0]} a ${r[1]}</span></div>` : ""}<div class="muted">Grupo: ${NAME[at[f]] ?? "Otros"}</div>`;
+  };
+  dots.on("mousemove", (ev, p) => { showTip(tip(p.f), ev); dots.classed("hemi-on", (q) => q.f === p.f); })
+    .on("mouseleave", () => { hideTip(); dots.classed("hemi-on", false); })
+    .on("click", (ev, p) => { showTip(tip(p.f), ev); dots.classed("hemi-on", (q) => q.f === p.f); });   // a tap shows the same bubble
+  const paint = (g) => {
+    dots.attr("opacity", (p) => (at[p.f] === g ? 1 : 0.22));
+    const fs = Object.keys(est).filter((f) => est[f] && at[f] === g).sort((x, y) => est[y] - est[x]), n = d3.sum(fs, (f) => est[f]);
+    const t = sumOf?.(g);
+    const p = t ? t.reduce((a, x) => a + (x >= 176 ? 1 : 0), 0) / t.length : null;
+    foco.innerHTML = T?.hemiciclo_foco ? md(T.hemiciclo_foco, { vars: { grupo: NAME[g], escanos: n, partidos: fs.map((f) => famName(f, "generales_2026-11")).join(", ") || "ningún partido",
+      veces: p == null ? null : deCada100(p) }, flags: { simulaciones: p != null }, page: "resultados" }).html : "";
+  };
+  return {
+    update(a, g, s) {
+      at = a; fijo = g; sumOf = s;
+      const orden = Object.keys(est).filter((f) => est[f]).sort((x, y) => G.indexOf(at[x] ?? "otros") - G.indexOf(at[y] ?? "otros") || IDEO.indexOf(x) - IDEO.indexOf(y));
+      let i = 0;
+      for (const f of orden) for (let k = 0; k < est[f]; k++) if (pts[i]) pts[i++].f = f;
+      dots.attr("fill", (p) => fam(p.f).color);
+      paint(g);
+    },
+    focus(g) { if (g !== f0) { f0 = g; paint(g ?? fijo); } },
+  };
 }
 
 // Ranges per party ("Escaños por partido" and "Voto estimado"): a dot at the central estimate and a band from the 5th
@@ -71,7 +227,7 @@ function evolucion(el, SD, at, conv) {
   });
   if (W.length < 2) { el.innerHTML = ""; return; }
   const B = [["derecha", "Derecha", "#1d84ce"], ["izquierda", "Izquierda", "#e30613"]];
-  const w = el.clientWidth || 700, narrow = w < 560, h = 220, m = { t: 10, r: narrow ? 70 : 110, b: 24, l: 34 };
+  const w = el.clientWidth || 700, narrow = w < 560, h = 220, m = { t: 10, r: narrow ? 92 : 110, b: 24, l: 34 };   // narrow: still room for "Derecha 195" (it was cut at 70)
   const x = d3.scaleTime().domain(d3.extent(W, (d) => new Date(d.f))).range([m.l, w - m.r]);
   const lo = d3.min(W, (d) => Math.min(d.bloques.derecha[0], d.bloques.izquierda[0])), hi = d3.max(W, (d) => Math.max(d.bloques.derecha[2], d.bloques.izquierda[2]));
   const y = d3.scaleLinear().domain([Math.min(lo, 170) - 5, Math.max(hi, 180) + 5]).range([h - m.b, m.t]);
