@@ -1,11 +1,11 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.122";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.122";
-import { num } from "./encuestas.js?v=0.2.122";
-import { short, pc } from "./provincia.js?v=0.2.122";
-import { textos, md } from "./textos.js?v=0.2.122";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.123";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.123";
+import { num } from "./encuestas.js?v=0.2.123";
+import { short, pc } from "./provincia.js?v=0.2.123";
+import { textos, md } from "./textos.js?v=0.2.123";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -20,7 +20,7 @@ export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = n
   // "¿Quién llega a 176?" (cards from the chosen model's draws), the shortcuts and the hemicycle of "Forma tu mayoría":
   // their captions are parts of resultados.md; without the part (or the draws) the slot stays empty
   // the selector and the cards are wrapped (.res-sel, .res-q176) so that the front page can lift them into its desktop grid
-  slots.quien_176 = DR && T.quien_176 ? `<div class="res-q176">${md(T.quien_176, { vars: tarjetasVars(DR), page: "resultados" }).html}</div>` : null;
+  slots.quien_176 = DR && T.quien_176 ? `<div class="res-q176">${md(T.quien_176, { vars: { ...tarjetasVars(DR), ...masVotadoVars(PR) }, flags: { mas_votado: !!masVotadoVars(PR).mv_pp }, page: "resultados" }).html}</div>` : null;
   slots.atajos = T.atajos ? md(T.atajos, { page: "resultados" }).html : null;
   slots.hemiciclo = `<div class="hemi"><svg class="hemi-svg" role="img" aria-label="Hemiciclo del escenario central"></svg><div class="hemi-foco"></div></div>`;
   if (modelo && modelo !== "k0" && T.nota_evolucion) slots.evolucion = md(T.nota_evolucion, { page: "resultados" }).html + '<div id="evolucion"></div>';
@@ -29,7 +29,7 @@ export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = n
   if (modelos?.length && T.selector) {
     const cur = modelos.find((m) => m.id === modelo) ?? modelos[0];
     const sel = `<select id="modelo-sel" style="max-width:100%">${modelos.map((m) => `<option value="${m.id}"${m.id === cur.id ? " selected" : ""}>${m.nombre}</option>`).join("")}</select>`;
-    top = `<div class="res-sel">${md(T.selector, { vars: { descripcion_modelo: cur.descripcion }, slots: { selector_modelo: sel }, page: "resultados" }).html}</div>`;
+    top = `<div class="res-sel">${md(T.selector, { vars: { descripcion_modelo: cur.descripcion.replace(/\s*\([^)]*\)/g, "") }, slots: { selector_modelo: sel }, page: "resultados" }).html}</div>`;
   }
   return { html: top + html, sec: sub };
 }
@@ -81,10 +81,13 @@ export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = 
   if (DR) {
     const V = tarjetasVars(DR);
     const TIP = { ppvox: ["PP + Vox", `${V.r_ppvox} escaños`], pp: ["PP solo", `${V.r_pp} escaños`], investidura: ["Bloque de investidura de 2023", `${V.r_investidura} escaños`],
-      pp_psoe: ["Escaños del PP menos los del PSOE", V.r_pp_psoe] };
+      pp_psoe: ["Escaños del PP menos los del PSOE", V.r_pp_psoe], ninguno: ["PP + Vox, cuando ninguno llega", `${V.r_ninguno} escaños`],
+      inv_sin_junts: ["Bloque de 2023 sin Junts", `${V.r_inv_sin_junts} escaños`] };
     root.querySelectorAll("[data-q]").forEach((c) => {
       const t = TIP[c.dataset.q]; if (!t) return;
-      const show = (ev) => showTip(`<b>${t[0]}</b><div class="row"><span>9 de cada 10 simulaciones</span><span>${t[1]}</span></div><div class="muted">De ${V.simulaciones} simulaciones del modelo elegido</div>`, ev);
+      // one line: the range, then "(en 9 de cada 10 simulaciones)" after it, not two columns (Víctor, 2026-11-17)
+      const extra = c.dataset.q === "ninguno" ? `<div class="muted">En ${V.empate_ninguno} de esas simulaciones es un empate exacto, 175 a 175: entonces bastaría un escaño de dentro del bloque de 2023, como el de CC, que gobierna con el PP en Canarias, para que PP y Vox llegaran a 176. En el resto, PP y Vox se quedan en 174 o 175 y algún escaño queda fuera de los dos bloques${V.fuera_ninguno ? ` (${V.fuera_ninguno})` : ""}.</div>` : "";
+      const show = (ev) => showTip(`<b>${t[0]}</b><div>${t[1]} (en 9 de cada 10 simulaciones)</div>${extra}<div class="muted">De ${V.simulaciones} simulaciones del modelo elegido</div>`, ev);
       c.onmousemove = show; c.onclick = show; c.onmouseleave = hideTip;
     });
   }
@@ -121,7 +124,16 @@ function suma(DR, fs) {
   DR.partidos.forEach((f, i) => { if (fs.includes(f)) for (let k = 0; k < n; k++) t[k] += DR.s[i][k]; });
   return t;
 }
-const deCada100 = (p) => (p < 0.005 ? "menos de 1" : p > 0.995 ? "más de 99" : String(Math.round(p * 100)));
+// the cards show a percentage, not "N de cada 100": Víctor found the small "de cada 100" under a big figure confusing (2026-11-17)
+const deCada100 = (p) => (p < 0.005 ? "<1%" : p > 0.995 ? ">99%" : `${Math.round(p * 100)}%`);
+const frec10 = (p) => (p >= 0.095 ? `${Math.round(p * 10)} de cada 10` : `${Math.max(1, Math.round(p * 100))} de cada 100`);
+// "¿Quién es la fuerza más votada?" (2026-11-17): from the model file, p_mas_votado {party: p} when it has it, else the PP's
+// p_pp_mas_votado and the rest to the PSOE (the only other party with any chance in the 2026 polls)
+function masVotadoVars(PR) {
+  const m = PR?.p_mas_votado ?? (PR?.p_pp_mas_votado != null ? { pp: PR.p_pp_mas_votado, psoe: 1 - PR.p_pp_mas_votado } : null);
+  if (!m) return {};
+  return { mv_pp: deCada100(m.pp ?? 0), mv_psoe: deCada100(m.psoe ?? 0), mv_vox: deCada100(m.vox ?? 0) };
+}
 const cuantil = (a, p) => { const v = [...a].sort((x, y) => x - y); return v[Math.min(v.length - 1, Math.floor(p * v.length))]; };
 // "¿Quién llega a 176?": {c_ppvox}, {c_pp}, {c_investidura}, {c_pp_psoe} (out of every 100 draws) and, for the cards' tooltips,
 // the 90% range of each sum ({r_ppvox}...) and of the PP's lead over the PSOE
@@ -130,7 +142,18 @@ function tarjetasVars(DR) {
   const rango = (t) => `de ${cuantil(t, 0.05)} a ${cuantil(t, 0.95)}`;
   const ppvox = suma(DR, ["pp", "vox"]), pp = suma(DR, ["pp"]), inv = suma(DR, INVESTIDURA), psoe = suma(DR, ["psoe"]);
   const dif = pp.map((x, i) => x - psoe[i]);
-  return { c_ppvox: deCada100(freq(ppvox, (x) => x >= 176)), c_pp: deCada100(freq(pp, (x) => x >= 176)), c_investidura: deCada100(freq(inv, (x) => x >= 176)),
+  // fourth card (2026-11-17): neither PP+Vox nor the 2023 investiture bloc reaches 176. With every party in the draws this is
+  // almost always a 175-175 tie; the rest is a seat of SALF, the only party with a chance of a seat outside both blocs.
+  // Its tooltip: how often it is an exact tie
+  const resto = ppvox.map((x, i) => 350 - x - inv[i]);
+  const nin = [...ppvox.keys()].filter((i) => ppvox[i] < 176 && inv[i] < 176);
+  const ppvoxNin = Int16Array.from(nin.map((i) => ppvox[i]));
+  const empate = nin.length ? nin.filter((i) => resto[i] === 0).length / nin.length : 0;
+  const invSinJunts = suma(DR, INVESTIDURA.filter((f) => f !== "junts"));
+  // who is outside both blocs in the "neither" draws: the seats of each party that is neither PP, Vox nor in the 2023 bloc
+  const fuera = DR.partidos.filter((f) => !["pp", "vox", ...INVESTIDURA].includes(f));
+  return { c_inv_sin_junts: deCada100(freq(invSinJunts, (x) => x >= 176)), r_inv_sin_junts: rango(invSinJunts),
+    fuera_ninguno: fuera.map((f) => short(f)).join(", "), c_ninguno: deCada100(nin.length / ppvox.length), r_ninguno: nin.length ? rango(ppvoxNin) : "·", empate_ninguno: frec10(empate), c_ppvox: deCada100(freq(ppvox, (x) => x >= 176)), c_pp: deCada100(freq(pp, (x) => x >= 176)), c_investidura: deCada100(freq(inv, (x) => x >= 176)),
     c_pp_psoe: deCada100(freq(dif, (x) => x > 0)), r_ppvox: rango(ppvox), r_pp: rango(pp), r_investidura: rango(inv), r_pp_psoe: rango(dif),
     simulaciones: DR.s[0].length.toLocaleString("es-ES", { useGrouping: "always" }) };
 }

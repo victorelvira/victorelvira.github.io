@@ -44,7 +44,8 @@ y [[hemiciclo]] (el hemiciclo, con la frase de la parte hemiciclo_foco debajo). 
 <!--
 El selector de modelo, arriba del bloque (solo en la portada). [[selector_modelo]] es el desplegable; la lista de
 modelos y sus nombres salen de data/modelos/index.json (pipeline/modelos/portada.py).
-Cifra: {descripcion_modelo}, la descripción de una línea del modelo elegido.
+Cifra: {descripcion_modelo}, la descripción de una línea del modelo elegido, sin lo que va entre paréntesis; en la portada
+sube encima de «Resumen» (Víctor, 2026-11-17).
 -->
 
 <div class="controls">
@@ -52,7 +53,7 @@ Cifra: {descripcion_modelo}, la descripción de una línea del modelo elegido.
 [[selector_modelo]]
 </div>
 
-[nota] {descripcion_modelo}
+<p class="note res-desc">{descripcion_modelo}</p>
 
 === nota_evolucion ===
 <!--
@@ -64,24 +65,36 @@ semanal solo existe para K0.
 
 === quien_176 ===
 <!--
-Tarjetas "¿Quién llega a 176?", arriba del bloque (las escribió Claude el 16-11-2026). Cifras, de cada 100 simulaciones
-del modelo elegido en el selector: {c_ppvox} PP y Vox suman 176 o más, {c_pp} el PP solo, {c_investidura} el bloque de la
-investidura de 2023, {c_pp_psoe} el PP saca más escaños que el PSOE (sale "menos de 1" o "más de 99" en los extremos);
-{simulaciones}, cuántas simulaciones son. El data-q de cada tarjeta la une con su globo (el rango del 90%): no lo cambies.
+Tarjetas "¿Quién llega a 176?", arriba del bloque (las escribió Claude el 16-11-2026; en porcentaje desde el 17-11-2026,
+por decisión de Víctor). Cifras, en porcentaje de las simulaciones del modelo elegido en el selector: {c_ppvox} PP y Vox suman 176 o más, {c_pp} el PP solo, {c_investidura} el bloque de la
+investidura de 2023, {c_inv_sin_junts} ese bloque sin Junts, {c_ninguno} ninguno de los dos (PP y Vox, ni ese bloque) llega a 176 (con el signo %; sale "<1%" o ">99%" en los extremos);
+{simulaciones}, cuántas simulaciones son. Debajo, condición mas_votado: {mv_pp}, {mv_psoe}, {mv_vox}, en qué
+porcentaje de las simulaciones es cada uno el partido con más votos (añadido el 17-11-2026). El data-q de cada tarjeta la une con su globo (el rango del 90%): no lo cambies.
 -->
 #### ¿Quién llega a 176?
 
 <div class="q176">
-<div class="q176-c" data-q="ppvox"><div class="q176-n">{c_ppvox}</div><div class="q176-d">de cada 100</div><div class="q176-t">PP y Vox suman 176</div></div>
-<div class="q176-c" data-q="pp"><div class="q176-n">{c_pp}</div><div class="q176-d">de cada 100</div><div class="q176-t">El PP llega solo a 176</div></div>
-<div class="q176-c" data-q="investidura"><div class="q176-n">{c_investidura}</div><div class="q176-d">de cada 100</div><div class="q176-t">El bloque de la investidura de 2023 suma 176</div></div>
-<div class="q176-c" data-q="pp_psoe"><div class="q176-n">{c_pp_psoe}</div><div class="q176-d">de cada 100</div><div class="q176-t">El PP saca más escaños que el PSOE</div></div>
+<div class="q176-c" data-q="ppvox"><div class="q176-n">{c_ppvox}</div><div class="q176-t">PP y Vox</div></div>
+<div class="q176-c" data-q="investidura"><div class="q176-n">{c_investidura}</div><div class="q176-t">El bloque de la investidura de 2023</div></div>
+<div class="q176-c" data-q="inv_sin_junts"><div class="q176-n">{c_inv_sin_junts}</div><div class="q176-t">Ese bloque sin Junts</div></div>
+<div class="q176-c" data-q="pp"><div class="q176-n">{c_pp}</div><div class="q176-t">El PP solo</div></div>
+<div class="q176-c q176-ancha" data-q="ninguno"><div class="q176-n">{c_ninguno}</div><div class="q176-t">Ninguno de los dos llega (casi siempre, empate a 175): pasa el ratón para ver quién decide</div></div>
 </div>
 
-[nota] De cada 100 simulaciones del modelo elegido ({simulaciones} en total), en cuántas pasa cada cosa. Toca o pasa el ratón por una tarjeta para ver el rango de escaños.
+[nota] Porcentaje de las simulaciones del modelo elegido ({simulaciones} en total) en las que pasa cada cosa. Toca o pasa el ratón por una tarjeta para ver el rango de escaños.
+
+::: si mas_votado
+#### ¿Quién es la fuerza más votada?
+
+<div class="q176 q176-3">
+<div class="q176-c"><div class="q176-n">{mv_pp}</div><div class="q176-t">El PP</div></div>
+<div class="q176-c"><div class="q176-n">{mv_psoe}</div><div class="q176-t">El PSOE</div></div>
+<div class="q176-c"><div class="q176-n">{mv_vox}</div><div class="q176-t">Vox</div></div>
+</div>
+:::
 
 ::: metodología
-Cada tarjeta cuenta, entre todas las simulaciones del modelo elegido en el selector, en cuántas pasa lo que dice: que PP y Vox juntos, o el PP solo, tengan 176 escaños o más; que los tenga el bloque de la investidura de 2023, los partidos que votaron a favor en noviembre de 2023 (PSOE, Sumar, que entonces llevaba dentro a Podemos y Compromís, ERC, Junts, EH Bildu, PNV, BNG y Coalición Canaria); y que el PP saque más escaños que el PSOE (un empate no cuenta). El globo de cada tarjeta da el rango que recoge 9 de cada 10 simulaciones. Los atajos de «Forma tu mayoría» colocan esos mismos grupos.
+Cada tarjeta cuenta, entre todas las simulaciones del modelo elegido en el selector, en cuántas pasa lo que dice: que PP y Vox juntos, o el PP solo, tengan 176 escaños o más; que los tenga el bloque de la investidura de 2023, los partidos que votaron a favor en noviembre de 2023 (PSOE, Sumar, que entonces llevaba dentro a Podemos y Compromís, ERC, Junts, EH Bildu, PNV, BNG y Coalición Canaria); y que no llegue ninguno de los dos: casi siempre es un empate, 175 escaños para PP y Vox y 175 para el bloque de 2023; alguna vez queda fuera de los dos un escaño de SALF, el único partido con opciones de escaño que no está en ninguno. La fuerza más votada es la que saca más votos en toda España en cada simulación. El globo de cada tarjeta da el rango que recoge 9 de cada 10 simulaciones. Los atajos de «Forma tu mayoría» colocan esos mismos grupos.
 :::
 
 === atajos ===

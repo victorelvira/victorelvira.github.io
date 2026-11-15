@@ -4,11 +4,11 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.122";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.122";
-import { getGeo, rewind } from "./mapa.js?v=0.2.122";
-import { textos, md } from "./textos.js?v=0.2.122";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.122";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.123";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.123";
+import { getGeo, rewind } from "./mapa.js?v=0.2.123";
+import { textos, md } from "./textos.js?v=0.2.123";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.123";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? FAM[f]?.nombre ?? (f === "otros" ? "Otras" : f.toUpperCase()));
 export const short = (f) => (f === "sumar" ? "Frente Amplio" : pn(f).split(" y otros")[0]);
@@ -421,19 +421,23 @@ async function fichaHtml(p, anio, T) {
   const validos = r23 ? d3.sum(r23.l, (l) => l[2]) + r23.bl : null;
   const s23 = S.provincias?.[p.prov]?.s?.["generales_2023-07"];
   const ccaa = Object.values(S.ccaa ?? {}).find((c) => c.provs?.includes(p.prov))?.n ?? "";
-  let filas, cab, esc;
+  let filas, cab, esc, frecReparto = null;
   const usadas = new Set();
   if (!y23) {
     esc = p.esc;
-    const med = (l) => l.pk.filter((x) => x >= 0.5).length;
+    // seats: the most frequent whole allocation of the province (repartos[0]), so the column adds up to the province's seats
+    // (medians per party do not: Madrid's summed 38 of 37); without it, the median from pk (Víctor, 2026-11-17)
+    const modal = p.repartos?.[0];
+    const med = (l) => (modal ? modal.a[l.f] ?? 0 : l.pk.filter((x) => x >= 0.5).length);
+    frecReparto = modal ? frecuencia(modal.p) : null;
     const ls = p.listas.map((l) => ({ ...l, m: med(l), v: p.voto[l.f]?.[0] ?? l.v })).sort((a, b) => b.m - a.m || b.v - a.v);
-    cab = `<tr><th>Partido</th><th class="num">Escaños</th><th class="num">%</th><th class="num">Votos estim.</th><th class="num">2023</th><th class="num">Var.</th></tr>`;
+    cab = `<tr><th>Partido</th><th class="num">Esc.</th><th class="num">%</th><th class="num">Votos estim.</th><th class="num">2023</th><th class="num">Var.</th></tr>`;
     filas = ls.map((l) => {
       const n = l.f === "otros" ? "Otras candidaturas" : short(l.f), c = colorVoto(l.f), v23 = p.v23?.[l.f];
       const rango = l.lo === l.hi ? `${l.lo} en 9 de cada 10 simulaciones` : `entre ${l.lo} y ${l.hi} en 9 de cada 10 simulaciones`;
       const marca = l.f === "otros" ? '<span class="mvp-ini mvp-ini-o" aria-hidden="true"></span>' : badge(l.f, n, c, L, usadas);
       return `<tr><td><span class="mvp-p">${marca}<span>${n}</span></span></td>
-        <td class="num mvp-esc" data-rango="${n}: ${rango}"><b>${l.m}</b></td><td class="num">${nm(l.v)}</td>
+        <td class="num mvp-esc" data-rango="${n}: ${rango}">${l.m ? `<span class="mvp-chip" style="--c:${c}">${l.m}</span>` : '<span class="mvp-cero">0</span>'}</td><td class="num">${nm(l.v)}</td>
         <td class="num">${validos ? f0(Math.round(l.v / 100 * validos / 100) * 100) : "·"}</td><td class="num">${v23 != null ? nm(v23) : "·"}</td>
         <td class="num">${v23 != null ? signo(l.v - v23) : "·"}</td></tr>`;
     }).join("");
@@ -441,14 +445,14 @@ async function fichaHtml(p, anio, T) {
     esc = r23?.esc ?? p.esc23;
     const ls = (r23?.l ?? []).map(([sig, f0_, v, e]) => ({ sig, f: f0_ === "izq" ? "sumar" : f0_, v, e, pc: 100 * v / validos })).sort((a, b) => b.e - a.e || b.v - a.v);
     const main = ls.filter((l) => l.e > 0 || l.pc >= 1), resto = ls.filter((l) => !main.includes(l));
-    cab = `<tr><th>Candidatura</th><th class="num">Escaños</th><th class="num">%</th><th class="num">Votos</th></tr>`;
+    cab = `<tr><th>Candidatura</th><th class="num">Esc.</th><th class="num">%</th><th class="num">Votos</th></tr>`;
     const fila = (n, f, e, pcv, v, c) => `<tr><td><span class="mvp-p">${f ? badge(f, n, c, null) : `<span class="mvp-ini mvp-ini-o" aria-hidden="true"></span>`}<span>${n}</span></span></td>
-      <td class="num"><b>${e}</b></td><td class="num">${nm(pcv)}</td><td class="num">${f0(v)}</td></tr>`;
+      <td class="num">${e ? `<span class="mvp-chip" style="--c:${c ?? "var(--ink-3)"}">${e}</span>` : '<span class="mvp-cero">0</span>'}</td><td class="num">${nm(pcv)}</td><td class="num">${f0(v)}</td></tr>`;
     filas = main.map((l) => fila(l.f === "otros" || l.f === "reg" ? l.sig : nombre(l.f, "2023"), l.f === "otros" ? null : l.f, l.e, l.pc, l.v, colorVoto(l.f))).join("")
       + (resto.length ? fila("Otras candidaturas", null, d3.sum(resto, (l) => l.e), d3.sum(resto, (l) => l.pc), d3.sum(resto, (l) => l.v)) : "");
   }
   const part = s23 ? nm(100 * s23.votantes / s23.censo) : null;
-  const pie = T.pie_ficha ? md(T.pie_ficha, { vars: { participacion: part ? `${part}%` : null }, flags: { proyeccion: !y23, participacion: !!part }, page: "provincia" }).html : "";
+  const pie = T.pie_ficha ? md(T.pie_ficha, { vars: { participacion: part ? `${part}%` : null, frecuencia_reparto: frecReparto }, flags: { proyeccion: !y23, participacion: !!part, reparto: !!frecReparto }, page: "provincia" }).html : "";
   return `<div class="mvp-h"><div><div class="mvp-n" id="mvp-titulo">${p.n}</div>
       <div class="mvp-sub">${ccaa ? `<span class="mvp-cc">${ccaa}</span>` : ""}<span>${esc} ${esc === 1 ? "escaño" : "escaños"}${y23 ? " en 2023" : ""}</span></div></div>
       <button type="button" class="mvp-x" aria-label="Cerrar">×</button></div>
@@ -482,6 +486,27 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   const mapBox = path.bounds({ type: "FeatureCollection", features });
   const gm = svg.append("g").attr("class", "mv-g");
   let sel = null;   // the province whose card is open
+  // zoom on the open province, as Su Momento does: the province fills the part of the map the card leaves free (beside it,
+  // or above it on a narrow map or a phone's sheet); the labels fade out while zoomed and come back on closing (Víctor, 2026-11-17)
+  const featBy = Object.fromEntries(features.map((f) => [f.id, f]));
+  function zoomA(id) {
+    if (!lay) return;
+    const base = `translate(${lay.tx},${lay.ty}) scale(${lay.s})`;
+    svg.classed("mv-zoom", !!id);
+    if (!id || !featBy[id]) { gm.interrupt().transition().duration(400).attr("transform", base); return; }
+    const [[x0, y0], [x1, y1]] = path.bounds(featBy[id]);
+    const W = +svg.attr("width"), H = lay.H, r = box.getBoundingClientRect(), u = W / (r.width || W);
+    let fx = 0, fy = 0, fw = W, fh = H;
+    if (!ficha.hidden) {
+      const fb = ficha.getBoundingClientRect();
+      if (ficha.classList.contains("mv-hoja")) fh = Math.min(H, Math.max(H * 0.4, (fb.top - r.top) * u));
+      else if ((fb.left - r.left) * u > W * 0.35) fw = (fb.left - r.left) * u - 8;
+      else fh = Math.min(H, Math.max(H * 0.3, (fb.top - r.top) * u));
+    }
+    const pad = Math.max(12, Math.min(fw, fh) * 0.08);
+    const k = Math.max(lay.s, Math.min((fw - 2 * pad) / Math.max(1, x1 - x0), (fh - 2 * pad) / Math.max(1, y1 - y0), lay.s * 8));
+    gm.interrupt().transition().duration(450).attr("transform", `translate(${fx + fw / 2 - k * (x0 + x1) / 2},${fy + fh / 2 - k * (y0 + y1) / 2}) scale(${k})`);
+  }
   const pv = gm.selectAll("path.pv").data(feats).join("path").attr("class", "pv").attr("d", path).attr("data-prov", (f) => f.id);
   gm.append("path").attr("class", "prov").attr("d", borders);
   const gCambio = gm.append("g").attr("class", "mv-cambios");   // outlines of the provinces that change bloc (Cambios desde 2023)
@@ -565,12 +590,10 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     if (sel) abrir(sel);
   }
   // the card: placed beside the point clicked inside the map's box, or across the box on a narrow screen
-  let ultimoXY = null;
   async function abrir(id, ev) {
     const p = byCode[id];
     if (!p) return;
     hideTip();
-    if (ev) { const b = caja.getBoundingClientRect(); ultimoXY = [ev.clientX - b.left, ev.clientY - b.top]; }
     sel = id;
     sl.attr("d", pathEl[id].getAttribute("d"));
     ficha.innerHTML = await fichaHtml(p, PORTADA.anio, T);
@@ -578,14 +601,12 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     // a phone: a sheet along the bottom of the screen, as wide as the screen (the map's box is too narrow for the table)
     const hoja = matchMedia("(max-width: 519px)").matches;
     ficha.classList.toggle("mv-hoja", hoja);
-    const cw = caja.clientWidth, fw = ficha.offsetWidth, fh = ficha.offsetHeight, [x, y] = ultimoXY ?? [cw / 2, 40];
+    // the card stays in one place (top right of the map; below the zoomed province on a narrow map), the map moves instead
+    const cw = caja.clientWidth, fw = ficha.offsetWidth;
     if (hoja) { ficha.style.left = ficha.style.right = ficha.style.top = ""; }
-    else if (cw < 520) { ficha.style.left = "4px"; ficha.style.right = "4px"; ficha.style.top = `${Math.max(4, Math.min(y + 12, caja.clientHeight - 60))}px`; }
-    else {
-      ficha.style.right = "";
-      ficha.style.left = `${x + 16 + fw <= cw ? x + 16 : Math.max(4, x - 16 - fw)}px`;
-      ficha.style.top = `${Math.max(4, Math.min(y - 40, caja.clientHeight - fh - 4, innerHeight))}px`;
-    }
+    else if (cw < 620) { ficha.style.left = "4px"; ficha.style.right = "4px"; ficha.style.top = `${Math.round(box.clientHeight * 0.45)}px`; }
+    else { ficha.style.right = ""; ficha.style.left = `${cw - fw - 8}px`; ficha.style.top = "8px"; }
+    zoomA(id);
     ficha.querySelector(".mvp-x").onclick = () => cerrar(true);
     ficha.querySelectorAll("[data-rango]").forEach((c) => { const s = (e) => showTip(c.dataset.rango, e); c.onmousemove = s; c.onclick = s; c.onmouseleave = hideTip; });
     if (ev) ficha.querySelector(".mvp-x").focus({ preventScroll: true });
@@ -594,6 +615,7 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     if (!sel) return;
     const id = sel;
     sel = null; ficha.hidden = true; sl.attr("d", null); hideTip();
+    zoomA(null);
     if (foco) gl.select(`g[data-prov="${id}"]`).node()?.focus?.();
   }
   ficha.addEventListener("click", (ev) => ev.stopPropagation());
@@ -607,7 +629,7 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   const ro = new ResizeObserver(() => {
     if (!document.body.contains(el)) { ro.disconnect(); document.removeEventListener("keydown", esc); return; }
     const w = Math.round(box.clientWidth);
-    if (w && w !== ancho && cur) { ancho = w; clearTimeout(t); t = setTimeout(etiquetas, 60); }
+    if (w && w !== ancho && cur) { ancho = w; clearTimeout(t); t = setTimeout(() => { etiquetas(); if (sel) abrir(sel); }, 60); }
   });
   await document.fonts?.ready;
   await paint();

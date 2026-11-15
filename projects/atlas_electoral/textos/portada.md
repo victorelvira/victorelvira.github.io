@@ -50,7 +50,7 @@ sensibilidad, movilizacion, cambios.
 ::: metodología #metodo
 **Las encuestas.** Todas las encuestas nacionales publicadas desde las generales de 2023, con su trabajo de campo y su muestra. Las encuestas que acumulan entrevistas día a día no cuentan varias veces las mismas: en SW Demoscopia, cada día nuevo entra como una encuesta pequeña con solo sus entrevistas nuevas; Sociométrica, que da más peso a lo reciente, entra con su última ola. Las encuestas encargadas por partidos y las reestimaciones del CIS hechas por terceros se muestran pero no entran. El CIS entra tal como lo publica, y los modelos que corrigen la tendencia de cada encuestadora descuentan su inclinación habitual, aunque este año el recuerdo de voto de sus entrevistados se aleja del resultado de 2023 más que en elecciones anteriores.
 
-**Siete modelos, el mismo peso.** Lo que se ve por defecto es la media de siete modelos de familias distintas, cada uno con el mismo peso. Todos usan esas encuestas y asignan los escaños con las mismas reglas. Se diferencian en tres cosas: si corrigen la tendencia de cada encuestadora a inclinarse hacia unos partidos (tres lo hacen, a partir de lo que se desvió cada una en 2023; cuatro no), cuánto pesan las encuestas recientes frente a las antiguas, y si el paso a las provincias tiene en cuenta las autonómicas, municipales y europeas celebradas desde 2023 (solo uno). Uno de ellos, el estilo Demócrata, deja fuera el CIS. El selector de arriba muestra cada modelo por separado y el que publicábamos hasta ahora (K0).
+**Nuestra predicción: siete modelos, el mismo peso.** Lo que se ve por defecto combina siete modelos de familias distintas, uno por familia, cada uno con el mismo peso. No se promedian sus escaños: se juntan sus simulaciones completas, voto provincia a provincia incluido, y de ellas salen los escaños, el mapa y el Senado. Todos usan esas encuestas y asignan los escaños con las mismas reglas. Se diferencian en tres cosas: si corrigen la tendencia de cada encuestadora a inclinarse hacia unos partidos (tres lo hacen, a partir de lo que se desvió cada una en 2023; cuatro no), cuánto pesan las encuestas recientes frente a las antiguas, y si el paso a las provincias tiene en cuenta las autonómicas, municipales y europeas celebradas desde 2023 (solo uno). Uno de ellos, el estilo Demócrata, deja fuera el CIS. El selector de arriba muestra cada modelo por separado y el que publicábamos hasta ahora (K0).
 
 **Por qué el mismo peso.** Probamos a dar a cada modelo un peso según lo que habría acertado en las 13 elecciones generales desde 1986. Con tan pocas elecciones, el peso se concentra en uno o dos modelos y no acierta de forma clara más que el mismo peso para todos: eso es elegir, no combinar.
 
@@ -58,7 +58,7 @@ sensibilidad, movilizacion, cambios.
 
 **De votos a escaños.** En cada simulación, el voto nacional se lleva a cada provincia con el mapa de 2023 (Frente Amplio, Podemos y SALF, con el de las europeas de 2024), más una variación aleatoria por comunidad y por provincia (uno de los siete corrige antes ese mapa con las elecciones celebradas desde 2023). Las listas que no se presentan en una provincia ceden sus votos a la lista conjunta que las incluye o los reparten entre las demás. Los escaños se asignan con D'Hondt y la barrera del 3%.
 
-**Cuánto fiarse.** El modelo que publicábamos hasta ahora (K0) se rehízo para las elecciones generales desde 1986 con solo las encuestas de cada momento: una semana antes, unos 9 de cada 10 resultados cayeron dentro de su rango, el que recoge 9 de cada 10 simulaciones. La media de los siete no se ha probado así como tal. Ver [Cuánto fiarse](#modelo/fiarse).
+**Cuánto fiarse.** El modelo que publicábamos hasta ahora (K0) se rehízo para las elecciones generales desde 1986 con solo las encuestas de cada momento: una semana antes, unos 9 de cada 10 resultados cayeron dentro de su rango, el que recoge 9 de cada 10 simulaciones. La combinación de los siete no se ha probado así como tal. Ver [Cuánto fiarse](#modelo/fiarse).
 
 **Lo que no hace.** No usa las encuestas provinciales ni modela la participación por separado.
 :::
@@ -77,7 +77,7 @@ sensibilidad, movilizacion, cambios.
 
 [Todo el modelo, en la pestaña Modelo →](#modelo)
 
-Lo que se ve por defecto es la media de siete modelos, con el mismo peso cada uno. Todos parten de las encuestas publicadas; unos corrigen la tendencia de cada encuestadora a sobrestimar o subestimar a cada partido y otros no. Cada uno añade el error que han tenido las encuestas en las elecciones generales desde 1982, simula miles de resultados posibles ({simulaciones} en lo que estás viendo) y reparte los escaños provincia a provincia. Las cifras de arriba resumen esas simulaciones. [Metodología](#inicio/metodo) · [El modelo estadístico, en detalle →](#modelo)
+Lo que se ve por defecto es nuestra predicción: siete modelos de familias distintas, con el mismo peso cada uno. Todos parten de las encuestas publicadas; unos corrigen la tendencia de cada encuestadora a sobrestimar o subestimar a cada partido y otros no. Cada uno añade el error que han tenido las encuestas en las elecciones generales desde 1982, simula miles de resultados posibles ({simulaciones} en lo que estás viendo) y reparte los escaños provincia a provincia. Las cifras de arriba resumen esas simulaciones. [Metodología](#inicio/metodo) · [El modelo estadístico, en detalle →](#modelo)
 
 Usamos todas las encuestas disponibles hasta el {ultimo_campo}, con los modelos actualizados el {ultimo_modelo}.
 
@@ -139,7 +139,8 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 El mapa de la portada, dentro de "Dónde se decide" (donde está [[mapa_portada]]; lo añadió Claude el 16-11-2026). [[mapa_masvotado]]
 es el mapa con su botón Proyección 2026 / Resultados 2023, su leyenda y su nota (la nota y el globo son los del modo "Más votado"
 de la pestaña Provincias: partes nota_mas_votado y tooltip_mas_votado de provincia.md). Cifra: {modelo}, el nombre del modelo
-elegido en el selector. Condición: otro_modelo (el elegido no es K0).
+elegido en el selector. Condición: otro_modelo (el elegido no es «Nuestra predicción»; desde el 17-11-2026 el mapa sale de sus
+simulaciones, no de K0).
 -->
 ### Quién gana en cada provincia {#mapa-provincias | Mapa}
 
@@ -148,5 +149,5 @@ elegido en el selector. Condición: otro_modelo (el elegido no es K0).
 [[mapa_masvotado]]
 
 ::: si otro_modelo
-[nota] El mapa por provincias es siempre el del modelo publicado hasta ahora (K0), no el de «{modelo}», elegido arriba.
+[nota] El mapa por provincias es siempre el de «Nuestra predicción», no el de «{modelo}», elegido arriba.
 :::

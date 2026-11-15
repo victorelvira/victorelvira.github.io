@@ -332,13 +332,14 @@ recuadro) con el bloque en el que cuentan. Condiciones: proyeccion, fuera.
 === pie_ficha ===
 <!--
 Pie de la ficha que se abre al pulsar una provincia en el mapa de la portada. Cifra: {participacion} (participación de 2023,
-votantes entre censo, Interior). Condiciones: proyeccion (2026), participacion.
+votantes entre censo, Interior); {frecuencia_reparto} (con qué frecuencia sale el reparto de escaños mostrado, el más frecuente:
+"7 de cada 10"). Condiciones: proyeccion (2026), participacion, reparto. Nota de escaños reescrita por Claude el 17-11-2026.
 -->
 ::: si participacion
 Participación en 2023: {participacion}.
 :::
-::: si proyeccion
-[nota] Escaños: mediana de las simulaciones (pasa el ratón o toca la cifra para ver el rango). Votos estimados con los votos válidos de 2023. Variación en puntos sobre 2023.
+::: si reparto
+[nota] Escaños: el reparto más frecuente, que sale en {frecuencia_reparto} simulaciones (pasa el ratón o toca la cifra para ver el rango de cada partido). Votos estimados con los votos válidos de 2023. Variación en puntos sobre 2023.
 :::
 
 === tooltip_escanos ===

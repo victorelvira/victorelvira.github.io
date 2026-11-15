@@ -1,11 +1,11 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.122";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.122";
-import { projectFromPolls } from "./simulador.js?v=0.2.122";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.122";
-import { pugnasHtml } from "./provincia.js?v=0.2.122";
-import { textos, md, INDICE } from "./textos.js?v=0.2.122";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.122";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.122";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.123";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.123";
+import { projectFromPolls } from "./simulador.js?v=0.2.123";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.123";
+import { pugnasHtml } from "./provincia.js?v=0.2.123";
+import { textos, md, INDICE } from "./textos.js?v=0.2.123";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.123";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.123";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
@@ -90,7 +90,7 @@ export async function renderInicio(app, args = []) {
     calendario: conv?.calendario ? calendario(conv) : null,
   };
   // the map of the most voted party per province (part "mapa" of portada.md): the province projection is always K0's
-  const mapa = PV && T.mapa ? md(T.mapa, { flags: { otro_modelo: (pick?.id ?? "k0") !== "k0" }, vars: { modelo: pick?.nombre ?? "" },
+  const mapa = PV && T.mapa ? md(T.mapa, { flags: { otro_modelo: (pick?.id ?? "nuestra") !== "nuestra" }, vars: { modelo: pick?.nombre ?? "" },
     slots: { mapa_masvotado: '<div id="mapa-masvotado"></div>' }, page: "portada" }) : null;
   slots.mapa_portada = mapa?.html ? `<div class="tb-mapa">${mapa.html}</div>` : null;
   const { html, sec } = md(T.principal, { vars, flags, slots, page: "portada" });
@@ -108,6 +108,9 @@ export async function renderInicio(app, args = []) {
     ${live ? nocheHtml(live, T) : ""}
     ${html.replace(INDICE, IX.row)}
     </div></div>`;
+  // the chosen model's one-line description goes above "Resumen", on every screen (Víctor, 2026-11-17)
+  const desc = app.querySelector(".res-desc"), resH = app.querySelector("#s-resumen");
+  if (desc && resH) resH.before(desc);
   if (ancho) tablero(app);
   if (ancho && matchMedia(PAREJAS).matches) parejas(app);
   sectionIndex(app);
@@ -160,13 +163,24 @@ function tablero(app) {
   sec.insertBefore(grid, res);
   const linea = res.nextElementSibling?.classList.contains("linea") ? res.nextElementSibling : null;
   const hemi = sec.querySelector(".hemi");
-  izq.append(res, ...[linea, sec.querySelector(".res-sel"), sec.querySelector(".res-q176")].filter(Boolean));
+  izq.append(...[app.querySelector(".res-desc"), res, linea, sec.querySelector(".res-sel"), sec.querySelector(".res-q176")].filter(Boolean));
   const mapa = app.querySelector(".tb-mapa");
   if (mapa) centro.append(mapa);
   const esc = sec.querySelector("#s-escanos");
   if (esc) {   // the h3, its caption and the first ranges list after it
     const run = [esc];
     for (let n = esc.nextElementSibling; n && !n.classList.contains("juego"); n = n.nextElementSibling) { run.push(n); if (n.classList.contains("rangos")) break; }
+    der.append(...run);
+  }
+  // "Voto estimado" goes under the seats in the right column, which is shorter than the map: no empty space beside the map
+  // (Víctor, 2026-11-17: "cuantos menos huecos menos"); a placeholder keeps its place for the poll chart (parejas(), below)
+  const votos = sec.querySelector("#s-votos");
+  if (votos && esc) {
+    const run = [votos];
+    for (let n = votos.nextElementSibling; n && n.tagName !== "DETAILS" && n.tagName !== "SECTION" && !n.classList.contains("juego"); n = n.nextElementSibling) run.push(n);
+    const hueco = document.createElement("div");
+    hueco.className = "tb-hueco-voto";
+    votos.before(hueco);
     der.append(...run);
   }
   const juego = hemi?.closest(".juego");
@@ -195,8 +209,13 @@ function parejas(app) {
     antes.before(p); a.append(...izq); b.append(...der); p.append(a, b);
   };
   const run = (h, stop) => { const r = [h]; for (let n = h.nextElementSibling; n && !stop(n); n = n.nextElementSibling) r.push(n); return r; };
-  const votos = app.querySelector("#s-votos"), chart = app.querySelector("#chart-area");
-  if (votos && chart) {
+  const votos = app.querySelector("#s-votos"), chart = app.querySelector("#chart-area"), hueco = app.querySelector(".tb-hueco-voto");
+  if (hueco && chart) {   // "Voto estimado" went up into the tablero: the poll chart takes its place, at full width
+    const linea = chart.previousElementSibling?.classList.contains("linea") ? chart.previousElementSibling : null;
+    const frase = linea?.previousElementSibling?.tagName === "P" ? linea.previousElementSibling : null;
+    const nota = chart.nextElementSibling?.classList.contains("note") ? chart.nextElementSibling : null;
+    hueco.append(...[frase, linea, chart, nota].filter(Boolean));
+  } else if (votos && chart) {
     const izq = run(votos, (n) => n.tagName === "DETAILS" || n.tagName === "SECTION" || n.classList.contains("par"));
     const linea = chart.previousElementSibling?.classList.contains("linea") ? chart.previousElementSibling : null;
     const frase = linea?.previousElementSibling?.tagName === "P" ? linea.previousElementSibling : null;

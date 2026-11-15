@@ -67,22 +67,24 @@ nav.sections a.on { color: var(--ink); border-bottom-color: var(--ink); }
   margin-left: auto; color: #8a7f72; font-size: 6.5px;
   font-variant-numeric: tabular-nums; white-space: nowrap;
 }
-main { max-width: 2400px; margin: 0 auto; padding: 16px 32px; }   /* the whole screen up to 2400px (Víctor, 2026-11-16: "todo el ancho en mi 24 pulgadas"); was 1560 */
-footer { color: var(--ink-3); font-size: var(--t-xs); padding: 24px 16px; text-align: center; }
+main { max-width: 2400px; margin: 0 auto; padding: 10px 24px; }   /* the whole screen up to 2400px (Víctor, 2026-11-16: "todo el ancho en mi 24 pulgadas"); was 1560 */
+footer { color: var(--ink-3); font-size: var(--t-xs); padding: 16px 16px; text-align: center; }
 h1, h2, h3 { font-family: var(--font-title); }
 h1 { font-size: var(--t-xxl); font-weight: 600; margin: 4px 0 6px; letter-spacing: -.01em; }
-h2 { font-size: var(--t-xl); font-weight: 600; margin: 36px 0 8px; letter-spacing: -.01em; }
+h2 { font-size: var(--t-xl); font-weight: 600; margin: 22px 0 6px; letter-spacing: -.01em; }
 h2 .muted { font-size: var(--t-m); letter-spacing: 0; }
-h3 { font-size: var(--t-l); color: var(--ink); font-weight: 600; margin: 18px 0 6px; }   /* bold, not capitals (Víctor, 2026-11-14) */
-.sub { color: var(--ink-2); margin: 0 0 12px; }
+h3 { font-size: var(--t-l); color: var(--ink); font-weight: 600; margin: 12px 0 4px; }   /* bold, not capitals (Víctor, 2026-11-14) */
+.sub { color: var(--ink-2); margin: 0 0 8px; }
 .loading { color: var(--ink-3); }
+/* compact rhythm (Víctor, 2026-11-17: "cuantos menos huecos menos"): paragraphs closer together everywhere */
+main p { margin: 0 0 .55em; }
 /* one reading width for running text, so it all ends on the same vertical line; charts, tables and chips keep the
    whole column (Víctor, 2026-11-15) */
 main p:not(.linea), main .sub, main .note, .metodo p, .arena-cap { max-width: var(--texto); }
 .tag-exp { display: inline-block; vertical-align: middle; font-size: var(--t-xs); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #9a5b00; background: #fff4e0; border: 1px solid #f0d6a8; border-radius: 4px; padding: 1px 6px; margin-left: 6px; }
 :root[data-theme="dark"] .tag-exp { color: #f0c27a; background: #3a2a10; border-color: #6b4e1e; }
 
-.controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 8px 0 12px; }
+.controls { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; margin: 6px 0 8px; }
 .controls label { color: var(--ink-2); font-size: var(--t-s); display: flex; gap: 6px; align-items: center; }
 select, input[type=search], input[type=text] {
   font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line);
@@ -283,7 +285,7 @@ footer .flinks a { color: var(--ink-2); }
   .toc a.on { color: var(--ink); border-left-color: var(--ink); font-weight: 600; }
 }
 .content section { scroll-margin-top: 72px; }
-.content > section { margin-bottom: 28px; }
+.content > section { margin-bottom: 16px; }
 .content > section > h2:first-child { margin-top: 0; }
 ol.steps { padding-left: 20px; font-size: var(--t-m); color: var(--ink-2); }
 ol.steps li { margin: 6px 0; }
@@ -501,11 +503,13 @@ table.sn-t td.muted { color: var(--ink-3); }
 /* ==== Portada 2 (2026-11-16): "¿Quién llega a 176?", atajos, hemiciclo, mapa del más votado · start ==== */
 .q176 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 6px 0 4px; }
 @media (max-width: 760px) { .q176 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.q176.q176-3, .tb-izq .q176.q176-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }   /* "¿Quién es la fuerza más votada?" */
+.q176-c.q176-ancha { grid-column: 1 / -1; }   /* the fifth card takes the whole row */
 .q176-c { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; cursor: default; }
 .q176-c:hover { border-color: var(--ink-3); }
 .q176-n { font-family: var(--font-title); font-weight: 600; font-size: 30px; line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--ink); }
 .q176-d { font-size: var(--t-s); color: var(--ink-2); }
-.q176-t { font-size: var(--t-s); color: var(--ink); margin-top: 6px; line-height: 1.3; }
+.q176-t { font-size: 14px; color: var(--ink); margin-top: 4px; line-height: 1.3; }   /* a bit larger than --t-s (Víctor, 2026-11-17) */
 .atajos { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
 .atajos button { font: inherit; font-size: var(--t-s); color: var(--ink-2); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; min-height: 32px; cursor: pointer; }
 .atajos button:hover:not(:disabled) { border-color: var(--ink-3); color: var(--ink); }
@@ -562,12 +566,13 @@ nav.camara a:not(.on):hover { color: var(--ink); }
    both start at the same left edge. */
 /* the index is the same left column as on the other pages (Víctor, 2026-11-16: the pill row "ni se parece a un índice");
    at 1200px the content column is about 950px, at 1440px about 1190px */
-.tb-grid { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 1.7fr) minmax(240px, 1fr); gap: 14px; align-items: start; margin: 10px 0 24px; }
+.tb-grid { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 1.7fr) minmax(240px, 1fr); gap: 14px; align-items: start; margin: 8px 0 14px; }
 .tb-grid[data-cols="2"] { grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr); }
 .tb-grid[data-cols="1"] { grid-template-columns: minmax(0, 1fr); }
 .tb-col { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
 .tb-col > h3:first-child, .tb-mapa > h3:first-child { margin-top: 0; }
 .tb-col p, .tb-col .note, .tb-col .sub { max-width: none; }   /* a card is narrower than --texto */
+.res-desc { margin: 0 0 6px; }   /* same look as the "Últimos datos utilizados" note: one style for both (Víctor, 2026-11-17) */
 .tb-izq .linea { font-family: var(--font-title); font-size: var(--t-l); line-height: 1.3; margin: 0 0 8px; }
 .tb-izq .controls { margin: 8px 0 4px; }
 .tb-izq #modelo-sel { width: 100%; }
@@ -652,6 +657,14 @@ nav.camara a:not(.on):hover { color: var(--ink); }
 .mvp-ini-o { background: var(--nodata); }
 .mvp-foto { object-fit: cover; border: 2px solid; box-sizing: border-box; }
 .mvp-esc { cursor: help; }
+/* seats as a small chip in the party's colour (Su Momento's card); zero in grey (2026-11-17) */
+.mvp-chip { display: inline-block; min-width: 1.6em; padding: 1px 5px; border-radius: 5px; text-align: center; font-weight: 600;
+  color: var(--ink); background: color-mix(in srgb, var(--c) 22%, var(--surface)); box-sizing: border-box; }
+.mvp-cero { color: var(--ink-3); padding-right: 5px; }
+/* zoom on the open province: the labels and their leader lines fade out while zoomed */
+.mvmap .mv-labs, .mvmap .mv-leads { transition: opacity .25s; }
+.mvmap svg.mv-zoom .mv-labs, .mvmap svg.mv-zoom .mv-leads { opacity: 0; pointer-events: none; }
+.mvmap { overflow: hidden; }
 .mvp-pie { color: var(--ink-2); font-size: var(--t-xs); }
 .mvp-pie p { margin: 2px 0; max-width: none; }
 .mvp-pie a { display: inline-block; margin-top: 4px; font-size: var(--t-s); font-weight: 600; }
@@ -736,3 +749,7 @@ table.pf-dh, table.pf-ev { width: auto; min-width: min(100%, 520px); }
 table.pf-ev { max-width: 760px; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pf-sube { color: #4ade80; } :root:not([data-theme="light"]) .pf-baja { color: #f87171; } }
 /* ==== Provincias: ficha de provincia · end ==== */
+
+/* the horizontal index row of narrow screens is gone (Víctor, 2026-11-17: "en horizontal es horrible"); the left index of
+   wide screens stays */
+.toc-row { display: none !important; }

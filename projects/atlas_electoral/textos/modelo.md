@@ -40,7 +40,7 @@ No hay condiciones (::: si ...) en esta página.
 
 === prediccion ===
 
-[sub] Predicción del modelo que publicábamos hasta ahora (K0; la portada muestra por defecto la media de siete modelos). Parte de las encuestas y añade lo que las encuestas no dicen: el error que la industria ha tenido en cada general desde 1982. Actualizada el {fecha} con {n_encuestas} encuestas.
+[sub] Predicción del modelo que publicábamos hasta ahora (K0; la portada muestra por defecto «Nuestra predicción», que combina siete modelos). Parte de las encuestas y añade lo que las encuestas no dicen: el error que la industria ha tenido en cada general desde 1982. Actualizada el {fecha} con {n_encuestas} encuestas.
 
 
 ### Voto y escaños por partido
@@ -92,7 +92,7 @@ No hay condiciones (::: si ...) en esta página.
 
 === fiarse ===
 
-Hemos rehecho el modelo que publicábamos hasta ahora (K0) para las {elecciones} elecciones generales desde {desde}, con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro de su rango (el que recoge 9 de cada 10 simulaciones) en {acierto_voto} de cada 100 casos en voto y en {acierto_escanos} de cada 100 en escaños. La media de siete modelos que la portada muestra por defecto no se ha probado así como tal.
+Hemos rehecho el modelo que publicábamos hasta ahora (K0) para las {elecciones} elecciones generales desde {desde}, con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro de su rango (el que recoge 9 de cada 10 simulaciones) en {acierto_voto} de cada 100 casos en voto y en {acierto_escanos} de cada 100 en escaños. «Nuestra predicción», la combinación de siete modelos que la portada muestra por defecto, no se ha probado así como tal.
 
 ::: si sensibilidad
 La probabilidad de mayoría no se conoce con tanta precisión como parece. En K0, si el error conjunto de las encuestas fuera un 50% mayor que el histórico, PP y Vox llegarían a 176 en {error_x15} de cada 100 simulaciones; si fuera un 20% menor, en {error_x08}. Y en esas {elecciones} elecciones el modelo solo dio más del 50% a que la derecha sumara 176 dos veces, así que una cifra tan alta apenas se ha podido poner a prueba.
@@ -115,7 +115,7 @@ La probabilidad de mayoría no se conoce con tanta precisión como parece. En K0
 
 **Promedio de encuestas.** El modelo publicado sigue día a día el apoyo de cada partido con un filtro que da más peso a las encuestas recientes y con más muestra. Las encuestas antiguas pesan menos, pero no desaparecen de golpe.
 
-**Simulación.** Una de las 4.000 elecciones posibles que el modelo imagina: un resultado nacional, su reparto por provincias y los escaños que salen. Todas las probabilidades de la web cuentan simulaciones.
+**Simulación.** Una de las miles de elecciones posibles que el modelo imagina: un resultado nacional, su reparto por provincias y los escaños que salen. Todas las probabilidades de la web cuentan simulaciones.
 
 **«9 de cada 10».** Contamos la incertidumbre como frecuencias: «en 9 de cada 10 simulaciones» quiere decir que ese resultado sale en 9 de cada 10 de esas elecciones imaginadas.
 
@@ -133,7 +133,7 @@ La probabilidad de mayoría no se conoce con tanta precisión como parece. En K0
 
 **Familia de modelos.** Modelos con la misma idea de fondo: los filtros que descuentan el efecto de casa (K), la calidad de las casas (C), las elecciones autonómicas, europeas y municipales en el reparto por provincias (R), la media simple (M), las reglas de El País (L), las de POLITICO (P) y las de otros agregadores (E).
 
-**Media de modelos.** Lo que muestra la portada por defecto: siete modelos, uno por familia, con el mismo peso. No elegimos uno solo porque 13 elecciones generales no bastan para saber cuál acierta más.
+**Nuestra predicción.** Lo que muestra la portada por defecto: siete modelos, uno por familia (K7, C0, R0, M0, L0, P0 y E0), con el mismo peso. Se juntan sus simulaciones completas, con el voto de cada provincia, y de esa mezcla salen los escaños, el mapa, las fichas de provincia y el Senado; no se promedian escaños. Un modelo por familia, y no todos, porque los de una misma familia se parecen tanto que contarían varias veces. No elegimos uno solo porque 13 elecciones generales no bastan para saber cuál acierta más.
 
 **Rehacer el pasado.** Para saber cuánto fiarse, el modelo se vuelve a correr en cada general desde 1986 con solo las encuestas que se conocían entonces, y se compara con lo que salió.
 :::
