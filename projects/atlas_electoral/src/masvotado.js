@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.127";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.127";
-import { getGeo, rewind } from "./mapa.js?v=0.2.127";
-import { textos, md } from "./textos.js?v=0.2.127";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.127";
-import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.127";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.128";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.128";
+import { getGeo, rewind } from "./mapa.js?v=0.2.128";
+import { textos, md } from "./textos.js?v=0.2.128";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.128";
+import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.128";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 export const short = (f) => (f === "sumar" ? "Frente Amplio" : pn(f).split(" y otros")[0].split(" and other")[0]);

@@ -22,7 +22,7 @@ Checked by pipeline/check_textos_en.py.
 
 **What weighs most.** Three assumptions move the probability that the PP reaches {mayoria} on its own, which with everything as it stands happens in {p_base} out of 100 simulations:
 
-*How much more the PP gets in the Senate than in Congress.* In 2019, with Ciudadanos in the race, its Senate candidates got considerably more than its Congress list; in 2023, almost the same. We use the average of the three elections ({offset_pp} more, compared with the PSOE). If 2023 repeats itself ({offset_2023}), the PP stays at {pp_2023} senators and the majority falls to {p_2023} out of 100.
+*How much more the PP gets in the Senate than in Congress.* In the two elections of 2019, with Ciudadanos in the race, its Senate candidates got considerably more than its Congress list; in 2023, almost the same. We use the average of the three elections ({offset_pp} more, compared with the PSOE). If 2023 repeats itself ({offset_2023}), the PP stays at {pp_2023} senators and the majority falls to {p_2023} out of 100.
 
 *How much of their partners' vote the joint lists keep.* The PSOE runs with IU and Movimiento Sumar (Senado de Progreso) in almost every province. There was only one list of this kind in 2019-2023, Eivissa-Formentera, which kept {lambda} of its partners' vote. If they kept half, a PP majority would come out in {p_lambda05} out of 100; if they kept all of it, in {p_lambda1}.
 

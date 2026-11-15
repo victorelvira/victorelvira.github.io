@@ -21,7 +21,7 @@ Cifras disponibles:
 Condiciones: antes / hoy / despues (del día de la votación), modelo, provincias, validacion,
 sensibilidad, movilizacion, cambios.
 -->
-# Elecciones generales en España -  29 de noviembre de 2026
+# Elecciones generales en España · 29 de noviembre de 2026
 
 
 ::: si antes

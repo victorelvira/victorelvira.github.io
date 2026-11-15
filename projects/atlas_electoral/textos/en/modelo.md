@@ -116,7 +116,7 @@ The probability of a majority is not known as precisely as it seems. In K0, if t
 
 **Seat in play.** A seat that no party wins in at least 9 out of 10 simulations. The rest are taken as decided.
 
-**Model family.** Models built on the same underlying idea: the filters that remove the house effect (K), the quality of the pollsters (C), the regional, European and municipal elections in the breakdown by province (R), the simple average (M), El País's rules (L), POLITICO's (P) and those of other aggregators (E).
+**Model family.** Models built on the same underlying idea: the filters that remove the house effect (K), the quality of the pollsters (C), the regional, European and municipal elections in the breakdown by province (R), the simple average (M), El País's rules (L), POLITICO's (P), those of other aggregators (E) and the trajectory, which extends each party's trend (T).
 
 **Our forecast.** What the front page shows by default: seven models, one per family (K7, C0, R0, M0, L0, P0 and E0), with equal weight. Their full simulations are pooled, including each province's vote, and from that mix come the seats, the map, the province cards and the Senate; seats are not averaged. One model per family, and not all of them, because models of the same family are so alike that they would be counted several times. We do not pick a single one because 13 general elections are not enough to know which is most accurate.
 

@@ -131,7 +131,7 @@ La probabilidad de mayoría no se conoce con tanta precisión como parece. En K0
 
 **Escaño en el aire.** Un escaño que ningún partido gana en al menos 9 de cada 10 simulaciones. El resto se dan por decididos.
 
-**Familia de modelos.** Modelos con la misma idea de fondo: los filtros que descuentan el efecto de casa (K), la calidad de las casas (C), las elecciones autonómicas, europeas y municipales en el reparto por provincias (R), la media simple (M), las reglas de El País (L), las de POLITICO (P) y las de otros agregadores (E).
+**Familia de modelos.** Modelos con la misma idea de fondo: los filtros que descuentan el efecto de casa (K), la calidad de las casas (C), las elecciones autonómicas, europeas y municipales en el reparto por provincias (R), la media simple (M), las reglas de El País (L), las de POLITICO (P), las de otros agregadores (E) y la trayectoria, que prolonga la tendencia de cada partido (T).
 
 **Nuestra predicción.** Lo que muestra la portada por defecto: siete modelos, uno por familia (K7, C0, R0, M0, L0, P0 y E0), con el mismo peso. Se juntan sus simulaciones completas, con el voto de cada provincia, y de esa mezcla salen los escaños, el mapa, las fichas de provincia y el Senado; no se promedian escaños. Un modelo por familia, y no todos, porque los de una misma familia se parecen tanto que contarían varias veces. No elegimos uno solo porque 13 elecciones generales no bastan para saber cuál acierta más.
 

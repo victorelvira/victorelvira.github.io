@@ -49,7 +49,7 @@ Parte "detalle" (la ficha de la provincia elegida, se rehace al cambiar de provi
 
 ## Dónde se decide {#decide | Dónde se decide}
 
-Hay **{en_juego} escaños en el aire**: escaños que ningún partido gana en al menos 9 de cada 10 simulaciones. Los otros {decididos} están prácticamente decididos. El mapa de la ficha, más abajo, muestra cuántos hay en el aire en cada provincia; pulsa una para ver la suya.
+Hay **{en_juego} escaños en el aire**: escaños que ningún partido gana en al menos 9 de cada 10 simulaciones. Los otros {decididos} están prácticamente decididos. El mapa de abajo muestra cuántos hay en el aire en cada provincia; pulsa una para ver la suya.
 
 [[mapa]]
 
@@ -60,7 +60,7 @@ Hay **{en_juego} escaños en el aire**: escaños que ningún partido gana en al 
 [[pugnas]]
 
 ::: metodología #metodo
-**De dónde sale.** Es el mismo modelo de la pestaña Encuestas, con {simulaciones} simulaciones: promedio nacional de encuestas, error común de la industria y, en cada simulación, voto provincial a partir del mapa de 2023 (Frente Amplio, Podemos y SALF, a partir de las europeas de 2024) con ruido por comunidad y provincia y reparto D'Hondt. Las listas que no aparecen en las encuestas nacionales conservan sus votos de 2023.
+**De dónde sale.** Es «Nuestra predicción», la de la portada, con {simulaciones} simulaciones de siete modelos: promedio nacional de encuestas, error común de la industria y, en cada simulación, voto provincial a partir de elecciones anteriores, sobre todo el mapa de 2023 (Frente Amplio, Podemos y SALF, a partir de las europeas de 2024) con ruido por comunidad y provincia y reparto D'Hondt. Las listas que no aparecen en las encuestas nacionales conservan sus votos de 2023.
 
 **Partidos regionales.** ERC, Junts, Bildu y PNV son cerca del 1% de una muestra nacional, así que su error se mide aparte y el ruido de las encuestas se ajusta a su tamaño. Probado en las elecciones desde 1986, unos 9 de cada 10 de sus resultados caen dentro del rango que recoge 9 de cada 10 simulaciones.
 

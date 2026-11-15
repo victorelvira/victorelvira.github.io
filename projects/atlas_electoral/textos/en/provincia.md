@@ -14,7 +14,7 @@ pipeline/check_textos_en.py refuses this file if any of them is missing.
 
 ## Where it is decided {#decide | Where it is decided}
 
-There are **{en_juego} seats in play**: seats that no party wins in at least 9 out of 10 simulations. The other {decididos} are all but decided. The map in the province card, further down, shows how many are in play in each province; click one to see its own.
+There are **{en_juego} seats in play**: seats that no party wins in at least 9 out of 10 simulations. The other {decididos} are all but decided. The map below shows how many are in play in each province; click one to see its own.
 
 [[mapa]]
 
@@ -25,7 +25,7 @@ There are **{en_juego} seats in play**: seats that no party wins in at least 9 o
 [[pugnas]]
 
 ::: metodología #metodo
-**Where it comes from.** It is the same model as in the 29N polls tab, with {simulaciones} simulations: a national poll average, the industry error and, in each simulation, a provincial vote built from the 2023 map (Frente Amplio, Podemos and SALF, from the 2024 European election) with noise by region and by province, and a D'Hondt allocation. Lists that do not appear in national polls keep their 2023 votes.
+**Where it comes from.** It is «Our forecast», the one on the front page, with {simulaciones} simulations from seven models: a national poll average, the industry error and, in each simulation, a provincial vote built from past elections, mainly the 2023 map (Frente Amplio, Podemos and SALF, from the 2024 European election) with noise by region and by province, and a D'Hondt allocation. Lists that do not appear in national polls keep their 2023 votes.
 
 **Regional parties.** ERC, Junts, Bildu and PNV are about 1% of a national sample, so their error is measured separately and the poll noise is scaled to their size. Tested on the elections since 1986, about 9 out of 10 of their results fall within the range that holds 9 out of 10 simulations.
 

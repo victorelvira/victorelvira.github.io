@@ -43,13 +43,13 @@ Parte "coaliciones_intro": la frase bajo el título de las coaliciones
 [[coaliciones]]
 
 ::: metodología #metodo
-**Cómo se vota.** Cada provincia peninsular elige 4 senadores y cada votante marca hasta 3; las islas mayores eligen 3, Ceuta y Melilla 2 y las islas menores 1. Ganan los candidatos con más votos, sea cual sea su lista. Desde este año Ibiza y Formentera eligen uno cada una, así que se eligen {electos_total}. Los parlamentos autonómicos designan otros {designados_total}: la cámara tiene {camara} y la mayoría absoluta está en {mayoria}.
+**Cómo se vota.** Cada provincia peninsular elige 4 senadores y cada votante marca hasta 3; las islas mayores eligen 3, Ceuta y Melilla 2 y las islas menores 1. Ganan los candidatos con más votos, sea cual sea su lista. Desde este año Ibiza y Formentera eligen uno cada una, así que se eligen {electos_total}. Los parlamentos autonómicos designan otros {designados_total}: la cámara tiene {camara} senadores y la mayoría absoluta está en {mayoria}.
 
 **De dónde sale.** De las mismas {simulaciones} simulaciones del voto al Congreso del modelo (actualizado el {fecha}). En cada una, el voto de cada partido al Congreso se convierte en votos a sus candidatos al Senado con lo que pasó en 2019 y 2023, y ganan los más votados. Los designados se fijan con los parlamentos actuales: no dependen del 29N. Probado en 2023 con lo aprendido en 2019, el reparto más probable acierta el partido de {aciertos_2023} de los 208 senadores.
 
 **Lo que más pesa.** Tres supuestos mueven la probabilidad de que el PP llegue solo a {mayoria}, que con todo como está sale en {p_base} de cada 100 simulaciones:
 
-*Cuánto más saca el PP en el Senado que en el Congreso.* En 2019, con Ciudadanos, sus candidatos al Senado sacaron bastante más que su lista al Congreso; en 2023, casi lo mismo. Usamos la media de las tres elecciones (un {offset_pp} más, comparado con el PSOE). Si se repite lo de 2023 (un {offset_2023}), el PP se queda en {pp_2023} senadores y la mayoría baja a {p_2023} de cada 100.
+*Cuánto más saca el PP en el Senado que en el Congreso.* En las dos elecciones de 2019, con Ciudadanos, sus candidatos al Senado sacaron bastante más que su lista al Congreso; en 2023, casi lo mismo. Usamos la media de las tres elecciones (un {offset_pp} más, comparado con el PSOE). Si se repite lo de 2023 (un {offset_2023}), el PP se queda en {pp_2023} senadores y la mayoría baja a {p_2023} de cada 100.
 
 *Cuánto voto de los socios conservan las listas conjuntas.* El PSOE va con IU y Movimiento Sumar (Senado de Progreso) en casi todas las provincias. Solo hubo una lista así en 2019-2023, la de Eivissa-Formentera, que conservó el {lambda} del voto de sus socios. Si conservaran la mitad, la mayoría del PP saldría en {p_lambda05} de cada 100; si lo conservaran todo, en {p_lambda1}.
 
