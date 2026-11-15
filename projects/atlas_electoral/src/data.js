@@ -1,6 +1,6 @@
 // Version: also the cache-bust for data files and the ?v= in the entry page (keep in sync).
-export const DATA_V = "0.2.74";
-export const BUILD_AT = "2026-11-14 13:48";
+export const DATA_V = "0.2.108";
+export const BUILD_AT = "2026-11-15 00:56";
 
 // data/ sits beside src/ inside the app folder; resolve it from this module, not from the page
 const DATA_BASE = new URL("../data/", import.meta.url).href;
@@ -39,6 +39,8 @@ export async function init() {
 export const norm = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 export const fmt = new Intl.NumberFormat("es-ES");
 export const pct = (x, d = 1) => (x == null || isNaN(x) ? "·" : `${(x * 100).toFixed(d).replace(".", ",")}%`);
+export const de100 = (p) => Math.round(p * 100);   // a probability as "out of every 100"
+export const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });   // "13 de noviembre"
 const MESES = ["", "ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
 export const elecLabel = (id) => META.elecciones.find((e) => e.eleccion === id)?.label
   ?? id.replace(/^(\w)(\w+)_(\d{4})-(\d{2})$/, (_, a, b, y, m) => `${a.toUpperCase()}${b} ${MESES[+m]} ${y}`);

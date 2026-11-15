@@ -38,7 +38,7 @@ Municipio no encontrado.
 
 === ficha ===
 
-<h1 style="margin-top:20px">{municipio} <span style="font-weight:400;color:var(--ink-2);font-size:18px">{provincia}</span></h1>
+<h1 style="margin-top:20px">{municipio} <span style="font-weight:400;color:var(--ink-2);font-size:var(--t-l)">{provincia}</span></h1>
 
 [[cifras]]
 

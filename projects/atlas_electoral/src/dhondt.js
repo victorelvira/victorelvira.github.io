@@ -1,7 +1,7 @@
-import { load, showTip, hideTip } from "./data.js?v=0.2.74";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.74";
-import { textos, md, INDICE } from "./textos.js?v=0.2.74";
-import { EID, THRESHOLD, fmt, short, pct1, reparto, provScenario, turnos, precio, sirvio, partes, aire } from "./dhondt_vis.js?v=0.2.74";
+import { load, showTip, hideTip } from "./data.js?v=0.2.108";
+import { indexHtml, sectionIndex, cull } from "./charts.js?v=0.2.108";
+import { textos, md, INDICE } from "./textos.js?v=0.2.108";
+import { EID, THRESHOLD, fmt, short, pct1, reparto, provScenario, turnos, precio, sirvio, partes, aire } from "./dhondt_vis.js?v=0.2.108";
 
 // The D'Hondt tab. This module: the sand widget (votes fall as sand into one jar per list; a line (the price of a seat) comes down from the top
 // and every time it touches a mark (all the votes, half, a third...) that list wins a seat. Same result as the
@@ -124,8 +124,9 @@ export function arena(el, { editable = false, onStep = null, onEdit = null } = {
   }
   function draw(t = performance.now()) {
     const ink = css("--ink"), ink3 = css("--ink-3"), line = css("--line"), surf = css("--surface");
+    const F = `${css("--t-xs")} system-ui, sans-serif`;   /* canvas text: the type scale's --t-xs */
     ctx.clearRect(0, 0, L.W, L.H);
-    ctx.font = "11px system-ui, sans-serif"; ctx.textBaseline = "middle";
+    ctx.font = F; ctx.textBaseline = "middle";
     const counts = S.lists.map((_, i) => R.won.slice(0, A.n).filter((w) => w.i === i).length);
 
     S.lists.forEach((l, i) => {
@@ -171,12 +172,12 @@ export function arena(el, { editable = false, onStep = null, onEdit = null } = {
       }
       // name, votes and seats under the jar
       ctx.textAlign = "center"; ctx.fillStyle = ink;
-      ctx.font = "600 12px system-ui, sans-serif";
+      ctx.font = `600 ${F}`;
       const name = l.name.length > 9 && L.slot < 80 ? `${l.name.slice(0, 8)}.` : l.name;
       ctx.fillText(name, cx, L.bottom + 13);
-      ctx.font = "11px system-ui, sans-serif"; ctx.fillStyle = css("--ink-2");
+      ctx.font = F; ctx.fillStyle = css("--ink-2");
       ctx.fillText(short(l.v), cx, L.bottom + 27);
-      if (A.h != null && counts[i]) { ctx.fillStyle = ink; ctx.font = "600 11px system-ui, sans-serif"; ctx.fillText(`${counts[i]} esc.`, cx, L.bottom + 41); ctx.font = "11px system-ui, sans-serif"; }
+      if (A.h != null && counts[i]) { ctx.fillStyle = ink; ctx.font = `600 ${F}`; ctx.fillText(`${counts[i]} esc.`, cx, L.bottom + 41); ctx.font = F; }
       if (editable) {   // a grip on the sand: drag it
         const gy = Math.max(L.top + 4, ytop);
         ctx.fillStyle = surf; ctx.strokeStyle = ink; ctx.lineWidth = 1.5;
@@ -190,7 +191,7 @@ export function arena(el, { editable = false, onStep = null, onEdit = null } = {
     if (L.bottom - thY > 2) {
       ctx.strokeStyle = "#c2410c"; ctx.lineWidth = 1; ctx.setLineDash([2, 4]);
       ctx.beginPath(); ctx.moveTo(0, thY); ctx.lineTo(L.W, thY); ctx.stroke(); ctx.setLineDash([]);
-      ctx.fillStyle = "#c2410c"; ctx.textAlign = "right"; ctx.font = "10px system-ui, sans-serif"; ctx.fillText("3%", L.W - 2, thY - 7);
+      ctx.fillStyle = "#c2410c"; ctx.textAlign = "right"; ctx.font = F; ctx.fillText("3%", L.W - 2, thY - 7);
     }
     // the price line; its value sits in a badge at the top right
     if (A.h != null) {
@@ -198,12 +199,12 @@ export function arena(el, { editable = false, onStep = null, onEdit = null } = {
       ctx.strokeStyle = ink; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(L.W, y); ctx.stroke();
       if (A.h < S.cap * 0.999) {
         const txt = `1 escaño = ${fmt.format(Math.round(A.h))} votos`;
-        ctx.font = "600 12px system-ui, sans-serif"; const w = ctx.measureText(txt).width + 26;
+        ctx.font = `600 ${F}`; const w = ctx.measureText(txt).width + 26;
         const lx = L.W - w - 6, ly = 12;
         ctx.fillStyle = ink; ctx.beginPath(); ctx.roundRect(lx, ly - 10, w, 20, 10); ctx.fill();
         ctx.fillRect(lx + 7, ly - 2, 12, 2.5);
         ctx.fillStyle = css("--bg"); ctx.textAlign = "left"; ctx.fillText(txt, lx + 22, ly);
-        ctx.font = "11px system-ui, sans-serif";
+        ctx.font = F;
       }
     }
     // the runner-up, once the seats are out
@@ -361,7 +362,7 @@ export async function renderDhondt(app) {
     app.querySelectorAll("#ejemplos .chip").forEach((c) => c.classList.toggle("on", c.dataset.p === code));
     const sc = provScenario(p);
     w1.set(sc, { play });
-    $("#tnnote").innerHTML = sc.hidden ? md(T.ocultas, { vars: { ocultas: `${sc.hidden} ${sc.hidden === 1 ? "lista" : "listas"}` }, page: "dhondt" }).html.replace(/^<p>|<\/p>$/g, "") : "";
+    $("#tnnote").innerHTML = sc.hidden ? md(T.ocultas, { vars: { ocultas: `${sc.hidden} ${sc.hidden === 1 ? "lista" : "listas"}` }, page: "dhondt" }).html.replace(/^<p[^>]*>|<\/p>$/g, "") : "";
   }
   $("#prov").onchange = (e) => show(e.target.value);
   app.querySelectorAll("#ejemplos .chip").forEach((c) => c.onclick = () => show(c.dataset.p));
@@ -414,11 +415,11 @@ function barrera(el, provs) {
   const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
   svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickValues([2, 3, 4, 5, 7, 10, 15, 20, 32, 37]).tickFormat(d3.format("d")));
   svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickFormat(d3.format(".0%")));
-  svg.append("text").attr("x", (W + m.l) / 2).attr("y", H - 4).attr("text-anchor", "middle").attr("fill", "var(--ink-3)").attr("font-size", 11).text("Escaños de la provincia");
+  svg.append("text").attr("x", (W + m.l) / 2).attr("y", H - 4).attr("text-anchor", "middle").attr("fill", "var(--ink-3)").text("Escaños de la provincia");
   const M = d3.range(2, 38.01, 0.25);
   svg.append("path").attr("d", d3.line().x((k) => x(k)).y((k) => y(1 / (k + 1)))(M)).attr("fill", "none").attr("stroke", "var(--ink-2)").attr("stroke-dasharray", "4 4");
   svg.append("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y(0.03)).attr("y2", y(0.03)).attr("stroke", "#c2410c").attr("stroke-dasharray", "2 4");
-  svg.append("text").attr("x", W - m.r).attr("y", y(0.03) - 5).attr("text-anchor", "end").attr("fill", "#c2410c").attr("font-size", 10).text("barrera legal del 3%");
+  svg.append("text").attr("x", W - m.r).attr("y", y(0.03) - 5).attr("text-anchor", "end").attr("fill", "#c2410c").text("barrera legal del 3%");
   const jit = (s, j) => x(s) * Math.exp(0) + (j % 3 - 1) * 4;
   const g = svg.append("g");
   pts.forEach((p, j) => {
@@ -428,6 +429,10 @@ function barrera(el, provs) {
     g.append("circle").attr("cx", cx).attr("cy", y(p.w)).attr("r", 4.5).attr("fill", "var(--ink)")
       .on("mousemove", (ev) => showTip(`<b>${p.n}</b> · ${p.esc} escaños<div class="row"><span>${p.wn}, con escaño</span><span>${pct1(p.w)}</span></div>`, ev)).on("mouseleave", hideTip);
   });
-  const lab = (n, dy, txt) => { const p = pts.find((q) => q.n === n); if (p) svg.append("text").attr("x", x(p.esc) + 8).attr("y", y(p.w) + dy).attr("font-size", 11).attr("fill", "var(--ink-2)").text(txt ?? n); };
+  const lab = (n, dy, txt) => { const p = pts.find((q) => q.n === n); if (p) svg.append("text").attr("x", x(p.esc) + 8).attr("y", y(p.w) + dy).attr("fill", "var(--ink-2)").text(txt ?? n); };
   lab("Soria", 4); lab("Madrid", -8); lab("Barcelona", 12);
+  // narrow: tick labels that meet (32 and 37) keep the larger, and a name that runs into the 3% note gives way (it is in the tooltip)
+  const ticks = svg.selectAll(".axis text").nodes(), xt = ticks.filter((n) => n.closest(".axis") === ticks[0].closest(".axis"));
+  cull(xt.reverse(), { keep: ticks.filter((n) => !xt.includes(n)) });
+  cull(svg.selectAll(":scope > text").nodes().slice(2), { keep: [...svg.selectAll(":scope > text").nodes().slice(0, 2), ...ticks] });
 }

@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, loadMuni, META, FAM, FAM_IDS, norm, fmt, pct, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.74";
-import { lines, dateOf } from "./charts.js?v=0.2.74";
-import { electosList } from "./electos.js?v=0.2.74";
-import { textos, md } from "./textos.js?v=0.2.74";
+import { load, loadMuni, META, FAM, FAM_IDS, norm, fmt, pct, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.108";
+import { lines, dateOf, declutter, leaders } from "./charts.js?v=0.2.108";
+import { electosList } from "./electos.js?v=0.2.108";
+import { textos, md } from "./textos.js?v=0.2.108";
 
 export function searchBox(container, onPick, placeholder = "Busca tu municipio… (p. ej. Gozón, Lorca, Sant Cugat)") {
   container.innerHTML = `<div class="search"><input type="search" placeholder="${placeholder}" autocomplete="off" aria-label="Buscar municipio" /><div class="sugg" hidden></div></div>`;
@@ -139,10 +139,10 @@ export function lineChart(el, elections, d) {
   }
   // direct labels at the end, de-collided
   const lastP = data.at(-1);
-  const labels = fams.filter((f) => lastP.fam[f] > 0).map((f) => ({ f, y: y(lastP.fam[f] / lastP.cand) })).sort((a, b) => a.y - b.y);
-  for (let i = 1; i < labels.length; i++) labels[i].y = Math.max(labels[i].y, labels[i - 1].y + 12);
-  svg.append("g").selectAll("text").data(labels).join("text")
-    .attr("x", W - m.r + 6).attr("y", (l) => l.y + 4).attr("font-size", 11).attr("fill", "var(--ink-2)")
+  const labels = declutter(fams.filter((f) => lastP.fam[f] > 0).map((f) => ({ f, y: y(lastP.fam[f] / lastP.cand), priority: lastP.fam[f] })), { min: m.t, max: H - m.b });
+  const led = leaders(svg, labels, { x0: W - m.r + 3, x1: W - m.r + 9 });
+  svg.append("g").selectAll("text").data(labels.filter((l) => !l.hidden)).join("text")
+    .attr("x", W - m.r + (led ? 12 : 6)).attr("y", (l) => l.y + 4).attr("fill", "var(--ink-2)")
     .text((l) => FAM[l.f].nombre.split(/[ /(]/)[0]);
   // hover crosshair
   const cross = svg.append("line").attr("stroke", "var(--ink-3)").attr("y1", m.t).attr("y2", H - m.b).style("display", "none");

@@ -1,6 +1,6 @@
-import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.74";
-import { textos, md, INDICE } from "./textos.js?v=0.2.74";
-import { fam, famName, IDEO, EXTRA, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.74";
+import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.108";
+import { textos, md, INDICE } from "./textos.js?v=0.2.108";
+import { fam, famName, IDEO, EXTRA, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.108";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
 export function dhondt(lists, seats, validos, threshold = 0.03, detail = null) {
@@ -85,7 +85,7 @@ export async function renderSimulador(app, args = [], embed = false) {
   };
   const { html, sec } = md(T.principal, { slots, flags: { embed: !!embed }, page: "simulador" });
   const IX = indexHtml(sec);
-  const nota = (part, vars) => md(T[part], { vars, page: "simulador" }).html.replace(/^<p>|<\/p>$/g, "");
+  const nota = (part, vars) => md(T[part], { vars, page: "simulador" }).html.replace(/^<p[^>]*>|<\/p>$/g, "");
   app.innerHTML = `
     <div class="layout">
     ${embed ? "" : IX.aside}

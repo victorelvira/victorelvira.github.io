@@ -1,5 +1,5 @@
-import { fam, famName, IDEO } from "./charts.js?v=0.2.74";
-import { showTip, hideTip } from "./data.js?v=0.2.74";
+import { fam, famName, IDEO } from "./charts.js?v=0.2.108";
+import { showTip, hideTip } from "./data.js?v=0.2.108";
 
 // Pieces of the D'Hondt tab other than the sand: turns (bars that split), the staircase of quotients, the
 // find-the-price game, the votes that elected nobody, proportional-to-D'Hondt in three steps, and the last seats.
@@ -65,19 +65,19 @@ export function turnos(el, esc, { onStep = null } = {}) {
     const thr = THRESHOLD * S.validos;
     if (y(0) - y(thr) > 2) {
       svg.append("line").attr("x1", 0).attr("x2", W).attr("y1", y(thr)).attr("y2", y(thr)).attr("stroke", "#c2410c").attr("stroke-dasharray", "2 4");
-      svg.append("text").attr("x", W - 2).attr("y", y(thr) - 4).attr("text-anchor", "end").attr("font-size", 10).attr("fill", "#c2410c").text("3%");
+      svg.append("text").attr("x", W - 2).attr("y", y(thr) - 4).attr("text-anchor", "end").attr("fill", "#c2410c").text("3%");
     }
     const g = svg.selectAll("g.tb").data(S.lists).join("g").attr("class", "tb").attr("transform", (_, i) => `translate(${x(i)},0)`);
     g.append("rect").attr("class", "ghost").attr("width", x.bandwidth()).attr("y", (l) => y(l.v)).attr("height", (l) => y(0) - y(l.v))
       .attr("fill", (l) => l.color).attr("opacity", 0.14);
     g.append("rect").attr("class", "f").attr("width", x.bandwidth()).attr("y", (l) => y(l.v)).attr("height", (l) => y(0) - y(l.v))
       .attr("fill", (l, i) => (R.ok[i] ? l.color : "var(--nodata)")).attr("stroke-width", 3);
-    g.append("text").attr("class", "dv").attr("x", x.bandwidth() / 2).attr("text-anchor", "middle").attr("font-size", 12).attr("font-weight", 600).attr("fill", "var(--ink)");
-    g.append("text").attr("x", x.bandwidth() / 2).attr("y", y(0) + 15).attr("text-anchor", "middle").attr("font-size", 12).attr("font-weight", 600).attr("fill", "var(--ink)")
+    g.append("text").attr("class", "dv").attr("x", x.bandwidth() / 2).attr("text-anchor", "middle").attr("font-weight", 600).attr("fill", "var(--ink)");
+    g.append("text").attr("x", x.bandwidth() / 2).attr("y", y(0) + 15).attr("text-anchor", "middle").attr("font-weight", 600).attr("fill", "var(--ink)")
       .text((l) => (l.name.length > 9 && x.bandwidth() < 60 ? `${l.name.slice(0, 8)}.` : l.name));
-    g.append("text").attr("x", x.bandwidth() / 2).attr("y", y(0) + 29).attr("text-anchor", "middle").attr("font-size", 11).attr("fill", "var(--ink-2)")
+    g.append("text").attr("x", x.bandwidth() / 2).attr("y", y(0) + 29).attr("text-anchor", "middle").attr("fill", "var(--ink-2)")
       .text((l, i) => (R.ok[i] ? short(l.v) : "no llega al 3%"));
-    g.append("text").attr("class", "ns").attr("x", x.bandwidth() / 2).attr("y", y(0) + 43).attr("text-anchor", "middle").attr("font-size", 11).attr("font-weight", 600).attr("fill", "var(--ink)");
+    g.append("text").attr("class", "ns").attr("x", x.bandwidth() / 2).attr("y", y(0) + 43).attr("text-anchor", "middle").attr("font-weight", 600).attr("fill", "var(--ink)");
     el.querySelector(".tn-seatwrap").innerHTML = seatSpans(M());
   }
 
@@ -165,12 +165,12 @@ function escalera(el, S, R, n) {
       .on("mousemove", (ev, d) => showTip(`<b>${S.lists[d.i].name}</b><div class="row"><span>${fmt.format(d.v)} ÷ ${d.k}</span><span>${fmt.format(Math.round(d.q))}</span></div>`, ev))
       .on("mouseleave", hideTip);
     if (x.bandwidth() >= 16) svg.selectAll("text.k").data(q).join("text").attr("class", "k").attr("x", (_, j) => x(j) + x.bandwidth() / 2).attr("y", H - m.b + 13)
-      .attr("text-anchor", "middle").attr("font-size", 10).attr("fill", "var(--ink-3)").text((d) => `÷${d.k}`);
+      .attr("text-anchor", "middle").attr("fill", "var(--ink-3)").text((d) => `÷${d.k}`);
     const cx = x(M - 1) + x.bandwidth() + (x.step() - x.bandwidth()) / 2;
     if (q.length > M) {
       svg.append("line").attr("x1", cx).attr("x2", cx).attr("y1", 0).attr("y2", H - 4).attr("stroke", "#c2410c").attr("stroke-dasharray", "3 3");
-      svg.append("text").attr("x", cx - 4).attr("y", 10).attr("text-anchor", "end").attr("font-size", 11).attr("fill", "var(--ink-2)").text(`${M} escaños`);
-      svg.append("text").attr("x", cx + 4).attr("y", 10).attr("font-size", 11).attr("fill", "var(--ink-3)").text("fuera");
+      svg.append("text").attr("x", cx - 4).attr("y", 10).attr("text-anchor", "end").attr("fill", "var(--ink-2)").text(`${M} escaños`);
+      svg.append("text").attr("x", cx + 4).attr("y", 10).attr("fill", "var(--ink-3)").text("fuera");
     }
   }
   svg.selectAll("rect").attr("opacity", (_, j) => (j < n ? 1 : j < M ? 0.28 : 0.12))
@@ -202,14 +202,14 @@ export function precio(el, sc, start = null) {
   bars.append("rect").attr("width", x.bandwidth()).attr("y", (l) => y(l.v)).attr("height", (l) => y(0) - y(l.v))
     .attr("fill", (l, i) => (R.ok[i] ? l.color : "var(--nodata)")).attr("opacity", 0.25);
   bars.append("g").attr("class", "blocks");
-  bars.append("text").attr("x", x.bandwidth() / 2).attr("y", y(0) + 14).attr("text-anchor", "middle").attr("font-size", 12).attr("font-weight", 600).attr("fill", "var(--ink)")
+  bars.append("text").attr("x", x.bandwidth() / 2).attr("y", y(0) + 14).attr("text-anchor", "middle").attr("font-weight", 600).attr("fill", "var(--ink)")
     .text((l) => (l.name.length > 9 && x.bandwidth() < 60 ? `${l.name.slice(0, 8)}.` : l.name));
-  bars.append("text").attr("class", "ns").attr("x", x.bandwidth() / 2).attr("y", y(0) + 28).attr("text-anchor", "middle").attr("font-size", 11).attr("fill", "var(--ink-2)");
+  bars.append("text").attr("class", "ns").attr("x", x.bandwidth() / 2).attr("y", y(0) + 28).attr("text-anchor", "middle").attr("fill", "var(--ink-2)");
   const line = svg.append("g").attr("class", "pr-line").style("cursor", "ns-resize").style("touch-action", "none");
   line.append("rect").attr("x", 0).attr("width", W).attr("y", -14).attr("height", 28).attr("fill", "transparent");
   line.append("line").attr("x1", 0).attr("x2", W).attr("stroke", "var(--ink)").attr("stroke-width", 2.5);
   line.append("rect").attr("class", "pill").attr("y", -11).attr("height", 22).attr("rx", 11).attr("fill", "var(--ink)");
-  line.append("text").attr("class", "pt").attr("y", 4).attr("font-size", 12).attr("font-weight", 600).attr("fill", "var(--bg)");
+  line.append("text").attr("class", "pt").attr("y", 4).attr("font-weight", 600).attr("fill", "var(--bg)");
   line.call(d3.drag().on("drag", (ev) => set(y.invert(ev.y))));
 
   function set(v, fromRange = false) {
@@ -330,7 +330,7 @@ export function partes(el, provs) {
   pts.sort((p, q) => q.a - p.a);
   const svg = d3.select(el.querySelector(".pt-hemi")).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
   const dots = svg.selectAll("circle").data(pts).join("circle").attr("cx", (p) => p.x).attr("cy", (p) => p.y).attr("r", 6.2).attr("fill", "var(--nodata)");
-  const big = svg.append("text").attr("x", cx).attr("y", cy - 30).attr("text-anchor", "middle").attr("font-size", 15).attr("font-weight", 600).attr("fill", "var(--ink)");
+  const big = svg.append("text").attr("x", cx).attr("y", cy - 30).attr("text-anchor", "middle").attr("class", "t-m").attr("font-weight", 600).attr("fill", "var(--ink)");
   let cur = -1;
   function show(i, dur = 900) {
     cur = i;

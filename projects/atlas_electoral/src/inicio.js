@@ -1,13 +1,12 @@
-import { load, loadFresh, FAM, pct, fmt, elecLabel, BUILD_AT } from "./data.js?v=0.2.74";
-import { seatRows, lines, dateOf, familySeries, IDEO, famName, fam, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.74";
-import { projectFromPolls } from "./simulador.js?v=0.2.74";
-const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.74";
-import { short, pc, pct as probTxt, reparto, escanosAire } from "./provincia.js?v=0.2.74";
-import { textos, md, INDICE } from "./textos.js?v=0.2.74";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.108";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.108";
+import { projectFromPolls } from "./simulador.js?v=0.2.108";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.108";
+import { pugnasHtml } from "./provincia.js?v=0.2.108";
+import { textos, md, INDICE } from "./textos.js?v=0.2.108";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.108";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
-const fechaLarga = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
 
 const LIVE_ELECTION = "generales_2026-11";
 
@@ -40,24 +39,22 @@ export async function renderInicio(app, args = []) {
   const [PR, DR] = await Promise.all([load("prediccion.json").catch(() => null), load("prediccion_draws.json").catch(() => null)]);
   const G = await load("geo_nuevos.json").catch(() => null);
   const [PV, BT, EC] = await Promise.all([load("provincias_29n.json").catch(() => null), load("backtest.json").catch(() => null), load("error_comun.json").catch(() => null)]);
-  const de100 = (p) => Math.round(p * 100);
   const mayoria = PR?.mayorias.find((m) => m.nombre === "PP + Vox");
   const days = Math.ceil((ELECTION_DAY - new Date()) / 86400000);
   const base = Object.keys(dh).sort().at(-1);
   const conv = S.convocatoria_2026;
   const esc26 = conv?.escanos?.provincias ? Object.fromEntries(conv.escanos.provincias.map((r) => [r.prov, r.escanos])) : null;
   const proj = projectFromPolls(dh[base], E.ultimo, esc26, G);
-  const ppvox = (proj.seats.pp ?? 0) + (proj.seats.vox ?? 0);
-  const izqNac = ["psoe", "izq", "sumar", "podemos"].reduce((s, f) => s + (proj.seats[f] ?? 0), 0);
-  const otros = Object.entries(proj.seats).filter(([f, n]) => n && !["pp", "vox", "psoe", "izq", "sumar", "podemos"].includes(f)).sort((a, b) => b[1] - a[1]);
   const top = ["pp", "psoe", "vox", "sumar", "podemos", "salf"].filter((p) => E.ultimo[p] != null);
 
   const live = await noche(args[0] === "demo");
   const T = await textos("portada");
+  const R = PR ? await resultadosHtml(PR) : null;   // the results block shared with the Modelo tab (textos/resultados.md)
   // the prose is textos/portada.md; here only the figures, the conditions and the computed blocks
   const vars = {
     dias: days, ultimo_campo: PR ? fechaLarga(PR.ultimo_campo) : null, ppvox_176: mayoria ? de100(mayoria.prob) : null,
-    pp_primero: PR ? de100(PR.p_pp_primero) : null, simulaciones: PR ? PR.draws.toLocaleString("es-ES") : null, fecha_datos: fechaLarga(BUILD_AT.slice(0, 10)),
+    pp_primero: PR ? de100(PR.p_pp_primero) : null, pp_mas_votado: PR?.p_pp_mas_votado != null ? de100(PR.p_pp_mas_votado) : null,
+    ultimo_modelo: PR ? fechaLarga(PR.fecha.slice(0, 10)) : null, simulaciones: PR ? PR.draws.toLocaleString("es-ES") : null, fecha_datos: fechaLarga(BUILD_AT.slice(0, 10)),
     elecciones: BT?.elecciones, desde: BT?.desde, acierto_voto: BT ? de100(BT.horizontes[7].voto.en90) : null, acierto_escanos: BT ? de100(BT.horizontes[7].escanos.en90) : null,
     error_x15: EC ? de100(EC.escala_x15) : null, error_x08: EC ? de100(EC.escala_x08) : null,
     fuente_escanos: conv?.escanos?.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE",
@@ -68,13 +65,13 @@ export async function renderInicio(app, args = []) {
   const slots = {
     noche: null,
     promedio: `<p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${String(E.ultimo[p]).replace(".", ",")}%</b></span>`).join("")}</p>`,
-    selector_provincia: PV ? `<div class="controls"><select id="in-prov" aria-label="Tu provincia"><option value="">Ver tu provincia</option>${[...PV.provincias].sort((a, b) => a.n.localeCompare(b.n, "es")).map((p) => `<option value="${p.prov}">${p.n}</option>`).join("")}</select></div>` : null,
-    tabla_aire: PV ? `<div class="scrollx"><table class="nosort"><tr><th>Provincia</th><th>Partido</th><th class="num">Escaño</th><th class="num">Probabilidad</th><th>Reparto más probable</th></tr>
-    ${escanosAire(PV).slice(0, 8).map((d) => `<tr><td><a href="#provincia/${d.p.prov}">${d.p.n}</a></td><td style="white-space:nowrap"><i class="dot" style="background:${pc(d.l.f)}"></i>${short(d.l.f)}</td><td class="num">${d.k}.º</td><td class="num">${probTxt(d.x)}</td><td>${reparto(d.p.repartos[0].a)}</td></tr>`).join("")}</table></div>` : null,
+    pugnas: PV ? pugnasHtml(PV, 3, T.pugna, "portada") : null,
     mov: '<div class="grid2" id="mov"></div>',
+    resultados: R?.html ?? null,
     calendario: conv?.calendario ? calendario(conv) : null,
   };
   const { html, sec } = md(T.principal, { vars, flags, slots, page: "portada" });
+  if (R) sec.find(([id]) => id === "diputados")?.[2].push(...R.sec);   // Escaños and Voto, after Resumen
   // index: a sticky column on wide screens, a sticky scrollable row under the menu on phones
   const IX = indexHtml(sec);
   app.innerHTML = `
@@ -85,8 +82,6 @@ export async function renderInicio(app, args = []) {
     ${html.replace(INDICE, IX.row)}
     </div></div>`;
   sectionIndex(app);
-  const selProv = app.querySelector("#in-prov");
-  if (selProv) selProv.onchange = () => { if (selProv.value) location.hash = `provincia/${selProv.value}`; };
 
   if (live) {
     const fam = {};
@@ -96,11 +91,10 @@ export async function renderInicio(app, args = []) {
     clearTimeout(window.__nocheTimer);
     window.__nocheTimer = setTimeout(() => { if (location.hash.replace("#", "").split("/")[0] in { "": 1, inicio: 1 }) renderInicio(app, args); }, 60000);
   }
-  const est = PR?.central ?? proj.seats;
-  seatRows(app.querySelector("#proj"), [{ label: "Estimación", e: est }], { labelWidth: 90, eid: "generales_2026-11" });
-  bloques(app.querySelector("#bloques"), est, { draws: PR ? DR : null });
+  // without a model, portada.md has its own seat bar and groups (the poll projection): the same wiring
+  wireResultados(app, { PR, DR, est: PR?.central ?? proj.seats, conv });
   pollChart(app.querySelector("#chart-area"), E, { selector: false, lastTable: false, tools: false, kpi: false });
-  if (D) movilizacion(app.querySelector("#mov"), D);
+
 }
 
 // latest survey with microdata: who is sure to vote, and the change from the same house's previous survey

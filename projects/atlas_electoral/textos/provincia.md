@@ -1,11 +1,19 @@
 <!--
-Tu provincia. Cómo se escribe: textos/README.md.
+Provincias. Cómo se escribe: textos/README.md.
 
 Parte principal (la página):
   {ultimo_campo}   fecha de la última encuesta del modelo (p. ej. "13 nov 2026")
   {simulaciones}   número de simulaciones (4.000)
   {boe}            enlace al BOE de las candidaturas proclamadas
-  [[selector]] [[detalle]] [[tabla_aire]]   selector de provincia, ficha de la provincia, tabla de escaños en el aire
+  {en_juego}       escaños en el aire (ningún partido los gana en 9 de cada 10 simulaciones), toda España (p. ej. 71)
+  {decididos}      los demás escaños
+  {total}          escaños del Congreso (350)
+  [[mapa]]         mapa de provincias coloreado por escaños en juego (pulsar una abre su ficha)
+  [[selector]] [[detalle]] [[pugnas]]   selector de provincia, ficha de la provincia, tabla de escaños en el aire
+
+Parte "tooltip" (lo que sale al pasar el ratón por una provincia del mapa):
+  {provincia}, {escanos}, {escanos_palabra}, {en_juego} (escaños en juego en esa provincia),
+  {ultimo_de}, {primera_fuera}, {frecuencia} (la pugna más habitual por el último escaño). Condición: disputa.
 
 Parte "detalle" (la ficha de la provincia elegida, se rehace al cambiar de provincia):
   {provincia}        nombre
@@ -21,23 +29,29 @@ Parte "detalle" (la ficha de la provincia elegida, se rehace al cambiar de provi
   Condiciones: disputa (hay pugna por el último escaño), margen (se conoce la diferencia de votos),
   candidaturas, encuestas.
 -->
-# Tu provincia
+# Provincias
 
 [sub] Qué espera el modelo para el 29N en cada provincia, con cuánta seguridad, y todas las encuestas publicadas allí. Con encuestas hasta el {ultimo_campo}.
+
+## Dónde se decide {#decide | Dónde se decide}
+
+Hay **{en_juego} escaños en el aire**: escaños que ningún partido gana en al menos 9 de cada 10 simulaciones. Los otros {decididos} están prácticamente decididos. El mapa muestra cuántos hay en el aire en cada provincia; pulsa una para ver su ficha.
+
+[[mapa]]
+
+### Escaños en el aire
+
+[nota] Las provincias con más escaños en el aire. En cada una, además, la pugna más habitual por su último escaño: quién se lo suele llevar, quién se queda fuera y por cuántos votos. Que un partido gane unos pocos votos solo cambia ese último escaño; la incertidumbre del modelo, de varios puntos, puede mover varios a la vez, y por eso una provincia grande tiene varios en el aire.
+
+[[pugnas]]
+
+## Tu provincia {#tuya | Tu provincia}
 
 [[selector]]
 [[detalle]]
 
-<section>
-<h2>Escaños en el aire</h2>
-
-[nota] Los casos más igualados de toda España: partidos con una probabilidad cercana a la mitad de conseguir ese escaño. Un mismo escaño disputado aparece una vez por cada partido que lo pelea. Pulsa una provincia para verla.
-
-[[tabla_aire]]
-</section>
-
 ::: metodología #metodo
-**De dónde sale.** Es el mismo modelo de la pestaña Encuestas, con {simulaciones} simulaciones: promedio nacional de encuestas, error común de la industria y, en cada simulación, voto provincial a partir del mapa de 2023 (Sumar, Podemos y SALF, a partir de las europeas de 2024) con ruido por comunidad y provincia y reparto D'Hondt. Las listas que no aparecen en las encuestas nacionales conservan sus votos de 2023.
+**De dónde sale.** Es el mismo modelo de la pestaña Encuestas, con {simulaciones} simulaciones: promedio nacional de encuestas, error común de la industria y, en cada simulación, voto provincial a partir del mapa de 2023 (Frente Amplio, Podemos y SALF, a partir de las europeas de 2024) con ruido por comunidad y provincia y reparto D'Hondt. Las listas que no aparecen en las encuestas nacionales conservan sus votos de 2023.
 
 **Partidos regionales.** ERC, Junts, Bildu y PNV son cerca del 1% de una muestra nacional, así que su error se mide aparte y el ruido de las encuestas se ajusta a su tamaño. Probado en las elecciones desde 1986, el 90% de sus resultados cae dentro del rango del 90%.
 
@@ -49,24 +63,26 @@ Parte "detalle" (la ficha de la provincia elegida, se rehace al cambiar de provi
 
 **Votos del último escaño.** Mediana, entre las simulaciones, de los votos que le faltan a la primera lista que se queda fuera para superar a la última que entra, a la escala de los votos de 2023.
 
-**Muestra.** Propia: la encuesta entrevistó a una muestra de la provincia. Desglose: el dato sale de una muestra mayor. Las filas transcritas de prensa y aún no revisadas van marcadas como tales.
+**Tipo de encuesta.** Solo de esta provincia: todas las entrevistas son de la provincia (también las de una comunidad de una sola provincia, como Madrid o Cantabria). Nacional, con dato de la provincia: una encuesta de toda España de la que se saca el dato provincial; en cada provincia hay pocas entrevistas, así que es una cifra muy incierta, y las entrevistas que se indican son las de toda España. Regional, con dato de la provincia: igual, para una encuesta de una comunidad autónoma. No consta: la fuente no lo dice. Las filas transcritas de prensa y aún no revisadas van marcadas como tales.
+
+**Escaños en el aire.** En cada provincia, el escaño de un partido cuenta como decidido cuando lo gana en al menos 9 de cada 10 simulaciones (el primero, si gana al menos uno; el segundo, si gana al menos dos). Los escaños en el aire son los que quedan: los que ningún partido tiene decididos así.
 :::
 
 === detalle ===
 
-<h2>{provincia}</h2>
+<h3 class="pv-nombre">{provincia}</h3>
 
 Elige {escanos} {escanos_palabra}{cambio}. El reparto más probable es **{reparto}**, que sale en el {prob_reparto} de las simulaciones.{siguientes}
 
-### Probabilidad de cada escaño
+#### Probabilidad de cada escaño
 
 [[casillas]]
 
-### Escaños y voto por partido
+#### Escaños y voto por partido
 
 [[tabla_partidos]]
 
-### El último escaño
+#### El último escaño
 
 ::: si disputa
 ::: si margen
@@ -78,7 +94,7 @@ Lo más frecuente es que el último escaño sea de **{ultimo_de}** y que la prim
 No hay disputa entre partidos por el último escaño.
 :::
 
-### Candidaturas proclamadas
+#### Candidaturas proclamadas
 
 ::: si candidaturas
 [[tabla_candidaturas]]
@@ -86,10 +102,26 @@ No hay disputa entre partidos por el último escaño.
 [nota] Sin datos.
 :::
 
-### Encuestas publicadas aquí
+#### Encuestas publicadas aquí
 
 ::: si encuestas
 [[tabla_encuestas]]
 ::: si no
 [nota] Aún no conocemos ninguna encuesta publicada para esta provincia.
+:::
+
+=== pugna ===
+
+::: si margen
+**{provincia}**: {en_juego} de sus {escanos} escaños en el aire. La pugna más habitual por el último es entre **{ultimo_de}**, que se lo lleva, y **{primera_fuera}**, que se queda fuera a unos {margen} votos (en {frecuencia} simulaciones).
+::: si no
+**{provincia}**: {en_juego} de sus {escanos} escaños en el aire. La pugna más habitual por el último es entre **{ultimo_de}**, que se lo lleva, y **{primera_fuera}**, que se queda fuera (en {frecuencia} simulaciones).
+:::
+
+=== tooltip ===
+
+**{provincia}**: {escanos} {escanos_palabra}, {en_juego} en el aire.
+
+::: si disputa
+Último escaño: lo más habitual es que se lo lleve **{ultimo_de}** y se quede fuera **{primera_fuera}** ({frecuencia} simulaciones).
 :::

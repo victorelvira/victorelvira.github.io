@@ -1,16 +1,18 @@
-import { init } from "./data.js?v=0.2.74";
-import { renderMapa } from "./mapa.js?v=0.2.74";
-import { renderPueblo } from "./pueblo.js?v=0.2.74";
-import { renderMiniatura } from "./miniatura.js?v=0.2.74";
-import { renderSimulador } from "./simulador.js?v=0.2.74";
-import { renderEncuestas } from "./encuestas.js?v=0.2.74";
-import { renderInicio } from "./inicio.js?v=0.2.74";
-import { renderHistoria } from "./historia.js?v=0.2.74";
-import { renderComunidad } from "./comunidad.js?v=0.2.74";
-import { renderExplora } from "./explora.js?v=0.2.74";
-import { renderDhondt } from "./dhondt.js?v=0.2.74";
-import { renderProvincia } from "./provincia.js?v=0.2.74";
-import { hideTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.74";
+import { init } from "./data.js?v=0.2.108";
+import { renderMapa } from "./mapa.js?v=0.2.108";
+import { renderPueblo } from "./pueblo.js?v=0.2.108";
+import { renderMiniatura } from "./miniatura.js?v=0.2.108";
+import { renderSimulador } from "./simulador.js?v=0.2.108";
+import { renderEncuestas } from "./encuestas.js?v=0.2.108";
+import { renderHistorico } from "./historico.js?v=0.2.108";
+import { renderModelo } from "./modelo.js?v=0.2.108";
+import { renderInicio } from "./inicio.js?v=0.2.108";
+import { renderHistoria } from "./historia.js?v=0.2.108";
+import { renderComunidad } from "./comunidad.js?v=0.2.108";
+import { renderExplora } from "./explora.js?v=0.2.108";
+import { renderDhondt } from "./dhondt.js?v=0.2.108";
+import { renderProvincia } from "./provincia.js?v=0.2.108";
+import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.108";
 
 // Spanish decimal comma and thousands point for every d3.format (axes, tooltips)
 window.d3.formatDefaultLocale({ decimal: ",", thousands: ".", grouping: [3], currency: ["", " €"] });
@@ -26,6 +28,8 @@ window.d3.timeFormatDefaultLocale({
 const routes = {
   inicio: renderInicio,
   encuestas: renderEncuestas,
+  modelo: renderModelo,
+  historico: renderHistorico,
   generales: renderHistoria,
   historia: renderHistoria, // old links
   simulador: renderSimulador,
@@ -40,10 +44,21 @@ const routes = {
 // views without a tab of their own (reached from the maps and the footer) light up Generales
 const TAB = { historia: "generales", mapa: "generales", explora: "generales", pueblo: "generales", comunidad: "generales", miniatura: "generales" };
 
+// old links into the Encuestas page whose content now has a tab of its own: past cycles ("#encuestas/2019-11-10")
+// and the past-polls sections go to Encuestas históricas, the forecast to Modelo
+const PAST = ["pasado", "ciclos", "eleccion", "salto", "aciertos"];
+function moved(name, args) {
+  if (name !== "encuestas" || !args[0]) return name;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(args[0]) || PAST.includes(args[0])) return "historico";
+  if (args[0] === "prediccion") return "modelo";
+  return name;
+}
+
 async function route() {
   hideTip();
   scrollTo(0, 0);
-  const [name, ...args] = location.hash.replace(/^#/, "").split("/");
+  let [name, ...args] = location.hash.replace(/^#/, "").split("/");
+  if (moved(name, args) !== name) { name = moved(name, args); history.replaceState(null, "", `#${[name, ...args].join("/")}`); }
   const view = routes[name] ? name : "inicio";
   document.querySelectorAll("nav.sections a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === `#${TAB[view] ?? view}`));
   const app = document.getElementById("app");
@@ -51,6 +66,8 @@ async function route() {
   try {
     await routes[view](app, args.map(decodeURIComponent));
     if (args[0] === "metodo") { const m = app.querySelector("#metodo"); if (m) { m.open = true; m.scrollIntoView({ block: "start" }); } }
+    // "#inicio/fiarse": a link to a section of a page (the section ids are "s-<name>", textos/*.md headings {#name})
+    else if (args[0] && /^[\w-]+$/.test(args[0])) app.querySelector(`#s-${args[0]}`)?.scrollIntoView({ block: "start" });
   } catch (e) {
     console.error(e);
     app.innerHTML = `<p>Error cargando la vista: ${e.message}</p>`;
@@ -93,5 +110,9 @@ document.querySelector(".brand").addEventListener("click", (e) => {
 });
 
 await init();
+// explanations on hover: any element with data-tip="..." shows it in the shared tooltip
+const app0 = document.getElementById("app");
+app0.addEventListener("mousemove", (ev) => { const t = ev.target.closest?.("[data-tip]"); if (t && t.dataset.tip) showTip(t.dataset.tip, ev); });
+app0.addEventListener("mouseout", (ev) => { if (ev.target.closest?.("[data-tip]") && !ev.relatedTarget?.closest?.("[data-tip]")) hideTip(); });
 addEventListener("hashchange", route);
 route();

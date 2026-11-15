@@ -6,8 +6,11 @@ Cada pestaña tiene aquí su archivo de texto. Lo que escribas es lo que sale en
 | Archivo | Pestaña |
 |---|---|
 | portada.md | 29N (portada) |
-| provincia.md | Tu provincia |
-| encuestas.md | Encuestas |
+| provincia.md | Provincias |
+| encuestas.md | Encuestas 29N |
+| modelo.md | Modelo |
+| resultados.md | El bloque de resultados del modelo (escaños, "Forma tu mayoría", voto): sale igual en 29N y en Modelo |
+| historico.md | Encuestas históricas |
 | generales.md | Generales |
 | simulador.md | Simulador |
 | dhondt.md | D'Hondt |
@@ -15,6 +18,11 @@ Cada pestaña tiene aquí su archivo de texto. Lo que escribas es lo que sale en
 
 Al principio de cada archivo, entre `<!--` y `-->`, está la lista de cifras y condiciones de esa página. Ese bloque
 no sale en la web.
+
+**¿Dónde está escrito esto?** En local, mantén pulsada la tecla Alt (Option) y pasa el ratón por la página: se
+recuadra cada bloque de texto. Alt+doble clic lo abre directamente en Sublime Text en su línea; Alt+clic solo dice el
+archivo y la línea y los copia. Lo hace el servidor de la familia (`_servir_green.command` y compañía), así que funciona
+igual en todos los proyectos. Los gráficos y las tablas no tienen línea propia: salen del código.
 
 ## Lo básico
 
@@ -72,6 +80,10 @@ Al principio de la línea:
 
     ::: plegable "Otro título"
     (desplegable con otro título)
+    :::
+
+    ::: juego
+    (caja con fondo de color, para lo interactivo)
     :::
 
 ## Condiciones

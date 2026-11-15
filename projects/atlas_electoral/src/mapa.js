@@ -1,10 +1,10 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 const topojson = window.topojson;
 const geoConicConformalSpain = d3.geoConicConformalSpain;
-import { searchBox } from "./pueblo.js?v=0.2.74";
-import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.74";
-import { addZoom } from "./zoom.js?v=0.2.74";
-import { textos, md } from "./textos.js?v=0.2.74";
+import { searchBox } from "./pueblo.js?v=0.2.108";
+import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.108";
+import { addZoom } from "./zoom.js?v=0.2.108";
+import { textos, md } from "./textos.js?v=0.2.108";
 
 const state = { tipo: "generales", eleccion: null, modo: "ganador", familia: "psoe", playing: null };
 let geo; // cached {features, provMesh, path}
@@ -109,7 +109,7 @@ export async function renderMapa(app, args, embed = null) {
   };
   app.innerHTML = md(T.principal, { slots, flags: { embed: !!embed }, page: "mapa" }).html;
   // a one-line part as bare text (for a heading that already exists)
-  const texto = (part, opts) => md(T[part], { ...opts, page: "mapa" }).html.replace(/^<p>|<\/p>$/g, "");
+  const texto = (part, opts) => md(T[part], { ...opts, page: "mapa" }).html.replace(/^<p[^>]*>|<\/p>$/g, "");
 
   const { features, provMesh, path, borders } = await getGeo();
   const svg = d3.select(app).select("svg");
@@ -247,7 +247,7 @@ export async function renderMapa(app, args, embed = null) {
   await draw();
 }
 
-function rewind(f) {
+export function rewind(f) {
   const g = f.geometry;
   if (!g) return f;
   // fix each polygon separately: a multipolygon can mix correct and inverted parts
