@@ -1,11 +1,11 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.124";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.124";
-import { projectFromPolls } from "./simulador.js?v=0.2.124";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.124";
-import { pugnasHtml } from "./provincia.js?v=0.2.124";
-import { textos, md, INDICE } from "./textos.js?v=0.2.124";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.124";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.124";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.125";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.125";
+import { projectFromPolls } from "./simulador.js?v=0.2.125";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.125";
+import { pugnasHtml } from "./provincia.js?v=0.2.125";
+import { textos, md, INDICE } from "./textos.js?v=0.2.125";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.125";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.125";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 

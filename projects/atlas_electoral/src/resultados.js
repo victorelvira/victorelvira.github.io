@@ -1,11 +1,11 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.124";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.124";
-import { num } from "./encuestas.js?v=0.2.124";
-import { short, pc } from "./provincia.js?v=0.2.124";
-import { textos, md } from "./textos.js?v=0.2.124";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.125";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.125";
+import { num } from "./encuestas.js?v=0.2.125";
+import { short, pc } from "./provincia.js?v=0.2.125";
+import { textos, md } from "./textos.js?v=0.2.125";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
