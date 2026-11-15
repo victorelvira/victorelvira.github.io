@@ -1,0 +1,230 @@
+{
+ "_doc": "Change within each pollster (pipeline/cambio_casas.py): latest poll minus the same house's latest poll ending 21 to 60 days earlier, houses with a poll ending in the last 14 days; internal polls and CIS re-estimations left out. Percentage points. A description of the data, not a forecast.",
+ "ultimo_campo": "2026-11-13",
+ "dias_recientes": 14,
+ "separacion_min": 21,
+ "separacion_max": 60,
+ "resumen": {
+  "pp": {
+   "n": 14,
+   "bajan": 10,
+   "suben": 4,
+   "iguales": 0,
+   "mediana": -0.3
+  },
+  "psoe": {
+   "n": 14,
+   "bajan": 8,
+   "suben": 6,
+   "iguales": 0,
+   "mediana": -0.3
+  },
+  "vox": {
+   "n": 14,
+   "bajan": 6,
+   "suben": 8,
+   "iguales": 0,
+   "mediana": 0.25
+  },
+  "sumar": {
+   "n": 14,
+   "bajan": 5,
+   "suben": 9,
+   "iguales": 0,
+   "mediana": 0.4
+  },
+  "podemos": {
+   "n": 13,
+   "bajan": 13,
+   "suben": 0,
+   "iguales": 0,
+   "mediana": -1.4
+  },
+  "salf": {
+   "n": 10,
+   "bajan": 5,
+   "suben": 5,
+   "iguales": 0,
+   "mediana": 0.0
+  }
+ },
+ "casas": [
+  {
+   "casa": "40dB",
+   "antes": "2026-10-08",
+   "ahora": "2026-11-13",
+   "cambio": {
+    "pp": -0.8,
+    "psoe": 1.7,
+    "vox": -0.4,
+    "sumar": -0.1,
+    "podemos": -1.0,
+    "salf": -0.2
+   }
+  },
+  {
+   "casa": "Ateneo del Dato",
+   "antes": "2026-10-01",
+   "ahora": "2026-11-05",
+   "cambio": {
+    "pp": -1.7,
+    "psoe": 1.1,
+    "vox": -0.6,
+    "sumar": -0.9,
+    "podemos": -1.8
+   }
+  },
+  {
+   "casa": "CIS",
+   "antes": "2026-10-06",
+   "ahora": "2026-10-30",
+   "cambio": {
+    "pp": 3.3,
+    "psoe": -0.7,
+    "vox": 1.3,
+    "sumar": 0.8,
+    "podemos": -2.0,
+    "salf": -0.4
+   }
+  },
+  {
+   "casa": "Celeste-Tel",
+   "antes": "2026-09-21",
+   "ahora": "2026-11-03",
+   "cambio": {
+    "pp": -2.1,
+    "psoe": 0.3,
+    "vox": 1.4,
+    "sumar": 1.6,
+    "podemos": -1.4,
+    "salf": -0.1
+   }
+  },
+  {
+   "casa": "DYM",
+   "antes": "2026-10-07",
+   "ahora": "2026-11-06",
+   "cambio": {
+    "pp": -0.9,
+    "psoe": -0.9,
+    "vox": 0.4,
+    "sumar": 2.0,
+    "podemos": -1.7,
+    "salf": -0.1
+   }
+  },
+  {
+   "casa": "Data10",
+   "antes": "2026-10-02",
+   "ahora": "2026-11-03",
+   "cambio": {
+    "pp": -1.6,
+    "psoe": -1.4,
+    "vox": 1.2,
+    "sumar": 1.7,
+    "podemos": -1.2,
+    "salf": 0.1
+   }
+  },
+  {
+   "casa": "EM-Analytics",
+   "antes": "2026-10-23",
+   "ahora": "2026-11-13",
+   "cambio": {
+    "pp": -0.3,
+    "psoe": -0.2,
+    "vox": -0.2,
+    "sumar": 0.7,
+    "podemos": -0.3,
+    "salf": 0.5
+   }
+  },
+  {
+   "casa": "GAD3",
+   "antes": "2026-10-08",
+   "ahora": "2026-11-05",
+   "cambio": {
+    "pp": 0.5,
+    "psoe": -0.5,
+    "vox": 0.4,
+    "sumar": 0.1,
+    "podemos": -0.9,
+    "salf": -0.5
+   }
+  },
+  {
+   "casa": "IMOP",
+   "antes": "2026-10-16",
+   "ahora": "2026-11-06",
+   "cambio": {
+    "pp": 1.3,
+    "psoe": -1.2,
+    "vox": -0.1,
+    "sumar": -0.8,
+    "podemos": -0.7,
+    "salf": 0.5
+   }
+  },
+  {
+   "casa": "NC Report",
+   "antes": "2026-10-06",
+   "ahora": "2026-11-05",
+   "cambio": {
+    "pp": -1.1,
+    "psoe": 0.6,
+    "vox": 1.1,
+    "sumar": 1.6,
+    "podemos": -1.5
+   }
+  },
+  {
+   "casa": "Sigma Dos",
+   "antes": "2026-10-22",
+   "ahora": "2026-11-13",
+   "cambio": {
+    "pp": 0.4,
+    "psoe": -0.5,
+    "vox": -0.2,
+    "sumar": -1.0
+   }
+  },
+  {
+   "casa": "Sociométrica",
+   "antes": "2026-10-11",
+   "ahora": "2026-11-08",
+   "cambio": {
+    "pp": -0.3,
+    "psoe": 1.5,
+    "vox": 0.1,
+    "sumar": 0.1,
+    "podemos": -1.6,
+    "salf": 0.1
+   }
+  },
+  {
+   "casa": "Target Point",
+   "antes": "2026-10-09",
+   "ahora": "2026-10-30",
+   "cambio": {
+    "pp": -0.2,
+    "psoe": -0.4,
+    "vox": 1.2,
+    "sumar": -0.3,
+    "podemos": -1.0,
+    "salf": 1.3
+   }
+  },
+  {
+   "casa": "Winston",
+   "antes": "2026-10-01",
+   "ahora": "2026-11-08",
+   "cambio": {
+    "pp": -0.2,
+    "psoe": 1.5,
+    "vox": -0.4,
+    "sumar": 1.6,
+    "podemos": -2.3
+   }
+  }
+ ]
+}

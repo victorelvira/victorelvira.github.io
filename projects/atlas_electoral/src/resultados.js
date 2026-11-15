@@ -1,11 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.125";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.125";
-import { num } from "./encuestas.js?v=0.2.125";
-import { short, pc } from "./provincia.js?v=0.2.125";
-import { textos, md } from "./textos.js?v=0.2.125";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.127";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.127";
+import { num } from "./encuestas.js?v=0.2.127";
+import { short, pc } from "./provincia.js?v=0.2.127";
+import { textos, md } from "./textos.js?v=0.2.127";
+import { t, loc, deCada } from "./i18n.js?v=0.2.127";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -22,14 +23,14 @@ export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = n
   // the selector and the cards are wrapped (.res-sel, .res-q176) so that the front page can lift them into its desktop grid
   slots.quien_176 = DR && T.quien_176 ? `<div class="res-q176">${md(T.quien_176, { vars: { ...tarjetasVars(DR), ...masVotadoVars(PR) }, flags: { mas_votado: !!masVotadoVars(PR).mv_pp }, page: "resultados" }).html}</div>` : null;
   slots.atajos = T.atajos ? md(T.atajos, { page: "resultados" }).html : null;
-  slots.hemiciclo = `<div class="hemi"><svg class="hemi-svg" role="img" aria-label="Hemiciclo del escenario central"></svg><div class="hemi-foco"></div></div>`;
+  slots.hemiciclo = `<div class="hemi"><svg class="hemi-svg" role="img" aria-label="${t("Hemiciclo del escenario central")}"></svg><div class="hemi-foco"></div></div>`;
   if (modelo && modelo !== "k0" && T.nota_evolucion) slots.evolucion = md(T.nota_evolucion, { page: "resultados" }).html + '<div id="evolucion"></div>';
   const { html, sub } = md(T.principal, { slots, page: "resultados" });
   let top = "";
   if (modelos?.length && T.selector) {
     const cur = modelos.find((m) => m.id === modelo) ?? modelos[0];
-    const sel = `<select id="modelo-sel" style="max-width:100%">${modelos.map((m) => `<option value="${m.id}"${m.id === cur.id ? " selected" : ""}>${m.nombre}</option>`).join("")}</select>`;
-    top = `<div class="res-sel">${md(T.selector, { vars: { descripcion_modelo: cur.descripcion.replace(/\s*\([^)]*\)/g, "") }, slots: { selector_modelo: sel }, page: "resultados" }).html}</div>`;
+    const sel = `<select id="modelo-sel" style="max-width:100%">${modelos.map((m) => `<option value="${m.id}"${m.id === cur.id ? " selected" : ""}>${t(m.nombre)}</option>`).join("")}</select>`;
+    top = `<div class="res-sel">${md(T.selector, { vars: { descripcion_modelo: t(cur.descripcion.replace(/\s*\([^)]*\)/g, "")) }, slots: { selector_modelo: sel }, page: "resultados" }).html}</div>`;
   }
   return { html: top + html, sec: sub };
 }
@@ -40,7 +41,7 @@ export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = n
  *  at: {party: group}, the reader's groups; pass the same object again to keep them when the block is redrawn. */
 export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = {} }) {
   const T = textosCache;   // read by resultadosHtml before this runs (null on the front page without a model)
-  seatRows(root.querySelector("#proj"), [{ label: PR ? "Por partidos" : "Estimación", e: est }], { labelWidth: PR ? 130 : 90, eid: "generales_2026-11" });
+  seatRows(root.querySelector("#proj"), [{ label: PR ? t("Por partidos") : t("Estimación"), e: est }], { labelWidth: PR ? 130 : 90, eid: "generales_2026-11" });
   // the evolution of the two blocs the reader has formed (inside "Forma tu mayoría"): redrawn on every regrouping
   const evoEl = root.querySelector("#evolucion");
   let evoAt = null, SD = null;
@@ -53,7 +54,7 @@ export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = 
   // (not "Otros"), else the bigger of left and right
   let antes = null, foco = null;
   // under the party bar, the bar of the reader's three blocs, same width and labels (Víctor, 2026-11-17)
-  const draw = () => bloques(bqEl, est, { at, draws: PR ? DR : null, barra: { label: "Por bloques", labelWidth: PR ? 130 : 90 },
+  const draw = () => bloques(bqEl, est, { at, draws: PR ? DR : null, barra: { label: t("Por bloques"), labelWidth: PR ? 130 : 90 },
     onChange: (at, sumOf) => {
       const movido = antes && Object.keys(at).find((f) => antes[f] && antes[f] !== at[f]);
       if (movido && at[movido] !== "otros") foco = at[movido];
@@ -81,14 +82,15 @@ export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = 
   // the cards' tooltips: the 90% range behind each frequency (hover, or tap on a phone)
   if (DR) {
     const V = tarjetasVars(DR);
-    const TIP = { ppvox: ["PP + Vox", `${V.r_ppvox} escaños`], pp: ["PP solo", `${V.r_pp} escaños`], investidura: ["Bloque de investidura de 2023", `${V.r_investidura} escaños`],
-      pp_psoe: ["Escaños del PP menos los del PSOE", V.r_pp_psoe], ninguno: ["PP + Vox, cuando ninguno llega", `${V.r_ninguno} escaños`],
-      inv_sin_junts: ["Bloque de 2023 sin Junts", `${V.r_inv_sin_junts} escaños`] };
+    const esc = (r) => t("{r} escaños", { r });
+    const TIP = { ppvox: ["PP + Vox", esc(V.r_ppvox)], pp: [t("PP solo"), esc(V.r_pp)], investidura: [t("Bloque de investidura de 2023"), esc(V.r_investidura)],
+      pp_psoe: [t("Escaños del PP menos los del PSOE"), V.r_pp_psoe], ninguno: [t("PP + Vox, cuando ninguno llega"), esc(V.r_ninguno)],
+      inv_sin_junts: [t("Bloque de 2023 sin Junts"), esc(V.r_inv_sin_junts)] };
     root.querySelectorAll("[data-q]").forEach((c) => {
-      const t = TIP[c.dataset.q]; if (!t) return;
+      const tq = TIP[c.dataset.q]; if (!tq) return;
       // one line: the range, then "(en 9 de cada 10 simulaciones)" after it, not two columns (Víctor, 2026-11-17)
-      const extra = c.dataset.q === "ninguno" ? `<div class="muted">En ${V.empate_ninguno} de esas simulaciones es un empate exacto, 175 a 175: entonces bastaría un escaño de dentro del bloque de 2023, como el de CC, que gobierna con el PP en Canarias, para que PP y Vox llegaran a 176. En el resto, PP y Vox se quedan en 174 o 175 y algún escaño queda fuera de los dos bloques${V.fuera_ninguno ? ` (${V.fuera_ninguno})` : ""}.</div>` : "";
-      const show = (ev) => showTip(`<b>${t[0]}</b><div>${t[1]} (en 9 de cada 10 simulaciones)</div>${extra}<div class="muted">De ${V.simulaciones} simulaciones del modelo elegido</div>`, ev);
+      const extra = c.dataset.q === "ninguno" ? `<div class="muted">${t("En {n} de esas simulaciones es un empate exacto, 175 a 175: entonces bastaría un escaño de dentro del bloque de 2023, como el de CC, que gobierna con el PP en Canarias, para que PP y Vox llegaran a 176. En el resto, PP y Vox se quedan en 174 o 175 y algún escaño queda fuera de los dos bloques", { n: V.empate_ninguno })}${V.fuera_ninguno ? ` (${V.fuera_ninguno})` : ""}.</div>` : "";
+      const show = (ev) => showTip(`<b>${tq[0]}</b><div>${tq[1]} ${t("(en 9 de cada 10 simulaciones)")}</div>${extra}<div class="muted">${t("De {n} simulaciones del modelo elegido", { n: V.simulaciones })}</div>`, ev);
       c.onmousemove = show; c.onclick = show; c.onmouseleave = hideTip;
     });
   }
@@ -126,21 +128,28 @@ function suma(DR, fs) {
   return t;
 }
 // the cards show a percentage, not "N de cada 100": Víctor found the small "de cada 100" under a big figure confusing (2026-11-17)
+// {veces} of the hemicycle note is a count out of 100 ("en 93 de cada 100 simulaciones"), not a percentage
 const deCada100 = (p) => (p < 0.005 ? "<1%" : p > 0.995 ? ">99%" : `${Math.round(p * 100)}%`);
-const frec10 = (p) => (p >= 0.095 ? `${Math.round(p * 10)} de cada 10` : `${Math.max(1, Math.round(p * 100))} de cada 100`);
+const frec10 = (p) => (p >= 0.095 ? deCada(Math.round(p * 10), 10) : deCada(Math.max(1, Math.round(p * 100)), 100));
 // "¿Quién es la fuerza más votada?" (2026-11-17): from the model file, p_mas_votado {party: p} when it has it, else the PP's
 // p_pp_mas_votado and the rest to the PSOE (the only other party with any chance in the 2026 polls)
 function masVotadoVars(PR) {
   const m = PR?.p_mas_votado ?? (PR?.p_pp_mas_votado != null ? { pp: PR.p_pp_mas_votado, psoe: 1 - PR.p_pp_mas_votado } : null);
   if (!m) return {};
-  return { mv_pp: deCada100(m.pp ?? 0), mv_psoe: deCada100(m.psoe ?? 0), mv_vox: deCada100(m.vox ?? 0) };
+  // largest-remainder rounding over all parties, so the cards add up to 100 (77.5 and 22.5 rounded one by one gave 78 + 23)
+  const ks = Object.keys(m), raw = ks.map((k) => m[k] * 100), fl = raw.map(Math.floor);
+  let falta = 100 - fl.reduce((a, b) => a + b, 0);
+  [...ks.keys()].sort((a, b) => (raw[b] - fl[b]) - (raw[a] - fl[a])).forEach((i) => { if (falta > 0 && raw[i] > fl[i]) { fl[i]++; falta--; } });
+  const r = Object.fromEntries(ks.map((k, i) => [k, fl[i]]));
+  const f = (k) => { const p = m[k] ?? 0, n = r[k] ?? 0; return n === 0 ? "<1%" : p < 1 && n === 100 ? ">99%" : `${n}%`; };
+  return { mv_pp: f("pp"), mv_psoe: f("psoe"), mv_vox: f("vox") };
 }
 const cuantil = (a, p) => { const v = [...a].sort((x, y) => x - y); return v[Math.min(v.length - 1, Math.floor(p * v.length))]; };
 // "¿Quién llega a 176?": {c_ppvox}, {c_pp}, {c_investidura}, {c_pp_psoe} (out of every 100 draws) and, for the cards' tooltips,
 // the 90% range of each sum ({r_ppvox}...) and of the PP's lead over the PSOE
 function tarjetasVars(DR) {
   const freq = (t, ok) => t.reduce((a, x) => a + (ok(x) ? 1 : 0), 0) / t.length;
-  const rango = (t) => `de ${cuantil(t, 0.05)} a ${cuantil(t, 0.95)}`;
+  const rango = (x) => t("de {a} a {b}", { a: cuantil(x, 0.05), b: cuantil(x, 0.95) });
   const ppvox = suma(DR, ["pp", "vox"]), pp = suma(DR, ["pp"]), inv = suma(DR, INVESTIDURA), psoe = suma(DR, ["psoe"]);
   const dif = pp.map((x, i) => x - psoe[i]);
   // fourth card (2026-11-17): neither PP+Vox nor the 2023 investiture bloc reaches 176. With every party in the draws this is
@@ -156,7 +165,7 @@ function tarjetasVars(DR) {
   return { c_inv_sin_junts: deCada100(freq(invSinJunts, (x) => x >= 176)), r_inv_sin_junts: rango(invSinJunts),
     fuera_ninguno: fuera.map((f) => short(f)).join(", "), c_ninguno: deCada100(nin.length / ppvox.length), r_ninguno: nin.length ? rango(ppvoxNin) : "·", empate_ninguno: frec10(empate), c_ppvox: deCada100(freq(ppvox, (x) => x >= 176)), c_pp: deCada100(freq(pp, (x) => x >= 176)), c_investidura: deCada100(freq(inv, (x) => x >= 176)),
     c_pp_psoe: deCada100(freq(dif, (x) => x > 0)), r_ppvox: rango(ppvox), r_pp: rango(pp), r_investidura: rango(inv), r_pp_psoe: rango(dif),
-    simulaciones: DR.s[0].length.toLocaleString("es-ES", { useGrouping: "always" }) };
+    simulaciones: DR.s[0].length.toLocaleString(loc(), { useGrouping: "always" }) };
 }
 
 // 350 seat positions on a half disc: rows from an inner radius to the outer one, each with seats in proportion to its length,
@@ -175,7 +184,7 @@ function asientos(n = 350, filas = 10, r0 = 0.42) {
 function hemiciclo(el, est, PR, T) {
   const { pts, punto } = asientos(d3.sum(Object.values(est)) || 350);
   const svg = d3.select(el).select("svg").attr("viewBox", "-1.04 -1.06 2.08 1.1");
-  const G = ["izquierda", "otros", "derecha"], NAME = { izquierda: "Izquierda", otros: "Otros", derecha: "Derecha" };
+  const G = ["izquierda", "otros", "derecha"], NAME = { izquierda: t("Izquierda"), otros: t("Otros"), derecha: t("Derecha") };
   const rango = (f) => { const e = PR?.partidos?.[f]?.escanos ?? PR?.otros_escanos?.[f]; return e ? [e.p05, e.p95] : null; };
   const dots = svg.append("g").selectAll("circle").data(pts).join("circle").attr("cx", (p) => p.x).attr("cy", (p) => p.y).attr("r", punto);
   // the 176th seat: the majority line runs up the middle of the half disc
@@ -185,7 +194,7 @@ function hemiciclo(el, est, PR, T) {
   let at = {}, fijo = null, sumOf = null, f0 = null;
   const tip = (f) => {
     const r = rango(f);
-    return `<b>${famName(f, "generales_2026-11")}</b><div class="row"><span>Escenario central</span><span>${est[f]} escaños</span></div>${r ? `<div class="row"><span>9 de cada 10 simulaciones</span><span>de ${r[0]} a ${r[1]}</span></div>` : ""}<div class="muted">Grupo: ${NAME[at[f]] ?? "Otros"}</div>`;
+    return `<b>${famName(f, "generales_2026-11")}</b><div class="row"><span>${t("Escenario central")}</span><span>${t("{r} escaños", { r: est[f] })}</span></div>${r ? `<div class="row"><span>${t("9 de cada 10 simulaciones")}</span><span>${t("de {a} a {b}", { a: r[0], b: r[1] })}</span></div>` : ""}<div class="muted">${t("Grupo:")} ${NAME[at[f]] ?? NAME.otros}</div>`;
   };
   dots.on("mousemove", (ev, p) => { showTip(tip(p.f), ev); dots.classed("hemi-on", (q) => q.f === p.f); })
     .on("mouseleave", () => { hideTip(); dots.classed("hemi-on", false); })
@@ -193,10 +202,10 @@ function hemiciclo(el, est, PR, T) {
   const paint = (g) => {
     dots.attr("opacity", (p) => (at[p.f] === g ? 1 : 0.22));
     const fs = Object.keys(est).filter((f) => est[f] && at[f] === g).sort((x, y) => est[y] - est[x]), n = d3.sum(fs, (f) => est[f]);
-    const t = sumOf?.(g);
-    const p = t ? t.reduce((a, x) => a + (x >= 176 ? 1 : 0), 0) / t.length : null;
-    foco.innerHTML = T?.hemiciclo_foco ? md(T.hemiciclo_foco, { vars: { grupo: NAME[g], escanos: n, partidos: fs.map((f) => famName(f, "generales_2026-11")).join(", ") || "ningún partido",
-      veces: p == null ? null : deCada100(p) }, flags: { simulaciones: p != null }, page: "resultados" }).html : "";
+    const tt = sumOf?.(g);
+    const p = tt ? tt.reduce((a, x) => a + (x >= 176 ? 1 : 0), 0) / tt.length : null;
+    foco.innerHTML = T?.hemiciclo_foco ? md(T.hemiciclo_foco, { vars: { grupo: NAME[g], escanos: n, partidos: fs.map((f) => famName(f, "generales_2026-11")).join(", ") || t("ningún partido"),
+      veces: p == null ? null : p < 0.005 ? t("menos de 1") : p > 0.995 ? t("más de 99") : String(Math.round(p * 100)) }, flags: { simulaciones: p != null }, page: "resultados" }).html : "";
   };
   return {
     update(a, g, s) {
@@ -228,7 +237,7 @@ function rangos(rows, { dec = 0, pct = false } = {}) {
   const n = (v) => `${num(v, dec)}${pct ? "%" : ""}`;
   return `<div class="rangos">${rows.map((r) => `<div class="rg-fila">
     <span class="rg-nom"><i class="dot" style="background:${pc(r.f)}"></i>${short(r.f)}</span>
-    <span class="rg-pista"><span class="rg-franja" style="left:${x(r.lo)};width:${x(r.hi - r.lo)};background:${pc(r.f)}"></span><span class="rg-punto" style="left:${x(r.c)};background:${pc(r.f)}"></span>${r.avg != null ? `<span class="rg-media" style="left:${x(r.avg)}" title="Promedio de encuestas: ${n(r.avg)}"></span>` : ""}</span>
+    <span class="rg-pista"><span class="rg-franja" style="left:${x(r.lo)};width:${x(r.hi - r.lo)};background:${pc(r.f)}"></span><span class="rg-punto" style="left:${x(r.c)};background:${pc(r.f)}"></span>${r.avg != null ? `<span class="rg-media" style="left:${x(r.avg)}" title="${t("Promedio de encuestas:")} ${n(r.avg)}"></span>` : ""}</span>
     <span class="rg-num"><b>${n(r.c)}</b> <span class="muted">${num(r.lo, dec)}–${num(r.hi, dec)}</span></span></div>`).join("")}</div>`;
 }
 
@@ -250,7 +259,7 @@ function evolucion(el, SD, at, conv) {
     return { f: w.f, bloques: b };
   });
   if (W.length < 2) { el.innerHTML = ""; return; }
-  const B = [["derecha", "Derecha", "#1d84ce"], ["izquierda", "Izquierda", "#e30613"]];
+  const B = [["derecha", t("Derecha"), "#1d84ce"], ["izquierda", t("Izquierda"), "#e30613"]];
   const w = el.clientWidth || 700, narrow = w < 560, h = 220, m = { t: 10, r: narrow ? 92 : 110, b: 24, l: 34 };   // narrow: still room for "Derecha 195" (it was cut at 70)
   const x = d3.scaleTime().domain(d3.extent(W, (d) => new Date(d.f))).range([m.l, w - m.r]);
   const lo = d3.min(W, (d) => Math.min(d.bloques.derecha[0], d.bloques.izquierda[0])), hi = d3.max(W, (d) => Math.max(d.bloques.derecha[2], d.bloques.izquierda[2]));
@@ -261,7 +270,7 @@ function evolucion(el, SD, at, conv) {
   cull(gx.selectAll("text").nodes(), { pad: 4 });   // weekly ticks: drop the dates that run into the previous one
   svg.append("g").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5)).attr("color", "var(--ink-3)");
   svg.append("line").attr("x1", m.l).attr("x2", w - m.r).attr("y1", y(176)).attr("y2", y(176)).attr("stroke", "var(--ink-2)").attr("stroke-dasharray", "4 3");
-  svg.append("text").attr("x", m.l + 4).attr("y", y(176) - 4).attr("fill", "var(--ink-2)").text("176, mayoría");
+  svg.append("text").attr("x", m.l + 4).attr("y", y(176) - 4).attr("fill", "var(--ink-2)").text(t("176, mayoría"));
   for (const [k, name, c] of B) {
     svg.append("path").attr("fill", c).attr("opacity", 0.12)
       .attr("d", d3.area().x((d) => x(new Date(d.f))).y0((d) => y(d.bloques[k][0])).y1((d) => y(d.bloques[k][2])).curve(d3.curveMonotoneX)(W));
@@ -277,7 +286,7 @@ function evolucion(el, SD, at, conv) {
       const xd = x.invert(d3.pointer(ev)[0]);
       const d = W[d3.leastIndex(W, (o) => Math.abs(new Date(o.f) - xd))];
       cross.attr("x1", x(new Date(d.f))).attr("x2", x(new Date(d.f))).style("display", null);
-      showTip(`<b>Semana del ${fechaLarga(d.f)}</b>${B.map(([k, name, c]) => `<div class="row"><span><i class="dot" style="background:${c}"></i>${name}</span><span>${d.bloques[k][1]} (${d.bloques[k][0]} a ${d.bloques[k][2]})</span></div>`).join("")}`, ev);
+      showTip(`<b>${t("Semana del {f}", { f: fechaLarga(d.f) })}</b>${B.map(([k, name, c]) => `<div class="row"><span><i class="dot" style="background:${c}"></i>${name}</span><span>${d.bloques[k][1]} (${t("{a} a {b}", { a: d.bloques[k][0], b: d.bloques[k][2] })})</span></div>`).join("")}`, ev);
     })
     .on("mouseleave", () => { cross.style("display", "none"); hideTip(); });
 }

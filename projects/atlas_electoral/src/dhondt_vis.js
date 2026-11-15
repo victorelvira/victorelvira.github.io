@@ -1,5 +1,5 @@
-import { fam, famName, IDEO } from "./charts.js?v=0.2.125";
-import { showTip, hideTip } from "./data.js?v=0.2.125";
+import { fam, famName, IDEO } from "./charts.js?v=0.2.127";
+import { showTip, hideTip } from "./data.js?v=0.2.127";
 
 // Pieces of the D'Hondt tab other than the sand: turns (bars that split), the staircase of quotients, the
 // find-the-price game, the votes that elected nobody, proportional-to-D'Hondt in three steps, and the last seats.

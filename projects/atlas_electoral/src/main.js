@@ -1,30 +1,22 @@
-import { init } from "./data.js?v=0.2.125";
-import { renderMapa } from "./mapa.js?v=0.2.125";
-import { renderPueblo } from "./pueblo.js?v=0.2.125";
-import { renderMiniatura } from "./miniatura.js?v=0.2.125";
-import { renderSimulador } from "./simulador.js?v=0.2.125";
-import { renderEncuestas } from "./encuestas.js?v=0.2.125";
-import { renderHistorico } from "./historico.js?v=0.2.125";
-import { renderModelo } from "./modelo.js?v=0.2.125";
-import { renderInicio } from "./inicio.js?v=0.2.125";
-import { renderHistoria } from "./historia.js?v=0.2.125";
-import { renderComunidad } from "./comunidad.js?v=0.2.125";
-import { renderExplora } from "./explora.js?v=0.2.125";
-import { renderDhondt } from "./dhondt.js?v=0.2.125";
-import { renderProvincia } from "./provincia.js?v=0.2.125";
-import { renderSenado } from "./senado.js?v=0.2.125";
-import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.125";
+import { init } from "./data.js?v=0.2.127";
+import { renderMapa } from "./mapa.js?v=0.2.127";
+import { renderPueblo } from "./pueblo.js?v=0.2.127";
+import { renderMiniatura } from "./miniatura.js?v=0.2.127";
+import { renderSimulador } from "./simulador.js?v=0.2.127";
+import { renderEncuestas } from "./encuestas.js?v=0.2.127";
+import { renderHistorico } from "./historico.js?v=0.2.127";
+import { renderModelo } from "./modelo.js?v=0.2.127";
+import { renderInicio } from "./inicio.js?v=0.2.127";
+import { renderHistoria } from "./historia.js?v=0.2.127";
+import { renderComunidad } from "./comunidad.js?v=0.2.127";
+import { renderExplora } from "./explora.js?v=0.2.127";
+import { renderDhondt } from "./dhondt.js?v=0.2.127";
+import { renderProvincia } from "./provincia.js?v=0.2.127";
+import { renderSenado } from "./senado.js?v=0.2.127";
+import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.127";
+import { LANG, setView, chrome, t } from "./i18n.js?v=0.2.127";
 
-// Spanish decimal comma and thousands point for every d3.format (axes, tooltips)
-window.d3.formatDefaultLocale({ decimal: ",", thousands: ".", grouping: [3], currency: ["", " €"] });
-// Spanish month and day names on every time axis (d3 defaults to English)
-window.d3.timeFormatDefaultLocale({
-  dateTime: "%A, %e de %B de %Y, %X", date: "%d/%m/%Y", time: "%H:%M:%S", periods: ["AM", "PM"],
-  days: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
-  shortDays: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
-  months: ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
-  shortMonths: ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
-});
+// d3's number and date formats follow the language of each view (i18n.js, setView, called by the router)
 
 const routes = {
   inicio: renderInicio,
@@ -62,6 +54,7 @@ async function route() {
   let [name, ...args] = location.hash.replace(/^#/, "").split("/");
   if (moved(name, args) !== name) { name = moved(name, args); history.replaceState(null, "", `#${[name, ...args].join("/")}`); }
   const view = routes[name] ? name : "inicio";
+  setView(view);   // English only on the views that exist in English (i18n.js, EN_VIEWS)
   document.querySelectorAll("nav.sections a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === `#${TAB[view] ?? view}`));
   // the chamber toggle in the header: Senado on its own page, Congreso everywhere else
   document.querySelectorAll("nav.camara a").forEach((a) => {
@@ -70,20 +63,29 @@ async function route() {
     if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
   });
   const app = document.getElementById("app");
-  app.innerHTML = '<p class="loading">Cargando…</p>';
+  const cam = document.querySelector("nav.camara");
+  const top = document.querySelector("header.top"), row = top.querySelector(":scope > .nav-wrap, :scope > nav.sections");
+  top.insertBefore(cam, row);   // back home before the view is wiped
+  cam.hidden = true;
+  app.innerHTML = `<p class="loading">${t("Cargando…")}</p>`;
   try {
     await routes[view](app, args.map(decodeURIComponent));
+    // the Congreso | Senado toggle sits beside the forecast's heading (Víctor, 2026-11-15), only on those two pages
+    const hc = view === "inicio" ? app.querySelector("#s-diputados > h2") : view === "senado" ? app.querySelector("h2.sn-h") : null;
+    if (hc) { hc.classList.add("h-camara"); hc.append(cam); cam.hidden = false; }
+    // an English reader on a page that exists only in Spanish: one line above it says so
+    if (LANG === "en" && document.documentElement.lang === "es") app.insertAdjacentHTML("afterbegin", '<p class="note lang-note" lang="en">This page is available in Spanish only.</p>');
     if (args[0] === "metodo") { const m = app.querySelector("#metodo"); if (m) { m.open = true; m.scrollIntoView({ block: "start" }); } }
     // "#inicio/fiarse": a link to a section of a page (the section ids are "s-<name>", textos/*.md headings {#name})
     else if (args[0] && /^[\w-]+$/.test(args[0])) app.querySelector(`#s-${args[0]}`)?.scrollIntoView({ block: "start" });
   } catch (e) {
     console.error(e);
-    app.innerHTML = `<p>Error cargando la vista: ${e.message}</p>`;
+    app.innerHTML = `<p>${t("Error cargando la vista:")} ${e.message}</p>`;
   }
 }
 
 // Every table sorts by the column whose header is clicked (tables with class "nosort" excepted);
-// numbers (with Spanish decimals, %, signs) sort numerically, the rest alphabetically; a second click reverses.
+// numbers (with the page's decimals, %, signs) sort numerically, the rest alphabetically; a second click reverses.
 document.getElementById("app").addEventListener("click", (ev) => {
   const th = ev.target.closest("th");
   const table = th?.closest("table");
@@ -92,7 +94,8 @@ document.getElementById("app").addEventListener("click", (ev) => {
   if (rows.length < 3) return;
   const col = [...th.parentNode.children].indexOf(th);
   const val = (r) => { const c = r.children[col]; if (!c) return ""; const t = c.textContent.trim().replace(/\s*\(.*\)$/, "");
-    const n = parseFloat(t.replace(/[^\d,.\-−+]/g, "").replace("−", "-").replace(/\./g, "").replace(",", ".")); return isNaN(n) ? t.toLowerCase() : n; };
+    const d = t.replace(/[^\d,.\-−+]/g, "").replace("−", "-");   // English pages write 1,234.5; Spanish ones 1.234,5
+    const n = parseFloat(document.documentElement.lang === "en" ? d.replace(/,/g, "") : d.replace(/\./g, "").replace(",", ".")); return isNaN(n) ? t.toLowerCase() : n; };
   const dir = th.dataset.dir === "asc" ? "desc" : "asc";
   table.querySelectorAll("th").forEach((h) => { delete h.dataset.dir; h.classList.remove("sorted"); });
   th.dataset.dir = dir; th.classList.add("sorted");
@@ -110,10 +113,24 @@ document.getElementById("theme").onclick = () => {
 };
 
 document.getElementById("build").textContent = `v${DATA_V} · ${BUILD_AT}`;
+chrome();   // top bar and footer in the reader's language, ES · EN buttons
+// phones: the row of tabs scrolls sideways; a fade and a "›" (or "‹") show on the side that has more (Víctor, 2026-11-15)
+{
+  const nav = document.querySelector("header.top nav.sections");
+  const wrap = document.createElement("div");
+  wrap.className = "nav-wrap";
+  nav.before(wrap); wrap.append(nav);
+  const btn = (cls, txt, dx) => { const b = document.createElement("button"); b.className = `nav-mas ${cls}`; b.textContent = txt; b.tabIndex = -1;
+    b.setAttribute("aria-hidden", "true"); b.onclick = () => nav.scrollBy({ left: dx * nav.clientWidth * 0.6, behavior: "smooth" }); wrap.append(b); };
+  btn("der", "›", 1); btn("izq", "‹", -1);
+  const upd = () => { wrap.classList.toggle("mas-der", nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 4); wrap.classList.toggle("mas-izq", nav.scrollLeft > 4); };
+  nav.addEventListener("scroll", upd, { passive: true }); addEventListener("resize", upd); upd();
+  nav.querySelector("a.on")?.scrollIntoView({ inline: "nearest", block: "nearest" });
+}
 // the brand reloads the project to its clean default view
 document.querySelector(".brand").addEventListener("click", (e) => {
   e.preventDefault();
-  history.replaceState(null, "", location.pathname);
+  history.replaceState(null, "", location.pathname + (LANG === "en" ? "?lang=en" : ""));   // the language survives the reset
   location.reload();
 });
 

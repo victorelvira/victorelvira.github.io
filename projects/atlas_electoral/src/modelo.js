@@ -1,8 +1,9 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, de100, fechaLarga } from "./data.js?v=0.2.125";
-import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.125";
-import { textos, md, INDICE } from "./textos.js?v=0.2.125";
-import { num, partyName, partyColor } from "./encuestas.js?v=0.2.125";
+import { load, de100, fechaLarga } from "./data.js?v=0.2.127";
+import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.127";
+import { textos, md, INDICE } from "./textos.js?v=0.2.127";
+import { num, partyName, partyColor } from "./encuestas.js?v=0.2.127";
+import { t as tr, loc, sep } from "./i18n.js?v=0.2.127";
 
 const pc = (x) => `${de100(x)}%`;
 
@@ -45,20 +46,20 @@ async function creditosFotos(T) {
   const L = T.fotos ? await load("lideres.json").catch(() => null) : null;
   if (!L || !Object.keys(L).length) return null;
   const items = Object.values(L).map((x) => `<li><img src="${esc(new URL(`../data/${x.img}`, import.meta.url).href)}" alt="" width="36" height="36" loading="lazy" style="object-fit:cover;object-position:top;border-radius:50%;vertical-align:middle;margin-right:.5em">`
-    + `${esc(x.nombre)} (${esc(x.lista)}, ${esc(x.provincia)}): <a href="${esc(x.fuente)}" target="_blank" rel="noopener">foto</a> de ${esc(x.autor)}, `
-    + `${x.licencia_url ? `<a href="${esc(x.licencia_url)}" target="_blank" rel="noopener">${esc(x.licencia)}</a>` : esc(x.licencia === "Public domain" ? "dominio público" : x.licencia)}.</li>`).join("");
+    + `${esc(x.nombre)} (${esc(x.lista)}, ${esc(x.provincia)}): ${tr("{foto} de {autor}", { foto: `<a href="${esc(x.fuente)}" target="_blank" rel="noopener">${tr("foto")}</a>`, autor: esc(x.autor) })}, `
+    + `${x.licencia_url ? `<a href="${esc(x.licencia_url)}" target="_blank" rel="noopener">${esc(x.licencia)}</a>` : esc(x.licencia === "Public domain" ? tr("dominio público") : x.licencia)}.</li>`).join("");
   return md(T.fotos, { slots: { lista_fotos: `<ul class="creditos-fotos">${items}</ul>` }, page: "modelo" }).html;
 }
 
 // the model's forecast (prediccion.json, pipeline/prediccion.py): the part "prediccion" of modelo.md, with the shared block
 function prediccionHtml(P, T) {
   const parties = Object.keys(P.partidos);
-  const sims = P.draws.toLocaleString("es-ES", { useGrouping: "always" });
+  const sims = P.draws.toLocaleString(loc(), { useGrouping: "always" });
   const vars = { fecha: fechaLarga(P.fecha), n_encuestas: P.n_encuestas, simulaciones: sims, pp_primero: pc(P.p_pp_primero),
-    b_escala: String(P.parametros.b_escala).replace(".", ","), s_ccaa: P.parametros.s_ccaa, s_prov: P.parametros.s_prov };
+    b_escala: sep(P.parametros.b_escala), s_ccaa: P.parametros.s_ccaa, s_prov: P.parametros.s_prov };
   const slots = {
-    tabla_partidos: `<div class="scrollx"><table><tr><th>Partido</th><th class="num">Voto, mediana</th><th class="num">Horquilla (90%)</th><th class="num">Escaños, mediana</th><th class="num">Horquilla (90%)</th></tr>
-      ${parties.map((p) => { const d = P.partidos[p]; return `<tr><td><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</td><td class="num">${num(d.voto.p50)}%</td><td class="num">${num(d.voto.p05)} a ${num(d.voto.p95)}</td><td class="num">${d.escanos ? d.escanos.p50 : "·"}</td><td class="num">${d.escanos ? `${d.escanos.p05} a ${d.escanos.p95}` : "·"}</td></tr>`; }).join("")}</table></div>`,
+    tabla_partidos: `<div class="scrollx"><table><tr><th>${tr("Partido")}</th><th class="num">${tr("Voto, mediana")}</th><th class="num">${tr("Horquilla (90%)")}</th><th class="num">${tr("Escaños, mediana")}</th><th class="num">${tr("Horquilla (90%)")}</th></tr>
+      ${parties.map((p) => { const d = P.partidos[p]; return `<tr><td><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</td><td class="num">${num(d.voto.p50)}%</td><td class="num">${tr("{a} a {b}", { a: num(d.voto.p05), b: num(d.voto.p95) })}</td><td class="num">${d.escanos ? d.escanos.p50 : "·"}</td><td class="num">${d.escanos ? tr("{a} a {b}", { a: d.escanos.p05, b: d.escanos.p95 }) : "·"}</td></tr>`; }).join("")}</table></div>`,
     histograma: '<div class="card chart" id="pred-hist"></div>',
     serie_probabilidad: '<div class="chart" id="pred-prob"></div>',
     serie_escanos: '<div class="chart" id="pred-esc"></div>',
@@ -70,7 +71,7 @@ function prediccionHtml(P, T) {
 function histograma(elh) {
   return (sumOf) => {
     elh.innerHTML = "";
-    const G = [["izquierda", "Izquierda", "#e30613"], ["derecha", "Derecha", "#1d84ce"]].map(([g, n, c]) => ({ n, c, t: sumOf(g) }));
+    const G = [["izquierda", tr("Izquierda"), "#e30613"], ["derecha", tr("Derecha"), "#1d84ce"]].map(([g, n, c]) => ({ n, c, t: sumOf(g) }));
     const lo = Math.min(...G.map((g) => d3.min(g.t))), hi = Math.max(...G.map((g) => d3.max(g.t)));
     const W = Math.max(340, elh.clientWidth || 900), H = 200, m = { t: 14, r: 16, b: 26, l: 36 };
     const x = d3.scaleLinear().domain([Math.min(lo, 170), Math.max(hi, 182) + 1]).range([m.l, W - m.r]);
@@ -91,10 +92,10 @@ function histograma(elh) {
 function prediccion(el, P, T) {
   load("prediccion_serie.json").then((SE) => {
     const w = SE.semanas, dt = (s) => new Date(s);
-    lines(el.querySelector("#pred-prob"), [{ id: "d", name: "PP, Vox y SALF", color: "#1d84ce", values: w.map((x) => ({ date: dt(x.f), v: x.p_derecha, label: x.f })) }],
+    lines(el.querySelector("#pred-prob"), [{ id: "d", name: tr("PP, Vox y SALF"), color: "#1d84ce", values: w.map((x) => ({ date: dt(x.f), v: x.p_derecha, label: x.f })) }],
       { height: 220, yMin: 0, yMax: 1 });
     lines(el.querySelector("#pred-esc"), Object.keys(P.partidos).filter((p) => w.at(-1).esc[p]?.[1] >= 1).map((p) => ({ id: p, name: partyName(p, "2026"), color: partyColor(p),
-      values: w.map((x) => ({ date: dt(x.f), v: x.esc[p]?.[1] ?? null, label: x.f })) })), { height: 220, fmt: (v) => `${Math.round(v)} escaños`, yTicks: (v) => v, yMin: 0 });
+      values: w.map((x) => ({ date: dt(x.f), v: x.esc[p]?.[1] ?? null, label: x.f })) })), { height: 220, fmt: (v) => tr("{r} escaños", { r: Math.round(v) }), yTicks: (v) => v, yMin: 0 });
   }).catch(() => {});
   load("backtest.json").then((B) => {
     const h7 = B.horizontes[7], h30 = B.horizontes[30];

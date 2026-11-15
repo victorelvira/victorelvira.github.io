@@ -1,10 +1,11 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 const topojson = window.topojson;
-import { load, META, fmt, pct, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.125";
-import { fam } from "./charts.js?v=0.2.125";
-import { getGeo, rewind } from "./mapa.js?v=0.2.125";
-import { addZoom } from "./zoom.js?v=0.2.125";
-import { textos, md } from "./textos.js?v=0.2.125";
+import { load, META, fmt, pct, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.127";
+import { fam } from "./charts.js?v=0.2.127";
+import { getGeo, rewind } from "./mapa.js?v=0.2.127";
+import { addZoom } from "./zoom.js?v=0.2.127";
+import { textos, md } from "./textos.js?v=0.2.127";
+import { t as tr, N_, sep } from "./i18n.js?v=0.2.127";
 
 // The Senate (tab "Senado", route #senado, #senado/2023; prose in textos/senado.md). Two views of the same layout: the 29N
 // forecast (prediccion_senado.json, pipeline/prediccion_senado.py) and the July 2023 result (senado_2023.json,
@@ -15,9 +16,9 @@ const PARTY = {
   pp: ["PP", null], psoe: ["PSOE", null], vox: ["Vox", null], erc: ["ERC", null], bildu: ["EH Bildu", null], pnv: ["PNV", null],
   junts: ["Junts", null], bng: ["BNG", null], cc: ["CC", null], upn: ["UPN", "#1f4e8c"], sumar: ["Frente Amplio", "#d6246e"],
   asg: ["ASG", "#2f8f5b"], ahi: ["AHI", "#b08d57"], sy: ["Soria ¡Ya!", "#7a5c2e"], "teruel existe": ["Teruel Existe", "#3c7d3a"],
-  psoe_sumar: ["PSOE-Sumar (Eivissa-Formentera)", "#ef6a73"], podemos: ["Podemos", "#6b2e68"], otros: ["Otros", "#9e9e9e"], nd: ["Sin asignar", null],
+  psoe_sumar: ["PSOE-Sumar (Eivissa-Formentera)", "#ef6a73"], podemos: ["Podemos", "#6b2e68"], otros: [N_("Otros"), "#9e9e9e"], nd: [N_("Sin asignar"), null],
 };
-const pname = (k, y) => (k === "sumar" && y === "2023" ? "Sumar" : k === "sumar" ? "Frente Amplio, Más Madrid, Compromís" : PARTY[k]?.[0] ?? k.toUpperCase());
+const pname = (k, y) => (k === "sumar" && y === "2023" ? "Sumar" : k === "sumar" ? "Frente Amplio, Más Madrid, Compromís" : k === "otros" || k === "nd" ? tr(PARTY[k][0]) : PARTY[k]?.[0] ?? k.toUpperCase());
 const pcolor = (k) => (k === "nd" ? "var(--nodata)" : PARTY[k]?.[1] ?? fam(k).color);
 // left to right in the hemicycle
 const ORDER = ["bildu", "erc", "sumar", "podemos", "bng", "psoe_sumar", "psoe", "pnv", "cc", "asg", "ahi", "sy", "teruel existe", "nd", "junts", "upn", "pp", "vox", "otros"];
@@ -37,7 +38,7 @@ const CCAA_KEY = { "Andalucía": "AN", "Aragón": "AR", "Asturias": "AS", "Illes
   "La Rioja": "RI", "Comunitat Valenciana": "VC" };
 const ccaaOf = (prov) => Object.keys(META.ccaa).find((k) => META.ccaa[k].provs.includes(prov));
 const de100 = (n, of) => Math.round((100 * n) / of);
-const num = (x) => String(x).replace(".", ",");
+const num = (x) => sep(x);
 const SHOW = 6;   // party rows before "Ver más"
 
 export async function renderSenado(app, args = []) {
@@ -56,13 +57,13 @@ export async function renderSenado(app, args = []) {
     p_andalucia: de100(sens("Andaluc").p_pp, 1), aciertos_2023: v23?.aciertos };
   const cab = `<div class="sn-cab">
     <div class="sn-sec"><h2 class="sn-h">${md(T[`titulo_${modo}`], { page: "senado" }).html.replace(/<\/?p[^>]*>/g, "")}</h2>
-    <div class="seg" id="sn-modo"><button data-m="2026"${modo === "2026" ? ' class="on"' : ""}>Proyección 2026</button><button data-m="2023"${modo === "2023" ? ' class="on"' : ""}>Resultados 2023</button></div></div></div>`;
+    <div class="seg" id="sn-modo"><button data-m="2026"${modo === "2026" ? ' class="on"' : ""}>${tr("Proyección 2026")}</button><button data-m="2023"${modo === "2023" ? ' class="on"' : ""}>${tr("Resultados 2023")}</button></div></div></div>`;
   const panel = `<div class="sn-grid">
     <div class="card sn-izq">${md(T[`titular_${modo}`], { vars: D.vars, page: "senado" }).html}
       <div class="sn-hemi"></div><div class="legend sn-hemi-leg"></div><div class="sn-tabla"></div>
       ${md(T[`nota_${modo}`], { vars: D.vars, flags: D.flags, page: "senado" }).html}
       <p class="note sn-fuente">${D.fuente}</p></div>
-    <div class="card sn-centro">${md(T[`mapa_${modo}`], { page: "senado" }).html}<div class="mapwrap sn-mapa"><svg role="img" aria-label="Mapa de circunscripciones del Senado"></svg></div><div class="legend sn-mapa-leg"></div></div>
+    <div class="card sn-centro">${md(T[`mapa_${modo}`], { page: "senado" }).html}<div class="mapwrap sn-mapa"><svg role="img" aria-label="${tr("Mapa de circunscripciones del Senado")}"></svg></div><div class="legend sn-mapa-leg"></div></div>
     <div class="card sn-der">${md(T[`comunidades_${modo}`], { page: "senado" }).html}<div class="sn-ccaa"></div></div>
   </div>`;
   const { html } = md(T.principal, { vars, slots: { cabecera: cab, panel, coaliciones: '<div id="sn-coal"></div>' }, page: "senado" });
@@ -109,7 +110,7 @@ function data2026(P, H) {
       mayoria: P.mayoria, p_pp: de100(pr.pp, 1), p_pp_vox: de100(pr.pp_vox, 1), simulaciones: d3.format(",")(P.draws),
       sin_asignar: sin, electos_total: P.electos_total, designados_total: P.designados_total },
     flags: { sin_asignar: sin > 0 },
-    fuente: "Fuente: modelo propio sobre las encuestas; listas proclamadas en el BOE (BOE-A-2026-23103 y su corrección BOE-A-2026-23383).",
+    fuente: tr("Fuente: modelo propio sobre las encuestas; listas proclamadas en el BOE (BOE-A-2026-23103 y su corrección BOE-A-2026-23383)."),
   };
 }
 
@@ -127,7 +128,7 @@ function data2023(H) {
     vars: { pp_electos23: N.partidos.pp.electos, psoe_electos23: N.partidos.psoe.electos, electos23: H.electos, designados_no: H.designados_no,
       participacion: pct(N.votantes / N.censo), blancos: `${v(N.blancos)} (${pct(N.blancos / N.votantes)})`, nulos: `${v(N.nulos)} (${pct(N.nulos / N.votantes)})` },
     flags: {},
-    fuente: "Fuente: Ministerio del Interior (Infoelectoral), elecciones al Senado del 23 de julio de 2023.",
+    fuente: tr("Fuente: Ministerio del Interior (Infoelectoral), elecciones al Senado del 23 de julio de 2023."),
   };
 }
 
@@ -149,39 +150,39 @@ function hemiciclo(el, leg, D) {
   }
   const rDot = Math.min(7, ((R1 - R0) / (rows - 1)) * 0.42);
   const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`).attr("role", "img")
-    .attr("aria-label", D.modo === "2026" ? "Hemiciclo del Senado, escenario central" : "Senadores electos en 2023");
+    .attr("aria-label", D.modo === "2026" ? tr("Hemiciclo del Senado, escenario central") : tr("Senadores electos en 2023"));
   svg.selectAll("circle").data(pts.map((p, i) => ({ ...p, ...(seq[i] ?? { k: "nd" }) }))).join("circle")
     .attr("cx", (p) => p.x).attr("cy", (p) => p.y).attr("r", rDot)
     .attr("fill", (p) => pcolor(p.k)).attr("fill-opacity", (p) => (p.des ? 0.35 : 1))
     .attr("stroke", (p) => (p.des ? pcolor(p.k) : "none")).attr("stroke-width", 1.2)
     .on("mousemove", (ev, p) => {
       const s = D.seats.find((x) => x.k === p.k);
-      showTip(`<b>${pname(p.k, D.modo)}</b>${p.k === "nd" ? '<div class="muted">escaños que las medianas no reparten</div>' : `<div class="row"><span>Electos</span><span>${s.e}</span></div>${D.modo === "2026" ? `<div class="row"><span>Designados</span><span>${s.d}</span></div>` : ""}`}`, ev);
+      showTip(`<b>${pname(p.k, D.modo)}</b>${p.k === "nd" ? `<div class="muted">${tr("escaños que las medianas no reparten")}</div>` : `<div class="row"><span>${tr("Electos")}</span><span>${s.e}</span></div>${D.modo === "2026" ? `<div class="row"><span>${tr("Designados")}</span><span>${s.d}</span></div>` : ""}`}`, ev);
     }).on("mouseleave", hideTip);
   if (D.mayoria) {
     svg.append("line").attr("x1", cx).attr("x2", cx).attr("y1", cy - R1 - 10).attr("y2", cy - R0 + 18).attr("stroke", "var(--ink)").attr("stroke-dasharray", "3 3");
-    svg.append("text").attr("x", cx).attr("y", cy - 26).attr("text-anchor", "middle").attr("class", "t-m").attr("font-weight", 600).attr("fill", "var(--ink)").text(`Mayoría: ${D.mayoria}`);
+    svg.append("text").attr("x", cx).attr("y", cy - 26).attr("text-anchor", "middle").attr("class", "t-m").attr("font-weight", 600).attr("fill", "var(--ink)").text(tr("Mayoría: {n}", { n: D.mayoria }));
   } else {
-    svg.append("text").attr("x", cx).attr("y", cy - 26).attr("text-anchor", "middle").attr("class", "t-m").attr("font-weight", 600).attr("fill", "var(--ink)").text(`${D.total} electos`);
+    svg.append("text").attr("x", cx).attr("y", cy - 26).attr("text-anchor", "middle").attr("class", "t-m").attr("font-weight", 600).attr("fill", "var(--ink)").text(tr("{n} electos", { n: D.total }));
   }
   const shown = [...D.seats].filter((s) => s.e + s.d > 0).sort((a, b) => b.e + b.d - (a.e + a.d)).filter((s) => s.k !== "nd");
   leg.innerHTML = shown.map((s) => `<span><i class="sw" style="background:${pcolor(s.k)}"></i>${pname(s.k, D.modo)} ${s.e + s.d}</span>`).join("")
-    + (D.modo === "2026" ? '<span><i class="sw sn-sw-des"></i>designados (claro)</span>' : "");
+    + (D.modo === "2026" ? `<span><i class="sw sn-sw-des"></i>${tr("designados (claro)")}</span>` : "");
 }
 
 function tabla(el, D) {
   const dot = (k) => `<i class="dot" style="background:${pcolor(k)}"></i>`;
   const rows = D.modo === "2026"
-    ? D.filas.map((f) => `<tr><td>${dot(f.k)}${pname(f.k, "2026")}</td><td class="num">${f.electos.p50}</td><td class="num muted">${f.electos.p05} a ${f.electos.p95}</td><td class="num">${f.designados}</td><td class="num"><b>${f.total.p50}</b></td></tr>`)
+    ? D.filas.map((f) => `<tr><td>${dot(f.k)}${pname(f.k, "2026")}</td><td class="num">${f.electos.p50}</td><td class="num muted">${tr("{a} a {b}", { a: f.electos.p05, b: f.electos.p95 })}</td><td class="num">${f.designados}</td><td class="num"><b>${f.total.p50}</b></td></tr>`)
     : D.filas.map((f) => `<tr><td>${dot(f.k)}${pname(f.k, "2023")}</td><td class="num"><b>${f.electos}</b></td><td class="num">${fmt.format(f.votos)}</td></tr>`);
   const head = D.modo === "2026"
-    ? '<tr><th>Partido</th><th class="num">Electos</th><th class="num" data-tip="En 9 de cada 10 simulaciones">Rango</th><th class="num">Designados</th><th class="num">Total</th></tr>'
-    : '<tr><th>Partido</th><th class="num">Escaños</th><th class="num" data-tip="Voto del candidato más votado de cada lista, sumado">Votos</th></tr>';
+    ? `<tr><th>${tr("Partido")}</th><th class="num">${tr("Electos")}</th><th class="num" data-tip="${tr("En 9 de cada 10 simulaciones")}">${tr("Rango")}</th><th class="num">${tr("Designados")}</th><th class="num">${tr("Total")}</th></tr>`
+    : `<tr><th>${tr("Partido")}</th><th class="num">${tr("Escaños")}</th><th class="num" data-tip="${tr("Voto del candidato más votado de cada lista, sumado")}">${tr("Votos")}</th></tr>`;
   const extra = rows.length - SHOW;
   el.innerHTML = `<div class="scrollx"><table class="nosort sn-t">${head}${rows.map((r, i) => (i >= SHOW ? r.replace("<tr>", '<tr class="sn-mas" hidden>') : r)).join("")}</table></div>
-    ${extra > 0 ? `<button class="play sn-ver">Ver ${extra} más</button>` : ""}`;
+    ${extra > 0 ? `<button class="play sn-ver">${tr("Ver {n} más", { n: extra })}</button>` : ""}`;
   const b = el.querySelector(".sn-ver");
-  if (b) b.onclick = () => { const open = b.dataset.open !== "1"; b.dataset.open = open ? "1" : ""; el.querySelectorAll(".sn-mas").forEach((r) => r.hidden = !open); b.textContent = open ? "Ver menos" : `Ver ${extra} más`; };
+  if (b) b.onclick = () => { const open = b.dataset.open !== "1"; b.dataset.open = open ? "1" : ""; el.querySelectorAll(".sn-mas").forEach((r) => r.hidden = !open); b.textContent = open ? tr("Ver menos") : tr("Ver {n} más", { n: extra }); };
 }
 
 // ----------------------------------------------------------------------------- map of the constituencies
@@ -257,13 +258,13 @@ async function mapaCirc(wrap, leg, D, sel, onPick) {
     .attr("fill", (p) => (p.c.lead.tie ? "var(--ink)" : textOn(pcolor(p.c.lead.k)))).text((p) => (p.c.lead.tie ? `${ABBR[p.id]} ${p.c.lead.n}-${p.c.lead.n}` : p.lab));
 
   const tip = (c) => {
-    const isla = /^(07|35|38)/.test(c.circ) ? '<div class="muted">La isla es su propia circunscripción.</div>' : "";
+    const isla = /^(07|35|38)/.test(c.circ) ? `<div class="muted">${tr("La isla es su propia circunscripción.")}</div>` : "";
     if (D.modo === "2023") {
-      return `<b>${c.nombre}</b><div class="muted">${c.escanos} ${c.escanos === 1 ? "senador" : "senadores"}</div>${c.listas.slice(0, 5).map((l) =>
-        `<div class="row"><span><i class="dot" style="background:${pcolor(l.partido)}"></i>${l.siglas}</span><span>${fmt.format(l.votos)}${l.electos ? ` · <b>${l.electos}</b>` : ""}</span></div>`).join("")}<div class="muted">votos del candidato más votado · escaños</div>${isla}`;
+      return `<b>${c.nombre}</b><div class="muted">${c.escanos} ${c.escanos === 1 ? tr("senador") : tr("senadores")}</div>${c.listas.slice(0, 5).map((l) =>
+        `<div class="row"><span><i class="dot" style="background:${pcolor(l.partido)}"></i>${l.siglas}</span><span>${fmt.format(l.votos)}${l.electos ? ` · <b>${l.electos}</b>` : ""}</span></div>`).join("")}<div class="muted">${tr("votos del candidato más votado · escaños")}</div>${isla}`;
     }
-    return `<b>${c.nombre}</b><div class="muted">${c.escanos} ${c.escanos === 1 ? "senador" : "senadores"} · repartos más frecuentes</div>${c.reps.map((r) =>
-      `<div class="row"><span>${r.parts.map((p) => `<i class="dot" style="background:${pcolor(p.partido)}"></i>${pname(p.partido, "2026").split(",")[0]} ${p.n}`).join(" · ")}</span><span style="white-space:nowrap">${r.de100} de cada 100</span></div>`).join("")}<div class="muted">${[...new Set(c.reps[0].parts.map((p) => p.siglas))].join(" · ")}</div>${isla}`;
+    return `<b>${c.nombre}</b><div class="muted">${c.escanos} ${c.escanos === 1 ? tr("senador") : tr("senadores")} · ${tr("repartos más frecuentes")}</div>${c.reps.map((r) =>
+      `<div class="row"><span>${r.parts.map((p) => `<i class="dot" style="background:${pcolor(p.partido)}"></i>${pname(p.partido, "2026").split(",")[0]} ${p.n}`).join(" · ")}</span><span style="white-space:nowrap">${tr("{n} de cada {de}", { n: r.de100, de: 100 })}</span></div>`).join("")}<div class="muted">${[...new Set(c.reps[0].parts.map((p) => p.siglas))].join(" · ")}</div>${isla}`;
   };
   const show = (ev, id) => { const c = byC[id]; if (c) showTip(tip(c), ev); };
   paths.on("mouseenter", function () { hl.attr("d", this.getAttribute("d")); }).on("mousemove", (ev, f) => show(ev, f.id))
@@ -274,7 +275,7 @@ async function mapaCirc(wrap, leg, D, sel, onPick) {
 
   const present = [...new Set(D.circs.filter((c) => !c.lead.tie).map((c) => c.lead.k))].sort((a, b) => ord(a) - ord(b));
   leg.innerHTML = present.map((k) => `<span><i class="sw" style="background:${pcolor(k)}"></i>${pname(k, D.modo)}</span>`).join("")
-    + (D.circs.some((c) => c.lead.tie) ? '<span><i class="sw sn-sw-empate"></i>empate a 2</span>' : "");
+    + (D.circs.some((c) => c.lead.tie) ? `<span><i class="sw sn-sw-empate"></i>${tr("empate a 2")}</span>` : "");
   return {
     // highlight the constituencies of a community (from the list on the right)
     mark(ccaa) {
@@ -300,7 +301,7 @@ function comunidades(el, D, onPick) {
     const desTip = r.desRep ? Object.entries(r.desRep).map(([p, n]) => `${pname(p, "2026")} ${n}`).join(", ") : "";
     return `<button class="sn-cr" data-k="${r.k}">
       <span class="sn-cn">${r.n}</span>
-      <span class="sn-cv">${r.tie ? `empate a ${r.ln}` : `${pname(r.lk, D.modo).split(",")[0]} <b>${r.ln}</b>/${r.seats}`}${r.des ? `<small data-tip="Designados por su parlamento: ${desTip}"> +${r.des} desig.</small>` : ""}</span>
+      <span class="sn-cv">${r.tie ? tr("empate a {n}", { n: r.ln }) : `${pname(r.lk, D.modo).split(",")[0]} <b>${r.ln}</b>/${r.seats}`}${r.des ? `<small data-tip="${tr("Designados por su parlamento:")} ${desTip}"> +${r.des} ${tr("desig.")}</small>` : ""}</span>
       <span class="sn-cb">${parts.map(([p, n]) => `<i style="flex:${n};background:${pcolor(p)}"></i>`).join("")}</span></button>`;
   }).join("")}</div>`;
   let cur = null;
@@ -330,7 +331,7 @@ function titulo(s) {
     return i && SMALL.has(l) ? l : l.charAt(0).toUpperCase() + l.slice(1);
   }).join("");
 }
-const FAMN = { psoe: "PSOE", sumar: "espacio Sumar", podemos: "Podemos", erc: "ERC", bildu: "EH Bildu", reg: "Nueva Canarias-BC", pp: "PP", cc: "CC" };
+const FAMN = { psoe: "PSOE", sumar: N_("espacio Sumar"), podemos: "Podemos", erc: "ERC", bildu: "EH Bildu", reg: "Nueva Canarias-BC", pp: "PP", cc: "CC" };
 
 function coaliciones(el, T, P, H) {
   const modal = Object.fromEntries(P.circunscripciones.map((c) => [c.circ, parseSplit(c.repartos[0].reparto, c.circ, H)]));
@@ -341,14 +342,14 @@ function coaliciones(el, T, P, H) {
       const p = modal[x.circ]?.find((q) => q.siglas === x.siglas);
       if (p) { won += p.n; where.push(`${x.nombre} ${p.n}`); }
     }
-    const fams = c.familias.length > 1 ? c.familias.map((f) => FAMN[f] ?? f).join(" + ") : "";
+    const fams = c.familias.length > 1 ? c.familias.map((f) => (f === "sumar" ? tr(FAMN[f]) : FAMN[f] ?? f)).join(" + ") : "";
     const n = c.circs.length;
     return `<div class="sn-co" style="--c:${pcolor(c.partido)}">
       <div class="sn-co-h"><i class="dot" style="background:${pcolor(c.partido)}"></i><b>${titulo(c.nombre)}</b></div>
-      <div class="sn-co-s">${c.siglas.slice(0, 4).join(" · ")}${c.siglas.length > 4 ? ` y ${c.siglas.length - 4} variantes más` : ""}</div>
-      ${fams ? `<div class="sn-co-m">Suma: ${fams}</div>` : ""}
-      <div class="sn-co-d">${n === 1 ? c.circs[0].nombre : `${n} circunscripciones`}</div>
-      <div class="sn-co-w">${won ? `<b>${won}</b> ${won === 1 ? "senador" : "senadores"} en el reparto más probable` : "Ningún senador en el reparto más probable"}${won && where.length <= 6 ? ` <span class="muted">(${where.join(", ")})</span>` : ""}</div>
+      <div class="sn-co-s">${c.siglas.slice(0, 4).join(" · ")}${c.siglas.length > 4 ? ` ${tr("y {n} variantes más", { n: c.siglas.length - 4 })}` : ""}</div>
+      ${fams ? `<div class="sn-co-m">${tr("Suma:")} ${fams}</div>` : ""}
+      <div class="sn-co-d">${n === 1 ? c.circs[0].nombre : tr("{n} circunscripciones", { n })}</div>
+      <div class="sn-co-w">${won ? `<b>${won}</b> ${won === 1 ? tr("senador") : tr("senadores")} ${tr("en el reparto más probable")}` : tr("Ningún senador en el reparto más probable")}${won && where.length <= 6 ? ` <span class="muted">(${where.join(", ")})</span>` : ""}</div>
     </div>`;
   });
   el.innerHTML = `${md(T.coaliciones_intro, { page: "senado" }).html}<div class="sn-coal">${cards.join("")}</div>`;

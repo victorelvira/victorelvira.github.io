@@ -1,7 +1,8 @@
 // The prose of every tab lives in web/atlas_electoral/textos/<page>.md, plain Markdown that Víctor edits by hand
 // (syntax in textos/README.md). This module reads those files and turns them into the same HTML the pages had.
 // The code keeps only what is computed: figures ({name}), charts and tables ([[name]]) and conditions (::: si name).
-import { DATA_V } from "./data.js?v=0.2.125";
+import { DATA_V } from "./data.js?v=0.2.127";
+import { lang, t as tr, EN_TEXTOS } from "./i18n.js?v=0.2.127";
 
 const BASE = new URL("../textos/", import.meta.url).href;
 const cache = new Map();
@@ -19,7 +20,7 @@ function watch() {
   watching = true;
   window.__liveTexts = true;   // the family server's reload script (chassis/servir.py) leaves the .md files to this one
   setInterval(async () => {
-    for (const [page, seen] of stamps) {
+    for (const [page, seen] of stamps) {   // page: the file's path under textos/ without .md ("portada", "en/portada")
       const r = await fetch(`${BASE}${page}.md`, { method: "HEAD", cache: "no-store" }).catch(() => null);
       const lm = r?.headers.get("Last-Modified");
       if (!lm || lm === seen) continue;
@@ -33,8 +34,10 @@ function watch() {
   }, 1500);
 }
 
-/** All the parts of a page file: {principal: "...", other: "..."} (a line "=== other ===" starts a part). */
-export function textos(page) {
+/** All the parts of a page file: {principal: "...", other: "..."} (a line "=== other ===" starts a part).
+ *  In English (a view that exists in English, i18n.js) the file is textos/en/<page>.md, with the same parts and names. */
+export function textos(name) {
+  const page = lang() === "en" && EN_TEXTOS.has(name) ? `en/${name}` : name;
   if (!cache.has(page)) {
     cache.set(page, fetch(`${BASE}${page}.md?v=${DATA_V}`, LOCAL ? { cache: "no-store" } : {}).then((r) => {
       if (!r.ok) throw new Error(`textos/${page}.md: ${r.status}`);
@@ -68,7 +71,7 @@ function inline(s, vars, page) {
     .replace(/\{([\wáéíóúñü]+)\}/gi, (m, k) => {
       if (k in vars && vars[k] != null) return String(vars[k]);
       console.warn(`textos/${page}: no value for {${k}}`);
-      return `<mark title="Cifra desconocida">{${k}}</mark>`;
+      return `<mark title="${tr("Cifra desconocida")}">{${k}}</mark>`;
     })
     .replace(/\u0000/g, "{")
     .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>")
@@ -124,7 +127,7 @@ export function md(src, { vars = {}, slots = {}, flags = {}, page = "?" } = {}) 
       const idA = id ? ` id="${id}"` : "";
       const pm = words.match(/^(metodología|plegable)(?:\s+(corta))?(?:\s+"([^"]+)")?\s*$/);
       if (pm) {
-        const title = pm[3] || "Metodología";
+        const title = pm[3] || tr("Metodología");
         const short = !!pm[2];
         if (parentOn) out.push(`<details class="metodo-box"${idA}${at(i)}><summary>${title}</summary>${short ? "" : '<div class="metodo">'}`);
         stack.push({ on: parentOn, cond: true, parentOn, close: short ? "</details>" : "</div></details>" });

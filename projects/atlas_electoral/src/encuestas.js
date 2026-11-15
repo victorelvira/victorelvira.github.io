@@ -1,7 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.125";
-import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.125";
-import { textos, md, INDICE } from "./textos.js?v=0.2.125";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.127";
+import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.127";
+import { textos, md, INDICE } from "./textos.js?v=0.2.127";
+import { t as tr, loc, fix } from "./i18n.js?v=0.2.127";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -16,7 +17,7 @@ export const POLL_PARTY = {
   pnv: { n: "PNV", c: () => FAM.pnv.color },
 };
 const MAIN = ["pp", "psoe", "vox", "sumar", "podemos", "salf"];
-export const num = (x, d = 1) => (x == null ? "·" : x.toFixed(d).replace(".", ","));
+export const num = (x, d = 1) => (x == null ? "·" : fix(x, d));   // decimal sign of the view's language (i18n.js)
 
 // parties outside POLL_PARTY (past cycles) and the name of the "sumar" key by cycle (Podemos lineage)
 const OTHER = { cs: ["Ciudadanos", "#f6a21d"], upyd: ["UPyD", "#e0218a"], iu: ["IU", "#b8001f"], mas_pais: ["Más País", "#2bb3a6"],
@@ -303,7 +304,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       if ($("#casas-sum")) $("#casas-sum").textContent = all ? `todas (${big.length} habituales y ${small.length} ocasionales)` : sel.size === 0 ? "ninguna"
         : sel.size <= 3 ? [...sel].join(", ") : `${sel.size - nsmall} de ${big.length} habituales${nsmall ? ` y ${nsmall} ocasionales` : ""}`;
       $("#ch-note").innerHTML = (all && corr ? "" : `Promedio ${corr ? "corregido" : "sin corregir"} de ${all ? "todas las encuestadoras" : sel.size === 1 ? [...sel][0] : `${sel.size} encuestadoras`}. `)
-        + "Cada punto es una encuesta: pasa el ratón por encima para ver cuál.";   // the front page's links are in textos/portada.md
+        + tr("Cada punto es una encuesta: pasa el ratón por encima para ver cuál.");   // the front page's links are in textos/portada.md
     }
 
     // last 12 polls (with their own fieldwork), published figure and gap to the corrected average on that date
@@ -319,8 +320,8 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     }
     $("#toggles").innerHTML = E.parties.map((p) => `<label><input type="checkbox" data-p="${p}" ${show.has(p) ? "checked" : ""}/> ${PN(p)}</label>`).join("");
     $("#toggles").querySelectorAll("input").forEach((i) => i.onchange = () => { i.checked ? show.add(i.dataset.p) : show.delete(i.dataset.p); draw(); overview(); });
-    $("#zoom").innerHTML = `<button data-z="in" title="Acercar">+</button><button data-z="out" title="Alejar">−</button>`
-      + Object.entries({ "1s": "1 semana", "1m": "1 mes", "3m": "3 meses", "1a": "1 año", todo: "Todo" }).map(([k, v]) => `<button data-k="${k}">${v}</button>`).join("");
+    $("#zoom").innerHTML = `<button data-z="in" title="${tr("Acercar")}">+</button><button data-z="out" title="${tr("Alejar")}">−</button>`
+      + Object.entries({ "1s": tr("1 semana"), "1m": tr("1 mes"), "3m": tr("3 meses"), "1a": tr("1 año"), todo: tr("Todo") }).map(([k, v]) => `<button data-k="${k}">${v}</button>`).join("");
     $("#zoom").querySelectorAll("button[data-k]").forEach((b) => b.onclick = () => { setZoom(b.dataset.k); draw(); moveBrush(); });
     $("#zoom").querySelectorAll("button[data-z]").forEach((b) => b.onclick = () => { zoomBy(b.dataset.z === "in" ? 0.5 : 2); draw(); moveBrush(); });
     const markZoom = () => $("#zoom").querySelectorAll("button[data-k]").forEach((b) => b.classList.toggle("on", b.dataset.k === zoom));
@@ -392,7 +393,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
         .attr("fill", "var(--ink-2)").attr("font-weight", E.resultado && +win[1] >= +end - DAY ? 600 : 400).text((l) => `${PN(l.p)} ${num(l.v)}`);
       if (E.resultado && inWin(end)) {   // past cycle: the result, as a tick per party on election day
         svg.append("line").attr("x1", x(end)).attr("x2", x(end)).attr("y1", m.t).attr("y2", H - m.b).attr("stroke", "var(--ink-2)").attr("stroke-dasharray", "4 3");
-        svg.append("text").attr("x", x(end) - 4).attr("y", m.t + 10).attr("text-anchor", "end").attr("fill", "var(--ink-2)").text("resultado");
+        svg.append("text").attr("x", x(end) - 4).attr("y", m.t + 10).attr("text-anchor", "end").attr("fill", "var(--ink-2)").text(tr("resultado"));
         for (const p of parties) if (E.resultado[p] != null) svg.append("rect").attr("x", x(end) - 7).attr("y", y(E.resultado[p]) - 2).attr("width", 14).attr("height", 4)
           .attr("fill", PC(p)).attr("stroke", "var(--surface)").attr("stroke-width", 1);
       }
@@ -400,7 +401,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
 
       // hover a dot: that poll (every party) and the same pollster's other polls stand out
       let pinned = null;
-      const fdate = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
+      const fdate = (s) => new Date(s).toLocaleDateString(loc(), { day: "numeric", month: "short", year: "numeric" });
       function focus(i) {
         const house = i == null ? null : E.polls[i].e;
         circles.attr("r", (o) => (o.i === i ? 5 : house && E.polls[o.i].e === house ? 3 : r0))
@@ -424,18 +425,18 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
         const nHouse = E.polls.filter((r) => r.e === q.e).length;
         const rows = Object.entries(q.v).sort((a, b) => b[1] - a[1]);
         showTip(`<b>${q.e}</b>${q.m ? ` · ${q.m}` : ""}
-          <div class="row muted"><span>Trabajo de campo</span><span>${q.f0 === q.f1 ? fdate(q.f1) : `${fdate(q.f0)} a ${fdate(q.f1)}`}</span></div>
-          ${q.n ? `<div class="row muted"><span>Muestra</span><span>${q.n.toLocaleString("es-ES", { useGrouping: "always" })}</span></div>` : ""}
+          <div class="row muted"><span>${tr("Trabajo de campo")}</span><span>${q.f0 === q.f1 ? fdate(q.f1) : tr("{a} a {b}", { a: fdate(q.f0), b: fdate(q.f1) })}</span></div>
+          ${q.n ? `<div class="row muted"><span>${tr("Muestra")}</span><span>${q.n.toLocaleString(loc(), { useGrouping: "always" })}</span></div>` : ""}
           ${rows.map(([p, v]) => `<div class="row"><span><i class="dot" style="background:${PC(p) ?? "var(--ink-3)"}"></i>${PN(p) ?? p}</span><span>${num(v)}%</span></div>`).join("")}
-          <div class="row muted"><span>Encuestas de ${q.e} en el ciclo</span><span>${nHouse}</span></div>
-          ${q.x ? `<div class="muted" style="max-width:240px;white-space:normal">${q.x === "reest" ? "Reestimación de una encuesta del CIS con otra cocina: misma muestra, no entra en el promedio." : "Encuesta encargada por un partido: no entra en el promedio."}</div>` : ""}`, ev);
+          <div class="row muted"><span>${tr("Encuestas de {e} en el ciclo", { e: q.e })}</span><span>${nHouse}</span></div>
+          ${q.x ? `<div class="muted" style="max-width:240px;white-space:normal">${q.x === "reest" ? tr("Reestimación de una encuesta del CIS con otra cocina: misma muestra, no entra en el promedio.") : tr("Encuesta encargada por un partido: no entra en el promedio.")}</div>` : ""}`, ev);
       }
       function avgTip(mx, ev) {
         const xd = x.invert(mx);
         const i = d3.leastIndex(days, (d) => Math.abs(d - xd));
         cross.attr("x1", x(days[i])).attr("x2", x(days[i])).style("display", null);
         const rows = parties.filter((p) => avg.media[p][i] != null).sort((a, b) => avg.media[b][i] - avg.media[a][i]);
-        showTip(`<b>Promedio, ${fdate(days[i])}</b>${rows.map((p) =>
+        showTip(`<b>${tr("Promedio, {f}", { f: fdate(days[i]) })}</b>${rows.map((p) =>
           `<div class="row"><span><i class="dot" style="background:${PC(p)}"></i>${PN(p)}</span><span>${num(avg.media[p][i])}%</span></div>`).join("")}`, ev);
       }
       const near = (mx, my) => { if (!dots.length) return null; const j = delaunay.find(mx, my);

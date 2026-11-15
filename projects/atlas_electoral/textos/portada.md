@@ -151,3 +151,11 @@ simulaciones, no de K0).
 ::: si otro_modelo
 [nota] El mapa por provincias es siempre el de «Nuestra predicción», no el de «{modelo}», elegido arriba.
 :::
+
+=== cambio_casas ===
+<!-- Below the poll chart of "El modelo explicado" (inicio.js; Claude, 2026-11-15). Figures from data/cambio_casas.json
+(pipeline/cambio_casas.py, every morning). {frase_cambio}: the parties that move most clearly, e.g. "Podemos baja en 13 de
+14"; {n_casas}: how many pollsters. [[tabla_cambio]]: the table per pollster, folded. -->
+[nota] **Cada encuestadora comparada consigo misma.** Entre su última encuesta y la que publicó de 3 a 8 semanas antes: {frase_cambio} ({n_casas} encuestadoras). Así no cuenta que unas casas den siempre más a un partido que otras. Describe los datos: el modelo ya incluye estas encuestas y no prolonga la tendencia hasta el 29N.
+
+[[tabla_cambio]]

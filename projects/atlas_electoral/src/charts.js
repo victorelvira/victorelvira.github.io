@@ -1,5 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.125";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.127";
+import { t as tr } from "./i18n.js?v=0.2.127";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
@@ -9,7 +10,9 @@ export const fam = (f) => FAM[f] ?? EXTRA[f] ?? { nombre: f, color: "#999" };
 /** Family name as it read at a given election: the vocabulary name spans 1977-2026 ("PP (AP/CD)",
  *  "PCE/IU/Podemos/Sumar"); from 2019 on the current label is clearer. eid like "generales_2023-07". */
 const NOW = { pp: "PP", junts: "Junts", bildu: "EH Bildu", cs: "Ciudadanos", ucd: "CDS", izq: "Sumar" };
-export function famName(f, eid) {
+// the two families whose name is a description, not a party ("Otros", "Regionalistas y otros nacionalistas"), in the view's language
+export const famName = (f, eid) => (f === "reg" || f === "otros" ? tr(famName0(f, eid)) : famName0(f, eid));
+function famName0(f, eid) {
   const y = eid ? +String(eid).replace(/^\D*/, "").slice(0, 4) : 0;
   if (y < 2019) return fam(f).nombre;
   if (f === "izq") return y >= 2023 ? "Sumar" : "Unidas Podemos";
@@ -29,7 +32,7 @@ export function seatRows(el, rows, { total = 350, labelWidth = 120, eid = null }
   <div class="legend">${IDEO.filter((f) => rows.some((r) => r.e[f])).map((f) => `<span><i class="sw" style="background:${fam(f).color}"></i>${famName(f, eid)}</span>`).join("")}
 </div>`;
   el.querySelectorAll(".seats div").forEach((d) => {
-    d.onmousemove = (ev) => showTip(`<b>${d.dataset.l}</b><div class="row"><span><i class="dot" style="background:${fam(d.dataset.f).color}"></i>${famName(d.dataset.f, eid)}</span><span>${d.dataset.n} escaños</span></div>`, ev);
+    d.onmousemove = (ev) => showTip(`<b>${d.dataset.l}</b><div class="row"><span><i class="dot" style="background:${fam(d.dataset.f).color}"></i>${famName(d.dataset.f, eid)}</span><span>${tr("{r} escaños", { r: d.dataset.n })}</span></div>`, ev);
     d.onmouseleave = hideTip;
   });
 }
@@ -178,7 +181,7 @@ export const BLOQUE_INICIAL = { pp: "derecha", vox: "derecha", salf: "derecha", 
 export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws = null, onChange = null, barra = null } = {}) {
   // barra: {label, labelWidth}: a three-colour bar (left, rest, right) with the same layout as seatRows, so it lines up
   // under a seat bar of the same width and shows which parties make up each bloc; redrawn on every move
-  const G = ["izquierda", "otros", "derecha"], NAME = { izquierda: "Izquierda", otros: "Otros", derecha: "Derecha" };
+  const G = ["izquierda", "otros", "derecha"], NAME = { izquierda: tr("Izquierda"), otros: tr("Otros"), derecha: tr("Derecha") };
   const start = BLOQUE_INICIAL;
   const fams = Object.entries(seats).filter(([, n]) => n).sort((a, b) => b[1] - a[1]).map(([f]) => f);
   for (const f of fams) at[f] ??= start[f] ?? "otros";
@@ -193,8 +196,8 @@ export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws =
     const v = [...t].sort((a, b) => a - b), q = (p) => v[Math.min(v.length - 1, Math.floor(p * v.length))];
     const pr = v.filter((x) => x >= 176).length / v.length;
     // two lines: the range in seats, then how often it reaches 176, as a percentage (Víctor, 2026-11-17)
-    const pct = pr < 0.005 ? "menos del 1%" : pr > 0.995 ? "más del 99%" : `un ${Math.round(pr * 100)}%`;
-    return `<div class="bq-p">de ${q(0.05)} a ${q(0.95)} escaños<br>llega a 176 en ${pct} de las simulaciones</div>`;
+    const pct = pr < 0.005 ? tr("menos del 1%") : pr > 0.995 ? tr("más del 99%") : tr("un {p}%", { p: Math.round(pr * 100) });
+    return `<div class="bq-p">${tr("de {a} a {b} escaños", { a: q(0.05), b: q(0.95) })}<br>${tr("llega a 176 en {p} de las simulaciones", { p: pct })}</div>`;
   };
   const draw = () => {
     const totG = Object.fromEntries(G.map((g) => [g, fams.filter((f) => at[f] === g).reduce((a, f) => a + seats[f], 0)]));
@@ -203,7 +206,7 @@ export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws =
     const COL = { izquierda: hatch("#e30613"), otros: hatch("#9b9a93"), derecha: hatch("#1d84ce") };
     const bar = barra ? `<div class="seatrows bq-barra"><div class="sr"><span class="sl" style="width:${barra.labelWidth}px">${barra.label}</span><div class="seats" style="height:20px;flex:1">${G.filter((g) => totG[g]).map((g) => `<div title="${NAME[g]}: ${totG[g]}" style="flex:${totG[g]};background:${COL[g]}"></div>`).join("")}<span class="majority" style="left:${(176 / 350) * 100}%"></span></div></div></div>` : "";
     el.innerHTML = bar + `<div class="bloques">${G.map((g) => { const fs = fams.filter((f) => at[f] === g), tot = fs.reduce((a, f) => a + seats[f], 0);
-      return `<div class="bloque" data-g="${g}"><div class="bq-h">${NAME[g]} = <b>${tot}</b>${!draws && tot >= 176 ? ' <span class="muted">· llega a 176</span>' : ""}</div>${stats(g)}<div class="bq-chips">${fs.map((f) =>
+      return `<div class="bloque" data-g="${g}"><div class="bq-h">${NAME[g]} = <b>${tot}</b>${!draws && tot >= 176 ? ` <span class="muted">· ${tr("llega a 176")}</span>` : ""}</div>${stats(g)}<div class="bq-chips">${fs.map((f) =>
         `<span class="chip drag" data-f="${f}"><i class="dot" style="background:${fam(f).color}"></i>${famName(f, eid)} ${seats[f]}</span>`).join("")}</div></div>`; }).join("")}</div>`;
     el.querySelectorAll(".chip").forEach((c) => c.onpointerdown = (ev) => {
       ev.preventDefault();

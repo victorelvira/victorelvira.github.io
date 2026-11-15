@@ -4,17 +4,18 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.125";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.125";
-import { getGeo, rewind } from "./mapa.js?v=0.2.125";
-import { textos, md } from "./textos.js?v=0.2.125";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.125";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.127";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.127";
+import { getGeo, rewind } from "./mapa.js?v=0.2.127";
+import { textos, md } from "./textos.js?v=0.2.127";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.127";
+import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.127";
 
-const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? FAM[f]?.nombre ?? (f === "otros" ? "Otras" : f.toUpperCase()));
-export const short = (f) => (f === "sumar" ? "Frente Amplio" : pn(f).split(" y otros")[0]);
+const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
+export const short = (f) => (f === "sumar" ? "Frente Amplio" : pn(f).split(" y otros")[0].split(" and other")[0]);
 export const pc = (f) => POLL_PARTY[f]?.c() ?? FAM[f]?.color ?? "#888";
-export const nm = (x, d = 1) => (x == null ? "·" : x.toFixed(d).replace(".", ","));
-export const frecuencia = (s) => (s >= 0.095 ? `${Math.round(s * 10)} de cada 10` : `${Math.max(1, Math.round(s * 100))} de cada 100`);
+export const nm = (x, d = 1) => (x == null ? "·" : fix(x, d));
+export const frecuencia = (s) => (s >= 0.095 ? deCada(Math.round(s * 10), 10) : deCada(Math.max(1, Math.round(s * 100)), 100));
 export const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 export const colorVoto = (f) => { const c = partyColor(f); return c === "#888" ? pc(f) : c; };   // partyColor has no "reg": its family colour
 export const nombre = (f, anio) => (f === "sumar" && anio === "2023" ? "Sumar" : short(f));   // the Sumar space ran as Sumar in 2023
@@ -23,7 +24,7 @@ export const pctVoto = (x) => `${nm(x)}%`;
 export const rampa = (c) => d3.interpolateLab(d3.interpolateLab(cssVar("--surface"), c)(0.14), d3.color(c).darker(0.9));
 // "Más votado": the lead of the first party over the second, in points, in four steps
 export const VENTAJA = [5, 10, 20];
-export const VENTAJA_LAB = ["hasta 5", "5–10", "10–20", "más de 20"];
+export const VENTAJA_LAB = [N_("hasta 5"), "5–10", "10–20", N_("más de 20")];   // passed through tr() where drawn
 export const pasoVentaja = (x) => d3.bisectRight(VENTAJA, x);
 export const toneMasVotado = (f, i) => rampa(colorVoto(f))(0.25 + 0.75 * i / 3);
 // three-letter labels of the 52 provinces (INE codes), the same letters as the Senate map's constituencies
@@ -79,20 +80,20 @@ export function masVotado(D, R23, anio, T) {
     return md(T.tooltip_mas_votado, { vars: { provincia: p.n, partido: nombre(x[0], anio), voto: pctVoto(medio(v)), ventaja: nm(x[2]),
       frecuencia: y23 ? null : frecuencia(x[1]) }, flags: { proyeccion: !y23 }, page: "provincia" }).html;
   };
-  const legend = `<div class="pv-leg-mv"><span class="muted">Más votado${y23 ? " en 2023" : ""}; ventaja sobre el segundo, en puntos</span>
-      <span></span>${VENTAJA_LAB.map((l) => `<span class="pv-leg-h">${l}</span>`).join("")}
+  const legend = `<div class="pv-leg-mv"><span class="muted">${y23 ? tr("Más votado en 2023; ventaja sobre el segundo, en puntos") : tr("Más votado; ventaja sobre el segundo, en puntos")}</span>
+      <span></span>${VENTAJA_LAB.map((l) => `<span class="pv-leg-h">${tr(l)}</span>`).join("")}
       ${lideres.map((f) => `<span>${nombre(f, anio)}</span>${d3.range(4).map((i) => `<i class="sw" style="background:${toneMasVotado(f, i)}"></i>`).join("")}`).join("")}</div>`;
   const nota = md(T.nota_mas_votado, { vars: { simulaciones: d3.format(",.0f")(D.draws) }, flags: { proyeccion: !y23 }, page: "provincia" }).html;
   // the leader and its share, for the map labels ("MAD 38,2")
   const lider = (p) => { const x = pri(p); return x ? { f: x[0], voto: medio(votoDe(p)[x[0]]) } : null; };
-  return { fill, tip, legend, nota, lider, aria: `Mapa de provincias por partido más votado${y23 ? " en 2023" : ""}` };
+  return { fill, tip, legend, nota, lider, aria: y23 ? tr("Mapa de provincias por partido más votado en 2023") : tr("Mapa de provincias por partido más votado") };
 }
 
 
 // "Bloques": each province in the colour of the bloc that leads in votes there, with the groups of "Forma tu mayoría"
 // (at: {party: "izquierda" | "otros" | "derecha"}, the reader's grouping); a party not in that box (no seat in the central
 // scenario) counts in its starting bloc. The share of a bloc is the sum of its parties' shares (medians in the projection).
-export const BLOQUES = [["izquierda", "Izquierda", "#e30613"], ["otros", "Otros", "#9b9a93"], ["derecha", "Derecha", "#1d84ce"]];
+export const BLOQUES = [["izquierda", N_("Izquierda"), "#e30613"], ["otros", N_("Otros"), "#9b9a93"], ["derecha", N_("Derecha"), "#1d84ce"]];   // names: tr(BQ[g].n) where drawn
 const BQ = Object.fromEntries(BLOQUES.map(([g, n, c]) => [g, { n, c }]));
 export const toneBloque = (g, i) => rampa(BQ[g].c)(0.25 + 0.75 * i / 3);
 export function porBloques(D, R23, anio, T, at = {}) {
@@ -114,18 +115,18 @@ export function porBloques(D, R23, anio, T, at = {}) {
   const tip = (p) => {
     const r = reparto(p);
     if (!r) return `<b>${p.n}</b>`;
-    return md(T.tooltip_bloques, { vars: { provincia: p.n, bloque: BQ[r.primero].n, ventaja: nm(r.ventaja), izquierda: pctVoto(r.b.izquierda), otros: pctVoto(r.b.otros),
+    return md(T.tooltip_bloques, { vars: { provincia: p.n, bloque: tr(BQ[r.primero].n), ventaja: nm(r.ventaja), izquierda: pctVoto(r.b.izquierda), otros: pctVoto(r.b.otros),
       derecha: pctVoto(r.b.derecha), resto: pctVoto(r.resto) }, flags: { proyeccion: !y23, resto: r.resto >= 0.5 }, page: "provincia" }).html;
   };
   const lideres = [...new Set(D.provincias.map(reparto).filter(Boolean).map((r) => r.primero))].sort((x, y) => BLOQUES.findIndex((b) => b[0] === x) - BLOQUES.findIndex((b) => b[0] === y));
-  const legend = `<div class="pv-leg-mv"><span class="muted">Bloque más votado${y23 ? " en 2023" : ""}; ventaja sobre el segundo, en puntos</span>
-      <span></span>${VENTAJA_LAB.map((l) => `<span class="pv-leg-h">${l}</span>`).join("")}
-      ${lideres.map((g) => `<span>${BQ[g].n}</span>${d3.range(4).map((i) => `<i class="sw" style="background:${toneBloque(g, i)}"></i>`).join("")}`).join("")}</div>`;
+  const legend = `<div class="pv-leg-mv"><span class="muted">${y23 ? tr("Bloque más votado en 2023; ventaja sobre el segundo, en puntos") : tr("Bloque más votado; ventaja sobre el segundo, en puntos")}</span>
+      <span></span>${VENTAJA_LAB.map((l) => `<span class="pv-leg-h">${tr(l)}</span>`).join("")}
+      ${lideres.map((g) => `<span>${tr(BQ[g].n)}</span>${d3.range(4).map((i) => `<i class="sw" style="background:${toneBloque(g, i)}"></i>`).join("")}`).join("")}</div>`;
   const sinEscano = [...new Set(D.provincias.flatMap((p) => Object.keys((y23 ? R23[p.prov]?.voto : p.voto) ?? {})))].filter((f) => f !== "otros" && !(f in at));
-  const nota = T.nota_bloques ? md(T.nota_bloques, { vars: { fuera: sinEscano.map((f) => `${nombre(f, anio)} (${BQ[grupo(f)].n.toLowerCase()})`).join(", ") },
+  const nota = T.nota_bloques ? md(T.nota_bloques, { vars: { fuera: sinEscano.map((f) => `${nombre(f, anio)} (${tr(BQ[grupo(f)].n).toLowerCase()})`).join(", ") },
     flags: { proyeccion: !y23, fuera: sinEscano.length > 0 }, page: "provincia" }).html : "";
   const lider = (p) => { const r = reparto(p); return r ? { voto: r.b[r.primero], c: BQ[r.primero].c } : null; };
-  return { fill, tip, legend, nota, lider, aria: `Mapa de provincias por bloque más votado${y23 ? " en 2023" : ""}` };
+  return { fill, tip, legend, nota, lider, aria: y23 ? tr("Mapa de provincias por bloque más votado en 2023") : tr("Mapa de provincias por bloque más votado") };
 }
 
 // "por diputados": the party (or the reader's bloc) with most seats. 2026: the likeliest split of the draws (the commonest
@@ -133,17 +134,17 @@ export function porBloques(D, R23, anio, T, at = {}) {
 // seats won. Small provinces tie (2-2, 1-1-1): a tie is drawn in stripes of the tied colours and named in the tooltip.
 // Darker: a bigger lead in seats over the second.
 export const VENTAJA_ESC = [2, 3, 5];
-export const VENTAJA_ESC_LAB = ["1", "2", "3 o 4", "5 o más"];
+export const VENTAJA_ESC_LAB = ["1", "2", N_("3 o 4"), N_("5 o más")];   // passed through tr() where drawn
 export function porEscanos(D, R23, anio, T, { at = {}, bloques = false } = {}) {
   const y23 = anio === "2023";
   const grupo = (f) => at[f] ?? BLOQUE_INICIAL[f] ?? "otros";
   const clave = (f) => (bloques ? grupo(f) : f);
-  const nomDe = (p, k) => (bloques ? BQ[k].n : (y23 && R23[p.prov]?.nom?.[k]) || (k === "otros" ? "Otras" : nombre(k, anio)));
+  const nomDe = (p, k) => (bloques ? tr(BQ[k].n) : (y23 && R23[p.prov]?.nom?.[k]) || (k === "otros" ? tr("Otras") : nombre(k, anio)));
   const colDe = (k) => (bloques ? BQ[k].c : colorVoto(k));
   const tone = (k, i) => rampa(colDe(k))(0.25 + 0.75 * i / 3);
   const rango = (k) => { const i = bloques ? BLOQUES.findIndex((b) => b[0] === k) : IDEO.indexOf(k === "sumar" ? "sumar" : k); return i < 0 ? 99 : i; };
   // near certainty reads better in hundredths than "10 de cada 10"
-  const frec = (x) => (x >= 0.95 && x < 0.995 ? `${Math.round(x * 100)} de cada 100` : x >= 0.995 ? "más de 99 de cada 100" : frecuencia(x));
+  const frec = (x) => (x >= 0.95 && x < 0.995 ? deCada(Math.round(x * 100), 100) : x >= 0.995 ? tr("más de 99 de cada 100") : frecuencia(x));
   // seats per key for one seat vector, and its leaders (several when tied) and lead over the next
   const suma = (fs, row) => { const o = {}; fs.forEach((f, j) => { if (row[j]) o[clave(f)] = (o[clave(f)] ?? 0) + row[j]; }); return o; };
   const lideres = (o) => {
@@ -186,25 +187,26 @@ export function porEscanos(D, R23, anio, T, { at = {}, bloques = false } = {}) {
     const w = 4, cs = ks.map((k) => tone(k, 1));
     return `<pattern id="${id}" width="${w * cs.length}" height="${w * cs.length}" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">${cs.map((c, i) => `<rect x="${i * w}" width="${w}" height="${w * cs.length}" fill="${c}"></rect>`).join("")}</pattern>`;
   }).join("");
-  const y = (ks, p) => { const n = ks.map((k) => nomDe(p, k)); return n.length > 1 ? `${n.slice(0, -1).join(", ")} y ${n.at(-1)}` : n[0]; };
+  const y = (ks, p) => { const n = ks.map((k) => nomDe(p, k)); return n.length > 1 ? `${n.slice(0, -1).join(", ")} ${tr("y")} ${n.at(-1)}` : n[0]; };
   const repartoTxt = (p, o) => Object.entries(o).sort((a, b) => b[1] - a[1]).map(([k, n]) => `${nomDe(p, k)} ${n}`).join(", ");
   const tip = (p) => {
     const r = info(p);
     if (!r) return `<b>${p.n}</b>`;
-    const freq = r.freq ? r.freq.filter(([, x]) => x >= 0.005).map(([k, x]) => `${k === "empate" ? "empate" : nomDe(p, k)}, ${frec(x)}`).join("; ") : null;
-    return md(T.tooltip_escanos, { vars: { provincia: p.n, lider: y(r.top, p), escanos: `${r.n} ${r.n === 1 ? "escaño" : "escaños"}`, ventaja: r.ventaja, ventaja_palabra: r.ventaja === 1 ? "escaño" : "escaños",
+    const freq = r.freq ? r.freq.filter(([, x]) => x >= 0.005).map(([k, x]) => `${k === "empate" ? tr("empate") : nomDe(p, k)}, ${frec(x)}`).join("; ") : null;
+    return md(T.tooltip_escanos, { vars: { provincia: p.n, lider: y(r.top, p), escanos: `${r.n} ${r.n === 1 ? tr("escaño") : tr("escaños")}`, ventaja: r.ventaja, ventaja_palabra: r.ventaja === 1 ? tr("escaño") : tr("escaños"),
       reparto: repartoTxt(p, r.o), frecuencias: freq, prob_reparto: r.pModo != null ? frec(r.pModo) : null },
       flags: { proyeccion: !y23, empate: r.top.length > 1, bloques }, page: "provincia" }).html;
   };
   const presentes = [...new Set(D.provincias.map(info).filter((r) => r && r.top.length === 1).map((r) => r.top[0]))];
   const orden = bloques ? BLOQUES.map((b) => b[0]).filter((k) => presentes.includes(k))
     : presentes.sort((a, b) => d3.sum(D.provincias, (p) => info(p)?.top[0] === b) - d3.sum(D.provincias, (p) => info(p)?.top[0] === a));
-  const nomLeg = (k) => (bloques ? BQ[k].n : k === "otros" ? "Otras" : nombre(k, anio));
+  const nomLeg = (k) => (bloques ? tr(BQ[k].n) : k === "otros" ? tr("Otras") : nombre(k, anio));
   const sw = (ks) => `background:repeating-linear-gradient(45deg, ${ks.map((k, i) => `${tone(k, 1)} ${i * 4}px ${(i + 1) * 4}px`).join(", ")})`;
-  const legend = `<div class="pv-leg-mv"><span class="muted">${bloques ? "Bloque" : "Partido"} con más diputados${y23 ? " en 2023" : ""}; ventaja sobre el segundo, en escaños</span>
-      <span></span>${VENTAJA_ESC_LAB.map((l) => `<span class="pv-leg-h">${l}</span>`).join("")}
+  const legend = `<div class="pv-leg-mv"><span class="muted">${bloques ? (y23 ? tr("Bloque con más diputados en 2023; ventaja sobre el segundo, en escaños") : tr("Bloque con más diputados; ventaja sobre el segundo, en escaños"))
+        : y23 ? tr("Partido con más diputados en 2023; ventaja sobre el segundo, en escaños") : tr("Partido con más diputados; ventaja sobre el segundo, en escaños")}</span>
+      <span></span>${VENTAJA_ESC_LAB.map((l) => `<span class="pv-leg-h">${tr(l)}</span>`).join("")}
       ${orden.map((k) => `<span>${nomLeg(k)}</span>${d3.range(4).map((i) => `<i class="sw" style="background:${tone(k, i)}"></i>`).join("")}`).join("")}</div>
-      ${empates.size ? `<div class="mv-leg-emp">${[...empates.values()].map((ks) => `<span><i class="sw" style="${sw(ks)}"></i>empate ${ks.map(nomLeg).slice(0, -1).join(", ")} y ${nomLeg(ks.at(-1))}</span>`).join("")}</div>` : ""}`;
+      ${empates.size ? `<div class="mv-leg-emp">${[...empates.values()].map((ks) => `<span><i class="sw" style="${sw(ks)}"></i>${tr("empate")} ${ks.map(nomLeg).slice(0, -1).join(", ")} ${tr("y")} ${nomLeg(ks.at(-1))}</span>`).join("")}</div>` : ""}`;
   const nota = T.nota_escanos ? md(T.nota_escanos, { vars: { simulaciones: d3.format(",.0f")(D.draws) }, flags: { proyeccion: !y23, bloques }, page: "provincia" }).html : "";
   const lider = (p) => {
     const r = info(p);
@@ -212,7 +214,8 @@ export function porEscanos(D, R23, anio, T, { at = {}, bloques = false } = {}) {
     const t = r.top.length > 1 ? r.top.map((k) => r.o[k]).join("=") : String(r.n);
     return { t, c: r.top.length > 1 ? `url(#${empId(r.top)})` : colDe(r.top[0]) };
   };
-  return { fill, tip, legend, nota, lider, patterns, aria: `Mapa de provincias por ${bloques ? "bloque" : "partido"} con más diputados${y23 ? " en 2023" : ""}` };
+  return { fill, tip, legend, nota, lider, patterns, aria: bloques ? (y23 ? tr("Mapa de provincias por bloque con más diputados en 2023") : tr("Mapa de provincias por bloque con más diputados"))
+    : y23 ? tr("Mapa de provincias por partido con más diputados en 2023") : tr("Mapa de provincias por partido con más diputados") };
 }
 
 // "Cambios desde 2023" (2026 only): the bloc that leads each province in 2026, with the reader's groups, against the one
@@ -223,7 +226,7 @@ export function porCambios(D, R23, VD, T, { at = {}, escanos = false } = {}) {
   const grupo = (f) => at[f] ?? BLOQUE_INICIAL[f] ?? "otros";
   const lider = (o) => { const e = Object.entries(o).filter(([, x]) => x > 0).sort((a, b) => b[1] - a[1]); if (!e.length) return null; return e.length > 1 && e[1][1] === e[0][1] ? "empate" : e[0][0]; };
   const porGrupo = (fs, xs) => { const o = { izquierda: 0, otros: 0, derecha: 0 }; fs.forEach((f, j) => { if (f !== "otros" || escanos) o[grupo(f)] += xs[j]; }); return o; };
-  const frec = (x) => (x >= 0.95 && x < 0.995 ? `${Math.round(x * 100)} de cada 100` : x >= 0.995 ? "más de 99 de cada 100" : x < 0.005 ? "menos de 1 de cada 100" : frecuencia(x));
+  const frec = (x) => (x >= 0.95 && x < 0.995 ? deCada(Math.round(x * 100), 100) : x >= 0.995 ? tr("más de 99 de cada 100") : x < 0.005 ? tr("menos de 1 de cada 100") : frecuencia(x));
   const cache = new Map();
   const info = (p) => {
     if (cache.has(p.prov)) return cache.get(p.prov);
@@ -251,7 +254,7 @@ export function porCambios(D, R23, VD, T, { at = {}, escanos = false } = {}) {
     cache.set(p.prov, r);
     return r;
   };
-  const nom = (k) => (k === "empate" ? "un empate" : BQ[k].n);
+  const nom = (k) => (k === "empate" ? tr("un empate") : tr(BQ[k].n));
   const fill = (p) => {
     const r = info(p);
     if (!r) return "url(#pv-hatch)";
@@ -267,9 +270,9 @@ export function porCambios(D, R23, VD, T, { at = {}, escanos = false } = {}) {
   const presentes = BLOQUES.map((b) => b[0]).filter((g) => D.provincias.some((p) => info(p)?.ahora === g));
   const hayEmpate = D.provincias.some((p) => info(p)?.ahora === "empate");
   const nCambia = D.provincias.filter((p) => info(p)?.cambia).length;
-  const legend = `<div class="mv-leg-cambio"><span class="muted">Bloque con más ${escanos ? "diputados" : "votos"} en 2026, comparado con 2023</span>
-      ${presentes.map((g) => `<span><i class="sw mv-sw-cambio" style="background:${rampa(BQ[g].c)(1)}"></i>${BQ[g].n}, cambia</span><span><i class="sw" style="background:${rampa(BQ[g].c)(0.12)}"></i>${BQ[g].n}, sin cambio</span>`).join("")}
-      ${hayEmpate ? `<span><i class="sw" style="background:var(--nodata)"></i>empate</span>` : ""}</div>`;
+  const legend = `<div class="mv-leg-cambio"><span class="muted">${escanos ? tr("Bloque con más diputados en 2026, comparado con 2023") : tr("Bloque con más votos en 2026, comparado con 2023")}</span>
+      ${presentes.map((g) => `<span><i class="sw mv-sw-cambio" style="background:${rampa(BQ[g].c)(1)}"></i>${tr("{b}, cambia", { b: tr(BQ[g].n) })}</span><span><i class="sw" style="background:${rampa(BQ[g].c)(0.12)}"></i>${tr("{b}, sin cambio", { b: tr(BQ[g].n) })}</span>`).join("")}
+      ${hayEmpate ? `<span><i class="sw" style="background:var(--nodata)"></i>${tr("empate")}</span>` : ""}</div>`;
   const nota = T.nota_cambios ? md(T.nota_cambios, { vars: { cambian: nCambia, simulaciones: escanos ? d3.format(",.0f")(D.draws) : String(VD?.draws ?? "") }, flags: { escanos }, page: "provincia" }).html : "";
   const liderLab = (p) => {
     const r = info(p);
@@ -278,7 +281,7 @@ export function porCambios(D, R23, VD, T, { at = {}, escanos = false } = {}) {
     return { t: escanos ? String(r.o26[r.ahora]) : nm(r.o26[r.ahora]), c: BQ[r.ahora].c };
   };
   const cambiadas = D.provincias.filter((p) => info(p)?.cambia).map((p) => p.prov);
-  return { fill, tip, legend, nota, lider: liderLab, cambiadas, aria: `Mapa de provincias que cambian de bloque ganador ${escanos ? "en diputados" : "en votos"} desde 2023` };
+  return { fill, tip, legend, nota, lider: liderLab, cambiadas, aria: escanos ? tr("Mapa de provincias que cambian de bloque ganador en diputados desde 2023") : tr("Mapa de provincias que cambian de bloque ganador en votos desde 2023") };
 }
 
 // state kept while the front page is redrawn (another model) and in the URL (#inicio?mapa=bloques&por=escanos&anio=2023):
@@ -412,8 +415,8 @@ function badge(f, name, c, L, usadas) {
   }
   return `<span class="mvp-ini" style="background:${c}" aria-hidden="true">${iniciales(name)}</span>`;
 }
-const creditos = (usadas, L) => (usadas.size ? `<details class="mvp-cred"><summary>Créditos de las fotos</summary>${[...usadas].map((f) => { const x = L[f];
-  return `<div>${short(f)}: ${x.nombre ?? ""}${x.autor ? `, foto de ${x.autor}` : ""}${x.licencia ? ` (${x.licencia})` : ""}${x.fuente ? `, <a href="${x.fuente}" target="_blank" rel="noopener">fuente</a>` : ""}</div>`; }).join("")}</details>` : "");
+const creditos = (usadas, L) => (usadas.size ? `<details class="mvp-cred"><summary>${tr("Créditos de las fotos")}</summary>${[...usadas].map((f) => { const x = L[f];
+  return `<div>${short(f)}: ${x.nombre ?? ""}${x.autor ? `, ${tr("foto de {a}", { a: x.autor })}` : ""}${x.licencia ? ` (${x.licencia})` : ""}${x.fuente ? `, <a href="${x.fuente}" target="_blank" rel="noopener">${tr("fuente")}</a>` : ""}</div>`; }).join("")}</details>` : "");
 async function fichaHtml(p, anio, T) {
   const [S, dh, L] = await Promise.all([load("series.json"), load("dhondt.json"), lideresJson()]);
   const y23 = anio === "2023";
@@ -431,10 +434,10 @@ async function fichaHtml(p, anio, T) {
     const med = (l) => (modal ? modal.a[l.f] ?? 0 : l.pk.filter((x) => x >= 0.5).length);
     frecReparto = modal ? frecuencia(modal.p) : null;
     const ls = p.listas.map((l) => ({ ...l, m: med(l), v: p.voto[l.f]?.[0] ?? l.v })).sort((a, b) => b.m - a.m || b.v - a.v);
-    cab = `<tr><th>Partido</th><th class="num">Esc.</th><th class="num">%</th><th class="num">Votos estim.</th><th class="num">2023</th><th class="num">Var.</th></tr>`;
+    cab = `<tr><th>${tr("Partido")}</th><th class="num">${tr("Esc.")}</th><th class="num">%</th><th class="num">${tr("Votos estim.")}</th><th class="num">2023</th><th class="num">${tr("Var.")}</th></tr>`;
     filas = ls.map((l) => {
-      const n = l.f === "otros" ? "Otras candidaturas" : short(l.f), c = colorVoto(l.f), v23 = p.v23?.[l.f];
-      const rango = l.lo === l.hi ? `${l.lo} en 9 de cada 10 simulaciones` : `entre ${l.lo} y ${l.hi} en 9 de cada 10 simulaciones`;
+      const n = l.f === "otros" ? tr("Otras candidaturas") : short(l.f), c = colorVoto(l.f), v23 = p.v23?.[l.f];
+      const rango = l.lo === l.hi ? tr("{a} en 9 de cada 10 simulaciones", { a: l.lo }) : tr("entre {a} y {b} en 9 de cada 10 simulaciones", { a: l.lo, b: l.hi });
       const marca = l.f === "otros" ? '<span class="mvp-ini mvp-ini-o" aria-hidden="true"></span>' : badge(l.f, n, c, L, usadas);
       return `<tr><td><span class="mvp-p">${marca}<span>${n}</span></span></td>
         <td class="num mvp-esc" data-rango="${n}: ${rango}">${l.m ? `<span class="mvp-chip" style="--c:${c}">${l.m}</span>` : '<span class="mvp-cero">0</span>'}</td><td class="num">${nm(l.v)}</td>
@@ -445,19 +448,19 @@ async function fichaHtml(p, anio, T) {
     esc = r23?.esc ?? p.esc23;
     const ls = (r23?.l ?? []).map(([sig, f0_, v, e]) => ({ sig, f: f0_ === "izq" ? "sumar" : f0_, v, e, pc: 100 * v / validos })).sort((a, b) => b.e - a.e || b.v - a.v);
     const main = ls.filter((l) => l.e > 0 || l.pc >= 1), resto = ls.filter((l) => !main.includes(l));
-    cab = `<tr><th>Candidatura</th><th class="num">Esc.</th><th class="num">%</th><th class="num">Votos</th></tr>`;
+    cab = `<tr><th>${tr("Candidatura")}</th><th class="num">${tr("Esc.")}</th><th class="num">%</th><th class="num">${tr("Votos")}</th></tr>`;
     const fila = (n, f, e, pcv, v, c) => `<tr><td><span class="mvp-p">${f ? badge(f, n, c, null) : `<span class="mvp-ini mvp-ini-o" aria-hidden="true"></span>`}<span>${n}</span></span></td>
       <td class="num">${e ? `<span class="mvp-chip" style="--c:${c ?? "var(--ink-3)"}">${e}</span>` : '<span class="mvp-cero">0</span>'}</td><td class="num">${nm(pcv)}</td><td class="num">${f0(v)}</td></tr>`;
     filas = main.map((l) => fila(l.f === "otros" || l.f === "reg" ? l.sig : nombre(l.f, "2023"), l.f === "otros" ? null : l.f, l.e, l.pc, l.v, colorVoto(l.f))).join("")
-      + (resto.length ? fila("Otras candidaturas", null, d3.sum(resto, (l) => l.e), d3.sum(resto, (l) => l.pc), d3.sum(resto, (l) => l.v)) : "");
+      + (resto.length ? fila(tr("Otras candidaturas"), null, d3.sum(resto, (l) => l.e), d3.sum(resto, (l) => l.pc), d3.sum(resto, (l) => l.v)) : "");
   }
   const part = s23 ? nm(100 * s23.votantes / s23.censo) : null;
   const pie = T.pie_ficha ? md(T.pie_ficha, { vars: { participacion: part ? `${part}%` : null, frecuencia_reparto: frecReparto }, flags: { proyeccion: !y23, participacion: !!part, reparto: !!frecReparto }, page: "provincia" }).html : "";
   return `<div class="mvp-h"><div><div class="mvp-n" id="mvp-titulo">${p.n}</div>
-      <div class="mvp-sub">${ccaa ? `<span class="mvp-cc">${ccaa}</span>` : ""}<span>${esc} ${esc === 1 ? "escaño" : "escaños"}${y23 ? " en 2023" : ""}</span></div></div>
-      <button type="button" class="mvp-x" aria-label="Cerrar">×</button></div>
+      <div class="mvp-sub">${ccaa ? `<span class="mvp-cc">${ccaa}</span>` : ""}<span>${esc} ${esc === 1 ? tr("escaño") : tr("escaños")}${y23 ? ` ${tr("en 2023")}` : ""}</span></div></div>
+      <button type="button" class="mvp-x" aria-label="${tr("Cerrar")}">×</button></div>
     <div class="mvp-t"><table>${cab}${filas}</table></div>
-    <div class="mvp-pie">${pie}<a href="#provincia/${p.prov}">Ver la provincia</a>${creditos(usadas, L)}</div>`;
+    <div class="mvp-pie">${pie}<a href="#provincia/${p.prov}">${tr("Ver la provincia")}</a>${creditos(usadas, L)}</div>`;
 }
 
 /** The front page's map: provinces in the colour of the most voted party, or of the leading bloc with the reader's groups
@@ -473,9 +476,9 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   // three levels of control, each nested under the one above: the year, then party or bloc, then votes or seats
   leerHash();
   el.innerHTML = `<div class="mv-controls">
-    <div class="seg mv-anio" role="group" aria-label="Qué elección"><button type="button" data-a="2026">Proyección 2026</button><button type="button" data-a="2023">Resultados 2023</button></div>
-    <div class="mv-nivel mv-n2"><div class="seg mv-modo" role="group" aria-label="Partido o bloque"><button type="button" data-m="mv">Más votado</button><button type="button" data-m="bloques">Bloques</button><button type="button" data-m="cambios">Cambios desde 2023</button></div>
-      <div class="mv-nivel mv-n3"><div class="seg mv-por" role="group" aria-label="Por votos o por diputados"><button type="button" data-p="votos">por votos</button><button type="button" data-p="escanos">por diputados</button></div></div></div></div>
+    <div class="seg mv-anio" role="group" aria-label="${tr("Qué elección")}"><button type="button" data-a="2026">${tr("Proyección 2026")}</button><button type="button" data-a="2023">${tr("Resultados 2023")}</button></div>
+    <div class="mv-nivel mv-n2"><div class="seg mv-modo" role="group" aria-label="${tr("Partido o bloque")}"><button type="button" data-m="mv">${tr("Más votado")}</button><button type="button" data-m="bloques">${tr("Bloques")}</button><button type="button" data-m="cambios">${tr("Cambios desde 2023")}</button></div>
+      <div class="mv-nivel mv-n3"><div class="seg mv-por" role="group" aria-label="${tr("Por votos o por diputados")}"><button type="button" data-p="votos">${tr("por votos")}</button><button type="button" data-p="escanos">${tr("por diputados")}</button></div></div></div></div>
     <div class="mv-caja"><div class="mapwrap pvmap mvmap"><svg role="img"></svg></div><div class="mv-ficha" role="dialog" aria-labelledby="mvp-titulo" hidden></div></div>
     <div class="legend pv-legend mv-legend"></div><div class="mv-nota"></div>`;
   const box = el.querySelector(".mvmap"), caja = el.querySelector(".mv-caja"), ficha = el.querySelector(".mv-ficha");

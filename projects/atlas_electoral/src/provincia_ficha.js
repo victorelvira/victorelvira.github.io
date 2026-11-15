@@ -3,19 +3,20 @@
 // worth (electors per seat), the last seat, the heads of the proclaimed lists, 2019 against 2023, the D'Hondt quotients
 // of 2023 and the municipalities. The prose is textos/provincia.md (parts named after each block).
 const d3 = window.d3;
-import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.125";
-import { md } from "./textos.js?v=0.2.125";
-import { fam, famName } from "./charts.js?v=0.2.125";
-import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.125";
-import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.125";
+import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.127";
+import { md } from "./textos.js?v=0.2.127";
+import { fam, famName } from "./charts.js?v=0.2.127";
+import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.127";
+import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.127";
+import { t as tr, deCada, ordinal } from "./i18n.js?v=0.2.127";
 
 const f0 = (x) => d3.format(",.0f")(x);   // at call time: the Spanish locale is set after the imports run
 const E23 = "generales_2023-07", E19 = "generales_2019-11";
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 // a frequency for readers ("7 de cada 10"); above 9 of 10, out of 100 so that 0.95 does not read "10 de cada 10"
-const fr = (s) => (s > 0.9 && s < 0.995 ? `${Math.round(s * 100)} de cada 100` : frecuencia(s));
-const pal = (n, uno, varios) => (n === 1 ? uno : varios);
-const ord = (k) => `${k}.ª`;
+const fr = (s) => (s > 0.9 && s < 0.995 ? deCada(Math.round(s * 100), 100) : frecuencia(s));
+const pal = (n, uno, varios) => (n === 1 ? tr(uno) : tr(varios));
+const ord = (k) => ordinal(k, "f");
 // one decimal for shares; the bar of a list on a 0..max scale
 const pctTxt = (x) => `${nm(x)}%`;
 const tipAttr = (html) => ` data-tip="${esc(html)}" tabindex="0"`;
@@ -45,12 +46,12 @@ const fila = (c, label, barra, cifras, tip) => `<div class="pf-fila"${tip ? tipA
 
 function barras2026(p) {
   const max = d3.max(p.listas, (l) => l.vhi) || 1, mas = p.repartos[0]?.a ?? {};
-  return `<div class="pf-filas"><div class="pf-fila pf-cab"><div></div><div></div><div class="num">Voto</div><div class="num">Escaños</div></div>${p.listas.map((l) => {
+  return `<div class="pf-filas"><div class="pf-fila pf-cab"><div></div><div></div><div class="num">${tr("Voto")}</div><div class="num">${tr("Escaños")}</div></div>${p.listas.map((l) => {
     const n = mas[l.f] ?? 0, rango = l.lo === l.hi ? "" : ` (${l.lo}–${l.hi})`;
     // the same mark as the front page's ranges (dot = median, light band = 9 in 10 draws), not a solid bar with a faded
     // band over it, which read as two different things (Víctor, 2026-11-17)
     const barra = `<div class="rg-pista"><span class="rg-franja" style="left:${l.vlo / max * 100}%;width:${(l.vhi - l.vlo) / max * 100}%;background:${pc(l.f)}"></span><span class="rg-punto" style="left:${l.v / max * 100}%;background:${pc(l.f)}"></span></div>`;
-    const tip = `<b>${short(l.f)}</b>: ${pctTxt(l.v)} de los votos (mediana); en 9 de cada 10 simulaciones, entre ${pctTxt(l.vlo)} y ${pctTxt(l.vhi)}. Escaños: ${n} en el reparto más probable${rango ? `, entre ${l.lo} y ${l.hi} en 9 de cada 10 simulaciones` : ""}. En 2023: ${p.v23[l.f] != null ? pctTxt(p.v23[l.f]) : "sin lista"}, ${p.s23[l.f] ?? 0} ${pal(p.s23[l.f] ?? 0, "escaño", "escaños")}.`;
+    const tip = `<b>${short(l.f)}</b>: ${tr("{v} de los votos (mediana); en 9 de cada 10 simulaciones, entre {lo} y {hi}.", { v: pctTxt(l.v), lo: pctTxt(l.vlo), hi: pctTxt(l.vhi) })} ${tr("Escaños: {n} en el reparto más probable", { n })}${rango ? `, ${tr("entre {a} y {b} en 9 de cada 10 simulaciones", { a: l.lo, b: l.hi })}` : ""}. ${tr("En 2023:")} ${p.v23[l.f] != null ? pctTxt(p.v23[l.f]) : tr("sin lista")}, ${p.s23[l.f] ?? 0} ${pal(p.s23[l.f] ?? 0, "escaño", "escaños")}.`;
     return fila(pc(l.f), short(l.f), barra, `<div class="num">${pctTxt(l.v)}</div><div class="num pf-esc">${n}<small>${rango}</small></div>`, tip);
   }).join("")}</div>`;
 }
@@ -59,9 +60,9 @@ function barras2023(L) {
   const { lists, validos } = L;
   const vis = lists.filter((l) => l.n || l.v >= 0.01 * validos), resto = lists.filter((l) => !vis.includes(l));
   const max = d3.max(vis, (l) => l.v) / validos * 100;
-  const rows = vis.map((l) => ({ c: fam(l.f).color, label: l.s, v: l.v, n: l.n, tip: `<b>${l.s}</b>: ${f0(l.v)} votos, ${pctTxt(l.v / validos * 100)} del voto válido; ${l.n} ${pal(l.n, "escaño", "escaños")}.${l.v < 0.03 * validos ? " No llegó al 3%." : ""}` }));
-  if (resto.length) rows.push({ c: "var(--ink-3)", label: `Otras ${resto.length} ${pal(resto.length, "lista", "listas")}`, v: d3.sum(resto, (l) => l.v), n: 0, tip: resto.map((l) => `${l.s}: ${f0(l.v)}`).join("<br>") });
-  return `<div class="pf-filas pf-filas23"><div class="pf-fila pf-cab"><div></div><div></div><div class="num">Voto</div><div class="num">Votos</div><div class="num">Escaños</div></div>${rows.map((r) => {
+  const rows = vis.map((l) => ({ c: fam(l.f).color, label: l.s, v: l.v, n: l.n, tip: `<b>${l.s}</b>: ${tr("{v} votos, {p} del voto válido;", { v: f0(l.v), p: pctTxt(l.v / validos * 100) })} ${l.n} ${pal(l.n, "escaño", "escaños")}.${l.v < 0.03 * validos ? ` ${tr("No llegó al 3%.")}` : ""}` }));
+  if (resto.length) rows.push({ c: "var(--ink-3)", label: tr("Otras {n} {listas}", { n: resto.length, listas: pal(resto.length, "lista", "listas") }), v: d3.sum(resto, (l) => l.v), n: 0, tip: resto.map((l) => `${l.s}: ${f0(l.v)}`).join("<br>") });
+  return `<div class="pf-filas pf-filas23"><div class="pf-fila pf-cab"><div></div><div></div><div class="num">${tr("Voto")}</div><div class="num">${tr("Votos")}</div><div class="num">${tr("Escaños")}</div></div>${rows.map((r) => {
     const x = r.v / validos * 100;
     return fila(r.c, esc(r.label), `<span class="pf-med" style="width:${Math.min(100, x / max * 100)}%;background:${r.c}"></span>`,
       `<div class="num">${pctTxt(x)}</div><div class="num">${f0(r.v)}</div><div class="num pf-esc">${r.n}</div>`, r.tip);
@@ -70,10 +71,10 @@ function barras2023(L) {
 
 function tira(E, code) {
   const lo = E.rows[0].x, hi = E.rows.at(-1).x, pos = (x) => ((x - lo) / (hi - lo)) * 100;
-  return `<div class="pf-tira" role="img" aria-label="Electores por escaño en las 52 provincias">
-    <span class="pf-tira-media" style="left:${pos(E.media)}%"${tipAttr(`Media de España: ${f0(E.media)} electores por escaño`)}></span>
-    ${E.rows.map((r, i) => `<a class="pf-tira-p${r.prov === code ? " on" : ""}" href="#provincia/${r.prov}" style="left:${pos(r.x)}%"${tipAttr(`<b>${r.n}</b>: ${f0(r.x)} electores por escaño (${f0(r.censo)} electores, ${r.esc} ${pal(r.esc, "escaño", "escaños")}); ${ord(i + 1)} de 52`)} aria-label="${r.n}"></a>`).join("")}
-  </div><div class="pf-tira-ejes"><span>${f0(lo)}</span><span>${f0(hi)} electores por escaño</span></div>`;
+  return `<div class="pf-tira" role="img" aria-label="${tr("Electores por escaño en las 52 provincias")}">
+    <span class="pf-tira-media" style="left:${pos(E.media)}%"${tipAttr(tr("Media de España: {n} electores por escaño", { n: f0(E.media) }))}></span>
+    ${E.rows.map((r, i) => `<a class="pf-tira-p${r.prov === code ? " on" : ""}" href="#provincia/${r.prov}" style="left:${pos(r.x)}%"${tipAttr(`<b>${r.n}</b>: ${tr("{x} electores por escaño ({c} electores, {e} {escanos}); {o} de 52", { x: f0(r.x), c: f0(r.censo), e: r.esc, escanos: pal(r.esc, "escaño", "escaños"), o: ord(i + 1) })}`)} aria-label="${r.n}"></a>`).join("")}
+  </div><div class="pf-tira-ejes"><span>${f0(lo)}</span><span>${tr("{n} electores por escaño", { n: f0(hi) })}</span></div>`;
 }
 
 // the D'Hondt quotients of 2023: lists over 3% by votes, columns ÷1 ... one past the most seats any list won
@@ -81,11 +82,11 @@ function tablaDhondt(L) {
   const { lists, r } = L;
   const ok = lists.map((l, i) => i).filter((i) => r.ok[i]);
   const K = Math.max(3, d3.max(ok, (i) => r.n[i]) + 1);
-  return `<div class="scrollx"><table class="nosort pf-dh"><tr><th>Lista</th>${d3.range(1, K + 1).map((k) => `<th class="num">÷${k}</th>`).join("")}</tr>
+  return `<div class="scrollx"><table class="nosort pf-dh"><tr><th>${tr("Lista")}</th>${d3.range(1, K + 1).map((k) => `<th class="num">÷${k}</th>`).join("")}</tr>
     ${ok.map((i) => { const l = lists[i]; return `<tr><td class="pv-nw"><i class="dot" style="background:${fam(l.f).color}"></i>${esc(l.s)}</td>${d3.range(1, K + 1).map((k) => {
       const gana = k <= r.n[i], ult = r.last && r.last.i === i && r.last.k === k, cola = r.next && r.next.i === i && r.next.k === k;
       const cls = [gana && "gana", ult && "ultimo", cola && "cola"].filter(Boolean).join(" ");
-      const t = `${l.s}: ${f0(l.v)} votos entre ${k}, ${f0(l.v / k)}${ult ? ". El último escaño" : cola ? ". El siguiente de la cola" : gana ? ". Escaño" : ""}`;
+      const t = `${l.s}: ${tr("{v} votos entre {k}", { v: f0(l.v), k })}, ${f0(l.v / k)}${ult ? `. ${tr("El último escaño")}` : cola ? `. ${tr("El siguiente de la cola")}` : gana ? `. ${tr("Escaño")}` : ""}`;
       return `<td class="num ${cls}" style="--c:${fam(l.f).color}"${tipAttr(t)}>${f0(l.v / k)}</td>`;
     }).join("")}</tr>`; }).join("")}</table></div>`;
 }
@@ -101,11 +102,11 @@ function tablaEvolucion(dh, code) {
   const nom = (f) => (f === "reg" ? (b.get(f) ?? a.get(f)).s : famName(f, E23));
   const flecha = (d) => (d > 0.05 ? `<span class="pf-sube">▲ ${nm(d)}</span>` : d < -0.05 ? `<span class="pf-baja">▼ ${nm(-d)}</span>` : '<span class="muted">=</span>');
   const row = (f, label, x, y) => {
-    const t = `<b>${label}</b>: ${x ? `${pctTxt(x.v)} y ${x.n} ${pal(x.n, "escaño", "escaños")} en 2019 (${x.s})` : "sin lista en 2019"}; ${y ? `${pctTxt(y.v)} y ${y.n} ${pal(y.n, "escaño", "escaños")} en 2023 (${y.s})` : "sin lista en 2023"}.`;
+    const t = `<b>${label}</b>: ${x ? tr("{v} y {n} {escanos} en {y} ({s})", { v: pctTxt(x.v), n: x.n, escanos: pal(x.n, "escaño", "escaños"), y: 2019, s: x.s }) : tr("sin lista en {y}", { y: 2019 })}; ${y ? tr("{v} y {n} {escanos} en {y} ({s})", { v: pctTxt(y.v), n: y.n, escanos: pal(y.n, "escaño", "escaños"), y: 2023, s: y.s }) : tr("sin lista en {y}", { y: 2023 })}.`;
     return `<tr${tipAttr(t)}><td class="pv-nw"><i class="dot" style="background:${f ? fam(f).color : "var(--ink-3)"}"></i>${esc(label)}</td><td class="num">${x ? pctTxt(x.v) : "·"}</td><td class="num">${y ? pctTxt(y.v) : "·"}</td>
       <td class="num pv-nw">${x && y ? flecha(y.v - x.v) : ""}</td><td class="num pv-nw">${x?.n ?? 0} → ${y?.n ?? 0}</td></tr>`;
   };
-  return `<div class="scrollx"><table class="nosort pf-ev"><tr><th>Partido</th><th class="num">2019</th><th class="num">2023</th><th class="num">Cambio (puntos)</th><th class="num">Escaños</th></tr>
+  return `<div class="scrollx"><table class="nosort pf-ev"><tr><th>${tr("Partido")}</th><th class="num">2019</th><th class="num">2023</th><th class="num">${tr("Cambio (puntos)")}</th><th class="num">${tr("Escaños")}</th></tr>
     ${fams.map((f) => row(f, nom(f), a.get(f), b.get(f))).join("")}</table></div>`;
 }
 
@@ -121,7 +122,7 @@ const FOTOS = new Map(Object.values((await load("lideres.json").catch(() => null
 const cara = (c, color) => {
   const x = c.c && FOTOS.get(c.c);
   if (!x?.img) return `<span class="pf-ini" style="background:${color}" aria-hidden="true">${c.c ? iniciales(c.c) : "·"}</span>`;
-  const cred = `Foto: ${x.autor}, ${x.licencia === "Public domain" ? "dominio público" : x.licencia} (Wikimedia Commons)`;
+  const cred = `${tr("Foto:")} ${x.autor}, ${x.licencia === "Public domain" ? tr("dominio público") : x.licencia} (Wikimedia Commons)`;
   return `<img class="pf-ini" src="${new URL(`../data/${x.img}`, import.meta.url).href}" alt="${esc(x.nombre)}" title="${esc(cred)}" style="background:${color};object-fit:cover;object-position:top">`;
 };
 
@@ -132,7 +133,7 @@ function tablaCandidaturas(p, L, T, boe) {
   const orden = (f) => { const i = p.listas.findIndex((l) => l.f === f); return i < 0 ? 99 : i; };
   const cs = p.candidaturas.map((c, j) => ({ ...c, f: famDe(c.s), j })).sort((a, b) => orden(a.f) - orden(b.f) || a.j - b.j);
   return `<div class="pf-cands">${cs.map((c) => `<div class="pf-cand">${cara(c, c.f ? pc(c.f) : "var(--ink-3)")}
-    <div><b>${esc(c.c ?? "Sin dato")}</b><div class="pf-lista">${esc(c.d)}${c.d !== c.s ? ` <span class="muted">(${esc(c.s)})</span>` : ""}</div></div></div>`).join("")}</div>
+    <div><b>${esc(c.c ?? tr("Sin dato"))}</b><div class="pf-lista">${esc(c.d)}${c.d !== c.s ? ` <span class="muted">(${esc(c.s)})</span>` : ""}</div></div></div>`).join("")}</div>
     ${md(T.candidaturas_nota, { vars: { boe }, page: "provincia" }).html}`;
 }
 
@@ -148,12 +149,12 @@ export function ficha({ p, D, S, dh, T, vista }) {
   const vars = {};
   const flags = { proyeccion: !y23 };
   const slots = {
-    cabecera: `<nav class="pf-migas" aria-label="Dónde estás"><a href="#provincia">Provincias</a>${ccn ? ` › <a href="#comunidad/${cc}">${ccn}</a>` : ""} › <span>${p.n}</span></nav>`,
+    cabecera: `<nav class="pf-migas" aria-label="${tr("Dónde estás")}"><a href="#provincia">${tr("Provincias")}</a>${ccn ? ` › <a href="#comunidad/${cc}">${ccn}</a>` : ""} › <span>${p.n}</span></nav>`,
     cifras: `<dl class="pf-cifras">
-      <div><dt>Escaños 2026</dt><dd>${p.esc}${dEsc ? ` <small>(${dEsc > 0 ? "+" : ""}${dEsc} respecto a 2023)</small>` : ""}</dd></div>
-      ${s23 ? `<div><dt>Censo 2023</dt><dd>${f0(s23.censo)}</dd></div><div><dt>Participación 2023</dt><dd>${pctTxt(s23.votantes / s23.censo * 100)}</dd></div>` : ""}
-      ${me ? `<div><dt>Electores por escaño</dt><dd>${f0(me.x)}</dd></div>` : ""}</dl>`,
-    vista: `<div class="seg pf-vista" role="group" aria-label="Qué se muestra">${[["2026", "Proyección 2026"], ["2023", "Resultados 2023"]].map(([v, t]) =>
+      <div><dt>${tr("Escaños 2026")}</dt><dd>${p.esc}${dEsc ? ` <small>(${tr("{d} respecto a 2023", { d: `${dEsc > 0 ? "+" : ""}${dEsc}` })})</small>` : ""}</dd></div>
+      ${s23 ? `<div><dt>${tr("Censo 2023")}</dt><dd>${f0(s23.censo)}</dd></div><div><dt>${tr("Participación 2023")}</dt><dd>${pctTxt(s23.votantes / s23.censo * 100)}</dd></div>` : ""}
+      ${me ? `<div><dt>${tr("Electores por escaño")}</dt><dd>${f0(me.x)}</dd></div>` : ""}</dl>`,
+    vista: `<div class="seg pf-vista" role="group" aria-label="${tr("Qué se muestra")}">${[["2026", tr("Proyección 2026")], ["2023", tr("Resultados 2023")]].map(([v, t]) =>
       `<button type="button" data-v="${v}" class="${vista === v ? "on" : ""}" aria-pressed="${vista === v}">${t}</button>`).join("")}</div>`,
     mapa_aqui: `<div class="pf-mapa-hueco"></div>${md(T.mapa_ficha, { vars: { provincia: p.n }, page: "provincia" }).html}`,
   };
@@ -168,7 +169,7 @@ export function ficha({ p, D, S, dh, T, vista }) {
   // what a vote is worth
   if (me) {
     const peso = E.media / me.x;
-    slots.vale = md(T.vale, { vars: { provincia: p.n, electores: f0(me.x), media: f0(E.media), peso: Math.abs(peso - 1) < 0.05 ? "más o menos" : `${nm(peso)} veces`,
+    slots.vale = md(T.vale, { vars: { provincia: p.n, electores: f0(me.x), media: f0(E.media), peso: Math.abs(peso - 1) < 0.05 ? tr("más o menos") : tr("{x} veces", { x: nm(peso) }),
       puesto: ord(k + 1), min_n: E.rows[0].n, min: f0(E.rows[0].x), max_n: E.rows.at(-1).n, max: f0(E.rows.at(-1).x) }, slots: { vale_tira: tira(E, code) }, page: "provincia" }).html;
   }
   // the last seat: 2026, every usual fight and the undecided seats with how often each party takes them
@@ -207,8 +208,8 @@ export async function municipios(el, code, prov, T) {
     return { ine, n: META.municipios[ine] ?? d.n, k: norm(META.municipios[ine] ?? d.n), vot: r.vot, censo: r.censo, top, share: top && val ? top[2] / val * 100 : null };
   }).filter(Boolean).sort((a, b) => b.vot - a.vot);
   const N = 20;
-  el.innerHTML = `${md(T.municipios, { vars: { n: f0(rows.length), provincia: prov }, slots: { municipios_lista: `<div class="pf-munis-ctl"><input type="search" placeholder="Busca un municipio de ${esc(prov)}" aria-label="Buscar municipio" autocomplete="off"></div>
-    <div class="scrollx"><table class="nosort pf-mun"><thead><tr><th>Municipio</th><th class="num">Votantes</th><th>Más votada</th></tr></thead><tbody></tbody></table></div>
+  el.innerHTML = `${md(T.municipios, { vars: { n: f0(rows.length), provincia: prov }, slots: { municipios_lista: `<div class="pf-munis-ctl"><input type="search" placeholder="${esc(tr("Busca un municipio de {p}", { p: prov }))}" aria-label="${tr("Buscar municipio")}" autocomplete="off"></div>
+    <div class="scrollx"><table class="nosort pf-mun"><thead><tr><th>${tr("Municipio")}</th><th class="num">${tr("Votantes")}</th><th>${tr("Más votada")}</th></tr></thead><tbody></tbody></table></div>
     <p class="pf-mas"><button type="button" class="pf-btn"></button></p>` }, page: "provincia" }).html}`;
   const tb = el.querySelector("tbody"), inp = el.querySelector("input"), btn = el.querySelector(".pf-btn");
   let todos = false;
@@ -218,9 +219,9 @@ export async function municipios(el, code, prov, T) {
     const show = q || todos ? hit : hit.slice(0, N);
     tb.innerHTML = show.map((r) => `<tr><td><a href="#pueblo/${r.ine}">${esc(r.n)}</a></td><td class="num">${f0(r.vot)}</td>
       <td class="pv-nw">${r.top ? `<i class="dot" style="background:${fam(r.top[1]).color}"></i>${esc(r.top[0])} <span class="muted">${pctTxt(r.share)}</span>` : "·"}</td></tr>`).join("")
-      || '<tr><td colspan="3" class="muted">Ningún municipio con ese nombre.</td></tr>';
+      || `<tr><td colspan="3" class="muted">${tr("Ningún municipio con ese nombre.")}</td></tr>`;
     btn.parentElement.hidden = !!q || rows.length <= N;
-    btn.textContent = todos ? `Ver solo los ${N} con más votantes` : `Ver los ${f0(rows.length)} municipios`;
+    btn.textContent = todos ? tr("Ver solo los {n} con más votantes", { n: N }) : tr("Ver los {n} municipios", { n: f0(rows.length) });
   };
   inp.addEventListener("input", paint);
   btn.addEventListener("click", () => { todos = !todos; paint(); });

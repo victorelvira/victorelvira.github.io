@@ -1,11 +1,12 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.125";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.125";
-import { projectFromPolls } from "./simulador.js?v=0.2.125";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.125";
-import { pugnasHtml } from "./provincia.js?v=0.2.125";
-import { textos, md, INDICE } from "./textos.js?v=0.2.125";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.125";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.125";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.127";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.127";
+import { projectFromPolls } from "./simulador.js?v=0.2.127";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.127";
+import { pugnasHtml } from "./provincia.js?v=0.2.127";
+import { textos, md, INDICE } from "./textos.js?v=0.2.127";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.127";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.127";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.127";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
@@ -31,14 +32,14 @@ async function noche(demo) {
 }
 
 function nocheHtml(d, T) {
-  const n1 = (x) => (x == null ? "·" : x.toFixed(2).replace(".", ","));
-  const hora = d.actualizado ? new Date(d.actualizado).toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" }) : "";
+  const n1 = (x) => (x == null ? "·" : fix(x, 2));
+  const hora = d.actualizado ? new Date(d.actualizado).toLocaleTimeString(loc(), { hour: "2-digit", minute: "2-digit" }) : "";
   const ps = d.partidos.filter((p) => p.escanos > 0 || p.pct >= 1).sort((a, b) => b.escanos - a.escanos || b.votos - a.votos);
-  const tabla = `<table><tr><th>Candidatura</th><th class="num">Votos</th><th class="num">%</th><th class="num">Escaños</th><th class="num">Antes</th></tr>
+  const tabla = `<table><tr><th>${t("Candidatura")}</th><th class="num">${t("Votos")}</th><th class="num">%</th><th class="num">${t("Escaños")}</th><th class="num">${t("Antes")}</th></tr>
       ${ps.map((p) => `<tr><td><i class="dot" style="background:${(FAM[p.familia] ?? FAM.otros).color}"></i>${p.siglas}</td>
         <td class="num">${fmt.format(p.votos)}</td><td class="num">${n1(p.pct)}</td><td class="num"><b>${p.escanos ?? "·"}</b></td>
         <td class="num">${p.escanos_ant ?? "·"}</td></tr>`).join("")}</table>`;
-  const vars = { titulo_noche: d.eleccion === LIVE_ELECTION ? "Resultados provisionales" : `Prueba con datos de ${d.eleccion}`,
+  const vars = { titulo_noche: d.eleccion === LIVE_ELECTION ? t("Resultados provisionales") : t("Prueba con datos de {e}", { e: d.eleccion }),
     escrutado: n1(d.mesas_pct ?? d.censo_pct), hora, participacion: n1(d.participacion) };
   return `<section class="card live">${md(T.noche, { vars, slots: { tabla_noche: tabla }, page: "portada" }).html}</section>`;
 }
@@ -73,24 +74,24 @@ export async function renderInicio(app, args = []) {
   const vars = {
     dias: days, ultimo_campo: PR ? fechaLarga(PR.ultimo_campo) : null, ppvox_176: mayoria ? de100(mayoria.prob) : null,
     pp_primero: PR ? de100(PR.p_pp_primero) : null, pp_mas_votado: PR?.p_pp_mas_votado != null ? de100(PR.p_pp_mas_votado) : null,
-    ultimo_modelo: PR ? fechaLarga(PR.fecha.slice(0, 10)) : null, simulaciones: PR ? PR.draws.toLocaleString("es-ES", { useGrouping: "always" }) : null, fecha_datos: fechaLarga(BUILD_AT.slice(0, 10)),
+    ultimo_modelo: PR ? fechaLarga(PR.fecha.slice(0, 10)) : null, simulaciones: PR ? PR.draws.toLocaleString(loc(), { useGrouping: "always" }) : null, fecha_datos: fechaLarga(BUILD_AT.slice(0, 10)),
     elecciones: BT?.elecciones, desde: BT?.desde, acierto_voto: BT ? de100(BT.horizontes[7].voto.en90) : null, acierto_escanos: BT ? de100(BT.horizontes[7].escanos.en90) : null,
     error_x15: EC ? de100(EC.escala_x15) : null, error_x08: EC ? de100(EC.escala_x08) : null,
-    fuente_escanos: conv?.escanos?.fuente === "boe" ? "según el decreto de convocatoria (BOE)" : "calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE",
+    fuente_escanos: conv?.escanos?.fuente === "boe" ? t("según el decreto de convocatoria (BOE)") : t("calculados con la LOREG y la población oficial a 1-1-2025, a falta del decreto en el BOE"),
     cambios_escanos: (conv?.cambios_vs_2023 ?? []).map((c) => `${c.nombre} ${c.escanos_2023}→${c.escanos_2026}`).join(", "),
   };
   const flags = { antes: days > 0, hoy: days === 0, despues: days < 0, modelo: !!mayoria, provincias: !!PV, validacion: !!BT, sensibilidad: !!(BT && EC),
     movilizacion: !!D, cambios: !!conv?.cambios_vs_2023?.length };
   const slots = {
     noche: null,
-    promedio: `<p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${String(E.ultimo[p]).replace(".", ",")}%</b></span>`).join("")}</p>`,
+    promedio: `<p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${sep(E.ultimo[p])}%</b></span>`).join("")}</p>`,
     pugnas: PV ? pugnasHtml(PV, 3, T.pugna, "portada") : null,
     mov: '<div class="grid2" id="mov"></div>',
     resultados: R?.html ?? null,
     calendario: conv?.calendario ? calendario(conv) : null,
   };
   // the map of the most voted party per province (part "mapa" of portada.md): the province projection is always K0's
-  const mapa = PV && T.mapa ? md(T.mapa, { flags: { otro_modelo: (pick?.id ?? "nuestra") !== "nuestra" }, vars: { modelo: pick?.nombre ?? "" },
+  const mapa = PV && T.mapa ? md(T.mapa, { flags: { otro_modelo: (pick?.id ?? "nuestra") !== "nuestra" }, vars: { modelo: pick?.nombre ? t(pick.nombre) : "" },
     slots: { mapa_masvotado: '<div id="mapa-masvotado"></div>' }, page: "portada" }) : null;
   slots.mapa_portada = mapa?.html ? `<div class="tb-mapa">${mapa.html}</div>` : null;
   const { html, sec } = md(T.principal, { vars, flags, slots, page: "portada" });
@@ -124,7 +125,7 @@ export async function renderInicio(app, args = []) {
   if (live) {
     const fam = {};
     live.partidos.forEach((p) => { if (p.escanos) fam[p.familia] = (fam[p.familia] ?? 0) + p.escanos; });
-    seatRows(app.querySelector("#live-seats"), [{ label: "Escaños", e: fam }], { labelWidth: 90, eid: "generales_2026-11" });
+    seatRows(app.querySelector("#live-seats"), [{ label: t("Escaños"), e: fam }], { labelWidth: 90, eid: "generales_2026-11" });
     // refresh while the page is open on election night
     clearTimeout(window.__nocheTimer);
     window.__nocheTimer = setTimeout(() => { if (location.hash.replace("#", "").split(/[/?]/)[0] in { "": 1, inicio: 1 }) renderInicio(app, args); }, 60000);
@@ -143,6 +144,7 @@ export async function renderInicio(app, args = []) {
     app.querySelector("#modelo-sel")?.focus({ preventScroll: true });
   });
   pollChart(app.querySelector("#chart-area"), E, { selector: false, lastTable: false, tools: false, kpi: false });
+  cambioCasas(app.querySelector("#chart-area"), T);
   const mm = app.querySelector("#mapa-masvotado");
   if (mm && PV) mapaMV = await mapaMasVotado(mm, PV, { grupos: GROUPS });
 
@@ -242,31 +244,57 @@ function movilizacion(el, D) {
 }
 
 const HITOS = {
-  convocatoria_boe: "Convocatoria en el BOE",
-  voto_correo_solicitud_fin: "Último día para pedir el voto por correo",
-  consulta_censo: "Consulta del censo y reclamaciones",
-  presentacion_candidaturas: "Presentación de candidaturas",
-  proclamacion_candidaturas: "Proclamación de candidaturas",
-  cera_envio_papeletas: "Exterior: envío de papeletas",
-  voto_correo_envio_documentacion: "Voto por correo: envío de la documentación",
-  campana_electoral: "Campaña electoral",
-  cera_deposito_urna: "Exterior: voto en urna en consulados",
-  cera_voto_correo_fin: "Exterior: último día para enviar el voto",
-  voto_correo_entrega_fin: "Último día para votar por correo en Correos",
-  jornada_reflexion: "Jornada de reflexión",
-  jornada_electoral: "Votación",
+  convocatoria_boe: N_("Convocatoria en el BOE"),
+  voto_correo_solicitud_fin: N_("Último día para pedir el voto por correo"),
+  consulta_censo: N_("Consulta del censo y reclamaciones"),
+  presentacion_candidaturas: N_("Presentación de candidaturas"),
+  proclamacion_candidaturas: N_("Proclamación de candidaturas"),
+  cera_envio_papeletas: N_("Exterior: envío de papeletas"),
+  voto_correo_envio_documentacion: N_("Voto por correo: envío de la documentación"),
+  campana_electoral: N_("Campaña electoral"),
+  cera_deposito_urna: N_("Exterior: voto en urna en consulados"),
+  cera_voto_correo_fin: N_("Exterior: último día para enviar el voto"),
+  voto_correo_entrega_fin: N_("Último día para votar por correo en Correos"),
+  jornada_reflexion: N_("Jornada de reflexión"),
+  jornada_electoral: N_("Votación"),
 };
 
 function calendario(conv) {
-  const f = (d) => new Date(d).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
+  const f = (d) => new Date(d).toLocaleDateString(loc(), { day: "numeric", month: "short" });
   const today = new Date().toISOString().slice(0, 10);
   const start = (c) => (c.fecha_fin ? c.fecha_inicio : c.fecha);
   const rows = conv.calendario.filter((c) => HITOS[c.clave]).sort((a, b) => start(a).localeCompare(start(b))).map((c) => {
     const end = c.fecha_fin ?? c.fecha;
     const when = c.fecha_fin ? `${f(c.fecha_inicio)} – ${f(c.fecha_fin)}` : f(c.fecha);
-    return `<tr class="${end < today ? "past" : ""}"><td style="width:150px">${when}</td><td>${HITOS[c.clave]}</td>
-      <td class="note">${c.fuente === "calculado" ? "calculado (LOREG)" : c.fuente}</td></tr>`;
+    return `<tr class="${end < today ? "past" : ""}"><td style="width:150px">${when}</td><td>${t(HITOS[c.clave])}</td>
+      <td class="note">${c.fuente === "calculado" ? t("calculado (LOREG)") : c.fuente}</td></tr>`;
   });
   return `<table class="cal">${rows.join("")}</table>`;
 }
 
+
+// "Cada encuestadora comparada consigo misma" (part cambio_casas of portada.md; Claude, 2026-11-15): below the poll chart, from
+// data/cambio_casas.json (pipeline/cambio_casas.py). The three parties whose direction is most one-sided get a phrase; the
+// table per pollster is folded. A description of the data, not a forecast.
+const CC_PARTIES = ["pp", "psoe", "vox", "sumar", "podemos"];
+async function cambioCasas(chart, T) {
+  if (!chart || !T.cambio_casas) return;
+  const C = await load("cambio_casas.json").catch(() => null);
+  if (!C?.casas?.length) return;
+  const name = (f) => POLL_PARTY[f]?.n ?? f;
+  const corta = (d) => new Date(d).toLocaleDateString(loc(), { day: "numeric", month: "short" }).replace(".", "");   // "8 oct", "8 Oct"
+  const R = CC_PARTIES.filter((f) => C.resumen[f]).map((f) => ({ f, ...C.resumen[f], lado: Math.max(C.resumen[f].bajan, C.resumen[f].suben) / C.resumen[f].n }))
+    .sort((a, b) => b.lado - a.lado).slice(0, 3);
+  const trozos = R.map((r) => r.bajan > r.suben ? t("{p} baja en {a} de {n}", { p: name(r.f), a: r.bajan, n: r.n })
+    : r.suben > r.bajan ? t("{p} sube en {a} de {n}", { p: name(r.f), a: r.suben, n: r.n }) : t("{p} sube en tantas como baja", { p: name(r.f) }));
+  const frase = trozos.length > 1 ? `${trozos.slice(0, -1).join(", ")} ${t("y")} ${trozos.at(-1)}` : trozos[0];
+  const cel = (v) => v == null ? '<td class="num">·</td>' : `<td class="num" style="color:${v > 0 ? "var(--pos, #1a7f37)" : v < 0 ? "var(--neg, #c62828)" : "inherit"}">${v > 0 ? "+" : v < 0 ? "−" : ""}${fix(Math.abs(v), 1)}</td>`;
+  const tabla = `<details class="card cc-tabla"><summary>${t("Cambio por encuestadora, en puntos")}</summary><div class="scrollx"><table class="nosort">
+    <tr><th>${t("Encuestadora")}</th><th>${t("Antes")}</th><th>${t("Ahora")}</th>${CC_PARTIES.map((f) => `<th class="num">${name(f)}</th>`).join("")}</tr>
+    ${C.casas.map((c) => `<tr><td>${c.casa}</td><td>${corta(c.antes)}</td><td>${corta(c.ahora)}</td>${CC_PARTIES.map((f) => cel(c.cambio[f])).join("")}</tr>`).join("")}
+    </table></div></details>`;
+  const box = document.createElement("div");
+  box.className = "cc";
+  box.innerHTML = md(T.cambio_casas, { vars: { frase_cambio: frase, n_casas: C.casas.length }, slots: { tabla_cambio: tabla }, page: "portada" }).html;
+  chart.after(box);
+}
