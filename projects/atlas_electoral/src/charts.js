@@ -1,5 +1,5 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.123";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.124";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
@@ -192,7 +192,9 @@ export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws =
     const t = sumOf(g); if (!t) return "";
     const v = [...t].sort((a, b) => a - b), q = (p) => v[Math.min(v.length - 1, Math.floor(p * v.length))];
     const pr = v.filter((x) => x >= 176).length / v.length;
-    return `<div class="bq-p">de ${q(0.05)} a ${q(0.95)}${pr >= 0.005 ? ` · llega a 176 en ${pr > 0.995 ? "más de 99" : Math.round(pr * 100)} de cada 100` : ""}</div>`;
+    // two lines: the range in seats, then how often it reaches 176, as a percentage (Víctor, 2026-11-17)
+    const pct = pr < 0.005 ? "menos del 1%" : pr > 0.995 ? "más del 99%" : `un ${Math.round(pr * 100)}%`;
+    return `<div class="bq-p">de ${q(0.05)} a ${q(0.95)} escaños<br>llega a 176 en ${pct} de las simulaciones</div>`;
   };
   const draw = () => {
     const totG = Object.fromEntries(G.map((g) => [g, fams.filter((f) => at[f] === g).reduce((a, f) => a + seats[f], 0)]));

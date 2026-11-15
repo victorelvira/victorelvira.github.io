@@ -214,7 +214,7 @@ En las generales de julio de 2023 eligió {escanos23} {escanos23_palabra}: **{re
 
 #### Resultado por partido
 
-[nota] Voto previsto: la mediana de las {simulaciones} simulaciones; la franja clara recoge 9 de cada 10. A la derecha, los escaños del reparto más probable y, entre paréntesis, entre cuántos se mueve en 9 de cada 10 simulaciones.
+[nota] Voto previsto: el punto es la mediana de las {simulaciones} simulaciones y la franja recoge 9 de cada 10, como en la portada. A la derecha, los escaños del reparto más probable y, entre paréntesis, entre cuántos se mueve en 9 de cada 10 simulaciones.
 
 [[barras]]
 

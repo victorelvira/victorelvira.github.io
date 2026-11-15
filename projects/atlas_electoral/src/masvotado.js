@@ -4,11 +4,11 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.123";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.123";
-import { getGeo, rewind } from "./mapa.js?v=0.2.123";
-import { textos, md } from "./textos.js?v=0.2.123";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.123";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.124";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.124";
+import { getGeo, rewind } from "./mapa.js?v=0.2.124";
+import { textos, md } from "./textos.js?v=0.2.124";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.124";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? FAM[f]?.nombre ?? (f === "otros" ? "Otras" : f.toUpperCase()));
 export const short = (f) => (f === "sumar" ? "Frente Amplio" : pn(f).split(" y otros")[0]);

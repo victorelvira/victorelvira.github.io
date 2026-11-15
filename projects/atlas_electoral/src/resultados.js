@@ -1,11 +1,11 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.123";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.123";
-import { num } from "./encuestas.js?v=0.2.123";
-import { short, pc } from "./provincia.js?v=0.2.123";
-import { textos, md } from "./textos.js?v=0.2.123";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.124";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.124";
+import { num } from "./encuestas.js?v=0.2.124";
+import { short, pc } from "./provincia.js?v=0.2.124";
+import { textos, md } from "./textos.js?v=0.2.124";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -40,7 +40,7 @@ export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = n
  *  at: {party: group}, the reader's groups; pass the same object again to keep them when the block is redrawn. */
 export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = {} }) {
   const T = textosCache;   // read by resultadosHtml before this runs (null on the front page without a model)
-  seatRows(root.querySelector("#proj"), [{ label: PR ? "Escenario central" : "Estimación", e: est }], { labelWidth: PR ? 130 : 90, eid: "generales_2026-11" });
+  seatRows(root.querySelector("#proj"), [{ label: PR ? "Por partidos" : "Estimación", e: est }], { labelWidth: PR ? 130 : 90, eid: "generales_2026-11" });
   // the evolution of the two blocs the reader has formed (inside "Forma tu mayoría"): redrawn on every regrouping
   const evoEl = root.querySelector("#evolucion");
   let evoAt = null, SD = null;
@@ -52,7 +52,8 @@ export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = 
   // the group the hemicycle brings forward: the side of the last shortcut, else the group a party was last moved to
   // (not "Otros"), else the bigger of left and right
   let antes = null, foco = null;
-  const draw = () => bloques(bqEl, est, { at, draws: PR ? DR : null, 
+  // under the party bar, the bar of the reader's three blocs, same width and labels (Víctor, 2026-11-17)
+  const draw = () => bloques(bqEl, est, { at, draws: PR ? DR : null, barra: { label: "Por bloques", labelWidth: PR ? 130 : 90 },
     onChange: (at, sumOf) => {
       const movido = antes && Object.keys(at).find((f) => antes[f] && antes[f] !== at[f]);
       if (movido && at[movido] !== "otros") foco = at[movido];

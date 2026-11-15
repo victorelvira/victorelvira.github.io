@@ -3,11 +3,11 @@
 // worth (electors per seat), the last seat, the heads of the proclaimed lists, 2019 against 2023, the D'Hondt quotients
 // of 2023 and the municipalities. The prose is textos/provincia.md (parts named after each block).
 const d3 = window.d3;
-import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.123";
-import { md } from "./textos.js?v=0.2.123";
-import { fam, famName } from "./charts.js?v=0.2.123";
-import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.123";
-import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.123";
+import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.124";
+import { md } from "./textos.js?v=0.2.124";
+import { fam, famName } from "./charts.js?v=0.2.124";
+import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.124";
+import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.124";
 
 const f0 = (x) => d3.format(",.0f")(x);   // at call time: the Spanish locale is set after the imports run
 const E23 = "generales_2023-07", E19 = "generales_2019-11";
@@ -47,7 +47,9 @@ function barras2026(p) {
   const max = d3.max(p.listas, (l) => l.vhi) || 1, mas = p.repartos[0]?.a ?? {};
   return `<div class="pf-filas"><div class="pf-fila pf-cab"><div></div><div></div><div class="num">Voto</div><div class="num">Escaños</div></div>${p.listas.map((l) => {
     const n = mas[l.f] ?? 0, rango = l.lo === l.hi ? "" : ` (${l.lo}–${l.hi})`;
-    const barra = `<span class="pf-rango" style="left:${l.vlo / max * 100}%;width:${(l.vhi - l.vlo) / max * 100}%;background:${pc(l.f)}"></span><span class="pf-med" style="width:${l.v / max * 100}%;background:${pc(l.f)}"></span>`;
+    // the same mark as the front page's ranges (dot = median, light band = 9 in 10 draws), not a solid bar with a faded
+    // band over it, which read as two different things (Víctor, 2026-11-17)
+    const barra = `<div class="rg-pista"><span class="rg-franja" style="left:${l.vlo / max * 100}%;width:${(l.vhi - l.vlo) / max * 100}%;background:${pc(l.f)}"></span><span class="rg-punto" style="left:${l.v / max * 100}%;background:${pc(l.f)}"></span></div>`;
     const tip = `<b>${short(l.f)}</b>: ${pctTxt(l.v)} de los votos (mediana); en 9 de cada 10 simulaciones, entre ${pctTxt(l.vlo)} y ${pctTxt(l.vhi)}. Escaños: ${n} en el reparto más probable${rango ? `, entre ${l.lo} y ${l.hi} en 9 de cada 10 simulaciones` : ""}. En 2023: ${p.v23[l.f] != null ? pctTxt(p.v23[l.f]) : "sin lista"}, ${p.s23[l.f] ?? 0} ${pal(p.s23[l.f] ?? 0, "escaño", "escaños")}.`;
     return fila(pc(l.f), short(l.f), barra, `<div class="num">${pctTxt(l.v)}</div><div class="num pf-esc">${n}<small>${rango}</small></div>`, tip);
   }).join("")}</div>`;

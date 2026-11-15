@@ -350,6 +350,12 @@ details.metodo-box[open] > .metodo, details.metodo-box[open] > p { border: 1px s
 .bloque[data-g="izquierda"] .bq-h b { color: #c8102e; }
 .bloque[data-g="derecha"] .bq-h b { color: #1d6fb0; }
 .bloque[data-g="otros"] .bq-h b { color: var(--ink-2); }
+/* each group box carries a hatched band in the colour of its part of the "Por bloques" bar, so box and bar match */
+.bloque { position: relative; overflow: hidden; padding-top: 14px; }
+.bloque::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; }
+.bloque[data-g="izquierda"]::before { background: repeating-linear-gradient(45deg, #e30613 0 5px, color-mix(in srgb, #e30613 35%, white) 5px 10px); }
+.bloque[data-g="derecha"]::before { background: repeating-linear-gradient(45deg, #1d84ce 0 5px, color-mix(in srgb, #1d84ce 35%, white) 5px 10px); }
+.bloque[data-g="otros"]::before { background: repeating-linear-gradient(45deg, #9b9a93 0 5px, color-mix(in srgb, #9b9a93 35%, white) 5px 10px); }
 
 /* ranges per party (resultados.js, rangos): band = 90% of the simulations, dot = central estimate */
 .rangos { display: grid; gap: 7px; margin: 10px 0 14px; }   /* full block width, like the "juego" box and the charts (it was 980px: the box above was wider) */
@@ -504,7 +510,12 @@ table.sn-t td.muted { color: var(--ink-3); }
 .q176 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 6px 0 4px; }
 @media (max-width: 760px) { .q176 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .q176.q176-3, .tb-izq .q176.q176-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }   /* "¿Quién es la fuerza más votada?" */
-.q176-c.q176-ancha { grid-column: 1 / -1; }   /* the fifth card takes the whole row */
+/* card colours (Víctor, 2026-11-17): one party, a plain tint of its colour; a bloc, the same tint hatched, as in the bars */
+.q176-c.q176-der { background: color-mix(in srgb, #1d84ce 11%, var(--surface)); border-color: color-mix(in srgb, #1d84ce 35%, var(--surface)); }
+.q176-c.q176-izq { background: color-mix(in srgb, #e30613 9%, var(--surface)); border-color: color-mix(in srgb, #e30613 30%, var(--surface)); }
+.q176-c.q176-vox { background: color-mix(in srgb, #63be21 11%, var(--surface)); border-color: color-mix(in srgb, #63be21 35%, var(--surface)); }
+.q176-c.q176-der.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #1d84ce 14%, var(--surface)) 0 6px, color-mix(in srgb, #1d84ce 5%, var(--surface)) 6px 12px); }
+.q176-c.q176-izq.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #e30613 12%, var(--surface)) 0 6px, color-mix(in srgb, #e30613 4%, var(--surface)) 6px 12px); }
 .q176-c { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; cursor: default; }
 .q176-c:hover { border-color: var(--ink-3); }
 .q176-n { font-family: var(--font-title); font-weight: 600; font-size: 30px; line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--ink); }
@@ -704,6 +715,10 @@ nav.camara a:not(.on):hover { color: var(--ink); }
 .pf-barra { position: relative; height: 14px; background: var(--nodata); border-radius: 2px; }
 .pf-barra span { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 2px; }
 .pf-rango { opacity: .28; }
+.pf-barra:has(.rg-pista) { background: none; height: 16px; }
+.pf-barra .rg-pista span { bottom: auto; }
+.pf-barra .rg-pista .rg-punto { border-radius: 50%; }
+.pf-barra .rg-pista .rg-franja { border-radius: 4px; }
 .pf-esc { font-weight: 600; }
 .pf-esc small { font-weight: 400; color: var(--ink-2); font-size: var(--t-xs); }
 .pf-fila[data-tip] { cursor: default; }

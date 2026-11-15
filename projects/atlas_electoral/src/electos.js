@@ -1,4 +1,4 @@
-import { FAM } from "./data.js?v=0.2.123";
+import { FAM } from "./data.js?v=0.2.124";
 
 const LOWER = new Set(["de", "del", "la", "las", "los", "y", "i", "da", "do", "das", "dos", "e"]);
 
