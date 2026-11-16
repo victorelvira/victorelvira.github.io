@@ -300,6 +300,12 @@ Turnout in 2023: {participacion}.
 ::: si reparto
 [nota] Seats: the most frequent allocation, which comes up in {frecuencia_reparto} simulations (hover over or tap a figure to see each party's range). Votes estimated on the valid votes of 2023. Change in points from 2023.
 :::
+::: si bloques
+[nota] Who makes up each bloc here: {composicion}. These are the groups of «Build your majority»: move a party to another group and the card changes.
+:::
+::: si bloques_proyeccion
+[nota] Seats: the most frequent split between blocs, which comes up in {frecuencia_reparto} simulations (hover over or tap a figure to see the range). A bloc's share is the sum of its parties' shares. Change in points from 2023.
+:::
 
 === tooltip_escanos ===
 <!--

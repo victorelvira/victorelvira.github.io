@@ -134,6 +134,7 @@ export default {
   "Votos estim.": "Est. votes",
   "Var.": "Change",
   "Otras candidaturas": "Other lists",
+  "Bloque": "Bloc",
   "{a} en 9 de cada 10 simulaciones": "{a} in 9 out of 10 simulations",
   "entre {a} y {b} en 9 de cada 10 simulaciones": "between {a} and {b} in 9 out of 10 simulations",
   "en 2023": "in 2023",

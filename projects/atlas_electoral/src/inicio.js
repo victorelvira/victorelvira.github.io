@@ -1,12 +1,12 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.130";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.130";
-import { projectFromPolls } from "./simulador.js?v=0.2.130";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.130";
-import { pugnasHtml } from "./provincia.js?v=0.2.130";
-import { textos, md, INDICE } from "./textos.js?v=0.2.130";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.130";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.130";
-import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.130";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.131";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.131";
+import { projectFromPolls } from "./simulador.js?v=0.2.131";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.131";
+import { pugnasHtml } from "./provincia.js?v=0.2.131";
+import { textos, md, INDICE } from "./textos.js?v=0.2.131";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.131";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.131";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.131";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
@@ -58,7 +58,12 @@ export async function renderInicio(app, args = []) {
     pick = modelos?.find((m) => m.id === "k0") ?? null;
   }
   const G = await load("geo_nuevos.json").catch(() => null);
-  const [PV, BT, EC] = await Promise.all([load("provincias_29n.json").catch(() => null), load("backtest.json").catch(() => null), load("error_comun.json").catch(() => null)]);
+  const [PV0, BT, EC] = await Promise.all([load("provincias_29n.json").catch(() => null), load("backtest.json").catch(() => null), load("error_comun.json").catch(() => null)]);
+  // the province map and "Dónde se decide" follow the chosen model (Víctor, 2026-11-16): its own provinces file
+  // (data/provincias/<id>.json, export_provincias_29n.py --todos), with the polls and candidates of provincias_29n.json;
+  // a model without one falls back on «Nuestra predicción», and the map says so (condition otro_modelo)
+  const PVm = pick && pick.id !== "nuestra" && pick.provincias ? await load(pick.provincias).catch(() => null) : null;
+  const PV = PVm && PV0 ? juntarProvincias(PV0, PVm, pick.provincias) : PV0;
   const mayoria = PR?.mayorias.find((m) => m.nombre === "PP + Vox");
   // the summary counts the same draws as the cards below it (the site carries a sample of the model's simulations; the full
   // count in PR.mayorias can round to another figure: 92.5 against 92.3, Víctor 2026-11-16)
@@ -100,7 +105,7 @@ export async function renderInicio(app, args = []) {
     calendario: conv?.calendario ? calendario(conv) : null,
   };
   // the map of the most voted party per province (part "mapa" of portada.md): the province projection is always K0's
-  const mapa = PV && T.mapa ? md(T.mapa, { flags: { otro_modelo: (pick?.id ?? "nuestra") !== "nuestra" }, vars: { modelo: pick?.nombre ? t(pick.nombre) : "" },
+  const mapa = PV && T.mapa ? md(T.mapa, { flags: { otro_modelo: (pick?.id ?? "nuestra") !== "nuestra" && !PVm }, vars: { modelo: pick?.nombre ? t(pick.nombre) : "" },
     slots: { mapa_masvotado: '<div id="mapa-masvotado"></div>' }, page: "portada" }) : null;
   slots.mapa_portada = mapa?.html ? `<div class="tb-mapa">${mapa.html}</div>` : null;
   const { html, sec } = md(T.principal, { vars, flags, slots, page: "portada" });
@@ -309,4 +314,11 @@ async function cambioCasas(chart, T) {
   box.className = "cc";
   box.innerHTML = md(T.cambio_casas, { vars: { frase_cambio: frase, n_casas: C.casas.length }, slots: { tabla_cambio: tabla }, page: "portada" }).html;
   chart.after(box);
+}
+
+// a model's provinces (no polls, no candidates) completed from provincias_29n.json; drawsFile: its draws for "Cambios desde 2023"
+function juntarProvincias(base, mod, archivo) {
+  const B = Object.fromEntries(base.provincias.map((p) => [p.prov, p]));
+  return { ...mod, drawsFile: archivo.replace(/\.json$/, "_draws.json"),
+    provincias: mod.provincias.map((p) => ({ ...p, encuestas: B[p.prov]?.encuestas ?? [], candidaturas: B[p.prov]?.candidaturas ?? [], s23: p.s23 ?? B[p.prov]?.s23, v23: p.v23 ?? B[p.prov]?.v23 })) };
 }

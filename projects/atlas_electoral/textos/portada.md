@@ -137,15 +137,15 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 El mapa de la portada, dentro de "Dónde se decide" (donde está [[mapa_portada]]; lo añadió Claude el 16-11-2026). [[mapa_masvotado]]
 es el mapa con su botón Proyección 2026 / Resultados 2023, su leyenda y su nota (la nota y el globo son los del modo "Más votado"
 de la pestaña Provincias: partes nota_mas_votado y tooltip_mas_votado de provincia.md). Cifra: {modelo}, el nombre del modelo
-elegido en el selector. Condición: otro_modelo (el elegido no es «Nuestra predicción»; desde el 17-11-2026 el mapa sale de sus
-simulaciones, no de K0).
+elegido en el selector. Condición: otro_modelo (el modelo elegido no tiene mapa propio; desde el 16-11-2026 cada modelo del selector tiene el suyo,
+data/provincias/<modelo>.json, así que solo sale si falta ese archivo).
 -->
 ### Quién gana en cada provincia {#mapa-provincias | Mapa}
 
 [sub] Cada provincia, en el color del partido más votado; las etiquetas dan la provincia y el porcentaje del primero. Pulsa o toca una provincia para ver su reparto; desde ahí se abre su ficha.
 
 ::: si otro_modelo
-[nota] El mapa por provincias es siempre el de «Nuestra predicción», no el de «{modelo}», elegido arriba.
+[nota] Este mapa es el de «Nuestra predicción»: «{modelo}», elegido arriba, no tiene resultados por provincia.
 :::
 
 [[mapa_masvotado]]

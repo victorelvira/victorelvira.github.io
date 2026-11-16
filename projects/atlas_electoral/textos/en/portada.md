@@ -130,15 +130,15 @@ The poll average. All the polls, one by one and by pollster, in [29N polls](#enc
 === mapa ===
 <!--
 The front-page map, inside "Where it is decided". [[mapa_masvotado]] is the map with its button, legend and note.
-Figure: {modelo}, the name of the model chosen in the selector. Condition: otro_modelo (the chosen model is not
-«Our forecast»).
+Figure: {modelo}, the name of the model chosen in the selector. Condition: otro_modelo (the chosen model has no
+province map of its own; since 2026-11-16 every selector model has one).
 -->
 ### Who wins in each province {#mapa-provincias | Map}
 
 [sub] Each province in the colour of the party with the most votes; the labels give the province and the share of the leading party. Click or tap a province to see its allocation; from there its card opens.
 
 ::: si otro_modelo
-[nota] The province map is always that of «Our forecast», not that of «{modelo}», chosen above.
+[nota] This map is that of «Our forecast»: «{modelo}», chosen above, has no results by province.
 :::
 
 [[mapa_masvotado]]

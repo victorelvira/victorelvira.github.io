@@ -334,12 +334,22 @@ recuadro) con el bloque en el que cuentan. Condiciones: proyeccion, fuera.
 Pie de la ficha que se abre al pulsar una provincia en el mapa de la portada. Cifra: {participacion} (participación de 2023,
 votantes entre censo, Interior); {frecuencia_reparto} (con qué frecuencia sale el reparto de escaños mostrado, el más frecuente:
 "7 de cada 10"). Condiciones: proyeccion (2026), participacion, reparto. Nota de escaños reescrita por Claude el 17-11-2026.
+Con el mapa en "Bloques" o "Cambios desde 2023" la ficha va por bloques (Claude, 16-11-2026, a petición de Víctor): {composicion}
+dice quién forma cada bloque en esta provincia ("Izquierda, PSOE, Frente Amplio y ERC; Derecha, PP y Vox"; en 2026 los
+partidos con un 1% o más); condiciones bloques (ficha por bloques) y bloques_proyeccion (2026, con {frecuencia_reparto} del
+reparto entre bloques más frecuente).
 -->
 ::: si participacion
 Participación en 2023: {participacion}.
 :::
 ::: si reparto
 [nota] Escaños: el reparto más frecuente, que sale en {frecuencia_reparto} simulaciones (pasa el ratón o toca la cifra para ver el rango de cada partido). Votos estimados con los votos válidos de 2023. Variación en puntos sobre 2023.
+:::
+::: si bloques
+[nota] Quién forma cada bloque aquí: {composicion}. Son los grupos de «Forma tu mayoría»: si mueves un partido de grupo, la ficha cambia.
+:::
+::: si bloques_proyeccion
+[nota] Escaños: el reparto entre bloques más frecuente, que sale en {frecuencia_reparto} simulaciones (pasa el ratón o toca la cifra para ver el rango). El porcentaje de un bloque es la suma de los de sus partidos. Variación en puntos sobre 2023.
 :::
 
 === tooltip_escanos ===

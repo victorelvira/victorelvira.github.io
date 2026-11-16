@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.130";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.130";
-import { getGeo, rewind } from "./mapa.js?v=0.2.130";
-import { textos, md } from "./textos.js?v=0.2.130";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.130";
-import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.130";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.131";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.131";
+import { getGeo, rewind } from "./mapa.js?v=0.2.131";
+import { textos, md } from "./textos.js?v=0.2.131";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.131";
+import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.131";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 export const short = (f) => (f === "sumar" ? "Frente Amplio" : pn(f).split(" y otros")[0].split(" and other")[0]);
@@ -417,16 +417,71 @@ function badge(f, name, c, L, usadas) {
 }
 const creditos = (usadas, L) => (usadas.size ? `<details class="mvp-cred"><summary>${tr("Créditos de las fotos")}</summary>${[...usadas].map((f) => { const x = L[f];
   return `<div>${short(f)}: ${x.nombre ?? ""}${x.autor ? `, ${tr("foto de {a}", { a: x.autor })}` : ""}${x.licencia ? ` (${x.licencia})` : ""}${x.fuente ? `, <a href="${x.fuente}" target="_blank" rel="noopener">${tr("fuente")}</a>` : ""}</div>`; }).join("")}</details>` : "");
-async function fichaHtml(p, anio, T) {
+// the card by blocs (map in "Bloques" or "Cambios desde 2023"): one row per bloc of the reader's groups, with its share (the sum of
+// its parties' shares), its seats in the commonest split between blocs (2026) or won (2023), and a note naming who makes up each
+// bloc in this province (Víctor, 2026-11-16: "que salgan porcentajes/diputados por bloque, y quién compondría el bloque")
+const yLista = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} ${tr("y")} ${xs.at(-1)}` : xs[0] ?? "");
+function filasBloques(p, y23, r23, validos, at) {
+  const grupo = (f) => at[f] ?? BLOQUE_INICIAL[f] ?? "otros";
+  const pct = { izquierda: 0, otros: 0, derecha: 0 }, pct23 = { izquierda: 0, otros: 0, derecha: 0 }, quien = { izquierda: [], otros: [], derecha: [] };
+  let esc = null, rng = {}, freq = null, resto = 0;
+  if (!y23) {
+    for (const [f, x] of Object.entries(p.voto ?? {}).sort((a, b) => b[1][0] - a[1][0])) {
+      if (f === "otros") continue;
+      pct[grupo(f)] += x[0];
+      if (x[0] >= 1) quien[grupo(f)].push(short(f));
+    }
+    for (const [f, x] of Object.entries(p.v23 ?? {})) if (f !== "otros") pct23[grupo(f)] += x;
+    resto = Math.max(0, 100 - pct.izquierda - pct.otros - pct.derecha);
+    // seats: the commonest split between blocs over all draws, and each bloc's 90% range
+    if (p.todos) {
+      const { f, n } = p.todos, tot = d3.sum(n, (r) => r[0]), modos = new Map(), dist = { izquierda: [], otros: [], derecha: [] };
+      for (const row of n) {
+        const o = { izquierda: 0, otros: 0, derecha: 0 };
+        f.forEach((x, j) => { o[grupo(x)] += row[j + 1]; });
+        const k = JSON.stringify(o);
+        modos.set(k, { o, c: (modos.get(k)?.c ?? 0) + row[0] });
+        for (const g in o) dist[g].push([o[g], row[0]]);
+      }
+      const m = d3.greatest([...modos.values()], (x) => x.c);
+      esc = m.o; freq = frecuencia(m.c / tot);
+      const q = (xs, a) => { xs.sort((u, v) => u[0] - v[0]); let c = 0; for (const [x, w] of xs) { c += w; if (c >= a * tot) return x; } return xs.at(-1)[0]; };
+      for (const g in dist) rng[g] = [q(dist[g], 0.05), q(dist[g], 0.95)];
+    }
+  } else {
+    esc = { izquierda: 0, otros: 0, derecha: 0 };
+    for (const [sig, f0_, v, e] of (r23?.l ?? []).slice().sort((a, b) => b[2] - a[2])) {
+      const f = f0_ === "izq" ? "sumar" : f0_, x = 100 * v / validos;
+      if (f === "otros") { resto += x; continue; }
+      pct[grupo(f)] += x; esc[grupo(f)] += e;
+      if (x >= 1 || e) quien[grupo(f)].push(f === "reg" ? sig : nombre(f, "2023"));
+    }
+  }
+  const filas = BLOQUES.filter(([g]) => pct[g] >= 0.05 || esc?.[g]).map(([g, n, c]) => {
+    const e = esc?.[g] ?? 0, r = rng[g], nom = tr(n);
+    const rango = r ? (r[0] === r[1] ? tr("{a} en 9 de cada 10 simulaciones", { a: r[0] }) : tr("entre {a} y {b} en 9 de cada 10 simulaciones", { a: r[0], b: r[1] })) : null;
+    return `<tr><td><span class="mvp-p"><span class="mvp-ini" style="background:${c}" aria-hidden="true"></span><span>${nom}</span></span></td>
+      <td class="num mvp-esc"${rango ? ` data-rango="${nom}: ${rango}"` : ""}>${e ? `<span class="mvp-chip" style="--c:${c}">${e}</span>` : '<span class="mvp-cero">0</span>'}</td><td class="num">${nm(pct[g])}</td>
+      <td class="num">${validos ? f0(Math.round(pct[g] / 100 * validos / 100) * 100) : "·"}</td>${y23 ? "" : `<td class="num">${nm(pct23[g])}</td><td class="num">${signo(pct[g] - pct23[g])}</td>`}</tr>`;
+  }).join("") + (resto >= 0.5 ? `<tr class="mvp-resto"><td><span class="mvp-p"><span class="mvp-ini mvp-ini-o" aria-hidden="true"></span><span>${tr("Otras candidaturas")}</span></span></td><td class="num"><span class="mvp-cero">0</span></td><td class="num">${nm(resto)}</td><td class="num">${validos ? f0(Math.round(resto / 100 * validos / 100) * 100) : "·"}</td>${y23 ? "" : '<td class="num">·</td><td class="num">·</td>'}</tr>` : "");
+  const composicion = BLOQUES.filter(([g]) => quien[g].length).map(([g, n]) => `<b>${tr(n)}</b>, ${yLista(quien[g])}`).join("; ");
+  const cab = y23 ? `<tr><th>${tr("Bloque")}</th><th class="num">${tr("Esc.")}</th><th class="num">%</th><th class="num">${tr("Votos")}</th></tr>`
+    : `<tr><th>${tr("Bloque")}</th><th class="num">${tr("Esc.")}</th><th class="num">%</th><th class="num">${tr("Votos estim.")}</th><th class="num">2023</th><th class="num">${tr("Var.")}</th></tr>`;
+  return { cab, filas, composicion, freq };
+}
+async function fichaHtml(p, anio, T, at = null) {
   const [S, dh, L] = await Promise.all([load("series.json"), load("dhondt.json"), lideresJson()]);
   const y23 = anio === "2023";
   const r23 = dh["generales_2023-07"].find((x) => x.prov === p.prov);
   const validos = r23 ? d3.sum(r23.l, (l) => l[2]) + r23.bl : null;
   const s23 = S.provincias?.[p.prov]?.s?.["generales_2023-07"];
   const ccaa = Object.values(S.ccaa ?? {}).find((c) => c.provs?.includes(p.prov))?.n ?? "";
-  let filas, cab, esc, frecReparto = null;
+  let filas, cab, esc, frecReparto = null, composicion = null;
   const usadas = new Set();
-  if (!y23) {
+  if (at) {
+    esc = y23 ? r23?.esc ?? p.esc23 : p.esc;
+    ({ cab, filas, composicion, freq: frecReparto } = filasBloques(p, y23, r23, validos, at));
+  } else if (!y23) {
     esc = p.esc;
     // seats: the most frequent whole allocation of the province (repartos[0]), so the column adds up to the province's seats
     // (medians per party do not: Madrid's summed 38 of 37); without it, the median from pk (Víctor, 2026-11-17)
@@ -455,7 +510,8 @@ async function fichaHtml(p, anio, T) {
       + (resto.length ? fila(tr("Otras candidaturas"), null, d3.sum(resto, (l) => l.e), d3.sum(resto, (l) => l.pc), d3.sum(resto, (l) => l.v)) : "");
   }
   const part = s23 ? nm(100 * s23.votantes / s23.censo) : null;
-  const pie = T.pie_ficha ? md(T.pie_ficha, { vars: { participacion: part ? `${part}%` : null, frecuencia_reparto: frecReparto }, flags: { proyeccion: !y23, participacion: !!part, reparto: !!frecReparto }, page: "provincia" }).html : "";
+  const pie = T.pie_ficha ? md(T.pie_ficha, { vars: { participacion: part ? `${part}%` : null, frecuencia_reparto: frecReparto, composicion },
+    flags: { proyeccion: !y23, participacion: !!part, reparto: !!frecReparto && !at, bloques: !!composicion, bloques_proyeccion: !!at && !y23 && !!frecReparto }, page: "provincia" }).html : "";
   return `<div class="mvp-h"><div><div class="mvp-n" id="mvp-titulo">${p.n}</div>
       <div class="mvp-sub">${ccaa ? `<span class="mvp-cc">${ccaa}</span>` : ""}<span>${esc} ${esc === 1 ? tr("escaño") : tr("escaños")}${y23 ? ` ${tr("en 2023")}` : ""}</span></div></div>
       <button type="button" class="mvp-x" aria-label="${tr("Cerrar")}">×</button></div>
@@ -578,7 +634,7 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     escribirHash();
     if (PORTADA.modo === "cambios") {
       if (!R23) R23 = resultados23(await load("dhondt.json"));
-      const VD = PORTADA.por === "votos" ? await load("provincias_29n_draws.json").catch(() => null) : null;
+      const VD = PORTADA.por === "votos" ? await load(D.drawsFile ?? "provincias_29n_draws.json").catch(() => null) : null;
       cur = porCambios(D, R23, VD, T, { at: grupos, escanos: PORTADA.por === "escanos" });
     } else if (PORTADA.por === "escanos") cur = porEscanos(D, R23, PORTADA.anio, T, { at: grupos, bloques: PORTADA.modo === "bloques" });
     else if (PORTADA.modo === "bloques") cur = porBloques(D, R23, PORTADA.anio, T, grupos);
@@ -599,7 +655,7 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     hideTip();
     sel = id;
     sl.attr("d", pathEl[id].getAttribute("d"));
-    ficha.innerHTML = await fichaHtml(p, PORTADA.anio, T);
+    ficha.innerHTML = await fichaHtml(p, PORTADA.anio, T, PORTADA.modo === "mv" ? null : grupos);
     ficha.hidden = false;
     // a phone: a sheet along the bottom of the screen, as wide as the screen (the map's box is too narrow for the table)
     const hoja = matchMedia("(max-width: 519px)").matches;
