@@ -342,5 +342,13 @@ export default {
   "Quitar": "Clear",
   "entre {a} y {b} escaños": "between {a} and {b} seats",
   "{n} escaños": "{n} seats",
-  "unos {n} escaños": "about {n} seats"
+  "unos {n} escaños": "about {n} seats",
+  "Orden de los escaños": "Order of the seats",
+  "Por partido": "By party",
+  "Por seguridad": "By how sure",
+  "Hemiciclo de los 350 escaños, cada uno según lo seguro que está": "Hemicycle of the 350 seats, each by how sure it is",
+  "Casi seguros": "Almost sure",
+  "Probables": "Likely",
+  "En juego": "In play",
+  "más de 999 de cada 1.000": "more than 999 in 1,000"
 };

@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.137";
-import { indexHtml, sectionIndex, declutter, leaders } from "./charts.js?v=0.2.137";
-import { textos, md, INDICE } from "./textos.js?v=0.2.137";
-import { pollChart, num, partyName, partyColor, cycleLabel, signed, signCell } from "./encuestas.js?v=0.2.137";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.138";
+import { indexHtml, sectionIndex, declutter, leaders } from "./charts.js?v=0.2.138";
+import { textos, md, INDICE } from "./textos.js?v=0.2.138";
+import { pollChart, num, partyName, partyColor, cycleLabel, signed, signCell } from "./encuestas.js?v=0.2.138";
 
 // The polls of past elections (tab "Encuestas históricas", route #historico; prose in textos/historico.md):
 // any past general election's poll chart, polls against result per election, the final jump, pollster ratings.

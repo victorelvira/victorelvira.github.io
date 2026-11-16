@@ -90,6 +90,14 @@ The poll average. All the polls, one by one and by pollster, in [29N polls](#enc
 
 [nota] [All the provinces in play →](#provincia/decide)
 
+### The 350 seats, one by one {#escanos350 | 350 seats}
+
+[sub] Each dot is one actual seat: the PSOE's first in Soria, the PP's second in Navarra. Solid when its party wins it in more than 999 of 1,000 simulations; lighter, in more than 95 of 100; a ring when it is in play. Tap a dot to see its province and by how many votes it is won or lost.
+
+[[parlamento]]
+
+[nota] From the simulations of «Our forecast», whatever model is chosen above. In each province, the seats some party wins most often, as many as it has. The vote margins are those of the median simulation, in 2023 votes.
+
 [[mapa_portada]]
 :::
 
@@ -157,3 +165,18 @@ pollsters. [[tabla_cambio]]: the table per pollster, folded. -->
 Blackout notice. See ../portada.md.
 -->
 **Forecast frozen on 23 November.** Spanish electoral law forbids publishing polls in the five days before the vote. This forecast uses the polls known up to Monday 23 November and will not change until the polls close. Results on this page on the night of the 29th.
+
+=== tooltip_350 ===
+<!--
+"The 350 seats, one by one". Figures and conditions: see ../portada.md.
+-->
+**{provincia}**, **{partido}**'s {escano} seat: won in {frecuencia} simulations.
+::: si sobran
+[nota] In the median simulation it has about {votos} votes to spare.
+:::
+::: si faltan
+[nota] In the median simulation it is about {votos} votes short.
+:::
+::: si quien
+[nota] When it is lost, it goes to: {quien}.
+:::

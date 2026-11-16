@@ -1,12 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.137";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.137";
-import { num } from "./encuestas.js?v=0.2.137";
-import { short, pc } from "./provincia.js?v=0.2.137";
-import { textos, md } from "./textos.js?v=0.2.137";
-import { t, loc, deCada } from "./i18n.js?v=0.2.137";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.138";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.138";
+import { num } from "./encuestas.js?v=0.2.138";
+import { short, pc } from "./provincia.js?v=0.2.138";
+import { textos, md } from "./textos.js?v=0.2.138";
+import { t, loc, deCada } from "./i18n.js?v=0.2.138";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -160,7 +160,7 @@ function tarjetasVars(DR) {
 
 // 350 seat positions on a half disc: rows from an inner radius to the outer one, each with seats in proportion to its length,
 // then ordered by angle, left to right, so that consecutive seats make a wedge (the usual parliament chart)
-function asientos(n = 350, filas = 10, r0 = 0.42) {
+export function asientos(n = 350, filas = 10, r0 = 0.42) {
   const radios = d3.range(filas).map((i) => r0 + (1 - r0) * i / (filas - 1)), tot = d3.sum(radios);
   const por = radios.map((r) => Math.round(n * r / tot));
   for (let i = filas - 1, d = n - d3.sum(por); d; i = (i - 1 + filas) % filas) { por[i] += Math.sign(d); d -= Math.sign(d); }

@@ -95,6 +95,14 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 
 [nota] [Todas las provincias en juego →](#provincia/decide)
 
+### Los 350 escaños, uno a uno {#escanos350 | 350 escaños}
+
+[sub] Cada punto es un escaño concreto: el primero del PSOE en Soria, el segundo del PP en Navarra. Relleno, el que su partido gana en más de 999 de cada 1.000 simulaciones; más claro, en más de 95 de cada 100; hueco, el que está en juego. Al tocar un punto sale de qué provincia es y por cuántos votos se gana o se pierde.
+
+[[parlamento]]
+
+[nota] Con las simulaciones de «Nuestra predicción», sea cual sea el modelo elegido arriba. En cada provincia, los escaños que más veces gana algún partido, tantos como reparte. Los votos de margen son los de la simulación mediana, en votos de 2023.
+
 [[mapa_portada]]
 :::
 
@@ -166,3 +174,21 @@ y Provincias, del 24 de noviembre a las 00:00 al 29 a las 20:00, hora de Madrid.
 (src/textos.js, VEDA); ?veda=1 en la dirección lo enseña antes, para probarlo. Cualquier texto puede usar "::: si veda".
 -->
 **Previsión congelada el 23 de noviembre.** La ley electoral prohíbe publicar encuestas en los cinco días anteriores a la votación. Esta previsión usa las encuestas conocidas hasta el lunes 23 y no cambiará hasta el cierre de los colegios. Los resultados, en esta misma página la noche del 29.
+
+=== tooltip_350 ===
+<!--
+"Los 350 escaños, uno a uno" (Claude, 16-11-2026, a petición de Víctor). Cifras: {provincia}; {escano} ("2.º"); {partido};
+{frecuencia} ("97 de cada 100", "más de 999 de cada 1.000"); {votos} (margen en la simulación mediana, sin signo); {quien}
+("PSOE (6 de cada 10), Vox (3 de cada 10)": quién se lo lleva cuando lo pierde). Condiciones: sobran (margen positivo), faltan,
+quien.
+-->
+**{provincia}**, {escano} escaño de **{partido}**: lo gana en {frecuencia} simulaciones.
+::: si sobran
+[nota] En la simulación mediana le sobran unos {votos} votos.
+:::
+::: si faltan
+[nota] En la simulación mediana le faltan unos {votos} votos.
+:::
+::: si quien
+[nota] Cuando lo pierde, se lo lleva: {quien}.
+:::

@@ -843,3 +843,16 @@ main h3 { font-size: 19px; }
 .aviso-veda { border: 1px solid color-mix(in srgb, #d9822b 45%, var(--surface)); background: color-mix(in srgb, #d9822b 10%, var(--surface));
   border-radius: 8px; padding: 10px 14px; margin: 4px 0 14px; font-size: var(--t-s); line-height: 1.45; }
 .aviso-veda p { margin: 0; }
+/* "Los 350 escaños, uno a uno" (src/parlamento.js): solid = almost sure, light = likely, ring = in play */
+.pl-orden { margin: 4px 0 6px; }
+.pl-wrap { max-width: 760px; }
+.pl-svg { width: 100%; height: auto; display: block; }
+.pl-d { cursor: pointer; stroke-width: 0.006; }
+.pl-d.pl-seguro { fill: var(--c); stroke: var(--c); }
+.pl-d.pl-probable { fill: color-mix(in srgb, var(--c) 45%, var(--surface)); stroke: var(--c); }
+.pl-d.pl-juego { fill: var(--surface); stroke: var(--c); stroke-width: 0.009; }
+.pl-d.pl-on { stroke: var(--ink); stroke-width: 0.014; }
+.pl-sw { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; border: 1.5px solid var(--ink-2); }
+.pl-sw.pl-seguro { background: var(--ink-2); }
+.pl-sw.pl-probable { background: color-mix(in srgb, var(--ink-2) 40%, var(--surface)); }
+.pl-sw.pl-juego { background: var(--surface); }
