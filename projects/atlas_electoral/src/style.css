@@ -839,3 +839,7 @@ main h3 { font-size: 19px; }
 .cond-nota { flex-basis: 100%; }
 .rg-franja.rg-base { background: var(--ink-3); opacity: 0.18; }
 .rg-fila.rg-fijo .rg-nom { font-weight: 700; }
+/* the blackout notice (textos/portada.md, aviso_veda), 24 to 29 November */
+.aviso-veda { border: 1px solid color-mix(in srgb, #d9822b 45%, var(--surface)); background: color-mix(in srgb, #d9822b 10%, var(--surface));
+  border-radius: 8px; padding: 10px 14px; margin: 4px 0 14px; font-size: var(--t-s); line-height: 1.45; }
+.aviso-veda p { margin: 0; }

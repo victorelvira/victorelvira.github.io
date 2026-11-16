@@ -158,3 +158,11 @@ data/provincias/<modelo>.json, así que solo sale si falta ese archivo).
 [nota] **Cada encuestadora comparada consigo misma.** Entre su última encuesta y la que publicó de 3 a 8 semanas antes: {frase_cambio} ({n_casas} encuestadoras). Así no cuenta que unas casas den siempre más a un partido que otras. Describe los datos: el modelo ya incluye estas encuestas y no prolonga la tendencia hasta el 29N.
 
 [[tabla_cambio]]
+
+=== aviso_veda ===
+<!--
+Aviso de la veda (LOREG art. 69.7; docs/protocolo_29N.md, sección 8): arriba del todo en Resumen, Modelo, Senado, Encuestas 29N
+y Provincias, del 24 de noviembre a las 00:00 al 29 a las 20:00, hora de Madrid. Lo decide el navegador por la fecha, sin despliegue
+(src/textos.js, VEDA); ?veda=1 en la dirección lo enseña antes, para probarlo. Cualquier texto puede usar "::: si veda".
+-->
+**Previsión congelada el 23 de noviembre.** La ley electoral prohíbe publicar encuestas en los cinco días anteriores a la votación. Esta previsión usa las encuestas conocidas hasta el lunes 23 y no cambiará hasta el cierre de los colegios. Los resultados, en esta misma página la noche del 29.

@@ -1,8 +1,8 @@
 // The prose of every tab lives in web/atlas_electoral/textos/<page>.md, plain Markdown that Víctor edits by hand
 // (syntax in textos/README.md). This module reads those files and turns them into the same HTML the pages had.
 // The code keeps only what is computed: figures ({name}), charts and tables ([[name]]) and conditions (::: si name).
-import { DATA_V } from "./data.js?v=0.2.135";
-import { lang, t as tr, EN_TEXTOS } from "./i18n.js?v=0.2.135";
+import { DATA_V } from "./data.js?v=0.2.136";
+import { lang, t as tr, EN_TEXTOS } from "./i18n.js?v=0.2.136";
 
 const BASE = new URL("../textos/", import.meta.url).href;
 const cache = new Map();
@@ -13,6 +13,15 @@ export const INDICE = "<!--indice-->";
 // On localhost the text files are never cached, and a saved edit re-renders the page by itself (kept scroll position):
 // every 1.5 s the files already read are asked for their Last-Modified date. The published site is not affected.
 const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+// The legal blackout on polls (LOREG art. 69.7; docs/protocolo_29N.md, section 8): from 24 November 00:00 to 29 November 20:00,
+// Madrid time (UTC+1), checked in the reader's browser so it needs no deploy. Every text can use "::: si veda". ?veda=1 or
+// ?veda=0 in the address forces it, to test it before the 24th.
+export const VEDA = (() => {
+  const q = new URLSearchParams(location.search).get("veda");
+  if (q === "1" || q === "0") return q === "1";
+  const n = Date.now();
+  return n >= Date.UTC(2026, 10, 23, 23) && n < Date.UTC(2026, 10, 29, 19);
+})();
 const stamps = new Map();
 let watching = false;
 function watch() {
@@ -93,6 +102,7 @@ function attrs(s) {
  * sub: the h3 with an id that come before any h2 (a block placed inside another page's section, e.g. resultados.md).
  */
 export function md(src, { vars = {}, slots = {}, flags = {}, page = "?" } = {}) {
+  flags = { veda: VEDA, ...flags };
   const out = [], sec = [], sub = [], stack = [];
   let para = [], pcls = null, inSection = false, pline = 0;
   // on localhost every block remembers its file and line (data-src="/elecciones_españa/.../portada.md:42"), the mark that the

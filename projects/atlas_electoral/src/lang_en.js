@@ -341,5 +341,6 @@ export default {
   "Escaños fijados": "Seats held",
   "Quitar": "Clear",
   "entre {a} y {b} escaños": "between {a} and {b} seats",
-  "{n} escaños": "{n} seats"
+  "{n} escaños": "{n} seats",
+  "unos {n} escaños": "about {n} seats"
 };

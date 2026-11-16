@@ -151,3 +151,9 @@ pollsters. [[tabla_cambio]]: the table per pollster, folded. -->
 [nota] **Each pollster compared with itself.** Between its latest poll and the one it published 3 to 8 weeks earlier: {frase_cambio} ({n_casas} pollsters). This way it does not matter that some houses always give a party more than others do. It describes the data: the model already includes these polls and does not extend the trend to 29N.
 
 [[tabla_cambio]]
+
+=== aviso_veda ===
+<!--
+Blackout notice. See ../portada.md.
+-->
+**Forecast frozen on 23 November.** Spanish electoral law forbids publishing polls in the five days before the vote. This forecast uses the polls known up to Monday 23 November and will not change until the polls close. Results on this page on the night of the 29th.

@@ -68,7 +68,7 @@ semanal solo existe para K0.
 Tarjetas "¿Quién llega a 176?", arriba del bloque (las escribió Claude el 16-11-2026; en porcentaje desde el 17-11-2026,
 por decisión de Víctor). Cifras, en porcentaje de las simulaciones del modelo elegido en el selector: {c_ppvox} PP y Vox suman 176 o más, {c_pp} el PP solo, {c_investidura} el bloque de la
 investidura de 2023, {c_inv_sin_junts} ese bloque sin Junts ni CC (desde el 16-11-2026, igual que el grupo de la izquierda con el que arranca «Forma tu mayoría»); {c_ninguno} (ninguno de los dos llega) queda calculado pero sin tarjeta desde el 17-11-2026 (con el signo %; sale "<1%" o ">99%" en los extremos);
-{simulaciones}, cuántas simulaciones son; {r_ppvox}, {r_investidura}, {r_inv_sin_junts}, {r_pp}, el rango de escaños que recoge 9 de cada 10 simulaciones ("de 129 a 172 escaños"), escrito en la tarjeta desde el 16-11-2026. Debajo, condición mas_votado: {mv_pp}, {mv_psoe}, {mv_vox}, en qué
+{simulaciones}, cuántas simulaciones son; {r_ppvox}, {r_investidura}, {r_inv_sin_junts}, {r_pp}, los escaños de la simulación mediana ("unos 194 escaños"; hasta el 16-11-2026, el rango del 90%, que confundía), escrito en la tarjeta desde el 16-11-2026. Debajo, condición mas_votado: {mv_pp}, {mv_psoe}, {mv_vox}, en qué
 porcentaje de las simulaciones es cada uno el partido con más votos (añadido el 17-11-2026). El data-q de cada tarjeta la une con su globo (el rango del 90%): no lo cambies.
 -->
 #### ¿Quién llega a 176?
@@ -80,7 +80,7 @@ porcentaje de las simulaciones es cada uno el partido con más votos (añadido e
 <div class="q176-c q176-der" data-q="pp"><div class="q176-n">{c_pp}</div><div class="q176-t">El PP solo</div><div class="q176-r">{r_pp}</div></div>
 </div>
 
-[nota] Porcentaje de las simulaciones del modelo elegido ({simulaciones} en total) en las que pasa cada cosa. Debajo, los escaños que recoge 9 de cada 10 simulaciones.
+[nota] Porcentaje de las simulaciones del modelo elegido ({simulaciones} en total) en las que pasa cada cosa. Debajo, los escaños que suma en la simulación mediana: la mitad de las simulaciones dan más y la otra mitad, menos.
 
 ::: si mas_votado
 #### ¿Quién es la fuerza más votada?
@@ -93,7 +93,7 @@ porcentaje de las simulaciones es cada uno el partido con más votos (añadido e
 :::
 
 ::: metodología
-Cada tarjeta cuenta, entre todas las simulaciones del modelo elegido en el selector, en cuántas pasa lo que dice: que PP y Vox juntos, o el PP solo, tengan 176 escaños o más; que los tenga el bloque de la investidura de 2023, los partidos que votaron a favor en noviembre de 2023 (PSOE, Sumar, que entonces llevaba dentro a Podemos y Compromís, ERC, Junts, EH Bildu, PNV, BNG y Coalición Canaria); y ese bloque sin Junts ni CC, el mismo grupo de la izquierda con el que arranca «Forma tu mayoría». Las tarjetas de un solo partido van en su color; las de un bloque, rayadas. La fuerza más votada es la que saca más votos en toda España en cada simulación. Cada tarjeta da también el rango de escaños que recoge 9 de cada 10 simulaciones. Los atajos de «Forma tu mayoría» colocan esos mismos grupos.
+Cada tarjeta cuenta, entre todas las simulaciones del modelo elegido en el selector, en cuántas pasa lo que dice: que PP y Vox juntos, o el PP solo, tengan 176 escaños o más; que los tenga el bloque de la investidura de 2023, los partidos que votaron a favor en noviembre de 2023 (PSOE, Sumar, que entonces llevaba dentro a Podemos y Compromís, ERC, Junts, EH Bildu, PNV, BNG y Coalición Canaria); y ese bloque sin Junts ni CC, el mismo grupo de la izquierda con el que arranca «Forma tu mayoría». Las tarjetas de un solo partido van en su color; las de un bloque, rayadas. La fuerza más votada es la que saca más votos en toda España en cada simulación. Cada tarjeta da también los escaños que suma en la simulación mediana. Los atajos de «Forma tu mayoría» colocan esos mismos grupos.
 :::
 
 === atajos ===
