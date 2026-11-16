@@ -4,21 +4,28 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.131";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.131";
-import { getGeo, rewind } from "./mapa.js?v=0.2.131";
-import { textos, md } from "./textos.js?v=0.2.131";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.131";
-import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.131";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.132";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.132";
+import { getGeo, rewind } from "./mapa.js?v=0.2.132";
+import { textos, md } from "./textos.js?v=0.2.132";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.132";
+import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.132";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
-export const short = (f) => (f === "sumar" ? "Frente Amplio" : pn(f).split(" y otros")[0].split(" and other")[0]);
+// the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a
+// province's card (Víctor, 2026-11-16: "lo de nacionalistas es confuso"): where the 2026 projection has one, say which
+export const REG_LISTA = { "31": "Geroa Bai", "42": "Soria ¡Ya!", "44": "Teruel Existe" };
+export const short = (f, prov) => (f === "sumar" ? "Frente Amplio" : f === "reg" && REG_LISTA[prov] ? REG_LISTA[prov] : pn(f).split(" y otros")[0].split(" and other")[0]);
 export const pc = (f) => POLL_PARTY[f]?.c() ?? FAM[f]?.color ?? "#888";
 export const nm = (x, d = 1) => (x == null ? "·" : fix(x, d));
 export const frecuencia = (s) => (s >= 0.095 ? deCada(Math.round(s * 10), 10) : deCada(Math.max(1, Math.round(s * 100)), 100));
 export const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 export const colorVoto = (f) => { const c = partyColor(f); return c === "#888" ? pc(f) : c; };   // partyColor has no "reg": its family colour
-export const nombre = (f, anio) => (f === "sumar" && anio === "2023" ? "Sumar" : short(f));   // the Sumar space ran as Sumar in 2023
+export const nombre = (f, anio, prov) => (f === "sumar" && anio === "2023" ? "Sumar" : short(f, prov));
+// bloc of a family in a province, with the reader's groups. Geroa Bai, the "reg" list in Navarra, goes where the PNV goes
+// (the PNV is one of its parties; Víctor, 2026-11-16); elsewhere "reg" keeps its own group (Otros unless the reader moves it)
+const REG_SIGUE = { "31": "pnv" };
+export const grupoDe = (at) => { const g = (f) => at[f] ?? BLOQUE_INICIAL[f] ?? "otros"; return (f, prov) => g(f === "reg" && REG_SIGUE[prov] ? REG_SIGUE[prov] : f); };   // the Sumar space ran as Sumar in 2023
 export const pctVoto = (x) => `${nm(x)}%`;
 // light to dark in a party's colour (t from 0 to 1), from the page background towards a darker shade of the colour
 export const rampa = (c) => d3.interpolateLab(d3.interpolateLab(cssVar("--surface"), c)(0.14), d3.color(c).darker(0.9));
@@ -77,7 +84,7 @@ export function masVotado(D, R23, anio, T) {
   const fill = (p) => { const x = pri(p); return x ? toneMasVotado(x[0], pasoVentaja(x[2])) : "url(#pv-hatch)"; };
   const tip = (p) => {
     const x = pri(p), v = votoDe(p)[x[0]];
-    return md(T.tooltip_mas_votado, { vars: { provincia: p.n, partido: nombre(x[0], anio), voto: pctVoto(medio(v)), ventaja: nm(x[2]),
+    return md(T.tooltip_mas_votado, { vars: { provincia: p.n, partido: nombre(x[0], anio, p.prov), voto: pctVoto(medio(v)), ventaja: nm(x[2]),
       frecuencia: y23 ? null : frecuencia(x[1]) }, flags: { proyeccion: !y23 }, page: "provincia" }).html;
   };
   const legend = `<div class="pv-leg-mv"><span class="muted">${y23 ? tr("Más votado en 2023; ventaja sobre el segundo, en puntos") : tr("Más votado; ventaja sobre el segundo, en puntos")}</span>
@@ -98,14 +105,14 @@ const BQ = Object.fromEntries(BLOQUES.map(([g, n, c]) => [g, { n, c }]));
 export const toneBloque = (g, i) => rampa(BQ[g].c)(0.25 + 0.75 * i / 3);
 export function porBloques(D, R23, anio, T, at = {}) {
   const y23 = anio === "2023";
-  const grupo = (f) => at[f] ?? BLOQUE_INICIAL[f] ?? "otros";
+  const grupo = grupoDe(at);
   const medio = (x) => (Array.isArray(x) ? x[0] : x);
   const cache = new Map();
   const reparto = (p) => {
     if (cache.has(p.prov)) return cache.get(p.prov);
     const v = (y23 ? R23[p.prov]?.voto : p.voto) ?? {}, b = { izquierda: 0, otros: 0, derecha: 0 };
     let n = 0;
-    for (const [f, x] of Object.entries(v)) { const m = medio(x); if (f !== "otros" && m != null) { b[grupo(f)] += m; n++; } }
+    for (const [f, x] of Object.entries(v)) { const m = medio(x); if (f !== "otros" && m != null) { b[grupo(f, p.prov)] += m; n++; } }
     const o = Object.entries(b).sort((x, y) => y[1] - x[1]);
     const r = n ? { b, primero: o[0][0], ventaja: o[0][1] - o[1][1], resto: Math.max(0, 100 - b.izquierda - b.otros - b.derecha) } : null;
     cache.set(p.prov, r);
@@ -123,7 +130,9 @@ export function porBloques(D, R23, anio, T, at = {}) {
       <span></span>${VENTAJA_LAB.map((l) => `<span class="pv-leg-h">${tr(l)}</span>`).join("")}
       ${lideres.map((g) => `<span>${tr(BQ[g].n)}</span>${d3.range(4).map((i) => `<i class="sw" style="background:${toneBloque(g, i)}"></i>`).join("")}`).join("")}</div>`;
   const sinEscano = [...new Set(D.provincias.flatMap((p) => Object.keys((y23 ? R23[p.prov]?.voto : p.voto) ?? {})))].filter((f) => f !== "otros" && !(f in at));
-  const nota = T.nota_bloques ? md(T.nota_bloques, { vars: { fuera: sinEscano.map((f) => `${nombre(f, anio)} (${tr(BQ[grupo(f)].n).toLowerCase()})`).join(", ") },
+  const nota = T.nota_bloques ? md(T.nota_bloques, { vars: { fuera: sinEscano.flatMap((f) => (f === "reg" && !y23
+    ? Object.keys(REG_LISTA).map((pv) => [nombre(f, anio, pv), grupo(f, pv)])   // one name per province, each in its own bloc
+    : [[nombre(f, anio), grupo(f)]])).map(([n, g]) => `${n} (${tr(BQ[g].n).toLowerCase()})`).join(", ") },
     flags: { proyeccion: !y23, fuera: sinEscano.length > 0 }, page: "provincia" }).html : "";
   const lider = (p) => { const r = reparto(p); return r ? { voto: r.b[r.primero], c: BQ[r.primero].c } : null; };
   return { fill, tip, legend, nota, lider, aria: y23 ? tr("Mapa de provincias por bloque más votado en 2023") : tr("Mapa de provincias por bloque más votado") };
@@ -137,16 +146,16 @@ export const VENTAJA_ESC = [2, 3, 5];
 export const VENTAJA_ESC_LAB = ["1", "2", N_("3 o 4"), N_("5 o más")];   // passed through tr() where drawn
 export function porEscanos(D, R23, anio, T, { at = {}, bloques = false } = {}) {
   const y23 = anio === "2023";
-  const grupo = (f) => at[f] ?? BLOQUE_INICIAL[f] ?? "otros";
-  const clave = (f) => (bloques ? grupo(f) : f);
-  const nomDe = (p, k) => (bloques ? tr(BQ[k].n) : (y23 && R23[p.prov]?.nom?.[k]) || (k === "otros" ? tr("Otras") : nombre(k, anio)));
+  const grupo = grupoDe(at);
+  const clave = (f, prov) => (bloques ? grupo(f, prov) : f);
+  const nomDe = (p, k) => (bloques ? tr(BQ[k].n) : (y23 && R23[p.prov]?.nom?.[k]) || (k === "otros" ? tr("Otras") : nombre(k, anio, p.prov)));
   const colDe = (k) => (bloques ? BQ[k].c : colorVoto(k));
   const tone = (k, i) => rampa(colDe(k))(0.25 + 0.75 * i / 3);
   const rango = (k) => { const i = bloques ? BLOQUES.findIndex((b) => b[0] === k) : IDEO.indexOf(k === "sumar" ? "sumar" : k); return i < 0 ? 99 : i; };
   // near certainty reads better in hundredths than "10 de cada 10"
   const frec = (x) => (x >= 0.95 && x < 0.995 ? deCada(Math.round(x * 100), 100) : x >= 0.995 ? tr("más de 99 de cada 100") : frecuencia(x));
   // seats per key for one seat vector, and its leaders (several when tied) and lead over the next
-  const suma = (fs, row) => { const o = {}; fs.forEach((f, j) => { if (row[j]) o[clave(f)] = (o[clave(f)] ?? 0) + row[j]; }); return o; };
+  const suma = (fs, row, prov) => { const o = {}; fs.forEach((f, j) => { if (row[j]) o[clave(f, prov)] = (o[clave(f, prov)] ?? 0) + row[j]; }); return o; };
   const lideres = (o) => {
     const e = Object.entries(o).sort((x, y) => y[1] - x[1]);
     if (!e.length) return null;
@@ -157,12 +166,12 @@ export function porEscanos(D, R23, anio, T, { at = {}, bloques = false } = {}) {
   const info = (p) => {
     if (cache.has(p.prov)) return cache.get(p.prov);
     let r = null;
-    if (y23) { const e = R23[p.prov]?.esc; if (e) r = lideres(suma(Object.keys(e), Object.values(e))); }
+    if (y23) { const e = R23[p.prov]?.esc; if (e) r = lideres(suma(Object.keys(e), Object.values(e), p.prov)); }
     else if (p.todos) {
       const { f, n } = p.todos, tot = d3.sum(n, (x) => x[0]);
       const modos = new Map(), freq = new Map();
       for (const row of n) {
-        const o = suma(f, row.slice(1)), k = JSON.stringify(Object.entries(o).sort());
+        const o = suma(f, row.slice(1), p.prov), k = JSON.stringify(Object.entries(o).sort());
         modos.set(k, { o, c: (modos.get(k)?.c ?? 0) + row[0] });
         const L = lideres(o), q = L.top.length > 1 ? "empate" : L.top[0];
         freq.set(q, (freq.get(q) ?? 0) + row[0] / tot);
@@ -223,9 +232,9 @@ export function porEscanos(D, R23, anio, T, { at = {}, bloques = false } = {}) {
 // porEscanos (the likeliest split, all draws in p.todos). A province whose leader changes is drawn strong and outlined,
 // one that keeps it is muted; the tooltip says how often the change happens across simulations.
 export function porCambios(D, R23, VD, T, { at = {}, escanos = false } = {}) {
-  const grupo = (f) => at[f] ?? BLOQUE_INICIAL[f] ?? "otros";
+  const grupo = grupoDe(at);
   const lider = (o) => { const e = Object.entries(o).filter(([, x]) => x > 0).sort((a, b) => b[1] - a[1]); if (!e.length) return null; return e.length > 1 && e[1][1] === e[0][1] ? "empate" : e[0][0]; };
-  const porGrupo = (fs, xs) => { const o = { izquierda: 0, otros: 0, derecha: 0 }; fs.forEach((f, j) => { if (f !== "otros" || escanos) o[grupo(f)] += xs[j]; }); return o; };
+  const porGrupo = (fs, xs, prov) => { const o = { izquierda: 0, otros: 0, derecha: 0 }; fs.forEach((f, j) => { if (f !== "otros" || escanos) o[grupo(f, prov)] += xs[j]; }); return o; };
   const frec = (x) => (x >= 0.95 && x < 0.995 ? deCada(Math.round(x * 100), 100) : x >= 0.995 ? tr("más de 99 de cada 100") : x < 0.005 ? tr("menos de 1 de cada 100") : frecuencia(x));
   const cache = new Map();
   const info = (p) => {
@@ -233,19 +242,19 @@ export function porCambios(D, R23, VD, T, { at = {}, escanos = false } = {}) {
     const r23 = R23[p.prov];
     let antes = null, freq = new Map(), tot = 0, o26 = null;
     if (escanos) {
-      if (r23?.esc) antes = lider(porGrupo(Object.keys(r23.esc), Object.values(r23.esc)));
+      if (r23?.esc) antes = lider(porGrupo(Object.keys(r23.esc), Object.values(r23.esc), p.prov));
       const modos = new Map();
       for (const row of p.todos?.n ?? []) {
-        const o = porGrupo(p.todos.f, row.slice(1)), k = lider(o), kk = JSON.stringify(o);
+        const o = porGrupo(p.todos.f, row.slice(1), p.prov), k = lider(o), kk = JSON.stringify(o);
         freq.set(k, (freq.get(k) ?? 0) + row[0]); tot += row[0];
         modos.set(kk, { o, c: (modos.get(kk)?.c ?? 0) + row[0] });
       }
       o26 = d3.greatest([...modos.values()], (x) => x.c)?.o;
     } else {
-      if (r23?.voto) antes = lider(porGrupo(Object.keys(r23.voto), Object.values(r23.voto)));
+      if (r23?.voto) antes = lider(porGrupo(Object.keys(r23.voto), Object.values(r23.voto), p.prov));
       const v = VD?.provincias?.[p.prov];
-      for (const row of v?.d ?? []) { const k = lider(porGrupo(v.f, row)); freq.set(k, (freq.get(k) ?? 0) + 1); tot++; }
-      const med = porGrupo(Object.keys(p.voto), Object.values(p.voto).map((x) => x[0]));
+      for (const row of v?.d ?? []) { const k = lider(porGrupo(v.f, row, p.prov)); freq.set(k, (freq.get(k) ?? 0) + 1); tot++; }
+      const med = porGrupo(Object.keys(p.voto), Object.values(p.voto).map((x) => x[0]), p.prov);
       o26 = med;
     }
     if (!tot || !antes) { cache.set(p.prov, null); return null; }
@@ -422,23 +431,23 @@ const creditos = (usadas, L) => (usadas.size ? `<details class="mvp-cred"><summa
 // bloc in this province (Víctor, 2026-11-16: "que salgan porcentajes/diputados por bloque, y quién compondría el bloque")
 const yLista = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} ${tr("y")} ${xs.at(-1)}` : xs[0] ?? "");
 function filasBloques(p, y23, r23, validos, at) {
-  const grupo = (f) => at[f] ?? BLOQUE_INICIAL[f] ?? "otros";
+  const grupo = grupoDe(at);
   const pct = { izquierda: 0, otros: 0, derecha: 0 }, pct23 = { izquierda: 0, otros: 0, derecha: 0 }, quien = { izquierda: [], otros: [], derecha: [] };
   let esc = null, rng = {}, freq = null, resto = 0;
   if (!y23) {
     for (const [f, x] of Object.entries(p.voto ?? {}).sort((a, b) => b[1][0] - a[1][0])) {
       if (f === "otros") continue;
-      pct[grupo(f)] += x[0];
-      if (x[0] >= 1) quien[grupo(f)].push(short(f));
+      pct[grupo(f, p.prov)] += x[0];
+      if (x[0] >= 1) quien[grupo(f, p.prov)].push(short(f, p.prov));
     }
-    for (const [f, x] of Object.entries(p.v23 ?? {})) if (f !== "otros") pct23[grupo(f)] += x;
+    for (const [f, x] of Object.entries(p.v23 ?? {})) if (f !== "otros") pct23[grupo(f, p.prov)] += x;
     resto = Math.max(0, 100 - pct.izquierda - pct.otros - pct.derecha);
     // seats: the commonest split between blocs over all draws, and each bloc's 90% range
     if (p.todos) {
       const { f, n } = p.todos, tot = d3.sum(n, (r) => r[0]), modos = new Map(), dist = { izquierda: [], otros: [], derecha: [] };
       for (const row of n) {
         const o = { izquierda: 0, otros: 0, derecha: 0 };
-        f.forEach((x, j) => { o[grupo(x)] += row[j + 1]; });
+        f.forEach((x, j) => { o[grupo(x, p.prov)] += row[j + 1]; });
         const k = JSON.stringify(o);
         modos.set(k, { o, c: (modos.get(k)?.c ?? 0) + row[0] });
         for (const g in o) dist[g].push([o[g], row[0]]);
@@ -453,8 +462,8 @@ function filasBloques(p, y23, r23, validos, at) {
     for (const [sig, f0_, v, e] of (r23?.l ?? []).slice().sort((a, b) => b[2] - a[2])) {
       const f = f0_ === "izq" ? "sumar" : f0_, x = 100 * v / validos;
       if (f === "otros") { resto += x; continue; }
-      pct[grupo(f)] += x; esc[grupo(f)] += e;
-      if (x >= 1 || e) quien[grupo(f)].push(f === "reg" ? sig : nombre(f, "2023"));
+      pct[grupo(f, p.prov)] += x; esc[grupo(f, p.prov)] += e;
+      if (x >= 1 || e) quien[grupo(f, p.prov)].push(f === "reg" ? sig : nombre(f, "2023"));
     }
   }
   const filas = BLOQUES.filter(([g]) => pct[g] >= 0.05 || esc?.[g]).map(([g, n, c]) => {
@@ -491,7 +500,7 @@ async function fichaHtml(p, anio, T, at = null) {
     const ls = p.listas.map((l) => ({ ...l, m: med(l), v: p.voto[l.f]?.[0] ?? l.v })).sort((a, b) => b.m - a.m || b.v - a.v);
     cab = `<tr><th>${tr("Partido")}</th><th class="num">${tr("Esc.")}</th><th class="num">%</th><th class="num">${tr("Votos estim.")}</th><th class="num">2023</th><th class="num">${tr("Var.")}</th></tr>`;
     filas = ls.map((l) => {
-      const n = l.f === "otros" ? tr("Otras candidaturas") : short(l.f), c = colorVoto(l.f), v23 = p.v23?.[l.f];
+      const n = l.f === "otros" ? tr("Otras candidaturas") : short(l.f, p.prov), c = colorVoto(l.f), v23 = p.v23?.[l.f];
       const rango = l.lo === l.hi ? tr("{a} en 9 de cada 10 simulaciones", { a: l.lo }) : tr("entre {a} y {b} en 9 de cada 10 simulaciones", { a: l.lo, b: l.hi });
       const marca = l.f === "otros" ? '<span class="mvp-ini mvp-ini-o" aria-hidden="true"></span>' : badge(l.f, n, c, L, usadas);
       return `<tr><td><span class="mvp-p">${marca}<span>${n}</span></span></td>

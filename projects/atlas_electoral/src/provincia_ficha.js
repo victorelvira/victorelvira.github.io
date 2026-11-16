@@ -3,12 +3,12 @@
 // worth (electors per seat), the last seat, the heads of the proclaimed lists, 2019 against 2023, the D'Hondt quotients
 // of 2023 and the municipalities. The prose is textos/provincia.md (parts named after each block).
 const d3 = window.d3;
-import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.131";
-import { md } from "./textos.js?v=0.2.131";
-import { fam, famName } from "./charts.js?v=0.2.131";
-import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.131";
-import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.131";
-import { t as tr, deCada, ordinal } from "./i18n.js?v=0.2.131";
+import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.132";
+import { md } from "./textos.js?v=0.2.132";
+import { fam, famName } from "./charts.js?v=0.2.132";
+import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.132";
+import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.132";
+import { t as tr, deCada, ordinal } from "./i18n.js?v=0.2.132";
 
 const f0 = (x) => d3.format(",.0f")(x);   // at call time: the Spanish locale is set after the imports run
 const E23 = "generales_2023-07", E19 = "generales_2019-11";
@@ -51,8 +51,8 @@ function barras2026(p) {
     // the same mark as the front page's ranges (dot = median, light band = 9 in 10 draws), not a solid bar with a faded
     // band over it, which read as two different things (Víctor, 2026-11-17)
     const barra = `<div class="rg-pista"><span class="rg-franja" style="left:${l.vlo / max * 100}%;width:${(l.vhi - l.vlo) / max * 100}%;background:${pc(l.f)}"></span><span class="rg-punto" style="left:${l.v / max * 100}%;background:${pc(l.f)}"></span></div>`;
-    const tip = `<b>${short(l.f)}</b>: ${tr("{v} de los votos (mediana); en 9 de cada 10 simulaciones, entre {lo} y {hi}.", { v: pctTxt(l.v), lo: pctTxt(l.vlo), hi: pctTxt(l.vhi) })} ${tr("Escaños: {n} en el reparto más probable", { n })}${rango ? `, ${tr("entre {a} y {b} en 9 de cada 10 simulaciones", { a: l.lo, b: l.hi })}` : ""}. ${tr("En 2023:")} ${p.v23[l.f] != null ? pctTxt(p.v23[l.f]) : tr("sin lista")}, ${p.s23[l.f] ?? 0} ${pal(p.s23[l.f] ?? 0, "escaño", "escaños")}.`;
-    return fila(pc(l.f), short(l.f), barra, `<div class="num">${pctTxt(l.v)}</div><div class="num pf-esc">${n}<small>${rango}</small></div>`, tip);
+    const tip = `<b>${short(l.f, p.prov)}</b>: ${tr("{v} de los votos (mediana); en 9 de cada 10 simulaciones, entre {lo} y {hi}.", { v: pctTxt(l.v), lo: pctTxt(l.vlo), hi: pctTxt(l.vhi) })} ${tr("Escaños: {n} en el reparto más probable", { n })}${rango ? `, ${tr("entre {a} y {b} en 9 de cada 10 simulaciones", { a: l.lo, b: l.hi })}` : ""}. ${tr("En 2023:")} ${p.v23[l.f] != null ? pctTxt(p.v23[l.f]) : tr("sin lista")}, ${p.s23[l.f] ?? 0} ${pal(p.s23[l.f] ?? 0, "escaño", "escaños")}.`;
+    return fila(pc(l.f), short(l.f, p.prov), barra, `<div class="num">${pctTxt(l.v)}</div><div class="num pf-esc">${n}<small>${rango}</small></div>`, tip);
   }).join("")}</div>`;
 }
 
@@ -174,10 +174,10 @@ export function ficha({ p, D, S, dh, T, vista }) {
   }
   // the last seat: 2026, every usual fight and the undecided seats with how often each party takes them
   if (!y23) {
-    const pug = (p.ultimo ?? []).map(([x, y, s]) => md(T.aire_fila, { vars: { lleva: short(x), fuera: short(y), frecuencia: fr(s) }, page: "provincia" }).html);
+    const pug = (p.ultimo ?? []).map(([x, y, s]) => md(T.aire_fila, { vars: { lleva: short(x, p.prov), fuera: short(y, p.prov), frecuencia: fr(s) }, page: "provincia" }).html);
     const dud = p.listas.filter((l) => l.f !== "otros").flatMap((l) => l.pk.map((x, i) => ({ l, k: i + 1, x }))).filter((d) => d.x >= 0.1 && d.x < 0.9)
       .sort((a, b) => Math.abs(a.x - 0.5) - Math.abs(b.x - 0.5)).slice(0, 8).sort((a, b) => b.x - a.x)   // the eight closest to a coin toss
-      .map((d) => md(T.dudoso_fila, { vars: { k: d.k, partido: short(d.l.f), frecuencia: fr(d.x) }, page: "provincia" }).html);
+      .map((d) => md(T.dudoso_fila, { vars: { k: d.k, partido: short(d.l.f, p.prov), frecuencia: fr(d.x) }, page: "provincia" }).html);
     slots.aire = md(T.aire, { flags: { pugnas: pug.length > 0, dudosos: dud.length > 0 }, slots: { pugnas_lista: `<ul class="pf-lista-aire">${pug.map((h) => `<li>${h.replace(/^<p[^>]*>|<\/p>$/g, "")}</li>`).join("")}</ul>`,
       dudosos_lista: `<ul class="pf-lista-aire">${dud.map((h) => `<li>${h.replace(/^<p[^>]*>|<\/p>$/g, "")}</li>`).join("")}</ul>` }, page: "provincia" }).html;
   } else if (L?.r.last) {

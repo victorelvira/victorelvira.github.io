@@ -1,12 +1,12 @@
 const d3 = window.d3;
-import { load, showTip, hideTip } from "./data.js?v=0.2.131";
-import { textos, md, INDICE } from "./textos.js?v=0.2.131";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.131";
-import { t as tr, lang, deCada, ordinal } from "./i18n.js?v=0.2.131";
+import { load, showTip, hideTip } from "./data.js?v=0.2.132";
+import { textos, md, INDICE } from "./textos.js?v=0.2.132";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.132";
+import { t as tr, lang, deCada, ordinal } from "./i18n.js?v=0.2.132";
 // the province card's blocks (results per list, electors per seat, last seat, D'Hondt, 2019 vs 2023, municipalities)
-import { ficha, municipios, bocadillos } from "./provincia_ficha.js?v=0.2.131";
+import { ficha, municipios, bocadillos } from "./provincia_ficha.js?v=0.2.132";
 // the province shapes, names, colours and the "Más votado" colouring are shared with the front page's map (masvotado.js)
-import { short, pc, nm, frecuencia, cssVar, colorVoto, nombre, pctVoto, rampa, provincias, resultados23, masVotado } from "./masvotado.js?v=0.2.131";
+import { short, pc, nm, frecuencia, cssVar, colorVoto, nombre, pctVoto, rampa, provincias, resultados23, masVotado } from "./masvotado.js?v=0.2.132";
 export { short, pc };   // imported from here by resultados.js
 const de100txt = (p) => (p >= 0.995 ? tr("más de 99 de cada 100") : p < 0.01 ? tr("menos de 1 de cada 100") : deCada(Math.round(p * 100), 100));   // frequencies, not percentages (Víctor)
 export const pct = (p) => (p >= 0.995 ? ">99%" : p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
@@ -14,7 +14,7 @@ const f0 = (x) => d3.format(",.0f")(x);   // at call time: the Spanish locale is
 const MES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
 const MONTH = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const fecha = (s) => `${+s.slice(8)} ${(lang() === "en" ? MONTH : MES)[+s.slice(5, 7) - 1]} ${s.slice(0, 4)}`;
-export const reparto = (a) => Object.entries(a).sort((x, y) => y[1] - x[1]).map(([f, n]) => `${short(f)} ${n}`).join(", ");
+export const reparto = (a, prov) => Object.entries(a).sort((x, y) => y[1] - x[1]).map(([f, n]) => `${short(f, prov)} ${n}`).join(", ");
 // the closest calls: a party's k-th seat with a probability near one half
 // "Dónde se decide" (front page) and the list in Provincias: the provinces whose last seat is most contested, ranked
 // by how close to one half any party's next seat is; for each, the usual holder of the last seat, the first list left out,
@@ -25,7 +25,7 @@ export function pugnas(D, n) {
     .sort((a, b) => enJuego(b.p) - enJuego(a.p) || a.d - b.d).slice(0, n).map(({ p }) => p);   // most seats in the air first
 }
 export const pugnaVars = (p) => ({ provincia: `<a href="#provincia/${p.prov}">${p.n}</a>`, escanos: p.esc, escanos_palabra: p.esc === 1 ? tr("escaño") : tr("escaños"), en_juego: enJuego(p),
-  ultimo_de: short(p.ultimo[0][0]), primera_fuera: short(p.ultimo[0][1]), frecuencia: frecuencia(p.ultimo[0][2]), margen: p.margen != null ? f0(p.margen) : null });
+  ultimo_de: short(p.ultimo[0][0], p.prov), primera_fuera: short(p.ultimo[0][1], p.prov), frecuencia: frecuencia(p.ultimo[0][2]), margen: p.margen != null ? f0(p.margen) : null });
 export const pugnasHtml = (D, n, src, page) => pugnas(D, n).map((p) => md(src, { vars: pugnaVars(p), flags: { margen: p.margen != null }, page }).html).join("");
 // "Dónde se decide" (Provincias): a party's k-th seat is secured when it wins at least k seats in 9 of every 10 draws
 // (pk[k-1] >= 0.9); the seats in play of a province are the ones no party has secured that way
@@ -137,11 +137,11 @@ async function mapaEnJuego(el, D, T, onPick) {
 
 export const escanosAire = (D) => D.provincias.flatMap((p) => p.listas.filter((l) => l.f !== "otros").flatMap((l) => l.pk.map((x, k) => ({ p, l, k: k + 1, x })))).filter((d) => d.x >= 0.2 && d.x <= 0.8).sort((a, b) => Math.abs(a.x - 0.5) - Math.abs(b.x - 0.5));
 // what changes between the likeliest allocation and another one (an allocation can differ in more than one seat)
-function frase(a, b) {
+function frase(a, b, prov) {
   const sube = [], baja = [];
   for (const f of new Set([...Object.keys(a), ...Object.keys(b)])) {
     const d = (b[f] ?? 0) - (a[f] ?? 0);
-    if (d > 0) sube.push(`${short(f)}${d > 1 ? ` (${d})` : ""}`); else if (d < 0) baja.push(`${short(f)}${d < -1 ? ` (${-d})` : ""}`);
+    if (d > 0) sube.push(`${short(f, prov)}${d > 1 ? ` (${d})` : ""}`); else if (d < 0) baja.push(`${short(f, prov)}${d < -1 ? ` (${-d})` : ""}`);
   }
   return tr("sube {a} y baja {b}", { a: sube.join(` ${tr("y")} `), b: baja.join(` ${tr("y")} `) });
 }
@@ -186,7 +186,7 @@ export async function renderProvincia(app, args = []) {
     const dEsc = p.esc - p.esc23;
     const kmax = Math.max(...p.listas.map((l) => l.pk.length), 1);
     const casillas = `<div class="scrollx"><table class="nosort pv-grid"><tr><th>${tr("Partido")}</th>${d3.range(1, kmax + 1).map((k) => `<th class="num">${ordinal(k, "m")}</th>`).join("")}</tr>
-      ${p.listas.filter((l) => l.pk.length).map((l) => `<tr><td class="pv-nw"><i class="dot" style="background:${pc(l.f)}"></i>${short(l.f)}</td>${d3.range(kmax).map((k) => { const x = l.pk[k]; return `<td>${x == null ? "" : `<div class="pv-c" title="${short(l.f)}: ${tr("{k} o más", { k: k + 1 })}, ${pct(x)}"><span style="height:${x * 100}%;background:${pc(l.f)}"></span></div><div class="pv-p">${x >= 0.995 ? "" : pct(x)}</div>`}</td>`; }).join("")}</tr>`).join("")}</table></div>`;
+      ${p.listas.filter((l) => l.pk.length).map((l) => `<tr><td class="pv-nw"><i class="dot" style="background:${pc(l.f)}"></i>${short(l.f, p.prov)}</td>${d3.range(kmax).map((k) => { const x = l.pk[k]; return `<td>${x == null ? "" : `<div class="pv-c" title="${short(l.f)}: ${tr("{k} o más", { k: k + 1 })}, ${pct(x)}"><span style="height:${x * 100}%;background:${pc(l.f)}"></span></div><div class="pv-p">${x >= 0.995 ? "" : pct(x)}</div>`}</td>`; }).join("")}</tr>`).join("")}</table></div>`;
     const ult = p.ultimo[0];
     const nE = p.encuestas.length;
     const fams = [...new Set(p.encuestas.flatMap((q) => Object.keys(q.v)))].sort((x, y) => (p.listas.findIndex((l) => l.f === x) + 1 || 99) - (p.listas.findIndex((l) => l.f === y) + 1 || 99));
@@ -197,14 +197,14 @@ export async function renderProvincia(app, args = []) {
     const vars = {
       provincia: p.n, escanos: p.esc, escanos_palabra: p.esc === 1 ? tr("escaño") : tr("escaños"),
       cambio: dEsc ? ` (${dEsc > 0 ? tr("{n} más que en 2023", { n: dEsc === 1 ? tr("uno") : dEsc }) : tr("{n} menos que en 2023", { n: dEsc === -1 ? tr("uno") : -dEsc })})` : "",
-      reparto: reparto(a.a), prob_reparto: de100txt(a.p),
-      siguientes: `${b ? ` ${tr("Le sigue un reparto en que {f}", { f: frase(a.a, b.a) })} (${pct(b.p)})` : ""}${c ? ` ${tr("y otro en que {f}", { f: frase(a.a, c.a) })} (${pct(c.p)})` : ""}${b ? "." : ""}`,
-      ultimo_de: ult ? short(ult[0]) : null, primera_fuera: ult ? short(ult[1]) : null, prob_ultimo: ult ? de100txt(ult[2]) : null, margen: p.margen != null ? f0(p.margen) : null,
+      reparto: reparto(a.a, p.prov), prob_reparto: de100txt(a.p),
+      siguientes: `${b ? ` ${tr("Le sigue un reparto en que {f}", { f: frase(a.a, b.a, p.prov) })} (${pct(b.p)})` : ""}${c ? ` ${tr("y otro en que {f}", { f: frase(a.a, c.a, p.prov) })} (${pct(c.p)})` : ""}${b ? "." : ""}`,
+      ultimo_de: ult ? short(ult[0], p.prov) : null, primera_fuera: ult ? short(ult[1], p.prov) : null, prob_ultimo: ult ? de100txt(ult[2]) : null, margen: p.margen != null ? f0(p.margen) : null,
     };
     const slots = {
       casillas,
       tabla_partidos: `<div class="scrollx"><table class="nosort"><tr><th>${tr("Partido")}</th><th class="num">${tr("Escaños 2023")}</th><th class="num">${tr("Media prevista")}</th><th class="num">${deCada(9, 10)}</th><th class="num">${tr("Voto 2023")}</th><th class="num">${tr("Voto previsto")}</th><th class="num">${deCada(9, 10)}</th></tr>
-      ${p.listas.map((l) => `<tr><td class="pv-nw"><i class="dot" style="background:${pc(l.f)}"></i>${short(l.f)}</td><td class="num">${p.s23[l.f] ?? 0}</td><td class="num">${nm(l.s)}</td><td class="num">${l.lo === l.hi ? l.lo : `${l.lo}–${l.hi}`}</td><td class="num">${p.v23[l.f] != null ? `${nm(p.v23[l.f])}%` : "·"}</td><td class="num">${nm(l.v)}%</td><td class="num">${nm(l.vlo)}–${nm(l.vhi)}%</td></tr>`).join("")}</table></div>`,
+      ${p.listas.map((l) => `<tr><td class="pv-nw"><i class="dot" style="background:${pc(l.f)}"></i>${short(l.f, p.prov)}</td><td class="num">${p.s23[l.f] ?? 0}</td><td class="num">${nm(l.s)}</td><td class="num">${l.lo === l.hi ? l.lo : `${l.lo}–${l.hi}`}</td><td class="num">${p.v23[l.f] != null ? `${nm(p.v23[l.f])}%` : "·"}</td><td class="num">${nm(l.v)}%</td><td class="num">${nm(l.vlo)}–${nm(l.vhi)}%</td></tr>`).join("")}</table></div>`,
       tabla_encuestas: nE ? `<div class="scrollx"><table class="nosort"><tr><th>${tr("Encuestadora")}</th><th>${tr("Medio")}</th><th>${tr("Fecha")}</th><th>${tr("Tipo")}</th><th class="num">${tr("Entrevistas")}</th>${fams.map((f) => `<th class="num">${short(f)}</th>`).join("")}<th>${tr("Origen")}</th></tr>
       ${p.encuestas.map((q) => `<tr><td class="pv-nw">${q.e}</td><td>${q.m ?? "·"}${q.x ? ` <span class="te-x">${tr("encargo")}</span>` : ""}</td><td class="pv-nw">${fecha(q.f)}</td><td>${ALCANCE[q.alcance] ?? tr("No consta")}</td><td class="num pv-nw">${(q.n ?? q.de) != null ? f0(q.n ?? q.de) + (DONDE[q.alcance] ?? "") : "·"}</td>${fams.map((f) => cel(q.v[f])).join("")}<td class="pv-nw">${q.url ? `<a href="${q.url}" target="_blank" rel="noopener">${tr("fuente")}</a>` : "·"}${q.rev ? ` <span class="te-x">${tr("sin revisar")}</span>` : ""}</td></tr>`).join("")}</table></div>` : null,
     };
