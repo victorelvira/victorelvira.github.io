@@ -363,3 +363,37 @@ Note under the map in the "Changes since 2023" view. Figures and conditions: see
 ::: si no
 [nota] {cambian} provinces change the bloc with the most votes compared with 2023: the bloc that comes first in the most simulations is not the 2023 one. In strong colour and outlined, those that change; faded, those that do not. The blocs are those of "Build your majority": if you move a party to another group, the map changes. How often the change happens comes from {simulaciones} simulations.
 :::
+
+=== tooltip_peso ===
+<!--
+Front-page map, "Where your vote counts" view. Figures and conditions: see ../provincia.md.
+-->
+**{provincia}**: {votos} more votes give {bloque} one more seat in this many simulations, depending on the party they go to: {lista}.
+::: si parejas
+[nota] The top options count almost the same.
+:::
+
+=== nota_peso ===
+<!--
+Note under the map in the "Where your vote counts" view. Figures and conditions: see ../provincia.md.
+-->
+[nota] **What it is.** For those who want {bloque} to win more seats: in each province, how often {votos} more votes for each party of that bloc give it one more seat, in the simulations of «Our forecast». The label names the party where a vote counts most; if the second counts almost as much, both, and if three or more do, «several, alike». A seat one party takes from another of the same bloc does not add up. The blocs are the groups of «Build your majority»: move a party to another group and the map changes.
+
+[nota] **How to read it.** What helps is comparing the parties within your province. Across provinces, small ones come out darker because {votos} votes are a larger part of the total there. It is not voting advice: it describes the forecast, with its uncertainty, and assumes everyone else votes as forecast.
+::: si otro_modelo
+[nota] This view always uses «Our forecast», even if you chose another model above.
+:::
+
+=== pie_peso ===
+<!--
+Footer of a province's card in the "Where your vote counts" view. Figures and conditions: see ../provincia.md.
+-->
+::: si vacia
+[nota] Here no party of {bloque} has a chance of a seat.
+:::
+::: si no
+[nota] Out of 1,000 simulations: how often {votos} more votes for that party give {bloque} one more seat (first column) and how often they give the party one, even if taken from another of the same bloc (second).
+:::
+::: si parejas
+[nota] The top options count almost the same.
+:::

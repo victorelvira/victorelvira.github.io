@@ -1,12 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.132";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.132";
-import { num } from "./encuestas.js?v=0.2.132";
-import { short, pc } from "./provincia.js?v=0.2.132";
-import { textos, md } from "./textos.js?v=0.2.132";
-import { t, loc, deCada } from "./i18n.js?v=0.2.132";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.133";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.133";
+import { num } from "./encuestas.js?v=0.2.133";
+import { short, pc } from "./provincia.js?v=0.2.133";
+import { textos, md } from "./textos.js?v=0.2.133";
+import { t, loc, deCada } from "./i18n.js?v=0.2.133";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -273,7 +273,7 @@ function evolucion(el, SD, at, conv) {
       const xd = x.invert(d3.pointer(ev)[0]);
       const d = W[d3.leastIndex(W, (o) => Math.abs(new Date(o.f) - xd))];
       cross.attr("x1", x(new Date(d.f))).attr("x2", x(new Date(d.f))).style("display", null);
-      showTip(`<b>${t("Semana del {f}", { f: fechaLarga(d.f) })}</b>${B.map(([k, name, c]) => `<div class="row"><span><i class="dot" style="background:${c}"></i>${name}</span><span>${d.bloques[k][1]} (${t("{a} a {b}", { a: d.bloques[k][0], b: d.bloques[k][2] })})</span></div>`).join("")}`, ev);
+      showTip(`<b>${t("Predicción del {f}", { f: fechaLarga(d.f) })}</b>${B.map(([k, name, c]) => `<div class="row"><span><i class="dot" style="background:${c}"></i>${name}</span><span>${d.bloques[k][1]} (${t("{a} a {b}", { a: d.bloques[k][0], b: d.bloques[k][2] })})</span></div>`).join("")}`, ev);
     })
     .on("mouseleave", () => { cross.style("display", "none"); hideTip(); });
 }

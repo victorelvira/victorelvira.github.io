@@ -588,7 +588,8 @@ nav.camara a:not(.on):hover { color: var(--ink); }
 .tb-izq .controls { margin: 8px 0 4px; }
 .tb-izq #modelo-sel { width: 100%; }
 .tb-izq .q176 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.tb-izq .q176-c { background: var(--bg); padding: 8px 10px; }
+.tb-izq .q176-c { padding: 8px 10px; }
+.tb-izq .q176-c:not(.q176-der):not(.q176-izq):not(.q176-vox) { background: var(--bg); }   /* only uncoloured cards: party and bloc colours show in the tablero too (Víctor's notes 5 and 6, 2026-11-16) */
 .tb-izq .q176-n { font-size: clamp(18px, 1.6vw, 24px); white-space: nowrap; }
 @media (max-width: 1359px) { .tb-izq .q176 { grid-template-columns: minmax(0, 1fr); } .tb-izq .q176-n { font-size: 22px; } }   /* a 1200px window: one card per row, so "menos de 1" fits */
 .tb-centro .mvmap, .tb-centro .mv-legend { max-width: none; }

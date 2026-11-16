@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.132";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.132";
-import { getGeo, rewind } from "./mapa.js?v=0.2.132";
-import { textos, md } from "./textos.js?v=0.2.132";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.132";
-import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.132";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.133";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.133";
+import { getGeo, rewind } from "./mapa.js?v=0.2.133";
+import { textos, md } from "./textos.js?v=0.2.133";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.133";
+import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.133";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 // the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a
@@ -52,7 +52,17 @@ export async function provincias() {
   const [topo, { path, borders }] = await Promise.all([load("municipios.topo.json"), getGeo()]);
   const by = d3.group(topo.objects.municipalities.geometries, (g) => String(g.id).slice(0, 2));
   const features = [...by].map(([prov, gs]) => rewind({ type: "Feature", id: prov, geometry: topojson.merge(topo, gs) }));
-  provGeo = { features, path, borders };
+  // the Canaries inset moved up and left, into the empty space west of Huelva and Badajoz: the map is about a fifth less tall
+  // and the inset's frame no longer touches Huelva (Víctor's note 7, 2026-11-16). The composite projection puts the inset in
+  // the corner below its frame (borders: "M x0,y L x1,y L x1,y2"); every projected point there is a Canary point.
+  const nums = borders.match(/-?[\d.]+(e-?\d+)?/g).map(Number), fx = nums[2], fy = nums[1];
+  const DX = -30, DY = -170;
+  const enCanarias = (x, y) => x <= fx + 0.5 && y >= fy - 0.5;
+  const proj = path.projection();
+  const movida = { stream: (s) => proj.stream({ point: (x, y) => (enCanarias(x, y) ? s.point(x + DX, y + DY) : s.point(x, y)),
+    lineStart: () => s.lineStart(), lineEnd: () => s.lineEnd(), polygonStart: () => s.polygonStart(), polygonEnd: () => s.polygonEnd(), sphere: () => s.sphere?.() }) };
+  const borde = borders.replace(/(-?[\d.]+(?:e-?\d+)?),(-?[\d.]+(?:e-?\d+)?)/g, (m, x, y) => `${+x + DX},${+y + DY}`);
+  provGeo = { features, path: d3.geoPath(movida), borders: borde };
   return provGeo;
 }
 
@@ -295,18 +305,19 @@ export function porCambios(D, R23, VD, T, { at = {}, escanos = false } = {}) {
 
 // state kept while the front page is redrawn (another model) and in the URL (#inicio?mapa=bloques&por=escanos&anio=2023):
 // the year, the map (party or bloc) and how it counts (votes or seats)
-const PORTADA = { anio: "2026", modo: "mv", por: "votos" };
-const ESTADO = { anio: ["2026", "2023"], mapa: ["mv", "bloques", "cambios"], por: ["votos", "escanos"] };
+const PORTADA = { anio: "2026", modo: "mv", por: "votos", para: "derecha", prov: null };   // para: the bloc of "Dónde pesa tu voto"; prov: the open card
+const ESTADO = { anio: ["2026", "2023"], mapa: ["mv", "bloques", "cambios", "peso"], por: ["votos", "escanos"], para: ["derecha", "izquierda"] };
 function leerHash() {
   const q = new URLSearchParams(location.hash.split("?")[1] ?? "");
   if (ESTADO.anio.includes(q.get("anio"))) PORTADA.anio = q.get("anio");
   if (ESTADO.mapa.includes(q.get("mapa"))) PORTADA.modo = q.get("mapa");
   if (ESTADO.por.includes(q.get("por"))) PORTADA.por = q.get("por");
+  if (ESTADO.para.includes(q.get("para"))) PORTADA.para = q.get("para");
 }
 function escribirHash() {
   const [base, qs] = location.hash.split("?"), q = new URLSearchParams(qs ?? "");
   const set = (k, v, def) => (v === def ? q.delete(k) : q.set(k, v));
-  set("anio", PORTADA.anio, "2026"); set("mapa", PORTADA.modo, "mv"); set("por", PORTADA.por, "votos");
+  set("anio", PORTADA.anio, "2026"); set("mapa", PORTADA.modo, "mv"); set("por", PORTADA.por, "votos"); set("para", PORTADA.para, "derecha");
   const h = `${base || "#inicio"}${q.toString() ? `?${q}` : ""}`;
   if (h !== location.hash) history.replaceState(null, "", h);
 }
@@ -528,6 +539,68 @@ async function fichaHtml(p, anio, T, at = null) {
     <div class="mvp-pie">${pie}<a href="#provincia/${p.prov}">${tr("Ver la provincia")}</a>${creditos(usadas, L)}</div>`;
 }
 
+// ------------------------------------------------------------------ "Dónde pesa tu voto" (Víctor, 2026-11-16)
+// For a reader who wants one bloc (the reader's groups) to win seats: in each province, how often 1,000 more votes for each
+// party of the bloc give the bloc one more seat (peso_voto.json, pipeline/peso_voto.py). A seat taken from a party of the same
+// bloc does not count. Shown per 1,000 draws (the shares are small). Only "Nuestra predicción" (one set of 140,000 draws).
+const PESO_PASOS = [5, 10, 20];   // per 1,000 draws: the four shades
+const PESO_LAB = [N_("menos de 5"), N_("de 5 a 9"), N_("de 10 a 19"), N_("20 o más")];
+const PESO_ART = { izquierda: N_("la izquierda"), derecha: N_("la derecha") };
+const MIL = () => tr("1.000");   // peso_voto.json's bundle (votos) is 1,000 votes; written with the language's thousands mark
+export const deCadaMil = (x) => { const n = Math.round(x * 1000); return n >= 1 ? deCada(n, MIL()) : x > 0 ? tr("menos de 1 de cada 1.000") : tr("ninguna"); };
+// the options of the bloc in one province, best first: f, g (seat for the bloc), p (seat for the party), losers outside the bloc
+export function opcionesPeso(PW, prov, at, bloque) {
+  const grupo = grupoDe(at), d = PW.provincias[prov] ?? {};
+  return Object.entries(d).filter(([f, x]) => grupo(f, prov) === bloque && (x.v >= 1 || x.p > 0)).map(([f, x]) => {
+    const fuera = Object.entries(x.a).filter(([l]) => grupo(l, prov) !== bloque);
+    return { f, p: x.p, v: x.v, g: d3.sum(fuera, (e) => e[1]), quita: fuera.filter((e) => e[1] >= 0.0005).map((e) => e[0]) };
+  }).sort((a, b) => b.g - a.g || b.v - a.v);
+}
+// options "parejas" with the best: those giving at least 4 in 5 of what it gives (all of them when it gives under 1 in 1,000)
+const cerca = (o) => o.filter((x, i) => i > 0 && (x.g >= 0.8 * o[0].g || o[0].g < 0.001)).length;
+const parejas = (o) => cerca(o) > 0;
+export function porPeso(D, PW, T, { at = {}, bloque = "derecha" } = {}) {
+  const nomB = tr(PESO_ART[bloque]);
+  const info = (p) => { const o = opcionesPeso(PW, p.prov, at, bloque); return o.length ? { o, par: parejas(o) } : null; };
+  const paso = (g) => d3.bisect(PESO_PASOS, g * 1000);
+  const fill = (p) => { const r = info(p); return r && r.o[0].g > 0 ? toneBloque(bloque, paso(r.o[0].g)) : "url(#pv-hatch)"; };
+  const tip = (p) => {
+    const r = info(p);
+    if (!r) return `<b>${p.n}</b>`;
+    return md(T.tooltip_peso, { vars: { provincia: p.n, bloque: nomB, votos: MIL(),
+      lista: r.o.map((x) => `${short(x.f, p.prov)}, ${deCadaMil(x.g)}`).join("; ") }, flags: { parejas: r.par }, page: "provincia" }).html;
+  };
+  const liderLab = (p) => {
+    const r = info(p);
+    if (!r || !(r.o[0].g > 0)) return null;
+    const n = cerca(r.o);   // three or more alike (Barcelona: Frente Amplio, ERC and PSOE): no name stands out
+    return { t: n >= 2 ? tr("varios, parecido") : n ? `${short(r.o[0].f, p.prov)} ${tr("o")} ${short(r.o[1].f, p.prov)}` : short(r.o[0].f, p.prov), c: n >= 2 ? BQ[bloque].c : colorVoto(r.o[0].f) };
+  };
+  const legend = `<div class="pv-leg-mv"><span class="muted">${tr("Escaño más para {b} con {n} votos más a su mejor opción, de cada 1.000 simulaciones", { b: nomB, n: MIL() })}</span>
+      <span></span>${PESO_LAB.map((l) => `<span class="pv-leg-h">${tr(l)}</span>`).join("")}
+      <span>${tr(BQ[bloque].n)}</span>${d3.range(4).map((i) => `<i class="sw" style="background:${toneBloque(bloque, i)}"></i>`).join("")}</div>`;
+  const nota = T.nota_peso ? md(T.nota_peso, { vars: { votos: MIL(), bloque: nomB }, flags: { otro_modelo: !!D.drawsFile }, page: "provincia" }).html : "";
+  return { fill, tip, legend, nota, lider: liderLab, aria: tr("Mapa de dónde pesa más un voto para {b}", { b: nomB }) };
+}
+// the card in "Dónde pesa tu voto": one row per party of the bloc
+async function fichaPeso(p, T, PW, at, bloque) {
+  const L = await lideresJson(), usadas = new Set(), nomB = tr(PESO_ART[bloque]);
+  const o = opcionesPeso(PW, p.prov, at, bloque);
+  const cab = `<tr><th>${tr("Partido")}</th><th class="num">${tr("Escaño para {b}", { b: nomB })}</th><th class="num">${tr("Escaño para el partido")}</th></tr>`;
+  const filas = o.map((x) => {
+    const n = short(x.f, p.prov), c = colorVoto(x.f);
+    const quita = x.quita.length ? tr("Se lo quitaría a {q}", { q: yLista(x.quita.map((f) => (f === "otros" ? tr("otras candidaturas") : short(f, p.prov)))) }) : "";
+    return `<tr><td><span class="mvp-p">${badge(x.f, n, c, L, usadas)}<span>${n}</span></span></td>
+      <td class="num mvp-esc"${quita ? ` data-rango="${n}: ${quita}"` : ""}>${Math.round(x.g * 1000)}</td><td class="num">${Math.round(x.p * 1000)}</td></tr>`;
+  }).join("");
+  const pie = T.pie_peso ? md(T.pie_peso, { vars: { votos: MIL(), bloque: nomB }, flags: { parejas: parejas(o), vacia: !o.length }, page: "provincia" }).html : "";
+  return `<div class="mvp-h"><div><div class="mvp-n" id="mvp-titulo">${p.n}</div>
+      <div class="mvp-sub"><span>${p.esc} ${p.esc === 1 ? tr("escaño") : tr("escaños")}</span></div></div>
+      <button type="button" class="mvp-x" aria-label="${tr("Cerrar")}">×</button></div>
+    ${o.length ? `<div class="mvp-t"><table>${cab}${filas}</table></div>` : ""}
+    <div class="mvp-pie">${pie}<a href="#provincia/${p.prov}">${tr("Ver la provincia")}</a>${creditos(usadas, L)}</div>`;
+}
+
 /** The front page's map: provinces in the colour of the most voted party, or of the leading bloc with the reader's groups
  *  of "Forma tu mayoría" (2026 projection or 2023 result); every province labelled with its letters and the leader's share,
  *  on the province or in a side column with a leader line; a tooltip on hover; a click or tap opens the province's card
@@ -542,8 +615,8 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   leerHash();
   el.innerHTML = `<div class="mv-controls">
     <div class="seg mv-anio" role="group" aria-label="${tr("Qué elección")}"><button type="button" data-a="2026">${tr("Proyección 2026")}</button><button type="button" data-a="2023">${tr("Resultados 2023")}</button></div>
-    <div class="mv-nivel mv-n2"><div class="seg mv-modo" role="group" aria-label="${tr("Partido o bloque")}"><button type="button" data-m="mv">${tr("Más votado")}</button><button type="button" data-m="bloques">${tr("Bloques")}</button><button type="button" data-m="cambios">${tr("Cambios desde 2023")}</button></div>
-      <div class="mv-nivel mv-n3"><div class="seg mv-por" role="group" aria-label="${tr("Por votos o por diputados")}"><button type="button" data-p="votos">${tr("por votos")}</button><button type="button" data-p="escanos">${tr("por diputados")}</button></div></div></div></div>
+    <div class="mv-nivel mv-n2"><div class="seg mv-modo" role="group" aria-label="${tr("Partido o bloque")}"><button type="button" data-m="mv">${tr("Más votado")}</button><button type="button" data-m="bloques">${tr("Bloques")}</button><button type="button" data-m="cambios">${tr("Cambios desde 2023")}</button><button type="button" data-m="peso">${tr("Dónde pesa tu voto")}</button></div>
+      <div class="mv-nivel mv-n3"><div class="seg mv-por" role="group" aria-label="${tr("Por votos o por diputados")}"><button type="button" data-p="votos">${tr("por votos")}</button><button type="button" data-p="escanos">${tr("por diputados")}</button></div><div class="seg mv-para" role="group" aria-label="${tr("Para qué bloque")}"><button type="button" data-b="izquierda">${tr("si quieres más escaños para la izquierda")}</button><button type="button" data-b="derecha">${tr("si quieres más escaños para la derecha")}</button></div></div></div></div>
     <div class="mv-caja"><div class="mapwrap pvmap mvmap"><svg role="img"></svg></div><div class="mv-ficha" role="dialog" aria-labelledby="mvp-titulo" hidden></div></div>
     <div class="legend pv-legend mv-legend"></div><div class="mv-nota"></div>`;
   const box = el.querySelector(".mvmap"), caja = el.querySelector(".mv-caja"), ficha = el.querySelector(".mv-ficha");
@@ -553,7 +626,8 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   const defsEmp = svg.append("defs");   // the stripes of the ties (por diputados), rewritten on every paint
   const mapBox = path.bounds({ type: "FeatureCollection", features });
   const gm = svg.append("g").attr("class", "mv-g");
-  let sel = null;   // the province whose card is open
+  // the province whose card is open; kept in PORTADA so it stays open when the page is redrawn for another model (Víctor, 2026-11-16)
+  let sel = byCode[PORTADA.prov] ? PORTADA.prov : null;
   // zoom on the open province, as Su Momento does: the province fills the part of the map the card leaves free (beside it,
   // or above it on a narrow map or a phone's sheet); the labels fade out while zoomed and come back on closing (Víctor, 2026-11-17)
   const featBy = Object.fromEntries(features.map((f) => [f.id, f]));
@@ -600,8 +674,8 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   const shapes = feats.map((f) => path(f));
   const pt = svg.node().createSVGPoint();
   const inside = (l, x, y) => { pt.x = x; pt.y = y; return pathEl[l.id].isPointInFill(pt); };
-  const seg = el.querySelector(".mv-anio"), mseg = el.querySelector(".mv-modo"), pseg = el.querySelector(".mv-por"), leg = el.querySelector(".mv-legend"), nota = el.querySelector(".mv-nota");
-  let cur, lay;
+  const seg = el.querySelector(".mv-anio"), mseg = el.querySelector(".mv-modo"), pseg = el.querySelector(".mv-por"), bseg = el.querySelector(".mv-para"), leg = el.querySelector(".mv-legend"), nota = el.querySelector(".mv-nota");
+  let cur, lay, PW = null;
   function etiquetas() {
     const W = Math.round(box.clientWidth) || 600;
     const fs = W >= 900 ? 11 : W >= 560 ? 10 : 9, font = `600 ${fs}px Inter, system-ui, sans-serif`;
@@ -639,9 +713,17 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     const btnCambios = mseg.querySelector('[data-m="cambios"]');
     btnCambios.hidden = PORTADA.anio === "2023";
     if (PORTADA.modo === "cambios" && PORTADA.anio === "2023") PORTADA.modo = "bloques";
+    // so does "Dónde pesa tu voto" (a forecast); it asks for a bloc instead of votes or seats
+    mseg.querySelector('[data-m="peso"]').hidden = PORTADA.anio === "2023";
+    if (PORTADA.modo === "peso" && PORTADA.anio === "2023") PORTADA.modo = "bloques";
+    pseg.hidden = PORTADA.modo === "peso"; bseg.hidden = PORTADA.modo !== "peso";
+    bseg.querySelectorAll("button").forEach((b) => { b.classList.toggle("on", b.dataset.b === PORTADA.para); b.setAttribute("aria-pressed", b.dataset.b === PORTADA.para); });
     mseg.querySelectorAll("button").forEach((b) => { b.classList.toggle("on", b.dataset.m === PORTADA.modo); b.setAttribute("aria-pressed", b.dataset.m === PORTADA.modo); });
     escribirHash();
-    if (PORTADA.modo === "cambios") {
+    if (PORTADA.modo === "peso") {
+      PW ??= await load("peso_voto.json");
+      cur = porPeso(D, PW, T, { at: grupos, bloque: PORTADA.para });
+    } else if (PORTADA.modo === "cambios") {
       if (!R23) R23 = resultados23(await load("dhondt.json"));
       const VD = PORTADA.por === "votos" ? await load(D.drawsFile ?? "provincias_29n_draws.json").catch(() => null) : null;
       cur = porCambios(D, R23, VD, T, { at: grupos, escanos: PORTADA.por === "escanos" });
@@ -662,9 +744,9 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     const p = byCode[id];
     if (!p) return;
     hideTip();
-    sel = id;
+    sel = id; PORTADA.prov = id;
     sl.attr("d", pathEl[id].getAttribute("d"));
-    ficha.innerHTML = await fichaHtml(p, PORTADA.anio, T, PORTADA.modo === "mv" ? null : grupos);
+    ficha.innerHTML = PORTADA.modo === "peso" && PW ? await fichaPeso(p, T, PW, grupos, PORTADA.para) : await fichaHtml(p, PORTADA.anio, T, PORTADA.modo === "mv" ? null : grupos);
     ficha.hidden = false;
     // a phone: a sheet along the bottom of the screen, as wide as the screen (the map's box is too narrow for the table)
     const hoja = matchMedia("(max-width: 519px)").matches;
@@ -682,7 +764,7 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   function cerrar(foco) {
     if (!sel) return;
     const id = sel;
-    sel = null; ficha.hidden = true; sl.attr("d", null); hideTip();
+    sel = null; PORTADA.prov = null; ficha.hidden = true; sl.attr("d", null); hideTip();
     zoomA(null);
     if (foco) gl.select(`g[data-prov="${id}"]`).node()?.focus?.();
   }
@@ -692,6 +774,7 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   seg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.a !== PORTADA.anio) { PORTADA.anio = b.dataset.a; paint(); } });
   mseg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.m !== PORTADA.modo) { PORTADA.modo = b.dataset.m; paint(); } });
   pseg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.p !== PORTADA.por) { PORTADA.por = b.dataset.p; paint(); } });
+  bseg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.b !== PORTADA.para) { PORTADA.para = b.dataset.b; paint(); } });
   // the labels are laid out again when the map's width changes (a window resize, the tablero's columns)
   let ancho = 0, t = null;
   const ro = new ResizeObserver(() => {

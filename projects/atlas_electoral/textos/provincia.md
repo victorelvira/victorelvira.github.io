@@ -415,3 +415,43 @@ Nota bajo el mapa en la vista "Cambios desde 2023". Cifras: {cambian} (provincia
 ::: si no
 [nota] {cambian} provincias cambian de bloque con más votos respecto a 2023: el bloque que queda primero en más simulaciones no es el de 2023. En color fuerte y con borde, las que cambian; apagadas, las que no. Los bloques son los de "Forma tu mayoría": si mueves un partido de grupo, el mapa cambia. La frecuencia del cambio sale de {simulaciones} simulaciones.
 :::
+
+=== tooltip_peso ===
+<!--
+Mapa de la portada, vista "Dónde pesa tu voto" (Claude, 16-11-2026, a petición de Víctor). Cifras: {provincia}; {bloque}
+("la derecha" o "la izquierda", el bloque elegido con los grupos de "Forma tu mayoría"); {votos} (el paquete de votos, 1.000);
+{lista} ("PP, 18 de cada 1.000; Vox, 12 de cada 1.000": con qué frecuencia esos votos a cada partido del bloque le dan un
+escaño más al bloque, de mejor a peor). Condición: parejas (las dos primeras opciones pesan casi lo mismo: la segunda da al
+menos 4 de cada 5 de lo que da la primera).
+-->
+**{provincia}**: {votos} votos más dan a {bloque} un escaño más en estas simulaciones, según a qué partido vayan: {lista}.
+::: si parejas
+[nota] Las primeras opciones pesan casi lo mismo.
+:::
+
+=== nota_peso ===
+<!--
+Nota bajo el mapa en la vista "Dónde pesa tu voto". Cifras: {bloque}, {votos}. Condición: otro_modelo (el selector de arriba
+tiene otro modelo; esta vista usa siempre "Nuestra predicción").
+-->
+[nota] **Qué es.** Para quien quiere que {bloque} saque más escaños: en cada provincia, con qué frecuencia {votos} votos más a cada partido de ese bloque le dan un escaño más, en las simulaciones de «Nuestra predicción». La etiqueta dice el partido con el que más pesa el voto; si el segundo pesa casi lo mismo, los dos, y si son tres o más, «varios, parecido». Un escaño que un partido le quita a otro del mismo bloque no suma. Los bloques son los grupos de «Forma tu mayoría»: si mueves un partido de grupo, el mapa cambia.
+
+[nota] **Cómo leerlo.** Lo útil es comparar los partidos dentro de tu provincia. Entre provincias, las pequeñas salen más oscuras porque allí {votos} votos son una parte mayor del total. No es una recomendación de voto: describe la previsión, con su incertidumbre, y supone que el resto vota como se prevé.
+::: si otro_modelo
+[nota] Esta vista usa siempre «Nuestra predicción», aunque arriba hayas elegido otro modelo.
+:::
+
+=== pie_peso ===
+<!--
+Pie de la ficha de una provincia en la vista "Dónde pesa tu voto". Cifras: {bloque}, {votos}. Condiciones: vacia (ningún
+partido del bloque tiene opciones de escaño en la provincia), parejas (como en tooltip_peso).
+-->
+::: si vacia
+[nota] Aquí ningún partido de {bloque} tiene opciones de escaño.
+:::
+::: si no
+[nota] De cada 1.000 simulaciones: cuántas veces {votos} votos más a ese partido dan un escaño más a {bloque} (primera columna) y cuántas se lo dan al partido, aunque sea quitándoselo a otro del mismo bloque (segunda).
+:::
+::: si parejas
+[nota] Las primeras opciones pesan casi lo mismo.
+:::
