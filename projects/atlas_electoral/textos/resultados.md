@@ -122,3 +122,23 @@ escaños en el escenario central), {veces} (de cada 100 simulaciones, en cuánta
 :::
 
 [nota] Cada punto es un escaño del escenario central, en el color de su partido, ordenados por los grupos que formes; la raya del centro marca el 176. Toca o pasa el ratón por un partido para ver su rango.
+
+=== condiciona ===
+<!--
+Debajo de "Escaños por partido estimados", el control "Fija los escaños de" (Claude, 16-11-2026, nota 8 de Víctor: condicionar
+a un valor de un partido). Sin fijar (activo falso) explica qué hace. Fijado: {partido}; {escanos} ("115 escaños" o "entre 113
+y 117 escaños", la ventana más estrecha con al menos 400 simulaciones, hasta ±6); {n} de {total} simulaciones dentro;
+{ppvox} con qué frecuencia PP y Vox llegan a 176 en ellas ("8 de cada 10"). Condiciones: activo, pocas (menos de 400), ninguna.
+-->
+::: si activo
+::: si ninguna
+[nota] Ninguna simulación da a {partido} {escanos}: prueba un valor más cercano al centro.
+::: si no
+[nota] Solo las {n} simulaciones (de {total}) en que {partido} saca {escanos}. En gris, la franja con todas. En ellas, PP y Vox llegan a 176 en {ppvox}.
+:::
+::: si pocas
+[nota] Son pocas simulaciones: tómalo como una indicación.
+:::
+::: si no
+[nota] Mueve el deslizador para fijar los escaños de un partido: las demás franjas pasan a contar solo las simulaciones en que ese partido saca esos escaños. Así se ve qué se mueve con él.
+:::

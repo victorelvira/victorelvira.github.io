@@ -1,20 +1,20 @@
-import { init } from "./data.js?v=0.2.133";
-import { renderMapa } from "./mapa.js?v=0.2.133";
-import { renderPueblo } from "./pueblo.js?v=0.2.133";
-import { renderMiniatura } from "./miniatura.js?v=0.2.133";
-import { renderSimulador } from "./simulador.js?v=0.2.133";
-import { renderEncuestas } from "./encuestas.js?v=0.2.133";
-import { renderHistorico } from "./historico.js?v=0.2.133";
-import { renderModelo } from "./modelo.js?v=0.2.133";
-import { renderInicio } from "./inicio.js?v=0.2.133";
-import { renderHistoria } from "./historia.js?v=0.2.133";
-import { renderComunidad } from "./comunidad.js?v=0.2.133";
-import { renderExplora } from "./explora.js?v=0.2.133";
-import { renderDhondt } from "./dhondt.js?v=0.2.133";
-import { renderProvincia } from "./provincia.js?v=0.2.133";
-import { renderSenado } from "./senado.js?v=0.2.133";
-import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.133";
-import { LANG, setView, chrome, t } from "./i18n.js?v=0.2.133";
+import { init } from "./data.js?v=0.2.134";
+import { renderMapa } from "./mapa.js?v=0.2.134";
+import { renderPueblo } from "./pueblo.js?v=0.2.134";
+import { renderMiniatura } from "./miniatura.js?v=0.2.134";
+import { renderSimulador } from "./simulador.js?v=0.2.134";
+import { renderEncuestas } from "./encuestas.js?v=0.2.134";
+import { renderHistorico } from "./historico.js?v=0.2.134";
+import { renderModelo } from "./modelo.js?v=0.2.134";
+import { renderInicio } from "./inicio.js?v=0.2.134";
+import { renderHistoria } from "./historia.js?v=0.2.134";
+import { renderComunidad } from "./comunidad.js?v=0.2.134";
+import { renderExplora } from "./explora.js?v=0.2.134";
+import { renderDhondt } from "./dhondt.js?v=0.2.134";
+import { renderProvincia } from "./provincia.js?v=0.2.134";
+import { renderSenado } from "./senado.js?v=0.2.134";
+import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.134";
+import { LANG, setView, chrome, t } from "./i18n.js?v=0.2.134";
 
 // d3's number and date formats follow the language of each view (i18n.js, setView, called by the router)
 

@@ -5,7 +5,7 @@
 // Interface strings are keyed by their Spanish text: t("Escaños") is "Escaños" in Spanish and lang_en.js["Escaños"] in English.
 // N_() only marks a string for pipeline/check_textos_en.py, for strings stored in a table and passed to t() later.
 // Prose is not here: textos/en/<page>.md beside textos/<page>.md (src/textos.js picks the folder).
-import EN from "./lang_en.js?v=0.2.133";
+import EN from "./lang_en.js?v=0.2.134";
 
 const KEY = "atlas_electoral.lang";
 const LANGS = ["es", "en"];
@@ -121,6 +121,9 @@ export function chrome() {
       store(a.dataset.l);
       const u = new URL(location.href);
       u.searchParams.set("lang", a.dataset.l);
+      // and the page: English lives at atlas_electoral_en.html, whose og: tags are English (pipeline/entrada_en.py), so a link
+      // copied after switching shows the preview in its own language (Víctor, 2026-11-16)
+      u.pathname = u.pathname.replace(/atlas_electoral(_en)?\.html$/, a.dataset.l === "en" ? "atlas_electoral_en.html" : "atlas_electoral.html");
       location.assign(u.href);
     };
   });

@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.133";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.133";
-import { getGeo, rewind } from "./mapa.js?v=0.2.133";
-import { textos, md } from "./textos.js?v=0.2.133";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.133";
-import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.133";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.134";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.134";
+import { getGeo, rewind } from "./mapa.js?v=0.2.134";
+import { textos, md } from "./textos.js?v=0.2.134";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.134";
+import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.134";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 // the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a
@@ -305,19 +305,20 @@ export function porCambios(D, R23, VD, T, { at = {}, escanos = false } = {}) {
 
 // state kept while the front page is redrawn (another model) and in the URL (#inicio?mapa=bloques&por=escanos&anio=2023):
 // the year, the map (party or bloc) and how it counts (votes or seats)
-const PORTADA = { anio: "2026", modo: "mv", por: "votos", para: "derecha", prov: null };   // para: the bloc of "Dónde pesa tu voto"; prov: the open card
-const ESTADO = { anio: ["2026", "2023"], mapa: ["mv", "bloques", "cambios", "peso"], por: ["votos", "escanos"], para: ["derecha", "izquierda"] };
+const PORTADA = { anio: "2026", modo: "mv", por: "votos", para: "derecha", prov: null, vista: "mapa" };   // vista: map or list   // para: the bloc of "Dónde pesa tu voto"; prov: the open card
+const ESTADO = { anio: ["2026", "2023"], mapa: ["mv", "bloques", "cambios", "peso"], por: ["votos", "escanos"], para: ["derecha", "izquierda"], vista: ["mapa", "lista"] };
 function leerHash() {
   const q = new URLSearchParams(location.hash.split("?")[1] ?? "");
   if (ESTADO.anio.includes(q.get("anio"))) PORTADA.anio = q.get("anio");
   if (ESTADO.mapa.includes(q.get("mapa"))) PORTADA.modo = q.get("mapa");
   if (ESTADO.por.includes(q.get("por"))) PORTADA.por = q.get("por");
   if (ESTADO.para.includes(q.get("para"))) PORTADA.para = q.get("para");
+  if (ESTADO.vista.includes(q.get("vista"))) PORTADA.vista = q.get("vista");
 }
 function escribirHash() {
   const [base, qs] = location.hash.split("?"), q = new URLSearchParams(qs ?? "");
   const set = (k, v, def) => (v === def ? q.delete(k) : q.set(k, v));
-  set("anio", PORTADA.anio, "2026"); set("mapa", PORTADA.modo, "mv"); set("por", PORTADA.por, "votos"); set("para", PORTADA.para, "derecha");
+  set("anio", PORTADA.anio, "2026"); set("mapa", PORTADA.modo, "mv"); set("por", PORTADA.por, "votos"); set("para", PORTADA.para, "derecha"); set("vista", PORTADA.vista, "mapa");
   const h = `${base || "#inicio"}${q.toString() ? `?${q}` : ""}`;
   if (h !== location.hash) history.replaceState(null, "", h);
 }
@@ -614,12 +615,13 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   // three levels of control, each nested under the one above: the year, then party or bloc, then votes or seats
   leerHash();
   el.innerHTML = `<div class="mv-controls">
+    <div class="seg mv-vista" role="group" aria-label="${tr("Mapa o lista")}"><button type="button" data-v="mapa">${tr("Mapa")}</button><button type="button" data-v="lista">${tr("Lista")}</button></div>
     <div class="seg mv-anio" role="group" aria-label="${tr("Qué elección")}"><button type="button" data-a="2026">${tr("Proyección 2026")}</button><button type="button" data-a="2023">${tr("Resultados 2023")}</button></div>
     <div class="mv-nivel mv-n2"><div class="seg mv-modo" role="group" aria-label="${tr("Partido o bloque")}"><button type="button" data-m="mv">${tr("Más votado")}</button><button type="button" data-m="bloques">${tr("Bloques")}</button><button type="button" data-m="cambios">${tr("Cambios desde 2023")}</button><button type="button" data-m="peso">${tr("Dónde pesa tu voto")}</button></div>
       <div class="mv-nivel mv-n3"><div class="seg mv-por" role="group" aria-label="${tr("Por votos o por diputados")}"><button type="button" data-p="votos">${tr("por votos")}</button><button type="button" data-p="escanos">${tr("por diputados")}</button></div><div class="seg mv-para" role="group" aria-label="${tr("Para qué bloque")}"><button type="button" data-b="izquierda">${tr("si quieres más escaños para la izquierda")}</button><button type="button" data-b="derecha">${tr("si quieres más escaños para la derecha")}</button></div></div></div></div>
-    <div class="mv-caja"><div class="mapwrap pvmap mvmap"><svg role="img"></svg></div><div class="mv-ficha" role="dialog" aria-labelledby="mvp-titulo" hidden></div></div>
+    <div class="mv-caja"><div class="mapwrap pvmap mvmap"><svg role="img"></svg></div><div class="mv-ficha" role="dialog" aria-labelledby="mvp-titulo" hidden></div></div><div class="mv-lista" hidden></div>
     <div class="legend pv-legend mv-legend"></div><div class="mv-nota"></div>`;
-  const box = el.querySelector(".mvmap"), caja = el.querySelector(".mv-caja"), ficha = el.querySelector(".mv-ficha");
+  const box = el.querySelector(".mvmap"), caja = el.querySelector(".mv-caja"), ficha = el.querySelector(".mv-ficha"), lista = el.querySelector(".mv-lista"), vseg = el.querySelector(".mv-vista");
   const svg = d3.select(el).select("svg");
   svg.append("defs").html(`<pattern id="pv-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
     <rect width="6" height="6" style="fill:var(--nodata)"></rect><line x1="0" y1="0" x2="0" y2="6" style="stroke:var(--ink-3);stroke-width:1.2;opacity:.45"></line></pattern>`);
@@ -704,6 +706,17 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     g.append("text").attr("x", PILL.pad + 2 * dotR + PILL.gap).attr("y", h / 2).attr("dy", "0.35em").style("font-size", `${fs}px`).text((l) => l.text);
     el.querySelector(".mvmap").dataset.etiquetas = `${labs.length}/${labs.filter((l) => l.col).length}`;
   }
+  // "Lista" (Víctor's note 7, 2026-11-16): the same as the map, as a table: the colour and figure of each province's label
+  // and the text of its tooltip; every table on the site sorts by a click on its header
+  function tablaLista() {
+    // the tooltip without its leading "<b>Provincia</b>:" (the first column says it), first letter capitalised
+    const sinNombre = (p, h) => h.replace(new RegExp(`^(\\s*<p[^>]*>)?\\s*<(b|strong)>${p.n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}</(b|strong)>\\s*[:.]?\\s*(\\S)`), (m, a, b, c, x) => `${a ?? ""}${x.toUpperCase()}`);
+    const filas = [...D.provincias].sort((a, b) => a.n.localeCompare(b.n, "es")).map((p) => {
+      const l = cur.lider(p), f = cur.fill(p), c = String(f).startsWith("url(") ? "var(--nodata)" : f;
+      return `<tr><td><a href="#provincia/${p.prov}">${p.n}</a></td><td class="num mv-l-cifra"><i class="sw" style="background:${c}"></i>${l ? l.t ?? nm(l.voto) : "·"}</td><td class="mv-l-det">${sinNombre(p, cur.tip(p))}</td></tr>`;
+    }).join("");
+    return `<div class="scrollx"><table class="mv-ltab"><tr><th>${tr("Provincia")}</th><th class="num">${tr("En el mapa")}</th><th>${tr("Detalle")}</th></tr>${filas}</table></div>`;
+  }
   async function paint() {
     if (PORTADA.anio === "2023" && !R23) R23 = resultados23(await load("dhondt.json"));
     seg.querySelectorAll("button").forEach((b) => { b.classList.toggle("on", b.dataset.a === PORTADA.anio); b.setAttribute("aria-pressed", b.dataset.a === PORTADA.anio); });
@@ -733,6 +746,9 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
     defsEmp.html(cur.patterns ?? "");
     gCambio.selectAll("path").data(cur.cambiadas ?? []).join("path").attr("class", "mv-cambio").attr("d", (id) => pathEl[id].getAttribute("d"));
     pv.attr("fill", (f) => cur.fill(byCode[f.id]));
+    vseg.querySelectorAll("button").forEach((b) => { b.classList.toggle("on", b.dataset.v === PORTADA.vista); b.setAttribute("aria-pressed", b.dataset.v === PORTADA.vista); });
+    caja.hidden = PORTADA.vista === "lista"; lista.hidden = PORTADA.vista !== "lista";
+    if (PORTADA.vista === "lista") lista.innerHTML = tablaLista();
     svg.attr("aria-label", cur.aria);
     leg.innerHTML = cur.legend;
     nota.innerHTML = cur.nota;
@@ -774,6 +790,7 @@ export async function mapaMasVotado(el, D, { grupos = {} } = {}) {
   seg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.a !== PORTADA.anio) { PORTADA.anio = b.dataset.a; paint(); } });
   mseg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.m !== PORTADA.modo) { PORTADA.modo = b.dataset.m; paint(); } });
   pseg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.p !== PORTADA.por) { PORTADA.por = b.dataset.p; paint(); } });
+  vseg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.v !== PORTADA.vista) { PORTADA.vista = b.dataset.v; paint(); } });
   bseg.addEventListener("click", (ev) => { const b = ev.target.closest("button"); if (b && b.dataset.b !== PORTADA.para) { PORTADA.para = b.dataset.b; paint(); } });
   // the labels are laid out again when the map's width changes (a window resize, the tablero's columns)
   let ancho = 0, t = null;

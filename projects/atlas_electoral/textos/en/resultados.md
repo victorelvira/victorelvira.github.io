@@ -112,3 +112,20 @@ Under the hemicycle of "Build your majority". Figures: {grupo} (the highlighted 
 :::
 
 [nota] Each dot is a seat in the central scenario, in its party's colour, ordered by the groups you build; the line in the middle marks 176. Tap or hover over a party to see its range.
+
+=== condiciona ===
+<!--
+Under "Seats per party", the "Hold the seats of" control. Figures and conditions: see ../resultados.md.
+-->
+::: si activo
+::: si ninguna
+[nota] No simulation gives {partido} {escanos}: try a value closer to the centre.
+::: si no
+[nota] Only the {n} simulations (out of {total}) in which {partido} gets {escanos}. In grey, the band with all of them. In these, PP and Vox reach 176 in {ppvox}.
+:::
+::: si pocas
+[nota] These are few simulations: take it as a pointer.
+:::
+::: si no
+[nota] Move the slider to hold one party's seats: the other bands then count only the simulations in which that party gets those seats. That shows what moves with it.
+:::

@@ -639,6 +639,13 @@ nav.camara a:not(.on):hover { color: var(--ink); }
 .mv-leg-emp .sw { width: 22px; height: 12px; }
 .mv-modo { -webkit-mask-image: none; mask-image: none; overflow: visible; }
 .mv-caja { position: relative; }
+.mv-lista { max-height: 70vh; overflow: auto; border: 1px solid var(--line); border-radius: 8px; }   /* "Lista": the map as a table */
+.mv-ltab { width: 100%; font-size: var(--t-s); }
+.mv-ltab td { vertical-align: top; }
+.mv-ltab .mv-l-cifra { white-space: nowrap; }
+.mv-ltab .mv-l-cifra .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.mv-ltab .mv-l-det p { margin: 0 0 3px; }
+.mv-ltab .mv-l-det .nota, .mv-ltab .mv-l-det small { color: var(--muted); }
 .mvmap svg { width: 100%; height: auto; }
 .mvmap .mv-leads polyline { fill: none; stroke: var(--ink-3); stroke-width: .75; }
 .mvmap .mv-leads circle { fill: var(--ink); }
@@ -823,3 +830,12 @@ main h3 { font-size: 19px; }
 
 /* front-page title on a phone: two lines at most (Víctor's note, 2026-11-16) */
 @media (max-width: 640px) { .portada .content > h1 { font-size: 20px; line-height: 1.2; } }
+/* "Fija los escaños de" (note 8, 2026-11-16): the control under the seat ranges, the faint unconditioned band, the fixed party */
+.cond { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 8px 0 4px; font-size: var(--t-s); }
+.cond-l { display: inline-flex; align-items: center; gap: 6px; }
+.cond-v { flex: 1 1 160px; min-width: 120px; max-width: 320px; accent-color: var(--ink-2); }
+.cond-n { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 6em; }
+.cond-x { font-size: var(--t-xs); padding: 2px 8px; }
+.cond-nota { flex-basis: 100%; }
+.rg-franja.rg-base { background: var(--ink-3); opacity: 0.18; }
+.rg-fila.rg-fijo .rg-nom { font-weight: 700; }

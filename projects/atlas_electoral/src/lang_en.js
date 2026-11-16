@@ -331,5 +331,15 @@ export default {
   "Escaño para {b}": "Seat for {b}",
   "Escaño para el partido": "Seat for the party",
   "Se lo quitaría a {q}": "It would take it from {q}",
-  "varios, parecido": "several, alike"
+  "varios, parecido": "several, alike",
+  "Mapa o lista": "Map or list",
+  "Mapa": "Map",
+  "Lista": "List",
+  "En el mapa": "On the map",
+  "Detalle": "Detail",
+  "Fija los escaños de": "Hold the seats of",
+  "Escaños fijados": "Seats held",
+  "Quitar": "Clear",
+  "entre {a} y {b} escaños": "between {a} and {b} seats",
+  "{n} escaños": "{n} seats"
 };

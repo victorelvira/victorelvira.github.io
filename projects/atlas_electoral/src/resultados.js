@@ -1,12 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.133";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.133";
-import { num } from "./encuestas.js?v=0.2.133";
-import { short, pc } from "./provincia.js?v=0.2.133";
-import { textos, md } from "./textos.js?v=0.2.133";
-import { t, loc, deCada } from "./i18n.js?v=0.2.133";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.134";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.134";
+import { num } from "./encuestas.js?v=0.2.134";
+import { short, pc } from "./provincia.js?v=0.2.134";
+import { textos, md } from "./textos.js?v=0.2.134";
+import { t, loc, deCada } from "./i18n.js?v=0.2.134";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -17,7 +17,7 @@ const d3 = window.d3; // vendored UMD build, loaded by the entry page
 export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = null } = {}) {
   const T = await textos("resultados");
   textosCache = T;
-  const slots = { escanos_partido: rangos(escanosFilas(PR), { dec: 0 }), voto_partido: rangos(votoFilas(PR), { dec: 1, pct: true }) };
+  const slots = { escanos_partido: `<div class="rg-esc">${rangos(escanosFilas(PR), { dec: 0 })}</div>${DR ? '<div class="cond"></div>' : ""}`, voto_partido: rangos(votoFilas(PR), { dec: 1, pct: true }) };
   // "¿Quién llega a 176?" (cards from the chosen model's draws), the shortcuts and the hemicycle of "Forma tu mayoría":
   // their captions are parts of resultados.md; without the part (or the draws) the slot stays empty
   // the selector and the cards are wrapped (.res-sel, .res-q176) so that the front page can lift them into its desktop grid
@@ -41,6 +41,7 @@ export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = n
  *  at: {party: group}, the reader's groups; pass the same object again to keep them when the block is redrawn. */
 export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = {} }) {
   const T = textosCache;   // read by resultadosHtml before this runs (null on the front page without a model)
+  if (PR && DR) condicionar(root, PR, DR, T);
   seatRows(root.querySelector("#proj"), [{ label: PR ? t("Por partidos") : t("Estimación"), e: est }], { labelWidth: PR ? 130 : 90, eid: "generales_2026-11" });
   // the evolution of the two blocs the reader has formed (inside "Forma tu mayoría"): redrawn on every regrouping
   const evoEl = root.querySelector("#evolucion");
@@ -218,13 +219,14 @@ function votoFilas(PR) {
   return Object.entries(PR.partidos).map(([f, d]) => ({ f, c: d.voto.p50, lo: d.voto.p05, hi: d.voto.p95 }))
     .filter((r) => r.c >= 0.5).sort((a, b) => b.c - a.c);
 }
-function rangos(rows, { dec = 0, pct = false } = {}) {
-  const max = Math.max(...rows.map((r) => Math.max(r.hi, r.avg ?? 0))) * 1.05;
+function rangos(rows, { dec = 0, pct = false, base = null, fijo = null } = {}) {
+  // base (f -> {lo, hi}): the unconditioned band, drawn faint under the conditioned one; fijo: the party held fixed
+  const max = Math.max(...rows.map((r) => Math.max(r.hi, r.avg ?? 0, base?.[r.f]?.hi ?? 0))) * 1.05;
   const x = (v) => `${(100 * v / max).toFixed(2)}%`;
   const n = (v) => `${num(v, dec)}${pct ? "%" : ""}`;
-  return `<div class="rangos">${rows.map((r) => `<div class="rg-fila">
+  return `<div class="rangos">${rows.map((r) => `<div class="rg-fila${r.f === fijo ? " rg-fijo" : ""}">
     <span class="rg-nom"><i class="dot" style="background:${pc(r.f)}"></i>${short(r.f)}</span>
-    <span class="rg-pista"><span class="rg-franja" style="left:${x(r.lo)};width:${x(r.hi - r.lo)};background:${pc(r.f)}"></span><span class="rg-punto" style="left:${x(r.c)};background:${pc(r.f)}"></span>${r.avg != null ? `<span class="rg-media" style="left:${x(r.avg)}" title="${t("Promedio de encuestas:")} ${n(r.avg)}"></span>` : ""}</span>
+    <span class="rg-pista">${base?.[r.f] ? `<span class="rg-franja rg-base" style="left:${x(base[r.f].lo)};width:${x(base[r.f].hi - base[r.f].lo)}"></span>` : ""}<span class="rg-franja" style="left:${x(r.lo)};width:${x(r.hi - r.lo)};background:${pc(r.f)}"></span><span class="rg-punto" style="left:${x(r.c)};background:${pc(r.f)}"></span>${r.avg != null ? `<span class="rg-media" style="left:${x(r.avg)}" title="${t("Promedio de encuestas:")} ${n(r.avg)}"></span>` : ""}</span>
     <span class="rg-num"><b>${n(r.c)}</b> <span class="muted">${num(r.lo, dec)}–${num(r.hi, dec)}</span></span></div>`).join("")}</div>`;
 }
 
@@ -276,4 +278,54 @@ function evolucion(el, SD, at, conv) {
       showTip(`<b>${t("Predicción del {f}", { f: fechaLarga(d.f) })}</b>${B.map(([k, name, c]) => `<div class="row"><span><i class="dot" style="background:${c}"></i>${name}</span><span>${d.bloques[k][1]} (${t("{a} a {b}", { a: d.bloques[k][0], b: d.bloques[k][2] })})</span></div>`).join("")}`, ev);
     })
     .on("mouseleave", () => { cross.style("display", "none"); hideTip(); });
+}
+
+// "Fija un partido" (Víctor's note 8, 2026-11-16): hold one party's seats at a value and redraw every other range with only
+// the draws in which that party gets those seats (DR: the model's draws, seats of every party in each one, jointly), so the
+// correlations show: with the PP lower, how much Vox and the PSOE gain. A window of ±w seats around the value, the narrowest
+// with at least COND_MIN draws (up to ±COND_MAXW); fewer than that and the note says so.
+const COND_MIN = 400, COND_MAXW = 6;
+function condicionar(root, PR, DR, T) {
+  const el = root.querySelector(".cond"), rg = root.querySelector(".rg-esc");
+  if (!el || !rg) return;
+  const filas = escanosFilas(PR), base = Object.fromEntries(filas.map((r) => [r.f, r]));
+  const fs = filas.map((r) => r.f).filter((f) => DR.partidos.includes(f));
+  const S = DR.s[0].length, col = (f) => DR.s[DR.partidos.indexOf(f)];
+  const q = (xs, a) => xs[Math.min(xs.length - 1, Math.max(0, Math.round(a * (xs.length - 1))))];
+  const rango = (f) => { const xs = Float64Array.from(col(f)).sort(); return [q(xs, 0.01), q(xs, 0.99)]; };
+  let f = fs[0], v = null;
+  el.innerHTML = `<label class="cond-l">${t("Fija los escaños de")} <select class="cond-f">${fs.map((x) => `<option value="${x}">${short(x)}</option>`).join("")}</select></label>
+    <input type="range" class="cond-v" step="1" aria-label="${t("Escaños fijados")}"><span class="cond-n"></span>
+    <button type="button" class="cond-x">${t("Quitar")}</button><div class="cond-nota"></div>`;
+  const sel = el.querySelector(".cond-f"), sl = el.querySelector(".cond-v"), lab = el.querySelector(".cond-n"), x = el.querySelector(".cond-x"), nota = el.querySelector(".cond-nota");
+  const setRange = () => { const [a, b] = rango(f); sl.min = a; sl.max = b; sl.value = Math.round(base[f].c); };
+  const pinta = () => {
+    x.hidden = v == null; el.classList.toggle("on", v != null);
+    if (v == null) {
+      lab.textContent = "";
+      rg.innerHTML = rangos(filas, { dec: 0 });
+      nota.innerHTML = T?.condiciona ? md(T.condiciona, { flags: { activo: false }, page: "resultados" }).html : "";
+      return;
+    }
+    const c = col(f);
+    let w = 0, idx = [];
+    for (; w <= COND_MAXW; w++) { idx = []; for (let k = 0; k < S; k++) if (Math.abs(c[k] - v) <= w) idx.push(k); if (idx.length >= COND_MIN) break; }
+    w = Math.min(w, COND_MAXW);
+    lab.textContent = t("{n} escaños", { n: v });
+    const rows = filas.map((r) => {
+      if (!DR.partidos.includes(r.f) || !idx.length) return r;
+      const xs = Float64Array.from(idx, (k) => col(r.f)[k]).sort();
+      return { f: r.f, c: q(xs, 0.5), lo: q(xs, 0.05), hi: q(xs, 0.95) };
+    });   // same rows in the same order as without conditioning, so the eye compares row by row
+    rg.innerHTML = rangos(rows, { dec: 0, base, fijo: f });
+    const pp = col("pp"), vox = col("vox");
+    const k176 = idx.filter((k) => pp[k] + vox[k] >= 176).length;
+    nota.innerHTML = T?.condiciona ? md(T.condiciona, { vars: { partido: short(f), escanos: w ? t("entre {a} y {b} escaños", { a: v - w, b: v + w }) : t("{n} escaños", { n: v }),
+      n: idx.length.toLocaleString(loc()), total: S.toLocaleString(loc()), ppvox: idx.length ? deCada(Math.round(10 * k176 / idx.length), 10) : "·" },
+      flags: { activo: true, pocas: idx.length < COND_MIN, ninguna: !idx.length }, page: "resultados" }).html : "";
+  };
+  sel.onchange = () => { f = sel.value; v = null; setRange(); pinta(); };
+  sl.oninput = () => { v = +sl.value; pinta(); };
+  x.onclick = () => { v = null; setRange(); pinta(); };
+  setRange(); pinta();
 }
