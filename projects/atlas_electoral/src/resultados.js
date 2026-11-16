@@ -1,12 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.128";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.128";
-import { num } from "./encuestas.js?v=0.2.128";
-import { short, pc } from "./provincia.js?v=0.2.128";
-import { textos, md } from "./textos.js?v=0.2.128";
-import { t, loc, deCada } from "./i18n.js?v=0.2.128";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.129";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.129";
+import { num } from "./encuestas.js?v=0.2.129";
+import { short, pc } from "./provincia.js?v=0.2.129";
+import { textos, md } from "./textos.js?v=0.2.129";
+import { t, loc, deCada } from "./i18n.js?v=0.2.129";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -79,21 +79,7 @@ export function wireResultados(root, { PR, DR, est, conv, onGroups = null, at = 
     foco = ATAJOS[b.dataset.atajo]?.[0] ?? null;   // Restablecer: back to the bigger side
     draw();
   });
-  // the cards' tooltips: the 90% range behind each frequency (hover, or tap on a phone)
-  if (DR) {
-    const V = tarjetasVars(DR);
-    const esc = (r) => t("{r} escaños", { r });
-    const TIP = { ppvox: ["PP + Vox", esc(V.r_ppvox)], pp: [t("PP solo"), esc(V.r_pp)], investidura: [t("Bloque de investidura de 2023"), esc(V.r_investidura)],
-      pp_psoe: [t("Escaños del PP menos los del PSOE"), V.r_pp_psoe], ninguno: [t("PP + Vox, cuando ninguno llega"), esc(V.r_ninguno)],
-      inv_sin_junts: [t("Bloque de 2023 sin Junts"), esc(V.r_inv_sin_junts)] };
-    root.querySelectorAll("[data-q]").forEach((c) => {
-      const tq = TIP[c.dataset.q]; if (!tq) return;
-      // one line: the range, then "(en 9 de cada 10 simulaciones)" after it, not two columns (Víctor, 2026-11-17)
-      const extra = c.dataset.q === "ninguno" ? `<div class="muted">${t("En {n} de esas simulaciones es un empate exacto, 175 a 175: entonces bastaría un escaño de dentro del bloque de 2023, como el de CC, que gobierna con el PP en Canarias, para que PP y Vox llegaran a 176. En el resto, PP y Vox se quedan en 174 o 175 y algún escaño queda fuera de los dos bloques", { n: V.empate_ninguno })}${V.fuera_ninguno ? ` (${V.fuera_ninguno})` : ""}.</div>` : "";
-      const show = (ev) => showTip(`<b>${tq[0]}</b><div>${tq[1]} ${t("(en 9 de cada 10 simulaciones)")}</div>${extra}<div class="muted">${t("De {n} simulaciones del modelo elegido", { n: V.simulaciones })}</div>`, ev);
-      c.onmousemove = show; c.onclick = show; c.onmouseleave = hideTip;
-    });
-  }
+  // the cards write their 90% range themselves ({r_*} in resultados.md); no tooltips (Víctor, 2026-11-16)
 }
 
 // ------------------------------------------------------------------ shortcuts, cards and hemicycle (front page, 2026-11-16)
@@ -149,7 +135,7 @@ const cuantil = (a, p) => { const v = [...a].sort((x, y) => x - y); return v[Mat
 // the 90% range of each sum ({r_ppvox}...) and of the PP's lead over the PSOE
 function tarjetasVars(DR) {
   const freq = (t, ok) => t.reduce((a, x) => a + (ok(x) ? 1 : 0), 0) / t.length;
-  const rango = (x) => t("de {a} a {b}", { a: cuantil(x, 0.05), b: cuantil(x, 0.95) });
+  const rango = (x) => t("{r} escaños", { r: t("de {a} a {b}", { a: cuantil(x, 0.05), b: cuantil(x, 0.95) }) });
   const ppvox = suma(DR, ["pp", "vox"]), pp = suma(DR, ["pp"]), inv = suma(DR, INVESTIDURA), psoe = suma(DR, ["psoe"]);
   const dif = pp.map((x, i) => x - psoe[i]);
   // fourth card (2026-11-17): neither PP+Vox nor the 2023 investiture bloc reaches 176. With every party in the draws this is
@@ -159,7 +145,8 @@ function tarjetasVars(DR) {
   const nin = [...ppvox.keys()].filter((i) => ppvox[i] < 176 && inv[i] < 176);
   const ppvoxNin = Int16Array.from(nin.map((i) => ppvox[i]));
   const empate = nin.length ? nin.filter((i) => resto[i] === 0).length / nin.length : 0;
-  const invSinJunts = suma(DR, INVESTIDURA.filter((f) => f !== "junts"));
+  // without Junts nor CC: the same left group "Forma tu mayoría" starts with, so card and box agree (Víctor, 2026-11-16)
+  const invSinJunts = suma(DR, INVESTIDURA.filter((f) => f !== "junts" && f !== "cc"));
   // who is outside both blocs in the "neither" draws: the seats of each party that is neither PP, Vox nor in the 2023 bloc
   const fuera = DR.partidos.filter((f) => !["pp", "vox", ...INVESTIDURA].includes(f));
   return { c_inv_sin_junts: deCada100(freq(invSinJunts, (x) => x >= 176)), r_inv_sin_junts: rango(invSinJunts),

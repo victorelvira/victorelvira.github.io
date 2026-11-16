@@ -1,12 +1,12 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.128";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.128";
-import { projectFromPolls } from "./simulador.js?v=0.2.128";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.128";
-import { pugnasHtml } from "./provincia.js?v=0.2.128";
-import { textos, md, INDICE } from "./textos.js?v=0.2.128";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.128";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.128";
-import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.128";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.129";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.129";
+import { projectFromPolls } from "./simulador.js?v=0.2.129";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.129";
+import { pugnasHtml } from "./provincia.js?v=0.2.129";
+import { textos, md, INDICE } from "./textos.js?v=0.2.129";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.129";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.129";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.129";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
@@ -60,6 +60,15 @@ export async function renderInicio(app, args = []) {
   const G = await load("geo_nuevos.json").catch(() => null);
   const [PV, BT, EC] = await Promise.all([load("provincias_29n.json").catch(() => null), load("backtest.json").catch(() => null), load("error_comun.json").catch(() => null)]);
   const mayoria = PR?.mayorias.find((m) => m.nombre === "PP + Vox");
+  // the summary counts the same draws as the cards below it (the site carries a sample of the model's simulations; the full
+  // count in PR.mayorias can round to another figure: 92.5 against 92.3, Víctor 2026-11-16)
+  const ppvoxDR = (() => {
+    if (!DR) return null;
+    const i = DR.partidos.indexOf("pp"), j = DR.partidos.indexOf("vox");
+    if (i < 0 || j < 0) return null;
+    let k = 0; DR.s[i].forEach((x, n) => { if (x + DR.s[j][n] >= 176) k++; });
+    return k / DR.s[i].length;
+  })();
   const days = Math.ceil((ELECTION_DAY - new Date()) / 86400000);
   const base = Object.keys(dh).sort().at(-1);
   const conv = S.convocatoria_2026;
@@ -72,7 +81,7 @@ export async function renderInicio(app, args = []) {
   const R = PR ? await resultadosHtml(PR, { modelos: pick ? modelos : null, modelo: pick?.id ?? "k0", DR }) : null;   // the results block shared with the Modelo tab (textos/resultados.md)
   // the prose is textos/portada.md; here only the figures, the conditions and the computed blocks
   const vars = {
-    dias: days, ultimo_campo: PR ? fechaLarga(PR.ultimo_campo) : null, ppvox_176: mayoria ? de100(mayoria.prob) : null,
+    dias: days, ultimo_campo: PR ? fechaLarga(PR.ultimo_campo) : null, ppvox_176: ppvoxDR != null ? de100(ppvoxDR) : mayoria ? de100(mayoria.prob) : null,
     pp_primero: PR ? de100(PR.p_pp_primero) : null, pp_mas_votado: PR?.p_pp_mas_votado != null ? de100(PR.p_pp_mas_votado) : null,
     ultimo_modelo: PR ? fechaLarga(PR.fecha.slice(0, 10)) : null, simulaciones: PR ? PR.draws.toLocaleString(loc(), { useGrouping: "always" }) : null, fecha_datos: fechaLarga(BUILD_AT.slice(0, 10)),
     elecciones: BT?.elecciones, desde: BT?.desde, acierto_voto: BT ? de100(BT.horizontes[7].voto.en90) : null, acierto_escanos: BT ? de100(BT.horizontes[7].escanos.en90) : null,

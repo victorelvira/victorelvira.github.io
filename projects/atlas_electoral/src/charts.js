@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.128";
-import { t as tr } from "./i18n.js?v=0.2.128";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.129";
+import { t as tr } from "./i18n.js?v=0.2.129";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
@@ -185,10 +185,12 @@ export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws =
   const start = BLOQUE_INICIAL;
   const fams = Object.entries(seats).filter(([, n]) => n).sort((a, b) => b[1] - a[1]).map(([f]) => f);
   for (const f of fams) at[f] ??= start[f] ?? "otros";
-  const sumOf = (g) => {   // seats of group g in every draw
+  // seats of group g in every draw; a party with no seat in the central scenario has no chip but can win seats in some
+  // draws (Podemos): it counts in its starting group (2026-11-16)
+  const sumOf = (g) => {
     if (!draws) return null;
     const n = draws.s[0].length, t = new Int16Array(n);
-    draws.partidos.forEach((f, i) => { if (at[f] === g) for (let k = 0; k < n; k++) t[k] += draws.s[i][k]; });
+    draws.partidos.forEach((f, i) => { if ((at[f] ?? start[f] ?? "otros") === g) for (let k = 0; k < n; k++) t[k] += draws.s[i][k]; });
     return t;
   };
   const stats = (g) => {

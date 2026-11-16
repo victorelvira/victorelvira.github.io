@@ -816,3 +816,6 @@ main h3 { font-size: 19px; }
 .cc .cc-tabla { margin: 6px 0; padding: 6px 12px; }
 .cc .cc-tabla summary { cursor: pointer; font-size: var(--t-s); font-weight: 600; }
 .cc .cc-tabla table { font-size: var(--t-s); margin-top: 6px; }
+
+/* the card's 90% seat range, written under its title (2026-11-16) */
+.q176-r { font-size: var(--t-s, 13px); color: var(--muted); margin-top: 3px; font-variant-numeric: tabular-nums; }

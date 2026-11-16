@@ -66,13 +66,13 @@ Shown above the weekly evolution when the chosen model is not the one published 
 #### Who reaches 176?
 
 <div class="q176">
-<div class="q176-c q176-der q176-bloque" data-q="ppvox"><div class="q176-n">{c_ppvox}</div><div class="q176-t">PP and Vox</div></div>
-<div class="q176-c q176-izq q176-bloque" data-q="investidura"><div class="q176-n">{c_investidura}</div><div class="q176-t">The 2023 investiture bloc</div></div>
-<div class="q176-c q176-izq q176-bloque" data-q="inv_sin_junts"><div class="q176-n">{c_inv_sin_junts}</div><div class="q176-t">That bloc without Junts (with CC)</div></div>
-<div class="q176-c q176-der" data-q="pp"><div class="q176-n">{c_pp}</div><div class="q176-t">The PP alone</div></div>
+<div class="q176-c q176-der q176-bloque" data-q="ppvox"><div class="q176-n">{c_ppvox}</div><div class="q176-t">PP and Vox</div><div class="q176-r">{r_ppvox}</div></div>
+<div class="q176-c q176-izq q176-bloque" data-q="investidura"><div class="q176-n">{c_investidura}</div><div class="q176-t">The 2023 investiture bloc</div><div class="q176-r">{r_investidura}</div></div>
+<div class="q176-c q176-izq q176-bloque" data-q="inv_sin_junts"><div class="q176-n">{c_inv_sin_junts}</div><div class="q176-t">That bloc without Junts or CC</div><div class="q176-r">{r_inv_sin_junts}</div></div>
+<div class="q176-c q176-der" data-q="pp"><div class="q176-n">{c_pp}</div><div class="q176-t">The PP alone</div><div class="q176-r">{r_pp}</div></div>
 </div>
 
-[nota] Share of the chosen model's simulations ({simulaciones} in total) in which each outcome happens. Tap or hover over a card to see the seat range.
+[nota] Share of the chosen model's simulations ({simulaciones} in total) in which each outcome happens. Below, the seats that cover 9 out of 10 simulations.
 
 ::: si mas_votado
 #### Who wins the most votes?
@@ -85,7 +85,7 @@ Shown above the weekly evolution when the chosen model is not the one published 
 :::
 
 ::: metodología
-Each card counts, among all the simulations of the model chosen in the selector, in how many its outcome happens: that PP and Vox together, or the PP alone, have 176 seats or more; that the 2023 investiture bloc has them, the parties that voted in favour in November 2023 (PSOE, Sumar, which then included Podemos and Compromís, ERC, Junts, EH Bildu, PNV, BNG and Coalición Canaria); and that bloc without Junts, with CC in it (which is why it can give somewhat more than the left-hand group «Build your majority» starts with, which does not include CC). Cards for a single party are in its colour; cards for a bloc are striped. The party with the most votes is the one that wins the most votes across Spain in each simulation. The tooltip of each card gives the range that covers 9 out of 10 simulations. The shortcuts in «Build your majority» set up these same groups.
+Each card counts, among all the simulations of the model chosen in the selector, in how many its outcome happens: that PP and Vox together, or the PP alone, have 176 seats or more; that the 2023 investiture bloc has them, the parties that voted in favour in November 2023 (PSOE, Sumar, which then included Podemos and Compromís, ERC, Junts, EH Bildu, PNV, BNG and Coalición Canaria); and that bloc without Junts or CC, the same left-hand group «Build your majority» starts with. Cards for a single party are in its colour; cards for a bloc are striped. The party with the most votes is the one that wins the most votes across Spain in each simulation. Each card also gives the seat range that covers 9 out of 10 simulations. The shortcuts in «Build your majority» set up these same groups.
 :::
 
 === atajos ===
