@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.136";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.136";
-import { getGeo, rewind } from "./mapa.js?v=0.2.136";
-import { textos, md } from "./textos.js?v=0.2.136";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.136";
-import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.136";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.137";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.137";
+import { getGeo, rewind } from "./mapa.js?v=0.2.137";
+import { textos, md } from "./textos.js?v=0.2.137";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.137";
+import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.137";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 // the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a

@@ -1,8 +1,8 @@
 // The prose of every tab lives in web/atlas_electoral/textos/<page>.md, plain Markdown that Víctor edits by hand
 // (syntax in textos/README.md). This module reads those files and turns them into the same HTML the pages had.
 // The code keeps only what is computed: figures ({name}), charts and tables ([[name]]) and conditions (::: si name).
-import { DATA_V } from "./data.js?v=0.2.136";
-import { lang, t as tr, EN_TEXTOS } from "./i18n.js?v=0.2.136";
+import { DATA_V } from "./data.js?v=0.2.137";
+import { lang, t as tr, EN_TEXTOS } from "./i18n.js?v=0.2.137";
 
 const BASE = new URL("../textos/", import.meta.url).href;
 const cache = new Map();
@@ -18,7 +18,11 @@ const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
 // ?veda=0 in the address forces it, to test it before the 24th.
 export const VEDA = (() => {
   const q = new URLSearchParams(location.search).get("veda");
-  if (q === "1" || q === "0") return q === "1";
+  if (q === "1" || q === "0") {
+    // read once and taken out of the address, so a test does not stick to every page visited or link copied afterwards
+    const u = new URL(location.href); u.searchParams.delete("veda"); history.replaceState(null, "", u);
+    return q === "1";
+  }
   const n = Date.now();
   return n >= Date.UTC(2026, 10, 23, 23) && n < Date.UTC(2026, 10, 29, 19);
 })();
