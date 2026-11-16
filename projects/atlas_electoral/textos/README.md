@@ -24,6 +24,12 @@ recuadra cada bloque de texto. Alt+doble clic lo abre directamente en Sublime Te
 archivo y la línea y los copia. Lo hace el servidor de la familia (`_servir_green.command` y compañía), así que funciona
 igual en todos los proyectos. Los gráficos y las tablas no tienen línea propia: salen del código.
 
+**Modo notas.** En local, Alt+Mayúsculas+clic sobre cualquier cosa de la página (un texto, una tarjeta, un gráfico)
+abre un recuadro: escribe la nota y pulsa Intro. Se guarda en `_notas/notas.md` del proyecto, con la pestaña, el texto
+del elemento y, si es texto, su archivo y línea. Lo anotado queda punteado en naranja; el contador de abajo a la
+izquierda dice cuántas notas quedan pendientes (clic: mostrar u ocultar las marcas). Después, dile a Claude «lee las
+notas»: las aplica y cambia el Estado de cada una a hecha, o a duda con la pregunta debajo.
+
 ## Lo básico
 
     # Título de la página

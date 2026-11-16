@@ -6,7 +6,7 @@ Figures:
   {dias}               days left until 29N
   {ultimo_campo}       date of the model's latest poll (e.g. "13 November")
   {ultimo_modelo}      date the model was last updated
-  {ppvox_176}          out of 100 simulations, in how many PP and Vox reach 176
+  {ppvox_176}          out of 100 simulations, in how many PP and Vox reach 176 (unused since 2026-11-16: the sentence repeated the cards)
   {pp_mas_votado}      out of 100, in how many the PP wins the most votes
   {simulaciones}       number of simulations of the model chosen in the selector
   {fecha_datos}        date of the data (when there is no model)
@@ -37,8 +37,6 @@ sensibilidad, movilizacion, cambios.
 [nota] Latest data used: polls up to {ultimo_campo}. Model updated on {ultimo_modelo}.
 
 ### Summary {#resumen | Summary}
-
-[línea] PP and Vox reach 176 seats together in {ppvox_176} out of 100 simulations. The PP wins the most votes in {pp_mas_votado} out of 100.
 
 [[resultados]]
 
@@ -139,11 +137,12 @@ Figure: {modelo}, the name of the model chosen in the selector. Condition: otro_
 
 [sub] Each province in the colour of the party with the most votes; the labels give the province and the share of the leading party. Click or tap a province to see its allocation; from there its card opens.
 
-[[mapa_masvotado]]
-
 ::: si otro_modelo
 [nota] The province map is always that of «Our forecast», not that of «{modelo}», chosen above.
 :::
+
+[[mapa_masvotado]]
+
 
 === cambio_casas ===
 <!-- Below the poll chart of "The model explained" (inicio.js; Claude, 2026-11-15). Figures from data/cambio_casas.json

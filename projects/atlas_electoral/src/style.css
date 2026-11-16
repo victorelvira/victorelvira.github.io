@@ -819,3 +819,6 @@ main h3 { font-size: 19px; }
 
 /* the card's 90% seat range, written under its title (2026-11-16) */
 .q176-r { font-size: var(--t-s, 13px); color: var(--muted); margin-top: 3px; font-variant-numeric: tabular-nums; }
+
+/* front-page title on a phone: two lines at most (Víctor's note, 2026-11-16) */
+@media (max-width: 640px) { .portada .content > h1 { font-size: 20px; line-height: 1.2; } }

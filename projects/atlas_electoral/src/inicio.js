@@ -1,12 +1,12 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.129";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.129";
-import { projectFromPolls } from "./simulador.js?v=0.2.129";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.129";
-import { pugnasHtml } from "./provincia.js?v=0.2.129";
-import { textos, md, INDICE } from "./textos.js?v=0.2.129";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.129";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.129";
-import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.129";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.130";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.130";
+import { projectFromPolls } from "./simulador.js?v=0.2.130";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.130";
+import { pugnasHtml } from "./provincia.js?v=0.2.130";
+import { textos, md, INDICE } from "./textos.js?v=0.2.130";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.130";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.130";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.130";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
@@ -118,9 +118,12 @@ export async function renderInicio(app, args = []) {
     ${live ? nocheHtml(live, T) : ""}
     ${html.replace(INDICE, IX.row)}
     </div></div>`;
-  // the chosen model's one-line description goes above "Resumen", on every screen (Víctor, 2026-11-17)
-  const desc = app.querySelector(".res-desc"), resH = app.querySelector("#s-resumen");
-  if (desc && resH) resH.before(desc);
+  // the chosen model's one-line description goes above "Resumen", on every screen (Víctor, 2026-11-17); since 2026-11-16 at the
+  // end of the "Últimos datos" note, on the same line, so it does not take a row of its own (Víctor's note: space lost under it)
+  const desc = app.querySelector("p.res-desc"), resH = app.querySelector("#s-resumen");
+  const nota = resH?.previousElementSibling?.classList.contains("note") ? resH.previousElementSibling : null;
+  if (desc && nota) { const s = document.createElement("span"); s.className = "res-desc"; s.innerHTML = desc.innerHTML; nota.append(" ", s); desc.remove(); }
+  else if (desc && resH) resH.before(desc);
   if (ancho) tablero(app);
   if (ancho && matchMedia(PAREJAS).matches) parejas(app);
   sectionIndex(app);
@@ -174,7 +177,7 @@ function tablero(app) {
   sec.insertBefore(grid, res);
   const linea = res.nextElementSibling?.classList.contains("linea") ? res.nextElementSibling : null;
   const hemi = sec.querySelector(".hemi");
-  izq.append(...[app.querySelector(".res-desc"), res, linea, sec.querySelector(".res-sel"), sec.querySelector(".res-q176")].filter(Boolean));
+  izq.append(...[app.querySelector("p.res-desc"), res, linea, sec.querySelector(".res-sel"), sec.querySelector(".res-q176")].filter(Boolean));
   const mapa = app.querySelector(".tb-mapa");
   if (mapa) centro.append(mapa);
   const esc = sec.querySelector("#s-escanos");

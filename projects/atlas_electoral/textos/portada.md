@@ -4,7 +4,7 @@ Portada (pestaña 29N). Cómo se escribe: textos/README.md.
 Cifras disponibles:
   {dias}               días que faltan para el 29N
   {ultimo_campo}       fecha de la última encuesta del modelo (p. ej. "13 de noviembre")
-  {ppvox_176}          de cada 100 simulaciones, en cuántas PP y Vox llegan a 176
+  {ppvox_176}          de cada 100 simulaciones, en cuántas PP y Vox llegan a 176 (sin uso desde el 16-11-2026: la frase repetía las tarjetas, nota de Víctor)
   {pp_primero}         de cada 100, en cuántas el PP queda primero
   {simulaciones}       número de simulaciones del modelo elegido en el selector (4.200 en la media: 600 de cada
                        uno de los siete modelos; 4.000 en cada modelo por separado)
@@ -42,8 +42,6 @@ sensibilidad, movilizacion, cambios.
 [nota] Últimos datos utilizados: encuestas hasta el {ultimo_campo}. Modelo actualizado el {ultimo_modelo}.
 
 ### Resumen {#resumen | Resumen}
-
-[línea] PP y Vox suman los 176 escaños en {ppvox_176} de cada 100 simulaciones. El PP es la fuerza más votada en {pp_mas_votado} de cada 100.
 
 [[resultados]]
 
@@ -146,11 +144,12 @@ simulaciones, no de K0).
 
 [sub] Cada provincia, en el color del partido más votado; las etiquetas dan la provincia y el porcentaje del primero. Pulsa o toca una provincia para ver su reparto; desde ahí se abre su ficha.
 
-[[mapa_masvotado]]
-
 ::: si otro_modelo
 [nota] El mapa por provincias es siempre el de «Nuestra predicción», no el de «{modelo}», elegido arriba.
 :::
+
+[[mapa_masvotado]]
+
 
 === cambio_casas ===
 <!-- Below the poll chart of "El modelo explicado" (inicio.js; Claude, 2026-11-15). Figures from data/cambio_casas.json
