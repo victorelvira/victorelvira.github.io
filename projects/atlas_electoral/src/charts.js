@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.134";
-import { t as tr } from "./i18n.js?v=0.2.134";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.135";
+import { t as tr } from "./i18n.js?v=0.2.135";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
