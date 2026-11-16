@@ -388,17 +388,9 @@ html[data-bs-theme="dark"] .navbar .dropdown-item { color: #cdd6da; }
 html[data-bs-theme="dark"] .navbar .dropdown-item:hover { background-color: #24333b; color: #fff; }
 html[data-bs-theme="dark"] .navbar-toggler { border-color: var(--d-border); }
 
-/* Enlace destacado del navbar: "Data Projects" (pill teal, igual que los chips de keywords) */
-.navbar .nav-link.nav-cta {
-  background: #e4eff0; color: #22646b;
-  border: 1px solid rgba(34,100,107,.22);
-  border-radius: 999px; padding: .35rem .95rem; margin: .1rem .15rem;
-}
-.navbar .nav-link.nav-cta:hover { background: #d4e6e8; color: #184b51; }
-html[data-bs-theme="dark"] .navbar .nav-link.nav-cta {
-  background: var(--d-chip-bg); color: var(--d-chip-text); border-color: #2f454c;
-}
-html[data-bs-theme="dark"] .navbar .nav-link.nav-cta:hover { background: #2a3b43; color: #c7ecf0; }
+/* Enlace destacado del navbar: "Data Projects" — solo color de acento (misma caja que el resto, nada se descuadra). */
+.navbar .nav-link.nav-cta { color: var(--accent, #0e7c86); white-space: nowrap; }
+.navbar .nav-link.nav-cta:hover { color: var(--accent-strong, #0b6169); }
 
 /* Tarjetas y superficies claras */
 html[data-bs-theme="dark"] .card,
