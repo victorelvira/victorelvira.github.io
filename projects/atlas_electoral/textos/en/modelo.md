@@ -136,3 +136,24 @@ Next to each party is a photo of the person who heads its list for Congress on 2
 
 [[lista_fotos]]
 :::
+
+=== conjunta ===
+<!--
+Figures and conditions: see ../modelo.md.
+-->
+[nota] Each cell is a combination of seats {dx} and {dy}; the stronger its colour, the more simulations land there. What is missing up to 350 belongs to the other parties.
+::: si llega
+[nota] Blue: 176 seats or more for {ny} (in {y176} simulations); red: 176 or more for {nx} (in {x176}); grey: neither (in {ninguno}).
+:::
+::: si delante
+[nota] Blue if {ny} wins more seats than {nx}, red if the other way round, grey if they tie: {ny} comes ahead in {y176} simulations, {nx} in {x176} and they tie in {ninguno}.
+:::
+::: si tres
+[nota] Drag to turn it. The height of each bar is how many simulations give that combination (in steps of 3 seats).
+:::
+
+=== tooltip_conjunta ===
+<!--
+Figures: see ../modelo.md.
+-->
+**{nx} {x}**, **{ny} {y}**, the rest {otros}: in {frecuencia} simulations.

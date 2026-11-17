@@ -1,9 +1,10 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, de100, fechaLarga } from "./data.js?v=0.2.150";
-import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.150";
-import { textos, md, INDICE } from "./textos.js?v=0.2.150";
-import { num, partyName, partyColor } from "./encuestas.js?v=0.2.150";
-import { t as tr, loc, sep } from "./i18n.js?v=0.2.150";
+import { load, de100, fechaLarga } from "./data.js?v=0.2.151";
+import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.151";
+import { textos, md, INDICE } from "./textos.js?v=0.2.151";
+import { num, partyName, partyColor } from "./encuestas.js?v=0.2.151";
+import { t as tr, loc, sep } from "./i18n.js?v=0.2.151";
+import { conjunta } from "./conjunta.js?v=0.2.151";
 
 const pc = (x) => `${de100(x)}%`;
 
@@ -29,7 +30,11 @@ export async function renderModelo(app) {
   if (P) {
     // the histogram of the starting blocs (the same groups as the front page's "Forma tu mayoría" starts with)
     const BLOQ = { derecha: ["pp", "vox", "salf"], izquierda: ["psoe", "sumar", "podemos", "erc", "bildu", "pnv", "bng"] };
-    if (DR) histograma($("#pred-hist"))((g) => DR.s[0].map((_, i) => DR.partidos.reduce((a, f, k) => a + (BLOQ[g].includes(f) ? DR.s[k][i] : 0), 0)));
+    if (DR) {
+      const dib = () => histograma($("#pred-hist"))((g) => DR.s[0].map((_, i) => DR.partidos.reduce((a, f, k) => a + (BLOQ[g].includes(f) ? DR.s[k][i] : 0), 0)));
+      dib();
+      conjunta($(".cj-card"), DR, dib);   // tabs: the two histograms, the joint as a heat map and in 3D (src/conjunta.js)
+    }
     prediccion(app, P, T);
   }
   // "Cuánto fiarse" (textos/modelo.md, part "fiarse"): back-test (backtest.py) and sensitivity to the common error (analysis_error_comun.py)
@@ -60,7 +65,7 @@ function prediccionHtml(P, T) {
   const slots = {
     tabla_partidos: `<div class="scrollx"><table><tr><th>${tr("Partido")}</th><th class="num">${tr("Voto, mediana")}</th><th class="num">${tr("Horquilla (90%)")}</th><th class="num">${tr("Escaños, mediana")}</th><th class="num">${tr("Horquilla (90%)")}</th></tr>
       ${parties.map((p) => { const d = P.partidos[p]; return `<tr><td><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</td><td class="num">${num(d.voto.p50)}%</td><td class="num">${tr("{a} a {b}", { a: num(d.voto.p05), b: num(d.voto.p95) })}</td><td class="num">${d.escanos ? d.escanos.p50 : "·"}</td><td class="num">${d.escanos ? tr("{a} a {b}", { a: d.escanos.p05, b: d.escanos.p95 }) : "·"}</td></tr>`; }).join("")}</table></div>`,
-    histograma: '<div class="card chart" id="pred-hist"></div>',
+    histograma: '<div class="card chart cj-card"><div id="pred-hist"></div></div>',
     serie_probabilidad: '<div class="chart" id="pred-prob"></div>',
     serie_escanos: '<div class="chart" id="pred-esc"></div>',
     diario: '<div class="chart" id="pred-dia"></div><div id="pred-dia-t"></div>',

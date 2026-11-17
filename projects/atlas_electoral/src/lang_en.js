@@ -395,5 +395,19 @@ export default {
   "en juego": "in play",
   "PP y Vox llegan a 176": "PP and Vox reach 176",
   "Día": "Day",
-  "Encuestas hasta": "Polls up to"
+  "Encuestas hasta": "Polls up to",
+  "Vista": "View",
+  "Por separado": "Separately",
+  "Juntos": "Together",
+  "En 3D": "In 3D",
+  "Qué grupos": "Which groups",
+  "PP y Vox": "PP and Vox",
+  "Escaños {d}": "Seats {d}",
+  "el PSOE": "PSOE",
+  "el PP": "PP",
+  "de la izquierda": "of the left",
+  "de la derecha": "of the right",
+  "del PSOE": "of PSOE",
+  "del PP": "of PP",
+  "de PP y Vox": "of PP and Vox"
 };

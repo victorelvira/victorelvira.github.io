@@ -151,3 +151,26 @@ Junto a cada partido sale la foto de quien encabeza su candidatura al Congreso e
 
 [[lista_fotos]]
 :::
+
+=== conjunta ===
+<!--
+Debajo de la vista conjunta de los histogramas (src/conjunta.js; Claude, 17-11-2026, a petición de Víctor). Cifras: {nx}, {ny}
+(los dos grupos: "la izquierda", "el PP"), {dx}, {dy} ("de la izquierda", "del PP"), {y176}, {x176}, {ninguno} ("62 de cada
+100"). Condiciones: llega (colores por quién llega a 176), delante (PSOE y PP: por quién saca más), tres (la vista en 3D).
+-->
+[nota] Cada casilla es una combinación de escaños {dx} y {dy}; cuanto más intensa, más simulaciones caen ahí. Lo que falta hasta 350 es del resto de partidos.
+::: si llega
+[nota] Azul: 176 escaños o más para {ny} (en {y176} simulaciones); rojo: 176 o más para {nx} (en {x176}); gris: ninguno de los dos (en {ninguno}).
+:::
+::: si delante
+[nota] Azul si {ny} saca más escaños que {nx}, rojo si es al revés, gris si empatan: {ny} queda por delante en {y176} simulaciones, {nx} en {x176} y empatan en {ninguno}.
+:::
+::: si tres
+[nota] Arrastra para girarlo. La altura de cada barra es cuántas simulaciones dan esa combinación (de 3 en 3 escaños).
+:::
+
+=== tooltip_conjunta ===
+<!--
+Al pasar por una casilla del mapa conjunto. Cifras: {nx}, {ny}, {x}, {y}, {otros} (350 menos los dos), {frecuencia}.
+-->
+**{nx} {x}**, **{ny} {y}**, resto {otros}: en {frecuencia} simulaciones.
