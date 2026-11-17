@@ -1,12 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.144";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.144";
-import { num } from "./encuestas.js?v=0.2.144";
-import { short, pc } from "./provincia.js?v=0.2.144";
-import { textos, md } from "./textos.js?v=0.2.144";
-import { t, loc, deCada } from "./i18n.js?v=0.2.144";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.145";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.145";
+import { num } from "./encuestas.js?v=0.2.145";
+import { short, pc } from "./provincia.js?v=0.2.145";
+import { textos, md } from "./textos.js?v=0.2.145";
+import { t, loc, deCada } from "./i18n.js?v=0.2.145";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -138,7 +138,7 @@ function tarjetasVars(DR) {
   const freq = (t, ok) => t.reduce((a, x) => a + (ok(x) ? 1 : 0), 0) / t.length;
   // the card's line: the median seats ("unos 194 escaños"). Until 2026-11-16 it gave the 90% range, "de 172 a 215", which next to
   // "92%" read as a contradiction (172 is under 176) (Víctor, 2026-11-16)
-  const rango = (x) => t("unos {n} escaños esperados", { n: cuantil(x, 0.5) });   // "esperados": what the figure is (Víctor, 2026-11-17)
+  const rango = (x) => t("({n} escaños esperados)", { n: cuantil(x, 0.5) });   // "esperados": what the figure is (Víctor, 2026-11-17)
   const ppvox = suma(DR, ["pp", "vox"]), pp = suma(DR, ["pp"]), inv = suma(DR, INVESTIDURA), psoe = suma(DR, ["psoe"]);
   const dif = pp.map((x, i) => x - psoe[i]);
   // fourth card (2026-11-17): neither PP+Vox nor the 2023 investiture bloc reaches 176. With every party in the draws this is

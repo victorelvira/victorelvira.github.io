@@ -68,7 +68,7 @@ Shown above the weekly evolution when the chosen model is not the one published 
 <div class="q176">
 <div class="q176-c q176-der q176-bloque" data-q="ppvox"><div class="q176-n">{c_ppvox}</div><div class="q176-t">PP and Vox</div><div class="q176-r">{r_ppvox}</div></div>
 <div class="q176-c q176-izq q176-bloque" data-q="investidura"><div class="q176-n">{c_investidura}</div><div class="q176-t">The 2023 investiture bloc</div><div class="q176-r">{r_investidura}</div></div>
-<div class="q176-c q176-izq q176-bloque" data-q="inv_sin_junts"><div class="q176-n">{c_inv_sin_junts}</div><div class="q176-t">That bloc without Junts or CC</div><div class="q176-r">{r_inv_sin_junts}</div></div>
+<div class="q176-c q176-izq q176-bloque" data-q="inv_sin_junts"><div class="q176-n">{c_inv_sin_junts}</div><div class="q176-t">The investiture bloc without Junts or CC</div><div class="q176-r">{r_inv_sin_junts}</div></div>
 <div class="q176-c q176-der" data-q="pp"><div class="q176-n">{c_pp}</div><div class="q176-t">The PP alone</div><div class="q176-r">{r_pp}</div></div>
 </div>
 

@@ -511,11 +511,12 @@ table.sn-t td.muted { color: var(--ink-3); }
 @media (max-width: 760px) { .q176 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .q176.q176-3, .tb-izq .q176.q176-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }   /* "¿Quién es la fuerza más votada?" */
 /* card colours (Víctor, 2026-11-17): one party, a plain tint of its colour; a bloc, the same tint hatched, as in the bars */
-.q176-c.q176-der { background: color-mix(in srgb, #1d84ce 11%, var(--surface)); border-color: color-mix(in srgb, #1d84ce 35%, var(--surface)); }
-.q176-c.q176-izq { background: color-mix(in srgb, #e30613 9%, var(--surface)); border-color: color-mix(in srgb, #e30613 30%, var(--surface)); }
-.q176-c.q176-vox { background: color-mix(in srgb, #63be21 11%, var(--surface)); border-color: color-mix(in srgb, #63be21 35%, var(--surface)); }
-.q176-c.q176-der.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #1d84ce 14%, var(--surface)) 0 6px, color-mix(in srgb, #1d84ce 5%, var(--surface)) 6px 12px); }
-.q176-c.q176-izq.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #e30613 12%, var(--surface)) 0 6px, color-mix(in srgb, #e30613 4%, var(--surface)) 6px 12px); }
+/* the party colours of the site (meta.json: PP #1d84ce, PSOE #e30613, Vox #4f9e17), stronger than before (Víctor, 2026-11-17) */
+.q176-c.q176-der { background: color-mix(in srgb, #1d84ce 20%, var(--surface)); border-color: color-mix(in srgb, #1d84ce 60%, var(--surface)); }
+.q176-c.q176-izq { background: color-mix(in srgb, #e30613 17%, var(--surface)); border-color: color-mix(in srgb, #e30613 55%, var(--surface)); }
+.q176-c.q176-vox { background: color-mix(in srgb, #4f9e17 20%, var(--surface)); border-color: color-mix(in srgb, #4f9e17 60%, var(--surface)); }
+.q176-c.q176-der.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #1d84ce 26%, var(--surface)) 0 6px, color-mix(in srgb, #1d84ce 10%, var(--surface)) 6px 12px); }
+.q176-c.q176-izq.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #e30613 22%, var(--surface)) 0 6px, color-mix(in srgb, #e30613 8%, var(--surface)) 6px 12px); }
 .q176-c { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; cursor: default; }
 .q176-c:hover { border-color: var(--ink-3); }
 .q176-n { font-family: var(--font-title); font-weight: 600; font-size: 30px; line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--ink); }
