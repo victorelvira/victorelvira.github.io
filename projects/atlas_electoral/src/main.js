@@ -1,22 +1,22 @@
-import { init } from "./data.js?v=0.2.147";
-import { renderMapa } from "./mapa.js?v=0.2.147";
-import { renderPueblo } from "./pueblo.js?v=0.2.147";
-import { renderMiniatura } from "./miniatura.js?v=0.2.147";
-import { renderSimulador } from "./simulador.js?v=0.2.147";
-import { renderEncuestas } from "./encuestas.js?v=0.2.147";
-import { renderHistorico } from "./historico.js?v=0.2.147";
-import { renderModelo } from "./modelo.js?v=0.2.147";
-import { renderInicio } from "./inicio.js?v=0.2.147";
-import { renderHistoria } from "./historia.js?v=0.2.147";
-import { renderComunidad } from "./comunidad.js?v=0.2.147";
-import { renderExplora } from "./explora.js?v=0.2.147";
-import { renderDhondt } from "./dhondt.js?v=0.2.147";
-import { renderProvincia } from "./provincia.js?v=0.2.147";
-import { renderSenado } from "./senado.js?v=0.2.147";
-import { renderVoto } from "./voto.js?v=0.2.147";
-import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.147";
-import { LANG, setView, chrome, t } from "./i18n.js?v=0.2.147";
-import { textos, md, VEDA } from "./textos.js?v=0.2.147";
+import { init } from "./data.js?v=0.2.148";
+import { renderMapa } from "./mapa.js?v=0.2.148";
+import { renderPueblo } from "./pueblo.js?v=0.2.148";
+import { renderMiniatura } from "./miniatura.js?v=0.2.148";
+import { renderSimulador } from "./simulador.js?v=0.2.148";
+import { renderEncuestas } from "./encuestas.js?v=0.2.148";
+import { renderHistorico } from "./historico.js?v=0.2.148";
+import { renderModelo } from "./modelo.js?v=0.2.148";
+import { renderInicio } from "./inicio.js?v=0.2.148";
+import { renderHistoria } from "./historia.js?v=0.2.148";
+import { renderComunidad } from "./comunidad.js?v=0.2.148";
+import { renderExplora } from "./explora.js?v=0.2.148";
+import { renderDhondt } from "./dhondt.js?v=0.2.148";
+import { renderProvincia } from "./provincia.js?v=0.2.148";
+import { renderSenado } from "./senado.js?v=0.2.148";
+import { renderVoto } from "./voto.js?v=0.2.148";
+import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.148";
+import { LANG, setView, chrome, t } from "./i18n.js?v=0.2.148";
+import { textos, md, VEDA } from "./textos.js?v=0.2.148";
 
 // d3's number and date formats follow the language of each view (i18n.js, setView, called by the router)
 

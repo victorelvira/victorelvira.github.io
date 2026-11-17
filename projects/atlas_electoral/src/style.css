@@ -880,3 +880,6 @@ main h3 { font-size: 19px; }
 .q176-c:is(.q176-der, .q176-izq, .q176-vox):not(.q176-bloque) :is(.q176-n, .q176-t, .q176-r) { color: #000; }
 .q176-c.q176-der.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #1d84ce 30%, var(--surface)) 0 6px, color-mix(in srgb, #1d84ce 12%, var(--surface)) 6px 12px); border-color: #1d84ce; }
 .q176-c.q176-izq.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #e30613 26%, var(--surface)) 0 6px, color-mix(in srgb, #e30613 10%, var(--surface)) 6px 12px); border-color: #e30613; }
+.vt-lineas { margin: 10px 0 0; padding-left: 18px; font-size: var(--t-s); line-height: 1.5; }
+.vt-lineas li { margin: 3px 0; }
+

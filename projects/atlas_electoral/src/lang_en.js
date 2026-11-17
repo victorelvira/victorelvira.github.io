@@ -359,5 +359,16 @@ export default {
   "Segunda": "Second",
   "Se lo quitaría a": "It would take it from",
   "De cada 1.000 simulaciones, con 1.000 votos más a ese partido.": "Out of 1,000 simulations, with 1,000 more votes for that party.",
-  "{n} escaños esperados": "{n} seats expected"
+  "{n} escaños esperados": "{n} seats expected",
+  "Un voto decide, 1 entre": "One vote decides, 1 in",
+  "1 entre": "1 in",
+  "menos de 1 entre 200.000": "under 1 in 200,000",
+  "hasta 1 entre 100.000": "up to 1 in 100,000",
+  "hasta 1 entre 50.000": "up to 1 in 50,000",
+  "más de 1 entre 50.000": "over 1 in 50,000",
+  "1 entre {n}": "1 in {n}",
+  "casi nunca": "almost never",
+  "Posibilidad de que un voto a su mejor opción decida un escaño de {b}": "Chance that one vote for its best option decides a seat of {b}",
+  "Para {b}, 1 entre": "For {b}, 1 in",
+  "Para el partido, 1 entre": "For the party, 1 in"
 };

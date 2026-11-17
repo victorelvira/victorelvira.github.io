@@ -6,7 +6,7 @@
 // Interface strings are keyed by their Spanish text: t("Escaños") is "Escaños" in Spanish and lang_en.js["Escaños"] in English.
 // N_() only marks a string for pipeline/check_textos_en.py, for strings stored in a table and passed to t() later.
 // Prose is not here: textos/en/<page>.md beside textos/<page>.md (src/textos.js picks the folder).
-import EN from "./lang_en.js?v=0.2.147";
+import EN from "./lang_en.js?v=0.2.148";
 
 const KEY = "atlas_electoral.lang";
 const LANGS = ["es", "en"];

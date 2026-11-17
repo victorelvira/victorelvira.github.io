@@ -3,12 +3,12 @@
 // worth (electors per seat), the last seat, the heads of the proclaimed lists, 2019 against 2023, the D'Hondt quotients
 // of 2023 and the municipalities. The prose is textos/provincia.md (parts named after each block).
 const d3 = window.d3;
-import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.147";
-import { md } from "./textos.js?v=0.2.147";
-import { fam, famName } from "./charts.js?v=0.2.147";
-import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.147";
-import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.147";
-import { t as tr, deCada, ordinal } from "./i18n.js?v=0.2.147";
+import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.148";
+import { md } from "./textos.js?v=0.2.148";
+import { fam, famName } from "./charts.js?v=0.2.148";
+import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.148";
+import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.148";
+import { t as tr, deCada, ordinal } from "./i18n.js?v=0.2.148";
 
 const f0 = (x) => d3.format(",.0f")(x);   // at call time: the Spanish locale is set after the imports run
 const E23 = "generales_2023-07", E19 = "generales_2019-11";

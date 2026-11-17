@@ -1,6 +1,6 @@
-import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.147";
-import { textos, md, INDICE } from "./textos.js?v=0.2.147";
-import { fam, famName, IDEO, EXTRA, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.147";
+import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.148";
+import { textos, md, INDICE } from "./textos.js?v=0.2.148";
+import { fam, famName, IDEO, EXTRA, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.148";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
 export function dhondt(lists, seats, validos, threshold = 0.03, detail = null) {
