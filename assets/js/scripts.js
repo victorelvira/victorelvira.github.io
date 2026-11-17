@@ -82,7 +82,7 @@ function applyLang(lang) {
 }
 
 // Version compartida para cache-busting de la navbar/footer (súbela al cambiar nav/footer).
-const __ASSET_VER = 'i18n13';
+const __ASSET_VER = 'i18n14';
 const __navbarPromise = fetch('/nav.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('nav.html ' + r.status)));
 const __footerPromise = fetch('/footer.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('footer.html ' + r.status)));
 
@@ -145,6 +145,48 @@ function injectFooter() {
 
 // Inyecta en cuanto el DOM esté listo (los placeholders ya existen). Si el script
 // se cargara tarde (DOM ya parseado), inyecta de inmediato.
+// --- Idiomas de cada proyecto: FUENTE ÚNICA = data-flang ------------------
+// Cada tarjeta [data-flang] con un .lang-badge muestra sus códigos en mayúscula,
+// en el orden del atributo: data-flang="es en" -> "ES · EN". El texto del badge
+// NO se escribe a mano (así nunca puede contradecir a data-flang, que es lo que
+// usan también los filtros). Para cambiar los idiomas de un proyecto, edita solo
+// su data-flang.
+function renderLangBadges(root) {
+    (root || document).querySelectorAll('[data-flang] .lang-badge').forEach(function (badge) {
+        var card = badge.closest('[data-flang]');
+        if (!card) return;
+        var codes = (card.getAttribute('data-flang') || '').split(/\s+/).filter(Boolean);
+        badge.textContent = codes.map(function (c) { return c.toUpperCase(); }).join(' · ');
+    });
+}
+
+// --- Escaparate de la portada: FUENTE ÚNICA = personal_projects.html -------
+// La home no duplica las tarjetas: clona en caliente las marcadas data-featured
+// en personal_projects.html (ordenadas por ese número) dentro de #featured-grid.
+// Así editas cada proyecto UNA sola vez (allí) y la portada se actualiza sola.
+// Idioma y badges se re-aplican sobre las tarjetas clonadas; applyLang re-traduce
+// todo el documento al cambiar EN/ES, por lo que no hace falta re-enganchar nada.
+function loadFeaturedProjects(gridId, source) {
+    var grid = document.getElementById(gridId || 'featured-grid');
+    if (!grid) return;
+    fetch((source || '/personal_projects.html') + '?v=' + __ASSET_VER)
+        .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error('projects ' + r.status)); })
+        .then(function (html) {
+            var doc = new DOMParser().parseFromString(html, 'text/html');
+            var cards = Array.prototype.slice.call(doc.querySelectorAll('[data-featured]'));
+            cards.sort(function (a, b) {
+                return (parseInt(a.getAttribute('data-featured'), 10) || 0) -
+                       (parseInt(b.getAttribute('data-featured'), 10) || 0);
+            });
+            if (!cards.length) return;
+            grid.innerHTML = '';
+            cards.forEach(function (card) { grid.appendChild(document.importNode(card, true)); });
+            translateTree(grid, window.__lang);
+            renderLangBadges(grid);
+        })
+        .catch(function (e) { console.error('Featured projects:', e); });
+}
+
 function injectBackToTop() {
     if (document.getElementById('to-top')) return;
     var b = document.createElement('button');
@@ -169,6 +211,8 @@ function __onReady() {
     // Traducir el contenido propio de la página (la navbar/footer se traducen al inyectarse)
     document.documentElement.setAttribute('lang', window.__lang);
     translateTree(document, window.__lang);
+    renderLangBadges(document);          // badges de idioma desde data-flang
+    loadFeaturedProjects('featured-grid'); // escaparate de la home (si existe #featured-grid)
 }
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', __onReady);
