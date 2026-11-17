@@ -1,12 +1,12 @@
 const d3 = window.d3;
-import { load, showTip, hideTip } from "./data.js?v=0.2.142";
-import { textos, md, INDICE } from "./textos.js?v=0.2.142";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.142";
-import { t as tr, lang, deCada, ordinal } from "./i18n.js?v=0.2.142";
+import { load, showTip, hideTip } from "./data.js?v=0.2.143";
+import { textos, md, INDICE } from "./textos.js?v=0.2.143";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.143";
+import { t as tr, lang, deCada, ordinal } from "./i18n.js?v=0.2.143";
 // the province card's blocks (results per list, electors per seat, last seat, D'Hondt, 2019 vs 2023, municipalities)
-import { ficha, municipios, bocadillos } from "./provincia_ficha.js?v=0.2.142";
+import { ficha, municipios, bocadillos } from "./provincia_ficha.js?v=0.2.143";
 // the province shapes, names, colours and the "Más votado" colouring are shared with the front page's map (masvotado.js)
-import { short, pc, nm, frecuencia, cssVar, colorVoto, nombre, pctVoto, rampa, provincias, resultados23, masVotado } from "./masvotado.js?v=0.2.142";
+import { short, pc, nm, frecuencia, cssVar, colorVoto, nombre, pctVoto, rampa, provincias, resultados23, masVotado } from "./masvotado.js?v=0.2.143";
 export { short, pc };   // imported from here by resultados.js
 const de100txt = (p) => (p >= 0.995 ? tr("más de 99 de cada 100") : p < 0.01 ? tr("menos de 1 de cada 100") : deCada(Math.round(p * 100), 100));   // frequencies, not percentages (Víctor)
 export const pct = (p) => (p >= 0.995 ? ">99%" : p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
@@ -25,7 +25,7 @@ export function pugnas(D, n) {
     .sort((a, b) => enJuego(b.p) - enJuego(a.p) || a.d - b.d).slice(0, n).map(({ p }) => p);   // most seats in the air first
 }
 export const pugnaVars = (p) => ({ provincia: `<a href="#provincia/${p.prov}">${p.n}</a>`, escanos: p.esc, escanos_palabra: p.esc === 1 ? tr("escaño") : tr("escaños"), en_juego: enJuego(p),
-  ultimo_de: short(p.ultimo[0][0], p.prov), primera_fuera: short(p.ultimo[0][1], p.prov), frecuencia: frecuencia(p.ultimo[0][2]), margen: p.margen != null ? f0(p.margen) : null });
+  ultimo_de: short(p.ultimo[0][0], p.prov), primera_fuera: short(p.ultimo[0][1], p.prov), frecuencia: frecuencia(p.ultimo[0][2]), margen: p.margen != null ? f0(Math.round(p.margen / 100) * 100) : null });
 export const pugnasHtml = (D, n, src, page) => pugnas(D, n).map((p) => md(src, { vars: pugnaVars(p), flags: { margen: p.margen != null }, page }).html).join("");
 // "Dónde se decide" (Provincias): a party's k-th seat is secured when it wins at least k seats in 9 of every 10 draws
 // (pk[k-1] >= 0.9); the seats in play of a province are the ones no party has secured that way
@@ -199,7 +199,7 @@ export async function renderProvincia(app, args = []) {
       cambio: dEsc ? ` (${dEsc > 0 ? tr("{n} más que en 2023", { n: dEsc === 1 ? tr("uno") : dEsc }) : tr("{n} menos que en 2023", { n: dEsc === -1 ? tr("uno") : -dEsc })})` : "",
       reparto: reparto(a.a, p.prov), prob_reparto: de100txt(a.p),
       siguientes: `${b ? ` ${tr("Le sigue un reparto en que {f}", { f: frase(a.a, b.a, p.prov) })} (${pct(b.p)})` : ""}${c ? ` ${tr("y otro en que {f}", { f: frase(a.a, c.a, p.prov) })} (${pct(c.p)})` : ""}${b ? "." : ""}`,
-      ultimo_de: ult ? short(ult[0], p.prov) : null, primera_fuera: ult ? short(ult[1], p.prov) : null, prob_ultimo: ult ? de100txt(ult[2]) : null, margen: p.margen != null ? f0(p.margen) : null,
+      ultimo_de: ult ? short(ult[0], p.prov) : null, primera_fuera: ult ? short(ult[1], p.prov) : null, prob_ultimo: ult ? de100txt(ult[2]) : null, margen: p.margen != null ? f0(Math.round(p.margen / 100) * 100) : null,
     };
     const slots = {
       casillas,

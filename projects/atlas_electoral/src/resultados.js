@@ -1,12 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.142";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.142";
-import { num } from "./encuestas.js?v=0.2.142";
-import { short, pc } from "./provincia.js?v=0.2.142";
-import { textos, md } from "./textos.js?v=0.2.142";
-import { t, loc, deCada } from "./i18n.js?v=0.2.142";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.143";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.143";
+import { num } from "./encuestas.js?v=0.2.143";
+import { short, pc } from "./provincia.js?v=0.2.143";
+import { textos, md } from "./textos.js?v=0.2.143";
+import { t, loc, deCada } from "./i18n.js?v=0.2.143";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -213,7 +213,9 @@ function hemiciclo(el, est, PR, T) {
 // Ranges per party ("Escaños por partido" and "Voto estimado"): a dot at the central estimate and a band from the 5th
 // to the 95th percentile of the simulations; rows with `avg` also get a tick at the simple poll average.
 function escanosFilas(PR) {
-  const rows = Object.entries(PR.partidos).filter(([, d]) => d.escanos).map(([f, d]) => ({ f, c: d.escanos.p50, lo: d.escanos.p05, hi: d.escanos.p95 }));
+  // the dot is the central scenario (the seats of "Forma tu mayoría" and the hemicycle), so a party has one figure on the page;
+  // until 2026-11-17 it was the median, which can differ by one (PP 129 here, 130 there)
+  const rows = Object.entries(PR.partidos).filter(([, d]) => d.escanos).map(([f, d]) => ({ f, c: PR.central?.[f] ?? d.escanos.p50, lo: d.escanos.p05, hi: d.escanos.p95 }));
   for (const [f, d] of Object.entries(PR.otros_escanos ?? {})) rows.push({ f, c: Math.round(d.media), lo: d.p05, hi: d.p95 });
   return rows.filter((r) => r.hi >= 1).sort((a, b) => b.c - a.c || b.hi - a.hi);
 }

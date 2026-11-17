@@ -1,21 +1,20 @@
 // The reader's language. Spanish is the site's language and its default; English is a layer on top, phase 1 (2026-11-15):
-// the 29N pages only (front page, Modelo, Provincias, Senado), listed in EN_VIEWS. Precedence: ?lang= in the address, then
-// the reader's last choice (localStorage), else Spanish (the browser's language is not used). This departs
+// the 29N pages only (front page, Modelo, Provincias, Senado, Tu voto), listed in EN_VIEWS. English only when the address says
+// ?lang=en; otherwise Spanish, always (Víctor, 2026-11-17: "español por defecto"; until then the last choice was remembered in
+// localStorage, so a reader who once pressed EN kept getting English). The browser's language is not used. This departs
 // from the family default (English last) on purpose: declared in chassis.json.
 // Interface strings are keyed by their Spanish text: t("Escaños") is "Escaños" in Spanish and lang_en.js["Escaños"] in English.
 // N_() only marks a string for pipeline/check_textos_en.py, for strings stored in a table and passed to t() later.
 // Prose is not here: textos/en/<page>.md beside textos/<page>.md (src/textos.js picks the folder).
-import EN from "./lang_en.js?v=0.2.142";
+import EN from "./lang_en.js?v=0.2.143";
 
 const KEY = "atlas_electoral.lang";
 const LANGS = ["es", "en"];
-const stored = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
-const store = (v) => { try { localStorage.setItem(KEY, v); } catch { /* private window: the address still carries it */ } };
 const fromUrl = () => new URLSearchParams(location.search).get("lang");
 function choose() {
-  const q = fromUrl(), s = stored();
+  const q = fromUrl();
   if (LANGS.includes(q)) return q;
-  if (LANGS.includes(s)) return s;
+  try { localStorage.removeItem(KEY); } catch { /* nothing stored */ }   // a choice remembered before 2026-11-17 no longer counts
   return "es";   // no browser detection (2026-11-15): Víctor's own browser is en-GB, and the site is Spanish unless the reader asks
 }
 /** The reader's language, for the whole visit. */
@@ -118,16 +117,9 @@ export function chrome() {
     if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
     a.onclick = (ev) => {
       ev.preventDefault();
-      store(a.dataset.l);
       const u = new URL(location.href);
       u.searchParams.set("lang", a.dataset.l);
       location.assign(u.href);
     };
   });
-  // an English reader who arrived without ?lang (stored choice or browser) gets it in the address, so a copied link keeps it
-  if (LANG === "en" && fromUrl() !== "en") {
-    const u = new URL(location.href);
-    u.searchParams.set("lang", "en");
-    history.replaceState(history.state, "", u.href);
-  }
 }
