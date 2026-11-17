@@ -882,4 +882,6 @@ main h3 { font-size: 19px; }
 .q176-c.q176-izq.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #e30613 26%, var(--surface)) 0 6px, color-mix(in srgb, #e30613 10%, var(--surface)) 6px 12px); border-color: #e30613; }
 .vt-lineas { margin: 10px 0 0; padding-left: 18px; font-size: var(--t-s); line-height: 1.5; }
 .vt-lineas li { margin: 3px 0; }
+.vt-noche { display: flex; flex-direction: column; gap: 4px; }
+.vt-noche .seg { -webkit-mask-image: none; mask-image: none; overflow: visible; flex-wrap: wrap; }
 

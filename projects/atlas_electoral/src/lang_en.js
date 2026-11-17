@@ -370,5 +370,12 @@ export default {
   "casi nunca": "almost never",
   "Posibilidad de que un voto a su mejor opción decida un escaño de {b}": "Chance that one vote for its best option decides a seat of {b}",
   "Para {b}, 1 entre": "For {b}, 1 in",
-  "Para el partido, 1 entre": "For the party, 1 in"
+  "Para el partido, 1 entre": "For the party, 1 in",
+  "Cómo crees que irá la noche": "How do you think the night will go",
+  "sin suponer nada": "no assumption",
+  "bien para {b}": "well for {b}",
+  "como se espera": "as expected",
+  "mal para {b}": "badly for {b}",
+  "ninguno": "none",
+  "{e} (lo gana en {f} simulaciones)": "{e} (won in {f} simulations)"
 };

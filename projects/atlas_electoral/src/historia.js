@@ -1,9 +1,9 @@
-import { renderMapa } from "./mapa.js?v=0.2.148";
-import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.148";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.148";
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.148";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.148";
-import { textos, md, INDICE } from "./textos.js?v=0.2.148";
+import { renderMapa } from "./mapa.js?v=0.2.149";
+import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.149";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.149";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.149";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.149";
+import { textos, md, INDICE } from "./textos.js?v=0.2.149";
 
 export async function renderHistoria(app) {
   const [S, G, E, dh, geo, PR, CI] = await Promise.all([load("series.json"), load("generales_encuestas.json"), load("encuestas.json"), load("dhondt.json"),

@@ -1,13 +1,13 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.148";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.148";
-import { projectFromPolls } from "./simulador.js?v=0.2.148";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.148";
-import { pugnasHtml } from "./provincia.js?v=0.2.148";
-import { parlamento } from "./parlamento.js?v=0.2.148";
-import { textos, md, INDICE } from "./textos.js?v=0.2.148";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.148";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.148";
-import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.148";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.149";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.149";
+import { projectFromPolls } from "./simulador.js?v=0.2.149";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.149";
+import { pugnasHtml } from "./provincia.js?v=0.2.149";
+import { parlamento } from "./parlamento.js?v=0.2.149";
+import { textos, md, INDICE } from "./textos.js?v=0.2.149";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.149";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.149";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.149";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 

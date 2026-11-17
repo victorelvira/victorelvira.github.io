@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.148";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.148";
-import { getGeo, rewind } from "./mapa.js?v=0.2.148";
-import { textos, md } from "./textos.js?v=0.2.148";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.148";
-import { t as tr, N_, fix, deCada, lang } from "./i18n.js?v=0.2.148";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.149";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.149";
+import { getGeo, rewind } from "./mapa.js?v=0.2.149";
+import { textos, md } from "./textos.js?v=0.2.149";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.149";
+import { t as tr, N_, fix, deCada, lang } from "./i18n.js?v=0.2.149";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 // the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a
@@ -555,9 +555,12 @@ export const PESO_ART = { izquierda: N_("la izquierda"), derecha: N_("la derecha
 const MIL = () => tr("1.000");   // peso_voto.json's bundle (votos) is 1,000 votes; written with the language's thousands mark
 export const deCadaMil = (x) => { const n = Math.round(x * 1000); return n >= 1 ? deCada(n, MIL()) : x > 0 ? tr("menos de 1 de cada 1.000") : tr("ninguna"); };
 // the options of the bloc in one province, best first: f, g (seat for the bloc), p (seat for the party), losers outside the bloc
-export function opcionesPeso(PW, prov, at, bloque) {
+// tercio: null for every draw, or 0-2 for one third of the draws by the national lead of the left (peso_voto.json "e": 0 the worst
+// third for the left, 2 the best); the "Tu voto" tab maps "la noche va bien / como se espera / mal" for the chosen bloc onto it
+export function opcionesPeso(PW, prov, at, bloque, tercio = null) {
   const grupo = grupoDe(at), d = PW.provincias[prov] ?? {};
-  return Object.entries(d).filter(([f, x]) => grupo(f, prov) === bloque && (x.v >= 1 || x.p > 0)).map(([f, x]) => {
+  return Object.entries(d).filter(([f, x]) => grupo(f, prov) === bloque && (x.v >= 1 || x.p > 0)).map(([f, x0]) => {
+    const x = tercio == null || !x0.e ? x0 : { ...x0.e[tercio], v: x0.v };
     const fuera = Object.entries(x.a).filter(([l]) => grupo(l, prov) !== bloque);
     const dentro = Object.entries(x.a).filter(([l]) => grupo(l, prov) === bloque && l !== f).sort((u, w) => w[1] - u[1]);
     return { f, p: x.p, v: x.v, g: d3.sum(fuera, (e) => e[1]), quita: fuera.filter((e) => e[1] >= 0.0005).map((e) => e[0]),
