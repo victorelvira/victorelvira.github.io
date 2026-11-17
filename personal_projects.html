@@ -10,41 +10,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
-    <link href="assets/css/styles.css?v=i18n11" rel="stylesheet">
+    <link href="assets/css/styles.css?v=i18n12" rel="stylesheet">
 
     <!-- JS -->
-    <script src="assets/js/scripts.js?v=i18n11"></script>
+    <script src="assets/js/scripts.js?v=i18n12"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <style>
-      .project-card{
-        height: 100%;
-        border: 1px solid #e5e8ec;
-        border-radius: .6rem;
-        overflow: hidden;
-        transition: transform .15s ease, box-shadow .15s ease;
-      }
-      .project-card:hover{
-        transform: translateY(-4px);
-        box-shadow: 0 .6rem 1.4rem rgba(44,62,80,.18);
-      }
-      .project-thumb{
-        height: 120px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-      }
-      .project-thumb i{ font-size: 2.8rem; opacity: .95; }
-      /* Miniaturas = imagen OG del proyecto (1200x630). Se muestran COMPLETAS
-         (sin recorte), usando su misma proporcion, para que se lean bien. */
-      .project-thumb.og{ height: auto; aspect-ratio: 1200 / 630; background-size: cover; background-position: center; }
-      .lang-switch{ font-size: .8rem; }
-      .lang-switch .active{ font-weight: 700; text-decoration: underline; }
-      .project-card .card-title{ margin-bottom: .35rem; }
-      .lang-badge{ font-size: .68rem; letter-spacing: .03em; }
-      /* que toda la tarjeta sea clicable pero el título mantenga su color */
-      .project-card .stretched-link{ color: inherit; text-decoration: none; }
+      /* Las tarjetas de proyecto (.project-card/.project-thumb/.lang-badge) viven ahora en assets/css/styles.css (global), para que el escaparate de la home las reutilice. */
 
       /* Filtros de proyectos (idioma / tema / tipo) */
       .pp-filters{ display:flex; flex-direction:column; gap:.6rem; margin-bottom:.25rem; }
@@ -256,43 +229,19 @@
             </div>
         </div>
 
-    </div>
-
-    <!-- "Experimental" es igual en ES/EN: un solo h2 neutro (sin data-lang). -->
-    <h2 class="mt-5 mb-3" id="pp-exp-title">Experimental</h2>
-
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4" id="pp-grid-exp">
-
-        <!-- Planes de Cantabria -->
-        <div class="col" data-flang="es" data-theme="cantabria" data-type="ongoing">
+        <!-- Gentilicios de España -->
+        <div class="col" data-flang="es" data-theme="language" data-type="ongoing">
             <div class="card project-card">
-                <div class="project-thumb" style="background:#18BC9C;">
-                    <i class="fa-solid fa-calendar-days"></i>
+                <div class="project-thumb" style="background:#B5562B;">
+                    <i class="fa-solid fa-map-location-dot"></i>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Planes de Cantabria
+                    <h5 class="card-title">Gentilicios de España
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted" data-lang="en">Events across Cantabria: festivals, concerts, theatre, and sport.</p>
-                    <p class="card-text text-muted" data-lang="es" hidden>Eventos en Cantabria: fiestas, conciertos, teatro y deporte.</p>
-                    <a href="/projects/fiestas_cantabria.html" class="stretched-link" aria-label="Abrir Planes de Cantabria"></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Frontones -->
-        <div class="col" data-flang="es" data-theme="sports cantabria" data-type="ongoing">
-            <div class="card project-card">
-                <div class="project-thumb" style="background:#3498DB;">
-                    <i class="fa-solid fa-table-tennis-paddle-ball"></i>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Frontones
-                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
-                    </h5>
-                    <p class="card-text text-muted" data-lang="en">Map of Basque-pelota courts in Cantabria and the Basque Country.</p>
-                    <p class="card-text text-muted" data-lang="es" hidden>Mapa de frontones en Cantabria y el País Vasco.</p>
-                    <a href="/projects/frontones.html" class="stretched-link" aria-label="Abrir Frontones"></a>
+                    <p class="card-text text-muted" data-lang="en">Demonyms of Spain, on an interactive map.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Gentilicios de España, en un mapa interactivo.</p>
+                    <a href="/projects/gentilicios.html" class="stretched-link" aria-label="Abrir Gentilicios de España"></a>
                 </div>
             </div>
         </div>
@@ -314,24 +263,45 @@
             </div>
         </div>
 
-        <!-- Gentilicios de España -->
-        <div class="col" data-flang="es" data-theme="language" data-type="ongoing">
+    </div>
+
+    <!-- ───────── NIVEL C · borradores ocultos ─────────
+         Estos proyectos NO se muestran en la página ni entran en los filtros.
+         Para publicar uno: saca su <div class="col">…</div> de este comentario
+         y pégalo arriba, dentro de <div id="pp-grid-main">. -->
+    <!-- OCULTO
+        <div class="col" data-flang="es" data-theme="cantabria" data-type="ongoing">
             <div class="card project-card">
-                <div class="project-thumb" style="background:#B5562B;">
-                    <i class="fa-solid fa-map-location-dot"></i>
+                <div class="project-thumb" style="background:#18BC9C;">
+                    <i class="fa-solid fa-calendar-days"></i>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Gentilicios de España
+                    <h5 class="card-title">Planes de Cantabria
                         <span class="badge bg-secondary lang-badge align-middle">ES</span>
                     </h5>
-                    <p class="card-text text-muted" data-lang="en">Demonyms of Spain, on an interactive map.</p>
-                    <p class="card-text text-muted" data-lang="es" hidden>Gentilicios de España, en un mapa interactivo.</p>
-                    <a href="/projects/gentilicios.html" class="stretched-link" aria-label="Abrir Gentilicios de España"></a>
+                    <p class="card-text text-muted" data-lang="en">Events across Cantabria: festivals, concerts, theatre, and sport.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Eventos en Cantabria: fiestas, conciertos, teatro y deporte.</p>
+                    <a href="/projects/fiestas_cantabria.html" class="stretched-link" aria-label="Abrir Planes de Cantabria"></a>
                 </div>
             </div>
         </div>
 
-    </div>
+        <div class="col" data-flang="es" data-theme="sports cantabria" data-type="ongoing">
+            <div class="card project-card">
+                <div class="project-thumb" style="background:#3498DB;">
+                    <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Frontones
+                        <span class="badge bg-secondary lang-badge align-middle">ES</span>
+                    </h5>
+                    <p class="card-text text-muted" data-lang="en">Map of Basque-pelota courts in Cantabria and the Basque Country.</p>
+                    <p class="card-text text-muted" data-lang="es" hidden>Mapa de frontones en Cantabria y el País Vasco.</p>
+                    <a href="/projects/frontones.html" class="stretched-link" aria-label="Abrir Frontones"></a>
+                </div>
+            </div>
+        </div>
+    -->
 </div>
 
 <!-- Footer (inyectado por scripts.js) -->

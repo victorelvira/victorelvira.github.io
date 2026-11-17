@@ -9,7 +9,7 @@
             
 
             <!-- Custom JS -->
-            <script src="assets/js/scripts.js?v=i18n11"></script> 
+            <script src="assets/js/scripts.js?v=i18n12"></script> 
             <!-- Bootstrap 5 CSS -->
             <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
             <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
 
             <!-- Custom CSS (at the end to overwrite if needed)-->
-            <link href="assets/css/styles.css?v=i18n11" rel="stylesheet">
+            <link href="assets/css/styles.css?v=i18n12" rel="stylesheet">
 
             <!-- FAVICON -->
             <!-- Primary Favicon -->
@@ -210,6 +210,49 @@
             </div>
                                     
         </header>
+
+        <!-- Featured Data Projects (escaparate de portada; se quita comentando este <section>) -->
+        <section class="container pt-4 pb-2" id="featured-projects">
+            <div class="d-flex align-items-baseline justify-content-between mb-3">
+                <h3 class="awards-h mb-0" data-lang="en">Data Projects</h3><h3 class="awards-h mb-0" data-lang="es" hidden>Proyectos de datos</h3>
+                <a href="/personal_projects.html" class="nav-cta text-decoration-none fw-medium"><span data-lang="en">See all →</span><span data-lang="es" hidden>Ver todos →</span></a>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card project-card h-100">
+                        <div class="project-thumb og" style="background-color:#181410; background-image:url('/projects/artatlas/og.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Interactive Atlas of Painting</h5>
+                            <p class="card-text text-muted" data-lang="en">Masterpieces of the great painters on interactive maps and timelines of works, painters, and museums.</p>
+                            <p class="card-text text-muted" data-lang="es" hidden>Obras maestras de los grandes pintores en mapas y líneas de tiempo interactivos de obras, pintores y museos.</p>
+                            <a href="/projects/artatlas.html" class="stretched-link" aria-label="Open the Interactive Atlas of Painting"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card project-card h-100">
+                        <div class="project-thumb og" style="background-color:#16130e; background-image:url('/projects/atlas_electoral/og/og.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Atlas Electoral</h5>
+                            <p class="card-text text-muted" data-lang="en">Every Spanish election since 1977, municipality by municipality, and all the polls on the road to the 29 November 2026 general election.</p>
+                            <p class="card-text text-muted" data-lang="es" hidden>Todas las elecciones en España desde 1977, municipio a municipio, y todas las encuestas camino de las generales del 29 de noviembre de 2026.</p>
+                            <a href="/projects/atlas_electoral.html" class="stretched-link" aria-label="Open the Atlas Electoral"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card project-card h-100">
+                        <div class="project-thumb og" style="background-color:#181410; background-image:url('/projects/romechurches/og.jpg');"></div>
+                        <div class="card-body">
+                            <h5 class="card-title">Churches of Rome</h5>
+                            <p class="card-text text-muted" data-lang="en">Every church in Rome, standing or lost, and what each one holds: the art inside, the people buried there, its saint, its cardinal title.</p>
+                            <p class="card-text text-muted" data-lang="es" hidden>Todas las iglesias de Roma, en pie o desaparecidas, y lo que guarda cada una: el arte que contiene, quién está enterrado, su santo, su título cardenalicio.</p>
+                            <a href="/projects/romechurches.html" class="stretched-link" aria-label="Open Churches of Rome"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Main Content Section -->
         <section id="main-content" class="container">
