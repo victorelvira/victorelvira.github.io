@@ -103,6 +103,22 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 
 [nota] Con las simulaciones de «Nuestra predicción», sea cual sea el modelo elegido arriba. En cada provincia, los escaños que más veces gana algún partido, tantos como reparte. Los votos de margen son los de la simulación mediana, en votos de 2023.
 
+### Opciones de escaño por partido {#opciones | Opciones}
+
+[sub] En el hemiciclo, cada escaño va a su partido más probable. Aquí se cuenta cada escaño que un partido gana en al menos 1 de cada 4 simulaciones, aunque lo pierda más veces de las que lo gana. Un escaño disputado aparece una vez por cada partido que puede ganarlo, así que la suma pasa de 350.
+
+[[opciones]]
+
+[nota] Casi seguros: los gana en más de 999 de cada 1.000 simulaciones; probables, en más de 95 de cada 100; en juego, entre 25 y 95 de cada 100. Toca una barra para ver en qué provincias están.
+
+### Juega a simular la noche {#simula | Simula}
+
+[sub] Una probabilidad se entiende mejor contando noches. Aquí hay tres escaños de verdad: uno casi seguro, uno probable y uno en juego. En cada noche simulada, cada escaño se gana o se pierde con la frecuencia que le da el modelo. Simula una noche, diez o cien, y cuenta cuántas veces se pierde cada uno.
+
+[[simula]]
+
+[nota] Cada escaño se sortea por separado. En el modelo, en cambio, los escaños se mueven juntos: una mala noche para un partido le quita escaños en muchas provincias a la vez.
+
 [[mapa_portada]]
 :::
 
@@ -191,4 +207,21 @@ quien.
 :::
 ::: si quien
 [nota] Cuando lo pierde, se lo lleva: {quien}.
+:::
+
+=== opciones_resumen ===
+<!--
+"Opciones de escaño por partido" (Claude, 17-11-2026, a petición de Víctor). Cifras: {seguros}, {probables}, {juego} (opciones de
+cada clase), {total} (su suma), {provincias} ("Madrid (10), Barcelona (9)": las de más opciones en juego).
+-->
+Hay **{seguros}** opciones casi seguras, **{probables}** probables y **{juego}** en juego: {total} en total, más que los 350 escaños porque varios partidos pueden ganar el mismo. Más opciones en juego: {provincias}.
+
+=== tooltip_opciones ===
+<!--
+Al tocar una barra de "Opciones de escaño por partido". Cifras: {partido}, {clase} ("en juego"), {n}, {lista} (provincias y
+escaños, o provincias y cuántos). Condición: lista.
+-->
+**{partido}**, {clase}: {n}.
+::: si lista
+[nota] {lista}
 :::

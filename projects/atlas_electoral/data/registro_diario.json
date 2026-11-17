@@ -1,0 +1,77 @@
+{
+ "_doc": "The published forecast (default model) as it stood each day, from data/processed/registro_diario.csv (pipeline/registro_diario.py); cambio: the model changed that day.",
+ "dias": [
+  {
+   "fecha": "2026-11-15",
+   "ultimo_campo": "2026-11-13",
+   "n_encuestas": 532,
+   "p_ppvox_176": 0.93,
+   "p_pp_primero": 0.768,
+   "esc": {
+    "pp": 128.0,
+    "psoe": 112.0,
+    "vox": 67.0,
+    "sumar": 12.0,
+    "podemos": 0.0,
+    "salf": 0.0
+   },
+   "voto": {
+    "pp": 30.7,
+    "psoe": 27.5,
+    "vox": 18.9,
+    "sumar": 6.9,
+    "podemos": 1.8,
+    "salf": 1.7
+   },
+   "cambio": false
+  },
+  {
+   "fecha": "2026-11-16",
+   "ultimo_campo": "2026-11-15",
+   "n_encuestas": 536,
+   "p_ppvox_176": 0.925,
+   "p_pp_primero": 0.771,
+   "esc": {
+    "pp": 129.0,
+    "psoe": 113.0,
+    "vox": 66.0,
+    "sumar": 12.0,
+    "podemos": 0.0,
+    "salf": 0.0
+   },
+   "voto": {
+    "pp": 30.9,
+    "psoe": 27.6,
+    "vox": 18.6,
+    "sumar": 6.8,
+    "podemos": 1.7,
+    "salf": 1.7
+   },
+   "cambio": false
+  },
+  {
+   "fecha": "2026-11-17",
+   "ultimo_campo": "2026-11-16",
+   "n_encuestas": 546,
+   "p_ppvox_176": 0.933,
+   "p_pp_primero": 0.781,
+   "esc": {
+    "pp": 129.0,
+    "psoe": 113.0,
+    "vox": 66.0,
+    "sumar": 12.0,
+    "podemos": 0.0,
+    "salf": 0.0
+   },
+   "voto": {
+    "pp": 31.0,
+    "psoe": 27.6,
+    "vox": 18.7,
+    "sumar": 6.9,
+    "podemos": 1.6,
+    "salf": 1.8
+   },
+   "cambio": true
+  }
+ ]
+}

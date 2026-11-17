@@ -53,6 +53,12 @@ Checked by pipeline/check_textos_en.py.
 </div>
 :::
 
+#### Our forecast, day by day
+
+[nota] What the front page said each day since 15 November, as published: this series is never recomputed, unlike the weekly one above (redone with today's model). An asterisk marks the days the model changed, not only the polls. It freezes with the blackout, on 23 November.
+
+[[diario]]
+
 ### Does it get it right?
 
 [[pred-bt]]

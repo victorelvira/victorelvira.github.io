@@ -68,6 +68,12 @@ No hay condiciones (::: si ...) en esta página.
 </div>
 :::
 
+#### Nuestra predicción, día a día
+
+[nota] Lo que dijo la portada cada día desde el 15 de noviembre, tal cual se publicó: esta serie no se recalcula, la semanal de arriba sí (se rehace con el modelo de hoy). Un asterisco marca los días en que cambió el modelo, no solo las encuestas. Se congela con la veda, el 23 de noviembre.
+
+[[diario]]
+
 ### ¿Acierta?
 
 [[pred-bt]]

@@ -1,9 +1,9 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, de100, fechaLarga } from "./data.js?v=0.2.149";
-import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.149";
-import { textos, md, INDICE } from "./textos.js?v=0.2.149";
-import { num, partyName, partyColor } from "./encuestas.js?v=0.2.149";
-import { t as tr, loc, sep } from "./i18n.js?v=0.2.149";
+import { load, de100, fechaLarga } from "./data.js?v=0.2.150";
+import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.150";
+import { textos, md, INDICE } from "./textos.js?v=0.2.150";
+import { num, partyName, partyColor } from "./encuestas.js?v=0.2.150";
+import { t as tr, loc, sep } from "./i18n.js?v=0.2.150";
 
 const pc = (x) => `${de100(x)}%`;
 
@@ -63,6 +63,7 @@ function prediccionHtml(P, T) {
     histograma: '<div class="card chart" id="pred-hist"></div>',
     serie_probabilidad: '<div class="chart" id="pred-prob"></div>',
     serie_escanos: '<div class="chart" id="pred-esc"></div>',
+    diario: '<div class="chart" id="pred-dia"></div><div id="pred-dia-t"></div>',
   };
   return md(T.prediccion, { vars, slots, page: "modelo" }).html;
 }
@@ -96,6 +97,16 @@ function prediccion(el, P, T) {
       { height: 220, yMin: 0, yMax: 1 });
     lines(el.querySelector("#pred-esc"), Object.keys(P.partidos).filter((p) => w.at(-1).esc[p]?.[1] >= 1).map((p) => ({ id: p, name: partyName(p, "2026"), color: partyColor(p),
       values: w.map((x) => ({ date: dt(x.f), v: x.esc[p]?.[1] ?? null, label: x.f })) })), { height: 220, fmt: (v) => tr("{r} escaños", { r: Math.round(v) }), yTicks: (v) => v, yMin: 0 });
+  }).catch(() => {});
+  // the published forecast as it stood each day (registro_diario.json, pipeline/registro_diario.py): never recomputed
+  load("registro_diario.json").then((R) => {
+    const d = R.dias, PS = ["pp", "psoe", "vox", "sumar", "podemos", "salf"], dt = (s) => new Date(s);
+    if (!d.length) return;
+    if (d.length > 1) lines(el.querySelector("#pred-dia"), [{ id: "d", name: tr("PP y Vox llegan a 176"), color: "#1d84ce", values: d.map((x) => ({ date: dt(x.fecha), v: x.p_ppvox_176, label: x.fecha })) }],
+      { height: 180, yMin: 0, yMax: 1 });
+    const dia = (s) => new Date(`${s}T12:00`).toLocaleDateString(loc(), { day: "numeric", month: "short" });
+    el.querySelector("#pred-dia-t").innerHTML = `<div class="scrollx"><table class="pred-dia"><tr><th>${tr("Día")}</th><th>${tr("Encuestas hasta")}</th><th class="num">${tr("PP y Vox llegan a 176")}</th>${PS.map((p) => `<th class="num"><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</th>`).join("")}</tr>
+      ${[...d].reverse().map((x) => `<tr><td>${dia(x.fecha)}${x.cambio ? " *" : ""}</td><td>${x.ultimo_campo ? dia(x.ultimo_campo) : "·"}</td><td class="num">${x.p_ppvox_176 != null ? `${(x.p_ppvox_176 * 100).toLocaleString(loc(), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%` : "·"}</td>${PS.map((p) => `<td class="num">${x.esc[p] ?? "·"}</td>`).join("")}</tr>`).join("")}</table></div>`;
   }).catch(() => {});
   load("backtest.json").then((B) => {
     const h7 = B.horizontes[7], h30 = B.horizontes[30];

@@ -98,6 +98,22 @@ The poll average. All the polls, one by one and by pollster, in [29N polls](#enc
 
 [nota] From the simulations of «Our forecast», whatever model is chosen above. In each province, the seats some party wins most often, as many as it has. The vote margins are those of the median simulation, in 2023 votes.
 
+### Seat options by party {#opciones | Options}
+
+[sub] In the hemicycle, each seat goes to its most likely party. Here every seat a party wins in at least 1 in 4 simulations counts, even if it loses it more often than it wins it. A disputed seat appears once for each party that can win it, so the total is more than 350.
+
+[[opciones]]
+
+[nota] Almost sure: won in more than 999 of 1,000 simulations; likely, in more than 95 of 100; in play, between 25 and 95 of 100. Tap a bar to see the provinces.
+
+### Simulate the night yourself {#simula | Simulate}
+
+[sub] A probability is easier to grasp by counting nights. Here are three real seats: one almost sure, one likely and one in play. On each simulated night, each seat is won or lost as often as the model says. Simulate one night, ten or a hundred, and count how often each one is lost.
+
+[[simula]]
+
+[nota] Each seat is drawn on its own. In the model, seats move together: a bad night for a party takes seats from it in many provinces at once.
+
 [[mapa_portada]]
 :::
 
@@ -179,4 +195,19 @@ Blackout notice. See ../portada.md.
 :::
 ::: si quien
 [nota] When it is lost, it goes to: {quien}.
+:::
+
+=== opciones_resumen ===
+<!--
+Figures: see ../portada.md.
+-->
+There are **{seguros}** almost sure options, **{probables}** likely ones and **{juego}** in play: {total} in all, more than the 350 seats because several parties can win the same one. Most options in play: {provincias}.
+
+=== tooltip_opciones ===
+<!--
+Figures and conditions: see ../portada.md.
+-->
+**{partido}**, {clase}: {n}.
+::: si lista
+[nota] {lista}
 :::

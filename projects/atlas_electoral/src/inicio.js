@@ -1,13 +1,14 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.149";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.149";
-import { projectFromPolls } from "./simulador.js?v=0.2.149";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.149";
-import { pugnasHtml } from "./provincia.js?v=0.2.149";
-import { parlamento } from "./parlamento.js?v=0.2.149";
-import { textos, md, INDICE } from "./textos.js?v=0.2.149";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.149";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.149";
-import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.149";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.150";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.150";
+import { projectFromPolls } from "./simulador.js?v=0.2.150";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.150";
+import { pugnasHtml } from "./provincia.js?v=0.2.150";
+import { parlamento } from "./parlamento.js?v=0.2.150";
+import { opciones, simula } from "./opciones.js?v=0.2.150";
+import { textos, md, INDICE } from "./textos.js?v=0.2.150";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.150";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.150";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.150";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
@@ -102,6 +103,8 @@ export async function renderInicio(app, args = []) {
     promedio: `<p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${sep(E.ultimo[p])}%</b></span>`).join("")}</p>`,
     pugnas: PV ? pugnasHtml(PV, 3, T.pugna, "portada") : null,
     parlamento: PV ? '<div id="parlamento"></div>' : null,
+    opciones: PV ? '<div id="opciones"></div>' : null,
+    simula: PV ? '<div id="simula" class="card sm"></div>' : null,
     mov: '<div class="grid2" id="mov"></div>',
     resultados: R?.html ?? null,
     calendario: conv?.calendario ? calendario(conv) : null,
@@ -168,7 +171,9 @@ export async function renderInicio(app, args = []) {
   if (mm && PV) mapaMV = await mapaMasVotado(mm, PV, { grupos: GROUPS });
   // "Los 350 escaños, uno a uno" (always «Nuestra predicción»: escanos_350.json)
   const pl = app.querySelector("#parlamento");
-  if (pl) load("escanos_350.json").then((E3) => parlamento(pl, E3, PV)).catch(() => pl.remove());
+  const op = app.querySelector("#opciones"), sm = app.querySelector("#simula");
+  if (pl) load("escanos_350.json").then((E3) => { parlamento(pl, E3, PV); if (op) opciones(op, E3, PV); if (sm) simula(sm, E3, PV); })
+    .catch(() => [pl, op, sm].forEach((x) => x?.remove()));
 
 }
 

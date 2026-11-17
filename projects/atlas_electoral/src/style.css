@@ -885,3 +885,28 @@ main h3 { font-size: 19px; }
 .vt-noche { display: flex; flex-direction: column; gap: 4px; }
 .vt-noche .seg { -webkit-mask-image: none; mask-image: none; overflow: visible; flex-wrap: wrap; }
 
+/* Opciones de escaño por partido and Juega a simular la noche (src/opciones.js) */
+.op-filas { display: grid; gap: 5px; margin: 10px 0 6px; max-width: 760px; }
+.op-fila { display: grid; grid-template-columns: 7.5em 1fr auto; align-items: center; gap: 8px; font-size: 0.9rem; }
+.op-nom { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.op-barra { display: flex; height: 16px; }
+.op-seg { height: 100%; cursor: pointer; box-sizing: border-box; border: 1.5px solid var(--c); }
+.op-seg + .op-seg { border-left-width: 0; }
+.op-seguro { background: var(--c); }
+.op-probable { background: color-mix(in srgb, var(--c) 45%, var(--surface)); }
+.op-juego { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--c) 30%, var(--surface)) 0 3px, var(--surface) 3px 6px); }
+.op-n { font-variant-numeric: tabular-nums; color: var(--ink-2); white-space: nowrap; font-size: 0.85rem; }
+.op-n b { font-weight: 600; color: var(--ink); }
+.sm { padding: 12px 14px; }
+.sm-bot { margin-bottom: 10px; flex-wrap: wrap; }
+.sm-fila { margin: 10px 0 4px; }
+.sm-cab { font-size: 0.9rem; margin-bottom: 5px; }
+.sm-tag { border-color: var(--c) !important; }
+.sm-tag.pl-seguro { background: var(--c); }
+.sm-tag.pl-probable { background: color-mix(in srgb, var(--c) 45%, var(--surface)); }
+.sm-cuadros { display: flex; flex-wrap: wrap; gap: 2px; min-height: 10px; }
+.sm-q { width: 9px; height: 9px; box-sizing: border-box; border: 1px solid var(--ink-2); background: var(--surface); }
+.sm-q.sm-si { background: var(--c); border-color: var(--c); }
+.sm-cuenta { font-size: 0.85rem; color: var(--ink-2); margin-top: 4px; font-variant-numeric: tabular-nums; }
+@media (max-width: 560px) { .op-fila { grid-template-columns: 6em 1fr auto; } }
+
