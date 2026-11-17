@@ -1,21 +1,22 @@
-import { init } from "./data.js?v=0.2.141";
-import { renderMapa } from "./mapa.js?v=0.2.141";
-import { renderPueblo } from "./pueblo.js?v=0.2.141";
-import { renderMiniatura } from "./miniatura.js?v=0.2.141";
-import { renderSimulador } from "./simulador.js?v=0.2.141";
-import { renderEncuestas } from "./encuestas.js?v=0.2.141";
-import { renderHistorico } from "./historico.js?v=0.2.141";
-import { renderModelo } from "./modelo.js?v=0.2.141";
-import { renderInicio } from "./inicio.js?v=0.2.141";
-import { renderHistoria } from "./historia.js?v=0.2.141";
-import { renderComunidad } from "./comunidad.js?v=0.2.141";
-import { renderExplora } from "./explora.js?v=0.2.141";
-import { renderDhondt } from "./dhondt.js?v=0.2.141";
-import { renderProvincia } from "./provincia.js?v=0.2.141";
-import { renderSenado } from "./senado.js?v=0.2.141";
-import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.141";
-import { LANG, setView, chrome, t } from "./i18n.js?v=0.2.141";
-import { textos, md, VEDA } from "./textos.js?v=0.2.141";
+import { init } from "./data.js?v=0.2.142";
+import { renderMapa } from "./mapa.js?v=0.2.142";
+import { renderPueblo } from "./pueblo.js?v=0.2.142";
+import { renderMiniatura } from "./miniatura.js?v=0.2.142";
+import { renderSimulador } from "./simulador.js?v=0.2.142";
+import { renderEncuestas } from "./encuestas.js?v=0.2.142";
+import { renderHistorico } from "./historico.js?v=0.2.142";
+import { renderModelo } from "./modelo.js?v=0.2.142";
+import { renderInicio } from "./inicio.js?v=0.2.142";
+import { renderHistoria } from "./historia.js?v=0.2.142";
+import { renderComunidad } from "./comunidad.js?v=0.2.142";
+import { renderExplora } from "./explora.js?v=0.2.142";
+import { renderDhondt } from "./dhondt.js?v=0.2.142";
+import { renderProvincia } from "./provincia.js?v=0.2.142";
+import { renderSenado } from "./senado.js?v=0.2.142";
+import { renderVoto } from "./voto.js?v=0.2.142";
+import { hideTip, showTip, DATA_V, BUILD_AT } from "./data.js?v=0.2.142";
+import { LANG, setView, chrome, t } from "./i18n.js?v=0.2.142";
+import { textos, md, VEDA } from "./textos.js?v=0.2.142";
 
 // d3's number and date formats follow the language of each view (i18n.js, setView, called by the router)
 
@@ -30,6 +31,7 @@ const routes = {
   dhondt: renderDhondt,
   provincia: renderProvincia,
   senado: renderSenado,
+  voto: renderVoto,
   mapa: renderMapa,
   explora: renderExplora,
   comunidad: renderComunidad,
@@ -77,7 +79,7 @@ async function route() {
     // an English reader on a page that exists only in Spanish: one line above it says so
     if (LANG === "en" && document.documentElement.lang === "es") app.insertAdjacentHTML("afterbegin", '<p class="note lang-note" lang="en">This page is available in Spanish only.</p>');
     // the blackout notice (textos/portada.md, aviso_veda) on the pages with the forecast or the polls
-    if (VEDA && ["inicio", "modelo", "senado", "encuestas", "provincia"].includes(view)) {
+    if (VEDA && ["inicio", "modelo", "senado", "encuestas", "provincia", "voto"].includes(view)) {
       const T = await textos("portada");
       if (T.aviso_veda) app.insertAdjacentHTML("afterbegin", `<div class="aviso-veda" role="note">${md(T.aviso_veda, { page: "portada" }).html}</div>`);
     }

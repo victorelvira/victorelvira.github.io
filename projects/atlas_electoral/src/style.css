@@ -856,3 +856,12 @@ main h3 { font-size: 19px; }
 .pl-sw.pl-seguro { background: var(--ink-2); }
 .pl-sw.pl-probable { background: color-mix(in srgb, var(--ink-2) 40%, var(--surface)); }
 .pl-sw.pl-juego { background: var(--surface); }
+/* "Tu voto" (src/voto.js) */
+.vt-ctl { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin: 6px 0 12px; }
+.vt-l { display: inline-flex; align-items: center; gap: 8px; }
+.vt-ctl .seg { -webkit-mask-image: none; mask-image: none; overflow: visible; flex-wrap: wrap; }
+.vt-resp { padding: 12px 14px; }
+.vt-resp > p:first-child { font-size: 17px; line-height: 1.45; margin-top: 0; }
+.vt-tab td, .vt-todas td { vertical-align: top; }
+.vt-todas tr.vt-sel td { background: color-mix(in srgb, var(--ink-3) 10%, var(--surface)); font-weight: 600; }
+

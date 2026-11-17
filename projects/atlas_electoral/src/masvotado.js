@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.141";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.141";
-import { getGeo, rewind } from "./mapa.js?v=0.2.141";
-import { textos, md } from "./textos.js?v=0.2.141";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.141";
-import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.141";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.142";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.142";
+import { getGeo, rewind } from "./mapa.js?v=0.2.142";
+import { textos, md } from "./textos.js?v=0.2.142";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.142";
+import { t as tr, N_, fix, deCada } from "./i18n.js?v=0.2.142";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 // the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a
@@ -546,7 +546,7 @@ async function fichaHtml(p, anio, T, at = null) {
 // bloc does not count. Shown per 1,000 draws (the shares are small). Only "Nuestra predicción" (one set of 140,000 draws).
 const PESO_PASOS = [5, 10, 20];   // per 1,000 draws: the four shades
 const PESO_LAB = [N_("menos de 5"), N_("de 5 a 9"), N_("de 10 a 19"), N_("20 o más")];
-const PESO_ART = { izquierda: N_("la izquierda"), derecha: N_("la derecha") };
+export const PESO_ART = { izquierda: N_("la izquierda"), derecha: N_("la derecha") };
 const MIL = () => tr("1.000");   // peso_voto.json's bundle (votos) is 1,000 votes; written with the language's thousands mark
 export const deCadaMil = (x) => { const n = Math.round(x * 1000); return n >= 1 ? deCada(n, MIL()) : x > 0 ? tr("menos de 1 de cada 1.000") : tr("ninguna"); };
 // the options of the bloc in one province, best first: f, g (seat for the bloc), p (seat for the party), losers outside the bloc
@@ -559,7 +559,7 @@ export function opcionesPeso(PW, prov, at, bloque) {
 }
 // options "parejas" with the best: those giving at least 4 in 5 of what it gives (all of them when it gives under 1 in 1,000)
 const cerca = (o) => o.filter((x, i) => i > 0 && (x.g >= 0.8 * o[0].g || o[0].g < 0.001)).length;
-const parejas = (o) => cerca(o) > 0;
+export const parejas = (o) => cerca(o) > 0;
 export function porPeso(D, PW, T, { at = {}, bloque = "derecha" } = {}) {
   const nomB = tr(PESO_ART[bloque]);
   const info = (p) => { const o = opcionesPeso(PW, p.prov, at, bloque); return o.length ? { o, par: parejas(o) } : null; };

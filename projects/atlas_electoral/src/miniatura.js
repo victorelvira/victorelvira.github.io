@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, META, elecLabel } from "./data.js?v=0.2.141";
-import { textos, md } from "./textos.js?v=0.2.141";
+import { load, META, elecLabel } from "./data.js?v=0.2.142";
+import { textos, md } from "./textos.js?v=0.2.142";
 
 export async function renderMiniatura(app) {
   const mini = await load("miniatura.json");

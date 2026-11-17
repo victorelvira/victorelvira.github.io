@@ -5,7 +5,7 @@
 // Interface strings are keyed by their Spanish text: t("Escaños") is "Escaños" in Spanish and lang_en.js["Escaños"] in English.
 // N_() only marks a string for pipeline/check_textos_en.py, for strings stored in a table and passed to t() later.
 // Prose is not here: textos/en/<page>.md beside textos/<page>.md (src/textos.js picks the folder).
-import EN from "./lang_en.js?v=0.2.141";
+import EN from "./lang_en.js?v=0.2.142";
 
 const KEY = "atlas_electoral.lang";
 const LANGS = ["es", "en"];
@@ -21,9 +21,9 @@ function choose() {
 /** The reader's language, for the whole visit. */
 export const LANG = choose();
 /** Views that exist in English; every other view is drawn in Spanish, with a one-line note in English above it. */
-export const EN_VIEWS = new Set(["inicio", "modelo", "provincia", "senado"]);
+export const EN_VIEWS = new Set(["inicio", "modelo", "provincia", "senado", "voto"]);
 /** Text files that exist in textos/en/ (pipeline/check_textos_en.py checks them against the Spanish ones). */
-export const EN_TEXTOS = new Set(["portada", "resultados", "provincia", "senado", "modelo"]);
+export const EN_TEXTOS = new Set(["portada", "resultados", "provincia", "senado", "modelo", "voto"]);
 
 // the language of the view being drawn: English only on a translated view, so an untranslated page stays Spanish throughout
 let page = LANG;

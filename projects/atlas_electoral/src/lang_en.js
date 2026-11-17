@@ -350,5 +350,12 @@ export default {
   "Casi seguros": "Almost sure",
   "Probables": "Likely",
   "En juego": "In play",
-  "más de 999 de cada 1.000": "more than 999 in 1,000"
+  "más de 999 de cada 1.000": "more than 999 in 1,000",
+  "Tu voto": "Your vote",
+  "Dónde votas": "Where you vote",
+  "Mejor opción": "Best option",
+  "De cada 1.000": "Out of 1,000",
+  "Segunda": "Second",
+  "Se lo quitaría a": "It would take it from",
+  "De cada 1.000 simulaciones, con 1.000 votos más a ese partido.": "Out of 1,000 simulations, with 1,000 more votes for that party."
 };
