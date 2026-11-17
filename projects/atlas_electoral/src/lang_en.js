@@ -358,5 +358,6 @@ export default {
   "De cada 1.000": "Out of 1,000",
   "Segunda": "Second",
   "Se lo quitaría a": "It would take it from",
-  "De cada 1.000 simulaciones, con 1.000 votos más a ese partido.": "Out of 1,000 simulations, with 1,000 more votes for that party."
+  "De cada 1.000 simulaciones, con 1.000 votos más a ese partido.": "Out of 1,000 simulations, with 1,000 more votes for that party.",
+  "{n} escaños esperados": "{n} seats expected"
 };

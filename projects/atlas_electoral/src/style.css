@@ -868,4 +868,8 @@ main h3 { font-size: 19px; }
 /* a long select inside the controls (Encuestas históricas, "Elección") never pushes the page wider than a phone (2026-11-17) */
 .controls label { min-width: 0; max-width: 100%; }
 .controls select { min-width: 0; max-width: 100%; }
+/* the expected seats, a fixed tick on the slider of "Fija los escaños de" (2026-11-17) */
+.cond-pista { position: relative; flex: 1 1 160px; min-width: 120px; max-width: 320px; display: inline-flex; align-items: center; }
+.cond-pista .cond-v { flex: 1 1 auto; width: 100%; max-width: none; min-width: 0; margin: 0; }
+.cond-esp { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink); border-radius: 1px; pointer-events: none; opacity: .75; }
 

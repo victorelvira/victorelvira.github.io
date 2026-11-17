@@ -121,7 +121,13 @@ Under "Seats per party", the "Hold the seats of" control. Figures and conditions
 ::: si ninguna
 [nota] No simulation gives {partido} {escanos}: try a value closer to the centre.
 ::: si no
-[nota] Only the {n} simulations (out of {total}) in which {partido} gets {escanos}. In grey, the band with all of them. In these, PP and Vox reach 176 in {ppvox}.
+::: si menos
+There is a {prob} chance that {partido} gets {v} seats or fewer (expected: {esperados}).
+:::
+::: si mas
+There is a {prob} chance that {partido} gets {v} seats or more (expected: {esperados}).
+:::
+[nota] The bands count only the {n} simulations (out of {total}) in which {partido} gets {escanos}; in grey, the band with all of them. In these, PP and Vox reach 176 in {ppvox}.
 :::
 ::: si pocas
 [nota] These are few simulations: take it as a pointer.

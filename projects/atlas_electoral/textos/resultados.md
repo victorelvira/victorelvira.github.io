@@ -128,13 +128,21 @@ escaños en el escenario central), {veces} (de cada 100 simulaciones, en cuánta
 Debajo de "Escaños por partido estimados", el control "Fija los escaños de" (Claude, 16-11-2026, nota 8 de Víctor: condicionar
 a un valor de un partido). Sin fijar (activo falso) explica qué hace. Fijado: {partido}; {escanos} ("115 escaños" o "entre 113
 y 117 escaños", la ventana más estrecha con al menos 400 simulaciones, hasta ±6); {n} de {total} simulaciones dentro;
-{ppvox} con qué frecuencia PP y Vox llegan a 176 en ellas ("8 de cada 10"). Condiciones: activo, pocas (menos de 400), ninguna.
+{ppvox} con qué frecuencia PP y Vox llegan a 176 en ellas ("8 de cada 10"); {v} los escaños fijados, {esperados} los esperados
+(escenario central) y {prob} la probabilidad de sacar {v} o menos (si {v} está por debajo de lo esperado) o {v} o más (si no), en
+todas las simulaciones ("12%"; 17-11-2026, a petición de Víctor). Condiciones: activo, pocas (menos de 400), ninguna, menos, mas.
 -->
 ::: si activo
 ::: si ninguna
 [nota] Ninguna simulación da a {partido} {escanos}: prueba un valor más cercano al centro.
 ::: si no
-[nota] Solo las {n} simulaciones (de {total}) en que {partido} saca {escanos}. En gris, la franja con todas. En ellas, PP y Vox llegan a 176 en {ppvox}.
+::: si menos
+Hay una probabilidad del {prob} de que {partido} saque {v} escaños o menos (lo esperado: {esperados}).
+:::
+::: si mas
+Hay una probabilidad del {prob} de que {partido} saque {v} escaños o más (lo esperado: {esperados}).
+:::
+[nota] Las franjas cuentan solo las {n} simulaciones (de {total}) en que {partido} saca {escanos}; en gris, la franja con todas. En ellas, PP y Vox llegan a 176 en {ppvox}.
 :::
 ::: si pocas
 [nota] Son pocas simulaciones: tómalo como una indicación.

@@ -1,12 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.145";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.145";
-import { num } from "./encuestas.js?v=0.2.145";
-import { short, pc } from "./provincia.js?v=0.2.145";
-import { textos, md } from "./textos.js?v=0.2.145";
-import { t, loc, deCada } from "./i18n.js?v=0.2.145";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.146";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.146";
+import { num } from "./encuestas.js?v=0.2.146";
+import { short, pc } from "./provincia.js?v=0.2.146";
+import { textos, md } from "./textos.js?v=0.2.146";
+import { t, loc, deCada, lang } from "./i18n.js?v=0.2.146";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -289,6 +289,9 @@ function evolucion(el, SD, at, conv) {
 // correlations show: with the PP lower, how much Vox and the PSOE gain. A window of ±w seats around the value, the narrowest
 // with at least COND_MIN draws (up to ±COND_MAXW); fewer than that and the note says so.
 const COND_MIN = 400, COND_MAXW = 6;
+// the party with its article where Spanish uses one ("de que el PP saque"); English and the rest go bare
+const ART = { pp: "el PP", psoe: "el PSOE", pnv: "el PNV", bng: "el BNG" };
+const conArt = (f) => (lang() === "es" && ART[f]) || short(f);
 function condicionar(root, PR, DR, T) {
   const el = root.querySelector(".cond"), rg = root.querySelector(".rg-esc");
   if (!el || !rg) return;
@@ -299,10 +302,18 @@ function condicionar(root, PR, DR, T) {
   const rango = (f) => { const xs = Float64Array.from(col(f)).sort(); return [q(xs, 0.01), q(xs, 0.99)]; };
   let f = fs[0], v = null;
   el.innerHTML = `<label class="cond-l">${t("Fija los escaños de")} <select class="cond-f">${fs.map((x) => `<option value="${x}">${short(x)}</option>`).join("")}</select></label>
-    <input type="range" class="cond-v" step="1" aria-label="${t("Escaños fijados")}"><span class="cond-n"></span>
+    <span class="cond-pista"><input type="range" class="cond-v" step="1" aria-label="${t("Escaños fijados")}"><span class="cond-esp" aria-hidden="true"></span></span><span class="cond-n"></span>
     <button type="button" class="cond-x">${t("Quitar")}</button><div class="cond-nota"></div>`;
   const sel = el.querySelector(".cond-f"), sl = el.querySelector(".cond-v"), lab = el.querySelector(".cond-n"), x = el.querySelector(".cond-x"), nota = el.querySelector(".cond-nota");
-  const setRange = () => { const [a, b] = rango(f); sl.min = a; sl.max = b; sl.value = Math.round(base[f].c); };
+  // the expected seats (the central scenario) stay marked on the slider as a tick, wherever the thumb goes (Víctor, 2026-11-17);
+  // the thumb's centre runs from 8 px to 100% - 8 px (a 16 px thumb)
+  const esp = el.querySelector(".cond-esp");
+  const setRange = () => {
+    const [a, b] = rango(f), c = Math.round(base[f].c);
+    sl.min = a; sl.max = b; sl.value = c;
+    const fr = b > a ? (c - a) / (b - a) : 0.5;
+    esp.style.left = `calc(8px + (100% - 16px) * ${fr})`; esp.title = t("{n} escaños esperados", { n: c });
+  };
   const pinta = () => {
     x.hidden = v == null; el.classList.toggle("on", v != null);
     if (v == null) {
@@ -324,9 +335,13 @@ function condicionar(root, PR, DR, T) {
     rg.innerHTML = rangos(rows, { dec: 0, base, fijo: f });
     const pp = col("pp"), vox = col("vox");
     const k176 = idx.filter((k) => pp[k] + vox[k] >= 176).length;
-    nota.innerHTML = T?.condiciona ? md(T.condiciona, { vars: { partido: short(f), escanos: w ? t("entre {a} y {b} escaños", { a: v - w, b: v + w }) : t("{n} escaños", { n: v }),
+    // the tail on the side the thumb went: P(seats <= v) left of the expected seats, P(seats >= v) right of them (or at them)
+    const c0 = Math.round(base[f].c), menos = v < c0;
+    let cola = 0; for (let k = 0; k < S; k++) if (menos ? c[k] <= v : c[k] >= v) cola++;
+    const pc_ = cola / S, prob = pc_ < 0.005 ? t("menos del 1%") : pc_ > 0.995 ? t("más del 99%") : `${Math.round(pc_ * 100)}%`;
+    nota.innerHTML = T?.condiciona ? md(T.condiciona, { vars: { partido: conArt(f), v, prob, esperados: c0, escanos: w ? t("entre {a} y {b} escaños", { a: v - w, b: v + w }) : t("{n} escaños", { n: v }),
       n: idx.length.toLocaleString(loc()), total: S.toLocaleString(loc()), ppvox: idx.length ? deCada(Math.round(10 * k176 / idx.length), 10) : "·" },
-      flags: { activo: true, pocas: idx.length < COND_MIN, ninguna: !idx.length }, page: "resultados" }).html : "";
+      flags: { activo: true, pocas: idx.length < COND_MIN, ninguna: !idx.length, menos, mas: !menos }, page: "resultados" }).html : "";
   };
   sel.onchange = () => { f = sel.value; v = null; setRange(); pinta(); };
   sl.oninput = () => { v = +sl.value; pinta(); };
