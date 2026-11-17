@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.143";
-import { t as tr } from "./i18n.js?v=0.2.143";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.144";
+import { t as tr } from "./i18n.js?v=0.2.144";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
@@ -199,7 +199,9 @@ export function bloques(el, seats, { eid = "generales_2026-11", at = {}, draws =
     const pr = v.filter((x) => x >= 176).length / v.length;
     // two lines: the range in seats, then how often it reaches 176, as a percentage (Víctor, 2026-11-17)
     const pct = pr < 0.005 ? tr("menos del 1%") : pr > 0.995 ? tr("más del 99%") : tr("un {p}%", { p: Math.round(pr * 100) });
-    return `<div class="bq-p">${tr("de {a} a {b} escaños", { a: q(0.05), b: q(0.95) })}<br>${tr("llega a 176 en {p} de las simulaciones", { p: pct })}</div>`;
+    // only the chance of 176: the 90% range ("de 173 a 216") beside "93%" read as a contradiction, and the seats are already in
+    // the box's heading ("Derecha = 195") (Víctor, 2026-11-17)
+    return `<div class="bq-p">${tr("llega a 176 en {p} de las simulaciones", { p: pct })}</div>`;
   };
   const draw = () => {
     const totG = Object.fromEntries(G.map((g) => [g, fams.filter((f) => at[f] === g).reduce((a, f) => a + seats[f], 0)]));

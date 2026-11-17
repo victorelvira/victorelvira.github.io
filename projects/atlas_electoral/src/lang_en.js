@@ -343,6 +343,7 @@ export default {
   "entre {a} y {b} escaños": "between {a} and {b} seats",
   "{n} escaños": "{n} seats",
   "unos {n} escaños": "about {n} seats",
+  "unos {n} escaños esperados": "about {n} seats expected",
   "Orden de los escaños": "Order of the seats",
   "Por partido": "By party",
   "Por seguridad": "By how sure",
