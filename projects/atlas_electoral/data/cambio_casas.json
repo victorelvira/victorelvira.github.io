@@ -1,44 +1,44 @@
 {
  "_doc": "Change within each pollster (pipeline/cambio_casas.py): latest poll minus the same house's latest poll ending 21 to 60 days earlier, houses with a poll ending in the last 14 days; internal polls and CIS re-estimations left out. Percentage points. A description of the data, not a forecast.",
- "ultimo_campo": "2026-11-15",
+ "ultimo_campo": "2026-11-16",
  "dias_recientes": 14,
  "separacion_min": 21,
  "separacion_max": 60,
  "resumen": {
   "pp": {
-   "n": 12,
-   "bajan": 9,
+   "n": 14,
+   "bajan": 11,
    "suben": 3,
    "iguales": 0,
-   "mediana": -0.35
+   "mediana": -0.5
   },
   "psoe": {
-   "n": 12,
-   "bajan": 5,
-   "suben": 6,
+   "n": 14,
+   "bajan": 4,
+   "suben": 9,
+   "iguales": 1,
+   "mediana": 0.25
+  },
+  "vox": {
+   "n": 14,
+   "bajan": 6,
+   "suben": 7,
    "iguales": 1,
    "mediana": 0.15
   },
-  "vox": {
-   "n": 12,
-   "bajan": 5,
-   "suben": 6,
-   "iguales": 1,
-   "mediana": 0.2
-  },
   "sumar": {
-   "n": 12,
+   "n": 14,
    "bajan": 4,
-   "suben": 8,
+   "suben": 10,
    "iguales": 0,
-   "mediana": 0.35
+   "mediana": 0.25
   },
   "podemos": {
-   "n": 11,
-   "bajan": 11,
+   "n": 13,
+   "bajan": 13,
    "suben": 0,
    "iguales": 0,
-   "mediana": -1.2
+   "mediana": -1.4
   },
   "salf": {
    "n": 8,
@@ -52,14 +52,14 @@
   {
    "casa": "40dB",
    "antes": "2026-10-08",
-   "ahora": "2026-11-15",
+   "ahora": "2026-11-16",
    "cambio": {
-    "pp": -0.4,
-    "psoe": 2.2,
-    "vox": -0.9,
+    "pp": -0.1,
+    "psoe": 2.5,
+    "vox": -1.4,
     "sumar": 0.1,
     "podemos": -1.2,
-    "salf": -0.1
+    "salf": -0.2
    }
   },
   {
@@ -103,27 +103,26 @@
   {
    "casa": "Data10",
    "antes": "2026-10-02",
-   "ahora": "2026-11-03",
+   "ahora": "2026-11-12",
    "cambio": {
-    "pp": -1.6,
-    "psoe": -1.4,
-    "vox": 1.2,
-    "sumar": 1.7,
-    "podemos": -1.2,
-    "salf": 0.1
+    "pp": -2.0,
+    "psoe": -0.6,
+    "vox": 1.8,
+    "sumar": 1.5,
+    "podemos": -2.2
    }
   },
   {
    "casa": "EM-Analytics",
    "antes": "2026-10-23",
-   "ahora": "2026-11-14",
+   "ahora": "2026-11-15",
    "cambio": {
-    "pp": -0.2,
-    "psoe": 0.0,
-    "vox": 0.0,
-    "sumar": 0.6,
-    "podemos": -0.3,
-    "salf": 0.4
+    "pp": -0.4,
+    "psoe": 0.2,
+    "vox": -0.1,
+    "sumar": 0.7,
+    "podemos": -0.5,
+    "salf": 0.5
    }
   },
   {
@@ -142,37 +141,49 @@
   {
    "casa": "IMOP",
    "antes": "2026-10-16",
-   "ahora": "2026-11-06",
+   "ahora": "2026-11-13",
    "cambio": {
-    "pp": 1.3,
-    "psoe": -1.2,
-    "vox": -0.1,
-    "sumar": -0.8,
-    "podemos": -0.7,
-    "salf": 0.5
+    "pp": 3.0,
+    "psoe": -0.2,
+    "vox": -1.0,
+    "sumar": -2.0,
+    "podemos": -1.0,
+    "salf": 0.4
+   }
+  },
+  {
+   "casa": "Invymark",
+   "antes": "2026-10-08",
+   "ahora": "2026-11-13",
+   "cambio": {
+    "pp": -0.6,
+    "psoe": 0.2,
+    "vox": 0.3,
+    "sumar": 0.1
    }
   },
   {
    "casa": "NC Report",
    "antes": "2026-10-06",
-   "ahora": "2026-11-05",
+   "ahora": "2026-11-12",
    "cambio": {
-    "pp": -1.1,
-    "psoe": 0.6,
-    "vox": 1.1,
-    "sumar": 1.6,
-    "podemos": -1.5
+    "pp": -1.6,
+    "psoe": 1.1,
+    "vox": 0.8,
+    "sumar": 2.3,
+    "podemos": -2.4
    }
   },
   {
    "casa": "Sigma Dos",
    "antes": "2026-10-22",
-   "ahora": "2026-11-13",
+   "ahora": "2026-11-14",
    "cambio": {
-    "pp": 0.4,
-    "psoe": -0.5,
-    "vox": -0.2,
-    "sumar": -1.0
+    "pp": 0.2,
+    "psoe": 0.0,
+    "vox": -0.1,
+    "sumar": -1.5,
+    "podemos": -1.4
    }
   },
   {
@@ -186,6 +197,19 @@
     "sumar": -0.1,
     "podemos": -0.6,
     "salf": -0.2
+   }
+  },
+  {
+   "casa": "Target Point",
+   "antes": "2026-10-09",
+   "ahora": "2026-11-12",
+   "cambio": {
+    "pp": -1.4,
+    "psoe": 1.1,
+    "vox": 0.0,
+    "sumar": 0.4,
+    "podemos": -1.8,
+    "salf": 0.8
    }
   },
   {
