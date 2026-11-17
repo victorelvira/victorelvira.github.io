@@ -872,4 +872,11 @@ main h3 { font-size: 19px; }
 .cond-pista { position: relative; flex: 1 1 160px; min-width: 120px; max-width: 320px; display: inline-flex; align-items: center; }
 .cond-pista .cond-v { flex: 1 1 auto; width: 100%; max-width: none; min-width: 0; margin: 0; }
 .cond-esp { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink); border-radius: 1px; pointer-events: none; opacity: .75; }
-
+/* "¿Quién llega a 176?" and "fuerza más votada" (Víctor, 2026-11-17): a party's card in its colour in full with black text; a
+   bloc's card striped, soft, so its small text stays clean */
+.q176-c.q176-der:not(.q176-bloque) { background: #1d84ce; border-color: #1d84ce; }
+.q176-c.q176-izq:not(.q176-bloque) { background: #e30613; border-color: #e30613; }
+.q176-c.q176-vox { background: #4f9e17; border-color: #4f9e17; }
+.q176-c:is(.q176-der, .q176-izq, .q176-vox):not(.q176-bloque) :is(.q176-n, .q176-t, .q176-r) { color: #000; }
+.q176-c.q176-der.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #1d84ce 30%, var(--surface)) 0 6px, color-mix(in srgb, #1d84ce 12%, var(--surface)) 6px 12px); border-color: #1d84ce; }
+.q176-c.q176-izq.q176-bloque { background: repeating-linear-gradient(45deg, color-mix(in srgb, #e30613 26%, var(--surface)) 0 6px, color-mix(in srgb, #e30613 10%, var(--surface)) 6px 12px); border-color: #e30613; }
