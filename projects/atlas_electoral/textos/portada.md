@@ -228,20 +228,20 @@ escaños, o provincias y cuántos). Condición: lista.
 
 === dia_titulo ===
 <!--
-Título del bloque "Cómo vamos, día a día" (src/dia.js, lo añadió Claude el 18-11-2026), debajo de "¿Quién llega a 176?".
+Título del bloque "Evolución día a día" (hasta el 18-11-2026, "Cómo vamos, día a día"; nota 9 de Víctor) (src/dia.js, lo añadió Claude el 18-11-2026), debajo de "¿Quién llega a 176?".
 -->
-#### Cómo vamos, día a día
+#### Evolución día a día
 
 === dia_frase ===
 <!--
 Frase encima del gráfico; cambia con el periodo elegido. Cifras: {desde} (primer día del periodo), {antes} y {hoy} ("92 de cada
-100": en cuántas simulaciones llegan PP y Vox a 176), {esc_antes} y {esc_hoy} (escaños esperados de PP y Vox). Condición: igual
+100": en cuántas simulaciones llegan PP y Vox a 176), {esc_antes} y {esc_hoy} (escaños esperados de PP y Vox), {inv_antes} y {inv_hoy} (lo mismo para el bloque de la investidura de 2023). Condición: igual
 (la frecuencia redondeada no cambia).
 -->
 ::: si igual
-Desde el {desde}, PP y Vox llegan a 176 en {hoy} simulaciones, igual que entonces ({esc_antes} escaños esperados entonces, {esc_hoy} hoy).
+Desde el {desde}, PP y Vox llegan a 176 en {hoy} simulaciones, igual que entonces ({esc_antes} escaños esperados entonces, {esc_hoy} hoy). El bloque de la investidura de 2023, en {inv_hoy}.
 ::: si no
-El {desde}, PP y Vox llegaban a 176 en {antes} simulaciones; hoy, en {hoy} ({esc_antes} escaños esperados entonces, {esc_hoy} hoy).
+El {desde}, PP y Vox llegaban a 176 en {antes} simulaciones; hoy, en {hoy} ({esc_antes} escaños esperados entonces, {esc_hoy} hoy). El bloque de la investidura de 2023, en {inv_antes} entonces y {inv_hoy} hoy.
 :::
 
 === dia_nota ===
@@ -250,7 +250,7 @@ Nota bajo el gráfico. Cifras: {diario_desde} (desde cuándo hay un punto por d�
 anteriores a {diario_desde}, con un punto por semana).
 -->
 ::: si semanal
-[nota] Cada día, «Nuestra predicción» rehecha con las encuestas que se conocían ese día y el modelo de hoy: si la línea se mueve, se movieron las encuestas, no el modelo. En «PP y Vox», la banda recoge 9 de cada 10 simulaciones y la raya marca la mayoría de 176. Antes del {diario_desde}, un punto por semana.
+[nota] Cada día, «Nuestra predicción» rehecha con las encuestas que se conocían ese día y el modelo de hoy: si la línea se mueve, se movieron las encuestas, no el modelo. En «Bloques», cada banda recoge 9 de cada 10 simulaciones y la raya marca la mayoría de 176; el bloque de la investidura es el de las tarjetas de arriba. Antes del {diario_desde}, un punto por semana.
 ::: si no
-[nota] Cada día, «Nuestra predicción» rehecha con las encuestas que se conocían ese día y el modelo de hoy: si la línea se mueve, se movieron las encuestas, no el modelo. En «PP y Vox», la banda recoge 9 de cada 10 simulaciones y la raya marca la mayoría de 176.
+[nota] Cada día, «Nuestra predicción» rehecha con las encuestas que se conocían ese día y el modelo de hoy: si la línea se mueve, se movieron las encuestas, no el modelo. En «Bloques», cada banda recoge 9 de cada 10 simulaciones y la raya marca la mayoría de 176; el bloque de la investidura es el de las tarjetas de arriba.
 :::

@@ -213,18 +213,18 @@ Figures and conditions: see ../portada.md.
 :::
 
 === dia_titulo ===
-#### How it is going, day by day
+#### Day by day
 
 === dia_frase ===
 ::: si igual
-Since {desde}, PP and Vox reach 176 in {hoy} simulations, as then ({esc_antes} expected seats then, {esc_hoy} today).
+Since {desde}, PP and Vox reach 176 in {hoy} simulations, as then ({esc_antes} expected seats then, {esc_hoy} today). The 2023 investiture bloc, in {inv_hoy}.
 ::: si no
-On {desde}, PP and Vox reached 176 in {antes} simulations; today, in {hoy} ({esc_antes} expected seats then, {esc_hoy} today).
+On {desde}, PP and Vox reached 176 in {antes} simulations; today, in {hoy} ({esc_antes} expected seats then, {esc_hoy} today). The 2023 investiture bloc, in {inv_antes} then and {inv_hoy} today.
 :::
 
 === dia_nota ===
 ::: si semanal
-[nota] Each day, our forecast re-run with the polls known that day and today's model: if the line moves, the polls moved, not the model. In «PP and Vox», the band holds 9 in 10 simulations and the dashed line marks the 176 majority. Before {diario_desde}, one point a week.
+[nota] Each day, our forecast re-run with the polls known that day and today's model: if the line moves, the polls moved, not the model. In «Blocs», each band holds 9 in 10 simulations and the dashed line marks the 176 majority; the investiture bloc is the one of the cards above. Before {diario_desde}, one point a week.
 ::: si no
-[nota] Each day, our forecast re-run with the polls known that day and today's model: if the line moves, the polls moved, not the model. In «PP and Vox», the band holds 9 in 10 simulations and the dashed line marks the 176 majority.
+[nota] Each day, our forecast re-run with the polls known that day and today's model: if the line moves, the polls moved, not the model. In «Blocs», each band holds 9 in 10 simulations and the dashed line marks the 176 majority; the investiture bloc is the one of the cards above.
 :::
