@@ -949,3 +949,44 @@ main h3 { font-size: 19px; }
 .dia-176 { stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 4 3; }
 .dia-176-t, .dia-lab { font-size: 12px; fill: var(--ink-2); font-variant-numeric: tabular-nums; }
 .dia-nota p { margin-top: 2px; }
+/* ==== "Provincia a provincia" (src/mosaico.js, 2026-11-18) · start ==== */
+.mz-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 6px 0 8px; }
+.mz-ctl .seg button { padding: 4px 9px; font-size: var(--t-s); line-height: 1.15; }
+.mz-c button small { display: block; font-size: 11px; opacity: .75; font-variant-numeric: tabular-nums; }
+.mz-wrap { position: relative; max-width: 620px; }
+.mz-grid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; align-items: start; }
+.mz-t { font: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 2px 2px 3px; cursor: pointer; min-width: 0; text-align: left; }
+.mz-t:hover { border-color: var(--ink-3); }
+.mz-t.on { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.mz-ab { display: block; font-size: 9px; line-height: 1.2; color: var(--ink-2); font-weight: 600; text-align: center; }
+.mz-qs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; }
+.mz-q { display: block; aspect-ratio: 1; border-radius: 1px; background: var(--c); }
+.mz-q.op-probable { background: color-mix(in srgb, var(--c) 45%, var(--surface)); }
+.mz-q.op-juego { background: repeating-linear-gradient(135deg, var(--c) 0 1px, var(--surface) 1px 2.5px); box-shadow: inset 0 0 0 0.5px var(--c); }
+.mz-otra { font: inherit; font-size: var(--t-s); color: var(--ink-2); background: none; border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; }
+.mz-ficha { margin-top: 10px; max-width: 620px; }
+.mz-cab { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; margin-bottom: 8px; font-size: var(--t-s); }
+.mz-cab select { max-width: 100%; }
+.mz-tabs { margin-bottom: 8px; }
+.mz-tabs button { padding: 4px 10px; font-size: var(--t-s); }
+.mz-tab { width: 100%; font-size: var(--t-s); }
+.mz-tab td { vertical-align: middle; }
+.mz-mini { display: inline-flex; flex-wrap: wrap; gap: 1px; max-width: 70px; vertical-align: middle; }
+.mz-mini .mz-q { width: 8px; height: 8px; }
+.mz-filas { display: grid; gap: 10px; margin: 6px 0; }
+.mz-fila { display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center; font-size: var(--t-s); }
+.mz-pista { position: relative; height: 22px; margin: 12px 8px 0 0; }
+.mz-pista > i { position: absolute; top: 0; bottom: 0; background: var(--c); }
+.mz-caja { position: absolute; top: -1px; bottom: -1px; border: 1.5px solid var(--ink-2); border-radius: 2px; box-sizing: border-box; }
+.mz-med { position: absolute; top: -4px; bottom: -4px; width: 3px; margin-left: -1.5px; background: var(--ink); border-radius: 1px; }
+.mz-et { position: absolute; top: -14px; transform: translateX(-50%); font-size: 10px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.mz-leg { font-size: 12px; }
+.mz-sw-g { display: inline-block; width: 22px; height: 9px; margin-right: 4px; vertical-align: -1px; background: linear-gradient(to right, color-mix(in srgb, var(--ink-2) 10%, transparent), var(--ink-2)); }
+.mz-sw-m { display: inline-block; width: 3px; height: 12px; margin-right: 4px; vertical-align: -2px; background: var(--ink); }
+.mz-sw-c { display: inline-block; width: 16px; height: 9px; margin-right: 4px; vertical-align: -1px; border: 1.5px solid var(--ink-2); border-radius: 2px; }
+@media (max-width: 480px) { .mz-grid { gap: 2px; } .mz-ab { font-size: 8px; } .mz-fila { grid-template-columns: 80px 1fr; } }
+/* ==== Provincia a provincia · end ==== */
+/* the shade under each range: darker where more simulations fall, a thin box with 9 in 10 (resultados.js densEscanos, 2026-11-18) */
+.rg-d { position: absolute; top: 3px; height: 10px; }
+.rg-caja { position: absolute; top: 2px; height: 12px; border: 1px solid var(--ink-3); border-radius: 3px; box-sizing: border-box; }
+.rg-enc { position: absolute; top: -3px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--ink-3); opacity: .55; }   /* one poll of the last month (2026-11-18) */

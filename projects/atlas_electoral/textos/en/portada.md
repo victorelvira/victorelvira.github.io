@@ -106,6 +106,14 @@ The poll average. All the polls, one by one and by pollster, in [29N polls](#enc
 
 [nota] Almost sure: won in more than 999 of 1,000 simulations; likely, in more than 95 of 100; in play, between 25 and 95 of 100. Tap a bar to see the provinces.
 
+### Province by province {#mosaico | Provinces}
+
+[sub] The same options, in their province: each small square is a seat that a party wins in at least 1 in 4 simulations. Filter by party or by how safe it is, and tap a province to see its options, its seats and its vote.
+
+[[mosaico]]
+
+[nota] Each tile is a province, roughly where it is. Solid, almost sure; light, likely; hatched, in play (the same thresholds as above). In the card, each bar is darker where more simulations fall; the black tick is the median and the box holds 9 in 10 simulations. In brackets, the change from 2023.
+
 ### Simulate the night yourself {#simula | Simulate}
 
 [sub] A probability is easier to grasp by counting nights. Here are three real seats: one almost sure, one likely and one in play. On each simulated night, each seat is won or lost as often as the model says. Simulate one night, ten or a hundred, and count how often each one is lost.
@@ -228,3 +236,7 @@ On {desde}, PP and Vox reached 176 in {antes} simulations; today, in {hoy} ({esc
 ::: si no
 [nota] Each day, our forecast re-run with the polls known that day and today's model: if the line moves, the polls moved, not the model. In «Blocs», each band holds 9 in 10 simulations and the dashed line marks the 176 majority; the investiture bloc is the one of the cards above.
 :::
+
+=== tooltip_mosaico ===
+**{provincia}**, {escanos} seats: {seguros} almost sure options, {probables} likely and {juego} in play.
+

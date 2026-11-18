@@ -1,12 +1,12 @@
 // The model's results block (prose in textos/resultados.md), the same on the front page (#inicio, section "Qué dice
 // nuestro modelo") and at the top of the Modelo tab: seats and vote per party as ranges, and the "Forma tu mayoría"
 // box (seat bar, three draggable groups with their hatched bar, the evolution of the reader's blocs).
-import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.155";
-import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.155";
-import { num } from "./encuestas.js?v=0.2.155";
-import { short, pc } from "./provincia.js?v=0.2.155";
-import { textos, md } from "./textos.js?v=0.2.155";
-import { t, loc, deCada, lang } from "./i18n.js?v=0.2.155";
+import { load, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.156";
+import { seatRows, bloques, declutter, leaders, cull, IDEO, BLOQUE_INICIAL, fam, famName } from "./charts.js?v=0.2.156";
+import { num } from "./encuestas.js?v=0.2.156";
+import { short, pc } from "./provincia.js?v=0.2.156";
+import { textos, md } from "./textos.js?v=0.2.156";
+import { t, loc, deCada, lang } from "./i18n.js?v=0.2.156";
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 
 /** The block's HTML and the index entries of its h3 subsections ([[id, label], ...]) for the page's section.
@@ -17,7 +17,7 @@ const d3 = window.d3; // vendored UMD build, loaded by the entry page
 export async function resultadosHtml(PR, { modelos = null, modelo = null, DR = null } = {}) {
   const T = await textos("resultados");
   textosCache = T;
-  const slots = { escanos_partido: `<div class="rg-esc">${rangos(escanosFilas(PR), { dec: 0 })}</div>${DR ? '<div class="cond"></div>' : ""}`, voto_partido: rangos(votoFilas(PR), { dec: 1, pct: true }) };
+  const slots = { escanos_partido: `<div class="rg-esc">${rangos(escanosFilas(PR), { dec: 0, dens: DR ? densEscanos(DR) : null })}</div>${DR ? '<div class="cond"></div>' : ""}`, voto_partido: rangos(votoFilas(PR), { dec: 1, pct: true, dens: "cuantiles", puntos: await encuestasMes(PR) }) };
   // "¿Quién llega a 176?" (cards from the chosen model's draws), the shortcuts and the hemicycle of "Forma tu mayoría":
   // their captions are parts of resultados.md; without the part (or the draws) the slot stays empty
   // the selector and the cards are wrapped (.res-sel, .res-q176) so that the front page can lift them into its desktop grid
@@ -223,14 +223,50 @@ function votoFilas(PR) {
   return Object.entries(PR.partidos).map(([f, d]) => ({ f, c: d.voto.p50, lo: d.voto.p05, hi: d.voto.p95 }))
     .filter((r) => r.c >= 0.5).sort((a, b) => b.c - a.c);
 }
-function rangos(rows, { dec = 0, pct = false, base = null, fijo = null } = {}) {
+// How often each value comes out, for the shade under each range (Víctor, 2026-11-18, after EL PAÍS's province bars): seats,
+// the share of draws with each number of seats (DR, the model's draws); vote, without draws on the page, a two-piece normal
+// through the median and the 5th and 95th percentiles. Each list of {v, w} has its largest w at 1.
+function densEscanos(DR) {
+  const out = {};
+  DR.partidos.forEach((f, i) => {
+    const h = new Map();
+    for (const x of DR.s[i]) h.set(x, (h.get(x) ?? 0) + 1);
+    const mx = Math.max(...h.values());
+    out[f] = [...h].map(([v, n]) => ({ v, w: n / mx, h: 0.5 }));
+  });
+  return out;
+}
+// the polls of the last 30 days of fieldwork before the model's data cut, one dot each on the vote ranges (Víctor, 2026-11-18)
+async function encuestasMes(PR) {
+  const E = await load("encuestas.json").catch(() => null);
+  if (!E?.polls) return null;
+  const fin = new Date(`${PR.ultimo_campo ?? E.dias.at(-1)}T12:00`), ini = new Date(+fin - 30 * 864e5);
+  const out = {};
+  for (const q of E.polls) {
+    const d = new Date(`${q.f1 ?? q.d}T12:00`);
+    if (d < ini || d > fin) continue;
+    for (const [f, v] of Object.entries(q.v ?? {})) if (v != null) (out[f] ??= []).push(v);
+  }
+  return out;
+}
+function densCuantiles(r) {
+  const sl = Math.max((r.c - r.lo) / 1.645, 0.05), sh = Math.max((r.hi - r.c) / 1.645, 0.05), paso = 0.25, out = [];
+  for (let v = Math.max(0, r.c - 3 * sl); v <= r.c + 3 * sh; v += paso) { const z = (v - r.c) / (v < r.c ? sl : sh); out.push({ v, w: Math.exp(-0.5 * z * z), h: paso / 2 }); }
+  return out;
+}
+function rangos(rows, { dec = 0, pct = false, base = null, fijo = null, dens = null, puntos = null } = {}) {
   // base (f -> {lo, hi}): the unconditioned band, drawn faint under the conditioned one; fijo: the party held fixed
-  const max = Math.max(...rows.map((r) => Math.max(r.hi, r.avg ?? 0, base?.[r.f]?.hi ?? 0))) * 1.05;
+  const max = Math.max(...rows.map((r) => Math.max(r.hi, r.avg ?? 0, base?.[r.f]?.hi ?? 0, ...(puntos?.[r.f] ?? [0])))) * 1.05;
   const x = (v) => `${(100 * v / max).toFixed(2)}%`;
   const n = (v) => `${num(v, dec)}${pct ? "%" : ""}`;
   return `<div class="rangos">${rows.map((r) => `<div class="rg-fila${r.f === fijo ? " rg-fijo" : ""}">
     <span class="rg-nom"><i class="dot" style="background:${pc(r.f)}"></i>${short(r.f)}</span>
-    <span class="rg-pista">${base?.[r.f] ? `<span class="rg-franja rg-base" style="left:${x(base[r.f].lo)};width:${x(base[r.f].hi - base[r.f].lo)}"></span>` : ""}<span class="rg-franja" style="left:${x(r.lo)};width:${x(r.hi - r.lo)};background:${pc(r.f)}"></span><span class="rg-punto" style="left:${x(r.c)};background:${pc(r.f)}"></span>${r.avg != null ? `<span class="rg-media" style="left:${x(r.avg)}" title="${t("Promedio de encuestas:")} ${n(r.avg)}"></span>` : ""}</span>
+    <span class="rg-pista">${base?.[r.f] ? `<span class="rg-franja rg-base" style="left:${x(base[r.f].lo)};width:${x(base[r.f].hi - base[r.f].lo)}"></span>` : ""}${(() => {
+      const ds = dens === "cuantiles" ? densCuantiles(r) : dens?.[r.f];
+      if (!ds) return `<span class="rg-franja" style="left:${x(r.lo)};width:${x(r.hi - r.lo)};background:${pc(r.f)}"></span>`;
+      return ds.filter((d) => d.w > 0.02).map((d) => `<i class="rg-d" style="left:${x(Math.max(0, d.v - d.h))};width:${x(2 * d.h)};opacity:${(0.06 + 0.8 * d.w).toFixed(2)};background:${pc(r.f)}"></i>`).join("")
+        + `<span class="rg-caja" style="left:${x(r.lo)};width:${x(r.hi - r.lo)}"></span>`;
+    })()}${(puntos?.[r.f] ?? []).map((v, i) => `<i class="rg-enc" style="left:${x(v)};top:${-7 + (i % 3) * 3}px"></i>`).join("")}<span class="rg-punto" style="left:${x(r.c)};background:${pc(r.f)}"></span>${r.avg != null ? `<span class="rg-media" style="left:${x(r.avg)}" title="${t("Promedio de encuestas:")} ${n(r.avg)}"></span>` : ""}</span>
     <span class="rg-num"><b>${n(r.c)}</b> <span class="muted">${num(r.lo, dec)}–${num(r.hi, dec)}</span></span></div>`).join("")}</div>`;
 }
 
@@ -318,7 +354,7 @@ function condicionar(root, PR, DR, T) {
     x.hidden = v == null; el.classList.toggle("on", v != null);
     if (v == null) {
       lab.textContent = "";
-      rg.innerHTML = rangos(filas, { dec: 0 });
+      rg.innerHTML = rangos(filas, { dec: 0, dens: densEscanos(DR) });
       nota.innerHTML = T?.condiciona ? md(T.condiciona, { flags: { activo: false }, page: "resultados" }).html : "";
       return;
     }

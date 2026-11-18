@@ -4,12 +4,12 @@
 //    counts once per party that can win it, so the options add up to more than 350. Hover or tap a bar: the provinces.
 // 2. "Juega a simular la noche": three real seats (one almost sure, one likely, one in play); each simulated night draws each
 //    seat with its probability, so the reader counts how often each one is lost. Independent draws, said in the note.
-import { showTip, hideTip } from "./data.js?v=0.2.155";
-import { IDEO, fam } from "./charts.js?v=0.2.155";
-import { short, pc } from "./provincia.js?v=0.2.155";
-import { textos, md } from "./textos.js?v=0.2.155";
-import { t, deCada, ordinal, loc } from "./i18n.js?v=0.2.155";
-import { CLASES } from "./parlamento.js?v=0.2.155";
+import { showTip, hideTip } from "./data.js?v=0.2.156";
+import { IDEO, fam } from "./charts.js?v=0.2.156";
+import { short, pc } from "./provincia.js?v=0.2.156";
+import { textos, md } from "./textos.js?v=0.2.156";
+import { t, deCada, ordinal, loc } from "./i18n.js?v=0.2.156";
+import { CLASES } from "./parlamento.js?v=0.2.156";
 
 const clase = (p) => CLASES.find(([, x]) => p >= x)[0];
 const familia = (f) => f.split("|")[0];

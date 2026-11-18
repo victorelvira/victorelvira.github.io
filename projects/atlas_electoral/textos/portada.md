@@ -111,6 +111,14 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 
 [nota] Casi seguros: los gana en más de 999 de cada 1.000 simulaciones; probables, en más de 95 de cada 100; en juego, entre 25 y 95 de cada 100. Toca una barra para ver en qué provincias están.
 
+### Provincia a provincia {#mosaico | Provincias}
+
+[sub] Las mismas opciones, en su provincia: cada cuadradito es un escaño que un partido gana en al menos 1 de cada 4 simulaciones. Filtra por partido o por seguridad, y toca una provincia para ver sus opciones, sus escaños y su voto.
+
+[[mosaico]]
+
+[nota] Cada casilla es una provincia, más o menos en su sitio. Macizo, casi seguro; claro, probable; rayado, en juego (los mismos umbrales que arriba). En la ficha, cada barra se oscurece donde más simulaciones caen; la raya negra es la mediana y la caja recoge 9 de cada 10 simulaciones. Entre paréntesis, la diferencia con 2023.
+
 ### Juega a simular la noche {#simula | Simula}
 
 [sub] Una probabilidad se entiende mejor contando noches. Aquí hay tres escaños de verdad: uno casi seguro, uno probable y uno en juego. En cada noche simulada, cada escaño se gana o se pierde con la frecuencia que le da el modelo. Simula una noche, diez o cien, y cuenta cuántas veces se pierde cada uno.
@@ -254,3 +262,11 @@ anteriores a {diario_desde}, con un punto por semana).
 ::: si no
 [nota] Cada día, «Nuestra predicción» rehecha con las encuestas que se conocían ese día y el modelo de hoy: si la línea se mueve, se movieron las encuestas, no el modelo. En «Bloques», cada banda recoge 9 de cada 10 simulaciones y la raya marca la mayoría de 176; el bloque de la investidura es el de las tarjetas de arriba.
 :::
+
+=== tooltip_mosaico ===
+<!--
+Al pasar por una casilla de "Provincia a provincia" (src/mosaico.js). Cifras: {provincia}, {escanos}, {seguros}, {probables},
+{juego} (opciones de escaño de cada clase en la provincia).
+-->
+**{provincia}**, {escanos} escaños: {seguros} opciones casi seguras, {probables} probables y {juego} en juego.
+

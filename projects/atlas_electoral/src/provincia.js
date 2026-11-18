@@ -1,12 +1,12 @@
 const d3 = window.d3;
-import { load, showTip, hideTip } from "./data.js?v=0.2.155";
-import { textos, md, INDICE } from "./textos.js?v=0.2.155";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.155";
-import { t as tr, lang, deCada, ordinal } from "./i18n.js?v=0.2.155";
+import { load, showTip, hideTip } from "./data.js?v=0.2.156";
+import { textos, md, INDICE } from "./textos.js?v=0.2.156";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.156";
+import { t as tr, lang, deCada, ordinal } from "./i18n.js?v=0.2.156";
 // the province card's blocks (results per list, electors per seat, last seat, D'Hondt, 2019 vs 2023, municipalities)
-import { ficha, municipios, bocadillos } from "./provincia_ficha.js?v=0.2.155";
+import { ficha, municipios, bocadillos } from "./provincia_ficha.js?v=0.2.156";
 // the province shapes, names, colours and the "Más votado" colouring are shared with the front page's map (masvotado.js)
-import { short, pc, nm, frecuencia, cssVar, colorVoto, nombre, pctVoto, rampa, provincias, resultados23, masVotado } from "./masvotado.js?v=0.2.155";
+import { short, pc, nm, frecuencia, cssVar, colorVoto, nombre, pctVoto, rampa, provincias, resultados23, masVotado } from "./masvotado.js?v=0.2.156";
 export { short, pc };   // imported from here by resultados.js
 const de100txt = (p) => (p >= 0.995 ? tr("más de 99 de cada 100") : p < 0.01 ? tr("menos de 1 de cada 100") : deCada(Math.round(p * 100), 100));   // frequencies, not percentages (Víctor)
 export const pct = (p) => (p >= 0.995 ? ">99%" : p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);

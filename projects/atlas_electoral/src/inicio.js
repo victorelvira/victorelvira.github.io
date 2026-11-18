@@ -1,15 +1,16 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.155";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.155";
-import { projectFromPolls } from "./simulador.js?v=0.2.155";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.155";
-import { pugnasHtml } from "./provincia.js?v=0.2.155";
-import { parlamento } from "./parlamento.js?v=0.2.155";
-import { opciones, simula } from "./opciones.js?v=0.2.155";
-import { diaADia } from "./dia.js?v=0.2.155";
-import { textos, md, INDICE } from "./textos.js?v=0.2.155";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.155";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.155";
-import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.155";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.156";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.156";
+import { projectFromPolls } from "./simulador.js?v=0.2.156";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.156";
+import { pugnasHtml } from "./provincia.js?v=0.2.156";
+import { parlamento } from "./parlamento.js?v=0.2.156";
+import { opciones, simula } from "./opciones.js?v=0.2.156";
+import { diaADia } from "./dia.js?v=0.2.156";
+import { mosaico } from "./mosaico.js?v=0.2.156";
+import { textos, md, INDICE } from "./textos.js?v=0.2.156";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.156";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.156";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.156";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
@@ -106,6 +107,7 @@ export async function renderInicio(app, args = []) {
     parlamento: PV ? '<div id="parlamento"></div>' : null,
     opciones: PV ? '<div id="opciones"></div>' : null,
     simula: PV ? '<div id="simula" class="card sm"></div>' : null,
+    mosaico: PV ? '<div id="mosaico" class="mz"></div>' : null,
     mov: '<div class="grid2" id="mov"></div>',
     resultados: R?.html ?? null,
     calendario: conv?.calendario ? calendario(conv) : null,
@@ -172,7 +174,7 @@ export async function renderInicio(app, args = []) {
   if (mm && PV) mapaMV = await mapaMasVotado(mm, PV, { grupos: GROUPS });
   // "Los 350 escaños, uno a uno" (always «Nuestra predicción»: escanos_350.json)
   const pl = app.querySelector("#parlamento");
-  const op = app.querySelector("#opciones"), sm = app.querySelector("#simula");
+  const op = app.querySelector("#opciones"), sm = app.querySelector("#simula"), mz = app.querySelector("#mosaico");
   // "Cómo vamos, día a día" under "¿Quién llega a 176?" (always «Nuestra predicción», so only with it chosen; 2026-11-18)
   const q176 = app.querySelector(".res-q176");
   if (q176 && (pick?.id ?? "nuestra") === "nuestra") {
@@ -182,8 +184,8 @@ export async function renderInicio(app, args = []) {
     if (grid) grid.after(dd); else q176.after(dd);
     diaADia(dd).catch(() => dd.remove());
   }
-  if (pl) load("escanos_350.json").then((E3) => { parlamento(pl, E3, PV); if (op) opciones(op, E3, PV); if (sm) simula(sm, E3, PV); })
-    .catch(() => [pl, op, sm].forEach((x) => x?.remove()));
+  if (pl) load("escanos_350.json").then((E3) => { parlamento(pl, E3, PV); if (op) opciones(op, E3, PV); if (sm) simula(sm, E3, PV); if (mz) mosaico(mz, E3, PV); })
+    .catch(() => [pl, op, sm, mz].forEach((x) => x?.remove()));
 
 }
 

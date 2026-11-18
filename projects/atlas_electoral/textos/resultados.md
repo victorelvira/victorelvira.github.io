@@ -12,7 +12,7 @@ y [[hemiciclo]] (el hemiciclo, con la frase de la parte hemiciclo_foco debajo). 
 
 ### Escaños por partido estimados {#escanos | Escaños}
 
-[sub] El punto es la estimación central; la franja recoge 9 de cada 10 simulaciones.
+[sub] El punto es la estimación central; el sombreado es más oscuro donde caen más simulaciones, y la caja recoge 9 de cada 10.
 
 [[escanos_partido]]
 
@@ -36,7 +36,7 @@ y [[hemiciclo]] (el hemiciclo, con la frase de la parte hemiciclo_foco debajo). 
 
 ### Voto estimado {#votos | Voto}
 
-[sub] Porcentaje de voto previsto para el 29N, con la franja que recoge 9 de cada 10 simulaciones.
+[sub] Porcentaje de voto previsto para el 29N; el sombreado es más oscuro donde caen más simulaciones, y la caja recoge 9 de cada 10. Los puntitos de encima son las encuestas del último mes, una cada uno.
 
 [[voto_partido]]
 

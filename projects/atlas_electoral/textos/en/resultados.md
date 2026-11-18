@@ -9,7 +9,7 @@ Slots: [[quien_176]], [[escanos_partido]] and [[voto_partido]] (ranges per party
 
 ### Estimated seats by party {#escanos | Seats}
 
-[sub] The dot is the central estimate; the band covers 9 out of 10 simulations.
+[sub] The dot is the central estimate; the shade is darker where more simulations fall, and the box holds 9 out of 10.
 
 [[escanos_partido]]
 
@@ -33,7 +33,7 @@ Slots: [[quien_176]], [[escanos_partido]] and [[voto_partido]] (ranges per party
 
 ### Estimated vote {#votos | Vote}
 
-[sub] Forecast vote share for 29N, with the band that covers 9 out of 10 simulations.
+[sub] Forecast vote share for 29N; the shade is darker where more simulations fall, and the box holds 9 out of 10. The small dots above are the polls of the last month, one each.
 
 [[voto_partido]]
 
