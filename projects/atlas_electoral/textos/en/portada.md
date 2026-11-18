@@ -92,7 +92,7 @@ The poll average. All the polls, one by one and by pollster, in [29N polls](#enc
 
 ### The 350 seats, one by one {#escanos350 | 350 seats}
 
-[sub] Each dot is one actual seat: the PSOE's first in Soria, the PP's second in Navarra. Solid when its party wins it in more than 999 of 1,000 simulations; lighter, in more than 95 of 100; a ring when it is in play. Tap a dot to see its province and by how many votes it is won or lost.
+[sub] Each dot is one actual seat: the PSOE's first in Soria, the PP's second in Navarra. Solid when its party wins it in 99 of 100 simulations or more; lighter, in 75 of 100 or more; a ring when it is in play. Tap a dot to see its province and by how many votes it is won or lost.
 
 [[parlamento]]
 
@@ -104,7 +104,7 @@ The poll average. All the polls, one by one and by pollster, in [29N polls](#enc
 
 [[opciones]]
 
-[nota] Almost sure: won in more than 999 of 1,000 simulations; likely, in more than 95 of 100; in play, between 25 and 95 of 100. Tap a bar to see the provinces.
+[nota] Almost sure: won in 99 of 100 simulations or more; likely, in 75 of 100 or more; in play, between 25 and 75 of 100. Tap a bar to see the provinces.
 
 ### Province by province {#mosaico | Provinces}
 

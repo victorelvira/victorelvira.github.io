@@ -94,5 +94,5 @@ See ../voto.md.
 ::: si hay
 [nota] Seats of {bloque} in the balance here, the ones a defensive vote helps to hold: {lista}.
 ::: si no
-[nota] Here {bloque} has no seat in the balance: the ones it wins, it wins in more than 95 of 100 simulations.
+[nota] Here {bloque} has no seat in the balance: the ones it wins, it wins in 75 of 100 simulations or more.
 :::

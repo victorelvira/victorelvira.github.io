@@ -97,7 +97,7 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 
 ### Los 350 escaños, uno a uno {#escanos350 | 350 escaños}
 
-[sub] Cada punto es un escaño concreto: el primero del PSOE en Soria, el segundo del PP en Navarra. Relleno, el que su partido gana en más de 999 de cada 1.000 simulaciones; más claro, en más de 95 de cada 100; hueco, el que está en juego. Al tocar un punto sale de qué provincia es y por cuántos votos se gana o se pierde.
+[sub] Cada punto es un escaño concreto: el primero del PSOE en Soria, el segundo del PP en Navarra. Relleno, el que su partido gana en 99 de cada 100 simulaciones o más; más claro, en 75 de cada 100 o más; hueco, el que está en juego. Al tocar un punto sale de qué provincia es y por cuántos votos se gana o se pierde.
 
 [[parlamento]]
 
@@ -109,7 +109,7 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 
 [[opciones]]
 
-[nota] Casi seguros: los gana en más de 999 de cada 1.000 simulaciones; probables, en más de 95 de cada 100; en juego, entre 25 y 95 de cada 100. Toca una barra para ver en qué provincias están.
+[nota] Casi seguros: los gana en 99 de cada 100 simulaciones o más; probables, en 75 de cada 100 o más; en juego, entre 25 y 75 de cada 100. Toca una barra para ver en qué provincias están.
 
 ### Provincia a provincia {#mosaico | Provincias}
 

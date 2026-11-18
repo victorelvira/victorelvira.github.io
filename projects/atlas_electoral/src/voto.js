@@ -5,10 +5,10 @@
 // peso_voto.py, «Nuestra predicción»; "e" = the same by thirds of the draws) and escanos_350.json; blocs: the starting groups of
 // "Forma tu mayoría" (masvotado.js grupoDe, so Geroa Bai goes with the PNV in Navarra).
 // The address keeps the choice: #voto/<province code>/<izquierda|derecha>/<todas|bien|normal|mal>.
-import { load } from "./data.js?v=0.2.156";
-import { textos, md } from "./textos.js?v=0.2.156";
-import { t, lang, ordinal, deCada } from "./i18n.js?v=0.2.156";
-import { opcionesPeso, short, colorVoto, PESO_ART, entreN, PESO_NUNCA, grupoDe } from "./masvotado.js?v=0.2.156";
+import { load } from "./data.js?v=0.2.157";
+import { textos, md } from "./textos.js?v=0.2.157";
+import { t, lang, ordinal, deCada } from "./i18n.js?v=0.2.157";
+import { opcionesPeso, short, colorVoto, PESO_ART, entreN, PESO_NUNCA, grupoDe } from "./masvotado.js?v=0.2.157";
 
 const KEY = "atlas_electoral.voto";   // the reader's last province, bloc and night (a convenience: the page works without it)
 const leer = () => { try { return JSON.parse(localStorage.getItem(KEY) ?? "{}"); } catch { return {}; } };
@@ -66,11 +66,11 @@ export async function renderVoto(app, args = []) {
           flags: { igual: mejor[0] === mejor[1] && mejor[1] === mejor[2], bn: mejor[0] === mejor[1] && mejor[1] !== mejor[2], nm: mejor[1] === mejor[2] && mejor[0] !== mejor[1], no_bn_nm: mejor[0] !== mejor[1] && mejor[1] !== mejor[2] }, page: "voto" }).html;
       }
     }
-    // on a bad night: the bloc's seats here that are at risk (won in 50 to 95 of 100 draws, escanos_350.json)
+    // on a bad night: the bloc's seats here that are at risk (won in 50 to 75 of 100 draws, the class "en juego", escanos_350.json)
     let riesgo = "";
     if (noche === "mal" && E3) {
       const grupo = grupoDe({});
-      const s = E3.escanos.filter((x) => x.prov === prov && grupo(x.f.split("|")[0], prov) === bloque && x.p >= 0.5 && x.p < 0.95).sort((u, w) => u.p - w.p);
+      const s = E3.escanos.filter((x) => x.prov === prov && grupo(x.f.split("|")[0], prov) === bloque && x.p >= 0.5 && x.p < 0.75).sort((u, w) => u.p - w.p);
       const nombre = (x) => { const f = x.f.split("|")[0]; return lang() === "es" ? `el ${ordinal(x.k)} ${ART[f] ? `del ${ART[f].slice(3)}` : `de ${short(f, prov)}`}` : `${short(f, prov)}'s ${ordinal(x.k)}`; };
       riesgo = md(T.riesgo, { vars: { bloque: nomB(bloque), lista: s.map((x) => t("{e} (lo gana en {f} simulaciones)", { e: nombre(x), f: deCada(Math.round(x.p * 100), 100) })).join("; ") },
         flags: { hay: s.length > 0 }, page: "voto" }).html;

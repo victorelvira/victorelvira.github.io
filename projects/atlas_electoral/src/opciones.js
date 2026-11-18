@@ -1,15 +1,15 @@
 // Two blocks under "Los 350 escaños, uno a uno" (Víctor, 2026-11-17, after EL PAÍS's page of 12 Nov):
 // 1. "Opciones de escaño por partido": every seat a party wins in at least 1 draw in 4 (escanos_350.json "opciones"), split
-//    into almost sure (>= 999 in 1,000), likely (>= 95 in 100) and in play (25 to 95 in 100), one bar per party. A disputed seat
+//    into almost sure (>= 99 in 100), likely (>= 75 in 100) and in play (25 to 75 in 100), one bar per party. A disputed seat
 //    counts once per party that can win it, so the options add up to more than 350. Hover or tap a bar: the provinces.
 // 2. "Juega a simular la noche": three real seats (one almost sure, one likely, one in play); each simulated night draws each
 //    seat with its probability, so the reader counts how often each one is lost. Independent draws, said in the note.
-import { showTip, hideTip } from "./data.js?v=0.2.156";
-import { IDEO, fam } from "./charts.js?v=0.2.156";
-import { short, pc } from "./provincia.js?v=0.2.156";
-import { textos, md } from "./textos.js?v=0.2.156";
-import { t, deCada, ordinal, loc } from "./i18n.js?v=0.2.156";
-import { CLASES } from "./parlamento.js?v=0.2.156";
+import { showTip, hideTip } from "./data.js?v=0.2.157";
+import { IDEO, fam } from "./charts.js?v=0.2.157";
+import { short, pc } from "./provincia.js?v=0.2.157";
+import { textos, md } from "./textos.js?v=0.2.157";
+import { t, deCada, ordinal, loc } from "./i18n.js?v=0.2.157";
+import { CLASES } from "./parlamento.js?v=0.2.157";
 
 const clase = (p) => CLASES.find(([, x]) => p >= x)[0];
 const familia = (f) => f.split("|")[0];
@@ -17,8 +17,8 @@ const color = (f) => (pc(f) === "#888" ? fam(f).color : pc(f));
 const NOMBRE_CLASE = { seguro: "casi seguros", probable: "probables", juego: "en juego" };
 // parties with a row of their own; the rest (regional lists that differ by province) go to "Otros"
 const PROPIOS = ["psoe", "sumar", "podemos", "erc", "bildu", "pnv", "bng", "junts", "cc", "pp", "vox", "salf"];
-const frec = (p) => (p >= 0.9995 ? t("más de 999 de cada 1.000") : p >= 0.995 ? deCada(Math.round(p * 1000), t("1.000"))
-  : deCada(Math.max(1, Math.min(p < 0.95 ? 94 : 99, Math.round(p * 100))), 100));
+const frec = (p) => (p >= 0.9995 ? t("más de 999 de cada 1.000") : p >= 0.99 ? deCada(Math.round(p * 1000), t("1.000"))
+  : deCada(Math.max(1, Math.min(p < 0.75 ? 74 : 98, Math.round(p * 100))), 100));
 
 export async function opciones(el, E, D) {
   const T = await textos("portada");
@@ -66,13 +66,13 @@ export async function simula(el, E, D) {
   const ops = (E.opciones ?? []).filter((o) => PROPIOS.includes(familia(o.f)));
   const peso = (o) => ops.filter((x) => familia(x.f) === familia(o.f)).length;   // the biggest party first
   const cerca = (xs, p) => [...xs].sort((a, b) => Math.abs(a.p - p) - Math.abs(b.p - p))[0];
-  // three real seats: the first seat of the most voted party in the largest province, one likely (near 97 in 100) and one
+  // three real seats: the first seat of the most voted party in the largest province, one likely (near 87 in 100) and one
   // in play (near 1 in 2)
   const grande = [...D.provincias].sort((a, b) => (b.esc ?? 0) - (a.esc ?? 0))[0]?.prov ?? "28";
   const filas = [
-    ops.filter((o) => o.prov === grande && o.k === 1 && o.p >= 0.999).sort((a, b) => peso(b) - peso(a))[0] ?? ops.find((o) => o.p >= 0.999),
-    cerca(ops.filter((o) => o.p >= 0.95 && o.p < 0.999), 0.97),
-    cerca(ops.filter((o) => o.p < 0.95), 0.5),
+    ops.filter((o) => o.prov === grande && o.k === 1 && o.p >= 0.99).sort((a, b) => peso(b) - peso(a))[0] ?? ops.find((o) => o.p >= 0.99),
+    cerca(ops.filter((o) => o.p >= 0.75 && o.p < 0.99), 0.87),
+    cerca(ops.filter((o) => o.p < 0.75), 0.5),
   ].filter(Boolean).map((o) => ({ o, ganadas: 0, noches: [] }));
   if (!filas.length) { el.remove(); return; }
   const ART = { pp: "del PP", psoe: "del PSOE", pnv: "del PNV", bng: "del BNG" };   // Spanish: "del PP", "de Vox"

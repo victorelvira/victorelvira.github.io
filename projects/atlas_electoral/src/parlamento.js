@@ -1,22 +1,22 @@
 // "Los 350 escaños, uno a uno" (Víctor, 2026-11-16): a hemicycle where each dot is one concrete seat (the PSOE's first seat in
-// Soria, the PP's second in Navarra...), drawn by how sure it is: solid when its party wins it in more than 999 of 1,000 draws,
-// lighter from 95 in 100, a ring when it is in play. Hover or tap: the province, the seat, how often it is won, the votes it has
+// Soria, the PP's second in Navarra...), drawn by how sure it is: solid when its party wins it in 99 of 100 draws or more,
+// lighter from 75 in 100, a ring when it is in play. Hover or tap: the province, the seat, how often it is won, the votes it has
 // to spare (or lacks) in the median draw and who takes it when it is lost. Data: escanos_350.json (pipeline/escanos_350.py),
 // always «Nuestra predicción». Two orders: by party (left to right) or by how sure (in play in the middle).
-import { showTip, hideTip } from "./data.js?v=0.2.156";
-import { IDEO, fam } from "./charts.js?v=0.2.156";
-import { asientos } from "./resultados.js?v=0.2.156";
-import { short, pc } from "./provincia.js?v=0.2.156";
-import { textos, md } from "./textos.js?v=0.2.156";
-import { t, deCada, ordinal, loc } from "./i18n.js?v=0.2.156";
+import { showTip, hideTip } from "./data.js?v=0.2.157";
+import { IDEO, fam } from "./charts.js?v=0.2.157";
+import { asientos } from "./resultados.js?v=0.2.157";
+import { short, pc } from "./provincia.js?v=0.2.157";
+import { textos, md } from "./textos.js?v=0.2.157";
+import { t, deCada, ordinal, loc } from "./i18n.js?v=0.2.157";
 const d3 = window.d3;
 
-export const CLASES = [["seguro", 0.999], ["probable", 0.95], ["juego", 0]];   // the first threshold each seat reaches
+export const CLASES = [["seguro", 0.99], ["probable", 0.75], ["juego", 0]];   // the first threshold each seat reaches (El País's 99 / 75 / 25, Víctor 2026-11-18; 999 / 95 before)
 const clase = (p) => CLASES.find(([, x]) => p >= x)[0];
 // "más de 999 de cada 1.000", "997 de cada 1.000", "87 de cada 100"
-// (a seat in play, under 95 in 100, never reads "95 de cada 100" by rounding)
-const frec = (p) => (p >= 0.9995 ? t("más de 999 de cada 1.000") : p >= 0.995 ? deCada(Math.round(p * 1000), t("1.000"))
-  : deCada(Math.max(1, Math.min(p < 0.95 ? 94 : 99, Math.round(p * 100))), 100));
+// (a seat in play, under 75 in 100, never reads "75 de cada 100" by rounding; a likely one never reads "99")
+const frec = (p) => (p >= 0.9995 ? t("más de 999 de cada 1.000") : p >= 0.99 ? deCada(Math.round(p * 1000), t("1.000"))
+  : deCada(Math.max(1, Math.min(p < 0.75 ? 74 : 98, Math.round(p * 100))), 100));
 const miles = (n) => n.toLocaleString(loc());
 // a family, or "family|2023 list name" for one of two lists of a family in a province (Navarra: PP and UPN)
 const nombre = (f, prov) => { const [fa, sig] = f.split("|"); return sig ? `${sig === "U.P.N." ? "UPN" : sig.replace(/^JxCAT - /, "")} (${short(fa, prov)})` : short(fa, prov); };
