@@ -918,3 +918,34 @@ main h3 { font-size: 19px; }
 .cj-3d:active { cursor: grabbing; }
 .cj-nota { max-width: 700px; }
 
+/* ==== "¿Quién llega a 176?" and "fuerza más votada", compact (Víctor, 2026-11-18: "ocupa muchísimo; algo mucho más pequeño y
+   discreto") · start ====
+   One thin row per card instead of a coloured box: a small swatch (solid for a party, hatched for a bloc), the label and the
+   expected seats on the left, the frequency on the right. The !important lines beat the earlier, more specific card rules
+   (the box colours of 2026-11-17 and the tablero's), which stay above for the record. */
+.q176, .tb-izq .q176 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin: 2px 0 4px; max-width: 460px; }
+.q176.q176-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 14px; }
+.tb-izq .q176.q176-3 { grid-template-columns: minmax(0, 1fr); }   /* the narrow left card: one row each */
+.tb-izq .q176.q176-3 .q176-c { border-bottom: 1px solid var(--line) !important; } .tb-izq .q176.q176-3 .q176-c:last-child { border-bottom: 0 !important; }
+.q176 .q176-c { display: grid; grid-template-columns: 11px minmax(0, 1fr) auto; grid-template-areas: "sw t n" "sw r n";
+  column-gap: 9px; align-items: center; padding: 5px 0 !important; background: none !important; border: 0 !important;
+  border-bottom: 1px solid var(--line) !important; border-radius: 0 !important; }
+.q176 .q176-c:last-child { border-bottom: 0 !important; }
+.q176 .q176-c::before { content: ""; grid-area: sw; width: 11px; height: 11px; border-radius: 2px; background: var(--sw, var(--ink-3)); }
+.q176 .q176-der { --sw: #1d84ce; } .q176 .q176-izq { --sw: #e30613; } .q176 .q176-vox { --sw: #4f9e17; }
+.q176 .q176-bloque::before { background: repeating-linear-gradient(45deg, var(--sw) 0 2px, transparent 2px 4px); box-shadow: inset 0 0 0 1px var(--sw); }
+.q176 .q176-c .q176-n { grid-area: n; font-family: inherit; font-size: 15px !important; font-weight: 700; color: var(--ink) !important; white-space: nowrap; text-align: right; }
+.q176 .q176-c .q176-t { grid-area: t; margin: 0; font-size: 13px; line-height: 1.3; color: var(--ink) !important; }
+.q176 .q176-c .q176-r { grid-area: r; margin: 0; font-size: 12px; line-height: 1.25; color: var(--muted) !important; }
+.q176.q176-3 .q176-c { grid-template-areas: "sw t n"; border-bottom: 0 !important; }
+/* ==== compact 176 · end ==== */
+/* "Cómo vamos, día a día" (src/dia.js, 2026-11-18) */
+.dia { margin: 14px 0 6px; }
+.tablero .dia { max-width: 900px; margin: 18px 0 10px; }
+.dia-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 4px 0 6px; }
+.dia-ctl .seg button { padding: 4px 9px; font-size: var(--t-s); }
+.dia-frase p { margin: 2px 0 4px; font-size: 14px; }
+.dia-chart svg { display: block; width: 100%; height: auto; }
+.dia-176 { stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 4 3; }
+.dia-176-t, .dia-lab { font-size: 12px; fill: var(--ink-2); font-variant-numeric: tabular-nums; }
+.dia-nota p { margin-top: 2px; }

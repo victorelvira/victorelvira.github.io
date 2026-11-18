@@ -211,3 +211,20 @@ Figures and conditions: see ../portada.md.
 ::: si lista
 [nota] {lista}
 :::
+
+=== dia_titulo ===
+#### How it is going, day by day
+
+=== dia_frase ===
+::: si igual
+Since {desde}, PP and Vox reach 176 in {hoy} simulations, as then ({esc_antes} expected seats then, {esc_hoy} today).
+::: si no
+On {desde}, PP and Vox reached 176 in {antes} simulations; today, in {hoy} ({esc_antes} expected seats then, {esc_hoy} today).
+:::
+
+=== dia_nota ===
+::: si semanal
+[nota] Each day, our forecast re-run with the polls known that day and today's model: if the line moves, the polls moved, not the model. In «PP and Vox», the band holds 9 in 10 simulations and the dashed line marks the 176 majority. Before {diario_desde}, one point a week.
+::: si no
+[nota] Each day, our forecast re-run with the polls known that day and today's model: if the line moves, the polls moved, not the model. In «PP and Vox», the band holds 9 in 10 simulations and the dashed line marks the 176 majority.
+:::
