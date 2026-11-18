@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.162";
-import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.162";
-import { textos, md, INDICE } from "./textos.js?v=0.2.162";
-import { t as tr, loc, fix } from "./i18n.js?v=0.2.162";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.163";
+import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.163";
+import { textos, md, INDICE } from "./textos.js?v=0.2.163";
+import { t as tr, loc, fix } from "./i18n.js?v=0.2.163";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },

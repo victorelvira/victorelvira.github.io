@@ -1,8 +1,8 @@
 // The prose of every tab lives in web/atlas_electoral/textos/<page>.md, plain Markdown that Víctor edits by hand
 // (syntax in textos/README.md). This module reads those files and turns them into the same HTML the pages had.
 // The code keeps only what is computed: figures ({name}), charts and tables ([[name]]) and conditions (::: si name).
-import { DATA_V } from "./data.js?v=0.2.162";
-import { lang, t as tr, EN_TEXTOS } from "./i18n.js?v=0.2.162";
+import { DATA_V } from "./data.js?v=0.2.163";
+import { lang, t as tr, EN_TEXTOS } from "./i18n.js?v=0.2.163";
 
 const BASE = new URL("../textos/", import.meta.url).href;
 const cache = new Map();

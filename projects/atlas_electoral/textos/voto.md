@@ -36,7 +36,7 @@ Para cada provincia y cada simulación de «Nuestra predicción» (140.000), con
 La frase de la provincia elegida (acortada el 18-11-2026: Víctor la veía "super verbosa"; debajo, el código pone una línea por
 partido: "Frente Amplio: 2,3 veces", "Bildu: casi igual", "Podemos: casi nunca suma (por debajo del 3%)"). Cifras: {provincia};
 {bloque} ("la derecha", "la izquierda"); {mejor} (con artículo: "el PSOE"); {noche} ("bien", "como se espera", "mal", para el bloque
-elegido). {escanos} (el siguiente escaño de las dos mejores opciones: "el 3.º del PNV o el 3.º del PSOE"). Condiciones: vacia (ningún partido
+elegido). {escanos} (el siguiente escaño de las dos mejores opciones en la noche elegida: "el 3.º del PNV o el 3.º del PSOE"). Condiciones: vacia (ningún partido
 del bloque tiene opciones), solo (un único partido del bloque), poco (ni la mejor opción da al bloque un escaño en 5 de cada 1.000
 simulaciones con 1.000 votos más: Víctor, 18-11-2026, "da igual lo que votes un poco... pero relativamente, mejor X"), mucho (lo contrario).
 -->
