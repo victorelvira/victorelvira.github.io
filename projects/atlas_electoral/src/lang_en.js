@@ -37,6 +37,7 @@ export default {
   "Provincias": "Provinces",
   "Encuestas históricas": "Past polls",
   "Generales": "General elections",
+  "Generales históricas": "Past elections",
   "Simulador": "Simulator",
   "Cambiar tema": "Switch theme",
   "Cargando datos…": "Loading data…",
