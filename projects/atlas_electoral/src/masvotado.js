@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.160";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.160";
-import { getGeo, rewind } from "./mapa.js?v=0.2.160";
-import { textos, md } from "./textos.js?v=0.2.160";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.160";
-import { t as tr, N_, fix, deCada, lang } from "./i18n.js?v=0.2.160";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.161";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.161";
+import { getGeo, rewind } from "./mapa.js?v=0.2.161";
+import { textos, md } from "./textos.js?v=0.2.161";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.161";
+import { t as tr, N_, fix, deCada, lang } from "./i18n.js?v=0.2.161";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 // the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a
@@ -589,7 +589,8 @@ export function porPeso(D, PW, T, { at = {}, bloque = "derecha" } = {}) {
     const igual = resto.filter((x) => x.g >= PESO_NUNCA && a.g / x.g < PESO_PAREJAS), mas = resto.filter((x) => x.g >= PESO_NUNCA && a.g / x.g >= PESO_PAREJAS), nunca = resto.filter((x) => x.g < PESO_NUNCA);
     const lista = [...(igual.length ? [tr("casi igual que {p}", { p: yLista(igual.map(nm)) })] : []), ...mas.map((x) => tr("{x} veces más que {p}", { x: vecesMas(a.g, x.g), p: nm(x) }))].join(", ");
     const nada = nunca.length ? tr(nunca.length > 1 ? "{p} casi nunca suman" : "{p} casi nunca suma", { p: yLista(nunca.map(nm)) }) : "";
-    return md(T.tooltip_peso, { vars: { provincia: p.n, bloque: nomB, mejor: nm(a), lista, nunca: nada }, flags: { vacia: !(a.g >= PESO_NUNCA), con_lista: !!lista, con_nunca: !!nada }, page: "provincia" }).html;
+    return md(T.tooltip_peso, { vars: { provincia: p.n, bloque: nomB, mejor: nm(a), lista, nunca: nada }, flags: { vacia: !(a.g >= PESO_NUNCA), con_lista: !!lista, con_nunca: !!nada }, page: "provincia" }).html
+      .replace(/<\/p>\s*<p[^>]*>/g, " ");   // one line (Víctor, 2026-11-18)
   };
   const liderLab = (p) => {
     const r = info(p);
