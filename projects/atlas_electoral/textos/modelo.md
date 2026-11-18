@@ -79,13 +79,13 @@ No hay condiciones (::: si ...) en esta página.
 [[pred-bt]]
 
 ::: metodología
-**Qué hace.** Para cada partido (PP, PSOE, Vox, Frente Amplio, Podemos, SALF, ERC, Junts, Bildu y PNV) sigue día a día su apoyo con un filtro que combina todas las encuestas del ciclo, descontando a cada casa su desviación habitual (con lo que hizo en 2023 como punto de partida). Eso da el nivel de hoy y su incertidumbre.
+**Qué hace.** Para cada partido (PP, PSOE, Vox, Frente Amplio, Podemos, SALF, ERC, Junts, Bildu y PNV) sigue día a día su apoyo con un filtro que combina todas las encuestas del ciclo, descontando a cada casa su desviación habitual en este ciclo (lo que hizo en 2023 cuenta poco: de una general a la siguiente, el sesgo de una casa apenas se repite). Eso da el nivel de hoy y su incertidumbre.
 
-**Lo que las encuestas no saben.** El día de la votación se añade el error común de la industria: lo que se equivocó este mismo filtro, con todas las encuestas, en cada general desde 1982, en una dirección que no se puede saber de antemano. Se simula con la escala y las correlaciones entre partidos medidas en esas elecciones (la derecha se mueve junta; derecha e izquierda, en sentidos opuestos).
+**Lo que las encuestas no saben.** El día de la votación se añade el error común de la industria: lo que se equivocó este mismo filtro, con todas las encuestas, en cada general desde 1982, en una dirección que no se puede saber de antemano. Se simula con la escala y las correlaciones entre partidos medidas en esas elecciones (la derecha se mueve junta; derecha e izquierda, en sentidos opuestos). Las colas son algo más anchas que las de una normal: en las generales pasadas, una horquilla del 90% así construida acertaba unas 89 veces de cada 100 a una semana de votar y unas 82 a un mes, así que se ensancha un poco y deja sitio a sorpresas grandes.
 
 **Escaños.** Cada simulación de voto nacional se lleva a las provincias como en el simulador, con un ruido extra por comunidad y por provincia calibrado con 1977-2023, y se reparten los escaños con D'Hondt. Las horquillas recogen el 90% de las simulaciones.
 
-[nota] Modelo K0, el que publicábamos hasta ahora (especificación en docs/modelos/especificacion/K0.md): filtro de Kalman por partido, error común casi normal, {simulaciones} simulaciones. Se probó además una capa provincial a partir de los microdatos del CIS y 40dB y de las encuestas autonómicas: mejora el mapa de porcentajes pero no los escaños, así que no se usa. Parámetros: escala del error común {b_escala}·√(p(1−p)); ruido autonómico {s_ccaa}, provincial {s_prov}.
+[nota] Modelo K0, el que publicábamos hasta ahora (especificación en docs/modelos/especificacion/K0.md): filtro de Kalman por partido, error común con colas algo más anchas que una normal (t de Student con 14 grados de libertad desde el 18 de noviembre; antes 100), {simulaciones} simulaciones. Se probó además una capa provincial a partir de los microdatos del CIS y 40dB y de las encuestas autonómicas: mejora el mapa de porcentajes pero no los escaños, así que no se usa. Parámetros: escala del error común {b_escala}·√(p(1−p)); ruido autonómico {s_ccaa}, provincial {s_prov}.
 :::
 
 === sin_prediccion ===

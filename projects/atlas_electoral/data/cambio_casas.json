@@ -1,23 +1,23 @@
 {
  "_doc": "Change within each pollster (pipeline/cambio_casas.py): latest poll minus the same house's latest poll ending 21 to 60 days earlier, houses with a poll ending in the last 14 days; internal polls and CIS re-estimations left out. Percentage points. A description of the data, not a forecast.",
- "ultimo_campo": "2026-11-16",
+ "ultimo_campo": "2026-11-17",
  "dias_recientes": 14,
  "separacion_min": 21,
  "separacion_max": 60,
  "resumen": {
   "pp": {
    "n": 14,
-   "bajan": 11,
-   "suben": 3,
+   "bajan": 10,
+   "suben": 4,
    "iguales": 0,
-   "mediana": -0.5
+   "mediana": -0.45
   },
   "psoe": {
    "n": 14,
    "bajan": 4,
-   "suben": 9,
-   "iguales": 1,
-   "mediana": 0.25
+   "suben": 10,
+   "iguales": 0,
+   "mediana": 0.3
   },
   "vox": {
    "n": 14,
@@ -28,8 +28,8 @@
   },
   "sumar": {
    "n": 14,
-   "bajan": 4,
-   "suben": 10,
+   "bajan": 5,
+   "suben": 9,
    "iguales": 0,
    "mediana": 0.25
   },
@@ -38,7 +38,7 @@
    "bajan": 13,
    "suben": 0,
    "iguales": 0,
-   "mediana": -1.4
+   "mediana": -1.6
   },
   "salf": {
    "n": 8,
@@ -52,14 +52,14 @@
   {
    "casa": "40dB",
    "antes": "2026-10-08",
-   "ahora": "2026-11-16",
+   "ahora": "2026-11-17",
    "cambio": {
-    "pp": -0.1,
-    "psoe": 2.5,
-    "vox": -1.4,
-    "sumar": 0.1,
-    "podemos": -1.2,
-    "salf": -0.2
+    "pp": 0.3,
+    "psoe": 2.6,
+    "vox": -1.9,
+    "sumar": -0.1,
+    "podemos": -1.1,
+    "salf": -0.1
    }
   },
   {
@@ -115,13 +115,13 @@
   {
    "casa": "EM-Analytics",
    "antes": "2026-10-23",
-   "ahora": "2026-11-15",
+   "ahora": "2026-11-16",
    "cambio": {
-    "pp": -0.4,
-    "psoe": 0.2,
-    "vox": -0.1,
+    "pp": -0.1,
+    "psoe": 0.3,
+    "vox": -0.2,
     "sumar": 0.7,
-    "podemos": -0.5,
+    "podemos": -0.4,
     "salf": 0.5
    }
   },
@@ -177,13 +177,13 @@
   {
    "casa": "Sigma Dos",
    "antes": "2026-10-22",
-   "ahora": "2026-11-14",
+   "ahora": "2026-11-16",
    "cambio": {
-    "pp": 0.2,
-    "psoe": 0.0,
+    "pp": 0.1,
+    "psoe": 0.3,
     "vox": -0.1,
     "sumar": -1.5,
-    "podemos": -1.4
+    "podemos": -1.6
    }
   },
   {

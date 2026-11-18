@@ -64,13 +64,13 @@ Checked by pipeline/check_textos_en.py.
 [[pred-bt]]
 
 ::: metodología
-**What it does.** For each party (PP, PSOE, Vox, Frente Amplio, Podemos, SALF, ERC, Junts, Bildu and PNV) it tracks support day by day with a filter that combines every poll of the cycle, removing each pollster's usual deviation (with what it did in 2023 as the starting point). That gives today's level and its uncertainty.
+**What it does.** For each party (PP, PSOE, Vox, Frente Amplio, Podemos, SALF, ERC, Junts, Bildu and PNV) it tracks support day by day with a filter that combines every poll of the cycle, removing each pollster's usual deviation in this cycle (what it did in 2023 counts for little: from one general election to the next, a pollster's bias hardly repeats). That gives today's level and its uncertainty.
 
-**What the polls do not know.** On election day the industry error is added: how wrong this same filter was, with every poll, at each general election since 1982, in a direction that cannot be known in advance. It is simulated with the scale and the correlations between parties measured in those elections (the right moves together; right and left, in opposite directions).
+**What the polls do not know.** On election day the industry error is added: how wrong this same filter was, with every poll, at each general election since 1982, in a direction that cannot be known in advance. It is simulated with the scale and the correlations between parties measured in those elections (the right moves together; right and left, in opposite directions). The tails are somewhat heavier than a normal's: in past general elections a 90% range built this way held about 89 times in 100 a week before the vote and about 82 a month before, so it is widened a little and leaves room for large surprises.
 
 **Seats.** Each simulation of the national vote is taken to the provinces as in the simulator, with extra noise by region and by province calibrated on 1977-2023, and the seats are allocated with D'Hondt. The ranges cover 90% of the simulations.
 
-[nota] Model K0, the one we published until now (specification in docs/modelos/especificacion/K0.md): a Kalman filter per party, near-normal industry error, {simulaciones} simulations. A provincial layer built from the CIS and 40dB microdata and the regional polls was also tested: it improves the map of percentages but not the seats, so it is not used. Parameters: scale of the industry error {b_escala}·√(p(1−p)); regional noise {s_ccaa}, provincial {s_prov}.
+[nota] Model K0, the one we published until now (specification in docs/modelos/especificacion/K0.md): a Kalman filter per party, industry error with tails somewhat heavier than a normal's (Student t with 14 degrees of freedom since 18 November; 100 before), {simulaciones} simulations. A provincial layer built from the CIS and 40dB microdata and the regional polls was also tested: it improves the map of percentages but not the seats, so it is not used. Parameters: scale of the industry error {b_escala}·√(p(1−p)); regional noise {s_ccaa}, provincial {s_prov}.
 :::
 
 === sin_prediccion ===
