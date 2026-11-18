@@ -31,7 +31,12 @@ In **{provincia}**, if the night goes {noche}, no party of {bloque} has a chance
 ::: si solo
 In **{provincia}**, for {bloque}: **{mejor}**, the only option.
 ::: si no
+::: si poco
+In **{provincia}**, for {bloque}, if the night goes {noche}, your vote counts little whatever you vote: it is hard for {bloque} to add one more seat, be it {escanos}. Even so, by comparison, best **{mejor}**. How many times more a vote for it counts than one for:
+:::
+::: si mucho
 In **{provincia}**, for {bloque}, if the night goes {noche}, best **{mejor}**. How many times more a vote for it counts than one for:
+:::
 :::
 :::
 

@@ -8,12 +8,12 @@
 // provinces (skipped with reduced motion); a button plays it again.
 // Data: escanos_350.json (options), provincias_29n.json (seat and vote per list, pk = P(at least k seats), 2023), and, for the
 // vote shades, provincias_29n_draws.json (500 draws of the vote per family and province), loaded the first time it is needed.
-import { load, showTip, hideTip } from "./data.js?v=0.2.161";
-import { IDEO, fam } from "./charts.js?v=0.2.161";
-import { short, pc } from "./provincia.js?v=0.2.161";
-import { textos, md } from "./textos.js?v=0.2.161";
-import { t, deCada, loc } from "./i18n.js?v=0.2.161";
-import { CLASES } from "./parlamento.js?v=0.2.161";
+import { load, showTip, hideTip } from "./data.js?v=0.2.162";
+import { IDEO, fam } from "./charts.js?v=0.2.162";
+import { short, pc } from "./provincia.js?v=0.2.162";
+import { textos, md } from "./textos.js?v=0.2.162";
+import { t, deCada, loc } from "./i18n.js?v=0.2.162";
+import { CLASES } from "./parlamento.js?v=0.2.162";
 
 const clase = (p) => CLASES.find(([, x]) => p >= x)[0];
 const familia = (f) => f.split("|")[0];

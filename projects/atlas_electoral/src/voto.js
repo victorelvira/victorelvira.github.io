@@ -7,10 +7,10 @@
 // peso_voto.py, «Nuestra predicción»; "e" = the same by thirds of the draws) and escanos_350.json; blocs: the starting groups of
 // "Forma tu mayoría" (masvotado.js grupoDe, so Geroa Bai goes with the PNV in Navarra).
 // The address keeps the choice: #voto/<province code>/<izquierda|derecha>/<bien|mal> (no third segment: as expected).
-import { load } from "./data.js?v=0.2.161";
-import { textos, md } from "./textos.js?v=0.2.161";
-import { t, lang } from "./i18n.js?v=0.2.161";
-import { opcionesPeso, short, colorVoto, PESO_ART, PESO_NUNCA, frente } from "./masvotado.js?v=0.2.161";
+import { load } from "./data.js?v=0.2.162";
+import { textos, md } from "./textos.js?v=0.2.162";
+import { t, lang, ordinal } from "./i18n.js?v=0.2.162";
+import { opcionesPeso, short, colorVoto, PESO_ART, PESO_NUNCA, frente } from "./masvotado.js?v=0.2.162";
 
 const KEY = "atlas_electoral.voto";   // the reader's last province, bloc and night (a convenience: the page works without it)
 const leer = () => { try { return JSON.parse(localStorage.getItem(KEY) ?? "{}"); } catch { return {}; } };
@@ -19,6 +19,9 @@ const BLOQUES = ["izquierda", "derecha"], NOCHES = ["bien", "normal", "mal"];
 // "la noche va bien / como se espera / mal" for the chosen bloc, as a third of the draws by the national lead of the left
 const TERCIO = { izquierda: { bien: 2, normal: 1, mal: 0 }, derecha: { bien: 0, normal: 1, mal: 2 } };
 const NUNCA = PESO_NUNCA;   // the "casi nunca" floor, shared with the map
+// "pesa poco vote lo que vote" (Víctor, 2026-11-18): even the best option gives the bloc a seat in under 5 of 1,000 draws with
+// 1,000 more votes (about the lowest fifth of provinces for each bloc); the page then says so first, then the best one anyway
+const POCO = 0.005;
 const ART = { pp: "el PP", psoe: "el PSOE", pnv: "el PNV", bng: "el BNG" };
 
 export async function renderVoto(app, args = []) {
@@ -44,7 +47,12 @@ export async function renderVoto(app, args = []) {
   const respuesta = () => {
     const o = opcionesPeso(PW, prov, {}, bloque, tercio()), p = byCode[prov], a = o[0];
     const hay = a && a.g >= NUNCA;
-    const frase = md(T.respuesta, { vars: { provincia: p.n, bloque: nomB(bloque), mejor: a ? conArt(a.f) : "", noche: { bien: t("bien"), normal: t("como se espera"), mal: t("mal") }[noche] }, flags: { vacia: !hay, solo: o.length < 2 }, page: "voto" }).html;
+    // the next seat of each of the two best options: the first k it wins in under half the draws (all nights together)
+    const sig = (f) => { const l = p.listas?.find((x) => x.f === f); const k = l?.pk ? l.pk.findIndex((q) => q < 0.5) + 1 || l.pk.length + 1 : null;
+      return k ? (lang() === "es" ? `el ${ordinal(k)} ${ART[f] ? `del ${ART[f].slice(3)}` : `de ${short(f, prov)}`}` : `${short(f, prov)}'s ${ordinal(k)}`) : short(f, prov); };
+    const poco = hay && a.g < POCO, dos = o.slice(0, 2).filter((x) => x.g >= NUNCA);
+    const frase = md(T.respuesta, { vars: { provincia: p.n, bloque: nomB(bloque), mejor: a ? conArt(a.f) : "", noche: { bien: t("bien"), normal: t("como se espera"), mal: t("mal") }[noche],
+      escanos: dos.map((x) => sig(x.f)).join(lang() === "es" ? " o " : " or ") }, flags: { vacia: !hay, solo: o.length < 2, poco, mucho: !poco }, page: "voto" }).html;
     // every other party of the bloc, one short line each: how many times more chances a vote for the best one has
     // (seats taken from partners of the same bloc are already left out of the ratio, so no note for them)
     const lineas = hay ? o.slice(1).map((x) => {

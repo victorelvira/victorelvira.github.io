@@ -36,7 +36,9 @@ Para cada provincia y cada simulación de «Nuestra predicción» (140.000), con
 La frase de la provincia elegida (acortada el 18-11-2026: Víctor la veía "super verbosa"; debajo, el código pone una línea por
 partido: "Frente Amplio: 2,3 veces", "Bildu: casi igual", "Podemos: casi nunca suma (por debajo del 3%)"). Cifras: {provincia};
 {bloque} ("la derecha", "la izquierda"); {mejor} (con artículo: "el PSOE"); {noche} ("bien", "como se espera", "mal", para el bloque
-elegido). Condiciones: vacia (ningún partido del bloque tiene opciones), solo (un único partido del bloque).
+elegido). {escanos} (el siguiente escaño de las dos mejores opciones: "el 3.º del PNV o el 3.º del PSOE"). Condiciones: vacia (ningún partido
+del bloque tiene opciones), solo (un único partido del bloque), poco (ni la mejor opción da al bloque un escaño en 5 de cada 1.000
+simulaciones con 1.000 votos más: Víctor, 18-11-2026, "da igual lo que votes un poco... pero relativamente, mejor X"), mucho (lo contrario).
 -->
 ::: si vacia
 En **{provincia}**, si la noche va {noche}, ningún partido de {bloque} tiene opciones de sumar un diputado más.
@@ -44,7 +46,12 @@ En **{provincia}**, si la noche va {noche}, ningún partido de {bloque} tiene op
 ::: si solo
 En **{provincia}**, para {bloque}: **{mejor}**, la única opción.
 ::: si no
+::: si poco
+En **{provincia}**, para {bloque}, si la noche va {noche}, tu voto pesa poco vote lo que vote: es difícil que {bloque} sume un diputado más, sea {escanos}. Aun así, en comparación, mejor **{mejor}**. Cuántas veces más pesa un voto suyo que uno a:
+:::
+::: si mucho
 En **{provincia}**, para {bloque}, si la noche va {noche}, mejor **{mejor}**. Cuántas veces más pesa un voto suyo que uno a:
+:::
 :::
 :::
 
