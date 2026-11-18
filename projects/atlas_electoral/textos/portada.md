@@ -93,7 +93,7 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 
 [[pugnas]]
 
-[nota] [Todas las provincias en juego →](#provincia/decide)
+[[pugnas_todas]]
 
 ### Los 350 escaños, uno a uno {#escanos350 | 350 escaños}
 

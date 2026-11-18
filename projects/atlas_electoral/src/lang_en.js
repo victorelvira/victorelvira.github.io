@@ -381,6 +381,7 @@ export default {
   "Tu voto": "Your vote",
   "Dónde votas": "Where you vote",
   "Mejor opción": "Best option",
+  "Las demás provincias con escaños en el aire": "The other provinces with seats in play",
   "mal": "badly",
   "bien": "well",
   "también {m}": "{m} as well",

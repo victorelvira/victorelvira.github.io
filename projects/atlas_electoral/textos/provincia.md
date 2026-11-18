@@ -47,17 +47,7 @@ Parte "detalle" (la ficha de la provincia elegida, se rehace al cambiar de provi
 [[selector]]
 [[detalle]]
 
-## Dónde se decide {#decide | Dónde se decide}
-
-Hay **{en_juego} escaños en el aire**: escaños que ningún partido gana en al menos 9 de cada 10 simulaciones. Los otros {decididos} están prácticamente decididos. El mapa de abajo muestra cuántos hay en el aire en cada provincia; pulsa una para ver la suya.
-
 [[mapa]]
-
-### Escaños en el aire
-
-[nota] Las provincias con más escaños en el aire. En cada una, además, la pugna más habitual por su último escaño: quién se lo suele llevar, quién se queda fuera y por cuántos votos. Que un partido gane unos pocos votos solo cambia ese último escaño; la incertidumbre del modelo, de varios puntos, puede mover varios a la vez, y por eso una provincia grande tiene varios en el aire.
-
-[[pugnas]]
 
 ::: metodología #metodo
 **De dónde sale.** Es «Nuestra predicción», la de la portada, con {simulaciones} simulaciones de siete modelos: promedio nacional de encuestas, error común de la industria y, en cada simulación, voto provincial a partir de elecciones anteriores, sobre todo el mapa de 2023 (Frente Amplio, Podemos y SALF, a partir de las europeas de 2024) con ruido por comunidad y provincia y reparto D'Hondt. Las listas que no aparecen en las encuestas nacionales conservan sus votos de 2023.
@@ -126,14 +116,6 @@ No hay disputa entre partidos por el último escaño.
 [[ultimo_2023]]
 :::
 
-#### Candidaturas proclamadas
-
-::: si candidaturas
-[[tabla_candidaturas]]
-::: si no
-[nota] Sin datos.
-:::
-
 [[evolucion]]
 
 [[dhondt]]
@@ -149,6 +131,14 @@ No hay disputa entre partidos por el último escaño.
 :::
 
 [[municipios]]
+
+#### Candidaturas proclamadas
+
+::: si candidaturas
+[[tabla_candidaturas]]
+::: si no
+[nota] Sin datos.
+:::
 
 === pugna ===
 
@@ -243,7 +233,7 @@ En {provincia} hay **{electores} electores por cada escaño**; la media de Espa�
 === aire ===
 
 ::: si pugnas
-Cómo acaba el último escaño en las simulaciones:
+Cómo acaba el último escaño en las simulaciones (las pugnas más frecuentes; el resto de simulaciones se reparte entre otras):
 
 [[pugnas_lista]]
 :::

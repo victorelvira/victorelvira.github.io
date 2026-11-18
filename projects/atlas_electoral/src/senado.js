@@ -1,11 +1,11 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
 const topojson = window.topojson;
-import { load, META, fmt, pct, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.163";
-import { fam } from "./charts.js?v=0.2.163";
-import { getGeo, rewind } from "./mapa.js?v=0.2.163";
-import { addZoom } from "./zoom.js?v=0.2.163";
-import { textos, md } from "./textos.js?v=0.2.163";
-import { t as tr, N_, sep } from "./i18n.js?v=0.2.163";
+import { load, META, fmt, pct, fechaLarga, showTip, hideTip } from "./data.js?v=0.2.164";
+import { fam } from "./charts.js?v=0.2.164";
+import { getGeo, rewind } from "./mapa.js?v=0.2.164";
+import { addZoom } from "./zoom.js?v=0.2.164";
+import { textos, md } from "./textos.js?v=0.2.164";
+import { t as tr, N_, sep } from "./i18n.js?v=0.2.164";
 
 // The Senate (tab "Senado", route #senado, #senado/2023; prose in textos/senado.md). Two views of the same layout: the 29N
 // forecast (prediccion_senado.json, pipeline/prediccion_senado.py) and the July 2023 result (senado_2023.json,

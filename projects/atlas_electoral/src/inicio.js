@@ -1,16 +1,16 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.163";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.163";
-import { projectFromPolls } from "./simulador.js?v=0.2.163";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.163";
-import { pugnasHtml } from "./provincia.js?v=0.2.163";
-import { parlamento } from "./parlamento.js?v=0.2.163";
-import { opciones, simula } from "./opciones.js?v=0.2.163";
-import { diaADia } from "./dia.js?v=0.2.163";
-import { mosaico } from "./mosaico.js?v=0.2.163";
-import { textos, md, INDICE } from "./textos.js?v=0.2.163";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.163";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.163";
-import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.163";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.164";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.164";
+import { projectFromPolls } from "./simulador.js?v=0.2.164";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.164";
+import { pugnasHtml, pugnas as pugnasDe, pugnaVars } from "./provincia.js?v=0.2.164";
+import { parlamento } from "./parlamento.js?v=0.2.164";
+import { opciones, simula } from "./opciones.js?v=0.2.164";
+import { diaADia } from "./dia.js?v=0.2.164";
+import { mosaico } from "./mosaico.js?v=0.2.164";
+import { textos, md, INDICE } from "./textos.js?v=0.2.164";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.164";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.164";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.164";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 
@@ -104,6 +104,9 @@ export async function renderInicio(app, args = []) {
     noche: null,
     promedio: `<p class="linea">${top.map((p) => `<span class="chip"><i class="dot" style="background:${POLL_PARTY[p].c()}"></i>${POLL_PARTY[p].n} <b>${sep(E.ultimo[p])}%</b></span>`).join("")}</p>`,
     pugnas: PV ? pugnasHtml(PV, 3, T.pugna, "portada") : null,
+    // the rest of the list, folded here (it was at the end of Provincias until 2026-11-18; Víctor: "no es de esta provincia")
+    pugnas_todas: PV ? `<details class="pugnas-mas"><summary>${t("Las demás provincias con escaños en el aire")}</summary>${pugnasDe(PV, 20).slice(3)
+      .map((p) => md(T.pugna, { vars: pugnaVars(p), flags: { margen: p.margen != null }, page: "portada" }).html).join("")}</details>` : null,
     parlamento: PV ? '<div id="parlamento"></div>' : null,
     opciones: PV ? '<div id="opciones"></div>' : null,
     simula: PV ? '<div id="simula" class="card sm"></div>' : null,

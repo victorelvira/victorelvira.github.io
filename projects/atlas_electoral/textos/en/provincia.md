@@ -12,17 +12,7 @@ pipeline/check_textos_en.py refuses this file if any of them is missing.
 [[selector]]
 [[detalle]]
 
-## Where it is decided {#decide | Where it is decided}
-
-There are **{en_juego} seats in play**: seats that no party wins in at least 9 out of 10 simulations. The other {decididos} are all but decided. The map below shows how many are in play in each province; click one to see its own.
-
 [[mapa]]
-
-### Seats in play
-
-[nota] The provinces with the most seats in play. For each, also the most frequent contest for its last seat: who usually takes it, who is left out and by how many votes. A party gaining a few votes only changes that last seat; the model's uncertainty, of several points, can move several seats at once, which is why a large province has several in play.
-
-[[pugnas]]
 
 ::: metodología #metodo
 **Where it comes from.** It is «Our forecast», the one on the front page, with {simulaciones} simulations from seven models: a national poll average, the industry error and, in each simulation, a provincial vote built from past elections, mainly the 2023 map (Frente Amplio, Podemos and SALF, from the 2024 European election) with noise by region and by province, and a D'Hondt allocation. Lists that do not appear in national polls keep their 2023 votes.
@@ -91,14 +81,6 @@ No parties contest the last seat.
 [[ultimo_2023]]
 :::
 
-#### Proclaimed candidate lists
-
-::: si candidaturas
-[[tabla_candidaturas]]
-::: si no
-[nota] No data.
-:::
-
 [[evolucion]]
 
 [[dhondt]]
@@ -114,6 +96,14 @@ No parties contest the last seat.
 :::
 
 [[municipios]]
+
+#### Proclaimed candidate lists
+
+::: si candidaturas
+[[tabla_candidaturas]]
+::: si no
+[nota] No data.
+:::
 
 === pugna ===
 
@@ -208,7 +198,7 @@ In {provincia} there are **{electores} voters for each seat**; the average for S
 === aire ===
 
 ::: si pugnas
-How the last seat ends up in the simulations:
+How the last seat ends up in the simulations (the most frequent fights; the other simulations are spread over other ones):
 
 [[pugnas_lista]]
 :::

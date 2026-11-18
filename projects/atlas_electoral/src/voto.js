@@ -7,10 +7,10 @@
 // peso_voto.py, «Nuestra predicción»; "e" = the same by thirds of the draws) and escanos_350.json; blocs: the starting groups of
 // "Forma tu mayoría" (masvotado.js grupoDe, so Geroa Bai goes with the PNV in Navarra).
 // The address keeps the choice: #voto/<province code>/<izquierda|derecha>/<bien|mal> (no third segment: as expected).
-import { load } from "./data.js?v=0.2.163";
-import { textos, md } from "./textos.js?v=0.2.163";
-import { t, lang, ordinal } from "./i18n.js?v=0.2.163";
-import { opcionesPeso, short, colorVoto, PESO_ART, PESO_NUNCA, frente } from "./masvotado.js?v=0.2.163";
+import { load } from "./data.js?v=0.2.164";
+import { textos, md } from "./textos.js?v=0.2.164";
+import { t, lang, ordinal } from "./i18n.js?v=0.2.164";
+import { opcionesPeso, short, colorVoto, PESO_ART, PESO_NUNCA, frente } from "./masvotado.js?v=0.2.164";
 
 const KEY = "atlas_electoral.voto";   // the reader's last province, bloc and night (a convenience: the page works without it)
 const leer = () => { try { return JSON.parse(localStorage.getItem(KEY) ?? "{}"); } catch { return {}; } };

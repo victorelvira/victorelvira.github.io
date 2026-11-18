@@ -88,7 +88,7 @@ The poll average. All the polls, one by one and by pollster, in [29N polls](#enc
 
 [[pugnas]]
 
-[nota] [All the provinces in play →](#provincia/decide)
+[[pugnas_todas]]
 
 ### The 350 seats, one by one {#escanos350 | 350 seats}
 
