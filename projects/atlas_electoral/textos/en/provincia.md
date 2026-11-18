@@ -368,18 +368,23 @@ Note under the map in the "Changes since 2023" view. Figures and conditions: see
 <!--
 Front-page map, "Where your vote counts" view. Figures and conditions: see ../provincia.md.
 -->
-**{provincia}**: chance that one vote decides one more seat for {bloque}, depending on the party it goes to: {lista}.
-::: si parejas
-[nota] The top options count almost the same.
+::: si vacia
+**{provincia}**: here no party of {bloque} has a chance.
+::: si no
+**{provincia}**, for {bloque}: best {mejor}.
+::: si con_lista
+It counts {lista}.
+:::
+::: si con_nunca
+{nunca}.
+:::
 :::
 
 === nota_peso ===
 <!--
 Note under the map in the "Where your vote counts" view. Figures and conditions: see ../provincia.md.
 -->
-[nota] **What it is.** For those who want {bloque} to win more seats: in each province, the chance that one vote for each party of that bloc decides one more seat for it («1 in…»), from the simulations of «Our forecast». The label names the party where a vote counts most; if the second counts almost as much, both, and if three or more do, «several, alike». A seat one party takes from another of the same bloc does not add up. The blocs are the groups of «Build your majority»: move a party to another group and the map changes.
-
-[nota] **How to read it.** What helps is comparing the parties within your province. Across provinces, small ones come out darker because each vote is a larger part of the total there. It is not voting advice: it describes the forecast, with its uncertainty, and assumes everyone else votes as forecast.
+[nota] **What it is.** The party of {bloque} with which a vote has the most chances of adding a seat to it, according to «Our forecast». A seat taken from a partner of the same bloc does not count. The colour says how much that vote can count: small provinces come out darker because each vote is a larger part there. The blocs are the groups of «Build your majority». It is not voting advice.
 ::: si otro_modelo
 [nota] This view always uses «Our forecast», even if you chose another model above.
 :::
@@ -390,10 +395,6 @@ Footer of a province's card in the "Where your vote counts" view. Figures and co
 -->
 ::: si vacia
 [nota] Here no party of {bloque} has a chance of a seat.
-:::
 ::: si no
-[nota] Chance that one vote for that party decides one more seat for {bloque} (first column) or for the party itself, even if taken from another of the same bloc (second). More detail in the [Your vote](#voto) tab.
-:::
-::: si parejas
-[nota] The top options count almost the same.
+[nota] How many times more a vote for {mejor} counts to add a seat to {bloque}. More in [Your vote](#voto).
 :::

@@ -23,7 +23,7 @@ Huecos [[...]]: [[controles]] (la provincia y el bloque), [[respuesta]] (la fras
 
 ## Todas las provincias {#todas | Todas}
 
-[sub] La mejor opción de cada bloque en cada provincia, la segunda y cuántas veces más posibilidades tiene un voto a la primera de sumar un diputado al bloque. Pulsa una cabecera para ordenar.
+[sub] La mejor opción de cada bloque en cada provincia, la segunda y cuántas veces más pesa un voto a la primera. Pulsa una cabecera para ordenar.
 
 [[lista]]
 
@@ -33,64 +33,28 @@ Para cada provincia y cada simulación de «Nuestra predicción» (140.000), con
 
 === respuesta ===
 <!--
-La frase de la provincia elegida. Cifras: {provincia}; {bloque} ("la derecha", "la izquierda"); {mejor} (el partido con el que
-más pesa el voto, con artículo: "el PSOE"). Condición: vacia (ningún partido del bloque tiene opciones).
+La frase de la provincia elegida (acortada el 18-11-2026: Víctor la veía "super verbosa"; debajo, el código pone una línea por
+partido: "Frente Amplio: 2,3 veces", "Bildu: casi igual", "Podemos: casi nunca suma (por debajo del 3%)"). Cifras: {provincia};
+{bloque} ("la derecha", "la izquierda"); {mejor} (con artículo: "el PSOE"). Condiciones: vacia (ningún partido del bloque tiene
+opciones), solo (el bloque tiene un único partido en la provincia).
 -->
 ::: si vacia
-En **{provincia}**, ningún partido de {bloque} tiene opciones reales de ganar un escaño más: aquí un voto casi nunca cambia el reparto.
+En **{provincia}**, ningún partido de {bloque} tiene opciones de sumar un diputado más.
 ::: si no
-En **{provincia}**, si quieres más escaños para {bloque}, tu voto tiene más posibilidades de sumar un diputado con **{mejor}**. Frente a los demás:
+::: si solo
+En **{provincia}**, para {bloque}: **{mejor}**, la única opción.
+::: si no
+En **{provincia}**, para {bloque}, mejor **{mejor}**. Cuántas veces más pesa un voto suyo que uno a:
 :::
-
-=== partido ===
-<!--
-Una línea por cada otro partido del bloque, debajo de la frase. Cifras: {partido}; {mejor} (con artículo); {veces} (cuántas veces
-más posibilidades tiene un voto al mejor: "1,4", "3", "más de 100"); {a_mejor}, {a_partido} ("al PSOE", "a Podemos"); {bloque}.
-Condiciones: umbral (por debajo del 3%, mediana), lejos (por encima del 3% pero casi nunca gana un escaño más: menos de 1 entre 2
-millones), parejas (menos de 1,25 veces), normal.
--->
-::: si umbral
-**{partido}**: un voto suyo casi nunca suma un diputado aquí. Se queda por debajo del 3% de los votos, el mínimo para entrar en el reparto.
 :::
-::: si lejos
-**{partido}**: un voto suyo casi nunca suma un diputado aquí; está lejos de conseguirlo.
-:::
-::: si parejas
-**{partido}**: casi las mismas posibilidades que {mejor}.
-:::
-::: si normal
-**{partido}**: un voto {a_mejor} tiene **{veces} veces** más posibilidades de sumar un diputado a {bloque} que uno {a_partido}.
-:::
-
-=== roba ===
-<!--
-Se añade a la línea de un partido cuando al menos la mitad de los escaños que gana son de su propio bloque. Cifras: {a_dentro}
-("al PP o a Vox"); {bloque}.
--->
-Cuando gana un escaño, a menudo se lo quita {a_dentro}, del mismo bloque, y entonces {bloque} no gana nada.
 
 === depende ===
 <!--
-Debajo de las líneas por partido: si la mejor opción cambia según cómo vaya la noche (tercios de las simulaciones). Cifras:
-{bloque}; {mejor_bien}, {mejor_normal}, {mejor_mal} (con artículo). Condiciones: igual (la misma en los tres), bn (la misma si va
-bien o como se espera), nm (la misma si va como se espera o mal), no_bn_nm (las tres distintas).
+Debajo de las líneas: si la mejor opción cambia según cómo vaya la noche (tercios de las simulaciones por la ventaja nacional de
+la izquierda). Cifras: {bloque}; {mejor_bien}, {mejor_normal}, {mejor_mal} (con artículo). Condición: igual (la misma en los tres).
 -->
 ::: si igual
-[nota] **Aquí da igual cómo vaya la noche**: vaya bien, como se espera o mal para {bloque}, el voto pesa más con {mejor_bien}.
+[nota] Vaya como vaya la noche, la mejor opción es la misma.
 ::: si no
-::: si bn
-[nota] **Aquí depende de cómo vaya la noche**: si va bien para {bloque} o como se espera, el voto pesa más con {mejor_bien}; si va mal, con {mejor_mal}.
+[nota] **Según la noche:** si va bien para {bloque}, {mejor_bien}; si va como se espera, {mejor_normal}; si va mal, {mejor_mal}.
 :::
-::: si nm
-[nota] **Aquí depende de cómo vaya la noche**: si va bien para {bloque}, el voto pesa más con {mejor_bien}; si va como se espera o mal, con {mejor_normal}.
-:::
-::: si no_bn_nm
-[nota] **Aquí depende de cómo vaya la noche**: si va bien para {bloque}, el voto pesa más con {mejor_bien}; si va como se espera, con {mejor_normal}; si va mal, con {mejor_mal}.
-:::
-:::
-
-=== pequeno ===
-<!--
-Al final de la respuesta, siempre que algún partido tenga opciones. Sin cifras.
--->
-[nota] Que pese más no quiere decir que pese mucho: un solo voto decide un diputado muy pocas veces. Lo que cuenta es la comparación entre partidos.

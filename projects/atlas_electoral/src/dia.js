@@ -4,10 +4,10 @@
 // known then and today's model; daily from 1 Sep 2026, weekly before. Two views: "Bloques", PP + Vox and the 2023 investiture
 // bloc (medians, each with the band of 9 in 10 simulations, and the 176 line; Víctor's notes 10 and 11, 2026-11-18), and the
 // seats of each party (medians). Ranges: last week, 2 weeks (default), month, 3 months, all.
-import { showTip, hideTip, load } from "./data.js?v=0.2.159";
-import { textos, md } from "./textos.js?v=0.2.159";
-import { t, deCada, loc } from "./i18n.js?v=0.2.159";
-import { partyName, partyColor } from "./encuestas.js?v=0.2.159";
+import { showTip, hideTip, load } from "./data.js?v=0.2.160";
+import { textos, md } from "./textos.js?v=0.2.160";
+import { t, deCada, loc } from "./i18n.js?v=0.2.160";
+import { partyName, partyColor } from "./encuestas.js?v=0.2.160";
 
 const RANGOS = [["7", 7, "Última semana"], ["14", 14, "2 semanas"], ["30", 30, "1 mes"], ["90", 90, "3 meses"], ["todo", 0, "Todo"]];
 const PARTIDOS = ["pp", "psoe", "vox", "sumar"];

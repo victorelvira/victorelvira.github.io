@@ -4,12 +4,12 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.159";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.159";
-import { getGeo, rewind } from "./mapa.js?v=0.2.159";
-import { textos, md } from "./textos.js?v=0.2.159";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.159";
-import { t as tr, N_, fix, deCada, lang } from "./i18n.js?v=0.2.159";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.160";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.160";
+import { getGeo, rewind } from "./mapa.js?v=0.2.160";
+import { textos, md } from "./textos.js?v=0.2.160";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.160";
+import { t as tr, N_, fix, deCada, lang } from "./i18n.js?v=0.2.160";
 
 const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
 // the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a
@@ -544,13 +544,19 @@ async function fichaHtml(p, anio, T, at = null) {
 // For a reader who wants one bloc (the reader's groups) to win seats: in each province, how often 1,000 more votes for each
 // party of the bloc give the bloc one more seat (peso_voto.json, pipeline/peso_voto.py). A seat taken from a party of the same
 // bloc does not count. Only "Nuestra predicción" (one set of 140,000 draws). Shown as one vote's chance of deciding a seat,
-// "1 entre N" (Víctor, 2026-11-17: "en simulaciones no ayuda"): g / 1,000 per vote, so N = 1,000 / g, two significant figures.
+// "1 entre N" until 2026-11-18; since then the reader sees only comparisons between parties, "2,3 veces" (Víctor: "X veces más
+// chances que tu voto contribuya a un diputado de PSOE que de Podemos"), and the map's four shades read from "menos" to "más".
 const PESO_PASOS = [5, 10, 20];   // g per 1,000 draws: the four shades (1 in 200,000 / 100,000 / 50,000)
-const PESO_LAB = [N_("menos de 1 entre 200.000"), N_("hasta 1 entre 100.000"), N_("hasta 1 entre 50.000"), N_("más de 1 entre 50.000")];
+const PESO_LAB = [N_("Menos"), "", "", N_("Más")];
 export const PESO_NUNCA = 0.0005;   // under 1 in 2 million: "casi nunca"
 const sepMiles = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, lang() === "en" ? "," : ".");
 export const entreN = (g) => { const n = 1000 / g, k = 10 ** Math.max(0, Math.floor(Math.log10(n)) - 1); return sepMiles(Math.round(n / k) * k); };
 export const unoEntre = (g) => (g >= PESO_NUNCA ? tr("1 entre {n}", { n: entreN(g) }) : tr("casi nunca"));
+export const PESO_PAREJAS = 1.25;   // under 1.25 times the chances of the best: "casi igual"
+// how many times more chances the best option a has than x: "1,4", "3", "más de 100"
+export const vecesMas = (a, b) => { const r = a / b; return r >= 100 ? tr("más de 100") : r < 3 ? String(Math.round(r * 10) / 10).replace(".", lang() === "en" ? "." : ",") : String(Math.round(r)); };
+// x against the best option a: "casi igual", "2,3 veces", "casi nunca suma"
+export const frente = (a, x) => (x.g < PESO_NUNCA ? tr("casi nunca suma") : a.g / x.g < PESO_PAREJAS ? tr("casi igual") : tr("{x} veces", { x: vecesMas(a.g, x.g) }));
 export const PESO_ART = { izquierda: N_("la izquierda"), derecha: N_("la derecha") };
 const MIL = () => tr("1.000");   // peso_voto.json's bundle (votos) is 1,000 votes; written with the language's thousands mark
 export const deCadaMil = (x) => { const n = Math.round(x * 1000); return n >= 1 ? deCada(n, MIL()) : x > 0 ? tr("menos de 1 de cada 1.000") : tr("ninguna"); };
@@ -578,8 +584,12 @@ export function porPeso(D, PW, T, { at = {}, bloque = "derecha" } = {}) {
   const tip = (p) => {
     const r = info(p);
     if (!r) return `<b>${p.n}</b>`;
-    return md(T.tooltip_peso, { vars: { provincia: p.n, bloque: nomB, votos: MIL(),
-      lista: r.o.map((x) => `${short(x.f, p.prov)}, ${unoEntre(x.g)}`).join("; ") }, flags: { parejas: r.par }, page: "provincia" }).html;
+    const a = r.o[0], resto = r.o.slice(1), nm = (x) => short(x.f, p.prov);
+    // "casi igual que Bildu y PNV, 2,3 veces más que Frente Amplio"; "Podemos casi nunca suma"
+    const igual = resto.filter((x) => x.g >= PESO_NUNCA && a.g / x.g < PESO_PAREJAS), mas = resto.filter((x) => x.g >= PESO_NUNCA && a.g / x.g >= PESO_PAREJAS), nunca = resto.filter((x) => x.g < PESO_NUNCA);
+    const lista = [...(igual.length ? [tr("casi igual que {p}", { p: yLista(igual.map(nm)) })] : []), ...mas.map((x) => tr("{x} veces más que {p}", { x: vecesMas(a.g, x.g), p: nm(x) }))].join(", ");
+    const nada = nunca.length ? tr(nunca.length > 1 ? "{p} casi nunca suman" : "{p} casi nunca suma", { p: yLista(nunca.map(nm)) }) : "";
+    return md(T.tooltip_peso, { vars: { provincia: p.n, bloque: nomB, mejor: nm(a), lista, nunca: nada }, flags: { vacia: !(a.g >= PESO_NUNCA), con_lista: !!lista, con_nunca: !!nada }, page: "provincia" }).html;
   };
   const liderLab = (p) => {
     const r = info(p);
@@ -587,8 +597,8 @@ export function porPeso(D, PW, T, { at = {}, bloque = "derecha" } = {}) {
     const n = cerca(r.o);   // three or more alike (Barcelona: Frente Amplio, ERC and PSOE): no name stands out
     return { t: n >= 2 ? tr("varios, parecido") : n ? `${short(r.o[0].f, p.prov)} ${tr("o")} ${short(r.o[1].f, p.prov)}` : short(r.o[0].f, p.prov), c: n >= 2 ? BQ[bloque].c : colorVoto(r.o[0].f) };
   };
-  const legend = `<div class="pv-leg-mv"><span class="muted">${tr("Posibilidad de que un voto a su mejor opción decida un escaño de {b}", { b: nomB })}</span>
-      <span></span>${PESO_LAB.map((l) => `<span class="pv-leg-h">${tr(l)}</span>`).join("")}
+  const legend = `<div class="pv-leg-mv"><span class="muted">${tr("Cuánto puede pesar un voto a la mejor opción de {b}", { b: nomB })}</span>
+      <span></span>${PESO_LAB.map((l) => `<span class="pv-leg-h">${l ? tr(l) : ""}</span>`).join("")}
       <span>${tr(BQ[bloque].n)}</span>${d3.range(4).map((i) => `<i class="sw" style="background:${toneBloque(bloque, i)}"></i>`).join("")}</div>`;
   const nota = T.nota_peso ? md(T.nota_peso, { vars: { votos: MIL(), bloque: nomB }, flags: { otro_modelo: !!D.drawsFile }, page: "provincia" }).html : "";
   return { fill, tip, legend, nota, lider: liderLab, aria: tr("Mapa de dónde pesa más un voto para {b}", { b: nomB }) };
@@ -597,18 +607,19 @@ export function porPeso(D, PW, T, { at = {}, bloque = "derecha" } = {}) {
 async function fichaPeso(p, T, PW, at, bloque) {
   const L = await lideresJson(), usadas = new Set(), nomB = tr(PESO_ART[bloque]);
   const o = opcionesPeso(PW, p.prov, at, bloque);
-  const cab = `<tr><th>${tr("Partido")}</th><th class="num">${tr("Para {b}, 1 entre", { b: nomB })}</th><th class="num">${tr("Para el partido, 1 entre")}</th></tr>`;
+  const a = o[0], vale = a && a.g >= PESO_NUNCA;
+  const cab = `<tr><th>${tr("Partido")}</th><th class="num">${tr("Cuánto más pesa {m}", { m: vale ? short(a.f, p.prov) : "" })}</th></tr>`;
   const filas = o.map((x) => {
     const n = short(x.f, p.prov), c = colorVoto(x.f);
     const quita = x.quita.length ? tr("Se lo quitaría a {q}", { q: yLista(x.quita.map((f) => (f === "otros" ? tr("otras candidaturas") : short(f, p.prov)))) }) : "";
     return `<tr><td><span class="mvp-p">${badge(x.f, n, c, L, usadas)}<span>${n}</span></span></td>
-      <td class="num mvp-esc"${quita ? ` data-rango="${n}: ${quita}"` : ""}>${x.g >= PESO_NUNCA ? entreN(x.g) : "·"}</td><td class="num">${x.p >= PESO_NUNCA ? entreN(x.p) : "·"}</td></tr>`;
+      <td class="num mvp-esc"${quita ? ` data-rango="${n}: ${quita}"` : ""}>${!vale ? "·" : x === a ? tr("la mejor") : frente(a, x)}</td></tr>`;
   }).join("");
-  const pie = T.pie_peso ? md(T.pie_peso, { vars: { votos: MIL(), bloque: nomB }, flags: { parejas: parejas(o), vacia: !o.length }, page: "provincia" }).html : "";
+  const pie = T.pie_peso ? md(T.pie_peso, { vars: { bloque: nomB, mejor: vale ? short(a.f, p.prov) : "" }, flags: { vacia: !vale }, page: "provincia" }).html : "";
   return `<div class="mvp-h"><div><div class="mvp-n" id="mvp-titulo">${p.n}</div>
       <div class="mvp-sub"><span>${p.esc} ${p.esc === 1 ? tr("escaño") : tr("escaños")}</span></div></div>
       <button type="button" class="mvp-x" aria-label="${tr("Cerrar")}">×</button></div>
-    ${o.length ? `<div class="mvp-t"><table>${cab}${filas}</table></div>` : ""}
+    ${vale ? `<div class="mvp-t"><table class="nosort">${cab}${filas}</table></div>` : ""}
     <div class="mvp-pie">${pie}<a href="#provincia/${p.prov}">${tr("Ver la provincia")}</a>${creditos(usadas, L)}</div>`;
 }
 

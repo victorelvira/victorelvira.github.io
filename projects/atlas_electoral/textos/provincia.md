@@ -418,40 +418,39 @@ Nota bajo el mapa en la vista "Cambios desde 2023". Cifras: {cambian} (provincia
 
 === tooltip_peso ===
 <!--
-Mapa de la portada, vista "Dónde pesa tu voto" (Claude, 16-11-2026, a petición de Víctor). Cifras: {provincia}; {bloque}
-("la derecha" o "la izquierda", el bloque elegido con los grupos de "Forma tu mayoría"); {votos} (el paquete de votos, 1.000);
-{lista} ("PP, 1 entre 56.000; Vox, 1 entre 90.000": la posibilidad de que un voto a cada partido del bloque decida un escaño
-más para el bloque, de mejor a peor; desde el 17-11-2026, antes "18 de cada 1.000" simulaciones con 1.000 votos más). Condición: parejas (las dos primeras opciones pesan casi lo mismo: la segunda da al
-menos 4 de cada 5 de lo que da la primera).
+Mapa de la portada, vista "Dónde pesa tu voto" (Claude, 16-11-2026, a petición de Víctor; desde el 18-11-2026 sin «1 entre N»:
+cuántas veces más pesa la mejor opción). Cifras: {provincia}; {bloque} ("la derecha" o "la izquierda", con los grupos de "Forma tu
+mayoría"); {mejor} (el partido con el que más pesa); {lista} ("casi igual que Bildu y PNV, 2,3 veces más que Frente Amplio"); {nunca} ("Podemos casi nunca suma"). Condiciones: vacia (ningún partido del bloque tiene opciones), con_lista, con_nunca.
 -->
-**{provincia}**: posibilidad de que un voto decida un escaño más para {bloque}, según a qué partido vaya: {lista}.
-::: si parejas
-[nota] Las primeras opciones pesan casi lo mismo.
+::: si vacia
+**{provincia}**: aquí ningún partido de {bloque} tiene opciones.
+::: si no
+**{provincia}**, para {bloque}: mejor {mejor}.
+::: si con_lista
+Pesa {lista}.
+:::
+::: si con_nunca
+{nunca}.
+:::
 :::
 
 === nota_peso ===
 <!--
-Nota bajo el mapa en la vista "Dónde pesa tu voto". Cifras: {bloque}, {votos}. Condición: otro_modelo (el selector de arriba
-tiene otro modelo; esta vista usa siempre "Nuestra predicción").
+Nota bajo el mapa en la vista "Dónde pesa tu voto". Cifras: {bloque}. Condición: otro_modelo (el selector de arriba tiene otro
+modelo; esta vista usa siempre "Nuestra predicción").
 -->
-[nota] **Qué es.** Para quien quiere que {bloque} saque más escaños: en cada provincia, la posibilidad de que un voto a cada partido de ese bloque decida un escaño más para él («1 entre…»), con las simulaciones de «Nuestra predicción». La etiqueta dice el partido con el que más pesa el voto; si el segundo pesa casi lo mismo, los dos, y si son tres o más, «varios, parecido». Un escaño que un partido le quita a otro del mismo bloque no suma. Los bloques son los grupos de «Forma tu mayoría»: si mueves un partido de grupo, el mapa cambia.
-
-[nota] **Cómo leerlo.** Lo útil es comparar los partidos dentro de tu provincia. Entre provincias, las pequeñas salen más oscuras porque allí cada voto es una parte mayor del total. No es una recomendación de voto: describe la previsión, con su incertidumbre, y supone que el resto vota como se prevé.
+[nota] **Qué es.** El partido de {bloque} con el que un voto tiene más posibilidades de sumarle un diputado, según «Nuestra predicción». Un escaño quitado a un socio del mismo bloque no cuenta. El color dice cuánto puede pesar ese voto: las provincias pequeñas salen más oscuras porque allí cada voto es una parte mayor. Los bloques son los grupos de «Forma tu mayoría». No es una recomendación de voto.
 ::: si otro_modelo
 [nota] Esta vista usa siempre «Nuestra predicción», aunque arriba hayas elegido otro modelo.
 :::
 
 === pie_peso ===
 <!--
-Pie de la ficha de una provincia en la vista "Dónde pesa tu voto". Cifras: {bloque}, {votos}. Condiciones: vacia (ningún
-partido del bloque tiene opciones de escaño en la provincia), parejas (como en tooltip_peso).
+Pie de la ficha de una provincia en la vista "Dónde pesa tu voto". Cifras: {bloque}, {mejor}. Condición: vacia (ningún partido
+del bloque tiene opciones de escaño en la provincia).
 -->
 ::: si vacia
 [nota] Aquí ningún partido de {bloque} tiene opciones de escaño.
-:::
 ::: si no
-[nota] Posibilidad de que un voto a ese partido decida un escaño más para {bloque} (primera columna) o para el propio partido, aunque sea quitándoselo a otro del mismo bloque (segunda). Más detalle, en la pestaña [Tu voto](#voto).
-:::
-::: si parejas
-[nota] Las primeras opciones pesan casi lo mismo.
+[nota] Cuántas veces más pesa un voto a {mejor} para sumar un diputado a {bloque}. Más en [Tu voto](#voto).
 :::
