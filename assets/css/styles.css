@@ -249,6 +249,18 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
 }
 #bibtex_display li.pub-item:hover { background-color: #f4f7f8; }
 
+/* Escaparate de papers en la portada: mismos items que la lista de publicaciones */
+#featured-papers-list { padding-left: 1.25rem; max-width: 100%; }
+#featured-papers-list li.pub-item {
+  margin-bottom: .45rem;
+  padding: .3rem .5rem;
+  border-radius: 6px;
+  transition: background-color .15s ease;
+}
+#featured-papers-list li.pub-item::marker { color: var(--accent); }
+#featured-papers-list li.pub-item:hover { background-color: #f4f7f8; }
+html[data-bs-theme="dark"] #featured-papers-list li.pub-item:hover { background-color: #1a252b; }
+
 /* Botones de filtro: chips suaves y pequenos (fondo neutro, activo en teal).
    Mas discretos y modernos que los pills con contorno. */
 #filter-buttons { display: flex; flex-wrap: wrap; gap: .4rem; }

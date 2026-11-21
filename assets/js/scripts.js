@@ -82,7 +82,7 @@ function applyLang(lang) {
 }
 
 // Version compartida para cache-busting de la navbar/footer (súbela al cambiar nav/footer).
-const __ASSET_VER = 'i18n14';
+const __ASSET_VER = 'i18n15';
 const __navbarPromise = fetch('/nav.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('nav.html ' + r.status)));
 const __footerPromise = fetch('/footer.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('footer.html ' + r.status)));
 
@@ -187,6 +187,237 @@ function loadFeaturedProjects(gridId, source) {
         .catch(function (e) { console.error('Featured projects:', e); });
 }
 
+// --- Artículos seleccionados en la portada: FUENTE ÚNICA = el .bib ----------
+// No se duplican los datos del paper: la home lee data/publications/all_publications.bib
+// (lo mismo que publications.html) y pinta solo las bibkeys de data-keys, EN ESE ORDEN.
+// Para cambiar qué papers salen, edita data-keys en #featured-papers-list (index.html).
+function __decodeAccents(s) {
+    if (!s) return s || '';
+    var acc = {
+        "'": { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú', n: 'ń', c: 'ć', y: 'ý', s: 'ś', z: 'ź', A: 'Á', E: 'É', I: 'Í', O: 'Ó', U: 'Ú' },
+        '`': { a: 'à', e: 'è', i: 'ì', o: 'ò', u: 'ù' },
+        '"': { a: 'ä', e: 'ë', i: 'ï', o: 'ö', u: 'ü', A: 'Ä', O: 'Ö', U: 'Ü' },
+        '^': { a: 'â', e: 'ê', i: 'î', o: 'ô', u: 'û' },
+        '~': { n: 'ñ', a: 'ã', o: 'õ', N: 'Ñ' }
+    };
+    // Formas LaTeX: {\'\i}, {\'i}, \'{i}, \'i  (con \i / \j sin punto)
+    s = s.replace(/\{?\\(['`"^~])\s*\\?\{?\\?([a-zA-Z])\}?\}?/g, function (m, a, l) {
+        return (acc[a] && acc[a][l]) || (a + l);
+    });
+    s = s.replace(/\\i\b/g, 'i').replace(/\\j\b/g, 'j');
+    return s.replace(/[{}]/g, '').replace(/\\([a-zA-Z])/g, '$1');
+}
+function __bibEntry(bib, key) {
+    var re = new RegExp('@(\\w+)\\s*\\{\\s*' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*,', 'i');
+    var m = re.exec(bib);
+    if (!m) return null;
+    var open = bib.indexOf('{', m.index), depth = 0, end = -1;
+    for (var j = open; j < bib.length; j++) {
+        var c = bib[j];
+        if (c === '{') depth++;
+        else if (c === '}') { depth--; if (depth === 0) { end = j; break; } }
+    }
+    if (end < 0) return null;
+    var body = bib.slice(open + 1, end), fields = {};
+    var i = body.indexOf(','); i = (i < 0) ? 0 : i + 1;
+    var n = body.length;
+    while (i < n) {
+        while (i < n && /[\s,]/.test(body[i])) i++;
+        var s = i;
+        while (i < n && /[A-Za-z0-9_\-]/.test(body[i])) i++;
+        var name = body.slice(s, i).toLowerCase();
+        if (!name) break;
+        while (i < n && /\s/.test(body[i])) i++;
+        if (body[i] !== '=') break;
+        i++;
+        while (i < n && /\s/.test(body[i])) i++;
+        var val = '';
+        if (body[i] === '{') {
+            var d = 0;
+            for (; i < n; i++) { var ch = body[i]; if (ch === '{') { d++; if (d === 1) continue; } else if (ch === '}') { d--; if (d === 0) { i++; break; } } val += ch; }
+        } else if (body[i] === '"') {
+            for (i++; i < n; i++) { if (body[i] === '"') { i++; break; } val += body[i]; }
+        } else {
+            for (; i < n; i++) { if (body[i] === ',' || body[i] === '\n') break; val += body[i]; }
+        }
+        fields[name] = val.trim();
+    }
+    return { type: m[1].toLowerCase(), key: key, fields: fields };
+}
+function __formatAuthors(a) {
+    if (!a) return 'Unknown';
+    return a.split(/\s+and\s+/).map(function (one) {
+        one = __decodeAccents(one.trim());
+        if (one.indexOf(',') >= 0) { var p = one.split(','); return (p[1] ? p[1].trim() + ' ' : '') + p[0].trim(); }
+        return one;
+    }).join(', ');
+}
+// --- MOTOR COMPARTIDO de "chips" de papers (lo usan publications.html Y la portada) ---
+// buildPaperChips arma los botones (arXiv/URL/DOI/PDF/Cite/Abstract) EXACTAMENTE igual
+// en las dos páginas, para que no haya dos versiones que se desincronicen. El modal de
+// Cite y el desplegable de Abstract los gestiona initPubChips() más abajo, también
+// compartido. pdfKeys/abstracts son opcionales: si no se pasan, usa los globales window.*.
+function buildPaperChips(o, pdfKeys, abstracts) {
+    o = o || {};
+    if (pdfKeys === undefined) pdfKeys = window.__PDF_KEYS__;
+    if (abstracts === undefined) abstracts = window.__ABSTRACTS__;
+    var key = (o.key || '').toString().trim();
+    var kl = key.toLowerCase();
+    var absKey = (o.abstractKey != null ? o.abstractKey : key).toString();
+    var arxiv = (o.arxiv || '').toString().trim();
+    var url = (o.url || '').toString().trim();
+    var doi = (o.doi || '').toString().trim();
+    var b = '';
+    if (arxiv) b += ' <a class="btn btn-mini btn-success" target="_blank" rel="noopener" href="' + arxiv + '">arXiv</a>';
+    if (url) b += ' <a class="btn btn-mini btn-info" target="_blank" rel="noopener" href="' + url + '">URL</a>';
+    if (doi) b += ' <a class="btn btn-mini btn-primary" target="_blank" rel="noopener" href="' + doi + '">DOI</a>';
+    if (kl) {
+        if (!pdfKeys || pdfKeys.has(kl)) {
+            b += ' <a class="btn btn-mini btn-danger" target="_blank" rel="noopener" href="assets/papers/' + encodeURIComponent(kl) + '_pre.pdf">PDF</a>';
+        }
+        b += ' <button type="button" class="btn btn-mini btn-secondary cite-btn" data-bibkey="' + kl + '" data-biburl="assets/bib/' + encodeURIComponent(kl) + '.bib"><span data-lang="en">Cite</span><span data-lang="es" hidden>Citar</span></button>';
+    }
+    if (abstracts && abstracts[absKey]) {
+        b += ' <button type="button" class="btn btn-mini btn-outline-secondary abs-btn" data-bibkey="' + absKey + '"><span data-lang="en">Abstract</span><span data-lang="es" hidden>Resumen</span></button>';
+    }
+    return b;
+}
+
+// Carga (una vez) el manifest de PDFs y los abstracts, a los mismos globales que usa
+// publications.html (window.__PDF_KEYS__ / window.__ABSTRACTS__).
+var __pubMetaPromise = null;
+function __loadPubMeta() {
+    if (__pubMetaPromise) return __pubMetaPromise;
+    var man = fetch('/data/publications/pdf_manifest.json?v=' + __ASSET_VER)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (keys) { if (Array.isArray(keys)) window.__PDF_KEYS__ = new Set(keys.map(function (k) { return String(k).toLowerCase(); })); })
+        .catch(function () {});
+    var abs = fetch('/data/publications/abstracts.json?v=' + __ASSET_VER)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (obj) { if (obj && typeof obj === 'object') window.__ABSTRACTS__ = obj; })
+        .catch(function () {});
+    __pubMetaPromise = Promise.all([man, abs]);
+    return __pubMetaPromise;
+}
+
+// Inyecta el modal de Cite (si la página no lo trae ya) y engancha, a nivel de documento,
+// los clics en .cite-btn / .abs-btn y el copiar. Compartido por las dos páginas.
+function injectCiteModal() {
+    if (document.getElementById('citeModal')) return;
+    var wrap = document.createElement('div');
+    wrap.innerHTML =
+        '<div class="modal fade" id="citeModal" tabindex="-1" aria-labelledby="citeModalLabel" aria-hidden="true">' +
+          '<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">' +
+            '<div class="modal-header"><h5 class="modal-title" id="citeModalLabel"><span data-lang="en">Cite</span><span data-lang="es" hidden>Citar</span></h5>' +
+              '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>' +
+            '<div class="modal-body"><pre id="citeText" class="cite-box">Loading…</pre></div>' +
+            '<div class="modal-footer">' +
+              '<button type="button" class="btn btn-secondary" id="citeCopyBtn"><i class="fa-regular fa-copy"></i> <span data-lang="en">Copy</span><span data-lang="es" hidden>Copiar</span></button>' +
+              '<a class="btn btn-primary" id="citeDownloadBtn" download><i class="fa-solid fa-download"></i> <span data-lang="en">Download .bib</span><span data-lang="es" hidden>Descargar .bib</span></a>' +
+            '</div>' +
+          '</div></div>' +
+        '</div>';
+    document.body.appendChild(wrap.firstChild);
+}
+function initPubChips() {
+    if (window.__pubChipsInit) return;
+    window.__pubChipsInit = true;
+    injectCiteModal();
+    var modalEl = document.getElementById('citeModal');
+    var modal = (window.bootstrap && modalEl) ? new bootstrap.Modal(modalEl) : null;
+    var preEl = document.getElementById('citeText');
+    var dlBtn = document.getElementById('citeDownloadBtn');
+    var copyBtn = document.getElementById('citeCopyBtn');
+    var cache = {}, curText = '';
+    function openCite(key, url) {
+        curText = '';
+        if (preEl) preEl.textContent = 'Loading…';
+        if (dlBtn) dlBtn.removeAttribute('href');
+        if (modal) modal.show();
+        Promise.resolve().then(function () {
+            if (url in cache) return cache[url];
+            return fetch(url, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('not found'); return r.text(); }).then(function (t) { cache[url] = t.trim(); return cache[url]; });
+        }).then(function (text) {
+            curText = text;
+            if (preEl) preEl.textContent = text;
+            if (dlBtn) { var blob = new Blob([text], { type: 'application/x-bibtex' }); dlBtn.href = URL.createObjectURL(blob); dlBtn.setAttribute('download', key + '.bib'); }
+        }).catch(function () { if (preEl) preEl.textContent = 'Could not load the BibTeX entry.'; });
+    }
+    function escHtml(s) { return (s || '').replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function highlightAbs(text, query) {
+        var html = escHtml(text);
+        (query || '').trim().split(/\s+/).filter(function (t) { return t.length >= 2; }).forEach(function (t) {
+            var re = new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+            html = html.replace(re, '<mark>$1</mark>');
+        });
+        return html;
+    }
+    document.addEventListener('click', function (ev) {
+        var t = ev.target;
+        if (!t || !t.closest) return;
+        var cite = t.closest('.cite-btn');
+        if (cite) { openCite(cite.getAttribute('data-bibkey'), cite.getAttribute('data-biburl')); return; }
+        var ab = t.closest('.abs-btn');
+        if (ab) {
+            var li = ab.closest('li.pub-item');
+            var box = li && li.querySelector('.abs-box');
+            if (!box) return;
+            var opening = box.hidden;
+            if (opening) {
+                var src = document.getElementById('pub-search');
+                var txt = (window.__ABSTRACTS__ && window.__ABSTRACTS__[ab.getAttribute('data-bibkey')]) || '';
+                box.innerHTML = highlightAbs(txt, src ? src.value : '');
+            }
+            box.hidden = !opening;
+            ab.classList.toggle('active', opening);
+        }
+    });
+    if (copyBtn) copyBtn.addEventListener('click', function () {
+        if (!curText) return;
+        var done = function () { var old = copyBtn.innerHTML; copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied'; setTimeout(function () { copyBtn.innerHTML = old; }, 1500); };
+        if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(curText).then(done).catch(done); }
+        else { var ta = document.createElement('textarea'); ta.value = curText; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (_) {} ta.remove(); done(); }
+    });
+}
+
+function __renderPaperLI(e) {
+    var f = e.fields;
+    var title = __decodeAccents(f.title || 'Untitled');
+    var year = (f.year || '').trim();
+    var authors = __formatAuthors(f.author || '');
+    var venue = f.journal ? ('<em>' + __decodeAccents(f.journal) + '</em>')
+              : (f.booktitle ? ('<em>' + __decodeAccents(f.booktitle) + '</em>') : '');
+    var doi = (f.doi || '').trim();
+    var doiURL = !doi ? '' : (doi.indexOf('http') === 0 ? doi : (doi.indexOf('10.') === 0 ? 'https://doi.org/' + doi : doi));
+    var etype = f.journal ? 'article' : (f.booktitle ? 'inproceedings' : 'misc');
+    var chips = buildPaperChips({ key: e.key, arxiv: (f.arxiv || f.eprint || ''), url: f.url, doi: doiURL });
+    var hasAbs = !!(window.__ABSTRACTS__ && window.__ABSTRACTS__[e.key]);
+    var safeId = (e.key || 'nokey').replace(/[^a-z0-9_-]/gi, '_');
+    return '<li id="pub_' + safeId + '" class="pub-item" data-entrytype="' + etype + '" data-bibkey="' + e.key + '">' +
+           '<em>' + authors + '</em>, <strong>"' + title + ',"</strong> ' +
+           venue + (year ? (venue ? ', ' : '') + year : '') + '.' +
+           '<div class="mt-1 btns">' + chips + '</div>' +
+           (hasAbs ? '<div class="abs-box" hidden></div>' : '') +
+           '</li>';
+}
+function loadFeaturedPapers(listId, source) {
+    var list = document.getElementById(listId || 'featured-papers-list');
+    if (!list) return;
+    var keys = (list.getAttribute('data-keys') || '').split(',').map(function (k) { return k.trim(); }).filter(Boolean);
+    if (!keys.length) return;
+    Promise.all([
+        fetch((source || '/data/publications/all_publications.bib') + '?v=' + __ASSET_VER)
+            .then(function (r) { return r.ok ? r.text() : Promise.reject(new Error('bib ' + r.status)); }),
+        __loadPubMeta()
+    ]).then(function (res) {
+        var bib = res[0];
+        var html = keys.map(function (k) { var e = __bibEntry(bib, k); return e ? __renderPaperLI(e) : ''; }).filter(Boolean).join('');
+        if (!html) return;
+        list.innerHTML = html;
+        translateTree(list, window.__lang);
+    }).catch(function (e) { console.error('Featured papers:', e); });
+}
+
 function injectBackToTop() {
     if (document.getElementById('to-top')) return;
     var b = document.createElement('button');
@@ -213,6 +444,8 @@ function __onReady() {
     translateTree(document, window.__lang);
     renderLangBadges(document);          // badges de idioma desde data-flang
     loadFeaturedProjects('featured-grid'); // escaparate de la home (si existe #featured-grid)
+    initPubChips();                        // motor compartido de Cite/Abstract (home + publications)
+    loadFeaturedPapers('featured-papers-list'); // artículos seleccionados (si existe #featured-papers-list)
 }
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', __onReady);

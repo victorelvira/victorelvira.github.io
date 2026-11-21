@@ -11,12 +11,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
   <!-- Tu CSS -->
-  <link href="assets/css/styles.css?v=i18n14" rel="stylesheet">
+  <link href="assets/css/styles.css?v=i18n15" rel="stylesheet">
 
   <!-- jQuery (necesario para el selector/eventos que usas) -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Script propio: para navbar/footer (no se usa en este snippet el contenido) -->
-  <script src="assets/js/scripts.js?v=i18n14"></script>
+  <script src="assets/js/scripts.js?v=i18n15"></script>
   <!-- Parser BibTeX (bibtex_js.js define BibtexParser) -->
   <script type="text/javascript" src="assets/js/bibtex_js.js"></script>
   <!-- OG:auto (social preview) -->
@@ -249,33 +249,15 @@
      }
 
      const doiURL = normDOI(entry['DOI']);
-     const arxiv  = entry['ARXIV'] || entry['EPRINT'] || '';
-     const url    = entry['URL'];
-
-     // Botones "seguros"
-     let buttons = '';
-     if (arxiv)  buttons += ` <a class="btn btn-mini btn-success"  target="_blank" rel="noopener" href="${arxiv}">arXiv</a>`;
-     if (url)    buttons += ` <a class="btn btn-mini btn-info"     target="_blank" rel="noopener" href="${url}">URL</a>`;
-     if (doiURL) buttons += ` <a class="btn btn-mini btn-primary"  target="_blank" rel="noopener" href="${doiURL}">DOI</a>`;
-
-     // PDF/Bib locales SOLO si hay bibKey (si no, no añadimos nada y no se rompe)
-     const kRaw = (entry.__bibKey || '').toString().trim();
-     if (kRaw) {
-       const k = kRaw.toLowerCase();
-       const pdfURL = `assets/papers/${encodeURIComponent(k)}_pre.pdf`;
-       const bibURL = `assets/bib/${encodeURIComponent(k)}.bib`;
-       // Botón PDF solo si el draft existe según el manifest (o si no hay manifest)
-       if (!__PDF_KEYS__ || __PDF_KEYS__.has(k)) {
-         buttons += ` <a class="btn btn-mini btn-danger"    target="_blank" rel="noopener" href="${pdfURL}">PDF</a>`;
-       }
-       buttons += ` <button type="button" class="btn btn-mini btn-secondary cite-btn" data-bibkey="${k}" data-biburl="${bibURL}"><span data-lang="en">Cite</span><span data-lang="es" hidden>Citar</span></button>`;
-     }
-
-     // Botón "Abstract" (Fase 2): solo si tenemos resumen para este paper.
+     const kRaw   = (entry.__bibKey || '').toString().trim();
+     // Resumen: se usa más abajo (búsqueda en abstracts y desplegable .abs-box)
      const abstract = (window.__ABSTRACTS__ && window.__ABSTRACTS__[entry.__bibKey]) || '';
-     if (abstract) {
-       buttons += ` <button type="button" class="btn btn-mini btn-outline-secondary abs-btn" data-bibkey="${entry.__bibKey}"><span data-lang="en">Abstract</span><span data-lang="es" hidden>Resumen</span></button>`;
-     }
+     // Chips (arXiv/URL/DOI/PDF/Cite/Abstract): motor COMPARTIDO en assets/js/scripts.js,
+     // idéntico a la portada (buildPaperChips). PDF se filtra con el manifest local.
+     const buttons = buildPaperChips(
+       { key: kRaw, abstractKey: entry.__bibKey, arxiv: (entry['ARXIV'] || entry['EPRINT'] || ''), url: entry['URL'], doi: doiURL },
+       __PDF_KEYS__, window.__ABSTRACTS__
+     );
 
      // Texto buscable: metadatos (data-search) y abstract aparte (data-abstract),
      // para poder activar/desactivar la búsqueda en resúmenes con el tick.
@@ -453,8 +435,10 @@
       const absChk = document.getElementById('search-abs');
       if (absChk) absChk.addEventListener('change', applySearch);
 
-      // --- Modal "Cite": carga el .bib y ofrece Copiar / Descargar ---
-      const modalEl = document.getElementById('citeModal');
+      // Cite / Abstract / copiar: ahora los gestiona el motor COMPARTIDO initPubChips()
+      // de assets/js/scripts.js (idéntico en la portada). Bloque antiguo DESACTIVADO
+      // (modalEl = null) para no enganchar los eventos dos veces.
+      const modalEl = null;
       if (modalEl) {
         const modal   = new bootstrap.Modal(modalEl);
         const preEl   = document.getElementById('citeText');
