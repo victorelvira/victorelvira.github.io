@@ -3,9 +3,9 @@
 // (prediccion_draws.json, K0). Three views, one tab each: the two histograms (drawn by modelo.js), a heat map (x: the left
 // group's seats, y: the right group's, darker = more draws) and 3D bars (height = how many draws give that pair; drag to turn
 // it). P.bx/by name the groups on buttons and tooltips, P.nx/ny in sentences ("la izquierda", "el PP"). Whatever is missing up to 350 belongs to the rest. Three pairings: the blocs, PSOE / PP, PSOE / PP and Vox.
-import { textos, md } from "./textos.js?v=0.2.169";
-import { t, deCada, loc } from "./i18n.js?v=0.2.169";
-import { showTip, hideTip } from "./data.js?v=0.2.169";
+import { textos, md } from "./textos.js?v=0.2.170";
+import { t, deCada, loc } from "./i18n.js?v=0.2.170";
+import { showTip, hideTip } from "./data.js?v=0.2.170";
 const d3 = window.d3;
 
 const IZQ = ["psoe", "sumar", "podemos", "erc", "bildu", "pnv", "bng"], DER = ["pp", "vox", "salf"];

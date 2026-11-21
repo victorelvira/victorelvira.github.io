@@ -3,12 +3,12 @@
 // lighter from 75 in 100, a ring when it is in play. Hover or tap: the province, the seat, how often it is won, the votes it has
 // to spare (or lacks) in the median draw and who takes it when it is lost. Data: escanos_350.json (pipeline/escanos_350.py),
 // always «Nuestra predicción». Two orders: by party (left to right) or by how sure (in play in the middle).
-import { showTip, hideTip } from "./data.js?v=0.2.169";
-import { IDEO, fam } from "./charts.js?v=0.2.169";
-import { asientos } from "./resultados.js?v=0.2.169";
-import { short, pc } from "./provincia.js?v=0.2.169";
-import { textos, md } from "./textos.js?v=0.2.169";
-import { t, deCada, ordinal, loc } from "./i18n.js?v=0.2.169";
+import { showTip, hideTip } from "./data.js?v=0.2.170";
+import { IDEO, fam } from "./charts.js?v=0.2.170";
+import { asientos } from "./resultados.js?v=0.2.170";
+import { short, pc } from "./provincia.js?v=0.2.170";
+import { textos, md } from "./textos.js?v=0.2.170";
+import { t, deCada, ordinal, loc } from "./i18n.js?v=0.2.170";
 const d3 = window.d3;
 
 export const CLASES = [["seguro", 0.99], ["probable", 0.75], ["juego", 0]];   // the first threshold each seat reaches (El País's 99 / 75 / 25, Víctor 2026-11-18; 999 / 95 before)
