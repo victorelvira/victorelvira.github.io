@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.171";
-import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.171";
-import { textos, md, INDICE } from "./textos.js?v=0.2.171";
-import { t as tr, loc, fix } from "./i18n.js?v=0.2.171";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.172";
+import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.172";
+import { textos, md, INDICE } from "./textos.js?v=0.2.172";
+import { t as tr, loc, fix } from "./i18n.js?v=0.2.172";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -210,7 +210,7 @@ export function chartHtml({ selector = true, lastTable = true, tools = true, kpi
   return (selector ? `    <div class="controls"><label>Elección <select id="ciclo"></select></label><span class="note" id="cycle-note"></span></div>` : "") + `
     ${kpi ? '<div class="stats" id="kpi"></div>' : ""}
     <div class="controls" id="toggles"></div>
-    <div class="controls"><div class="seg" id="zoom"></div><div class="seg"><button type="button" id="solo-media" aria-pressed="false">${tr("Solo la media")}</button></div><div class="seg" id="modo" style="display:none"><button type="button" data-m="voto" class="on">${tr("Voto")}</button><button type="button" data-m="escanos">${tr("Escaños")}</button></div>
+    <div class="controls"><div class="seg" id="zoom"></div><div class="seg"><button type="button" id="solo-media" aria-pressed="false">${tr("Solo la media")}</button></div><div class="seg" id="fecha-modo"><button type="button" data-f="fin" class="on" title="${tr("Cada encuesta en el último día de su trabajo de campo, el más cercano a su publicación")}">${tr("Fin del campo")}</button><button type="button" data-f="mitad" title="${tr("Cada encuesta en el día central de su trabajo de campo, como el promedio publicado")}">${tr("Mitad del campo")}</button></div><div class="seg" id="modo" style="display:none"><button type="button" data-m="voto" class="on">${tr("Voto")}</button><button type="button" data-m="escanos">${tr("Escaños")}</button></div>
       ${tools ? `<details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
         <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
           <label><input type="checkbox" id="corr" checked/> Descontar el sesgo de cada casa respecto a las demás</label></div>
@@ -234,7 +234,14 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
   // the chart block, for the current cycle or any past one (ciclos/<ciclo>.json has the same shape plus "resultado")
   function pollBlock(E) {
     const PN = (k) => partyName(k, E.ciclo), PC = partyColor;
-    const days = E.dias.map((d) => new Date(d));
+    // a daily grid up to the last fieldwork end (E.dias is every 3 days and can stop up to 2 days before the last poll), with every
+    // poll placed and averaged at its fieldwork end, the date its tooltip and the tables give (Víctor, 2026-11-21: a 16-20 Nov
+    // poll drawn on the 18th looked wrong). So the chart computes its own average; E.media (fieldwork midpoints) stays the
+    // published one, used by the last-polls table below and by the other pages.
+    const days = (() => {
+      const a = +new Date(E.dias[0]), b = Math.max(+new Date(E.dias.at(-1)), E.resultado ? 0 : +new Date(d3.max(E.polls, (q) => q.f1)));
+      const out = []; for (let t = a; t <= b; t += 864e5) out.push(new Date(t)); return out;
+    })();
     const show = new Set(mainOf(E));
     if ($("#cycle-note")) $("#cycle-note").innerHTML = E.resultado
       ? frase(T.nota_ciclo, { ciclo: cycleLabel(E.ciclo), encuestas: E.polls.filter((q) => !q.x).length, desde: cycleLabel(E.polls.map((q) => q.f1).sort()[0]) })
@@ -251,13 +258,17 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     // "Voto | Escaños" (2026-11-21): the seats some polls publish beside the shares (q.s; a range counts as its midpoint),
     // averaged with the same kernel but without the house correction, which is measured in vote points
     let modo = "voto";
+    // which day a poll sits on: its fieldwork end (default; the data have no publication date, which is usually the next
+    // day) or its fieldwork midpoint, as in the published average (pipeline/poll_model.py)
+    let fecha = "fin";
+    const qt = (q) => (fecha === "fin" ? q.f1 : q.d);
     const hasSeats = E.polls.some((q) => q.s);
     const val = (q) => (modo === "escanos" ? q.s ?? {} : q.v);
     const fv = (v) => (modo === "escanos" ? String(Math.round(v)) : `${num(v)}%`);
     const nx = d3.rollup(E.polls.filter((q) => q.x), (v) => v.length, (q) => q.x);
     const tDay = (s) => Math.round(new Date(s) / 864e5);
     const dayT = days.map((d) => Math.round(d / 864e5));
-    let corr = true, avg = { media: E.media, sd: E.sd };
+    let corr = true, avg = null;
     const end = days.at(-1), start = days[0];
     const ZOOM = { "1s": 7, "1m": 31, "3m": 92, "1a": 365, todo: null };
     const DAY = 864e5, MIN_WIN = 7 * DAY;
@@ -277,9 +288,8 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
 
     // the same kernel as pipeline/poll_model.py (one-sided exponential, tau 10 days, 120-day memory,
     // weight min(sqrt(n/1000), 2) divided by the pollster's polls in the last 30 days), on the chosen polls
-    function kernelAverage(force = false) {
-      if (!force && modo === "voto" && corr && sel.size === houses.length) return { media: E.media, sd: E.sd };
-      const P = E.polls.filter((q) => !q.x && sel.has(q.e)).map((q) => ({ t: tDay(q.d), e: q.e, w: Math.min(Math.sqrt((q.n ?? 1000) / 1000), 2), v: val(q) }));
+    function kernelAverage() {
+      const P = E.polls.filter((q) => !q.x && sel.has(q.e)).map((q) => ({ t: tDay(qt(q)), e: q.e, w: Math.min(Math.sqrt((q.n ?? 1000) / 1000), 2), v: val(q) }));
       const media = {}, sd = {};
       for (const p of E.parties) {
         const Q = P.filter((q) => q.v[p] != null).map((q) => ({ ...q, x: q.v[p] - (corr && modo === "voto" ? E.efecto_casa?.[q.e]?.[p] ?? 0 : 0) }))
@@ -321,7 +331,8 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     // last 12 polls (with their own fieldwork), published figure and gap to the corrected average on that date
     {
       const cols = mainOf(E);
-      const at = (p, d) => { const i = d3.leastIndex(days, (x) => Math.abs(x - new Date(d))); return E.media[p][i]; };
+      const D3 = E.dias.map((d) => new Date(d));
+      const at = (p, d) => { const i = d3.leastIndex(D3, (x) => Math.abs(x - new Date(d))); return E.media[p][i]; };
       const fd = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "short" });
       const rows = E.polls.filter((q) => !q.x).sort((a, b) => (a.f1 < b.f1 ? 1 : -1)).slice(0, 12);
       if ($("#last")) $("#last").innerHTML = `<table><tr><th>Encuestadora</th><th>Medio</th><th>Campo</th><th class="num">Muestra</th>${cols.map((p) => `<th class="num"><i class="dot" style="background:${PC(p)}"></i>${PN(p)}</th>`).join("")}</tr>
@@ -356,6 +367,11 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
         b.classList.toggle("on", b.dataset.m === modo);
         b.onclick = () => { modo = b.dataset.m; mEl.querySelectorAll("button").forEach((c) => c.classList.toggle("on", c === b)); refresh(); };
       });
+      const fEl = $("#fecha-modo");
+      fEl.querySelectorAll("button").forEach((b) => {
+        b.classList.toggle("on", b.dataset.f === fecha);
+        b.onclick = () => { fecha = b.dataset.f; fEl.querySelectorAll("button").forEach((c) => c.classList.toggle("on", c === b)); refresh(); };
+      });
     }
     $("#casas-box")?.querySelectorAll(".casas-act button").forEach((b) => b.onclick = () => {
       if (b.dataset.a === "all") houses.forEach(([h]) => sel.add(h)); else sel.clear(); refresh(); });
@@ -374,7 +390,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       const x = d3.scaleTime().domain(win).range([m.l, W - m.r]);
       const inWin = (d) => d >= win[0] && d <= win[1];
       const shown = (q) => !soloMedia && (q.x ? showX : sel.has(q.e));
-      const vis = E.polls.filter((q) => shown(q) && inWin(new Date(q.d)));
+      const vis = E.polls.filter((q) => shown(q) && inWin(new Date(qt(q))));
       const visAvg = parties.flatMap((p) => days.map((d, i) => (inWin(d) ? avg.media[p][i] : null)).filter((v) => v != null));
       const ymax = Math.max(d3.max(parties, (p) => d3.max(vis, (q) => val(q)[p])) ?? 0, d3.max(visAvg) ?? 0) || 40;
       const y = d3.scaleLinear().domain([0, modo === "escanos" ? ymax + 5 : Math.min(50, ymax + 2)]).nice().range([H - m.b, m.t]);
@@ -395,8 +411,8 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       }
       // one dot per poll and party: the polls as published, before any correction
       const dots = [];
-      E.polls.forEach((q, i) => { if (shown(q) && inWin(new Date(q.d))) for (const p of parties) if (val(q)[p] != null)
-        dots.push({ i, p, cx: x(new Date(q.d)), cy: y(val(q)[p]) }); });
+      E.polls.forEach((q, i) => { if (shown(q) && inWin(new Date(qt(q)))) for (const p of parties) if (val(q)[p] != null)
+        dots.push({ i, p, cx: x(new Date(qt(q))), cy: y(val(q)[p]) }); });
       // fewer dots on screen (short window or few pollsters) -> bigger, more opaque dots
       const npolls = new Set(dots.map((o) => o.i)).size;
       const r0 = npolls < 60 ? 3.5 : npolls < 150 ? 3 : 2, o0 = npolls < 60 ? 0.7 : npolls < 150 ? 0.45 : 0.25;

@@ -257,7 +257,7 @@ table.cal tr.past td { color: var(--ink-3); }
 .overview .brush .selection { fill: var(--ink-3); fill-opacity: 0.18; stroke: var(--ink-3); }
 details.casas { font-size: var(--t-s); }
 /* one and two buttons beside the zoom of the poll chart: no fade on phones */
-#solo-media, .seg:has(> #solo-media), #modo { -webkit-mask-image: none; mask-image: none; overflow: visible; }
+#solo-media, .seg:has(> #solo-media), #modo, #fecha-modo { -webkit-mask-image: none; mask-image: none; overflow: visible; }
 /* the date pinned on the poll chart (encuestas.js, drawPin) */
 .pin-media { margin: 8px 0 0; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); font-size: var(--t-s); }
 .pin-media .pin-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }

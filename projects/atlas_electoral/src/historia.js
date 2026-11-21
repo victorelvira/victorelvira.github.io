@@ -1,10 +1,10 @@
-import { fix } from "./i18n.js?v=0.2.171";
-import { renderMapa } from "./mapa.js?v=0.2.171";
-import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.171";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.171";
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.171";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.171";
-import { textos, md, INDICE } from "./textos.js?v=0.2.171";
+import { fix } from "./i18n.js?v=0.2.172";
+import { renderMapa } from "./mapa.js?v=0.2.172";
+import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.172";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.172";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.172";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.172";
+import { textos, md, INDICE } from "./textos.js?v=0.2.172";
 
 export async function renderHistoria(app) {
   const [S, G, E, dh, geo, PR, CI] = await Promise.all([load("series.json"), load("generales_encuestas.json"), load("encuestas.json"), load("dhondt.json"),
