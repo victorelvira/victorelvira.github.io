@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.170";
-import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.170";
-import { textos, md, INDICE } from "./textos.js?v=0.2.170";
-import { t as tr, loc, fix } from "./i18n.js?v=0.2.170";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.171";
+import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.171";
+import { textos, md, INDICE } from "./textos.js?v=0.2.171";
+import { t as tr, loc, fix } from "./i18n.js?v=0.2.171";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -210,7 +210,7 @@ export function chartHtml({ selector = true, lastTable = true, tools = true, kpi
   return (selector ? `    <div class="controls"><label>Elección <select id="ciclo"></select></label><span class="note" id="cycle-note"></span></div>` : "") + `
     ${kpi ? '<div class="stats" id="kpi"></div>' : ""}
     <div class="controls" id="toggles"></div>
-    <div class="controls"><div class="seg" id="zoom"></div><div class="seg"><button type="button" id="solo-media" aria-pressed="false">${tr("Solo la media")}</button></div>
+    <div class="controls"><div class="seg" id="zoom"></div><div class="seg"><button type="button" id="solo-media" aria-pressed="false">${tr("Solo la media")}</button></div><div class="seg" id="modo" style="display:none"><button type="button" data-m="voto" class="on">${tr("Voto")}</button><button type="button" data-m="escanos">${tr("Escaños")}</button></div>
       ${tools ? `<details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
         <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
           <label><input type="checkbox" id="corr" checked/> Descontar el sesgo de cada casa respecto a las demás</label></div>
@@ -248,6 +248,12 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     // "Solo la media" hides the poll dots; a click on the chart away from a dot pins a date (index into days) and lists the
     // average of every party that day (Víctor, 2026-11-21). Both persist across redraws (zoom, pollsters, correction).
     let soloMedia = false, pinDay = null;
+    // "Voto | Escaños" (2026-11-21): the seats some polls publish beside the shares (q.s; a range counts as its midpoint),
+    // averaged with the same kernel but without the house correction, which is measured in vote points
+    let modo = "voto";
+    const hasSeats = E.polls.some((q) => q.s);
+    const val = (q) => (modo === "escanos" ? q.s ?? {} : q.v);
+    const fv = (v) => (modo === "escanos" ? String(Math.round(v)) : `${num(v)}%`);
     const nx = d3.rollup(E.polls.filter((q) => q.x), (v) => v.length, (q) => q.x);
     const tDay = (s) => Math.round(new Date(s) / 864e5);
     const dayT = days.map((d) => Math.round(d / 864e5));
@@ -272,11 +278,11 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     // the same kernel as pipeline/poll_model.py (one-sided exponential, tau 10 days, 120-day memory,
     // weight min(sqrt(n/1000), 2) divided by the pollster's polls in the last 30 days), on the chosen polls
     function kernelAverage(force = false) {
-      if (!force && corr && sel.size === houses.length) return { media: E.media, sd: E.sd };
-      const P = E.polls.filter((q) => !q.x && sel.has(q.e)).map((q) => ({ t: tDay(q.d), e: q.e, w: Math.min(Math.sqrt((q.n ?? 1000) / 1000), 2), v: q.v }));
+      if (!force && modo === "voto" && corr && sel.size === houses.length) return { media: E.media, sd: E.sd };
+      const P = E.polls.filter((q) => !q.x && sel.has(q.e)).map((q) => ({ t: tDay(q.d), e: q.e, w: Math.min(Math.sqrt((q.n ?? 1000) / 1000), 2), v: val(q) }));
       const media = {}, sd = {};
       for (const p of E.parties) {
-        const Q = P.filter((q) => q.v[p] != null).map((q) => ({ ...q, x: q.v[p] - (corr ? E.efecto_casa?.[q.e]?.[p] ?? 0 : 0) }))
+        const Q = P.filter((q) => q.v[p] != null).map((q) => ({ ...q, x: q.v[p] - (corr && modo === "voto" ? E.efecto_casa?.[q.e]?.[p] ?? 0 : 0) }))
           .sort((a, b) => a.t - b.t);
         if (Q.length < 10) { media[p] = dayT.map(() => null); sd[p] = media[p]; continue; }
         media[p] = []; sd[p] = [];
@@ -307,7 +313,8 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       const nsmall = small.filter(([h]) => sel.has(h)).length;
       if ($("#casas-sum")) $("#casas-sum").textContent = all ? `todas (${big.length} habituales y ${small.length} ocasionales)` : sel.size === 0 ? "ninguna"
         : sel.size <= 3 ? [...sel].join(", ") : `${sel.size - nsmall} de ${big.length} habituales${nsmall ? ` y ${nsmall} ocasionales` : ""}`;
-      $("#ch-note").innerHTML = (all && corr ? "" : `Promedio ${corr ? "corregido" : "sin corregir"} de ${all ? "todas las encuestadoras" : sel.size === 1 ? [...sel][0] : `${sel.size} encuestadoras`}. `)
+      $("#ch-note").innerHTML = (modo === "escanos" ? tr("Escaños: la media de los que publica cada encuesta, sin descontar el sesgo de cada casa; una horquilla cuenta por su punto medio.") + " " : "")
+        + (modo === "escanos" || (all && corr) ? "" : `Promedio ${corr ? "corregido" : "sin corregir"} de ${all ? "todas las encuestadoras" : sel.size === 1 ? [...sel][0] : `${sel.size} encuestadoras`}. `)
         + (soloMedia ? "" : tr("Cada punto es una encuesta: pasa el ratón por encima para ver cuál.") + " ") + tr("Haz clic fuera de los puntos para fijar una fecha y ver la media de cada partido ese día.");   // the front page's links are in textos/portada.md
     }
 
@@ -342,6 +349,14 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     if ($("#showx")) $("#showx").onchange = (ev) => { showX = ev.target.checked; draw(); };
     $("#solo-media").classList.remove("on"); $("#solo-media").setAttribute("aria-pressed", "false");
     $("#solo-media").onclick = () => { soloMedia = !soloMedia; $("#solo-media").classList.toggle("on", soloMedia); $("#solo-media").setAttribute("aria-pressed", String(soloMedia)); kpi(); draw(); };
+    {
+      const mEl = $("#modo");
+      mEl.style.display = hasSeats ? "" : "none";
+      mEl.querySelectorAll("button").forEach((b) => {
+        b.classList.toggle("on", b.dataset.m === modo);
+        b.onclick = () => { modo = b.dataset.m; mEl.querySelectorAll("button").forEach((c) => c.classList.toggle("on", c === b)); refresh(); };
+      });
+    }
     $("#casas-box")?.querySelectorAll(".casas-act button").forEach((b) => b.onclick = () => {
       if (b.dataset.a === "all") houses.forEach(([h]) => sel.add(h)); else sel.clear(); refresh(); });
     if ($("#corr")) $("#corr").onchange = (ev) => { corr = ev.target.checked; refresh(); };
@@ -361,13 +376,13 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       const shown = (q) => !soloMedia && (q.x ? showX : sel.has(q.e));
       const vis = E.polls.filter((q) => shown(q) && inWin(new Date(q.d)));
       const visAvg = parties.flatMap((p) => days.map((d, i) => (inWin(d) ? avg.media[p][i] : null)).filter((v) => v != null));
-      const ymax = Math.max(d3.max(parties, (p) => d3.max(vis, (q) => q.v[p])) ?? 0, d3.max(visAvg) ?? 0) || 40;
-      const y = d3.scaleLinear().domain([0, Math.min(50, ymax + 2)]).nice().range([H - m.b, m.t]);
+      const ymax = Math.max(d3.max(parties, (p) => d3.max(vis, (q) => val(q)[p])) ?? 0, d3.max(visAvg) ?? 0) || 40;
+      const y = d3.scaleLinear().domain([0, modo === "escanos" ? ymax + 5 : Math.min(50, ymax + 2)]).nice().range([H - m.b, m.t]);
       const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
       svg.append("defs").append("clipPath").attr("id", clipId).append("rect").attr("x", m.l).attr("y", 0).attr("width", W - m.l - m.r).attr("height", H);
       svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(6)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
       svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.max(3, Math.floor(W / 110))).tickFormat((+win[1] - +win[0]) / DAY <= 45 ? d3.timeFormat("%-d %b") : null).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
-      svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickFormat((v) => `${v}%`).tickSize(0)).call((g) => g.select(".domain").remove());
+      svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickFormat((v) => (modo === "escanos" ? `${v}` : `${v}%`)).tickSize(0)).call((g) => g.select(".domain").remove());
       const plot = svg.append("g").attr("clip-path", `url(#${clipId})`);
       const gBands = plot.append("g"), gTrail = plot.append("g"), gDots = plot.append("g"), gLines = plot.append("g");
       for (const p of parties) {
@@ -380,8 +395,8 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       }
       // one dot per poll and party: the polls as published, before any correction
       const dots = [];
-      E.polls.forEach((q, i) => { if (shown(q) && inWin(new Date(q.d))) for (const p of parties) if (q.v[p] != null)
-        dots.push({ i, p, cx: x(new Date(q.d)), cy: y(q.v[p]) }); });
+      E.polls.forEach((q, i) => { if (shown(q) && inWin(new Date(q.d))) for (const p of parties) if (val(q)[p] != null)
+        dots.push({ i, p, cx: x(new Date(q.d)), cy: y(val(q)[p]) }); });
       // fewer dots on screen (short window or few pollsters) -> bigger, more opaque dots
       const npolls = new Set(dots.map((o) => o.i)).size;
       const r0 = npolls < 60 ? 3.5 : npolls < 150 ? 3 : 2, o0 = npolls < 60 ? 0.7 : npolls < 150 ? 0.45 : 0.25;
@@ -396,7 +411,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       const labels = declutter(parties.filter((p) => lv(p) != null).map((p) => ({ p, v: lv(p), y: y(lv(p)), priority: lv(p) })), { min: m.t, max: H - m.b });
       leaders(svg, labels, { x0: W - m.r, x1: W - m.r + 5 });
       svg.append("g").selectAll("text").data(labels.filter((l) => !l.hidden)).join("text").attr("x", W - m.r + 6).attr("y", (l) => l.y + 4)
-        .attr("fill", "var(--ink-2)").attr("font-weight", E.resultado && +win[1] >= +end - DAY ? 600 : 400).text((l) => `${PN(l.p)} ${num(l.v)}`);
+        .attr("fill", "var(--ink-2)").attr("font-weight", E.resultado && +win[1] >= +end - DAY ? 600 : 400).text((l) => `${PN(l.p)} ${modo === "escanos" ? Math.round(l.v) : num(l.v)}`);
       if (E.resultado && inWin(end)) {   // past cycle: the result, as a tick per party on election day
         svg.append("line").attr("x1", x(end)).attr("x2", x(end)).attr("y1", m.t).attr("y2", H - m.b).attr("stroke", "var(--ink-2)").attr("stroke-dasharray", "4 3");
         svg.append("text").attr("x", x(end) - 4).attr("y", m.t + 10).attr("text-anchor", "end").attr("fill", "var(--ink-2)").text(tr("resultado"));
@@ -423,8 +438,8 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
         }
         const rows = E.parties.filter((p) => avg.media[p]?.[pinDay] != null).sort((a, b) => avg.media[b][pinDay] - avg.media[a][pinDay]);
         box.hidden = false;
-        box.innerHTML = `<div class="pin-head"><b>${tr("Promedio, {f}", { f: fdate(d) })}</b><button type="button" class="pin-x" aria-label="${tr("Quitar la fecha")}" title="${tr("Quitar la fecha")}">×</button></div>
-          <div class="pin-rows">${rows.map((p) => `<span><i class="dot" style="background:${PC(p)}"></i>${PN(p)} <b>${num(avg.media[p][pinDay])}%</b></span>`).join("")}</div>`;
+        box.innerHTML = `<div class="pin-head"><b>${tr(modo === "escanos" ? "Escaños, media del {f}" : "Promedio, {f}", { f: fdate(d) })}</b><button type="button" class="pin-x" aria-label="${tr("Quitar la fecha")}" title="${tr("Quitar la fecha")}">×</button></div>
+          <div class="pin-rows">${rows.map((p) => `<span><i class="dot" style="background:${PC(p)}"></i>${PN(p)} <b>${fv(avg.media[p][pinDay])}</b></span>`).join("")}</div>`;
         box.querySelector(".pin-x").onclick = () => { pinDay = null; drawPin(); };
       }
       function focus(i) {
@@ -448,11 +463,11 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       function pollTip(i, ev) {
         const q = E.polls[i];
         const nHouse = E.polls.filter((r) => r.e === q.e).length;
-        const rows = Object.entries(q.v).sort((a, b) => b[1] - a[1]);
+        const rows = Object.entries(val(q)).sort((a, b) => b[1] - a[1]);
         showTip(`<b>${q.e}</b>${q.m ? ` · ${q.m}` : ""}
           <div class="row muted"><span>${tr("Trabajo de campo")}</span><span>${q.f0 === q.f1 ? fdate(q.f1) : tr("{a} a {b}", { a: fdate(q.f0), b: fdate(q.f1) })}</span></div>
           ${q.n ? `<div class="row muted"><span>${tr("Muestra")}</span><span>${q.n.toLocaleString(loc(), { useGrouping: "always" })}</span></div>` : ""}
-          ${rows.map(([p, v]) => `<div class="row"><span><i class="dot" style="background:${PC(p) ?? "var(--ink-3)"}"></i>${PN(p) ?? p}</span><span>${num(v)}%</span></div>`).join("")}
+          ${rows.map(([p, v]) => `<div class="row"><span><i class="dot" style="background:${PC(p) ?? "var(--ink-3)"}"></i>${PN(p) ?? p}</span><span>${fv(v)}</span></div>`).join("")}
           <div class="row muted"><span>${tr("Encuestas de {e} en el ciclo", { e: q.e })}</span><span>${nHouse}</span></div>
           ${q.x ? `<div class="muted" style="max-width:240px;white-space:normal">${q.x === "reest" ? tr("Reestimación de una encuesta del CIS con otra cocina: misma muestra, no entra en el promedio.") : tr("Encuesta encargada por un partido: no entra en el promedio.")}</div>` : ""}`, ev);
       }
@@ -461,8 +476,8 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
         const i = d3.leastIndex(days, (d) => Math.abs(d - xd));
         cross.attr("x1", x(days[i])).attr("x2", x(days[i])).style("display", null);
         const rows = parties.filter((p) => avg.media[p][i] != null).sort((a, b) => avg.media[b][i] - avg.media[a][i]);
-        showTip(`<b>${tr("Promedio, {f}", { f: fdate(days[i]) })}</b>${rows.map((p) =>
-          `<div class="row"><span><i class="dot" style="background:${PC(p)}"></i>${PN(p)}</span><span>${num(avg.media[p][i])}%</span></div>`).join("")}`, ev);
+        showTip(`<b>${tr(modo === "escanos" ? "Escaños, media del {f}" : "Promedio, {f}", { f: fdate(days[i]) })}</b>${rows.map((p) =>
+          `<div class="row"><span><i class="dot" style="background:${PC(p)}"></i>${PN(p)}</span><span>${fv(avg.media[p][i])}</span></div>`).join("")}`, ev);
       }
       const near = (mx, my) => { if (!dots.length) return null; const j = delaunay.find(mx, my);
         return Math.hypot(dots[j].cx - mx, dots[j].cy - my) <= 9 ? dots[j].i : null; };

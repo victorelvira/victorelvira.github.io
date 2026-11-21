@@ -303,6 +303,8 @@ export default {
   "Encuesta encargada por un partido: no entra en el promedio.": "Poll commissioned by a party: not in the average.",
   "Promedio, {f}": "Average, {f}",
   "Solo la media": "Average only",
+  "Escaños, media del {f}": "Seats, average on {f}",
+  "Escaños: la media de los que publica cada encuesta, sin descontar el sesgo de cada casa; una horquilla cuenta por su punto medio.": "Seats: the average of those each poll publishes, without correcting each pollster's lean; a range counts as its midpoint.",
   "Quitar la fecha": "Remove the date",
   "Haz clic fuera de los puntos para fijar una fecha y ver la media de cada partido ese día.": "Click away from the dots to pin a date and see each party's average that day.",
   "Nuestra predicción": "Our forecast",
