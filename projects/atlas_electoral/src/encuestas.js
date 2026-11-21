@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.172";
-import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.172";
-import { textos, md, INDICE } from "./textos.js?v=0.2.172";
-import { t as tr, loc, fix } from "./i18n.js?v=0.2.172";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.173";
+import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.173";
+import { textos, md, INDICE } from "./textos.js?v=0.2.173";
+import { t as tr, loc, fix } from "./i18n.js?v=0.2.173";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -387,17 +387,28 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
       W = Math.max(340, Math.round(el.clientWidth || 1000));
       const H = W < 600 ? 360 : 420;
       const parties = E.parties.filter((p) => show.has(p));
-      const x = d3.scaleTime().domain(win).range([m.l, W - m.r]);
+      // 8 px of air on the right so the last day's dots are drawn whole inside the clip (Víctor, 2026-11-21)
+      const x = d3.scaleTime().domain(win).range([m.l, W - m.r - 8]);
       const inWin = (d) => d >= win[0] && d <= win[1];
       const shown = (q) => !soloMedia && (q.x ? showX : sel.has(q.e));
       const vis = E.polls.filter((q) => shown(q) && inWin(new Date(qt(q))));
       const visAvg = parties.flatMap((p) => days.map((d, i) => (inWin(d) ? avg.media[p][i] : null)).filter((v) => v != null));
       const ymax = Math.max(d3.max(parties, (p) => d3.max(vis, (q) => val(q)[p])) ?? 0, d3.max(visAvg) ?? 0) || 40;
       const y = d3.scaleLinear().domain([0, modo === "escanos" ? ymax + 5 : Math.min(50, ymax + 2)]).nice().range([H - m.b, m.t]);
+      // windows of up to 4 months: one tick every k days counted back from the last day shown, so the latest date is
+      // always labelled (d3's own ticks fell on odd days and skipped it); longer windows keep d3's month ticks
+      function xAxis(x, W) {
+        const span = (+win[1] - +win[0]) / DAY, nT = Math.max(3, Math.floor(W / 110)), ax = d3.axisBottom(x).tickSizeOuter(0);
+        if (span > 120) return ax.ticks(nT);
+        const k = [1, 2, 3, 4, 5, 7, 14, 21, 28].find((s) => span / s <= nT) ?? 28;
+        const last = Math.floor(+win[1] / DAY) * DAY;
+        const tv = d3.range(0, Math.floor(span) + 1, k).map((j) => new Date(last - j * DAY)).filter((d) => x(d) >= m.l + 14);
+        return ax.tickValues(tv).tickFormat(d3.timeFormat("%-d %b"));
+      }
       const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
       svg.append("defs").append("clipPath").attr("id", clipId).append("rect").attr("x", m.l).attr("y", 0).attr("width", W - m.l - m.r).attr("height", H);
       svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(6)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
-      svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.max(3, Math.floor(W / 110))).tickFormat((+win[1] - +win[0]) / DAY <= 45 ? d3.timeFormat("%-d %b") : null).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
+      svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(xAxis(x, W)).call((g) => g.select(".domain").remove());
       svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(6).tickFormat((v) => (modo === "escanos" ? `${v}` : `${v}%`)).tickSize(0)).call((g) => g.select(".domain").remove());
       const plot = svg.append("g").attr("clip-path", `url(#${clipId})`);
       const gBands = plot.append("g"), gTrail = plot.append("g"), gDots = plot.append("g"), gLines = plot.append("g");
