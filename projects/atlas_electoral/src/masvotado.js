@@ -4,14 +4,16 @@
 // mayoría"). mapaMasVotado() draws the front page's version: every province labelled, and a card on click or tap.
 const d3 = window.d3;
 const topojson = window.topojson;
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.164";
-import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.164";
-import { getGeo, rewind } from "./mapa.js?v=0.2.164";
-import { textos, md } from "./textos.js?v=0.2.164";
-import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.164";
-import { t as tr, N_, fix, deCada, lang } from "./i18n.js?v=0.2.164";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.169";
+import { POLL_PARTY, partyColor } from "./encuestas.js?v=0.2.169";
+import { getGeo, rewind } from "./mapa.js?v=0.2.169";
+import { textos, md } from "./textos.js?v=0.2.169";
+import { BLOQUE_INICIAL, IDEO } from "./charts.js?v=0.2.169";
+import { t as tr, N_, fix, deCada, lang } from "./i18n.js?v=0.2.169";
 
-const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : f.toUpperCase()));
+const pn = (f) => (f === "sumar" ? "Frente Amplio" : POLL_PARTY[f]?.n ?? (f === "reg" && FAM.reg ? tr(FAM.reg.nombre) : FAM[f]?.nombre) ?? (f === "otros" ? tr("Otras") : SUELTOS[f] ?? f.toUpperCase()));
+// lists that only a few provincial polls name, keyed as the poll file writes them
+const SUELTOS = { iustitia: "Iustitia Europa", izquierda_espanola: "Izquierda Española" };
 // the "reg" family is a different list in each province, and "Regionalistas y otros nacionalistas" read as nonsense on a
 // province's card (Víctor, 2026-11-16: "lo de nacionalistas es confuso"): where the 2026 projection has one, say which
 export const REG_LISTA = { "31": "Geroa Bai", "42": "Soria ¡Ya!", "44": "Teruel Existe" };

@@ -29,7 +29,7 @@ pipeline/check_textos_en.py refuses this file if any of them is missing.
 
 **Type of poll.** This province only: every interview is in the province (including those of a single-province region, such as Madrid or Cantabria). National, with a figure for the province: a poll of all of Spain from which the provincial figure is taken; each province has few interviews, so the figure is very uncertain, and the interviews shown are those for all of Spain. Regional, with a figure for the province: the same, for a poll of an autonomous community. Not stated: the source does not say. Rows transcribed from the press and not yet reviewed are marked as such.
 
-**Seats in play.** In each province, a party's seat counts as decided when the party wins it in at least 9 out of 10 simulations (the first, if it wins at least one; the second, if it wins at least two). The seats in play are the rest: those that no party has decided in this way.
+**Seats in play.** In each province, a party's seat counts as decided when the party wins it in at least 75 out of 100 simulations, the bar for «likely» in the front page's hemicycle (the first, if it wins at least one; the second, if it wins at least two). The seats in play are the rest: those that no party has decided in this way.
 :::
 
 === detalle ===
@@ -189,7 +189,16 @@ In the general election of July 2023 it elected {escanos23} {escanos23_palabra}:
 
 #### What your vote is worth: voters per seat
 
-In {provincia} there are **{electores} voters for each seat**; the average for Spain is {media}. A vote here weighs {peso} an average vote. It ranks {puesto} of 52, counting from the one with the fewest voters per seat: {min_n} ({min}). The one with the most is {max_n} ({max}).
+In {provincia} there are **{electores} voters for each seat**; the average for Spain is {media}. A vote here weighs {peso} an average vote.
+::: si menos
+It has the fewest voters per seat of the 52 provinces; the one with the most is {max_n} ({max}).
+::: si no
+::: si mas
+It has the most voters per seat of the 52 provinces; the one with the fewest is {min_n} ({min}).
+::: si no
+It ranks {puesto} of 52, counting from the one with the fewest voters per seat: {min_n} ({min}). The one with the most is {max_n} ({max}).
+:::
+:::
 
 [[vale_tira]]
 

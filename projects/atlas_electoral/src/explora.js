@@ -1,4 +1,4 @@
-import { textos, md } from "./textos.js?v=0.2.164";
+import { textos, md } from "./textos.js?v=0.2.169";
 
 // the prose and the tiles are textos/explora.md
 export async function renderExplora(app) {

@@ -3,12 +3,12 @@
 // worth (electors per seat), the last seat, the heads of the proclaimed lists, 2019 against 2023, the D'Hondt quotients
 // of 2023 and the municipalities. The prose is textos/provincia.md (parts named after each block).
 const d3 = window.d3;
-import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.164";
-import { md } from "./textos.js?v=0.2.164";
-import { fam, famName } from "./charts.js?v=0.2.164";
-import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.164";
-import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.164";
-import { t as tr, deCada, ordinal } from "./i18n.js?v=0.2.164";
+import { META, load, loadMuni, norm, showTip, hideTip } from "./data.js?v=0.2.169";
+import { md } from "./textos.js?v=0.2.169";
+import { fam, famName } from "./charts.js?v=0.2.169";
+import { reparto as dhondt } from "./dhondt_vis.js?v=0.2.169";
+import { short, pc, nm, frecuencia } from "./masvotado.js?v=0.2.169";
+import { t as tr, deCada, ordinal } from "./i18n.js?v=0.2.169";
 
 const f0 = (x) => d3.format(",.0f")(x);   // at call time: the Spanish locale is set after the imports run
 const E23 = "generales_2023-07", E19 = "generales_2019-11";
@@ -154,7 +154,7 @@ export function ficha({ p, D, S, dh, T, vista }) {
   const slots = {
     cabecera: `<nav class="pf-migas" aria-label="${tr("Dónde estás")}"><a href="#provincia">${tr("Provincias")}</a>${ccn ? ` › <a href="#comunidad/${cc}">${ccn}</a>` : ""} › <span>${p.n}</span></nav>`,
     cifras: `<dl class="pf-cifras">
-      <div><dt>${tr("Escaños 2026")}</dt><dd>${p.esc}${dEsc ? ` <small>(${tr("{d} respecto a 2023", { d: `${dEsc > 0 ? "+" : ""}${dEsc}` })})</small>` : ""}</dd></div>
+      <div><dt>${tr("Escaños 2026")}</dt><dd>${p.esc}${dEsc ? ` <small>(${tr("{d} respecto a 2023", { d: `${dEsc > 0 ? "+" : "−"}${Math.abs(dEsc)}` })})</small>` : ""}</dd></div>
       ${s23 ? `<div><dt>${tr("Censo 2023")}</dt><dd>${f0(s23.censo)}</dd></div><div><dt>${tr("Participación 2023")}</dt><dd>${pctTxt(s23.votantes / s23.censo * 100)}</dd></div>` : ""}
       ${me ? `<div><dt>${tr("Electores por escaño")}</dt><dd>${f0(me.x)}</dd></div>` : ""}</dl>`,
     vista: `<div class="seg pf-vista" role="group" aria-label="${tr("Qué se muestra")}">${[["2026", tr("Proyección 2026")], ["2023", tr("Resultados 2023")]].map(([v, t]) =>
@@ -173,7 +173,7 @@ export function ficha({ p, D, S, dh, T, vista }) {
   if (me) {
     const peso = E.media / me.x;
     slots.vale = md(T.vale, { vars: { provincia: p.n, electores: f0(me.x), media: f0(E.media), peso: Math.abs(peso - 1) < 0.05 ? tr("más o menos") : tr("{x} veces", { x: nm(peso) }),
-      puesto: ord(k + 1), min_n: E.rows[0].n, min: f0(E.rows[0].x), max_n: E.rows.at(-1).n, max: f0(E.rows.at(-1).x) }, slots: { vale_tira: tira(E, code) }, page: "provincia" }).html;
+      puesto: ord(k + 1), min_n: E.rows[0].n, min: f0(E.rows[0].x), max_n: E.rows.at(-1).n, max: f0(E.rows.at(-1).x) }, flags: { menos: k === 0, mas: k === E.rows.length - 1 }, slots: { vale_tira: tira(E, code) }, page: "provincia" }).html;
   }
   // the last seat: 2026, every usual fight and the undecided seats with how often each party takes them
   if (!y23) {

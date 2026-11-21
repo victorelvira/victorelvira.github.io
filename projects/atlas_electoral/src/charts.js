@@ -1,6 +1,6 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.164";
-import { t as tr } from "./i18n.js?v=0.2.164";
+import { FAM, pct, showTip, hideTip } from "./data.js?v=0.2.169";
+import { t as tr, loc } from "./i18n.js?v=0.2.169";
 
 // left-to-right ordering used for every seat bar
 export const IDEO = ["bildu", "cup", "podemos", "izq", "sumar", "erc", "bng", "compromis", "psoe", "pnv", "cc", "otros", "junts", "ucd", "cs", "pp", "vox", "salf"];
@@ -102,7 +102,11 @@ export function lines(el, series, { height = 300, fmt = (v) => pct(v), yTicks = 
   const y = d3.scaleLinear().domain([yMin, yMax ?? d3.max(all, (p) => p.v) * 1.08]).nice().range([H - m.b, m.t]);
   const svg = d3.select(el).append("svg").attr("viewBox", `0 0 ${W} ${H}`);
   svg.append("g").attr("class", "grid").selectAll("line").data(y.ticks(5)).join("line").attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
-  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.max(3, Math.floor(W / 90))).tickSizeOuter(0)).call((g) => g.select(".domain").remove());
+  // a span of a few weeks gets one tick per day or few days, written "16 nov" (d3's default wrote "12 PM" between the days)
+  const nT = Math.max(3, Math.floor(W / 90)), dias = (x.domain()[1] - x.domain()[0]) / 864e5;
+  const ejeX = dias <= 120 ? d3.axisBottom(x).ticks(d3.timeDay.every(Math.max(1, Math.ceil(dias / nT)))).tickFormat((d) => d.toLocaleDateString(loc(), { day: "numeric", month: "short" }).replace(".", ""))
+    : d3.axisBottom(x).ticks(nT);
+  svg.append("g").attr("class", "axis").attr("transform", `translate(0,${H - m.b})`).call(ejeX.tickSizeOuter(0)).call((g) => g.select(".domain").remove());
   svg.append("g").attr("class", "axis").attr("transform", `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickFormat(yTicks).tickSize(0)).call((g) => g.select(".domain").remove());
   for (const s of series) {
     const vals = s.values.filter((p) => p.v != null);

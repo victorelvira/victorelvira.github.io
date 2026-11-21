@@ -6,7 +6,7 @@
 // Interface strings are keyed by their Spanish text: t("Escaños") is "Escaños" in Spanish and lang_en.js["Escaños"] in English.
 // N_() only marks a string for pipeline/check_textos_en.py, for strings stored in a table and passed to t() later.
 // Prose is not here: textos/en/<page>.md beside textos/<page>.md (src/textos.js picks the folder).
-import EN from "./lang_en.js?v=0.2.164";
+import EN from "./lang_en.js?v=0.2.169";
 
 const KEY = "atlas_electoral.lang";
 const LANGS = ["es", "en"];
@@ -47,7 +47,7 @@ export const N_ = (s) => s;
 /** A figure written with a decimal point ("38.2", "1.5"), with the decimal sign of the view's language. */
 export const sep = (s) => (page === "en" ? String(s) : String(s).replace(".", ","));
 /** x with d decimals, in the view's language ("38,2" / "38.2"). */
-export const fix = (x, d = 1) => sep(x.toFixed(d));
+export const fix = (x, d = 1) => { const s = x.toFixed(d); return sep(/^-0(\.0+)?$/.test(s) ? s.slice(1) : s.replace(/^-/, "−")); };   // a true minus sign, and no "-0,0"
 /** A frequency for readers: "7 de cada 10" / "7 out of 10". */
 export const deCada = (n, de) => t("{n} de cada {de}", { n, de });
 /** An ordinal: "3.º" (g "m") or "3.ª" (g "f") in Spanish, "3rd" in English. */

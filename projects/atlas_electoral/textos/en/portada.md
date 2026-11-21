@@ -84,7 +84,7 @@ The poll average. All the polls, one by one and by pollster, in [29N polls](#enc
 ::: si provincias
 ## Where it is decided {#aire}
 
-[sub] The allocation is played out province by province. These are the provinces with the most seats in play: seats that no party wins in at least 9 out of 10 simulations.
+[sub] The allocation is played out province by province. These are the provinces with the most seats in play: seats that no party wins in at least 75 out of 100 simulations, the ones «in play» in the hemicycle.
 
 [[pugnas]]
 
@@ -188,7 +188,7 @@ pollsters. [[tabla_cambio]]: the table per pollster, folded. -->
 <!--
 Blackout notice. See ../portada.md.
 -->
-**Forecast frozen on 23 November.** Spanish electoral law forbids publishing polls in the five days before the vote. This forecast uses the polls known up to Monday 23 November and will not change until the polls close. Results on this page on the night of the 29th.
+**Data and models not updated since 23 November, because of the electoral blackout.** Spanish law forbids publishing polls in the five days before the vote (LOREG, art. 69.7). What you see uses the polls known up to Monday 23 November and will not change until the polls close. Results on this page on the night of the 29th.
 
 === tooltip_350 ===
 <!--
@@ -225,7 +225,7 @@ Figures and conditions: see ../portada.md.
 
 === dia_frase ===
 ::: si igual
-Since {desde}, PP and Vox reach 176 in {hoy} simulations, as then ({esc_antes} expected seats then, {esc_hoy} today). The 2023 investiture bloc, in {inv_hoy}.
+From {desde} to today, PP and Vox still reach 176 in {hoy} simulations ({esc_antes} expected seats then, {esc_hoy} today). The 2023 investiture bloc, in {inv_hoy}.
 ::: si no
 On {desde}, PP and Vox reached 176 in {antes} simulations; today, in {hoy} ({esc_antes} expected seats then, {esc_hoy} today). The 2023 investiture bloc, in {inv_antes} then and {inv_hoy} today.
 :::

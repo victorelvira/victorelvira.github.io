@@ -1,16 +1,16 @@
-import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.164";
-import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.164";
-import { projectFromPolls } from "./simulador.js?v=0.2.164";
-import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.164";
-import { pugnasHtml, pugnas as pugnasDe, pugnaVars } from "./provincia.js?v=0.2.164";
-import { parlamento } from "./parlamento.js?v=0.2.164";
-import { opciones, simula } from "./opciones.js?v=0.2.164";
-import { diaADia } from "./dia.js?v=0.2.164";
-import { mosaico } from "./mosaico.js?v=0.2.164";
-import { textos, md, INDICE } from "./textos.js?v=0.2.164";
-import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.164";
-import { mapaMasVotado } from "./masvotado.js?v=0.2.164";
-import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.164";
+import { load, loadFresh, FAM, fmt, BUILD_AT, de100, fechaLarga } from "./data.js?v=0.2.169";
+import { seatRows, lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.169";
+import { projectFromPolls } from "./simulador.js?v=0.2.169";
+import { POLL_PARTY, pollChart } from "./encuestas.js?v=0.2.169";
+import { pugnasHtml, pugnas as pugnasDe, pugnaVars } from "./provincia.js?v=0.2.169";
+import { parlamento } from "./parlamento.js?v=0.2.169";
+import { opciones, simula } from "./opciones.js?v=0.2.169";
+import { diaADia } from "./dia.js?v=0.2.169";
+import { mosaico } from "./mosaico.js?v=0.2.169";
+import { textos, md, INDICE } from "./textos.js?v=0.2.169";
+import { resultadosHtml, wireResultados } from "./resultados.js?v=0.2.169";
+import { mapaMasVotado } from "./masvotado.js?v=0.2.169";
+import { t, N_, loc, fix, sep } from "./i18n.js?v=0.2.169";
 
 const ELECTION_DAY = new Date("2026-11-29T09:00:00+01:00");
 

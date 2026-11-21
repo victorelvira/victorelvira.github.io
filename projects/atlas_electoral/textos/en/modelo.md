@@ -7,7 +7,7 @@ Checked by pipeline/check_textos_en.py.
 
 [[índice]]
 
-## Forecast <span class="tag-exp">experimental model, under review</span> {#prediccion | Forecast}
+## Forecast <span class="tag-exp">experimental model</span> {#prediccion | Forecast}
 
 [[pred]]
 
@@ -36,7 +36,7 @@ Checked by pipeline/check_textos_en.py.
 
 [[histograma]]
 
-[nota] Probability that the PP is the party with the most seats: **{pp_primero}**.
+[nota] The PP has the most seats in **{pp_primero} out of 100** simulations.
 
 ### How it has changed
 
@@ -59,10 +59,6 @@ Checked by pipeline/check_textos_en.py.
 
 [[diario]]
 
-### Does it get it right?
-
-[[pred-bt]]
-
 ::: metodología
 **What it does.** For each party (PP, PSOE, Vox, Frente Amplio, Podemos, SALF, ERC, Junts, Bildu and PNV) it tracks support day by day with a filter that combines every poll of the cycle, removing each pollster's usual deviation in this cycle (what it did in 2023 counts for little: from one general election to the next, a pollster's bias hardly repeats). That gives today's level and its uncertainty.
 
@@ -76,10 +72,6 @@ Checked by pipeline/check_textos_en.py.
 === sin_prediccion ===
 
 [nota] The model's forecast will appear here.
-
-=== backtest ===
-
-[nota] Tested on the {generales} general elections since {desde}, rerunning the model with only the polls known at the time. One week before, the result fell inside the 90% range in {voto_7} of cases for the vote and in {escanos_7} for the seats (one month before: {voto_30} and {escanos_30}). The main misses were 2004 (three days after the Madrid train bombings of 11 March) and Ciudadanos in 2015.
 
 === fiarse ===
 

@@ -1,6 +1,7 @@
-import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.164";
-import { textos, md, INDICE } from "./textos.js?v=0.2.164";
-import { fam, famName, IDEO, EXTRA, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.164";
+import { fix } from "./i18n.js?v=0.2.169";
+import { load, FAM_IDS, elecLabel } from "./data.js?v=0.2.169";
+import { textos, md, INDICE } from "./textos.js?v=0.2.169";
+import { fam, famName, IDEO, EXTRA, indexHtml, sectionIndex, bloques } from "./charts.js?v=0.2.169";
 
 /** D'Hondt with the 3% provincial threshold over valid votes (candidaturas + blancos). */
 export function dhondt(lists, seats, validos, threshold = 0.03, detail = null) {
@@ -23,7 +24,7 @@ export const SLIDERS = ["pp", "psoe", "vox", "izq", "cs", ...NEW];
 /** Sliders that make sense for a results set: the families it has, plus the three new parties once split. */
 export const slidersFor = (nat) => SLIDERS.filter((f) => nat[f] > 0);
 const fdate = (s) => new Date(s).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
-const num = (x, d = 1) => (+x).toFixed(d).replace(".", ",");
+const num = (x, d = 1) => fix(+x, d);
 
 /** Replace each province's "izq" list (Sumar in 2023) by Sumar, Podemos and SALF lists whose votes follow
  *  their shares in the June 2024 European election (geo_nuevos.json), over the province's valid votes. */
@@ -146,7 +147,7 @@ export async function renderSimulador(app, args = [], embed = false) {
     $("#leg").innerHTML = IDEO.filter((f) => sim.seats[f]).map((f) => `<span><i class="sw" style="background:${fam(f).color}"></i>${famName(f, state.base)} <b>${sim.seats[f]}</b></span>`).join("");
     $("#tbl").innerHTML = `<table><tr><th>Partido</th><th class="num">${elecLabel(state.base)}</th><th class="num">Simulado</th><th class="num">Dif.</th></tr>
       ${order.map((f) => { const a = base.seats[f] ?? 0, b = sim.seats[f] ?? 0;
-        return `<tr><td><i class="dot" style="background:${fam(f).color}"></i>${famName(f, state.base)}</td><td class="num">${a}</td><td class="num"><b>${b}</b></td><td class="num">${b - a > 0 ? "+" : ""}${b - a || ""}</td></tr>`; }).join("")}
+        return `<tr><td><i class="dot" style="background:${fam(f).color}"></i>${famName(f, state.base)}</td><td class="num">${a}</td><td class="num"><b>${b}</b></td><td class="num">${b - a > 0 ? "+" : b < a ? "−" : ""}${Math.abs(b - a) || ""}</td></tr>`; }).join("")}
 
       </table>`;
     const changes = sim.perProv.map((p, i) => {
@@ -154,7 +155,7 @@ export async function renderSimulador(app, args = [], embed = false) {
       return { n: p.n, diffs };
     }).filter((p) => p.diffs.length);
     $("#prov").innerHTML = changes.length ? `<table>${changes.map((p) => `<tr><td>${p.n}</td><td>${p.diffs.map(([f, d]) =>
-      `<span style="white-space:nowrap;margin-right:10px"><i class="dot" style="background:${fam(f).color}"></i>${d > 0 ? "+" : ""}${d}</span>`).join("")}</td></tr>`).join("")}</table>`
+      `<span style="white-space:nowrap;margin-right:10px"><i class="dot" style="background:${fam(f).color}"></i>${d > 0 ? "+" : "−"}${Math.abs(d)}</span>`).join("")}</td></tr>`).join("")}</table>`
       : md(T.sin_cambios, { page: "simulador" }).html;
     // sums by group, the reader decides where each party goes (same component as the 29N page)
     bloques($("#pactos"), sim.seats, { eid: state.provs !== dh[state.base] ? "generales_2026-11" : state.base, at: state.grupos });

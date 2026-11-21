@@ -5,7 +5,7 @@ Parte principal (la página):
   {ultimo_campo}   fecha de la última encuesta del modelo (p. ej. "13 nov 2026")
   {simulaciones}   número de simulaciones (4.000)
   {boe}            enlace al BOE de las candidaturas proclamadas
-  {en_juego}       escaños en el aire (ningún partido los gana en 9 de cada 10 simulaciones), toda España (p. ej. 71)
+  {en_juego}       escaños en el aire (ningún partido los gana en 75 de cada 100 simulaciones), toda España (p. ej. 71)
   {decididos}      los demás escaños
   {total}          escaños del Congreso (350)
   [[mapa]]         mapa de provincias coloreado por escaños en juego (pulsar una abre su ficha)
@@ -64,7 +64,7 @@ Parte "detalle" (la ficha de la provincia elegida, se rehace al cambiar de provi
 
 **Tipo de encuesta.** Solo de esta provincia: todas las entrevistas son de la provincia (también las de una comunidad de una sola provincia, como Madrid o Cantabria). Nacional, con dato de la provincia: una encuesta de toda España de la que se saca el dato provincial; en cada provincia hay pocas entrevistas, así que es una cifra muy incierta, y las entrevistas que se indican son las de toda España. Regional, con dato de la provincia: igual, para una encuesta de una comunidad autónoma. No consta: la fuente no lo dice. Las filas transcritas de prensa y aún no revisadas van marcadas como tales.
 
-**Escaños en el aire.** En cada provincia, el escaño de un partido cuenta como decidido cuando lo gana en al menos 9 de cada 10 simulaciones (el primero, si gana al menos uno; el segundo, si gana al menos dos). Los escaños en el aire son los que quedan: los que ningún partido tiene decididos así.
+**Escaños en el aire.** En cada provincia, el escaño de un partido cuenta como decidido cuando lo gana en al menos 75 de cada 100 simulaciones, el umbral de «probable» en el hemiciclo de la portada (el primero, si gana al menos uno; el segundo, si gana al menos dos). Los escaños en el aire son los que quedan: los que ningún partido tiene decididos así.
 :::
 
 === detalle ===
@@ -224,7 +224,16 @@ En las generales de julio de 2023 eligió {escanos23} {escanos23_palabra}: **{re
 
 #### Lo que vale tu voto: electores por escaño
 
-En {provincia} hay **{electores} electores por cada escaño**; la media de España es de {media}. Un voto aquí pesa {peso} lo que un voto medio. Es la {puesto} de 52, contando desde la que tiene menos electores por escaño: {min_n} ({min}). La que más tiene es {max_n} ({max}).
+En {provincia} hay **{electores} electores por cada escaño**; la media de España es de {media}. Un voto aquí pesa {peso} lo que un voto medio.
+::: si menos
+Es la provincia con menos electores por escaño de las 52; la que más tiene es {max_n} ({max}).
+::: si no
+::: si mas
+Es la provincia con más electores por escaño de las 52; la que menos tiene es {min_n} ({min}).
+::: si no
+Es la {puesto} de 52, contando desde la que tiene menos electores por escaño: {min_n} ({min}). La que más tiene es {max_n} ({max}).
+:::
+:::
 
 [[vale_tira]]
 

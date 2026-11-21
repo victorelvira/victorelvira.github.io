@@ -7,10 +7,10 @@
 // peso_voto.py, «Nuestra predicción»; "e" = the same by thirds of the draws) and escanos_350.json; blocs: the starting groups of
 // "Forma tu mayoría" (masvotado.js grupoDe, so Geroa Bai goes with the PNV in Navarra).
 // The address keeps the choice: #voto/<province code>/<izquierda|derecha>/<bien|mal> (no third segment: as expected).
-import { load } from "./data.js?v=0.2.164";
-import { textos, md } from "./textos.js?v=0.2.164";
-import { t, lang, ordinal } from "./i18n.js?v=0.2.164";
-import { opcionesPeso, short, colorVoto, PESO_ART, PESO_NUNCA, frente } from "./masvotado.js?v=0.2.164";
+import { load } from "./data.js?v=0.2.169";
+import { textos, md } from "./textos.js?v=0.2.169";
+import { t, lang, ordinal } from "./i18n.js?v=0.2.169";
+import { opcionesPeso, short, colorVoto, PESO_ART, PESO_NUNCA, frente } from "./masvotado.js?v=0.2.169";
 
 const KEY = "atlas_electoral.voto";   // the reader's last province, bloc and night (a convenience: the page works without it)
 const leer = () => { try { return JSON.parse(localStorage.getItem(KEY) ?? "{}"); } catch { return {}; } };
@@ -75,9 +75,9 @@ export async function renderVoto(app, args = []) {
       const o = opcionesPeso(PW, p.prov, {}, bloque, tercio()), a = o[0], b = o[1];
       const okA = a && a.g >= NUNCA;
       return `<tr${p.prov === prov ? ' class="vt-sel"' : ""}><td><a href="#voto/${p.prov}/${bloque}/${noche}">${p.n}</a></td>
-        <td>${okA ? `<i class="dot" style="background:${colorVoto(a.f)}"></i>${short(a.f, p.prov)}` : "·"}</td>
+        <td>${okA ? `<i class="dot" style="background:${colorVoto(a.f)}"></i>${short(a.f, p.prov)}` : `<span class="muted">${t("ninguna")}</span>`}</td>
         <td>${okA && b ? short(b.f, p.prov) : "·"}</td>
-        <td class="num">${okA && b ? frente(a, b) : "·"}</td></tr>`;
+        <td class="num">${okA && b ? frente(a, b) : okA ? "·" : t("casi nunca suma")}</td></tr>`;
     }).join("");
     lista.innerHTML = `<div class="scrollx"><table class="vt-todas"><tr><th>${t("Provincia")}</th><th>${t("Mejor opción")}</th><th>${t("Segunda")}</th><th class="num">${t("Veces más que la segunda")}</th></tr>${filas}</table></div>`;
   };

@@ -13,7 +13,7 @@ Your vote (tab "Your vote", #voto). Figures and conditions: see ../voto.md.
 
 ## Every province {#todas | Every province}
 
-[sub] The best option of each bloc in each province, the second one, and how many times more a vote for the first counts. Click a header to sort.
+[sub] The best option of each bloc in each province, the second one, and how many times more a vote for the first counts; «none» where a vote for that bloc almost never adds a seat. Click a header to sort.
 
 [[lista]]
 

@@ -1,10 +1,10 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, de100, fechaLarga } from "./data.js?v=0.2.164";
-import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.164";
-import { textos, md, INDICE } from "./textos.js?v=0.2.164";
-import { num, partyName, partyColor } from "./encuestas.js?v=0.2.164";
-import { t as tr, loc, sep } from "./i18n.js?v=0.2.164";
-import { conjunta } from "./conjunta.js?v=0.2.164";
+import { load, de100, fechaLarga } from "./data.js?v=0.2.169";
+import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.169";
+import { textos, md, INDICE } from "./textos.js?v=0.2.169";
+import { num, partyName, partyColor } from "./encuestas.js?v=0.2.169";
+import { t as tr, loc, sep } from "./i18n.js?v=0.2.169";
+import { conjunta } from "./conjunta.js?v=0.2.169";
 
 const pc = (x) => `${de100(x)}%`;
 
@@ -60,10 +60,10 @@ async function creditosFotos(T) {
 function prediccionHtml(P, T) {
   const parties = Object.keys(P.partidos);
   const sims = P.draws.toLocaleString(loc(), { useGrouping: "always" });
-  const vars = { fecha: fechaLarga(P.fecha), n_encuestas: P.n_encuestas, simulaciones: sims, pp_primero: pc(P.p_pp_primero),
+  const vars = { fecha: fechaLarga(P.fecha), n_encuestas: P.n_encuestas, simulaciones: sims, pp_primero: de100(P.p_pp_primero),
     b_escala: sep(P.parametros.b_escala), s_ccaa: P.parametros.s_ccaa, s_prov: P.parametros.s_prov };
   const slots = {
-    tabla_partidos: `<div class="scrollx"><table><tr><th>${tr("Partido")}</th><th class="num">${tr("Voto, mediana")}</th><th class="num">${tr("Horquilla (90%)")}</th><th class="num">${tr("Escaños, mediana")}</th><th class="num">${tr("Horquilla (90%)")}</th></tr>
+    tabla_partidos: `<div class="scrollx"><table><tr><th>${tr("Partido")}</th><th class="num">${tr("Voto, mediana")}</th><th class="num">${tr("Horquilla (9 de cada 10)")}</th><th class="num">${tr("Escaños, mediana")}</th><th class="num">${tr("Horquilla (9 de cada 10)")}</th></tr>
       ${parties.map((p) => { const d = P.partidos[p]; return `<tr><td><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</td><td class="num">${num(d.voto.p50)}%</td><td class="num">${tr("{a} a {b}", { a: num(d.voto.p05), b: num(d.voto.p95) })}</td><td class="num">${d.escanos ? d.escanos.p50 : "·"}</td><td class="num">${d.escanos ? tr("{a} a {b}", { a: d.escanos.p05, b: d.escanos.p95 }) : "·"}</td></tr>`; }).join("")}</table></div>`,
     histograma: '<div class="card chart cj-card"><div id="pred-hist"></div></div>',
     serie_probabilidad: '<div class="chart" id="pred-prob"></div>',
@@ -112,10 +112,5 @@ function prediccion(el, P, T) {
     const dia = (s) => new Date(`${s}T12:00`).toLocaleDateString(loc(), { day: "numeric", month: "short" });
     el.querySelector("#pred-dia-t").innerHTML = `<div class="scrollx"><table class="pred-dia"><tr><th>${tr("Día")}</th><th>${tr("Encuestas hasta")}</th><th class="num">${tr("PP y Vox llegan a 176")}</th>${PS.map((p) => `<th class="num"><i class="dot" style="background:${partyColor(p)}"></i>${partyName(p, "2026")}</th>`).join("")}</tr>
       ${[...d].reverse().map((x) => `<tr><td>${dia(x.fecha)}${x.cambio ? " *" : ""}</td><td>${x.ultimo_campo ? dia(x.ultimo_campo) : "·"}</td><td class="num">${x.p_ppvox_176 != null ? `${(x.p_ppvox_176 * 100).toLocaleString(loc(), { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%` : "·"}</td>${PS.map((p) => `<td class="num">${x.esc[p] ?? "·"}</td>`).join("")}</tr>`).join("")}</table></div>`;
-  }).catch(() => {});
-  load("backtest.json").then((B) => {
-    const h7 = B.horizontes[7], h30 = B.horizontes[30];
-    el.querySelector("#pred-bt").innerHTML = md(T.backtest, { vars: { generales: B.elecciones, desde: B.desde, voto_7: pc(h7.voto.en90), escanos_7: pc(h7.escanos.en90),
-      voto_30: pc(h30.voto.en90), escanos_30: pc(h30.escanos.en90) }, page: "modelo" }).html;
   }).catch(() => {});
 }

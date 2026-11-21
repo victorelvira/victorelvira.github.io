@@ -1,48 +1,48 @@
 {
  "_doc": "Change within each pollster (pipeline/cambio_casas.py): latest poll minus the same house's latest poll ending 21 to 60 days earlier, houses with a poll ending in the last 14 days; internal polls and CIS re-estimations left out. Percentage points. A description of the data, not a forecast.",
- "ultimo_campo": "2026-11-17",
+ "ultimo_campo": "2026-11-20",
  "dias_recientes": 14,
  "separacion_min": 21,
  "separacion_max": 60,
  "resumen": {
   "pp": {
-   "n": 14,
-   "bajan": 10,
+   "n": 13,
+   "bajan": 8,
    "suben": 4,
-   "iguales": 0,
-   "mediana": -0.45
+   "iguales": 1,
+   "mediana": -0.3
   },
   "psoe": {
-   "n": 14,
-   "bajan": 4,
-   "suben": 10,
+   "n": 13,
+   "bajan": 2,
+   "suben": 11,
    "iguales": 0,
-   "mediana": 0.3
+   "mediana": 1.0
   },
   "vox": {
-   "n": 14,
+   "n": 13,
    "bajan": 6,
-   "suben": 7,
+   "suben": 6,
    "iguales": 1,
-   "mediana": 0.15
+   "mediana": 0.0
   },
   "sumar": {
-   "n": 14,
+   "n": 13,
    "bajan": 5,
-   "suben": 9,
-   "iguales": 0,
-   "mediana": 0.25
+   "suben": 7,
+   "iguales": 1,
+   "mediana": 0.1
   },
   "podemos": {
-   "n": 13,
-   "bajan": 13,
+   "n": 10,
+   "bajan": 10,
    "suben": 0,
    "iguales": 0,
-   "mediana": -1.6
+   "mediana": -1.45
   },
   "salf": {
-   "n": 8,
-   "bajan": 5,
+   "n": 7,
+   "bajan": 4,
    "suben": 3,
    "iguales": 0,
    "mediana": -0.1
@@ -52,39 +52,14 @@
   {
    "casa": "40dB",
    "antes": "2026-10-08",
-   "ahora": "2026-11-17",
+   "ahora": "2026-11-20",
    "cambio": {
-    "pp": 0.3,
-    "psoe": 2.6,
-    "vox": -1.9,
-    "sumar": -0.1,
-    "podemos": -1.1,
-    "salf": -0.1
-   }
-  },
-  {
-   "casa": "Ateneo del Dato",
-   "antes": "2026-10-01",
-   "ahora": "2026-11-05",
-   "cambio": {
-    "pp": -1.7,
-    "psoe": 1.1,
-    "vox": -0.6,
-    "sumar": -0.9,
-    "podemos": -1.8
-   }
-  },
-  {
-   "casa": "Celeste-Tel",
-   "antes": "2026-09-21",
-   "ahora": "2026-11-03",
-   "cambio": {
-    "pp": -2.1,
-    "psoe": 0.3,
-    "vox": 1.4,
-    "sumar": 1.6,
-    "podemos": -1.4,
-    "salf": -0.1
+    "pp": 0.0,
+    "psoe": 3.1,
+    "vox": -1.8,
+    "sumar": 0.2,
+    "podemos": -1.2,
+    "salf": -0.3
    }
   },
   {
@@ -103,39 +78,25 @@
   {
    "casa": "Data10",
    "antes": "2026-10-02",
-   "ahora": "2026-11-12",
+   "ahora": "2026-11-20",
    "cambio": {
-    "pp": -2.0,
-    "psoe": -0.6,
-    "vox": 1.8,
-    "sumar": 1.5,
-    "podemos": -2.2
+    "pp": -1.7,
+    "psoe": 0.5,
+    "vox": 0.4,
+    "sumar": 1.5
    }
   },
   {
    "casa": "EM-Analytics",
-   "antes": "2026-10-23",
-   "ahora": "2026-11-16",
+   "antes": "2026-10-30",
+   "ahora": "2026-11-20",
    "cambio": {
-    "pp": -0.1,
-    "psoe": 0.3,
-    "vox": -0.2,
-    "sumar": 0.7,
-    "podemos": -0.4,
-    "salf": 0.5
-   }
-  },
-  {
-   "casa": "GAD3",
-   "antes": "2026-10-08",
-   "ahora": "2026-11-05",
-   "cambio": {
-    "pp": 0.5,
-    "psoe": -0.5,
-    "vox": 0.4,
-    "sumar": 0.1,
-    "podemos": -0.9,
-    "salf": -0.5
+    "pp": -0.5,
+    "psoe": 1.8,
+    "vox": -1.0,
+    "sumar": 0.0,
+    "podemos": -0.8,
+    "salf": 0.7
    }
   },
   {
@@ -163,6 +124,19 @@
    }
   },
   {
+   "casa": "More in Common",
+   "antes": "2026-10-25",
+   "ahora": "2026-11-19",
+   "cambio": {
+    "pp": 0.6,
+    "psoe": 0.4,
+    "vox": -1.0,
+    "sumar": -0.7,
+    "podemos": -0.9,
+    "salf": -0.1
+   }
+  },
+  {
    "casa": "NC Report",
    "antes": "2026-10-06",
    "ahora": "2026-11-12",
@@ -177,13 +151,13 @@
   {
    "casa": "Sigma Dos",
    "antes": "2026-10-22",
-   "ahora": "2026-11-16",
+   "ahora": "2026-11-19",
    "cambio": {
-    "pp": 0.1,
-    "psoe": 0.3,
-    "vox": -0.1,
-    "sumar": -1.5,
-    "podemos": -1.6
+    "pp": 0.6,
+    "psoe": 1.5,
+    "vox": -1.0,
+    "sumar": -1.1,
+    "podemos": -2.0
    }
   },
   {
@@ -197,6 +171,17 @@
     "sumar": -0.1,
     "podemos": -0.6,
     "salf": -0.2
+   }
+  },
+  {
+   "casa": "Sondaxe",
+   "antes": "2026-10-28",
+   "ahora": "2026-11-19",
+   "cambio": {
+    "pp": 0.3,
+    "psoe": 1.0,
+    "vox": 0.6,
+    "sumar": -0.3
    }
   },
   {

@@ -23,7 +23,7 @@ Huecos [[...]]: [[controles]] (la provincia y el bloque), [[respuesta]] (la fras
 
 ## Todas las provincias {#todas | Todas}
 
-[sub] La mejor opción de cada bloque en cada provincia, la segunda y cuántas veces más pesa un voto a la primera. Pulsa una cabecera para ordenar.
+[sub] La mejor opción de cada bloque en cada provincia, la segunda y cuántas veces más pesa un voto a la primera; «ninguna», donde un voto a ese bloque casi nunca le suma un diputado. Pulsa una cabecera para ordenar.
 
 [[lista]]
 

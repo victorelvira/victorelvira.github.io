@@ -1,9 +1,10 @@
-import { renderMapa } from "./mapa.js?v=0.2.164";
-import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.164";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.164";
-import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.164";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.164";
-import { textos, md, INDICE } from "./textos.js?v=0.2.164";
+import { fix } from "./i18n.js?v=0.2.169";
+import { renderMapa } from "./mapa.js?v=0.2.169";
+import { projectFromPolls, natShares, seatsFor } from "./simulador.js?v=0.2.169";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.169";
+import { load, META, FAM, fmt, pct, elecLabel } from "./data.js?v=0.2.169";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.169";
+import { textos, md, INDICE } from "./textos.js?v=0.2.169";
 
 export async function renderHistoria(app) {
   const [S, G, E, dh, geo, PR, CI] = await Promise.all([load("series.json"), load("generales_encuestas.json"), load("encuestas.json"), load("dhondt.json"),
@@ -60,8 +61,8 @@ export async function renderHistoria(app) {
   ], { height: 260, yMin: 0.5, yMax: 0.85 });
   lines($("#avances"), [
     { id: "t", name: "Cierre", color: "#1f4e8c", values: eids.map((e) => ({ date: dateOf(e), v: N[e].votantes / N[e].censo, label: lab(e) })) },
-    { id: "a2", name: "2º avance (18:00)", color: "#6b8fc7", values: eids.map((e) => ({ date: dateOf(e), v: N[e].av2, label: lab(e) })) },
-    { id: "a1", name: "1er avance (14:00)", color: "#a9bfe0", values: eids.map((e) => ({ date: dateOf(e), v: N[e].av1, label: lab(e) })) },
+    { id: "a2", name: "2.º avance (18:00)", color: "#6b8fc7", values: eids.map((e) => ({ date: dateOf(e), v: N[e].av2, label: lab(e) })) },
+    { id: "a1", name: "1.er avance (14:00)", color: "#a9bfe0", values: eids.map((e) => ({ date: dateOf(e), v: N[e].av1, label: lab(e) })) },
   ], { height: 260, yMin: 0.2, yMax: 0.85 });
   lines($("#bn"), [
     { id: "b", name: "En blanco", color: "#8a8984", values: eids.map((e) => ({ date: dateOf(e), v: N[e].blancos / N[e].votantes, label: lab(e) })) },
@@ -83,7 +84,7 @@ export async function renderHistoria(app) {
     const mx = pr[0]?.pct_aceptadas_sobre_censo_cer ?? 1;
     $("#vcprov").innerHTML = `<table>${pr.slice(0, 10).map((r) => `<tr><td>${META.provincias[String(r.ambito).padStart(2, "0")] ?? r.ambito}</td>
       <td style="width:50%"><span class="hbar" style="width:${(r.pct_aceptadas_sobre_censo_cer / mx) * 100}%;background:#1f4e8c"></span></td>
-      <td class="num">${String(r.pct_aceptadas_sobre_censo_cer).replace(".", ",")}%</td></tr>`).join("")}</table>`;
+      <td class="num">${fix(+r.pct_aceptadas_sobre_censo_cer, 1)}%</td></tr>`).join("")}</table>`;
   }
   const cera = (S.cera ?? []).filter((r) => r.ambito === "ES" && r.participacion_cera != null);
   if (cera.length) {
@@ -110,5 +111,5 @@ export async function renderHistoria(app) {
 
 const PFAM = { sumar: "izq", iu: "izq", podemos: "izq", mas_pais: "izq", upyd: "cs", cds: "ucd" };
 const pColor = (p) => (FAM[PFAM[p] ?? p] ?? FAM.otros).color;
-const n1 = (x) => (x == null ? "·" : x.toFixed(1).replace(".", ","));
+const n1 = (x) => (x == null ? "·" : fix(x, 1));
 

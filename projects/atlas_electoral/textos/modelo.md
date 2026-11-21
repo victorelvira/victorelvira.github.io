@@ -7,11 +7,8 @@ el histograma [[histograma]] usa los bloques de partida (los resultados principa
 Partes con nombre (se pintan aparte):
   === prediccion ===     el bloque de la predicción, cuando hay prediccion.json
       {fecha} día de la actualización, {n_encuestas} encuestas usadas, {simulaciones} número de simulaciones,
-      {pp_primero} probabilidad de que el PP quede primero, {b_escala} {s_ccaa} {s_prov} parámetros del modelo
+      {pp_primero} en cuántas de cada 100 simulaciones queda primero el PP, {b_escala} {s_ccaa} {s_prov} parámetros del modelo
   === sin_prediccion === lo que se ve si no hay predicción
-  === backtest ===       el párrafo de "¿Acierta?"
-      {generales} elecciones generales probadas, {desde} año de la primera, {voto_7} {escanos_7} % dentro
-      del rango del 90% una semana antes (voto, escaños), {voto_30} {escanos_30} lo mismo un mes antes
   === glosario ===       el desplegable "Glosario" al final de la página (sin cifras); la versión técnica es docs/glosario.md
   === fotos ===          el desplegable "Fotos de los candidatos" (créditos); [[lista_fotos]] es la lista de cada foto con su
       autor y su licencia, sacada de data/lideres.json (pipeline/lideres.py)
@@ -22,7 +19,7 @@ No hay condiciones (::: si ...) en esta página.
 
 [[índice]]
 
-## Predicción <span class="tag-exp">modelo experimental, en revisión</span> {#prediccion | Predicción}
+## Predicción <span class="tag-exp">modelo experimental</span> {#prediccion | Predicción}
 
 [[pred]]
 
@@ -51,7 +48,7 @@ No hay condiciones (::: si ...) en esta página.
 
 [[histograma]]
 
-[nota] Probabilidad de que el PP sea el partido con más escaños: **{pp_primero}**.
+[nota] El PP es el partido con más escaños en **{pp_primero} de cada 100** simulaciones.
 
 ### Cómo ha cambiado
 
@@ -74,10 +71,6 @@ No hay condiciones (::: si ...) en esta página.
 
 [[diario]]
 
-### ¿Acierta?
-
-[[pred-bt]]
-
 ::: metodología
 **Qué hace.** Para cada partido (PP, PSOE, Vox, Frente Amplio, Podemos, SALF, ERC, Junts, Bildu y PNV) sigue día a día su apoyo con un filtro que combina todas las encuestas del ciclo, descontando a cada casa su desviación habitual en este ciclo (lo que hizo en 2023 cuenta poco: de una general a la siguiente, el sesgo de una casa apenas se repite). Eso da el nivel de hoy y su incertidumbre.
 
@@ -91,10 +84,6 @@ No hay condiciones (::: si ...) en esta página.
 === sin_prediccion ===
 
 [nota] La predicción del modelo aparecerá aquí.
-
-=== backtest ===
-
-[nota] Probado en las {generales} elecciones generales desde {desde}, rehaciendo el modelo con solo las encuestas que se conocían entonces. Una semana antes, el resultado cayó dentro del rango del 90% en el {voto_7} de los casos para el voto y en el {escanos_7} para los escaños (un mes antes: {voto_30} y {escanos_30}). Fallaron, sobre todo, 2004 (tres días después del 11-M) y Ciudadanos en 2015.
 
 === fiarse ===
 

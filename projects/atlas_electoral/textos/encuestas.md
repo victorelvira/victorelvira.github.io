@@ -20,7 +20,7 @@ No hay condiciones (::: si ...) en esta página.
 -->
 # Encuestas
 
-[sub] Las encuestas hacia el 29N, la predicción propia, cómo se cocinan las encuestas y lo que pasó en las elecciones anteriores.
+[sub] Todas las encuestas hacia el 29N y su promedio, cuánto se desvía cada encuestadora, quién dice que irá a votar y cómo se cocina una estimación.
 
 [[índice]]
 
@@ -56,7 +56,7 @@ No hay condiciones (::: si ...) en esta página.
 
 ### Adónde va cada voto
 
-[nota] Lo que votaron en julio de 2023 (filas) y lo que dicen que votarán ahora (columnas), en porcentaje de cada fila.
+[nota] Lo que votaron en julio de 2023 (filas) y lo que dicen que votarán ahora (columnas), en porcentaje de cada fila. Entre paréntesis, cuánto ha cambiado desde la encuesta anterior de la misma casa, cuando son 3 puntos o más.
 
 [[controles_matriz]]
 [[matriz]]

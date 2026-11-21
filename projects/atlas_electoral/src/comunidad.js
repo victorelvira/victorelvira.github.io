@@ -1,10 +1,10 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.164";
-import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.164";
-import { getGeo } from "./mapa.js?v=0.2.164";
-import { addZoom } from "./zoom.js?v=0.2.164";
-import { electosList } from "./electos.js?v=0.2.164";
-import { textos, md } from "./textos.js?v=0.2.164";
+import { load, META, FAM, FAM_IDS, parseRow, winner, pct, fmt, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.169";
+import { seatRows, lines, dateOf, familySeries, IDEO } from "./charts.js?v=0.2.169";
+import { getGeo } from "./mapa.js?v=0.2.169";
+import { addZoom } from "./zoom.js?v=0.2.169";
+import { electosList } from "./electos.js?v=0.2.169";
+import { textos, md } from "./textos.js?v=0.2.169";
 
 const state = { cc: "MD", eleccion: null };
 

@@ -89,7 +89,7 @@ El promedio de las encuestas. Todas, una a una y por encuestadora, en [Encuestas
 ::: si provincias
 ## Dónde se decide {#aire}
 
-[sub] El reparto se juega provincia a provincia. Estas son las provincias con más escaños en el aire: escaños que ningún partido gana en al menos 9 de cada 10 simulaciones.
+[sub] El reparto se juega provincia a provincia. Estas son las provincias con más escaños en el aire: escaños que ningún partido gana en al menos 75 de cada 100 simulaciones, los «en juego» del hemiciclo.
 
 [[pugnas]]
 
@@ -197,7 +197,7 @@ Aviso de la veda (LOREG art. 69.7; docs/protocolo_29N.md, sección 8): arriba de
 y Provincias, del 24 de noviembre a las 00:00 al 29 a las 20:00, hora de Madrid. Lo decide el navegador por la fecha, sin despliegue
 (src/textos.js, VEDA); ?veda=1 en la dirección lo enseña antes, para probarlo. Cualquier texto puede usar "::: si veda".
 -->
-**Previsión congelada el 23 de noviembre.** La ley electoral prohíbe publicar encuestas en los cinco días anteriores a la votación. Esta previsión usa las encuestas conocidas hasta el lunes 23 y no cambiará hasta el cierre de los colegios. Los resultados, en esta misma página la noche del 29.
+**Datos y modelos sin actualizar desde el 23 de noviembre, por la veda electoral.** La ley prohíbe publicar encuestas en los cinco días anteriores a la votación (LOREG, art. 69.7). Lo que ves usa las encuestas conocidas hasta el lunes 23 y no cambiará hasta el cierre de los colegios. Los resultados, en esta misma página la noche del 29.
 
 === tooltip_350 ===
 <!--
@@ -247,7 +247,7 @@ Frase encima del gráfico; cambia con el periodo elegido. Cifras: {desde} (prime
 (la frecuencia redondeada no cambia).
 -->
 ::: si igual
-Desde el {desde}, PP y Vox llegan a 176 en {hoy} simulaciones, igual que entonces ({esc_antes} escaños esperados entonces, {esc_hoy} hoy). El bloque de la investidura de 2023, en {inv_hoy}.
+Del {desde} a hoy, PP y Vox siguen llegando a 176 en {hoy} simulaciones ({esc_antes} escaños esperados entonces, {esc_hoy} hoy). El bloque de la investidura de 2023, en {inv_hoy}.
 ::: si no
 El {desde}, PP y Vox llegaban a 176 en {antes} simulaciones; hoy, en {hoy} ({esc_antes} escaños esperados entonces, {esc_hoy} hoy). El bloque de la investidura de 2023, en {inv_antes} entonces y {inv_hoy} hoy.
 :::

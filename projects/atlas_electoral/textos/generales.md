@@ -109,7 +109,7 @@ Parte "cera" (solo si hay datos de participación CERA):
 
 [[vc]]
 
-[nota] Solicitudes aceptadas (INE, Oficina del Censo Electoral) y votos admitidos por Correos cuando se publicaron. El récord de {ultima} coincide con unas elecciones en pleno julio. **Qué** se vota por correo no se publica: los sobres se mezclan en la urna de cada mesa.
+[nota] Solicitudes aceptadas (INE, Oficina del Censo Electoral) y votos admitidos por Correos cuando se publicaron. El récord, en las de julio de 2023, coincide con unas elecciones en pleno verano. **Qué** se vota por correo no se publica: los sobres se mezclan en la urna de cada mesa.
 
 ### Dónde más se pidió ({ultima}, % del censo de residentes) {.h3}
 

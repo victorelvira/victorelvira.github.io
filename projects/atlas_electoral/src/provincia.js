@@ -1,12 +1,12 @@
 const d3 = window.d3;
-import { load, showTip, hideTip } from "./data.js?v=0.2.164";
-import { textos, md, INDICE } from "./textos.js?v=0.2.164";
-import { indexHtml, sectionIndex } from "./charts.js?v=0.2.164";
-import { t as tr, lang, deCada, ordinal } from "./i18n.js?v=0.2.164";
+import { load, showTip, hideTip } from "./data.js?v=0.2.169";
+import { textos, md, INDICE } from "./textos.js?v=0.2.169";
+import { indexHtml, sectionIndex } from "./charts.js?v=0.2.169";
+import { t as tr, lang, deCada, ordinal } from "./i18n.js?v=0.2.169";
 // the province card's blocks (results per list, electors per seat, last seat, D'Hondt, 2019 vs 2023, municipalities)
-import { ficha, municipios, bocadillos } from "./provincia_ficha.js?v=0.2.164";
+import { ficha, municipios, bocadillos } from "./provincia_ficha.js?v=0.2.169";
 // the province shapes, names, colours and the "Más votado" colouring are shared with the front page's map (masvotado.js)
-import { short, pc, nm, frecuencia, cssVar, colorVoto, nombre, pctVoto, rampa, provincias, resultados23, masVotado } from "./masvotado.js?v=0.2.164";
+import { short, pc, nm, frecuencia, cssVar, colorVoto, nombre, pctVoto, rampa, provincias, resultados23, masVotado } from "./masvotado.js?v=0.2.169";
 export { short, pc };   // imported from here by resultados.js
 const de100txt = (p) => (p >= 0.995 ? tr("más de 99 de cada 100") : p < 0.01 ? tr("menos de 1 de cada 100") : deCada(Math.round(p * 100), 100));   // frequencies, not percentages (Víctor)
 export const pct = (p) => (p >= 0.995 ? ">99%" : p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
@@ -28,8 +28,8 @@ export const pugnaVars = (p) => ({ provincia: `<a href="#provincia/${p.prov}">${
   ultimo_de: short(p.ultimo[0][0], p.prov), primera_fuera: short(p.ultimo[0][1], p.prov), frecuencia: de100txt(p.ultimo[0][2]), margen: p.margen != null ? f0(Math.round(p.margen / 100) * 100) : null });
 export const pugnasHtml = (D, n, src, page) => pugnas(D, n).map((p) => md(src, { vars: pugnaVars(p), flags: { margen: p.margen != null }, page }).html).join("");
 // "Dónde se decide" (Provincias): a party's k-th seat is secured when it wins at least k seats in 9 of every 10 draws
-// (pk[k-1] >= 0.9); the seats in play of a province are the ones no party has secured that way
-export const SEGURO = 0.9;
+// (pk[k-1] >= SEGURO); the seats in play of a province are the ones no party has secured that way
+export const SEGURO = 0.75;   // the bar of a «probable» seat in the hemicycle (El País's thresholds, 0.2.157); 0.9 until 0.2.166
 export const enJuego = (p) => p.esc - p.listas.reduce((s, l) => s + l.pk.filter((x) => x >= SEGURO).length, 0);
 // the vote maps: the parties of the selector, nationwide first and then the regional ones, where they stand
 const VOTO_ORDEN = ["pp", "psoe", "vox", "sumar", "podemos", "salf", "erc", "junts", "bildu", "pnv", "bng", "cc", "cup", "reg"];
@@ -198,7 +198,7 @@ export async function renderProvincia(app, args = []) {
       provincia: p.n, escanos: p.esc, escanos_palabra: p.esc === 1 ? tr("escaño") : tr("escaños"),
       cambio: dEsc ? ` (${dEsc > 0 ? tr("{n} más que en 2023", { n: dEsc === 1 ? tr("uno") : dEsc }) : tr("{n} menos que en 2023", { n: dEsc === -1 ? tr("uno") : -dEsc })})` : "",
       reparto: reparto(a.a, p.prov), prob_reparto: de100txt(a.p),
-      siguientes: `${b ? ` ${tr("Le sigue un reparto en que {f}", { f: frase(a.a, b.a, p.prov) })} (${pct(b.p)})` : ""}${c ? ` ${tr("y otro en que {f}", { f: frase(a.a, c.a, p.prov) })} (${pct(c.p)})` : ""}${b ? "." : ""}`,
+      siguientes: `${b ? ` ${tr("Le sigue un reparto en que {f}", { f: frase(a.a, b.a, p.prov) })} (${de100txt(b.p)})` : ""}${c ? ` ${tr("y otro en que {f}", { f: frase(a.a, c.a, p.prov) })} (${de100txt(c.p)})` : ""}${b ? "." : ""}`,
       ultimo_de: ult ? short(ult[0], p.prov) : null, primera_fuera: ult ? short(ult[1], p.prov) : null, prob_ultimo: ult ? de100txt(ult[2]) : null, margen: p.margen != null ? f0(Math.round(p.margen / 100) * 100) : null,
     };
     const slots = {
@@ -206,7 +206,7 @@ export async function renderProvincia(app, args = []) {
       tabla_partidos: `<div class="scrollx"><table class="nosort"><tr><th>${tr("Partido")}</th><th class="num">${tr("Escaños 2023")}</th><th class="num">${tr("Media prevista")}</th><th class="num">${deCada(9, 10)}</th><th class="num">${tr("Voto 2023")}</th><th class="num">${tr("Voto previsto")}</th><th class="num">${deCada(9, 10)}</th></tr>
       ${p.listas.map((l) => `<tr><td class="pv-nw"><i class="dot" style="background:${pc(l.f)}"></i>${short(l.f, p.prov)}</td><td class="num">${p.s23[l.f] ?? 0}</td><td class="num">${nm(l.s)}</td><td class="num">${l.lo === l.hi ? l.lo : `${l.lo}–${l.hi}`}</td><td class="num">${p.v23[l.f] != null ? `${nm(p.v23[l.f])}%` : "·"}</td><td class="num">${nm(l.v)}%</td><td class="num">${nm(l.vlo)}–${nm(l.vhi)}%</td></tr>`).join("")}</table></div>`,
       tabla_encuestas: nE ? `<div class="scrollx"><table class="nosort"><tr><th>${tr("Encuestadora")}</th><th>${tr("Medio")}</th><th>${tr("Fecha")}</th><th>${tr("Tipo")}</th><th class="num">${tr("Entrevistas")}</th>${fams.map((f) => `<th class="num">${short(f)}</th>`).join("")}<th>${tr("Origen")}</th></tr>
-      ${p.encuestas.map((q) => `<tr><td class="pv-nw">${q.e}</td><td>${q.m ?? "·"}${q.x ? ` <span class="te-x">${tr("encargo")}</span>` : ""}</td><td class="pv-nw">${fecha(q.f)}</td><td>${ALCANCE[q.alcance] ?? tr("No consta")}</td><td class="num pv-nw">${(q.n ?? q.de) != null ? f0(q.n ?? q.de) + (DONDE[q.alcance] ?? "") : "·"}</td>${fams.map((f) => cel(q.v[f])).join("")}<td class="pv-nw">${q.url ? `<a href="${q.url}" target="_blank" rel="noopener">${tr("fuente")}</a>` : "·"}${q.rev ? ` <span class="te-x">${tr("sin revisar")}</span>` : ""}</td></tr>`).join("")}</table></div>` : null,
+      ${p.encuestas.map((q) => `<tr><td class="pv-nw">${q.e}</td><td>${q.m ?? "·"}${q.x && !/encargo|datos de/i.test(q.m ?? "") ? ` <span class="te-x">${tr("encargo")}</span>` : ""}</td><td class="pv-nw">${fecha(q.f)}</td><td>${ALCANCE[q.alcance] ?? tr("No consta")}</td><td class="num pv-nw">${(q.n ?? q.de) != null ? f0(q.n ?? q.de) + (DONDE[q.alcance] ?? "") : "·"}</td>${fams.map((f) => cel(q.v[f])).join("")}<td class="pv-nw">${q.url ? `<a href="${q.url}" target="_blank" rel="noopener">${tr("fuente")}</a>` : "·"}${q.rev ? ` <span class="te-x">${tr("sin revisar")}</span>` : ""}</td></tr>`).join("")}</table></div>` : null,
     };
     const flags = { disputa: !!ult, margen: p.margen != null, candidaturas: !!p.candidaturas.length, encuestas: !!nE };
     // the card's other blocks and the view (provincia_ficha.js); the heads of list come from there too

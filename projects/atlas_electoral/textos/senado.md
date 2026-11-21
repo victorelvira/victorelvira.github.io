@@ -71,7 +71,7 @@ Punto de partida: así quedó el Senado en 2023
 
 [sub] Mediana de {simulaciones} simulaciones: {pp_electos} electos y {pp_designados} designados. En 9 de cada 10, entre {pp_lo} y {pp_hi}.
 
-[línea] La mayoría absoluta está en **{mayoria}**. El PP la alcanza solo en **{p_pp} de cada 100** simulaciones; con Vox, en **{p_pp_vox} de cada 100**.
+[línea] La mayoría absoluta está en **{mayoria}**. El PP la alcanza por sí solo en **{p_pp} de cada 100** simulaciones; con Vox, en **{p_pp_vox} de cada 100**.
 
 === nota_2026 ===
 [nota] El hemiciclo pone la mediana de cada partido. Los designados por los parlamentos autonómicos van en color claro.
