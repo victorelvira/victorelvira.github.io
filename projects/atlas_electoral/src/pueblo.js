@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, loadMuni, META, FAM, FAM_IDS, norm, fmt, pct, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.174";
-import { lines, dateOf, declutter, leaders } from "./charts.js?v=0.2.174";
-import { electosList } from "./electos.js?v=0.2.174";
-import { textos, md } from "./textos.js?v=0.2.174";
+import { load, loadMuni, META, FAM, FAM_IDS, norm, fmt, pct, elecLabel, byTipo, showTip, hideTip } from "./data.js?v=0.2.177";
+import { lines, dateOf, declutter, leaders } from "./charts.js?v=0.2.177";
+import { electosList } from "./electos.js?v=0.2.177";
+import { textos, md } from "./textos.js?v=0.2.177";
 
 export function searchBox(container, onPick, placeholder = "Busca tu municipio… (p. ej. Gozón, Lorca, Sant Cugat)") {
   container.innerHTML = `<div class="search"><input type="search" placeholder="${placeholder}" autocomplete="off" aria-label="Buscar municipio" /><div class="sugg" hidden></div></div>`;

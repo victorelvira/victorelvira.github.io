@@ -1,51 +1,51 @@
 {
  "_doc": "Change within each pollster (pipeline/cambio_casas.py): latest poll minus the same house's latest poll ending 21 to 60 days earlier, houses with a poll ending in the last 14 days; internal polls and CIS re-estimations left out. Percentage points. A description of the data, not a forecast.",
- "ultimo_campo": "2026-11-21",
+ "ultimo_campo": "2026-11-23",
  "dias_recientes": 14,
  "separacion_min": 21,
  "separacion_max": 60,
  "resumen": {
   "pp": {
-   "n": 13,
-   "bajan": 8,
-   "suben": 4,
+   "n": 19,
+   "bajan": 11,
+   "suben": 7,
    "iguales": 1,
    "mediana": -0.2
   },
   "psoe": {
-   "n": 13,
-   "bajan": 1,
-   "suben": 12,
+   "n": 19,
+   "bajan": 2,
+   "suben": 17,
    "iguales": 0,
-   "mediana": 1.1
+   "mediana": 1.6
   },
   "vox": {
-   "n": 13,
-   "bajan": 7,
-   "suben": 5,
-   "iguales": 1,
-   "mediana": -0.1
-  },
-  "sumar": {
-   "n": 13,
-   "bajan": 6,
-   "suben": 6,
-   "iguales": 1,
-   "mediana": 0.0
-  },
-  "podemos": {
-   "n": 10,
-   "bajan": 10,
-   "suben": 0,
-   "iguales": 0,
-   "mediana": -1.2
-  },
-  "salf": {
-   "n": 7,
-   "bajan": 4,
+   "n": 19,
+   "bajan": 16,
    "suben": 3,
    "iguales": 0,
-   "mediana": -0.1
+   "mediana": -1.3
+  },
+  "sumar": {
+   "n": 19,
+   "bajan": 5,
+   "suben": 13,
+   "iguales": 1,
+   "mediana": 0.4
+  },
+  "podemos": {
+   "n": 14,
+   "bajan": 14,
+   "suben": 0,
+   "iguales": 0,
+   "mediana": -1.25
+  },
+  "salf": {
+   "n": 10,
+   "bajan": 5,
+   "suben": 4,
+   "iguales": 1,
+   "mediana": -0.05
   }
  },
  "casas": [
@@ -54,36 +54,86 @@
    "antes": "2026-10-08",
    "ahora": "2026-11-21",
    "cambio": {
-    "pp": 0.0,
-    "psoe": 3.5,
-    "vox": -2.0,
-    "sumar": 0.0,
-    "podemos": -1.3,
-    "salf": -0.4
+    "pp": -0.1,
+    "psoe": 2.8,
+    "vox": -1.6,
+    "sumar": 0.4,
+    "podemos": -1.2,
+    "salf": -0.5
+   }
+  },
+  {
+   "casa": "CIS",
+   "antes": "2026-10-06",
+   "ahora": "2026-11-17",
+   "cambio": {
+    "pp": 2.5,
+    "psoe": 0.4,
+    "vox": -1.5,
+    "sumar": 2.1,
+    "podemos": -2.3,
+    "salf": 0.0
+   }
+  },
+  {
+   "casa": "Celeste-Tel",
+   "antes": "2026-09-21",
+   "ahora": "2026-11-20",
+   "cambio": {
+    "pp": -1.7,
+    "psoe": 2.7,
+    "vox": 1.1,
+    "sumar": 0.6,
+    "podemos": -2.5,
+    "salf": 0.1
+   }
+  },
+  {
+   "casa": "Cluster17",
+   "antes": "2026-10-31",
+   "ahora": "2026-11-21",
+   "cambio": {
+    "pp": -0.2,
+    "psoe": 2.7,
+    "vox": -1.5,
+    "sumar": -0.6
+   }
+  },
+  {
+   "casa": "DYM",
+   "antes": "2026-10-07",
+   "ahora": "2026-11-19",
+   "cambio": {
+    "pp": -1.0,
+    "psoe": -0.2,
+    "vox": -0.2,
+    "sumar": 3.3,
+    "podemos": -2.3,
+    "salf": 0.5
    }
   },
   {
    "casa": "Data10",
    "antes": "2026-10-02",
-   "ahora": "2026-11-20",
+   "ahora": "2026-11-22",
    "cambio": {
-    "pp": -1.7,
-    "psoe": 0.5,
-    "vox": 0.4,
-    "sumar": 1.5
+    "pp": -2.3,
+    "psoe": 1.2,
+    "vox": 0.5,
+    "sumar": 1.3
    }
   },
   {
    "casa": "EM-Analytics",
    "antes": "2026-10-30",
-   "ahora": "2026-11-21",
+   "ahora": "2026-11-23",
    "cambio": {
-    "pp": -0.5,
-    "psoe": 2.1,
-    "vox": -0.7,
-    "sumar": -0.3,
+    "pp": 0.0,
+    "psoe": 3.1,
+    "vox": -1.3,
+    "sumar": 0.1,
     "podemos": -0.8,
-    "salf": 0.5
+    "salf": 0.6
    }
   },
   {
@@ -94,33 +144,58 @@
     "pp": -0.3,
     "psoe": 2.0,
     "vox": -0.1,
-    "sumar": 0.4,
+    "sumar": 0.6,
     "podemos": -1.2,
     "salf": -0.5
    }
   },
   {
+   "casa": "GESOP",
+   "antes": "2026-10-08",
+   "ahora": "2026-11-21",
+   "cambio": {
+    "pp": 4.2,
+    "psoe": 2.9,
+    "vox": -1.4,
+    "sumar": -1.3,
+    "podemos": -1.9,
+    "salf": -0.7
+   }
+  },
+  {
+   "casa": "Hamalgama Métrica",
+   "antes": "2026-10-28",
+   "ahora": "2026-11-20",
+   "cambio": {
+    "pp": -0.2,
+    "psoe": -1.0,
+    "vox": 0.7,
+    "sumar": 1.1,
+    "podemos": -1.0
+   }
+  },
+  {
    "casa": "IMOP",
    "antes": "2026-10-16",
-   "ahora": "2026-11-13",
+   "ahora": "2026-11-19",
    "cambio": {
-    "pp": 3.0,
-    "psoe": -0.2,
-    "vox": -1.0,
-    "sumar": -2.0,
-    "podemos": -1.0,
-    "salf": 0.4
+    "pp": 3.2,
+    "psoe": 0.3,
+    "vox": -1.7,
+    "sumar": -1.5,
+    "podemos": -1.2,
+    "salf": 0.7
    }
   },
   {
    "casa": "Invymark",
    "antes": "2026-10-08",
-   "ahora": "2026-11-13",
+   "ahora": "2026-11-20",
    "cambio": {
-    "pp": -0.6,
-    "psoe": 0.2,
-    "vox": 0.3,
-    "sumar": 0.1
+    "pp": -1.3,
+    "psoe": 0.7,
+    "vox": -0.2,
+    "sumar": 0.2
    }
   },
   {
@@ -138,75 +213,73 @@
   },
   {
    "casa": "NC Report",
-   "antes": "2026-10-06",
-   "ahora": "2026-11-12",
+   "antes": "2026-10-29",
+   "ahora": "2026-11-20",
    "cambio": {
-    "pp": -1.6,
-    "psoe": 1.1,
-    "vox": 0.8,
-    "sumar": 2.3,
-    "podemos": -2.4
+    "pp": -0.7,
+    "psoe": 1.6,
+    "vox": -0.3,
+    "sumar": 0.4,
+    "podemos": -1.6
    }
   },
   {
    "casa": "Sigma Dos",
    "antes": "2026-10-30",
-   "ahora": "2026-11-20",
+   "ahora": "2026-11-23",
    "cambio": {
-    "pp": 0.4,
-    "psoe": 3.4,
-    "vox": -1.0,
-    "sumar": -1.7,
-    "podemos": -1.2
+    "pp": 0.8,
+    "psoe": 4.0,
+    "vox": -1.5,
+    "sumar": -1.3,
+    "podemos": -1.3
    }
   },
   {
    "casa": "Sociométrica",
-   "antes": "2026-10-25",
-   "ahora": "2026-11-21",
+   "antes": "2026-11-01",
+   "ahora": "2026-11-23",
    "cambio": {
-    "pp": -0.1,
-    "psoe": 1.5,
-    "vox": 0.2,
-    "sumar": -0.2,
-    "podemos": -0.8,
-    "salf": -0.2
+    "pp": -0.3,
+    "psoe": 2.4,
+    "vox": -1.0,
+    "sumar": 0.0,
+    "podemos": -0.7,
+    "salf": -0.4
    }
   },
   {
    "casa": "Sondaxe",
    "antes": "2026-10-28",
-   "ahora": "2026-11-19",
+   "ahora": "2026-11-22",
    "cambio": {
-    "pp": 0.3,
-    "psoe": 1.0,
-    "vox": 0.6,
-    "sumar": -0.3
+    "pp": 2.6,
+    "psoe": 0.9,
+    "vox": -2.8,
+    "sumar": 1.7
    }
   },
   {
    "casa": "Target Point",
-   "antes": "2026-10-09",
-   "ahora": "2026-11-12",
+   "antes": "2026-10-30",
+   "ahora": "2026-11-21",
    "cambio": {
-    "pp": -1.4,
-    "psoe": 1.1,
-    "vox": 0.0,
-    "sumar": 0.4,
-    "podemos": -1.8,
-    "salf": 0.8
+    "pp": -0.3,
+    "psoe": 3.3,
+    "vox": -2.5,
+    "sumar": 0.7,
+    "podemos": -1.4
    }
   },
   {
    "casa": "Winston",
-   "antes": "2026-10-01",
-   "ahora": "2026-11-08",
+   "antes": "2026-10-23",
+   "ahora": "2026-11-19",
    "cambio": {
-    "pp": -0.2,
-    "psoe": 1.5,
-    "vox": -0.4,
-    "sumar": 1.6,
-    "podemos": -2.3
+    "pp": 1.7,
+    "psoe": 1.1,
+    "vox": -1.5,
+    "sumar": 0.8
    }
   }
  ]
