@@ -1,8 +1,8 @@
 // Version: also the cache-bust for data files and the ?v= in the entry page (keep in sync).
-export const DATA_V = "0.2.177";
-export const BUILD_AT = "2026-11-23 23:27";
+export const DATA_V = "0.2.178";
+export const BUILD_AT = "2026-11-23 23:40";
 
-import { loc, fix } from "./i18n.js?v=0.2.177";
+import { loc, fix } from "./i18n.js?v=0.2.178";
 
 // data/ sits beside src/ inside the app folder; resolve it from this module, not from the page
 const DATA_BASE = new URL("../data/", import.meta.url).href;

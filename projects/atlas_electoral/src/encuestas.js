@@ -1,8 +1,8 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.177";
-import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.177";
-import { textos, md, INDICE } from "./textos.js?v=0.2.177";
-import { t as tr, loc, fix } from "./i18n.js?v=0.2.177";
+import { load, FAM, showTip, hideTip } from "./data.js?v=0.2.178";
+import { lines, indexHtml, sectionIndex, declutter, leaders, cull, LABEL_GAP } from "./charts.js?v=0.2.178";
+import { textos, md, INDICE } from "./textos.js?v=0.2.178";
+import { t as tr, loc, fix } from "./i18n.js?v=0.2.178";
 
 export const POLL_PARTY = {
   pp: { n: "PP", c: () => FAM.pp.color },
@@ -210,7 +210,7 @@ export function chartHtml({ selector = true, lastTable = true, tools = true, kpi
   return (selector ? `    <div class="controls"><label>Elección <select id="ciclo"></select></label><span class="note" id="cycle-note"></span></div>` : "") + `
     ${kpi ? '<div class="stats" id="kpi"></div>' : ""}
     <div class="controls" id="toggles"></div>
-    <div class="controls"><div class="seg" id="zoom"></div><div class="seg"><button type="button" id="solo-media" aria-pressed="false">${tr("Solo la media")}</button></div><div class="seg" id="fecha-modo"><button type="button" data-f="fin" class="on" title="${tr("Cada encuesta en el último día de su trabajo de campo, el más cercano a su publicación")}">${tr("Fin del campo")}</button><button type="button" data-f="mitad" title="${tr("Cada encuesta en el día central de su trabajo de campo, como el promedio publicado")}">${tr("Mitad del campo")}</button></div><div class="seg" id="modo" style="display:none"><button type="button" data-m="voto" class="on">${tr("Voto")}</button><button type="button" data-m="escanos">${tr("Escaños")}</button></div>
+    <div class="controls"><div class="seg" id="zoom"></div><div class="seg"><button type="button" id="solo-media" aria-pressed="false">${tr("Solo la media")}</button></div><div class="seg" id="fecha-modo"><button type="button" data-f="fin" class="on" title="${tr("Cada encuesta en su fecha de publicación cuando la conocemos y, si no, en el último día de su trabajo de campo")}">${tr("Publicación")}</button><button type="button" data-f="mitad" title="${tr("Cada encuesta en el día central de su trabajo de campo, como el promedio publicado")}">${tr("Mitad del campo")}</button></div><div class="seg" id="modo" style="display:none"><button type="button" data-m="voto" class="on">${tr("Voto")}</button><button type="button" data-m="escanos">${tr("Escaños")}</button></div>
       ${tools ? `<details class="casas" id="casas-box"><summary>Encuestadoras: <b id="casas-sum"></b></summary>
         <div class="casas-act"><button data-a="all">Todas</button><button data-a="none">Ninguna</button>
           <label><input type="checkbox" id="corr" checked/> Descontar el sesgo de cada casa respecto a las demás</label></div>
@@ -239,7 +239,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     // poll drawn on the 18th looked wrong). So the chart computes its own average; E.media (fieldwork midpoints) stays the
     // published one, used by the last-polls table below and by the other pages.
     const days = (() => {
-      const a = +new Date(E.dias[0]), b = Math.max(+new Date(E.dias.at(-1)), E.resultado ? 0 : +new Date(d3.max(E.polls, (q) => q.f1)));
+      const a = +new Date(E.dias[0]), b = Math.max(+new Date(E.dias.at(-1)), E.resultado ? 0 : +new Date(d3.max(E.polls, (q) => q.p ?? q.f1)));
       const out = []; for (let t = a; t <= b; t += 864e5) out.push(new Date(t)); return out;
     })();
     const show = new Set(mainOf(E));
@@ -261,7 +261,7 @@ export async function pollChart(el, E, { CI = { ciclos: [] }, args = [], selecto
     // which day a poll sits on: its fieldwork end (default; the data have no publication date, which is usually the next
     // day) or its fieldwork midpoint, as in the published average (pipeline/poll_model.py)
     let fecha = "fin";
-    const qt = (q) => (fecha === "fin" ? q.f1 : q.d);
+    const qt = (q) => (fecha === "fin" ? q.p ?? q.f1 : q.d);
     const hasSeats = E.polls.some((q) => q.s);
     const val = (q) => (modo === "escanos" ? q.s ?? {} : q.v);
     const fv = (v) => (modo === "escanos" ? String(Math.round(v)) : `${num(v)}%`);

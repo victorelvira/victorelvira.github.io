@@ -1,10 +1,10 @@
 const d3 = window.d3; // vendored UMD build, loaded by the entry page
-import { load, de100, fechaLarga } from "./data.js?v=0.2.177";
-import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.177";
-import { textos, md, INDICE } from "./textos.js?v=0.2.177";
-import { num, partyName, partyColor } from "./encuestas.js?v=0.2.177";
-import { t as tr, loc, sep } from "./i18n.js?v=0.2.177";
-import { conjunta } from "./conjunta.js?v=0.2.177";
+import { load, de100, fechaLarga } from "./data.js?v=0.2.178";
+import { lines, indexHtml, sectionIndex } from "./charts.js?v=0.2.178";
+import { textos, md, INDICE } from "./textos.js?v=0.2.178";
+import { num, partyName, partyColor } from "./encuestas.js?v=0.2.178";
+import { t as tr, loc, sep } from "./i18n.js?v=0.2.178";
+import { conjunta } from "./conjunta.js?v=0.2.178";
 
 const pc = (x) => `${de100(x)}%`;
 

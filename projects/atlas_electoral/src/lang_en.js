@@ -304,6 +304,8 @@ export default {
   "Promedio, {f}": "Average, {f}",
   "Solo la media": "Average only",
   "Fin del campo": "Fieldwork end",
+  "Publicación": "Publication",
+  "Cada encuesta en su fecha de publicación cuando la conocemos y, si no, en el último día de su trabajo de campo": "Each poll on its publication date when we know it, otherwise on the last day of its fieldwork",
   "Mitad del campo": "Fieldwork midpoint",
   "Cada encuesta en el último día de su trabajo de campo, el más cercano a su publicación": "Each poll on the last day of its fieldwork, the closest to its publication",
   "Cada encuesta en el día central de su trabajo de campo, como el promedio publicado": "Each poll on the middle day of its fieldwork, as in the published average",
