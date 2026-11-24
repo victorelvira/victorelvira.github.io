@@ -859,6 +859,8 @@ main h3 { font-size: 19px; }
 .aviso-veda { border: 1px solid color-mix(in srgb, #d9822b 45%, var(--surface)); background: color-mix(in srgb, #d9822b 10%, var(--surface));
   border-radius: 8px; padding: 10px 14px; margin: 4px 0 14px; font-size: var(--t-s); line-height: 1.45; }
 .aviso-veda p { margin: 0; }
+/* on wide screens, aligned with the content column instead of running over the sticky index (.layout) */
+@media (min-width: 1100px) { .aviso-veda:has(+ .layout), .aviso-veda:has(~ .layout) { margin-left: 202px; } }
 /* "Los 350 escaños, uno a uno" (src/parlamento.js): solid = almost sure, light = likely, ring = in play */
 .pl-orden { margin: 4px 0 6px; }
 .pl-wrap { max-width: 760px; }

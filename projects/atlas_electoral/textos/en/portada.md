@@ -188,7 +188,7 @@ pollsters. [[tabla_cambio]]: the table per pollster, folded. -->
 <!--
 Blackout notice. See ../portada.md.
 -->
-**Data and models frozen on 23 November at 23:30 (Madrid time), because of the electoral blackout.** Spanish law forbids publishing polls in the five days before the vote (LOREG, art. 69.7). What you see uses the polls known up to Monday 23 November and will not change until the polls close. Results on this page on the night of the 29th.
+**Data and models frozen on 23 November at 23:30** (Madrid time) for the electoral blackout (LOREG, art. 69.7). Results here on the night of the 29th.
 
 === tooltip_350 ===
 <!--
