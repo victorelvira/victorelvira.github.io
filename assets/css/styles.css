@@ -508,3 +508,53 @@ html[data-bs-theme="dark"] .navbar .lang-opt { color: #9aa7ad; }
 html[data-bs-theme="dark"] .navbar .lang-opt.active { color: var(--accent); }
 html[data-bs-theme="dark"] .navbar .lang-sep { color: #4a575d; }
 html[data-bs-theme="dark"] #theme-toggle { color: #cdd6da; }
+
+/* ============================================================
+   PhD opportunities banner (index hero; reusable on Team).
+   Compact: one hook line + clickable deadline pills.
+   ============================================================ */
+.phd-box {
+  background: #f4f7f8;
+  border: 1px solid #d8e2e4;
+  border-left: 4px solid var(--accent, #0e7c86);
+  border-radius: 8px;
+  padding: .8rem 1rem .85rem;
+  margin-bottom: 1.5rem;
+}
+.phd-box-head {
+  font-weight: 700; font-size: 1rem; color: var(--accent-strong, #0a5f67);
+  display: flex; align-items: baseline; gap: .45rem; flex-wrap: wrap;
+}
+.phd-box-head .phd-hook { font-weight: 500; font-size: .88rem; color: #5a6671; }
+.phd-pills { display: flex; flex-direction: column; gap: .4rem; margin-top: .55rem; }
+.phd-group { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.phd-inst {
+  font-size: .72rem; font-weight: 700; white-space: nowrap;
+  padding: .2rem .5rem; border-radius: 999px;
+}
+.phd-inst.uoe { background: #e7eef6; color: #2a4d74; }
+.phd-inst.bcam { background: #fdece9; color: #b3422f; }
+.phd-pill {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: #fff; border: 1px solid #d3dddf; border-radius: 999px;
+  padding: .28rem .5rem .28rem .7rem; font-size: .83rem; line-height: 1.2;
+  color: #2f353b !important; text-decoration: none !important;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.phd-pill:hover {
+  border-color: var(--accent, #0e7c86);
+  box-shadow: 0 2px 8px rgba(14,124,134,.18); transform: translateY(-1px);
+}
+.phd-pill b { font-weight: 600; }
+.phd-dl {
+  font-size: .72rem; font-weight: 700; white-space: nowrap;
+  background: var(--accent, #0e7c86); color: #fff; padding: .1rem .45rem; border-radius: 999px;
+}
+.phd-dl.soon { background: #c0392b; }
+.phd-dl.rolling { background: #6b747c; }
+html[data-bs-theme="dark"] .phd-box { background: #172227; border-color: #2a3942; }
+html[data-bs-theme="dark"] .phd-box-head .phd-hook { color: #9aa7ad; }
+html[data-bs-theme="dark"] .phd-pill { background: #1f2c33; border-color: #2f3f47; color: #cdd6da !important; }
+html[data-bs-theme="dark"] .phd-pill:hover { border-color: var(--accent); }
+html[data-bs-theme="dark"] .phd-inst.uoe { background: #20303f; color: #9ec3e6; }
+html[data-bs-theme="dark"] .phd-inst.bcam { background: #3a241f; color: #e8a596; }
