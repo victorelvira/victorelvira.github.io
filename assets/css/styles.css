@@ -261,6 +261,19 @@ h4 { margin-top: 1.25rem; margin-bottom: .6rem; }
 #featured-papers-list li.pub-item:hover { background-color: #f4f7f8; }
 html[data-bs-theme="dark"] #featured-papers-list li.pub-item:hover { background-color: #1a252b; }
 
+/* Cajita del DOI dentro del modal #doiModal (identificador seleccionable) */
+.doi-box {
+  display: block;
+  font-size: 1rem;
+  word-break: break-all;
+  user-select: all;
+  padding: .45rem .6rem;
+  background: #f4f7f8;
+  border-radius: 6px;
+  color: inherit;
+}
+html[data-bs-theme="dark"] .doi-box { background: #1a252b; }
+
 /* Botones de filtro: chips suaves y pequenos (fondo neutro, activo en teal).
    Mas discretos y modernos que los pills con contorno. */
 #filter-buttons { display: flex; flex-wrap: wrap; gap: .4rem; }

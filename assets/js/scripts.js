@@ -82,7 +82,7 @@ function applyLang(lang) {
 }
 
 // Version compartida para cache-busting de la navbar/footer (súbela al cambiar nav/footer).
-const __ASSET_VER = 'i18n15';
+const __ASSET_VER = 'i18n16';
 const __navbarPromise = fetch('/nav.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('nav.html ' + r.status)));
 const __footerPromise = fetch('/footer.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('footer.html ' + r.status)));
 
@@ -270,7 +270,12 @@ function buildPaperChips(o, pdfKeys, abstracts) {
     var b = '';
     if (arxiv) b += ' <a class="btn btn-mini btn-success" target="_blank" rel="noopener" href="' + arxiv + '">arXiv</a>';
     if (url) b += ' <a class="btn btn-mini btn-info" target="_blank" rel="noopener" href="' + url + '">URL</a>';
-    if (doi) b += ' <a class="btn btn-mini btn-primary" target="_blank" rel="noopener" href="' + doi + '">DOI</a>';
+    if (doi) {
+        var rawDoi = doi.replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
+        var doiLink = /^https?:/i.test(doi) ? doi : 'https://doi.org/' + rawDoi;
+        var escA = function (s) { return (s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+        b += ' <button type="button" class="btn btn-mini btn-primary doi-btn" data-doi="' + escA(rawDoi) + '" data-doi-url="' + escA(doiLink) + '">DOI</button>';
+    }
     if (kl) {
         if (!pdfKeys || pdfKeys.has(kl)) {
             b += ' <a class="btn btn-mini btn-danger" target="_blank" rel="noopener" href="assets/papers/' + encodeURIComponent(kl) + '_pre.pdf">PDF</a>';
@@ -319,16 +324,48 @@ function injectCiteModal() {
         '</div>';
     document.body.appendChild(wrap.firstChild);
 }
+// Modal del DOI: muestra el identificador, con "Copiar DOI" e "Ir a la página".
+function injectDoiModal() {
+    if (document.getElementById('doiModal')) return;
+    var wrap = document.createElement('div');
+    wrap.innerHTML =
+        '<div class="modal fade" id="doiModal" tabindex="-1" aria-labelledby="doiModalLabel" aria-hidden="true">' +
+          '<div class="modal-dialog modal-dialog-centered"><div class="modal-content">' +
+            '<div class="modal-header"><h5 class="modal-title" id="doiModalLabel">DOI</h5>' +
+              '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>' +
+            '<div class="modal-body"><code id="doiText" class="doi-box">—</code></div>' +
+            '<div class="modal-footer">' +
+              '<button type="button" class="btn btn-secondary" id="doiCopyBtn"><i class="fa-regular fa-copy"></i> <span data-lang="en">Copy DOI</span><span data-lang="es" hidden>Copiar DOI</span></button>' +
+              '<a class="btn btn-primary" id="doiGoBtn" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-lang="en">Open page</span><span data-lang="es" hidden>Ir a la página</span></a>' +
+            '</div>' +
+          '</div></div>' +
+        '</div>';
+    document.body.appendChild(wrap.firstChild);
+}
 function initPubChips() {
     if (window.__pubChipsInit) return;
     window.__pubChipsInit = true;
     injectCiteModal();
+    injectDoiModal();
     var modalEl = document.getElementById('citeModal');
     var modal = (window.bootstrap && modalEl) ? new bootstrap.Modal(modalEl) : null;
     var preEl = document.getElementById('citeText');
     var dlBtn = document.getElementById('citeDownloadBtn');
     var copyBtn = document.getElementById('citeCopyBtn');
     var cache = {}, curText = '';
+    var doiModalEl = document.getElementById('doiModal');
+    var doiModal = (window.bootstrap && doiModalEl) ? new bootstrap.Modal(doiModalEl) : null;
+    var doiTextEl = document.getElementById('doiText');
+    var doiGoBtn = document.getElementById('doiGoBtn');
+    var doiCopyBtn = document.getElementById('doiCopyBtn');
+    var curDoi = '';
+    function openDoi(raw, url) {
+        curDoi = raw || '';
+        if (doiTextEl) doiTextEl.textContent = raw || '—';
+        if (doiGoBtn) { if (url) doiGoBtn.href = url; else doiGoBtn.removeAttribute('href'); }
+        if (doiModal) doiModal.show();
+        else if (url) window.open(url, '_blank', 'noopener');
+    }
     function openCite(key, url) {
         curText = '';
         if (preEl) preEl.textContent = 'Loading…';
@@ -357,6 +394,8 @@ function initPubChips() {
         if (!t || !t.closest) return;
         var cite = t.closest('.cite-btn');
         if (cite) { openCite(cite.getAttribute('data-bibkey'), cite.getAttribute('data-biburl')); return; }
+        var dbtn = t.closest('.doi-btn');
+        if (dbtn) { openDoi(dbtn.getAttribute('data-doi'), dbtn.getAttribute('data-doi-url')); return; }
         var ab = t.closest('.abs-btn');
         if (ab) {
             var li = ab.closest('li.pub-item');
@@ -377,6 +416,13 @@ function initPubChips() {
         var done = function () { var old = copyBtn.innerHTML; copyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied'; setTimeout(function () { copyBtn.innerHTML = old; }, 1500); };
         if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(curText).then(done).catch(done); }
         else { var ta = document.createElement('textarea'); ta.value = curText; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (_) {} ta.remove(); done(); }
+    });
+    if (doiCopyBtn) doiCopyBtn.addEventListener('click', function () {
+        if (!curDoi) return;
+        var old = doiCopyBtn.innerHTML;
+        var done = function () { doiCopyBtn.innerHTML = '<i class="fa-solid fa-check"></i> <span>Copied</span>'; setTimeout(function () { doiCopyBtn.innerHTML = old; }, 1500); };
+        if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(curDoi).then(done).catch(done); }
+        else { var ta = document.createElement('textarea'); ta.value = curDoi; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (_) {} ta.remove(); done(); }
     });
 }
 
