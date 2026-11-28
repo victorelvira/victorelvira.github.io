@@ -566,3 +566,36 @@ html[data-bs-theme="dark"] .phd-pill { background: #223039; border-color: #33434
 html[data-bs-theme="dark"] .phd-pill:hover { border-color: var(--accent); }
 html[data-bs-theme="dark"] .phd-inst.uoe { background: #152331; color: #9ec3e6; }
 html[data-bs-theme="dark"] .phd-inst.bcam { background: #2a1a16; color: #e8a596; }
+
+/* ============================================================
+   Software page: clean list of code releases with chip links.
+   ============================================================ */
+.sw-intro { color: #5a6671; max-width: 70ch; margin-bottom: 1.2rem; }
+.sw-list { list-style: none; padding-left: 0; margin: 0; }
+.sw-item { padding: .85rem 0; border-top: 1px solid #e3eaec; }
+.sw-item:first-child { border-top: none; padding-top: .2rem; }
+.sw-cite { line-height: 1.55; max-width: 78ch; }
+.sw-cite .sw-venue { color: #5a6671; }
+.sw-links { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
+.sw-chip {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: #fff; border: 1px solid #d3dddf; border-radius: 999px;
+  padding: .26rem .72rem; font-size: .82rem; line-height: 1.2; font-weight: 500;
+  color: #2f353b !important; text-decoration: none !important;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.sw-chip i { color: var(--accent, #0e7c86); font-size: .9em; }
+.sw-chip:hover {
+  border-color: var(--accent, #0e7c86);
+  box-shadow: 0 2px 8px rgba(14,124,134,.18); transform: translateY(-1px);
+}
+.sw-chip.sw-code { background: var(--accent, #0e7c86); border-color: var(--accent, #0e7c86); color: #fff !important; }
+.sw-chip.sw-code i { color: #fff; }
+.sw-chip.sw-code:hover { background: var(--accent-strong, #0a5f67); border-color: var(--accent-strong, #0a5f67); }
+html[data-bs-theme="dark"] .sw-intro,
+html[data-bs-theme="dark"] .sw-cite .sw-venue { color: #9aa7ad; }
+html[data-bs-theme="dark"] .sw-item { border-top-color: #2a3942; }
+html[data-bs-theme="dark"] .sw-chip { background: #223039; border-color: #33434d; color: #cdd6da !important; }
+html[data-bs-theme="dark"] .sw-chip:hover { border-color: var(--accent); }
+html[data-bs-theme="dark"] .sw-chip.sw-code { background: var(--accent); border-color: var(--accent); color: #0f1518 !important; }
+html[data-bs-theme="dark"] .sw-chip.sw-code i { color: #0f1518; }

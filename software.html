@@ -11,13 +11,13 @@
       <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/flatly/bootstrap.min.css" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css">
-      <link href="assets/css/styles.css?v=i18n20" rel="stylesheet">       <!-- Custom CSS -->
+      <link href="assets/css/styles.css?v=i18n21" rel="stylesheet">       <!-- Custom CSS -->
 
 
       <!-- JS -->
-      <script src="assets/js/scripts.js?v=i18n20"></script> <!-- Custom JS (scripts.js to load the navbar and footer) -->
+      <script src="assets/js/scripts.js?v=i18n21"></script> <!-- Custom JS (scripts.js to load the navbar and footer) -->
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery (Required for bibtex_js) -->
-      <script type="text/javascript" src="assets/js/bibtex_js.js?v=i18n20"></script> <!-- Load bibtex-js -->
+      <script type="text/javascript" src="assets/js/bibtex_js.js?v=i18n21"></script> <!-- Load bibtex-js -->
   <!-- OG:auto (social preview) -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Víctor Elvira">
@@ -29,105 +29,84 @@
   <meta name="twitter:image" content="https://victorelvira.github.io/assets/images/profile.jpg">
 </head>
 <body>
- 
+
 <!-- Load Navbar from nav.html -->
 <div id="navbar-placeholder"></div>
 
-<!-- Main content section (Empty) -->
+<!-- Main content section -->
 <div class="container py-3">
     <h2>Software</h2>
 
+    <p class="sw-intro" data-lang="en">Open-source code released with our papers &mdash; to reproduce the experiments and reuse the methods. Each entry links the paper (arXiv / PDF) and its downloadable code.</p>
+    <p class="sw-intro" data-lang="es" hidden>Código abierto publicado junto a nuestros artículos &mdash; para reproducir los experimentos y reutilizar los métodos. Cada entrada enlaza el artículo (arXiv / PDF) y su código descargable.</p>
+
     <div id="content">
-         <ul>
-            <li>E. Chouzenoux and V. Elvira, "Sparse Graphical Linear Dynamical Systems", Journal of Machine Learning Research, Vol. 25, No. 223, pp. 1-53, 2024
-                <span class="file">
-                        <span class="file"><img title="application/pdf" src="assets/favicons/arxiv-favicon.png">
-                <a href="https://arxiv.org/pdf/2307.03210.pdf" target="_blank">[arXiv]</a>
-                    </span></nobr>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/chouzenoux2024sparse.zip" type="application/MATLAB">MATLAB code</a> 
-                </span>
-            </li>
-         
-            <li>V. Elvira, É. Chouzenoux, "Graphical Inference in Linear-Gaussian State-Space Models", IEEE Transactions on Signal Processing, vol. 70, pp. 4757-4771, 2022.
-                <span class="file">
-                    <span class="file"><img title="application/pdf" src="assets/favicons/arxiv-favicon.png">
-                <a href="2209.09969" target="_blank">[arXiv]</a>
-                    </span></nobr>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/elvira2022graphical.zip" type="application/MATLAB">MATLAB code</a> 
-                </span>
-            </li>
-         
-            <li>V. Elvira, L. Martino, D. Luengo, and M. F. Bugallo, "Generalized Multiple Importance Sampling", Statistical Science, vol. 34, no. 1, pp. 129-155, 2019.
-                <span class="file">
-                    <img title="application/pdf" src="assets/favicons/arxiv-favicon.png"> 
-                    <a href="http://arxiv.org/abs/1511.03095" target="_blank">[arXiv]</a>
-                    <nobr><span class="biblio_file_links"><span class="file">
-                        <img title="application/pdf" src="assets/favicons/application-pdf.png"> 
-                        <a href="assets/papers/elvira2016generalized_pre.pdf" type="application/pdf">[pdf]/a>
-                    </span></nobr>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/GenMIS_ej1_gm.zip" type="application/MATLAB">MATLAB code (Section 8.1)</a>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/GenMIS_adaptive_gm_LAIS.zip" type="application/MATLAB">MATLAB code (Section 8.2.1)</a>
-                </span>
-            </li>
-        
-            <li>V. Elvira, L. Martino, D. Luengo, and M. Bugallo, "Improving Population Monte Carlo: Alternative Weighting and Resampling Schemes", Signal Processing, Vol. 131, pp. 77-91, February, 2017.
-                <span class="file">
-                    <img title="application/pdf" src="assets/favicons/arxiv-favicon.png"> 
-                    <a href="http://arxiv.org/abs/1607.02758" target="_blank">[arXiv]</a>
-                    <nobr><span class="biblio_file_links"><span class="file">
-                        <img title="application/pdf" src="assets/favicons/application-pdf.png"> 
-                        <a href="assets/papers/elvira2017improving_pre.pdf" type="application/pdf">[pdf]/a>
-                    </span></nobr>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/DMPMC_v1.zip" type="application/MATLAB">MATLAB code</a>
-                </span>
-            </li>
-         
-            <li>L. Martino, V. Elvira, D. Luengo, and J. Corander, "Layered Adaptive Importance Sampling", Statistics and Computing, pp. 1-15, 2016.
-                <span class="file">
-                    <img title="application/pdf" src="assets/favicons/arxiv-favicon.png"> 
-                    <a href="http://arxiv.org/abs/1505.04732" target="_blank">[arXiv]</a>
-                    <nobr><span class="biblio_file_links"><span class="file">
-                        <img title="application/pdf" src="assets/favicons/application-pdf.png"> 
-                        <a href="assets/papers/martino2017layered_pre.pdf" type="application/pdf">[pdf]/a>
-                    </span></nobr>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/CODE_LAIS_v03_forMathWorks.zip" type="application/MATLAB">MATLAB code (iterative)</a>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/LAIS_non_iterative_code.mltbx" type="application/MATLAB">MATLAB code (non iterative)</a>
-                </span>
-            </li>
-         
-            <li>L. Martino, V. Elvira, D. Luengo, J. Corander, and F. Louzada, "Orthogonal parallel MCMC methods for sampling and optimization", Digital Signal Processing, Vol. 58, pp. 64-84, November, 2016.
-                <span class="file">
-                    <img title="application/pdf" src="assets/favicons/arxiv-favicon.png"> 
-                    <a href="http://arxiv.org/abs/1507.08577" target="_blank">[arXiv]</a>
-                    <nobr><span class="biblio_file_links"><span class="file">
-                        <img title="application/pdf" src="assets/favicons/application-pdf.png"> 
-                        <a href="assets/papers/martino2016orthogonal_pre.pdf" type="application/pdf">[pdf]/a>
-                    </span></nobr>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/OMCMC_SMH.zip" type="application/MATLAB">MATLAB code</a>
-                </span>
-            </li>
-         
-            <li>L. Martino, J. Read, V. Elvira, and F. Louzada, "Cooperative Parallel Particle Filters for On-line Model Selection and Applications to Urban Mobility", Digital Signal Processing, Vol. 60, pp. 172-185, January, 2017.
-                <span class="file">
-                    <img title="application/pdf" src="assets/favicons/arxiv-favicon.png"> 
-                    <a href="http://arxiv.org/abs/1609.07731" target="_blank">[arXiv]</a>
-                    <nobr><span class="biblio_file_links"><span class="file">
-                        <img title="application/pdf" src="assets/favicons/application-pdf.png"> 
-                        <a href="assets/papers/martino2017cooperative_pre.pdf" type="application/pdf">[pdf]/a>
-                    </span></nobr>
-                    <img title="MATLAB" src="assets/favicons/matlab_favicon.ico"> 
-                    <a href="assets/software/CODE_MAPF.zip" type="application/MATLAB">MATLAB code</a>
-                </span>
-            </li>
-        </ul>
+      <ul class="sw-list">
+
+        <li class="sw-item">
+          <div class="sw-cite">E. Chouzenoux and V. Elvira, &ldquo;Sparse Graphical Linear Dynamical Systems,&rdquo; <span class="sw-venue"><em>Journal of Machine Learning Research</em>, Vol. 25, No. 223, pp. 1&ndash;53, 2024</span>.</div>
+          <div class="sw-links">
+            <a class="sw-chip" href="https://arxiv.org/abs/2307.03210" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+            <a class="sw-chip sw-code" href="assets/software/chouzenoux2024sparse.zip"><i class="fas fa-code"></i> MATLAB code</a>
+          </div>
+        </li>
+
+        <li class="sw-item">
+          <div class="sw-cite">V. Elvira and É. Chouzenoux, &ldquo;Graphical Inference in Linear-Gaussian State-Space Models,&rdquo; <span class="sw-venue"><em>IEEE Transactions on Signal Processing</em>, vol. 70, pp. 4757&ndash;4771, 2022</span>.</div>
+          <div class="sw-links">
+            <a class="sw-chip" href="https://arxiv.org/abs/2209.09969" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+            <a class="sw-chip sw-code" href="assets/software/elvira2022graphical.zip"><i class="fas fa-code"></i> MATLAB code</a>
+          </div>
+        </li>
+
+        <li class="sw-item">
+          <div class="sw-cite">V. Elvira, L. Martino, D. Luengo, and M. F. Bugallo, &ldquo;Generalized Multiple Importance Sampling,&rdquo; <span class="sw-venue"><em>Statistical Science</em>, vol. 34, no. 1, pp. 129&ndash;155, 2019</span>.</div>
+          <div class="sw-links">
+            <a class="sw-chip" href="https://arxiv.org/abs/1511.03095" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+            <a class="sw-chip" href="assets/papers/elvira2019generalized_pre.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+            <a class="sw-chip sw-code" href="assets/software/GenMIS_ej1_gm.zip"><i class="fas fa-code"></i> MATLAB code (Section 8.1)</a>
+            <a class="sw-chip sw-code" href="assets/software/GenMIS_adaptive_gm_LAIS.zip"><i class="fas fa-code"></i> MATLAB code (Section 8.2.1)</a>
+          </div>
+        </li>
+
+        <li class="sw-item">
+          <div class="sw-cite">V. Elvira, L. Martino, D. Luengo, and M. F. Bugallo, &ldquo;Improving Population Monte Carlo: Alternative Weighting and Resampling Schemes,&rdquo; <span class="sw-venue"><em>Signal Processing</em>, Vol. 131, pp. 77&ndash;91, 2017</span>.</div>
+          <div class="sw-links">
+            <a class="sw-chip" href="https://arxiv.org/abs/1607.02758" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+            <a class="sw-chip" href="assets/papers/elvira2017improving_pre.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+            <a class="sw-chip sw-code" href="assets/software/DMPMC_v1.zip"><i class="fas fa-code"></i> MATLAB code</a>
+          </div>
+        </li>
+
+        <li class="sw-item">
+          <div class="sw-cite">L. Martino, V. Elvira, D. Luengo, and J. Corander, &ldquo;Layered Adaptive Importance Sampling,&rdquo; <span class="sw-venue"><em>Statistics and Computing</em>, vol. 27, pp. 599&ndash;623, 2017</span>.</div>
+          <div class="sw-links">
+            <a class="sw-chip" href="https://arxiv.org/abs/1505.04732" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+            <a class="sw-chip" href="assets/papers/martino2017layered_pre.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+            <a class="sw-chip sw-code" href="assets/software/CODE_LAIS_v03_forMathWorks.zip"><i class="fas fa-code"></i> MATLAB code (iterative)</a>
+            <a class="sw-chip sw-code" href="assets/software/LAIS_non_iterative_code.mltbx"><i class="fas fa-code"></i> MATLAB code (non-iterative)</a>
+          </div>
+        </li>
+
+        <li class="sw-item">
+          <div class="sw-cite">L. Martino, V. Elvira, D. Luengo, J. Corander, and F. Louzada, &ldquo;Orthogonal Parallel MCMC Methods for Sampling and Optimization,&rdquo; <span class="sw-venue"><em>Digital Signal Processing</em>, Vol. 58, pp. 64&ndash;84, 2016</span>.</div>
+          <div class="sw-links">
+            <a class="sw-chip" href="https://arxiv.org/abs/1507.08577" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+            <a class="sw-chip" href="assets/papers/martino2016orthogonal_pre.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+            <a class="sw-chip sw-code" href="assets/software/OMCMC_SMH.zip"><i class="fas fa-code"></i> MATLAB code</a>
+          </div>
+        </li>
+
+        <li class="sw-item">
+          <div class="sw-cite">L. Martino, J. Read, V. Elvira, and F. Louzada, &ldquo;Cooperative Parallel Particle Filters for On-line Model Selection and Applications to Urban Mobility,&rdquo; <span class="sw-venue"><em>Digital Signal Processing</em>, Vol. 60, pp. 172&ndash;185, 2017</span>.</div>
+          <div class="sw-links">
+            <a class="sw-chip" href="https://arxiv.org/abs/1609.07731" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+            <a class="sw-chip" href="assets/papers/martino2017cooperative_pre.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
+            <a class="sw-chip sw-code" href="assets/software/CODE_MAPF.zip"><i class="fas fa-code"></i> MATLAB code</a>
+          </div>
+        </li>
+
+      </ul>
     </div>
 </div>
 
@@ -152,9 +131,9 @@
 <!-- Default Statcounter code for Github personal
 https://victorelvira.github.io/index.html -->
 <script type="text/javascript">
-var sc_project=11157426; 
-var sc_invisible=1; 
-var sc_security="c4968ba5"; 
+var sc_project=11157426;
+var sc_invisible=1;
+var sc_security="c4968ba5";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
