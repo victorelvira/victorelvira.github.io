@@ -624,6 +624,10 @@ if (typeof jQuery == 'undefined') {
 } else {
   // draw bibtex when loaded
   $(document).ready(function () {
+    // Solo auto-dibuja si hay un <textarea id="bibtex_input"> en la pagina.
+    // Nuestras paginas usan BibtexParser directamente (fetch del .bib), sin ese
+    // textarea, asi que evitamos que displayBibtex(undefined) lance un TypeError.
+    if ($("#bibtex_input").length === 0) return;
     // check for template, add default
     if ($(".bibtex_template").length == 0) {
       $("body").append("<div class=\"bibtex_template\"><div class=\"if author\" style=\"font-weight: bold;\">\n  <span class=\"if year\">\n    <span class=\"year\"></span>, \n  </span>\n  <span class=\"author\"></span>\n  <span class=\"if url\" style=\"margin-left: 20px\">\n    <a class=\"url\" style=\"color:black; font-size:10px\">(view online)</a>\n  </span>\n</div>\n<div style=\"margin-left: 10px; margin-bottom:5px;\">\n  <span class=\"title\"></span>\n</div></div>");

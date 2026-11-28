@@ -82,7 +82,7 @@ function applyLang(lang) {
 }
 
 // Version compartida para cache-busting de la navbar/footer (súbela al cambiar nav/footer).
-const __ASSET_VER = 'i18n19';
+const __ASSET_VER = 'i18n20';
 const __navbarPromise = fetch('/nav.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('nav.html ' + r.status)));
 const __footerPromise = fetch('/footer.html?v=' + __ASSET_VER).then(r => r.ok ? r.text() : Promise.reject(new Error('footer.html ' + r.status)));
 
