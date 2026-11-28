@@ -7,6 +7,13 @@
     padding: 0.3rem 0;
 }
 
+/* La navbar compartida se inyecta dentro de #navbar-placeholder. Si ese div
+   forma caja propia, su alto == el de la navbar y el position:sticky de la
+   navbar se queda sin recorrido (se va al primer scroll). display:contents
+   elimina la caja del placeholder: la navbar cuelga directamente de <body>
+   y vuelve a quedarse fija al hacer scroll. */
+#navbar-placeholder { display: contents; }
+
 .navbar-brand {
     font-weight: bold;
 }
